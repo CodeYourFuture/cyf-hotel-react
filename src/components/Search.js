@@ -28,7 +28,7 @@ const Search = props => (
                 />
               </td>
               <td>
-                <button>Search IDs</button>
+                <button className="btn btn-primary fn-submit-name">Search IDs</button>
               </td>
               {/* Add search by name here */}
             </tr>
