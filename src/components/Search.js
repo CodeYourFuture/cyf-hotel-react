@@ -13,12 +13,13 @@ const Search = props => (
             <tr>
               <th>Customer id</th>
               <th />
-              <th></th>
+              <th>Customer name</th>
               <th />
             </tr>
           </thead>
           <tbody>
             <tr>
+              {/* Search by ID */ }
               <td>
                 <input
                   id="customerId"
@@ -31,7 +32,20 @@ const Search = props => (
               <td>
                 <Button label="Search IDs" />
               </td>
-              {/* Add search by name here */}
+
+              {/* Search by name */ }
+              <td>
+                <input
+                  id="customerName"
+                  type="text"
+                  className="form-control"
+                  placeholder="Customer name"
+                  name="customerName"
+                />
+              </td>
+              <td>
+                <Button label="Search Names" />
+              </td>
             </tr>
           </tbody>
         </table>
