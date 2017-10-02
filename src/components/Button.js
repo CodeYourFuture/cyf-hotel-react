@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Button = props => (
-  <button className="btn btn-primary fn-submit-name">{props.label}</button>
+const Button = ({label}) => (
+  <button className="btn btn-primary fn-submit-name">{label}</button>
 );
 
 export default Button;
