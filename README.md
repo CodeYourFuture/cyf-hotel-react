@@ -11,9 +11,9 @@ Launch server using `yarn start` and go to http://localhost:3000/
 
 # Exercises 
 
-1- Change the button on the `search.js` page to be a separate component 
+1- Change the button on the `Search.js` page to be a separate component
 
-2- Add `search by name` form to the file `search.js`
+2- Add `search by name` form to the file `Search.js`
 
 3- Create a results table component and show it on the Bookings page using hard coded data. Be sure to split out your components, similar to the method used in (1)
 
@@ -28,7 +28,6 @@ Launch server using `yarn start` and go to http://localhost:3000/
 8 - Multi-select and count of rows. When you press on each row, mark it as selected (maybe change the color). When you press on the same row, it should become unselected. 
 A total counter of all selected rows should update at the top of the table (next to `5 results found`)
 
-9 - Use your existing API to search for results.
-Make sure you show a `Loading` message somewhere whenever there is a fetch to the API in process.
-Display an error message when there is a problem fetching from the server.
+9 - Use your existing API to search for results. Make sure you show a `Loading` message somewhere whenever there is a fetch to the API in process.
 
+10 - Display an error message when there is a problem fetching from the server.
