@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
 
-const SearchIdsButton = () => (
-  <button className="btn btn-primary fn-submit-name">Search IDs</button>  
-);
+class Button extends React.Component {
+  render() {
+    return <button className="btn btn-primary fn-submit-name">{this.props.name}</button>  
+  }
+}
 
-export default SearchIdsButton;    
+export default Button;
