@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import Search from "../components/Search.js";
-// import Results from "../components/Results.js";
-// import * as FakeBookings from "../data/fakeBookings.json";
+import SearchResultsTable from "../components/ResultsTable.js";
+import * as FakeBookings from "../data/fakeBookings.json";
 
 export default class Bookings extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {results: FakeBookings};
+  }
+
   search = () => {
     console.info("to do!");
   };
@@ -13,7 +18,7 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
-          {/* <Results results={this.state.results} /> */}
+          <SearchResultsTable results={this.state.results} />
         </div>
       </div>
     );

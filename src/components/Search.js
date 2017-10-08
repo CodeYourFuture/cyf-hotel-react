@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from "./Button.js";
-import SearchResultsTable from "./ResultsTable.js";
 
 const Search = props => (
   <div className="search">
@@ -37,8 +36,6 @@ const Search = props => (
             </tr>
           </tbody>
         </table>
-        
-        <SearchResultsTable />
       </div>
     </div>
   </div>

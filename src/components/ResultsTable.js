@@ -16,15 +16,17 @@ class SearchResultsTable extends React.Component {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Mr</td>
-            <td>First name</td>
-            <td>Surname</td>
-            <td>Email</td>
-            <td>Room Id</td>
-            <td>Check in date</td>
-            <td>Check out date</td>
-          </tr>
+          {this.props.results.map((row, i) =>
+            <tr key={i}>
+              <td>{ row.title }</td>
+              <td>{ row.firstName }</td>
+              <td>{ row.surname }</td>
+              <td>{ row.email }</td>
+              <td>{ row.roomId }</td>
+              <td>{ row.checkInDate }</td>
+              <td>{ row.checkOutDate }</td>
+            </tr>
+          )}
         </tbody>
       </table>
     )
