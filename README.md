@@ -5,7 +5,7 @@ This is the `react` frontend for the [CYF-Hotel](https://github.com/CodeYourFutu
 
 # Installation
 
-Install the dependencies using `yarn i`.
+Install the dependencies by running `yarn`.
 
 Launch server using `yarn start` and go to http://localhost:3000/
 
