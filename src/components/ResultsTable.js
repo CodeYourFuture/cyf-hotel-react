@@ -1,6 +1,10 @@
 import React from 'react';
 
 class SearchResultsTable extends React.Component {
+  numberOfDaysBetween = (date1, date2) => {
+    return Math.floor((new Date(date2) - new Date(date1)) / (1000*60*60*24))
+  }
+
   render() {
     return (
       <table className="table search-table">
@@ -13,6 +17,7 @@ class SearchResultsTable extends React.Component {
             <th>Room ID</th>
             <th>Check in date</th>
             <th>Check out date</th>
+            <th>Duration</th>
           </tr>
         </thead>
         <tbody>
@@ -25,6 +30,7 @@ class SearchResultsTable extends React.Component {
               <td>{ row.roomId }</td>
               <td>{ row.checkInDate }</td>
               <td>{ row.checkOutDate }</td>
+              <td>{ this.numberOfDaysBetween(row.checkInDate, row.checkOutDate) }</td>
             </tr>
           )}
         </tbody>
