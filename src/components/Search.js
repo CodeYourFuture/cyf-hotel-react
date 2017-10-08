@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchIdsButton from "./Button.js";
 
 const Search = props => (
   <div className="search">
@@ -28,7 +29,7 @@ const Search = props => (
                 />
               </td>
               <td>
-                <button className="btn btn-primary fn-submit-name">Search IDs</button>
+                <SearchIdsButton />
               </td>
               {/* Add search by name here */}
             </tr>
