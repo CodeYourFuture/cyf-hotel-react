@@ -1,9 +1,12 @@
 import React from 'react';
-import FakeBookings from "../data/fakeBookings.json";
+import ResultsTableRow from './ResultsTableRow';
+
 const ResultsTable = (props) => {
+  console.log(props.bookings);
   return(
     <div >
       <table>
+      <tbody className="rows-border">
       <tr>
           <th>Title</th>
           <th>First Name</th>
@@ -13,17 +16,11 @@ const ResultsTable = (props) => {
           <th>checkInDate</th>
           <th>checkOutDate</th>
         </tr>
-      {FakeBookings.map((item, index) => (
-        <tr>
-          <td>{item.title}</td>
-          <td>{item.firstName} </td>
-          <td>{item.surname} </td>
-          <td>{item.email} </td>
-          <td>{item.roomId} </td>
-          <td>{item.checkInDate} </td>
-          <td>{item.checkOutDate} </td>
-      </tr>
-      ))}
+      {props.bookings.map((fakeBooking)=>
+
+          <ResultsTableRow {...fakeBooking}/>
+      )}
+      </tbody>
     </table>
     </div>
   )

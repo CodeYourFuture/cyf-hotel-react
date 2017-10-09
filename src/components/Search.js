@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from './button'
-import Input from './input'
+import Button from './Button'
+import Input from './Input'
 
 const Search = props => (
   <div className="search">
@@ -28,7 +28,7 @@ const Search = props => (
                 />
               </td>
               <td>
-                <Button text="search Id" search = {props.search}/>
+                <Button text="search Id" search = {props.handleSearch} handleClick={props.handleClick}/>
               </td>
             </tr>
             <tr>
@@ -40,7 +40,7 @@ const Search = props => (
                 />
               </td>
               <td>
-                <Button text="search Name" />
+                <Button text="search Name" search={props.handleSearch} handleClick={props.handleClick} />
               </td>
             </tr>
           </tbody>

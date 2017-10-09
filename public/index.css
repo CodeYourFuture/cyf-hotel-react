@@ -1,6 +1,11 @@
 tbody, th, td {
-    border: 1px solid black;
     border-collapse: collapse;
     width: 60%;
     text-align: center;
+}
+.rows-border{
+    border: 1px solid black;
+}
+.search-table th, {
+  border:none;
 }
