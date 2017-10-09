@@ -15,7 +15,7 @@
     "email": "Person2@else.com",
     "roomId": 2,
     "checkInDate": "2017-11-21",
-    "checkOutDate": "2017-11-28"
+    "checkOutDate": "2017-11-27"
   },
   {
     "title": "Mr",
@@ -24,7 +24,7 @@
     "email": "Person3@else.com",
     "roomId": 3,
     "checkInDate": "2017-11-21",
-    "checkOutDate": "2017-11-28"
+    "checkOutDate": "2017-11-26"
   },
   {
     "title": "Mrs",
@@ -33,7 +33,7 @@
     "email": "Person4@else.com",
     "roomId": 4,
     "checkInDate": "2017-11-21",
-    "checkOutDate": "2017-11-28"
+    "checkOutDate": "2017-11-25"
   },
   {
     "title": "Mr",
@@ -42,6 +42,6 @@
     "email": "Person5@else.com",
     "roomId": 5,
     "checkInDate": "2017-11-21",
-    "checkOutDate": "2017-11-28"
+    "checkOutDate": "2017-11-24"
   }
 ]
