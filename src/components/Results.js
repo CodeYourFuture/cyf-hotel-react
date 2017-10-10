@@ -26,17 +26,18 @@ const Results = props => (
     <div className = "container" >
         <div className = "row" >
             <div className = "col" >
+                <p> Results ( <span className="text-danger">{props.results.length}</span> found ) </p>
                 <table className = "table" >
                     <thead>
                         <tr>
-                            <th > Title </th> 
-                            <th > First name </th> 
-                            <th > Surname </th> 
-                            <th > Email </th> 
-                            <th > Room id </th> 
-                            <th > Check in date </th> 
-                            <th > Check out date </th> 
-                            <th > Total days </th>
+                            <th> Title </th> 
+                            <th> First name </th> 
+                            <th> Surname </th> 
+                            <th> Email </th> 
+                            <th> Room id </th> 
+                            <th> Check in date </th> 
+                            <th> Check out date </th> 
+                            <th> Total days </th>
                         </tr> 
                     </thead> 
                     <tbody id = "rows">
