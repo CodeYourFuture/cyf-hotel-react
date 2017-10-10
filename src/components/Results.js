@@ -3,9 +3,10 @@ import moment from 'moment';
 // import ResultRow from './ResultsRow.js';
 
 const getTimeDifference = (checkInDate, checkOutDate)=>{
-    checkOutDate = checkOutDate.split("-");
-    checkInDate = checkInDate.split("-");
-    return checkOutDate[2] - checkInDate[2]
+    checkOutDate = moment(checkOutDate);
+    checkInDate = moment(checkInDate);
+    return checkOutDate.diff(checkInDate,'days')
+  
 }
 const resultsAll = (bookings)=> {
        return bookings.results.map((booking,i)=>{
@@ -35,7 +36,7 @@ const Results = props => (
                             <th > Room id </th> 
                             <th > Check in date </th> 
                             <th > Check out date </th> 
-                            <th > Staying days </th>
+                            <th > Total days </th>
                         </tr> 
                     </thead> 
                     <tbody id = "rows">

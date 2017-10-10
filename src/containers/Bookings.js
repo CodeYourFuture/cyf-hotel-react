@@ -17,7 +17,7 @@ export default class Bookings extends Component {
         this.setState({bookings});
     }
     searchByName = (e) => {
-      const bookings = FakeBookings.filter(booking => booking.firstName.toString() === this.state.customerName)
+      const bookings = FakeBookings.filter(booking => booking.firstName.toString().toLowerCase() === this.state.customerName.toLowerCase())
       this.setState({bookings})
     }
     updateCustomerName = (e)=>{
