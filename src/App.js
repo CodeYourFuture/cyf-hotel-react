@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import moment from "moment";
 
 import Bookings from "./containers/Bookings.js";
 import Footer from "./components/Footer.js";

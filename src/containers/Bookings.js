@@ -9,7 +9,9 @@ export default class Bookings extends Component {
         this.state ={ 
             bookings: FakeBookings,
             customerId: null,
-            customerName: null
+            customerName: null,
+            isSortedASC : false,
+            isSortedDES : false
         }
     }
     searchById = (e) => {
@@ -22,11 +24,69 @@ export default class Bookings extends Component {
     }
     updateCustomerName = (e)=>{
       this.setState({customerName:e.target.value})
-    //   console.log(e.target.value)
-
     }
     updateCustomerId = (e)=>{
       this.setState({customerId:e.target.value})
+    }
+    sortASC = (sortBy) =>{
+      this.setState(
+        {
+          isSortedASC:true,
+          isSortedDES:false
+      });
+      return  this.state.bookings.sort(function (a, b) {
+        if(sortBy === 'roomId' || sortBy === 'totalDays'){
+          return a[sortBy] - b[sortBy];
+        }
+        else{
+            if (a[sortBy] < b[sortBy]) {
+                  return -1;
+              }
+              if (a[sortBy] > b[sortBy]) {
+                  return 1;
+              }            
+              return 0;
+        }
+        
+        });
+        
+        
+    }
+    sortDES = (sortBy) =>{
+      this.setState(
+        {
+          isSortedDES:true,
+          isSortedASC:false
+        });
+      return  this.state.bookings.sort(function (a, b) {
+        if(sortBy === 'roomId' || sortBy === 'totalDays'){
+          return b[sortBy] - a[sortBy];
+        }
+        else{
+            if (b[sortBy] < a[sortBy]) {
+                  return -1;
+              }
+              if (b[sortBy] > a[sortBy]) {
+                  return 1;
+              }            
+              return 0;
+        }
+        
+        });
+        
+    }
+    headerclick = (e) =>{
+        const sortBy = e.target.id;
+        /*
+          on initial click sort the results in ascending alphabetically or form small number to larger number 
+          order, if it is not alrady,
+        */
+        this.setState(this.sortASC(sortBy)); 
+        //if the result is already sorted ascendingly, sort it in decending order alphabetically or 
+        //from max to min if the column clicked is roomid or totalDays  
+        if(this.state.isSortedASC){
+          this.setState(this.sortDES(sortBy));  
+        }
     }
     render() { 
         return ( <div className = "App-content" >
@@ -37,7 +97,7 @@ export default class Bookings extends Component {
                 onCustomerNameChange={this.updateCustomerName} 
                 onCustomerIdChange = {this.updateCustomerId}
             /> 
-             <Results results = {this.state.bookings}/> { /* <Results results={this.state.results} /> */ }
+             <Results results = {this.state.bookings} headerclick = {this.headerclick}/> { /* <Results results={this.state.results} /> */ }
              </div> 
              </div>
         );
