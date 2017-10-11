@@ -31,7 +31,9 @@ class Results extends React.Component{
                         </tr> 
                     </thead> 
                     <tbody id = "rows">
-                      <ResultTableRows bookings = {this.props.results} />
+                      { this.props.results.map((booking,i) =>
+                      <ResultTableRows key = {i} booking = {booking} index={i}/>)
+                    }
                     </tbody> 
                 </table> 
             </div> 

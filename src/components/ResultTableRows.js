@@ -5,7 +5,8 @@ class ResultTableRows extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-      isRowSelected : false
+      isRowSelected : false,
+      numberOfRowSelected : 0
     }
   }
   rowSelected =(i)=>{
@@ -14,32 +15,30 @@ class ResultTableRows extends React.Component{
         this.refs[i].removeAttribute('class')
         console.log(this.state)
       }) 
-      ;
-       
     } else{
-      this.setState({isRowSelected:true}, function(){
+      this.setState({isRowSelected:true }, function(){
         this.refs[i].setAttribute('class','table-success');
-        console.log(this.refs)
+        console.log(this.state)
       })
-      
-      
     }
     
   }
   
-  render(){
-    return (this.props.bookings.map( (booking,i) =>(
-      <tr key ={i} onClick ={this.rowSelected.bind(this,i)} ref={i}>
-      {
+  render(){ 
+    return (
+      <tr key ={this.props.index} onClick ={this.rowSelected.bind(this,this.props.index)} ref={this.props.index}>
+      { 
         /* get all the keys of the object and map their value to the td*/
-        Object.keys(booking)
+        Object.keys(this.props.booking)
         .map((result,j)=>{
-          if(result !== 'id')
-            return <td key={j}>{booking[result]}</td>   
+          if(result !== 'id'){
+            return <td key={j}>{this.props.booking[result]}</td>  
+          }
+             
         })
       }
       </tr>
-    )))
+    )
   }
   
 } 
