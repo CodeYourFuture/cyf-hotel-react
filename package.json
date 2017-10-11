@@ -1,17 +1,20 @@
 {
-  "name": "react-hotel",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "moment": "^2.18.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14"
-  },
+  "name": "cyf-hotel",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.4",
+    "knex": "0.13.0",
+    "sqlite3": "3.1.8"
+  },
+  "devDependencies": {
+    "nodemon": "1.11.0"
   }
 }
