@@ -8,7 +8,8 @@ export default class Bookings extends Component {
        console.log(props)
         super(props);
         this.state ={ 
-            bookings: props.reservations,
+            reservations: props.reservations,
+            searchResult : [],
             customerId: null,
             customerName: null,
             isSortedASC : false,
@@ -17,22 +18,22 @@ export default class Bookings extends Component {
         }
     }
     searchById = (e) => {
-      const bookings = FakeBookings
+      const bookings = this.props.reservations
         .filter(booking => (
           booking.id === Number(this.state.customerId)
         ))
       this.setState({ 
-        bookings,
+        reservations : bookings,
         numberOfResults:bookings.length
       });             
     }
     searchByName = (e) => {
-      const bookings = FakeBookings
+      const bookings = this.props.reservations
         .filter(booking => (
-            booking.firstName.toString().toLowerCase() === this.state.customerName.toLowerCase()
+            booking.firstname.toString().toLowerCase() === this.state.customerName.toLowerCase()
           ))
       this.setState({ 
-        bookings,
+        reservations : bookings,
         numberOfResults:bookings.length
       });
     }
@@ -49,7 +50,7 @@ export default class Bookings extends Component {
           isSortedASC:true,
           isSortedDES:false
       });
-      return  this.state.bookings.sort(function (a, b) {
+      return  this.state.reservations.sort(function (a, b) {
         if(sortBy === 'roomId' || sortBy === 'totalDays'){
           return a[sortBy] - b[sortBy];
         }
@@ -71,7 +72,7 @@ export default class Bookings extends Component {
           isSortedDES:true,
           isSortedASC:false
         });
-      return  this.state.bookings.sort(function (a, b) {
+      return  this.state.reservations.sort(function (a, b) {
         if(sortBy === 'roomId' || sortBy === 'totalDays'){
           return b[sortBy] - a[sortBy];
         }else{
@@ -109,7 +110,7 @@ export default class Bookings extends Component {
                 onCustomerIdChange = {this.updateCustomerId}
             /> 
              <Results 
-                results = {this.state.bookings} 
+                results = {this.state.reservations} 
                 headerclick = {this.headerclick} 
                 numberOfResults = {this.state.numberOfResults} 
                 updateRowsSelected = {this.updateNumberOfRowsSelected}

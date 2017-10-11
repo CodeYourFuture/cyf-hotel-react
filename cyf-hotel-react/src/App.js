@@ -11,12 +11,12 @@ class App extends Component {
       requestFailed:false
     }
   }
-  componentDidMount (){
+componentDidMount (){
     return fetch('/api/reservations',{
       headers : {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-}})
+  }})
 .then(response => {
   if(!response.ok){
     throw Error("API request failed");
