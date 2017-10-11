@@ -30,7 +30,11 @@ const Search = props => (
                 />
               </td>
               <td>
-                <Button classStyle={"btn btn-primary fn-submit-name"} searchById={"Search Ids"} onClick={props.searchById} />
+                <Button 
+                  classStyle={"btn btn-primary fn-submit-name"} 
+                  searchById={"Search Ids"} 
+                  onClick={props.searchById} 
+                />
               </td>
               <td>
                 <input
@@ -43,7 +47,11 @@ const Search = props => (
                 />
               </td>
               <td>
-                <Button classStyle={"btn btn-primary fn-submit-name"} searchById={"Search Names"} onClick={props.searchByName} />
+                <Button 
+                  classStyle={"btn btn-primary fn-submit-name"} 
+                  searchById={"Search Names"} 
+                  onClick={props.searchByName} 
+                />
               </td>
             </tr>
           </tbody>

@@ -5,7 +5,11 @@ const ResultTableHeaders =  props => {
     //since Id coulumn is not displayed in the result
     if(header !== 'id')
     //capitalize the heading
-    return <th key = {i} onClick ={props.onClick} id = {header} >{header.charAt(0).toUpperCase() + header.slice(1)}</th>
+    return <th key = {i} 
+              onClick ={props.onClick}
+              id = {header} >
+              {header.charAt(0).toUpperCase() + header.slice(1)}
+           </th>
   })
   
 };

@@ -12,21 +12,30 @@ export default class Bookings extends Component {
             customerName: null,
             isSortedASC : false,
             isSortedDES : false,
-            numberOfResults: FakeBookings.length
+            numberOfResults: FakeBookings.length,
+            message : "found" 
+            /*message will have to values found for number of result for search and 
+              'selected' for number of rows selected*/
         }
     }
     
     searchById = (e) => {
-        const bookings = FakeBookings.filter(booking => booking.id === Number(this.state.customerId))
-        this.setState(
-          { bookings,
-            numberOfResults:bookings.length
-           }
-           );
+      const bookings = FakeBookings
+        .filter(booking => (
+          booking.id === Number(this.state.customerId)
+        ))
+      this.setState(
+        { bookings,
+          numberOfResults:bookings.length
+         }
+         );
                        
     }
     searchByName = (e) => {
-      const bookings = FakeBookings.filter(booking => booking.firstName.toString().toLowerCase() === this.state.customerName.toLowerCase())
+      const bookings = FakeBookings
+        .filter(booking => (
+            booking.firstName.toString().toLowerCase() === this.state.customerName.toLowerCase()
+          ))
       this.setState(
         { bookings,
           numberOfResults:bookings.length
@@ -108,7 +117,13 @@ export default class Bookings extends Component {
                 onCustomerNameChange={this.updateCustomerName} 
                 onCustomerIdChange = {this.updateCustomerId}
             /> 
-             <Results results = {this.state.bookings} headerclick = {this.headerclick} numberOfResults = {this.state.numberOfResults} updateRowsSelected = {this.updateNumberOfRowsSelected}/> { /* <Results results={this.state.results} /> */ }
+             <Results 
+                results = {this.state.bookings} 
+                headerclick = {this.headerclick} 
+                numberOfResults = {this.state.numberOfResults} 
+                updateRowsSelected = {this.updateNumberOfRowsSelected}
+                message = {this.state.message}
+              /> 
              </div> 
              </div>
         );

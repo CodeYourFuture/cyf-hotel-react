@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class ResultTableRows extends React.Component{
   constructor(props){
     super(props)
@@ -8,18 +7,21 @@ class ResultTableRows extends React.Component{
       isRowSelected : false
     }
   }
-
   rowSelected =(i)=>{
-    let n = this.props.n; 
+    let numberOfRowSelected = this.props.numberOfRowSelected; 
     if(this.state.isRowSelected){
-      this.setState({isRowSelected:false}, function(){
+      this.setState({
+        isRowSelected:false
+       }, function(){
         this.refs[i].removeAttribute('class')
-        this.props.updateNumberOfRowsSelected(--n)
+        this.props.updateNumberOfRowsSelected(--numberOfRowSelected)
       }) 
     } else{
-      this.setState({isRowSelected:true}, function(){
+      this.setState({
+        isRowSelected:true
+      }, function(){
         this.refs[i].setAttribute('class','table-success');
-          this.props.updateNumberOfRowsSelected(++n)
+        this.props.updateNumberOfRowsSelected(++numberOfRowSelected)
       })
     }
     
@@ -27,23 +29,24 @@ class ResultTableRows extends React.Component{
   
   render(){ 
     return (
-      <tr key ={this.props.index} onClick ={this.rowSelected.bind(this,this.props.index)} ref={this.props.index}>
+      <tr 
+        key ={this.props.index} 
+        onClick ={this.rowSelected.bind(this,this.props.index)} 
+        ref={this.props.index}
+        >
       { 
         /* get all the keys of the object and map their value to the td*/
         Object.keys(this.props.booking)
         .map((result,j)=>{
           if(result !== 'id'){
-            return <td key={j}>{this.props.booking[result]}</td>  
-          }
-             
+            return <td key={j}>
+                      {this.props.booking[result]}
+                   </td>  
+          }     
         })
       }
       </tr>
     )
-  }
-  
+  }  
 } 
-
-
-
 export default ResultTableRows;
