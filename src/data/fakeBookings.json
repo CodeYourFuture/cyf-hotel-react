@@ -1,23 +1,26 @@
 [
   {
+    "id": 5,
     "title": "Mr",
     "firstName": "Person1",
     "surname": "Else",
     "email": "Person1@else.com",
     "roomId": 1,
     "checkInDate": "2017-11-21",
-    "checkOutDate": "2017-11-28"
+    "checkOutDate": "2017-12-28"
   },
   {
+    "id": 3,
     "title": "Mrs",
     "firstName": "Person2",
     "surname": "Else",
     "email": "Person2@else.com",
     "roomId": 2,
-    "checkInDate": "2017-11-21",
+    "checkInDate": "2017-08-21",
     "checkOutDate": "2017-11-28"
   },
   {
+    "id": 1,
     "title": "Mr",
     "firstName": "Person3",
     "surname": "Else",
@@ -27,21 +30,23 @@
     "checkOutDate": "2017-11-28"
   },
   {
+    "id": 4,
     "title": "Mrs",
     "firstName": "Person4",
     "surname": "Else",
     "email": "Person4@else.com",
     "roomId": 4,
     "checkInDate": "2017-11-21",
-    "checkOutDate": "2017-11-28"
+    "checkOutDate": "2018-1-28"
   },
   {
+    "id": 2,
     "title": "Mr",
     "firstName": "Person5",
     "surname": "Else",
     "email": "Person5@else.com",
     "roomId": 5,
-    "checkInDate": "2017-11-21",
+    "checkInDate": "2017-10-21",
     "checkOutDate": "2017-11-28"
   }
 ]
