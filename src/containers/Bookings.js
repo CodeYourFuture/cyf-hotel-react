@@ -95,6 +95,9 @@ export default class Bookings extends Component {
           this.setState(this.sortDES(sortBy));  
         }
     }
+    updateNumberOfRowsSelected = (n)=>{
+      this.setState({numberOfResults : n })
+    }
     render() { 
         return ( 
             <div className = "App-content" >
@@ -105,7 +108,7 @@ export default class Bookings extends Component {
                 onCustomerNameChange={this.updateCustomerName} 
                 onCustomerIdChange = {this.updateCustomerId}
             /> 
-             <Results results = {this.state.bookings} headerclick = {this.headerclick} numberOfResults = {this.state.numberOfResults}/> { /* <Results results={this.state.results} /> */ }
+             <Results results = {this.state.bookings} headerclick = {this.headerclick} numberOfResults = {this.state.numberOfResults} updateRowsSelected = {this.updateNumberOfRowsSelected}/> { /* <Results results={this.state.results} /> */ }
              </div> 
              </div>
         );

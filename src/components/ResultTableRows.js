@@ -5,20 +5,21 @@ class ResultTableRows extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-      isRowSelected : false,
-      numberOfRowSelected : 0
+      isRowSelected : false
     }
   }
+
   rowSelected =(i)=>{
+    let n = this.props.n; 
     if(this.state.isRowSelected){
       this.setState({isRowSelected:false}, function(){
         this.refs[i].removeAttribute('class')
-        console.log(this.state)
+        this.props.updateNumberOfRowsSelected(--n)
       }) 
     } else{
-      this.setState({isRowSelected:true }, function(){
+      this.setState({isRowSelected:true}, function(){
         this.refs[i].setAttribute('class','table-success');
-        console.log(this.state)
+          this.props.updateNumberOfRowsSelected(++n)
       })
     }
     

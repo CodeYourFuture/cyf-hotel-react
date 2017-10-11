@@ -15,6 +15,15 @@ const getTimeDifference = (bookings)=>{
 class Results extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      numberOfRowSelected : 0
+    }
+  }
+  updateNumberOfRowsSelected = (n)=>{
+    this.setState({numberOfRowSelected:n}, function(){
+       this.props.updateRowsSelected(n);
+    })
+  
   }
   render(){
     return (
@@ -32,7 +41,7 @@ class Results extends React.Component{
                     </thead> 
                     <tbody id = "rows">
                       { this.props.results.map((booking,i) =>
-                      <ResultTableRows key = {i} booking = {booking} index={i}/>)
+                      <ResultTableRows key = {i} booking = {booking} index={i} updateNumberOfRowsSelected ={this.updateNumberOfRowsSelected} n ={this.state.numberOfRowSelected}/>)
                     }
                     </tbody> 
                 </table> 
