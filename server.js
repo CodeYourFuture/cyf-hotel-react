@@ -6,8 +6,6 @@ const sqlite3 = require('sqlite3').verbose();
 // open the database
 let db = new sqlite3.Database(filename);
 
-// app.use(express.static(`${__dirname}/cyf-hotel-react`))
-
 app.get('/api/reservations', function(req, res) {
     // TODO comment out response above and uncomment the below
     db.serialize(function() {
