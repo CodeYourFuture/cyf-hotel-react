@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class ResultTableRows extends Component{
+export default class ResultTableRows extends Component{
   constructor(props){
     super(props)
     this.state ={
@@ -48,4 +48,3 @@ class ResultTableRows extends Component{
     )
   }  
 } 
-export default ResultTableRows;

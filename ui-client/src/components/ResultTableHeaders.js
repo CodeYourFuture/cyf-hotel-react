@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class ResultTableHeaders extends Component{
+export default class ResultTableHeaders extends Component{
   constructor(props){
     super(props);
   }
@@ -18,4 +18,3 @@ class ResultTableHeaders extends Component{
   }
 }
 
-export default ResultTableHeaders;

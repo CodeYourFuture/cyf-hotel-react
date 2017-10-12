@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Button from './Button';
 
-class Search extends Component{
+export default class Search extends Component{
   constructor(props){
     super(props);
   }
@@ -37,7 +37,7 @@ class Search extends Component{
                   <td>
                     <Button 
                       classStyle={"btn btn-primary fn-submit-name"} 
-                      searchById={"Search Ids"} 
+                      searchById={"Search by ID"} 
                       onClick={this.props.searchByCustomerId} 
                     />
                   </td>
@@ -54,7 +54,7 @@ class Search extends Component{
                   <td>
                     <Button 
                       classStyle={"btn btn-primary fn-submit-name"} 
-                      searchById={"Search Names"} 
+                      searchById={"Search Name"} 
                       onClick={this.props.searchByCustomerFirstName} 
                     />
                   </td>
@@ -68,4 +68,3 @@ class Search extends Component{
   }
 }
 
-export default Search;

@@ -13,7 +13,7 @@ const calculateDateDifference = (reservations)=>{
    })
 }
 
-class Results extends Component {
+export default class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -68,5 +68,3 @@ class Results extends Component {
     )
   }
 } 
-
-export default Results;

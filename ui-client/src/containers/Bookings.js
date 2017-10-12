@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Search from "../components/Search.js";
 import Results from "../components/Results.js";
-import * as FakeBookings from "../data/fakeBookings.json";
-// import ResultsAll from "../components/Results.js";
+
 export default class Bookings extends Component {
     constructor(props) {
        console.log(props)
@@ -17,26 +16,49 @@ export default class Bookings extends Component {
         }
     }
     searchByCustomerId = (e) => {
-      //bookings will hold the initial data so that the search is always on the entire data
-      const bookings = this.props.reservations
-        .filter(booking => (
-          booking.id === Number(this.state.customerId)
-        ))
-      this.setState({ 
-        reservations : bookings,
-        numberOfResults:bookings.length
-      });             
+      e.preventDefault();
+      let customerId = this.state.customerId;
+      if(customerId == null || customerId ==''){
+        alert("PLEASE, you need to specify the ID of the customer before you click search!!!");
+      }
+      else{
+        //bookings will hold the initial data so that the search is always on the entire data
+        const reservations = this.props.reservations
+          .filter(reservation => (
+            reservation.id === Number(customerId)
+          ))
+        if(reservations.length < 1 ){
+          alert("SORRY, there is no reservation made by the customer with the id => "+customerId +" !!!")
+        } else{
+          this.setState({ 
+            reservations,
+            numberOfResults:reservations.length
+          });
+        }    
+      }               
     }
     searchByCustomerFirstName = (e) => {
-      const bookings = this.props.reservations
-        .filter(booking => (
-            booking.firstname.toString().toLowerCase() === this.state.customerName.toLowerCase()
-          ))
-      this.setState({ 
-        reservations : bookings,
-        numberOfResults:bookings.length
-      });
+      e.preventDefault();
+      let customerName = this.state.customerName;
+      if(customerName == null || customerName ==''){
+        alert("PLEASE, you need to specify the First name of the customer before you click search!!!");
+      }
+      else{
+        const reservations = this.props.reservations
+          .filter(reservation => (
+              reservation.firstname.toString().toLowerCase() === customerName.toLowerCase()
+            ))
+         if(reservations.length < 1 ){
+           alert("SORRY, there is no reservation made by the customer with the First name => "+customerName+" !!!")
+          } else{
+            this.setState({ 
+              reservations,
+              numberOfResults:reservations.length
+            });
+          }
+        }
     }
+    
     handleUpdateCustomerName = (e)=>{
       this.setState({customerName:e.target.value})
     }
@@ -55,15 +77,15 @@ export default class Bookings extends Component {
           return a[sortBy] - b[sortBy];
         }
         else{
-            if (a[sortBy] < b[sortBy]) {
-                  return -1;
-              }
-              if (a[sortBy] > b[sortBy]) {
-                  return 1;
-              }            
-              return 0;
+          if (a[sortBy] < b[sortBy]) {
+            return -1;
+          }
+          if (a[sortBy] > b[sortBy]) {
+              return 1;
+          }            
+          return 0;
         }
-        });  
+      });  
     }
     //to sort the bookings result in descending order
     sortDES = (sortBy) =>{
