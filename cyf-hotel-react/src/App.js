@@ -18,35 +18,54 @@ componentDidMount (){
       headers : {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-  }})
-.then(response => {
-  if(!response.ok){
-    throw Error("API request failed");
-  }
-  return response;
-})
+    }})
+    .then(response => {
+      if(!response.ok){
+        throw Error("API request failed");
+      }
+      return response;
+    })
     .then(reservations => reservations.json())
-    .then((response)=>{
+    .then((reservationsJson)=>{
       //used setTimeout only for presenting the implementation of a loading status 
       //should be avoided on the production
       setTimeout(()=>{ 
         this.setState({
-          reservations: response.reservations,
+          reservations: reservationsJson.reservations,
           loading:false
         })
       },3000)
+    },()=>{
+      this.setState({
+        requestFailed:true
+      })
     })
   }
     render() {
+      if(this.state.requestFailed) 
+      return (
+        <div className = "App" >
+          <header className = "App-header" > CYF Hotel </header> 
+        <div className="error-template">
+                <h1>
+                    Failed to load resource:
+                </h1>
+                <div className="error-details">
+                    Sorry, the server responded with a status of {404} (Not Found)
+                </div>
+            </div>
+            <Footer />
+          </div>)
       if(this.state.loading) 
       return  (
         <div className = "App" >
           <header className = "App-header" > CYF Hotel </header> 
-          <div className='RingLoader center'>
+          {/*used react-spinners @0.1.6 package for showing a loading status*/}
+          <div className='RingLoader center-loading'>
             <RingLoader
               color={'#123abc'} 
               loading={this.state.loading} 
-              size={120}
+              size={200}
             />
             </div>
           <Footer />

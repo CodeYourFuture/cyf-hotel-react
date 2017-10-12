@@ -54,8 +54,20 @@ tr {
 .table{
   cursor:pointer;
 }
-.center{
-  margin:20%;
-  margin-left:45%;
-  
+.center-loading{
+  margin:15%;
+  margin-left:40%;
+  margin-bottom:18%;
+}
+.error-template {
+  padding:10%;
+  padding-top: 40%;
+  padding-bottom: 3%;
+  color: red;
+  text-align: center;
+  background: url('/404c.gif') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
