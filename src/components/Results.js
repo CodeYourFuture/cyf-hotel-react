@@ -1,13 +1,12 @@
 import React from 'react'
 import RenderFakeData from '../components/RenderFakeData.js'
-import SortTable from './SortTable.js'
 
 
 const Results = function(props){
     return  <table className="table search-table" >
       <thead>
     <tr>
-      <SortTable />
+      <th onClick={props.clickSort}>id</th>
       <th >title</th>
       <th >first name</th>
       <th >surname</th>
