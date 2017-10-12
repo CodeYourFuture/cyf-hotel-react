@@ -88,7 +88,7 @@ export default class Bookings extends Component {
         }
       });  
     }
-    //to sort the bookings result in descending order
+    //to sort the reservations result in descending order
     sortDES = (sortBy) =>{
       this.setState(
         {
@@ -109,19 +109,19 @@ export default class Bookings extends Component {
         }
       });    
     }
-    //to handle clicks the come from clicking any of the headings of the table
+    //to handle clicks that comes from clicking any of the headings of the table
     headerclick = (e) =>{
         // id will return the value of the heading such as firstname, roomId, surname..
         const sortBy = e.target.id;
         /*
           on initial click sort the results in ascending order alphabetically or 
-          form min to max if the column clicked is roomid or totalDays
+          from min to max if the column clicked is roomId or totalDays
           , if it is not alrady sorted ascendingly,
         */
         this.sortASC(sortBy); 
         /*
           if the result is already sorted ascendingly, sort it in descending order alphabetically or 
-          from max to min if the column clicked is roomid or totalDays
+          from max to min if the column clicked is roomId or totalDays
         */  
         if(this.state.isSortedASC){
           this.sortDES(sortBy);  
