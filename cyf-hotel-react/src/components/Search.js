@@ -33,7 +33,7 @@ const Search = props => (
                 <Button 
                   classStyle={"btn btn-primary fn-submit-name"} 
                   searchById={"Search Ids"} 
-                  onClick={props.searchById} 
+                  onClick={props.searchByCustomerId} 
                 />
               </td>
               <td>
@@ -50,7 +50,7 @@ const Search = props => (
                 <Button 
                   classStyle={"btn btn-primary fn-submit-name"} 
                   searchById={"Search Names"} 
-                  onClick={props.searchByName} 
+                  onClick={props.searchByCustomerFirstName} 
                 />
               </td>
             </tr>

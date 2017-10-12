@@ -9,7 +9,6 @@ export default class Bookings extends Component {
         super(props);
         this.state ={ 
             reservations: props.reservations,
-            searchResult : [],
             customerId: null,
             customerName: null,
             isSortedASC : false,
@@ -17,7 +16,8 @@ export default class Bookings extends Component {
             numberOfResults: props.reservations.length
         }
     }
-    searchById = (e) => {
+    searchByCustomerId = (e) => {
+      //bookings will hold the initial data so that the search is always on the entire data
       const bookings = this.props.reservations
         .filter(booking => (
           booking.id === Number(this.state.customerId)
@@ -27,7 +27,7 @@ export default class Bookings extends Component {
         numberOfResults:bookings.length
       });             
     }
-    searchByName = (e) => {
+    searchByCustomerFirstName = (e) => {
       const bookings = this.props.reservations
         .filter(booking => (
             booking.firstname.toString().toLowerCase() === this.state.customerName.toLowerCase()
@@ -37,10 +37,10 @@ export default class Bookings extends Component {
         numberOfResults:bookings.length
       });
     }
-    updateCustomerName = (e)=>{
+    handleUpdateCustomerName = (e)=>{
       this.setState({customerName:e.target.value})
     }
-    updateCustomerId = (e)=>{
+    handleUpdateCustomerId = (e)=>{
       this.setState({customerId:e.target.value})
     }
     //to sort the booking result in ascending order
@@ -104,10 +104,10 @@ export default class Bookings extends Component {
             <div className = "App-content" >
             <div className = "container" >
             <Search 
-                searchById={this.searchById} 
-                searchByName ={this.searchByName} 
-                onCustomerNameChange={this.updateCustomerName} 
-                onCustomerIdChange = {this.updateCustomerId}
+                searchByCustomerId = {this.searchByCustomerId} 
+                searchByCustomerFirstName = {this.searchByCustomerFirstName} 
+                onCustomerNameChange={this.handleUpdateCustomerName} 
+                onCustomerIdChange = {this.handleUpdateCustomerId}
             /> 
              <Results 
                 results = {this.state.reservations} 

@@ -6,7 +6,8 @@
     "moment": "^2.18.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14"
+    "react-scripts": "1.0.14",
+    "react-spinners": "^0.1.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -14,5 +15,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy":"http://localhost:3001/"
+  "proxy": "http://localhost:3001/"
 }
