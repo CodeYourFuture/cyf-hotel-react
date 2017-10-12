@@ -19,7 +19,11 @@ export default class Bookings extends Component {
     })})
   };
   
-
+// sort = () =>{
+//   this.setState({result:FakeBookings.sort(function(a,b){
+//     return a.id - b.id
+//   })})
+// }
   render() {
     return (
       <div className="App-content">
