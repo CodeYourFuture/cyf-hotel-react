@@ -1,4 +1,6 @@
 import React from 'react';
+// import Button from './Button'
+import SearchFunction from './SearchFunction';
 
 const Search = props => (
   <div className="search">
@@ -12,25 +14,14 @@ const Search = props => (
             <tr>
               <th>Customer id</th>
               <th />
-              <th></th>
+              <th>Customer Name</th>
               <th />
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <input
-                  id="customerId"
-                  type="text"
-                  className="form-control"
-                  placeholder="Customer id"
-                  name="customerId"
-                />
-              </td>
-              <td>
-                <button className="btn btn-primary fn-submit-name">Search IDs</button>
-              </td>
-              {/* Add search by name here */}
+           <tr> 
+              <SearchFunction search={props.search} inputId="customer id" inputType="text" inputClassName="form-control" inputPlaceholder="Customer id" inputName="customerId"/>
+              <SearchFunction search={props.search} inputId="customer name" inputType="text" inputClassName="form-control" inputPlaceholder="Customer name" inputName="customerName"/>
             </tr>
           </tbody>
         </table>
