@@ -1,4 +1,5 @@
 import React from 'react';
+import StayedInDays from './StayedInDays';
 const ResultsTableRow = (props) => {
   return (
     <tr className="rows-border">
@@ -9,7 +10,11 @@ const ResultsTableRow = (props) => {
       <td>{props.roomId} </td>
       <td>{props.checkInDate} </td>
       <td>{props.checkOutDate} </td>
-  </tr>
+      <td><StayedInDays
+        checkInDate={props.checkInDate}
+        checkOutDate={props.checkOutDate}
+      /></td>
+    </tr>
   )
 }
 export default ResultsTableRow;
