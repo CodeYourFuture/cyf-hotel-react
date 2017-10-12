@@ -22,7 +22,7 @@ export default class Bookings extends Component {
         alert("PLEASE, you need to specify the ID of the customer before you click search!!!");
       }
       else{
-        //bookings will hold the initial data so that the search is always on the entire data
+        //reservations will hold the initial data so that the search is always on the entire data
         const reservations = this.props.reservations
           .filter(reservation => (
             reservation.id === Number(customerId)
@@ -58,14 +58,14 @@ export default class Bookings extends Component {
           }
         }
     }
-    
+    //update the customerName when there is a change on the input field of the customerName
     handleUpdateCustomerName = (e)=>{
       this.setState({customerName:e.target.value})
     }
     handleUpdateCustomerId = (e)=>{
       this.setState({customerId:e.target.value})
     }
-    //to sort the booking result in ascending order
+    //to sort the reservations result in ascending order
     sortASC = (sortBy) =>{
       this.setState(
         {
@@ -73,10 +73,11 @@ export default class Bookings extends Component {
           isSortedDES:false
       });
       return  this.state.reservations.sort(function (a, b) {
+        //assume that roomId and totalDays are always numbers 
         if(sortBy === 'roomId' || sortBy === 'totalDays'){
           return a[sortBy] - b[sortBy];
         }
-        else{
+        else{ //for other sort by queries like firstname, surname,email...
           if (a[sortBy] < b[sortBy]) {
             return -1;
           }
@@ -108,29 +109,36 @@ export default class Bookings extends Component {
         }
       });    
     }
+    //to handle clicks the come from clicking any of the headings of the table
     headerclick = (e) =>{
+        // id will return the value of the heading such as firstname, roomId, surname..
         const sortBy = e.target.id;
         /*
-          on initial click sort the results in ascending alphabetically or form small number to larger number 
-          order, if it is not alrady,
+          on initial click sort the results in ascending order alphabetically or 
+          form min to max if the column clicked is roomid or totalDays
+          , if it is not alrady sorted ascendingly,
         */
-        this.setState(this.sortASC(sortBy)); 
-        //if the result is already sorted ascendingly, sort it in descending order alphabetically or 
-        //from max to min if the column clicked is roomid or totalDays  
+        this.sortASC(sortBy); 
+        /*
+          if the result is already sorted ascendingly, sort it in descending order alphabetically or 
+          from max to min if the column clicked is roomid or totalDays
+        */  
         if(this.state.isSortedASC){
-          this.setState(this.sortDES(sortBy));  
+          this.sortDES(sortBy);  
         }
     }
     render() { 
         return ( 
             <div className = "App-content" >
             <div className = "container" >
+            {/* search row with search by customerId and customerName input fields and buttons */}
             <Search 
                 searchByCustomerId = {this.searchByCustomerId} 
                 searchByCustomerFirstName = {this.searchByCustomerFirstName} 
                 onCustomerNameChange={this.handleUpdateCustomerName} 
                 onCustomerIdChange = {this.handleUpdateCustomerId}
             /> 
+            {/*result table with the details of reservations made */}
              <Results 
                 reservations = {this.state.reservations} 
                 headerclick = {this.headerclick} 

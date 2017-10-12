@@ -7,7 +7,6 @@ const sqlite3 = require('sqlite3').verbose();
 let db = new sqlite3.Database(filename);
 
 app.get('/api/reservations', function(req, res) {
-    // TODO comment out response above and uncomment the below
     db.serialize(function() {
       const sql = `SELECT customers.id,title, firstname, surname, email,
                  room_id AS roomId, check_in_date AS checkInDate, check_out_date AS checkOutDate

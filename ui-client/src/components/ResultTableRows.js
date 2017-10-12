@@ -12,15 +12,17 @@ export default class ResultTableRows extends Component{
     if(this.state.isRowSelected){
       this.setState({
         isRowSelected:false
-       }, function(){
+       }, function(){ //as it is not guranted that change in state is reflected immediately
         this.refs[i].removeAttribute('class')
+        //we are updating the state of the parent
         this.props.updateNumberOfRowsSelected(--numberOfRowSelected)
       }) 
     } else{
       this.setState({
         isRowSelected:true
-      }, function(){
+      }, function(){ 
         this.refs[i].setAttribute('class','table-success');
+        //we are updating the state of the parent
         this.props.updateNumberOfRowsSelected(++numberOfRowSelected)
       })
     }
@@ -29,7 +31,8 @@ export default class ResultTableRows extends Component{
   render(){ 
     return (
       <tr 
-        key ={this.props.index} 
+        key ={this.props.index}
+        //since the key is not accessible for use we pass the index to identify each row from refs  
         onClick ={this.rowSelected.bind(this,this.props.index)} 
         ref={this.props.index}
         >

@@ -35,7 +35,7 @@ componentDidMount (){
           loading:false
         })
       },3000)
-    },()=>{
+    },()=>{//handle the throwen error as .catch() can't handle 404 error
       this.setState({
         requestFailed:true
       })

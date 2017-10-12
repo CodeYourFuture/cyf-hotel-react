@@ -17,10 +17,10 @@ export default class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberOfRowSelected: 0
+      numberOfRowSelected: 0 //for tracing number of rows selected
     }
   }
-
+  //handles when there is a change in the number of rows selected/deselected
   updateNumberOfRowsSelected = (numberOfRowSelected)=>{
     this.setState({
       numberOfRowSelected
@@ -36,6 +36,7 @@ export default class Results extends Component {
                     Results &#40; <span className="text-primary">{this.props.numberOfResults} </span> Found &#41; 
                     &mdash;  <span className="text-danger">{this.state.numberOfRowSelected} </span> Selected  
                 </p>
+                
                 {/*calculate the total days between the check_in_date and check_out_date and map it with each reservation object*/}
                 {calculateDateDifference(this.props.reservations)}
                 
@@ -54,8 +55,10 @@ export default class Results extends Component {
                         <ResultTableRows 
                           key = {i} 
                           reservations = {reservation} 
+                          /*will be used to identify each row during selection/deselection*/
                           index={i} 
-                          updateNumberOfRowsSelected ={this.updateNumberOfRowsSelected} 
+                          /* to be able to modify the state of the parent from child */
+                          updateNumberOfRowsSelected ={this.updateNumberOfRowsSelected}
                           numberOfRowSelected ={this.state.numberOfRowSelected}
                         />
                         )
