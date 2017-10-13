@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import Button from './Button';
 
-export default class Search extends Component{
-  render(){
-    return(
+export default class Search extends Component {
+  render() {
+    return (
       <div className="search">
         <div className="page-header">
           <h4 className="text-left">Search Bookings</h4>
@@ -28,14 +28,14 @@ export default class Search extends Component{
                       className="form-control"
                       placeholder="Customer id"
                       name="customerId"
-                      onChange = {this.props.onCustomerIdChange}
+                      onChange={this.props.onCustomerIdChange}
                     />
                   </td>
                   <td>
-                    <Button 
-                      classStyle={"btn btn-primary fn-submit-name"} 
-                      searchById={"Search by ID"} 
-                      onClick={this.props.searchByCustomerId} 
+                    <Button
+                      classStyle={'btn btn-primary fn-submit-name'}
+                      searchById={'Search by ID'}
+                      onClick={this.props.searchByCustomerId}
                     />
                   </td>
                   <td>
@@ -49,10 +49,10 @@ export default class Search extends Component{
                     />
                   </td>
                   <td>
-                    <Button 
-                      classStyle={"btn btn-primary fn-submit-name"} 
-                      searchById={"Search Name"} 
-                      onClick={this.props.searchByCustomerFirstName} 
+                    <Button
+                      classStyle={'btn btn-primary fn-submit-name'}
+                      searchById={'Search Name'}
+                      onClick={this.props.searchByCustomerFirstName}
                     />
                   </td>
                 </tr>
@@ -64,4 +64,3 @@ export default class Search extends Component{
     );
   }
 }
-
