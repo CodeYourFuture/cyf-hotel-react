@@ -18,7 +18,7 @@ export default class Bookings extends Component {
     searchByCustomerId = (e) => {
       e.preventDefault();
       let customerId = this.state.customerId;
-      if(customerId == null || customerId ==''){
+      if(customerId === null || customerId === ''){
         alert("PLEASE, you need to specify the ID of the customer before you click search!!!");
       }
       else{
@@ -28,7 +28,7 @@ export default class Bookings extends Component {
             reservation.id === Number(customerId)
           ))
         if(reservations.length < 1 ){
-          alert("SORRY, there is no reservation made by the customer with the id => "+customerId +" !!!")
+          alert("SORRY, there is no reservation made by the customer with the id => "+ customerId +" !!!")
         } else{
           this.setState({ 
             reservations,
@@ -40,7 +40,7 @@ export default class Bookings extends Component {
     searchByCustomerFirstName = (e) => {
       e.preventDefault();
       let customerName = this.state.customerName;
-      if(customerName == null || customerName ==''){
+      if(customerName === null || customerName === ''){
         alert("PLEASE, you need to specify the First name of the customer before you click search!!!");
       }
       else{
@@ -72,44 +72,44 @@ export default class Bookings extends Component {
           isSortedASC:true,
           isSortedDES:false
       });
-      return  this.state.reservations.sort(function (a, b) {
+      return  this.state.reservations.sort(function (reservationA, reservationB) {
         //assume that roomId and totalDays are always numbers 
         if(sortBy === 'roomId' || sortBy === 'totalDays'){
-          return a[sortBy] - b[sortBy];
+          return reservationA[sortBy] - reservationB[sortBy];
         }
         else{ //for other sort by queries like firstname, surname,email...
-          if (a[sortBy] < b[sortBy]) {
+          if (reservationA[sortBy] < reservationB[sortBy]) {
             return -1;
           }
-          if (a[sortBy] > b[sortBy]) {
+          if (reservationA[sortBy] > reservationB[sortBy]) {
               return 1;
           }            
           return 0;
         }
       });  
     }
-    //to sort the bookings result in descending order
+    //to sort the reservations result in descending order
     sortDES = (sortBy) =>{
       this.setState(
         {
           isSortedDES:true,
           isSortedASC:false
         });
-      return  this.state.reservations.sort(function (a, b) {
+      return  this.state.reservations.sort(function (reservationA, reservationB) {
         if(sortBy === 'roomId' || sortBy === 'totalDays'){
-          return b[sortBy] - a[sortBy];
+          return reservationB[sortBy] - reservationA[sortBy];
         }else{
-          if (b[sortBy] < a[sortBy]) {
+          if (reservationB[sortBy] < reservationA[sortBy]) {
             return -1;
           }
-          if (b[sortBy] > a[sortBy]) {
+          if (reservationB[sortBy] > reservationA[sortBy]) {
             return 1;
           }            
         return 0;
         }
       });    
     }
-    //to handle clicks the come from clicking any of the headings of the table
+    //to handle clicks that come from clicking any of the headings of the table
     headerclick = (e) =>{
         // id will return the value of the heading such as firstname, roomId, surname..
         const sortBy = e.target.id;

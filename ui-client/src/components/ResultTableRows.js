@@ -32,7 +32,7 @@ export default class ResultTableRows extends Component{
     return (
       <tr 
         key ={this.props.index}
-        //since the key is not accessible for use we pass the index to identify each row from refs  
+        /*since the key is not accessible for use we pass the index to identify each row from refs  */
         onClick ={this.rowSelected.bind(this,this.props.index)} 
         ref={this.props.index}
         >
