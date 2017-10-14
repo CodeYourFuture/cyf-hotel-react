@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class ResultTableRows extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isRowSelected: false,
+      isRowSelected: false
     };
   }
   rowSelected = i => {
@@ -12,11 +12,11 @@ export default class ResultTableRows extends Component {
     if (this.state.isRowSelected) {
       this.setState(
         {
-          isRowSelected: false,
+          isRowSelected: false
         },
         () => {
           //as it is not guranted that change in state is reflected immediately
-          this.refs[i].removeAttribute('class');
+          this.refs[i].removeAttribute("class");
           //we are updating the state of the parent
           this.props.updateNumberOfRowsSelected(--numberOfRowSelected);
         }
@@ -24,17 +24,16 @@ export default class ResultTableRows extends Component {
     } else {
       this.setState(
         {
-          isRowSelected: true,
+          isRowSelected: true
         },
         () => {
-          this.refs[i].setAttribute('class', 'table-success');
+          this.refs[i].setAttribute("class", "table-success");
           //we are updating the state of the parent
           this.props.updateNumberOfRowsSelected(++numberOfRowSelected);
         }
       );
     }
   };
-
   render() {
     return (
       <tr
@@ -45,7 +44,7 @@ export default class ResultTableRows extends Component {
       >
         {/* get all the keys of the object and map their value to the td*/
         Object.keys(this.props.reservations).map((result, j) => {
-          if (result !== 'id') {
+          if (result !== "id") {
             return <td key={j}>{this.props.reservations[result]}</td>;
           }
         })}

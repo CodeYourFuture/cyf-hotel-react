@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import Search from '../components/Search.js';
-import Results from '../components/Results.js';
+import React, { Component } from "react";
+import Search from "../components/Search.js";
+import Results from "../components/Results.js";
 
 export default class Bookings extends Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
       reservations: props.reservations,
@@ -12,15 +11,15 @@ export default class Bookings extends Component {
       customerName: null,
       isSortedASC: false,
       isSortedDES: false,
-      numberOfResults: props.reservations.length,
+      numberOfResults: props.reservations.length
     };
   }
   searchByCustomerId = e => {
     e.preventDefault();
     let customerId = this.state.customerId;
-    if (customerId === null || customerId === '') {
+    if (customerId === null || customerId === "") {
       alert(
-        'PLEASE, you need to specify the ID of the customer before you click search!!!'
+        "PLEASE, you need to specify the ID of the customer before you click search!!!"
       );
     } else {
       //reservations will hold the initial data so that the search is always on the entire data
@@ -29,14 +28,14 @@ export default class Bookings extends Component {
       );
       if (reservations.length < 1) {
         alert(
-          'SORRY, there is no reservation made by the customer with the id => ' +
+          "SORRY, there is no reservation made by the customer with the id => " +
             customerId +
-            ' !!!'
+            " !!!"
         );
       } else {
         this.setState({
           reservations,
-          numberOfResults: reservations.length,
+          numberOfResults: reservations.length
         });
       }
     }
@@ -44,9 +43,9 @@ export default class Bookings extends Component {
   searchByCustomerFirstName = e => {
     e.preventDefault();
     let customerName = this.state.customerName;
-    if (customerName === null || customerName === '') {
+    if (customerName === null || customerName === "") {
       alert(
-        'PLEASE, you need to specify the First name of the customer before you click search!!!'
+        "PLEASE, you need to specify the First name of the customer before you click search!!!"
       );
     } else {
       const reservations = this.props.reservations.filter(
@@ -55,34 +54,38 @@ export default class Bookings extends Component {
       );
       if (reservations.length < 1) {
         alert(
-          'SORRY, there is no reservation made by the customer with the First name => ' +
+          "SORRY, there is no reservation made by the customer with the First name => " +
             customerName +
-            ' !!!'
+            " !!!"
         );
       } else {
         this.setState({
           reservations,
-          numberOfResults: reservations.length,
+          numberOfResults: reservations.length
         });
       }
     }
   };
   //update the customerName when there is a change on the input field of the customerName
   handleUpdateCustomerName = e => {
-    this.setState({ customerName: e.target.value });
+    this.setState({
+      customerName: e.target.value
+    });
   };
   handleUpdateCustomerId = e => {
-    this.setState({ customerId: e.target.value });
+    this.setState({
+      customerId: e.target.value
+    });
   };
   //to sort the reservations result in ascending order
   sortASC = sortBy => {
     this.setState({
       isSortedASC: true,
-      isSortedDES: false,
+      isSortedDES: false
     });
     return this.state.reservations.sort(function(reservationA, reservationB) {
       //assume that roomId and totalDays are always numbers
-      if (sortBy === 'roomId' || sortBy === 'totalDays') {
+      if (sortBy === "roomId" || sortBy === "totalDays") {
         return reservationA[sortBy] - reservationB[sortBy];
       } else {
         //for other sort by queries like firstname, surname,email...
@@ -100,10 +103,10 @@ export default class Bookings extends Component {
   sortDES = sortBy => {
     this.setState({
       isSortedDES: true,
-      isSortedASC: false,
+      isSortedASC: false
     });
     return this.state.reservations.sort(function(reservationA, reservationB) {
-      if (sortBy === 'roomId' || sortBy === 'totalDays') {
+      if (sortBy === "roomId" || sortBy === "totalDays") {
         return reservationB[sortBy] - reservationA[sortBy];
       } else {
         if (reservationB[sortBy] < reservationA[sortBy]) {
@@ -151,6 +154,8 @@ export default class Bookings extends Component {
             headerclick={this.headerclick}
             numberOfResults={this.state.numberOfResults}
             updateRowsSelected={this.updateNumberOfRowsSelected}
+            isSortedASC={this.state.isSortedASC}
+            isSortedDES={this.state.isSortedDES}
           />
         </div>
       </div>

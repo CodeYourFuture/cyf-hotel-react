@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import moment from 'moment';
-import ResultTableHeaders from './ResultTableHeaders';
-import ResultTableRows from './ResultTableRows';
+import React, { Component } from "react";
+import moment from "moment";
+import ResultTableHeaders from "./ResultTableHeaders";
+import ResultTableRows from "./ResultTableRows";
 
 //to claculate the number of days that a customer has reserved/booked
 const calculateDateDifference = reservations => {
   reservations.map(reservation => {
     let checkOutDate = moment(reservation.checkOutDate);
     let checkInDate = moment(reservation.checkInDate);
-    //calculate the difference and include the result,totalDays, to the booking object
-    reservation.totalDays = checkOutDate.diff(checkInDate, 'days');
+    //calculate the difference and include the result,totalDays, to the reservation object
+    reservation.totalDays = checkOutDate.diff(checkInDate, "days");
   });
 };
 
@@ -17,30 +17,29 @@ export default class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberOfRowSelected: 0, //for tracing number of rows selected
+      numberOfRowSelected: 0 //for tracing number of rows selected
     };
   }
   //handles when there is a change in the number of rows selected/deselected
   updateNumberOfRowsSelected = numberOfRowSelected => {
     this.setState({
-      numberOfRowSelected,
+      numberOfRowSelected
     });
   };
-
   render() {
     return (
       <div className="container">
         <div className="row">
           <div className="col">
             <p>
-              Results &#40;{' '}
+              Results &#40;{" "}
               <span className="text-primary">
-                {this.props.numberOfResults}{' '}
-              </span>{' '}
-              Found &#41; &mdash;{' '}
+                {this.props.numberOfResults}{" "}
+              </span>{" "}
+              Found &#41; &mdash;{" "}
               <span className="text-danger">
-                {this.state.numberOfRowSelected}{' '}
-              </span>{' '}
+                {this.state.numberOfRowSelected}{" "}
+              </span>{" "}
               Selected
             </p>
 

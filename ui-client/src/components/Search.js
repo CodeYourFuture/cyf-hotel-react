@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Button from './Button';
+import React, { Component } from "react";
+import Button from "./Button";
 
 export default class Search extends Component {
   render() {
@@ -33,8 +33,8 @@ export default class Search extends Component {
                   </td>
                   <td>
                     <Button
-                      classStyle={'btn btn-primary fn-submit-name'}
-                      searchById={'Search by ID'}
+                      classStyle={"btn btn-primary fn-submit-name"}
+                      searchById={"Search by ID"}
                       onClick={this.props.searchByCustomerId}
                     />
                   </td>
@@ -50,8 +50,8 @@ export default class Search extends Component {
                   </td>
                   <td>
                     <Button
-                      classStyle={'btn btn-primary fn-submit-name'}
-                      searchById={'Search Name'}
+                      classStyle={"btn btn-primary fn-submit-name"}
+                      searchById={"Search Name"}
                       onClick={this.props.searchByCustomerFirstName}
                     />
                   </td>

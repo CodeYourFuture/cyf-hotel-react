@@ -1,49 +1,49 @@
-import React, { Component } from 'react';
-import Bookings from './containers/Bookings.js';
-import Footer from './components/Footer.js';
-import './App.css';
-import { RingLoader } from 'react-spinners';
+import React, { Component } from "react";
+import Bookings from "./containers/Bookings.js";
+import Footer from "./components/Footer.js";
+import "./App.css";
+import { RingLoader } from "react-spinners";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reservations: '',
+      reservations: "",
       requestFailed: false,
-      loading: true,
+      loading: true
     };
   }
   componentDidMount() {
-    return fetch('/api/reservations', {
+    return fetch("/api/reservations", {
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
     })
       .then(response => {
         if (!response.ok) {
-          throw Error('API request failed');
+          throw Error("API request failed");
         }
         return response;
       })
       .then(reservations => reservations.json())
       .then(
-      reservationsJson => {
-        //used setTimeout only for presenting the implementation of a loading status
-        //should be avoided on the production
-        setTimeout(() => {
+        reservationsJson => {
+          //used setTimeout only for presenting the implementation of a loading status
+          //should be avoided on the production
+          setTimeout(() => {
+            this.setState({
+              reservations: reservationsJson.reservations,
+              loading: false
+            });
+          }, 3000);
+        },
+        () => {
+          //handle the throwen error as .catch() can't handle 404 error
           this.setState({
-            reservations: reservationsJson.reservations,
-            loading: false,
+            requestFailed: true
           });
-        }, 3000);
-      },
-      () => {
-        //handle the throwen error as .catch() can't handle 404 error
-        this.setState({
-          requestFailed: true,
-        });
-      }
+        }
       );
   }
   render() {
@@ -65,7 +65,7 @@ class App extends Component {
     }
     //if the API resource request hasn't yet responded with 200 or ok
     if (this.state.loading) {
-      const lightBlueColor = '#123abc';
+      const lightBlueColor = "#123abc";
       return (
         <div className="App">
           <header className="App-header"> CYF Hotel </header>
