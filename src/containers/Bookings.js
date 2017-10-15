@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Search from "../components/Search.js";
 import Results from "../components/Results.js";
-
-const FAKE_API_URL = 'https://gist.githubusercontent.com/40thieves/e18665f42b9a7f32003a86f060b92fb2/raw/41f6f221067803447fa5daa78dd450455e47f57d/fake-api.json'
-const ERROR_API_URL = 'http://httpbin.org/status/500'
+import * as api from '../data/api'
 
 export default class Bookings extends Component {
   constructor(props) {
@@ -18,14 +16,7 @@ export default class Bookings extends Component {
   }
 
   componentDidMount() {
-    fetch(FAKE_API_URL)
-      .then((data) => {
-        if (data.ok) {
-          return data.json()
-        } else {
-          throw new Error(data.statusText)
-        }
-      })
+    api.slow()
       .then((results) => {
         this.setState({
           loading: false,
