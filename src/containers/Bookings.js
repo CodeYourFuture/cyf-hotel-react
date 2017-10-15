@@ -4,8 +4,19 @@ import Results from "../components/Results.js";
 import * as FakeBookings from "../data/fakeBookings.json";
 
 export default class Bookings extends Component {
-  search = () => {
-    console.info("to do!");
+  constructor() {
+    super();
+    this.state = {
+      showResults: false,
+    };
+  }
+
+  search = (evt) => {
+    // Show results only after a search button has been clicked.
+    this.setState({
+      ...this.state,
+      showResults: true,
+    });
   };
   
   render() {
@@ -13,7 +24,9 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
-          <Results results={FakeBookings} />
+          {this.state.showResults && 
+            <Results results={FakeBookings} />
+          }
         </div>
       </div>
     );

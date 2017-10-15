@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Button = ({label}) => (
-  <button className="btn btn-primary fn-submit-name">{label}</button>
+const Button = (props) => (
+  <button className="btn btn-primary fn-submit-name" onClick={props.handleClick}>
+    {props.label}
+  </button>
 );
 
 export default Button;

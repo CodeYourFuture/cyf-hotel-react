@@ -30,7 +30,7 @@ const Search = props => (
                 />
               </td>
               <td>
-                <Button label="Search IDs" />
+                <Button label="Search IDs" handleClick={props.search} />
               </td>
 
               {/* Search by name */ }
@@ -44,7 +44,7 @@ const Search = props => (
                 />
               </td>
               <td>
-                <Button label="Search Names" />
+                <Button label="Search Names" handleClick={props.search} />
               </td>
             </tr>
           </tbody>
