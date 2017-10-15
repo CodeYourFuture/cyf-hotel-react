@@ -10,6 +10,7 @@ export default class Bookings extends Component {
     super(props)
 
     this.state = {
+      loading: true,
       allResults: null,
       filteredResults: null,
       error: null
@@ -27,12 +28,16 @@ export default class Bookings extends Component {
       })
       .then((results) => {
         this.setState({
+          loading: false,
           allResults: results,
           filteredResults: this.filterResults(results)
         })
       })
-      .catch((err) => {
-        this.setState({ error: err })
+      .catch((error) => {
+        this.setState({
+          loading: false,
+          error
+        })
       })
   }
 
@@ -56,7 +61,9 @@ export default class Bookings extends Component {
 
   render() {
     let content
-    if (this.state.error) {
+    if (this.state.loading) {
+      content = <div className="alert alert-primary">Loading&hellip;</div>
+    } else if (this.state.error) {
       content = <div className="alert alert-danger">Error: {this.state.error.message}</div>
     } else {
       content = this.state.filteredResults 
