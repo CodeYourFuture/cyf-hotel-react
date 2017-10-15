@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 
+const ResultCount = () => (
+  <div>
+    <span>Results ({this.props.results.length} found)</span>
+  </div>
+)
+
 const TableHead = () => (
   <thead>
     <tr>
@@ -18,9 +24,7 @@ export default class Results extends Component {
   render() {
     return (
       <div>
-        <div>
-          <span>Results ({this.props.results.length} found)</span>
-        </div>
+        <ResultCount />
         <table className="table">
           <TableHead />
           <tbody>
