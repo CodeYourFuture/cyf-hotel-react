@@ -23,34 +23,24 @@ const TableHead = props => (
   </thead>
 )
 
-class ResultRow extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { selected: false }
-  }
-
-  handleCheck = () => {
-    let selected = !this.state.selected
-    this.setState({ selected })
-    this.props.onSelected(this.props.email)
-  }
-
-  render() {
-    return (
-      <tr className={this.state.selected ? 'table-primary' : ''}>
-        <td><input type="checkbox" checked={this.state.checked} onChange={this.handleCheck} /></td>
-        <td>{this.props.title}</td>
-        <td>{this.props.firstName}</td>
-        <td>{this.props.surname}</td>
-        <td>{this.props.email}</td>
-        <td>{this.props.roomId}</td>
-        <td>{this.props.checkInDate}</td>
-        <td>{this.props.checkOutDate}</td>
-        <td>{moment(this.props.checkOutDate).diff(moment(this.props.checkInDate), 'days')}</td>
-      </tr>
-    )
-  }
-}
+const ResultRow = props => (
+  <tr className={props.selected ? 'table-primary' : ''}>
+    <td>
+      <input
+        type="checkbox"
+        onChange={() => props.onSelected(props.email)}
+      />
+    </td>
+    <td>{props.title}</td>
+    <td>{props.firstName}</td>
+    <td>{props.surname}</td>
+    <td>{props.email}</td>
+    <td>{props.roomId}</td>
+    <td>{props.checkInDate}</td>
+    <td>{props.checkOutDate}</td>
+    <td>{moment(props.checkOutDate).diff(moment(props.checkInDate), 'days')}</td>
+  </tr>
+)
 
 export default class Results extends Component {
   constructor(props) {
@@ -115,6 +105,7 @@ export default class Results extends Component {
               <ResultRow
                 key={`result-row-${result.email}`}
                 onSelected={this.handleSelected}
+                selected={this.state.selected.includes(result.email)}
                 {...result}
               />
             ))}
