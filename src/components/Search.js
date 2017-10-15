@@ -76,8 +76,8 @@ const Search = props => (
         <SearchBox
           searchAreas={[
             {
-              title: "Customer id",
-              id: "customerId"
+              title: "Room id",
+              id: "roomId"
             },
             {
               title: "Customer name",
