@@ -14,7 +14,7 @@ class SearchRow extends Component {
   }
 
   handleSearch = () => {
-    this.props.onSearch(this.state.value)
+    this.props.onSearch(this.state.value, this.props.id)
   }
 
   render() {
@@ -33,7 +33,7 @@ class SearchRow extends Component {
       <td key={`searchrow-td-${this.props.id}-2`}>
         <Button
           text="Some text"
-          handleClick={this.handleSearch}
+          onClick={this.handleSearch}
         />
       </td>
     ]
@@ -52,7 +52,15 @@ const SearchBox = props => (
     </thead>
     <tbody>
       <tr>
-        {props.searchAreas.map(searchArea => <SearchRow {...searchArea} key={`searchbox-row-${searchArea.id}`} />)}
+        {props.searchAreas.map(searchArea => {
+          return (
+            <SearchRow
+              key={`searchbox-row-${searchArea.id}`}
+              {...searchArea}
+              onSearch={props.onSearch}
+            />
+          )
+        })}
       </tr>
     </tbody>
   </table>
