@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-const ResultCount = () => (
+const ResultCount = props => (
   <div>
-    <span>Results ({this.props.results.length} found)</span>
+    <span>Results ({props.results.length} found)</span>
   </div>
 )
 
