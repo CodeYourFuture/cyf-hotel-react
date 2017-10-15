@@ -1,17 +1,36 @@
 import React, { Component } from "react";
 import Search from "../components/Search.js";
 import Results from "../components/Results.js";
-import FakeBookings from "../data/fakeBookings.json";
+
+const FAKE_API_URL = 'https://gist.githubusercontent.com/40thieves/e18665f42b9a7f32003a86f060b92fb2/raw/41f6f221067803447fa5daa78dd450455e47f57d/fake-api.json'
 
 export default class Bookings extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { results: this.filterResults() }
+    this.state = {
+      allResults: null,
+      filteredResults: null
+    }
   }
 
-  filterResults = (query, searchType) => {
-    return FakeBookings.filter((result) => {
+  componentDidMount() {
+    fetch(FAKE_API_URL)
+      .then((data) => {
+        if (data.ok) {
+          return data.json()
+        }
+      })
+      .then((results) => {
+        this.setState({
+          allResults: results,
+          filteredResults: this.filterResults(results)
+        })
+      })
+  }
+
+  filterResults = (results, query, searchType) => {
+    return results.filter((result) => {
       if (searchType === 'roomId') {
         return result.roomId === parseInt(query, 10)
       } else if (searchType === 'customerName') {
@@ -24,7 +43,7 @@ export default class Bookings extends Component {
 
   handleSearch = (query, searchType) => {
     this.setState({
-      results: this.filterResults(query, searchType)
+      filteredResults: this.filterResults(this.state.allResults, query, searchType)
     })
   }
 
@@ -33,7 +52,7 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <Search onSearch={this.handleSearch} />
-          <Results results={this.state.results} />
+          {this.state.filteredResults && <Results results={this.state.filteredResults} />}
         </div>
       </div>
     );
