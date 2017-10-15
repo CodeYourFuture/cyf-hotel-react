@@ -11,15 +11,20 @@ export default class Bookings extends Component {
   }
 
   handleSearch = (query, searchType) => {
-    let filtered = FakeBookings.filter((result) => {
-      if (searchType === 'roomId') {
-        return result.roomId === parseInt(query, 10)
-      } else if (searchType === 'customerName') {
-        return result.firstName === query
-      } else {
-        return result
-      }
-    })
+    let filtered
+    if (!query) {
+      filtered = FakeBookings
+    } else {
+      filtered = FakeBookings.filter((result) => {
+        if (searchType === 'roomId') {
+          return result.roomId === parseInt(query, 10)
+        } else if (searchType === 'customerName') {
+          return result.firstName.toLowerCase() === query.toLowerCase()
+        } else {
+          return result
+        }
+      })
+    }
     this.setState({ results: filtered })
   }
 
