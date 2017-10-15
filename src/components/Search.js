@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from './Button'
+import Input from './Input'
 
 const Search = props => (
   <div className="search">
@@ -19,18 +21,27 @@ const Search = props => (
           <tbody>
             <tr>
               <td>
-                <input
+                <Input
                   id="customerId"
-                  type="text"
-                  className="form-control"
-                  placeholder="Customer id"
+                  placeholder="customer Id"
                   name="customerId"
                 />
               </td>
               <td>
-                <button className="btn btn-primary fn-submit-name">Search IDs</button>
+                <Button text="search Id" search = {props.handleSearch} handleClick={props.handleClick}/>
               </td>
-              {/* Add search by name here */}
+            </tr>
+            <tr>
+              <td>
+                <Input
+                  id="customerName"
+                  placeholder="customer Name"
+                  name="customerName"
+                />
+              </td>
+              <td>
+                <Button text="search Name" search={props.handleSearch} handleClick={props.handleClick} />
+              </td>
             </tr>
           </tbody>
         </table>
