@@ -1,41 +1,39 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Button from "./Button.js";
+import CustomerName from "./CustomerName.js";
+import Table from "./Table.js";
+import fakeBookings from "./../data/fakeBookings";
 
-const Search = props => (
-  <div className="search">
-    <div className="page-header">
-      <h4 className="text-left">Search Bookings</h4>
-    </div>
-    <div className="row">
-      <div className="col">
-        <table className="table search-table">
-          <thead>
-            <tr>
-              <th>Customer id</th>
-              <th />
-              <th></th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <input
-                  id="customerId"
-                  type="text"
-                  className="form-control"
-                  placeholder="Customer id"
-                  name="customerId"
-                />
-              </td>
-              <td>
-                <button className="btn btn-primary fn-submit-name">Search IDs</button>
-              </td>
-              {/* Add search by name here */}
-            </tr>
-          </tbody>
-        </table>
+// const Search = props => (
+  class Search extends Component {
+    constructor (props){
+      super(props);
+      this.state = {
+       show : false
+      };
+    }
+ handleSearch (event) {
+    this.setState({ show : !this.state.show})
+}
+    render() {
+      // const show = false;
+      return (
+        <div className="search">
+          <div className="page-header">
+            <h4 className="text-left">Search Bookings</h4>
+          </div>
+        <div className="row">
+          <CustomerName onSearch = {this.handleSearch.bind(this)}  />
+          {/* <CustomerId /> */}
+
+      </div>   
+        <div className="table">
+          {this.state.show && <Table data={fakeBookings}  />}
+
+        </div>  
       </div>
-    </div>
-  </div>
-);
+    );
+    
+  } 
+} 
 export default Search;
