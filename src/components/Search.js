@@ -13,6 +13,7 @@ class SearchInput extends Component {
         className="form-control"
         placeholder={this.props.placeholder}
         name={this.props.name}
+        value={this.props.value}
         onChange={this.props.handleInput}
       />
     );
@@ -39,21 +40,20 @@ class SearchButton extends Component {
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = {filter: {}};
   }
 
   getInput = (e) => {
     if (e.target.name === 'customerId') {
-      this.setState({filter: {customerId: e.target.value}});
+      this.props.updateFilter({filter: {customerId: e.target.value, customerName: ''}});
     } else {
-      this.setState({filter: {customerName: e.target.value}});
+      this.props.updateFilter({filter: {customerId: '', customerName: e.target.value}});
     }
   };
 
   callSearch = (e) => {
-    this.props.runSearch(e, this.state.filter);
+    this.props.runSearch(e);
   };
-
+ 
   render() {
     return (
       <div className="search">
@@ -79,13 +79,10 @@ class Search extends Component {
                       placeholder='customer id'
                       name='customerId'
                       handleInput={this.getInput}
+                      value={this.props.customerIdInput}
                     />
                   </td>
                   <td>
-                    <SearchButton 
-                      label='Seach IDs'
-                      handleClicks={this.callSearch}
-                    />
                   </td>
                   <td>
                     <SearchInput 
@@ -93,11 +90,12 @@ class Search extends Component {
                       placeholder='customer name'
                       name='customerName'
                       handleInput={this.getInput}
+                      value={this.props.customerNameInput}
                     />
                   </td>
                   <td>
                     <SearchButton 
-                      label='Seach names'
+                      label='Seach'
                       handleClicks={this.callSearch}
                     />
                   </td>
