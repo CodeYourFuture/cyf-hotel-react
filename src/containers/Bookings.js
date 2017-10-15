@@ -7,15 +7,17 @@ export default class Bookings extends Component {
   constructor() {
     super();
     this.state = {
-      showResults: false,
+      // Results of the search.
+      results: [],
     };
   }
 
+  // Do a search and set results in state.
   search = (evt) => {
-    // Show results only after a search button has been clicked.
+    // Simulate a search by using fake bookings for now.
     this.setState({
       ...this.state,
-      showResults: true,
+      results: FakeBookings,
     });
   };
   
@@ -24,9 +26,7 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
-          {this.state.showResults && 
-            <Results results={FakeBookings} />
-          }
+          <Results results={this.state.results} />
         </div>
       </div>
     );
