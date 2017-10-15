@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import moment from 'moment'
 
 const ResultCount = props => (
   <div>
@@ -16,6 +17,7 @@ const TableHead = () => (
       <th>Room id</th>
       <th>Check in date</th>
       <th>Check out date</th>
+      <th>Days staying</th>
     </tr>
   </thead>
 )
@@ -24,7 +26,7 @@ export default class Results extends Component {
   render() {
     return (
       <div>
-        <ResultCount />
+        <ResultCount results={this.props.results} />
         <table className="table">
           <TableHead />
           <tbody>
@@ -38,6 +40,7 @@ export default class Results extends Component {
                   <td>{result.roomId}</td>
                   <td>{result.checkInDate}</td>
                   <td>{result.checkOutDate}</td>
+                  <td>{moment(result.checkOutDate).diff(moment(result.checkInDate), 'days')}</td>
                 </tr>
               )
             })}
