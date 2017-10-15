@@ -15,8 +15,12 @@ export default class Results extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // Which field (column) to sort by.
       sortField: null,
+      // Order of sort: 'asc' or 'desc'.
       sortOrder: null,
+      // Which rows are selected (active).
+      selectedRows: [],
     };
     this.toggleSort = this.toggleSort.bind(this);
     this.sortResults = this.sortResults.bind(this);
@@ -64,9 +68,40 @@ export default class Results extends React.Component {
     return sortedArray;
   }
 
+  toggleRowSelect(index) {
+    // Clone the array as we're going to change it.
+    let selectedRows = [...this.state.selectedRows];
+    const selectedIndex = selectedRows.indexOf(index);
+    // Row is already selected.
+    if (selectedIndex !== -1) {
+      // Remove the row from the list of selected rows.
+      selectedRows = selectedRows.filter((item, idx) => idx !== selectedIndex);
+    }
+    else {
+      // Add the row to the selected rows list.
+      selectedRows.push(index);
+    }
+    this.setState({
+      ...this.state,
+      selectedRows: selectedRows,
+    });
+  }
+
+  // Get the className of the row.
+  getRowClass(index) {
+    // This row is selected, return a Bootstrap class to highlight it.
+    if (this.state.selectedRows.indexOf(index) !== -1) {
+      return 'table-active';
+    }
+    else {
+      return null;
+    }
+  }
+
   render() {
     return (
-      <table>
+      <table className='table'>
+      {/* Set table class to style with included Bootstrap CSS. */}
         <thead>
           <tr>
             <th onClick={() => {this.toggleSort('title');}}>Title</th>
@@ -81,15 +116,15 @@ export default class Results extends React.Component {
         </thead>
         <tbody>
           {this.sortResults().map( (result, index) =>
-            <tr key={ index }>
-              <td>{ result.title }</td>
-              <td>{ result.firstName }</td>
-              <td>{ result.surname }</td>
-              <td>{ result.email }</td>
-              <td>{ result.roomId }</td>
-              <td>{ result.checkInDate }</td>
-              <td>{ result.checkOutDate }</td>
-              <td>{ daysBetweenDates(result.checkInDate, result.checkOutDate) }</td>
+            <tr key={index} className={this.getRowClass(index)} onClick={() => this.toggleRowSelect(index)}>
+              <td>{result.title }</td>
+              <td>{result.firstName}</td>
+              <td>{result.surname}</td>
+              <td>{result.email}</td>
+              <td>{result.roomId}</td>
+              <td>{result.checkInDate}</td>
+              <td>{result.checkOutDate}</td>
+              <td>{daysBetweenDates(result.checkInDate, result.checkOutDate)}</td>
             </tr>
           )}
         </tbody>
