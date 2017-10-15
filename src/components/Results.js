@@ -17,24 +17,29 @@ const TableHead = () => (
 export default class Results extends Component {
   render() {
     return (
-      <table className="table">
-        <TableHead />
-        <tbody>
-          {this.props.results.map((result) => {
-            return (
-              <tr key={`result-row-${result.email}`}>
-                <td>{result.title}</td>
-                <td>{result.firstName}</td>
-                <td>{result.surname}</td>
-                <td>{result.email}</td>
-                <td>{result.roomId}</td>
-                <td>{result.checkInDate}</td>
-                <td>{result.checkOutDate}</td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
+      <div>
+        <div>
+          <span>Results ({this.props.results.length} found)</span>
+        </div>
+        <table className="table">
+          <TableHead />
+          <tbody>
+            {this.props.results.map((result) => {
+              return (
+                <tr key={`result-row-${result.email}`}>
+                  <td>{result.title}</td>
+                  <td>{result.firstName}</td>
+                  <td>{result.surname}</td>
+                  <td>{result.email}</td>
+                  <td>{result.roomId}</td>
+                  <td>{result.checkInDate}</td>
+                  <td>{result.checkOutDate}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
     )
   }
 }
