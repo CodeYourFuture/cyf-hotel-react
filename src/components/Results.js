@@ -7,14 +7,14 @@ const ResultCount = props => (
   </div>
 )
 
-const TableHead = () => (
+const TableHead = props => (
   <thead>
     <tr>
-      <th>Title</th>
-      <th>First name</th>
-      <th>Surname</th>
-      <th>Email</th>
-      <th>Room id</th>
+      <th onClick={() => props.onSort('title')}>Title</th>
+      <th onClick={() => props.onSort('firstName')}>First name</th>
+      <th onClick={() => props.onSort('surname')}>Surname</th>
+      <th onClick={() => props.onSort('email')}>Email</th>
+      <th onClick={() => props.onSort('roomId')}>Room id</th>
       <th>Check in date</th>
       <th>Check out date</th>
       <th>Days staying</th>
@@ -23,14 +23,53 @@ const TableHead = () => (
 )
 
 export default class Results extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      title: 'desc',
+      firstName: 'desc',
+      surname: 'desc',
+      email: 'desc',
+      roomId: 'desc',
+      results: props.results
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ results: nextProps.results })
+  }
+
+  handleSort = (sortField) => {
+    let direction = this.state[sortField] === 'desc' ? 'asc' : 'desc' //  Toggle direction
+    let directionIsDesc = direction === 'desc'
+
+    let sorted = this.state.results.sort((resultA, resultB) => {
+      let a = resultA[sortField]
+      let b = resultB[sortField]
+
+      if (a < b) {
+        return directionIsDesc ? -1 : 1
+      } else if (a > b) {
+        return directionIsDesc ? 1 : -1
+      } else {
+        return 0
+      }
+    })
+
+    this.setState({
+      results: sorted,
+      [sortField]: direction
+    })
+  }
+
   render() {
     return (
       <div>
         <ResultCount results={this.props.results} />
         <table className="table">
-          <TableHead />
+          <TableHead onSort={this.handleSort} />
           <tbody>
-            {this.props.results.map((result) => {
+            {this.state.results.map((result) => {
               return (
                 <tr key={`result-row-${result.email}`}>
                   <td>{result.title}</td>

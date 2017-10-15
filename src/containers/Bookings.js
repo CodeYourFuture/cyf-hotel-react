@@ -15,7 +15,7 @@ export default class Bookings extends Component {
       if (searchType === 'roomId') {
         return result.roomId === parseInt(query, 10)
       } else if (searchType === 'customerName') {
-        return result.firstName.toLowerCase() === query.toLowerCase()
+        return result.firstName.toLowerCase().includes(query.toLowerCase())
       } else {
         return false
       }
