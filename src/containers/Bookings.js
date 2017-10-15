@@ -10,7 +10,18 @@ export default class Bookings extends Component {
     this.state = { results: FakeBookings }
   }
 
-  handleSearch = () => {}
+  handleSearch = (query, searchType) => {
+    let filtered = FakeBookings.filter((result) => {
+      if (searchType === 'roomId') {
+        return result.roomId === parseInt(query, 10)
+      } else if (searchType === 'customerName') {
+        return result.firstName === query
+      } else {
+        return result
+      }
+    })
+    this.setState({ results: filtered })
+  }
 
   render() {
     return (
