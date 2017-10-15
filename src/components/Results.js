@@ -100,35 +100,39 @@ export default class Results extends React.Component {
 
   render() {
     return (
-      <table className='table'>
-      {/* Set table class to style with included Bootstrap CSS. */}
-        <thead>
-          <tr>
-            <th onClick={() => {this.toggleSort('title');}}>Title</th>
-            <th onClick={() => {this.toggleSort('firstName');}}>First name</th>
-            <th onClick={() => {this.toggleSort('surname');}}>Surname</th>
-            <th onClick={() => {this.toggleSort('email');}}>Email</th>
-            <th onClick={() => {this.toggleSort('roomId');}}>Room ID</th>
-            <th onClick={() => {this.toggleSort('checkInDate');}}>Check in date</th>
-            <th onClick={() => {this.toggleSort('checkOutDate');}}>Check out date</th>
-            <th>No. of days</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.sortResults().map( (result, index) =>
-            <tr key={index} className={this.getRowClass(index)} onClick={() => this.toggleRowSelect(index)}>
-              <td>{result.title }</td>
-              <td>{result.firstName}</td>
-              <td>{result.surname}</td>
-              <td>{result.email}</td>
-              <td>{result.roomId}</td>
-              <td>{result.checkInDate}</td>
-              <td>{result.checkOutDate}</td>
-              <td>{daysBetweenDates(result.checkInDate, result.checkOutDate)}</td>
+      <div>
+        <p>Results: {this.props.results.length} found, {this.state.selectedRows.length} selected</p>
+
+        <table className='table'>
+        {/* Set table class to style with included Bootstrap CSS. */}
+          <thead>
+            <tr>
+              <th onClick={() => {this.toggleSort('title');}}>Title</th>
+              <th onClick={() => {this.toggleSort('firstName');}}>First name</th>
+              <th onClick={() => {this.toggleSort('surname');}}>Surname</th>
+              <th onClick={() => {this.toggleSort('email');}}>Email</th>
+              <th onClick={() => {this.toggleSort('roomId');}}>Room ID</th>
+              <th onClick={() => {this.toggleSort('checkInDate');}}>Check in date</th>
+              <th onClick={() => {this.toggleSort('checkOutDate');}}>Check out date</th>
+              <th>No. of days</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {this.sortResults().map( (result, index) =>
+              <tr key={index} className={this.getRowClass(index)} onClick={() => this.toggleRowSelect(index)}>
+                <td>{result.title }</td>
+                <td>{result.firstName}</td>
+                <td>{result.surname}</td>
+                <td>{result.email}</td>
+                <td>{result.roomId}</td>
+                <td>{result.checkInDate}</td>
+                <td>{result.checkOutDate}</td>
+                <td>{daysBetweenDates(result.checkInDate, result.checkOutDate)}</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
