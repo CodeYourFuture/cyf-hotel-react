@@ -3,6 +3,7 @@ import Search from "../components/Search.js";
 import Results from "../components/Results.js";
 
 const FAKE_API_URL = 'https://gist.githubusercontent.com/40thieves/e18665f42b9a7f32003a86f060b92fb2/raw/41f6f221067803447fa5daa78dd450455e47f57d/fake-api.json'
+const ERROR_API_URL = 'http://httpbin.org/status/500'
 
 export default class Bookings extends Component {
   constructor(props) {
@@ -10,7 +11,8 @@ export default class Bookings extends Component {
 
     this.state = {
       allResults: null,
-      filteredResults: null
+      filteredResults: null,
+      error: null
     }
   }
 
@@ -19,6 +21,8 @@ export default class Bookings extends Component {
       .then((data) => {
         if (data.ok) {
           return data.json()
+        } else {
+          throw new Error(data.statusText)
         }
       })
       .then((results) => {
@@ -26,6 +30,9 @@ export default class Bookings extends Component {
           allResults: results,
           filteredResults: this.filterResults(results)
         })
+      })
+      .catch((err) => {
+        this.setState({ error: err })
       })
   }
 
@@ -48,11 +55,20 @@ export default class Bookings extends Component {
   }
 
   render() {
+    let content
+    if (this.state.error) {
+      content = <div className="alert alert-danger">Error: {this.state.error.message}</div>
+    } else {
+      content = this.state.filteredResults 
+        ? <Results results={this.state.filteredResults} />
+        : <div className="alert alert-info">No results</div>
+    }
+
     return (
       <div className="App-content">
         <div className="container">
           <Search onSearch={this.handleSearch} />
-          {this.state.filteredResults && <Results results={this.state.filteredResults} />}
+          {content}
         </div>
       </div>
     );
