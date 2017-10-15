@@ -7,25 +7,25 @@ export default class Bookings extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { results: FakeBookings }
+    this.state = { results: this.filterResults() }
+  }
+
+  filterResults = (query, searchType) => {
+    return FakeBookings.filter((result) => {
+      if (searchType === 'roomId') {
+        return result.roomId === parseInt(query, 10)
+      } else if (searchType === 'customerName') {
+        return result.firstName.toLowerCase() === query.toLowerCase()
+      } else {
+        return false
+      }
+    })
   }
 
   handleSearch = (query, searchType) => {
-    let filtered
-    if (!query) {
-      filtered = FakeBookings
-    } else {
-      filtered = FakeBookings.filter((result) => {
-        if (searchType === 'roomId') {
-          return result.roomId === parseInt(query, 10)
-        } else if (searchType === 'customerName') {
-          return result.firstName.toLowerCase() === query.toLowerCase()
-        } else {
-          return result
-        }
-      })
-    }
-    this.setState({ results: filtered })
+    this.setState({
+      results: this.filterResults(query, searchType)
+    })
   }
 
   render() {
