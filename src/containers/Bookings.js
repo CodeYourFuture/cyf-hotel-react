@@ -26,6 +26,7 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
+          <span>Results ({this.state.results.length} found)</span>
           <Results results={this.state.results} />
         </div>
       </div>
