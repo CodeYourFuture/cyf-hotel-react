@@ -12,6 +12,8 @@ export default class Bookings extends Component {
       results: [],
       // Whether we are waiting for results to load.
       isLoading: false,
+      // Error messages.
+      errorMsg: null,
     };
   }
 
@@ -26,14 +28,17 @@ export default class Bookings extends Component {
     else if (field === 'customerName') {
       queryParams += `name=${value}&`;
     }
+    const apiUrl = `http://localhost:8080/api/reservations?${queryParams}`;
 
-    // Set loading state prior to long fetch operation.
     this.setState({
+      // Cancel any prior errors.
+      errorMsg: null,
+      // Set loading state prior to long fetch operation.
       isLoading: true,
     });
 
     // Fetch results from backend Node API.
-    fetch(`http://localhost:8080/api/reservations?${queryParams}`)
+    fetch(apiUrl)
       .then(response => {
         return response.json();
       })
@@ -43,6 +48,14 @@ export default class Bookings extends Component {
           // Hide loading text.
           isLoading: false,
         });
+      })
+      // Error fetching results.
+      .catch(error => {
+        console.log(error);
+        this.setState({
+          isLoading: false,
+          errorMsg: `Error fetching results: ${error.message}`,
+        });
       });
   };
 
@@ -51,8 +64,12 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
-          {/* Show loading text when fetching results. */}
-          {this.state.isLoading && <div className='text-info'>Loading...</div>}
+          {// Show loading text when fetching results.
+            this.state.isLoading && <div className='text-info'>Loading...</div>
+          }
+          {// Show error messages.
+            this.state.errorMsg && <div className='text-danger'>{this.state.errorMsg}</div>
+          }
           <Results results={this.state.results} />
         </div>
       </div>
