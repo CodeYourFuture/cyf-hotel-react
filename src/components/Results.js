@@ -37,7 +37,6 @@ export default class Results extends React.Component {
     }
 
     this.setState({
-      ...this.state,
       sortField: field,
       sortOrder: sortOrder,
     });
@@ -52,8 +51,17 @@ export default class Results extends React.Component {
     }
 
     const sortedArray = this.props.results.sort((a, b) => {
-      const val1 = a[this.state.sortField];
-      const val2 = b[this.state.sortField];
+      let val1, val2;
+
+      // numDays is a computed field, need to compute values for comparing.
+      if (this.state.sortField === 'numDays') {
+        val1 = daysBetweenDates(a.checkInDate, a.checkOutDate);
+        val2 = daysBetweenDates(b.checkInDate, b.checkOutDate);
+      }
+      else {
+        val1 = a[this.state.sortField];
+        val2 = b[this.state.sortField];
+      }
 
       if (this.state.sortOrder === 'asc') {
         if (val1 > val2) { return 1; }
@@ -82,7 +90,6 @@ export default class Results extends React.Component {
       selectedRows.push(index);
     }
     this.setState({
-      ...this.state,
       selectedRows: selectedRows,
     });
   }
@@ -114,7 +121,7 @@ export default class Results extends React.Component {
               <th onClick={() => {this.toggleSort('roomId');}}>Room ID</th>
               <th onClick={() => {this.toggleSort('checkInDate');}}>Check in date</th>
               <th onClick={() => {this.toggleSort('checkOutDate');}}>Check out date</th>
-              <th>No. of days</th>
+              <th onClick={() => {this.toggleSort('numDays');}}>No. of days</th>
             </tr>
           </thead>
           <tbody>
