@@ -1,14 +1,5 @@
 import React from 'react';
 
-// Calculate number of days between two dates (in string).
-function daysBetweenDates(dateStr1, dateStr2) {
-  const date1 = new Date(dateStr1);
-  const date2 = new Date(dateStr2);
-  
-  const diffSeconds = date2 - date1;
-  const diffDays = Math.round(diffSeconds / (1000 * 60 * 60 * 24));
-  return diffDays;
-}
 
 export default class Results extends React.Component {
 
@@ -51,17 +42,8 @@ export default class Results extends React.Component {
     }
 
     const sortedArray = this.props.results.sort((a, b) => {
-      let val1, val2;
-
-      // numDays is a computed field, need to compute values for comparing.
-      if (this.state.sortField === 'numDays') {
-        val1 = daysBetweenDates(a.checkInDate, a.checkOutDate);
-        val2 = daysBetweenDates(b.checkInDate, b.checkOutDate);
-      }
-      else {
-        val1 = a[this.state.sortField];
-        val2 = b[this.state.sortField];
-      }
+      const val1 = a[this.state.sortField];
+      const val2 = b[this.state.sortField];
 
       if (this.state.sortOrder === 'asc') {
         if (val1 > val2) { return 1; }
@@ -134,7 +116,7 @@ export default class Results extends React.Component {
                 <td>{result.roomId}</td>
                 <td>{result.checkInDate}</td>
                 <td>{result.checkOutDate}</td>
-                <td>{daysBetweenDates(result.checkInDate, result.checkOutDate)}</td>
+                <td>{result.numDays}</td>
               </tr>
             )}
           </tbody>

@@ -3,6 +3,27 @@ import Search from "../components/Search.js";
 import Results from "../components/Results.js";
 // import * as FakeBookings from "../data/fakeBookings.json";
 
+
+// Calculate number of days between two dates (in string).
+function daysBetweenDates(dateStr1, dateStr2) {
+  const date1 = new Date(dateStr1);
+  const date2 = new Date(dateStr2);
+
+  const diffSeconds = date2 - date1;
+  const diffDays = Math.round(diffSeconds / (1000 * 60 * 60 * 24));
+  return diffDays;
+}
+
+// Add a new field 'numDays' (diff between checkin and checkout date) to the
+// reservations array.
+function addNumDays(reservations) {
+  return reservations.map(res => {
+    res.numDays = daysBetweenDates(res.checkInDate, res.checkOutDate);
+    return res;
+  });
+}
+
+
 export default class Bookings extends Component {
 
   constructor() {
@@ -44,7 +65,8 @@ export default class Bookings extends Component {
       })
       .then(jsonData => {
         this.setState({
-          results: jsonData.reservations,
+          // Add 'numDays' field before committing to state.
+          results: addNumDays(jsonData.reservations),
           // Hide loading text.
           isLoading: false,
         });
