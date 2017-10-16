@@ -49,7 +49,11 @@ export default class Bookings extends Component {
     else if (field === 'customerName') {
       queryParams += `name=${value}&`;
     }
-    const apiUrl = `http://localhost:8080/api/reservations?${queryParams}`;
+    // Allow setting a different backend hostname from env var.
+    const baseUrl = process.env.REACT_APP_BACKEND_API_BASE_URL
+      || 'http://localhost:8080/api/reservations';
+    // Full URL to call backend API.
+    const apiUrl = baseUrl + '?' + queryParams;
 
     this.setState({
       // Cancel any prior errors.
