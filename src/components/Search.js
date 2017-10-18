@@ -1,6 +1,9 @@
 import React from 'react';
+import SearchInput from './SearchInput';
 
-const Search = props => (
+const Search = props => {
+  
+  return (
   <div className="search">
     <div className="page-header">
       <h4 className="text-left">Search Bookings</h4>
@@ -10,7 +13,7 @@ const Search = props => (
         <table className="table search-table">
           <thead>
             <tr>
-              <th>Customer id</th>
+              <th>"title"</th>
               <th />
               <th></th>
               <th />
@@ -18,24 +21,13 @@ const Search = props => (
           </thead>
           <tbody>
             <tr>
-              <td>
-                <input
-                  id="customerId"
-                  type="text"
-                  className="form-control"
-                  placeholder="Customer id"
-                  name="customerId"
-                />
-              </td>
-              <td>
-                <button className="btn btn-primary fn-submit-name">Search IDs</button>
-              </td>
-              {/* Add search by name here */}
+              <SearchInput isClicked= {props.isClicked} />
             </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
-);
+
+)};
 export default Search;
