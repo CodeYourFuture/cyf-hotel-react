@@ -39,6 +39,9 @@
   padding: 5px 0 20px 0;
 }
 
+.selectRow{
+  background-color: lightpink
+}
 tr {
   color: #5b5757;
 }
@@ -50,4 +53,11 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+.showLoading{
+  display: block;
+  color: rebeccapurple
+}
+.notshowLoading{
+  display: none;
 }
