@@ -23,7 +23,7 @@ import fakeBookings from "./../data/fakeBookings";
             <h4 className="text-left">Search Bookings</h4>
           </div>
         <div className="row">
-          <CustomerName onSearch = {this.handleSearch.bind(this)}  />
+          <CustomerName onSearch = {this.handleSearch.bind(this)} result={this.props.bookings} />
           {/* <CustomerId /> */}
 
       </div>   

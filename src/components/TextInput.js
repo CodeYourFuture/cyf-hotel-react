@@ -9,6 +9,7 @@ const TextInput = props =>(
           placeholder={props.message}
           name={props.name}
           NumberOfDays={props.NumberOfDays}
+          checkBox={props.checkBox}
 
         />
 );        

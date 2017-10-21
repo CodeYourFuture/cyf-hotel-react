@@ -20,7 +20,7 @@ const CustomerName = (props) =>
     <tr>
       <td>
         <TextInput id="customerName"  message="Enter Your Name" name="customerName" />
-        <Counter onClick={props.result.length}/>
+        <Counter resultLength={props.result.length}/>
       </td>
       <td>
         <Button onClick={props.onSearch} button="Search Name"/>

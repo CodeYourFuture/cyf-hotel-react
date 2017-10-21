@@ -16,28 +16,39 @@ export default class Bookings extends Component {
   search = () => {
     console.info("to do!");
   };
+
+  filterResults = (query, searchType)=> {
+    return fakeBookings.filter((result)=> {
+    return result.firstName.toLowerCase().includes(query.toLowerCase())
+    })
+  }
+  handleSearch = (query, searchType) => {
+    this.setState({
+      results: this.filterResults(query, searchType)
+    })
+  }
   
   render() {
     return (
       <div className="App-content">
         <div className="container">
-          <Search search={this.search}/>
+          <Search search={this.search} bookings={fakeBookings} />
           <TableRow TableRow={fakeBookings} /> 
-           {/* <TextInput bookings={this.handleBookings()} sortIt = {this.sortIt}/> */}
+          {/* {<TextInput bookings={this.handleBookings()} sortIt = {this.sortIt}/>} */}
         </div>
       </div>
     );
   }
+
+
+handleBookings() {
+  if(this.state.onClick===true){
+    return this.state.bookings;
+  }else {
+    return [];
+  }
 }
-
-  // handleBooking () {
-  //   if(this.state.onClick===true){
-  //     return this.state.bookings;
-  //   }else {
-  //     return [];
-  //   }
-  // }
-
+}
    const onClick = () => {
     this.setState({
      onClick: true,

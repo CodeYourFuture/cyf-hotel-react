@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as FakeBookings from "../data/fakeBookings.json"
+
 
 const Counter = props => 
     <tbody>
         <tr>
             <td> Result Found:</td>
-            <td>{props.FakeBookings.parse.length}</td>
+            <td>{props.resultLength}</td>
         </tr>
     </tbody>   
    ;
