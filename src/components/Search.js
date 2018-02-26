@@ -1,4 +1,6 @@
 import React from 'react';
+//import data from '../data/fakeBookings';
+
 
 const Search = props => (
   <div className="search">
@@ -16,26 +18,39 @@ const Search = props => (
               <th />
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>
-                <input
-                  id="customerId"
-                  type="text"
-                  className="form-control"
-                  placeholder="Customer id"
-                  name="customerId"
-                />
-              </td>
-              <td>
-                <button className="btn btn-primary fn-submit-name">Search IDs</button>
-              </td>
-              {/* Add search by name here */}
-            </tr>
-          </tbody>
+          <SearchBtn />
         </table>
       </div>
     </div>
   </div>
 );
+
+const SearchBtn = props =>(
+  <tbody>
+  <tr>
+    <td>
+      <input
+        id="customerId"
+        type="text"
+        className="form-control"
+        placeholder="Customer id"
+        name="customerId"
+      />
+    </td>
+    <td>
+      <button className="btn btn-primary fn-submit-name">Search IDs</button>
+    </td>
+    <td>
+      <input
+        className="form-control"
+        placeholder="Customer name"
+      />
+    </td>
+    <td>
+      <button className="btn btn-primary fn-submit-name">Search Name</button>
+    </td>
+  </tr>
+</tbody>
+);
+
 export default Search;
