@@ -2,7 +2,6 @@ import React from 'react';
 import SearchButtonL from './SearchButtonL.js';
 import SearchButtonR from './SearchButtonR.js'; 
 
-import Results from './Results.js';
 
 const Search = props => (
   <div className="search">
@@ -50,8 +49,7 @@ const Search = props => (
           </tbody>
         </table>
       </div>
-    </div>
-    <Results/>    
+    </div>   
   </div>
 );
 export default Search;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-export default class Reasult extends Component {
+
+export default class Results extends Component {
     render() {
         return (
             <div className="row">
@@ -18,42 +19,19 @@ export default class Reasult extends Component {
                                 <th>Check out date</th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>Mr</td>
-                            <td>Person1</td>
-                            <td>Alex</td>
-                            <td>alex@gmail.com</td>
-                            <td>1</td>
-                            <td>2018-01-20</td>
-                            <td>2018-01-30</td>
-                        </tr>
-                        <tr>
-                            <td>Mr</td>
-                            <td>Person1</td>
-                            <td>Alex</td>
-                            <td>alex@gmail.com</td>
-                            <td>1</td>
-                            <td>2018-01-20</td>
-                            <td>2018-01-30</td>
-                        </tr>
-                        <tr>
-                            <td>Mr</td>
-                            <td>Person1</td>
-                            <td>Alex</td>
-                            <td>alex@gmail.com</td>
-                            <td>1</td>
-                            <td>2018-01-20</td>
-                            <td>2018-01-30</td>
-                        </tr>
-                        <tr>
-                            <td>Mr</td>
-                            <td>Person1</td>
-                            <td>Alex</td>
-                            <td>alex@gmail.com</td>
-                            <td>1</td>
-                            <td>2018-01-20</td>
-                            <td>2018-01-30</td>
-                        </tr>
+                        <tbody>
+                            {this.props.items.map((item, index) =>  (
+                                <tr key = {index}>
+                                    <td >{item.title}</td>
+                                    <td >{item.firstName}</td>
+                                    <td >{item.surname}</td>
+                                    <td >{item.email}</td>
+                                    <td >{item.roomId}</td>
+                                    <td >{item.checkInDate}</td>
+                                    <td >{item.checkOutDate}</td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </table>
                 </div>
             </div>
