@@ -1,5 +1,7 @@
-import React from 'react';
 
+import React, { Component } from "react";
+import Button from "./Button";
+import SearchByName from "./SearchByName";
 const Search = props => (
   <div className="search">
     <div className="page-header">
@@ -28,9 +30,10 @@ const Search = props => (
                 />
               </td>
               <td>
-                <button className="btn btn-primary fn-submit-name">Search IDs</button>
-              </td>
+                {<Button name = "Search IDs"/>}
+              </td> 
               {/* Add search by name here */}
+              <SearchByName />
             </tr>
           </tbody>
         </table>
