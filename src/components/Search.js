@@ -20,9 +20,9 @@ const Search = props => (
           <tbody>
             <tr>
               <SearchInput id='customerId' placeholder='Customer id' name='customerid' />
-              <SearchButton value='Search IDs' />
+              <SearchButton value='Search IDs'  click={props.click}/>
               <SearchInput id='customerName' placeholder='Customer name' name='customername' />
-              <SearchButton value='Search Names' />
+              <SearchButton value='Search Names' click={props.click}/>
             </tr>
           </tbody>
         </table>
