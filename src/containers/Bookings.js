@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Search from "../components/Search.js";
-import Results from "../components/Results.js";
+import Search from "../components/Search/Search.js";
+import Results from "../components/Results/Results.js";
 import FakeBookings from '../data/fakeBookings.json'
 
 
@@ -24,19 +24,17 @@ export default class Bookings extends Component {
       heading: ['Title', 'First name', 'Surname', 'Email', 'Room id', 'Check in date', 'Check out date', 'Length of stay'],
       showResult: !isShowResult
     });
-    // console.log(this.setState.showResult)
   }
 
-  toggleColumn = (e)=> {
+  toggleColumn = (e) => {
     console.log(e.currentTarget.innerHTML);
-    let val = e.currentTarget.innerHTML;    
+    let val = e.currentTarget.innerHTML;
     let isSorted = this.state.sort;
     console.log(isSorted)
     this.setState({
       sort: !isSorted
     });
-    console.log(isSorted) 
-    this.sortColumn(val); 
+    this.sortColumn(val);
   }
 
   sortColumn = () => {
@@ -65,7 +63,6 @@ export default class Bookings extends Component {
     }
 
   }
-  // ('checkOutDate', 'email', 'firstNameroomId', 'surnametitle')
   render() {
     let results = null;
     if (this.state.showResult) {
