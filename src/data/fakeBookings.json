@@ -1,6 +1,51 @@
 [
   {
     "title": "Mr",
+    "firstName": "Johm",
+    "surname": "Doe",
+    "email": "johndoe@doe.com",
+    "roomId": 2,
+    "checkInDate": "2017-11-21",
+    "checkOutDate": "2017-11-23"
+  },
+  {
+    "title": "Doctor",
+    "firstName": "Sadib",
+    "surname": "Begum",
+    "email": "begum_sadia@sadia.org",
+    "roomId": 1,
+    "checkInDate": "2018-02-15",
+    "checkOutDate": "2018-02-28"
+  },
+  {
+    "title": "Prince",
+    "firstName": "Henrz",
+    "surname": "Wales",
+    "email": "harry@wales.com",
+    "roomId": 5,
+    "checkInDate": "2018-03-01",
+    "checkOutDate": "2018-04-09"
+  },
+  {
+    "title": "Dame",
+    "firstName": "Judi",
+    "surname": "3d",
+    "email": "Judi@dench.co.uk",
+    "roomId": 6,
+    "checkInDate": "2017-12-25",
+    "checkOutDate": "2018-01-03"
+  },
+  {
+    "title": "Madam",
+    "firstName": "Anuradha",
+    "surname": "Selvam",
+    "email": "anu@selvam.net",
+    "roomId": 3,
+    "checkInDate": "2017-08-30",
+    "checkOutDate": "2017-10-02"
+  },
+  {
+    "title": "Mr",
     "firstName": "John",
     "surname": "Doe",
     "email": "johndoe@doe.com",

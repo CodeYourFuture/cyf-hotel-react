@@ -1,20 +1,20 @@
 import React from "react";
 
-const Results = ({ filteredResult }) => {
+const Results = ({ filteredResult, sortBy }) => {
     return (
         <div>
             <h3>Result: {filteredResult.length}</h3>
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>First tname</th>
-                        <th>Sur Name</th>
-                        <th>Email</th>
-                        <th>Room Id</th>
-                        <th>Check in Date</th>
-                        <th>Check Out Date</th>
-                        <th>Days</th>
+                        <th onClick={() => sortBy('title')}>Title</th>
+                        <th onClick={() => sortBy('firstName')}>First Name</th>
+                        <th onClick={() => sortBy('surname')}>Sur Name</th>
+                        <th onClick={() => sortBy('email')}>Email</th>
+                        <th onClick={() => sortBy('roomId')}>Room Id</th>
+                        <th onClick={() => sortBy('checkInDate')}>Check in Date</th>
+                        <th onClick={() => sortBy('checkOutDate')}>Check Out Date</th>
+                        <th onClick={() => sortBy('Days')}>Days</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -17,12 +17,33 @@ export default class Bookings extends Component {
     this.state = {
       FakeBookings: '',
       term: '',
-      result: false
+      result: false,
+      direction: {
+        sortin: 'asc'
+      },
+      text: ''
     }
     this.searchHandler = this.searchHandler.bind(this)
+    this.sortBy = this.sortBy.bind(this)
   }
   searchHandler(inputType) {
-    this.setState({ term: inputType, result: inputType.length ? true : false })
+    this.setState({ term: inputType, result: inputType.length ? true : false, text: inputType })
+  }
+
+  sortBy(key) {
+    this.setState({
+      result: FakeBookings.sort((a, b) => (
+        this.state.direction[key] === 'asc'
+          ? (a[key] > b[key])
+          : (b[key] < a[key])
+      )),
+      direction: {
+        [key]: this.state.direction[key] === 'asc'
+          ? 'desc'
+          : 'asc'
+      }
+    })
+    this.searchHandler(this.state.text)
   }
 
   render() {
@@ -33,6 +54,7 @@ export default class Bookings extends Component {
         <Search search={this.search} />
         {this.state.result ?
           <Results
+            sortBy={this.sortBy}
             filteredResult={FakeBookings.filter(searchingFor(this.state.term))} />
           : 'please enter your text'
         }
@@ -40,3 +62,4 @@ export default class Bookings extends Component {
     );
   }
 }
+
