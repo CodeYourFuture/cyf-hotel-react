@@ -7,10 +7,9 @@ import * as FakeBookings from "../data/fakeBookings.json";
 
 function searchingFor(term) {
   return (e) => {
-      return e.firstName.toLowerCase().includes(term.toLowerCase()) || !term;
+    return e.firstName.toLowerCase().includes(term.toLowerCase()) || !term;
   }
 }
-
 export default class Bookings extends Component {
 
   constructor(props) {
@@ -18,21 +17,25 @@ export default class Bookings extends Component {
     this.state = {
       FakeBookings: '',
       term: '',
+      result: false
     }
     this.searchHandler = this.searchHandler.bind(this)
   }
   searchHandler(inputType) {
-    this.setState({ term: inputType })
+    this.setState({ term: inputType, result: inputType.length ? true : false })
   }
 
   render() {
+
     return (
-      <div className="App-content">
-        <div className="container">
-          <Button searchHandler={this.searchHandler} />
-          <Search search={this.search} />
-          <Results FakeBookings={FakeBookings} term={this.state.term} searchingFor={searchingFor}/>
-        </div>
+      <div>
+        <Button searchHandler={this.searchHandler} />
+        <Search search={this.search} />
+        {this.state.result ?
+          <Results
+            filteredResult={FakeBookings.filter(searchingFor(this.state.term))} />
+          : 'please enter your text'
+        }
       </div>
     );
   }
