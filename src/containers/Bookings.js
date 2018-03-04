@@ -6,8 +6,8 @@ import Button from "../components/button.js";
 import * as FakeBookings from "../data/fakeBookings.json";
 
 function searchingFor(term) {
-  return function (x) {
-      return x.firstName.toLowerCase().includes(term.toLowerCase()) || !term;
+  return (e) => {
+      return e.firstName.toLowerCase().includes(term.toLowerCase()) || !term;
   }
 }
 
@@ -21,8 +21,8 @@ export default class Bookings extends Component {
     }
     this.searchHandler = this.searchHandler.bind(this)
   }
-  searchHandler(event) {
-    this.setState({ term: event.target.value })
+  searchHandler(inputType) {
+    this.setState({ term: inputType })
   }
 
   render() {

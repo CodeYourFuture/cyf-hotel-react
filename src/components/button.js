@@ -1,5 +1,10 @@
 import React from "react";
 
+let inputType = '';
+
+const getInput = (event)=>{
+    inputType = event.target.value
+}
 const button = (props) => (
     <div className="search">
         <table className="table search-table">
@@ -29,11 +34,11 @@ const button = (props) => (
                         <input
                             className="form-control"
                             placeholder="Customer name"
-                            onChange={props.searchHandler}
+                            onChange={getInput}
                         />
                     </td>
                     <td>
-                        <button className="btn btn-primary fn-submit-name" >Search Name</button>
+                        <button className="btn btn-primary fn-submit-name" onClick={() => props.searchHandler(inputType)}>Search Name</button>
                     </td>
                 </tr>
             </tbody>
