@@ -1,6 +1,6 @@
 import React, {Component } from 'react';
 import SearchInput from "./SearchInput.js";
-import CustomersTable from "./CustomersTable.js";
+import Results from "./Results.js";
 import SearchButton from "./SearchButton.js";
 import SearchInputHeader from "./SearchInputHeader";
 
@@ -35,7 +35,6 @@ const Search = props => (
         </table>
       </div>
     </div>
-    <CustomersTable />
   </div>
 );
 export default Search;
