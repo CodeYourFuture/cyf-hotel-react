@@ -1,17 +1,10 @@
 
 import React, { Component } from "react";
-import Search from "../components/Search.js";
-import Results from "../components/Results.js";
-import Button from "../components/button.js";
+import Search from "../components/search/Search.js";
+import Results from "../components/results/Results.js";
 import * as FakeBookings from "../data/fakeBookings.json";
 
-function searchingFor(term) {
-  return (e) => {
-    return e.firstName.toLowerCase().includes(term.toLowerCase()) || !term;
-  }
-}
 export default class Bookings extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -26,6 +19,7 @@ export default class Bookings extends Component {
     this.searchHandler = this.searchHandler.bind(this)
     this.sortBy = this.sortBy.bind(this)
   }
+
   searchHandler(inputType) {
     this.setState({ term: inputType, result: inputType.length ? true : false, text: inputType })
   }
@@ -47,19 +41,24 @@ export default class Bookings extends Component {
   }
 
   render() {
-
     return (
       <div>
-        <Button searchHandler={this.searchHandler} />
-        <Search search={this.search} />
+        <Search searchHandler={this.searchHandler} />
         {this.state.result ?
           <Results
             sortBy={this.sortBy}
             filteredResult={FakeBookings.filter(searchingFor(this.state.term))} />
-          : 'please enter your text'
+          : <h1>Please enter your search</h1>
         }
       </div>
     );
   }
 }
+
+function searchingFor(term) {
+  return (e) => {
+    return e.firstName.toLowerCase().includes(term.toLowerCase()) || !term;
+  }
+}
+
 

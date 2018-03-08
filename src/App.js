@@ -13,7 +13,7 @@ class App extends Component {
           <div className="row">
             <div className="col">
               <Header />
-              <div>Search for Customers </div>
+              <div className="col form-control"><h3 className="text-center">Search Bookings</h3> </div>
               <Bookings />
               <Footer />
             </div>
