@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from './Button';
-import Results from './Results'
+import Results from './Results';
 
 const Search = props => (
   <div className="search">
@@ -14,7 +14,7 @@ const Search = props => (
             <tr>
               <th>Customer id</th>
               <th />
-              <th></th>
+              <th>Search by name</th>
               <th />
             </tr>
           </thead>
@@ -29,32 +29,11 @@ const Search = props => (
                   name="customerId"
                 />
               </td>
+
               <td>
-                <Button label="Ids" onClick={()=>{console.log("Id button")}} />
+                <Button label="Ids" handleClick={props.handleSearchId} />
               </td>
 
-
-
-              {/* Add search by name here */}
-
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div className="row">
-      <div className="col">
-        <table className="table search-table">
-          <thead>
-            <tr>
-              <th>Search by name</th>
-              <th />
-              <th></th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
               <td>
                 <input
                   id="customerId"
@@ -65,21 +44,17 @@ const Search = props => (
                 />
               </td>
               <td>
-                <Button label="by name" onClick={()=>{console.log("Hi id!")}}/>
+                <Button label="by name" handleClick={props.handleSearchName} />
               </td>
-
-
-
-              {/* Add search by name here */}
 
             </tr>
           </tbody>
         </table>
-
-
       </div>
-
     </div>
+
+
+
 
   </div>
 );
