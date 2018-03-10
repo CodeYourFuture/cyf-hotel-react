@@ -1,6 +1,6 @@
 import React from 'react';
-import Btn_id from "./Btn_id.js";
-import Btn_name from "./Btn_name.js";
+import Btn from "./Btn.js";
+
 const Search = props => (
   <div className="search">
     <div className="page-header">
@@ -28,18 +28,24 @@ const Search = props => (
                   name="customerId"
                 />
               </td>
-              <Btn_id />
+              <Btn 
+              toggle= {props.toggle} 
+              button = "Search IDs"
+              />
               {/* Add search by name here */}  
               <td>
                 <input
                   id="customerId"
                   type="text"
                   className="form-control"
-                  placeholder="Customer id"
-                  name="customerId"
+                  placeholder="Customer name"
+                  name="customerName"
                 />
               </td>
-              <Btn_name />
+              <Btn 
+              toggle= {props.toggle }
+              button = "Search Names" 
+              />
             </tr>
           </tbody>
         </table>
