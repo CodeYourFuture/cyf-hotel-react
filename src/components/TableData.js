@@ -5,6 +5,7 @@ class TableData extends React.Component {
 	render() {
 		const customersData = this.props.customers;
 
+		// console.log(customersData)
 
 		let row = customersData.map((item, index) => {
 			return <tr key={index}>
