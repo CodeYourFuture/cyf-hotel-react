@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchButton from './SearchButton.js';
-import TablTitle from './SearchHeading.js';
+import SearchHeading from './SearchHeading.js';
 import SearchInput from './SearchInput.js';
 
 const Search = props => (
@@ -13,8 +13,8 @@ const Search = props => (
       <table className="table search-table">
         <thead>
           <tr>
-            <TablTitle title='Customer id' /><th />
-            <TablTitle title='Customer Name' /><th />
+            <SearchHeading title='Customer id' /><th />
+            <SearchHeading title='Customer Name' /><th />
           </tr>
         </thead>
         <tbody>

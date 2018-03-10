@@ -1,9 +1,9 @@
 import React from 'react';
 
-const tablTitle = (props) => {
+const SearchHeading = (props) => {
     return (
         <th> {props.title} </th>
     )
 };
 
-export default tablTitle;
+export default SearchHeading;

@@ -4,9 +4,6 @@ body {
   font-family: sans-serif;
 }
 
-.hidden{
-  display: none;
-}
 
 .fn-submit-name{
   cursor: pointer;
