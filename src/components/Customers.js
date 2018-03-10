@@ -11,32 +11,24 @@ class Customers extends React.Component {
 			data: [],
 			isFetched: false
 		}
-
-		this.checkIfFetched = this.checkIfFetched.bind(this);
-		this.getData = this.getData.bind(this);
-
 	}
 
-	checkIfFetched(event) {
-		// console.log('checkIfFetched is here');
-		if (this.state.isFetched === false) {
-			this.getData();
-		}
-	}
-		
 
-	getData() {
+	getData = () => {
 		// console.log('this is', FakeBookings);
-		this.setState({
-			data: FakeBookings,
-			isFetched: true
-		})
+		if (this.state.isFetched === false) {
+			this.setState({
+				data: FakeBookings,
+				isFetched: true
+			})	
+		}
+
 	}
 	render() {
 		return (
 			<div>
 				<p>Find Customers: 
-					<button className='btn btn-primary' onClick={this.checkIfFetched}>Find</button>
+					<button className='btn btn-primary' onClick={this.getData}>Find</button>
 				</p>
 				<table className="table">
 					<TableHead />

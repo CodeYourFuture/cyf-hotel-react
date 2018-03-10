@@ -10,7 +10,7 @@ class TableData extends React.Component {
 			return <tr key={index}>
 				        <td>{item.title}</td>
 				        <td>{item.firstName}</td>
-				        <td>{item.Surname}</td>
+				        <td>{item.surname}</td>
 				        <td>{item.email}</td>
 				        <td>{item.roomId}</td>
 				        <td>{item.checkInDate}</td>
