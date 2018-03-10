@@ -18,7 +18,7 @@ const SearchResult = props => (
               <th>Room id</th>
               <th>Check in date</th>
               <th>Check out date</th>
-            
+              <th>Total Days</th>
             </tr>
           </thead>
           <tbody>
@@ -33,6 +33,7 @@ const SearchResult = props => (
                 <td>{row.roomId}</td>
                 <td>{row.checkInDate}</td>
                 <td>{row.checkOutDate}</td>
+                <td >{parseInt((new Date(row.checkOutDate) - new Date(row.checkInDate)) / (1000 * 60 * 60 * 24))} days</td>
               </tr>))
             }
           </tbody>
