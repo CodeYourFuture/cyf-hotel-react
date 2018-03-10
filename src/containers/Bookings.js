@@ -1,22 +1,51 @@
-import React, { Component } from "react";
-import Search from "../components/Search.js";
-import Results from "../components/Results.js";
-// import * as FakeBookings from "../data/fakeBookings.json";
+import React, { Component } from 'react';
+import Search from '../components/search/Search';
+import Results from '../components/results/Results';
+
+import * as FakeBookings from '../data/fakeBookings.json';
 
 export default class Bookings extends Component {
-  search = () => {
-    console.info("to do!");
+	constructor(props) {
+		super(props);
+		this.state = {
+      FakeBookings: [],
+      text : 'Show Results'
+		};
+	}
+	search = () => {
+		var btn = window.document.getElementById('search');
+		this.setState({
+			FakeBookings: FakeBookings,
+			text: 'Hide Results',
+		});
+		btn.innerHTML = this.state.text;
   };
   
-  render() {
-    return (
-      <div className="App-content">
-        <div className="container">
-          <Search search={this.search} />
-          {/* <Results results={this.state.results} /> */}
-          <Results />
-        </div>
-      </div>
-    );
+  hideSearch = () => {
+    var btn = window.document.getElementById('search');
+    btn.innerHTML = 'Show Results'
+    this.setState({
+      FakeBookings : [],
+      text : 'Show Results'
+    })
+    
+    
   }
+
+	render() {
+    var props = {
+      search : this.search,
+      hideSearch : this.hideSearch,
+      text : this.state.text
+    }
+		return (
+			<div className="App-content">
+				<div className="container">
+					<Search {...props} />
+
+					<Results FakeBookings={this.state.FakeBookings}  />
+				</div>
+			</div>
+		);
+	}
 }
