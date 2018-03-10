@@ -49,7 +49,7 @@ class Results extends React.Component {
 		      		<div className="col">
 			        	<table className="table customers-table">
 			        		<TableHead />
-			        		<TableBody fetched={this.state.data}/>
+			        		<TableBody items={this.state.data}/>
 				         </table>
 
 			         </div>
