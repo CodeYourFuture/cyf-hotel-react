@@ -12,6 +12,7 @@ class TableHead extends React.Component {
 					<th>Room id</th>
 					<th>Check in date</th>
 					<th>Check out date</th>
+					<th>Full days</th>
 				</tr>
 			</thead>
 		)

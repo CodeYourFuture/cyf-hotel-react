@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 class TableBody extends React.Component {
 	constructor(props){
@@ -18,6 +19,7 @@ class TableBody extends React.Component {
 						<td> {item.roomId} </td>
 						<td> {item.checkInDate} </td>
 						<td> {item.checkOutDate} </td>
+						<td> {moment(item.checkOutDate).diff(item.checkInDate, 'days')}</td>
 					</tr>
 					)
 		})

@@ -13,12 +13,9 @@ class Results extends React.Component {
 			isFetched: false
 		}
 
-		this.checkIfFetched = this.checkIfFetched.bind(this);
-		this.getData = this.getData.bind(this);
-
 		}
 
-		checkIfFetched(event) {
+		checkIfFetched = (event) => {
 			console.log('checkIfFetched is here');
 			if (this.state.isFetched === false) {
 				this.getData();
@@ -26,7 +23,7 @@ class Results extends React.Component {
 		}
 		
 
-		getData() {
+		getData = () => {
 			console.log('this is', FakeBookings);
 			this.setState({
 				data: FakeBookings,
