@@ -28,16 +28,16 @@ export default class Bookings extends Component {
     this.setState({
       result: FakeBookings.sort((a, b) => (
         this.state.direction[key] === 'asc'
-          ? (a[key] < b[key])
-          : (b[key] < a[key])
+          ? (a[key].toLowerCase() < b[key].toLowerCase())
+          : (a[key].toLowerCase() > b[key].toLowerCase())
       )),
       direction: {
         [key]: this.state.direction[key] === 'asc'
           ? 'desc'
           : 'asc'
-      }
+      },
+         text: this.state.text   
     })
-    this.searchHandler(this.state.text)
   }
 
   render() {
