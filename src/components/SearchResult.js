@@ -10,10 +10,10 @@ const SearchResult = props => (
         <table className="table search-table">
           <thead>
             <tr>
-              <th>Title</th>
-              <th>First name</th>
-              <th>Surname</th>
-              <th>Email</th>
+              <th onClick={() => props.sortBy('title')}>Title</th>
+              <th onClick={() => props.sortBy('firstName')}>First name</th>
+              <th onClick={() => props.sortBy('surname')}>Surname</th>
+              <th onClick={() => props.sortBy('email')}>Email</th>
               <th />
               <th>Room id</th>
               <th>Check in date</th>

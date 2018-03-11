@@ -10,15 +10,36 @@ export default class Bookings extends Component {
     super(props)
     this.state = {
       data : [],
-      show : false
+      show : false,
+      direction: {
+        surname: 'asc',
+        email: 'asc'
+      }
     }
+
+  }
+  
+
+  sortBy = (key) => {
+    console.log(key)
+    this.setState({
+      
+      data: FakeBookings.sort( (a, b) => (
+        this.state.direction[key] === 'asc'
+          ? (a[key]) < (b[key])
+          : (b[key]) < (a[key]) 
+      )),
+      direction: {
+        [key]: this.state.direction[key] === 'asc'
+          ? 'desc'
+          : 'asc'
+      }
+    })
   }
 
-  search = () => {
-    console.info("to do!");
-  };
-  
-  togglePersonsHandler = () => {
+
+
+  toggleHandler = () => {
     console.log(FakeBookings);
 
     let doesShow = this.state.show;
@@ -31,13 +52,16 @@ export default class Bookings extends Component {
   let result = null;
   
     if(this.state.show){
-      result = ( <SearchResult data = {this.state.data}/>);
+      result = ( <SearchResult 
+        data = {this.state.data}
+        sortBy={this.sortBy}
+        />);
     }
 
     return (
       <div className="App-content">
         <div className="container">
-          <Search toggle={this.togglePersonsHandler} />
+          <Search toggle={this.toggleHandler} />
 
          {result}
         
