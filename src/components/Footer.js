@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => (
   <footer className="footer">
-      &copy; CYF Hotel 2017
+    &copy; CYF Hotel 2017
   </footer>
 );
 
