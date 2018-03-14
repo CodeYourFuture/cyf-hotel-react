@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const ResultBody = ({ filteredResult }) => {
@@ -5,14 +6,15 @@ const ResultBody = ({ filteredResult }) => {
         <tbody>
             {filteredResult.map((data, i) =>
                 <tr key={i}>
+                    <td>{data.id}</td>
                     <td>{data.title}</td>
-                    <td>{data.firstName}</td>
+                    <td>{data.firstname}</td>
                     <td>{data.surname}</td>
                     <td>{data.email}</td>
-                    <td>{data.roomId}</td>
-                    <td>{data.checkInDate}</td>
-                    <td>{data.checkOutDate}</td>
-                    <td>{parseInt((new Date(data.checkOutDate) - new Date(data.checkInDate)) / (86400000), 10)} days</td>
+                    <td>{data.room_id}</td>
+                    <td>{data.check_in_date}</td>
+                    <td>{data.check_out_date}</td>
+                    <td>{parseInt((new Date(data.check_out_date) - new Date(data.check_in_date)) / (86400000), 10)}</td>
                 </tr>
             )}
         </tbody>
