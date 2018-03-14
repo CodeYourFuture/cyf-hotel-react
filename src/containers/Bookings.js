@@ -16,7 +16,7 @@ export default class Bookings extends Component {
         sortin: 'asc',
         error: null,
       },
-      text: null
+      text: null,
     }
     this.searchHandler = this.searchHandler.bind(this)
     this.sortBy = this.sortBy.bind(this)
@@ -34,7 +34,7 @@ export default class Bookings extends Component {
         })
       })
   }
-  
+
   searchHandler(inputType) {
     this.setState({ term: inputType, result: inputType.length ? true : false, text: inputType })
   }
@@ -43,8 +43,8 @@ export default class Bookings extends Component {
     this.setState({
       result: this.state.FakeBookings.sort((a, b) => (
         this.state.direction[key] === 'asc'
-        ?(a[key].toLowerCase()) < (b[key].toLowerCase())
-        :(a[key].toLowerCase()) > (b[key].toLowerCase())
+          ? (a[key].toLowerCase()) < (b[key].toLowerCase())
+          : (a[key].toLowerCase()) > (b[key].toLowerCase())
       )),
       direction: {
         [key]: this.state.direction[key] === 'asc'
@@ -55,7 +55,6 @@ export default class Bookings extends Component {
     })
   }
 
-  
   sortByNumber(key) {
     this.setState({
       result: this.state.FakeBookings.sort((a, b) => (
@@ -73,15 +72,15 @@ export default class Bookings extends Component {
   }
 
   render() {
+    // const filteredResult = this.state.FakeBookings.filter(searchingFor(this.state.term))
     return (
       <div>
-        {console.log([this.state.FakeBookings])}
         <Search searchHandler={this.searchHandler} />
         {this.state.result
           ? <Results
             sortByNumber={this.sortByNumber}
             sortBy={this.sortBy}
-            filteredResult={this.state.FakeBookings.filter(searchingFor(this.state.term))} err={this.state.error} />
+            filteredResult={this.state.FakeBookings.filter(searchingFor(this.state.term))} err={this.state.error} textInput={this.state.textInput} />
           : <h1>Please enter your search</h1>
         }
       </div>
