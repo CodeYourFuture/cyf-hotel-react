@@ -4,14 +4,13 @@ import ResultsBody from './resultsComponents/ResultsBody';
 
 class Results extends Component {
 	render() {
-		var bookedItems = this.props.FakeBookings;
-
+		
 		return (
 			<div>
 				<div> Search Reasults </div>
 				<table className="table">
-					<ResultsHeader bookings={bookedItems} />
-					<ResultsBody bookings={bookedItems} />
+					<ResultsHeader {...this.props} />
+					<ResultsBody {...this.props}/>
 				</table>
 			</div>
 		);

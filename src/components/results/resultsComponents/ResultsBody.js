@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 export default class ResultsBody extends Component {
+
 	render() {
+		console.log(this.props.FakeBookings)
 		return (
 			<div>
 				<tbody>
-					{this.props.bookings.map((booking, i) => {
+					{this.props.FakeBookings.map((booking, i) => {
 						return (
 							<tr key={i}>
 								<td>{booking.title}</td>

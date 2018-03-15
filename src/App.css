@@ -42,7 +42,9 @@
 tr {
   color: #5b5757;
 }
-
+th {
+  cursor: pointer;
+}
 .results {
   padding-top: 15px;
 }
