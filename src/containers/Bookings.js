@@ -11,10 +11,26 @@ export default class Bookings extends Component {
 			FakeBookings: [],
 			text: 'Show Results',
 			resultsHeading : [],
-			sortDirection : 'ASC'
+			sortDirection : 'ASC',
+			selectedItems: []
 
-    };
-    
+	};
+	
+	}
+
+	selectItem = (key) => {
+		//console.log(key)
+		//const selectedItems = this.state.selectedItems
+		const { selectedItems } =  this.state
+		const index = selectedItems.indexOf(key)
+		if(index > -1) {
+			selectedItems.splice(index, 1)
+		}else {
+			selectedItems.push(key)
+		}
+		this.setState({
+			selectedItems
+		})
 	}
 	search = () => {
 		var btn = window.document.getElementById('search');
@@ -58,6 +74,7 @@ export default class Bookings extends Component {
 		})
 	}
 
+	
 
 	render() {
 		var props = {
@@ -66,14 +83,19 @@ export default class Bookings extends Component {
 			text: this.state.text,
 			sortSearch: this.sortSearch,
 			FakeBookings: this.state.FakeBookings,
-			resultsHeading : this.state.resultsHeading
-		};
+			resultsHeading : this.state.resultsHeading,
+			selectedItems : this.state.selectedItems,
+			selectItem : this.selectItem
 
+		};
+		console.log(this.state)
 		return (
 			<div className="App-content">
 				<div className="container">
 					<Search {...props} />
 					<Results {...props} />
+					
+					<p> No of rows selected {this.state.selectedItems.length} </p>
 				</div>
 			</div>
 		);
