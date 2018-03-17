@@ -7,6 +7,7 @@
     "roomId": 2,
     "checkInDate": "2017-11-21",
     "checkOutDate": "2017-11-23"
+    
   },
   {
     "title": "Doctor",
@@ -39,6 +40,24 @@
     "title": "Madam",
     "firstName": "Anuradha",
     "surname": "Selvam",
+    "email": "anu@selvam.net",
+    "roomId": 3,
+    "checkInDate": "2017-08-30",
+    "checkOutDate": "2017-10-02"
+  },
+  {
+    "title": "Maaaadam",
+    "firstName": "Anuradha",
+    "surname": "Selvam",
+    "email": "anu@selvam.net",
+    "roomId": 3,
+    "checkInDate": "2017-08-30",
+    "checkOutDate": "2017-10-02"
+  },
+  {
+    "title": "mis",
+    "firstName": "Mona",
+    "surname": "Azami",
     "email": "anu@selvam.net",
     "roomId": 3,
     "checkInDate": "2017-08-30",

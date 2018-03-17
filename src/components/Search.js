@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from './Button';
+import Results from './Results';
 
 const Search = props => (
   <div className="search">
@@ -12,7 +14,7 @@ const Search = props => (
             <tr>
               <th>Customer id</th>
               <th />
-              <th></th>
+              <th>Search by name</th>
               <th />
             </tr>
           </thead>
@@ -27,15 +29,34 @@ const Search = props => (
                   name="customerId"
                 />
               </td>
+
               <td>
-                <button className="btn btn-primary fn-submit-name">Search IDs</button>
+                <Button label="Ids" handleClick={props.handleSearchId} />
               </td>
-              {/* Add search by name here */}
+
+              <td>
+                <input
+                  id="customerId"
+                  type="text"
+                  className="form-control"
+                  placeholder="search by name"
+                  name="customerId"
+                />
+              </td>
+              <td>
+                <Button label="by name" handleClick={props.handleSearchName} />
+              </td>
+
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+
+
+
+
   </div>
 );
+
 export default Search;
