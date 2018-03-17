@@ -7,7 +7,9 @@ class Results extends Component {
 		
 		return (
 			<div>
-				<div> Search Reasults </div>
+				<div> {
+					this.props.resultStatus !== null ? `Results (${this.props.FakeBookings.length} found) | No of rows selected : ${this.props.selectedItems.length}` : null
+				} </div>
 				<table className="table">
 					<ResultsHeader {...this.props} />
 					<ResultsBody {...this.props}/>

@@ -7,7 +7,6 @@ const Search = (props)=> {
 	return (
 		<div className="search">
 			<div className="page-header">
-				<h4 className="text-left">Search Bookings</h4>
 			</div>
 			<table>
 				<tr>

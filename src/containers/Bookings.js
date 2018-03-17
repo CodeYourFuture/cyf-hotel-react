@@ -12,7 +12,8 @@ export default class Bookings extends Component {
 			text: 'Show Results',
 			resultsHeading : [],
 			sortDirection : 'ASC',
-			selectedItems: []
+			selectedItems: [],
+			resultStatus: null
 
 	};
 	
@@ -37,8 +38,10 @@ export default class Bookings extends Component {
 		this.setState({
 			FakeBookings: FakeBookings,
 			text: 'Hide Results',
-			resultsHeading : ['Title', 'First Name', 'Surname', 'Email', 'Room ID', 'Check-In-Date', 'Check-Out-Date', 'Total Days Of Stay']
+			resultsHeading : ['Title', 'First Name', 'Surname', 'Email', 'Room ID', 'Check-In-Date', 'Check-Out-Date', 'Total Days Of Stay'],
 			//resultsHeading: FakeBookings[1]
+			resultStatus: !this.state.resultStatus
+
 		});
 		btn.innerHTML = this.state.text
 		
@@ -50,7 +53,8 @@ export default class Bookings extends Component {
 		this.setState({
 			FakeBookings: [],
 			text: 'Show Results',
-			resultsHeading : []
+			resultsHeading : [],
+			resultStatus : null
 		});
 	};
 
@@ -85,7 +89,8 @@ export default class Bookings extends Component {
 			FakeBookings: this.state.FakeBookings,
 			resultsHeading : this.state.resultsHeading,
 			selectedItems : this.state.selectedItems,
-			selectItem : this.selectItem
+			selectItem : this.selectItem,
+			resultStatus : this.state.resultStatus
 
 		};
 		console.log(this.state)
@@ -94,8 +99,6 @@ export default class Bookings extends Component {
 				<div className="container">
 					<Search {...props} />
 					<Results {...props} />
-					
-					<p> No of rows selected {this.state.selectedItems.length} </p>
 				</div>
 			</div>
 		);

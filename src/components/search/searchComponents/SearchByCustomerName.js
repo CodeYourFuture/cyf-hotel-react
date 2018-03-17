@@ -8,10 +8,7 @@ class SearchByCustomerName extends Component {
 				<table className="table search-table">
 					<thead>
 						<tr>
-							<th>Customer Name</th>
-							<th />
-							<th />
-							<th />
+							
 						</tr>
 					</thead>
 					<tbody>
