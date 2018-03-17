@@ -7,6 +7,12 @@
   height: 80px;
 }
 
+.Highlite {
+  background-color: transparent;
+}
+.blue {
+  background-color: blue;
+}
 .App-header {
   background-color: #222;
   height: 50px;

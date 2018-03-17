@@ -23,7 +23,11 @@ const SearchResult = props => (
           </thead>
           <tbody>
             {props.data.map((row, index) => (
-              <tr key={index}>
+              <tr
+                onClick={props.colourToggleHandler}
+                className="Highlite"
+                key={index}
+              >
                 <td>{row.title}</td>
                 <td>{row.firstname}</td>
                 <td>{row.surname}</td>
