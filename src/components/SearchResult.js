@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const SearchResult = props => (
   <div className="search">
@@ -10,10 +10,10 @@ const SearchResult = props => (
         <table className="table search-table">
           <thead>
             <tr>
-              <th onClick={() => props.sortBy('title')}>Title</th>
-              <th onClick={() => props.sortBy('firstName')}>First name</th>
-              <th onClick={() => props.sortBy('surname')}>Surname</th>
-              <th onClick={() => props.sortBy('email')}>Email</th>
+              <th onClick={() => props.sortBy("title")}>Title</th>
+              <th onClick={() => props.sortBy("firstname")}>Firstname</th>
+              <th onClick={() => props.sortBy("surname")}>Surname</th>
+              <th onClick={() => props.sortBy("email")}>Email</th>
               <th />
               <th>Room id</th>
               <th>Check in date</th>
@@ -22,20 +22,26 @@ const SearchResult = props => (
             </tr>
           </thead>
           <tbody>
-            {
-              props.data.map((row,index)=> (
-              <tr key = {index}>
+            {props.data.map((row, index) => (
+              <tr key={index}>
                 <td>{row.title}</td>
-                <td>{row.firstName}</td>
+                <td>{row.firstname}</td>
                 <td>{row.surname}</td>
                 <td>{row.email}</td>
                 <td />
                 <td>{row.roomId}</td>
                 <td>{row.checkInDate}</td>
                 <td>{row.checkOutDate}</td>
-                <td >{parseInt((new Date(row.checkOutDate) - new Date(row.checkInDate)) / (1000 * 60 * 60 * 24))} days</td>
-              </tr>))
-            }
+                <td>
+                  {parseInt(
+                    (new Date(row.checkOutDate) - new Date(row.checkInDate)) /
+                      (1000 * 60 * 60 * 24),
+                    10
+                  )}{" "}
+                  days
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
