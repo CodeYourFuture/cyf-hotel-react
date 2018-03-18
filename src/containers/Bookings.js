@@ -1,61 +1,75 @@
 import React, { Component } from "react";
 import Search from "../components/Search.js";
 import Results from "../components/Results.js";
-// import SearchButton from '../components/SearchButton'
 
-import FakeBookings from "../data/fakeBookings.json";
+import SortableHeaders from "../components/SortableHeaders.js";
 
 export default class Bookings extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // data: this.data,
-      show: [{
-        title: "",
-        firstName:"",
-        surname: "" ,
-        email: "" ,
-        roomId: "" ,
-        checkInDate:"" ,
-        checkOutDate: "" 
-      }]
+      data: [],
+      isLoading: true,
+      err: false
     };
+
     this.toggleContent = this.toggleContent.bind(this);
-    // this.sortBy = this.sortBy.bind(this);
+    this.sortBy = this.sortBy.bind(this);
   }
   toggleContent = () => {
-    // console.log("hello");
-    //  const {show} = this.state;
-    // this.state.show ? FakeBookings : Null
-    this.setState({ show: FakeBookings });
+    this.setState({ data: this.props.data });
   };
-  // sortBy = (key)=>{
-  //   this.setState({})
-  //   data: data.sort((a,b)=> a > b)
+  componentDidMount() {
+    fetch("http://localhost:3030/api/customers-and-reservations")
+      .then(res => {
+        if (res.status >= 200 && res.status < 300) {
+          return res;
+        } else {
+          throw new Error("HTTP error");
+        }
+      })
+      .then(res => res.json())
+      .then(apiData => {
+        this.setState({
+          isLoading: false,
+          data: apiData.invoices
+        });
+      })
+      .catch(err => {
+        this.setState({
+          isLoading: false,
+          err: err
+        });
+      });
+  }
 
-  // }
-  // state = {
-  //   // searchname: "",
-  //   // searchId: "",
-  //   // results: [],
-  //   data: [],
-  //   show: []
-  // };
-  // setSearchName = event =>{
-  //   console.info("searchName",event.target.id);
-  // }
-  // setSearchId = event =>{
-  //   console.info("searchId",event.target.id);
-  // }
-  // searchAction = event =>{
-  //   console.info(event.target.id);
-  // }
-
+  sortBy = (key, direction) => {
+    console.log(direction);
+    console.log(key);
+    this.setState({
+      data: this.state.data.sort((a, b) => {
+        if (a[key] > b[key]) {
+          return direction === "asc" ? 1 : -1;
+        } else if (a[key] < b[key]) {
+          return direction === "asc" ? -1 : 1;
+        } else {
+          return 0;
+        }
+      })
+    });
+  };
   search = () => {
     console.info("to do!");
   };
 
   render() {
+    if (this.state.isLoading) {
+      return <div>Loading.... ... 🤔</div>;
+    }
+    if (this.state.err) {
+      return <div>Something went wrong 😭</div>;
+    }
+
     return (
       <div className="App-content">
         <div className="container">
@@ -65,12 +79,12 @@ export default class Bookings extends Component {
             setSearchId={this.setSearchId}
             toggleContent={this.toggleContent}
           />
-          {/* * <SearchByIdResult SearchByIdResult= {this.search}/> */}
-          <Results 
-          FakeBookings={this.state.show} 
-          // sortAble={this.state.sortAble}
+
+          <Results
+            data={this.state.data}
+            sortBy={this.sortBy}
+            data={this.state.data}
           />
-          {/* <searchButton  /> */}
         </div>
       </div>
     );

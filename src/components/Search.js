@@ -1,8 +1,7 @@
 import React from "react";
 import SearchButton from "./SearchButton";
 import SearchFiled from "./SearchFiled";
-// // import sortAble from "./sortAble"
-import sortAble from "../containers/sortAble";
+
 const Search = props => (
   <div className="search">
     <div className="page-header">
@@ -29,7 +28,7 @@ const Search = props => (
                 <SearchButton
                   search={Search}
                   toggleContent={props.toggleContent}
-                  value = "Search Id"
+                  value="Search Id"
                 />
               </td>
               <td>
@@ -40,11 +39,9 @@ const Search = props => (
                   search={Search}
                   name="name"
                   toggleContent={props.toggleContent}
-                  value = "Search Name"
+                  value="Search Name"
                 />
-                {/* <sortAble/> */}
               </td>
-              {/* Add search by name here */}
             </tr>
           </tbody>
         </table>
