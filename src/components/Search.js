@@ -1,4 +1,8 @@
-import React from 'react';
+import React, {Component } from 'react';
+import SearchInput from "./SearchInput.js";
+import Results from "./Results.js";
+import SearchButton from "./SearchButton.js";
+import SearchInputHeader from "./SearchInputHeader";
 
 const Search = props => (
   <div className="search">
@@ -10,27 +14,22 @@ const Search = props => (
         <table className="table search-table">
           <thead>
             <tr>
-              <th>Customer id</th>
+              <SearchInputHeader header="Customer ID" />
               <th />
-              <th></th>
+              <SearchInputHeader header="Customer name"/>
               <th />
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>
-                <input
-                  id="customerId"
-                  type="text"
-                  className="form-control"
-                  placeholder="Customer id"
-                  name="customerId"
-                />
-              </td>
-              <td>
-                <button className="btn btn-primary fn-submit-name">Search IDs</button>
-              </td>
-              {/* Add search by name here */}
+             <SearchInput name="seachById" placeholder="Seach by id"/>
+             <td>
+              <SearchButton />
+             </td>
+             <SearchInput name="seachByName" placeholder="Search by name"/>
+             <td>
+              <SearchButton />
+            </td>
             </tr>
           </tbody>
         </table>

@@ -51,3 +51,11 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
+
+.selected {
+  color: green;
+}
+
+.basic {
+  color: #000000;
+}
