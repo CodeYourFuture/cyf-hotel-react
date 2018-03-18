@@ -35,12 +35,22 @@
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
 
 tr {
   color: #5b5757;
+}
+
+.row-hover{
+  background-color:#26651e;
+  color: #e2dfdf;
+}
+
+.row-hover:hover{
+  color: #fff;
 }
 
 .results {
