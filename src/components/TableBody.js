@@ -2,24 +2,22 @@ import React from 'react';
 import moment from 'moment';
 
 class TableBody extends React.Component {
-	constructor(props){
-		super(props);
-
-	}
 	render() {
 		const data = this.props.items;
 
-		let rowWithData = data.map(function(item) {
+
+		let rowWithData = data.map(function(item,i) {
+
 			return (
-					<tr>
+					<tr key={i}>
 						<td> {item.title} </td>
-						<td> {item.firstName} </td>
+						<td> {item.firstname} </td>
 						<td> {item.surname} </td>
 						<td> {item.email}</td>
-						<td> {item.roomId} </td>
-						<td> {item.checkInDate} </td>
-						<td> {item.checkOutDate} </td>
-						<td> {moment(item.checkOutDate).diff(item.checkInDate, 'days')}</td>
+						<td> {item.room_id} </td>
+						<td> {item.check_in_date} </td>
+						<td> {item.check_out_date} </td>
+						<td> {moment(item.check_out_date).diff(item.check_in_date, 'days')}</td>
 					</tr>
 					)
 		})
