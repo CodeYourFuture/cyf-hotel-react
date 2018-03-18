@@ -52,8 +52,8 @@ class Customers extends React.Component {
 	      })
 	      .catch(err => {
 	        this.setState({
-	          // isLoading: false,
-	          error: err
+	          isLoading: false,
+	          error: err.toString()
 	        });
 	      });
 		}
@@ -109,47 +109,53 @@ class Customers extends React.Component {
 	}
 
 	render() {
-		console.log('error message here', this.state.error)
-		return (
-			<div>
-				<section className="get-results">
+		// console.log('error message here', this.state.error)
+		if(this.state.error) {
+			return (
+				<p>There is an error: <span>{this.state.error}</span></p>
+			);
+		} else {
+			return (
+				<div>
+					<section className="get-results">
 
-					{/*SPINNER SECTION*/}
-          <section className={this.state.isLoading ? 'spinner' : 'hidden'}>
-            <div className="lds-css ng-scope">
-              <div className="lds-spinner">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-          </section>
-          {/*SPINNER SECTION END*/}
+						{/*SPINNER SECTION*/}
+	          <section className={this.state.isLoading ? 'spinner' : 'hidden'}>
+	            <div className="lds-css ng-scope">
+	              <div className="lds-spinner">
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	                <div></div>
+	              </div>
+	            </div>
+	          </section>
+	          {/*SPINNER SECTION END*/}
 
-					<p>Results (<span>{this.state.data.length}</span> found)</p>
-					<p>Rows selected: <span>{this.state.counter}</span></p>
-					<p className={this.state.error ? 'error-message' : 'hidden'}>There is an error: <span>{this.state.error}</span></p>
-				</section>
-				
-				<table className="table">
-					<TableHead sort={this.handleSort} />
-					<TableData 
-						classCss={this.state.isRowClicked ? 'selected' : 'default'}
-						customers={this.state.data} 
-						myClick={this.handleClick}
-					/>
-				</table>
-			</div>
-		);
+						<p>Results (<span>{this.state.data.length}</span> found)</p>
+						<p>Rows selected: <span>{this.state.counter}</span></p>
+					</section>
+					
+					<table className="table">
+						<TableHead sort={this.handleSort} />
+						<TableData 
+							classCss={this.state.isRowClicked ? 'selected' : 'default'}
+							customers={this.state.data} 
+							myClick={this.handleClick}
+						/>
+					</table>
+				</div>
+			);
+		}
+		
 	}
 }
 
