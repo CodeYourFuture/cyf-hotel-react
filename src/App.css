@@ -7,11 +7,11 @@
   height: 80px;
 }
 
-.Highlite {
+.Default-Bg-Colour {
   background-color: transparent;
 }
-.blue {
-  background-color: blue;
+.Bg-Colour {
+  background-color: grey;
 }
 .App-header {
   background-color: #222;

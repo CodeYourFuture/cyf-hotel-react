@@ -12,7 +12,7 @@ export default class Bookings extends Component {
       show: false,
       isLoading: true,
       err: null,
-      bd: "blue",
+      colour: "Bg-Colour",
       direction: {
         surname: "asc",
         email: "asc",
@@ -31,10 +31,10 @@ export default class Bookings extends Component {
   };
 
   colourToggleHandler = e => {
-    if (e.currentTarget.className === "Highlite") {
-      e.currentTarget.className = this.state.bd;
-    } else if (e.currentTarget.className === this.state.bd) {
-      e.currentTarget.className = "Highlite";
+    if (e.currentTarget.className === "Default-Bg-Colour") {
+      e.currentTarget.className = this.state.colour;
+    } else if (e.currentTarget.className === this.state.colour) {
+      e.currentTarget.className = "Default-Bg-Colour";
     }
   };
   sortBy = key => {

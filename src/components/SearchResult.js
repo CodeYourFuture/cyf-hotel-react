@@ -25,7 +25,7 @@ const SearchResult = props => (
             {props.data.map((row, index) => (
               <tr
                 onClick={props.colourToggleHandler}
-                className="Highlite"
+                className="Default-Bg-Colour"
                 key={index}
               >
                 <td>{row.title}</td>
