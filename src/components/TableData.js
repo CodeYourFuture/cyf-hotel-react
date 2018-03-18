@@ -5,18 +5,16 @@ class TableData extends React.Component {
 	render() {
 		const customersData = this.props.customers;
 
-		// console.log(customersData)
-
 		let row = customersData.map((item, index) => {
-			return <tr key={index}>
+			return <tr className={this.props.classCss} key={index} onClick={this.props.myClick}>
 				        <td>{item.title}</td>
-				        <td>{item.firstName}</td>
+				        <td>{item.firstname}</td>
 				        <td>{item.surname}</td>
 				        <td>{item.email}</td>
-				        <td>{item.roomId}</td>
-				        <td>{item.checkInDate}</td>
-				        <td>{item.checkOutDate}</td>
-				        <td>{moment(item.checkOutDate).diff(item.checkInDate, 'days')}</td>
+				        <td>{item.room_id}</td>
+				        <td>{item.check_in_date}</td>
+				        <td>{item.check_out_date}</td>
+				        <td>{moment(item.check_out_date).diff(item.check_in_date, 'days')}</td>
       				</tr>
 		});
 		return (

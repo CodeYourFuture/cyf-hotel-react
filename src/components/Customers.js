@@ -1,13 +1,8 @@
 import React from 'react';
 import TableHead from './TableHead';
 import TableData from './TableData';
-import * as FakeBookings from "../data/fakeBookings.json";
-// import orderBy from 'lodash/orderBy';
+// import * as FakeBookings from "../data/fakeBookings.json";
 
-const invertDirection = {
-	'asc': 'desc',
-	'desc': 'asc'
-}
 
 class Customers extends React.Component {
 	constructor(props) {
@@ -16,27 +11,57 @@ class Customers extends React.Component {
 		this.state = {
 			data: [],
 			isFetched: false,
-			columnToSort: '',
-			sortDirection: 'asc'
+			// columnToSort: '',
+			sortDirection: 'asc',
+			isRowClicked: false,
+			counter: 0,
+			error: null,
+			isLoading: false
 		}
 	}
 
 
-	getData = () => {
-		// const testSort = this.sort(FakeBookings, 'firstName');
-		// console.log(testSort);
+	// getData = () => {
+	// 	if (this.state.isFetched === false) {
+	// 		this.setState({
+	// 			data: this.sort(FakeBookings, 'firstName'),
+	// 			isFetched: true
+	// 		})	
+	// 	}
+	// }
+
+	componentDidMount() {
 		if (this.state.isFetched === false) {
-			this.setState({
-				data: this.sort(FakeBookings, 'firstName'),
-				isFetched: true
-			})	
+			this.setState({isLoading: true});
+			fetch(`http://localhost:7000/api/customers-data`)
+	      .then(res => {
+	        if (res.status >= 200 && res.status < 300) {
+	          return res;
+	        } else {
+	          throw new Error("HTTP error");
+	        }
+	      })
+	      .then(res => res.json())
+	      .then(data => {
+	        this.setState({
+	          // isLoading: false,
+	         data: data.rows,
+	         isFetched: true,
+	         isLoading:  false
+	        });
+	      })
+	      .catch(err => {
+	        this.setState({
+	          // isLoading: false,
+	          error: err
+	        });
+	      });
 		}
-	}
+    
+  }
 
 	sort = (data, columnName) => {
 		return data.sort((a, b) => {
-			// console.log(a[columnName]);
-			// console.log(b[columnName]);
 			if (this.state.sortDirection === 'asc') {
 				if (a[columnName] > b[columnName]) {
 					return 1
@@ -55,29 +80,6 @@ class Customers extends React.Component {
 	} 
 
 	handleSort = (columnName) => {
-		// this.setState(state => ({
-		// 	columnToSort: columnName,
-		// 	sortDirection: state.columnToSort === columnName ? invertDirection[state.sortDirection] : 'asc'
-		// }));
-		// console.log('before', this.state.data)
-		// this.state.data.sort((a, b) => {
-		// 	// console.log(a[columnName]);
-		// 	// console.log(b[columnName]);
-		// 	if (this.state.sortDirection === 'asc') {
-		// 		if (a[columnName] > b[columnName]) {
-		// 			return 1
-		// 		} else {	
-		// 			return -1
-		// 		}
-		// 	} else {
-		// 		if (a[columnName] < b[columnName]) {
-		// 			return 1
-		// 		} else {	
-		// 			return -1
-		// 		}
-		// 	}
-			
-		// });
 		let foo;
 		if(this.state.sortDirection === 'asc') {
 			foo = 'desc';
@@ -88,20 +90,62 @@ class Customers extends React.Component {
 			data: this.sort(this.state.data, columnName),
 			sortDirection: foo
 		});
+	}
 
-		// console.log('after', this.state.data)
+	handleClick = (event) => {
+		console.log(event.currentTarget)
+		// console.log(event)
+		if(this.state.isRowClicked === false) {
+			this.setState({
+				isRowClicked: true,
+				counter: ++this.state.counter
+			});
+		} else {
+			this.setState({
+				isRowClicked: false,
+				counter: --this.state.counter
+			});
+		}
 	}
 
 	render() {
-		// console.log(this.state.columnToSort, this.state.sortDirection);
+		console.log('error message here', this.state.error)
 		return (
 			<div>
-				<p>Find Customers: 
-					<button className='btn btn-primary' onClick={this.getData}>Find</button>
-				</p>
+				<section className="get-results">
+
+					{/*SPINNER SECTION*/}
+          <section className={this.state.isLoading ? 'spinner' : 'hidden'}>
+            <div className="lds-css ng-scope">
+              <div className="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          </section>
+          {/*SPINNER SECTION END*/}
+
+					<p>Results (<span>{this.state.data.length}</span> found)</p>
+					<p>Rows selected: <span>{this.state.counter}</span></p>
+					<p className={this.state.error ? 'error-message' : 'hidden'}>There is an error: <span>{this.state.error}</span></p>
+				</section>
+				
 				<table className="table">
 					<TableHead sort={this.handleSort} />
-					<TableData customers={this.state.data} 
+					<TableData 
+						classCss={this.state.isRowClicked ? 'selected' : 'default'}
+						customers={this.state.data} 
+						myClick={this.handleClick}
 					/>
 				</table>
 			</div>
