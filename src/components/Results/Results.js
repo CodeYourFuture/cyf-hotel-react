@@ -7,10 +7,12 @@ class Results extends Component {
         return (
             <div className='row'>
                 <div className="col">
-                    <p>Results</p>
+                    <p>Result found:  {this.props.count}</p>
                     <table className="table search-table">
                         <ResultHeading result={this.props.resultHeading} sortColumn={this.props.sortColumn} />
-                        <ResultBody bookingsItems={this.props.bookingsItems} />
+                        <ResultBody bookingsItems={this.props.bookingsItems} 
+                        selectedRow = {this.props.selectedRow}
+                        />
                     </table>
                 </div>
             </div>

@@ -4,7 +4,9 @@ const resultBody = (props) => {
     return (
         <tbody>
             {props.bookingsItems.map((item, index) => (
-                <tr key={index}>
+                <tr key={index}
+                    onClick={props.selectedRow}
+                >
                     <td >{item.title}</td>
                     <td >{item.firstName}</td>
                     <td >{item.surname}</td>

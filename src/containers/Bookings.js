@@ -3,13 +3,16 @@ import Search from "../components/Search/Search.js";
 import Results from "../components/Results/Results.js";
 import FakeBookings from '../data/fakeBookings.json'
 
-
 export default class Bookings extends Component {
   state = {
     fake: [],
     heading: [],
     showResult: false,
-    sort: false
+    sort: false,
+    isRowSelect:true,
+    highly: true,
+    background:'row-hover',
+    count:0
   }
 
   search = () => {
@@ -27,15 +30,25 @@ export default class Bookings extends Component {
   }
 
   toggleColumn = (e) => {
-    console.log(e.currentTarget.innerHTML);
-    let val = e.currentTarget.innerHTML;
     let isSorted = this.state.sort;
-    console.log(isSorted)
     this.setState({
       sort: !isSorted
     });
-    this.sortColumn(val);
+    this.sortColumn();
   }
+  
+  selectRowHandler = (e) => {
+    {e.currentTarget.className !== 'row-hover'? 
+      ( e.currentTarget.className = this.state.background,
+        this.setState({
+            count:++this.state.count
+          }))
+
+    :  (e.currentTarget.className = null, this.setState({
+          count: --this.state.count
+        }))
+  }
+}
 
   sortColumn = () => {
     if (this.state.sort) {
@@ -69,7 +82,9 @@ export default class Bookings extends Component {
           results = (<Results 
           bookingsItems={this.state.fake}
           resultHeading={this.state.heading}
-          sortColumn={this.toggleColumn} 
+          sortColumn={this.toggleColumn}
+          selectedRow ={ this.selectRowHandler} 
+          count={this.state.count}
           />);
     }
 

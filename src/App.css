@@ -44,6 +44,15 @@ tr {
   color: #5b5757;
 }
 
+.row-hover{
+  background-color:#26651e;
+  color: #e2dfdf;
+}
+
+.row-hover:hover{
+  color: #fff;
+}
+
 .results {
   padding-top: 15px;
 }
