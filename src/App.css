@@ -1,3 +1,6 @@
+
+
+
 .App {
   text-align: left;
 }
@@ -50,4 +53,7 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+.selected {
+  background: yellow;
 }

@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react";
+import SearchButton from "./SearchButton";
+import SearchFiled from "./SearchFiled";
 
 const Search = props => (
   <div className="search">
@@ -12,25 +14,38 @@ const Search = props => (
             <tr>
               <th>Customer id</th>
               <th />
-              <th></th>
+              <th />
+              <th>Customer Nmae</th>
               <th />
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>
-                <input
-                  id="customerId"
-                  type="text"
-                  className="form-control"
-                  placeholder="Customer id"
-                  name="customerId"
+                <SearchFiled name="id" action={(text)=>{
+                  console.log('hello react')
+                this.props.searching(text)
+                }} />
+              </td>
+              <td>
+                <SearchButton
+                  search={Search}
+                  toggleContent={props.toggleContent}
+                  value="Search Id"
+                  
                 />
               </td>
               <td>
-                <button className="btn btn-primary fn-submit-name">Search IDs</button>
+                <SearchFiled name="name" action={()=> console.log("setSeachName")} />
               </td>
-              {/* Add search by name here */}
+              <td>
+                <SearchButton
+                  search={Search}
+                  name="name"
+                  toggleContent={props.toggleContent}
+                  value="Search Name"
+                />
+              </td>
             </tr>
           </tbody>
         </table>
