@@ -7,5 +7,6 @@ export default ({ name, action }) => (
     placeholder={name}
     name={name}
     onChange={action}
+    
   />
 );

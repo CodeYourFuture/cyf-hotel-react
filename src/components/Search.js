@@ -22,17 +22,21 @@ const Search = props => (
           <tbody>
             <tr>
               <td>
-                <SearchFiled name="id" action="setSearchId" />
+                <SearchFiled name="id" action={(text)=>{
+                  console.log('hello react')
+                this.props.searching(text)
+                }} />
               </td>
               <td>
                 <SearchButton
                   search={Search}
                   toggleContent={props.toggleContent}
                   value="Search Id"
+                  
                 />
               </td>
               <td>
-                <SearchFiled name="name" action="setSeachName" />
+                <SearchFiled name="name" action={()=> console.log("setSeachName")} />
               </td>
               <td>
                 <SearchButton
