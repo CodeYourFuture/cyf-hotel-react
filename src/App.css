@@ -7,6 +7,12 @@
   height: 80px;
 }
 
+.Default-Bg-Colour {
+  background-color: transparent;
+}
+.Bg-Colour {
+  background-color: grey;
+}
 .App-header {
   background-color: #222;
   height: 50px;
