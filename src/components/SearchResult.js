@@ -24,9 +24,9 @@ const SearchResult = props => (
           <tbody>
             {props.data.map((row, index) => (
               <tr
-                onClick={props.colourToggleHandler}
-                className="Default-Bg-Colour"
-                key={index}
+                onClick={props.select}
+                data-index={index}
+                className={props.selected.includes(index) ? "Bg-Colour" : ""}
               >
                 <td>{row.title}</td>
                 <td>{row.firstname}</td>

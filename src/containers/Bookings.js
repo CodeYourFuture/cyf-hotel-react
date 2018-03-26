@@ -1,18 +1,16 @@
 import React, { Component } from "react";
 import Search from "../components/Search.js";
 import SearchResult from "../components/SearchResult.js";
-// import FakeBookings from "../data/fakeBookings.json";
 
 export default class Bookings extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
-      newData: [],
       show: false,
       isLoading: true,
       err: null,
-      colour: "Bg-Colour",
+      selected: [],
       direction: {
         surname: "asc",
         email: "asc",
@@ -25,21 +23,28 @@ export default class Bookings extends Component {
   toggleHandler = () => {
     let doesShow = this.state.show;
     this.setState({
-      data: this.state.newData.rows,
       show: !doesShow
     });
   };
 
-  colourToggleHandler = e => {
-    if (e.currentTarget.className === "Default-Bg-Colour") {
-      e.currentTarget.className = this.state.colour;
-    } else if (e.currentTarget.className === this.state.colour) {
-      e.currentTarget.className = "Default-Bg-Colour";
+  select = e => {
+    const selectedIndex = parseInt(e.currentTarget.dataset.index, 10);
+    console.log(this.state.selected);
+    if (this.state.selected.includes(selectedIndex)) {
+      this.state.selected = this.state.selected.filter(selected => {
+        return selected !== selectedIndex;
+      });
+    } else {
+      this.state.selected.push(selectedIndex);
     }
+    this.setState({
+      selected: this.state.selected
+    });
   };
+
   sortBy = key => {
     this.setState({
-      data: this.state.newData.rows.sort(
+      data: this.state.data.sort(
         (a, b) =>
           this.state.direction[key] === "asc"
             ? a[key] < b[key]
@@ -62,13 +67,11 @@ export default class Bookings extends Component {
       })
       .then(res => res.json())
       .then(data => {
-        let doesShow = this.state.show;
+        console.log(data);
         this.setState({
           isLoading: false,
-          newData: data,
-          show: !doesShow
+          data: data.rows
         });
-        console.log(this.state.newData);
       })
       .catch(err => {
         this.setState({
@@ -85,17 +88,11 @@ export default class Bookings extends Component {
         <SearchResult
           data={this.state.data}
           sortBy={this.sortBy}
-          colourToggleHandler={this.colourToggleHandler}
+          select={this.select}
+          selected={this.state.selected}
         />
       );
     }
-    // if (this.state.isLoading &&&) {
-    //   return <div>Loading... 🤔</div>;
-    // } else if (this.state.err) {
-    //   return <div>Something went wrong 😭</div>;
-    // } else {
-    //   return <div>Pokemon name: {this.state.name}</div>;
-    // }
 
     return (
       <div className="App-content">
