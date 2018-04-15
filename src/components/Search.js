@@ -5,37 +5,18 @@ const Search = props => (
     <div className="page-header">
       <h4 className="text-left">Search Bookings</h4>
     </div>
-    <div className="row">
+    <div className="row search-wrapper">
       <div className="col">
-        <table className="table search-table">
-          <thead>
-            <tr>
-              <th>Customer id</th>
-              <th />
-              <th></th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <input
-                  id="customerId"
-                  type="text"
-                  className="form-control"
-                  placeholder="Customer id"
-                  name="customerId"
-                />
-              </td>
-              <td>
-                <button className="btn btn-primary fn-submit-name">Search IDs</button>
-              </td>
-              {/* Add search by name here */}
-            </tr>
-          </tbody>
-        </table>
+        <div className="form-group search-box">
+          <label htmlFor="customerId">Customer Id</label>
+          <div className="search-row">
+            <input type="text" id="customerId" className="form-control" placeholder="Customer Id" />
+            <button className="btn btn-primary fn-submit-name">Search IDs</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 );
+
 export default Search;
