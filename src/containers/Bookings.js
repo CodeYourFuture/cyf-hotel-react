@@ -5,7 +5,7 @@ import Search from '../components/Search.js';
 
 export default class Bookings extends Component {
   search = () => {
-    console.info("to do!");
+    console.info('TO DO!');
   };
   
   render() {
