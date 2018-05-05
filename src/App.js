@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Bookings from './containers/Bookings.js';
-import Footer from './components/Footer.js';
-import './App.css';
-
+import Bookings from "./containers/Bookings.js";
+import Footer from "./components/Footer.js";
+import Logo from "./components/Logo.js";
+import "./App.css";
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">CYF Hotel</header>
+        <Logo />
         <Bookings />
+        <p>
+          there are bookings available for {new Date().toLocaleDateString()}
+        </p>
         <Footer />
       </div>
     );
