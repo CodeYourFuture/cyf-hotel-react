@@ -6,7 +6,10 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-
+.Cfy-image {
+  width: 100px;
+  height: 20px;
+}
 .App-header {
   background-color: #222;
   height: 50px;
