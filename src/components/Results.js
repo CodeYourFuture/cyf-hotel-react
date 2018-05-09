@@ -1,21 +1,19 @@
 import React from "react";
 
 const Results = props => {
-  const fakeBookings = () => {
-    return props.results.map(booking => {
-      return (
-        <tr>
-          <td>{booking.title}</td>
-          <td>{booking.firstName}</td>
-          <td>{booking.surname}</td>
-          <td>{booking.email}</td>
-          <td>{booking.roomId}</td>
-          <td>{booking.checkInDate}</td>
-          <td>{booking.checkOutDate}</td>
-        </tr>
-      );
-    });
-  };
+  const fakeBookings = props.results.map(booking => {
+    return (
+      <tr>
+        <td>{booking.title}</td>
+        <td>{booking.firstName}</td>
+        <td>{booking.surname}</td>
+        <td>{booking.email}</td>
+        <td>{booking.roomId}</td>
+        <td>{booking.checkInDate}</td>
+        <td>{booking.checkOutDate}</td>
+      </tr>
+    );
+  });
 
   return (
     <div className="container">
@@ -29,7 +27,7 @@ const Results = props => {
           <th>Check in date</th>
           <th>Check out date</th>
         </tr>
-        {fakeBookings()}
+        {fakeBookings}
       </table>
     </div>
   );
