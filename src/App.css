@@ -1,6 +1,11 @@
 .App {
   text-align: left;
 }
+.cyf-image {
+  width: 100px;
+  height: 30px;
+  padding: 4px;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
