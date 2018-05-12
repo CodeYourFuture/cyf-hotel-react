@@ -24,6 +24,7 @@ class App extends Component {
         <p>'There are bokin abailable on ' + {new Date().getFullYear()}</p>
 
         <Bookings />
+
         <Logo />
         <SpecialDeals />
         <BookingsMessage />
