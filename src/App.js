@@ -7,6 +7,7 @@ import BookingsMessage from "./components/BookingsMessage.js";
 import SpecialDeals from "./components/SpecialDeals.js";
 import Name from "./components/Name.js";
 import "./App.css";
+import Counter from "./components/Counter.js";
 
 class App extends Component {
   render() {
@@ -25,10 +26,11 @@ class App extends Component {
 
         <Bookings />
 
-        <Logo />
+        {/*<Logo />*/}
         <SpecialDeals />
         <BookingsMessage />
         <Name />
+        <Counter buttonName="Click me" />
       </div>
     );
   }

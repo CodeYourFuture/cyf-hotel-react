@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button.js";
+import Results from "../containers/Results.js";
 
 const Search = props => (
   <div className="search">
@@ -17,7 +18,8 @@ const Search = props => (
               className="form-control"
               placeholder="Customer Id"
             />
-            <Button title="Search Id" />
+            <Button title="Search Id" />{" "}
+            {/* call same button to add the title Search Id */}
           </div>
         </div>
       </div>
@@ -32,6 +34,7 @@ const Search = props => (
               placeholder="Customer Name"
             />
             <Button title="Search Name" />
+            {/* call same button to add the title Search Name */}
           </div>
         </div>
       </div>
