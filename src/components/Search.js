@@ -21,6 +21,8 @@ const Search = props => (
             <Button />
           </div>
         </div>
+      </div>
+      <div className="col">
         <div className="form-group search-box">
           <label htmlFor="customerId">Booking Name</label>
           <div className="search-row">
