@@ -1,4 +1,5 @@
 import React from "react";
+var moment = require("moment");
 const Results = prop => {
   return (
     <table className="results">
@@ -11,6 +12,7 @@ const Results = prop => {
           <th>Room ID </th>
           <th>Check in date </th>
           <th>Check out date </th>
+          <th>Days booked </th>
         </tr>
       </thead>
       {prop.results.map(result => (
@@ -23,6 +25,12 @@ const Results = prop => {
             <td>{result.roomId} </td>
             <td>{result.checkInDate} </td>
             <td>{result.checkOutDate} </td>
+            <td>
+              {moment(result.checkOutDate).diff(
+                moment(result.checkInDate),
+                "days"
+              )}
+            </td>
           </tr>
         </tbody>
       ))}
