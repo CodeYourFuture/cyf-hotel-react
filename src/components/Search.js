@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react";
+import Button from "./Button.js";
+import Results from "../containers/Results.js";
 
 const Search = props => (
   <div className="search">
@@ -10,8 +12,29 @@ const Search = props => (
         <div className="form-group search-box">
           <label htmlFor="customerId">Customer Id</label>
           <div className="search-row">
-            <input type="text" id="customerId" className="form-control" placeholder="Customer Id" />
-            <button className="btn btn-primary fn-submit-name">Search IDs</button>
+            <input
+              type="text"
+              id="customerId"
+              className="form-control"
+              placeholder="Customer Id"
+            />
+            <Button title="Search Id" />{" "}
+            {/* call same button to add the title Search Id */}
+          </div>
+        </div>
+      </div>
+      <div className="col">
+        <div className="form-group search-box">
+          <label htmlFor="customerName">Customer Name</label>
+          <div className="search-row">
+            <input
+              type="text"
+              id="customerName"
+              className="form-control"
+              placeholder="Customer Name"
+            />
+            <Button title="Search Name" />
+            {/* call same button to add the title Search Name */}
           </div>
         </div>
       </div>
