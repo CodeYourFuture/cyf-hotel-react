@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Logo />
+        <Logo title="Welcome to CYF Hotel" />
         <Bookings />
         <SpecialDeals />
         <Footer />

@@ -5,7 +5,7 @@ class Logo extends Component {
     return (
       <header className="App-header">
         <img className="image" src="https://codeyourfuture.io/static/media/cyf_brand.fbcea877.png" alt="" />
-        Welcome to CYF Hotel
+        {this.props.title}
       </header>
     );
   }
