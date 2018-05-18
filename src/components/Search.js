@@ -13,7 +13,7 @@ class Search extends React.Component {
             <div className="form-group search-box">
               <label htmlFor="customerId">Customer Id</label>
               <div className="search-row">
-                <input type="text" id="customerId" className="form-control" placeholder="Customer Id" />
+                <input type="text" id="customerId" className="form-control" placeholder="Customer Id" onChange={this.props.userInput} />
                 <Button name="Search IDs" />
               </div>
             </div>

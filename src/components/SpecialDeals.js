@@ -5,7 +5,7 @@ class SpecialDeals extends Component {
     const deals = ['10% Off', 'Kids eat free', 'Two for one'];
     return (
         <div>
-            {deals.map(deal => <p>{deal}</p>)}
+            {deals.map(deal => <p key={deal}>{deal}</p>)}
         </div>
     );
   }
