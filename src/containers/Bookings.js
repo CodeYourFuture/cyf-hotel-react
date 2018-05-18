@@ -17,7 +17,7 @@ export default class Bookings extends Component {
   userInput = e => {
     e.preventDefault();
     this.setState({
-      input: parseInt(e.target.value)
+      input: parseInt(e.target.value, 10)
     });
   };
 
@@ -49,6 +49,7 @@ export default class Bookings extends Component {
         <div className="container">
           <BookingsMessage />
           <Search userInput={this.userInput} bookingsById={this.bookingsById} />
+          Results: {this.state.bookings.length}
           <Results results={this.state.bookings} />
           Sum: {this.state.sum}
           <br />
