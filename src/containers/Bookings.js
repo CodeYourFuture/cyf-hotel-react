@@ -23,7 +23,7 @@ export default class Bookings extends Component {
 
   bookingsById = () => {
     this.setState({
-      bookings: this.state.bookings.filter(booking => {
+      bookings: fakeBookings.filter(booking => {
         return booking.id === this.state.input;
       })
     });
