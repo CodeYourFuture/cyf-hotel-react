@@ -1,21 +1,32 @@
-import React, { Component } from 'react';
-import Search from '../components/Search.js';
-import BookingsMessage from '../components/BookingsMessage.js';
-import Results from '../components/Results.js';
-import fakeBookings from '../data/fakeBookings.json';
-import Counter from '../components/Counter'
+import React, { Component } from "react";
+import Search from "../components/Search.js";
+import BookingsMessage from "../components/BookingsMessage.js";
+import Results from "../components/Results.js";
+import fakeBookings from "../data/fakeBookings.json";
+import Counter from "../components/Counter";
 
 export default class Bookings extends Component {
- 
   state = {
     count: 0,
     count2: 0,
     sum: 0,
+    input: 0,
     bookings: fakeBookings
-  }
+  };
 
-  userInput = (e) => {
-    console.log(e.target.value);
+  userInput = e => {
+    e.preventDefault();
+    this.setState({
+      input: parseInt(e.target.value)
+    });
+  };
+
+  bookingsById = () => {
+    this.setState({
+      bookings: this.state.bookings.filter(booking => {
+        return booking.id === this.state.input;
+      })
+    });
   };
 
   increase = () => {
@@ -37,7 +48,7 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <BookingsMessage />
-          <Search userInput={this.userInput} />
+          <Search userInput={this.userInput} bookingsById={this.bookingsById} />
           <Results results={this.state.bookings} />
           Sum: {this.state.sum}
           <br />

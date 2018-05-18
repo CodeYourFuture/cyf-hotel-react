@@ -14,7 +14,7 @@ class Search extends React.Component {
               <label htmlFor="customerId">Customer Id</label>
               <div className="search-row">
                 <input type="text" id="customerId" className="form-control" placeholder="Customer Id" onChange={this.props.userInput} />
-                <Button name="Search IDs" />
+                <Button name="Search IDs" bookingsById={this.props.bookingsById} />
               </div>
             </div>
           </div>
