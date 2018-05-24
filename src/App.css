@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 90px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -50,4 +50,13 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+
+.cyf-image {
+  width: 350px;
+  height: 70px;
+}
+
+.special-deal {
+  text-indent: 25px;
 }
