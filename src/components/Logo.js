@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-class Logo extends Component {
-  render() {
-    return (
-      <header className="App-header">
-        <img className="image" src="https://codeyourfuture.io/static/media/cyf_brand.fbcea877.png" alt="" />
-        {this.props.title}
-      </header>
-    );
-  }
-}
+const Logo = (props) => {
+  return (
+    <header className="App-header">
+      <img
+        className="image"
+        src="https://codeyourfuture.io/static/media/cyf_brand.fbcea877.png"
+        alt=""
+      />
+      {props.title}
+    </header>
+  );
+};
 
 export default Logo;
-
-

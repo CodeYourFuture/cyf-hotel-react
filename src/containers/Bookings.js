@@ -21,7 +21,7 @@ export default class Bookings extends Component {
     });
   };
 
-  bookingsById = () => {
+  getBookingsById = () => {
     this.setState({
       bookings: fakeBookings.filter(booking => {
         return booking.id === this.state.input;
@@ -30,17 +30,17 @@ export default class Bookings extends Component {
   };
 
   increase = () => {
-    this.setState({
-      count: ++this.state.count,
-      sum: ++this.state.sum
-    });
+    this.setState((prevState, props) => ({
+      count: ++prevState.count,
+      sum: ++prevState.sum
+    }));
   };
 
   increase2 = () => {
-    this.setState({
-      count2: ++this.state.count2,
-      sum: ++this.state.sum
-    });
+    this.setState((prevState, props) => ({
+      count2: ++prevState.count2,
+      sum: ++prevState.sum
+    }));
   };
 
   render() {
@@ -48,15 +48,15 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <BookingsMessage />
-          <Search userInput={this.userInput} bookingsById={this.bookingsById} />
+          <Search userInput={this.userInput} getBookingsById={this.getBookingsById} />
           Results: {this.state.bookings.length}
           <Results results={this.state.bookings} />
           Sum: {this.state.sum}
           <br />
           {this.state.count}
-          <Counter name="Counter 1" increase={this.increase} />
+          <Counter name="Counter 1" onIncrease={this.increase} />
           {this.state.count2}
-          <Counter name="Counter 2" increase={this.increase2} />
+          <Counter name="Counter 2" onIncrease={this.increase2} />
         </div>
       </div>
     );

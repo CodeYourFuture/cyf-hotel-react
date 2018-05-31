@@ -3,8 +3,8 @@ import moment from "moment";
 
 const Results = props => {
   const fakeBookings = props.results.map(booking => {
-    let checkInDate = moment(booking.checkInDate);
-    let checkOutDate = moment(booking.checkOutDate);
+    const checkInDate = moment(booking.checkInDate);
+    const checkOutDate = moment(booking.checkOutDate);
     return (
       <tr key={booking.id}>
         <td>{booking.title}</td>

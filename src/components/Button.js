@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-class Button extends Component {
-    render(){
-        return <button onClick={this.props.bookingsById} className="btn btn-primary fn-submit-name">{this.props.name}</button>;
-    }
-}
+const Button = props => {
+  return (
+    <button
+      onClick={props.getBookingsById}
+      className="btn btn-primary fn-submit-name"
+    >
+      {props.name}
+    </button>
+  );
+};
 
 export default Button;

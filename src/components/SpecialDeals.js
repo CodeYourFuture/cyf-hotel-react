@@ -1,14 +1,8 @@
-import React, { Component } from 'react';
+import React from "react";
 
-class SpecialDeals extends Component {
-  render() {
-    const deals = ['10% Off', 'Kids eat free', 'Two for one'];
-    return (
-        <div>
-            {deals.map(deal => <p key={deal}>{deal}</p>)}
-        </div>
-    );
-  }
-}
+const SpecialDeals = () => {
+  const deals = ["10% Off", "Kids eat free", "Two for one"];
+  return <div>{deals.map(deal => <p key={deal}>{deal}</p>)}</div>;
+};
 
 export default SpecialDeals;
