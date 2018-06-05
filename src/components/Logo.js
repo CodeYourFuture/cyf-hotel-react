@@ -20,7 +20,7 @@ export default Logo;
 const Logo = () => {
   return (
     <header className="App-header">
-      Welcome to CYF Hotel
+      <b> Welcome to CYF Hotel </b>
       <img
         className="cyf-image"
         alt="codeyourfuture logo"

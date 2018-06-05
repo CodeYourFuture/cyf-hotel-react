@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "./Button.js";
-import Button2 from "./Button2.js";
 
 class Search extends React.Component {
   render() {
@@ -20,7 +19,7 @@ class Search extends React.Component {
                   className="form-control"
                   placeholder="Customer Id"
                 />
-                <Button />
+                <Button name={"Search Ids"} onClick={this.props.onClickId} />
               </div>
             </div>
           </div>
@@ -34,7 +33,10 @@ class Search extends React.Component {
                   className="form-control"
                   placeholder="Booking name"
                 />
-                <Button2 />
+                <Button
+                  name={"Search by name"}
+                  onClick={this.props.onClickName}
+                />
               </div>
             </div>
           </div>

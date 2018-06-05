@@ -1,6 +1,6 @@
 import React from "react";
 var moment = require("moment");
-const Results = prop => {
+const Results = props => {
   return (
     <table className="results">
       <thead>
@@ -15,7 +15,7 @@ const Results = prop => {
           <th>Days booked </th>
         </tr>
       </thead>
-      {prop.results.map(result => (
+      {props.results.map(result => (
         <tbody>
           <tr>
             <td>{result.title} </td>

@@ -5,6 +5,7 @@ import Footer from "./components/Footer.js";
 import Logo from "./components/Logo.js";
 import SpecialDeals from "./components/SpecialDeals.js";
 import BookingsMessage from "./components/BookingsMessage.js";
+import Counter from "./components/Counter.js";
 
 import "./App.css";
 
@@ -16,6 +17,7 @@ class App extends Component {
         <BookingsMessage />
         <SpecialDeals />
         <Bookings />
+        <Counter name="Click here" />
         <Footer />
       </div>
     );

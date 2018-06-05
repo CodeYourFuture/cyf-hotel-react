@@ -1,10 +1,10 @@
 import React from "react";
 const BookingsMessage = () => {
   return (
-    <p>
-      {"There are bookings available for today's   " +
+    <h4>
+      {"There are bookings available for today   " +
         new Date().toLocaleDateString()}
-    </p>
+    </h4>
   );
 };
 export default BookingsMessage;
