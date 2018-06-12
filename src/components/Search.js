@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchButton from './Searchbutton'
 
 const Search = props => (
   <div className="search">
@@ -11,7 +12,16 @@ const Search = props => (
           <label htmlFor="customerId">Customer Id</label>
           <div className="search-row">
             <input type="text" id="customerId" className="form-control" placeholder="Customer Id" />
-            <button className="btn btn-primary fn-submit-name">Search IDs</button>
+            <SearchButton searchbut = "Search IDs" />
+          </div>
+        </div>
+      </div>
+      <div className="col">
+        <div className="form-group search-box">
+          <label htmlFor="customername">Customer name</label>
+          <div className="search-row">
+            <input type="text" id="customername" className="form-control" placeholder="Customer name" />
+            <SearchButton searchbut = "Search Names"/>
           </div>
         </div>
       </div>
