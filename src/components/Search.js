@@ -11,8 +11,8 @@ const Search = props => (
         <div className="form-group search-box">
           <label htmlFor="customerId">Customer Id</label>
           <div className="search-row">
-            <input type="text" id="customerId" className="form-control" placeholder="Customer Id" />
-            <SearchButton searchbut = "Search IDs" />
+            <input type="number" id="customerId" className="form-control" placeholder="Customer Id" onChange={props.userData} />
+            <SearchButton searchbut="Search IDs" clickState={props.bookingsById} />
           </div>
         </div>
       </div>
@@ -20,8 +20,8 @@ const Search = props => (
         <div className="form-group search-box">
           <label htmlFor="customername">Customer name</label>
           <div className="search-row">
-            <input type="text" id="customername" className="form-control" placeholder="Customer name" />
-            <SearchButton searchbut = "Search Names"/>
+            <input type="text" id="customername" className="form-control" placeholder="Customer name" onChange={props.userData} />
+            <SearchButton searchbut="Search Names" clickState={props.customerName} />
           </div>
         </div>
       </div>
