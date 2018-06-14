@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import moment from 'moment';
 class TableData extends Component {
     render() {
         const rows = this.props.datas;
@@ -13,6 +13,7 @@ class TableData extends Component {
                     <td> {item.roomId} </td>
                     <td> {item.checkInDate} </td>
                     <td> {item.checkOutDate} </td>
+                    <td> {moment(item.checkOutDate).diff(item.checkInDate, 'days')} days</td>
                 </tr>
             )
         })

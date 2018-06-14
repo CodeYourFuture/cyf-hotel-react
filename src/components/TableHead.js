@@ -12,6 +12,7 @@ class TableHead extends Component {
                     <th>RoomID</th>
                     <th>Check-In-Date</th>
                     <th>Check-Out-Date</th>
+                    <th>Stay in</th>
                 </tr>
             </thead>
         )
