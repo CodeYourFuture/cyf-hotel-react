@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+
 class TableData extends Component {
     render() {
         const rows = this.props.datas;
-        let rowData = rows.map(function (item, i) {
+        let rowData = rows.map((item, i) => {
             return (
-                <tr key={i}>
+                <tr className={this.props.trCss} key={i} onClick={this.props.trClick} >
                     <td> {item.title} </td>
                     <td> {item.firstName} </td>
                     <td> {item.surname} </td>
@@ -18,7 +19,7 @@ class TableData extends Component {
             )
         })
         return (
-            <tbody>
+            <tbody id="rows">
                 {rowData}
             </tbody>
         )
