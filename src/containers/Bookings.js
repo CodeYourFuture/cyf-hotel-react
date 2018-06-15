@@ -6,7 +6,10 @@ import FakeBookings from "../data/fakeBookings.json";
 export default class Bookings extends Component {
   constructor() {
     super();
-    this.state = { results: FakeBookings };
+    this.state = {
+      results: FakeBookings,
+      bookings: FakeBookings
+    };
   }
   filterBookingsId = event => {
     var searchValue = document.querySelector("#customerId");
@@ -16,7 +19,7 @@ export default class Bookings extends Component {
       return result.roomId === parseFloat(inputValue);
     });
     this.setState({
-      results: filteredBookingsId
+      bookings: filteredBookingsId
     });
   };
   filterBookingsName = event => {
@@ -27,7 +30,7 @@ export default class Bookings extends Component {
       return result.firstName === inputValue || result.surname === inputValue;
     });
     this.setState({
-      results: filteredBookingsName
+      bookings: filteredBookingsName
     });
   };
 
@@ -54,7 +57,7 @@ export default class Bookings extends Component {
           />
 
           {/* <Results results={FakeBookings} /> */}
-          <Results results={this.state.results} />
+          <Results results={this.state.bookings} />
         </div>
       </div>
     );
