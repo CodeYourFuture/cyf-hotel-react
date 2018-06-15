@@ -6,19 +6,32 @@ import FakeBookings from '../data/fakeBookings.json';
 class Bookings extends Component {
   constructor(props) {
     super(props);
-    this.state = { input: '', bookings: FakeBookings };
-  }
-  userData = event => {
+    this.state = { inputID: '', inputName: '', bookings: FakeBookings };
+  };
+
+  clickById = event => {
     event.preventDefault();
     this.setState({
-      input: event.target.value
+      inputID: event.target.value
     });
+    console.log(this.state.inputID)
+  };
+
+  clickName = event => {
+    event.preventDefault();
+    this.setState({
+      inputName: event.target.value
+    });
+    console.log(this.state.inputName)
   };
 
   bookingsById = () => {
     this.setState({
       bookings: FakeBookings.filter(booking => {
-        return booking.id === parseInt(this.state.input, 10);
+        if (this.state.inputID !== '') {
+          return booking.id === parseInt(this.state.inputID, 10)
+        }
+        else { return FakeBookings }
       })
     });
   };
@@ -26,7 +39,10 @@ class Bookings extends Component {
   customerName = () => {
     this.setState({
       bookings: FakeBookings.filter(booking => {
-        return (booking.firstName + " " + booking.surname) === this.state.input;
+        if (this.state.inputName !== '') {
+          return (booking.firstName + " " + booking.surname) === this.state.inputName
+        }
+        else { return FakeBookings }
       })
     });
   };
@@ -35,7 +51,10 @@ class Bookings extends Component {
     return (
       <div className="App-content">
         <div className="container">
-          <Search userData={this.userData} bookingsById={this.bookingsById} customerName={this.customerName} />
+          <Search clickById={this.clickById}
+            clickName={this.clickName}
+            bookingsById={this.bookingsById}
+            customerName={this.customerName} />
           <Results result={this.state.bookings} />
         </div>
       </div>
