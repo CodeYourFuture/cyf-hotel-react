@@ -8,17 +8,23 @@ export default class Bookings extends Component {
     super();
     this.state = { results: FakeBookings };
   }
-  filterBookingsId = input => {
+  filterBookingsId = event => {
+    var searchValue = document.querySelector("#customerId");
+    var inputValue = searchValue.value;
+
     const filteredBookingsId = this.state.results.filter(result => {
-      return result.roomId === input;
+      return result.roomId === parseFloat(inputValue);
     });
     this.setState({
       results: filteredBookingsId
     });
   };
-  filterBookingsName = input => {
+  filterBookingsName = event => {
+    var searchValue = document.querySelector("#customerName");
+    var inputValue = searchValue.value;
+
     const filteredBookingsName = this.state.results.filter(result => {
-      return result.firstName === input || result.surname === input;
+      return result.firstName === inputValue || result.surname === inputValue;
     });
     this.setState({
       results: filteredBookingsName

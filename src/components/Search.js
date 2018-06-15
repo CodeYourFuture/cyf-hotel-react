@@ -25,11 +25,11 @@ class Search extends React.Component {
           </div>
           <div className="col">
             <div className="form-group search-box">
-              <label htmlFor="customerId">Booking Name</label>
+              <label htmlFor="customerName">Booking Name</label>
               <div className="search-row">
                 <input
                   type="text"
-                  id="customerId"
+                  id="customerName"
                   className="form-control"
                   placeholder="Booking name"
                 />
