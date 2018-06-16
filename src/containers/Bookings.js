@@ -14,7 +14,6 @@ class Bookings extends Component {
     this.setState({
       inputID: event.target.value
     });
-    console.log(this.state.inputID)
   };
 
   clickName = event => {
@@ -22,44 +21,49 @@ class Bookings extends Component {
     this.setState({
       inputName: event.target.value
     });
-    console.log(this.state.inputName)
   };
 
   bookingsById = () => {
-    this.setState({
-      bookings: FakeBookings.filter(booking => {
-        if (this.state.inputID !== '') {
-          return booking.id === parseInt(this.state.inputID, 10)
-        }
-        else { return FakeBookings }
-      })
-    });
-  };
+    if (this.state.inputID !== '') {
+      var filteredBookings = FakeBookings.filter(booking => {
+       return booking.id === parseInt(this.state.inputID, 10)})
+      } else { return FakeBookings }
+    
+        this.setState({
+        bookings: filteredBookings,
+        inputID: ''
+  })
+}
+    customerName = () => {
+      this.setState({
+        bookings: FakeBookings.filter(booking => {
+          if (this.state.inputName !== '') {
+            return (booking.firstName + " " + booking.surname) === this.state.inputName
+          }
+          else { return FakeBookings }
+        })
+      });
+    };
 
-  customerName = () => {
-    this.setState({
-      bookings: FakeBookings.filter(booking => {
-        if (this.state.inputName !== '') {
-          return (booking.firstName + " " + booking.surname) === this.state.inputName
-        }
-        else { return FakeBookings }
-      })
-    });
-  };
+    render() {
+      console.log(this.state)
+      return (
+        <div className="App-content">
+          <div className="container">
+            <Search clickById={this.clickById}
+              clickName={this.clickName}
+              bookingsById={this.bookingsById}
+              customerName={this.customerName}
+              inputID={this.state.inputID}
+            />
+            <Results result={this.state.bookings} />
 
-  render() {
-    return (
-      <div className="App-content">
-        <div className="container">
-          <Search clickById={this.clickById}
-            clickName={this.clickName}
-            bookingsById={this.bookingsById}
-            customerName={this.customerName} />
-          <Results result={this.state.bookings} />
+          </div>
         </div>
-      </div>
-    );
+      );
+    };
   };
-};
 
-export default Bookings;
+
+
+  export default Bookings;
