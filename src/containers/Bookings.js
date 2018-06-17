@@ -26,44 +26,58 @@ class Bookings extends Component {
   bookingsById = () => {
     if (this.state.inputID !== '') {
       var filteredBookings = FakeBookings.filter(booking => {
-       return booking.id === parseInt(this.state.inputID, 10)})
-      } else { return FakeBookings }
-    
-        this.setState({
+        return booking.id === parseInt(this.state.inputID, 10)
+      });
+      this.setState({
         bookings: filteredBookings,
         inputID: ''
-  })
-}
-    customerName = () => {
-      this.setState({
-        bookings: FakeBookings.filter(booking => {
-          if (this.state.inputName !== '') {
-            return (booking.firstName + " " + booking.surname) === this.state.inputName
-          }
-          else { return FakeBookings }
-        })
       });
-    };
+    } else {
+      return this.setState({
+        bookings: FakeBookings,
+        inputID: ''
+      });
+    }
+  };
 
-    render() {
-      console.log(this.state)
-      return (
-        <div className="App-content">
-          <div className="container">
-            <Search clickById={this.clickById}
-              clickName={this.clickName}
-              bookingsById={this.bookingsById}
-              customerName={this.customerName}
-              inputID={this.state.inputID}
-            />
-            <Results result={this.state.bookings} />
-
-          </div>
-        </div>
-      );
-    };
+  customerName = () => {
+    if (this.state.inputName !== '') {
+      var filteredBookings = FakeBookings.filter(booking => {
+        return (booking.firstName + " " + booking.surname) === this.state.inputName
+      });
+      this.setState({
+        bookings: filteredBookings,
+        inputName: ''
+      })
+    } else {
+      return this.setState({
+        bookings: FakeBookings,
+        inputName: ''
+      });
+    }
   };
 
 
+  render() {
 
-  export default Bookings;
+    return (
+      <div className="App-content">
+        <div className="container">
+          <Search clickById={this.clickById}
+            clickName={this.clickName}
+            bookingsById={this.bookingsById}
+            customerName={this.customerName}
+            inputID={this.state.inputID}
+            inputName={this.state.inputName}
+          />
+          <Results result={this.state.bookings} />
+
+        </div>
+      </div>
+    );
+  };
+};
+
+
+
+export default Bookings;

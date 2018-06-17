@@ -7,7 +7,8 @@
     "email": "johndoe@doe.com",
     "roomId": 2,
     "checkInDate": "2017-11-21",
-    "checkOutDate": "2017-11-23"
+    "checkOutDate": "2017-11-23",
+    "isActive": false
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "email": "begum_sadia@sadia.org",
     "roomId": 1,
     "checkInDate": "2018-02-15",
-    "checkOutDate": "2018-02-28"
+    "checkOutDate": "2018-02-28",
+    "isActive": false
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "email": "harry@wales.com",
     "roomId": 5,
     "checkInDate": "2018-03-01",
-    "checkOutDate": "2018-04-09"
+    "checkOutDate": "2018-04-09",
+    "isActive": false
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "email": "Judi@dench.co.uk",
     "roomId": 6,
     "checkInDate": "2017-12-25",
-    "checkOutDate": "2018-01-03"
+    "checkOutDate": "2018-01-03",
+    "isActive": false
   },
   {
     "id": 5,
@@ -47,6 +51,7 @@
     "email": "anu@selvam.net",
     "roomId": 3,
     "checkInDate": "2017-08-30",
-    "checkOutDate": "2017-10-02"
+    "checkOutDate": "2017-10-02",
+    "isActive": false
   }
 ]

@@ -20,7 +20,7 @@ const Search = props => (
         <div className="form-group search-box">
           <label htmlFor="customername">Customer name</label>
           <div className="search-row">
-            <input type="text" id="customername" className="form-control" placeholder="Customer name" onChange={props.clickName} />
+            <input type="text" id="customername" className="form-control" placeholder="Customer name" value={props.inputName} onChange={props.clickName} />
             <SearchButton searchbut="Search Names" clickState={props.customerName} />
           </div>
         </div>
