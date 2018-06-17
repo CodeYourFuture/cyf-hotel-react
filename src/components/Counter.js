@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Counter extends Component {
     render() {
         return (
-            <p>Results  ({this.props.result.length} found)</p>
+            <p>{this.props.messageCounter}  ({this.props.result} found)</p>
         )
     };
 };

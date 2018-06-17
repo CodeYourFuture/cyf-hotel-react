@@ -3,14 +3,9 @@ import moment from 'moment';
 
 
 class TableRow extends Component {
-Click = () => {
-    this.props.rowClick(this.props.item.id)
-}
-
     render() {
-
         return (
-            <tr className={this.props.trCss} key={this.props.index} onClick={this.Click} >
+            <tr className={this.props.trCss} key={this.props.index} onClick={() => { this.props.rowClick(this.props.item.id) }} >
                 <td> {this.props.item.title} </td>
                 <td> {this.props.item.firstName} </td>
                 <td> {this.props.item.surname} </td>

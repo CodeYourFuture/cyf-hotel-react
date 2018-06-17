@@ -57,9 +57,7 @@ class Bookings extends Component {
     }
   };
 
-
   render() {
-
     return (
       <div className="App-content">
         <div className="container">
@@ -77,7 +75,5 @@ class Bookings extends Component {
     );
   };
 };
-
-
 
 export default Bookings;
