@@ -1,79 +1,97 @@
 import React, { Component } from 'react';
 import Search from '../components/Search.js';
 import Results from '../components/Results.js';
-import FakeBookings from '../data/fakeBookings.json';
+// import FakeBookings from '../data/fakeBookings.json';
 
 class Bookings extends Component {
   constructor(props) {
     super(props);
-    this.state = { inputID: '', inputName: '', bookings: FakeBookings };
+    this.state = {
+      inputID: '',
+      inputName: '',
+      bookings: []
+    };
   };
 
-  clickById = event => {
-    event.preventDefault();
-    this.setState({
-      inputID: event.target.value
+  componentDidMount() {
+    fetch(`http://localhost:8080/api/customers/`)
+      .then(response => { return response.json() })
+      .then(data => {
+        this.setState({
+          bookings: data.customers,
+        });
+      });
+  };
+
+
+
+clickById = event => {
+  event.preventDefault();
+  this.setState({
+    inputID: event.target.value
+  });
+};
+
+clickName = event => {
+  event.preventDefault();
+  this.setState({
+    inputName: event.target.value
+  });
+};
+
+bookingsById = () => {
+  const FakeBookings = this.data;
+  if (this.state.inputID !== '') {
+    var filteredBookings = FakeBookings.filter(booking => {
+      return booking.id === parseInt(this.state.inputID, 10)
     });
-  };
-
-  clickName = event => {
-    event.preventDefault();
     this.setState({
-      inputName: event.target.value
+      bookings: filteredBookings,
+      inputID: ''
     });
-  };
+  } else {
+    return this.setState({
+      bookings: FakeBookings,
+      inputID: ''
+    });
+  }
+};
 
-  bookingsById = () => {
-    if (this.state.inputID !== '') {
-      var filteredBookings = FakeBookings.filter(booking => {
-        return booking.id === parseInt(this.state.inputID, 10)
-      });
-      this.setState({
-        bookings: filteredBookings,
-        inputID: ''
-      });
-    } else {
-      return this.setState({
-        bookings: FakeBookings,
-        inputID: ''
-      });
-    }
-  };
+customerName = () => {
+  const FakeBookings = this.data;
+  if (this.state.inputName !== '') {
+    var filteredBookings = FakeBookings.filter(booking => {
+      return (booking.firstName + " " + booking.surname) === this.state.inputName
+    });
+    this.setState({
+      bookings: filteredBookings,
+      inputName: ''
+    })
+  } else {
+    return this.setState({
+      bookings: FakeBookings,
+      inputName: ''
+    });
+  }
+};
 
-  customerName = () => {
-    if (this.state.inputName !== '') {
-      var filteredBookings = FakeBookings.filter(booking => {
-        return (booking.firstName + " " + booking.surname) === this.state.inputName
-      });
-      this.setState({
-        bookings: filteredBookings,
-        inputName: ''
-      })
-    } else {
-      return this.setState({
-        bookings: FakeBookings,
-        inputName: ''
-      });
-    }
-  };
+render() {
+  return (
+    <div className="App-content">
+      <div className="container">
+        <Search clickById={this.clickById}
+          clickName={this.clickName}
+          bookingsById={this.bookingsById}
+          customerName={this.customerName}
+          inputID={this.state.inputID}
+          inputName={this.state.inputName}
+        />
+        <Results result={this.state.bookings} />
 
-  render() {
-    return (
-      <div className="App-content">
-        <div className="container">
-          <Search clickById={this.clickById}
-            clickName={this.clickName}
-            bookingsById={this.bookingsById}
-            customerName={this.customerName}
-            inputID={this.state.inputID}
-            inputName={this.state.inputName}
-          />
-          <Results result={this.state.bookings} />
-
-        </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 };
 
 export default Bookings;
