@@ -10,23 +10,45 @@ class Bookings extends Component {
       inputID: '',
       inputName: '',
       bookingsState: [],
-      bookings: []
+      bookings: [],
+      isFetched: false,
+      isLoading: false,
+      error: ''
     };
   };
+  // http://localhost:3000/api/customers-data/
+  // https://river-interest.glitch.me                error
+  // https://mire-hub.glitch.me   timeout 5 sec
 
   componentDidMount() {
-    fetch(`http://localhost:3000/api/customers-data/`)
-      .then(response => { return response.json() })
-      .then(data => {
-        let addRowState = data.rows.map((obj) => ({ ...obj, 'isActive': false }));
-        this.setState({
-          bookingsState: data.rows,
-          bookings: addRowState
+    if (this.state.isFetched === false) {
+      this.setState({ isLoading: true });
+      fetch(`https://mire-hub.glitch.me`)
+        .then(response => {
+          if (response.status >= 200 && response.status < 300) {
+            return response;
+          } else {
+            throw new Error("HTTP error");
+          }
+        })
+        .then(response => { return response.json() })
+        .then(data => {
+          let addRowState = data.map((obj) => ({ ...obj, 'isActive': false })); // data.rows.map  for local data
+          this.setState({
+            bookingsState: data,   // data.rows for local data
+            bookings: addRowState,
+            isFetched: true,
+            isLoading: false
+          });
+        })
+        .catch(err => {
+          this.setState({
+            isLoading: false,
+            error: err.toString()
+          });
         });
-      });
+    };
   };
-
-
 
   clickById = event => {
     event.preventDefault();
@@ -79,22 +101,34 @@ class Bookings extends Component {
   };
 
   render() {
-    return (
-      <div className="App-content">
-        <div className="container">
-          <Search clickById={this.clickById}
-            clickName={this.clickName}
-            bookingsById={this.bookingsById}
-            customerName={this.customerName}
-            inputID={this.state.inputID}
-            inputName={this.state.inputName}
-          />
-          <Results result={this.state.bookings} />
 
-        </div>
-      </div>
-    );
-  };
-};
+    if (this.state.error) {
+      return (
+        <h2>There is an error: <span>{this.state.error}</span></h2>
+      )
+    } else {
+      if (this.state.isLoading) {
+        return (<h2>There is loading data: please wait</h2>)
+      }
+      else {
+        return (
 
+          <div className="App-content">
+            <div className="container">
+              <Search clickById={this.clickById}
+                clickName={this.clickName}
+                bookingsById={this.bookingsById}
+                customerName={this.customerName}
+                inputID={this.state.inputID}
+                inputName={this.state.inputName}
+              />
+              <Results result={this.state.bookings} />
+
+            </div>
+          </div>
+        );
+      };
+    };
+  }
+}
 export default Bookings;

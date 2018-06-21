@@ -7,13 +7,13 @@ class TableRow extends Component {
         return (
             <tr className={this.props.trCss} key={this.props.index} onClick={() => { this.props.rowClick(this.props.item.id) }} >
                 <td> {this.props.item.title} </td>
-                <td> {this.props.item.firstname} </td>
+                <td> {this.props.item.firstName} </td>
                 <td> {this.props.item.surname} </td>
                 <td> {this.props.item.email}</td>
-                <td> {this.props.item.rooms_id} </td>
-                <td> {this.props.item.checkin_date} </td>
-                <td> {this.props.item.checkout_date} </td>
-                <td> {moment(this.props.item.checkout_date).diff(this.props.item.checkin_date, 'days')} days</td>
+                <td> {this.props.item.roomId} </td>
+                <td> {this.props.item.checkInDate} </td>
+                <td> {this.props.item.checkOutDate} </td>
+                <td> {moment(this.props.item.checkOutDate).diff(this.props.item.checkInDate, 'days')} days</td>
             </tr>
         )
     };
