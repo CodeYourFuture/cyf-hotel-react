@@ -13,7 +13,9 @@ class Results extends Component {
 
     handleRowActive = (id) => {
         let j = id - 1;
-        let activeRow = this.state.setActiveRow;
+        console.log(id);
+        let activeRow = this.props.result;
+        console.log(activeRow);
         if (!activeRow[j].isActive) {
             activeRow[j].isActive = true;
             this.setState({ setActiveRow: activeRow, countActiveRow: ++this.state.countActiveRow, })
