@@ -5,13 +5,13 @@ class TableHead extends Component {
         return (
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>FirstName</th>
-                    <th>Surname</th>
-                    <th>E-Mail</th>
-                    <th>RoomID</th>
-                    <th>Check-In-Date</th>
-                    <th>Check-Out-Date</th>
+                    <th onClick={()=> {this.props.sortColumn('title')}}>Title</th>
+                    <th onClick={()=> {this.props.sortColumn('firstName')}}>FirstName</th>
+                    <th onClick={()=> {this.props.sortColumn('surname')}}>Surname</th>
+                    <th onClick={()=> {this.props.sortColumn('email')}}>E-Mail</th>
+                    <th onClick={()=> {this.props.sortColumn('roomId')}}>RoomID</th>
+                    <th onClick={()=> {this.props.sortColumn('checkInDate')}}>Check-In-Date</th>
+                    <th onClick={()=> {this.props.sortColumn('checkOutDate')}}>Check-Out-Date</th>
                     <th>Stay in</th>
                 </tr>
             </thead>

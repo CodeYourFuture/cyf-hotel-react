@@ -35,7 +35,7 @@ class Bookings extends Component {
         .then(data => {
           let addRowState = data.map((obj) => ({ ...obj, 'isActive': false })); // data.rows.map  for local data
           this.setState({
-            bookingsState: data,   // data.rows for local data
+            bookingsState: addRowState,   // data.rows for local data
             bookings: addRowState,
             isFetched: true,
             isLoading: false

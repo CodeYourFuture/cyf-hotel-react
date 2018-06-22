@@ -60,6 +60,7 @@ td, th {
 
   .selected {
     background-color:rgb(41, 86, 235);
+    color: antiquewhite;
   }
   
   .default {
