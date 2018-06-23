@@ -14,8 +14,11 @@ class Results extends Component {
         };
         this.handleRowActive = this.handleRowActive.bind(this);
         this.sortFunction = this.sortFunction.bind(this);
-        this.handelSort = this.handelSort.bind(this)
+        this.handelSort = this.handelSort.bind(this);
+
     };
+
+
 
     handleRowActive = (id) => {
         let activeRow = this.state.setActiveRow;
@@ -68,14 +71,19 @@ class Results extends Component {
         });
     };
 
+    handleUpdate = () => {
+        this.setState({ setActiveRow: this.props.result })
+    };
+
     render() {
+
         return (
             <div>
                 <Counter messageCounter="Result " resultLength={this.props.result.length} />
                 <Counter messageCounter="Row selected " resultLength={this.state.countActiveRow} />
                 <table className="table">
                     <TableHead sortColumn={this.handelSort} />
-                    <TableData results={this.state.setActiveRow} rowActive={this.handleRowActive} />
+                    <TableData results={this.props.result} rowActive={this.handleRowActive} />
                 </table>
             </div>
         )
