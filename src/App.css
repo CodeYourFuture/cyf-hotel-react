@@ -40,14 +40,45 @@
 }
 
 tr {
+ 
   color: #5b5757;
+  padding: 20px;
+}
+th {
+  padding: 20px;
+  width : 100%;
+}
+table  {
+  table-layout:fixed ;
+  width: 100%
+}
+
+td {
+  padding: 20px;
+  width : 60%;
 }
 
 .results {
   padding-top: 15px;
+  
 }
 
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+thead th:nth-child(1){
+  width : 30%;
+}
+thead th:nth-child(2){
+  width : 20%;
+}
+thead th:nth-child(4){
+  width : 80%;
+}
+thead th:nth-child(5){
+  width : 10%;
+}
+thead th:nth-child(6){
+  width : 10%;
 }
