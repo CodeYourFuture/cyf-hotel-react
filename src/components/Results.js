@@ -13,6 +13,8 @@ class Results extends Component {
             sortOrder: 'ascending'
         };
         this.handleRowActive = this.handleRowActive.bind(this);
+        this.sortFunction = this.sortFunction.bind(this);
+        this.handelSort = this.handelSort.bind(this)
     };
 
     handleRowActive = (id) => {
@@ -69,11 +71,11 @@ class Results extends Component {
     render() {
         return (
             <div>
-                <Counter messageCounter="Result " result={this.props.result.length} />
-                <Counter messageCounter="Row selected " result={this.state.countActiveRow} />
+                <Counter messageCounter="Result " resultLength={this.props.result.length} />
+                <Counter messageCounter="Row selected " resultLength={this.state.countActiveRow} />
                 <table className="table">
                     <TableHead sortColumn={this.handelSort} />
-                    <TableData result={this.props.result} rowActive={this.handleRowActive} />
+                    <TableData results={this.state.setActiveRow} rowActive={this.handleRowActive} />
                 </table>
             </div>
         )

@@ -67,7 +67,7 @@ class Bookings extends Component {
   bookingsById = () => {
     // const FakeBookings = this.data;
     if (this.state.inputID !== '') {
-      var filteredBookings = this.state.bookings.filter(booking => {
+      var filteredBookings = this.state.bookingsState.filter(booking => {
         return booking.id === parseInt(this.state.inputID, 10)
       });
       this.setState({
@@ -85,7 +85,7 @@ class Bookings extends Component {
   customerName = () => {
     // const FakeBookings = this.data;
     if (this.state.inputName !== '') {
-      var filteredBookings = this.state.bookings.filter(booking => {
+      var filteredBookings = this.state.bookingsState.filter(booking => {
         return (booking.firstName + " " + booking.surname) === this.state.inputName
       });
       this.setState({

@@ -3,8 +3,8 @@ import TableRow from './TableRow';
 
 class TableData extends Component {
     render() {
-        const rows = this.props.result;
-        console.log(rows);
+        const rows = this.props.results;
+        // console.log(rows);
         let rowData = rows.map((item, i) => {
             return (<TableRow item={item} index={i}
                 trCss={rows[i].isActive ? 'selected' : 'default'}
