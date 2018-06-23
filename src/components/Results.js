@@ -16,16 +16,23 @@ class Results extends Component {
     };
 
     handleRowActive = (id) => {
-        let j = id - 1;
-        let activeRow = this.props.result;
-        if (!activeRow[j].isActive) {
-            activeRow[j].isActive = true;
-            this.setState({ setActiveRow: activeRow, countActiveRow: ++this.state.countActiveRow, })
+        let activeRow = this.state.setActiveRow;
+        let filterActivRow = activeRow.find(x => x.id === id);
+        if (!filterActivRow.isActive) {
+            filterActivRow.isActive = true;
+            let tempCountActiveRow = this.state.countActiveRow + 1;
+            this.setState({
+                setActiveRow: activeRow,
+                countActiveRow: tempCountActiveRow
+            })
+        } else {
+            filterActivRow.isActive = false;
+            let tempCountActiveRow = this.state.countActiveRow - 1;
+            this.setState({
+                setActiveRow: activeRow,
+                countActiveRow: tempCountActiveRow
+            })
         }
-        else {
-            activeRow[j].isActive = false;
-            this.setState({ setActiveRow: activeRow, countActiveRow: --this.state.countActiveRow })
-        };
     };
 
     sortFunction = (data, column) => {
@@ -42,7 +49,7 @@ class Results extends Component {
                 } else {
                     return -1
                 }
-            };
+            }
         });
     };
 

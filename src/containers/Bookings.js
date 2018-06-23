@@ -86,7 +86,7 @@ class Bookings extends Component {
     // const FakeBookings = this.data;
     if (this.state.inputName !== '') {
       var filteredBookings = this.state.bookings.filter(booking => {
-        return (booking.firstname + " " + booking.surname) === this.state.inputName
+        return (booking.firstName + " " + booking.surname) === this.state.inputName
       });
       this.setState({
         bookings: filteredBookings,
@@ -127,8 +127,8 @@ class Bookings extends Component {
             </div>
           </div>
         );
-      };
-    };
+      }
+    }
   }
 }
 export default Bookings;
