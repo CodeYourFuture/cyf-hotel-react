@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Search from "../components/Search.js";
 import Results from "../components/Results.js";
 import FakeBookings from "../data/fakeBookings.json";
+import ResultFound from "../components/ResultFound.js";
 
 export default class Bookings extends Component {
   constructor() {
@@ -42,9 +43,6 @@ export default class Bookings extends Component {
     input.preventDefault();
     this.filterBookingsName(input);
   };
-  // search = () => {
-  //   console.info("TO DO!");
-  // };
 
   render() {
     return (
@@ -55,7 +53,7 @@ export default class Bookings extends Component {
             onClickId={this.onClickId}
             onClickName={this.onClickName}
           />
-
+          <ResultFound count={this.state.bookings.length} />
           {/* <Results results={FakeBookings} /> */}
           <Results results={this.state.bookings} />
         </div>
