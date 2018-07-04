@@ -8,9 +8,18 @@ export default class Bookings extends Component {
   constructor() {
     super();
     this.state = {
-      results: FakeBookings,
-      bookings: FakeBookings
+      isLoding: true,
+      err: null,
+      results: [],
+      bookings: []
     };
+  }
+  componentDidMount() {
+    fetch("https://mire-hub.glitch.me")
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ isLoding: false, results: data, bookings: data });
+      });
   }
   filterBookingsId = event => {
     var searchValue = document.querySelector("#customerId");
@@ -45,19 +54,22 @@ export default class Bookings extends Component {
   };
 
   render() {
-    return (
-      <div className="App-content">
-        <div className="container">
-          <Search
-            search={this.search}
-            onClickId={this.onClickId}
-            onClickName={this.onClickName}
-          />
-          <ResultFound count={this.state.bookings.length} />
-          {/* <Results results={FakeBookings} /> */}
-          <Results results={this.state.bookings} />
+    if (this.state.isLoading) {
+      return <div>Loading... 🤔</div>;
+    } else {
+      return (
+        <div className="App-content">
+          <div className="container">
+            <Search
+              search={this.search}
+              onClickId={this.onClickId}
+              onClickName={this.onClickName}
+            />
+            <ResultFound count={this.state.bookings.length} />
+            <Results results={this.state.bookings} />
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
