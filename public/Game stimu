@@ -1,0 +1,9 @@
+function testNum(a) {
+  if (a > 0) {
+    return "live";
+  } else {
+    return "dead";
+  }
+}
+
+console.log(testNum(9));
