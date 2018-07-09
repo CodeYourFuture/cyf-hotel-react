@@ -8,7 +8,7 @@ export default class Bookings extends Component {
   constructor() {
     super();
     this.state = {
-      isLoding: true,
+      isLoading: true,
       err: null,
       results: [],
       bookings: []
@@ -18,7 +18,12 @@ export default class Bookings extends Component {
     fetch("https://mire-hub.glitch.me")
       .then(res => res.json())
       .then(data => {
-        this.setState({ isLoding: false, results: data, bookings: data });
+        this.setState({ isLoading: false, results: data, bookings: data });
+      })
+      .catch(err => {
+        this.setState({
+          err: err
+        });
       });
   }
   filterBookingsId = event => {
@@ -54,8 +59,11 @@ export default class Bookings extends Component {
   };
 
   render() {
+    console.debug("Test");
     if (this.state.isLoading) {
-      return <div>Loading... 🤔</div>;
+      return <div> Page is Loading... 🤔</div>;
+    } else if (this.state.err !== null && this.state.err !== undefined) {
+      return <div> The server is encountering an error..</div>;
     } else {
       return (
         <div className="App-content">
