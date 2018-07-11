@@ -13,7 +13,7 @@ class Counter extends React.Component {
     return (
       <div>
         <button onClick={this.increasingCounter}>{this.props.name}</button>
-        <p>{this.state.count} booked</p>
+        <p>{this.state.count} Likes</p>
       </div>
     );
   }

@@ -15,15 +15,13 @@ export default class Bookings extends Component {
     };
   }
   componentDidMount() {
-    fetch("https://mire-hub.glitch.me")
+    fetch("https://infinite-ravine-88150.herokuapp.com/")
       .then(res => res.json())
       .then(data => {
         this.setState({ isLoading: false, results: data, bookings: data });
       })
       .catch(err => {
-        this.setState({
-          err: err
-        });
+        this.setState({ err: err });
       });
   }
   filterBookingsId = event => {

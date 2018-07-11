@@ -17,8 +17,7 @@ class App extends Component {
         <BookingsMessage />
         <SpecialDeals />
         <Bookings />
-        <Counter name="Click here" />
-        <Footer />
+        <Footer /> <Counter name="Like us" />
       </div>
     );
   }
