@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
-import Search from '../components/Search.js';
-// import Results from '../components/Results.js';
-// import FakeBookings from '../data/fakeBookings.json';
-
+import React, { Component } from "react";
+import Search from "../components/Search.js";
+import Results from "../components/Results.js";
+import rsults from "../data/fakeBookings.json";
 export default class Bookings extends Component {
+  state = { rsults: undefined };
   search = () => {
-    console.info('TO DO!');
+    this.setState({ rsults});
   };
-  
+
   render() {
     return (
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
-          {/* <Results results={this.state.results} /> */}
+          {this.state.rsults ? (
+            <Results results={this.state.rsults} />
+          ) : (
+            "No results found!!"
+          )}
         </div>
       </div>
     );

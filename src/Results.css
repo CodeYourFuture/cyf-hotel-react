@@ -1,0 +1,9 @@
+.Results{
+    width: 100%; 
+}
+th{
+    background-color: lightgray;
+}
+table{
+    padding: 12px;
+}
