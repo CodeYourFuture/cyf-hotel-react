@@ -17,7 +17,7 @@ const TableHeader = () => (
       <th>Roome ID</th>
       <th>Check in date</th>
       <th>Check out date</th>
-      <th>Check out date</th>
+      <th>Difference</th>
     </tr>
   </thead>
 );
