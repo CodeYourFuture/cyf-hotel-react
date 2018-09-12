@@ -38,11 +38,20 @@
 .search {
   padding: 5px 0 20px 0;
 }
+tr{
+  border-top: 1px solid black;
 
-tr {
-  color: #5b5757;
 }
-
+td{
+  color: #5b5757;
+  padding-left: 25px;
+  text-align: center
+}
+th{
+  padding-left: 25px;
+  background-color: azure;
+  text-align: center
+}
 .results {
   padding-top: 15px;
 }
