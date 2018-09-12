@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Button from './Button.js'
 const Search = props => (
   <div className="search">
     <div className="page-header">
@@ -11,7 +11,11 @@ const Search = props => (
           <label htmlFor="customerId">Customer Id</label>
           <div className="search-row">
             <input type="text" id="customerId" className="form-control" placeholder="Customer Id" />
-            <button className="btn btn-primary fn-submit-name">Search IDs</button>
+            <Button displayText="hello"/>
+          </div>
+          <div className="search-row">
+            <input type="text" id="customerId" className="form-control" placeholder="Search Booking by name" />
+            <Button displayText= "welcome"/>
           </div>
         </div>
       </div>
