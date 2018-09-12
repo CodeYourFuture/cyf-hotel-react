@@ -24,3 +24,10 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+thead {color:green;}
+tbody {color:blue;}
+tfoot {color:red;}
+
+table, th, td {
+    border: 1px solid black;
+}
