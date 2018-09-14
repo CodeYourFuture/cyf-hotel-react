@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
 import Search from '../components/Search.js';
-// import Results from '../components/Results.js';
-// import FakeBookings from '../data/fakeBookings.json';
+import ResultTable from '../components/Results.js';
+import FakeBookings from '../data/fakeBookings.json';
+import moment from 'moment';
+
+import '../results.css';
 
 export default class Bookings extends Component {
   search = () => {
     console.info('TO DO!');
   };
-  
   render() {
+    //console.log(FakeBookings)
+
     return (
+
       <div className="App-content">
         <div className="container">
-          <Search search={this.search} />
-          {/* <Results results={this.state.results} /> */}
+          <Search search={this.search}  />
+          <ResultTable data={FakeBookings} />
+          
+
+          {/* <FakeBookings  /> */}
+          
+          {/*<Results results={this.state.results} />*/} 
         </div>
       </div>
     );
