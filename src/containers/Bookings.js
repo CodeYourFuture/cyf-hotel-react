@@ -4,7 +4,7 @@ import Results from "../components/Results.js";
 import rsults from "../data/fakeBookings.json";
 export default class Bookings extends Component {
   state = { rsults: undefined };
-  search = () => {
+  searchHandler = () => {
     this.setState({ rsults});
   };
 
@@ -12,7 +12,7 @@ export default class Bookings extends Component {
     return (
       <div className="App-content">
         <div className="container">
-          <Search search={this.search} />
+          <Search searchHandler={this.searchHandler} />
           {this.state.rsults ? (
             <Results results={this.state.rsults} />
           ) : (

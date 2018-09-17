@@ -1,40 +1,27 @@
-import React from 'react';
-import Buttton from './Button'
-const Search = ({search}) => (
+import React from "react";
+import SearchControls from "./SearchControls";
+const searchById = {
+  htmlFor: "customerId",
+  searchBy: "customer Id",
+  id: "customerId",
+  placeholder: "Customer Id",
+  btn_label: "Search IDs"
+};
+const searchByName = {
+  htmlFor: "customerName",
+  searchBy: "customer Name",
+  id: "customerName",
+  placeholder: "Customer Name",
+  btn_label: "Search Names"
+};
+const Search = ({ searchHandler }) => (
   <div className="search">
     <div className="page-header">
       <h4 className="text-left">Search Bookings</h4>
     </div>
     <div className="row search-wrapper">
-      <div className="col">
-        <div className="form-group search-box">
-          <label htmlFor="customerId">Customer Id</label>
-          <div className="search-row">
-            <input
-              type="text"
-              id="customerId"
-              className="form-control"
-              placeholder="Customer Id"
-            />
-            <Buttton label="Search IDs" search= {search}/>
-          </div>
-        </div>
-      </div>
-      {/* search by name*/}
-      <div className="col">
-        <div className="form-group search-box">
-          <label htmlFor="customerName">Customer Name</label>
-          <div className="search-row">
-            <input
-              type="text"
-              id="customerName"
-              className="form-control"
-              placeholder="Customer Name"
-            />
-            <Buttton label="Search Name" search={search}/>
-          </div>
-        </div>
-      </div>
+      <SearchControls {...searchById} searchHandler={searchHandler} />
+      <SearchControls {...searchByName} searchHandler={searchHandler} />
     </div>
   </div>
 );
