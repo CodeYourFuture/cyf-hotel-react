@@ -5,14 +5,16 @@ const searchById = {
   searchBy: "customer Id",
   id: "customerId",
   placeholder: "Customer Id",
-  btn_label: "Search IDs"
+  btn_label: "Search IDs",
+  enteredValue: "enteredId"
 };
 const searchByName = {
   htmlFor: "customerName",
   searchBy: "customer Name",
   id: "customerName",
   placeholder: "Customer Name",
-  btn_label: "Search Names"
+  btn_label: "Search Names",
+  enteredValue: "enteredName"
 };
 const Search = ({ searchHandler }) => (
   <div className="search">
