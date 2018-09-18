@@ -22,13 +22,15 @@ export default class Bookings extends Component {
               numberOfBookingsFound: filteredRsults.length
             };
           } else if (searchMethod === "NAME") {
+            let filteredRsults = bookings.filter(
+              ({ firstName, surname }) =>
+                valueEntered.toLowerCase() === firstName.toLowerCase() ||
+                valueEntered.toLowerCase() === surname.toLowerCase()
+            )
             return {
-              filteredRsults: bookings.filter(
-                ({ firstName, surname }) =>
-                  valueEntered.toLowerCase() === firstName.toLowerCase() ||
-                  valueEntered.toLowerCase() === surname.toLowerCase()
-              ),
-              error: null
+              filteredRsults,
+              error: null,
+              numberOfBookingsFound: filteredRsults.length
             };
           }
         }
