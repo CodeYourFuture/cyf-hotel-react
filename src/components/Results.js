@@ -1,6 +1,7 @@
 import React from "react";
 import "../Results.css";
-import { TableHeader, TableRow } from "./table";
+import TableHeader from "./TableHeader"
+import TableRow from "./TableRow"
 const Results = ( {results} ) => {
     // console.log('testing...', results)
   if (results && results.length > 0) {

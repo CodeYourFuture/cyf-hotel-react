@@ -32,7 +32,7 @@ const TableRow = ({
   checkOutDate
 }) => (
   <tbody>
-    <tr>
+    <tr onClick={isActive}>
       <td>{id}</td>
       <td>{title}</td>
       <td>{firstName}</td>

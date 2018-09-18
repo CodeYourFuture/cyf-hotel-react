@@ -54,3 +54,8 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
+.activeRow{
+  background-color: orangered;
+  color: white;
+  font-size: 24;
+}
