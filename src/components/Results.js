@@ -1,6 +1,6 @@
 
 import React from 'react';
-import moment from './monent';
+import moment from 'moment';
 
 const Results = (props) => {
   return (
@@ -20,6 +20,7 @@ const Results = (props) => {
       </thead>
       <tbody>
       {props.results.map(result => {
+      
         return (
           <tr>
 
@@ -31,8 +32,8 @@ const Results = (props) => {
             <td>{result.roomId}</td>
             <td>{result.checkInDate}</td>
             <td>{result.checkOutDate}</td>
-            <td>moment{[result.checkOutDate].diff([result.checkInDate], 'days') }</td>
-
+            <td>{moment([result.checkOutDate]).diff(moment([result.checkInDate]), 'days')}</td>
+            
           </tr>
         )
       })}

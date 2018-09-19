@@ -12,12 +12,16 @@ export default class Bookings extends Component {
   };
 
   render() {
+    
     return (
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
           {/* <Results results={this.state.results} /> */}
+          <ul>
           <Results results={fakeBookings}/>
+          
+          </ul>
         </div>
       </div>
     );
