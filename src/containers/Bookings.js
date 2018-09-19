@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import Search from '../components/Search.js';
-import Results from '../containers/Results.js';
-import FakeBookings from '../data/fakeBookings.json';
+import Results from '../components/Results.js';
+import fakeBookings from '../data/fakeBookings.json';
 
 export default class Bookings extends Component {
+
+  // state = { results: [] };
   search = () => {
     console.info('TO DO!');
+    // this.setState({ results: fakeBookings });
   };
-  
+
   render() {
     return (
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
-          <Results results={this.props.results} /> 
+          {/* <Results results={this.state.results} /> */}
+          <Results results={fakeBookings}/>
         </div>
       </div>
     );

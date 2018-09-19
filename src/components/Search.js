@@ -11,12 +11,14 @@ const Search = props => (
           <label htmlFor="customerId">Customer Id</label>
           <div className="search-row">
             <input type="text" id="customerId" className="form-control" placeholder="Customer Id" />
-            <Button displayText="hello"/>
+            <Button displayText="Search customerId"/>
           </div>
           <div className="search-row">
             <input type="text" id="customerId" className="form-control" placeholder="Search Booking by name" />
-            <Button displayText= "welcome"/>
+            <Button displayText= "Search by name"/>
+            
           </div>
+          
         </div>
       </div>
     </div>

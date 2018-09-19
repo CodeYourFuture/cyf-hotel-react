@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Bookings from './containers/Bookings.js';
 import Footer from './components/Footer.js';
 import './App.css';
