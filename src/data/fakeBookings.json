@@ -48,5 +48,25 @@
     "roomId": 3,
     "checkInDate": "2017-08-30",
     "checkOutDate": "2017-10-02"
+  },
+  {
+    "id": 6,
+    "title": "Prof",
+    "firstName": "Paul",
+    "surname": "Selvam",
+    "email": "paul@selvam.net",
+    "roomId": 3,
+    "checkInDate": "2017-08-30",
+    "checkOutDate": "2017-10-02"
+  },
+  {
+    "id": 7,
+    "title": "Miss",
+    "firstName": "Anne",
+    "surname": "Smit",
+    "email": "anne@smit.net",
+    "roomId": 7,
+    "checkInDate": "2017-08-30",
+    "checkOutDate": "2017-10-02"
   }
 ]

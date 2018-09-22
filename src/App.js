@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import columns from './components/Results.js';
+//import columns from './components/Results.js';
 import Bookings from './containers/Bookings.js';
 import Footer from './components/Footer.js';
 import './App.css';
