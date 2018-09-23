@@ -5,6 +5,7 @@ const Results = (props) => {
   const res = props.results;
   return <div>
       <table>
+      <tbody> 
         <tr>
           <th>title</th>
           <th>First Name</th>
@@ -16,7 +17,7 @@ const Results = (props) => {
           <th>number of days</th>
         </tr>
         {res.map(function (result){
-        return (<tr>
+        return (<tr key={result.id}>
           <td>{result.title}</td>
           <td>{result.firstName}</td>
           <td>{result.surname}</td>
@@ -26,11 +27,11 @@ const Results = (props) => {
           <td>{result.checkOutDate}</td>
           <td>{moment(result.checkOutDate).diff(moment(result.checkInDate), 'days')}</td>
         </tr>
-
           );
 
         })}
-        
+        </tbody> 
+
       </table>
     </div>;
 };
