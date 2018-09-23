@@ -12,11 +12,15 @@ const Search = props => (
           <label htmlFor="customerId">Customer Id</label>
           <div className="search-row">
             <input
+              onChange={props.search}
               type="text"
               id="customerId"
               className="form-control"
               placeholder="Customer Id" />
-            <Button label='Search by ID' />
+            <Button label='Search by ID'
+              searching={props.secondSearching}
+
+            />
           </div>
         </div>
       </div>
@@ -26,11 +30,15 @@ const Search = props => (
           <label htmlFor="customerName">Customer Name</label>
           <div className="search-row">
             <input
+              onChange={props.search2}
               type="text"
               id="customerName"
               className="form-control"
               placeholder="Customer Name" />
-            <Button label='Search by Name' />
+            <Button label='Search by Name'
+              searching={props.secondSearching}
+            />
+
           </div>
         </div>
       </div>
