@@ -10,14 +10,28 @@ const Search = props => (
         <div className="form-group search-box">
           <label htmlFor="customerId">Customer Id</label>
           <div className="search-row">
-            <input type="text" id="customerId" className="form-control" placeholder="Customer Id" />
-            <Button displayText="Search customerId"/>
+            <input
+              type="text"
+              value={props.customerIdInput}
+              onChange={props.customerInputChange}
+              id="customerId" className="form-control"
+              placeholder="Customer Id" />
+            <Button displayText="Search customerId" search={props.filteredCustomerId} />
           </div>
           <div className="search-row">
-            <input type="text" id="customerId" className="form-control" placeholder="Search Booking by name" />
-            <Button displayText= "Search by name"/>
-            
+            <input type="text"
+              value={props.customerNameInput}
+              onChange={props.customerNameInputChange}
+              id="customerId" className="form-control"
+              placeholder="Search Booking by name" />
+            <Button displayText="Search by name" search={props.filteredCustomerName} />
+
           </div>
+          {/* <br/>
+          <div>
+             
+            <button onClick={this.resultCounterChange} id="click-me">Click me!</button>
+          </div> */}
           
         </div>
       </div>

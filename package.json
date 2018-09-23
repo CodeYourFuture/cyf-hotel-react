@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ajv": "^6.5.3",
     "moment": "^2.22.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

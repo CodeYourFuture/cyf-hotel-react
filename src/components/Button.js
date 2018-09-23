@@ -12,7 +12,11 @@ import React from 'react';
 
   
     return(
-      <button className={className}>{props.displayText}</button>
+      <button 
+      onClick={props.search}
+        className={className}>
+        {props.displayText}
+        </button>
     )}
 
 export default Button;
