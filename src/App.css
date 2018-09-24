@@ -77,8 +77,12 @@ table:hover {
 	transform: scale(1)
 }
 
-tr:hover  {
+/* tr:hover  {
 	background: #ccf2ff;
+} */
+
+.isSelected {
+  background: #ccf2ff;
 }
 
 

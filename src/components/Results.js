@@ -1,6 +1,6 @@
 import React from 'react';
-import moment from 'moment';
-
+//import moment from 'moment';
+import TableRow from './TableRow';
 
 //import FakeBookings from '../data/fakeBookings.json';
 
@@ -8,7 +8,7 @@ class ResultTable extends React.Component {
 
   constructor(props) {
     super(props)
-    console.log(props)
+    //console.log(props)
     this.state = {
       reservations: this.props.reservations
     }
@@ -21,9 +21,11 @@ class ResultTable extends React.Component {
   // }
 
   onClickHandler = (e) => {
-    this.setState({ reservations: e.target.td })
-    console.log(this.onClickHandler)
+    console.log('fire')
+    this.setState({ reservations: e.target.value })
+    
   }
+
   render() {
 
     return (
@@ -44,17 +46,7 @@ class ResultTable extends React.Component {
         <tbody>
           {
             this.props.reservations.map(row => (
-              <tr onClick={this.onClickHandler}>
-                <td>{row.id}</td>
-                <td>{row.title}</td>
-                <td>{row.firstName}</td>
-                <td>{row.surname}</td>
-                <td>{row.email}</td>
-                <td>{row.roomId}</td>
-                <td>{row.checkInDate}</td>
-                <td>{row.checkOutDate}</td>
-                <td>{diffDays(row.checkInDate, row.checkOutDate)}</td>
-              </tr>
+              <TableRow row={row}/>
             ))
           }
 
@@ -62,14 +54,14 @@ class ResultTable extends React.Component {
       </table>
     )
 
-    function diffDays(checkInDate, checkOutDate) {
+    // function diffDays(checkInDate, checkOutDate) {
 
-      var checkInMoment = moment(checkInDate);
-      var checkOutMoment = moment(checkOutDate);
+    //   var checkInMoment = moment(checkInDate);
+    //   var checkOutMoment = moment(checkOutDate);
 
-      return checkOutMoment.diff(checkInMoment, 'days')
+    //   return checkOutMoment.diff(checkInMoment, 'days')
 
-    }
+    // }
   }
 }
 //console.log(diffDays());
