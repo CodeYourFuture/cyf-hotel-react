@@ -26,7 +26,7 @@ class Results extends React.Component {
 
 
   componentDidMount() {
-    fetch('api/customers')
+    fetch('https://mire-hub.glitch.me/')
       .then((res) => {
         if (res.status >= 200 && res.status < 300) {
           return res
@@ -40,7 +40,7 @@ class Results extends React.Component {
           isLoading: false,
           data: data
         })
-        // /console.log(data)
+        console.log(data)
       })
       .catch((err) => {
         this.setState({
@@ -63,7 +63,7 @@ class Results extends React.Component {
         <table className="Results">
           <TableHeader />
           {
-            this.state.data.customers.map((row, key) => (
+            this.state.data.map((row, key) => (
               <TableRow toggleClass={this.toggleClass} className={this.state.isActive ? "activeRow" : null} key={key} {...row} />))
 
           }
