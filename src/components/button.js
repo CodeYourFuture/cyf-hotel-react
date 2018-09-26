@@ -1,10 +1,8 @@
-import React from 'react';
- const Button = ({text}) => (
-    <button className="btn btn-primary fn-submit-name">{text}</button>
- )
+import React from 'react'
 
 
+const Button = ({handleClick, text}) => (
 
-
-
-export default Button;
+    <button onClick={handleClick} className="btn btn-primary fn-submit-name">{text}</button>
+);
+export default Button

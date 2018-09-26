@@ -1,57 +1,85 @@
 import React from 'react';
-import FakeBookings from '../data/fakeBookings.json';
-import moment from 'moment'
-const dateDifference = (start, end) => {
-  const startMoment = moment(start)
-  const endMoment = moment(end)
-  return endMoment.diff(startMoment, "days");
+//import { render } from 'react-dom'
+import { TableHeader, TableRow } from "./table";
+class Results extends React.Component {
+
+  constructor(props) {
+    super(props)
+    console.log(props)
+    this.state = {
+      bookings: this.props.bookings,
+      isActive: false,
+      isLoading: true,
+      err: null,
+      data: null
+    }
+  }
+
+
+
+  toggleClass = () => {
+
+    this.setState(({ isActive }) => ({ isActive: !isActive }))
+
+  }
+
+
+
+  componentDidMount() {
+    fetch('api/customers')
+      .then((res) => {
+        if (res.status >= 200 && res.status < 300) {
+          return res
+        } else {
+          throw new Error('HTTP error')
+        }
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          isLoading: false,
+          data: data
+        })
+        // /console.log(data)
+      })
+      .catch((err) => {
+        this.setState({
+          isLoading: false,
+          err: err
+        })
+      })
+    }
+
+
+  render() {
+
+    // console.log(this.state.data)
+    if (this.state.isLoading) {
+      return <div>Loading... </div>
+    } else if (this.state.err) {
+      return <div>Something went wrong</div>
+    } else {
+      return (
+        <table className="Results">
+          <TableHeader />
+          {
+            this.state.data.customers.map((row, key) => (
+              <TableRow toggleClass={this.toggleClass} className={this.state.isActive ? "activeRow" : null} key={key} {...row} />))
+
+          }
+          {/* {console.log(this.state.isActive)} */}
+        </table>
+
+      );
+    }
+  }
 }
+  export default Results;
 
-const Results = () => {
    
-  return(
-    <div className="row search-wrapper">
-    <div className="col">
-    <table>
-    <thead>
-    <tr>
-      <th>Title</th>
-      <th>First name</th>
-      <th>Surname</th>
-      <th>Email</th>
-      <th>Room Id</th>
-      <th>Check In Date</th>
-      <th>Check Out Date</th>
-      <th>booking length</th>
-    </tr>
-    </thead>
-        {FakeBookings.map((item)=>(
-    
-         
-        <tbody>
-       
-            <tr>
-              <td>{item.title}</td>
-              <td>{item.firstName}</td>
-              <td>{item.surname}</td>
-              <td>{item.email}</td>
-              <td>{item.roomId}</td>
-              <td>{item.checkInDate}</td>
-              <td>{item.checkOutDate}</td>
-              <td>{dateDifference(item.checkInDate, item.checkOutDate)}</td>
-            </tr>
-        </tbody>
-      
-        ))}
-       </table>
-    </div>
-  </div>
-
-  )}
-    
 
 
 
 
+ 
 
-export default Results;

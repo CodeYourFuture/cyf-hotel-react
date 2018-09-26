@@ -43,6 +43,19 @@ tr {
   color: #5b5757;
 }
 
+button {
+  background-color: blue;
+}
+
+.itemSearch {
+  display: inline-flex;
+  width: 100%;
+}
+
+.search-row {
+  margin-right: 20px;
+}
+
 .results {
   padding-top: 15px;
 }
@@ -50,4 +63,23 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+table {
+  width: 100%
+}
+
+th, td {
+  border: 1px solid gray;
+  text-align: center;
+}
+
+table:hover {
+	transform: scale(1)
+}
+
+tr:hover  {
+	background: #ccf2ff;
+}
+tr.activeRow{
+ background-color:red;
 }

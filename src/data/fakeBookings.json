@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Mr",
-    "firstName": "John",
+    "first-name": "John",
     "surname": "Doe",
     "email": "johndoe@doe.com",
     "roomId": 2,
