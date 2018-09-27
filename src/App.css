@@ -64,6 +64,7 @@ button {
   padding-top: 20px;
   text-align: center;
 }
+
 table {
   width: 100%
 }
@@ -84,6 +85,22 @@ table:hover {
 .isSelected {
   background: #ccf2ff;
 }
+
+.sortBy {
+  background: #b8d1ff;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 10px 15px;
+  font-size: 20px;
+  opacity: 1.5;
+  color: #ccf2ff;
+  cursor: pointer;
+  transition: 0.8s;
+  background-color: #2614cc;
+}
+
 
 
 

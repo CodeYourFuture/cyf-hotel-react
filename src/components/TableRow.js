@@ -6,13 +6,27 @@ export default class TableRow extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isSelected: false
+      isSelected: false,
+      counter: 0
+      
     }
   }
 
+//    gridOptions = {
+//     //columnDefs: columnDefs,
+//     rowSelection: 'multiple',
+//     rowMultiSelectWithClick: true
+// };
+
   onSelect = () => {
     console.log('mouse')
-    this.setState({ isSelected: !this.state.isSelected })
+    this.setState({ isSelected: !this.state.isSelected });
+    if(!this.state.isSelected) {
+     this.props.onSelected()
+    }else if(this.state.isSelected) {
+      this.props.deSelected()
+      
+    }
 
   }
 
@@ -29,7 +43,10 @@ export default class TableRow extends Component {
         <td>{this.props.row.roomId}</td>
         <td>{this.props.row.checkInDate}</td>
         <td>{this.props.row.checkOutDate}</td>
-        <td>{diffDays(this.props.row.checkInDate, this.props.row.checkOutDate)}</td>
+        <td>{diffDays(this.props.row.checkInDate, 
+            this.props.row.checkOutDate)}
+            </td>
+           
       </tr>
     )
   }
