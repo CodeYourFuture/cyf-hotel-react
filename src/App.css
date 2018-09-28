@@ -71,3 +71,6 @@ td {
 tr:hover {
   background: greenyellow;
 }
+.myStyle {
+  background-color: yellow;
+}

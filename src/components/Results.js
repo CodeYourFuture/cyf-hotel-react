@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import moment from "moment";
+import Row from "./rowClass";
 
-const diffDays = (checkInDate, checkOutDate) => {
-  return moment(checkOutDate).diff(moment(checkInDate), "days");
-};
+// const diffDays = (checkInDate, checkOutDate) => {
+//   return moment(checkOutDate).diff(moment(checkInDate), "days");
+// };
 
 // const diffDays = (checkInDate, checkOutDate) => {
 //   var numberOfMsInADay = 1000 * 60 * 60 * 24;
@@ -17,13 +17,31 @@ export default class Results extends Component {
     console.log("receiving props");
     console.log(props);
     super(props);
-    this.state = { reservations: props.reservations };
+    console.log(props, "my props");
+    this.state = {
+      reservations: props.reservations,
+      numSelected: 0
+    };
   }
+
+  increaseCounter = () => {
+    this.setState({
+      numSelected: this.state.numSelected + 1
+    });
+  };
+
+  decreaseCounter = () => {
+    this.setState({
+      numSelected: this.state.numSelected - 1
+    });
+  };
 
   render() {
     return (
       <div>
         <p>Results ({this.state.reservations.length} found)</p>
+        <p>Number of rows Selected ({this.state.numSelected} found)</p>
+
         <table>
           <thead>
             <tr>
@@ -39,20 +57,12 @@ export default class Results extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.reservations.map(reservation => (
-              <tr>
-                <td>{reservation.id}</td>
-                <td>{reservation.title}</td>
-                <td>{reservation.firstName}</td>
-                <td>{reservation.surname}</td>
-                <td>{reservation.email}</td>
-                <td>{reservation.checkInDate}</td>
-                <td>{reservation.checkOutDate}</td>
-                <td>{reservation.roomId}</td>
-                <td>
-                  {diffDays(reservation.checkInDate, reservation.checkOutDate)}
-                </td>
-              </tr>
+            {this.props.reservations.map(res => (
+              <Row
+                reservation={res}
+                onSelected={this.increaseCounter}
+                deSelected={this.decreaseCounter}
+              />
             ))}
           </tbody>
         </table>

@@ -1,20 +1,30 @@
 import React, { Component } from "react";
 import Search from "../components/Search.js";
 import Results from "../components/Results.js";
-import FakeBookings from "../data/fakeBookings.json";
+//import FakeBookings from "../data/fakeBookings.json";
+import Api from "../Api.js";
 
 export default class Bookings extends Component {
-  state = { reservations: FakeBookings };
+  state = { reservations: [] };
+
+  componentDidMount() {
+    Api.getReservations().then(reservationsDataFromApi => {
+      console.log(reservationsDataFromApi, "reservationsDataFrom");
+      this.setState({
+        reservations: reservationsDataFromApi.reservations
+      });
+    });
+  }
 
   search = () => {
     console.info("to do");
-    this.setState({ reservations: FakeBookings });
+    // this.setState({ reservations: thisreservationsDataFromApi });
   };
 
   filteredItemHandler = e => {
     const UserInput = e.target.value;
     console.log(UserInput);
-    const myResult = FakeBookings.filter(singleReservation => {
+    const myResult = this.state.reservations.filter(singleReservation => {
       console.log(UserInput);
       console.log(singleReservation.id);
       return (
@@ -29,6 +39,7 @@ export default class Bookings extends Component {
   selectColumnHandler = e => {};
 
   render() {
+    console.log(this.state.reservations);
     return (
       <div className="App-content">
         <div className="container">

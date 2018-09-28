@@ -39,7 +39,10 @@ const Search = props => {
                   placeholder="Customer name"
                   onChange={props.UserInput}
                 />
-                <ButtonSearch buttonText="Search Customer" />
+                <ButtonSearch
+                  buttonText="Search Customer"
+                  // search={props.UserInput}
+                />
               </div>
             </div>
           </div>
