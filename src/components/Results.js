@@ -1,6 +1,7 @@
+
 import React from 'react';
 //import { render } from 'react-dom'
-import { TableHeader, TableRow } from "./table";
+import {TableRow } from "./table";
 class Results extends React.Component {
 
   constructor(props) {
@@ -13,20 +14,24 @@ class Results extends React.Component {
       err: null,
       data: null
     }
+  
+// this.compareBy.bind(this);
+// this.sortBy.bind(this);
+this.onSort.bind(this);
+//this.sortingHandler.bind(this);
   }
 
 
+  // toggleClass = () => {
 
-  toggleClass = () => {
+  //   this.setState(({ isActive }) => ({ isActive: !isActive }))
 
-    this.setState(({ isActive }) => ({ isActive: !isActive }))
-
-  }
+  // }
 
 
 
   componentDidMount() {
-    fetch('https://mire-hub.glitch.me/')
+    fetch('api/customers')
       .then((res) => {
         if (res.status >= 200 && res.status < 300) {
           return res
@@ -49,8 +54,36 @@ class Results extends React.Component {
         })
       })
     }
+    // compareBy(key){
+    //   return function(a,b){
+    //     if(a[key] < b[key]) return -1;
+    //     if(a[key]>b[key]) return 1
+    //     return 0;
+    //   }
+    // }
+    
+    // sortBy(key){
+    //   let arrayCopy = [...this.state.data.customers];
+    //   arrayCopy.sort(this.compareBy(key));
+    //   this.setState({data:arrayCopy});
+    //   console.log(arrayCopy)
+    // }
+    onSort(event, sortKey){
+     
+      const data = [...this.state.data.customers];
+      data.sort((a,b) => a[sortKey].localeCompare(b[sortKey]))
+      this.setState({data})
+    }
 
-
+    // sortingHandler() {
+    //  // const { reservations } = this.state
+    //   let newData = this.state.data.customers
+    //   console.log('sort')
+    //   this.setState({
+    //     data: newData.sort((a, b) => a.firstName > b.firstName)
+    //     //reverse: !this.state.reverse,  
+    //   });
+    // }
   render() {
 
     // console.log(this.state.data)
@@ -61,10 +94,21 @@ class Results extends React.Component {
     } else {
       return (
         <table className="Results">
-          <TableHeader />
+          <thead>
+            <tr>
+              <th onClick={(e)=>this.onSort(e,'id')}>ID</th>
+              <th onClick={(e)=>this.onSort(e,'title')}>Title</th>
+              <th onClick={(e)=>this.onSort(e,'first_name')}>>First name</th>
+              <th>Surname</th>
+              <th>Email</th>
+             
+            </tr>
+          </thead>
           {
-            this.state.data.map((row, key) => (
-              <TableRow toggleClass={this.toggleClass} className={this.state.isActive ? "activeRow" : null} key={key} {...row} />))
+            this.state.data.customers.map((row, key) => {
+              return <TableRow  key={key} rowData = {row} />
+              
+            })
 
           }
           {/* {console.log(this.state.isActive)} */}
@@ -75,6 +119,7 @@ class Results extends React.Component {
   }
 }
   export default Results;
+
 
    
 

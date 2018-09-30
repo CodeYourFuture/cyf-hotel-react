@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Search from '../components/Search.js';
 import Results from '../components/Results.js';
 import FakeBookings from '../data/fakeBookings.json';
-
+//import Basic from '../components/formik.js'
 export default class Bookings extends Component {
   constructor() {
     super()
