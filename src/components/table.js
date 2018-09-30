@@ -1,11 +1,4 @@
 import React from "react";
-import moment from 'moment'
-const dateDifference = (start, end) => {
-    const startMoment = moment(start)
-    const endMoment = moment(end)
-    return endMoment.diff(startMoment, "days");
-}
-
 const TableHeader = () => (
   <thead>
     <tr>

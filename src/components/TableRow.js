@@ -14,31 +14,34 @@ class TableRow extends React.Component {
     }
   render() {
     const {
-      id,
+      customer_id,
       title,
-      firstName,
+      first_name,
       surname,
       email,
-      roomId,
-      checkInDate,
-      checkOutDate
+      room_id,
+      check_in_date,
+      check_out_date
     } = this.props;
-    return (
-      <tbody>
-        <tr onClick={this.toggleClass} 
-        className={this.state.isActive ? 'activeRow' : null}>
-          <td>{id}</td>
+    return <tbody>
+        <tr onClick={this.toggleClass} className={this.state.isActive ? "activeRow" : null}>
+          <td>{customer_id}</td>
           <td>{title}</td>
-          <td>{firstName}</td>
+          <td>{first_name}</td>
           <td>{surname}</td>
           <td>{email}</td>
-          <td>{roomId}</td>
-          <td>{checkInDate}</td>
-          <td>{checkOutDate}</td>
-          <td>{dateDifference(checkInDate, checkOutDate)}</td>
+          <td>{room_id}</td>
+          <td>{check_in_date}</td>
+          <td>{check_out_date}</td>
+          <td>
+            {
+              (check_in_date&&
+              check_out_date&&
+              dateDifference(check_in_date, check_out_date))
+            }
+          </td>
         </tr>
-      </tbody>
-    );
+      </tbody>;
   }
 }
 export default TableRow;
