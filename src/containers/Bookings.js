@@ -11,7 +11,9 @@ export default class Bookings extends Component {
     isLoading: true
   };
   componentDidMount() {
-    fetch(`http://localhost:8080/api/hw/bookings`)
+    const localUrl = `http://localhost:8080/api/hw/bookings`
+    const delayedUrl = `https://mire-hub.glitch.me/`
+    fetch(delayedUrl)
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
           return res;
@@ -99,9 +101,14 @@ export default class Bookings extends Component {
         )}
       </div>
     );
+    const templateLoading = <h1>successfully completed!</h1>
+    /* I am using two different identifier: 
+    database has names like first_name and API returns as firstName; 
+    not enogh time! 
+    I will change it later*/
     return (
       <div className="App-content">
-        {this.state.isLoading ? <p> Loading.. </p> : template}
+        {this.state.isLoading ? <p> Loading.. </p> : templateLoading}
       </div>
     );
   }
