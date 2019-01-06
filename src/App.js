@@ -10,7 +10,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">CYF Hotel</header>
         <Bookings />
-        <Footer />
       </div>
     );
   }
