@@ -1,6 +1,5 @@
 This is the `react` frontend for the [CYF-Hotel](https://github.com/CodeYourFuture/cyf-hotel).
 
-
 ![Bookings Search page](Bookings.png)
 
 # Installation
@@ -14,9 +13,9 @@ This is the `react` frontend for the [CYF-Hotel](https://github.com/CodeYourFutu
 
 ### Lesson 1
 
-1. Extract the `<button>` in the `src/components/Search.js` component to be it's own separate component
+1. Extract the `<button>` in the `src/Search.js` component to be it's own separate component
 
-2. Add another search form to the `Search` component. The new search form will search for bookings by name. You *don't* need to implement the search functionality yet
+<!-- 2. Add another search form to the `Search` component. The new search form will search for bookings by name. You *don't* need to implement the search functionality yet -->
 
 3. Create a Results component that shows a table of results. Show it on the Bookings page using hard coded data. Hint: look in `src/containers/Bookings.js` for where to load it. Be sure to split out your components, similar to the method used in exercise 1
 
@@ -26,15 +25,15 @@ This is the `react` frontend for the [CYF-Hotel](https://github.com/CodeYourFutu
 
 ### Lesson 2
 
-6. Filter the bookings by the customer id, by using *state* to control which results are seen. So for example, if you type `1` into the customer id search input, you will only see John Doe's booking
+9. Add a click handler to each row in the results table that allows the user to "select" the row (and highlight with a different color). When clicking on the row for a second time, "unselect" the row. Above the table, show a count of the number of selected rows
+
+### Lesson 3
+
+<!-- 6. Filter the bookings by the customer id, by using *state* to control which results are seen. So for example, if you type `1` into the customer id search input, you will only see John Doe's booking -->
 
 7. Do the same to allow the bookings to be filtered by the customer's name. Make sure that you check the whole name (`firstName` and `surname`) in the search
 
 8. Add a counter above the results table which shows the number of results that match the search filter
-
-9. Add a click handler to each row in the results table that allows the user to "select" the row (and highlight with a different color). When clicking on the row for a second time, "unselect" the row. Above the table, show a count of the number of selected rows
-
-### Lesson 3
 
 9. Instead of loading fake data, use `fetch()` to get data from the API that you built in your [Node homework](https://github.com/CodeYourFuture/cyf-hotel). Hint: ensure that you are running both the Node server (`npm start`) **and** your React app
 
@@ -42,7 +41,7 @@ This is the `react` frontend for the [CYF-Hotel](https://github.com/CodeYourFutu
 
 11. Display an error message if there is an HTTP error when fetching data from the server. To test this, try loading data from `https://river-interest.glitch.me`, which will return a 500 HTTP error
 
-12. Add a click handler to the columns of the result table, which sorts the results ascending (A -> Z). Clicking the column again will reverse the sort order to descending (Z -> A). Hint: try using the `.sort()` method with a callback to do custom sorting
+<!-- 12. Add a click handler to the columns of the result table, which sorts the results ascending (A -> Z). Clicking the column again will reverse the sort order to descending (Z -> A). Hint: try using the `.sort()` method with a callback to do custom sorting -->
 
 ### Stretch Goals
 
