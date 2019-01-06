@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Bookings from './containers/Bookings.js';
-import Footer from './components/Footer.js';
-import './App.css';
+import Bookings from "./Bookings.js";
+import Footer from "./Footer.js";
+import "./App.css";
 
 class App extends Component {
   render() {
