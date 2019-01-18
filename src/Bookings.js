@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Search from "./Search.js";
-// import Results from './Results.js';
+// import SearchResults from './SearchResults.js';
 // import FakeBookings from '../data/fakeBookings.json';
 
 export default class Bookings extends Component {
@@ -13,7 +13,7 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
-          {/* <Results results={this.state.results} /> */}
+          {/* <SearchResults results={this.state.results} /> */}
         </div>
       </div>
     );

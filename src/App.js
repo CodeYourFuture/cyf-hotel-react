@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import Bookings from "./Bookings.js";
-import Footer from "./Footer.js";
+import Bookings from "./Bookings";
+import Restaurant from "./Restaurant";
 import "./App.css";
 
 class App extends Component {
@@ -10,6 +10,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">CYF Hotel</header>
         <Bookings />
+        <Restaurant />
       </div>
     );
   }
