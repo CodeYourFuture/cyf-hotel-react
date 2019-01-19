@@ -4,8 +4,8 @@ import Search from "./Search.js";
 // import FakeBookings from '../data/fakeBookings.json';
 
 export default class Bookings extends Component {
-  search = () => {
-    console.info("TO DO!");
+  search = searchVal => {
+    console.info("TO DO!", searchVal);
   };
 
   render() {
@@ -13,7 +13,7 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
-          {/* <SearchResults results={this.state.results} /> */}
+          {/* <SearchResults results={FakeBookings} /> */}
         </div>
       </div>
     );

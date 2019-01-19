@@ -29,7 +29,7 @@ This is the `react` frontend for the [CYF-Hotel](https://github.com/CodeYourFutu
 
 ### Lesson 2
 
-8. Render the `<Restaurant />` component (that is provided for you in `src/Restaurant.js`) underneath the `<Bookings />` component. Then convert the `<Restaurant />` component to a class component.
+8. Within `src/App.js`, render the `<Restaurant />` component (that is provided for you in `src/Restaurant.js`) underneath the `<Bookings />` component. Then convert the `<Restaurant />` component to a class component.
 
 9. Add a method to the `Restaurant` class named `addOrder`. Use `console.log` to log a "Add order" message. Remember to use the `addOrder = () => {}` syntax. Add a `onClick` handler to the Add `<button>` that calls `this.addOrder`. Ensure that clicking on the button logs your "Add order" message in the console.
 
@@ -45,23 +45,27 @@ This is the `react` frontend for the [CYF-Hotel](https://github.com/CodeYourFutu
 
 ### Lesson 3
 
-15. 
+15. Within your `<Header />` component, render the `<Clock />` component (that is provided for you in `src/Clock.js`). Fix the problem where the `setTimeout` timer is not **cleared** if the component is **unmounted**. Hint: look at the Clock exercise you did in class.
 
-6. Filter the bookings by the customer name, by using *state* to control which results are seen. So for example, if you type John into the customer name search input, you will only see John Doe's booking
+16. Convert the `src/Search.js` component into a class component. Then use a *ref* to assign `this.input` to the `<input>` element.
 
-<!-- 8. Add a counter above the results table which shows the number of results that match the search filter -->
+17. Still in the `<Search />` component, add an `onSubmit` handler to the `<form>` element. When the form is submitted (try clicking the search button), get the **value** of `this.input` and pass it as a parameter to the `this.props.search` prop function that has been provided for you. Look in the console, you should see the text that is typed in the search box when submitting the form.
 
-9. Instead of loading fake data, use `fetch()` to get data from the API that you built in your [Node homework](https://github.com/CodeYourFuture/cyf-hotel). Hint: ensure that you are running both the Node server (`npm start`) **and** your React app
+18. In the `<Bookings />` component, use state to hold the `FakeBookings` data instead of directly passing it to `<SearchResults />`. Hint: use a `constructor` method to initialise the state with the `FakeBookings` variable.
 
-10. Show a loading state while the data from the server is being fetched. To test this, try loading data from `https://mire-hub.glitch.me`, which has a 5 second delay before returning the data
+19. Still in the `<Bookings />` component, implement the `search` method. It must use the `searchVal` (that you just passed from the `<Search />` component) to **filter** the search results. The filter function should return results where `firstName` or `surname` match `searchVal`. Once filtered, use `this.setState` to update the results rendered in `<SearchResults />`.
 
-11. Display an error message if there is an HTTP error when fetching data from the server. To test this, try loading data from `https://river-interest.glitch.me`, which will return a 500 HTTP error
+20. Again in the `<Bookings />` component, use the `fetch()` function to get data from `https://cyf-react.glitch.me`. Hints:
+  - Replace `FakeBookings` in the state initialise with `null` (because we haven't fetched any results yet!)
+  - Add a `componentDidMount()` method that calls the `fetch()` function and then use `.then()` to handle the response. Try looking at your Pokemon app that you worked on in class for an example
+  - When the response comes back use `this.setState` to update the results
 
+21. Now show a *loading state* in `<Bookings />` while the data from the server is being fetched. To test this, try loading data from `https://cyf-react.glitch.me/delayed`, which has a 5 second delay before returning the data. Hint: try looking at your Pokemon app that you worked on in class for an example
+
+22. Finally, display an error message in `<Bookings />` if there is an HTTP error when fetching data from the server. To test this, try loading data from `https://cyf-react.glitch.me/error`, which will return a 500 HTTP error. Hint: Try looking at your Pokemon app that you worked on in class for an example
 
 ### Stretch Goals
 
-1. Add a form with inputs for each of the booking fields (first name, last name, title, room id, check in date, check out date) to the bottom of the page. Submitting the form adds the booking to the result table. Note that the new booking won't persist if you refresh the page
+1. Add a form with `<input>`s for each of the booking fields (first name, surname, title, room id, check in date, check out date) to the bottom of the page. Submitting the form adds the booking to the result table. Note that the new booking won't persist if you refresh the page.
 
-<!-- 2. Fix the bug from Stretch Goal 1 by making the form send a POST request to your Node server that saves the booking in the database -->
-
-3. Add a click handler to the columns of the result table, which sorts the results ascending (A -> Z). Clicking the column again will reverse the sort order to descending (Z -> A). Hint: try using the `.sort()` method with a callback to do custom sorting
+2. Add an `onClick` handler to the columns of the result table, which sorts the results ascending (A -> Z). Clicking the column again will reverse the sort order to descending (Z -> A). Hint: try using the `.sort()` method with a callback to do custom sorting

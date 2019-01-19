@@ -8,7 +8,7 @@ const Search = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <div className="form-group search-box">
+          <form className="form-group search-box">
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
@@ -19,7 +19,7 @@ const Search = () => {
               />
               <button className="btn btn-primary">Search IDs</button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
