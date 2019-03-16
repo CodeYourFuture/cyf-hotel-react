@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Bookings from './containers/Bookings.js';
-import Footer from './components/Footer.js';
-import './App.css';
+import Bookings from "./Bookings";
+import Restaurant from "./Restaurant";
+import "./App.css";
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">CYF Hotel</header>
         <Bookings />
-        <Footer />
+        <Restaurant />
       </div>
     );
   }
