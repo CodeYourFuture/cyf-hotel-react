@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Search from "./Search.js";
-// import SearchResults from './SearchResults.js';
-// import FakeBookings from '../data/fakeBookings.json';
+import SearchResults from "./components/SearchResults/SearchResults";
+import FakeBookings from "./data/fakeBookings.json";
 
 export default class Bookings extends Component {
   search = searchVal => {
@@ -13,7 +13,8 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
-          {/* <SearchResults results={FakeBookings} /> */}
+          {/* <SearchResults /> */}
+          <SearchResults results={FakeBookings} />
         </div>
       </div>
     );
