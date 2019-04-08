@@ -9,13 +9,15 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  height: 120px;
+  padding: 20px 60px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .App-title {
@@ -52,8 +54,12 @@ tr {
   text-align: center;
 }
 
+.footer ul li{
+  list-style-type: none;
+}
+
 .image-container{ 
-  max-height: 245px;
+  max-height: 300px;
   overflow:hidden;
 }
 .image-container img {

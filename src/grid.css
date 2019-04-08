@@ -12,7 +12,7 @@
 
 /* Containers */
 
-.container { /* default from breakpoint 0, until another breakpoint overrides it */
+.container {  /*default from breakpoint 0, until another breakpoint overrides it*/ 
   max-width: 100%;
   padding-right: 15px;
   padding-left: 15px;
