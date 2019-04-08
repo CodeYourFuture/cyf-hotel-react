@@ -1,10 +1,11 @@
 import React from "react";
 
-
 const Button = () => {
-    return (
-    <button className="btn btn-primary">Search IDs</button>
-    )
-}
+  return (
+    <div>
+      <button className="btn btn-primary">Search IDs</button>
+    </div>
+  );
+};
 
 export default Button;

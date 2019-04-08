@@ -10,6 +10,7 @@
 .App-header {
   background-color: #222;
   height: 50px;
+  width: 90%;
   padding: 20px;
   color: white;
   text-align: left;
@@ -26,7 +27,15 @@
   padding-top: 20px;
   font-size: large;
 }
-
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.logo-header {
+  height: 10%;
+  width: 10%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
