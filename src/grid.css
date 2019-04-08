@@ -1,0 +1,279 @@
+/* GRID */
+
+/* This grid is meant to be used as is, without any edits to it. 
+   You should copy this file into each new responsive project, 
+   and import grid.css in the head of your HTML file, as well as 
+   your custom stylesheet(s).
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Containers */
+
+.container { /* default from breakpoint 0, until another breakpoint overrides it */
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Wrap each bundle of content blocks in a row */
+/* For example, 4 blocks that 'live' together in a row, and then get stacked on mobile */
+/* they should be together inside a wrapper with the class 'row' */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* Default styles for all col-classes */
+
+.xs-col-1, .xs-col-2, .xs-col-3, .xs-col-4, .xs-col-5, .xs-col-6, .xs-col-7, .xs-col-8, .xs-col-9, .xs-col-10, .xs-col-11, .xs-col-12,
+.sm-col-1, .sm-col-2, .sm-col-3, .sm-col-4, .sm-col-5, .sm-col-6, .sm-col-7, .sm-col-8, .sm-col-9, .sm-col-10, .sm-col-11, .sm-col-12, 
+.md-col-1, .md-col-2, .md-col-3, .md-col-4, .md-col-5, .md-col-6, .md-col-7, .md-col-8, .md-col-9, .md-col-10, .md-col-11, .md-col-12,
+.lg-col-1, .lg-col-2, .lg-col-3, .lg-col-4, .lg-col-5, .lg-col-6, .lg-col-7, .lg-col-8, .lg-col-9, .lg-col-10, .lg-col-11, .lg-col-12,
+.xl-col-1, .xl-col-2, .xl-col-3, .xl-col-4, .xl-col-5, .xl-col-6, .xl-col-7, .xl-col-8, .xl-col-9, .xl-col-10, .xl-col-11, .xl-col-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* INDIVIDUAL BREAKPOINTS */
+
+/* Extra Small */
+
+@media (min-width: 320px) { 
+   .xs-col-1 {
+    width: 8.333333%;
+  }
+  .xs-col-2 {
+    width: 16.666666%;
+  }
+  .xs-col-3 {
+    width: 25%;
+  }
+  .xs-col-4 {
+    width: 33.333333%;
+  }
+  .xs-col-5 {
+    width: 41.666666%;
+  }
+  .xs-col-6 {
+    width: 50%;
+  }
+  .xs-col-7 {
+    width: 58.333%;
+  }
+  .xs-col-8 {
+    width: 66.666666%;
+  }
+  .xs-col-9 {
+    width: 75%;
+  }
+  .xs-col-10 {
+    width: 83.333333%;
+  }
+  .xs-col-11 {
+    width: 91.666666%;
+  }
+  .xs-col-12 {
+    width: 100%;
+  }
+}
+
+/* Small */
+
+@media (min-width: 576px) {
+
+  .sm-col-1 {
+    width: 8.333333%;
+  }
+  .sm-col-2 {
+    width: 16.666666%;
+  }
+  .sm-col-3 {
+    width: 25%;
+  }
+  .sm-col-4 {
+    width: 33.333333%;
+  }
+  .sm-col-5 {
+    width: 41.666666%;
+  }
+  .sm-col-6 {
+    width: 50%;
+  }
+  .sm-col-7 {
+    width: 58.333%;
+  }
+  .sm-col-8 {
+    width: 66.666666%;
+  }
+  .sm-col-9 {
+    width: 75%;
+  }
+  .sm-col-10 {
+    width: 83.333333%;
+  }
+  .sm-col-11 {
+    width: 91.666666%;
+  }
+  .sm-col-12 {
+    width: 100%;
+  }
+}
+
+/* Medium */
+
+@media (min-width: 768px) {
+
+   .md-col-1 {
+    width: 8.333333%;
+  }
+  .md-col-2 {
+    width: 16.666666%;
+  }
+  .md-col-3 {
+    width: 25%;
+  }
+  .md-col-4 {
+    width: 33.333333%;
+  }
+  .md-col-5 {
+    width: 41.666666%;
+  }
+  .md-col-6 {
+    width: 50%;
+  }
+  .md-col-7 {
+    width: 58.333%;
+  }
+  .md-col-8 {
+    width: 66.666666%;
+  }
+  .md-col-9 {
+    width: 75%;
+  }
+  .md-col-10 {
+    width: 83.333333%;
+  }
+  .md-col-11 {
+    width: 91.666666%;
+  }
+  .md-col-12 {
+    width: 100%;
+  }
+}
+
+/* Large */
+
+@media (min-width: 992px) {
+
+   .lg-col-1 {
+    width: 8.333333%;
+  }
+  .lg-col-2 {
+    width: 16.666666%;
+  }
+  .lg-col-3 {
+    width: 25%;
+  }
+  .lg-col-4 {
+    width: 33.333333%;
+  }
+  .lg-col-5 {
+    width: 41.666666%;
+  }
+  .lg-col-6 {
+    width: 50%;
+  }
+  .lg-col-7 {
+    width: 58.333%;
+  }
+  .lg-col-8 {
+    width: 66.666666%;
+  }
+  .lg-col-9 {
+    width: 75%;
+  }
+  .lg-col-10 {
+    width: 83.333333%;
+  }
+  .lg-col-11 {
+    width: 91.666666%;
+  }
+  .lg-col-12 {
+    width: 100%;
+  }
+}
+/* Extra Large */
+
+@media (min-width: 1200px) {
+
+  .xl-col-1 {
+    width: 8.333333%;
+  }
+  .xl-col-2 {
+    width: 16.666666%;
+  }
+  .xl-col-3 {
+    width: 25%;
+  }
+  .xl-col-4 {
+    width: 33.333333%;
+  }
+  .xl-col-5 {
+    width: 41.666666%;
+  }
+  .xl-col-6 {
+    width: 50%;
+  }
+  .xl-col-7 {
+    width: 58.333%;
+  }
+  .xl-col-8 {
+    width: 66.666666%;
+  }
+  .xl-col-9 {
+    width: 75%;
+  }
+  .xl-col-10 {
+    width: 83.333333%;
+  }
+  .xl-col-11 {
+    width: 91.666666%;
+  }
+  .xl-col-12 {
+    width: 100%;
+  }
+}
