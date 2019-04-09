@@ -22,7 +22,10 @@
 .App-title {
   font-size: 1.5em;
 }
-
+.row-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
 .App-content {
   padding-top: 20px;
   font-size: large;
