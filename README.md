@@ -19,7 +19,7 @@ This is the `react` frontend for the [CYF-Hotel](https://github.com/CodeYourFutu
 
 3. Above the `<Bookings />` component add a new component called `TouristInfoCards` which shows 3 cards. They must link to `peoplemakeglasgow.com`, `visitmanchester.com` and `visitlondon.com`. The cards should be contain the name of the city and an image of the city. You can use the CSS classes from [Bootstrap](https://getbootstrap.com/docs/4.2/components/card), which is already installed for you
 
-4. Add a `<Footer />` component at the bottom of the page. Pass the following array as a prop to this component: `["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]`. Inside the component, use the data you passed as a prop to show a `<ul>` list. Hint: the `.map()` method will by useful
+4. Add a `<Footer />` component at the bottom of the page. Pass the following array as a prop to this component: `["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]`. Inside the component, use the data you passed as a prop to show a `<ul>` list. Hint: the `.map()` method will be useful
 
 5. Create a `<SearchResults />` component that shows hotel bookings in a `<table>` element. Each booking will have an id, title, first name, surname, email, room id, check in date and check out date. You can make up data to show in the table. Then show `<SearchResults />` component within the `<Bookings />` component that is provided for you. Be sure to split out your components into small well-named components, similar to the method used in exercise 1. Hint: You will find some useful `<table>` examples in the [Bootstrap documentation for tables](https://getbootstrap.com/docs/4.2/content/tables/#examples)
 
