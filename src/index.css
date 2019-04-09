@@ -24,3 +24,11 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.card {
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: space-around;
+border: 0;
+}
