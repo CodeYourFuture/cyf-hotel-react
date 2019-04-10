@@ -1,7 +1,14 @@
+body {
+  display: flex;
+}
 .App {
   text-align: left;
 }
 
+.input-search {
+  background-color: pink;
+  display: flex;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -60,6 +67,13 @@ tr {
 }
 
 .footer {
+  flex-direction: row;
   padding-top: 20px;
+  background-color: aquamarine;
+}
+.footer ul {
+  text-decoration: none;
+  padding: 10px;
+  align-content: space-between;
   text-align: center;
 }
