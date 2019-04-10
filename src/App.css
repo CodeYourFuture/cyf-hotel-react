@@ -2,6 +2,32 @@
   text-align: left;
 }
 
+.image-container{
+  width: 32px;
+  height: 32px;
+  margin-top: -7px;
+}
+
+.logo-image{
+  width: 100%;
+
+}
+
+.card-image-container{
+  width: 100%;
+  min-height: 10.5em;
+  max-height: 10.5em;
+  overflow: hidden;
+}
+
+.tourist-information{
+  padding-top: 1em;
+}
+
+.card{
+  width: 15rem;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -20,6 +46,7 @@
 
 .App-title {
   font-size: 1.5em;
+  margin-top: -7px;
 }
 
 .App-content {
@@ -43,11 +70,21 @@ tr {
   color: #5b5757;
 }
 
+.primary-button{
+  padding-top: 1em;
+}
+
 .results {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
+footer {
+  padding-top: 5em;
   text-align: center;
+}
+
+ul#menu li {
+  display:inline;
+  padding-right: .6em;
+margin: 1em 0;
 }

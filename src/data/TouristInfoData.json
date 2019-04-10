@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "location": "Visit Manchester",
+    "image":"https://i.ibb.co/SwMYNzY/1200px-Manchester-Town-Hall-October-2010.jpg",
+    "text":"Visit Manchester",
+    "link":"https://www.visitmanchester.com",
+    "buttonText":"Learn More"
+  },
+    {
+    "id": 2,
+    "location": "Visit Glasgow",
+    "image":"https://i.ibb.co/7r4D2Kt/artur-kraft-731696-unsplash.jpg",
+    "text":"Visit Glasgow",
+    "link":"https://www.peoplemakeglasgow.com",
+    "buttonText":"Learn More"
+  },
+    {
+    "id": 3,
+    "location":"Visit London",
+    "image":"https://i.ibb.co/YDQjZ7Y/london.jpg",
+    "text":"Visit London",
+    "link":"https://visitlondon.com",
+    "buttonText":"Learn More"
+  }
+]
