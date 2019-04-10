@@ -3,9 +3,9 @@ import TouristInfoCards from './TouristInfoCards';
 import TouristInfoData from "./data/TouristInfoData.json"
 import Heading from './Heading'
 import Bookings from "./Bookings";
-//import Restaurant from "./Restaurant";
 import Footer from './Footer'
 import "./App.css";
+//import Restaurant from "./Restaurant";
 
 class App extends Component {
   render() {

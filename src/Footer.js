@@ -1,25 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const Footer = (props) =>{
+const Footer = props => {
   return (
-    <footer className ='container'>
-      <div className ="d-flex justify-content-center">
+    <footer className="container">
+      <div className="d-flex justify-content-center">
         <ul id="menu">
           {props.address.map((addressPart, index) => {
-            return (
-              <li key={index}>
-                {addressPart}
-              </li>
-            )
+            return <li key={index}>{addressPart}</li>;
           })}
-
-
         </ul>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-
-
-export default Footer
+export default Footer;

@@ -1,15 +1,12 @@
-import React from 'react'
+import React from "react";
 import DisplayBookings from "./DisplayBookings";
 
-const SearchResults = (props) => {
+const SearchResults = props => {
   return (
     <div>
       <DisplayBookings />
-
     </div>
-  )
-}
+  );
+};
 
-
-
-export default SearchResults
+export default SearchResults;

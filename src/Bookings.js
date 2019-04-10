@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Search from "./Search.js";
-import SearchResults from './SearchResults.js';
-
+import SearchResults from "./SearchResults.js";
 
 export default class Bookings extends Component {
   search = searchVal => {
@@ -10,12 +9,10 @@ export default class Bookings extends Component {
 
   render() {
     return (
-
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
           {<SearchResults />}
-
         </div>
       </div>
     );
