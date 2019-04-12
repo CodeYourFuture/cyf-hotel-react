@@ -1,0 +1,82 @@
+import React from "react";
+
+const TouristInfoCards =() =>{
+    return (
+    <div class="card-group row">
+        <div class="card">
+            <img
+               src="https://i.postimg.cc/KvdgxZPS/Palace-of-Westminster-from-the-dome-on-Methodist-Central-Hall.jpg"
+               class="card-img-top"
+               alt="London_View"/>
+            <div class="card-body">
+                <h5 class="card-title">London</h5>
+                <p class="card-text">
+                London, the capital of England and the United Kingdom, is a
+                21st-century city with history stretching back to Roman times.
+                At its centre stand the imposing Houses of Parliament, the
+                iconic ‘Big Ben’ clock tower and Westminster Abbey, site of
+                British monarch coronations. Across the Thames River, the
+                London Eye observation wheel provides panoramic views of the
+                South Bank cultural complex, and the entire city.
+                </p>
+                <a href="https://www.visitlondon.com/" class="btn btn-primary">
+                Chekout Upcoming events
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img
+                src="https://i.postimg.cc/MpKY4083/images-11.jpg"
+                class="card-img-top"
+                alt="Manchester_View" />
+            <div class="card-body">
+                <h5 class="card-title">Manchester</h5>
+                <p class="card-text">
+                Manchester is a major city in the northwest of England with a
+                rich industrial heritage. The Castlefield conservation area’s
+                18th-century canal system recalls the city’s days as a textile
+                powerhouse, and visitors can trace this history at the
+                interactive Museum of Science & Industry. The revitalised
+                Salford Quays dockyards now house the Daniel
+                Libeskind-designed Imperial War Museum North and the Lowry
+                cultural centre.
+                </p>
+                <a
+                href="https://www.visitmanchester.com/"
+                class="btn btn-primary"
+                >
+                Chekout Upcoming events
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img
+                src="https://i.postimg.cc/G3Pyd0MH/Glasgow-lead-xlarge.jpg"
+                class="card-img-top"
+                alt="Glasgow_view" />
+            <div class="card-body">
+                <h5 class="card-title">Glasgow</h5>
+                <p class="card-text">
+                Glasgow is a port city on the River Clyde in Scotland's
+                western Lowlands. It's famed for its Victorian and art nouveau
+                architecture, a rich legacy of the city's 18th–20th-century
+                prosperity due to trade and shipbuilding. Today it's a
+                national cultural hub, home to institutions including the
+                Scottish Opera, Scottish Ballet and National Theatre of
+                Scotland, as well as acclaimed museums and a thriving music
+                scene.
+                </p>
+                <a
+                href="https://peoplemakeglasgow.com/"
+                class="btn btn-primary"
+                >
+                Chekout Upcoming events
+                </a>
+            </div>
+        </div>
+    </div>
+    );
+}
+export default TouristInfoCards;
