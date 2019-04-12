@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "London",
+        "imageSource": "https://cdn.londonandpartners.com/assets/73295-640x360-london-skyline-ns.jpg",
+        "link": "https://www.visitlondon.com/"
+    },
+    {
+        "id": 2,
+        "name": "Glasgow",
+        "imageSource": "https://ichef.bbci.co.uk/news/660/cpsprodpb/E213/production/_90057875_mediaitem90057873.jpg",
+        "link": "https://peoplemakeglasgow.com/"
+    },
+    {
+        "id": 3,
+        "name": "Manchaster",
+        "imageSource": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV1u2v3Poqi8gSsKb4C3nIXBpPQtSYdMbLjLDg5Aq2lMbl_R7xyw",
+        "link": "https://www.visitmanchester.com/"
+    }
+]

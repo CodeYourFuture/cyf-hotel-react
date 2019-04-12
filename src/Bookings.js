@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Search from "./Search.js";
 import SearchResults from './SearchResults.js';
-import FakeBookings from './fakeBookings.json';
-// import FakeBookings from '../data/fakeBookings.json';
+import FakeBookings from './data/fakeBookings.json';
 
 
 export default class Bookings extends Component {

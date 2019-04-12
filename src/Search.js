@@ -18,7 +18,7 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer Id"
               />
-              <Button />
+              <Button content='Search IDs' />
             </div>
           </form>
         </div>

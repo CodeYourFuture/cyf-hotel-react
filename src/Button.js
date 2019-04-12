@@ -1,8 +1,8 @@
 import React from "react";
 
-const Button = () => {
+const Button = (props) => {
     return (
-        <button className="btn btn-primary">Search IDs</button>
+        <button className="btn btn-primary">{props.content}</button>
     )
 }
 
