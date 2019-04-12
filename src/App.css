@@ -1,10 +1,14 @@
 .App {
   text-align: left;
+  
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /*animation: App-logo-spin infinite 20s linear;*/
+  height: 30px;
+  margin-top: -70px;
+  margin-inline-start:10%;
+  
 }
 
 .App-header {
@@ -16,6 +20,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  
 }
 
 .App-title {
@@ -50,4 +55,9 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+
+.App-TouristInfoCards{
+  display: flex;
+  justify-content: space-around;
 }
