@@ -24,3 +24,10 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+.card-body {
+  overflow: hidden;
+  height: 300px;
+}
+.card-img {
+  width: auto;
+}
