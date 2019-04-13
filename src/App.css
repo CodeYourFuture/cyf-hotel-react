@@ -54,3 +54,7 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
+.cards {
+  display: flex;
+  align-content: space-between;
+}

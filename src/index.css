@@ -24,3 +24,7 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+.cards {
+  display: flex;
+  align-content: space-between;
+}
