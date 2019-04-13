@@ -3,7 +3,7 @@ import logo from './Logo.png'
 const Heading = () => {
     return (
         <div>
-            <img src={logo} />
+            <img className="App-logo" src={logo} />
             <header className="App-header">CYF Hotel</header>
         </div>
     )

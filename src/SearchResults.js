@@ -5,7 +5,7 @@ const SearchResults = (props) => {
     console.log(props)
     return (
         <div>
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
@@ -21,18 +21,19 @@ const SearchResults = (props) => {
                 </thead>
                 <tbody>
 
-                    {props.results.map(result => {
-                        return (<tr>
-                            <th scope="row">{result.id}</th>
-                            <td>{result.title}</td>
-                            <td>{result.firstName}</td>
-                            <td>{result.surName}</td>
-                            <td>{result.email}</td>
-                            <td>{result.roomId}</td>
-                            <td>{result.checkInDate}</td>
-                            <td>{result.checkOutDate}</td>
-                            <td>{moment(result.checkOutDate).diff(result.checkInDate, 'days')}</td>
-                        </tr>)
+                    {props.results.map((result, index) => {
+                        return (
+                            <tr key={index}>
+                                <th scope="row">{result.id}</th>
+                                <td>{result.title}</td>
+                                <td>{result.firstName}</td>
+                                <td>{result.surName}</td>
+                                <td>{result.email}</td>
+                                <td>{result.roomId}</td>
+                                <td>{result.checkInDate}</td>
+                                <td>{result.checkOutDate}</td>
+                                <td>{moment(result.checkOutDate).diff(result.checkInDate, 'days')}</td>
+                            </tr>)
                     })}
 
                 </tbody>
