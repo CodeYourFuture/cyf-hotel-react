@@ -16,7 +16,7 @@ class App extends Component {
       <div className="App">
         <Heading />
         <Bookings />
-       
+       <div className='row'>
         <TouristInfoCards
           image="https://i.postimg.cc/MH3GWqTW/London.jpg"
           city="London"
@@ -35,7 +35,7 @@ class App extends Component {
           link="https://peoplemakeglasgow.com/"
         />
    
-       
+        </div>
         <Restaurant />
         <Footer array = {["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]}
 />
