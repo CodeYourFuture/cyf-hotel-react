@@ -4,7 +4,6 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 export default class Bookings extends Component {
-
   search = searchVal => {
     console.info("TO DO!", searchVal);
   };
@@ -13,12 +12,9 @@ export default class Bookings extends Component {
       <div className="App-content">
         <div className="container">
           <Search search={this.search} />
-
           <SearchResults results={FakeBookings} />
-          {/* <SearchResults /> */}
         </div>
       </div>
     );
   }
 }
-

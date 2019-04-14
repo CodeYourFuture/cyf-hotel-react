@@ -18,7 +18,7 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer Id"
               />
-              <Button/>
+              <Button />
             </div>
           </form>
         </div>

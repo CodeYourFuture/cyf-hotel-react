@@ -2,8 +2,7 @@ import React from "react";
 // import FakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
 
-const SearchResults = (props) => {
- 
+const SearchResults = props => {
   return (
     <table className="table table-hover">
       <thead>
@@ -23,11 +22,7 @@ const SearchResults = (props) => {
       </thead>
       <tbody>
         {props.results.map((customer, index) => {
-           /* 
-            var a = moment(customer.checkInDate);
-            var b = moment(customer.checkOutDate);
-            console.log(a.diff(b, "days"));
-            */
+
           return (
             <tr key={index}>
               <td>{customer.id}</td>
@@ -39,7 +34,12 @@ const SearchResults = (props) => {
               <td>{customer.checkInDate}</td>
               <td>{customer.checkOutDate}</td>
 
-              <td>{moment(customer.checkOutDate).diff(customer.checkInDate, "days")}</td>
+              <td>
+                {moment(customer.checkOutDate).diff(
+                  customer.checkInDate,
+                  "days"
+                )}
+              </td>
             </tr>
           );
         })}
