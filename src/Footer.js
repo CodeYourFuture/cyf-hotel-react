@@ -3,10 +3,10 @@ import React from "react";
 function Footer(props) {
     return (
     <div>
-        <h5>Communication:</h5>
+        <h5>Contact Details:</h5>
         <ul>
             {
-                props.Communication.map((Name) => {
+                props.contactDetails.map((Name) => {
                     return (
                         <li> {Name}</li>
                     )
