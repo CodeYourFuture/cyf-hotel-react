@@ -1,9 +1,9 @@
 import React from "react";
 
-function searchButton() {
-    return <button className="btn btn-primary">Search IDs</button>;
+function Button(props) {
+    return <button className="btn btn-primary">{props.text}</button>;
 }
 
 
-export default searchButton;
+export default Button;
 

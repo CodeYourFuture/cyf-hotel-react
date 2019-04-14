@@ -3,7 +3,7 @@ import React from "react";
 function TouristInfoCards(props) {
 
     return (
-        <div class="row">
+        <div className="row">
             {
                 props.CityCards.map((city) => {
                     return (
