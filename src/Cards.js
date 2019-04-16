@@ -1,8 +1,8 @@
 import React from "react";
 
 const Card = (props) => {      //changed Cards to Card.
-  return (
-    <div class="card" style={{ width: "18rem" }}>
+  return (                                           // added class to className
+    <div className="card" style={{ width: "18rem" }}>   
       <img src={props.image} class="card-img-top" alt={props.city} />
       <div class="card-body">
         <h5 class="card-title">{props.city}</h5>
