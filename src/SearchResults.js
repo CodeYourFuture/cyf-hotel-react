@@ -8,7 +8,6 @@ const SearchResults = (props) => {
             <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
                         <th scope="col">Title</th>
                         <th scope="col">First Name</th>
                         <th scope="col">Surname</th>
@@ -23,8 +22,7 @@ const SearchResults = (props) => {
 
                     {props.results.map((result, index) => {
                         return (
-                            <tr key={index}>
-                                <th scope="row">{result.id}</th>
+                            <tr key={result.id}>
                                 <td>{result.title}</td>
                                 <td>{result.firstName}</td>
                                 <td>{result.surName}</td>
