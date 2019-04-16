@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cards = (props) => {
+const Card = (props) => {      //changed Cards to Card.
   return (
     <div class="card" style={{ width: "18rem" }}>
       <img src={props.image} class="card-img-top" alt={props.city} />
@@ -17,4 +17,4 @@ const Cards = (props) => {
     </div>
   );
 };
-export default Cards;
+export default Card;
