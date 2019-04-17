@@ -45,7 +45,15 @@
 tr {
   color: #5b5757;
 }
-
+.cardrow {
+  display: flex;
+  margin: 10px;
+  padding: 10px; 
+}
+/* .card{
+  width: 23%;
+  height: 300px;
+} */
 .results {
   padding-top: 15px;
 }
@@ -53,8 +61,4 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
-}
-.cards {
-  display: flex;
-  align-content: space-between;
 }

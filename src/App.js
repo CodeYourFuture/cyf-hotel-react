@@ -2,15 +2,34 @@
 import React, { Component } from "react";
 import "./App.css";
 import Heading from "./Heading";
-import TouristsInfoCards from "./TouristInfoCards";
+import TouristsInfoCard from "./TouristInfoCard";
 import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
 import Footer from "./Footer";
-const glasgowInfo = ['https://www.whatsonnetwork.co.uk/uploads/800x600/c66a3c7e9715a4e542ffbcf1696127a0.jpg', 'glasgow-img', 'Glasgow', 'Fun things to do in Glasgow', 'https://www.peoplemakeglasgow.com'];
-const manchesterInfo = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyByYyaLocYGr2ao1pLGDLHt1i653-RqT49cItIgKBqZicNNOs0g', 'manchester-img', 'Manchester', 'Lovely places to visit in Manchester', 'https://www.visitmanchester.com'];
-const londonInfo = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbZnqGAb0KkGpQKScGyMwYyTZJgsUv7CDP9T3xPt6LCRXyHPWYYw', 'london-img', 'London', 'Great places to visit in London', 'https://www.visilondon.com'];
 
+const glasgowInfo = {
+  image: 'https://www.whatsonnetwork.co.uk/uploads/800x600/c66a3c7e9715a4e542ffbcf1696127a0.jpg',
+  altText: 'glasgow-img',
+  city: 'Glasgow',
+  mainText: 'Fun things to do in Glasgow',
+  website: 'https://www.peoplemakeglasgow.com'
+}
 
+const manchesterInfo = {
+image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyByYyaLocYGr2ao1pLGDLHt1i653-RqT49cItIgKBqZicNNOs0g',
+altText: 'manchester-img', 
+city: 'Manchester', 
+mainText: 'Lovely places to visit in Manchester', 
+website: 'https://www.visitmanchester.com'
+}
+
+const londonInfo = {
+  image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbZnqGAb0KkGpQKScGyMwYyTZJgsUv7CDP9T3xPt6LCRXyHPWYYw',
+  altText: 'london-img', 
+  city:'London', 
+  mainText:'Great places to visit in London', 
+  website: 'https://www.visilondon.com'
+}
 
 const footerContent = ["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"];
 
@@ -19,12 +38,14 @@ class App extends Component {
     return (
       <div className="App">
         <Heading />
-        <TouristsInfoCards image = {glasgowInfo[0]} altText = {glasgowInfo[1]} city = {glasgowInfo[2]} mainText= {glasgowInfo[3]}  website = {glasgowInfo[4]}/>
-        <TouristsInfoCards image = {manchesterInfo[0]} altText = {manchesterInfo[1]} city = {manchesterInfo[2]} mainText= {manchesterInfo[3]}  website = {manchesterInfo[4]}/>
-        <TouristsInfoCards image = {londonInfo[0]} altText = {londonInfo[1]} city = {londonInfo[2]} mainText= {londonInfo[3]}  website = {londonInfo[4]}/>
+        <div className= "cardrow">
+        <TouristsInfoCard image= {glasgowInfo.image} altText= {glasgowInfo.altText} city= {glasgowInfo.city} mainText= {glasgowInfo.mainText}  website= {glasgowInfo.website}/>
+        <TouristsInfoCard image= {manchesterInfo.image} altText= {manchesterInfo.altText} city= {manchesterInfo.city} mainText= {manchesterInfo.mainText}  website= {manchesterInfo.website}/>
+        <TouristsInfoCard image= {londonInfo.image} altText= {londonInfo.altText} city= {londonInfo.city} mainText= {londonInfo.mainText}  website= {londonInfo.website}/>
+       </div>
         <Bookings />
         <Restaurant />
-        <Footer names = {footerContent} />
+        <Footer footerInfo = {footerContent} />
         
       </div>
     );

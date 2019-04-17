@@ -4,7 +4,7 @@ function Footer (props) {
         <div>
             <h6>Contact Us</h6>
             <ul>
-                {props.names.map(name => {return <li>{name}</li>})}
+                {props.footerInfo.map(footerInfo => {return <li>{footerInfo}</li>})}
             </ul>
         </div>
 
