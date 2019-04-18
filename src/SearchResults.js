@@ -1,10 +1,11 @@
 import React from "react";
 // import FakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
+import Highlight from "./Highlight";
 
 const SearchResults = props => {
   return (
-    <table className="table table-hover">
+    <table className="table ">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -22,26 +23,7 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map((customer, index) => {
-
-          return (
-            <tr key={index}>
-              <td>{customer.id}</td>
-              <td>{customer.title}</td>
-              <td>{customer.firstName}</td>
-              <td>{customer.surname}</td>
-              <td>{customer.email}</td>
-              <td>{customer.roomId}</td>
-              <td>{customer.checkInDate}</td>
-              <td>{customer.checkOutDate}</td>
-
-              <td>
-                {moment(customer.checkOutDate).diff(
-                  customer.checkInDate,
-                  "days"
-                )}
-              </td>
-            </tr>
-          );
+          return <Highlight customer={customer} />;
         })}
       </tbody>
     </table>

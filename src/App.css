@@ -42,6 +42,9 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
+.highlighted {
+  background-color: blue;
+}
 .logo-header {
   height: 10%;
   width: 10%;

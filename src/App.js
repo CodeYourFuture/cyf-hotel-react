@@ -16,6 +16,7 @@ class App extends Component {
         <div className="input-search">
           <Bookings />
           <Restaurant />
+          
         </div>
         <Footer
           footerArray={[
