@@ -8,6 +8,7 @@ import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
 import "./App.css";
 
+
 class App extends Component {
   render() {
     return (
