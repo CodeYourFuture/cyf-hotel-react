@@ -1,20 +1,31 @@
 .App {
-  text-align: left;
+  text-align: justify;
+  
+ 
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
+.logo{
+  position: relative;
+}
+.logo img{
+  position: absolute;
+  top: 0;
+  left: 5rem;
+  width: 8rem;
+}
 
 .App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
+  background-color: #433E3F;
+  height: 4rem;
+  padding: .7rem;
   color: white;
-  text-align: left;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
 }
 
@@ -38,7 +49,29 @@
 .search {
   padding: 5px 0 20px 0;
 }
-
+.cardMaster{
+  display: flex;
+  width: 70%;
+  margin: 1rem auto;
+  padding: 1rem 0;
+justify-content: space-evenly;
+background-color:rgba(122, 114, 101, 0.185);
+}
+.card{
+  width: 18rem;
+ 
+}
+.card-title{
+  text-align: center;
+  
+}
+.btn-primary{
+  border: none;
+  background: #8E6E53;
+}
+.btn-primary:hover{
+  background: #C69C72;
+}
 tr {
   color: #5b5757;
 }
@@ -47,7 +80,27 @@ tr {
   padding-top: 15px;
 }
 
+.restaurantSection{
+  width: 70%;
+  margin: auto;
+  background:  rgba(198, 156, 114, 0.322);
+  padding: 3rem;
+  margin-bottom: .5rem;
+}
+
+.address li{
+  list-style: none;
+  font-size: .9rem;
+  font-family: monospace;
+}
 .footer {
   padding-top: 20px;
   text-align: center;
+  width: 100%;
+  background-color: #433E3F;
+  height: 4rem;
+  padding: .7rem;
+  color: white;
+  line-height: 1rem;
+  
 }
