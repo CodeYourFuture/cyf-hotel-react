@@ -1,0 +1,33 @@
+import React, { Component } from "react";
+import RestaurantButton from './RestaurantButton'
+
+class Orders extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { orders: 0 }
+    }
+
+    addOrder = () => {
+        const previousCount = this.state.orders;
+        this.setState({ orders: previousCount + 1 });
+    }
+
+    removeOrder = () => {
+        const previousCount = this.state.orders;
+        if (previousCount) {
+            this.setState({ orders: previousCount - 1 });
+        } else {
+            alert('please enter at least one order')
+        }
+
+    }
+    render() {
+        return (
+            <li>
+                {this.props.orderType} : <RestaurantButton handleClick={this.removeOrder} content='&#x2212;' /> {this.state.orders} <RestaurantButton handleClick={this.addOrder} content='&#x2b;' />
+            </li>
+        );
+    };
+}
+
+export default Orders;

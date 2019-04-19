@@ -1,18 +1,19 @@
-import React from "react";
-import Button from './Button'
+import React, { Component } from "react";
+import Orders from './Orders'
 
-const Restaurant = () => {
-  const pizzas = 0;
-  return (
-    <div class='container'>
-      <h3>Restaurant Orders</h3>
-      <ul>
-        <li>
-          Pizzas: {pizzas} <Button content='Add' />
-        </li>
-      </ul>
-    </div>
-  );
-};
+class Restaurant extends Component {
+  render() {
+    return (
+      <div class='container'>
+        <h3>Restaurant Orders</h3>
+        <ul>
+          <Orders orderType='Pizzas' />
+          <br />
+          <Orders orderType='Salads' />
+        </ul>
+      </div>
+    );
+  };
+}
 
 export default Restaurant;
