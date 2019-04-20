@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-
 import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
 import Heading from "./Heading"
 import TouristInfoCards from "./TouristInfoCards";
-import Footer from "./Footer"
+import Footer from "./Footer";
 import "./App.css";
-import "./grid.css";
+
 
 class App extends Component {
   render() {
@@ -21,7 +20,7 @@ class App extends Component {
         <Heading />
         <TouristInfoCards />
         <Bookings />
-        <Restaurant text={"add"}/>
+        <Restaurant />
        <Footer contactInfo={contactInfo} />
       </div>
     </div>
