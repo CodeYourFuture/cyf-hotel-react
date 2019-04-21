@@ -1,5 +1,9 @@
 import React from 'react'
 const Button = props => {
-  return <button className='btn btn-primary'>{props.caption}</button>
+  return (
+    <button className='btn btn-primary' onClick={props.addOrder}>
+      {props.caption}
+    </button>
+  )
 }
 export default Button

@@ -5,28 +5,53 @@
 
 import React, { Component } from 'react'
 var moment = require('moment')
-const selectedRowIdDefault = 0
 class SearchResults extends Component {
   state = {
     rowSelected: false,
-    selectedRowId: selectedRowIdDefault
+    previousRow: '',
+    currentRow: ''
   }
-  handleSelection = selectedRowId => {
+  handleSelection = () => {
     this.setState(previousState => {
       return {
-        selectedRowId: selectedRowId
+        rowSelected: !previousState.rowSelected
       }
     })
   }
 
   toggle = e => {
-    const indexRaw = e.target.parentNode.id
-    const index = parseInt(indexRaw, 10)
+    let x = null
+    this.handleSelection()
 
-    this.handleSelection(Number.isNaN(index) ? selectedRowIdDefault : index)
+    console.log(this.state.rowSelected + ' after set ')
+
+    if (this.state.rowSelected) {
+      // e.target.parentNode.style.background = 'lightblue'
+      // this.state.previousRow = e.target.parentNode
+      this.setState({ previousRow: e.target.parentNode })
+    } else {
+      // turn current row white and row Selected to false
+      // e.target.parentNode.style.background = 'white'
+      if (this.state.previousRow !== '') {
+        x = this.state.previousRow
+        // x.style.background = 'white'
+
+        // previous row is not equal to selected row
+        if (this.state.previousRow !== e.target.parentNode) {
+          // this.state.rowSelected = true
+          this.handleSelection()
+          // e.target.parentNode.style.background = 'lightblue'
+          // x.style.background = 'white'
+          // this.state.previousRow = e.target.parentNode
+          this.setState({ previousRow: e.target.parentNode })
+        }
+      }
+    }
   }
 
   render () {
+    // console.log('selected ' + this.state.rowSelected)
+
     return (
       <table className='table'>
         <thead className='thead-dark'>
@@ -45,14 +70,7 @@ class SearchResults extends Component {
         <tbody>
           {this.props.results.map(row => {
             return (
-              <tr
-                id={row.id}
-                key={row.id}
-                onClick={this.toggle}
-                className={
-                  this.state.selectedRowId === row.id ? 'bg-info' : 'bg-light'
-                }
-              >
+              <tr onClick={this.toggle}>
                 <td>{row.id}</td>
                 <td>{row.title}</td>
                 <td>{row.firstName}</td>

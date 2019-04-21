@@ -1,7 +1,7 @@
 .App {
   text-align: left;
 }
-.Card-row{
+.Cards-row{
   display: flex;
   flex-direction: row;
   text-align: justify;
