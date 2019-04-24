@@ -1,18 +1,22 @@
-import React from "react";
-import Button from "./Button";
+import React, { Component } from "react";
+import RestaurantButton from "./RestaurantButton";
 
-const Restaurant = () => {
-  const pizzas = 0;
-  return (
-    <div>
-      <h3>Restaurant Orders</h3>
-      <ul>
-        <li>
-          Pizzas: {pizzas} <Button content="Add" />
-        </li>
-      </ul>
-    </div>
-  );
-};
-
+class Restaurant extends Component {
+  addOrder = () => {
+    console.log("Add order");
+  };
+  render() {
+    const pizzas = 0;
+    return (
+      <div>
+        <ul>
+          <li>
+            Pizzas= {pizzas}
+            <RestaurantButton handleClick={this.onClick} content="Add" />
+          </li>
+        </ul>
+      </div>
+    );
+  }
+}
 export default Restaurant;
