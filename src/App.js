@@ -16,6 +16,7 @@ class App extends Component {
       <div className="App">
         <Heading />
         <Bookings />
+        <Restaurant />
        <div className='row'>
         <TouristInfoCards
           image="https://i.postimg.cc/MH3GWqTW/London.jpg"
@@ -36,7 +37,7 @@ class App extends Component {
         />
    
         </div>
-        <Restaurant />
+        
         <Footer array = {["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]}
 />
        
