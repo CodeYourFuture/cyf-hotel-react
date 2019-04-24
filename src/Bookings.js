@@ -19,3 +19,6 @@ export default class Bookings extends Component {
     );
   }
 }
+
+
+
