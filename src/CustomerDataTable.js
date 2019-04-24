@@ -7,17 +7,17 @@ class CustomerDataTable extends Component {
 constructor(props) {
   super(props);
   this.state = {
-    rowId: 0
+    selected: false
   }
 }
 
 
 toggleHighlightedRow = (e) => {
-
-  let row = e.target.parentNode.id
   this.setState(prevState => ({
-    rowId: row
-  }));
+    selected: !prevState.selected
+  })
+)
+this.state.selected ? (e.target.parentNode.className = 'bg-info') : (e.target.parentNode.className = '');
 }
 
 
@@ -35,7 +35,7 @@ calculateStayDuration = (checkIn, checkOut) => {
         {this.props.results.map(res => {
           return (
 
-         <tr onClick={this.toggleHighlightedRow} key={res.id} id={res.id} className={this.state.rowId == res.id ? "bg-info": ""}>
+         <tr onClick={this.toggleHighlightedRow} key={res.id} id={res.id}>
               <th scope="row" key={res.id}>
                 {res.id}
               </th>

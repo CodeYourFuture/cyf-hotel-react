@@ -2,10 +2,6 @@ import React, { Component } from "react";
 
 class TouristInfoCard extends Component {
 
-constructor(props) {
-  super(props);
-}
-
 render() {
   return(
       this.props.data.map((singleCard,index) => {
