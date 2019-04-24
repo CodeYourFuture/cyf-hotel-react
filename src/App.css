@@ -72,3 +72,7 @@ ul#menu li {
    padding-right: .6em;
    margin: 1em 0;
 }
+
+.selected{
+  background: blue;
+}
