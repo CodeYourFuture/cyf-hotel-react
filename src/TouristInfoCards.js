@@ -10,7 +10,7 @@ const TouristInfoCards = () => {
                 <div className='card-body'>
                     <h4 className="card-title">Glasgow</h4>
                     <p className="card-text">Thudisdksdalaka alalkajlkajlasa lajslaksjlajka sjusuhslsalalsa alslssalanla lajslaksjlajkalsjls </p>
-                    <a href="peoplemakeglasgow.com" className="btn btn-primary">Learn more...</a>
+                    <a href="https://www.peoplemakeglasgow.com" className="btn btn-primary">Learn more...</a>
                 </div>
             </div>
             <div className="card">
@@ -18,7 +18,7 @@ const TouristInfoCards = () => {
                 <div className='card-body'>
                     <h4 className="card-title">Manchester</h4>
                     <p className="card-text">Thudisdksdalaka alalkajlkajlasa lajslaksjlajka sjusuhslsalalsa alslssalanla lajslaksjlajkalsjls </p>
-                    <a href="visitlondon.com" className="btn btn-primary">Learn more...</a>
+                    <a href="https://www.visitmanchester.com/" className="btn btn-primary">Learn more...</a>
                 </div>
             </div>
             <div className="card">
@@ -26,7 +26,7 @@ const TouristInfoCards = () => {
                 <div className='card-body'>
                     <h4 className="card-title">London</h4>
                     <p className="card-text">Thudisdksdalaka alalkajlkajlasa lajslaksjlajka sjusuhslsalalsa alslssalanla lajslaksjlajkalsjls </p>
-                    <a href="visitlondon.com" className="btn btn-primary">Learn more...</a>
+                    <a href="https://www.visitlondon.com" className="btn btn-primary">Learn more...</a>
                 </div>
             </div>
         </div>

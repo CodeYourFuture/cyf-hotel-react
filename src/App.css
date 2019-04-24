@@ -94,6 +94,7 @@ tr {
 }
 .selected{
   background: red;
+  color: white;
 }
 
 .address li{
