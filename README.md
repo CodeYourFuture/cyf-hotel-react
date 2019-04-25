@@ -39,7 +39,7 @@ This is the `react` frontend for the [CYF-Hotel](https://github.com/CodeYourFutu
 
 12. Within the `addOrder` method of `<Restaurant />`, use the `this.setState` method to increment the `orders` state by 1. Hint: remember that if we are using previous state to calculate the new state, we must use a callback function with `this.setState`.
 
-13. Extract the `<li>` containing "Pizzas" within the `<Restaurant />` component to a new component named `Orders`. Move `orders` initial state set up in the `constructor` and the `addOrder` method from `<Restaurant />` to the new `<Orders />` component. Make sure that clicking the "Add" button still increments the number of orders. Then replace the hard-coded string "Pizzas" in `<Orders />` with a prop named `orderType`. Finally, render another `<Orders />` component but this time with the prop `orderType="Salads"`.
+13. Extract the `<li>` containing "Pizzas" within the `<Restaurant />` component to a new component named `Order`. Move `orders` initial state set up in the `constructor` and the `addOrder` method from `<Restaurant />` to the new `<Order />` component. Make sure that clicking the "Add" button still increments the number of orders. Then replace the hard-coded string "Pizzas" in `<Order />` with a prop named `orderType`. Finally, render another `<Order />` component but this time with the prop `orderType="Salads"`.
 
 14. Within the `<SearchResults />` component or it's child components, add an `onClick` handler to each row in the table (hint: on the `<tr>` element). When clicked, the row is "selected" and highlighted with a different colour. Hint: use state to add a class to the `className`. When clicking on the row for a second time, "unselect" the row and remove the coloured highlighting.
 
