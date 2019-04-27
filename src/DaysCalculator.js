@@ -1,7 +1,5 @@
+import moment from 'moment';
 
-
-var moment = require('moment');
-moment().format();
 
 const DaysCalculator = (props) => {
 

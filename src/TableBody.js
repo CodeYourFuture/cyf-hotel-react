@@ -1,28 +1,31 @@
-import React from "react";
+import React, { Component } from "react";
 
-import DaysCalculator from "./DaysCalculator";
+import TableRow from "./TableRow"
+// var moment = require('moment');
+// moment().format();
 
-var moment = require('moment');
-moment().format();
 
+class TableBody extends Component {
+  // constructor(props){
+  //   super(props)
+  // this.state = {
+  //   selected: false
+  // }}
 
-const TableBody = (props) => {
+  // clickHandle = ()=> {
+  //   this.setState(currentState => {
+  //     return{
+  //     selected: !currentState.selected}})
+  // }
+  render() {
+  
 return(
 <tbody>
-     {props.searchOutput.map(searchOutput => {
-  return(
-    <tr>
-     <th scope= "row"> {searchOutput.id}</th>
-       <td>{searchOutput.title}</td>
-       <td>{searchOutput.firstName}</td>
-       <td>{searchOutput.surname}</td>
-       <td>{searchOutput.email}</td>
-       <td>{searchOutput.roomId}</td>
-       <td>{searchOutput.checkInDate}</td>
-       <td>{searchOutput.checkOutDate}</td>
-       <td> <DaysCalculator dateout = {searchOutput.checkOutDate} datein = {searchOutput.checkInDate} /> </td>
-       </tr>     
-         )})}    
+     {this.props.searchOutput.map(rowInfo => {
+  return( <TableRow rowInfo= {rowInfo} />)
+    
+    
+         })}    
   </tbody>)
-}
+  }}
 export default TableBody;
