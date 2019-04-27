@@ -5,20 +5,14 @@ class SearchResults extends Component {
   constructor(props){
     super(props)
     this.state = {
-      lineId: 0
+
     }
   }
 
 changeColor = e => {
   this.setState(previousState => {
     return {
-      let line = e.target.parentNode.id;
-      console.log(line)
-      this.setState(previousState => ({
-        lineId: line
-      }))
-      e.target.parentNode.style.backgroundColor = "blue"
-  //    rowcolor="rowcolor"
+
     }
   })
 }
@@ -66,13 +60,3 @@ changeColor = e => {
 }
 
 export default SearchResults;
-
-/*
-Within the <SearchResults /> component or it's child components, add an onClick handler 
-to each row in the table (hint: on the <tr> element). 
-When clicked, the row is "selected" and highlighted with a different colour. 
-Hint: use state to add a class to the className. When clicking on the row for a second time, 
-"unselect" the row and remove the coloured highlighting.
-            <button className="btn btn-primary" onClick={props.order} >Add</button>
-
-*/

@@ -22,9 +22,3 @@ export default class Bookings extends Component {
     );
   }
 }
-
-/*
-Within src/App.js, render the <Restaurant /> component (that is provided for you
-   in src/Restaurant.js) underneath the <Bookings /> component. 
-Then convert the <Restaurant /> component to a class component.
-*/

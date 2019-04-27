@@ -29,8 +29,3 @@ class Orders extends Component {
 }
 
 export default Orders;
-
-/*
-Then replace the hard-coded string "Pizzas" in <Orders /> with a prop named orderType. 
-Finally, render another <Orders /> component but this time with the prop orderType="Salads".
-*/
