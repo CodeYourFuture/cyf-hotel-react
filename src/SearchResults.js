@@ -1,7 +1,29 @@
-import React from "react";
+import React, {Component} from "react";
 import moment from 'moment';
 
-function SearchResults(props) {
+class SearchResults extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      lineId: 0
+    }
+  }
+
+changeColor = e => {
+  this.setState(previousState => {
+    return {
+      let line = e.target.parentNode.id;
+      console.log(line)
+      this.setState(previousState => ({
+        lineId: line
+      }))
+      e.target.parentNode.style.backgroundColor = "blue"
+  //    rowcolor="rowcolor"
+    }
+  })
+}
+
+  render(){
   return (
       <div>
       < table className="table table-hover" >
@@ -20,9 +42,9 @@ function SearchResults(props) {
         </thead>
         <tbody>       
                {
-              props.results.map((visitor) => {
+              this.props.results.map((visitor) => {
                 return (
-                  <tr>
+                <tr onClick={this.changeColor}>
                   <td>{visitor.id}</td>
                   <td>{visitor.title}</td>
                   <td>{visitor.firstName}</td>
@@ -41,5 +63,16 @@ function SearchResults(props) {
       </div>
   )
 }
+}
 
 export default SearchResults;
+
+/*
+Within the <SearchResults /> component or it's child components, add an onClick handler 
+to each row in the table (hint: on the <tr> element). 
+When clicked, the row is "selected" and highlighted with a different colour. 
+Hint: use state to add a class to the className. When clicking on the row for a second time, 
+"unselect" the row and remove the coloured highlighting.
+            <button className="btn btn-primary" onClick={props.order} >Add</button>
+
+*/

@@ -35,10 +35,16 @@ class App extends Component {
         <TouristInfoCards CityCards={CityCards}/>
         <Bookings />
         <Restaurant />
-        <Footer contactDetails= {["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]}/>
+        <Footer contactDetails={["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]}/>
       </div>
     );
   }
 }
 
 export default App;
+
+/*
+Within src/App.js, render the <Restaurant /> component (that is provided for you
+   in src/Restaurant.js) underneath the <Bookings /> component.
+Then convert the <Restaurant /> component to a class component.
+*/
