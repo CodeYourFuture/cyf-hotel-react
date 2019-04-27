@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Bookings from "./Bookings";
-import Restaurant from "./Restaurant";
+import { Restaurant } from "./Restaurant";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import "./App.css";
 import SearchResults from "./SearchResults";
 
-class App extends Component {
+class App extends React.Component {
   render() {
     const footerInfo = [
       "123 Fake Street, London, E1 4UD",

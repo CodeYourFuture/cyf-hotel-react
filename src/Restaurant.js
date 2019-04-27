@@ -1,22 +1,21 @@
 import React, { Component } from "react";
 import RestaurantButton from "./RestaurantButton";
+import Orders from "./Orders";
 
 class Restaurant extends Component {
-  addOrder = () => {
-    console.log("Add order");
-  };
   render() {
-    const pizzas = 0;
     return (
       <div>
         <ul>
           <li>
-            Pizzas= {pizzas}
-            <RestaurantButton handleClick={this.onClick} content="Add" />
+            <Orders orderType="Salad" />
+          </li>
+          <li>
+            <Orders orderType="Pizza" />
           </li>
         </ul>
       </div>
     );
   }
 }
-export default Restaurant;
+export { Restaurant };
