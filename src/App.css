@@ -1,14 +1,23 @@
 .App {
-  text-align: left;
-  
+  text-align:left;
+}
+
+.restaurant-orders{
+margin-inline-start: 11%;
+}
+
+.restaurant-orders ul, ul{
+list-style: none;
+}
+
+.footer-contact-info{
+text-align: center;
 }
 
 .App-logo {
-  /*animation: App-logo-spin infinite 20s linear;*/
   height: 30px;
   margin-top: -70px;
-  margin-inline-start:10%;
-  
+  margin-inline-start:10%; 
 }
 
 .App-header {
@@ -32,14 +41,7 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -54,7 +56,6 @@ tr {
 
 .footer {
   padding-top: 20px;
-  text-align: center;
 }
 
 .App-TouristInfoCards{

@@ -36,7 +36,7 @@ class App extends Component {
 				/>
 			</div>
 			<Bookings />
-			<Restaurant />
+			<Restaurant /> 
 			<Footer footerData={footerData} />
 		</div>
 	);

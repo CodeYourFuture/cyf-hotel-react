@@ -1,17 +1,25 @@
-import React from "react";
+import React, {Component} from "react";
+import Orders from "./Orders";
 
-const Restaurant = () => {
-  const pizzas = 0;
-  return (
-    <div>
-      <h3>Restaurant Orders</h3>
-      <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
-      </ul>
-    </div>
-  );
-};
+class Restaurant extends Component {
+  addOrder = () => {
+  console.log("Add Order");
+  };
+	  render() {
+    return (
+      <div className="restaurant-orders">
+        <h3>Restaurant Orders</h3>
+        <ul>
+          <Orders orderType="Pizza" />
+          <Orders orderType="Salads" />
+        </ul>
+      </div>
+    );
+  }
+		
+
+}
 
 export default Restaurant;
+
+
