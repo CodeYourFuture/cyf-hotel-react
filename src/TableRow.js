@@ -18,9 +18,8 @@ class TableRow extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
-      <tr onClick={this.toggleHighlightedRow} key='mango' id={1} className={this.state.selected ? 'bg-info' : ''}>
+      <tr onClick={this.toggleHighlightedRow} key='' id={1} className={this.state.selected ? 'bg-info' : ''}>
       <th scope="row" key={this.props.id}>
         {this.props.id}
       </th>
