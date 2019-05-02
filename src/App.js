@@ -14,10 +14,11 @@ class App extends Component {
       <div className="App">
         <Heading />
         <header className="App-header">CYF Hotel</header>
-        
+
         <Bookings />
+        <Restaurant />
         <TouristInfoCards
-          image="https://i.ytimg.com/vi/c8Sa0l98UB4/maxresdefault.jpg"
+          image="https://i.postimg.cc/X7tt3Vd0/ugur-akdemir-473717-unsplash.jpg"
           city="London"
           link="https://www.visitlondon.com"
         />
@@ -31,10 +32,14 @@ class App extends Component {
           city="Mancester"
           link="visitmanchester.com"
         />
-      
-        <Restaurant />
-        <Footer array={["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]} />
-        
+
+        <Footer
+          array={[
+            "123 Fake Street, London, E1 4UD",
+            "hello@fakehotel.com",
+            "0123 456789"
+          ]}
+        />
       </div>
     );
   }

@@ -1,7 +1,17 @@
 import React from "react";
 import Button from "./Button";
 
-const Search = () => {
+class Search extends React.Component {
+  
+  setInputRef = (input) => {
+    this.input = input
+  }
+  handeleSubmit = event => {
+    console.log(this.input.value);
+    event.preventDefault();
+  }
+  
+  render() {
   return (
     <div className="search">
       <div className="page-header">
@@ -13,6 +23,7 @@ const Search = () => {
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
+              ref = {this.setInputRef}
                 type="text"
                 id="customerName"
                 className="form-control"
@@ -26,6 +37,6 @@ const Search = () => {
     </div>
   );
 };
-
+}
 export default Search;
 
