@@ -6,6 +6,7 @@ import Bookings from "./Bookings";
 import Footer from './Footer'
 import "./App.css";
 import Restaurant from "./Restaurant";
+import Clock from "./Clock"
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
 
       <div className="App">
         <Heading />
+        <Clock />
         <TouristInfoCards data={TouristInfoData} />
         <Bookings />
         <Restaurant />
