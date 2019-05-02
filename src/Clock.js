@@ -1,9 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 
 class Clock extends Component {
   constructor(props) {
     super(props);
-
     this.state = { date: new Date() };
   }
 
@@ -11,7 +10,11 @@ class Clock extends Component {
     // There is a bug in this component, where this.timer is not cleared if the
     // component is unmounted. It will continue to try to render if even the
     // component is no longer in the DOM.
-    this.timer = setTimeout(this.tick, 1000);
+    this.timer = setInterval(this.tick, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
   }
 
   tick = () => {

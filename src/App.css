@@ -1,6 +1,6 @@
 .selected {
-  background-color  : gray;
-  color:white;
+  background-color: gray;
+  color: white;
 }
 
 .App {
@@ -11,8 +11,6 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-
-
 
 .App-header {
   background-color: #222;
@@ -61,16 +59,33 @@ tr {
   text-align: center;
 }
 
-.footer ul li{
+ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.image-container{ 
+.image-container {
   max-height: 300px;
-  overflow:hidden;
+  overflow: hidden;
 }
 .image-container img {
-  width:100%;
-  height:auto;
-  display:block;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  margin: 0 5px;
+}
+
+input {
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  div.search-row {
+    display: flex;
+    flex-direction: column;
+  }
 }
