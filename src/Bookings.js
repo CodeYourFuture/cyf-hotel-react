@@ -64,7 +64,7 @@ export default class Bookings extends Component {
     return (
       <div className="App-content">
         <div className="container">
-          {this.state.err ? this.errorMessage() : null}
+          {this.state.err && this.errorMessage()}
           <Search search={this.search} />
 
           {this.state.isLoading ? (
