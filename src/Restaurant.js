@@ -3,8 +3,6 @@ import Orders from './Orders';
 class Restaurant extends React.Component {
 
   render() {
-    const pizzas = 0;
-
     return (
       <div>
         <h3>Restaurant Orders</h3>
