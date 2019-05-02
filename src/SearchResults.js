@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment'
-
+import TableRow from './TableRow'
 class SearchResults extends React.Component {
     constructor(props) {
         super(props);
@@ -9,32 +9,32 @@ class SearchResults extends React.Component {
 
 
 
-    highlightRow = (event) => {
+    // highlightRow = (event) => {
 
-        //Check if there is a row selected or not 
-        if (!this.state.isRowSelected && !this.state.selectedRow) {
+    //     //Check if there is a row selected or not 
+    //     if (!this.state.isRowSelected && !this.state.selectedRow) {
 
-            //updating the state if a new  row selected and saving the value of the it for later to make sure there is only one row selected 
-            this.setState({
-                isRowSelected: true,
-                selectedRow: event.target.parentNode
-            })
+    //         //updating the state if a new  row selected and saving the value of the it for later to make sure there is only one row selected 
+    //         this.setState({
+    //             isRowSelected: true,
+    //             selectedRow: event.target.parentNode
+    //         })
 
-            // adding  class to  highlight the selected row 
-            event.target.parentNode.classList.add("table-danger");
+    //         // adding  class to  highlight the selected row 
+    //         event.target.parentNode.classList.add("table-danger");
 
-        } else if (this.state.selectedRow === event.target.parentNode) {//here we check if the clicked row is previously selected  if it is it will be unhighlighted
+    //     } else if (this.state.selectedRow === event.target.parentNode) {//here we check if the clicked row is previously selected  if it is it will be unhighlighted
 
-            this.setState({
-                isRowSelected: false,
-                selectedRow: null
-            })
-            // removing the added class in case we clicked a previously highlighted row 
-            event.target.parentNode.classList.remove("table-danger");
+    //         this.setState({
+    //             isRowSelected: false,
+    //             selectedRow: null
+    //         })
+    //         // removing the added class in case we clicked a previously highlighted row 
+    //         event.target.parentNode.classList.remove("table-danger");
 
-        }
+    //     }
 
-    }
+    // }
     render() {
 
         return (
@@ -54,20 +54,8 @@ class SearchResults extends React.Component {
                     </thead>
                     <tbody>
 
-                        {this.props.results.map((result, index) => {
-                            return (
-                                <tr key={result.id}
-                                    onClick={this.highlightRow}>
-                                    <td >{result.title}</td>
-                                    <td>{result.firstName}</td>
-                                    <td>{result.surName}</td>
-                                    <td>{result.email}</td>
-                                    <td>{result.roomId}</td>
-                                    <td>{result.checkInDate}</td>
-                                    <td>{result.checkOutDate}</td>
-                                    <td>{moment(result.checkOutDate).diff(result.checkInDate, 'days')}</td>
-                                </tr>)
-                        })}
+                        {this.props.results.map((result, index) => <TableRow result={result} />
+                        )}
 
                     </tbody>
                 </table>
