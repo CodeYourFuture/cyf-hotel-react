@@ -50,3 +50,6 @@
 .row--selected {
   background-color: lightgreen;
 }
+.btn-primary {
+  margin: 10px;
+}

@@ -4,8 +4,18 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 export default class Bookings extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { bookings: FakeBookings };
+  }
   search = searchVal => {
-    console.info("TO DO!", searchVal);
+    this.setState({
+      bookings: this.state.bookings.filter(
+        booking =>
+          booking.firstName.includes(searchVal) ||
+          booking.lastName.include(searchVal)
+      )
+    });
   };
 
   render() {
