@@ -17,7 +17,7 @@ import React, { Component } from "react";
              {this.props.orderType} {this.state.orders}
              <RestaurantButton
                handleClick={this.addOrder}
-               text={"Add"}
+               type={"Add"}
              />
            </li>
          );
