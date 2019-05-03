@@ -8,18 +8,18 @@ class SearchResults extends Component {
 
     };
   }
-  selection = (props) => {
+  selection = (event) => {
     this.setState(previousState => {
       return {selected: !previousState.selected}
     });
     this.state.selected
-    ? (props.target.parentNode.className="highlight")
-        : (props.target.parentNode.className="" );
+    ? (event.target.parentNode.className="highlight")
+        : (event.target.parentNode.className="" );
   };
 
   render() {
     return (
-      <div class="table-responsive">
+      <div className="table-responsive">
         <table className="table table-highlight">
           <thead>
             <tr>
@@ -35,9 +35,9 @@ class SearchResults extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.results.map(booking => {
+            {this.props.Bookings.map(booking => {
               return (
-                <tr
+                <tr key={booking.id}
                   className={this.state.highlight}
                   onClick={this.selection}
                 >
