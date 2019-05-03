@@ -2,8 +2,8 @@ import React from "react";
 
 const TouristInfoCards = () => {
   return (
-    <div class="row">
-      <div class="xs-col-12 md-col-6 lg-col-4">
+    <div className="row">
+      <div className="xs-col-12 md-col-6 lg-col-4">
         <div className="card">
           <img
             src="https://i.postimg.cc/KvdgxZPS/Palace-of-Westminster-from-the-dome-on-Methodist-Central-Hall.jpg"
@@ -14,23 +14,20 @@ const TouristInfoCards = () => {
             <h5 className="card-title">London</h5>
             <p className="card-text">
               London, the capital of England and the United Kingdom, is a
-              21st-century city with history stretching back to Roman times.
-              At its centre stand the imposing Houses of Parliament, the
-              iconic ‘Big Ben’ clock tower and Westminster Abbey, site of
-              British monarch coronations. Across the Thames River, the London
-              Eye observation wheel provides panoramic views of the South Bank
+              21st-century city with history stretching back to Roman times. At
+              its centre stand the imposing Houses of Parliament, the iconic
+              ‘Big Ben’ clock tower and Westminster Abbey, site of British
+              monarch coronations. Across the Thames River, the London Eye
+              observation wheel provides panoramic views of the South Bank
               cultural complex, and the entire city.
             </p>
-            <a
-              href="https://www.visitlondon.com/"
-              className="btn btn-primary"
-            >
+            <a href="https://www.visitlondon.com/" className="btn btn-primary">
               Checkout Upcoming events
             </a>
           </div>
         </div>
       </div>
-      <div class="xs-col-12 md-col-6 lg-col-4">
+      <div className="xs-col-12 md-col-6 lg-col-4">
         <div className="card">
           <img
             src="https://i.postimg.cc/MpKY4083/images-11.jpg"
@@ -40,13 +37,13 @@ const TouristInfoCards = () => {
           <div className="card-body">
             <h5 className="card-title">Manchester</h5>
             <p className="card-text">
-              Manchester is a major city in the northwest of England with a
-              rich industrial heritage. The Castlefield conservation area’s
+              Manchester is a major city in the northwest of England with a rich
+              industrial heritage. The Castlefield conservation area’s
               18th-century canal system recalls the city’s days as a textile
-              powerhouse, and visitors can trace this history at the
-              interactive Museum of Science & Industry. The revitalised
-              Salford Quays dockyards now house the Daniel Libeskind-designed
-              Imperial War Museum North and the Lowry.
+              powerhouse, and visitors can trace this history at the interactive
+              Museum of Science & Industry. The revitalised Salford Quays
+              dockyards now house the Daniel Libeskind-designed Imperial War
+              Museum North and the Lowry.
             </p>
             <a
               href="https://www.visitmanchester.com/"
@@ -57,7 +54,7 @@ const TouristInfoCards = () => {
           </div>
         </div>
       </div>
-      <div class="xs-col-12 md-col-6 lg-col-4">
+      <div className="xs-col-12 md-col-6 lg-col-4">
         <div className="card">
           <img
             src="https://i.postimg.cc/G3Pyd0MH/Glasgow-lead-xlarge.jpg"
