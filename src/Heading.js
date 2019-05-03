@@ -1,6 +1,7 @@
-import React from "react";
-
-const Heading = () => {
+import React, {Component}from "react";
+import Clock from "./Clock"
+class Heading extends Component {
+  render(){
   return (
     <div>
       <img
@@ -8,9 +9,15 @@ const Heading = () => {
         height="120px"
         alt="logo"
       />
-      <header className="App-header">CYF Hotel</header>
+      <header className="header">
+        CYF Hotel
+        <div>
+          <Clock />
+        </div>
+      </header>
     </div>
   );
+  }
 };
 
-export default Heading; 
+export default  Heading; 
