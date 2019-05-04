@@ -1,7 +1,20 @@
+body{
+  background-color: #CEDADA;
+}
 .App {
   text-align: left;
 }
+.logo-container{
+  display: flex; 
+  width :100%;
+  justify-content: space-between;
+}
 
+.logo-container h1{
+  color: #695958;
+ margin-top: 10px;
+ margin-right: 20px;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -16,6 +29,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .App-title {
@@ -38,6 +52,9 @@
 .search {
   padding: 5px 0 20px 0;
 }
+.search-row input{
+  width: 85%;
+}
 
 tr {
   color: #5b5757;
@@ -46,8 +63,22 @@ tr {
 .results {
   padding-top: 15px;
 }
-
+.new-booking-fields{
+  width :60%;
+}
+.new-booking-fields button, input{
+  margin-top: 10px;
+}
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+
+.footer ul{
+  list-style-type: none;
+}
+
+#card-image{
+  height: 300px;
+  object-fit: cover;
 }

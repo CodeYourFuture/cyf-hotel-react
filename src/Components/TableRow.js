@@ -23,7 +23,7 @@ class TableRow extends React.Component {
                 onClick={this.highlightRow} className={className}>
                 <td >{this.props.result.title}</td>
                 <td>{this.props.result.firstName}</td>
-                <td>{this.props.result.surName}</td>
+                <td>{this.props.result.surname}</td>
                 <td>{this.props.result.email}</td>
                 <td>{this.props.result.roomId}</td>
                 <td>{this.props.result.checkInDate}</td>

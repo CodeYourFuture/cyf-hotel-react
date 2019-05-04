@@ -8,6 +8,7 @@ class Restaurant extends React.Component {
         <h3>Restaurant Orders</h3>
         <ul>
           <Orders orderType="Pizzas" />
+          <br />
           <Orders orderType="Salads" />
         </ul>
       </div >
