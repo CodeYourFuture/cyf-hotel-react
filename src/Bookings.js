@@ -29,8 +29,7 @@ export default class Bookings extends Component {
       isLoading: true,
       error: null,
       fakeBookings: [],
-      searchVal: "",
-      searchResults: null
+      searchVal: ""
     };
   }
 
@@ -68,11 +67,6 @@ export default class Bookings extends Component {
 
   search = searchVal => {
     this.setState({ searchVal: searchVal });
-    this.setState({
-      searchResults: this.state.fakeBookings.filter(booking => {
-        return booking.firstName === searchVal || booking.surname === searchVal;
-      })
-    });
   };
 
   addBooking = newBooking => {
@@ -96,11 +90,12 @@ export default class Bookings extends Component {
               displayAllBookings={this.displayAllBookings}
             />
             <SearchResults
-              results={
+              results={this.state.fakeBookings.filter(booking =>
                 this.state.searchVal
-                  ? this.state.searchResults
-                  : this.state.fakeBookings
-              }
+                  ? booking.firstName === this.state.searchVal ||
+                    booking.surname === this.state.searchVal
+                  : true
+              )}
               headerTitles={titles}
             />
             <hr />
