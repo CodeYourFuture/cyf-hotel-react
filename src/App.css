@@ -1,12 +1,12 @@
 .App {
   text-align: left;
 }
-.Cards-row{
+.Row-cards{
   display: flex;
   flex-direction: row;
   text-align: justify;
   justify-content: space-around;
-  padding-top: 40px;
+  padding-top: 1px;
 }
 .App-logo {
   /* animation: App-logo-spin infinite 20s linear; */
@@ -15,12 +15,12 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  height: 110px;
+  padding: 20px 60px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
 }
 
@@ -45,9 +45,6 @@
   padding: 5px 0 20px 0;
 }
 
-tr {
-  color: #5b5757;
-}
 li{
   list-style: none;
 }
@@ -63,4 +60,13 @@ li{
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+.image-container {
+  max-height: 300px;
+  overflow: hidden;
+}
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
 }

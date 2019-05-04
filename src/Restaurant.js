@@ -3,7 +3,7 @@ import Orders from './Orders'
 class Restaurant extends Component {
   render () {
     return (
-      <div>
+      <div className='container'>
         <h3>Restaurant Orders</h3>
         <Orders orderType='Pizza' />
         <Orders orderType='Salad' />

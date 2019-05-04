@@ -5,30 +5,11 @@
 
 import React, { Component } from 'react'
 var moment = require('moment')
-const selectedRowIdDefault = 0
-class SearchResults extends Component {
-  state = {
-    rowSelected: false,
-    selectedRowId: selectedRowIdDefault
-  }
-  handleSelection = selectedRowId => {
-    this.setState(previousState => {
-      return {
-        selectedRowId: selectedRowId
-      }
-    })
-  }
 
-  toggle = e => {
-    const indexRaw = e.target.parentNode.id
-    const index = parseInt(indexRaw, 10)
-
-    this.handleSelection(Number.isNaN(index) ? selectedRowIdDefault : index)
-  }
-
-  render () {
-    return (
-      <table className='table'>
+function SearchResults (props) {
+  return (
+    <div className='container'>
+      <table className='table table-responsive'>
         <thead className='thead-dark'>
           <tr>
             <th scope='col'>#</th>
@@ -43,35 +24,52 @@ class SearchResults extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.results.map(row => {
-            return (
-              <tr
-                id={row.id}
-                key={row.id}
-                onClick={this.toggle}
-                className={
-                  this.state.selectedRowId === row.id ? 'bg-info' : 'bg-light'
-                }
-              >
-                <td>{row.id}</td>
-                <td>{row.title}</td>
-                <td>{row.firstName}</td>
-                <td>{row.surname}</td>
-                <td>{row.email}</td>
-                <td>{row.roomId}</td>
-                <td>{row.checkInDate}</td>
-                <td>{row.checkOutDate}</td>
-                <td>
-                  {moment(row.checkOutDate).diff(
-                    moment(row.checkInDate),
-                    'days'
-                  )}
-                </td>
-              </tr>
-            )
+          {props.results.map(row => {
+            return <TableRow row={row} />
           })}
         </tbody>
       </table>
+    </div>
+  )
+}
+
+class TableRow extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      isSelected: false
+    }
+  }
+
+  handleClick = () => {
+    this.setState(previousState => {
+      return {
+        isSelected: !previousState.isSelected
+      }
+    })
+  }
+
+  render () {
+    const rowClassName = this.state.isSelected
+      ? 'bg-secondary text-white'
+      : 'bg-light'
+    return (
+      <tr className={rowClassName} onClick={this.handleClick}>
+        <td>{this.props.row.id}</td>
+        <td>{this.props.row.title}</td>
+        <td>{this.props.row.firstName}</td>
+        <td>{this.props.row.surname}</td>
+        <td>{this.props.row.email}</td>
+        <td>{this.props.row.roomId}</td>
+        <td>{this.props.row.checkInDate}</td>
+        <td>{this.props.row.checkOutDate}</td>
+        <td>
+          {moment(this.props.row.checkOutDate).diff(
+            moment(this.props.row.checkInDate),
+            'days'
+          )}
+        </td>
+      </tr>
     )
   }
 }

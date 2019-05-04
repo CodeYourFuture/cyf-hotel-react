@@ -2,13 +2,15 @@ import React from 'react'
 
 const TouristInfoCard = props => {
   return (
-    <div className='card' style={{ width: '18rem', right: '4' }}>
-      <img src={props.image} className='card-img-top' alt='...' />
+    <div className='card' style={{ width: '25rem', right: '4' }}>
+      <figure className='image-container'>
+        <img src={props.image} className='card-img-top' alt={props.location} />
+      </figure>
       <div className='card-body'>
-        <h5 className='card-title'>{props.location}</h5>
-
+        <h4 className='card-title'>{props.location}</h4>
+        <p>test text</p>
         <a href={props.link} target='_blank' className='btn btn-primary'>
-          Find out More
+          Explore {props.location}
         </a>
       </div>
     </div>
