@@ -7,11 +7,6 @@
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 120px;
-}
-
 .header {
   display: flex;
   flex-direction: row;
@@ -96,19 +91,14 @@ li {
    margin: 15px;
  color:green;
 }
-.addBooking__form{
+.newBooking__Form{
   margin-top: 30px;
+  text-align: center;
   margin-bottom: 20px;
-
 }
-.addBooking__form{
-  margin-top: 50px;
-  height: 100px;
- 
-
-}
-.addBooking__table{
-  height: 100px;
+.input__wrapper{
+  margin-top:15px; 
+ text-align: center
 }
 /* GRID */
 
