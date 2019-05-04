@@ -15,7 +15,7 @@ class BookingForm extends Component {
   render() {
     return (
       <div className="newBooking__Form">
-        <h3>Add New Booking </h3>
+        <h3>New Booking </h3>
         <div className="form__wrapper">
           <form onSubmit={this.handleSubmit}>
           <div className="input__wrapper">
@@ -63,59 +63,7 @@ class BookingForm extends Component {
               placeholder="CheckOutDate"
             />
             <br />
-            <Button type={"submit"} />
-            {/* <div className=" addBooking__form">
-          <div className="table-responsive">
-            <table className="addBooking__table">
-              <tbody>
-                <tr>
-                  <td>
-                    ID
-                    <input id="id" onChange={this.handleChange} /><br />
-                  </td>
-
-                  <td>
-                    title
-                    <input id="title" onChange={this.handleChange} /><br />
-                  </td>
-
-                  <td>
-                    FirstName
-                    <input id="firstName" onChange={this.handleChange} />
-                  </td>
-
-                  <td>
-                    Surname
-                    <input id="surname" onChange={this.handleChange} />
-                  </td>
-
-                  <td>
-                    Email
-                    <input id="email" onChange={this.handleChange} />
-                  </td>
-
-                  <td>
-                    Room ID
-                    <input id="roomId" onChange={this.handleChange} />
-                  </td>
-
-                  <td>
-                    CheckInDate
-                    <input id="checkInDate" onChange={this.handleChange} />
-                  </td>
-                  <td>
-                    CheckoutDate
-                    <input id="checkOutDate" onChange={this.handleChange} />
-                  </td>
-                  <td />
-                  <td>
-                 <Button type={"submit"} />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div> */}
+            <Button type={"Confirm Booking"} />
             </div>
           </form>
         </div>
