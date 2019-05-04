@@ -48,7 +48,7 @@ class BookingForm extends Component {
             <input
               id="roomId"
               onChange={this.handleChange}
-              placeholder="roomID"
+              placeholder="RoomID"
             />
             <br />
             <input
