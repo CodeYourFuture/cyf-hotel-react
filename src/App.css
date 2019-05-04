@@ -70,3 +70,6 @@ li{
   height: auto;
   display: block;
 }
+input {
+  margin: 10px 0;
+}

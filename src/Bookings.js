@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Search from './Search.js'
 import SearchResults from './SearchResults.js'
-// import FakeBookings from './data/fakeBookings.json'
+import NewBooking from './NewBooking.js'
 
 export default class Bookings extends Component {
   constructor (props) {
@@ -13,7 +13,6 @@ export default class Bookings extends Component {
     }
   }
   componentDidMount () {
-    console.log('inside component mount')
     fetch('https://cyf-react.glitch.me/')
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
@@ -35,28 +34,50 @@ export default class Bookings extends Component {
           isLoading: false,
           error: error
         })
-      })
+      }),
+    1000
   }
   search = searchVal => {
-    console.info('TO DO!', searchVal)
-    const searchResults = this.state.FakeBookings.filter(bookings => {
-      return bookings.firstName === searchVal || bookings.surname === searchVal
-    })
-    console.log(searchResults)
+    if (searchVal !== '' || searchVal !== null) {
+      console.info('TO DO!', searchVal)
+      const searchResults = this.state.FakeBookings.filter(bookings => {
+        return (
+          bookings.firstName === searchVal || bookings.surname === searchVal
+        )
+      })
+      console.log(searchResults)
+      this.setState({
+        FakeBookings: searchResults
+      })
+    } else {
+      this.setState({
+        FakeBookings: this.state.FakeBookings
+      })
+    }
+  }
+  addBooking = newBooking => {
     this.setState({
-      FakeBookings: searchResults
+      FakeBookings: this.state.FakeBookings.concat(newBooking)
     })
   }
-
   render () {
-    // console.log(this.state.FakeBookings)
-    return (
-      <div className='App-content'>
-        <div>
-          <Search search={this.search} />
-          <SearchResults results={this.state.FakeBookings} />
+    if (this.state.isLoading) {
+      return <span>Loading.....🏨</span>
+    } else if (this.state.error) {
+      return <span>Something went wrong 😭</span>
+    } else {
+      return (
+        <div className='App-content'>
+          <div>
+            <Search search={this.search} />
+            <SearchResults results={this.state.FakeBookings} />
+            <NewBooking
+              id={this.state.FakeBookings.length}
+              handleBooking={this.addBooking}
+            />
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
 }

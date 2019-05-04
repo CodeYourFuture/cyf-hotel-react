@@ -29,6 +29,7 @@ function SearchResults (props) {
           })}
         </tbody>
       </table>
+      <hr />
     </div>
   )
 }

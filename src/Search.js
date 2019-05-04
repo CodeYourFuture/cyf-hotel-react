@@ -28,10 +28,10 @@ class Search extends Component {
                   type='text'
                   id='customerName'
                   className='form-control'
-                  placeholder='Customer Id'
+                  placeholder='Customer Name or Surname'
                   ref={this.setInputRef}
                 />
-                <Button caption='Search Id' />
+                <Button caption=' Search ' />
               </div>
             </form>
           </div>

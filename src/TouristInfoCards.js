@@ -8,7 +8,10 @@ const TouristInfoCard = props => {
       </figure>
       <div className='card-body'>
         <h4 className='card-title'>{props.location}</h4>
-        <p>test text</p>
+        <p>
+          Top 10 attractions - {props.location} events calendar - Day trips from{' '}
+          {props.location}
+        </p>
         <a href={props.link} target='_blank' className='btn btn-primary'>
           Explore {props.location}
         </a>
