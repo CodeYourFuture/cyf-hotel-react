@@ -15,7 +15,7 @@ class BookingForm extends Component {
   render() {
     return (
       <div className="newBooking__Form">
-        <h3>Add New Booking here!</h3>
+        <h3>Add New Booking </h3>
         <div className="form__wrapper">
           <form onSubmit={this.handleSubmit}>
           <div className="input__wrapper">
