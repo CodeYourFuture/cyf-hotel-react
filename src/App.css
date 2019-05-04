@@ -98,7 +98,10 @@ li {
 }
 .input__wrapper{
   margin-top:15px; 
- text-align: center
+ text-align: center;
+}
+input{
+  width:80%;
 }
 /* GRID */
 
