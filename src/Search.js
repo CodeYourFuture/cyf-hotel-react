@@ -9,6 +9,7 @@ class Search extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.search(this.input.value);
+    this.input.value = "";
   };
 
   render() {
@@ -30,11 +31,11 @@ class Search extends Component {
                   type="text"
                   id="customerName"
                   className="form-control"
-                  placeholder="Customer Id"
+                  placeholder="Customer Name or Surname"
                 />
                 <Button
                   handleClick={this.props.search}
-                  content="Search IDs"
+                  content="Search"
                   style={buttonStyle}
                 />
                 <Button

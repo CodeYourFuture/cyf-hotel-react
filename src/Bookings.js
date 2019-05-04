@@ -29,7 +29,7 @@ export default class Bookings extends Component {
       isLoading: true,
       error: null,
       fakeBookings: [],
-      areAllBookingsdisplayed: true,
+      searchVal: "",
       searchResults: null
     };
   }
@@ -63,31 +63,21 @@ export default class Bookings extends Component {
   }
 
   displayAllBookings = () => {
-    this.setState({
-      areAllBookingsdisplayed: true
-    });
+    this.setState({ searchVal: " " });
   };
 
   search = searchVal => {
+    this.setState({ searchVal: searchVal });
     this.setState({
-      areAllBookingsdisplayed: false
+      searchResults: this.state.fakeBookings.filter(booking => {
+        return booking.firstName === searchVal || booking.surname === searchVal;
+      })
     });
-    const results = this.state.areAllBookingsdisplayed
-      ? null
-      : this.state.fakeBookings.filter(booking => {
-          return (
-            searchVal === booking.firstName || searchVal === booking.surname
-          );
-        });
-    this.setState({ searchResults: results });
   };
 
   addBooking = newBooking => {
     this.setState({
       fakeBookings: this.state.fakeBookings.concat(newBooking)
-    });
-    this.setState({
-      searchResults: this.state.fakeBookings.concat(newBooking)
     });
   };
 
@@ -106,7 +96,11 @@ export default class Bookings extends Component {
               displayAllBookings={this.displayAllBookings}
             />
             <SearchResults
-              results={this.state.searchResults || this.state.fakeBookings}
+              results={
+                this.state.searchVal
+                  ? this.state.searchResults
+                  : this.state.fakeBookings
+              }
               headerTitles={titles}
             />
             <hr />
