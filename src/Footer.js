@@ -3,8 +3,8 @@ import React from "react";
 function Footer(props)  {
     return (
         <ul>
-            {props.details.map(data => {   // chnge Details to details
-                return <li>{data}</li>;
+            {props.details.map((data, index) => {   // chnge Details to details
+                return <li key={index}>{data}</li>;
             })}
         </ul>
     );
