@@ -13,11 +13,11 @@ This is the `react` frontend for the [CYF-Hotel](https://github.com/CodeYourFutu
 
 ### Lesson 1
 
-1. Extract the `<button>` in the `src/Search.js` component to be its own separate component
+1. Extract the `<button>` in the `src/Search.js` component to be its own separate component.
 
-2. Create a new component named `Heading` which renders the hotel's logo in an `<img>` (it doesn't matter what the logo is). Also move the `<header>` in `src/App.js` to the new component. Make sure that you import and render the `<Heading />` component within `src/App.js`.
+2. Create a new component named `Heading` which renders the hotel's logo in an `<img>` (Try using `https://images.unsplash.com/photo-1492455417212-e162ed4446e1`, or find your own image URL). Also move the `<header>` in `src/App.js` to the new component. Make sure that you import and render the `<Heading />` component within `src/App.js`.
 
-3. Above the `<Bookings />` component add a new component called `TouristInfoCards` which shows 3 cards. They must link to `peoplemakeglasgow.com`, `visitmanchester.com` and `visitlondon.com`. The cards should be contain the name of the city and an image of the city. You can use the CSS classes from [Bootstrap](https://getbootstrap.com/docs/4.2/components/card), which is already installed for you
+3. Above the `<Bookings />` component add a new component called `TouristInfoCards` which shows 3 *cards*. A card is a common user interface pattern with an image at the top and some related text underneath - you can use the CSS classes from [Bootstrap](https://getbootstrap.com/docs/4.2/components/card), which is already installed for you. The cards must link to `peoplemakeglasgow.com`, `visitmanchester.com` and `visitlondon.com`. The cards should be contain the name of the city and an image of the city.
 
 4. Add a `<Footer />` component at the bottom of the page. Pass the following array as a prop to this component: `["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]`. Inside the component, use the data you passed as a prop to show a `<ul>` list. Hint: the `.map()` method will by useful
 
@@ -25,7 +25,7 @@ This is the `react` frontend for the [CYF-Hotel](https://github.com/CodeYourFutu
 
 6. Instead of using your hard-coded data in the `<SearchResults />` component, load data from the `src/data/fakeBookings.json` file in the `<Bookings />` component and pass it as a prop to `<SearchResults />`. Hint: look in the `<Bookings />` component for how to import data from a JSON file.
 
-7. Add another column to your `<SearchResults />` table which shows the number of days each booking is staying. (Hint: try installing the [moment.js library](http://momentjs.com/) and using the [`.diff()` method](http://momentjs.com/docs/#/displaying/difference/) to compare dates)
+7. Add another column to your `<SearchResults />` table which shows the number of days each booking is staying. Hint: try installing the [moment.js library](http://momentjs.com/) (you'll need to install it with `npm install moment --save`) and using the [`.diff()` method](http://momentjs.com/docs/#/displaying/difference/) to compare dates
 
 ### Lesson 2
 
