@@ -1,26 +1,79 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+.App {
+  text-align: left;
 }
 
-.search-wrapper {
-  border-top: 1px solid #e9ecef;
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
 }
 
-.search-box label {
+.App-header {
+  background-color: #222;
+  height: 60px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
   font-weight: bold;
-  padding: 0.75rem;
-  margin-bottom: 0;
+}
+.App-logo-image {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+.App-title {
+  font-size: 1.5em;
+}
+.card-img-top {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+.App-content {
+  padding-top: 20px;
+  font-size: large;
+}
+.Card-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.SearchResultsTh {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.row {
+  margin: 25px;
+  text-align: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.search {
+  padding: 5px 0 20px 0;
+}
+
+tr {
   color: #5b5757;
 }
 
-.search-row {
-  display: flex;
-  border-top: 2px solid #e9ecef;
+.results {
   padding-top: 15px;
 }
 
-.search-row input {
-  margin-right: 10px;
+.footer {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.card {
+  width: 18rem;
 }
