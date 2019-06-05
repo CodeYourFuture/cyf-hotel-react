@@ -1,5 +1,13 @@
 import React from "react";
 
+const Button = () => {
+  return (
+    <div>
+      <button className="btn btn-primary">Search IDs</button>
+    </div>
+  );
+};
+
 const Search = () => {
   return (
     <div className="search">
@@ -17,7 +25,7 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer Id"
               />
-              <button className="btn btn-primary">Search IDs</button>
+              <Button />
             </div>
           </form>
         </div>
