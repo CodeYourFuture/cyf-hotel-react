@@ -1,17 +1,58 @@
-import React from "react";
+import React, { Component } from "react";
 
-const Restaurant = () => {
-  const pizzas = 0;
-  return (
-    <div>
-      <h3>Restaurant Orders</h3>
-      <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
-      </ul>
-    </div>
-  );
-};
+class Restaurant extends Component {
+  // class Restaurant extends Component {
 
-export default Restaurant;
+  //   render(){
+  //     return (
+  //       <div>
+  //         <h3>Restaurant Orders</h3>
+  //         <ul>
+  //           <Order/>
+  //         </ul>
+  //       </div>
+  //     );
+  //     }
+  //  }
+
+  render() {
+    return (
+      <div>
+        <h3>Restaurant Orders</h3>
+        <ul>
+          <Order />
+        </ul>
+      </div>
+    );
+  }
+}
+const RestaurantButton = props => (
+  <button className="btn btn-primary" onClick={props.handleClick}>
+    Add Order
+  </button>
+);
+class Order extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      orders: 0
+    };
+  }
+  addOrder = () => {
+    this.setState(function(currentState) {
+      return {
+        orders: currentState.orders + 1
+      };
+    });
+  };
+  render() {
+    const pizzas = 0;
+    return (
+      <li>
+        Pizzas: {pizzas} <br /> Orders:{this.state.orders} <br />
+        <RestaurantButton handleClick={this.addOrder} />
+      </li>
+    );
+  }
+}
+export default { Restaurant, Order };
