@@ -1,20 +1,6 @@
 import React, { Component } from "react";
 
 class Restaurant extends Component {
-  // class Restaurant extends Component {
-
-  //   render(){
-  //     return (
-  //       <div>
-  //         <h3>Restaurant Orders</h3>
-  //         <ul>
-  //           <Order/>
-  //         </ul>
-  //       </div>
-  //     );
-  //     }
-  //  }
-
   render() {
     return (
       <div>
@@ -46,13 +32,12 @@ class Order extends Component {
     });
   };
   render() {
-    const pizzas = 0;
     return (
       <li>
-        Pizzas: {pizzas} <br /> Orders:{this.state.orders} <br />
+        Pizzas: {this.state.orders} <br /> Salads:{this.state.orders} <br />
         <RestaurantButton handleClick={this.addOrder} />
       </li>
     );
   }
 }
-export default { Restaurant, Order };
+export default Restaurant;

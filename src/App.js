@@ -4,7 +4,7 @@ import "./App.css";
 import fakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
 import Restaurant from "./Restaurant";
-import Order from "./Restaurant";
+
 const Heading = () => {
   return (
     <div>
@@ -94,7 +94,6 @@ const App = () => {
       </div>
       <Bookings />
       <Restaurant />
-      <Order />
       <SearchResults
         elements={[
           "ID",
