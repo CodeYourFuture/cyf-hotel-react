@@ -34,7 +34,7 @@ class SearcResults extends React.Component {
     super(props);
     this.state = {
       fakeBookingsList: FakeBookings,
-      style: { backgroundColor: "red" }
+      style: { backgroundColor: "skyblue" }
     };
   }
 

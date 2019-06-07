@@ -34,8 +34,10 @@ class Order extends React.Component {
   render() {
     return (
       <ul>
-        <li>Pizzas : {this.state.orders}</li>
-        <RestaurantButton clickToAddOrder={this.addOrder} />
+        <li>
+          {this.props.orderType} : {this.state.orders}{" "}
+          <RestaurantButton clickToAddOrder={this.addOrder} />
+        </li>
       </ul>
     );
   }
@@ -45,7 +47,9 @@ class Restaurant extends React.Component {
     return (
       <div>
         <h3>Restaurant Orders</h3>
-        <Order />
+        <Order orderType="pizza" />
+        <Order orderType="Salad" />
+        <Order orderType="cola" />
       </div>
     );
   }
