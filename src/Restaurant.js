@@ -6,7 +6,8 @@ class Restaurant extends Component {
       <div>
         <h3>Restaurant Orders</h3>
         <ul>
-          <Order />
+          <Order name={"Pizza"} />
+          <Order name={"Salad"} />
         </ul>
       </div>
     );
@@ -34,7 +35,7 @@ class Order extends Component {
   render() {
     return (
       <li>
-        Pizzas: {this.state.orders} <br /> Salads:{this.state.orders} <br />
+        {this.props.name}:{this.state.orders} <br />
         <RestaurantButton handleClick={this.addOrder} />
       </li>
     );

@@ -94,6 +94,7 @@ const App = () => {
       </div>
       <Bookings />
       <Restaurant />
+
       <SearchResults
         elements={[
           "ID",
