@@ -56,9 +56,9 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 15. Within your `<Header />` component, render the `<Clock />` component (that is provided for you in `src/Clock.js`). Fix the problem where the `setTimeout` timer is not **cleared** if the component is **unmounted**. Hint: look at the Clock exercise you did in class.
 
-16. Convert the `src/Search.js` component into a class component. Then use a _ref_ to assign `this.input` to the `<input>` element.
+16. Convert the `src/Search.js` component into a class component. Add a `constructor` method and initialise a new state `searchInput` to an empty string `''`. Add a `value` property to the `<input>` that you set to your new `searchInput` state. Then create a new method `handleSearchInput` taking an `event` parameter. This method should use `setState` to update the state `searchInput` with what the user typed in the input (hint: use `event.target.value` to get the input value). Finally add a `onChange` property to the `<input>` set to the method `handleSearchInput`.
 
-17. Still in the `<Search />` component, add an `onSubmit` handler to the `<form>` element. When the form is submitted (try clicking the search button), get the **value** of `this.input` and pass it as a parameter to the `this.props.search` prop function that has been provided for you. Look in the console, you should see the text that is typed in the search box when submitting the form.
+17. Still in the `<Search />` component, add an `onSubmit` handler to the `<form>` element. When the form is submitted (try clicking the search button), get the value of the state `searchInput` and pass it as a parameter to the `this.props.search` prop function that has been provided for you. Look in the console, you should see the text that is typed in the search box when submitting the form (note: also your submit handler should take an `event` parameter and add the line `event.preventDefault()` to prevent the browser to implicitely submit the form).
 
 18. In the `<Bookings />` component, use state to hold the `FakeBookings` data instead of directly passing it to `<SearchResults />`. Hint: use a `constructor` method to initialise the state with the `FakeBookings` variable.
 
