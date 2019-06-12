@@ -6,36 +6,40 @@ class Bookings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading:true,
       filteredarray: [],
-      bookings: []
+      bookings: [],
+      error:null,
     };
   }
   componentDidMount() {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me").then((res) => {
+      if (res.status >= 200 && res.status < 300) {
+        return res;
+      } else {
+        throw new Error("HTTP error");
+      }
+    })
       .then(res => res.json())
-      .then(data => this.setState({ bookings: data }));
+      .then(data => this.setState({ bookings: data,
+      isLoading:false })).catch((error) => this.setState({ isLoading: false, error: error }));
   }
 
   render() {
-    // const search=(searchVal)=>{console.log(searchVal.toUpperCase())}
     const search = searchVal => {
-      console.log(this.state.bookings);
-      console.log(JSON.stringify(searchVal).replace(/\s/g, ""));
-      console.log(
-        this.state.bookings.filter(
-          item => item.title === JSON.stringify(searchVal).replace(/\s/g, "")
-        )
-      );
-      console.log(this.state.bookings.filter(item => item.id === 1));
-      // console.log(this.result)
       this.setState({
-        filteredarray: this.state.bookings.filter(item => item.title === "Mr")
-      });
-    };
+        filteredarray: this.state.bookings.filter(item =>{if(String(item.firstName).toLowerCase() === String(searchVal).trim().toLowerCase() 
+          || String(item.surname).toLowerCase() === String(searchVal).trim().toLowerCase())
+      return item})
+    })}
+    if (this.state.isLoading === true)return <span>LOADING.....</span>
+    else if (this.state.error)return <span>500 HTTP error.</span>
+    else
     return (
       <div className="App-content">
         <div className="container">
           <Search search={search} />
+        
           <SearchResults fakeBookingsList={this.state.filteredarray} />
         </div>
       </div>

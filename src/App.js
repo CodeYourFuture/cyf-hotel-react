@@ -8,6 +8,7 @@ import {
   TouristInfoCards
 } from "./components/TouristInfoCards";
 import { footerContentArray, Footer } from "./components/Footer";
+import Inputs from "./components/Inputs"
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <TouristInfoCards cardContent={TouristCardsLinksAndImages} />
       <Bookings />
       <Restaurant />
+      <Inputs/>
       <Footer footerContent={footerContentArray} />
     </div>
   );
