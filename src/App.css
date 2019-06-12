@@ -8,8 +8,10 @@
 }
 
 .App-header {
+  display: flex;
+  justify-content: space-around;
   background-color: #222;
-  height: 50px;
+  height: 60px;
   padding: 20px;
   color: white;
   text-align: left;

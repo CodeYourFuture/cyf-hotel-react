@@ -1,17 +1,30 @@
 import React from "react";
-import FakeBookings from "../data/fakeBookings.json";
 import moment from "moment";
-// for (var i = 0; i < FakeBookings.length; i++);
+
 class TableRow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: { backgroundColor: "" }
+      isClicked: false,
+      style: {}
     };
   }
 
   onClicked = () => {
-    this.setState({ style: { backgroundColor: "skyblue" } });
+    this.setState(() => {
+      if (this.state.isClicked === false)
+        return {
+          isClicked: !this.state.isClicked,
+          style: { backgroundColor: "skyblue" }
+        };
+      else {
+        if (this.state.isClicked === true)
+          return {
+            isClicked: !this.state.isClicked,
+            style: { backgroundColor: "" }
+          };
+      }
+    });
   };
 
   render() {
@@ -44,9 +57,7 @@ class SearcResults extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fakeBookingsList: FakeBookings,
-      style: { backgroundColor: "" },
-      rowId: FakeBookings.map(item => item.id)
+      style: { backgroundColor: "" }
     };
   }
   onClicking = () => {
@@ -69,29 +80,8 @@ class SearcResults extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.state.fakeBookingsList.map(item => (
-            <TableRow item={item} />
-            // <tr
-            //   className={item.id}
-            //   key={item.id}
-            //   onClick={this.onClicking}
-            //   style={this.state.style}
-            // >
-            //   <td>{item.id} </td>
-            //   <td>{item.title}</td>
-            //   <td>{item.firstName}</td>
-            //   <td>{item.surname}</td>
-            //   <td>{item.email}</td>
-            //   <td>{item.roomId}</td>
-            //   <td>{item.checkInDate}</td>
-            //   <td>{item.checkOutDate}</td>
-            //   <td>
-            //     {moment(item.checkOutDate).diff(
-            //       moment(item.checkInDate),
-            //       "days"
-            //     )}
-            //   </td>
-            // </tr>
+          {this.props.fakeBookingsList.map((item, index) => (
+            <TableRow key={index} item={item} />
           ))}
         </tbody>
       </table>
