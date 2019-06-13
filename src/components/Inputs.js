@@ -1,10 +1,10 @@
 import React from "react";
-// import {TableRow} from "./SearchResults"
 class Inputs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       user: {
+        id: "",
         title: "",
         firstName: "",
         surname: "",
@@ -15,46 +15,16 @@ class Inputs extends React.Component {
     };
   }
   handleChange = event => {
-    this.setState({ user: this.state.user.concat(event.target.value) });
+    const updateduser = this.state.user;
+    updateduser[event.target.name] = event.target.value;
+    this.setState({ user: updateduser });
+    // this.setState({
+    //   user: { ...this.state.user, [event.target.name]: event.target.value }
+    // });
   };
-  // handleChangeTitle = (event) => {console.log(this.state.user.title)
-  //   this.setState({
-  //     user: {
-  //       title: event.target.value
-  //     },
-  //   });
-  // };
-  // handleChangeFirstName = (event) => {console.log(this.state.user.firstName)
-  //   this.setState({
-  //     firstName: event.target.value,
-
-  //   });
-  // };
-  // handleChangeSurName = (event) => {console.log(this.state.user.surname)
-  //   this.setState({
-  //       surname: event.target.value
-  //   });
-  // };
-  // handleChangeRoomId = (event) => {console.log(this.state.user.roomId)
-  //   this.setState({
-
-  //       roomId: event.target.value,
-  //   });
-  // };
-  // handleChangeCheckIn = (event) => {console.log(this.state.user.checkInDate)
-  //   this.setState({
-  //       checkInDate: event.target.value
-
-  //   });
-  // };
-  // handleChangeCheckOUt = (event) => {console.log(this.state.user.checkOutDate)
-  //   this.setState({
-  //       checkOutDate: event.target.value,
-
-  //   });
-  // };
   handelSubmit = e => {
     e.preventDefault();
+    this.props.addBooking(this.state.user);
     console.log(this.state.user);
   };
   render() {
@@ -66,11 +36,18 @@ class Inputs extends React.Component {
           onSubmit={this.handelSubmit}
         >
           <input
+            placeholder="id"
+            name="id"
+            type="number"
+            value={this.state.user.id}
+            onChange={this.handleChange}
+          />
+          <input
             placeholder="title"
             name="title"
             type="text"
             value={this.state.user.title}
-            onChange={this.handleChang}
+            onChange={this.handleChange}
           />
           <input
             placeholder="FirstName"

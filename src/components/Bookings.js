@@ -1,5 +1,6 @@
 import React from "react";
 import Search from "./Search";
+import Inputs from "./Inputs";
 import { SearcResults } from "./SearchResults";
 
 class Bookings extends React.Component {
@@ -25,34 +26,39 @@ class Bookings extends React.Component {
       .then(data => this.setState({ bookings: data, isLoading: false }))
       .catch(error => this.setState({ isLoading: false, error: error }));
   }
-
+  search = searchVal => {
+    this.setState({
+      filteredarray: this.state.bookings.filter(item => {
+        return (
+          String(item.firstName).toLowerCase() ===
+            String(searchVal)
+              .trim()
+              .toLowerCase() ||
+          String(item.surname).toLowerCase() ===
+            String(searchVal)
+              .trim()
+              .toLowerCase()
+        );
+      })
+    });
+  };
+  addBooking = booking => {
+    const updatedBookings = this.state.bookings;
+    updatedBookings.push(booking);
+    this.setState({ bookings: updatedBookings });
+  };
   render() {
-    const search = searchVal => {
-      this.setState({
-        filteredarray: this.state.bookings.filter(item => {
-          if (
-            String(item.firstName).toLowerCase() ===
-              String(searchVal)
-                .trim()
-                .toLowerCase() ||
-            String(item.surname).toLowerCase() ===
-              String(searchVal)
-                .trim()
-                .toLowerCase()
-          )
-            return item;
-        })
-      });
-    };
     if (this.state.isLoading === true) return <span>LOADING.....</span>;
     else if (this.state.error) return <span>500 HTTP error.</span>;
     else
       return (
         <div className="App-content">
           <div className="container">
-            <Search search={search} />
+            <Search search={this.search} />
 
-            <SearcResults fakeBookingsList={this.state.filteredarray} />
+            <SearcResults fakeBookingsList={this.state.bookings} />
+
+            <Inputs addBooking={this.addBooking} />
           </div>
         </div>
       );
