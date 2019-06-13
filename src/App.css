@@ -23,7 +23,10 @@
 .App-title {
   font-size: 1.5em;
 }
-
+.App_input_lest {
+  display: flex;
+  justify-content: center;
+}
 .App-content {
   padding-top: 20px;
   font-size: large;

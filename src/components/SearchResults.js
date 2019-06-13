@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-class TableRow extends React.Component {
+export class TableRow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,7 +53,7 @@ class TableRow extends React.Component {
     );
   }
 }
-class SearcResults extends React.Component {
+export class SearcResults extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -88,5 +88,3 @@ class SearcResults extends React.Component {
     );
   }
 }
-
-export default SearcResults;
