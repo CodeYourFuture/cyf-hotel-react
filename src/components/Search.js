@@ -8,11 +8,15 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchInput: ""
+      searchInput: "",
+      SearchingActive: false
     };
   }
+
   handleSearcInput = event => {
+    this.props.searching(this.state.SearchingActive);
     this.setState({
+      SearchingActive: true,
       searchInput: event.target.value
     });
   };

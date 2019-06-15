@@ -1,4 +1,5 @@
 import React from "react";
+// to create an input form to insert new guest
 class Inputs extends React.Component {
   constructor(props) {
     super(props);
@@ -14,18 +15,20 @@ class Inputs extends React.Component {
       }
     };
   }
+  // creating new object of entries
   handleChange = event => {
     const updateduser = this.state.user;
     updateduser[event.target.name] = event.target.value;
+    console.log(this.state.user);
     this.setState({ user: updateduser });
     // this.setState({
     //   user: { ...this.state.user, [event.target.name]: event.target.value }
     // });
   };
+  // on submit add the value of the user object to the function addBoking "transfered as a props from bookings file"
   handelSubmit = e => {
     e.preventDefault();
     this.props.addBooking(this.state.user);
-    console.log(this.state.user);
   };
   render() {
     return (

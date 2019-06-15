@@ -10,7 +10,8 @@ class Bookings extends React.Component {
       isLoading: true,
       filteredarray: [],
       bookings: [],
-      error: null
+      error: null,
+      searching: false
     };
   }
   componentDidMount() {
@@ -42,6 +43,11 @@ class Bookings extends React.Component {
       })
     });
   };
+  //to make the table displayed in case of not searching and disappear in case searching and then display the result on submit
+  searching = StartTyping => {
+    if (StartTyping === true) this.setState({ searching: true });
+  };
+  // to push the new array transfered from input file
   addBooking = booking => {
     const updatedBookings = this.state.bookings;
     updatedBookings.push(booking);
@@ -54,10 +60,14 @@ class Bookings extends React.Component {
       return (
         <div className="App-content">
           <div className="container">
-            <Search search={this.search} />
-
-            <SearcResults fakeBookingsList={this.state.bookings} />
-
+            <Search search={this.search} searching={this.searching} />
+            {/* to make the table displayed in case of not searching and disappear in case searching and then display the result on submit */}
+            {this.state.searching ? (
+              <SearcResults fakeBookingsList={this.state.filteredarray} />
+            ) : (
+              <SearcResults fakeBookingsList={this.state.bookings} />
+            )}
+            {/* to insert New booking details Row to the table */}
             <Inputs addBooking={this.addBooking} />
           </div>
         </div>

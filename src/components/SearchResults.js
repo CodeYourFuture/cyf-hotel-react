@@ -1,6 +1,5 @@
 import React from "react";
 import moment from "moment";
-import { throwStatement } from "@babel/types";
 
 export class TableRow extends React.Component {
   constructor(props) {
@@ -59,7 +58,8 @@ export class SearcResults extends React.Component {
     super(props);
     this.state = {
       style: { backgroundColor: "" },
-      sortType: ""
+      sortType: "",
+      sortAscending: true
     };
   }
   onClicking = () => {
@@ -70,10 +70,14 @@ export class SearcResults extends React.Component {
     if (a[this.state.sortType] < b[this.state.sortType]) return -1;
     return 0;
   };
-  handleClickToSort = (event, item) => {
+  handleClickToSort = event => {
     let text = event.target.textContent;
     text = text.charAt(0).toLowerCase() + text.slice(1);
-    this.setState({ sortType: text });
+    this.setState({
+      sortType: text,
+      changeArowDirection: !this.state.changeArowDirection,
+      sortAscending: !this.state.sortAscending
+    });
   };
   render() {
     return (
@@ -95,13 +99,25 @@ export class SearcResults extends React.Component {
             <th scope="col">Number Of Days</th>
           </tr>
         </thead>
-        <tbody>
-          {this.props.fakeBookingsList
-            .sort(this.compareFunction)
-            .map((item, index) => (
-              <TableRow key={index} item={item} />
-            ))}
-        </tbody>
+        {/* to manage sorting way on clicking the tabple header */}
+        {this.state.sortAscending ? (
+          <tbody>
+            {this.props.fakeBookingsList
+              .sort(this.compareFunction)
+              .map((item, index) => (
+                <TableRow key={index} item={item} />
+              ))}
+          </tbody>
+        ) : (
+          <tbody>
+            {this.props.fakeBookingsList
+              .sort(this.compareFunction)
+              .reverse()
+              .map((item, index) => (
+                <TableRow key={index} item={item} />
+              ))}
+          </tbody>
+        )}
       </table>
     );
   }
