@@ -1,5 +1,5 @@
 import React from "react";
-var TouristCardsLinksAndImages = [
+const TouristCardsLinksAndImages = [
   {
     CityName: "Glasgow",
     Link: "https://peoplemakeglasgow.com/",
