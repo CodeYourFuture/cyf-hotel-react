@@ -2,8 +2,9 @@ import React from "react";
 import Bookings from "./Bookings";
 import "./App.css";
 import fakeBookings from "./data/fakeBookings.json";
-import moment from "moment";
+
 import Restaurant from "./Restaurant";
+import SearchResults from "./SearchResult";
 
 const Heading = () => {
   return (
@@ -39,35 +40,7 @@ const Footer = props => {
     </ul>
   );
 };
-const SearchResults = props => {
-  return (
-    <table className="table">
-      {props.elements.map(item => (
-        <th>{item}</th>
-      ))}
-      {props.bookings.map(booking => (
-        <tr>
-          <td>{booking.id}</td>
-          <td>{booking.title}</td>
-          <td>{booking.firstName}</td>
-          <td>{booking.surname}</td>
-          <td>{booking.email}</td>
-          <td>{booking.roomId}</td>
-          <td>{booking.checkInDate}</td>
-          <td>{booking.checkOutDate}</td>
-          <td>{numberOfDays(booking.checkInDate, booking.checkOutDate)}</td>
-        </tr>
-      ))}
-    </table>
-  );
-};
-function numberOfDays(checkIn, checkOut) {
-  var checkInMoment = moment(checkIn);
-  var checkOutMoment = moment(checkOut);
-  var duration = moment.duration(checkOutMoment.diff(checkInMoment));
 
-  return Math.floor(duration.asDays());
-}
 const App = () => {
   return (
     <div className="App container">
@@ -79,6 +52,7 @@ const App = () => {
           text="People make Glasgow"
           linkSite="https://peoplemakeglasgow.com/"
         />
+
         <TouristInfoCards
           link="http://www.manchesterliteraturefestival.co.uk/images/112238-5a4x9t8z5.jpg?size=195x195"
           title="Manchester"
