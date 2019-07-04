@@ -1,11 +1,10 @@
 import React from 'react';
 
 const Footer = (props) => {
-        const details = props.map((d) => <li>{d}</li>)
+        const businessInfo = props.businessInfo;
+        const details = businessInfo.map((d) => <li key={d.toString()}>{d}</li>);
         return(
-        <div>
         <ul>{details}</ul>
-        </div>
         )
     
 }
