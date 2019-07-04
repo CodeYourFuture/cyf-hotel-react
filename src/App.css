@@ -53,10 +53,69 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  justify-content: space-around;
+  bottom: 0;
+  width: 100%;
+  background-color: gray;
+  color: white;
 }
 
 .card {
   width: 18rem;
+  background-color: transparent;
+  color: rgb(243, 245, 243);
+  font-size: 1.5rem;
+}
+.Nav-Bar {
+  display: flex;
+  justify-content: space-around;
+  background-color: cornflowerblue;
+  height: 60px;
+}
+
+.Nav-Items {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  color: white;
+}
+.Nav-Items li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+.tableRow-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.welcome-msg {
+  color: rgb(3, 3, 90);
+  text-align: center;
+}
+body {
+  background-image: url("https://peoplemakeglasgow.com/images/Neighbourhoods/East/glasgow-womens-library-.jpg");
+  background-repeat: no-repeat;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+.tablebody {
+  color: white;
+}
+.orders-list {
+  list-style: none;
+  text-align: center;
+  color: rgb(53, 29, 77);
+  font-size: 20px;
+  font-weight: bold;
+}
+.resturant-adress {
+  text-align: center;
+  color: rgb(192, 33, 33);
 }

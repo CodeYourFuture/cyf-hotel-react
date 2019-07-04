@@ -1,12 +1,6 @@
 import React from "react";
+import Button from "./Buttons";
 
-const RestaurantButton = props => {
-  return (
-    <button onClick={props.clickToAddOrder} className="btn btn-primary">
-      Add
-    </button>
-  );
-};
 class Order extends React.Component {
   constructor(props) {
     super(props);
@@ -21,9 +15,9 @@ class Order extends React.Component {
   render() {
     return (
       <ul>
-        <li>
-          {this.props.orderType} : {this.state.orders}{" "}
-          <RestaurantButton clickToAddOrder={this.addOrder} />
+        <li className="orders-list">
+          {this.props.orderType} : {this.state.orders} {"   "}
+          <Button name="Add" onClick={this.addOrder} />
         </li>
       </ul>
     );
@@ -33,7 +27,7 @@ class Restaurant extends React.Component {
   render() {
     return (
       <div>
-        <h3>Restaurant Orders</h3>
+        <h3 className="resturant-adress">Restaurant Orders</h3>
         <Order orderType="pizza" />
         <Order orderType="Salad" />
         <Order orderType="cola" />

@@ -70,10 +70,9 @@ tr {
 }
 
 .footer {
+  list-style: none;
+  color: whitesmoke;
   padding-top: 20px;
+  align-content: center;
   text-align: center;
-}
-
-.card {
-  width: 18rem;
 }

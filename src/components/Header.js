@@ -6,7 +6,7 @@ class Header extends React.Component {
     return (
       <header className="App-header">
         <img
-          className="App-logo-image"
+          className="App-logo"
           src="https://image.flaticon.com/icons/svg/139/139899.svg"
           alt=""
         />

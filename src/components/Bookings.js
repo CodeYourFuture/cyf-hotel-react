@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./Search";
 import AddBookingGuestForm from "./AddBookingGuestForm";
-import { SearcResults } from "./SearchResults";
+import { SearchResults } from "./SearchResults";
 
 class Bookings extends React.Component {
   constructor(props) {
@@ -11,7 +11,8 @@ class Bookings extends React.Component {
       filteredarray: [],
       bookings: [],
       error: null,
-      searching: false
+      searching: false,
+      selectedEditRowId: null
     };
   }
   componentDidMount() {
@@ -43,6 +44,20 @@ class Bookings extends React.Component {
       })
     });
   };
+  editRow = id => {
+    this.setState({
+      selectedEditRowId: id
+    });
+  };
+  saveRow = (id, firstName, surname, email) => {
+    const newData = this.state.bookings.filter(row => row.id !== id);
+    const updatedRow = { id, firstName, surname, email };
+    newData.splice(id - 1, 0, updatedRow);
+
+    this.setState({
+      bookings: newData
+    });
+  };
   //to make the table displayed in case of not searching and disappear in case searching and then display the result on submit
   searching = startTyping => {
     if (startTyping === true) this.setState({ searching: true });
@@ -54,6 +69,10 @@ class Bookings extends React.Component {
     updatedBookings.push(booking);
     this.setState({ bookings: updatedBookings });
   };
+  // deleteEntry = (entry) => {
+  //   console.log("Delete")
+  //   this.setState({ bookings: this.state.bookings.filter((user) => user !== entry) });
+  // };
   render() {
     if (this.state.isLoading) return <span>LOADING.....</span>;
     else if (this.state.error) return <span>500 HTTP error.</span>;
@@ -64,9 +83,15 @@ class Bookings extends React.Component {
             <Search search={this.search} searching={this.searching} />
             {/* to make the table displayed in case of not searching and disappear in case searching and then display the result on submit */}
             {this.state.searching ? (
-              <SearcResults fakeBookingsList={this.state.filteredarray} />
+              <SearchResults fakeBookingsList={this.state.filteredarray} />
             ) : (
-              <SearcResults fakeBookingsList={this.state.bookings} />
+              <SearchResults
+                fakeBookingsList={this.state.bookings}
+                deleteEntry={this.deleteEntry}
+                saveRow={this.saveRow}
+                selectedEditRowId={this.state.selectedEditRowId}
+                editRow={this.editRow}
+              />
             )}
             {/* to insert New booking details Row to the table */}
             <AddBookingGuestForm

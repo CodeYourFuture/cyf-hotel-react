@@ -5,10 +5,11 @@ class AddBookingGuestForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.fakeBookingsList.length + 1,
+      id: "",
       title: "",
       firstName: "",
       surname: "",
+      email: "",
       roomId: "",
       checkInDate: "",
       checkOutDate: ""
@@ -19,7 +20,10 @@ class AddBookingGuestForm extends React.Component {
     const updateduser = this.state;
     console.log(updateduser);
     updateduser[event.target.name] = event.target.value;
-    this.setState({ state: updateduser });
+    this.setState({
+      state: updateduser,
+      id: this.props.fakeBookingsList.length + 1
+    });
   };
   // on submit add the value of the user object to the function addBoking "transfered as a props from bookings file"
   handelSubmit = e => {
@@ -29,7 +33,6 @@ class AddBookingGuestForm extends React.Component {
   };
 
   render() {
-    console.log(this.props.fakeBookingsList.length);
     return (
       <div>
         <form
@@ -62,6 +65,13 @@ class AddBookingGuestForm extends React.Component {
             name="surname"
             type="text"
             value={this.state.surname}
+            onChange={this.handleChange}
+          />
+          <input
+            placeholder="email"
+            name="email"
+            type="email"
+            value={this.state.email}
             onChange={this.handleChange}
           />
           <input

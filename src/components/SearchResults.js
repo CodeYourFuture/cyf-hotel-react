@@ -1,77 +1,63 @@
 import React from "react";
-import moment from "moment";
-
-export class TableRow extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isClicked: false,
-      style: {}
-    };
-  }
-
-  onClicked = () => {
-    this.setState(previousState => {
-      if (previousState.isClicked === false)
-        return {
-          isClicked: !previousState.isClicked,
-          style: { backgroundColor: "skyblue" }
-        };
-      else {
-        if (previousState.isClicked)
-          return {
-            isClicked: !previousState.isClicked,
-            style: { backgroundColor: "" }
-          };
-      }
-    });
-  };
-
-  render() {
-    return (
-      <tr
-        className={this.props.item.id}
-        key={this.props.item.id}
-        onClick={this.onClicked}
-        style={this.state.style}
-      >
-        <td>{this.props.item.id}</td>
-        <td>{this.props.item.title}</td>
-        <td>{this.props.item.firstName}</td>
-        <td>{this.props.item.surname}</td>
-        <td>{this.props.item.email}</td>
-        <td>{this.props.item.roomId}</td>
-        <td>{this.props.item.checkInDate}</td>
-        <td>{this.props.item.checkOutDate}</td>
-        <td>
-          {moment(this.props.item.checkOutDate).diff(
-            moment(this.props.item.checkInDate),
-            "days"
-          )}
-        </td>
-      </tr>
-    );
-  }
-}
-export class SearcResults extends React.Component {
+import EditableRow from "./EditableRow";
+import TableRow from "./TableRow";
+export class SearchResults extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       style: { backgroundColor: "" },
       sortType: "",
-      sortAscending: true
+      sortAscending: true,
+      fakeBookingsList: props.fakeBookingsList,
+      selectedEditRowId: this.props.selectedEditRowId
     };
   }
-  mapingRow = () => {
-    this.props.fakeBookingsList
-      .sort(this.compareFunction)
-      .map((item, index) => <TableRow key={index} item={item} />);
+  editRow = id => {
+    this.setState({
+      selectedEditRowId: id
+    });
   };
+
+  saveRow = (
+    id,
+    title,
+    firstName,
+    surname,
+    email,
+    roomId,
+    checkInDate,
+    checkOutDate
+  ) => {
+    const newData = this.props.fakeBookingsList.filter(row => row.id !== id);
+    const updatedRow = {
+      id,
+      title,
+      firstName,
+      surname,
+      email,
+      roomId,
+      checkInDate,
+      checkOutDate
+    };
+    newData.splice(id - 1, 0, updatedRow);
+
+    this.setState({
+      selectedEditRowId: null,
+      fakeBookingsList: newData
+    });
+  };
+
   onClicking = () => {
     this.setState({ style: { backgroundColor: "skyblue" } });
   };
   compareFunction = (a, b) => {
-    return a[this.state.sortType] > b[this.state.sortType] ? 1 : -1;
+    return this.state.sortAscending
+      ? a[this.state.sortType] > b[this.state.sortType]
+        ? 1
+        : -1
+      : a[this.state.sortType] > b[this.state.sortType]
+      ? -1
+      : 1;
   };
   handleClickToSort = event => {
     let text = event.target.textContent;
@@ -81,9 +67,17 @@ export class SearcResults extends React.Component {
       sortAscending: !this.state.sortAscending
     });
   };
+  deleteEntry = entry => {
+    console.log("Delete");
+    this.setState({
+      fakeBookingsList: this.state.fakeBookingsList.filter(
+        user => user !== entry
+      )
+    });
+  };
   render() {
     return (
-      <table className="table">
+      <table className="table table-striped table-dark">
         <thead className="thead-dark">
           <tr>
             <th scope="col">ID</th>
@@ -96,27 +90,47 @@ export class SearcResults extends React.Component {
             </th>
             <th scope="col">Email</th>
             <th scope="col">RoomID</th>
+
             <th scope="col">CheckInDate</th>
             <th scope="col">checkOutDate</th>
             <th scope="col">Number Of Days</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
-        {/* to manage sorting way on clicking the tabple header */}
-        {this.state.sortAscending ? (
-          <tbody>
-            {this.props.fakeBookingsList
-              .map((item, index) => <TableRow key={index} item={item} />)
-              .sort(this.compareFunction)}
-          </tbody>
-        ) : (
-          <tbody>
-            {this.props.fakeBookingsList
-              .map((item, index) => <TableRow key={index} item={item} />)
-              .sort(this.compareFunction)
-              .reverse()}
-          </tbody>
-        )}
+        <tbody className="tablebody">
+          {this.state.fakeBookingsList
+            .map((item, index) => {
+              if (item.id === this.state.selectedEditRowId) {
+                return (
+                  <EditableRow
+                    key={index}
+                    id={item.id}
+                    title={item.title}
+                    firstName={item.firstName}
+                    surname={item.surname}
+                    email={item.email}
+                    roomId={item.roomId}
+                    checkInDate={item.checkInDate}
+                    checkOutDate={item.checkOutDate}
+                    saveRow={this.saveRow}
+                  />
+                );
+              } else {
+                return (
+                  <TableRow
+                    key={index}
+                    item={item}
+                    deleteButton={() => this.deleteEntry(item)}
+                    editRow={() => this.editRow(item.id)}
+                  />
+                );
+              }
+            })
+            .sort(this.compareFunction)}
+        </tbody>
       </table>
     );
   }
 }
+
+export default SearchResults;

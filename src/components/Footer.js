@@ -5,7 +5,7 @@ const footerContentArray = [
   "0123 456789"
 ];
 const Footer = props => (
-  <ul>
+  <ul className="footer">
     {props.footerContent.map((item, index) => (
       <li key={index}>{item}</li>
     ))}

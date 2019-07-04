@@ -1,8 +1,5 @@
 import React from "react";
-
-const SearchButton = () => {
-  return <button className="btn btn-primary">Search</button>;
-};
+import Button from "./Buttons";
 
 class Search extends React.Component {
   constructor(props) {
@@ -46,7 +43,7 @@ class Search extends React.Component {
                   placeholder="Customer"
                   value={this.state.searchInput}
                 />
-                <SearchButton />
+                <Button name="Search" />
               </div>
             </form>
           </div>
