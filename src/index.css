@@ -71,8 +71,10 @@ tr {
 
 .footer {
   list-style: none;
-  color: whitesmoke;
-  padding-top: 20px;
-  align-content: center;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  background-color: gray;
+  color: white;
 }

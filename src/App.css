@@ -52,16 +52,6 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  bottom: 0;
-  width: 100%;
-  background-color: gray;
-  color: white;
-}
-
 .card {
   width: 18rem;
   background-color: transparent;
