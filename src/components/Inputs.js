@@ -19,7 +19,6 @@ class Inputs extends React.Component {
   handleChange = event => {
     const updateduser = this.state.user;
     updateduser[event.target.name] = event.target.value;
-    console.log(this.state.user);
     this.setState({ user: updateduser });
   };
   // on submit add the value of the user object to the function addBoking "transfered as a props from bookings file"

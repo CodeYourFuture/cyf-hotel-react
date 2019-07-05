@@ -8,42 +8,12 @@ export class SearchResults extends React.Component {
       style: { backgroundColor: "" },
       sortType: "",
       sortAscending: true,
-      fakeBookingsList: props.fakeBookingsList,
-      selectedEditRowId: this.props.selectedEditRowId
+      selectedEditRowId: null
     };
   }
   editRow = id => {
     this.setState({
       selectedEditRowId: id
-    });
-  };
-
-  saveRow = (
-    id,
-    title,
-    firstName,
-    surname,
-    email,
-    roomId,
-    checkInDate,
-    checkOutDate
-  ) => {
-    const newData = this.props.fakeBookingsList.filter(row => row.id !== id);
-    const updatedRow = {
-      id,
-      title,
-      firstName,
-      surname,
-      email,
-      roomId,
-      checkInDate,
-      checkOutDate
-    };
-    newData.splice(id - 1, 0, updatedRow);
-
-    this.setState({
-      selectedEditRowId: null,
-      fakeBookingsList: newData
     });
   };
 
@@ -61,18 +31,11 @@ export class SearchResults extends React.Component {
   };
   handleClickToSort = event => {
     let text = event.target.textContent;
+
     text = text.charAt(0).toLowerCase() + text.slice(1);
     this.setState({
       sortType: text,
       sortAscending: !this.state.sortAscending
-    });
-  };
-  deleteEntry = entry => {
-    console.log("Delete");
-    this.setState({
-      fakeBookingsList: this.state.fakeBookingsList.filter(
-        user => user !== entry
-      )
     });
   };
   render() {
@@ -98,9 +61,10 @@ export class SearchResults extends React.Component {
           </tr>
         </thead>
         <tbody className="tablebody">
-          {this.state.fakeBookingsList
+          {this.props.fakeBookingsList
+            .sort(this.compareFunction)
             .map((item, index) => {
-              if (item.id === this.state.selectedEditRowId) {
+              if (item.id === this.props.selectedEditRowId) {
                 return (
                   <EditableRow
                     key={index}
@@ -112,7 +76,7 @@ export class SearchResults extends React.Component {
                     roomId={item.roomId}
                     checkInDate={item.checkInDate}
                     checkOutDate={item.checkOutDate}
-                    saveRow={this.saveRow}
+                    saveRow={this.props.saveRow}
                   />
                 );
               } else {
@@ -120,13 +84,12 @@ export class SearchResults extends React.Component {
                   <TableRow
                     key={index}
                     item={item}
-                    deleteButton={() => this.deleteEntry(item)}
-                    editRow={() => this.editRow(item.id)}
+                    deleteButton={() => this.props.deleteEntry(item)}
+                    editRow={() => this.props.editRow(item.id)}
                   />
                 );
               }
-            })
-            .sort(this.compareFunction)}
+            })}
         </tbody>
       </table>
     );

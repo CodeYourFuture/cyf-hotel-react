@@ -55,7 +55,6 @@ tr {
 .footer {
   display: flex;
   flex-direction: row;
-  position: fixed;
   justify-content: space-around;
   bottom: 0;
   width: 100%;

@@ -1,5 +1,5 @@
 import React from "react";
-
+import Button from "./Buttons";
 // to create an input form to insert new guest
 class AddBookingGuestForm extends React.Component {
   constructor(props) {
@@ -18,7 +18,6 @@ class AddBookingGuestForm extends React.Component {
   // creating new object of entries
   handleChange = event => {
     const updateduser = this.state;
-    console.log(updateduser);
     updateduser[event.target.name] = event.target.value;
     this.setState({
       state: updateduser,
@@ -95,7 +94,7 @@ class AddBookingGuestForm extends React.Component {
             value={this.state.checkOutDate}
             onChange={this.handleChange}
           />
-          <button>submit</button>
+          <Button name="Submuit" />
         </form>
       </div>
     );

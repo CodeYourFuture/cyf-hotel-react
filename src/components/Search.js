@@ -13,7 +13,7 @@ class Search extends React.Component {
   handleSearcInput = event => {
     this.props.searching(this.state.searchingActive);
     this.setState({
-      searchingActive: true,
+      searchingActive: !this.state.searchingActive,
       searchInput: event.target.value
     });
   };
