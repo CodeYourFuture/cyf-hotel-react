@@ -6,7 +6,7 @@ import Heading from "./Heading"
 import Restaurant from "./Restaurant";
 import TouristInfoCards from "./TouristInfoCards";
 
-//import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import "./App.css";
 
 class App extends Component {

@@ -43,3 +43,4 @@ const SearchResults = () => {
 </table>
     )
 }
+export default SearchResults;
