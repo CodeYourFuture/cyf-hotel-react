@@ -54,7 +54,7 @@ tr {
 
 .my-custom-card {
   max-width: 28rem;
-  height: 35rem;
+  max-height: 28rem;
 }
 .my-card-wrapper {
   display: flex;
