@@ -1,6 +1,7 @@
 import React from "react";
+import moment from "moment";
 
-const SearchResults = (props, customersDetails) => {
+const SearchResults = props => {
   return (
     <table className="table table-hover">
       <thead>
@@ -13,11 +14,11 @@ const SearchResults = (props, customersDetails) => {
           <th scope="col">ROOM ID</th>
           <th scope="col">CHECK IN DATE</th>
           <th scope="col">CHECK OUT DATE</th>
+          <th scope="col"> Numbers of nights</th>
         </tr>
       </thead>
       <tbody>
         {props.results.map((customer, index) => {
-          console.log(customer);
           return (
             <tr key={index}>
               <td>{customer.id}</td>
@@ -28,6 +29,12 @@ const SearchResults = (props, customersDetails) => {
               <td>{customer.roomId}</td>
               <td>{customer.checkInDate}</td>
               <td>{customer.checkOutDate}</td>
+              <td>
+                {moment(customer.checkOutDate).diff(
+                  customer.checkInDate,
+                  "days"
+                )}
+              </td>
             </tr>
           );
         })}
