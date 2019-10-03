@@ -1,4 +1,5 @@
 import React from "react";
+import RestaurantButton from "./components/RestaurantButton";
 
 class Restaurant extends React.Component {
   addOrder = () => {
@@ -11,10 +12,7 @@ class Restaurant extends React.Component {
         <h3>Restaurant Orders</h3>
         <ul>
           <li>
-            Pizzas: {pizzas}{" "}
-            <button className="btn btn-primary" onClick={this.addOrder}>
-              Add
-            </button>
+            Pizzas: {pizzas} <RestaurantButton eventOnClick={this.addOrder} />
           </li>
         </ul>
       </div>
