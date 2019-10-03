@@ -1,5 +1,5 @@
 import React from "react";
-
+import Restaurant from "./Restaurant";
 import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./components/Heading";
@@ -14,6 +14,7 @@ const App = () => {
       <div className="input-search">
         <Bookings />
       </div>
+      <Restaurant />
       <Footer
         footerArray={[
           "123 Fake Street, London, E1 4UD",

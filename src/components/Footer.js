@@ -1,6 +1,7 @@
 import React from "react";
 
-const Footer = ({ footerArray }) => {
+const Footer = props => {
+  const { footerArray } = props; //new property
   return (
     <div className="footer">
       <ul>

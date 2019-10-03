@@ -4,7 +4,11 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  height: 10%;
+  width: 10%;
 }
 
 .App-header {
@@ -22,13 +26,7 @@
   align-items: flex-start;
   background-color: coral;
 }
-.logo-header {
-  padding-left: 20px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  height: 10%;
-  width: 10%;
-}
+
 .App-title {
   font-size: 1.5em;
 }
