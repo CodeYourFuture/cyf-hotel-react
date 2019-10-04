@@ -1,8 +1,10 @@
 import React from "react";
 
-const Footer = ({ array }) => {
-  let liArray = array.map(element => <li>{element}</li>);
-  return <ul>{liArray}</ul>;
+const Footer = props => {
+  let liArray = props.myArray.map(element => (
+    <li className="footer-items">{element}</li>
+  ));
+  return <ul className="footer">{liArray}</ul>;
 };
 
 export default Footer;

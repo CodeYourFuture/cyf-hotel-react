@@ -13,7 +13,7 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img className="card-img-top" src="./images/manchester.jpeg" alt="" />
+        <img className="card-img-top" src="./images/manchester.jpg" alt="" />
         <div className="card-body">
           <a href="https://www.visitmanchester.com" className="btn btn-primary">
             Manchester

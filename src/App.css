@@ -47,13 +47,25 @@ tr {
   color: #5b5757;
 }
 
+.highlighted {
+  border-style: groove;
+}
+
 .results {
   padding-top: 15px;
+}
+
+.restaurant-section {
+  margin: 20px auto;
 }
 
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+
+.footer-items {
+  list-style-type: none;
 }
 
 .card {

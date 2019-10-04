@@ -1,7 +1,9 @@
 import React from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-var FakeBookings = require("./data/fakeBookings.json");
+// import ActiveSearchResult from "./ActiveSearchResult";
+// var FakeBookings = require("./data/fakeBookings.json");
+import FakeBookings from "./data/fakeBookings.json";
 
 const search = searchVal => {
   console.info("TO DO!", searchVal);
@@ -13,6 +15,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         <SearchResults results={FakeBookings} />
+        {/* <ActiveSearchResult /> */}
         {/* <SearchResults /> */}
       </div>
     </div>
