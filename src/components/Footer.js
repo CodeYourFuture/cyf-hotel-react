@@ -6,7 +6,9 @@ const Footer = props => {
     <div className="footer">
       <ul>
         {footerArray.map((footerItems, index) => (
-          <li key={index}>{footerItems}</li>
+          <li style={{ listStyleType: "none" }} key={index}>
+            {footerItems}
+          </li>
         ))}
       </ul>
     </div>

@@ -3,7 +3,7 @@ import React from "react";
 const TouristInfoCards = () => {
   return (
     <div className="cards">
-      <div className="card" style={{ width: 18 + "rem" }}>
+      <div className="card">
         <img
           src="https://www.zingarate.com/pictures/2018/08/07/glasgow.jpeg"
           className="card-img-top"

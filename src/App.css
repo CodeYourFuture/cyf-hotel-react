@@ -68,3 +68,14 @@ tr {
   display: flex;
   justify-content: space-around;
 }
+
+.orders {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+h3 {
+  text-align: center;
+}

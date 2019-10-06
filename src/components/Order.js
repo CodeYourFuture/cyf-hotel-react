@@ -19,7 +19,7 @@ class Order extends React.Component {
   };
   render() {
     return (
-      <li>
+      <li className="list" style={{ listStyleType: "none" }}>
         {this.props.orderType}: {this.state.orders + " "}
         <RestaurantButton eventOnClick={this.addOrder} />
       </li>

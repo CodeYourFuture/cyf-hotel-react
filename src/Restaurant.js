@@ -6,10 +6,14 @@ class Restaurant extends React.Component {
     return (
       <div>
         <h3>Restaurant Orders</h3>
-        <ul>
-          <Order orderType={"Pizzas"} />
-          <Order orderType={"Salads"} />
-        </ul>
+        <section className="orders">
+          <div>
+            <Order orderType={"Pizzas"} />
+          </div>
+          <div>
+            <Order orderType={"Salads"} />
+          </div>
+        </section>
       </div>
     );
   }
