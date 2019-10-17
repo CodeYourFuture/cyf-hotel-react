@@ -8,10 +8,14 @@ class Search extends Component {
       searchInput: ""
     };
   }
-  handleSearchInput = () => {
+  handleSearchInput = event => {
     this.setState({
       searchInput: event.target.value
     });
+  };
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.search(this.state.searchInput);
   };
   render() {
     return (
@@ -21,7 +25,10 @@ class Search extends Component {
         </div>
         <div className="row search-wrapper">
           <div className="col">
-            <form className="form-group search-box">
+            <form
+              className="form-group search-box"
+              onSubmit={this.handleSubmit}
+            >
               <label htmlFor="customerName">Customer name</label>
               <div className="search-row">
                 <input

@@ -12,7 +12,7 @@ class Clock extends Component {
     // component is no longer in the DOM.
     this.timer = setInterval(this.tick, 1000);
   }
-  componentWillMount() {
+  componentWillUnmount() {
     clearInterval(this.timer);
   }
   tick = () => {
@@ -20,7 +20,7 @@ class Clock extends Component {
   };
 
   render() {
-    return <div>{this.state.date.toLocaleTimeString()}</div>;
+    return <div>{this.state.date.toLocaleString()}</div>;
   }
 }
 
