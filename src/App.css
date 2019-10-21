@@ -1,21 +1,22 @@
-.App {
+/* .App {
   text-align: left;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
-}
+} */
 
 .App-header {
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 1%;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  margin-bottom: 2%;
 }
 
 .App-title {
@@ -26,7 +27,7 @@
   padding-top: 20px;
   font-size: large;
 }
-
+/* 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -34,7 +35,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 .search {
   padding: 5px 0 20px 0;
 }
@@ -50,8 +51,83 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  height: 100px;
 }
 
 .card {
   width: 18rem;
+}
+.card-title {
+  text-align: center;
+  margin-top: 2%;
+}
+.img-fluid {
+  max-width: 64px;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+}
+.selected {
+  background: #5b5757;
+  color: #ffffff;
+}
+table tr {
+  cursor: pointer;
+}
+.fa-sort-up,
+.fa-sort-down {
+  margin-left: 4%;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+#container-loading {
+  position: relative;
+  top: 30%;
+  left: 35%;
+  width: 300px;
+  height: 300px;
+  padding: 15px;
+  /* transform: translate(-50%, -50%); */
+}
+.loading {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border: solid 8px #ffffff;
+  border-radius: 50%;
+  animation: rotate infinite 5s linear;
+  border-bottom: solid 8px #b7b3b3;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.title {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  color: #b7b3b3;
+  animation: opacity infinite 5s linear;
+  animation-direction: alternate;
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
 }
