@@ -18,7 +18,6 @@ export default class Bookings extends Component {
     fetch("http://www.mocky.io/v2/5daae3233100005900becdd4?mocky-delay=5000ms")
       .then(res => res.json())
       .then(res => {
-        console.log(res);
         this.setState({
           data: res
         });

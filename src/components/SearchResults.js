@@ -14,11 +14,9 @@ export default class SearchResults extends Component {
 
   render() {
     const { results, massegeError, toMakeSort, isTrue } = this.props;
-    console.log(results.length);
 
     return results.length <= 0 ? (
       <div className="container">
-        {" "}
         <div id="container-loading">
           <h1 className="title">Loading</h1>
           <div className="loading">
