@@ -1,4 +1,5 @@
 import React from "react";
+import Clock from "./Clock";
 
 const Heading = () => {
   return (
@@ -8,6 +9,7 @@ const Heading = () => {
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
         alt=""
       />
+      <Clock />
       <h1 className="App-title">CYF Hotel</h1>
     </header>
   );
