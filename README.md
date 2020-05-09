@@ -6,18 +6,30 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 1. Follow [the instructions](https://codeyourfuture.github.io/syllabus-master/others/making-a-pull-request.html#how-to-fork-a-github-repo) to fork & clone the GitHub repo
 2. Install the dependencies by running `npm install`
-3. Launch server using `npm start`
-4. It should automatically open http://localhost:3000/
+3. Launch the server using `npm start`
+4. It should automatically open `http://localhost:3000/` in your browser
 
 # Exercises
 
-### Lesson 1
+## Lesson 1
 
-1. Extract the `<button>` in the `src/Search.js` component to be its own separate component.
+#### 1. Extract the search button in its own component
 
-2. Extract the `<header>` in the `src/App.js` to be its own separate component called `Heading`. Make sure that you import and render the `<Heading />` component within `src/App.js`. In the `Heading` component, render the hotel's logo in an `<img>` (you can use `https://image.flaticon.com/icons/svg/139/139899.svg` or find your own image URL). You can adjust the CSS by editing `src/App.css` to make your Heading looks better if necessary.
+**Instructions:** Extract the search `<button>` from the `src/Search.js` file to be its own separate component. You can name it `SearchButton`. Import and use this new component in `src/Search.js`.
 
-3. In `src/App.js`, above the `<Bookings />` component add a new component called `TouristInfoCards` which shows 3 _cards_. A card is a common user interface pattern with an image at the top and some related text underneath. The cards must link to `peoplemakeglasgow.com`, `visitmanchester.com` and `visitlondon.com`. The cards should contain the name of the city and an image of the city (use the same className as the example below to benefit from [Bootstrap](https://getbootstrap.com/docs/4.2/components/card) library which is already imported for you in the project). Use the JSX code below as an example of one card (note that in JSX, you'll need to use `className` instead of `class`):
+**Test:** The search button should still render on the page.
+
+#### 2. Extract the header in its own component
+
+**Instructions:** Extract the `<header>` from the `src/App.js` file to be its own separate component called `Heading`. Make sure that you import and render the `<Heading />` component within `src/App.js`. In the `Heading` component, render the hotel's logo in an `<img>` (you can use `https://image.flaticon.com/icons/svg/139/139899.svg` or find your own image URL). You can adjust the CSS by editing `src/App.css` to make your Heading looks better if necessary.
+
+**Test:** The header should be displayed with a logo on the page.
+
+#### 3. Create and use a new component to show info cards
+
+**Instructions:** In `src/App.js`, above the `<Bookings />` component add a new component called `TouristInfoCards` which shows 3 _cards_. A card is a common user interface pattern with an image at the top and some related text underneath. The cards must link to `peoplemakeglasgow.com`, `visitmanchester.com` and `visitlondon.com`. The cards should contain the name of the city and an image of the city.
+
+**Hint:** Use the same className as the example below to benefit from [Bootstrap](https://getbootstrap.com/docs/4.2/components/card) library which is already imported for you in the project. Use the JSX code below as an example of one card (note that in JSX, you'll need to use `className` instead of `class`):
 
 ```
 <div className="card">
@@ -28,13 +40,39 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 </div>
 ```
 
-4. Add a `<Footer />` component at the bottom of the page. Pass the following array as a prop to this component: `["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]`. Inside the component, use the data you passed as a prop to render a `<ul>` list with each item of the array displayed as a `<li>`. Hint: the `.map()` method will by useful.
+**Test:** 3 info cards should be displayed on the page for each city (Glasgow, Manchester, London). Each card should link to the correct website.
 
-5. Create a `<SearchResults />` component that shows hotel bookings in a `<table>` element. Each booking will have an id, title, first name, surname, email, room id, check in date and check out date. You can make up data to show in the table. Then show `<SearchResults />` component within the `<Bookings />` component that is provided for you. Be sure to split out your components into small well-named components, similar to the method used in exercise 1. Hint: You will find some useful `<table>` examples in the [Bootstrap documentation for tables](https://getbootstrap.com/docs/4.2/content/tables/#examples)
+#### 4. Create a Footer component
 
-6. Instead of using your hard-coded data in the `<SearchResults />` component, load data from the `src/data/fakeBookings.json` file in the `<Bookings />` component and pass it as a prop to `<SearchResults />`. All the bookings in `src/data/fakeBookings.json` should now be displayed in your table. Hint: look in the `<Bookings />` component for how to import data from a JSON file.
+**Instructions:** Create a `<Footer />` component which should be rendered at the bottom of the page. Pass the following array as a prop to this component: `["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]`. Inside the component, use the data you passed as a prop to render a `<ul>` list with each item of the array displayed as a `<li>`.
 
-7. Add another column to your `<SearchResults />` table which shows the number of nights a guest is staying. For example, Mr John Doe has a booking for **2** nights. Hint: try installing the [moment.js library](http://momentjs.com/) (you'll need to install it with `npm install moment --save`) and using the [`.diff()` method](http://momentjs.com/docs/#/displaying/difference/) to compare dates.
+**Hint:** The `.map()` method will by useful.
+
+**Test:** The footer should render at the bottom of the page with each address property displayed as a list item.
+
+#### 5. Create a table to show hotel bookings
+
+**Instructions:** Create a `<SearchResults />` component that shows hotel bookings in a `<table>` element. Each booking will have an `id`, `title`, `first name`, `surname`, `email`, `room id`, `check in date` and `check out date`. You can make up data in the `<SearchResults />` component to show in the table. Then show `<SearchResults />` component within the `<Bookings />` component that is provided. Be sure to split out your components into small well-named components, similar to the method used in exercise 1.
+
+**Hint:** You will find some useful `<table>` examples in the [Bootstrap documentation for tables](https://getbootstrap.com/docs/4.2/content/tables/#examples).
+
+**Test:** A table should render with a column for each booking attribute. The table can show more than one booking. The bookings that are displayed can be made up and hardcoded for now.
+
+#### 6. Show more bookings in the table
+
+**Instructions:** Instead of using your hard-coded data in the `<SearchResults />` component, load data from the `src/data/fakeBookings.json` file in the `<Bookings />` component and pass it as a prop to `<SearchResults />`. All the bookings in `src/data/fakeBookings.json` should now be displayed in your table.
+
+**Hint:** Look in the `<Bookings />` component for how to import data from a JSON file.
+
+**Test:** All the bookings in the file `src/data/fakeBookings.json` should be displayed in your table.
+
+#### 7. Calculate and show the number of nights for each booking
+
+**Instructions:** Add another column to your `<SearchResults />` table which shows the number of nights a guest is staying.
+
+**Hint:** Try installing the [moment.js library](http://momentjs.com/) (you'll need to install it with `npm install moment --save`) and using the [`.diff()` method](http://momentjs.com/docs/#/displaying/difference/) to compare dates.
+
+**Test:** Each booking in your table should show the number of nights in a separate column. For example, Mr John Doe has a booking for **2** nights.
 
 ### Lesson 2
 
@@ -52,7 +90,15 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 14. Pass a new prop named `orderType` to the `<Order />` component with the value "Pizzas". Then render the `orderType` prop instead of "Pizzas" in the `<Order />` component. Make sure that "Pizzas" is still displayed on the screen. In the `<ul>` list of the `<Restaurant />` component, render 2 others `<Order />` components but this time pass different values for the `orderType` prop: "Salads" and "Chocolate cake". Verify that you can increment each number of items independently.
 
-15. Within the `<SearchResults />` component or its child components, add an `onClick` handler to each row in the table (hint: on the `<tr>` element). When clicked, the row is "selected" and highlighted with a different colour. When clicked again, the row is unselected and the coloured highlighting is removed. Hint: use a new state variable for each row to record if the row is selected or not, and use this value to set a class to the `className` prop of the row.
+15. Instead of getting the existing bookings from the file `data/fakeBookings.json`, we will get and load the bookings from a remote API. In the `<Bookings />` component, use the React function `useEffect` to `console.log()` some text only when the page first renders on the screen. Verify that when you refresh the page, the text appears once in the console. Then, in the `useEffect` function, use the `fetch()` function to get data from `https://cyf-react.glitch.me`. Hints:
+
+- Replace `FakeBookings` in the bookings state and initialise it with `[]` (because we haven't fetched any results yet!)
+- After calling the `fetch()` function, use `.then()` to handle the response. Try looking at your Pokemon app that you worked on in class for an example
+- When the response comes back, use `setBookings` to update the results
+
+Verify the customers data are still displayed correctly in the table.
+
+16. Within the `<SearchResults />` component or its child components, add an `onClick` handler to each row in the table (hint: on the `<tr>` element). When clicked, the row is "selected" and highlighted with a different colour. When clicked again, the row is unselected and the coloured highlighting is removed. Hint: use a new state variable for each row to record if the row is selected or not, and use this value to set a class to the `className` prop of the row.
 
 ### Lesson 3
 
@@ -67,17 +113,9 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 19. Still in the `<Bookings />` component, implement the `search` method. It must use the `searchVal` variable (that you just passed from the `<Search />` component) to **filter** the search results. The filter function should return bookings where `firstName` or `surname` match `searchVal`. Once filtered, use the `setBookings` function to update the results rendered in `<SearchResults />`. Verify that when you enter an existing first name or surname and submit the form, the results are filtered accordingly in the customers table.
 
-20. Now instead of getting the existing bookings from the file `data/fakeBookings.json`, we will get the bookings from a remote API. In the `<Bookings />` component, use the React function `useEffect` to `console.log()` some text only when the page first renders on the screen. Verify that when you refresh the page, the text appears once in the console. Then, in the `useEffect` function, use the `fetch()` function to get data from `https://cyf-react.glitch.me`. Hints:
+20. Now show a _loading state_ in `<Bookings />` while the data from the server is being fetched. To test this, try loading data from `https://cyf-react.glitch.me/delayed`, which has a 5 second delay before returning the data. You will need to use another state to record when your application is loading data (this can be a boolean) and display a loading message whenever the application is loading data. Hint: try looking at your Pokemon app that you worked on in class for an example.
 
-- Replace `FakeBookings` in the bookings state and initialise it with `[]` (because we haven't fetched any results yet!)
-- After calling the `fetch()` function, use `.then()` to handle the response. Try looking at your Pokemon app that you worked on in class for an example
-- When the response comes back, use `setBookings` to update the results
-
-Verify the customers data are still displayed correctly in the table.
-
-21. Now show a _loading state_ in `<Bookings />` while the data from the server is being fetched. To test this, try loading data from `https://cyf-react.glitch.me/delayed`, which has a 5 second delay before returning the data. You will need to use another state to record when your application is loading data (this can be a boolean) and display a loading message whenever the application is loading data. Hint: try looking at your Pokemon app that you worked on in class for an example.
-
-22. Finally, display an error message in `<Bookings />` if there is an HTTP error when fetching data from the server. To test this, try loading data from `https://cyf-react.glitch.me/error`, which will return a 500 HTTP error. Hint: Try looking at your Pokemon app that you worked on in class for an example.
+21. Finally, display an error message in `<Bookings />` if there is an HTTP error when fetching data from the server. To test this, try loading data from `https://cyf-react.glitch.me/error`, which will return a 500 HTTP error. Hint: Try looking at your Pokemon app that you worked on in class for an example.
 
 ### Stretch Goals
 
