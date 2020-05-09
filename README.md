@@ -114,7 +114,15 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** For each order, the number of items can be incremented independently. Verify that you are able to explain what is happening.
 
-#### 14. Load bookings remotely
+#### 14. Holding passing bookings from a state variable
+
+**Instructions:** In the `<Bookings />` component, declare a new state `bookings` with the corresponding setter function `setBookings` to hold the `FakeBookings` data. Instead of passing `FakeBookings` directly to the `<SearchResults />` component, pass the new `bookings` state variable.
+
+**Hint:** The new `bookings` state should be initialised with the `FakeBookings` variable.
+
+**Test:** Check that the bookings are still rendered correctly in the page.
+
+#### 15. Load bookings remotely
 
 **Instructions:** Instead of getting the existing bookings from the file `data/fakeBookings.json`, we will get and load the bookings from a remote API. In the `<Bookings />` component, use the React function `useEffect` to `console.log()` some text only when the page first renders on the screen. Verify that when you refresh the page, the text appears once in the console. Then, in the `useEffect` function, use the `fetch()` function to get data from `https://cyf-react.glitch.me`.
 
@@ -126,7 +134,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** Verify the customers data are still displayed correctly in the table.
 
-#### 15. Highlight booking row when clicked
+#### 16. Highlight booking row when clicked
 
 **Instructions:** Within the `<SearchResults />` component or its child components, add an `onClick` handler to each row in the table (hint: on the `<tr>` element). When clicked, the row is "selected" and highlighted with a different colour. When clicked again, the row is unselected and the coloured highlighting is removed.
 
@@ -140,13 +148,11 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 17. Still in the `<Search />` component, add a `onSubmit` handler to the `<form>` tag. When the form is submitted (try clicking the search button), get the value of the state `searchInput` and pass it as a parameter to the `search` prop function that has been provided for you (the `search` prop is passed from the `<Bookings />` component). Look in the console, you should see the text that is typed in the search input field when submitting the form (note: also your submit handler should take an `event` parameter and add the line `event.preventDefault()` to prevent the browser to implicitely submit the form).
 
-18. In the `<Bookings />` component, declare a new state `bookings` with the corresponding setter function `setBookings` to hold the `FakeBookings` data (hint: the new state should be initialised with the `FakeBookings` variable). Instead of passing `FakeBookings` directly to the `<SearchResults />` component, pass the new `bookings` state variable. Check that the bookings are still rendered correctly in the page.
+18. Still in the `<Bookings />` component, implement the `search` method. It must use the `searchVal` variable (that you just passed from the `<Search />` component) to **filter** the search results. The filter function should return bookings where `firstName` or `surname` match `searchVal`. Once filtered, use the `setBookings` function to update the results rendered in `<SearchResults />`. Verify that when you enter an existing first name or surname and submit the form, the results are filtered accordingly in the customers table.
 
-19. Still in the `<Bookings />` component, implement the `search` method. It must use the `searchVal` variable (that you just passed from the `<Search />` component) to **filter** the search results. The filter function should return bookings where `firstName` or `surname` match `searchVal`. Once filtered, use the `setBookings` function to update the results rendered in `<SearchResults />`. Verify that when you enter an existing first name or surname and submit the form, the results are filtered accordingly in the customers table.
+19. Now show a _loading state_ in `<Bookings />` while the data from the server is being fetched. To test this, try loading data from `https://cyf-react.glitch.me/delayed`, which has a 5 second delay before returning the data. You will need to use another state to record when your application is loading data (this can be a boolean) and display a loading message whenever the application is loading data. Hint: try looking at your Pokemon app that you worked on in class for an example.
 
-20. Now show a _loading state_ in `<Bookings />` while the data from the server is being fetched. To test this, try loading data from `https://cyf-react.glitch.me/delayed`, which has a 5 second delay before returning the data. You will need to use another state to record when your application is loading data (this can be a boolean) and display a loading message whenever the application is loading data. Hint: try looking at your Pokemon app that you worked on in class for an example.
-
-21. Finally, display an error message in `<Bookings />` if there is an HTTP error when fetching data from the server. To test this, try loading data from `https://cyf-react.glitch.me/error`, which will return a 500 HTTP error. Hint: Try looking at your Pokemon app that you worked on in class for an example.
+20. Finally, display an error message in `<Bookings />` if there is an HTTP error when fetching data from the server. To test this, try loading data from `https://cyf-react.glitch.me/error`, which will return a 500 HTTP error. Hint: Try looking at your Pokemon app that you worked on in class for an example.
 
 ### Stretch Goals
 
