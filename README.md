@@ -166,7 +166,21 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** Verify that when you enter an existing first name or surname and submit the form, the results are filtered accordingly in the customers table.
 
-#### 20. Show a loading message
+#### 20. Highlight only one row when selected
+
+**Instructions:** In the task 16, we highlighted a row when it was clicked. In the following, we will change a bit this logic so only the row which is selected is highlighted (previously, if you clicked on several rows, all of them were highlighted). Instead of recording _if_ a row is clicked or no, we need to record _which_ row is clicked. Declare a new state in the `<SearchResults />` component, which should contain the `id` of the corresponding user when the row is selected. Use this state to highlight the correct row of the table.
+
+**Test:** A row should be highlighted when clicked. When another row is selected, the previous row shouldn't be hightlighted anymore. At a given time, only one row can be highlighted to show which user is selected last.
+
+#### 21. Display a customer profile
+
+**Instructions:** Create a new `<CustomerProfile />` component. This component should be rendered next to the table in the `<SearchResults />` component. This component can be passed one prop `id`, corresponding to the user id which is selected (as defined in the task 20). Initially, the `<CustomerProfile />` component doesn't show anything. When a customer is selected in the table, fetch the corresponding profile from `https://cyf-react.glitch.me/customers/<ID>` in the `<CustomerProfile />` component. A customer profile should show the customer ID, their email, their nationality, if they are VIP and their phone number.
+
+**Hint:** You need to use `useEffect` and the correct dependency array. You'll need to fetch customers data from the API every time a new row is selected.
+
+**Test:** When you click on a table row, the corresponding customer profile is loaded and rendered on the screen.
+
+#### 22. Show a loading message
 
 **Instructions:** Do you remember in the Homework of the Lesson 2, we fetched the bookings from a remote API. Now show a _loading state_ in `<Bookings />` while the data from the server is being fetched. To test this, try loading data from `https://cyf-react.glitch.me/delayed`, which has a 5 second delay before returning the data. You will need to use another state to record when your application is loading data (this can be a boolean) and display a loading message whenever the application is loading data.
 
@@ -174,7 +188,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** A message inviting the user to wait should be displayed on the screen until bookings data can be rendered on the screen. When bookings are rendered, the loading message should be hidden.
 
-#### 21. Show an error message
+#### 23. Show an error message
 
 **Instructions:** Finally, display an error message in `<Bookings />` if there is an HTTP error when fetching data from the server. To test this, try loading data from `https://cyf-react.glitch.me/error`, which will return a 500 HTTP error.
 
