@@ -166,19 +166,21 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** Verify that when you enter an existing first name or surname and submit the form, the results are filtered accordingly in the customers table.
 
-#### 20. Highlight only one row when selected
+#### 20. Display a customer profile - step 1
 
-**Instructions:** In the task 16, we highlighted a row when it was clicked. In the following, we will change a bit this logic so only the row which is selected is highlighted (previously, if you clicked on several rows, all of them were highlighted). Instead of recording _if_ a row is clicked or no, we need to record _which_ row is clicked. Declare a new state in the `<SearchResults />` component, which should contain the `id` of the corresponding user when the row is selected. Use this state to highlight the correct row of the table.
+**Instructions:** Add a new column in the table of the `<SearchResults />` component and display a `<button>` for each row. The text of the button should read "Show profile". Then, create a new `<CustomerProfile />` component. This component should be rendered next to the table in the `<SearchResults />` component. This component should receive one prop `id`. When clicking on a "Show profile" button for a given row, the component `<CustomerProfile />` should display the text "Customer <ID> Profile", where <ID> is the id of the selected customer. Initially, the `<CustomerProfile />` component doesn't show anything.
 
-**Test:** A row should be highlighted when clicked. When another row is selected, the previous row shouldn't be hightlighted anymore. At a given time, only one row can be highlighted to show which user is selected last.
+**Hint:** You need to record the selected customer id after clicking on a "Show profile" button. In which component do you think this state should be defined?
 
-#### 21. Display a customer profile
+**Test:** When first showing the page, no customer profile is displayed. When clicking the first "Show profile" button of the table, the text "Customer 1 profile" appears. When clickong the second "Show profile" button of the table, the text "Customer 2 profile" appears instead.
 
-**Instructions:** Create a new `<CustomerProfile />` component. This component should be rendered next to the table in the `<SearchResults />` component. This component can be passed one prop `id`, corresponding to the user id which is selected (as defined in the task 20). Initially, the `<CustomerProfile />` component doesn't show anything. When a customer is selected in the table, fetch the corresponding profile from `https://cyf-react.glitch.me/customers/<ID>` in the `<CustomerProfile />` component. A customer profile should show the customer ID, their email, their nationality, if they are VIP and their phone number.
+#### 21. Display a customer profile - step 2
 
-**Hint:** You need to use `useEffect` and the correct dependency array. You'll need to fetch customers data from the API every time a new row is selected.
+**Instructions:** When a "Show profile" button is clicked in the table, fetch the corresponding customer profile from `https://cyf-react.glitch.me/customers/<ID>` in the `<CustomerProfile />` component. A customer profile should show the customer ID, their email, if they are VIP and their phone number in a list.
 
-**Test:** When you click on a table row, the corresponding customer profile is loaded and rendered on the screen.
+**Hint:** You need to use `useEffect` and the correct dependency array. You'll need to fetch customers data from the API every time a "Show profile" button is clicked and render it accordingly.
+
+**Test:** When you click on a "Show profile" button in the table, the corresponding customer profile is loaded and rendered on the screen.
 
 #### 22. Show a loading message
 
