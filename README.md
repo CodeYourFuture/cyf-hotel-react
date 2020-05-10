@@ -198,6 +198,16 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 ## Stretch Goals
 
-1. Add a form with `<input>`s for each of the booking fields (first name, surname, title, room id, check in date, check out date) to the bottom of the page. Submitting the form adds the booking to the result table. Note that the new booking won't persist if you refresh the page.
+#### 24. Create a new booking
 
-2. Add an `onClick` handler to the columns of the result table, which sorts the results ascending (A -> Z). Clicking the column again will reverse the sort order to descending (Z -> A). Hint: try using the `.sort()` method with a callback to do custom sorting
+**Instructions:** Add a form with `<input>`s for each of the booking fields (first name, surname, title, room id, check in date, check out date) to the bottom of the page. Submitting the form adds the booking to the result table. Note that the new booking won't persist if you refresh the page.
+
+**Test:** When adding a new booking in the form, it should be displayed in the table.
+
+#### 25. Sort table columns
+
+**Instructions:** Add an `onClick` handler to the columns of the result table, which sorts the results ascending (A -> Z). Clicking the column again will reverse the sort order to descending (Z -> A).
+
+**Hint:** Try using the `.sort()` method with a callback to do custom sorting.
+
+**Test:** Each column in the table should be clickable to sort results in ascending or descending order.
