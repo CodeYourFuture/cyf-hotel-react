@@ -96,13 +96,13 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** Try to click on the Add button a few times and verify that the number of pizzas increases accordingly.
 
-#### 11. Extract the Add button in its own component
+#### 11. Extract the Add button to its own component
 
 **Instructions:** Extract the `<button>` currently in the `<Restaurant />` component to a new component named `RestaurantButton`. Pass the `orderOne` function as a prop to the `<RestaurantButton />` component and use this prop in the `onClick` handler.
 
 **Test:** Clicking the button should still increment the number of pizzas.
 
-#### 12. Extract pizza order in its own Order component
+#### 12. Extract pizza order to its own Order component
 
 **Instructions:** Extract the `<li>` containing "Pizzas" from the `<Restaurant />` component to a new component named `Order`. Also, move the declaration of the `orders` state and the `orderOne` function from the `<Restaurant />` component to the new `<Order />` component. Use the `<Order />` component in the `<ul>` list of the `<Restaurant />` component.
 
@@ -114,7 +114,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** For each order, the number of items can be incremented independently. Verify that you are able to explain what is happening.
 
-#### 14. Holding passing bookings from a state variable
+#### 14. Passing bookings from a state variable
 
 **Instructions:** In the `<Bookings />` component, declare a new state `bookings` with the corresponding setter function `setBookings` to hold the `FakeBookings` data. Instead of passing `FakeBookings` directly to the `<SearchResults />` component, pass the new `bookings` state variable.
 
