@@ -83,7 +83,7 @@ const TouristInfoCards = props => {
             href="https://www.visitmanchester.com/"
             target="blank"
           >
-            <Button className="btn btn-dark">Go Manchester</Button>
+            <Button className="btn btn-danger">Go Manchester</Button>
           </a>
         </CardBody>
       </Card>
