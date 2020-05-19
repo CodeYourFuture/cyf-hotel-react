@@ -16,6 +16,8 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  justify-content: space-around;
 }
 
 .App-title {
@@ -35,6 +37,7 @@
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -54,4 +57,8 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+img {
+  size: 20px;
 }
