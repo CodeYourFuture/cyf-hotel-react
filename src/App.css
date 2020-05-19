@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  height: 100vh;
 }
 
 .App-logo {
@@ -38,6 +39,21 @@
 .list-cards {
   display: flex;
   justify-content: center;
+}
+
+li {
+  list-style: none;
+  color: white;
+  padding: 5px;
+}
+
+ul {
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  background-color: #222;
 }
 
 @keyframes App-logo-spin {
