@@ -1,0 +1,14 @@
+footer {
+  background-color: whitesmoke;
+  min-height: 200px;
+  padding: 50px;
+  margin-top: 40px;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer ul li {
+  line-height: 40px;
+}
