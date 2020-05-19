@@ -17,10 +17,10 @@ const TouristInfoCard = props => {
 
   return (
     <div className="card">
-      <img src={props.cityPic} className="card-img-top" />
+      <img src={props.cityPic} className="card-img-top" alt={props.cityName} />
       <div className="card-body">
-        Get Information about :<br />
-        <a href={props.cityLink} className="btn btn-primary">
+        <br />
+        <a href={props.cityLink} className="btn btn-primary btn-block">
           {props.cityName}
         </a>
       </div>

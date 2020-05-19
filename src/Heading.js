@@ -11,6 +11,7 @@ const Heading = () => {
         data={logofile}
         className="Heading-logo"
         alt="hotel cyf"
+        aria-label="Logo"
       />{" "}
       CYF Hotel
     </header>

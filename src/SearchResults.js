@@ -23,6 +23,7 @@ const SearchResults = props => {
         {FakeBookingData.map((booking, index) => {
           return (
             <BookingRow
+              key={booking.id}
               id={booking.id}
               title={booking.title}
               firstName={booking.firstName}
