@@ -45,8 +45,7 @@
 }
 
 .App-content {
-  padding-top: 20px;
-  font-size: large;
+  max-width: fit-content;
 }
 .card {
   height: 550px;
