@@ -7,19 +7,21 @@
   height: 80px;
 }
 .logo-hotel {
-  height: 100px;
-  padding: 20px;
+  height: 70px;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .App-title {
@@ -27,6 +29,7 @@
 }
 
 .cards {
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -49,19 +52,55 @@
   padding: 5px 0 20px 0;
 }
 
+.table {
+  padding: 30px;
+}
+
 tr {
   color: #5b5757;
+}
+td {
+  padding: 20px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
 .results {
   padding-top: 15px;
 }
 
+.table-head {
+  background-color: #d2d2d2;
+}
+
 .footer {
   padding-top: 20px;
   text-align: center;
 }
+.footer-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #222;
+  height: 50px;
+  padding: 20px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  bottom: 0;
+  margin-bottom: 0;
+}
 
 .card {
   width: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
