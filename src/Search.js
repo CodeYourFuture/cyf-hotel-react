@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = () => {
+const SearchButton = () => {
   return (
     <div className="search">
       <div className="page-header">
@@ -26,4 +26,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchButton;
