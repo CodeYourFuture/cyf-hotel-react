@@ -8,8 +8,8 @@ const SearchResults = props => {
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Title</th>
-          <th scope="col">First name</th>
-          <th scope="col">Last name</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
           <th scope="col">Email</th>
           <th scope="col">Room #</th>
           <th scope="col">Check-in</th>

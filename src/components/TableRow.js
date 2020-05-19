@@ -16,7 +16,7 @@ const TableRow = ({ list }) => {
       <td>{list.roomId}</td>
       <td>{checkIn}</td>
       <td>{checkOut}</td>
-      <td>{durationInDays}</td>
+      <td>{durationInDays} days</td>
     </tr>
   );
 };
