@@ -1,12 +1,19 @@
 .App {
   text-align: left;
 }
-
+.card {
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-
+.logo {
+  width: 50px;
+  height: 30px;
+}
 .App-header {
   background-color: #222;
   height: 50px;
