@@ -9,6 +9,8 @@
 
 .App-header {
   background-color: #222;
+  display: flex;
+  justify-content: flex-start;
   height: 50px;
   padding: 20px;
   color: white;
@@ -16,6 +18,13 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+}
+
+.img-header {
+  height: 45px;
+  margin-top: -1%;
+  margin-left: -1%;
+  margin-right: 1%;
 }
 
 .App-title {
