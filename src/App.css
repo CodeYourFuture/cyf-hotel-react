@@ -36,14 +36,12 @@
   font-size: large;
 }
 .card {
-  height: 400px;
+  height: 550px;
   overflow: scroll;
 }
 .card-img {
-  height: 150px;
-}
-.card-text {
-  height: 100px;
+  width: 100%;
+  height: 300px;
 }
 
 @keyframes App-logo-spin {
