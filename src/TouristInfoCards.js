@@ -10,8 +10,8 @@ import {
 
 const TouristInfoCards = props => {
   return (
-    <div className="d-md-flex d-lg-flex mr-lg-5 mr-md-4 mr-2 ml-2">
-      <Card className="card bg-dark text-white col-12 col-md-12 col-lg-4 mt-md-5 ml-md-2 mr-md-2 mt-4 pr-2">
+    <div className="col-12 d-lg-flex mx-auto mr-lg-5  mr-lg-2 ml-lg-2">
+      <Card className="card bg-dark text-white col-12 col-md-9 mx-md-auto col-lg-4 mt-md-5 mt-4 pr-2">
         <CardImg
           className="card-img"
           top
@@ -34,7 +34,7 @@ const TouristInfoCards = props => {
           </a>
         </CardBody>
       </Card>
-      <Card className="card  bg-dark text-white col-12 col-md-12 col-lg-4 mt-md-5 ml-md-2 mr-md-2 mt-4 pr-2">
+      <Card className="card  bg-dark text-white col-12 col-md-9 mx-md-auto col-lg-4 mt-md-5 mt-4 pr-2">
         <CardImg
           className="card-img"
           top
@@ -60,7 +60,7 @@ const TouristInfoCards = props => {
           </a>
         </CardBody>
       </Card>
-      <Card className="card bg-dark text-white col-12 col-md-12 col-lg-4 mt-md-5 ml-md-2 mr-md-2 mt-4 pr-2">
+      <Card className="card bg-dark text-white flex-sm-column col-12 col-md-9 mx-md-auto col-lg-4 mt-md-5 mt-4 pr-2">
         <CardImg
           className="card-img"
           top
