@@ -11,11 +11,34 @@ import {
 const TouristInfoCards = props => {
   return (
     <div className="d-md-flex d-lg-flex mr-lg-5 mr-md-4 mr-2 ml-2">
-      <Card className="card col-12 col-sm-12 col-md-4 mt-md-5 ml-md-2 mr-md-2 mt-4 pr-2">
+      <Card className="card bg-dark text-white col-12 col-sm-12 col-md-4 mt-md-5 ml-md-2 mr-md-2 mt-4 pr-2">
         <CardImg
           className="card-img"
           top
-          src="https://assets.londonist.com/uploads/2019/10/i875/bus_london.jpg"
+          src="https://images.unsplash.com/photo-1531152127291-ea24c3b2a1da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          alt="Card image cap"
+        />
+        <CardBody>
+          <CardTitle>
+            <strong>Visit Glasgow</strong>
+          </CardTitle>
+          <CardText>
+            Glasgow Life delivers services on behalf of Glasgow City Council to
+            both citizens and visitors to the city, providing opportunities
+            through culture, sport and learning. Find out all the essential
+            information for travelling to Glasgow for a holiday or vacation by
+            rail, air, car, or by sea.
+          </CardText>
+          <a href="https://peoplemakeglasgow.com/" target="blank">
+            <Button className="btn btn-danger">Go Glasgow</Button>
+          </a>
+        </CardBody>
+      </Card>
+      <Card className="card  bg-dark text-white col-12 col-sm-12 col-md-4 mt-md-5 ml-md-2 mr-md-2 mt-4 pr-2">
+        <CardImg
+          className="card-img"
+          top
+          src="https://images.unsplash.com/photo-1523289607602-d9abf1bbd7dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
           alt="Card image cap"
         />
         <CardBody>
@@ -33,15 +56,15 @@ const TouristInfoCards = props => {
             href="https://www.visitlondon.com/"
             target="blank"
           >
-            <Button>Go London</Button>
+            <Button className="btn btn-danger">Go London</Button>
           </a>
         </CardBody>
       </Card>
-      <Card className="card col-12 col-sm-12 col-md-4 mt-md-5 ml-md-2 mr-md-2 mt-4 pr-2">
+      <Card className="card bg-dark text-white col-12 col-sm-12 col-md-4 mt-md-5 ml-md-2 mr-md-2 mt-4 pr-2">
         <CardImg
           className="card-img"
           top
-          src="https://i2-prod.manchestereveningnews.co.uk/incoming/article14948472.ece/ALTERNATES/s1200/30429_LRR_MEN_ManchesterSkyline_03jpeg.jpg"
+          src="https://images.unsplash.com/photo-1551983627-d46f03818923?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
           alt="Card image cap"
         />
         <CardBody>
@@ -60,30 +83,7 @@ const TouristInfoCards = props => {
             href="https://www.visitmanchester.com/"
             target="blank"
           >
-            <Button>Go Manchester</Button>
-          </a>
-        </CardBody>
-      </Card>
-      <Card className="card col-12 col-sm-12 col-md-4 mt-md-5 ml-md-2 mr-md-2 mt-4 pr-2">
-        <CardImg
-          className="card-img"
-          top
-          src="https://cimg.visitscotland.com/cms-images/header-images/ois/glasgow?size=md"
-          alt="Card image cap"
-        />
-        <CardBody>
-          <CardTitle>
-            <strong>Visit Glasgow</strong>
-          </CardTitle>
-          <CardText>
-            Glasgow Life delivers services on behalf of Glasgow City Council to
-            both citizens and visitors to the city, providing opportunities
-            through culture, sport and learning. Find out all the essential
-            information for travelling to Glasgow for a holiday or vacation by
-            rail, air, car, or by sea.
-          </CardText>
-          <a href="https://peoplemakeglasgow.com/" target="blank">
-            <Button>Go Glasgow</Button>
+            <Button className="btn btn-dark">Go Manchester</Button>
           </a>
         </CardBody>
       </Card>
