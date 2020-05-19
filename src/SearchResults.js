@@ -5,7 +5,7 @@ import BookingRow from "./BookingRow";
 
 const SearchResults = props => {
   return (
-    <table class="table table-hover table-responsive-sm table-responsive-xs">
+    <table className="table table-hover table-responsive-sm table-responsive-xs">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -16,6 +16,7 @@ const SearchResults = props => {
           <th scope="col">Room Id</th>
           <th scope="col">Check-in</th>
           <th scope="col">Check-out</th>
+          <th scope="col">Duration (nights)</th>
         </tr>
       </thead>
       <tbody>
