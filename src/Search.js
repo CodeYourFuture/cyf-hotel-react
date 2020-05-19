@@ -17,11 +17,19 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <button className="btn btn-primary">Search</button>
+              <SearchButton />
             </div>
           </form>
         </div>
       </div>
+    </div>
+  );
+};
+
+const SearchButton = () => {
+  return (
+    <div id="SearchButton">
+      <button className="btn btn-primary">Search</button>
     </div>
   );
 };
