@@ -5,7 +5,7 @@ import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
-
+import SearchResults from "./SearchResults";
 const App = () => {
   return (
     <div className="App">
@@ -14,7 +14,9 @@ const App = () => {
         <TouristInfoCards />
       </div>
       <Bookings />
-
+      <div className="container">
+        <SearchResults />
+      </div>
       <div>
         <Footer
           contact={[

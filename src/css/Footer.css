@@ -12,3 +12,12 @@ footer ul {
 footer ul li {
   line-height: 40px;
 }
+
+footer p {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 0.85em;
+  display: block;
+  width: 100%;
+  border: 1px dashed rgb(223, 223, 223);
+}

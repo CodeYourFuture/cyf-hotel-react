@@ -8,6 +8,7 @@ const Footer = props => {
           return <li key={index}>{row}</li>;
         })}
       </ul>
+      <p>© CYF Hotel 2017-2020</p>
     </footer>
   );
 };
