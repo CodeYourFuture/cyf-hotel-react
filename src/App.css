@@ -35,6 +35,16 @@
   padding-top: 20px;
   font-size: large;
 }
+.card {
+  height: 400px;
+  overflow: scroll;
+}
+.card-img {
+  height: 150px;
+}
+.card-text {
+  height: 100px;
+}
 
 @keyframes App-logo-spin {
   from {
