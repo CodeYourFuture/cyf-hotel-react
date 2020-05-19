@@ -31,7 +31,7 @@ const SearchResults = props => {
           </tr>
         </thead>
 
-        <tbody>{rows}</tbody>
+        <tbody className="result">{rows}</tbody>
       </table>
     </div>
   );

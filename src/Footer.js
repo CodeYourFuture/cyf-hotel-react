@@ -6,7 +6,7 @@ const address = [
 ];
 const Footer = () => {
   return (
-    <div>
+    <div className="footer">
       <ul>
         {address.map((name, index) => {
           return <li key={index}>{name}</li>;

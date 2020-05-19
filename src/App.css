@@ -4,11 +4,11 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  margin-left: 20px;
+  height: 40px;
 }
 
 .App-header {
-  background-color: #222;
   height: 50px;
   padding: 20px;
   color: white;
@@ -48,8 +48,15 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
+  background-color: black;
+  color: white;
+  position: sticky;
+  bottom: 0;
+}
+.footer li {
+  list-style: none;
 }
 
 .card {
@@ -58,4 +65,13 @@ tr {
 .card-control {
   display: flex;
   justify-content: space-around;
+  text-align: center;
+}
+.nav-bar {
+  display: flex;
+  background-color: black;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: sticky;
+  top: 0;
 }
