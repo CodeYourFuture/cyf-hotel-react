@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Heading() {
+function Heading() {
   return (
     <header className="App-header">
       <img
@@ -12,3 +12,4 @@ export default function Heading() {
     </header>
   );
 }
+export default Heading;

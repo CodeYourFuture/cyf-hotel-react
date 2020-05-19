@@ -35,6 +35,11 @@
   margin-left: 30px;
 }
 
+.list-cards {
+  display: flex;
+  justify-content: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -64,4 +69,14 @@ tr {
 
 .card {
   width: 18rem;
+  margin: 30px;
+}
+
+.card-img-top {
+  height: 150px;
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
 }
