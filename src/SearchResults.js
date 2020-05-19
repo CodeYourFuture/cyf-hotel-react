@@ -4,7 +4,7 @@ import moment from "moment";
 
 const SearchResults = props => {
   return (
-    <Table className="table col-12">
+    <Table>
       <thead>
         <tr>
           <th className="mx-auto bg-danger text-white">Title</th>
