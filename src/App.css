@@ -55,6 +55,9 @@
   width: 100%;
   height: 300px;
 }
+.table {
+  width: 100%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
