@@ -6,6 +6,10 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
+.logo-hotel {
+  height: 100px;
+  padding: 20px;
+}
 
 .App-header {
   background-color: #222;
@@ -20,6 +24,12 @@
 
 .App-title {
   font-size: 1.5em;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .App-content {
