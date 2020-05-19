@@ -53,5 +53,22 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 20rem;
+  padding: 25px;
+  margin: 10px;
+  height: 25rem;
+}
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 40px;
+  padding-right: 5px;
+  margin-top: -15px;
+}
+.photo {
+  width: 100%;
 }
