@@ -1,6 +1,7 @@
 import React from "react";
+import SearchButton from "./SearchButton.js";
 
-const Search = () => {
+const Search = props => {
   return (
     <div className="search">
       <div className="page-header">
@@ -17,7 +18,7 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <button className="btn btn-primary">Search</button>
+              <SearchButton SearchButton={props.SearchButton} />
             </div>
           </form>
         </div>
