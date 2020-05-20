@@ -18,7 +18,7 @@ const Rows = () => {
             <td>{booking.roomId}</td>
             <td>{booking.checkInDate}</td>
             <td>{booking.checkOutDate}</td>
-            <td>{checkOut.diff(checkIn, "days")}</td>
+            <td className="booking-days">{checkOut.diff(checkIn, "days")}</td>
           </tr>
         );
       })}
