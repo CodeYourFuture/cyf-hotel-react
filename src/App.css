@@ -7,6 +7,36 @@
   height: 80px;
 }
 
+.header-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin: 15px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
+}
+
 .App-header {
   background-color: #222;
   height: 50px;
@@ -16,6 +46,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  width: 100%;
 }
 
 .App-title {
@@ -48,8 +79,16 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding: 10px 10px;
   text-align: center;
+  background-color: #5b5757;
+  color: aliceblue;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
 }
 
 .card {
