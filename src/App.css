@@ -74,10 +74,12 @@ tr:nth-child(even) {
 
 .table-head {
   background-color: #d2d2d2;
+  font-weight: bold;
 }
 
 .footer {
   padding-top: 20px;
+  margin-top: 50px;
   text-align: center;
 }
 .footer-list {
