@@ -55,3 +55,13 @@ tr {
 .card {
   width: 18rem;
 }
+
+#header-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.tourist-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
