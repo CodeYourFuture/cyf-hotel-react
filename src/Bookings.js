@@ -2,6 +2,7 @@ import React from "react";
 import SearchButton from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
+import ShowAll from "./ShowAll";
 
 const Bookings = () => {
   const search = searchVal => {
@@ -12,7 +13,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <SearchButton search={search} />
-        <SearchResults results={FakeBookings} />
+        <ShowAll />
       </div>
     </div>
   );

@@ -8,7 +8,6 @@ const App = () => {
   return (
     <div className="App">
       <heading className="App-header">
-        {" "}
         CYF Hotel
         <img
           className="App-logo "

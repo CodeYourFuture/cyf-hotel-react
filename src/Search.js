@@ -1,6 +1,11 @@
-import React from "react";
-
+import React, { useState } from "react";
+import SearchResults from "./SearchResults";
 const SearchButton = () => {
+  const [searchVal, setSearchVal] = useState();
+  const handleChange = event => {
+    setSearchVal(event.target.value);
+  };
+
   return (
     <div className="search">
       <div className="page-header">
@@ -16,14 +21,18 @@ const SearchButton = () => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
+                value={searchVal}
+                onChange={handleChange}
               />
               <button className="btn btn-primary">Search</button>
             </div>
           </form>
+          <SearchResults results={searchVal} />
         </div>
       </div>
     </div>
   );
+  console.log(searchVal + "search");
 };
 
 export default SearchButton;

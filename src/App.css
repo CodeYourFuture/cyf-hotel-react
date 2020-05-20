@@ -40,9 +40,41 @@
 .search {
   padding: 5px 0 20px 0;
 }
+.table {
+  border-collapse: collapse;
+  width: 90%;
+  box-shadow: 0px 0px 20px rgba(23, 24, 24, 0.7);
+}
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
+.table tr:hover {
+  background-color: #ddd;
+}
 tr {
   color: #5b5757;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+table,
+td {
+  border: 1px solid #333;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+thead,
+tfoot {
+  background-color: rgb(163, 162, 162);
+  color: #fff;
 }
 
 .results {
@@ -54,7 +86,39 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
-
 .card {
-  width: 18rem;
+  width: 20rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  display: flex;
+  width: 95%;
+
+  grid-gap: 35px;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 30px 5% 10px 2%;
+  box-shadow: 0px 0px 20px rgba(23, 24, 24, 0.7);
+}
+.card1 {
+  display: flex;
+  padding-left: 8%;
+  width: 90%;
+  grid-gap: 35px;
+  justify-content: center;
+  border-radius: 5px;
+}
+.card-img-top {
+  width: 8cm;
+  height: 5cm;
+}
+@media only screen and (min-width: 300px) {
+  .root {
+    grid-template-columns: auto;
+  }
+  .card1 {
+    display: block;
+  }
+  .App-header {
+    width: 100%;
+  }
 }
