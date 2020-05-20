@@ -1,5 +1,6 @@
 import React from "react";
 import FakeBookings from "./data/fakeBookings.json";
+import Nights from "./Nights";
 
 const SearchResults = ({ results }) => {
   console.log(results);
@@ -31,6 +32,12 @@ const SearchResults = ({ results }) => {
                 <td>{booking.roomId}</td>
                 <td>{booking.checkInDate}</td>
                 <td>{booking.checkOutDate}</td>
+                <td>
+                  <Nights
+                    timeline={booking.checkInDate}
+                    timeout={booking.checkOutDate}
+                  />
+                </td>
               </tr>
             </tbody>
           </table>

@@ -1,6 +1,6 @@
 import React from "react";
 import FakeBookings from "./data/fakeBookings.json";
-
+import Nights from "./Nights";
 const ShowAll = () => {
   return (
     <div className="table">
@@ -28,7 +28,12 @@ const ShowAll = () => {
                 <td>{booking.roomId}</td>
                 <td>{booking.checkInDate}</td>
                 <td>{booking.checkOutDate}</td>
-                <td>{}</td>
+                <td>
+                  <Nights
+                    timeline={booking.checkInDate}
+                    timeout={booking.checkOutDate}
+                  />
+                </td>
               </tr>
             </tbody>
           );

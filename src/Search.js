@@ -20,7 +20,7 @@ const SearchButton = () => {
                 type="text"
                 id="customerName"
                 className="form-control"
-                placeholder="Customer name"
+                placeholder="Search By First Name"
                 value={searchVal}
                 onChange={handleChange}
               />
@@ -32,7 +32,6 @@ const SearchButton = () => {
       </div>
     </div>
   );
-  console.log(searchVal + "search");
 };
 
 export default SearchButton;
