@@ -6,6 +6,7 @@ import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import SearchResults from "./SearchResults";
+import Restaurant from "./Restaurant";
 const App = () => {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ const App = () => {
       </div>
       <Bookings />
       <div className="container">
+        <Restaurant />
         <SearchResults />
       </div>
       <div>
