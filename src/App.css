@@ -65,3 +65,13 @@ tr {
   display: flex;
   justify-content: space-evenly;
 }
+
+footer {
+  background-color: coral;
+}
+
+.footer-info {
+  list-style-type: none;
+  display: inline;
+  text-align: center;
+}
