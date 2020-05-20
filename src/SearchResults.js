@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const SearchResults = props => {
   return (
@@ -29,10 +30,10 @@ const SearchResults = props => {
               <td>{booking.checkInDate}</td>
               <td>{booking.checkOutDate}</td>
               <td>
-                {/* {moment(booking.checkOutDate.split("-"), "YYYY/MM/DD").diff(
-                    moment(booking.checkInDate.split("-"), "YYYY/MM/DD"),
-                    "days"
-                  )} */}
+                {moment(booking.checkOutDate).diff(
+                  moment(booking.checkInDate),
+                  "days"
+                )}
               </td>
             </tr>
           );

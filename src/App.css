@@ -79,6 +79,10 @@ tr {
   padding-top: 15px;
 }
 
+.table th {
+  color: rgb(87, 22, 22);
+}
+
 .footer {
   padding: 10px 10px;
   text-align: center;
