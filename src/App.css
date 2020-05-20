@@ -72,3 +72,7 @@ tr {
 .photo {
   width: 100%;
 }
+.footer {
+  list-style-type: none;
+  text-align: center;
+}
