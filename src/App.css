@@ -111,7 +111,7 @@ tfoot {
   width: 8cm;
   height: 5cm;
 }
-@media only screen and (min-width: 300px) {
+@media only screen and (max-width: 600px) {
   .root {
     grid-template-columns: auto;
   }
