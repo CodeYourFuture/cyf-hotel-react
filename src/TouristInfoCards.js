@@ -2,18 +2,18 @@ import React from "react";
 
 const TouristInfoCards = props => {
   console.log(props);
-  const infoRows = props.data.map((oneInfo, index) => {
+  const infoRows = props.data.map((locationInfo, index) => {
     return (
       <div key={index} className="card">
-        <img src={oneInfo.img} alt="img" className="card-img-top" />
+        <img src={locationInfo.img} alt="img" className="card-img-top" />
         <div className="card-body">
           <a
-            href={oneInfo.href}
+            href={locationInfo.href}
             rel="noopener noreferrer"
             target="_blank"
             className="btn btn-primary"
           >
-            {oneInfo.place}
+            {locationInfo.place}
           </a>
         </div>
       </div>
