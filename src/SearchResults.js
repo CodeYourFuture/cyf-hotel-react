@@ -2,13 +2,14 @@ import React from "react";
 import FakeBookings from "./data/fakeBookings.json";
 
 const SearchResults = ({ results }) => {
-  const cont = 0;
+  console.log(results);
+  let cont = 0;
   return FakeBookings.map((booking, index) => {
-    if (booking.surname === results) {
+    if (booking.firstName === results) {
       cont = 1;
       return (
         <div>
-          <table key={index} id={booking.id}>
+          <table className="table">
             <thead>
               <tr>
                 <th> Title </th>
@@ -37,8 +38,8 @@ const SearchResults = ({ results }) => {
       );
     }
   });
-  if (cont == 0) {
-    return <p> WE have NOT any this coustomer Name //</p>;
+  if (cont === 0) {
+    return <p> WE have NOT any this customer Name //</p>;
   }
 };
 

@@ -42,15 +42,16 @@
 }
 .table {
   border-collapse: collapse;
-  width: 90%;
-  box-shadow: 0px 0px 20px rgba(23, 24, 24, 0.7);
+  width: 88%;
+  box-shadow: 0px 0px 20px rgba(67, 68, 68, 0.7);
 }
 th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #4caf50;
+  background-color: #9dc79f;
   color: white;
+  font-size: medium;
 }
 .table tr:nth-child(even) {
   background-color: #f2f2f2;

@@ -5,7 +5,7 @@ const SearchButton = () => {
   const handleChange = event => {
     setSearchVal(event.target.value);
   };
-
+  console.log(searchVal);
   return (
     <div className="search">
       <div className="page-header">
