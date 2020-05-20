@@ -39,6 +39,7 @@
 .list-cards {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 li {
@@ -78,9 +79,10 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
+footer {
   padding-top: 20px;
   text-align: center;
+  margin-top: 50px;
 }
 
 .card {
@@ -95,4 +97,8 @@ tr {
 .card-body {
   display: flex;
   justify-content: center;
+}
+
+.table thead th {
+  vertical-align: middle;
 }

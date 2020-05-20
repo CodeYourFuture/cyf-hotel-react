@@ -1,7 +1,7 @@
 import React from "react";
 import TouristInfoCards from "./TouristInfoCards";
 
-function ListCards() {
+const ListCards = () => {
   return (
     <div className="list-cards">
       <TouristInfoCards
@@ -21,5 +21,5 @@ function ListCards() {
       />
     </div>
   );
-}
+};
 export default ListCards;

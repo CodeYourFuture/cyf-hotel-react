@@ -1,6 +1,6 @@
 import React from "react";
 
-function TouristInfoCards(props) {
+const TouristInfoCards = props => {
   return (
     <div className="card">
       <img src={props.imgUrl} className="card-img-top" alt="" />
@@ -16,6 +16,6 @@ function TouristInfoCards(props) {
       </div>
     </div>
   );
-}
+};
 
 export default TouristInfoCards;

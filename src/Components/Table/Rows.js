@@ -1,27 +1,29 @@
 import React from "react";
 import FakeBookings from "../../data/fakeBookings.json";
+import moment from "moment";
 
-function Rows() {
+const Rows = () => {
   return (
     <tbody>
       {FakeBookings.map((booking, index) => {
+        const checkIn = moment(booking.checkInDate);
+        const checkOut = moment(booking.checkOutDate);
         return (
           <tr key={index}>
-            <th scope="row" key={index + 18}>
-              {booking.id}
-            </th>
-            <td key={index + 11}>{booking.title}</td>
-            <td key={index + 12}>{booking.firstName}</td>
-            <td key={index + 13}>{booking.surname}</td>
-            <td key={index + 14}>{booking.email}</td>
-            <td key={index + 15}>{booking.roomId}</td>
-            <td key={index + 16}>{booking.checkInDate}</td>
-            <td key={index + 17}>{booking.checkOutDate}</td>
+            <th scope="row">{booking.id}</th>
+            <td>{booking.title}</td>
+            <td>{booking.firstName}</td>
+            <td>{booking.surname}</td>
+            <td>{booking.email}</td>
+            <td>{booking.roomId}</td>
+            <td>{booking.checkInDate}</td>
+            <td>{booking.checkOutDate}</td>
+            <td>{checkOut.diff(checkIn, "days")}</td>
           </tr>
         );
       })}
     </tbody>
   );
-}
+};
 
 export default Rows;
