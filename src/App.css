@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -19,12 +19,19 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  margin-left: 15px;
+  font-size: 2em;
+  font-family: Lucida Sans;
 }
 
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 @keyframes App-logo-spin {
@@ -54,4 +61,7 @@ tr {
 
 .card {
   width: 18rem;
+}
+.card-img-top {
+  width: 250px;
 }
