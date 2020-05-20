@@ -1,6 +1,6 @@
 import React from "react";
 const Footer = props => (
-  <div>
+  <div className="footer">
     <ul>
       {props.hotelInfo.map((info, index) => {
         return <li key={index}>{info}</li>;
