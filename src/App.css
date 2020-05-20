@@ -21,7 +21,8 @@
   display: flex;
   flex-direction: row;
   padding: 10px;
-  margin: 15px 15px;
+  margin-top: 15px;
+
   justify-content: space-around;
   flex-wrap: wrap;
 }
@@ -93,4 +94,5 @@ ul {
 
 .card {
   width: 18rem;
+  margin-top: 15px;
 }
