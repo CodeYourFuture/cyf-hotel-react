@@ -10,7 +10,7 @@ const Bookings = () => {
 
   return (
     <div>
-      <div className="container col-12 col-md-10 mx-auto">
+      <div className="container col-12 col-md-10 ml-1">
         <Search search={search} />
         <SearchResults results={FakeBookings} />
       </div>

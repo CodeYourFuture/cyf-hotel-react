@@ -50,15 +50,12 @@
 .card {
   height: 550px;
   overflow: scroll;
-  width: 100%;
 }
 .card-img {
-  width: 100%;
+  width: auto;
   height: 300px;
 }
-.table {
-  width: 100%;
-}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -82,8 +79,4 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
-}
-
-.card {
-  width: 18rem;
 }

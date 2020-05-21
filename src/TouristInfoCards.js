@@ -11,7 +11,7 @@ import {
 const TouristInfoCards = props => {
   return (
     <div className="col-12 d-lg-flex mx-auto">
-      <Card className="card bg-dark text-white flex-sm-column col-12 ml-md-4  mr-lg-2 col-md-12 mx-auto mx-md-auto col-lg-4 mt-md-5 mt-4 pr-2">
+      <Card className="card bg-dark text-white flex-sm-column col-12 ml-auto mr-auto ml-md-4  mr-lg-2 col-md-12 mx-auto mx-md-auto col-lg-4 mt-md-5 mt-4 pr-2">
         <CardImg
           className="card-img"
           top
