@@ -10,12 +10,13 @@
 .App-header {
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 10px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
+  line-height: normal;
 }
 
 .App-title {
@@ -54,4 +55,14 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.hotel-logo {
+  width: 3%;
+  padding-left: 10px;
+}
+
+.name-logo {
+  display: flex;
+  background-color: #222;
 }
