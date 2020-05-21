@@ -4,9 +4,9 @@ import moment from "moment";
 
 const SearchResults = props => {
   return (
-    <Table>
+    <Table className="col-12">
       <thead>
-        <tr>
+        <tr className="col-12">
           <th className="mx-auto bg-danger text-white">Title</th>
           <th className="mx-auto bg-dark text-white">First Name</th>
           <th className="mx-auto bg-danger text-white pl-2">Last Name</th>
@@ -20,7 +20,7 @@ const SearchResults = props => {
       <tbody>
         {props.results.map((element, index) => {
           return (
-            <tr key={index}>
+            <tr key={index} className="col-12">
               <th scope="row" className="bg-dark text-white">
                 {element.title}
               </th>
