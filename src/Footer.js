@@ -12,7 +12,7 @@ const Footer = props => {
                 <Nav className="mr-auto" navbar>
                   <NavItem>
                     <NavLink href="/components/">
-                      <p className="text-white px-auto">{name}</p>
+                      <p className="text-white px-auto mx-auto">{name}</p>
                     </NavLink>
                   </NavItem>
                 </Nav>
