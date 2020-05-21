@@ -58,7 +58,7 @@
 table,
 th,
 td {
-  border: 1px, solid, rgb(104, 69, 69);
+  border: 1px, gray solid;
 }
 
 tr {
@@ -88,6 +88,11 @@ tr {
 ul,
 li {
   list-style: none;
+  margin: 0;
+}
+
+ul {
+  padding: 1em 0;
 }
 
 .card {
