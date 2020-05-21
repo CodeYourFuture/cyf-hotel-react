@@ -31,8 +31,8 @@ const TouristInfoCards = () => {
     <div id="TouristInfoCards" className="TouristInfoCards_CSS">
       {Cities.map((City, index) => {
         return (
-          <div className="card">
-            <img src={City.Image} className="Image_CSS" />
+          <div key={index} className="card">
+            <img src={City.Image} className="Image_CSS" alt="CitiesImg" />
             <div className="cardBody_CSS">
               <p className="Title_CSS" key={index}>
                 Visit {City.Title}
@@ -42,7 +42,12 @@ const TouristInfoCards = () => {
                   {City.Description}
                 </p>
               </div>
-              <a href={City.Address} className="button_CSS" target="_blank">
+              <a
+                href={City.Address}
+                className="button_CSS"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Go {City.Title}
               </a>
             </div>

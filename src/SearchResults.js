@@ -21,9 +21,9 @@ const SearchResults = props => {
           {props.results.map((el, index) => {
             return (
               <tr key={index}>
-                <td scope="row" className="Table_TD_CSS">
+                <th scope="row" className="Table_TD_CSS">
                   {el.title}
-                </td>
+                </th>
                 <td className="Table_TD_CSS">{el.firstName}</td>
                 <td className="Table_TD_CSS">{el.surname}</td>
                 <td className="Table_TD_CSS">{el.email}</td>
