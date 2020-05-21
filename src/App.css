@@ -65,4 +65,11 @@ tr {
 .name-logo {
   display: flex;
   background-color: #222;
+  margin-bottom: 30px;
+}
+
+.cards-layout {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 240px;
 }

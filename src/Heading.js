@@ -3,9 +3,9 @@ import React from "react";
 const Heading = () => {
   return (
     <div>
-      <div class="name-logo">
+      <div className="name-logo">
         <img
-          class="hotel-logo"
+          className="hotel-logo"
           src="https://image.flaticon.com/icons/svg/139/139899.svg"
         />
         <header className="App-header">CYF Hotel</header>
