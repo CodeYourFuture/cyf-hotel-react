@@ -26,6 +26,7 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+  margin-bottom: 40vh;
 }
 
 @keyframes App-logo-spin {
@@ -58,7 +59,7 @@ tr {
 }
 
 .hotel-logo {
-  width: 3%;
+  width: 4%;
   padding-left: 10px;
 }
 
@@ -71,5 +72,6 @@ tr {
 .cards-layout {
   display: flex;
   justify-content: space-around;
-  padding: 0 240px;
+  width: 85vw;
+  margin: 0 auto;
 }
