@@ -2,12 +2,9 @@
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
+.App-header-wrapper {
+  display: flex;
+  flex-direction: row;
   background-color: #222;
   height: 50px;
   padding: 20px;
@@ -17,6 +14,24 @@
   font-size: 1em;
   font-weight: bold;
 }
+
+.App-logo {
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 40px;
+  padding: 0;
+  margin: 0;
+}
+/* 
+.App-header {
+  background-color: #222;
+  height: 50px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+} */
 
 .App-title {
   font-size: 1.5em;
@@ -39,6 +54,12 @@
   padding: 5px 0 20px 0;
 }
 
+table,
+th,
+td {
+  border: 1px, solid, black;
+}
+
 tr {
   color: #5b5757;
 }
@@ -47,11 +68,27 @@ tr {
   padding-top: 15px;
 }
 
+.touristic-cards-container {
+  margin: 50px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .footer {
+  bottom: 0;
+  width: 100%;
+  position: fixed;
   padding-top: 20px;
   text-align: center;
 }
 
+ul,
+li {
+  list-style: none;
+}
+
 .card {
   width: 18rem;
+  text-align: center;
 }
