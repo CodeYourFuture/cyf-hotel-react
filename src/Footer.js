@@ -1,14 +1,10 @@
 import React from "react";
-const address = [
-  "123 Fake Street, London, E1 4UD",
-  "hello@fakehotel.com",
-  "0123 456789"
-];
-const Footer = () => {
+
+const Footer = props => {
   return (
     <div className="footer">
       <ul>
-        {address.map((name, index) => {
+        {props.address.map((name, index) => {
           return <li key={index}>{name}</li>;
         })}
       </ul>
