@@ -1,6 +1,7 @@
 import React from "react";
 
-function SearchResults() {
+function SearchResults(props) {
+  console.log(props);
   return (
     <table className="table table-bordered">
       <thead className="thead-dark">
@@ -15,17 +16,37 @@ function SearchResults() {
           <th>Check Out Date</th>
         </tr>
       </thead>
-      <tr>
-        <td>1</td>
-        <td>Mr</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>marko@gmail.com</td>
-        <td>53413</td>
-        <td>17/05/2020</td>
-        <td>22/05/2020</td>
-      </tr>
-      <tr>
+      {props.bookings.map(person => {
+        return (
+          <tr>
+            <td>{person.id}</td>
+            <td>{person.title}</td>
+            <td>{person.firstName}</td>
+            <td>{person.surname}</td>
+            <td>{person.email}</td>
+            <td>{person.roomId}</td>
+            <td>{person.checkInDate}</td>
+            <td>{person.checkOutDate}</td>
+          </tr>
+        );
+      })}
+    </table>
+  );
+}
+
+/* 
+       
+         <tr key = {person.id}>
+            <td>{person.id}</td>
+            <td>{person.title}</td>
+            <td>{person.firstName}</td>
+            <td>{person.surname}</td>
+            <td>{person.email}</td>
+            <td>{person.roomId}</td>
+            <td>{person.checkInDate}</td>
+            <td>{person.checkOutDate}</td>
+       
+       <tr>
         <td>2</td>
         <td>Ms</td>
         <td>Jamie</td>
@@ -67,6 +88,6 @@ function SearchResults() {
       </tr>
     </table>
   );
-}
+} */
 
 export default SearchResults;
