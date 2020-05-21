@@ -7,7 +7,7 @@
   flex-direction: row;
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 10px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -17,21 +17,21 @@
 
 .App-logo {
   /* animation: App-logo-spin infinite 20s linear; */
-  height: 40px;
+  height: 1.7em;
   padding: 0;
   margin: 0;
 }
-/* 
+
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  height: 1.5em;
+  padding-left: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
-} */
+}
 
 .App-title {
   font-size: 1.5em;
@@ -40,6 +40,7 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+  margin-bottom: 150px;
 }
 
 @keyframes App-logo-spin {
@@ -57,7 +58,7 @@
 table,
 th,
 td {
-  border: 1px, solid, black;
+  border: 1px, solid, rgb(104, 69, 69);
 }
 
 tr {
@@ -81,6 +82,7 @@ tr {
   position: fixed;
   padding-top: 20px;
   text-align: center;
+  margin: 0;
 }
 
 ul,
