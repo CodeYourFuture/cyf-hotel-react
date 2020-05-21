@@ -188,7 +188,7 @@ table {
 }
 .Head_TH_CSS {
   border-radius: 4px;
-  padding: 6px;
+  padding: 6px 5px;
   background-color: #1e88e5;
   color: #f0f0f0;
   font-family: "Scada", sans-serif;
