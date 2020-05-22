@@ -170,7 +170,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** Add a new column in the table of the `<SearchResults />` component and display a `<button>` for each row. The text of the button should read "Show profile". Then, create a new `<CustomerProfile />` component. This component should be rendered next to the table in the `<SearchResults />` component. This component should receive one prop `id`. When clicking on a "Show profile" button for a given row, the component `<CustomerProfile />` should display the text "Customer <ID> Profile", where <ID> is the id of the selected customer. Initially, the `<CustomerProfile />` component doesn't show anything.
 
-**Hint:** You need to record the selected customer id after clicking on a "Show profile" button. In which component do you think this state should be defined?
+**Hint:** You need to record the selected customer id after clicking on a "Show profile" button. In which component do you think this state should be defined course you will learn what React JS is and the fundamentals such as c?
 
 **Test:** When first showing the page, no customer profile is displayed. When clicking the first "Show profile" button of the table, the text "Customer 1 profile" appears. When clickong the second "Show profile" button of the table, the text "Customer 2 profile" appears instead.
 
