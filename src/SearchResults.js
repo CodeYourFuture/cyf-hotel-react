@@ -5,6 +5,7 @@ const SearchResults = () => {
     <table className="table">
       <thead className="thead-light">
         <tr>
+          <th scope="col">Id</th>
           <th scope="col">Title</th>
           <th scope="col">First name</th>
           <th scope="col">Surname</th>
@@ -16,6 +17,7 @@ const SearchResults = () => {
       </thead>
       <tbody>
         <tr>
+          <td>1</td>
           <td>Mr</td>
           <td>Person 1</td>
           <td>Else</td>
@@ -25,6 +27,7 @@ const SearchResults = () => {
           <td>2019-11-28</td>
         </tr>
         <tr>
+          <td>2</td>
           <td>Ms</td>
           <td>Person 2</td>
           <td>Else</td>
@@ -34,6 +37,7 @@ const SearchResults = () => {
           <td>2019-11-28</td>
         </tr>
         <tr>
+          <td>3</td>
           <td>Mrs</td>
           <td>Person 3</td>
           <td>Else</td>
@@ -43,6 +47,7 @@ const SearchResults = () => {
           <td>2019-11-28</td>
         </tr>
         <tr>
+          <td>4</td>
           <td>Mr</td>
           <td>Person 4</td>
           <td>Else</td>
@@ -52,6 +57,7 @@ const SearchResults = () => {
           <td>2019-11-28</td>
         </tr>
         <tr>
+          <td>5</td>
           <td>Mrs</td>
           <td>Person 5</td>
           <td>Else</td>

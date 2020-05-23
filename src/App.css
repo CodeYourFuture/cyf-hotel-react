@@ -4,7 +4,7 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  width: 40px;
+  width: 35px;
   margin-left: 20px;
 }
 
@@ -13,7 +13,7 @@
   flex-direction: row-reverse;
   justify-content: flex-end;
   background-color: #222;
-  height: 60px;
+  height: 55px;
 }
 
 .App-header {
@@ -30,7 +30,6 @@
 }
 
 .App-content {
-  padding-top: 20px;
   font-size: large;
 }
 
@@ -55,7 +54,7 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding-top: 75px;
   text-align: center;
 }
 
