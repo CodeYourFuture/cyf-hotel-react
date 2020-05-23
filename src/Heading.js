@@ -7,8 +7,9 @@ const Heading = () => {
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
         alt="This is the hotel logo"
       />
-      <h1>CYF Hotel</h1>
+      <h1>cyf hotel</h1>
     </div>
   );
 };
+
 export default Heading;

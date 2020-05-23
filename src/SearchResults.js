@@ -39,10 +39,8 @@ const SearchResults = props => {
 };
 
 function getDuration(start, end) {
-  var start = moment(start); //todays date
-  var end = moment(end); // another date
-  var duration = moment.duration(start.diff(end));
-  var days = duration.asDays();
+  let duration = moment.duration(moment(start).diff(moment(end)));
+  let days = duration.asDays();
   return Math.round(days);
 }
 
