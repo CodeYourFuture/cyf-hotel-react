@@ -4,7 +4,8 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  width: 40px;
+  margin-left: 20px;
 }
 
 .Header {
@@ -12,7 +13,7 @@
   flex-direction: row-reverse;
   justify-content: flex-end;
   background-color: #222;
-  height: 55px;
+  height: 60px;
 }
 
 .App-header {
@@ -26,11 +27,6 @@
 
 .App-title {
   font-size: 1.5em;
-}
-
-.Logo {
-  width: 40px;
-  margin-left: 20px;
 }
 
 .App-content {
@@ -61,6 +57,10 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+
+.footer ul {
+  list-style: none;
 }
 
 .card {

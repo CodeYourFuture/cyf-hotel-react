@@ -4,6 +4,7 @@ import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         image="https://www.fodors.com/assets/destinations/2869/tower-bridge-london-england_980x650.jpg"
       />
       <Bookings />
+      <Footer />
     </div>
   );
 };
