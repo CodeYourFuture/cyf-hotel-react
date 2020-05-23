@@ -1,8 +1,8 @@
 import React from "react";
 import fakeBookings from "./fakeBookings.js";
-import Tbody from "./Tbody.js";
+// import Tbody from "./Tbody.js";
 console.log(fakeBookings);
-const SearchResults = data => {
+const SearchResults = () => {
   return (
     <table className="table table-borderless">
       <thead>
@@ -22,7 +22,7 @@ const SearchResults = data => {
   );
 };
 
-export default SearchResults(fakeBookings);
+export default SearchResults;
 /* {data.map((custumerHistory, index)=>
         <li key ={index}>{line}</li>
         <tr>
