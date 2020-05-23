@@ -1,6 +1,7 @@
 import React from "react";
 import fakeBookings from "./fakeBookings.js";
-// import Tbody from "./Tbody.js";
+import moment from "moment";
+import Tbody from "./Tbody.js";
 // console.log(fakeBookings);
 let SearchResults = fakeBookings => {
   return (
@@ -15,9 +16,10 @@ let SearchResults = fakeBookings => {
           <th scope="col">room id</th>
           <th scope="col">check in date</th>
           <th scope="col">check out date</th>
+          <th scope="col">days stayed</th>
         </tr>
       </thead>
-      {/* <Tbody  /> */}
+      <Tbody />
     </table>
   );
 };
