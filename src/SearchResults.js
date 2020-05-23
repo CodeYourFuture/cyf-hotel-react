@@ -1,4 +1,5 @@
 import React from "react";
+import FakeBookings from "./data/fakeBookings.json";
 
 const SearchResults = () => {
   return (
@@ -17,36 +18,20 @@ const SearchResults = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td>@fat</td>
-          </tr>
+          {FakeBookings.map(e => {
+            return (
+              <tr>
+                <th scope="row">{e.id}</th>
+                <td>{e.title}</td>
+                <td>{e.firstName}</td>
+                <td>{e.surname}</td>
+                <td>{e.email}</td>
+                <td>{e.roomId}</td>
+                <td>{e.checkInDate}</td>
+                <td>{e.checkOutDate}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
