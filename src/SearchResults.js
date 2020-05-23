@@ -19,6 +19,8 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map((booking, index) => {
+          const checkIn = moment(booking.checkOutDate);
+          const checkOut = moment(booking.checkInDate);
           return (
             <tr key={index}>
               <th scope="row">{booking.id}</th>
@@ -29,12 +31,7 @@ const SearchResults = props => {
               <td>{booking.roomId}</td>
               <td>{booking.checkInDate}</td>
               <td>{booking.checkOutDate}</td>
-              <td>
-                {moment(booking.checkOutDate).diff(
-                  moment(booking.checkInDate),
-                  "days"
-                )}
-              </td>
+              <td>{checkIn.diff(checkOut, "days")}</td>
             </tr>
           );
         })}
