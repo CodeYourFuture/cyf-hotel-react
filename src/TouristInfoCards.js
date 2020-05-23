@@ -22,10 +22,10 @@ function TouristInfoCards() {
     }
   ];
   return (
-    <div className="card-control">
+    <div className="row">
       {arrOfObj.map((obj, index) => {
         return (
-          <div key={index} className="card">
+          <div key={index} className="col-sm">
             <img src={obj.srcImg} className="card-img-top" />
             <div className="card-body">
               <a href={obj.url} className="btn btn-primary">

@@ -3,13 +3,13 @@ import SearchButton from "./SearchButton";
 
 const Search = () => {
   return (
-    <div className="search ">
-      <div>
+    <div className="search row">
+      <div className="row">
         <h4 className="text-left"> Search Bookings </h4>{" "}
       </div>{" "}
-      <div className="search-wrapper">
+      <div className="row search-wrapper">
         {" "}
-        <div className="">
+        <div className="col-sm">
           <form className="form-group search-box">
             <label htmlFor="customerName"> Customer name </label>{" "}
             <div className="search-row">
