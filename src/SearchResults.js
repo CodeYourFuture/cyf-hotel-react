@@ -1,6 +1,6 @@
 import React from "react";
 import fakeBookings from "./fakeBookings.js";
-import moment from "moment";
+
 import Tbody from "./Tbody.js";
 // console.log(fakeBookings);
 let SearchResults = fakeBookings => {
