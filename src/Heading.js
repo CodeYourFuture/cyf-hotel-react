@@ -10,7 +10,12 @@ function Heading() {
 }
 
 function Logo() {
-  return <img src="https://image.flaticon.com/icons/svg/139/139899.svg" />;
+  return (
+    <img
+      className="image-header"
+      src="https://image.flaticon.com/icons/svg/139/139899.svg"
+    />
+  );
 }
 
 export default Heading;

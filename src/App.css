@@ -1,4 +1,4 @@
-.App {
+.container {
   text-align: left;
 }
 
@@ -59,6 +59,26 @@ tr {
   width: 18rem;
 }
 
-img {
-  size: 20px;
+.card-control {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.image-header {
+  height: 40px;
+  margin-top: -20px;
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 20px;
+  margin-left: 1px;
+}
+
+.footer {
+  padding-top: 10px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
 }
