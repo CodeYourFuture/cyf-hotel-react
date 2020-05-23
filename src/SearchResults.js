@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import moment from "moment"; // imported the moment js
 const SearchResults = props => {
   /*Table added added to website using JSX */
   // 1
@@ -20,12 +20,15 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
+          {/* loops through the guest list pass it to props*/}
           {props.guestList.map((element, index) => {
-            const a = moment(element.checkOutDate);
-            const b = moment(element.checkInDate);
-            const differenceOfDays = a.diff(b, "days");
+            const a = moment(element.checkOutDate); // using moment js function to pass in checkout date
+            const b = moment(element.checkInDate); // using moment js function to pass in checkout date
+            const differenceOfDays = a.diff(b, "days"); // calculates the differenceOfDays
             return (
               <tr key={index}>
+                {/*assigns key called index to table row*/}
+                {/*retrieves the data for the table using array element by accessing object properties*/}
                 <th scope="row">{element.id}</th>
                 <td>{element.title}</td>
                 <td>{element.firstName}</td>
