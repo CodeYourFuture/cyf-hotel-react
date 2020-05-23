@@ -1,8 +1,8 @@
 import React from "react";
 import fakeBookings from "./fakeBookings.js";
 // import Tbody from "./Tbody.js";
-console.log(fakeBookings);
-const SearchResults = () => {
+// console.log(fakeBookings);
+let SearchResults = fakeBookings => {
   return (
     <table className="table table-borderless">
       <thead>
@@ -17,7 +17,7 @@ const SearchResults = () => {
           <th scope="col">check out date</th>
         </tr>
       </thead>
-      {/* <Tbody data /> */}
+      {/* <Tbody  /> */}
     </table>
   );
 };

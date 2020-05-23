@@ -1,14 +1,14 @@
 import React from "react";
-
-const Tbody = data => {
+import fakeBookings from "./fakeBookings.js";
+const Tbody = () => {
   return (Tbody = (
     <tbody>
-      {data.map(booker => {
+      {fakeBookings.map(booker => {
         console.log(booker);
 
         <tr key={booker.id}>
-          <th scope="row">{booker.id}</th>
-          <td>{booker.id}</td>
+          <th scope="row" />
+          <td>{booker.roomId}</td>
           <td>Otto</td>
           <td>@mdo</td>
         </tr>;
