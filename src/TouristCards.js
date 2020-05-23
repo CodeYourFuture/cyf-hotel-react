@@ -10,6 +10,12 @@ function TouristInfoCards() {
           className="card-img-top"
         />
         <div className="card-body">
+          <p className="card-info">
+            Scotland's largest city, Glasgow has a strong shipbuilding heritage
+            with many ocean liners being constructed on the banks of the River
+            Clyde, and is now the largest seaport in Scotland, alongside its now
+            modern architecture, a symbol of the city's urban regeneration.
+          </p>
           <a href="https://peoplemakeglasgow.com/" className="btn btn-primary">
             Glasgow
           </a>
@@ -22,6 +28,11 @@ function TouristInfoCards() {
           className="card-img-top"
         />
         <div className="card-body">
+          <p className="card-info">
+            Discover Manchester, a major cultural hub known now for its
+            extensive nightlife, famous sporting history, and being the
+            birthplace of many things used and loved globally.
+          </p>
           <a href="https://visitmanchester.com/" className="btn btn-primary">
             Manchester
           </a>
@@ -34,6 +45,12 @@ function TouristInfoCards() {
           className="card-img-top"
         />
         <div className="card-body">
+          <p className="card-info">
+            One of the world's most visited cities, London has something for
+            everyone: from history and culture to fine food and exceedingly good
+            times. With such diversity, London's cultural dynamism makes it
+            among the world's most international cities.
+          </p>
           <a href="https://www.visitlondon.com/" className="btn btn-primary">
             London
           </a>
