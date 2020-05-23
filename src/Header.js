@@ -1,5 +1,5 @@
 import React from "react";
-const Header = () => {
+const Header = props => {
   return (
     <div className="nav-bar">
       <img
@@ -7,7 +7,7 @@ const Header = () => {
         alt="img"
         className="App-logo"
       />
-      <header className="App-header">CYF Hotel</header>
+      <header className="App-header">{props.name}</header>
     </div>
   );
 };

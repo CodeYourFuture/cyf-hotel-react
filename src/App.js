@@ -11,11 +11,12 @@ const address = [
   "hello@fakehotel.com",
   "0123 456789"
 ];
+const name = " CYF hotel";
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
+      <Header name={name} />
       <TouristInfoCards data={Locationinfo} />
       <Bookings />
       <Footer address={address} />

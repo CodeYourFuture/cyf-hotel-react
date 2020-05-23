@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+
 const SearchResults = props => {
   const rows = props.results.map((e, index) => (
     <tr key={index}>
@@ -14,6 +15,7 @@ const SearchResults = props => {
       <td>{moment(e.checkOutDate).diff(e.checkInDate, "days")}</td>
     </tr>
   ));
+
   return (
     <div>
       <table className="table">
