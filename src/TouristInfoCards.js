@@ -3,7 +3,7 @@ import React from "react";
 const TouristInfoCards = props => {
   return (
     <div className="card">
-      <img src={props.image} className="card-img-top" />
+      <img src={props.image} alt="Cityscape" className="card-img-top" />
       <div className="card-body">
         <a href={props.site} className="btn btn-primary">
           Visit {props.city}
