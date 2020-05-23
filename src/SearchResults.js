@@ -1,8 +1,8 @@
 import React from "react";
-
+import moment from "moment";
 const SearchResults = props => {
   /*Table added added to website using JSX */
-
+  // 1
   return (
     <div>
       <table className="table">
@@ -16,22 +16,25 @@ const SearchResults = props => {
             <th scope="col">Room ID</th>
             <th scope="col">Check In</th>
             <th scope="col">Check Out</th>
+            <th scope="col">Nights In</th>
           </tr>
         </thead>
         <tbody>
           {props.guestList.map((element, index) => {
+            const a = moment(element.checkOutDate);
+            const b = moment(element.checkInDate);
+            const differenceOfDays = a.diff(b, "days");
             return (
-              <tr>
-                <th key={index} scope="row">
-                  {element.id}
-                </th>
-                <td key={index}>{element.title}</td>
-                <td key={index}>{element.firstName}</td>
-                <td key={index}>{element.surname}</td>
-                <td key={index}>{element.email}</td>
-                <td key={index}>{element.roomId}</td>
-                <td key={index}>{element.checkInDate}</td>
-                <td key={index}>{element.checkOutDate}</td>
+              <tr key={index}>
+                <th scope="row">{element.id}</th>
+                <td>{element.title}</td>
+                <td>{element.firstName}</td>
+                <td>{element.surname}</td>
+                <td>{element.email}</td>
+                <td>{element.roomId}</td>
+                <td>{element.checkInDate}</td>
+                <td>{element.checkOutDate}</td>
+                <td>{differenceOfDays}</td>
               </tr>
             );
           })}

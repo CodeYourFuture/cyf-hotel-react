@@ -7,6 +7,7 @@ import FakeBookings from "./data/fakeBookings.json";
 const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    console.log(searchVal);
   };
 
   return (
