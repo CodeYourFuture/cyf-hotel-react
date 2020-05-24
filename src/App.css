@@ -83,7 +83,7 @@ tfoot {
 }
 
 .footer {
-  background-color: rgb(170, 217, 245);
+  background-color: rgb(198, 226, 243);
   padding-top: 20px;
   text-align: center;
 }
@@ -91,12 +91,7 @@ tfoot {
   width: 20rem;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  display: flex;
-  width: 95%;
-
-  grid-gap: 35px;
-  justify-content: center;
-  border-radius: 5px;
+  border-radius: 9px;
   margin: 30px 5% 10px 2%;
   box-shadow: 0px 0px 20px rgba(23, 24, 24, 0.7);
 }
@@ -106,11 +101,13 @@ tfoot {
   width: 90%;
   grid-gap: 35px;
   justify-content: center;
-  border-radius: 5px;
 }
 .card-img-top {
-  width: 8cm;
+  width: 8.2cm;
   height: 5cm;
+}
+.card-body {
+  display: grid;
 }
 @media only screen and (max-width: 600px) {
   .root {

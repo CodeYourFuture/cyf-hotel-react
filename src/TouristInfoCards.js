@@ -6,7 +6,7 @@ const TouristInfoCards = () => {
       City: "Glasgow",
       web: "http://www.peoplemakeglasgow.com",
       pic:
-        "https://lh3.googleusercontent.com/proxy/t3Pj4lLy3lNlrFyujcOcdMpMoRujPucKB9By4lcHQT3pdqKoKPu0HsC9NQJMwItvNetIjhNNCmab57kFca5F9CXE8VBgyZMMNPykiya94yDRyD4lruQHnfyb4wujdGZTp7PS"
+        "https://d1v9sz08rbysvx.cloudfront.net/careers/media/assets/shutterstock_10061808040-glasgow-town.jpg?ext=.jpg"
     },
     {
       City: "Manchester",
