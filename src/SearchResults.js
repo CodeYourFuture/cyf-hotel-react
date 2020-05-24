@@ -1,6 +1,11 @@
 import React from "react";
+import moment from "moment";
 
-const SearchResults = () => {
+const SearchResults = ({ results }) => {
+  function calculateNumberOfNights(a, b) {
+    return moment(a).diff(moment(b), "days");
+  }
+
   return (
     <table class="table">
       <thead>
@@ -13,39 +18,25 @@ const SearchResults = () => {
           <th scope="col">Room id</th>
           <th scope="col">Check In date</th>
           <th scope="col">Check Out date</th>
+          <th scope="col">Number of nights</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mr.</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>110</td>
-          <td>01/01/2020</td>
-          <td>17/01/2020</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Mr.</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>220</td>
-          <td>05/02/2020</td>
-          <td>12/02/2020</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Mr.</td>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-          <td>330</td>
-          <td>03/03/2020</td>
-          <td>04/04/2020</td>
-        </tr>
+        {results.map(result => (
+          <tr>
+            <th scope="row">{result.id}</th>
+            <td>{result.title}</td>
+            <td>{result.firstName}</td>
+            <td>{result.surname}</td>
+            <td>{result.email}</td>
+            <td>{result.roomId}</td>
+            <td>{result.checkInDate}</td>
+            <td>{result.checkOutDate}</td>
+            <td>
+              {calculateNumberOfNights(result.checkOutDate, result.checkInDate)}
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

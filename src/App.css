@@ -3,14 +3,14 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 50px;
   top: 0;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -56,3 +56,7 @@ tr {
 .card {
   width: 18rem;
 }
+/* 
+.logo {
+  height: 50px;
+} */
