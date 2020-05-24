@@ -4,7 +4,8 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 25px;
+  margin-right: 5px;
 }
 
 .App-header {
@@ -40,7 +41,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: white;
 }
 
 .results {
@@ -53,5 +54,30 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 20rem;
+  height: 14rem;
+  margin-left: 3rem;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10rem;
+}
+ul {
+  list-style: none;
+}
+
+.card-img-top {
+  width: 10rem;
+  margin-left: 80px;
+  margin-top: 10px;
+}
+
+.card-body {
+  text-align: center;
+  margin-left: 0.2rem;
+}
+.searchIdLabel {
+  margin-left: 700px;
 }
