@@ -57,3 +57,10 @@ tr {
 .card {
   width: 18rem;
 }
+
+@media screen and (max-width: 680px) {
+  .card {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -16,7 +16,7 @@ const SearchResult = props => {
     </tr>
   ));
   return (
-    <div>
+    <div class="table-responsive">
       <table className="table">
         <thead className="thead-dark">
           <tr>
