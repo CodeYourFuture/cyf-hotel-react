@@ -41,6 +41,7 @@
   padding: 5px 0 20px 0;
 }
 .table {
+  margin-top: 2cm;
   border-collapse: collapse;
   width: 88%;
   box-shadow: 0px 0px 20px rgba(67, 68, 68, 0.7);
@@ -84,6 +85,7 @@ tfoot {
 
 .footer {
   background-color: rgb(198, 226, 243);
+  margin-top: 3cm;
   padding-top: 20px;
   text-align: center;
 }
@@ -96,6 +98,7 @@ tfoot {
   box-shadow: 0px 0px 20px rgba(23, 24, 24, 0.7);
 }
 .card1 {
+  margin-top: 3cm;
   display: flex;
   padding-left: 8%;
   width: 90%;
@@ -105,9 +108,6 @@ tfoot {
 .card-img-top {
   width: 8.2cm;
   height: 5cm;
-}
-.card-body {
-  display: grid;
 }
 @media only screen and (max-width: 600px) {
   .root {
