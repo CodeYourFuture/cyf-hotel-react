@@ -61,3 +61,8 @@ tr {
   margin-left: 3em;
   margin-top: -1em;
 }
+.allCards {
+  display: flex;
+  justify-items: center;
+  justify-content: space-around;
+}
