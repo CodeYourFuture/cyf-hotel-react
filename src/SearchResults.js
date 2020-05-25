@@ -2,6 +2,12 @@ import React from "react";
 import moment from "moment";
 
 function SearchResults(props) {
+  function calculateDuration(checkOutDate, checkInDate) {
+    return moment(checkOutDate.toString()).diff(
+      moment(checkInDate.toString()),
+      "days"
+    );
+  }
   return (
     <table className="table">
       <thead className="thead-dark">
@@ -30,10 +36,7 @@ function SearchResults(props) {
               <td>{result.checkInDate}</td>
               <td>{result.checkOutDate}</td>
               <td>
-                {moment(result.checkOutDate.toString()).diff(
-                  moment(result.checkInDate.toString()),
-                  "days"
-                )}
+                {calculateDuration(result.checkOutDate, result.checkInDate)}
               </td>
             </tr>
           );
