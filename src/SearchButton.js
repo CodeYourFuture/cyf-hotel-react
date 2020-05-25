@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function SearchButton() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return <button className="btn btn-primary">Search</button>;
 }
 
 export default SearchButton;
