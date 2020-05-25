@@ -52,7 +52,16 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 5. Create a table to show hotel bookings
 
-**Instructions:** Create a `<SearchResults />` component that shows hotel bookings in a `<table>` element. Each booking will have an `id`, `title`, `first name`, `surname`, `email`, `room id`, `check in date` and `check out date`. You can make up data in the `<SearchResults />` component to show in the table. Then show `<SearchResults />` component within the `<Bookings />` component that is provided. Be sure to split out your components into small well-named components, similar to the method used in exercise 1.
+**Instructions:**
+1.Create a `<SearchResults />` component that shows hotel bookings in a `<table>` element.
+
+2.Each booking will have an `id`, `title`, `first name`, `surname`, `email`, `room id`, `check in date` and `check out date`.
+
+3.You can make up data in the `<SearchResults />` component to show in the table.
+
+4.Then show `<SearchResults />` component within the `<Bookings />` component that is provided.
+
+5.Be sure to split out your components into small well-named components, similar to the method used in exercise 1.
 
 **Hint:** You will find some useful `<table>` examples in the [Bootstrap documentation for tables](https://getbootstrap.com/docs/4.2/content/tables/#examples).
 
