@@ -14,10 +14,23 @@ const Search = () => {
             <label htmlFor="customerName">Customer name</label>
             <label className="searchIdLabel" htmlFor="customerName">Customer id</label>
           </form>
+          <div className="search-row">
+            <input
+              type="text"
+              id="customerName"
+              className="form-control"
+              placeholder="Customer name"
+            />
+            <button className="btn btn-primary">Search</button>
+            <input
+              type="text"
+              id="customerId"
+              className="form-control"
+              placeholder="Customer id"
+            />
 
-          <form className="form-group search-box">
-            <SearchBtn />
-          </form>
+          </div>
+          <SearchBtn />
         </div>
       </div>
     </div>

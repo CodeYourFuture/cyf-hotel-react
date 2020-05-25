@@ -13,7 +13,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <Footer footercontent={footerContentArray} />
+      <Footer content={footerContentArray} />
     </div>
   );
 };

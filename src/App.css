@@ -62,7 +62,6 @@ tr {
 .cardContainer {
   display: flex;
   flex-direction: row;
-  margin-left: 10rem;
 }
 ul {
   list-style: none;
@@ -80,4 +79,7 @@ ul {
 }
 .searchIdLabel {
   margin-left: 700px;
+}
+.search-row {
+  margin-bottom: 1rem;
 }
