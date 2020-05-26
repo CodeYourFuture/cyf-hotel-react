@@ -24,8 +24,8 @@ const ListCards = () => {
   ];
   return (
     <div className="list-cards">
-      {cityUk.map(city => (
-        <TouristInfoCards {...city} />
+      {cityUk.map((city, index) => (
+        <TouristInfoCards key={index} {...city} />
       ))}
     </div>
   );
