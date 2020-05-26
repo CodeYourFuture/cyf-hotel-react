@@ -2,7 +2,7 @@ import React from "react";
 
 function TouristInfoCards() {
   return (
-    <div>
+    <div className="cards">
       <TouristInfoCard
         img="https://images.unsplash.com/photo-1531152369337-1d0b0b9ef20d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
         link="https://peoplemakeglasgow.com"
@@ -25,7 +25,7 @@ function TouristInfoCards() {
 function TouristInfoCard(props) {
   return (
     <div className="card">
-      <img src={props.img} className="card-img-top" />
+      <img src={props.img} alt={props.name} className="card-img-top" />
       <div className="card-body">
         <a href={props.link} className="btn btn-primary">
           {props.name}

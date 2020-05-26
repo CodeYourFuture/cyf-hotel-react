@@ -3,9 +3,10 @@ import React from "react";
 function Heading() {
   return (
     <header className="App-header">
-      CYF Hotel
+      <p>CYF Hotel</p>
       <img
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
+        alt="logo"
         className="logo"
       />
     </header>

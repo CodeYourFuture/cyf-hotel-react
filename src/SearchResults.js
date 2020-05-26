@@ -1,9 +1,10 @@
 import React from "react";
+import moment from "moment";
 
-function SearchResults() {
+function SearchResults(props) {
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -14,39 +15,25 @@ function SearchResults() {
             <th scope="col">Room id</th>
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
+            <th scope="col">Number of Nights</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mr</td>
-            <td>Hanif</td>
-            <td>Abi</td>
-            <td>h@gamail</td>
-            <td>301</td>
-            <td>2019</td>
-            <td>2020</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Mr</td>
-            <td>Hanif</td>
-            <td>Abi</td>
-            <td>h@gamail</td>
-            <td>301</td>
-            <td>2019</td>
-            <td>2020</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Mr</td>
-            <td>Hanif</td>
-            <td>Abi</td>
-            <td>h@gamail</td>
-            <td>301</td>
-            <td>2019</td>
-            <td>2020</td>
-          </tr>
+          {props.bookings.map((booking, index) => (
+            <tr key={index}>
+              <td>{booking.id}</td>
+              <td>{booking.title}</td>
+              <td>{booking.firstName}</td>
+              <td>{booking.surname}</td>
+              <td>{booking.email}</td>
+              <td>{booking.roomId}</td>
+              <td>{booking.checkInDate}</td>
+              <td>{booking.checkOutDate}</td>
+              <td>
+                {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

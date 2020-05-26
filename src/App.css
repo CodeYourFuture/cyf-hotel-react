@@ -24,6 +24,14 @@
   font-size: large;
 }
 
+.logo {
+  max-width: 100px;
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .search {
   padding: 5px 0 20px 0;
 }
@@ -37,16 +45,13 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
   text-align: center;
 }
 
 .card {
   width: 18rem;
 }
-.footer {
-  display: list-item;
-}
+
 ul {
   list-style: none;
 }
