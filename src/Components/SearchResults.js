@@ -8,7 +8,7 @@ const SearchResults = props => {
   return (
     <table className="table table-hover table-responsive">
       <Columns fakeDataCol={objDataFakeBooking} />
-      <Rows />
+      <Rows fakeData={props.results} />
     </table>
   );
 };

@@ -1,11 +1,10 @@
 import React from "react";
-import FakeBookings from "../../data/fakeBookings.json";
 import moment from "moment";
 
-const Rows = () => {
+const Rows = props => {
   return (
     <tbody>
-      {FakeBookings.map((booking, index) => {
+      {props.fakeData.map((booking, index) => {
         const checkIn = moment(booking.checkInDate);
         const checkOut = moment(booking.checkOutDate);
         return (

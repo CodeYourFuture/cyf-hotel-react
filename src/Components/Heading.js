@@ -1,6 +1,6 @@
 import React from "react";
 
-const Heading = () => {
+const Heading = props => {
   return (
     <header className="App-header">
       <img
@@ -8,7 +8,7 @@ const Heading = () => {
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
         alt="Hotel Logo"
       />
-      CYF Hotel Alex
+      {props.logoName}
     </header>
   );
 };
