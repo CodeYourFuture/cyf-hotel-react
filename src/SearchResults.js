@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const SearchResults = props => {
   return (
@@ -6,13 +7,14 @@ const SearchResults = props => {
       <thead>
         <tr>
           <th scope="col">Title</th>
+          <th scope="col">Title</th>
           <th scope="col">First Name</th>
           <th scope="col">Surname</th>
-          <th scope="col">Room id</th>
           <th scope="col">Email</th>
-          <th scope="col">days</th>
+          <th scope="col">Room id</th>
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
+          <th scope="col">Nights</th>
         </tr>
       </thead>
       <tbody>
@@ -20,18 +22,23 @@ const SearchResults = props => {
           <tr key={data.id}>
             <td>{data.id}</td>
             <td>{data.title}</td>
-            <td>{data.fistName}</td>
+            <td>{data.firstName}</td>
             <td>{data.surname}</td>
-            <td>{}</td>
             <td>{data.email}</td>
             <td>{data.roomId}</td>
             <td>{data.checkInDate}</td>
             <td>{data.checkOutDate}</td>
+            <td>{daysDifference(data.checkOutDate, data.checkInDate)}</td>
           </tr>
         ))}
       </tbody>
     </table>
   );
 };
+
+function daysDifference(start, end) {
+  const duration = moment.duration(moment(start).diff(moment(end))).asDays();
+  return Math.round(duration);
+}
 
 export default SearchResults;
