@@ -1,14 +1,11 @@
 import React from "react";
 import moment from "moment";
 
-const BookingRow = props => {
-  function calcDeff(chkIn, chkOut) {
-    return moment(chkOut, "YYYY-MM-DD").diff(
-      moment(chkIn, "YYYY-MM-DD"),
-      "days"
-    );
-  }
+function calcDeff(chkIn, chkOut) {
+  return moment(chkOut, "YYYY-MM-DD").diff(moment(chkIn, "YYYY-MM-DD"), "days");
+}
 
+const BookingRow = props => {
   return (
     <tr>
       <th scope="row">{props.id}</th>
@@ -19,7 +16,7 @@ const BookingRow = props => {
       <td>{props.roomId}</td>
       <td>{props.checkInDate}</td>
       <td>{props.checkOutDate}</td>
-      <td>{calcDeff(props.checkInDate, props.checkOutDate)}</td>
+      <td>{calcDeff(props.checkInDate, props.checkOutDate) + " nights"}</td>
     </tr>
   );
 };

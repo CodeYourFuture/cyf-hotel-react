@@ -3,7 +3,7 @@ import "./css/Footer.css";
 import FakeBookingData from "./data/fakeBookings.json";
 import BookingRow from "./BookingRow";
 
-const SearchResults = props => {
+const SearchResults = () => {
   return (
     <table className="table table-hover table-responsive-sm table-responsive-xs">
       <thead>
@@ -16,7 +16,7 @@ const SearchResults = props => {
           <th scope="col">Room Id</th>
           <th scope="col">Check-in</th>
           <th scope="col">Check-out</th>
-          <th scope="col">Duration (nights)</th>
+          <th scope="col">Duration</th>
         </tr>
       </thead>
       <tbody>
