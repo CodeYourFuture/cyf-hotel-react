@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer(props) {
   return (
-    <div>
+    <div className="footr">
       {props.address.map(name => (
         <ul className="footer">
           <li>{name}</li>
