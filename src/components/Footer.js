@@ -1,9 +1,9 @@
 import React from "react";
 
-const Footer = props => {
+const Footer = ({ footerData }) => {
   return (
     <ul className="bg-dark text-white-50 text-center list">
-      {props.list.map((item, index) => (
+      {footerData.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
     </ul>
