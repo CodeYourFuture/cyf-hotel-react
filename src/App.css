@@ -55,3 +55,7 @@ tr {
 .card {
   width: 18rem;
 }
+
+table {
+  border: #222;
+}

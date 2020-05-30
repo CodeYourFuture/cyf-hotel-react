@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
-import SearchResults from "./SearchResults";
+// import SearchResults from "./SearchResults";
 
 import Bookings from "./Bookings";
 import "./App.css";
