@@ -4,7 +4,10 @@ const Heading = () => {
   return (
     <header className="App-header">
       CYF Hotel
-      <img src="https://seeklogo.com/images/S/small-luxury-hotels-logo-1858CEB80B-seeklogo.com.png" />
+      <img
+        className="App-logo"
+        src="https://image.flaticon.com/icons/svg/139/139899.svg"
+      />
     </header>
   );
 };

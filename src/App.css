@@ -51,6 +51,12 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-right: 80px;
+  height: 50px;
+  padding: 20px;
 }
 
 .card {
@@ -61,4 +67,9 @@ tr {
 .card-body {
   width: 18rem;
   align-items: flex-end;
+}
+
+.container-tourist {
+  display: flex;
+  justify-content: space-around;
 }
