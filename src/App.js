@@ -12,7 +12,7 @@ const App = () => {
     "0123 456789"
   ];
   return (
-    <div className="App">
+    <div class>
       <Heading />
       <TouristicInfoCards />
       <Bookings />
