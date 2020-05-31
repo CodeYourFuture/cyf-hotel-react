@@ -2,6 +2,8 @@ import React from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  //created to calculated the length of stay, any idea for the improvments??
+
   // const checkTheLengthOfTheStay = props.results.map((element) => {
   //   const a = moment(element.checkInDate);
   //   const b = moment(element.checkOutDate);
