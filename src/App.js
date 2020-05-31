@@ -9,7 +9,7 @@ import Footer from "./Footer";
 const App = () => {
   const countryInfo = [
     "123 Fake Street, London, E1 4UD",
-    "hello@fakehotel.com",
+    "hello@fakehotel.com ",
     "0123 456789 "
   ];
 
