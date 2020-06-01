@@ -27,6 +27,15 @@
   font-size: large;
 }
 
+.background-white {
+  background-color: whitesmoke;
+}
+
+.background-blue {
+  background-color: rgb(8, 8, 83);
+  color: aliceblue;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

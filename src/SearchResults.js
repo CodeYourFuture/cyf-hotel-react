@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
+import "./App.css";
+
 const SearchResult = props => {
+  const [active, setActive] = useState(null);
+
+  const handleClick = index => {
+    active === index ? setActive(null) : setActive(index);
+  };
+
   const rows = props.results.map((user, index) => (
-    <tr key={index}>
+    <tr
+      key={index}
+      onClick={() => handleClick(index)}
+      className={active === index ? "background-blue" : "background-white"}
+    >
       <th scope="row">{user.id}</th>
       <td>{user.title}</td>
       <td>{user.firstName}</td>
