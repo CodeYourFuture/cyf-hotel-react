@@ -3,6 +3,7 @@ import React from "react";
 import Bookings from "./Bookings";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristCards";
+import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 import "./App.css";
 
@@ -13,6 +14,7 @@ const App = () => {
       {/* <header className="App-header">CYF Hotel</header> */}
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer
         addresses={[
           "123 Fake Street, London, E1 4UD",
