@@ -55,3 +55,27 @@ tr {
 .card {
   width: 18rem;
 }
+
+#header-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.tourist-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer {
+  background-color: coral;
+}
+
+.footer-info {
+  list-style-type: none;
+  display: inline;
+  text-align: center;
+}
+
+.card-info {
+  text-align: center;
+}
