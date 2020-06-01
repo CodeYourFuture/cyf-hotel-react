@@ -2,11 +2,6 @@
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .header-container {
   display: flex;
   flex-direction: row;
@@ -50,27 +45,6 @@
   width: 100%;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.search {
-  padding: 5px 0 20px 0;
-}
-
 tr {
   color: #5b5757;
 }
@@ -99,4 +73,8 @@ ul {
 .card {
   width: 18rem;
   margin-top: 15px;
+}
+
+a {
+  height: 38px;
 }
