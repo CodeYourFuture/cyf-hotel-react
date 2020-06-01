@@ -4,8 +4,11 @@ const Footer = ({ arrayInfo }) => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-12">
-          <ul className="list-inline" style={{ listStyleType: "none" }}>
+        <div className="col-12 footer">
+          <ul
+            className="list-inline text-center"
+            style={{ listStyleType: "none" }}
+          >
             {arrayInfo.map((item, index) => {
               return (
                 /*the key must be unique for efficiency purpose*/
