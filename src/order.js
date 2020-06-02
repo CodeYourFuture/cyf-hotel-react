@@ -6,9 +6,13 @@ const Order = () => {
   function orderOne() {
     setOrders(orders + 1);
   }
+  function cancel() {
+    setOrders(0);
+  }
   return (
     <li>
-      Pizzas:{orders} <RestaurantButton orderOne={orderOne} />
+      <h3>Pizzas:{orders}</h3>{" "}
+      <RestaurantButton cancelOrder={cancel} orderOne={orderOne} />
     </li>
   );
 };

@@ -102,8 +102,8 @@ const SearchResults = props => {
               key={index}
               className={
                 active
-                  ? "col-12 switch-on bg-success"
-                  : "col-12 switch-off bg-danger "
+                  ? "col-12  text-white  bg-success"
+                  : "col-12 text-dark bg-danger "
               }
             >
               <th>
