@@ -41,7 +41,4 @@ const SearchResults = props => {
   );
 };
 
-// //var a = moment([2007, 0, 29]);
-// var b = moment([2007, 0, 28]);
-// a.diff(b, 'days')
 export default SearchResults;
