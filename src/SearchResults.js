@@ -11,15 +11,87 @@ const SearchResults = props => {
     <Table className="col-12">
       <thead>
         <tr className="col-12">
-          <th className="mx-auto bg-dark text-white">status</th>
-          <th className="mx-auto bg-danger text-white">Title</th>
-          <th className="mx-auto bg-dark text-white">First Name</th>
-          <th className="mx-auto bg-danger text-white pl-2">Last Name</th>
-          <th className="mx-auto bg-dark text-white pr-3">Email</th>
-          <th className="mx-auto bg-danger text-white pl-1 pr-5">Room id</th>
-          <th className="mx-auto bg-dark text-white pl-2">Check in date</th>
-          <th className="mx-auto bg-danger text-white pl-2">Check out date</th>
-          <th className="mx-auto bg-dark text-white pl-2">Nights</th>
+          <th
+            className={
+              active
+                ? "bg-warning mx-auto text-white"
+                : "mx-auto text-white bg-dark"
+            }
+          >
+            status
+          </th>
+          <th
+            className={
+              active
+                ? "bg-success mx-auto text-white"
+                : "mx-auto text-white bg-danger"
+            }
+          >
+            Title
+          </th>
+          <th
+            className={
+              active
+                ? "bg-warning mx-auto text-white"
+                : "mx-auto text-white bg-dark"
+            }
+          >
+            First Name
+          </th>
+          <th
+            className={
+              active
+                ? "bg-success mx-auto text-white pl-2"
+                : "mx-auto text-white bg-danger pl-2"
+            }
+          >
+            Last Name
+          </th>
+          <th
+            className={
+              active
+                ? "bg-warning mx-auto text-white pr-3"
+                : "mx-auto text-white bg-dark pr-3"
+            }
+          >
+            Email
+          </th>
+          <th
+            className={
+              active
+                ? "bg-success mx-auto text-white pl-1 pr-5"
+                : "mx-auto text-white bg-danger pl-1 pr-5"
+            }
+          >
+            Room id
+          </th>
+          <th
+            className={
+              active
+                ? "bg-warning mx-auto text-white pr-3"
+                : "mx-auto text-white bg-dark pl-2"
+            }
+          >
+            Check in date
+          </th>
+          <th
+            className={
+              active
+                ? "bg-success mx-auto text-white pl-2"
+                : "mx-auto text-white bg-danger pl-2"
+            }
+          >
+            Check out date
+          </th>
+          <th
+            className={
+              active
+                ? "bg-warning mx-auto text-white pr-3"
+                : "mx-auto text-white bg-dark pl-2"
+            }
+          >
+            Nights
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -30,43 +102,63 @@ const SearchResults = props => {
               key={index}
               className={
                 active
-                  ? "col-12 switch-on bg-primary"
-                  : "col-12 switch-off bg-secondary "
+                  ? "col-12 switch-on bg-success"
+                  : "col-12 switch-off bg-danger "
               }
             >
-              <th>{active ? "On" : "Off"}</th>
-              <th scope="row" className="bg-dark text-white">
+              <th>
+                <i
+                  className={active ? "fas fa-toggle-on" : "fas fa-toggle-off"}
+                />
+                {active ? "On" : "Off"}
+              </th>
+              <th
+                scope="row"
+                className={
+                  active
+                    ? "bg-warning mx-auto text-white"
+                    : "mx-auto text-white bg-dark"
+                }
+              >
                 {element.title}
               </th>
-              <td
-                className={
-                  active ? "switch-on bg-danger text-white" : " switch-off "
-                }
-              >
+              <td className={active ? "bg-success text-white" : " text-white "}>
                 {element.firstName}
               </td>
-              <td className="bg-dark text-white">{element.surname}</td>
               <td
                 className={
-                  active ? "switch-on bg-danger text-white" : " switch-off "
+                  active
+                    ? "bg-warning mx-auto text-white"
+                    : "mx-auto text-white bg-dark"
                 }
               >
+                {element.surname}
+              </td>
+              <td className={active ? "bg-success text-white" : " text-white "}>
                 {element.email}
               </td>
-              <td className="bg-dark text-white">{element.roomId}</td>
               <td
                 className={
-                  active ? "switch-on bg-danger text-white" : " switch-off "
+                  active
+                    ? "bg-warning mx-auto text-white"
+                    : "mx-auto text-white bg-dark"
                 }
               >
+                {element.roomId}
+              </td>
+              <td className={active ? "bg-success text-white" : " text-white "}>
                 {element.checkInDate}
               </td>
-              <td className="bg-dark text-white">{element.checkOutDate}</td>
               <td
                 className={
-                  active ? "switch-on bg-danger text-white" : " switch-off "
+                  active
+                    ? "bg-warning mx-auto text-white"
+                    : "mx-auto text-white bg-dark"
                 }
               >
+                {element.checkOutDate}
+              </td>
+              <td className={active ? "bg-success text-white" : "text-white"}>
                 {" "}
                 {moment(element.checkOutDate).diff(
                   moment(element.checkInDate),
