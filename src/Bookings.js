@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults";
-import FakeBookingsData from "./data/fakeBookings.json";
+// import FakeBookingsData from "./data/fakeBookings.json";
 
-//https://cyf-react.glitch.me/
 const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/Footer.css";
 // import FakeBookingData from "./data/fakeBookings.json";
 import BookingRow from "./BookingRow";
+import "./SearchResults.css";
 
 const SearchResults = props => {
   return (

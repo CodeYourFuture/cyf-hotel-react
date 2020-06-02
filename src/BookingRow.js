@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 function calcDeff(chkIn, chkOut) {
@@ -6,8 +6,22 @@ function calcDeff(chkIn, chkOut) {
 }
 
 const BookingRow = props => {
+  const [bookingRowClass, setBookingRowClass] = useState("");
+  const [selected, setSelected] = useState(false);
+
+  function selectRow() {
+    // console.log("someone calls me");
+    if (selected === false) {
+      setSelected(true);
+      setBookingRowClass("search-selected");
+    } else {
+      setSelected(false);
+      setBookingRowClass("");
+    }
+  }
+
   return (
-    <tr>
+    <tr onClick={selectRow} className={bookingRowClass}>
       <th scope="row">{props.id}</th>
       <td>{props.title}</td>
       <td>{props.firstName}</td>
