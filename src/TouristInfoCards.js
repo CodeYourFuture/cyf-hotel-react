@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Card";
 
 const TouristInfoCards = () => {
   const cityData = [
@@ -24,20 +25,7 @@ const TouristInfoCards = () => {
   return (
     <div className="cards">
       {cityData.map((city, index) => {
-        return (
-          <div className="card" key={index}>
-            <img
-              className="card-img-top"
-              src={city.imgSource}
-              alt="this is city pic"
-            />
-            <div className="card-body">
-              <a href={city.cityUrl} className="btn btn-primary">
-                {city.cityName}
-              </a>
-            </div>
-          </div>
-        );
+        return <Card city={city} key={index} />;
       })}
     </div>
   );

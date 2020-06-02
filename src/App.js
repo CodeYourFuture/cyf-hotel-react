@@ -19,5 +19,3 @@ const App = () => {
 };
 
 export default App;
-
-// key={props.key}

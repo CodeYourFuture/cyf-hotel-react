@@ -1,4 +1,5 @@
 import React from "react";
+import SearchInput from "./SearchInput";
 
 const Search = () => {
   return (
@@ -8,26 +9,11 @@ const Search = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
-            <label htmlFor="customerName">Customer name</label>
-            <div className="search-row">
-              <input
-                type="text"
-                id="customerName"
-                className="form-control"
-                placeholder="Customer name"
-              />
-              <SearchButton />
-            </div>
-          </form>
+          <SearchInput />
         </div>
       </div>
     </div>
   );
-};
-
-const SearchButton = () => {
-  return <button className="btn btn-primary">Search</button>;
 };
 
 export default Search;
