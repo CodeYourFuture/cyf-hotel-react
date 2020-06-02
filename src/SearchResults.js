@@ -37,7 +37,10 @@ const SearchResults = props => {
 };
 
 function daysDifference(start, end) {
-  const duration = moment.duration(moment(start).diff(moment(end))).asDays();
+  let startDate = moment(start);
+  let endDate = moment(end);
+  let diffInDays = startDate.diff(endDate, "days");
+  const duration = moment.duration(diffInDays);
   return Math.round(duration);
 }
 

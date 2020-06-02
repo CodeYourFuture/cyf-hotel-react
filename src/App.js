@@ -5,6 +5,7 @@ import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import SearchButton from "./SearchButton";
+import Restaurant from "./Restaurant";
 
 const details = [
   "123 Fake Street, London, E1 4UD",
@@ -18,6 +19,8 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
+
       <div className="footer footer-list">
         <Footer contactDetails={details} />
       </div>
