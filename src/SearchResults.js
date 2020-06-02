@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Table } from "reactstrap";
-import moment from "moment";
+import Row from "./row";
 
 const SearchResults = props => {
   const [active, setActiveClass] = useState(false);
@@ -96,77 +96,7 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map((element, index) => {
-          return (
-            <tr
-              onClick={handleClick}
-              key={index}
-              className={
-                active
-                  ? "col-12  text-white  bg-success"
-                  : "col-12 text-dark bg-danger "
-              }
-            >
-              <th>
-                <i
-                  className={active ? "fas fa-toggle-on" : "fas fa-toggle-off"}
-                />
-                {active ? "On" : "Off"}
-              </th>
-              <th
-                scope="row"
-                className={
-                  active
-                    ? "bg-warning mx-auto text-white"
-                    : "mx-auto text-white bg-dark"
-                }
-              >
-                {element.title}
-              </th>
-              <td className={active ? "bg-success text-white" : " text-white "}>
-                {element.firstName}
-              </td>
-              <td
-                className={
-                  active
-                    ? "bg-warning mx-auto text-white"
-                    : "mx-auto text-white bg-dark"
-                }
-              >
-                {element.surname}
-              </td>
-              <td className={active ? "bg-success text-white" : " text-white "}>
-                {element.email}
-              </td>
-              <td
-                className={
-                  active
-                    ? "bg-warning mx-auto text-white"
-                    : "mx-auto text-white bg-dark"
-                }
-              >
-                {element.roomId}
-              </td>
-              <td className={active ? "bg-success text-white" : " text-white "}>
-                {element.checkInDate}
-              </td>
-              <td
-                className={
-                  active
-                    ? "bg-warning mx-auto text-white"
-                    : "mx-auto text-white bg-dark"
-                }
-              >
-                {element.checkOutDate}
-              </td>
-              <td className={active ? "bg-success text-white" : "text-white"}>
-                {" "}
-                {moment(element.checkOutDate).diff(
-                  moment(element.checkInDate),
-                  "days"
-                )}
-              </td>
-            </tr>
-          );
+          return <Row element={element} key={index} index={index} />;
         })}
       </tbody>
     </Table>
