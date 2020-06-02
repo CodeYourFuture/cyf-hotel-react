@@ -12,8 +12,13 @@ const Search = () => {
           <form className="form-group search-box">
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
+              <input
+                type="text"
+                id="customerName"
+                className="form-control"
+                placeholder="Customer name"
+              />
               <SearchButton />
-              <button className="btn btn-primary">Search</button>
             </div>
           </form>
         </div>
