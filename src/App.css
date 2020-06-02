@@ -24,6 +24,9 @@
   font-size: 1em;
   font-weight: bold;
 }
+.row-color {
+  background-color: lightgray;
+}
 .footer {
   font-size: 1.2rem;
   font-weight: 500;

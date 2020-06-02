@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 const TableRow = ({ list }) => {
   const checkIn = list.checkInDate;
@@ -6,8 +6,15 @@ const TableRow = ({ list }) => {
   const duration = moment(checkOut).diff(checkIn);
   const durationInHours = duration / 1000 / 60 / 60;
   const durationInDays = Math.round(durationInHours / 24);
+
+  const [rowActive, setRowActive] = useState(false);
+
+  const changeRowColor = () => {
+    setRowActive(!rowActive);
+  };
+
   return (
-    <tr>
+    <tr onClick={changeRowColor} className={rowActive ? "row-color" : ""}>
       <th scope="row">{list.id}</th>
       <td>{list.title}</td>
       <td>{list.firstName}</td>
