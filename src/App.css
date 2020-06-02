@@ -40,19 +40,6 @@ body
   font-size: 1.5em;
 }
 
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
 }
@@ -72,4 +59,8 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.mg-5 {
+  margin: 5px;
 }
