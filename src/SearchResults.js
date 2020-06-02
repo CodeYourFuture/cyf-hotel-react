@@ -4,7 +4,6 @@ import "./css/Footer.css";
 import BookingRow from "./BookingRow";
 
 const SearchResults = props => {
-  console.log(props);
   return (
     <div className="row">
       <div className="col-12">
