@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [isSelected, setIsSelected] = useState(false);
+  function changeColor() {
+    setIsSelected(previousState => {
+      return {
+        isSelected: !previousState.isSelected
+      };
+    });
+  }
+  const rowClassName = isSelected ? "bg-secondary text-white" : "bg-light";
   return (
     <table class="table">
       <thead>
@@ -19,7 +28,7 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.result.map(data => (
-          <tr key={data.id}>
+          <tr className={rowClassName} onClick={changeColor} key={data.id}>
             <td>{data.id}</td>
             <td>{data.title}</td>
             <td>{data.firstName}</td>
