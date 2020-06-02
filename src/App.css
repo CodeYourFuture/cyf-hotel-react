@@ -75,3 +75,10 @@ tr {
   position: sticky;
   top: 0;
 }
+
+.btn-true {
+  background-color: white;
+}
+.btn-false {
+  background-color: lightblue;
+}

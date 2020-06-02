@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [rowSelect, setRowSelect] = useState("");
+
+  const changeBackground = data => {
+    if (data === rowSelect) {
+      setRowSelect();
+    } else {
+      setRowSelect(data);
+    }
+  };
   const rows = props.results.map((e, index) => (
-    <tr key={index}>
+    <tr
+      className={rowSelect === index ? "btn-false" : "btn-true"}
+      onClick={() => changeBackground(index)}
+      key={index}
+    >
       <th scope="row">{e.id}</th>
       <td>{e.title}</td>
       <td>{e.firstName}</td>
