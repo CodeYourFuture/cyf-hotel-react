@@ -60,3 +60,7 @@ tr {
 .logo {
   height: 50px;
 } */
+
+.highlighted {
+  background-color: aquamarine;
+}

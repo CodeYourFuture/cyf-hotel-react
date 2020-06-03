@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 const Heading = () => {
   return (
@@ -6,6 +6,7 @@ const Heading = () => {
       <img
         className="App-logo"
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
+        alt="logo"
       />
       CYF Hotel
     </header>

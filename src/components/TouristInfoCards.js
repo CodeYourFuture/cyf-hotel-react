@@ -5,8 +5,9 @@ const TouristInfoCards = () => {
     <Fragment>
       <div className="card">
         <img
-          src="https://images.unsplash.com/photo-1571494146906-86de15d3817b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=680&q=80"
           className="card-img-top"
+          src="https://images.unsplash.com/photo-1571494146906-86de15d3817b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=680&q=80"
+          alt="Glasgow"
         />
         <div className="card-body">
           <a href="https://peoplemakeglasgow.com/" className="btn btn-primary">
@@ -16,8 +17,9 @@ const TouristInfoCards = () => {
       </div>
       <div className="card">
         <img
-          src="https://images.unsplash.com/photo-1551983627-d46f03818923?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
           className="card-img-top"
+          src="https://images.unsplash.com/photo-1551983627-d46f03818923?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+          alt="Manchester"
         />
         <div className="card-body">
           <a href="https://visitmanchester.com/" className="btn btn-primary">
@@ -27,8 +29,9 @@ const TouristInfoCards = () => {
       </div>
       <div className="card">
         <img
-          src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
           className="card-img-top"
+          src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+          alt="London"
         />
         <div className="card-body">
           <a href="https://visitlondon.com/" className="btn btn-primary">
