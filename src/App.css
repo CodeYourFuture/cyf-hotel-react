@@ -70,3 +70,6 @@ li {
 .card-img-top {
   width: 250px;
 }
+.chosenRow {
+  background-color: aqua;
+}

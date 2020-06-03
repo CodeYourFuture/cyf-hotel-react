@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
-  const [backGroundColor, setBackGroundColor] = useState("red");
+  const [toogle, setToogle] = useState(false);
 
-  const changeColor = () => {
-    setBackGroundColor("green");
+  const ToogleChange = () => {
+    setToogle(!toogle);
   };
 
   return (
@@ -30,8 +30,8 @@ const SearchResults = props => {
         return (
           <tbody>
             <tr
-              onClick={changeColor}
-              style={{ background: backGroundColor }}
+              onClick={ToogleChange}
+              className={toogle ? "chosenRow" : null}
               key={index}
             >
               <th scope="row">{booking.id}</th>
