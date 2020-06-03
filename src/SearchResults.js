@@ -10,8 +10,7 @@ function name(fullInfo) {
       <td>{fullInfo.surname}</td>
       <td>{fullInfo.email}</td>
       <td>{fullInfo.roomId}</td>
-      <td>{fullInfo.checkInDate}</td>{" "}
-      {/*moment().diff(Moment|String|Number|Date|Array); */}
+      <td>{fullInfo.checkInDate}</td>
       <td>{fullInfo.checkOutDate}</td>
       <td>
         {moment(fullInfo.checkOutDate).diff(
