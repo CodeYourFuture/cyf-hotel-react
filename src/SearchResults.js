@@ -1,11 +1,10 @@
 import React from "react";
-import FakeBookings from "./data/fakeBookings.json";
 import Nights from "./Nights";
 
-const SearchResults = ({ results }) => {
-  console.log(results);
+const SearchResults = ({ results, data }) => {
+  console.log(data);
   let cont = 0;
-  return FakeBookings.map((booking, index) => {
+  return data.map((booking, index) => {
     if (booking.firstName === results) {
       cont = 1;
       return (

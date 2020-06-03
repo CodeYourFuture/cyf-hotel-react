@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchResults from "./SearchResults";
-const SearchButton = () => {
+const SearchButton = props => {
   const [searchVal, setSearchVal] = useState();
   const handleChange = event => {
     setSearchVal(event.target.value);
@@ -27,7 +27,7 @@ const SearchButton = () => {
               <button className="btn btn-primary">Search</button>
             </div>
           </form>
-          <SearchResults results={searchVal} />
+          <SearchResults results={searchVal} data={props.data} />
         </div>
       </div>
     </div>

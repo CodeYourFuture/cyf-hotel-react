@@ -1,7 +1,6 @@
 import React from "react";
-import FakeBookings from "./data/fakeBookings.json";
 import Nights from "./Nights";
-const ShowAll = () => {
+const ShowAll = props => {
   return (
     <div className="table">
       <table>
@@ -17,7 +16,7 @@ const ShowAll = () => {
             <th> Nights </th>
           </tr>
         </thead>
-        {FakeBookings.map((booking, index) => {
+        {props.data.map((booking, index) => {
           return (
             <tbody key={index} id={booking.id}>
               <tr>
