@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 function name(fullInfo) {
   return (
@@ -9,8 +10,15 @@ function name(fullInfo) {
       <td>{fullInfo.surname}</td>
       <td>{fullInfo.email}</td>
       <td>{fullInfo.roomId}</td>
-      <td>{fullInfo.checkInDate}</td>
+      <td>{fullInfo.checkInDate}</td>{" "}
+      {/*moment().diff(Moment|String|Number|Date|Array); */}
       <td>{fullInfo.checkOutDate}</td>
+      <td>
+        {moment(fullInfo.numOfDays).diff(
+          moment(fullInfo.checkInDate),
+          fullInfo.checkOutDate
+        )}
+      </td>
     </tr>
   );
 }
@@ -28,7 +36,7 @@ const SearchResults = props => {
           <th scope="col">roomId</th>
           <th scope="col">checkInDate</th>
           <th scope="col">checkOutDate</th>
-          <th scope="col">numOfNights</th>
+          <th scope="col">numOfDays</th>
         </tr>
         <tbody>{props.results.map(name)}</tbody>
       </table>
