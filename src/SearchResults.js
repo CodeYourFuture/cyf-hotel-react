@@ -6,19 +6,19 @@ const SearchResults = props => {
   return (
     <table className="table">
       <tbody>
-        {props.results.map((name, index) => {
+        {props.results.map((data, index) => {
           return (
             <tr key={index}>
-              <td>{name.id}</td>
-              <td>{name.title}</td>
-              <td>{name.firstName}</td>
-              <td>{name.surname}</td>
-              <td>{name.email}</td>
-              <td>{name.roomId}</td>
+              <td>{data.id}</td>
+              <td>{data.title}</td>
+              <td>{data.firstName}</td>
+              <td>{data.surname}</td>
+              <td>{data.email}</td>
+              <td>{data.roomId}</td>
 
-              <td>{name.checkInDate}</td>
-              <td>{name.checkOutDate}</td>
-              <td>{moment(name.checkOutDate).diff(name.checkInDate, "day")}</td>
+              <td>{data.checkInDate}</td>
+              <td>{data.checkOutDate}</td>
+              <td>{moment(data.checkOutDate).diff(data.checkInDate, "day")}</td>
             </tr>
           );
         })}

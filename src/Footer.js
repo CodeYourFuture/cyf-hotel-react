@@ -4,8 +4,8 @@ const Footer = props => {
   return (
     <ul>
       <footer className="footer">
-        {props.footer.map(name => {
-          return <li>{name}</li>;
+        {props.footer.map(foot => {
+          return <li className="footer-style">{foot}</li>;
         })}
       </footer>
     </ul>

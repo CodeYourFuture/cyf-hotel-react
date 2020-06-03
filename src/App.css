@@ -71,5 +71,9 @@ tr {
 
 .container-tourist {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.footer-style {
+  list-style-type: none;
 }

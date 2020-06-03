@@ -25,6 +25,7 @@ const TouristInfoCards = () => {
             </a>
           </div>
         </div>
+
         <div className="card">
           <img
             src="https://yt3.ggpht.com/a/AGF-l7-ua_5VIaz7FNCMb8CyvHaWzndZBQKmCjIgSQ=s900-c-k-c0xffffffff-no-rj-mo"
