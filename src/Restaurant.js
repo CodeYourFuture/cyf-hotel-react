@@ -10,16 +10,19 @@ const Restaurant = () => {
           <thead>
             <tr>
               <th>
-                {" "}
-                <Order orderType={"Pizzas"} />{" "}
+                <Order orderType={"Pizzas"} />
               </th>
               <th>
-                {" "}
-                <Order orderType={"Salads"} />{" "}
+                <Order orderType={"Salads"} />
               </th>
               <th>
-                {" "}
-                <Order orderType={"Chocolate cake"} />{" "}
+                <Order orderType={"Chocolate cake"} />
+              </th>
+              <th>
+                <Order orderType={"Hot Drink"} />
+              </th>
+              <th>
+                <Order orderType={"Cold Drink"} />
               </th>
             </tr>
           </thead>
