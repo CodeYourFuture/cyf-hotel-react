@@ -9,21 +9,24 @@ const Table = props => {
   const checkIn = moment(props.data.checkOutDate);
   const checkOut = moment(props.data.checkInDate);
   return (
-    <tr
-      key={props.data.index}
-      onClick={toggle}
-      className={selected ? "highlight" : null}
-    >
-      <td>{props.data.id}</td>
-      <td>{props.data.title}</td>
-      <td>{props.data.firstName}</td>
-      <td>{props.data.surname}</td>
-      <td>{props.data.email}</td>
-      <td>{props.data.roomId}</td>
-      <td>{props.data.checkInDate}</td>
-      <td>{props.data.checkOutDate}</td>
-      <td>{checkIn.diff(checkOut, "days")}</td>
-    </tr>
+    <tbody>
+      <tr
+        key={props.data.index}
+        onClick={toggle}
+        className={selected ? "highlight" : null}
+      >
+        <th scope="row">{props.data.id}</th>
+
+        <td>{props.data.title}</td>
+        <td>{props.data.firstName}</td>
+        <td>{props.data.surname}</td>
+        <td>{props.data.email}</td>
+        <td>{props.data.roomId}</td>
+        <td>{props.data.checkInDate}</td>
+        <td>{props.data.checkOutDate}</td>
+        <td>{checkIn.diff(checkOut, "days")}</td>
+      </tr>
+    </tbody>
   );
 };
 

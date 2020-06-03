@@ -17,13 +17,10 @@ const SearchResults = props => {
           <th scope="col">Number Of Nights</th>
         </tr>
       </thead>
-      <tbody>
-        {props.results.map(data => {
-          {
-            <Table data={data} />;
-          }
-        })}
-      </tbody>
+
+      {props.results.map(data => {
+        return <Table data={data} />;
+      })}
     </table>
   );
 };
