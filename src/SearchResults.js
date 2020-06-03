@@ -14,9 +14,9 @@ function name(fullInfo) {
       {/*moment().diff(Moment|String|Number|Date|Array); */}
       <td>{fullInfo.checkOutDate}</td>
       <td>
-        {moment(fullInfo.numOfDays).diff(
+        {moment(fullInfo.checkOutDate).diff(
           moment(fullInfo.checkInDate),
-          fullInfo.checkOutDate
+          "days"
         )}
       </td>
     </tr>
