@@ -1,9 +1,7 @@
 import React from "react";
-import fakeBookings from "./fakeBookings.js";
-
 import Tbody from "./Tbody.js";
 // console.log(fakeBookings);
-let SearchResults = fakeBookings => {
+let SearchResults = props => {
   return (
     <table className="table table-borderless">
       <thead>
@@ -19,25 +17,9 @@ let SearchResults = fakeBookings => {
           <th scope="col">days stayed</th>
         </tr>
       </thead>
-      <Tbody />
+      <Tbody bookings={props.bookings} />
     </table>
   );
 };
 
 export default SearchResults;
-/* {data.map((custumerHistory, index)=>
-        <li key ={index}>{line}</li>
-        <tr>
-      <th key ={index}>{id}</th>
-      <th>title</th>
-      <th>first name</th>
-      <th>surname</th>
-      <th>email</th>
-      <th>room id</th>
-      <th>check in date</th>
-      <th>check out date</th>
-    </tr>
-    }
-
-    </table>
-} */

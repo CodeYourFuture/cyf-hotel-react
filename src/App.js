@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import "./App.css";
 import Restaurant from "./Restaurant.js";
 import TouristInfoCards from "./TouristInfoCards.js";
-import SearchResults from "./SearchResults.js";
+
 const cities = [
   {
     name: "Glasgow",

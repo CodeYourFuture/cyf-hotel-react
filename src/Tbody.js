@@ -1,15 +1,10 @@
 import React from "react";
-import fakeBookings from "./fakeBookings.js";
 import moment from "moment";
-const Tbody = () => {
+const Tbody = props => {
+  console.log(props);
   return (
     <tbody>
-      {fakeBookings.map(booker => {
-        console.log(fakeBookings);
-
-        //         var a = moment([2007, 0, 29]);
-        // var b = moment([2007, 0, 28]);
-        // a.diff(b, 'days') // 1
+      {props.bookings.map(booker => {
         let b = moment(booker.checkInDate);
         let a = moment(booker.checkOutDate);
         const daysSpent = a.diff(b, "days");
