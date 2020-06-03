@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [backGroundColor, setBackGroundColor] = useState("red");
+
+  const changeColor = () => {
+    setBackGroundColor("green");
+  };
+
   return (
     <table class="table">
       <thead>
@@ -23,7 +29,11 @@ const SearchResults = props => {
         const date2 = moment(booking.checkInDate);
         return (
           <tbody>
-            <tr key={index}>
+            <tr
+              onClick={changeColor}
+              style={{ background: backGroundColor }}
+              key={index}
+            >
               <th scope="row">{booking.id}</th>
               <td>{booking.title}</td>
               <td>{booking.firstNam}</td>
