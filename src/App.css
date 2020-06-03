@@ -60,3 +60,8 @@ tr {
   width: 100px;
   margin: 20 px;
 }
+
+.highlight {
+  color: white;
+  background-color: aqua;
+}

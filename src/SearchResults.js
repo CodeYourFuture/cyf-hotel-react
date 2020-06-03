@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import Table from "./Table";
 
 const SearchResults = props => {
   return (
@@ -19,21 +19,9 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map(data => {
-          const checkIn = moment(data.checkOutDate);
-          const checkOut = moment(data.checkInDate);
-          return (
-            <tr>
-              <td>{data.id}</td>
-              <td>{data.title}</td>
-              <td>{data.firstName}</td>
-              <td>{data.surname}</td>
-              <td>{data.email}</td>
-              <td>{data.roomId}</td>
-              <td>{data.checkInDate}</td>
-              <td>{data.checkOutDate}</td>
-              <td>{checkIn.diff(checkOut, "days")}</td>
-            </tr>
-          );
+          {
+            <Table data={data} />;
+          }
         })}
       </tbody>
     </table>
