@@ -2,7 +2,6 @@ import React from "react";
 import Nights from "./Nights";
 
 const SearchResults = ({ results, data }) => {
-  console.log(data);
   let cont = 0;
   return data.map((booking, index) => {
     if (booking.firstName === results) {

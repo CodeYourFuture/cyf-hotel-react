@@ -1,6 +1,10 @@
 import React from "react";
 import Nights from "./Nights";
 const ShowAll = props => {
+  const select = () => {
+    console.log("dfdfd");
+    return <tr className={"selectTr"} />;
+  };
   return (
     <div className="table">
       <table>
@@ -19,7 +23,7 @@ const ShowAll = props => {
         {props.data.map((booking, index) => {
           return (
             <tbody key={index} id={booking.id}>
-              <tr>
+              <tr onSelect={select}>
                 <td>{booking.title}</td>
                 <td>{booking.firstName}</td>
                 <td>{booking.surname}</td>

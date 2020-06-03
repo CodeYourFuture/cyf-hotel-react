@@ -5,19 +5,15 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
-  margin-left: 70%;
+  margin-left: 87%;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
+  background-color: rgb(156, 151, 151);
+  padding: 15px;
   color: white;
-  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
-  font-weight: bold;
-  position: static;
 }
 
 .App-title {
@@ -25,18 +21,11 @@
 }
 
 .App-content {
+  margin-top: 2cm;
   padding-top: 20px;
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
 }
@@ -72,7 +61,9 @@ td {
   border: 1px solid #ddd;
   padding: 8px;
 }
-
+.selectTr {
+  color: blue;
+}
 thead,
 tfoot {
   background-color: rgb(163, 162, 162);
@@ -84,30 +75,34 @@ tfoot {
 }
 
 .footer {
-  background-color: rgb(198, 226, 243);
+  background-color: rgb(156, 151, 151);
+  color: white;
   margin-top: 3cm;
   padding-top: 20px;
   text-align: center;
 }
+.card1 {
+  margin-top: 1cm;
+  display: flex;
+  padding-left: 3%;
+  width: 94%;
+}
 .card {
-  width: 20rem;
+  width: 24rem;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 9px;
-  margin: 30px 5% 10px 2%;
+  margin: 1px 2% 0px 2%;
   box-shadow: 0px 0px 20px rgba(23, 24, 24, 0.7);
 }
-.card1 {
-  margin-top: 3cm;
-  display: flex;
-  padding-left: 8%;
-  width: 90%;
-  grid-gap: 35px;
+.Name-card {
+  padding-top: 10px;
   justify-content: center;
+  margin-left: 15px;
 }
 .card-img-top {
-  width: 8.2cm;
-  height: 5cm;
+  width: 10.1cm;
+  height: 6cm;
 }
 @media only screen and (max-width: 600px) {
   .root {
