@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
-  //created to calculated the length of stay, any idea for the improvments??
+  const { results } = props;
 
-  // const checkTheLengthOfTheStay = props.results.map((element) => {
-  //   const a = moment(element.checkInDate);
-  //   const b = moment(element.checkOutDate);
-  //   return a.diff(b, "days") * -1;
-  // });
+  const [isHighlighted, setIsHighlighted] = useState({ complited: false });
+
+  // const toggleHighlight = (resultId) => {
+  //   const eachBooking = results.map((booking) =>
+  //     booking.id === resultId ? (className = "highlited") : null
+  //   );
+  // };
+
+  const toggleHighlight = resultId => {
+    results.map(booking =>
+      booking.id === resultId
+        ? { ...isHighlighted, completed: !isHighlighted }
+        : null
+    );
+  };
 
   return (
     <table className="table table-sm">
@@ -25,8 +35,12 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map((element, index) => (
-          <tr key={index}>
+        {results.map((element, index) => (
+          <tr
+            key={index}
+            onClick={e => toggleHighlight(element.id)}
+            className={isHighlighted === element.id ? "highlight" : null}
+          >
             <td>{element.title}</td>
             <td>{element.firstName}</td>
             <td>{element.surname}</td>

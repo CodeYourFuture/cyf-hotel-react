@@ -38,8 +38,13 @@ body {
 .title {
   margin: 15px;
 }
+
 .footer {
   display: flex;
   list-style-type: none;
   justify-content: space-around;
+}
+
+.highlited {
+  background-color: aquamarine;
 }
