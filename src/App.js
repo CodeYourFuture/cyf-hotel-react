@@ -3,20 +3,15 @@ import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant";
+import heading from "./Heading";
 
 import "./App.css";
+import Heading from "./Heading";
 
 const App = () => {
   return (
     <div className="App">
-      <heading className="App-header">
-        CYF Hotel
-        <img
-          className="App-logo "
-          src=" https://image.flaticon.com/icons/svg/139/139899.svg "
-        />
-      </heading>
-
+      <Heading />
       <Bookings />
       <Restaurant />
       <TouristInfoCards />
