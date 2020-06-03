@@ -4,9 +4,9 @@ import Order from "./Order";
 
 const Restaurant = () => {
   return (
-    <div>
+    <div className="orders">
       <h3>Restaurant Orders</h3>
-      <ul>
+      <ul className="food-orders">
         <li>
           <Order orderType="Pizzas" />
         </li>

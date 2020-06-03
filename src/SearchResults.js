@@ -18,7 +18,7 @@ function SearchResults(props) {
           <th>Nights Stayed</th>
         </tr>
       </thead>
-      {props.bookings.map(person => {
+      {props.hotelBookings.map(person => {
         return (
           <tr>
             <td>{person.id}</td>
