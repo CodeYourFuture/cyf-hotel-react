@@ -3,6 +3,7 @@ import moment from "moment";
 
 const SearchResults = props => {
   const [isSelected, setIsSelected] = useState(false);
+
   function changeColor() {
     setIsSelected(previousState => {
       return {
@@ -10,7 +11,16 @@ const SearchResults = props => {
       };
     });
   }
-  const rowClassName = isSelected ? "bg-secondary text-white" : "bg-light";
+  // handleSelection = (selectedRowId) => {
+  //   setselectedRowId(selectedRowId), setrowSelected(!this.state.rowSelected);
+  // };
+  // changeColor = (e) => {
+  //   const selectedIdRaw = e.target.parentNode.id;
+  //   const selectedId = parseInt(selectedIdRaw, 10);
+  //   handleSelection(
+  //     Number.isNaN(selectedId) ? selectedRowIdDefault : selectedId
+  //   );
+  // };
   return (
     <table class="table">
       <thead>
@@ -28,7 +38,13 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.result.map(data => (
-          <tr className={rowClassName} onClick={changeColor} key={data.id}>
+          <tr
+            onClick={changeColor}
+            key={data.id}
+            className={
+              selectedRowId === row.id ? "bg-secondary text-white" : "bg-light"
+            }
+          >
             <td>{data.id}</td>
             <td>{data.title}</td>
             <td>{data.firstName}</td>
