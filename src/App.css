@@ -93,7 +93,10 @@ tfoot {
   border: 1px solid #ccc;
   border-radius: 9px;
   margin: 1px 2% 0px 2%;
-  box-shadow: 0px 0px 20px rgba(23, 24, 24, 0.7);
+  box-shadow: 0px 0px 11px rgba(23, 24, 24, 0.7);
+}
+.card:hover {
+  margin-top: 5px;
 }
 .Name-card {
   padding-top: 10px;
