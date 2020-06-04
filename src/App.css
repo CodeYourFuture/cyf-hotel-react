@@ -99,9 +99,18 @@ footer {
 
 .pizzas ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .pizzas li {
+  width: 300px;
   color: #333;
+  text-align: left;
+  padding: 10px;
+}
+
+.orders {
+  align-items: center;
+  display: flex;
 }
