@@ -1,6 +1,8 @@
 import React from "react";
+import fakeData from "../../data/fakeBookings.json";
 
 function formatHeaders(dataColumns) {
+  const objDataFakeBooking = dataColumns[0];
   return Object.keys(dataColumns).map((propriety, index) => {
     const colName = propriety;
     return (
@@ -15,7 +17,7 @@ const Columns = props => {
   return (
     <thead className="thead-dark">
       <tr>
-        {formatHeaders(props.fakeDataCol)}
+        {formatHeaders(fakeData)}
         <th>Booking days</th>
       </tr>
     </thead>

@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const Rows = props => {
+  const [select, setSelect] = useState(false);
+
+  const selectRow = e => {
+    console.log(e.target.value);
+  };
   return (
     <tbody>
-      {props.fakeData.map((booking, index) => {
+      {props.data.map(booking => {
         const checkIn = moment(booking.checkInDate);
         const checkOut = moment(booking.checkOutDate);
         return (
-          <tr key={index}>
+          <tr key={booking.id} value={booking.id} onClick={selectRow}>
             <th scope="row">{booking.id}</th>
             <td>{booking.title}</td>
             <td>{booking.firstName}</td>

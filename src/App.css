@@ -114,3 +114,11 @@ footer {
   align-items: center;
   display: flex;
 }
+
+.select {
+  background-color: white;
+}
+
+.notSelect {
+  background-color: red;
+}
