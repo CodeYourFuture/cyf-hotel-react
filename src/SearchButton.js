@@ -4,9 +4,8 @@ import React from "react"; // imported react library
 const SearchButton = () => {
   return (
     // returned the button with JSX tags in the  search button component
-    <div>
-      <button className="btn btn-primary">Search</button>
-    </div>
+
+    <button className="btn btn-primary">Search</button>
   );
 };
 
