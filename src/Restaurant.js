@@ -2,7 +2,7 @@ import React, { useState } from "react"; // imported the useState react hook.
 import RestaurantButton from "./RestaurantButton";
 const Restaurant = () => {
   const [orders, setOrders] = useState(0); // declared orders variable and passed setOrder function to it.
-  //const pizzas= 0; commented Pizzas variables
+
 
   const orderOne = () => {
     // added the orderOne function that calls set orders function
