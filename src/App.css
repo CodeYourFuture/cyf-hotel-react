@@ -116,9 +116,9 @@ footer {
 }
 
 .select {
-  background-color: white;
+  background-color: red;
 }
 
 .notSelect {
-  background-color: red;
+  background-color: white;
 }

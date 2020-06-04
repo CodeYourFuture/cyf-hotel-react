@@ -2,7 +2,6 @@ import React from "react";
 import fakeData from "../../data/fakeBookings.json";
 
 function formatHeaders(dataColumns) {
-  const objDataFakeBooking = dataColumns[0];
   return Object.keys(dataColumns).map((propriety, index) => {
     const colName = propriety;
     return (
