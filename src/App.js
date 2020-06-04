@@ -4,6 +4,7 @@ import Heading from "./Components/Heading";
 import Footer from "./Components/Footer";
 import "./App.css";
 import ListCards from "./Components/ListCards";
+import Restaurant from "./Components/Restaurant";
 
 const App = () => {
   const footerData = [
@@ -17,6 +18,10 @@ const App = () => {
       <Heading logoName={"CYF Hotel Alex"} />
       <ListCards />
       <Bookings />
+      <div className="container">
+        <hr />
+      </div>
+      <Restaurant />
       <Footer data={footerData} />
     </div>
   );

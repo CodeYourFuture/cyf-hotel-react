@@ -92,6 +92,16 @@ footer {
 .table thead th {
   vertical-align: middle;
 }
+
 .booking-days {
   text-align: center;
+}
+
+.pizzas ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pizzas li {
+  color: #333;
 }
