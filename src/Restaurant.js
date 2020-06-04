@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react"; // imported the useState react hook.
 
 const Restaurant = () => {
-  const pizzas = 0;
+  const [orders, setOrders] = useState(0); // declared orders variable and passed setOrder function to it.
+
+  //const pizzas= 0; commented Pizzas variables
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
+          Pizzas: {orders}
+          {/* replaced pizzas variable with orders*/}{" "}
+          <button className="btn btn-primary">Add</button>
         </li>
       </ul>
     </div>
