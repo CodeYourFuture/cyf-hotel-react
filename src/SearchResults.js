@@ -1,26 +1,7 @@
 import React, { useState } from "react";
-import moment from "moment";
 
+import Row from "./Row";
 const SearchResults = props => {
-  const [isSelected, setIsSelected] = useState(false);
-
-  function changeColor() {
-    setIsSelected(previousState => {
-      return {
-        isSelected: !previousState.isSelected
-      };
-    });
-  }
-  // handleSelection = (selectedRowId) => {
-  //   setselectedRowId(selectedRowId), setrowSelected(!this.state.rowSelected);
-  // };
-  // changeColor = (e) => {
-  //   const selectedIdRaw = e.target.parentNode.id;
-  //   const selectedId = parseInt(selectedIdRaw, 10);
-  //   handleSelection(
-  //     Number.isNaN(selectedId) ? selectedRowIdDefault : selectedId
-  //   );
-  // };
   return (
     <table class="table">
       <thead>
@@ -38,35 +19,11 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.result.map(data => (
-          <tr
-            onClick={changeColor}
-            key={data.id}
-            className={
-              selectedRowId === row.id ? "bg-secondary text-white" : "bg-light"
-            }
-          >
-            <td>{data.id}</td>
-            <td>{data.title}</td>
-            <td>{data.firstName}</td>
-            <td>{data.surname}</td>
-            <td>{data.email}</td>
-            <td>{data.roomId}</td>
-            <td>{data.checkInDate}</td>
-            <td>{data.checkOutDate}</td>
-            <td>{daysDifference(data.checkOutDate, data.checkInDate)}</td>
-          </tr>
+          <Row data={data} />
         ))}
       </tbody>
     </table>
   );
 };
-
-function daysDifference(start, end) {
-  let startDate = moment(start);
-  let endDate = moment(end);
-  let diffInDays = startDate.diff(endDate, "days");
-  const duration = moment.duration(diffInDays);
-  return Math.round(duration);
-}
 
 export default SearchResults;
