@@ -1,5 +1,5 @@
 import React, { useState } from "react"; // imported the useState react hook.
-
+import RestaurantButton from "./RestaurantButton";
 const Restaurant = () => {
   const [orders, setOrders] = useState(0); // declared orders variable and passed setOrder function to it.
   //const pizzas= 0; commented Pizzas variables
@@ -16,14 +16,7 @@ const Restaurant = () => {
         <li>
           Pizzas: {orders}
           {/* replaced pizzas variable with orders*/}{" "}
-          <button
-            className="btn btn-primary"
-            onClick={
-              orderOne
-            } /*will call on order function to increase the order by 1*/
-          >
-            Add
-          </button>
+          <RestaurantButton order={orderOne} />
         </li>
       </ul>
     </div>
