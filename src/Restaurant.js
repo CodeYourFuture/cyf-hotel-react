@@ -7,25 +7,23 @@ const Restaurant = () => {
       <div className="container">
         <h3>Restaurant Orders :</h3>
         <table>
-          <thead>
-            <tr>
-              <th>
-                <Order orderType={"Pizzas"} />
-              </th>
-              <th>
-                <Order orderType={"Salads"} />
-              </th>
-              <th>
-                <Order orderType={"Chocolate cake"} />
-              </th>
-              <th>
-                <Order orderType={"Hot Drink"} />
-              </th>
-              <th>
-                <Order orderType={"Cold Drink"} />
-              </th>
-            </tr>
-          </thead>
+          <tr>
+            <th> Name</th>
+            <th> Price </th>
+            <th> Number</th>
+            <th>All price</th>
+            <th> Add</th>
+          </tr>
+
+          <Order orderType={"Pizzas"} price={9.99} />
+
+          <Order orderType={"Salads"} price={5.99} />
+
+          <Order orderType={"Chocolate cake"} price={3.99} />
+
+          <Order orderType={"Hot Drink"} price={1.99} />
+
+          <Order orderType={"Cold Drink"} price={0.99} />
         </table>
       </div>
     </div>
