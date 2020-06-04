@@ -2,19 +2,27 @@
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
+.App-header-wrapper {
+  display: flex;
+  flex-direction: row;
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 10px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
+  font-weight: bold;
+}
+
+.App-header {
+  background-color: #222;
+  height: 1.5em;
+  padding-left: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
@@ -25,18 +33,17 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+  margin-bottom: 150px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
+}
+
+table,
+th,
+td {
+  border: 1px, gray solid;
 }
 
 tr {
@@ -47,11 +54,72 @@ tr {
   padding-top: 15px;
 }
 
+.touristic-cards-container {
+  margin: 50px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .footer {
+  bottom: 0;
+  width: 100%;
+  /* position: fixed; */
   padding-top: 20px;
   text-align: center;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+}
+
+ul {
+  padding: 1em 0;
 }
 
 .card {
   width: 18rem;
+  text-align: center;
+}
+
+.highlight {
+  color: rgb(73, 6, 6);
+  background-color: gold;
+}
+
+.order-item {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.item-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 250px;
+  color: rgb(2, 39, 20);
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.orders {
+  width: 800px;
+  align-self: center;
+  margin-left: 20%;
+}
+
+.orders h3 {
+  margin-left: 20px;
+  color: firebrick;
+}
+
+.orders button {
+  margin-left: 20px;
 }
