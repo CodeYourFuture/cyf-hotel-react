@@ -1,14 +1,7 @@
-import React, { useState } from "react";
-
-import moment from "moment";
+import React from "react";
+import Row from "./Row";
 
 const SearchResults = props => {
-  const [toogle, setToogle] = useState(false);
-
-  const ToogleChange = () => {
-    setToogle(!toogle);
-  };
-
   return (
     <table class="table">
       <thead>
@@ -25,29 +18,9 @@ const SearchResults = props => {
         </tr>
       </thead>
 
-      {props.results.map((booking, index) => {
-        const date1 = moment(booking.checkOutDate);
-        const date2 = moment(booking.checkInDate);
-        return (
-          <tbody>
-            <tr
-              onClick={ToogleChange}
-              className={toogle ? "chosenRow" : null}
-              key={index}
-            >
-              <th scope="row">{booking.id}</th>
-              <td>{booking.title}</td>
-              <td>{booking.firstNam}</td>
-              <td>{booking.surname}</td>
-              <td>{booking.email}</td>
-              <td>{booking.roomId}</td>
-              <td>{booking.checkInDate}</td>
-              <td>{booking.checkOutDate}</td>
-              <td>{date1.diff(date2, "days")}</td>
-            </tr>
-          </tbody>
-        );
-      })}
+      {props.results.map((booking, index) => (
+        <Row key={index} booking={booking} />
+      ))}
     </table>
   );
 };
