@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [rowClassName, setRowClassName] = useState("");
+
+  const ChangeRowClassOnClick = () => {
+    setRowClassName("table-row");
+    alert(rowClassName);
+  };
+
   return (
     <table className="table">
       <thead>
@@ -22,7 +29,11 @@ const SearchResults = props => {
           const checkIn = moment(booking.checkOutDate);
           const checkOut = moment(booking.checkInDate);
           return (
-            <tr key={index}>
+            <tr
+              key={index}
+              className={rowClassName}
+              onClick={ChangeRowClassOnClick}
+            >
               <th scope="row">{booking.id}</th>
               <td>{booking.title}</td>
               <td>{booking.firstName}</td>

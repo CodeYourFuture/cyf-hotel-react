@@ -78,3 +78,15 @@ ul {
 a {
   height: 38px;
 }
+
+/* .table{
+	width:100%; 
+	border-collapse:collapse; 
+}
+	/* Define the hover highlight color for the table row */
+/* .table tr:hover {
+  background-color: #ffff99;
+} */
+*/ .table-row {
+  background-color: bisque;
+}
