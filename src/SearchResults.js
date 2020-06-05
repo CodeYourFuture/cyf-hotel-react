@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
+
+import Row from "./TableRow";
 
 const SearchResults = props => {
-  const [rowClassName, setRowClassName] = useState("");
-
-  const ChangeRowClassOnClick = () => {
-    setRowClassName("table-row");
-    alert(rowClassName);
-  };
-
   return (
     <table className="table">
       <thead>
@@ -25,27 +19,9 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map((booking, index) => {
-          const checkIn = moment(booking.checkOutDate);
-          const checkOut = moment(booking.checkInDate);
-          return (
-            <tr
-              key={index}
-              className={rowClassName}
-              onClick={ChangeRowClassOnClick}
-            >
-              <th scope="row">{booking.id}</th>
-              <td>{booking.title}</td>
-              <td>{booking.firstName}</td>
-              <td>{booking.surname}</td>
-              <td>{booking.email}</td>
-              <td>{booking.roomId}</td>
-              <td>{booking.checkInDate}</td>
-              <td>{booking.checkOutDate}</td>
-              <td>{checkIn.diff(checkOut, "days")}</td>
-            </tr>
-          );
-        })}
+        {props.results.map((booking, index) => (
+          <Row booking={booking} index={index} />
+        ))}
       </tbody>
     </table>
   );

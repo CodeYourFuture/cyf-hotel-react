@@ -9,10 +9,10 @@ const Order = props => {
   };
 
   return (
-    <li>
+    <p>
       {props.orderType}: {orders}
       <RestaurantButton orderOne={orderOne} />
-    </li>
+    </p>
   );
 };
 

@@ -79,14 +79,20 @@ a {
   height: 38px;
 }
 
-/* .table{
+/*
+HIGHLIGHT ROW ON HOVER
+.table{
 	width:100%; 
 	border-collapse:collapse; 
 }
-	/* Define the hover highlight color for the table row */
-/* .table tr:hover {
-  background-color: #ffff99;
-} */
-*/ .table-row {
+.table tr:hover {
+  background-color: #ffff99
+} 
+*/
+
+.highlight {
   background-color: bisque;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 1px 3px 5px #888888;
 }
