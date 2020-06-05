@@ -5,6 +5,7 @@ const Restaurant = () => {
   return (
     <div>
       <h3>Restaurant Orders</h3>
+      <hr />
       <ul className="order-list">
         <li>
           <Order orderType="Pizzas" />{" "}

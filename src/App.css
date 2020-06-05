@@ -99,13 +99,22 @@ HIGHLIGHT ROW ON HOVER
   color: black;
 }
 
-.order-list {
+.order-list,
+h3 {
   display: flex;
   margin-left: 20px;
   padding: 20px;
 }
 
+h3 {
+  margin-left: 25px;
+}
+
 .order-list li {
   margin-left: 20px;
-  padding: 20px;
+  padding-right: 20px;
+}
+
+hr {
+  width: 95%;
 }
