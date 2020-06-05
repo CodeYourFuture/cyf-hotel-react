@@ -8,7 +8,7 @@ const SearchResults = props => {
       <tbody>
         {props.results.map((data, index) => {
           return (
-            <tr key={index}>
+            <tr onCLick key={index}>
               <td>{data.id}</td>
               <td>{data.title}</td>
               <td>{data.firstName}</td>
