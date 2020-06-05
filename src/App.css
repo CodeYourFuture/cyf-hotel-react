@@ -42,3 +42,11 @@ footer {
 .card-info {
   text-align: center;
 }
+
+.orders {
+  text-align: center;
+}
+
+.food-orders {
+  list-style-type: none;
+}
