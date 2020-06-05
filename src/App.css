@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  background-color: rgb(248, 244, 244);
 }
 
 .header-container {
@@ -91,8 +92,20 @@ HIGHLIGHT ROW ON HOVER
 */
 
 .highlight {
-  background-color: bisque;
-  border: 1px solid;
+  background-color: rgb(243, 226, 205);
   padding: 10px;
   box-shadow: 1px 3px 5px #888888;
+  font-weight: bold;
+  color: black;
+}
+
+.order-list {
+  display: flex;
+  margin-left: 20px;
+  padding: 20px;
+}
+
+.order-list li {
+  margin-left: 20px;
+  padding: 20px;
 }

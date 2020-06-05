@@ -8,22 +8,22 @@ const Row = ({ booking }) => {
     setSelected(!selected);
   };
 
-  const checkIn = moment(props.booking.checkOutDate);
-  const checkOut = moment(props.booking.checkInDate);
+  const checkIn = moment(booking.checkOutDate);
+  const checkOut = moment(booking.checkInDate);
   return (
     <tr
       key={booking.id}
       onClick={toggleSelectedClass}
       className={selected ? "highlight" : null}
     >
-      <th scope="row">{props.booking.id}</th>
-      <td>{props.booking.title}</td>
-      <td>{props.booking.firstName}</td>
-      <td>{props.booking.surname}</td>
-      <td>{props.booking.email}</td>
-      <td>{props.booking.roomId}</td>
-      <td>{props.booking.checkInDate}</td>
-      <td>{props.booking.checkOutDate}</td>
+      <th scope="row">{booking.id}</th>
+      <td>{booking.title}</td>
+      <td>{booking.firstName}</td>
+      <td>{booking.surname}</td>
+      <td>{booking.email}</td>
+      <td>{booking.roomId}</td>
+      <td>{booking.checkInDate}</td>
+      <td>{booking.checkOutDate}</td>
       <td>{checkIn.diff(checkOut, "days")}</td>
     </tr>
   );
