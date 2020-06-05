@@ -1,6 +1,7 @@
 import React, { useState } from "react"; // imported the useState react hook.
 import RestaurantButton from "./RestaurantButton";
-const Order = () => {
+
+const Order = props => {
   const [orders, setOrders] = useState(0); // declared orders variable and passed setOrder function to it.
   //const pizzas= 0; commented Pizzas variables
 
@@ -10,7 +11,7 @@ const Order = () => {
   };
   return (
     <li>
-      Pizzas: {orders}
+      {props.orderType} : {orders}
       {/* replaced pizzas variable with orders*/}{" "}
       <RestaurantButton order={orderOne} />
     </li>
