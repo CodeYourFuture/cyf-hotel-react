@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 function SearchResults(props) {
+  // const [clickRow, setClickRow ] = useState(true) - l16 try?
+
+  // function RowClick(){
+  //   if (clickRow===true){
+  //   {'tr {background-color: red; }'}
+  //     setClickRow(false)
+  //   } else {
+  //     setClickRow(true)
+  //   }
+  // }
   console.log(props);
   return (
     <table className="table table-bordered">
       <thead className="thead-dark">
+        {/* <tr className={clickRow} onClick={RowClick}> */}
         <tr>
           <th>ID</th>
           <th>Title</th>
@@ -20,6 +31,7 @@ function SearchResults(props) {
       </thead>
       {props.hotelBookings.map(person => {
         return (
+          // <tr className={clickRow} onClick={RowClick}>
           <tr>
             <td>{person.id}</td>
             <td>{person.title}</td>
