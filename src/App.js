@@ -1,18 +1,14 @@
-import React from "react";
+import React from 'react';
+import './App.css';
+import AllHighScoreTables from './AllHighScoreTables';
 
-import Bookings from "./Bookings";
-import Restaurant from "./Restaurant";
-import "./App.css";
-
-const App = () => {
+function App() {
   return (
     <div className="App">
-      <header className="App-header">CYF Hotel</header>
-      <Bookings />
-      <Restaurant />
-      {/* <Footer hotelInfos={footerInfo} /> */}
+      <h2 className='heading'>High Scores per Country</h2>
+      <AllHighScoreTables />
     </div>
   );
-};
+}
 
 export default App;
