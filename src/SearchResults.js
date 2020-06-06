@@ -1,5 +1,6 @@
 import React from "react";
-import moment from "moment";
+
+import Row from "./Row";
 
 function SearchResults(props) {
   return (
@@ -19,20 +20,8 @@ function SearchResults(props) {
           </tr>
         </thead>
         <tbody>
-          {props.bookings.map((booking, index) => (
-            <tr key={index}>
-              <td>{booking.id}</td>
-              <td>{booking.title}</td>
-              <td>{booking.firstName}</td>
-              <td>{booking.surname}</td>
-              <td>{booking.email}</td>
-              <td>{booking.roomId}</td>
-              <td>{booking.checkInDate}</td>
-              <td>{booking.checkOutDate}</td>
-              <td>
-                {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
-              </td>
-            </tr>
+          {props.booking.map(booking => (
+            <Row booking={booking} />
           ))}
         </tbody>
       </table>

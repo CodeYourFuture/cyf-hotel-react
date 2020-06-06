@@ -32,6 +32,14 @@
   flex-direction: row;
   justify-content: space-around;
 }
+.odertyp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+h3 {
+  text-align: center;
+}
 .btn {
   background-color: rgb(114, 141, 203);
   transition: 2s all ease;
@@ -69,4 +77,7 @@ tr {
 
 ul {
   list-style: none;
+}
+.sth {
+  background: burlywood;
 }
