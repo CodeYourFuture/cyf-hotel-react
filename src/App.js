@@ -16,12 +16,11 @@ const App = () => {
       <Bookings />
       <Restaurant />
       <Footer
-        footerProps={[
+        footerCompInfo={[
           "123 Fake Street, London, E1 4UD",
           "hello@fakehotel.com",
           "0123 456789"
         ]}
-      />
       />
     </div>
   );

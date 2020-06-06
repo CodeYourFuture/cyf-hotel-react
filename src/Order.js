@@ -11,12 +11,25 @@ const Order = props => {
     setOrder(order - 1);
   }
   return (
-    <div>
-      <li>
+    <div className="col-sm-3">
+      <div className="restaurant-card">
+        <img
+          className="restaurant-image"
+          src={props.image}
+          alt={props.orderType}
+        />
         {props.orderType} {order}{" "}
-        <RestaurantButton handleClick={orderOne} context={"add"} />
-        <RestaurantButton handleClick={orderRemove} context={"remove"} />
-      </li>
+        <RestaurantButton
+          className={"btn btn-primary"}
+          handleClick={orderOne}
+          context={"add"}
+        />
+        <RestaurantButton
+          className={"btn btn-warning"}
+          handleClick={orderRemove}
+          context={"remove"}
+        />
+      </div>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 
 const RestaurantButton = props => {
   return (
-    <button className="btn btn-primary" onClick={props.handleClick}>
+    <button className={props.className} onClick={props.handleClick}>
       {props.context}
     </button>
   );

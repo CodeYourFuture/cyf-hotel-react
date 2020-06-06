@@ -2,11 +2,20 @@ import React from "react";
 
 const Footer = props => {
   return (
-    <ul>
-      {props.footerProps.map((name, index) => {
-        return <li key={index}>{name}</li>;
-      })}
-    </ul>
+    <div className="footer">
+      <div className="row">
+        <div className="col-sm-4">
+          <ul>
+            {props.footerCompInfo.map((name, index) => {
+              return <li key={index}>{name}</li>;
+            })}
+          </ul>
+        </div>
+        <div className="col-sm-4">
+          <p>By: Abdullah Celen</p>
+        </div>
+      </div>
+    </div>
   );
 };
 

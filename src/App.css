@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: royalblue;
   height: 50px;
   padding: 20px;
   color: white;
@@ -37,6 +37,7 @@
 }
 .search {
   padding: 5px 0 20px 0;
+  background-color: orange;
 }
 
 tr {
@@ -46,9 +47,27 @@ tr {
 .results {
   padding-top: 15px;
 }
+.order {
+  border: solid 2px lightslategray;
+  margin: 10px;
+  padding: 5px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+}
 
 .footer {
-  padding-top: 20px;
+  background-color: royalblue;
+  color: white;
+  margin: 10px;
+  padding: 5px;
   text-align: center;
 }
 
@@ -64,4 +83,14 @@ tr {
 .highlight {
   color: white;
   background-color: skyblue;
+}
+img {
+  width: 100%;
+}
+.restaurant-image {
+  width: 100%;
+}
+.restaurant-card {
+  display: flex;
+  flex-direction: column;
 }
