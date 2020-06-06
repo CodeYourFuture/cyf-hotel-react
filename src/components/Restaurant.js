@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import RestaurantButton from "./RestaurantButton";
+import React from "react";
+import Order from "./Order";
 
 const Restaurant = () => {
   return (
@@ -11,19 +11,6 @@ const Restaurant = () => {
         <Order orderType="Chocolate cake" />
       </ul>
     </div>
-  );
-};
-
-const Order = ({ orderType }) => {
-  const [orders, setOrders] = useState(0);
-  const orderOne = () => {
-    setOrders(orders + 1);
-  };
-
-  return (
-    <li>
-      {orderType}: {orders} <RestaurantButton orderOne={orderOne} />
-    </li>
   );
 };
 
