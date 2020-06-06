@@ -12,7 +12,9 @@ const Footer = props => {
           </ul>
         </div>
         <div className="col-sm-4">
-          <p>By: Abdullah Celen</p>
+          <p>
+            By: <hr /> Abdullah Celen
+          </p>
         </div>
       </div>
     </div>
