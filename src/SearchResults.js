@@ -10,7 +10,7 @@ const SearchResults = props => {
   return (
     <Table className="col-12">
       <thead>
-        <tr className="col-12">
+        <tr onClick={handleClick} className="col-12">
           <th
             className={
               active
