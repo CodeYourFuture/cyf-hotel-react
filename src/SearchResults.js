@@ -23,15 +23,15 @@ const SearchResults = props => {
                 {props.results.map((bookingData, index) => {
                     return (
                         <tr key={index} >
-                            <th key={"id" + index}>{bookingData.id}</th>
-                            <td key={"title " + index}>{bookingData.title}</td>
-                            <td key={"firstName " + index}>{bookingData.firstName}</td>
-                            <td key={"surname " + index}>{bookingData.surname}</td>
-                            <td key={"email " + index}>{bookingData.email}</td>
-                            <td key={"roomId " + index}>{bookingData.roomId}</td>
-                            <td key={"checkInDate " + index}>{bookingData.checkInDate}</td>
-                            <td key={"checkOutDate " + index}>{bookingData.checkOutDate}</td>
-                            <td key={"totalNight " + index}>{moment(bookingData.checkOutDate).diff(bookingData.checkInDate, "days")}</td>
+                            <th onClick={} key={"id" + index}>{bookingData.id}</th>
+                            <td onClick={} key={"title " + index}>{bookingData.title}</td>
+                            <td onClick={} key={"firstName " + index}>{bookingData.firstName}</td>
+                            <td onClick={} key={"surname " + index}>{bookingData.surname}</td>
+                            <td onClick={} key={"email " + index}>{bookingData.email}</td>
+                            <td onClick={} key={"roomId " + index}>{bookingData.roomId}</td>
+                            <td onClick={} key={"checkInDate " + index}>{bookingData.checkInDate}</td>
+                            <td onClick={} key={"checkOutDate " + index}>{bookingData.checkOutDate}</td>
+                            <td onClick={} key={"totalNight " + index}>{moment(bookingData.checkOutDate).diff(bookingData.checkInDate, "days")}</td>
                         </tr>)
                 })}
             </tbody>
