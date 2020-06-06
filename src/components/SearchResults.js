@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import TableRow from "./TabelRow";
-import moment from "moment";
 
 const SearchResults = ({ results }) => {
   return (
