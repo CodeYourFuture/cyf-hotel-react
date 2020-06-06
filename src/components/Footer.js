@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = ({ arrayInfo }) => {
+const Footer = ({ hotelContactInfo }) => {
   return (
     <div className="container">
       <div className="row">
@@ -9,7 +9,7 @@ const Footer = ({ arrayInfo }) => {
             className="list-inline text-center"
             style={{ listStyleType: "none" }}
           >
-            {arrayInfo.map((item, index) => {
+            {hotelContactInfo.map((item, index) => {
               return (
                 /*the key must be unique for efficiency purpose*/
                 <li className="list-inline-item" key={index + item}>

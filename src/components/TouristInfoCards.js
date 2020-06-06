@@ -1,13 +1,12 @@
-import React from "react";
-import cities from "./CityCards";
+import React from 'react';
 
-const TouristInfoCards = () => {
+const TouristInfoCards = ({citiesData}) => {
   return (
     <div className="container">
       <div className="row">
-        {cities.map((city, index) => (
+        {citiesData.map((city, index) => (
           <div className="card mr-1 mt-2 col-12 col-md-3" key={index}>
-            <div className="card-body text-center" key={index}>
+            <div className="card-body text-center">
               <img
                 src={city.img.src}
                 className={city.img.className}

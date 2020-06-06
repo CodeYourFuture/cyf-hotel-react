@@ -1,9 +1,8 @@
-import React from "react";
-import Restaurant from "../Restaurant";
+import React from 'react';
 
-const RestaurantButton = props => {
+const RestaurantButton = ({orderButton}) => {
   return (
-    <button className="btn btn-primary" onClick={props.orderButton}>
+    <button className="btn btn-primary" onClick={orderButton}>
       Add
     </button>
   );

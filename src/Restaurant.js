@@ -1,10 +1,10 @@
 import React from "react";
-import Order from "./components/Order";
+import { Order } from "./components";
 
 const Restaurant = () => {
   return (
-    <div>
-      <h3>Restaurant Orders</h3>
+    <div className="text-center">
+      <h4>Restaurant Orders</h4>
       <ul>
         <Order orderType="Pizzas" />
         <Order orderType="Salads" />

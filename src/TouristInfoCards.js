@@ -1,10 +1,10 @@
 import React from "react";
-import cities from "./components/CityCards";
+import {CityCards} from "./components";
 
 const TouristInfoCards = () => {
   return (
     <div className="card">
-      {cities.map((city, index) => (
+      {CityCards.map((city, index) => (
           <img
           src={city.img.src}
           className={city.img.className}

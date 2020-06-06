@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search";
-import SearchResults from "./components/SearchResults";
+import { SearchResults } from "./components";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -21,7 +21,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        <SearchResults customerBookings={bookings} />
       </div>
     </div>
   );

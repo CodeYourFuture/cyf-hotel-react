@@ -1,8 +1,6 @@
 import React from "react";
-import Heading from "./components/Heading";
+import { Heading, TouristInfoCards, Footer, cities } from "./components";
 import Bookings from "./Bookings";
-import TouristInfoCards from "./components/TouristInfoCards";
-import Footer from "./components/Footer";
 import "./App.css";
 import Restaurant from "./Restaurant";
 const info = [
@@ -14,10 +12,10 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <TouristInfoCards />
+      <TouristInfoCards citiesData={cities} />
       <Bookings />
       <Restaurant />
-      <Footer arrayInfo={info} />
+      <Footer hotelContactInfo={info} />
     </div>
   );
 };
