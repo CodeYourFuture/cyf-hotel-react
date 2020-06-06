@@ -10,7 +10,11 @@ const Order = ({ orderType }) => {
     setOrders(0);
   }
   function decreaseOrder() {
-    setOrders(orders - 1);
+    if (orders - 1 >= 0) {
+      setOrders(orders - 1);
+    } else {
+      return;
+    }
   }
   return (
     <li>
