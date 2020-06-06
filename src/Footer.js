@@ -6,7 +6,7 @@ const info = [
   "0123 456789"
 ];
 
-const Footer = () => {
+const Footer = props => {
   return (
     <footer className="footer">
       <ul>
