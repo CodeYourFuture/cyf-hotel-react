@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
+import TableClick from "./TableClick";
 
-function SearchResults(props) {
+const SearchResults = props => {
   function calculateDuration(checkOutDate, checkInDate) {
     return moment(checkOutDate.toString()).diff(
       moment(checkInDate.toString()),
       "days"
     );
   }
+
+  const [userClick, setUserClick] = useState(null);
+
   return (
     <table className="table">
       <thead className="thead-dark">
@@ -24,26 +28,20 @@ function SearchResults(props) {
         </tr>
       </thead>
       <tbody>
-        {props.results.map((result, index) => {
+        {props.results.map(result => {
           return (
-            <tr key={index}>
-              <td>{result.id}</td>
-              <td>{result.title}</td>
-              <td>{result.firstName}</td>
-              <td>{result.surname}</td>
-              <td>{result.email}</td>
-              <td>{result.roomId}</td>
-              <td>{result.checkInDate}</td>
-              <td>{result.checkOutDate}</td>
-              <td>
-                {calculateDuration(result.checkOutDate, result.checkInDate)}
-              </td>
-            </tr>
+            <TableClick
+              key={result.id}
+              isUserClick={userClick === result.id}
+              setUserClick={setUserClick}
+              result={result}
+              calculateDuration={calculateDuration}
+            />
           );
         })}
       </tbody>
     </table>
   );
-}
+};
 
 export default SearchResults;

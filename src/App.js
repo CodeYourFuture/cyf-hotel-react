@@ -4,7 +4,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Footer from "./Footer";
 import "./App.css";
-import moment from "moment";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -12,6 +12,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer />
     </div>
   );

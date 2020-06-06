@@ -26,7 +26,7 @@ function TouristInfoCards() {
       {arrOfObj.map((obj, index) => {
         return (
           <div key={index} className="col-sm">
-            <img src={obj.srcImg} className="card-img-top" />
+            <img src={obj.srcImg} className="card-img-top" alt="" />
             <div className="card-body">
               <a href={obj.url} className="btn btn-primary">
                 {" "}

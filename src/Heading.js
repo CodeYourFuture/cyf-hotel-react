@@ -13,6 +13,7 @@ function Logo() {
   return (
     <img
       className="image-header"
+      alt=""
       src="https://image.flaticon.com/icons/svg/139/139899.svg"
     />
   );

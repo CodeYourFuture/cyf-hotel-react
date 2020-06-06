@@ -82,3 +82,13 @@ tr {
   position: sticky;
   bottom: 0;
 }
+button {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.clicked-row {
+  background-color: lightblue;
+}
+.unclicked-row {
+  background-color: white;
+}
