@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchResults from "./SearchResults";
-const SearchButton = props => {
+
+const Search = props => {
   const [searchVal, setSearchVal] = useState();
   const handleChange = event => {
     setSearchVal(event.target.value);
@@ -33,4 +34,4 @@ const SearchButton = props => {
   );
 };
 
-export default SearchButton;
+export default Search;

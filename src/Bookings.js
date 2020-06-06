@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import SearchButton from "./Search.js";
+import Search from "./Search.js";
 import ShowAll from "./ShowAll";
-import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -17,7 +16,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <SearchButton search={search} data={bookings} />
+        <Search search={search} data={bookings} />
         <ShowAll data={bookings} />
       </div>
     </div>

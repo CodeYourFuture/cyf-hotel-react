@@ -11,8 +11,9 @@ const Restaurant = () => {
             <th> Name</th>
             <th> Price </th>
             <th> Number</th>
-            <th>All price</th>
-            <th> Add</th>
+            <th>Total</th>
+            <th> Add </th>
+            <th> Delete </th>
           </tr>
 
           <Order orderType={"Pizzas"} price={9.99} />
