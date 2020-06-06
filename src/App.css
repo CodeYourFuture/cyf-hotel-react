@@ -6,6 +6,7 @@
   /* animation: App-logo-spin infinite 20s linear; */
   height: 50px;
   top: 0;
+  margin-right: 20px;
 }
 
 .App-header {
@@ -36,31 +37,73 @@
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
 
+.table {
+  font-size: 12px;
+}
+
 tr {
   color: #5b5757;
+}
+th {
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
 }
 
 .results {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
-}
-
 .card {
   width: 18rem;
 }
-/* 
-.logo {
-  height: 50px;
-} */
 
 .highlighted {
   background-color: aquamarine;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  margin: 10px;
+}
+
+.card-img-top {
+  max-height: 180px;
+}
+
+.card-body {
+  margin: 0 auto;
+}
+
+.restaurant {
+  padding: 15px;
+}
+
+.orders {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.orders > * {
+  margin: 20px 20px 20px 0;
+}
+
+.footer {
+  background-color: #222;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  padding: 10px;
+  margin-bottom: 0;
 }

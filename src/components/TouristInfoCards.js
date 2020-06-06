@@ -1,12 +1,12 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 const TouristInfoCards = () => {
   return (
-    <Fragment>
+    <div className="cards-container">
       <div className="card">
         <img
           className="card-img-top"
-          src="https://images.unsplash.com/photo-1571494146906-86de15d3817b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=680&q=80"
+          src="https://images.unsplash.com/photo-1519044444158-d7b0e8452004?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
           alt="Glasgow"
         />
         <div className="card-body">
@@ -39,7 +39,7 @@ const TouristInfoCards = () => {
           </a>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 

@@ -6,16 +6,6 @@ const SearchResults = ({ results }) => {
     return moment(a).diff(moment(b), "days");
   }
 
-  // let trackedResults = [];
-  // results.forEach((element) => {
-  //   {
-  //     trackedResults.push(false);
-  //     console.log(trackedResults);
-  //   }
-  // });
-
-  // const toggleHighlightClass = () => {};
-
   const TableRow = ({ result }) => {
     const [isHighlighted, setIsHighlighted] = useState(false);
 
