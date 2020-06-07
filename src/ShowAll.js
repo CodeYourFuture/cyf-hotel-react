@@ -1,45 +1,23 @@
-import React, { useState } from "react";
-import Nights from "./Nights";
+import React from "react";
+import SelectTable from "./SelectTable";
+
 const ShowAll = props => {
-  const [clicked, setClicked] = useState(false);
   return (
     <div className="table">
       <table>
         <tr>
           <th />
-          <th> Title </th>
-          <th> First Name </th>
-          <th> SureName </th>
-          <th> Email </th>
-          <th> Room Number </th>
-          <th> CheckInDate </th>
-          <th> CheckOutDate </th>
-          <th> Nights </th>
+          <th scope="co1"> Title </th>
+          <th scope="co1">> First Name </th>
+          <th scope="co1">> SureName </th>
+          <th scope="co1">> Email </th>
+          <th scope="co1">> Room Number </th>
+          <th scope="co1">> CheckInDate </th>
+          <th scope="co1">> CheckOutDate </th>
+          <th scope="co1">> Nights </th>
         </tr>
         {props.data.map((booking, index) => {
-          return (
-            <tr
-              onClick={() => setClicked(!clicked)}
-              className={clicked ? "bg-warning" : "show-all"}
-            >
-              <th scope="row" key={index}>
-                {booking.id}
-              </th>
-              <td>{booking.title}</td>
-              <td>{booking.firstName}</td>
-              <td>{booking.surname}</td>
-              <td>{booking.email}</td>
-              <td>{booking.roomId}</td>
-              <td>{booking.checkInDate}</td>
-              <td>{booking.checkOutDate}</td>
-              <td>
-                <Nights
-                  timeline={booking.checkInDate}
-                  timeout={booking.checkOutDate}
-                />
-              </td>
-            </tr>
-          );
+          return <SelectTable booking={booking} key={index} />;
         })}
       </table>
     </div>

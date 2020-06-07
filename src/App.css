@@ -43,10 +43,6 @@ th {
   color: white;
   font-size: medium;
 }
-.table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
 .table tr:hover {
   background-color: #ddd;
 }
@@ -106,6 +102,9 @@ tfoot {
 .card-img-top {
   width: 10.1cm;
   height: 6cm;
+}
+.select {
+  background-color: rgb(131, 163, 236);
 }
 @media only screen and (max-width: 600px) {
   .root {
