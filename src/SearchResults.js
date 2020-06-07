@@ -1,34 +1,8 @@
-import React, { useState } from "react";
-import moment from "moment";
+import React from "react";
 
-const SearchResults = props => {
-  const [rowSelect, setRowSelect] = useState("");
+import TableRow from "./TableRow";
 
-  const changeBackground = data => {
-    if (data === rowSelect) {
-      setRowSelect();
-    } else {
-      setRowSelect(data);
-    }
-  };
-  const rows = props.results.map((e, index) => (
-    <tr
-      className={rowSelect === index ? "btn-false" : "btn-true"}
-      onClick={() => changeBackground(index)}
-      key={index}
-    >
-      <th scope="row">{e.id}</th>
-      <td>{e.title}</td>
-      <td>{e.firstName}</td>
-      <td>{e.surname}</td>
-      <td>{e.email}</td>
-      <td>{e.roomId}</td>
-      <td>{e.checkInDate}</td>
-      <td>{e.checkOutDate}</td>
-      <td>{moment(e.checkOutDate).diff(e.checkInDate, "days")}</td>
-    </tr>
-  ));
-
+const SearchResults = ({ results }) => {
   return (
     <div>
       <table className="table">
@@ -46,7 +20,11 @@ const SearchResults = props => {
           </tr>
         </thead>
 
-        <tbody className="result">{rows}</tbody>
+        <tbody className="result">
+          {results.map((result, index) => {
+            return <TableRow result={result} key={index} />;
+          })}
+        </tbody>
       </table>
     </div>
   );
