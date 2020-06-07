@@ -14,9 +14,6 @@ const SearchResults = props => {
     rows[index] =
       rows[index] === "unselected" ? "Table_TD_HighLight_CSS" : "unselected";
     setRowsState(rows);
-    document.getElementById("TR_Row_" + index + "_JSX").className =
-      rowsState[index];
-    console.log(rowsState[index]);
   };
   return (
     <div id="SearchResults" className="SearchResults_CSS">
@@ -37,9 +34,9 @@ const SearchResults = props => {
           {props.results.map((el, index) => {
             return (
               <tr
-                id={"TR_Row_" + index + "_JSX"}
                 key={index}
                 onClick={() => changeRowState(index)}
+                className={rowsState[index]}
               >
                 <th scope="row" className="Table_TD_CSS">
                   {el.title}
