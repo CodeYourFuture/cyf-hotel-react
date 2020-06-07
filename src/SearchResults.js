@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [rowsState, setRowsState] = useState([
+    "unselected",
+    "unselected",
+    "unselected",
+    "unselected",
+    "unselected"
+  ]);
+  const changeRowState = (index, e) => {
+    let rows = rowsState;
+    rows[index] =
+      rows[index] === "unselected" ? "Table_TD_HighLight_CSS" : "unselected";
+    setRowsState(rows);
+    document.getElementById("TR_Row_" + index + "_JSX").className =
+      rowsState[index];
+    console.log(rowsState[index]);
+  };
   return (
     <div id="SearchResults" className="SearchResults_CSS">
       <table>
@@ -20,7 +36,11 @@ const SearchResults = props => {
         <tbody>
           {props.results.map((el, index) => {
             return (
-              <tr key={index}>
+              <tr
+                id={"TR_Row_" + index + "_JSX"}
+                key={index}
+                onClick={() => changeRowState(index)}
+              >
                 <th scope="row" className="Table_TD_CSS">
                   {el.title}
                 </th>
