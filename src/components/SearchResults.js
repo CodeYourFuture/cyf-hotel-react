@@ -1,7 +1,7 @@
 import React from "react";
 import TableRow from "./TableRow";
 
-const SearchResults = ({customerBookings}) => {
+const SearchResults = ({ customerBookings }) => {
   return (
     <table className="table">
       <thead className="thead-dark">
@@ -19,7 +19,7 @@ const SearchResults = ({customerBookings}) => {
       </thead>
       <tbody>
         {customerBookings.map((customer, index) => {
-          return <TableRow key={index} list={customer} />;
+          return <TableRow key={index} customerList={customer} />;
         })}
       </tbody>
     </table>
