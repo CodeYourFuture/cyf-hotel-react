@@ -71,3 +71,7 @@ tr {
   background-color: black;
   color:white;
 }
+
+.change {
+  background-color: lightgray;
+}

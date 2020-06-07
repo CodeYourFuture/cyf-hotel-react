@@ -4,7 +4,6 @@ import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import "./App.css";
 import Footer from "./Footer";
-import SearchResults from "./SearchResults";
 import Restaurant from "./Restaurant";
 
 const App = () => {
@@ -40,8 +39,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards  cardAttributes ={cardAttributes} />
       <Bookings />
-      {/* <Restaurant /> */}
-      {/* <SearchResults /> */}
+      <Restaurant />
       <Footer footerComponents={footerComponents} />
     </div>
   );
