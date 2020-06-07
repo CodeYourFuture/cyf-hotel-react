@@ -39,7 +39,8 @@ th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #9dc79f;
+  /* background-color: #9dc79f; */
+  background-color: rgb(156, 151, 151);
   color: white;
   font-size: medium;
 }
