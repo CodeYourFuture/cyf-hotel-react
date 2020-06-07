@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Row from "./TableRow";
+import EachRow from "./TableRow";
 
 const SearchResults = props => {
   return (
@@ -20,7 +20,7 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map((booking, index) => (
-          <Row booking={booking} index={index} />
+          <EachRow booking={booking} index={index} />
         ))}
       </tbody>
     </table>

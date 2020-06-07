@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const Row = ({ booking }) => {
-  const [selected, setSelected] = useState(false);
+const EachRow = ({ booking }) => {
+  const [isSelected, setIsSelected] = useState(false);
 
   const toggleSelectedClass = () => {
-    setSelected(!selected);
+    setIsSelected(!isSelected);
   };
 
   const checkIn = moment(booking.checkOutDate);
   const checkOut = moment(booking.checkInDate);
+
   return (
     <tr
       key={booking.id}
       onClick={toggleSelectedClass}
-      className={selected ? "highlight" : null}
+      className={!!isSelected ? "highlight" : null}
     >
       <th scope="row">{booking.id}</th>
       <td>{booking.title}</td>
@@ -28,4 +29,4 @@ const Row = ({ booking }) => {
     </tr>
   );
 };
-export default Row;
+export default EachRow;

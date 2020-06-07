@@ -14,12 +14,10 @@ const App = () => {
     "0123 456789 "
   ];
 
-  const touristicInformation = TouristicData;
-
   return (
     <div className="App">
       <Heading />
-      <TouristInfoCards touristicInformation={touristicInformation} />
+      <TouristInfoCards touristicInformation={TouristicData} />
       <Bookings />
       <Restaurant />
       <Footer countryInfo={countryInfo} />

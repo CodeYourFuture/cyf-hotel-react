@@ -3,10 +3,6 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
-  };
-
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
@@ -14,6 +10,14 @@ const Bookings = () => {
       .then(results => results.json())
       .then(data => setBookings(data));
   }, []);
+
+  const search = searchVal => {
+    setBookings(
+      bookings.filter(
+        item => item.firstName === searchVal || item.surname === searchVal
+      )
+    );
+  };
 
   return (
     <div className="App-content">
