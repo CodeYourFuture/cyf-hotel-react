@@ -1,5 +1,6 @@
-import React from "react"
-import moment from "moment"
+import React, { useState } from "react"
+import TableRow from "./TableRow"
+
 
 
 
@@ -21,18 +22,7 @@ const SearchResults = props => {
             </thead>
             <tbody>
                 {props.results.map((bookingData, index) => {
-                    return (
-                        <tr key={index} >
-                            <th onClick={} key={"id" + index}>{bookingData.id}</th>
-                            <td onClick={} key={"title " + index}>{bookingData.title}</td>
-                            <td onClick={} key={"firstName " + index}>{bookingData.firstName}</td>
-                            <td onClick={} key={"surname " + index}>{bookingData.surname}</td>
-                            <td onClick={} key={"email " + index}>{bookingData.email}</td>
-                            <td onClick={} key={"roomId " + index}>{bookingData.roomId}</td>
-                            <td onClick={} key={"checkInDate " + index}>{bookingData.checkInDate}</td>
-                            <td onClick={} key={"checkOutDate " + index}>{bookingData.checkOutDate}</td>
-                            <td onClick={} key={"totalNight " + index}>{moment(bookingData.checkOutDate).diff(bookingData.checkInDate, "days")}</td>
-                        </tr>)
+                    return <TableRow bookingData={bookingData} key={index} />
                 })}
             </tbody>
         </table >
