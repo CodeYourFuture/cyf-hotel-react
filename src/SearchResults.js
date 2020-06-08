@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import moment from "moment";
+import TableRow from "./TableRow";
 
 function SearchResults(props) {
-  // const [clickRow, setClickRow ] = useState(true) - l16 try?
+  // const [clickRow, setClickRow ] = useState(false) - l16 try?
 
   // function RowClick(){
   //   if (clickRow===true){
@@ -31,20 +32,21 @@ function SearchResults(props) {
       </thead>
       {props.hotelBookings.map(person => {
         return (
+          <TableRow result={person} />
           // <tr className={clickRow} onClick={RowClick}>
-          <tr>
-            <td>{person.id}</td>
-            <td>{person.title}</td>
-            <td>{person.firstName}</td>
-            <td>{person.surname}</td>
-            <td>{person.email}</td>
-            <td>{person.roomId}</td>
-            <td>{person.checkInDate}</td>
-            <td>{person.checkOutDate}</td>
-            <td>
-              {moment(person.checkOutDate).diff(person.checkInDate, "days")}
-            </td>
-          </tr>
+          // <tr>
+          //   <td>{person.id}</td>
+          //   <td>{person.title}</td>
+          //   <td>{person.firstName}</td>
+          //   <td>{person.surname}</td>
+          //   <td>{person.email}</td>
+          //   <td>{person.roomId}</td>
+          //   <td>{person.checkInDate}</td>
+          //   <td>{person.checkOutDate}</td>
+          //   <td>
+          //     {moment(person.checkOutDate).diff(person.checkInDate, "days")}
+          //   </td>
+          // </tr>
         );
       })}
     </table>
