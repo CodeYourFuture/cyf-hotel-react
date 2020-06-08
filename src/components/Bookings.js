@@ -4,11 +4,17 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "../data/fakeBookings.json";
 
 const Bookings = () => {
+  const [bookings, setBookings] = useState(FakeBookings);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    let filteredBookings = bookings.filter(
+      booking =>
+        booking.firstName.toLowerCase() === searchVal ||
+        booking.surname.toLowerCase() === searchVal
+    );
+    setBookings(filteredBookings);
   };
-
-  const [bookings, setBookings] = useState(FakeBookings);
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 function calculateNumberOfNights(a, b) {
   return moment(a).diff(moment(b), "days");
@@ -7,6 +8,7 @@ function calculateNumberOfNights(a, b) {
 
 const TableRow = ({ result }) => {
   const [isHighlighted, setIsHighlighted] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
 
   return (
     <tr
@@ -26,6 +28,16 @@ const TableRow = ({ result }) => {
       <td>
         {calculateNumberOfNights(result.checkOutDate, result.checkInDate)}
       </td>
+      <td>
+        <button
+          onClick={() => {
+            setShowProfile(!showProfile);
+          }}
+        >
+          Show profile
+        </button>
+      </td>
+      {showProfile && <CustomerProfile id={result.id} />}
     </tr>
   );
 };
