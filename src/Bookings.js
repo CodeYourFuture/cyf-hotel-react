@@ -12,6 +12,14 @@ const Bookings = () => {
   });
 
   const search = searchVal => {
+    setBookings(
+      bookings.filter(name => {
+        return (
+          name.firstName.includes(searchVal) || name.surName.includes(searchVal)
+        );
+      })
+    );
+
     console.info("TO DO!", searchVal);
   };
 
