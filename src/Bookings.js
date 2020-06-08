@@ -5,7 +5,13 @@ import { SearchResults } from "./components";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    const filteredBooking = bookings.filter(name => {
+      return (
+        name.firstName.toLowerCase() === searchVal.toLowerCase() ||
+        name.lastName.toLowerCase() === searchVal.toLowerCase()
+      );
+    });
+    setBookings(filteredBooking);
   };
 
   useEffect(() => {
@@ -14,7 +20,7 @@ const Bookings = () => {
       .then(data => setBookings(data));
   }, []);
   if (!bookings) {
-    return null;
+    return "Loading...";
   }
 
   return (
