@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./css/Footer.css";
 // import FakeBookingData from "./data/fakeBookings.json";
 import BookingRow from "./BookingRow";
@@ -23,20 +23,8 @@ const SearchResults = props => {
             </tr>
           </thead>
           <tbody>
-            {props.BookingsData.map((booking, index) => {
-              return (
-                <BookingRow
-                  key={booking.id}
-                  id={booking.id}
-                  title={booking.title}
-                  firstName={booking.firstName}
-                  surname={booking.surname}
-                  email={booking.email}
-                  roomId={booking.roomId}
-                  checkInDate={booking.checkInDate}
-                  checkOutDate={booking.checkOutDate}
-                />
-              );
+            {props.bookingsData.map((booking, index) => {
+              return <BookingRow key={booking.id} booking={booking} />;
             })}
           </tbody>
         </table>

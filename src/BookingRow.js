@@ -5,32 +5,27 @@ function calcDeff(chkIn, chkOut) {
   return moment(chkOut, "YYYY-MM-DD").diff(moment(chkIn, "YYYY-MM-DD"), "days");
 }
 
-const BookingRow = props => {
-  const [bookingRowClass, setBookingRowClass] = useState("");
+const BookingRow = ({ booking }) => {
   const [selected, setSelected] = useState(false);
 
   function selectRow() {
-    // console.log("someone calls me");
-    if (selected === false) {
-      setSelected(true);
-      setBookingRowClass("search-selected");
-    } else {
-      setSelected(false);
-      setBookingRowClass("");
-    }
+    setSelected(!selected);
   }
 
   return (
-    <tr onClick={selectRow} className={bookingRowClass}>
-      <th scope="row">{props.id}</th>
-      <td>{props.title}</td>
-      <td>{props.firstName}</td>
-      <td>{props.surname}</td>
-      <td>{props.email}</td>
-      <td>{props.roomId}</td>
-      <td>{props.checkInDate}</td>
-      <td>{props.checkOutDate}</td>
-      <td>{calcDeff(props.checkInDate, props.checkOutDate) + " nights"}</td>
+    <tr
+      onClick={selectRow}
+      className={selected === true ? "search-selected" : ""}
+    >
+      <th scope="row">{booking.id}</th>
+      <td>{booking.title}</td>
+      <td>{booking.firstName}</td>
+      <td>{booking.surname}</td>
+      <td>{booking.email}</td>
+      <td>{booking.roomId}</td>
+      <td>{booking.checkInDate}</td>
+      <td>{booking.checkOutDate}</td>
+      <td>{calcDeff(booking.checkInDate, booking.checkOutDate) + " nights"}</td>
     </tr>
   );
 };
