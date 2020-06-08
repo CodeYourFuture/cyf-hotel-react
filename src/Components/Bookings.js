@@ -5,16 +5,13 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
-  function fetchData(url) {
-    fetch(url)
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
       .then(response => response.json())
       .then(data => {
         setBookings(data);
       })
       .catch(err => console.log(err));
-  }
-  useEffect(() => {
-    fetchData("https://cyf-react.glitch.me");
   }, []);
 
   const search = searchVal => {

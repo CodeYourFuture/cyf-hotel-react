@@ -11,7 +11,7 @@ const Order = ({ orderType }) => {
     <div className="orders">
       <div>
         <li>
-          {orderType} {order}
+          {orderType}: {order}
         </li>
       </div>
 

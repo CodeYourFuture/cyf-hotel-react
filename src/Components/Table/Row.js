@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
-const Rows = props => {
+const Row = props => {
+  const [selectedRow, setSelectedRow] = useState(false);
   const checkIn = moment(props.data.checkInDate);
   const checkOut = moment(props.data.checkOutDate);
   return (
     <tr
       key={props.data.id}
-      className={props.isSelected ? "select" : "notSelect"}
+      className={selectedRow ? "select" : ""}
       onClick={() => {
-        props.setSelectedRow(props.data.id);
+        setSelectedRow(!selectedRow);
       }}
     >
       <th scope="row">{props.data.id}</th>
@@ -25,4 +26,4 @@ const Rows = props => {
   );
 };
 
-export default Rows;
+export default Row;
