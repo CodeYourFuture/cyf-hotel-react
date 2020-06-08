@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const TableRow = ({ result }) => {
+const TableRow = ({ result, handlerProfile }) => {
   const [rowSelect, setRowSelect] = useState(false);
 
   const changeBackground = () => {
@@ -9,10 +9,7 @@ const TableRow = ({ result }) => {
   };
 
   return (
-    <tr
-      className={rowSelect === true ? "btn-false" : ""}
-      onClick={changeBackground}
-    >
+    <tr className={rowSelect ? "btn-false" : ""} onClick={changeBackground}>
       <th scope="row">{result.id}</th>
       <td>{result.title}</td>
       <td>{result.firstName}</td>
@@ -22,6 +19,16 @@ const TableRow = ({ result }) => {
       <td>{result.checkInDate}</td>
       <td>{result.checkOutDate}</td>
       <td>{moment(result.checkOutDate).diff(result.checkInDate, "days")}</td>
+      <td>
+        <button
+          className="btn-row"
+          onClick={() => {
+            handlerProfile(result.id);
+          }}
+        >
+          Show profile
+        </button>
+      </td>
     </tr>
   );
 };

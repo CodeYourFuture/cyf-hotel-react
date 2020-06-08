@@ -1,8 +1,15 @@
-import React from "react";
-
+import React, { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 import TableRow from "./TableRow";
 
 const SearchResults = ({ results }) => {
+  const [id, setId] = useState("");
+  const [isActive, setIsActive] = useState(false);
+
+  function handlerProfile(id) {
+    setIsActive(!isActive);
+    setId(id);
+  }
   return (
     <div>
       <table className="table">
@@ -22,10 +29,17 @@ const SearchResults = ({ results }) => {
 
         <tbody className="result">
           {results.map((result, index) => {
-            return <TableRow result={result} key={index} />;
+            return (
+              <TableRow
+                result={result}
+                key={index}
+                handlerProfile={handlerProfile}
+              />
+            );
           })}
         </tbody>
       </table>
+      {isActive && <CustomerProfile id={id} />}
     </div>
   );
 };
