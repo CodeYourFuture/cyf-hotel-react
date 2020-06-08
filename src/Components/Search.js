@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Search = props => {
+const Search = ({ search, filterBooking }) => {
   const [searchInput, setSearchInput] = useState("");
 
   function handleSearchInput(e) {
@@ -18,7 +18,8 @@ const Search = props => {
             className="form-group search-box"
             onSubmit={e => {
               e.preventDefault();
-              props.search(searchInput);
+              search(searchInput);
+              filterBooking(searchInput);
             }}
           >
             <label htmlFor="customerName">Customer name</label>
