@@ -1,20 +1,7 @@
-import React, { useState } from "react";
-import moment from "moment";
+import React from "react";
+import BookingRows from "./BookingRows.js";
 
 const SearchResults = props => {
-  const [rowsState, setRowsState] = useState([
-    "unselected",
-    "unselected",
-    "unselected",
-    "unselected",
-    "unselected"
-  ]);
-  const changeRowState = (index, e) => {
-    let rows = rowsState;
-    rows[index] =
-      rows[index] === "unselected" ? "Table_TD_HighLight_CSS" : "unselected";
-    setRowsState(rows);
-  };
   return (
     <div id="SearchResults" className="SearchResults_CSS">
       <table>
@@ -31,27 +18,8 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map((el, index) => {
-            return (
-              <tr
-                key={index}
-                onClick={() => changeRowState(index)}
-                className={rowsState[index]}
-              >
-                <th scope="row" className="Table_TD_CSS">
-                  {el.title}
-                </th>
-                <td className="Table_TD_CSS">{el.firstName}</td>
-                <td className="Table_TD_CSS">{el.surname}</td>
-                <td className="Table_TD_CSS">{el.email}</td>
-                <td className="Table_TD_CSS">{el.roomId}</td>
-                <td className="Table_TD_CSS">{el.checkInDate}</td>
-                <td className="Table_TD_CSS">{el.checkOutDate}</td>
-                <td className="Table_TD_CSS">
-                  {moment(el.checkOutDate).diff(moment(el.checkInDate), "days")}
-                </td>
-              </tr>
-            );
+          {props.results.map((element, index) => {
+            return <BookingRows element={element} index={index} />;
           })}
         </tbody>
       </table>
