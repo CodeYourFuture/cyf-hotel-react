@@ -6,13 +6,22 @@ const Bookings = () => {
   const [bookings, setBookings] = useState();
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/delayed")
-      .then(response => response.json())
-      .then(data => setBookings(data));
-  }, []);
+      // fetch("https://cyf-react.glitch.me/error")
+      .then(response => {
+        if (!response.ok) {
+          throw response;
+        }
+        return response.json();
+      })
+      .then(data => setBookings(data))
+      .catch(err => {
+        throw new Error(err.url + " Error has occured:" + err.status);
+      });
+  });
   if (!bookings) {
     return (
       <div className="m-5 text-white bg-danger p-5 text-center">
-        please wait, the data is being fetched
+        please wait, the data is being fetched...
       </div>
     );
   } else {
