@@ -1,0 +1,19 @@
+.customer-profile {
+  position: absolute;
+  background-color: #ffffff;
+  -webkit-box-shadow: 7px 5px 5px 0px rgba(207, 207, 207, 1);
+  -moz-box-shadow: 7px 5px 5px 0px rgba(207, 207, 207, 1);
+  box-shadow: 7px 5px 5px 0px rgba(207, 207, 207, 1);
+  min-height: 200px;
+  margin: auto;
+  width: 50%;
+  top: 20%;
+  left: 20%;
+  border-radius: 15px;
+  text-align: center;
+  display: none;
+}
+
+.customer-profile-visible {
+  display: block;
+}

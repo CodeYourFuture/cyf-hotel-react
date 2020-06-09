@@ -5,7 +5,7 @@ function calcDeff(chkIn, chkOut) {
   return moment(chkOut, "YYYY-MM-DD").diff(moment(chkIn, "YYYY-MM-DD"), "days");
 }
 
-const BookingRow = ({ booking }) => {
+const BookingRow = ({ booking, handleShowProfile }) => {
   const [selected, setSelected] = useState(false);
 
   function selectRow() {
@@ -26,6 +26,16 @@ const BookingRow = ({ booking }) => {
       <td>{booking.checkInDate}</td>
       <td>{booking.checkOutDate}</td>
       <td>{calcDeff(booking.checkInDate, booking.checkOutDate) + " nights"}</td>
+      <td>
+        <button
+          className="form-control btn btn-primary btn-block"
+          onClick={() => {
+            handleShowProfile(booking.id);
+          }}
+        >
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };
