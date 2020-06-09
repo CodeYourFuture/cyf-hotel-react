@@ -1,31 +1,10 @@
-import React from "react";
-import moment from "moment";
-
-function name(fullInfo) {
-  return (
-    <tr>
-      <th scope="row">{fullInfo.id}</th>
-      <td>{fullInfo.title}</td>
-      <td>{fullInfo.firstName}</td>
-      <td>{fullInfo.surname}</td>
-      <td>{fullInfo.email}</td>
-      <td>{fullInfo.roomId}</td>
-      <td>{fullInfo.checkInDate}</td>
-      <td>{fullInfo.checkOutDate}</td>
-      <td>
-        {moment(fullInfo.checkOutDate).diff(
-          moment(fullInfo.checkInDate),
-          "days"
-        )}
-      </td>
-    </tr>
-  );
-}
+import React, { useState } from "react";
+import TableRow from "./TableRow";
 
 const SearchResults = props => {
   return (
-    <div className="table">
-      <table>
+    <table className="table">
+      <thead>
         <tr>
           <th scope="col">id</th>
           <th scope="col">title</th>
@@ -35,11 +14,15 @@ const SearchResults = props => {
           <th scope="col">roomId</th>
           <th scope="col">checkInDate</th>
           <th scope="col">checkOutDate</th>
-          <th scope="col">numOfDays</th>
+          <th scope="col">totalNight</th>
         </tr>
-        <tbody>{props.results.map(name)}</tbody>
-      </table>
-    </div>
+      </thead>
+      <tbody>
+        {props.results.map((bookingData, index) => {
+          return <TableRow bookingData={bookingData} key={index} />;
+        })}
+      </tbody>
+    </table>
   );
 };
 
