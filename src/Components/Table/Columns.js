@@ -18,6 +18,7 @@ const Columns = props => {
       <tr>
         {formatHeaders(fakeData)}
         <th>Booking days</th>
+        <th>{}</th>
       </tr>
     </thead>
   );

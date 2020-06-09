@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
-const Search = ({ search, filterBooking }) => {
+const Search = ({ search, bookings, setBookings }) => {
   const [searchInput, setSearchInput] = useState("");
 
   function handleSearchInput(e) {
     setSearchInput(e.target.value);
   }
-
+  if (searchInput === "") {
+    setBookings(bookings);
+  }
   return (
     <div className="search">
       <div className="page-header">
@@ -19,7 +21,6 @@ const Search = ({ search, filterBooking }) => {
             onSubmit={e => {
               e.preventDefault();
               search(searchInput);
-              filterBooking(searchInput);
             }}
           >
             <label htmlFor="customerName">Customer name</label>

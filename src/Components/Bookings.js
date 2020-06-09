@@ -12,25 +12,22 @@ const Bookings = () => {
         setBookings(data);
       })
       .catch(err => console.log(err));
-  }, []);
+  }, [bookings]);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
-  };
-
-  function filterBooking(searchVal) {
     const filteredBookings = bookings.filter(
       booking =>
         booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
         booking.surname.toLowerCase().includes(searchVal.toLowerCase())
     );
     setBookings(filteredBookings);
-  }
+  };
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} filterBooking={filterBooking} />
+        <Search search={search} bookings={bookings} setBookings={setBookings} />
         <SearchResults data={bookings} />
       </div>
     </div>
