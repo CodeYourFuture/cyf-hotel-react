@@ -53,8 +53,9 @@ ul {
   text-align: center;
 }
 
-footer {
-  background-color: #222;
+.bookings {
+  display: flex;
+  justify-content: center;
 }
 
 .search {
@@ -143,4 +144,8 @@ footer {
   background-color: red;
   color: white;
   text-align: center;
+}
+
+footer {
+  background-color: #222;
 }
