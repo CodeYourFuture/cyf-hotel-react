@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const Row = ({ element, index }) => {
+const Row = ({ element, index, showCustomerProfile }) => {
   const [active, setActiveClass] = useState(false);
+
   function handleClick() {
     setActiveClass(!active);
+  }
+  function showCustomer() {
+    showCustomerProfile(element);
   }
   return (
     <tr
@@ -19,6 +23,21 @@ const Row = ({ element, index }) => {
       <th>
         <i className={active ? "fas fa-toggle-on" : "fas fa-toggle-off"} />
         {active ? "On" : "Off"}
+      </th>
+      <th
+        scope="row"
+        className={
+          active ? "bg-warning mx-auto text-white" : "mx-auto text-white border"
+        }
+      >
+        <button
+          className={active ? "bg-success ml-3" : "bg-danger ml-3"}
+          onClick={() => {
+            showCustomer();
+          }}
+        >
+          Show Profile
+        </button>
       </th>
       <th
         scope="row"
