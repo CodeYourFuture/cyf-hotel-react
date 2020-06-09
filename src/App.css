@@ -74,6 +74,7 @@ tr {
   margin-bottom: 3rem;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .btn-true {
@@ -87,8 +88,4 @@ tr {
   width: 100px;
   height: 50px;
   font-size: 1rem;
-}
-.msg-loading {
-  font-size: 3rem;
-  text-align: center;
 }

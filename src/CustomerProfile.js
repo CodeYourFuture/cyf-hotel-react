@@ -9,11 +9,20 @@ function CustomerProfile(props) {
   }, [props.id]);
 
   return (
-    <ul>
-      <li>{data.id} </li>
-      <li>{data.email}</li>
-      {data.vip && <li>{data.phoneNumber}</li>}
-    </ul>
+    <div className="bg-warning text-white m-4 ">
+      <ul className="list-group list-unstyled">
+        <h3>CustomerProfile</h3>
+        <li className="list-group-item-success text-center">id: {data.id}</li>
+        <li className="list-group-item-success text-center ">
+          email: {data.email}
+        </li>
+        {data.vip && (
+          <li className="list-group-item-success text-center">
+            phoneNumber: {data.phoneNumber}
+          </li>
+        )}
+      </ul>
+    </div>
   );
 }
 export default CustomerProfile;

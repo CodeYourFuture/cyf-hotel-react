@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import AddBooking from "./AddBooking";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -19,9 +20,16 @@ const Bookings = () => {
   }, []);
 
   if (error) {
-    return <div className="msg-loading"> something wrong {error.message} </div>;
+    return (
+      <div className="font-weight-bolder text-danger ">
+        {" "}
+        something wrong {error.message}{" "}
+      </div>
+    );
   } else if (!bookings) {
-    return <div className="msg-loading"> "Loading..." </div>;
+    return (
+      <div className="alert alert-warning font-weight-bold"> "Loading..." </div>
+    );
   }
 
   const search = searchVal => {
@@ -34,13 +42,16 @@ const Bookings = () => {
       )
     );
   };
-
+  function handlarAddBooking(value) {
+    const newBookings = [...bookings, value];
+    setBookings(newBookings);
+  }
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-
         <SearchResults results={bookings} />
+        <AddBooking handlarAddBooking={handlarAddBooking} />
       </div>
     </div>
   );
