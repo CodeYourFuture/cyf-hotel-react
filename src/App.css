@@ -53,11 +53,6 @@ ul {
   text-align: center;
 }
 
-.bookings {
-  display: flex;
-  justify-content: center;
-}
-
 .search {
   padding: 5px 0 20px 0;
 }
@@ -131,6 +126,7 @@ footer {
 
 .customer-details {
   border: 2px solid red;
+  padding: 20px;
 }
 
 .customer-details div {
@@ -148,4 +144,16 @@ footer {
 
 footer {
   background-color: #222;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loading {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 1.5em;
 }

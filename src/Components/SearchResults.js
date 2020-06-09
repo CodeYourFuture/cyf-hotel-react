@@ -2,29 +2,38 @@ import React, { useState, useEffect } from "react";
 import Columns from "../Components/Table/Columns";
 import Row from "./Table/Row";
 import CustomerProfile from "./Table/CustomerProfile";
-import { errData } from "./functions";
 
-const SearchResults = ({ data, loading }) => {
+const SearchResults = ({ data, loading, error }) => {
   const [isShow, setIsShow] = useState(null);
   const [customerData, setCustomerData] = useState([]);
-  const [err, setErr] = useState(null);
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/customers/" + isShow)
       .then(res => res.json())
       .then(data => setCustomerData(data))
-      .catch(error => setErr(error));
+      .catch(error => console.log(error));
   }, [isShow]);
 
+  function errorData() {
+    return (
+      <div className="error">
+        <p>404</p>
+        <h1>Sorry!</h1>
+        <p>Something went wrong!</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="bookings">
-      {err && errData()}
+    <div>
+      {error && errorData()}
       {loading ? (
-        <div>Loading...</div>
+        <div className="loading">Loading...</div>
       ) : (
-        <div>
+        <>
           <table className="table table-responsive">
             <Columns data={data} />
+
             <tbody>
               {data.map(booking => {
                 return (
@@ -33,8 +42,13 @@ const SearchResults = ({ data, loading }) => {
               })}
             </tbody>
           </table>
-          <CustomerProfile id={isShow} data={customerData} />
-        </div>
+
+          <CustomerProfile
+            id={isShow}
+            data={customerData}
+            setIsShow={setIsShow}
+          />
+        </>
       )}
     </div>
   );
