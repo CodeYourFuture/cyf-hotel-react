@@ -11,7 +11,12 @@ const Search = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    props.search(searchInput);
+    const lowerSearchInput = searchInput.toLowerCase();
+    props.search(lowerSearchInput);
+  };
+
+  const handleReturn = () => {
+    props.returnButton();
   };
 
   return (
@@ -32,7 +37,14 @@ const Search = props => {
                 placeholder="Customer name"
                 onChange={handleSearchInput}
               />
-              <SearchButton return={props.return} />
+              <SearchButton />
+              <button
+                className="btn btn-primary"
+                style={{ marginLeft: "5px" }}
+                onClick={() => handleReturn()}
+              >
+                Return
+              </button>
             </div>
           </form>
         </div>

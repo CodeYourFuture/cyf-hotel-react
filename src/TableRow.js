@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const EachRow = ({ booking }) => {
+const TableRow = ({ booking }, props) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const toggleSelectedClass = () => {
@@ -26,7 +26,11 @@ const EachRow = ({ booking }) => {
       <td>{booking.checkInDate}</td>
       <td>{booking.checkOutDate}</td>
       <td>{checkIn.diff(checkOut, "days")}</td>
+      {/* <button className="btn btn-primary" 
+              value={booking.id}
+              onClick={}>Show profile
+              </button> */}
     </tr>
   );
 };
-export default EachRow;
+export default TableRow;
