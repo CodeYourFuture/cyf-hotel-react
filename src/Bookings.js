@@ -5,13 +5,21 @@ import { SearchResults } from "./components";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const search = searchVal => {
-    const filteredBooking = bookings.filter(name => {
-      return (
-        name.firstName.toLowerCase() === searchVal.toLowerCase() ||
-        name.lastName.toLowerCase() === searchVal.toLowerCase()
-      );
-    });
-    setBookings(filteredBooking);
+    console.info("TO DO!", searchVal);
+
+    setBookings(
+      bookings.filter(customerBooking =>
+        isEqualToFirstNameOrSurname(
+          customerBooking.firstName.toLowerCase(),
+          customerBooking.surname.toLowerCase(),
+          searchVal.toLowerCase()
+        )
+      )
+    );
+  };
+
+  const isEqualToFirstNameOrSurname = (firstName, surName, searchVal) => {
+    return firstName === searchVal || surName === searchVal;
   };
 
   useEffect(() => {
@@ -21,16 +29,16 @@ const Bookings = () => {
   }, []);
   if (!bookings) {
     return "Loading...";
-  }
-
-  return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults customerBookings={bookings} />
+  } else {
+    return (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+          <SearchResults customerBookings={bookings} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Bookings;
