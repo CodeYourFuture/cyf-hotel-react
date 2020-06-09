@@ -2,7 +2,7 @@ import React from "react";
 
 const Heading = () => {
   return (
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav className="navbar navbar-expand-md navbar-light bg-light">
       <img
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
         alt="logo"

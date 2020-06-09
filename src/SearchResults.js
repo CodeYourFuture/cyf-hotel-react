@@ -1,34 +1,20 @@
 import React, { useState } from "react";
-import moment from "moment";
+import TableRows from "./TableRows";
+import CustomerProfile from "./CustomerProfile";
 
 import "./App.css";
 
 const SearchResult = props => {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState(false);
+  const [id, setId] = useState(0);
 
-  const handleClick = index => {
-    active === index ? setActive(null) : setActive(index);
+  const handleProfileClick = id => {
+    setActive(!active);
+    setId(id);
   };
 
-  const rows = props.results.map((user, index) => (
-    <tr
-      key={index}
-      onClick={() => handleClick(index)}
-      className={active === index ? "background-blue" : "background-white"}
-    >
-      <th scope="row">{user.id}</th>
-      <td>{user.title}</td>
-      <td>{user.firstName}</td>
-      <td>{user.surname}</td>
-      <td>{user.email}</td>
-      <td>{user.roomId}</td>
-      <td>{user.checkInDate}</td>
-      <td>{user.checkOutDate}</td>
-      <td>{moment(user.checkOutDate).diff(user.checkInDate, "days")} days</td>
-    </tr>
-  ));
   return (
-    <div class="table-responsive">
+    <div className="table-responsive">
       <table className="table">
         <thead className="thead-dark">
           <tr>
@@ -41,10 +27,23 @@ const SearchResult = props => {
             <th scope="col">check in date</th>
             <th scope="col">check out data</th>
             <th scope="col">number of nights</th>
+            <th scope="col">Profiles</th>
           </tr>
         </thead>
-        <tbody className="result">{rows}</tbody>
+        <tbody className="result">
+          {props.results.map((result, index) => {
+            return (
+              <TableRows
+                user={result}
+                key={index}
+                handleProfileClick={handleProfileClick}
+              />
+            );
+          })}
+        </tbody>
       </table>
+
+      {active ? <CustomerProfile id={id} /> : ""}
     </div>
   );
 };

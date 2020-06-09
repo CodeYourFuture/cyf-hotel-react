@@ -36,6 +36,19 @@
   color: aliceblue;
 }
 
+.buttonload {
+  background-color: #2f4f4f;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+  width: 100%;
+}
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
