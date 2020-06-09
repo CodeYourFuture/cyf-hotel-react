@@ -10,10 +10,11 @@ const CustomerProfile = ({ id, data, setIsShow }) => {
         </div>
 
         <div>Email: {data.email}</div>
-        <div className="vip">
+
+        <div>Phone number:{data.phoneNumber}</div>
+        <div className={data.vip ? "vip" : ""}>
           <p>{data.vip ? "VIP" : ""}</p>
         </div>
-        <div>Phone number:{data.phoneNumber}</div>
         <button
           onClick={() => {
             setIsShow(false);
