@@ -124,26 +124,29 @@ hr {
 }
 
 .profile {
-  background-color: rgb(226, 213, 197);
-  border: none;
+  background-color: rgb(228, 221, 214);
+  border: 1px solid gray;
   border-radius: 5px;
   padding: 5px 10px;
 }
 
 .loader-text {
+  transition: color 2.5s ease;
+  color: rgb(2, 36, 41);
   text-align: center;
-  color: rgb(10, 121, 136);
   font-size: 20px;
+  font-style: italic;
 }
 .loader {
   margin: auto;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid blue;
-  border-right: 16px solid green;
-  border-bottom: 16px solid red;
-  width: 120px;
-  height: 120px;
+  border-top: 10px solid rgb(74, 74, 240);
+  border-right: 10px solid rgb(104, 235, 104);
+  border-bottom: 10px solid rgb(245, 79, 79);
+  border-left: 10px solid rgb(237, 240, 58);
+  width: 80px;
+  height: 80px;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }

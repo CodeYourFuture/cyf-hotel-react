@@ -6,7 +6,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState(null);
 
   useEffect(() => {
-    return fetch(`https://cyf-react.glitch.me/delayed`)
+    return fetch(`https://cyf-react.illicitonion.com/delayed`)
       .then(results => results.json())
       .then(data => setBookings(data));
   }, []);
@@ -36,7 +36,9 @@ const Bookings = () => {
     </div>
   ) : (
     <div>
-      <div className="loader-text">..loading......</div>
+      <div className="loader-text">
+        ..<b>loading booking data</b>......
+      </div>
       <div class="loader" />
     </div>
   );
