@@ -3,17 +3,17 @@ import moment from "moment";
 import Row from "./Row";
 import "./App.css";
 
-let tableHead = {
-  id: "id",
-  title: "title",
-  firstName: "first name",
-  surname: "sure name",
-  email: "email",
-  roomId: "room id",
-  checkInDate: "check in date",
-  checkOutDate: "check out date",
-  nights: "nights"
-};
+// let tableHead = {
+//   id: "id",
+//   title: "title",
+//   firstName: "first name",
+//   surname: "sure name",
+//   email: "email",
+//   roomId: "room id",
+//   checkInDate: "check in date",
+//   checkOutDate: "check out date",
+//   nights: "nights"
+// };
 
 const SearchResults = props => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -23,8 +23,8 @@ const SearchResults = props => {
         <tr>
           <td>id</td>
           <td>title</td>
-          <td>firstName</td>
-          <td>surName</td>
+          <td>firstname</td>
+          <td>surname</td>
           <td>email</td>
           <td>roomId</td>
           <td>checkInDate</td>

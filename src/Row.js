@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Row = props => {
   return (
@@ -9,7 +9,7 @@ const Row = props => {
       <td>{props.row.id}</td>
       <td>{props.row.title}</td>
       <td>{props.row.firstName}</td>
-      <td>{props.row.surName}</td>
+      <td>{props.row.surname}</td>
       <td>{props.row.email}</td>
       <td>{props.row.roomId}</td>
       <td>{props.row.checkInDate}</td>

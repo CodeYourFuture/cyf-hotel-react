@@ -1,7 +1,7 @@
 import React from "react";
 import SearchInput from "./SearchInput";
 
-const Search = () => {
+const Search = props => {
   return (
     <div className="search">
       <div className="page-header">
@@ -9,7 +9,7 @@ const Search = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <SearchInput />
+          <SearchInput searchForName={props.searchForName} />
         </div>
       </div>
     </div>
