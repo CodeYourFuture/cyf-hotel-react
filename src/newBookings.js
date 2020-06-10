@@ -32,7 +32,6 @@ const NewForm = ({ addNewBookings }) => {
   }
 
   const handleSubmit = event => {
-    event.preventDefault();
     addNewBookings({
       title,
       firstName,
@@ -42,19 +41,16 @@ const NewForm = ({ addNewBookings }) => {
       checkIn,
       checkOut
     });
-    setTitle("");
-    setFirstName("");
-    setSurName("");
-    setEmail("");
-    setRoomId("");
-    setCheckOut("");
-    setCheckIn("");
+    event.preventDefault();
   };
 
   return (
-    <form className="form-inline" onSubmit={handleSubmit}>
+    <form
+      className="form-inline d-flex bg-danger text-white p-2 mx-auto"
+      onSubmit={handleSubmit}
+    >
       <div class="form-group mb-2">
-        <label for="title" className="col-sm-2 col-form-label">
+        <label for="title" className="col-form-label">
           Title:
         </label>
         <input
@@ -65,80 +61,84 @@ const NewForm = ({ addNewBookings }) => {
           onChange={handleTitle}
         />
       </div>
-      <div class="form-group mb-2">
-        <label for="firstname" className="col-sm-2 col-form-label">
+      <div class="form-group mb-2 mx-2">
+        <label for="firstname" className="col-form-label mr-1">
           First Name:
         </label>
         <input
           type="text"
           name="firstname"
-          className="form-group mx-sm-3 mb-2"
+          className="form-group mt-2 mr-1 mb-2"
           value={firstName}
           onChange={handleFirstName}
         />
       </div>
       <div class="form-group mb-2">
-        <label for="surname" className="col-sm-2 col-form-label">
-          SurName :
+        <label for="surname" className="col-form-label mr-1">
+          SurName:
         </label>
         <input
           type="text"
           name="surname"
-          className="form-group mx-sm-3 mb-2"
+          className="form-group mt-2 mb-2"
           value={surName}
           onChange={handleSurName}
         />
       </div>
       <div class="form-group mb-2">
-        <label for="email" className="col-sm-2 col-form-label">
+        <label for="email" className="col-form-label mx-2">
           Email:
         </label>
         <input
           type="email"
           placeholder="name@example.com"
-          className="form-group mx-sm-3 mb-2"
+          className="form-group mt-2 mb-2"
           name="email"
-          value={roomId}
-          onChange={handleRoomId}
-        />
-      </div>
-      <div class="form-group mb-2">
-        <label for="roomId" className="col-sm-2 col-form-label">
-          roomId:
-        </label>
-        <input
-          type="text"
-          name="roomId"
-          className="form-group mx-sm-3 mb-2"
           value={email}
           onChange={handleEmail}
         />
       </div>
       <div class="form-group mb-2">
-        <label for="check-in" className="col-sm-2 col-form-label">
-          Check in date:
+        <label for="roomId" className="col-form-label mx-2">
+          roomId:
         </label>
         <input
           type="text"
+          name="roomId"
+          className="form-group mt-2 mb-2"
+          value={roomId}
+          onChange={handleRoomId}
+        />
+      </div>
+      <div class="form-group mb-2">
+        <label for="check-in" className="col-form-label mx-1">
+          Check in date:
+        </label>
+        <input
+          type="date"
           name="check-in"
-          className="form-group mx-sm-3 mb-2"
+          className="form-group mt-2 mb-2"
           value={checkIn}
           onChange={handleCheckIn}
         />
       </div>
       <div class="form-group mb-2">
-        <label for="check-out" className="col-sm-2 col-form-label">
+        <label for="check-out" className="col-form-label mx-2">
           Check out date:
         </label>
         <input
-          type="text"
+          type="date"
           name="check-out"
-          className="form-group mx-sm-3 mb-2"
+          className="form-group mt-2 mb-2 mr-1"
           value={checkOut}
           onChange={handleCheckOut}
         />
       </div>
-      <input type="submit" value="Submit" />
+      <input
+        type="submit"
+        value="Submit"
+        className="col-form-label mx-2 mb-1"
+      />
     </form>
   );
 };

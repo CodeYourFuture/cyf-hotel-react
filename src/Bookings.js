@@ -19,7 +19,7 @@ const Bookings = () => {
       .catch(err => {
         throw new Error(err.url + " Error has occured:" + err.status);
       });
-  });
+  }, []);
   if (!bookings) {
     return (
       <div className="m-5 text-white bg-danger p-5 text-center">
