@@ -3,9 +3,9 @@ import Order from "./Order";
 
 const Restaurant = () => {
   return (
-    <div>
+    <div className="Restaurant">
       <h3>Restaurant Orders</h3>
-      <ul>
+      <ul className="Orders">
         <Order orderType="Pizzas" />
         <Order orderType="Salads" />
         <Order orderType="Chocolate cake" />

@@ -1,8 +1,7 @@
 import React from "react";
-import FakeBookings from "./data/fakeBookings.json";
-import moment from "moment";
+import TableRow from "./TableRow";
 
-const SearchResults = () => {
+const SearchResults = props => {
   return (
     <div>
       <table className="table">
@@ -20,25 +19,8 @@ const SearchResults = () => {
           </tr>
         </thead>
         <tbody>
-          {FakeBookings.map(props => {
-            return (
-              <tr>
-                <td>{props.id}</td>
-                <td>{props.title}</td>
-                <td>{props.firstName}</td>
-                <td>{props.surname}</td>
-                <td>{props.email}</td>
-                <td>{props.roomId}</td>
-                <td>{props.checkInDate}</td>
-                <td>{props.checkOutDate}</td>
-                <td>
-                  {moment(props.checkOutDate).diff(
-                    moment(props.checkInDate),
-                    "days"
-                  )}
-                </td>
-              </tr>
-            );
+          {props.results.map((result, index) => {
+            return <TableRow result={result} key={index} />;
           })}
         </tbody>
       </table>
