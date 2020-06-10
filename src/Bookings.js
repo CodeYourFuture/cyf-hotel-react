@@ -36,22 +36,8 @@ const Bookings = () => {
     </div>
   ) : (
     <div>
-      <h1
-        style={{
-          textAlign: "center",
-          color: "gray",
-          marginTop: "10px",
-          backgroundColor: "black",
-          padding: "8px",
-          fontSize: "22px"
-        }}
-      >
-        CYF Hotels.........
-        <span style={{ textAlign: "center", color: "white", fontSize: "22px" }}>
-          Loading booking information
-        </span>
-        .........CYF Hotels{" "}
-      </h1>
+      <div className="loader-text">..loading......</div>
+      <div class="loader" />
     </div>
   );
 };
