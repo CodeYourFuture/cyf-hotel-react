@@ -12,6 +12,7 @@ const CustomerProfile = props => {
   return (
     <div className={props.id > 0 ? "profile" : "no-profile"}>
       <h2>Customer Profile</h2>
+      <hr />
       <ul>
         <li>
           <b>Customer ID :</b>
@@ -45,6 +46,7 @@ const CustomerProfile = props => {
           {customer.phoneNumber}
         </li>
       </ul>
+      <hr />
     </div>
   );
 };
