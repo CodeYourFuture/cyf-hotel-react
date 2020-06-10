@@ -63,7 +63,7 @@ td {
 }
 thead,
 tfoot {
-  background-color: rgb(163, 162, 162);
+  background-color: rgb(155, 141, 141);
   color: #fff;
 }
 
@@ -72,7 +72,7 @@ tfoot {
 }
 
 .footer {
-  background-color: rgb(156, 151, 151);
+  background-color: rgb(116, 102, 102);
   color: white;
   margin-top: 3cm;
   padding-top: 20px;
@@ -105,7 +105,7 @@ tfoot {
   height: 6cm;
 }
 .select {
-  background-color: rgb(131, 163, 236);
+  background-color: rgb(179, 198, 243);
 }
 @media only screen and (max-width: 600px) {
   .root {
