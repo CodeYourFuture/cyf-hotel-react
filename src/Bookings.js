@@ -3,10 +3,10 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState(null);
 
   useEffect(() => {
-    return fetch(`https://cyf-react.illicitonion.com/`)
+    return fetch(`https://cyf-react.glitch.me/delayed`)
       .then(results => results.json())
       .then(data => setBookings(data));
   }, []);
@@ -27,12 +27,31 @@ const Bookings = () => {
     );
   };
 
-  return (
+  return bookings ? (
     <div className="App-content">
       <div className="container">
         <Search search={search} returnButton={returnButton} />
         <SearchResults results={bookings} />
       </div>
+    </div>
+  ) : (
+    <div>
+      <h1
+        style={{
+          textAlign: "center",
+          color: "gray",
+          marginTop: "10px",
+          backgroundColor: "black",
+          padding: "8px",
+          fontSize: "22px"
+        }}
+      >
+        CYF Hotels.........
+        <span style={{ textAlign: "center", color: "white", fontSize: "22px" }}>
+          Loading booking information
+        </span>
+        .........CYF Hotels{" "}
+      </h1>
     </div>
   );
 };
