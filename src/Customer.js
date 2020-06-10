@@ -10,24 +10,30 @@ const CustomerProfile = props => {
   }, [props.id]);
 
   return (
-    <div className={props.id ? "profile" : "no-profile"}>
-      <h1>Customer Profile</h1>
+    <div className={props.id > 0 ? "profile" : "no-profile"}>
+      <h2>Customer Profile</h2>
       <ul>
         <li>
-          <b>Customer Title :</b>Customer Title : {customer.title}
+          <b>Customer ID :</b>
+          {customer.id}
         </li>
         <li>
-          <b>Customer Name :</b>Customer Name : {customer.firstName}
+          <b>Customer Title :</b>
+          {customer.title}
+        </li>
+        <li>
+          <b>Customer Name :</b>
+          {customer.firstName}
         </li>
         <li>
           <b>Customer Surname :</b>
           {customer.surname}
         </li>
         <li>
-          <b>Customer Email :</b>Customer Email :{customer.email}
+          <b>Customer Email :</b>
+          {customer.email}
         </li>
         <li>
-          {" "}
           {customer.vip ? (
             <span>
               <b>Status :</b> VIP
