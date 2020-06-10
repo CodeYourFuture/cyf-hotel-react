@@ -112,7 +112,7 @@ footer {
 }
 
 .select {
-  background-color: red;
+  background-color: #007bff;
   color: white;
 }
 
@@ -125,7 +125,7 @@ footer {
 }
 
 .customer-details {
-  border: 2px solid red;
+  border: 2px solid #007bff;
   padding: 20px;
 }
 
@@ -161,4 +161,14 @@ footer {
   margin-top: 50px;
   text-align: center;
   font-size: 1.5em;
+}
+
+.form-booking {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-booking input {
+  margin-top: 10px;
+  width: 400px;
 }

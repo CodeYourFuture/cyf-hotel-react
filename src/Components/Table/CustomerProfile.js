@@ -16,6 +16,7 @@ const CustomerProfile = ({ id, data, setIsShow }) => {
           <p>{data.vip ? "VIP" : ""}</p>
         </div>
         <button
+          className="btn btn-primary"
           onClick={() => {
             setIsShow(false);
           }}

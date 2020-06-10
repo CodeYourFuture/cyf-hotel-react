@@ -34,7 +34,9 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} bookings={bookings} setBookings={setBookings} />
+
         <SearchResults data={bookings} loading={isLoading} error={err} />
+        <hr />
       </div>
     </div>
   );

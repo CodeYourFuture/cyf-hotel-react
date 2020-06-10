@@ -24,6 +24,7 @@ const Row = ({ data, setIsShow }) => {
       <td className="booking-days">{checkOut.diff(checkIn, "days")}</td>
       <td className="show-profile">
         <button
+          className="btn btn-primary"
           key={data.id}
           onClick={() => {
             console.log(data.id);

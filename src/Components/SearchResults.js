@@ -8,7 +8,7 @@ const SearchResults = ({ data, loading, error }) => {
   const [customerData, setCustomerData] = useState([]);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/customers/" + isShow)
+    fetch("https://cyf-react.illicitonion.com/customers/" + isShow)
       .then(res => res.json())
       .then(data => setCustomerData(data))
       .catch(error => console.log(error));
