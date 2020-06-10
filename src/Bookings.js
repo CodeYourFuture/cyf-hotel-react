@@ -6,13 +6,13 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    return fetch(`https://cyf-react.glitch.me`)
+    return fetch(`https://cyf-react.illicitonion.com/`)
       .then(results => results.json())
       .then(data => setBookings(data));
   }, []);
 
   const returnButton = () => {
-    return fetch(`https://cyf-react.glitch.me`)
+    return fetch(`https://cyf-react.illicitonion.com`)
       .then(results => results.json())
       .then(data => setBookings(data));
   };
