@@ -17,6 +17,36 @@ const SearchResults = props => {
     <div className="col-12">
       {id == "" ? "" : <CustomerProfile className="col-12" customerId={id} />}
       <Table className="col-12">
+        <tbody>
+          <tr className="col-12">
+            <th className="mx-auto text-white bg-dark border pl-3 pr-3">
+              <button>sort Title</button>
+            </th>
+            <th className="mx-auto text-white bg-dark border">
+              <button>Sort First Name</button>
+            </th>
+            <th className="mx-auto text-white bg-dark border">
+              <button>Sort surname</button>
+            </th>
+            <th className="mx-auto text-white bg-dark border">
+              <button> Sort Email</button>
+            </th>
+            <th className="mx-auto text-white bg-dark border">
+              <button> Sort Room Id</button>
+            </th>
+            <th className="mx-auto text-white bg-dark border">
+              <button> Sort CheckInDate</button>
+            </th>
+            <th className="mx-auto text-white bg-dark border">
+              <button>Sort CheckOutDate</button>
+            </th>
+            <th className="mx-auto text-white bg-dark border">
+              <button>Sort Nights</button>
+            </th>
+          </tr>
+        </tbody>
+      </Table>
+      <Table className="col-12">
         <thead>
           <tr onClick={handleClick} className="col-12">
             <th

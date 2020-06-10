@@ -49,10 +49,8 @@ const NewForm = ({ addNewBookings }) => {
       className="form-inline d-flex bg-danger text-white p-2 mx-auto"
       onSubmit={handleSubmit}
     >
-      <div class="form-group mb-2">
-        <label for="title" className="col-form-label">
-          Title:
-        </label>
+      <div className="form-group mb-2">
+        <label className="col-form-label">Title:</label>
         <input
           type="text"
           name="title"
@@ -61,10 +59,8 @@ const NewForm = ({ addNewBookings }) => {
           onChange={handleTitle}
         />
       </div>
-      <div class="form-group mb-2 mx-2">
-        <label for="firstname" className="col-form-label mr-1">
-          First Name:
-        </label>
+      <div className="form-group mb-2 mx-2">
+        <label className="col-form-label mr-1">First Name:</label>
         <input
           type="text"
           name="firstname"
@@ -73,10 +69,8 @@ const NewForm = ({ addNewBookings }) => {
           onChange={handleFirstName}
         />
       </div>
-      <div class="form-group mb-2">
-        <label for="surname" className="col-form-label mr-1">
-          SurName:
-        </label>
+      <div className="form-group mb-2">
+        <label className="col-form-label mr-1">SurName:</label>
         <input
           type="text"
           name="surname"
@@ -85,10 +79,8 @@ const NewForm = ({ addNewBookings }) => {
           onChange={handleSurName}
         />
       </div>
-      <div class="form-group mb-2">
-        <label for="email" className="col-form-label mx-2">
-          Email:
-        </label>
+      <div className="form-group mb-2">
+        <label className="col-form-label mx-2">Email:</label>
         <input
           type="email"
           placeholder="name@example.com"
@@ -98,10 +90,8 @@ const NewForm = ({ addNewBookings }) => {
           onChange={handleEmail}
         />
       </div>
-      <div class="form-group mb-2">
-        <label for="roomId" className="col-form-label mx-2">
-          roomId:
-        </label>
+      <div className="form-group mb-2">
+        <label className="col-form-label mx-2">roomId:</label>
         <input
           type="text"
           name="roomId"
@@ -110,10 +100,8 @@ const NewForm = ({ addNewBookings }) => {
           onChange={handleRoomId}
         />
       </div>
-      <div class="form-group mb-2">
-        <label for="check-in" className="col-form-label mx-1">
-          Check in date:
-        </label>
+      <div className="form-group mb-2">
+        <label className="col-form-label mx-1">Check in date:</label>
         <input
           type="date"
           name="check-in"
@@ -122,10 +110,8 @@ const NewForm = ({ addNewBookings }) => {
           onChange={handleCheckIn}
         />
       </div>
-      <div class="form-group mb-2">
-        <label for="check-out" className="col-form-label mx-2">
-          Check out date:
-        </label>
+      <div className="form-group mb-2">
+        <label className="col-form-label mx-2">Check out date:</label>
         <input
           type="date"
           name="check-out"

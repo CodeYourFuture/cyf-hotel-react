@@ -5,6 +5,7 @@ import NewBookings from "./newBookings";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState();
+  const [title, setTitle] = useState([]);
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
       // fetch("https://cyf-react.glitch.me/delayed")
@@ -57,6 +58,7 @@ const Bookings = () => {
         }
       ]);
     };
+
     return (
       <div className="col-12">
         <div className="table container col-12 col-md-10 ml-sm-1 ml-md-5 ml-lg-auto mr-lg-auto">
