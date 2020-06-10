@@ -122,3 +122,10 @@ hr {
 .no-profile {
   display: none;
 }
+
+.profile {
+  background-color: rgb(235, 230, 221);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
