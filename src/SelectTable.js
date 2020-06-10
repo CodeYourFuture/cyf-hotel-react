@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import Nights from "./Nights";
+import CustomerProfile from "./CustomerProfile";
 
 const SelectTable = props => {
   const [clicked, setClicked] = useState(false);
 
   const toggle = () => {
     setClicked(!clicked);
-    console.log(clicked);
   };
+
   return (
-    <tr onClick={toggle} className={clicked ? "select" : null}>
+    <tr className="te" onClick={toggle} className={clicked ? "select" : null}>
       <th scope="row">{props.booking.id}</th>
       <td>{props.booking.title}</td>
       <td>{props.booking.firstName}</td>
@@ -24,6 +25,19 @@ const SelectTable = props => {
           timeout={props.booking.checkOutDate}
         />
       </td>
+      <th>
+        <button
+          className="btn btn-primary"
+          key={props.booking.id}
+          onClick={() => {
+            console.log(props.booking.id);
+            props.setProfile(props.booking.id);
+          }}
+        >
+          {" "}
+          profile{" "}
+        </button>
+      </th>
     </tr>
   );
 };

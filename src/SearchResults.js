@@ -1,51 +1,51 @@
-import React from "react";
-import Nights from "./Nights";
+import React, { useState, useEffect } from "react";
+import SelectTable from "./SelectTable";
+import CustomerProfile from "./CustomerProfile";
 
-const SearchResults = ({ results, data }) => {
-  let cont = 0;
-  return data.map((booking, index) => {
-    if (booking.firstName === results) {
-      cont = 1;
-      return (
-        <div>
-          <table className="table">
-            <thead>
-              <tr>
-                <th> Title </th>
-                <th> First Name </th>
-                <th> SureName </th>
-                <th> Email </th>
-                <th> Room Number </th>
-                <th> CheckInDate </th>
-                <th> CheckOutDate </th>
-                <th> Nights </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{booking.title}</td>
-                <td>{booking.firstName}</td>
-                <td>{booking.surname}</td>
-                <td>{booking.email}</td>
-                <td>{booking.roomId}</td>
-                <td>{booking.checkInDate}</td>
-                <td>{booking.checkOutDate}</td>
-                <td>
-                  <Nights
-                    timeline={booking.checkInDate}
-                    timeout={booking.checkOutDate}
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      );
-    }
-  });
-  if (cont === 0) {
-    return <p> WE have NOT any this customer Name //</p>;
-  }
+const SearchResults = ({ data }) => {
+  const [profile, setProfile] = useState(null);
+  const [customerData, setCustomerData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me/customers/" + profile)
+      .then(res => res.json())
+      .then(data => setCustomerData(data))
+      .catch(error => console.log(error));
+  }, [profile]);
+
+  return (
+    <div className="table">
+      <table>
+        <tbody>
+          <tr>
+            <th />
+            <th scope="co1"> Title </th>
+            <th scope="co1"> FirstName </th>
+            <th scope="co1"> SureName </th>
+            <th scope="co1"> Email </th>
+            <th scope="co1"> Room </th>
+            <th scope="co1"> CheckInDate </th>
+            <th scope="co1"> CheckOutDate </th>
+            <th scope="co1"> Nights </th>
+            <th scope="co1"> ShowProfile</th>
+          </tr>
+          {data.map((booking, index) => {
+            return (
+              <SelectTable
+                booking={booking}
+                key={index}
+                setProfile={setProfile}
+              />
+            );
+          })}
+        </tbody>
+      </table>
+      <CustomerProfile
+        id={profile}
+        data={customerData}
+        setProfile={setProfile}
+      />
+    </div>
+  );
 };
-
 export default SearchResults;

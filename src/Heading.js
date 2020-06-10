@@ -2,7 +2,7 @@ import React from "react";
 
 const Heading = () => {
   return (
-    <heading className="App-header">
+    <header className="App-header">
       CYF Hotel
       <img
         className="App-logo "
@@ -10,7 +10,7 @@ const Heading = () => {
         //src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTDDTlQrAb_EjsvmqIVmz8nDVKygizJoB3At6X6fxIUX0oGioBN&usqp=CAU"
         src="https://image.flaticon.com/icons/png/512/34/34699.png"
       />
-    </heading>
+    </header>
   );
 };
 export default Heading;

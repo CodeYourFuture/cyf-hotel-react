@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import SearchResults from "./SearchResults";
 
-const Search = props => {
-  const [searchVal, setSearchVal] = useState();
-  const handleChange = event => {
-    setSearchVal(event.target.value);
+const Search = ({ search, bookings, setBookings }) => {
+  const [searchInput, setSearchInput] = useState("");
+  const handleSearchInput = event => {
+    setSearchInput(event.target.value);
+    console.log(searchInput);
   };
+  if (searchInput === "") {
+    setBookings(bookings);
+  }
   return (
     <div className="search">
       <div className="page-header">
@@ -13,7 +16,13 @@ const Search = props => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form
+            className="form-group search-box"
+            onSubmit={event => {
+              event.preventDefault();
+              search(searchInput);
+            }}
+          >
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
@@ -21,13 +30,12 @@ const Search = props => {
                 id="customerName"
                 className="form-control"
                 placeholder="Search By First Name"
-                value={searchVal}
-                onChange={handleChange}
+                value={searchInput}
+                onChange={handleSearchInput}
               />
               <button className="btn btn-primary">Search</button>
             </div>
           </form>
-          <SearchResults results={searchVal} data={props.data} />
         </div>
       </div>
     </div>
