@@ -184,7 +184,7 @@ footer {
 .title-add-booking {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
+  align-items: center;
 }
 
 .title-add-booking button {
@@ -193,6 +193,5 @@ footer {
 }
 
 .btn-remove input {
-  margin-top: 10px;
   margin-left: 10px;
 }

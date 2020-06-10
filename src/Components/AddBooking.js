@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AddBookingForm from "./Bookings/AddBookingForm";
 
-const AddBooking = ({ bookings, setBookings, initialBookings }) => {
+const AddBooking = ({ bookings, setBookings }) => {
   const [showAddForm, setShowAddForm] = useState(false);
   const [removeInputValue, setRemoveInputValue] = useState("");
 
@@ -50,7 +50,12 @@ const AddBooking = ({ bookings, setBookings, initialBookings }) => {
           showAddForm ? "show-AddBookingForm" : "not-show-AddBookingForm"
         }
       >
-        <AddBookingForm bookings={bookings} setBookings={setBookings} />
+        <AddBookingForm
+          bookings={bookings}
+          setBookings={setBookings}
+          showAddForm={showAddForm}
+          setShowAddForm={setShowAddForm}
+        />
       </div>
     </div>
   );

@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-const AddBookingForm = ({ bookings, setBookings }) => {
+const AddBookingForm = ({
+  bookings,
+  setBookings,
+  showAddForm,
+  setShowAddForm
+}) => {
   const [userBooking, setUserBooking] = useState({
     id: "",
     title: "",
@@ -24,7 +29,7 @@ const AddBookingForm = ({ bookings, setBookings }) => {
     e.preventDefault();
     const updateBookings = [...bookings, userBooking];
     setBookings(updateBookings);
-    console.log(updateBookings);
+    setShowAddForm(!showAddForm);
   }
 
   return (
