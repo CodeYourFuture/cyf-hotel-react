@@ -15,34 +15,34 @@ const CustomerProfile = props => {
       <hr />
       <ul>
         <li>
-          <b>Customer ID :</b>
+          <b>Customer ID..............: </b>
           {customer.id}
         </li>
         <li>
-          <b>Customer Title :</b>
+          <b>Customer Title..........: </b>
           {customer.title}
         </li>
         <li>
-          <b>Customer Name :</b>
+          <b>Customer Name........: </b>
           {customer.firstName}
         </li>
         <li>
-          <b>Customer Surname :</b>
+          <b>Customer Surname..: </b>
           {customer.surname}
         </li>
         <li>
-          <b>Customer Email :</b>
+          <b>Customer Email........: </b>
           {customer.email}
         </li>
         <li>
           {customer.vip ? (
             <span>
-              <b>Status :</b> VIP
+              <b>Status.........................: </b> VIP
             </span>
           ) : null}
         </li>
         <li>
-          <b>Customer Phone :</b>
+          <b>Customer Phone.......: </b>
           {customer.phoneNumber}
         </li>
       </ul>
