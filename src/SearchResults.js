@@ -13,11 +13,11 @@ const SearchResults = ({ results }) => {
     setIsActive(!isActive);
     setId(id);
   }
-  function handlerSortById() {
+  function handlerSortById(attr) {
     if (isSmallFirst) {
-      setIsSort(results.sort((a, b) => b.id - a.id));
+      setIsSort(results.sort((a, b) => b[attr] - a[attr]));
     } else {
-      setIsSort(results.sort((a, b) => a.id - b.id));
+      setIsSort(results.sort((a, b) => a[attr] - b[attr]));
     }
     setSmallFirst(!isSmallFirst);
   }
@@ -50,7 +50,7 @@ const SearchResults = ({ results }) => {
       attr === "title"
     ) {
       handlerSortByName(attr);
-    } else if (attr === "id") {
+    } else if (attr === "id" || attr === "roomId") {
       handlerSortById();
     }
 
@@ -62,7 +62,12 @@ const SearchResults = ({ results }) => {
       <table className="table">
         <thead className="thead-dark">
           <tr>
-            <th onClick={handlerSortById} scope="col ">
+            <th
+              onClick={() => {
+                handlerSortById(id);
+              }}
+              scope="col "
+            >
               id
             </th>
             <th
@@ -98,7 +103,14 @@ const SearchResults = ({ results }) => {
             >
               email
             </th>
-            <th scope="col">room id </th>
+            <th
+              onClick={() => {
+                handlerSortById("roomId");
+              }}
+              scope="col"
+            >
+              room id{" "}
+            </th>
             <th scope="col">check in date</th>
             <th scope="col">check out data</th>
             <th scope="col">number of nights</th>
