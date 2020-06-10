@@ -163,12 +163,36 @@ footer {
   font-size: 1.5em;
 }
 
-.form-booking {
-  display: flex;
+.show-AddBookingForm {
+  display: block;
   flex-direction: column;
 }
 
-.form-booking input {
+.not-show-AddBookingForm {
+  display: none;
+}
+
+.add-book-form input {
   margin-top: 10px;
   width: 400px;
+}
+
+.booking-submit-btn {
+  margin-top: 10px;
+}
+
+.title-add-booking {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.title-add-booking button {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.btn-remove input {
+  margin-top: 10px;
+  margin-left: 10px;
 }

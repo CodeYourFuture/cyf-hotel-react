@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import Heading from "./Components/Heading";
 import ListCards from "./Components/ListCards";
-import AddBooking from "./Components/AddBooking";
 import Bookings from "./Components/Bookings";
 import Restaurant from "./Components/Restaurant";
 import Footer from "./Components/Footer";
@@ -18,7 +17,7 @@ const App = () => {
     <div className="App">
       <Heading logoName={"CYF Hotel Alex"} />
       <ListCards />
-      <AddBooking />
+
       <Bookings />
       <Restaurant />
       <Footer data={footerData} />

@@ -14,7 +14,8 @@ const Search = ({ search, bookings, setBookings }) => {
       <div className="page-header">
         <h4 className="text-left">Search Bookings</h4>
       </div>
-      <div className="row search-wrapper">
+      <hr />
+      <div className="row ">
         <div className="col">
           <form
             className="form-group search-box"
@@ -23,7 +24,6 @@ const Search = ({ search, bookings, setBookings }) => {
               search(searchInput);
             }}
           >
-            <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
                 type="text"

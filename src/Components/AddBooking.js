@@ -1,48 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
+import AddBookingForm from "./Bookings/AddBookingForm";
 
-const AddBooking = () => {
+const AddBooking = ({ bookings, setBookings, initialBookings }) => {
+  const [showAddForm, setShowAddForm] = useState(false);
+  const [removeInputValue, setRemoveInputValue] = useState("");
+
+  function removeBooking(surname) {
+    var filteredBooking = bookings.filter(
+      booking => booking.surname.toLowerCase() !== surname.toLowerCase()
+    );
+    setBookings(filteredBooking);
+
+    setRemoveInputValue("");
+  }
+
+  function handleChange(e) {
+    setRemoveInputValue(e.target.value);
+  }
+
   return (
-    <div className="App-content">
-      <div className="container">
-        <div className="add-booking">
-          <div className="title-add-booking">
-            <h4 className="text-left">Add a Booking</h4>
-            <hr />
-            <button className="btn btn-primary">Add a booking</button>
-          </div>
+    <div className="add-booking">
+      <h4 className="text-left">Add a Booking</h4>
+      <hr />
+      <div className="title-add-booking">
+        <div className="btn-remove">
+          <button
+            className="btn btn-primary"
+            onClick={() => {
+              removeBooking(removeInputValue);
+            }}
+          >
+            Remove a booking
+          </button>
 
-          <div className="form-booking">
-            <form>
-              <div>
-                <input name="title" placeholder="Title" type="text" />
-              </div>
-              <div>
-                <input name="firstName" placeholder="First name" type="text" />
-              </div>
-              <div>
-                <input name="surname" placeholder="Surname" type="text" />
-              </div>
-              <div>
-                <input name="room id" placeholder="Room id" type="number" />
-              </div>
-              <div>
-                <input
-                  name="check in date"
-                  placeholder="Check in"
-                  type="date"
-                />
-              </div>
-              <div>
-                <input
-                  name="check out date"
-                  placeholder="Check out"
-                  type="date"
-                />
-              </div>
-            </form>
-          </div>
+          <input onChange={handleChange} placeholder="remove by surname" />
         </div>
-        <hr />
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            setShowAddForm(!showAddForm);
+          }}
+        >
+          Add a booking
+        </button>
+      </div>
+
+      <div
+        className={
+          showAddForm ? "show-AddBookingForm" : "not-show-AddBookingForm"
+        }
+      >
+        <AddBookingForm bookings={bookings} setBookings={setBookings} />
       </div>
     </div>
   );

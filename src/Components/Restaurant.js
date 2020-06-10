@@ -7,6 +7,7 @@ const Restaurant = () => {
       <div className="restaurant">
         <h4>Restaurant Orders</h4>
       </div>
+      <hr />
       <div className="pizzas">
         <ul>
           <Order orderType="Pizzas" />
