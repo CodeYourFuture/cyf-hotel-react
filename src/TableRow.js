@@ -22,7 +22,8 @@ const TableRow = ({ result, handlerProfile }) => {
       <td>
         <button
           className="btn-row"
-          onClick={() => {
+          onClick={e => {
+            e.stopPropagation();
             handlerProfile(result.id);
           }}
         >

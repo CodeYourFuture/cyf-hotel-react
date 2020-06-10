@@ -43,8 +43,7 @@ const Bookings = () => {
     );
   };
   function handlarAddBooking(value) {
-    const newBookings = [...bookings, value];
-    setBookings(newBookings);
+    setBookings([...bookings, value]);
   }
   return (
     <div className="App-content">
