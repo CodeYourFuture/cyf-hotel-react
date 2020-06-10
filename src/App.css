@@ -118,3 +118,7 @@ h3 {
 hr {
   width: 95%;
 }
+
+.no-profile {
+  display: none;
+}

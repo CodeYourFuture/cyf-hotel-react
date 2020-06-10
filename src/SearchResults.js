@@ -1,8 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TableRow from "./TableRow";
-// import CustomerProfile from "./CustomerProfile";
+import CustomerProfile from "./Customer";
 
 const SearchResults = props => {
+  const [selectedId, setSelectedId] = useState();
+
+  const setSelected = customerId => {
+    setSelectedId(customerId);
+  };
+
   return (
     <div>
       <table className="table">
@@ -24,12 +30,12 @@ const SearchResults = props => {
             <TableRow
               booking={booking}
               index={index}
-              returnButton={props.returnButton}
+              setSelected={setSelected}
             />
           ))}
         </tbody>
       </table>
-      {/* <CustomerProfile /> */}
+      <CustomerProfile id={selectedId} />
     </div>
   );
 };
