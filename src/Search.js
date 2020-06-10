@@ -11,7 +11,8 @@ const Search = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    props.search(searchInput);
+    const lowerCaseInput = searchInput.toLowerCase();
+    props.search(lowerCaseInput);
   };
 
   return (

@@ -9,18 +9,19 @@ const Bookings = () => {
     fetch("https://cyf-react.glitch.me")
       .then(res => res.json())
       .then(data => setBookings(data));
-  });
+  }, []);
 
   const search = searchVal => {
+    console.log(bookings);
     setBookings(
-      bookings.filter(name => {
-        return (
-          name.firstName.includes(searchVal) || name.surName.includes(searchVal)
-        );
-      })
-    );
+      bookings.filter(
+        name =>
+          name.firstName.toLowerCase() === searchVal ||
+          name.surname.toLowerCase() === searchVal
+      )
 
-    console.info("TO DO!", searchVal);
+      // console.info("TO DO!", searchVal);
+    );
   };
 
   return (
