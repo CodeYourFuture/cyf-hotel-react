@@ -4,6 +4,8 @@ import { SearchResults } from "./components";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
 
@@ -23,12 +25,36 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
-      .then(res => res.json())
-      .then(data => setBookings(data));
+    fetch(`http://cyf-hotel-bookings.herokuapp.com/`)
+      .then(res => {
+        if (res.status >= 200 && res.status < 300) {
+          return res.json();
+        } else {
+          throw new Error("HTTP error");
+        }
+      })
+      .then(
+        data => {
+          setIsLoading(true);
+          setBookings(data);
+        },
+        err => {
+          setIsLoading(true);
+          setError(err);
+        }
+      );
   }, []);
-  if (!bookings) {
-    return "Loading...";
+  if (!isLoading) {
+    return <div>Loading...</div>;
+  } else if (error) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        Can not fetch booking data the following error has occurred:
+        <a href="#" className="alert-link">
+          {error.toString()}
+        </a>
+      </div>
+    );
   } else {
     return (
       <div className="App-content">
