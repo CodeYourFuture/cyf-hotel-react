@@ -6,6 +6,7 @@ import Row from "./row";
 const SearchResults = props => {
   const [active, setActiveClass] = useState(false);
   const [id, setId] = useState("");
+
   function handleClick() {
     setActiveClass(!active);
   }

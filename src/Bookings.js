@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import NewBookings from "./newBookings";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState();
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me")
+      // fetch("https://cyf-react.glitch.me/delayed")
       // fetch("https://cyf-react.glitch.me/error")
       .then(response => {
         if (!response.ok) {
@@ -33,11 +35,34 @@ const Bookings = () => {
       );
       setBookings(newBookings);
     };
+    const addNewBookings = ({
+      title,
+      firstName,
+      surName,
+      roomId,
+      email,
+      checkIn,
+      checkOut
+    }) => {
+      setBookings([
+        ...bookings,
+        {
+          title: title,
+          firstName: firstName,
+          surname: surName,
+          roomId: roomId,
+          email: email,
+          checkInDate: checkIn,
+          checkOutDate: checkOut
+        }
+      ]);
+    };
     return (
       <div className="col-12">
         <div className="table container col-12 col-md-10 ml-sm-1 ml-md-5 ml-lg-auto mr-lg-auto">
           <Search searchVal={searchVal} />
           <SearchResults results={bookings} />
+          <NewBookings addNewBookings={addNewBookings} />
         </div>
       </div>
     );
