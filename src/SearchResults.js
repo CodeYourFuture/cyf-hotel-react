@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CustomerProfile from "./CustomerProfile";
 import "./css/Footer.css";
 // import FakeBookingData from "./data/fakeBookings.json";
@@ -7,16 +7,30 @@ import "./SearchResults.css";
 
 const SearchResults = props => {
   const [showProfileId, setShowProfileId] = useState(-1);
+  const [customerData, setCustomerData] = useState([]);
 
   function handleShowProfile(id) {
-    console.log("id in handle :" + id);
     setShowProfileId(id);
   }
+
+  useEffect(() => {
+    if (showProfileId !== -1) {
+      fetch(`https://cyf-react.illicitonion.com/customers/${showProfileId}`)
+        .then(res => res.json())
+        .then(data => setCustomerData(data));
+    }
+  }, [showProfileId]);
 
   return (
     <div className="row">
       <div className="col-12">
-        <CustomerProfile id={showProfileId} />
+        {showProfileId !== -1 && (
+          <CustomerProfile
+            customer={customerData}
+            onClose={() => setShowProfileId(-1)}
+          />
+        )}
+
         <table className="table table-hover table-responsive-sm table-responsive-xs">
           <thead>
             <tr>

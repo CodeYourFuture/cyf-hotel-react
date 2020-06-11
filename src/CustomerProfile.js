@@ -1,16 +1,29 @@
 import React from "react";
 import "./CustomerProfile.css";
 import CloseIcon from "./images/icon-remove.svg";
-const CustomerProfile = ({ id }) => {
-  console.log("id : " + id);
+import VIPImage from "./images/vip-badge.jpg";
+
+const CustomerProfile = ({ customer, onClose }) => {
   return (
-    <div
-      className={`customer-profile ${id !== -1 && "customer-profile-visible"}`}
-    >
-      <p>
-        <img src={CloseIcon} alt="close" />
-      </p>
-      <p>Customer {id} Profile</p>
+    <div className="customer-profile">
+      <div>
+        <p onClick={onClose}>
+          <img src={CloseIcon} alt="close" />
+        </p>
+      </div>
+      <div>
+        <p>Customer {customer.id} Profile</p>
+        {customer.vip && (
+          <p>
+            <img src={VIPImage} alt="vip" className="vip-image" />
+          </p>
+        )}
+        <p>
+          {customer.title} {customer.firstName} {customer.surname}
+        </p>
+        <p>{customer.phoneNumber}</p>
+        <p>{customer.email}</p>
+      </div>
     </div>
   );
 };

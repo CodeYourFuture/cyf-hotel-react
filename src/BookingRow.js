@@ -29,7 +29,8 @@ const BookingRow = ({ booking, handleShowProfile }) => {
       <td>
         <button
           className="form-control btn btn-primary btn-block"
-          onClick={() => {
+          onClick={e => {
+            e.stopPropagation();
             handleShowProfile(booking.id);
           }}
         >

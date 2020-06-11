@@ -23,9 +23,7 @@ const Bookings = () => {
   const [originalData, setOriginalData] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://babakjahangiri.github.io/cyf-hotel-react/src/data/fakeBookings.json`
-    )
+    fetch(`http://cyf-hotel-bookings.herokuapp.com/`)
       .then(res => res.json())
       .then(data => {
         setBookings(data);
