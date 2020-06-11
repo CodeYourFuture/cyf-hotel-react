@@ -5,10 +5,17 @@ import "./App.css";
 
 const Bookings = () => {
   const [bookingData, setBookingData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    fetch("https://cyf-react.illicitonion.com/")
+    //start loading
+    setIsLoading(true);
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
-      .then(data => setBookingData(data));
+      //finish loading
+      .then(data => {
+        setIsLoading(false);
+        setBookingData(data);
+      });
   }, []);
 
   const search = searchVal => {
@@ -25,7 +32,11 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookingData} />
+        {isLoading ? (
+          <p>loading...</p>
+        ) : (
+          <SearchResults results={bookingData} />
+        )}
       </div>
     </div>
   );
