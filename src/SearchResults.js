@@ -41,7 +41,7 @@ const SearchResults = props => {
           );
         })}
       </table>
-      <CustomerProfile profileId={`costommer ${profileId} profile`} />
+      <CustomerProfile profileId={profileId} />
     </div>
   );
 };

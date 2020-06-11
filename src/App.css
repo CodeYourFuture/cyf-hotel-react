@@ -138,3 +138,16 @@ td {
   border-radius: 15px;
   font-size: 14px;
 }
+button:focus {
+  outline: none;
+}
+
+.customer-profile {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 20px;
+  color: gray;
+  border-radius: 2px;
+}
