@@ -34,8 +34,7 @@ const SelectTable = props => {
             props.setProfile(props.booking.id);
           }}
         >
-          {" "}
-          profile{" "}
+          profile
         </button>
       </th>
     </tr>

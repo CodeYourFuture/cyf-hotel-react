@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Search = ({ search, bookings, setBookings }) => {
+const Search = ({ search, bookings, setBookings, original }) => {
   const [searchInput, setSearchInput] = useState("");
   const handleSearchInput = event => {
     setSearchInput(event.target.value);
@@ -9,6 +9,11 @@ const Search = ({ search, bookings, setBookings }) => {
   if (searchInput === "") {
     setBookings(bookings);
   }
+  const showAll = () => {
+    console.log("pres button ");
+    console.log(bookings);
+    setBookings(original);
+  };
   return (
     <div className="search">
       <div className="page-header">
@@ -36,6 +41,9 @@ const Search = ({ search, bookings, setBookings }) => {
               <button className="btn btn-primary">Search</button>
             </div>
           </form>
+          <button className="btn btn-primary show-all" onClick={showAll}>
+            Show All
+          </button>
         </div>
       </div>
     </div>

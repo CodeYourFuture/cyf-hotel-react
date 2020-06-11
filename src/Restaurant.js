@@ -17,9 +17,9 @@ const Restaurant = () => {
               <th> Delete </th>
             </tr>
 
-            <Order orderType={"Pizzas"} price={9.99} />
+            <Order orderType={"Pizza"} price={9.99} />
 
-            <Order orderType={"Salads"} price={5.99} />
+            <Order orderType={"Salad"} price={5.99} />
 
             <Order orderType={"Chocolate cake"} price={3.99} />
 

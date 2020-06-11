@@ -24,7 +24,7 @@ const Order = props => {
       <td>{props.orderType}</td>
       <td>{props.price}</td>
       <td>{orders}</td>
-      <td>{price}</td>
+      <td>{price.toFixed(2)}</td>
       <td>
         <RestaurantButton onClick={orderOne} />
       </td>
