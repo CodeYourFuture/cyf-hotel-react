@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton"; // imported search button component in to search js
 
-const Search = () => {
+const Search = props => {
   const [searchInput, setSearchInput] = useState(""); // declared  the state variable set its value to an empty array
   const handleSearchInput = event => {
     //this is the change handler function that takes an event as an arguments
     setSearchInput(event.target.value); //set search input function takes takes the user input by event.target.value
   };
-  console.log(searchInput); // logs the user input to the dev console.
-
+  const searchHandler = event => {
+    // search handler result that access the  result in the bookings
+    props.result(searchInput); //access the result function from the bookings
+    event.preventDefault(); // prevent the page to reload
+  };
   return (
     /* search field  */
     <div className="search">
@@ -17,7 +20,7 @@ const Search = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form onSubmit={searchHandler} className="form-group search-box">
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input

@@ -15,6 +15,11 @@ const Bookings = () => {
       .catch(err => console.log(err)); // error handing
   }, []); // square bracket will prevent fetch infinite loop by react
 
+  const result = input => {
+    //function that display the result on console
+    console.log(input); // logs the user input to the function
+  };
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     console.log(searchVal);
@@ -23,7 +28,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
+        <Search result={result} search={search} />
         <SearchResults guestList={bookings} />
         {/*replaced the fake booking with bookings */}
         {/* <SearchResults results={FakeBookings} /> which displays the table*/}
