@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 const Tbody = props => {
-  console.log(props);
+  const [selected, setSelected] = useState([]);
+  const changeSelected = bookerId => {
+    if (selected.includes(bookerId)) {
+      setSelected(selected.filter(selectedId => selectedId !== bookerId));
+    } else {
+      setSelected(selected.concat(bookerId));
+    }
+  };
   return (
     <tbody>
       {props.bookings.map(booker => {
@@ -9,7 +16,13 @@ const Tbody = props => {
         let a = moment(booker.checkOutDate);
         const daysSpent = a.diff(b, "days");
         return (
-          <tr key={booker.id}>
+          <tr
+            className={
+              selected.includes(booker.id) ? "selected cursor" : "cursor"
+            }
+            key={booker.id}
+            onClick={() => changeSelected(booker.id)}
+          >
             <td>{booker.id}</td>
             <td>{booker.title}</td>
             <td>{booker.firstName}</td>

@@ -6,7 +6,16 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-
+.selected {
+  background-color: #5b5757;
+  color: white;
+}
+.cursor {
+  cursor: default;
+}
+.cursor:hover {
+  background-color: silver;
+}
 .App-header {
   background-color: #222;
   height: 50px;
