@@ -17,7 +17,9 @@ const SearchResults = props => {
     if (showProfileId !== -1) {
       fetch(`https://cyf-react.illicitonion.com/customers/${showProfileId}`)
         .then(res => res.json())
-        .then(data => setCustomerData(data));
+        .then(data => {
+          setCustomerData(data);
+        });
     }
   }, [showProfileId]);
 
