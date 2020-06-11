@@ -9,7 +9,7 @@ const Search = props => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <SearchInput searchForName={props.searchForName} />
+          <SearchInput searchForName={props.search} />
         </div>
       </div>
     </div>

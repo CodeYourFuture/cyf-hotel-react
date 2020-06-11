@@ -2,37 +2,32 @@ import React, { useState } from "react";
 import moment from "moment";
 import Row from "./Row";
 import "./App.css";
-
-// let tableHead = {
-//   id: "id",
-//   title: "title",
-//   firstName: "first name",
-//   surname: "sure name",
-//   email: "email",
-//   roomId: "room id",
-//   checkInDate: "check in date",
-//   checkOutDate: "check out date",
-//   nights: "nights"
-// };
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
   const [selectedRow, setSelectedRow] = useState(null);
+  const [profileId, setProfileId] = useState(null);
+  const showProfile = id => {
+    setProfileId(id);
+  };
   return (
-    <table className="table">
-      <thead className="table-head">
-        <tr>
-          <td>id</td>
-          <td>title</td>
-          <td>firstname</td>
-          <td>surname</td>
-          <td>email</td>
-          <td>roomId</td>
-          <td>checkInDate</td>
-          <td>checkOutDate</td>
-          <td>nights</td>
-        </tr>
-      </thead>
-      <tbody className="table-body table-striped">
+    <div>
+      <table className="table">
+        <thead className="table-head">
+          <tr>
+            <td>id</td>
+            <td>title</td>
+            <td>firstname</td>
+            <td>surname</td>
+            <td>email</td>
+            <td>roomId</td>
+            <td>checkInDate</td>
+            <td>checkOutDate</td>
+            <td>nights</td>
+            <td>buttons</td>
+          </tr>
+        </thead>
+
         {props.results.map(result => {
           return (
             <Row
@@ -41,11 +36,13 @@ const SearchResults = props => {
               row1={getDuration(result.checkOutDate, result.checkInDate)}
               isSelected={result.id === selectedRow}
               setSelectedRow={setSelectedRow}
+              showProfile={showProfile}
             />
           );
         })}
-      </tbody>
-    </table>
+      </table>
+      <CustomerProfile profileId={`costommer ${profileId} profile`} />
+    </div>
   );
 };
 

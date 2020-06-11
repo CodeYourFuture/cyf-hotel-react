@@ -132,3 +132,9 @@ td {
 .order-list {
   padding: 20px;
 }
+.show-profile-btn {
+  cursor: pointer;
+  border: 0.1px solid lightgray;
+  border-radius: 15px;
+  font-size: 14px;
+}
