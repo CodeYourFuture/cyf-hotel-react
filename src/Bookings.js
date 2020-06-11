@@ -6,6 +6,7 @@ import fakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState(fakeBookings);
+  const [filteredBookings, setfilteredBookings] = useState(bookings);
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
       .then(res => res.json())
@@ -13,12 +14,24 @@ const Bookings = () => {
         setBookings(data);
       });
   }, []);
+  const search = searchVal => {
+    if (searchVal === "") {
+      setfilteredBookings(bookings);
+    } else {
+      const newFilteredBookings = bookings.filter(booking => {
+        return booking.firstName
+          .toLowerCase()
+          .includes(searchVal.toLowerCase());
+      });
+      setfilteredBookings(newFilteredBookings);
+    }
+  };
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search />
-        <SearchResults bookings={bookings} />
+        <Search search={search} />
+        <SearchResults bookings={filteredBookings} />
       </div>
     </div>
   );

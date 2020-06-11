@@ -1,5 +1,6 @@
 import React from "react";
 import Tbody from "./Tbody.js";
+import CustomerProfile from "./CustomerProfile";
 // console.log(fakeBookings);
 let SearchResults = props => {
   return (
