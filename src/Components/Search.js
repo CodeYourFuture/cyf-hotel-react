@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 
-const Search = ({ search, bookings, setBookings }) => {
+const Search = ({ search, initialBookings, setBookings }) => {
   const [searchInput, setSearchInput] = useState("");
 
   function handleSearchInput(e) {
     setSearchInput(e.target.value);
   }
-  if (searchInput === "") {
-    setBookings(bookings);
-  }
+
   return (
     <div className="search">
       <div className="page-header">
@@ -34,6 +32,14 @@ const Search = ({ search, bookings, setBookings }) => {
                 onChange={handleSearchInput}
               />
               <button className="btn btn-primary">Search</button>
+              <button
+                className="btn btn-primary"
+                onClick={() => {
+                  setBookings(initialBookings);
+                }}
+              >
+                Clear
+              </button>
             </div>
           </form>
         </div>
