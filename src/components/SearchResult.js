@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-export default function SearchResult({ booking, index }) {
+export default function SearchResult({ booking, setId }) {
   const [clicked, setClicked] = useState(false);
+
+  const onClickhandle = () => {
+    setId(booking.id);
+  };
 
   return (
     <tr
@@ -22,6 +26,11 @@ export default function SearchResult({ booking, index }) {
           moment(booking.checkInDate.split("-"), "YYYY/MM/DD"),
           "days"
         )}
+      </td>
+      <td>
+        <button className="btn btn-primary" onClick={onClickhandle}>
+          Show profile
+        </button>
       </td>
     </tr>
   );
