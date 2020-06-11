@@ -1,6 +1,13 @@
 import React from "react";
 import moment from "moment"; // imported the moment js
+
 const TableRows = props => {
+  /*changeHandler that displays the id when botton is clicked */
+  const buttonChangeHandler = event => {
+    props.clickedBtn(props.element.id);
+    event.stopPropagation();
+  };
+
   const changeHandler = () => {
     props.setClickedRow(props.element.id);
   };
@@ -23,6 +30,10 @@ const TableRows = props => {
       <td>{props.element.checkInDate}</td>
       <td>{props.element.checkOutDate}</td>
       <td>{differenceOfDays}</td>
+      <td>
+        <button onClick={buttonChangeHandler}>Show profile</button>
+        {/*added the new column to the table to containing bottom gets change handler function*/}
+      </td>
     </tr>
   );
 };
