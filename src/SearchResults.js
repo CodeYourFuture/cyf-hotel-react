@@ -7,6 +7,7 @@ import CustomerProfile from "./CustomerProfile";
 const SearchResults = props => {
   const [selectedRow, setSelectedRow] = useState(null);
   const [profileId, setProfileId] = useState(null);
+  const [className, setClassName] = useState("customer-profile");
   const showProfile = id => {
     setProfileId(id);
   };
@@ -37,11 +38,12 @@ const SearchResults = props => {
               isSelected={result.id === selectedRow}
               setSelectedRow={setSelectedRow}
               showProfile={showProfile}
+              setClassName={setClassName}
             />
           );
         })}
       </table>
-      <CustomerProfile profileId={profileId} />
+      <CustomerProfile profileId={profileId} className={className} />
     </div>
   );
 };

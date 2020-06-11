@@ -143,11 +143,17 @@ button:focus {
 }
 
 .customer-profile {
-  background-color: lightgray;
+  list-style-type: none;
+  height: 60px;
+}
+
+.dispaly-show {
   display: flex;
   justify-content: space-around;
+  background-color: lightgray;
   list-style-type: none;
   padding: 20px;
   color: gray;
   border-radius: 2px;
+  height: 60px;
 }

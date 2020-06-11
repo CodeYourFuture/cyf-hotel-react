@@ -23,6 +23,7 @@ const Row = props => {
           <button
             onClick={() => {
               props.showProfile(props.row.id);
+              props.setClassName("dispaly-show");
             }}
             className="show-profile-btn"
           >
