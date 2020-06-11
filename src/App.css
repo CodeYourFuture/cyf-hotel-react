@@ -1,53 +1,193 @@
 .App {
-  margin: auto;
-  max-width: 350px;
-  border: 2px solid rgb(82, 6, 182);
+  text-align: left;
+}
+
+.App-logo {
+  height: 30px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 40px;
+  padding: 20px;
+  align-items: center;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.App-title {
+  margin-left: 15px;
+  font-size: 1em;
+  font-family: Lucida Sans;
+  line-height: 1em;
+}
+
+.App-content {
+  padding-top: 20px;
+  font-size: large;
+}
+
+h1,
+h4 {
+  color: brown;
   text-align: center;
 }
 
-h2 {
-  margin: auto;
-  margin-bottom: 10px;
-  padding: 7px;
-  color: rgb(98, 203, 241);
+.card {
   text-align: center;
 }
 
-.sort-button {
-  margin: 10px;
-}
-
-.scores-container {
-  margin: auto;
-  border: 8px solid rgb(129, 231, 101);
-  width: 300px;
-  margin-bottom: 15px;
-}
-
-.scores {
+.card-container {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  border: 1px solid black;
-  padding: 4px;
+  align-content: center;
 }
 
-.person-score-container {
-  margin: 5px 5px 1px 5px;
-  padding: 2px;
+.touristic-cards-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-h3 {
-  color: deepskyblue;
+.search {
+  padding: 5px 0 20px 0;
 }
 
-.personal-score {
-  font-weight: 800;
+tr {
+  color: #5b5757;
+}
+
+.results {
+  padding-top: 15px;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.card {
+  width: 18rem;
+}
+.card-img-top {
+  width: 250px;
+}
+
+.chosenRow {
+  background-color: aqua;
+}
+
+table button {
+  width: fit-content;
+}
+
+.order-buttons {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 200px;
+}
+
+.order-buttons button {
+  margin-right: 20px;
+}
+
+.restaurant-container {
+  width: 600px;
+  margin-top: 40px;
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.order-name {
+  font-weight: 900;
+  width: 180px;
+}
+
+.customer-name {
+  font-weight: 900;
+  width: auto;
+}
+.order-list {
+  width: 400px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 30px;
+  align-items: center;
 }
 
-.score {
-  color: darkred;
+.order-list button {
+  margin-left: 20px;
+}
+
+.footer {
+  background-color: darkgray;
+  padding-top: 20px;
+  text-align: center;
+  bottom: 0;
+}
+
+.highlight {
+  color: rgb(73, 6, 6);
+  background-color: gold;
+}
+
+.order-item {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+}
+.customer-profile {
+  width: auto;
+  margin-top: 20px;
+}
+
+.profile-items {
+  font-weight: 700;
+  color: darkslategray;
+}
+
+.customer-span {
+  font-weight: 800;
+  color: darkblue;
+}
+
+.item-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 250px;
+  color: rgb(2, 39, 20);
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.orders {
+  width: 800px;
+  align-self: center;
+  margin-left: 20%;
+}
+
+.orders h3 {
+  margin-left: 20px;
+  color: firebrick;
+}
+
+.orders button {
+  margin-left: 20px;
 }

@@ -1,32 +1,39 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const TableRow = props => {
-  console.log(props);
-  const [selected, setSelected] = useState(false);
+const Row = props => {
+  const [bool, setToggle] = useState(false);
 
   const toggle = () => {
-    setSelected(!selected);
+    setToggle(!bool);
   };
 
+  const date1 = moment(props.booking.checkOutDate);
+  const date2 = moment(props.booking.checkInDate);
+
   return (
-    <tr onClick={toggle} className={selected ? "highlight" : null}>
-      <th scope="row">{props.info.id}</th>
-      <td>{props.info.title}</td>
-      <td>{props.info.firstName}</td>
-      <td>{props.info.surname}</td>
-      <td>{props.info.email}</td>
-      <td>{props.info.roomId}</td>
-      <td>{props.info.checkInDate}</td>
-      <td>{props.info.checkOutDate}</td>
-      <td>
-        {moment(props.info.checkOutDate, "YYYY/MM/DD").diff(
-          moment(props.info.checkInDate, "YYYY/MM/DD"),
-          "days"
-        )}
-      </td>
-    </tr>
+    <tbody>
+      <tr onClick={toggle} className={bool ? "highlight" : null}>
+        <th scope="row">{props.booking.id}</th>
+        <td>{props.booking.title}</td>
+        <td>{props.booking.firstName}</td>
+        <td>{props.booking.surname}</td>
+        <td>{props.booking.email}</td>
+        <td>{props.booking.roomId}</td>
+        <td>{props.booking.checkInDate}</td>
+        <td>{props.booking.checkOutDate}</td>
+        <td>{date1.diff(date2, "days")}</td>
+        <td>
+          <button
+            className="btn btn-primary"
+            value={props.booking.id}
+            onClick={props.handleClick}
+          >
+            Show Profile
+          </button>
+        </td>
+      </tr>
+    </tbody>
   );
 };
-
-export default TableRow;
+export default Row;
