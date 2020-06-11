@@ -6,22 +6,15 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
 
-  const search = searchVal => {
-    const filteredBooking = bookings.filter(customerBooking =>
-      isEqualToFirstNameOrSurname(
-        customerBooking.firstName.toLowerCase(),
-        customerBooking.surname.toLowerCase(),
-        searchVal.toLowerCase()
-      )
-    );
+  const whereFirstNameOrSurnameMatches = searchVal => booking =>
+    booking.firstName.toLowerCase().includes(searchVal) ||
+    booking.surname.toLowerCase().includes(searchVal);
 
-    setBookings(filteredBooking);
-  };
-
-  const isEqualToFirstNameOrSurname = (firstName, surName, searchVal) => {
-    return firstName === searchVal || surName === searchVal;
-  };
+  const filteredBookings = bookings.filter(
+    whereFirstNameOrSurnameMatches(searchInput.toLowerCase())
+  );
 
   useEffect(() => {
     fetch(`https://cyf-react.illicitonion.com/`)
@@ -32,16 +25,14 @@ const Bookings = () => {
           throw new Error("HTTP error");
         }
       })
-      .then(
-        data => {
-          setIsLoading(true);
-          setBookings(data);
-        },
-        err => {
-          setIsLoading(true);
-          setError(err);
-        }
-      );
+      .then(data => {
+        setIsLoading(true);
+        setBookings(data);
+      })
+      .catch(err => {
+        setIsLoading(true);
+        setError(err);
+      });
   }, []);
   if (!isLoading) {
     return <div>Loading...</div>;
@@ -58,8 +49,8 @@ const Bookings = () => {
     return (
       <div className="App-content">
         <div className="container">
-          <Search search={search} />
-          <SearchResults customerBookings={bookings} />
+          <Search searchInput={searchInput} setSearchInput={setSearchInput} />
+          <SearchResults customerBookings={filteredBookings} />
         </div>
       </div>
     );
