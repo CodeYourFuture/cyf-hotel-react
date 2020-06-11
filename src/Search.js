@@ -9,7 +9,7 @@ const Search = props => {
   };
   const searchHandler = event => {
     // search handler result that access the  result in the bookings
-    props.result(searchInput); //access the result function from the bookings
+    props.search(searchInput); //access the result function from the bookings
     event.preventDefault(); // prevent the page to reload
   };
   return (

@@ -15,20 +15,24 @@ const Bookings = () => {
       .catch(err => console.log(err)); // error handing
   }, []); // square bracket will prevent fetch infinite loop by react
 
-  const result = input => {
-    //function that display the result on console
-    console.log(input); // logs the user input to the function
-  };
-
+  /*search implemented */
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
-    console.log(searchVal);
+    // function search result
+    const filteredResult = bookings.filter(el => {
+      //filters the booking
+      return (
+        el.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        el.surname.toLowerCase().includes(searchVal.toLowerCase())
+      ); // return the customer based on search
+    });
+
+    setBookings(filteredResult); //calls the function to filter the bookings
   };
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search result={result} search={search} />
+        <Search result={search} search={search} />
         <SearchResults guestList={bookings} />
         {/*replaced the fake booking with bookings */}
         {/* <SearchResults results={FakeBookings} /> which displays the table*/}
