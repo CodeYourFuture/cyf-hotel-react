@@ -3,18 +3,16 @@ import moment from "moment";
 
 const Row = ({ element, index, showCustomerProfile }) => {
   const [active, setActiveClass] = useState(false);
-  const [title, setTitle] = useState([]);
-
   function handleClick() {
     setActiveClass(!active);
   }
   function showCustomer() {
     showCustomerProfile(element);
   }
-  function handleTitle(element) {
-    if (title.includes(element.title)) return;
-    else setTitle([...title, element.title]);
+  function sortTitle() {
+    sortTitle();
   }
+
   return (
     <tr
       onClick={handleClick}
@@ -52,7 +50,7 @@ const Row = ({ element, index, showCustomerProfile }) => {
             : "mx-auto text-white bg-dark"
         }
       >
-        <p onClick={() => handleTitle(element)}>{element.title}</p>
+        <p>{element.title}</p>
       </th>
       <td className={active ? "bg-success text-white" : " text-white "}>
         {element.firstName}

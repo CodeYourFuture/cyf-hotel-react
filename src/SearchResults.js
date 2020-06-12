@@ -3,7 +3,7 @@ import { Table } from "reactstrap";
 import CustomerProfile from "./CustomerProfile";
 import Row from "./row";
 
-const SearchResults = props => {
+const SearchResults = ({ bookings, sortTitle }) => {
   const [active, setActiveClass] = useState(false);
   const [id, setId] = useState("");
 
@@ -13,6 +13,7 @@ const SearchResults = props => {
   function showCustomerProfile(element) {
     setId([element.roomId]);
   }
+
   return (
     <div className="col-12">
       {id == "" ? "" : <CustomerProfile className="col-12" customerId={id} />}
@@ -20,7 +21,7 @@ const SearchResults = props => {
         <tbody>
           <tr className="col-12">
             <th className="mx-auto text-white bg-dark border pl-3 pr-3">
-              <button>sort Title</button>
+              <button onClick={sortTitle}>sort Title</button>
             </th>
             <th className="mx-auto text-white bg-dark border">
               <button>Sort First Name</button>
@@ -144,7 +145,7 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map((element, index) => {
+          {bookings.map((element, index) => {
             return (
               <Row
                 element={element}
