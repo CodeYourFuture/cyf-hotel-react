@@ -6,7 +6,7 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.illicitonion.com/delayed")
       .then(res => res.json())
       .then(data => setBookings(data));
   }, []);
@@ -19,8 +19,6 @@ const Bookings = () => {
           name.firstName.toLowerCase() === searchVal ||
           name.surname.toLowerCase() === searchVal
       )
-
-      // console.info("TO DO!", searchVal);
     );
   };
 
@@ -28,7 +26,11 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {bookings.length > 0 ? (
+          <SearchResults results={bookings} />
+        ) : (
+          <p style={{ color: "red" }}>Loading Data...</p>
+        )}
       </div>
     </div>
   );

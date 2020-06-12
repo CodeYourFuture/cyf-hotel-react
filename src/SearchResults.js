@@ -3,11 +3,10 @@ import Row from "./Row";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
-  const [selectedId, setSelectedId] = useState("");
+  const [selectedId, setSelectedId] = useState(null);
 
   const setSelected = e => {
     setSelectedId(e);
-    console.log(hello);
   };
   return (
     <div>
@@ -33,7 +32,7 @@ const SearchResults = props => {
         })}
       </table>
 
-      <CustomerProfile id={selectedId} />
+      {selectedId && <CustomerProfile id={selectedId} />}
     </div>
   );
 };

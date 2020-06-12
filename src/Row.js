@@ -1,33 +1,35 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const Row = props => {
+const Row = ({ setSelected, booking }) => {
   const [toogle, setToogle] = useState(false);
 
   const ToogleChange = () => {
     setToogle(!toogle);
   };
   const handleSelectedId = event => {
-    props.setSelected(event.target.value);
-    console.log(event.target.value);
+    setSelected(event);
   };
 
-  const date1 = moment(props.booking.checkOutDate);
-  const date2 = moment(props.booking.checkInDate);
+  const date1 = moment(booking.checkOutDate);
+  const date2 = moment(booking.checkInDate);
   return (
     <tbody>
       <tr onClick={ToogleChange} className={toogle ? "chosenRow" : null}>
-        <th scope="row">{props.booking.id}</th>
-        <td>{props.booking.title}</td>
-        <td>{props.booking.firstName}</td>
-        <td>{props.booking.surname}</td>
-        <td>{props.booking.email}</td>
-        <td>{props.booking.roomId}</td>
-        <td>{props.booking.checkInDate}</td>
-        <td>{props.booking.checkOutDate}</td>
+        <th scope="row">{booking.id}</th>
+        <td>{booking.title}</td>
+        <td>{booking.firstName}</td>
+        <td>{booking.surname}</td>
+        <td>{booking.email}</td>
+        <td>{booking.roomId}</td>
+        <td>{booking.checkInDate}</td>
+        <td>{booking.checkOutDate}</td>
         <td>{date1.diff(date2, "days")}</td>
         <td>
-          <button value={props.booking.id} onClick={handleSelectedId}>
+          <button
+            className="btn btn-primary "
+            onClick={() => handleSelectedId(booking.id)}
+          >
             Show profile
           </button>
         </td>
