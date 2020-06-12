@@ -32,16 +32,17 @@ const Search = ({ search, initialBookings, setBookings }) => {
                 onChange={handleSearchInput}
               />
               <button className="btn btn-primary">Search</button>
-              <button
-                className="btn btn-primary"
-                onClick={() => {
-                  setBookings(initialBookings);
-                }}
-              >
-                Clear
-              </button>
             </div>
           </form>
+          <button
+            className="btn btn-primary clear-search"
+            onClick={() => {
+              setBookings(initialBookings);
+              setSearchInput("");
+            }}
+          >
+            Clear search
+          </button>
         </div>
       </div>
     </div>

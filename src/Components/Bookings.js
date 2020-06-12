@@ -2,32 +2,31 @@ import React, { useState, useEffect } from "react";
 import AddBooking from "./AddBooking";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-
-const [bookings, setBookings] = useState(initialBookings);
-const [isLoading, setIsLoading] = useState(false);
-const [err, setErr] = useState(false);
-
-async function fetchApi() {
-  setIsLoading(true);
-  await fetch("https://cyf-react.illicitonion.com/")
-    .then(response => response.json())
-    .then(data => setBookings(data))
-    .catch(err => setErr(err));
-  setIsLoading(false);
-}
-
-useEffect(() => {
-  if (initialBookings.length !== 0) {
-    setBookings(initialBookings);
-  } else {
-    fetchApi();
-  }
-}, []);
-
 const Bookings = () => {
   const initialBookings = JSON.parse(
     window.localStorage.getItem("bookings" || [])
   );
+  const [bookings, setBookings] = useState(initialBookings);
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState(false);
+
+  async function fetchApi() {
+    setIsLoading(true);
+    await fetch("https://cyf-react.illicitonion.com/")
+      .then(response => response.json())
+      .then(data => setBookings(data))
+      .catch(err => setErr(err));
+    setIsLoading(false);
+  }
+
+  useEffect(() => {
+    if (initialBookings.length !== 0) {
+      setBookings(initialBookings);
+    } else {
+      fetchApi();
+    }
+  }, []);
+
   useEffect(() => {
     window.localStorage.setItem("bookings", JSON.stringify(bookings));
   }, [bookings]);
@@ -57,7 +56,12 @@ const Bookings = () => {
           setBookings={setBookings}
         />
 
-        <SearchResults data={bookings} loading={isLoading} error={err} />
+        <SearchResults
+          data={bookings}
+          loading={isLoading}
+          error={err}
+          setBookings={setBookings}
+        />
       </div>
     </div>
   );

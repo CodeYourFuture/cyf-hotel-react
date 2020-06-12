@@ -188,10 +188,45 @@ footer {
 }
 
 .title-add-booking button {
-  margin-top: 10px;
   margin-left: 10px;
 }
 
 .btn-remove input {
+  margin-left: 10px;
+}
+
+.btn-remove {
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.title-add-booking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+th button {
+  background-color: grey;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  /* padding: 5px; */
+  color: white;
+  border: none;
+}
+
+th button:hover {
+  background-color: #007bff;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.clear-search {
   margin-left: 10px;
 }

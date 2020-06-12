@@ -5,13 +5,11 @@ const AddBooking = ({ bookings, setBookings }) => {
   const [showAddForm, setShowAddForm] = useState(false);
   const [removeInputValue, setRemoveInputValue] = useState("");
 
-  function removeBooking(surname) {
+  function removeBooking(roomID) {
     var filteredBooking = bookings.filter(
-      booking => booking.surname.toLowerCase() !== surname.toLowerCase()
+      booking => booking.roomId !== Number(roomID)
     );
     setBookings(filteredBooking);
-
-    setRemoveInputValue("");
   }
 
   function handleChange(e) {
@@ -23,6 +21,14 @@ const AddBooking = ({ bookings, setBookings }) => {
       <h4 className="text-left">Add a Booking</h4>
       <hr />
       <div className="title-add-booking">
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            setShowAddForm(!showAddForm);
+          }}
+        >
+          Add a booking
+        </button>
         <div className="btn-remove">
           <button
             className="btn btn-primary"
@@ -33,16 +39,8 @@ const AddBooking = ({ bookings, setBookings }) => {
             Remove a booking
           </button>
 
-          <input onChange={handleChange} placeholder="remove by surname" />
+          <input onChange={handleChange} placeholder="enter room id" />
         </div>
-        <button
-          className="btn btn-primary"
-          onClick={() => {
-            setShowAddForm(!showAddForm);
-          }}
-        >
-          Add a booking
-        </button>
       </div>
 
       <div
