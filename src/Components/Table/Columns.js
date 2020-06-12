@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { sortInColumns } from "../../utils/functions";
 // import moment from "moment";
 // import fakeData from "../../data/fakeBookings.json";
 
-const Columns = ({ data, sortInColumns }) => {
+const Columns = ({ data, setBookings }) => {
+  const [sort, setSort] = useState(true);
   // const nights = data.map((Bookings) => {
   //   const checkIn = moment(Bookings.checkInDate);
   //   const checkOut = moment(Bookings.checkOutDate);
@@ -24,7 +26,7 @@ const Columns = ({ data, sortInColumns }) => {
         <th>
           <button
             onClick={() => {
-              sortInColumns("id");
+              sortInColumns("id", data, setBookings, sort, setSort);
             }}
           >
             Sort
@@ -34,7 +36,7 @@ const Columns = ({ data, sortInColumns }) => {
         <th>
           <button
             onClick={() => {
-              sortInColumns("title");
+              sortInColumns("title", data, setBookings, sort, setSort);
             }}
           >
             Sort
@@ -44,7 +46,7 @@ const Columns = ({ data, sortInColumns }) => {
         <th>
           <button
             onClick={() => {
-              sortInColumns("firstName");
+              sortInColumns("firstName", data, setBookings, sort, setSort);
             }}
           >
             Sort
@@ -54,7 +56,7 @@ const Columns = ({ data, sortInColumns }) => {
         <th>
           <button
             onClick={() => {
-              sortInColumns("surname");
+              sortInColumns("surname", data, setBookings, sort, setSort);
             }}
           >
             Sort
@@ -64,7 +66,7 @@ const Columns = ({ data, sortInColumns }) => {
         <th>
           <button
             onClick={() => {
-              sortInColumns("email");
+              sortInColumns("email", data, setBookings, sort, setSort);
             }}
           >
             Sort
@@ -74,7 +76,7 @@ const Columns = ({ data, sortInColumns }) => {
         <th>
           <button
             onClick={() => {
-              sortInColumns("roomId");
+              sortInColumns("roomId", data, setBookings, sort, setSort);
             }}
           >
             Sort
@@ -84,7 +86,7 @@ const Columns = ({ data, sortInColumns }) => {
         <th>
           <button
             onClick={() => {
-              sortInColumns("checkIn");
+              sortInColumns("checkIn", data, setBookings, sort, setSort);
             }}
           >
             Sort
@@ -94,7 +96,7 @@ const Columns = ({ data, sortInColumns }) => {
         <th>
           <button
             onClick={() => {
-              sortInColumns("checkOut");
+              sortInColumns("checkOut", data, setBookings, sort, setSort);
             }}
           >
             Sort
