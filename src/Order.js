@@ -13,7 +13,7 @@ const Order = props => {
   };
 
   return (
-    <p className="orders">
+    <p className="orders" style={{ textAlign: "center" }}>
       <b>{props.orderType}</b>: {orders}
       <RestaurantButton orderOne={orderOne} removeOne={removeOne} />
     </p>
