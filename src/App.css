@@ -80,17 +80,6 @@ a {
   height: 38px;
 }
 
-/*
-HIGHLIGHT ROW ON HOVER
-.table{
-	width:100%; 
-	border-collapse:collapse; 
-}
-.table tr:hover {
-  background-color: #ffff99
-} 
-*/
-
 .highlight {
   background-color: rgb(243, 226, 205);
   padding: 10px;
@@ -117,10 +106,6 @@ h3 {
 
 hr {
   width: 100%;
-}
-
-.no-profile {
-  display: none;
 }
 
 .profile {
