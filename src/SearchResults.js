@@ -6,7 +6,7 @@ const SearchResults = props => {
   // 1
 
   const [clickedRow, setClickedRow] = useState(null);
-  const [clickedBtn, setClickedBtn] = useState(0); // declared state variable gets clickbtn and clickbotton function
+  const [clickedBtn, setClickedBtn] = useState(-1); // declared state variable gets clickbtn and clickbotton function
   return (
     <div>
       <table className="table">
@@ -32,7 +32,7 @@ const SearchResults = props => {
                 key={element.id}
                 element={element}
                 isClicked={clickedRow === element.id}
-                clickedBtn={setClickedBtn}
+                setClickedBtn={setClickedBtn}
                 setClickedRow={setClickedRow}
                 id={element.id}
               />

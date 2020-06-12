@@ -4,11 +4,11 @@ import moment from "moment"; // imported the moment js
 const TableRows = props => {
   /*changeHandler that displays the id when botton is clicked */
   const buttonChangeHandler = event => {
-    props.clickedBtn(props.element.id);
+    props.setClickedBtn(props.element.id);
     event.stopPropagation();
   };
 
-  const changeHandler = () => {
+  const highLightChangeHandler = () => {
     props.setClickedRow(props.element.id);
   };
   const a = moment(props.element.checkOutDate); // using moment js function to pass in checkout date
@@ -16,7 +16,7 @@ const TableRows = props => {
   const differenceOfDays = a.diff(b, "days"); // calculates the differenceOfDays
   return (
     <tr
-      onClick={changeHandler}
+      onClick={highLightChangeHandler}
       className={props.isClicked ? "clickedRow" : "unclicked"}
     >
       {/*assigns key called index to table row*/}
