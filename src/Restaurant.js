@@ -5,7 +5,7 @@ const Restaurant = () => {
   return (
     <div id="Div_Restaurant_JSX" className="Div_Restaurant_CSS">
       <h3>Restaurant Orders</h3>
-      <ul>
+      <ul className="UL_Food_CSS">
         <Order orderType="Pizza" />
         <Order orderType="Salad" />
         <Order orderType="Chocolate Cake" />

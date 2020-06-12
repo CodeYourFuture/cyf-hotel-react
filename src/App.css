@@ -87,6 +87,7 @@ body {
     color: white;
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -176,11 +177,28 @@ tr {
   color: #f0f0f0;
   letter-spacing: 2px;
 }
-
+.Button_Search_CSS {
+  width: 80px;
+  padding: 8px;
+  background-color: #1e88e5;
+  color: white;
+  font-family: "Scada", sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  border: none;
+}
+.Button_Search_CSS:hover {
+  background-color: #55acf8;
+  cursor: pointer;
+}
+.Button_Search_CSS:focus {
+  outline: none;
+}
 /* -----------------Table------------------ */
 .SearchResults_CSS {
   width: 100%;
   margin: auto;
+  animation: FadeIn 500ms;
 }
 table {
   width: 100%;
@@ -214,6 +232,14 @@ table {
   text-indent: 10px;
   transition: 100ms;
 }
+.Table_TD_CSS:first-child {
+  text-indent: 6px;
+}
+.Table_TD_CSS:first-child:hover {
+  font-size: 15px;
+  padding: 2px;
+  text-indent: 7px;
+}
 tr:hover {
   cursor: pointer;
 }
@@ -223,13 +249,98 @@ tr:hover {
 .Table_TD_HighLight_CSS td {
   background-color: #c5e1f8;
 }
-td:nth-child(5),
-td:nth-child(8) {
+td:nth-child(6),
+td:nth-child(9) {
   text-align: center;
   text-indent: 0px;
 }
 
+/* ----------------------- Show Profile ------------------- */
+.Div_ShowProfile_CSS {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #00000025;
+  animation: FadeIn 200ms;
+  font-family: "Scada", sans-serif;
+}
+.Div_ShowProfileChild_CSS {
+  font-size: 16px;
+  margin-left: 25%;
+  margin-top: 10%;
+  width: 50%;
+  height: 300px;
+  border-radius: 5px;
+  background-color: #f5f9fc;
+  box-shadow: 0px 0px 10px 1px #a7a7a7;
+  animation: FadeIn 200ms;
+  display: flex;
+}
+.Div_UserAvatar_CSS {
+  width: 35%;
+  height: 290px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.D_VIP_CSS {
+  margin-top: 60px;
+  margin-bottom: 10px;
+  height: 30px;
+}
+.P_VIP_CSS {
+  width: 50px;
+  border-radius: 10px 50px 50px 10px;
+  height: 30px;
+  color: white;
+  background-color: #1e88e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Div_UserDetail_CSS {
+  height: 290px;
+  letter-spacing: 1px;
+}
+.Div_FirstPard_CSS {
+  display: flex;
+}
+.P_Title_CSS {
+  font-weight: bold;
+}
+.P_FirstName_CSS {
+  padding: 0px 10px;
+}
+.I_User_CSS {
+  font-size: 150px;
+  color: #38324c;
+}
+.P_Close_CSS {
+  margin-top: 30px;
+  width: 150px;
+  border-radius: 50px;
+  height: 30px;
+  color: white;
+  background-color: #1e88e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 200ms;
+}
+.P_Close_CSS:hover {
+  background-color: #55acf8;
+  cursor: pointer;
+}
 /* -----------------------Resturant------------------------ */
+.UL_Food_CSS {
+  display: flex;
+}
+.UL_Food_CSS li {
+  list-style: none;
+  padding: 0px 20px;
+}
 .Div_Restaurant_CSS {
   max-width: 70%;
   margin: auto;
@@ -252,4 +363,29 @@ td:nth-child(8) {
 }
 .Button_ResturantButton_CSS:focus {
   outline: none;
+}
+
+/* Loading */
+@keyframes Loading-Animation {
+  0% {
+    color: #f5f9fc;
+  }
+  50% {
+    color: #039be5;
+  }
+  100% {
+    color: #f5f9fc;
+  }
+}
+.P_Loading_CSS {
+  font-family: "Scada", sans-serif;
+  letter-spacing: 3px;
+  color: #039be5;
+  font-weight: bold;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: Loading-Animation infinite 2s;
 }

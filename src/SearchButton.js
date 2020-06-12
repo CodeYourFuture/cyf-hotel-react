@@ -3,7 +3,7 @@ import React from "react";
 const SearchButton = () => {
   return (
     <div id="SearchButton">
-      <button className="btn btn-primary">Search</button>
+      <button className="Button_Search_CSS">Search</button>
     </div>
   );
 };

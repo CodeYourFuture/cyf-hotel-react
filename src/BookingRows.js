@@ -1,20 +1,27 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const BookingRows = ({ element, index }) => {
+const BookingRows = ({ show, element, index }) => {
   const [rowsState, setRowsState] = useState(false);
   const changeRowState = () => {
     setRowsState(!rowsState);
   };
   return (
     <tr
-      key={index}
+      key={"Row" + index}
       onClick={changeRowState}
       className={rowsState ? "Table_TD_HighLight_CSS" : "Table_TD_CSS"}
     >
-      <th scope="row" className="Table_TD_CSS">
-        {element.title}
+      <th
+        className="Table_TD_CSS"
+        onClick={e => {
+          e.stopPropagation();
+          show(element.id);
+        }}
+      >
+        <i className="fas fa-eye" />
       </th>
+      <th className="Table_TD_CSS">{element.title}</th>
       <td className="Table_TD_CSS">{element.firstName}</td>
       <td className="Table_TD_CSS">{element.surname}</td>
       <td className="Table_TD_CSS">{element.email}</td>
