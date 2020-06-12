@@ -6,7 +6,7 @@ const Bookings = () => {
   const initialBookings = JSON.parse(
     window.localStorage.getItem("bookings" || [])
   );
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState(initialBookings);
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState(false);
 
@@ -20,7 +20,7 @@ const Bookings = () => {
   }
 
   useEffect(() => {
-    if (initialBookings) {
+    if (initialBookings && initialBookings.length !== 0) {
       setBookings(initialBookings);
     } else {
       fetchApi();
