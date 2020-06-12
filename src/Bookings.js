@@ -5,14 +5,20 @@ import SearchResults from "./SearchResults";
 //import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState([]); // created the state hook passing booking and setBookings functions give it empty array.
+  const [bookings, setBookings] = useState([]); // created the state hook passing booking and setBookings functions gve
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    // useEffect function
-    fetch(`https://cyf-react.illicitonion.com/`) // fetched the booking data
+    setIsLoading(true);
+    fetch(`https://cyf-react.illicitonion.com/delayed`) // fetched the booking data
       .then(Response => Response.json())
-      .then(data => setBookings(data))
-      .catch(err => console.log(err)); // error handing
+      .then(data => {
+        setBookings(data);
+        setIsLoading(false);
+      })
+
+      .catch(error => setError(error)); // error handing
   }, []); // square bracket will prevent fetch infinite loop by react
 
   /*search implemented */
@@ -33,7 +39,14 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search result={search} search={search} />
-        <SearchResults guestList={bookings} />
+
+        {error ? (
+          <p>error 500</p>
+        ) : isLoading ? (
+          <p>Loading... </p>
+        ) : (
+          <SearchResults guestList={bookings} />
+        )}
         {/*replaced the fake booking with bookings */}
         {/* <SearchResults results={FakeBookings} /> which displays the table*/}
       </div>

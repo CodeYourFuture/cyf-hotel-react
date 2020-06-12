@@ -6,7 +6,7 @@ const SearchResults = props => {
   // 1
 
   const [clickedRow, setClickedRow] = useState(null);
-  const [clickedBtn, setClickedBtn] = useState(-1); // declared state variable gets clickbtn and clickbotton function
+  const [clickedBtn, setClickedBtn] = useState(null); // declared state variable gets clickbtn and clickbotton function
   return (
     <div>
       <table className="table">
