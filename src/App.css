@@ -215,9 +215,20 @@ table {
   letter-spacing: 1px;
   text-indent: 10px;
 }
-.Head_TH_CSS:first-child {
-  border-top-left-radius: 4px;
+.Head_TH_CSS:last-child {
+  text-align: center;
+  text-indent: 0px;
+  width: 40px;
+  padding: 2px;
 }
+.Head_TH_CSS:nth-child(1) {
+  border-top-left-radius: 4px;
+  text-align: center;
+  text-indent: 0px;
+  width: 40px;
+  padding: 2px;
+}
+
 .Head_TH_CSS:last-child {
   border-top-right-radius: 4px;
 }
@@ -232,13 +243,20 @@ table {
   text-indent: 10px;
   transition: 100ms;
 }
-.Table_TD_CSS:first-child {
-  text-indent: 6px;
-}
-.Table_TD_CSS:first-child:hover {
-  font-size: 15px;
+.Table_TD_CSS:last-child {
+  text-align: center;
+  text-indent: 0px;
+  width: 40px;
   padding: 2px;
-  text-indent: 7px;
+}
+.Table_TD_CSS:nth-child(1) {
+  text-align: center;
+  text-indent: 0px;
+  width: 40px;
+  padding: 2px;
+}
+.Table_TD_CSS:last-child:hover {
+  font-size: 15px;
 }
 tr:hover {
   cursor: pointer;
@@ -378,7 +396,7 @@ td:nth-child(9) {
   }
 }
 .P_Loading_CSS {
-  font-family: "Scada", sans-serif;
+  font-family: "Concert One", cursive;
   letter-spacing: 3px;
   color: #039be5;
   font-weight: bold;
@@ -388,4 +406,28 @@ td:nth-child(9) {
   justify-content: center;
   align-items: center;
   animation: Loading-Animation infinite 2s;
+}
+/* Add booking */
+.TD_Add_CSS {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.P_Add_CSS {
+  width: 95%;
+  height: 95%;
+  text-align: center;
+  text-indent: 0px;
+  font-weight: bold;
+  color: white;
+  background-color: #039be5;
+  border-radius: 3px;
+  font-size: 18px;
+  margin: 0px;
+  border: none;
+  transition: 200ms;
+}
+.P_Add_CSS:hover {
+  background-color: #4ca0ea;
 }

@@ -7,7 +7,7 @@ const Bookings = () => {
   const [bookingData, setBookingData] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me")
       .then(respose => respose.json())
       .then(data => {
         setBookings(data);

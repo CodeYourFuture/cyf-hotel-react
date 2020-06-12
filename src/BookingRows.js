@@ -12,15 +12,9 @@ const BookingRows = ({ show, element, index }) => {
       onClick={changeRowState}
       className={rowsState ? "Table_TD_HighLight_CSS" : "Table_TD_CSS"}
     >
-      <th
-        className="Table_TD_CSS"
-        onClick={e => {
-          e.stopPropagation();
-          show(element.id);
-        }}
-      >
-        <i className="fas fa-eye" />
-      </th>
+      <td className="Table_TD_CSS">
+        <i className="fas fa-user" />
+      </td>
       <th className="Table_TD_CSS">{element.title}</th>
       <td className="Table_TD_CSS">{element.firstName}</td>
       <td className="Table_TD_CSS">{element.surname}</td>
@@ -31,6 +25,15 @@ const BookingRows = ({ show, element, index }) => {
       <td className="Table_TD_CSS">
         {moment(element.checkOutDate).diff(moment(element.checkInDate), "days")}
       </td>
+      <th
+        className="Table_TD_CSS"
+        onClick={e => {
+          e.stopPropagation();
+          show(element.id);
+        }}
+      >
+        <i className="fas fa-eye" />
+      </th>
     </tr>
   );
 };
