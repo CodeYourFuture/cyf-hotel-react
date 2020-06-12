@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+// const [supect, setSuspect]=useState(null)
 const CustomerProfile = props => {
-  // const [customerId, setcustomerId]
-  return <div>{props.id}ccgjcj</div>;
+  // setSuspect(props.suspect)
+  return <div>{props.suspect}</div>;
 };
 export default CustomerProfile;
