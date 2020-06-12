@@ -28,7 +28,6 @@ const SearchResults = props => {
             <td>buttons</td>
           </tr>
         </thead>
-
         {props.results.map(result => {
           return (
             <Row

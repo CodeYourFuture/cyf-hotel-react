@@ -6,6 +6,7 @@ import "./App.css";
 const Bookings = () => {
   const [bookingData, setBookingData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   useEffect(() => {
     //start loading
     setIsLoading(true);
@@ -15,7 +16,8 @@ const Bookings = () => {
       .then(data => {
         setIsLoading(false);
         setBookingData(data);
-      });
+      })
+      .catch(err => setError(err));
   }, []);
 
   const search = searchVal => {
@@ -32,10 +34,12 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {isLoading ? (
+        {error ? (
+          <p>this is an API error</p>
+        ) : isLoading ? (
           <p>loading...</p>
         ) : (
-          <SearchResults results={bookingData} />
+          <SearchResults results={bookingData} error={error} />
         )}
       </div>
     </div>
