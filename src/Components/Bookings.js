@@ -3,10 +3,10 @@ import AddBooking from "./AddBooking";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 const Bookings = () => {
-  const initialBookings = JSON.parse(
-    window.localStorage.getItem("bookings" || [])
-  );
-  const [bookings, setBookings] = useState(initialBookings);
+  // const initialBookings = JSON.parse(
+  //   window.localStorage.getItem("bookings" || [])
+  // );
+  const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState(false);
 
@@ -20,16 +20,16 @@ const Bookings = () => {
   }
 
   useEffect(() => {
-    if (initialBookings) {
-      setBookings(initialBookings);
-    } else {
-      fetchApi();
-    }
+    // if (initialBookings.length !== 0) {
+    //   setBookings(initialBookings);
+    // } else {
+    fetchApi();
+    // }
   }, []);
 
-  useEffect(() => {
-    window.localStorage.setItem("bookings", JSON.stringify(bookings));
-  }, [bookings]);
+  // useEffect(() => {
+  //   window.localStorage.setItem("bookings", JSON.stringify(bookings));
+  // }, [bookings]);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
@@ -47,12 +47,12 @@ const Bookings = () => {
         <AddBooking
           bookings={bookings}
           setBookings={setBookings}
-          initialBookings={initialBookings}
+          // initialBookings={initialBookings}
         />
         <br />
         <Search
           search={search}
-          initialBookings={initialBookings}
+          // initialBookings={initialBookings}
           setBookings={setBookings}
         />
 
