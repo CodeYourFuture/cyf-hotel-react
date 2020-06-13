@@ -3,9 +3,11 @@ import { Table } from "reactstrap";
 import CustomerProfile from "./CustomerProfile";
 import Row from "./row";
 
-const SearchResults = ({ bookings, sortTitle }) => {
+const SearchResults = ({ bookings }) => {
   const [active, setActiveClass] = useState(false);
   const [id, setId] = useState("");
+  const [sortedBookings, setSortedBookings] = useState(bookings);
+  const [ascending, setAscending] = useState(false);
 
   function handleClick() {
     setActiveClass(!active);
@@ -13,139 +15,105 @@ const SearchResults = ({ bookings, sortTitle }) => {
   function showCustomerProfile(element) {
     setId([element.roomId]);
   }
+  function handleSortTable(header) {
+    let newSortedBookings = [...sortedBookings];
+    if (ascending) {
+      newSortedBookings.sort((a, b) =>
+        a[header].toLowerCase() > b[header].toLowerCase() ? 1 : -1
+      );
+    } else {
+      newSortedBookings.sort((a, b) =>
+        a[header].toLowerCase() < b[header].toLowerCase() ? 1 : -1
+      );
+    }
+    setSortedBookings(newSortedBookings);
+    setAscending(!ascending);
+  }
+  function handleSortNumber(header) {
+    let newSortedBookings = [...sortedBookings];
+    if (ascending) {
+      newSortedBookings.sort((a, b) => (a[header] > b[header] ? 1 : -1));
+    } else {
+      newSortedBookings.sort((a, b) => (a[header] < b[header] ? 1 : -1));
+    }
+    setSortedBookings(newSortedBookings);
+    setAscending(!ascending);
+  }
 
   return (
     <div className="col-12">
       {id == "" ? "" : <CustomerProfile className="col-12" customerId={id} />}
       <Table className="col-12">
-        <tbody>
-          <tr className="col-12">
-            <th className="mx-auto text-white bg-dark border pl-3 pr-3">
-              <button onClick={sortTitle}>sort Title</button>
-            </th>
-            <th className="mx-auto text-white bg-dark border">
-              <button>Sort First Name</button>
-            </th>
-            <th className="mx-auto text-white bg-dark border">
-              <button>Sort surname</button>
-            </th>
-            <th className="mx-auto text-white bg-dark border">
-              <button> Sort Email</button>
-            </th>
-            <th className="mx-auto text-white bg-dark border">
-              <button> Sort Room Id</button>
-            </th>
-            <th className="mx-auto text-white bg-dark border">
-              <button> Sort CheckInDate</button>
-            </th>
-            <th className="mx-auto text-white bg-dark border">
-              <button>Sort CheckOutDate</button>
-            </th>
-            <th className="mx-auto text-white bg-dark border">
-              <button>Sort Nights</button>
-            </th>
-          </tr>
-        </tbody>
-      </Table>
-      <Table className="col-12">
         <thead>
-          <tr onClick={handleClick} className="col-12">
-            <th
-              className={
-                active
-                  ? "bg-warning mx-auto text-white"
-                  : "mx-auto text-white bg-dark"
-              }
-            >
+          <tr className="col-12">
+            <th className={"mx-auto border text-center text-white bg-dark"}>
               status
             </th>
 
-            <th
-              className={
-                active
-                  ? "bg-warning mx-auto text-white"
-                  : "mx-auto text-white bg-dark"
-              }
-            >
+            <th className={"mx-auto border text-center text-white bg-dark"}>
               Show profile
             </th>
 
             <th
-              className={
-                active
-                  ? "bg-success mx-auto text-white"
-                  : "mx-auto text-white bg-danger"
-              }
+              onClick={() => handleSortTable("title")}
+              className={"mx-auto border text-center text-white bg-dark"}
             >
+              <button className="mb-4 ">Sort</button>
               Title
             </th>
             <th
-              className={
-                active
-                  ? "bg-warning mx-auto text-white"
-                  : "mx-auto text-white bg-dark"
-              }
+              onClick={() => handleSortTable("firstName")}
+              className={"mx-auto border text-center text-white bg-dark"}
             >
+              <button className="mb-1 d-flex ml-2 ">Sort</button>
               First Name
             </th>
             <th
-              className={
-                active
-                  ? "bg-success mx-auto text-white pl-2"
-                  : "mx-auto text-white bg-danger pl-2"
-              }
+              onClick={() => handleSortTable("surname")}
+              className={"mx-auto border text-center text-white bg-dark"}
             >
+              <button className="mb-1 d-flex ml-2 ">Sort</button>
               Last Name
             </th>
             <th
-              className={
-                active
-                  ? "bg-warning mx-auto text-white pr-3"
-                  : "mx-auto text-white bg-dark pr-3"
-              }
+              onClick={() => handleSortTable("email")}
+              className={"mx-auto border text-center text-white bg-dark"}
             >
+              <button className="mb-4 d-flex mx-auto">Sort</button>
               Email
             </th>
             <th
-              className={
-                active
-                  ? "bg-success mx-auto text-white pl-1 pr-5"
-                  : "mx-auto text-white bg-danger pl-1 pr-5"
-              }
+              onClick={() => handleSortTable("roomId")}
+              className={"mx-auto border text-center text-white bg-dark"}
             >
+              <button className="mb-1 d-flex ml-2 ">Sort</button>
               Room id
             </th>
             <th
-              className={
-                active
-                  ? "bg-warning mx-auto text-white pr-3"
-                  : "mx-auto text-white bg-dark pl-2"
-              }
+              onClick={() => handleSortNumber("checkInDate")}
+              className={"mx-auto border text-center text-white bg-dark"}
             >
+              <button className="mb-1 d-flex ml-2 ">Sort</button>
               Check in date
             </th>
             <th
-              className={
-                active
-                  ? "bg-success mx-auto text-white pl-2"
-                  : "mx-auto text-white bg-danger pl-2"
-              }
+              onClick={() => handleSortNumber("checkOutDate")}
+              className={"mx-auto border text-center text-white bg-dark"}
             >
+              <button className="mb-1 d-flex ml-2 ">Sort</button>
               Check out date
             </th>
             <th
-              className={
-                active
-                  ? "bg-warning mx-auto text-white pr-3"
-                  : "mx-auto text-white bg-dark pl-2"
-              }
+              onClick={() => handleSortNumber("nights")}
+              className={"mx-auto border text-center text-white bg-dark"}
             >
+              <button className="mb-4 d-flex ml-2 ">Sort</button>
               Nights
             </th>
           </tr>
         </thead>
         <tbody>
-          {bookings.map((element, index) => {
+          {sortedBookings.map((element, index) => {
             return (
               <Row
                 element={element}

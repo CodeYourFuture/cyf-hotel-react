@@ -36,10 +36,6 @@ const Bookings = () => {
       setBookings(newBookings);
     };
 
-    function sortTitle() {
-      setBookings(bookings.sort((a, b) => (a.name > b.name ? 1 : -1)));
-    }
-
     const addNewBookings = ({
       title,
       firstName,
@@ -67,7 +63,7 @@ const Bookings = () => {
       <div className="col-12">
         <div className="table container col-12 col-md-10 ml-sm-1 ml-md-5 ml-lg-auto mr-lg-auto">
           <Search searchVal={searchVal} />
-          <SearchResults bookings={bookings} sortTitle={sortTitle} />
+          <SearchResults bookings={bookings} />
           <NewBookings addNewBookings={addNewBookings} />
         </div>
       </div>
