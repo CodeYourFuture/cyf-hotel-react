@@ -4,14 +4,11 @@ const Search = ({ search, bookings, setBookings, original }) => {
   const [searchInput, setSearchInput] = useState("");
   const handleSearchInput = event => {
     setSearchInput(event.target.value);
-    console.log(searchInput);
   };
   if (searchInput === "") {
     setBookings(bookings);
   }
   const showAll = () => {
-    console.log("pres button ");
-    console.log(bookings);
     setBookings(original);
   };
   return (

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults";
+import AddNew from "./AddNew";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -14,7 +15,11 @@ const Bookings = () => {
       });
   }, []);
   if (!bookings) {
-    return <h1>. Looding . . .</h1>;
+    return (
+      <div>
+        <img src="https://i.gifer.com/HJkK.gif" />
+      </div>
+    );
   }
   const search = searchVal => {
     console.info("TO DO!", searchVal);
@@ -24,12 +29,11 @@ const Bookings = () => {
         booking.surname.toLowerCase().includes(searchVal.toLowerCase())
     );
     setBookings(searchBooking);
-    console.log(searchBooking);
-    console.log("this is search ");
   };
   return (
     <div className="App-content">
       <div className="container">
+        <AddNew />
         <Search
           search={search}
           bookings={bookings}
