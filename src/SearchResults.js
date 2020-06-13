@@ -7,14 +7,14 @@ import CustomerProfile from "./CustomerProfile";
 const SearchResults = props => {
   const [selectedRow, setSelectedRow] = useState(null);
   const [profileId, setProfileId] = useState(null);
-  const [className, setClassName] = useState("customer-profile");
+  const [className, setClassName] = useState("customer-profile lg-col-5");
   const showProfile = id => {
     setProfileId(id);
   };
   return (
-    <div>
-      <table className="table">
-        <thead className="table-head">
+    <div className="lg-col-12 col-12">
+      <table className="table lg-col-12 col-12">
+        <thead className="table-head lg-col-11 col-11">
           <tr>
             <td>id</td>
             <td>title</td>

@@ -11,7 +11,10 @@ const SearchInput = props => {
     props.searchForName(inputValue);
   };
   return (
-    <form className="form-group search-box" onSubmit={searchClick}>
+    <form
+      className="form-group search-box lg-col-12 col-12"
+      onSubmit={searchClick}
+    >
       <label htmlFor="customerName">Customer name</label>
       <div className=" search-input">
         <input

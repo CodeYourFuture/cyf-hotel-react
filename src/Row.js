@@ -1,11 +1,8 @@
 import React from "react";
 
 const Row = props => {
-  // const showProfile =()=>{
-
-  // }
   return (
-    <tbody className="table-body table-striped">
+    <tbody className="table-body table-striped lg-col-11 col-11">
       <tr
         onClick={() => props.setSelectedRow(props.row.id)}
         className={props.isSelected ? "selected-row" : "unselected-row"}

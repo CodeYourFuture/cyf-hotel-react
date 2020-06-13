@@ -1,8 +1,3 @@
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .logo-hotel {
   height: 70px;
 }
@@ -28,13 +23,25 @@
 .cards {
   margin-top: 30px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
 }
 
 .App-content {
   padding-top: 20px;
   font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .search {
@@ -47,7 +54,6 @@
 }
 
 table {
-  /* padding: 3px; */
   font-size: 16px;
 }
 
@@ -56,7 +62,6 @@ tr {
 }
 
 td {
-  /* padding: 2px; */
   text-align: left;
 }
 
@@ -77,6 +82,12 @@ td {
   background-color: lightblue;
 }
 
+.result-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .footer {
   padding-top: 20px;
   margin-top: 50px;
@@ -91,20 +102,12 @@ td {
   align-items: center;
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 20px 0;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 0;
-}
-
-.card {
-  width: 18rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .restaurand-order {
@@ -117,21 +120,50 @@ td {
 
 .orders {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 992px) {
+  /* lg */
+  .orders {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .cards {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .form-inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    background-color: powderblue;
+  }
 }
 
 .order {
   list-style-type: none;
-  padding: 50px;
+  padding: 30px 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
 
 .order-list {
-  padding: 20px;
+  padding: 20px 0;
 }
+
 .show-profile-btn {
   cursor: pointer;
   border: 0.1px solid lightgray;
@@ -159,8 +191,31 @@ button:focus {
 }
 
 .form-inputs {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  /* justify-content: space-between; */
+  justify-content: center;
+  align-items: center; */
+  border-radius: 5px;
+  background-color: powderblue;
 }
+
+.submit-form {
+  margin: 15px 0;
+  padding: 5px;
+  border: 0.1px solid rgb(170, 170, 170);
+  border-radius: 5px;
+}
+
+.input {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  border-radius: 5px;
+  border: 0.1px solid rgb(170, 170, 170);
+  padding: 5px 0;
+  margin: 10px 0;
+}
+.input:focus {
+  outline: none;
+}
+/* .submit-form: */

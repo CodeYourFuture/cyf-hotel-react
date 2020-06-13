@@ -5,13 +5,15 @@ const CustomerProfile = props => {
 
   // console.log(props.className);
   useEffect(() => {
-    fetch(`https://cyf-react.illicitonion.com/customers/${props.profileId}`)
+    fetch(`https://cyf-react.glitch.me/customers/${props.profileId}`)
       .then(res => res.json())
       .then(data => setCustomerData(data));
   }, [props.profileId]);
   return (
     <ul className={props.className}>
       <li>{customerData.id}</li>
+      <li>{customerData.firstName}</li>
+      <li>{customerData.surname}</li>
       <li>{customerData.email}</li>
       {customerData.vip ? <li>{customerData.phoneNumber}</li> : null}
     </ul>

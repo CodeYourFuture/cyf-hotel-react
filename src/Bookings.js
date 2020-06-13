@@ -8,13 +8,12 @@ const Bookings = () => {
   const [bookingData, setBookingData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  // const[formData, setFormData]=useState({})
   useEffect(() => {
     //start loading
     setIsLoading(true);
     fetch("https://cyf-react.glitch.me")
       .then(res => res.json())
-      //finish loading
+      //finxish loading
       .then(data => {
         setIsLoading(false);
         setBookingData(data);
@@ -42,20 +41,18 @@ const Bookings = () => {
     setBookingData(searchResult);
   };
   return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        {error ? (
-          <p>this is an API error</p>
-        ) : isLoading ? (
-          <p>loading...</p>
-        ) : (
-          <div>
-            <SearchResults results={bookingData} error={error} />
-            <BookingForm updateData={updateData} />
-          </div>
-        )}
-      </div>
+    <div className="App-content row">
+      <Search search={search} />
+      {error ? (
+        <p>this is an API error</p>
+      ) : isLoading ? (
+        <p>loading...</p>
+      ) : (
+        <div className="result-form lg-col-11 col-10">
+          <SearchResults results={bookingData} error={error} />
+          <BookingForm updateData={updateData} />
+        </div>
+      )}
     </div>
   );
 };

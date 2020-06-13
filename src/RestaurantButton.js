@@ -3,7 +3,10 @@ import "./App.css";
 
 const RestaurantButton = props => {
   return (
-    <button className="btn btn-primary" onClick={props.orderOneFun}>
+    <button
+      className="btn btn-primary col-7 lg-col-5"
+      onClick={props.orderOneFun}
+    >
       Add
     </button>
   );

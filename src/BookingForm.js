@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 const BookingForm = props => {
-  //  const[newId,setNewId]=useState(null)
-  // props.results.map((id,index) => {
-  //     // setNewId(id.id)
-
-  // })
-
-  // let newId = props.results.length +1;
   const [data, setData] = useState({
-    // id:{newId},
     title: "",
     firstName: "",
     surname: "",
@@ -18,7 +10,6 @@ const BookingForm = props => {
   });
 
   const submitHandler = event => {
-    // setNewId(props.results.length + 1)
     props.updateData(data);
     event.preventDefault();
   };
@@ -32,20 +23,50 @@ const BookingForm = props => {
   };
 
   return (
-    <form className="form-inputs" onSubmit={submitHandler}>
-      title:
-      <input onChange={changeHandler} name="title" type="text" />
-      first name:
-      <input onChange={changeHandler} name="firstName" type="text" />
-      surname:
-      <input onChange={changeHandler} name="surname" type="text" />
-      room id:
-      <input onChange={changeHandler} name="roomId" type="number" />
-      check in date:
-      <input onChange={changeHandler} name="checkInDate" type="date" />
-      check out date:
-      <input onChange={changeHandler} name="checkOutDate" type="date" />
-      <button>Submit</button>
+    <form className="form-inputs lg-col-11 col-11" onSubmit={submitHandler}>
+      Title :
+      <input
+        onChange={changeHandler}
+        name="title"
+        type="text"
+        className="lg-col-5 input"
+      />
+      First Name:
+      <input
+        onChange={changeHandler}
+        name="firstName"
+        type="text"
+        className="lg-col-5 input"
+      />
+      Surname:
+      <input
+        onChange={changeHandler}
+        name="surname"
+        type="text"
+        className="lg-col-5 input"
+      />
+      Room Id:
+      <input
+        onChange={changeHandler}
+        name="roomId"
+        type="number"
+        className="lg-col-5 input"
+      />
+      CheckInDate:
+      <input
+        onChange={changeHandler}
+        name="checkInDate"
+        type="date"
+        className="lg-col-4 input"
+      />
+      CheckOutDate:
+      <input
+        onChange={changeHandler}
+        name="checkOutDate"
+        type="date"
+        className="lg-col-4 input"
+      />
+      <button className="submit-form lg-col-2">Submit</button>
     </form>
   );
 };

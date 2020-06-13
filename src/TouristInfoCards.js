@@ -23,7 +23,7 @@ const TouristInfoCards = () => {
     }
   ];
   return (
-    <div className="cards">
+    <div className="cards row">
       {cityData.map((city, index) => {
         return <Card city={city} key={index} />;
       })}

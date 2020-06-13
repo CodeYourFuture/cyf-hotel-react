@@ -5,10 +5,11 @@ import Footer from "./Footer";
 import TouristInfoCards from "./TouristInfoCards";
 import Heading from "./Heading";
 import "./App.css";
+import "./Grid.css";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App ">
       <Heading />
       <TouristInfoCards />
       <Bookings />

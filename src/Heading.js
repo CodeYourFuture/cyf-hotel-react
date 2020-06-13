@@ -1,9 +1,9 @@
 import React from "react";
 const Heading = () => {
   return (
-    <div className="App-header">
+    <div className="App-header row">
       <img
-        className="logo-hotel"
+        className="logo-hotel lg-col-1 col-3"
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
         alt="This is the hotel logo"
       />
