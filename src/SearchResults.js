@@ -10,13 +10,12 @@ let SearchResults = props => {
   const handleShow = event => {
     setSuspectId(event.target.value);
 
-    const something = () => {
-      return bookings.filter(booking => {
-        booking.id = suspectId;
-      });
+    const something = id => {
+      return bookings.find(bo => bo.id === { id });
     };
     setNewSuspect(something);
     setSuspect(newSuspect);
+    console.log(something(1));
   };
   return (
     <div>
