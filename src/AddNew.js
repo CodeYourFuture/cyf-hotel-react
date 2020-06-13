@@ -5,7 +5,6 @@ const AddNew = ({ updateData }) => {
     firstName: "",
     surname: "",
     roomId: "",
-    email: "",
     checkInDate: "",
     checkOutDate: ""
   });
@@ -14,11 +13,11 @@ const AddNew = ({ updateData }) => {
     updateData(addBooking);
   };
   const handleInputChange = event => {
-    const updateDatan = {
+    const updateData = {
       ...addBooking,
       [event.target.name]: event.target.value
     };
-    setAddBooking(updateDatan);
+    setAddBooking(updateData);
   };
   return (
     <div className="search">
