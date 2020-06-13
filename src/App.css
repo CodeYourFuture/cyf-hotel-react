@@ -139,6 +139,12 @@ tfoot {
 }
 .box {
   display: inline-block;
+  justify-content: space-between;
+  padding-right: 5%;
+  padding-left: 2%;
+}
+.text {
+  margin-left: 1cm;
 }
 .notShow {
   display: none;

@@ -1,5 +1,25 @@
-import React from "react";
-const AddNew = () => {
+import React, { useState } from "react";
+const AddNew = ({ updateData }) => {
+  const [addBooking, setAddBooking] = useState({
+    title: "",
+    firstName: "",
+    surname: "",
+    roomId: "",
+    email: "",
+    checkInDate: "",
+    checkOutDate: ""
+  });
+  const submitHandel = event => {
+    event.preventDefault();
+    updateData(addBooking);
+  };
+  const handleInputChange = event => {
+    const updateDatan = {
+      ...addBooking,
+      [event.target.name]: event.target.value
+    };
+    setAddBooking(updateDatan);
+  };
   return (
     <div className="search">
       <div className="page-header">
@@ -7,12 +27,12 @@ const AddNew = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group">
+          <form className="form-group" onSubmit={submitHandel}>
             <label htmlFor="customerName">New Customer</label>
             <div className="search-rows">
-              <tr className="box">
+              <div className="box">
                 <p scope="co1"> Title: </p>
-                <select>
+                <select onChange={handleInputChange}>
                   <option value="Mr">Mr</option>
                   <option value="Mrs">Mrs</option>
                   <option value="Miss">Miss</option>
@@ -23,21 +43,20 @@ const AddNew = () => {
                   <option value="Dame">Dame</option>
                   <option value="Madam">Madam</option>
                 </select>
-                <div />
-                <p> FirstName:</p>
-                <input type="text" />
-                <p scope="co1"> SureName:</p>
-                <input type="text" />
-              </tr>
-              <tr className="box">
+                <p> First Name:</p>
+                <input type="text" onChange={handleInputChange} />
+                <p scope="co1"> Sure Name:</p>
+                <input type="text" onChange={handleInputChange} />
+              </div>
+              <div className="box">
                 <p scope="co1"> Email: </p>
-                <input type="Email" />
+                <input type="Email" onChange={handleInputChange} />
                 <p scope="co1"> Phone number: </p>
-                <input type="Number" />
-              </tr>
-              <tr className="box">
+                <input type="Number" onChange={handleInputChange} />
+              </div>
+              <div className="box">
                 <p scope="co1"> Room: </p>
-                <select>
+                <select onChange={handleInputChange}>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -50,12 +69,12 @@ const AddNew = () => {
                   <option value="10">10</option>
                 </select>
                 <p scope="co1"> Check In Date: </p>
-                <input type="Date" />
+                <input type="Date" onChange={handleInputChange} />
                 <p scope="co1"> Check Out Date: </p>
-                <input type="Date" />
-              </tr>
+                <input type="Date" onChange={handleInputChange} />
+              </div>
             </div>
-            <button className="btn btn-primary add">Add New</button>
+            <button className="btn btn-primary add">New Customer</button>
           </form>
         </div>
       </div>

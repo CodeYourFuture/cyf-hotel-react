@@ -12,7 +12,9 @@ const SearchResults = ({ data }) => {
       .then(data => setCustomerData(data))
       .catch(error => console.log(error));
   }, [profile]);
-
+  if (!customerData) {
+    return null;
+  }
   return (
     <div className="table">
       <table>

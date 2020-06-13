@@ -21,6 +21,15 @@ const Bookings = () => {
       </div>
     );
   }
+  const updateData = newObj => {
+    console.log(newObj);
+    console.log("newobj");
+    const newOne = {
+      ...newObj,
+      id: bookings.length + 1
+    };
+    setBookings([...bookings, newOne]);
+  };
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     const searchBooking = bookings.filter(
@@ -33,7 +42,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <AddNew />
+        <AddNew updateData={updateData} setBookings={setBookings} />
         <Search
           search={search}
           bookings={bookings}
