@@ -3,21 +3,21 @@ import Tbody from "./Tbody.js";
 import CustomerProfile from "./CustomerProfile";
 // console.log(fakeBookings);
 let SearchResults = props => {
-  const [suspect, setSuspect] = useState(null);
-  const [newSuspect, setNewSuspect] = useState(null);
+  const [suspect, setSuspect] = useState([]);
+
   const [suspectId, setSuspectId] = useState(-1);
   const bookings = props.bookings;
   const handleShow = event => {
     setSuspectId(event.target.value);
 
-    const something = id => {
-      console.log(bookings);
-      console.log(id);
-      return bookings.filter(bo => bo.id === { id });
-    };
-    setNewSuspect(something);
-    setSuspect(newSuspect);
-    console.log(something(suspectId));
+    // const something = id => {
+    //   console.log(bookings);
+    //   console.log(suspectId);
+    //   return bookings[0] ;
+    // };
+
+    // setSuspect(something(suspectId));
+    // console.log(suspect);
   };
   return (
     <div>
@@ -38,7 +38,7 @@ let SearchResults = props => {
         </thead>
         <Tbody bookings={props.bookings} handleShow={handleShow} />
       </table>
-      <CustomerProfile handleShow={handleShow} suspect={suspect} />
+      <CustomerProfile suspect={suspectId} />
     </div>
   );
 };
