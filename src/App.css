@@ -157,3 +157,10 @@ button:focus {
   border-radius: 2px;
   height: 60px;
 }
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+}

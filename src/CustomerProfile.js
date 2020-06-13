@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const CustomerProfile = props => {
   const [customerData, setCustomerData] = useState({});
 
-  console.log(props.className);
+  // console.log(props.className);
   useEffect(() => {
     fetch(`https://cyf-react.illicitonion.com/customers/${props.profileId}`)
       .then(res => res.json())
