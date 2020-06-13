@@ -10,11 +10,12 @@ let SearchResults = props => {
   const handleShow = event => {
     setSuspectId(event.target.value);
 
-    setNewSuspect(suspectId => {
+    const something = () => {
       return bookings.filter(booking => {
-        return booking.id.includes(suspectId);
+        booking.id = suspectId;
       });
-    });
+    };
+    setNewSuspect(something);
     setSuspect(newSuspect);
   };
   return (
