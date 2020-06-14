@@ -31,7 +31,7 @@ const AddNew = ({ updateData }) => {
             <div className="search-rows">
               <div className="box">
                 <p scope="co1"> Title: </p>
-                <select onChange={handleInputChange}>
+                <select onChange={handleInputChange.title}>
                   <option value="Mr">Mr</option>
                   <option value="Mrs">Mrs</option>
                   <option value="Miss">Miss</option>

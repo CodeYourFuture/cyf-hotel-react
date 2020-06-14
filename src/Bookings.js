@@ -26,7 +26,8 @@ const Bookings = () => {
     console.log("newobj");
     const newOne = {
       ...newObj,
-      id: bookings.length + 1
+      id: bookings.length + 1,
+      firstName: "meisam"
     };
     setBookings([...bookings, newOne]);
   };
