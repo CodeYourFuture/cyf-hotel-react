@@ -16,15 +16,31 @@ const SearchResults = props => {
       <table className="table lg-col-12 col-12">
         <thead className="table-head lg-col-11 col-11">
           <tr>
-            <td>id</td>
-            <td>title</td>
-            <td>firstname</td>
-            <td>surname</td>
-            <td>email</td>
-            <td>roomId</td>
-            <td>checkInDate</td>
-            <td>checkOutDate</td>
-            <td>nights</td>
+            <td onClick={props.sortById} className="head-column">
+              Id
+            </td>
+            <td onClick={props.sortByTitle} className="head-column">
+              Title
+            </td>
+            <td onClick={props.sortByFirstName} className="head-column">
+              FirstName
+            </td>
+            <td onClick={props.sortBySurname} className="head-column">
+              Surname
+            </td>
+            <td onClick={props.sortByEmail} className="head-column">
+              Email
+            </td>
+            <td onClick={props.sortByRoomId} className="head-column">
+              RoomId
+            </td>
+            <td onClick={props.sortByCheckInDate} className="head-column">
+              CheckInDate
+            </td>
+            <td onClick={props.sortByCheckOutDate} className="head-column">
+              CheckOutDate
+            </td>
+            <td onClick={props.sortByNights}>Nights</td>
             <td>buttons</td>
           </tr>
         </thead>

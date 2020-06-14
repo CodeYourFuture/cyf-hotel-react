@@ -191,10 +191,6 @@ button:focus {
 }
 
 .form-inputs {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   border-radius: 5px;
   background-color: powderblue;
 }
@@ -207,9 +203,6 @@ button:focus {
 }
 
 .input {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
   border-radius: 5px;
   border: 0.1px solid rgb(170, 170, 170);
   padding: 5px 0;
@@ -218,4 +211,8 @@ button:focus {
 .input:focus {
   outline: none;
 }
-/* .submit-form: */
+.head-column:hover {
+  cursor: pointer;
+  background-color: rgb(230, 230, 230);
+  transform: translate(3px, 3px);
+}
