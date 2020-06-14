@@ -29,7 +29,7 @@ function TouristInfoCards() {
       {cityData.map((data, index) => {
         return (
           <div className="card" key={index}>
-            <img src={data.thumbnail} className="card-img-top" />
+            <img src={data.thumbnail} className="card-img-top" alt="" />
             <div className="card-body">
               <a href={data.href} className="btn btn-primary">
                 {data.name}
