@@ -4,7 +4,8 @@ import SearchResults from "./SearchResults.js";
 import NewBookings from "./newBookings";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState();
+  const [sortedBookings, setSortedBookings] = useState();
+  const [ascending, setAscending] = useState(false);
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
       // fetch("https://cyf-react.glitch.me/delayed")
@@ -15,12 +16,12 @@ const Bookings = () => {
         }
         return response.json();
       })
-      .then(data => setBookings(data))
+      .then(data => setSortedBookings(data))
       .catch(err => {
         throw new Error(err.url + " Error has occured:" + err.status);
       });
   }, []);
-  if (!bookings) {
+  if (!sortedBookings) {
     return (
       <div className="m-5 text-white bg-danger p-5 text-center">
         please wait, the data is being fetched...
@@ -28,12 +29,12 @@ const Bookings = () => {
     );
   } else {
     const searchVal = searchInput => {
-      const newBookings = bookings.filter(
+      const newBookings = sortedBookings.filter(
         element =>
           element.firstName.toLowerCase() == searchInput.toLowerCase() ||
           element.surname.toLowerCase() == searchInput.toLowerCase()
       );
-      setBookings(newBookings);
+      setSortedBookings(newBookings);
     };
 
     const addNewBookings = ({
@@ -45,8 +46,8 @@ const Bookings = () => {
       checkIn,
       checkOut
     }) => {
-      setBookings([
-        ...bookings,
+      setSortedBookings([
+        ...sortedBookings,
         {
           title: title,
           firstName: firstName,
@@ -59,11 +60,40 @@ const Bookings = () => {
       ]);
     };
 
+    function handleSortTable(header) {
+      let newSortedBookings = [...sortedBookings];
+      if (ascending) {
+        newSortedBookings.sort((a, b) =>
+          a[header].toLowerCase() > b[header].toLowerCase() ? 1 : -1
+        );
+      } else {
+        newSortedBookings.sort((a, b) =>
+          a[header].toLowerCase() < b[header].toLowerCase() ? 1 : -1
+        );
+      }
+      setSortedBookings(newSortedBookings);
+      setAscending(!ascending);
+    }
+    function handleSortNumber(header) {
+      let newSortedBookings = [...sortedBookings];
+      if (ascending) {
+        newSortedBookings.sort((a, b) => (a[header] > b[header] ? 1 : -1));
+      } else {
+        newSortedBookings.sort((a, b) => (a[header] < b[header] ? 1 : -1));
+      }
+      setSortedBookings(newSortedBookings);
+      setAscending(!ascending);
+    }
+
     return (
       <div className="col-12">
         <div className="table container col-12 col-md-10 ml-sm-1 ml-md-5 ml-lg-auto mr-lg-auto">
           <Search searchVal={searchVal} />
-          <SearchResults bookings={bookings} />
+          <SearchResults
+            bookings={sortedBookings}
+            handleSortTable={handleSortTable}
+            handleSortNumber={handleSortNumber}
+          />
           <NewBookings addNewBookings={addNewBookings} />
         </div>
       </div>

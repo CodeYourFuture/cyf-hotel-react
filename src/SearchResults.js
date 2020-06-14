@@ -3,11 +3,11 @@ import { Table } from "reactstrap";
 import CustomerProfile from "./CustomerProfile";
 import Row from "./row";
 
-const SearchResults = ({ bookings }) => {
+const SearchResults = ({ bookings, handleSortTable, handleSortNumber }) => {
   const [active, setActiveClass] = useState(false);
   const [id, setId] = useState("");
-  const [sortedBookings, setSortedBookings] = useState(bookings);
-  const [ascending, setAscending] = useState(false);
+  // const [sortedBookings, setSortedBookings] = useState(bookings);
+  // const [ascending, setAscending] = useState(false);
 
   function handleClick() {
     setActiveClass(!active);
@@ -15,30 +15,30 @@ const SearchResults = ({ bookings }) => {
   function showCustomerProfile(element) {
     setId([element.roomId]);
   }
-  function handleSortTable(header) {
-    let newSortedBookings = [...sortedBookings];
-    if (ascending) {
-      newSortedBookings.sort((a, b) =>
-        a[header].toLowerCase() > b[header].toLowerCase() ? 1 : -1
-      );
-    } else {
-      newSortedBookings.sort((a, b) =>
-        a[header].toLowerCase() < b[header].toLowerCase() ? 1 : -1
-      );
-    }
-    setSortedBookings(newSortedBookings);
-    setAscending(!ascending);
-  }
-  function handleSortNumber(header) {
-    let newSortedBookings = [...sortedBookings];
-    if (ascending) {
-      newSortedBookings.sort((a, b) => (a[header] > b[header] ? 1 : -1));
-    } else {
-      newSortedBookings.sort((a, b) => (a[header] < b[header] ? 1 : -1));
-    }
-    setSortedBookings(newSortedBookings);
-    setAscending(!ascending);
-  }
+  // function handleSortTable(header) {
+  //   let newSortedBookings = [...sortedBookings];
+  //   if (ascending) {
+  //     newSortedBookings.sort((a, b) =>
+  //       a[header].toLowerCase() > b[header].toLowerCase() ? 1 : -1
+  //     );
+  //   } else {
+  //     newSortedBookings.sort((a, b) =>
+  //       a[header].toLowerCase() < b[header].toLowerCase() ? 1 : -1
+  //     );
+  //   }
+  //   setSortedBookings(newSortedBookings);
+  //   setAscending(!ascending);
+  // }
+  // function handleSortNumber(header) {
+  //   let newSortedBookings = [...sortedBookings];
+  //   if (ascending) {
+  //     newSortedBookings.sort((a, b) => (a[header] > b[header] ? 1 : -1));
+  //   } else {
+  //     newSortedBookings.sort((a, b) => (a[header] < b[header] ? 1 : -1));
+  //   }
+  //   setSortedBookings(newSortedBookings);
+  //   setAscending(!ascending);
+  // }
 
   return (
     <div className="col-12">
@@ -113,7 +113,7 @@ const SearchResults = ({ bookings }) => {
           </tr>
         </thead>
         <tbody>
-          {sortedBookings.map((element, index) => {
+          {bookings.map((element, index) => {
             return (
               <Row
                 element={element}
