@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search";
-import { SearchResults } from "./components";
+import { SearchResults, BookingForm } from "./components";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -51,6 +51,7 @@ const Bookings = () => {
         <div className="container">
           <Search searchInput={searchInput} setSearchInput={setSearchInput} />
           <SearchResults customerBookings={filteredBookings} />
+          <BookingForm />
         </div>
       </div>
     );

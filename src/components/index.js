@@ -8,6 +8,7 @@ import SearchResults from "./SearchResults";
 import TableRow from "./TableRow";
 import Order from "./Order";
 import CustomerProfile from "./CustomerProfile";
+import BookingForm from "./BookingForm";
 
 export {
   Heading,
@@ -19,5 +20,6 @@ export {
   SearchResults,
   TableRow,
   Order,
-  CustomerProfile
+  CustomerProfile,
+  BookingForm
 };
