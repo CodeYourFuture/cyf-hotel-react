@@ -3,10 +3,10 @@ import Tbody from "./Tbody.js";
 import CustomerProfile from "./CustomerProfile";
 // console.log(fakeBookings);
 let SearchResults = props => {
-  const [suspect, setSuspect] = useState([]);
+  // const [suspect, setSuspect] = useState([]);
 
   const [suspectId, setSuspectId] = useState(-1);
-  const bookings = props.bookings;
+  // const bookings = props.bookings;
   const handleShow = event => {
     setSuspectId(event.target.value);
 

@@ -1,20 +1,33 @@
 import React, { useState, useEffect } from "react";
 
-const CustomerProfile = ({ suspectId }) => {
-  const [supectId2, setSuspectId2] = useState(null);
+const CustomerProfile = suspect => {
+  // const [ suspectId,setSupectId]=useState(null)
   const [thatGuy, setThatGuy] = useState(null);
-  setSuspectId2({ suspectId });
+  console.log(suspect);
 
-  useEffect(
-    props => {
-      fetch(`https://cyf-react.glitch.me/customers/${props.suspect}`)
-        .then(res => res.json())
-        .then(data => setThatGuy(data));
-    },
-    [{ suspectId }]
-  );
-  console.log({ thatGuy });
-  return <div>thatGuy</div>;
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${suspect.suspect}`)
+      .then(res => res.json())
+      .then(data => setThatGuy(data));
+  }, [suspect]);
+  console.log(thatGuy);
+  if (thatGuy != null) {
+    return (
+      <div>
+        <span>
+          <strong className="col-12">Customer profile</strong>
+        </span>
+        <span>
+          Customer id:
+          <strong>
+            <div>{JSON.stringify(thatGuy)}</div>
+          </strong>
+        </span>
+      </div>
+    );
+  } else {
+    return <div>loading...</div>;
+  }
 };
 
 export default CustomerProfile;
