@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-// import FakeBookings from "../data/fakeBookings.json";
+import FakeBookings from "../data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -17,6 +17,10 @@ const Bookings = () => {
     setBookings(filteredBookings);
   };
 
+  // const addBooking = (booking) => {
+  //   setBookings([...bookings, booking]);
+  // };
+
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
       // fetch(`https://cyf-react.glitch.me/delayed`)
@@ -25,19 +29,20 @@ const Bookings = () => {
       .then(data => {
         setBookings(data);
         setLoaded(true);
-      })
-      .catch(error =>
-        alert("Sorry unexpected error... Please try again later")
-      );
+      });
+    // .catch((error) =>
+    //   alert("Sorry unexpected error... Please try again later")
+    // );
   }, []);
 
-  return !loaded ? (
-    <div>LOADING ...</div>
-  ) : (
+  // !loaded ? (
+  //   <div>LOADING ...</div>
+  // ) :
+  return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        <SearchResults results={bookings} setBookings={setBookings} />
       </div>
     </div>
   );

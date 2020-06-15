@@ -1,7 +1,8 @@
 import React from "react";
 import TableRow from "./TabelRow";
+import AddBooking from "./AddBooking";
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ results, setBookings }) => {
   return (
     <>
       <table className="table">
@@ -25,6 +26,7 @@ const SearchResults = ({ results }) => {
           ))}
         </tbody>
       </table>
+      <AddBooking results={results} setBookings={setBookings} />
     </>
   );
 };
