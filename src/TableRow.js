@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 function TableRow(props) {
   const [isHighlighted, setIsHighlighted] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   function handleClick() {
     setIsHighlighted(!isHighlighted);
+  }
+
+  function showId() {
+    setClicked(!clicked);
   }
 
   return (
@@ -26,6 +32,10 @@ function TableRow(props) {
           moment(props.result.checkInDate),
           "days"
         )}
+      </td>
+      <td>
+        <button onClick={showId}>Show Profile</button>
+        {clicked ? <CustomerProfile id={props.result.id} /> : null}
       </td>
     </tr>
   );

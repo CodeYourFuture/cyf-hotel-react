@@ -3,16 +3,6 @@ import moment from "moment";
 import TableRow from "./TableRow";
 
 function SearchResults(props) {
-  // const [clickRow, setClickRow ] = useState(false) - l16 try?
-
-  // function RowClick(){
-  //   if (clickRow===true){
-  //   {'tr {background-color: red; }'}
-  //     setClickRow(false)
-  //   } else {
-  //     setClickRow(true)
-  //   }
-  // }
   console.log(props);
   return (
     <table className="table table-bordered">
@@ -28,6 +18,7 @@ function SearchResults(props) {
           <th>Check In Date</th>
           <th>Check Out Date</th>
           <th>Nights Stayed</th>
+          <th>Profiles</th>
         </tr>
       </thead>
       {props.hotelBookings.map(person => {
