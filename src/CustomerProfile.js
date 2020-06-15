@@ -13,14 +13,14 @@ const CustomerProfile = suspect => {
   console.log(thatGuy);
   if (thatGuy != null) {
     return (
-      <div>
+      <div className="customerProfile">
         <span>
-          <strong className="col-12">Customer profile</strong>
+          <strong className="h1">Customer profile</strong>
         </span>
         <span>
           Customer id:
           <strong>
-            <div>{JSON.stringify(thatGuy)}</div>
+            <div>{JSON.stringify(thatGuy).trim()}</div>
           </strong>
         </span>
       </div>

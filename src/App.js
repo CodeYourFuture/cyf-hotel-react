@@ -11,7 +11,7 @@ const cities = [
     name: "Glasgow",
     href: "https://peoplemakeglasgow.com",
     image:
-      "https://rccl-h.assetsadobe.com/is/image/content/dam/royal/data/ports/glasgow-scotland/overview/glasgow-scotland-aerial-view.jpg?$750x320$"
+      "https://lp-cms-production.imgix.net/2019-06/e8d86a035ed072df0be80000e5a5b058-kelvingrove-art-gallery-museum.jpg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4"
   },
   {
     name: "Manchester",

@@ -60,7 +60,21 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
-
+.cardsBlock {
+  display: flex;
+  justify-content: center;
+}
+.customerProfile {
+  display: flex;
+  flex-direction: column;
+}
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .card {
   width: 18rem;
+  padding-left: 0%;
+  justify-content: center;
 }
