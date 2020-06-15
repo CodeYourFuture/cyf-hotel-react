@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-
+import AddBooking from "./AddBooking";
 import TableRow from "./TableRow";
+
 const SearchResults = props => {
-  const { results } = props;
+  const { results, setBookings } = props;
 
   return (
     <>
@@ -27,6 +28,7 @@ const SearchResults = props => {
           ))}
         </tbody>
       </table>
+      <AddBooking setBookings={setBookings} results={results} />
     </>
   );
 };
