@@ -5,6 +5,7 @@ import SearchResults from "./SearchResults";
 
 function Bookings() {
   const [bookings, setBookings] = useState([]);
+  const [error, setError] = useState(null);
 
   function search(searchVal) {
     // console.info("TO DO!", searchVal);
@@ -16,11 +17,28 @@ function Bookings() {
     setBookings(filterBookings);
   }
 
+  // useEffect(() => {
+  //   fetch(`https://cyf-react.glitch.me/delayed`)
+  //     .then(res => res.json())
+  //     .then(data => setBookings(data));
+
+  // }, .catch(err => {setError(err))[]);
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/delayed`)
+    fetch(`https://cyf-react.glitch.me/delayed`) //https://cyf-react.glitch.me/error
       .then(res => res.json())
-      .then(data => setBookings(data));
+      .then(data => {
+        console.log(data);
+        setBookings(data);
+      })
+      .catch(err => setError(err));
   }, []);
+
+  // if (error) {
+  //   return (
+  //     <div>
+  //     Error when loading data{error.message}
+  //     </div>
+  //   )}
 
   return (
     <div className="App-content">
