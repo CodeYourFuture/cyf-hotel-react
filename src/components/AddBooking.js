@@ -2,18 +2,6 @@ import React, { useState } from "react";
 
 const AddBooking = ({ results, setBookings }) => {
   const [newBooking, setNewBooking] = useState({});
-  //   const handleSubmit = () => {
-  //     setNewBooking({
-  //       title: select.target.value,
-  //       firstName: firstName.target.value,
-  //       surname: surname.target.value,
-  //       email: email.target.value,
-  //       roomId: roomId.target.value,
-  //       checkInDate: checkInDate.target.value,
-  //       checkOutDate: checkOutDate.target.value,
-  //     });
-  //   };
-  console.log(newBooking);
 
   return (
     <div>

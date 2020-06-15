@@ -4,7 +4,7 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "../data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState(FakeBookings);
   const [loaded, setLoaded] = useState(false);
 
   const search = searchVal => {
@@ -17,28 +17,22 @@ const Bookings = () => {
     setBookings(filteredBookings);
   };
 
-  // const addBooking = (booking) => {
-  //   setBookings([...bookings, booking]);
-  // };
-
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
-      // fetch(`https://cyf-react.glitch.me/delayed`)
-      // fetch(`https://cyf-react.glitch.me/error`)
       .then(res => res.json())
       .then(data => {
         setBookings(data);
         setLoaded(true);
-      });
-    // .catch((error) =>
-    //   alert("Sorry unexpected error... Please try again later")
-    // );
+      })
+      .catch(error =>
+        alert("Sorry unexpected error... Please try again later")
+      );
   }, []);
 
-  // !loaded ? (
-  //   <div>LOADING ...</div>
-  // ) :
   return (
+    // !loaded ? (
+    //   <div>LOADING ...</div>
+    // ) :
     <div className="App-content">
       <div className="container">
         <Search search={search} />
