@@ -44,11 +44,13 @@ const Bookings = () => {
       roomId,
       email,
       checkIn,
-      checkOut
+      checkOut,
+      id
     }) => {
       setSortedBookings([
         ...sortedBookings,
         {
+          id: id,
           title: title,
           firstName: firstName,
           surname: surName,
