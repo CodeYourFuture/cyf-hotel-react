@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const ShowProfile = ({ closeProfile, profileState_F, profileData }) => {
   return (
@@ -7,38 +8,72 @@ const ShowProfile = ({ closeProfile, profileState_F, profileData }) => {
         <div className="Div_UserAvatar_CSS">
           <i className="I_User_CSS fas fa-user" />
         </div>
-        <div className="Div_UserDetail_CSS">
-          <div className="D_VIP_CSS">
-            {profileData.vip ? (
-              <p className="P_VIP_CSS">
-                <strong>VIP</strong>
-              </p>
-            ) : null}
-          </div>
-          <div className="Div_FirstPard_CSS">
-            <p className="P_Title_CSS">{profileData.title},</p>
-            <p className="P_FirstName_CSS">{profileData.firstName}</p>
-            <p className="P_SurName_CSS">{profileData.surname}</p>
-          </div>
-          <p className="P_Email_CSS">
-            <strong>Email: </strong>
-            {profileData.email}
-          </p>
-          <p className="P_Phone_CSS">
-            <strong>Phone: </strong>
-            {profileData.phoneNumber}
-          </p>
-          <p
-            className="P_Close_CSS"
-            onClick={() => {
-              closeProfile("");
-              profileState_F("");
-            }}
-          >
-            {" "}
-            Close{" "}
-          </p>
-        </div>
+        <table className="Div_UserDetail_CSS">
+          <tbody>
+            <tr>
+              <td>
+                {profileData.vip ? (
+                  <p className="P_VIP_CSS">
+                    <strong>VIP</strong>
+                  </p>
+                ) : null}
+              </td>
+            </tr>
+            <tr>
+              <td className="Div_FirstPard_CSS">
+                <strong>{profileData.title},&nbsp;</strong>
+                {profileData.firstName}&nbsp;
+                {profileData.surname}
+              </td>
+              <td>
+                <strong>Check in date: </strong>
+                {profileData.checkInDate}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Email: </strong>
+                {profileData.email}
+              </td>
+              <td>
+                <strong>Check out date: </strong>
+                {profileData.checkOutDate}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Phone: </strong>
+                {profileData.phoneNumber}
+              </td>
+              <td>
+                <strong>Night: </strong>
+                {moment(profileData.checkOutDate).diff(
+                  moment(profileData.checkInDate),
+                  "days"
+                )}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Room Id: </strong>
+                {profileData.roomId}
+              </td>
+            </tr>
+            <tr>
+              <td />
+              <td>
+                <p
+                  className="P_Close_CSS"
+                  onClick={() => {
+                    profileState_F("");
+                  }}
+                >
+                  Back
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

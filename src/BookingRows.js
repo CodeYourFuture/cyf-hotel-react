@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const BookingRows = ({ show, element, index }) => {
+const BookingRows = ({ profileState_F, element, index }) => {
   const [rowsState, setRowsState] = useState(false);
   const changeRowState = () => {
     setRowsState(!rowsState);
@@ -29,7 +29,7 @@ const BookingRows = ({ show, element, index }) => {
         className="Table_TD_CSS"
         onClick={e => {
           e.stopPropagation();
-          show(element.id);
+          profileState_F(element);
         }}
       >
         <i className="fas fa-eye" />

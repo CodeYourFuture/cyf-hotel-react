@@ -202,7 +202,6 @@ tr {
 }
 table {
   width: 100%;
-  margin-bottom: 50px;
 }
 .Head_TH_CSS {
   padding: 6px 5px;
@@ -257,8 +256,6 @@ table {
 }
 .Table_TD_CSS:last-child:hover {
   font-size: 15px;
-}
-tr:hover {
   cursor: pointer;
 }
 .Table_TD_HighLight_CSS th {
@@ -285,11 +282,11 @@ td:nth-child(9) {
   font-family: "Scada", sans-serif;
 }
 .Div_ShowProfileChild_CSS {
-  font-size: 16px;
-  margin-left: 25%;
+  font-size: 14px;
+  margin-left: 20%;
   margin-top: 10%;
-  width: 50%;
-  height: 300px;
+  width: 60%;
+  height: 350px;
   border-radius: 5px;
   background-color: #f5f9fc;
   box-shadow: 0px 0px 10px 1px #a7a7a7;
@@ -297,21 +294,19 @@ td:nth-child(9) {
   display: flex;
 }
 .Div_UserAvatar_CSS {
-  width: 35%;
-  height: 290px;
+  width: 30%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.D_VIP_CSS {
-  margin-top: 60px;
-  margin-bottom: 10px;
-  height: 30px;
+  background-color: rgb(241, 241, 241);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .P_VIP_CSS {
+  padding: 3px;
   width: 50px;
   border-radius: 10px 50px 50px 10px;
-  height: 30px;
   color: white;
   background-color: #1e88e5;
   display: flex;
@@ -319,24 +314,17 @@ td:nth-child(9) {
   align-items: center;
 }
 .Div_UserDetail_CSS {
+  margin-left: 15px;
+  margin-top: 55px;
+  width: 68%;
   height: 290px;
   letter-spacing: 1px;
-}
-.Div_FirstPard_CSS {
-  display: flex;
-}
-.P_Title_CSS {
-  font-weight: bold;
-}
-.P_FirstName_CSS {
-  padding: 0px 10px;
 }
 .I_User_CSS {
   font-size: 150px;
   color: #38324c;
 }
 .P_Close_CSS {
-  margin-top: 30px;
   width: 150px;
   border-radius: 50px;
   height: 30px;
@@ -408,26 +396,144 @@ td:nth-child(9) {
   animation: Loading-Animation infinite 2s;
 }
 /* Add booking */
-.TD_Add_CSS {
-  height: 30px;
+.Div_Add_CSS {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
 }
 .P_Add_CSS {
-  width: 95%;
-  height: 95%;
+  width: 38px;
+  height: 27px;
+  margin-top: 1px;
+  margin-right: 1px;
   text-align: center;
   text-indent: 0px;
   font-weight: bold;
   color: white;
-  background-color: #039be5;
-  border-radius: 3px;
+  background-color: #12cbc4;
+  border-radius: 2px;
   font-size: 18px;
-  margin: 0px;
   border: none;
   transition: 200ms;
 }
 .P_Add_CSS:hover {
-  background-color: #4ca0ea;
+  background-color: #4be2dd;
+  cursor: pointer;
+}
+/* Add Customer */
+.Div_AddProfileFullSize_CSS {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #00000025;
+  animation: FadeIn 200ms;
+  font-family: "Scada", sans-serif;
+}
+.Div_AddProfile_CSS {
+  font-size: 14px;
+  margin-left: 20%;
+  margin-top: 10%;
+  width: 60%;
+  height: 450px;
+  border-radius: 5px;
+  background-color: #f5f9fc;
+  box-shadow: 0px 0px 10px 1px #a7a7a7;
+  animation: FadeIn 200ms;
+  display: flex;
+}
+.Input_Title_CSS,
+.Input_RoomId_CSS,
+.Input_FirstName_CSS,
+.Input_Surname_CSS,
+.Input_CheckDate_CSS,
+.Input_Email_CSS,
+.Input_PhoneNumber_CSS {
+  border: none;
+  height: 28px;
+  text-indent: 10px;
+  border-radius: 10px 50px 50px 10px;
+  box-shadow: 0 0 1px 0 #a3a3a3;
+  color: #3d3d3d;
+  letter-spacing: 1px;
+}
+.Input_Title_CSS:focus,
+.Input_RoomId_CSS:focus,
+.Input_FirstName_CSS:focus,
+.Input_Surname_CSS:focus,
+.Input_CheckDate_CSS:focus,
+.Input_Email_CSS:focus,
+.Input_PhoneNumber_CSS {
+  outline: none;
+}
+.Input_Title_CSS {
+  width: 120px;
+}
+.Input_RoomId_CSS {
+  padding-right: 8px;
+  width: 100px;
+}
+.Input_FirstName_CSS {
+  width: 180px;
+}
+.Input_Surname_CSS {
+  width: 190px;
+}
+.Input_CheckDate_CSS {
+  padding-right: 8px;
+  width: 170px;
+}
+.Input_Email_CSS {
+  width: 250px;
+}
+.P_Night_CSS {
+  padding: 0px;
+  height: 28px;
+  width: 70px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  text-indent: 10px;
+  border-radius: 10px 50px 50px 10px;
+  color: #3d3d3d;
+  letter-spacing: 1px;
+}
+
+.Input_PhoneNumber_CSS {
+  padding-right: 8px;
+}
+.Input_PhoneNumber_CSS::-webkit-outer-spin-button,
+.Input_PhoneNumber_CSS::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.TD_Label_CSS {
+  padding-top: 8px;
+  margin: 0px;
+  font-weight: bold;
+}
+
+.TD_Button_CSS {
+  display: flex;
+}
+
+.P_Button_CSS {
+  width: 100px;
+  border-radius: 50px;
+  height: 30px;
+  color: white;
+  background-color: #1e88e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 200ms;
+}
+.P_Button_CSS:last-child {
+  margin-left: 15px;
+}
+.P_Button_CSS:hover {
+  background-color: #55acf8;
+  cursor: pointer;
 }
