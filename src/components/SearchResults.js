@@ -1,6 +1,5 @@
 import React from "react";
 import TableRow from "./TabelRow";
-import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ results }) => {
   return (
