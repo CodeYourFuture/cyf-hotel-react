@@ -7,7 +7,7 @@ const Bookings = () => {
   const [sortedBookings, setSortedBookings] = useState();
   const [ascending, setAscending] = useState(false);
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.illicitonion.com")
       // fetch("https://cyf-react.glitch.me/delayed")
       // fetch("https://cyf-react.glitch.me/error")
       .then(response => {
