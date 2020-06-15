@@ -50,3 +50,14 @@ footer {
 .food-orders {
   list-style-type: none;
 }
+
+.loading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: coral;
+}
+
+.profile-list {
+  list-style-type: none;
+}
