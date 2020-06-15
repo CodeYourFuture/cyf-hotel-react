@@ -270,6 +270,14 @@ td:nth-child(9) {
   text-indent: 0px;
 }
 
+.Table_TD_CSS:hover td,
+.Table_TD_CSS:hover th,
+.Table_TD_HighLight_CSS:hover td,
+.Table_TD_HighLight_CSS:hover th {
+  background-color: #c5e1f8;
+  cursor: pointer;
+}
+
 /* ----------------------- Show Profile ------------------- */
 .Div_ShowProfile_CSS {
   position: fixed;
@@ -436,7 +444,7 @@ td:nth-child(9) {
   margin-left: 20%;
   margin-top: 10%;
   width: 60%;
-  height: 450px;
+  height: 460px;
   border-radius: 5px;
   background-color: #f5f9fc;
   box-shadow: 0px 0px 10px 1px #a7a7a7;
@@ -454,7 +462,7 @@ td:nth-child(9) {
   height: 28px;
   text-indent: 10px;
   border-radius: 10px 50px 50px 10px;
-  box-shadow: 0 0 1px 0 #a3a3a3;
+  box-shadow: 0 0 1px 0 #8d8d8d;
   color: #3d3d3d;
   letter-spacing: 1px;
 }
@@ -529,6 +537,7 @@ td:nth-child(9) {
   justify-content: center;
   align-items: center;
   transition: 200ms;
+  margin-top: 10px;
 }
 .P_Button_CSS:last-child {
   margin-left: 15px;
