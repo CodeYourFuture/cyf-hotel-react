@@ -18,10 +18,12 @@ function CustomerProfile(props) {
   } else {
     return (
       <div>
-        <p>Customer {profile.id} Profile</p>
-        <p>Customer email: {profile.email}</p>
-        <p>VIP? {profile.vip ? <p>YES</p> : <p>NO</p>} </p>
-        <p>Customer phone number: {profile.phoneNumber}</p>
+        <h5>Customer {profile.id} Profile:</h5>
+        <ul className="profile-list">
+          <li>Customer email: {profile.email}</li>
+          <li>VIP? {profile.vip ? <p>YES</p> : <p>NO</p>} </li>
+          <li>Customer phone number: {profile.phoneNumber}</li>
+        </ul>
       </div>
     );
   }

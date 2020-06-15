@@ -94,3 +94,7 @@ footer {
   font-weight: bold;
   color: coral;
 }
+
+.profile-list {
+  list-style-type: none;
+}
