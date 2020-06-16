@@ -85,3 +85,7 @@ li {
   margin-bottom: 0;
   padding: 0;
 }
+
+.inline {
+  display: inline;
+}
