@@ -442,7 +442,7 @@ td:nth-child(9) {
 .Div_AddProfile_CSS {
   font-size: 14px;
   margin-left: 20%;
-  margin-top: 10%;
+  margin-top: 5%;
   width: 60%;
   height: 460px;
   border-radius: 5px;
@@ -480,7 +480,7 @@ td:nth-child(9) {
 }
 .Input_RoomId_CSS {
   padding-right: 8px;
-  width: 100px;
+  width: 70px;
 }
 .Input_FirstName_CSS {
   width: 180px;
@@ -538,6 +538,8 @@ td:nth-child(9) {
   align-items: center;
   transition: 200ms;
   margin-top: 10px;
+  border: none;
+  outline: none;
 }
 .P_Button_CSS:last-child {
   margin-left: 15px;
@@ -545,4 +547,20 @@ td:nth-child(9) {
 .P_Button_CSS:hover {
   background-color: #55acf8;
   cursor: pointer;
+}
+
+/* Form Validation CSS */
+@keyframes Error-Animation {
+  0% {
+    box-shadow: 0 0 1px 0 #8d8d8d;
+  }
+  50% {
+    box-shadow: 0 0 0px 1px #e50303;
+  }
+  100% {
+    box-shadow: 0 0 1px 0 #8d8d8d;
+  }
+}
+.Error {
+  animation: Error-Animation infinite 1.5s;
 }

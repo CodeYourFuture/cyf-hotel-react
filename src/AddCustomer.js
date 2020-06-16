@@ -1,10 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 
 const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
+  const [dateIn, setDateIn] = useState("");
+  const [dateOut, setDateOut] = useState("");
+  const [night, setNight] = useState("-");
+  // Input Validation
+  const [titleValidate, setTitleValidate] = useState("Null");
+  const [firstNameValidate, setFirstNameValidate] = useState("Null");
+  const [surNameValidate, setSurNameValidate] = useState("Null");
+  const [emailValidate, setEmailValidate] = useState("Null");
+  const [phoneNumberValidate, setPhoneNumberValidate] = useState("Null");
+  const [roomNumberValidate, setRoomNumberValidate] = useState("Null");
+  const [checkInValidate, setCheckInValidate] = useState("Null");
+  const [checkOutValidate, setCheckOutValidate] = useState("Null");
+
+  useEffect(() => {
+    if (dateIn !== "" && dateOut !== "") {
+      if (moment(dateOut).diff(moment(dateIn), "days") > 0) {
+        setNight(moment(dateOut).diff(moment(dateIn), "days"));
+      } else {
+        setNight("!");
+      }
+    } else {
+      setNight("-");
+    }
+  }, [dateIn, dateOut]);
+
+  const addCustomer = () => {};
+
+  const nightCalculator = () => {};
   return (
     <div className="Div_AddProfileFullSize_CSS">
-      <div className="Div_AddProfile_CSS">
+      <form className="Div_AddProfile_CSS">
         <div className="Div_UserAvatar_CSS">
           <i className="I_User_CSS fas fa-user" />
         </div>
@@ -27,10 +55,30 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
             </tr>
             <tr>
               <td>
-                <input type="text" className="Input_Title_CSS" />
+                <input
+                  type="text"
+                  className={
+                    titleValidate === ""
+                      ? "Input_RoomId_CSS Error"
+                      : "Input_RoomId_CSS"
+                  }
+                  onChange={e => setTitleValidate(e.target.value)}
+                  required
+                />
               </td>
               <td>
-                <input type="number" className="Input_RoomId_CSS" />
+                <input
+                  type="number"
+                  className={
+                    roomNumberValidate === ""
+                      ? "Input_CheckDate_CSS Error"
+                      : "Input_CheckDate_CSS"
+                  }
+                  onChange={e => {
+                    setRoomNumberValidate(e.target.value);
+                  }}
+                  required
+                />
               </td>
             </tr>
             <tr>
@@ -43,10 +91,31 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
             </tr>
             <tr>
               <td>
-                <input type="text" className="Input_FirstName_CSS" />
+                <input
+                  type="text"
+                  className={
+                    firstNameValidate === ""
+                      ? "Input_FirstName_CSS Error"
+                      : "Input_FirstName_CSS"
+                  }
+                  onChange={e => setFirstNameValidate(e.target.value)}
+                  required
+                />
               </td>
               <td>
-                <input type="date" className="Input_CheckDate_CSS" />
+                <input
+                  type="date"
+                  className={
+                    checkInValidate === ""
+                      ? "Input_CheckDate_CSS Error"
+                      : "Input_CheckDate_CSS"
+                  }
+                  onChange={e => {
+                    setDateIn(e.target.value);
+                    setCheckInValidate(e.target.value);
+                  }}
+                  required
+                />
               </td>
             </tr>
             <tr>
@@ -59,10 +128,31 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
             </tr>
             <tr>
               <td>
-                <input type="text" className="Input_Surname_CSS" />
+                <input
+                  type="text"
+                  className={
+                    surNameValidate === ""
+                      ? "Input_Surname_CSS Error"
+                      : "Input_Surname_CSS"
+                  }
+                  onChange={e => setSurNameValidate(e.target.value)}
+                  required
+                />
               </td>
               <td>
-                <input type="date" className="Input_CheckDate_CSS" />
+                <input
+                  type="date"
+                  className={
+                    checkOutValidate === ""
+                      ? "Input_CheckDate_CSS Error"
+                      : "Input_CheckDate_CSS"
+                  }
+                  onChange={e => {
+                    setDateOut(e.target.value);
+                    setCheckOutValidate(e.target.value);
+                  }}
+                  required
+                />
               </td>
             </tr>
             <tr>
@@ -75,10 +165,25 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
             </tr>
             <tr>
               <td>
-                <input type="email" className="Input_Email_CSS" />
+                <input
+                  type="email"
+                  className={
+                    emailValidate === ""
+                      ? "Input_Email_CSS Error"
+                      : "Input_Email_CSS"
+                  }
+                  onChange={e => setEmailValidate(e.target.value)}
+                  required
+                />
               </td>
               <td>
-                <p className="P_Night_CSS" />
+                <p
+                  className={
+                    night === "!" ? "P_Night_CSS Error" : "P_Night_CSS"
+                  }
+                >
+                  {night}
+                </p>
               </td>
             </tr>
             <tr>
@@ -88,7 +193,16 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
             </tr>
             <tr>
               <td>
-                <input type="number" className="Input_PhoneNumber_CSS" />
+                <input
+                  type="number"
+                  className={
+                    phoneNumberValidate === ""
+                      ? "Input_PhoneNumber_CSS Error"
+                      : "Input_PhoneNumber_CSS"
+                  }
+                  onChange={e => setPhoneNumberValidate(e.target.value)}
+                  required
+                />
               </td>
             </tr>
             <tr>
@@ -98,14 +212,22 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
                   className="P_Button_CSS"
                   onClick={() => showAddCustomerForm_F(false)}
                 >
-                  cancel
+                  Cancel
                 </p>
-                <p className="P_Button_CSS">Add</p>
+                <button
+                  type="submit"
+                  className="P_Button_CSS"
+                  onClick={() => {
+                    addCustomer();
+                  }}
+                >
+                  Add
+                </button>
               </td>
             </tr>
           </tbody>
         </table>
-      </div>
+      </form>
     </div>
   );
 };

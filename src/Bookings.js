@@ -19,7 +19,6 @@ const Bookings = () => {
           ids.push(element.id);
         });
         setCustomerID(ids);
-        setCounterId(0);
       })
       .catch(err => setErrorMessage(err));
   }, []);
