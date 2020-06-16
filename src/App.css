@@ -89,3 +89,9 @@ li {
 .inline {
   display: inline;
 }
+
+.resItems {
+  width: 300px;
+  display: felx;
+  justify-content: space-around;
+}
