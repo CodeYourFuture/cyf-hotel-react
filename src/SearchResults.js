@@ -51,6 +51,7 @@ const SearchResults = props => {
         <AddCustomer
           showAddCustomerForm_F={showAddCustomerForm}
           addCustomer_F={props.addCustomer_F}
+          newId={props.results.length + 1}
         />
       ) : null}
       {profile ? (

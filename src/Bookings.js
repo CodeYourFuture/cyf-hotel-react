@@ -9,7 +9,7 @@ const Bookings = () => {
   const [customerId, setCustomerID] = useState("");
   const [counterID, setCounterId] = useState("");
   useEffect(() => {
-    fetch("https://cyf-react.illicitonion.com")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(respose => respose.json())
       .then(data => {
         setBookingData(data);
@@ -19,6 +19,7 @@ const Bookings = () => {
           ids.push(element.id);
         });
         setCustomerID(ids);
+        setCounterId(0);
       })
       .catch(err => setErrorMessage(err));
   }, []);
@@ -37,7 +38,6 @@ const Bookings = () => {
           setBookings(customer);
           let i = counterID + 1;
           setCounterId(i);
-          console.log("1");
         });
     }
   }, [counterID]);
@@ -55,7 +55,8 @@ const Bookings = () => {
     setBookings(result);
   };
   const addCustomer = newCustomer => {
-    let newData = [...bookingData, newCustomer];
+    let newData = bookingData;
+    newData.push(newCustomer);
     setBookings(newData);
     setBookingData(newData);
   };

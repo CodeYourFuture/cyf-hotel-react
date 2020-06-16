@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 
-const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
+const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F, newId }) => {
   const [dateIn, setDateIn] = useState("");
   const [dateOut, setDateOut] = useState("");
   const [night, setNight] = useState("-");
+  const [VIP, setVip] = useState(false);
   // Input Validation
   const [titleValidate, setTitleValidate] = useState("Null");
   const [firstNameValidate, setFirstNameValidate] = useState("Null");
   const [surNameValidate, setSurNameValidate] = useState("Null");
-  const [emailValidate, setEmailValidate] = useState("Null");
+  const [emailValidate, setEmailValidate] = useState("Input_Email_CSS");
   const [phoneNumberValidate, setPhoneNumberValidate] = useState("Null");
   const [roomNumberValidate, setRoomNumberValidate] = useState("Null");
   const [checkInValidate, setCheckInValidate] = useState("Null");
@@ -19,6 +20,7 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
     if (dateIn !== "" && dateOut !== "") {
       if (moment(dateOut).diff(moment(dateIn), "days") > 0) {
         setNight(moment(dateOut).diff(moment(dateIn), "days"));
+        document.getElementById("P_Night_JSX").className = "P_Night_CSS";
       } else {
         setNight("!");
       }
@@ -27,12 +29,80 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
     }
   }, [dateIn, dateOut]);
 
-  const addCustomer = () => {};
+  const emailValidation = e => {
+    if (e === "") {
+      setEmailValidate("Input_Email_CSS Error");
+    } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e)) {
+      setEmailValidate("Input_Email_CSS");
+    } else {
+      setEmailValidate("Input_Email_CSS Error");
+    }
+  };
 
-  const nightCalculator = () => {};
+  const addCustomer = () => {
+    let i = 0;
+    if (document.getElementById("Input_Title_JSX").value === "") {
+      i++;
+      setTitleValidate("");
+    }
+    if (document.getElementById("Input_RoomId_JSX").value === "") {
+      i++;
+      setRoomNumberValidate("");
+    }
+    if (document.getElementById("Input_FirstName_JSX").value === "") {
+      i++;
+      setFirstNameValidate("");
+    }
+    if (document.getElementById("Input_CheckInDate_JSX").value === "") {
+      i++;
+      setCheckInValidate("");
+    }
+    if (document.getElementById("Input_Surname_JSX").value === "") {
+      i++;
+      setSurNameValidate("");
+    }
+    if (document.getElementById("Input_CheckOutDate_JSX").value === "") {
+      i++;
+      setCheckOutValidate("");
+    }
+    if (document.getElementById("Input_Email_JSX").value === "") {
+      i++;
+      setEmailValidate("Input_Email_CSS Error");
+    }
+    emailValidation(document.getElementById("Input_Email_JSX").value);
+    if (
+      document.getElementById("Input_Email_JSX").value !== "" &&
+      emailValidate === "Input_Email_CSS Error"
+    ) {
+      i++;
+    }
+    if (document.getElementById("Input_PhoneNumber_JSX").value === "") {
+      i++;
+      setPhoneNumberValidate("");
+    }
+    if (night === "-" || night === "!") {
+      i++;
+      document.getElementById("P_Night_JSX").className = "P_Night_CSS Error";
+    }
+    if (i === 0) {
+      addCustomer_F({
+        id: newId,
+        title: document.getElementById("Input_Title_JSX").value,
+        firstName: document.getElementById("Input_FirstName_JSX").value,
+        surname: document.getElementById("Input_Surname_JSX").value,
+        email: document.getElementById("Input_Email_JSX").value,
+        phoneNumber: document.getElementById("Input_PhoneNumber_JSX").value,
+        roomId: document.getElementById("Input_RoomId_JSX").value,
+        vip: VIP,
+        checkInDate: document.getElementById("Input_CheckInDate_JSX").value,
+        checkOutDate: document.getElementById("Input_CheckOutDate_JSX").value
+      });
+      showAddCustomerForm_F(false);
+    }
+  };
   return (
     <div className="Div_AddProfileFullSize_CSS">
-      <form className="Div_AddProfile_CSS">
+      <div className="Div_AddProfile_CSS">
         <div className="Div_UserAvatar_CSS">
           <i className="I_User_CSS fas fa-user" />
         </div>
@@ -40,7 +110,14 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
           <tbody>
             <tr>
               <td>
-                <p className="P_VIP_CSS">
+                <p
+                  className={
+                    VIP
+                      ? "P_VIPOptionButton_CSS P_VIPOptionButtonSelected_CSS"
+                      : "P_VIPOptionButton_CSS P_VIPOptionButtonUnselected_CSS"
+                  }
+                  onClick={() => setVip(!VIP)}
+                >
                   <strong>VIP</strong>
                 </p>
               </td>
@@ -57,10 +134,11 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
               <td>
                 <input
                   type="text"
+                  id="Input_Title_JSX"
                   className={
                     titleValidate === ""
-                      ? "Input_RoomId_CSS Error"
-                      : "Input_RoomId_CSS"
+                      ? "Input_Title_CSS Error"
+                      : "Input_Title_CSS"
                   }
                   onChange={e => setTitleValidate(e.target.value)}
                   required
@@ -69,10 +147,11 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
               <td>
                 <input
                   type="number"
+                  id="Input_RoomId_JSX"
                   className={
                     roomNumberValidate === ""
-                      ? "Input_CheckDate_CSS Error"
-                      : "Input_CheckDate_CSS"
+                      ? "Input_RoomId_CSS Error"
+                      : "Input_RoomId_CSS"
                   }
                   onChange={e => {
                     setRoomNumberValidate(e.target.value);
@@ -93,6 +172,7 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
               <td>
                 <input
                   type="text"
+                  id="Input_FirstName_JSX"
                   className={
                     firstNameValidate === ""
                       ? "Input_FirstName_CSS Error"
@@ -105,6 +185,7 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
               <td>
                 <input
                   type="date"
+                  id="Input_CheckInDate_JSX"
                   className={
                     checkInValidate === ""
                       ? "Input_CheckDate_CSS Error"
@@ -130,6 +211,7 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
               <td>
                 <input
                   type="text"
+                  id="Input_Surname_JSX"
                   className={
                     surNameValidate === ""
                       ? "Input_Surname_CSS Error"
@@ -142,6 +224,7 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
               <td>
                 <input
                   type="date"
+                  id="Input_CheckOutDate_JSX"
                   className={
                     checkOutValidate === ""
                       ? "Input_CheckDate_CSS Error"
@@ -167,17 +250,16 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
               <td>
                 <input
                   type="email"
-                  className={
-                    emailValidate === ""
-                      ? "Input_Email_CSS Error"
-                      : "Input_Email_CSS"
-                  }
-                  onChange={e => setEmailValidate(e.target.value)}
+                  id="Input_Email_JSX"
+                  placeholder="Email: example@email.com"
+                  className={emailValidate}
+                  onChange={e => emailValidation(e.target.value)}
                   required
                 />
               </td>
               <td>
                 <p
+                  id="P_Night_JSX"
                   className={
                     night === "!" ? "P_Night_CSS Error" : "P_Night_CSS"
                   }
@@ -195,6 +277,8 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
               <td>
                 <input
                   type="number"
+                  id="Input_PhoneNumber_JSX"
+                  placeholder="01234567890"
                   className={
                     phoneNumberValidate === ""
                       ? "Input_PhoneNumber_CSS Error"
@@ -214,20 +298,19 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F }) => {
                 >
                   Cancel
                 </p>
-                <button
-                  type="submit"
+                <p
                   className="P_Button_CSS"
                   onClick={() => {
                     addCustomer();
                   }}
                 >
                   Add
-                </button>
+                </p>
               </td>
             </tr>
           </tbody>
         </table>
-      </form>
+      </div>
     </div>
   );
 };

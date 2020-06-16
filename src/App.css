@@ -429,6 +429,34 @@ td:nth-child(9) {
   cursor: pointer;
 }
 /* Add Customer */
+.P_VIPOptionButton_CSS {
+  padding: 3px;
+  width: 50px;
+  border-radius: 10px 50px 50px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.P_VIPOptionButtonUnselected_CSS {
+  color: #3d3d3d;
+  background-color: rgb(241, 241, 241);
+  transition: 200ms;
+}
+.P_VIPOptionButtonUnselected_CSS:hover {
+  cursor: pointer;
+  color: #3d3d3d;
+  background-color: rgb(224, 222, 222);
+}
+.P_VIPOptionButtonSelected_CSS {
+  transition: 200ms;
+  background-color: #1e88e5;
+  color: white;
+}
+.P_VIPOptionButtonSelected_CSS:hover {
+  cursor: pointer;
+  background-color: #4a9feb;
+  color: white;
+}
 .Div_AddProfileFullSize_CSS {
   position: fixed;
   left: 0px;
@@ -481,6 +509,10 @@ td:nth-child(9) {
 .Input_RoomId_CSS {
   padding-right: 8px;
   width: 70px;
+}
+.Input_RoomId_CSS::-webkit-outer-spin-button,
+.Input_RoomId_CSS::-webkit-inner-spin-button {
+  appearance: none;
 }
 .Input_FirstName_CSS {
   width: 180px;
@@ -563,4 +595,8 @@ td:nth-child(9) {
 }
 .Error {
   animation: Error-Animation infinite 1.5s;
+}
+
+.P_Selected_CSS {
+  background-color: #55acf8;
 }
