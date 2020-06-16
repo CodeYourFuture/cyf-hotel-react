@@ -241,6 +241,7 @@ table {
   text-align: left;
   text-indent: 10px;
   transition: 100ms;
+  animation: FadeIn 1s;
 }
 .Table_TD_CSS:last-child {
   text-align: center;

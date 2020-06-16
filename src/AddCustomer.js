@@ -32,7 +32,7 @@ const AddCustomer = ({ showAddCustomerForm_F, addCustomer_F, newId }) => {
   const emailValidation = e => {
     if (e === "") {
       setEmailValidate("Input_Email_CSS Error");
-    } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e)) {
+    } else if (new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g).test(e)) {
       setEmailValidate("Input_Email_CSS");
     } else {
       setEmailValidate("Input_Email_CSS Error");
