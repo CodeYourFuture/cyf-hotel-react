@@ -6,6 +6,7 @@ import AddNew from "./AddNew";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [original, setOriginal] = useState();
+  const [sort, setSort] = useState(false);
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
       .then(res => res.json())
@@ -21,16 +22,15 @@ const Bookings = () => {
       </div>
     );
   }
+
   const updateData = newObj => {
-    console.log(newObj);
-    console.log("newobj");
-    const newOne = {
+    const formData = {
       ...newObj,
-      id: bookings.length + 1,
-      firstName: "meisam"
+      id: bookings.length + 1
     };
-    setBookings([...bookings, newOne]);
+    setBookings([...bookings, formData]);
   };
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     const searchBooking = bookings.filter(
@@ -40,20 +40,40 @@ const Bookings = () => {
     );
     setBookings(searchBooking);
   };
+
+  const sortByFirstName = () => {
+    setSort(!sort);
+    sort ? assendi() : dessendi();
+  };
+
+  const assendi = () => {
+    bookings.sort(function(a, b) {
+      if (a.firstName.toLowerCase() > b.firstName.toLowerCase()) {
+        return -1;
+      }
+    });
+  };
+  const dessendi = () => {
+    bookings.sort(function(a, b) {
+      if (a.firstName.toLowerCase() < b.firstName.toLowerCase()) {
+        return -1;
+      }
+    });
+  };
+
   return (
     <div className="App-content">
       <div className="container">
-        <AddNew updateData={updateData} setBookings={setBookings} />
+        <AddNew updateData={updateData} />
         <Search
           search={search}
           bookings={bookings}
           setBookings={setBookings}
           original={original}
         />
-        <SearchResults data={bookings} />
+        <SearchResults data={bookings} sortByFirstName={sortByFirstName} />
       </div>
     </div>
   );
 };
-
 export default Bookings;

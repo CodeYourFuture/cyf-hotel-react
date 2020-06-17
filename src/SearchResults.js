@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SelectTable from "./SelectTable";
 import CustomerProfile from "./CustomerProfile";
 
-const SearchResults = ({ data }) => {
+const SearchResults = ({ data, sortByFirstName }) => {
   const [profile, setProfile] = useState(null);
   const [customerData, setCustomerData] = useState([]);
 
@@ -22,7 +22,10 @@ const SearchResults = ({ data }) => {
           <tr>
             <th />
             <th scope="co1"> Title </th>
-            <th scope="co1"> FirstName </th>
+            <th scope="co1" onClick={sortByFirstName}>
+              {" "}
+              FirstName{" "}
+            </th>
             <th scope="co1"> SureName </th>
             <th scope="co1"> Email </th>
             <th scope="co1"> Room </th>

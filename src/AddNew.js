@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-const AddNew = ({ updateData }) => {
+
+const AddNew = props => {
   const [addBooking, setAddBooking] = useState({
     title: "",
     firstName: "",
@@ -9,15 +10,13 @@ const AddNew = ({ updateData }) => {
     checkOutDate: ""
   });
   const submitHandel = event => {
+    props.updateData(addBooking);
     event.preventDefault();
-    updateData(addBooking);
   };
+
   const handleInputChange = event => {
-    const updateData = {
-      ...addBooking,
-      [event.target.name]: event.target.value
-    };
-    setAddBooking(updateData);
+    const newC = { ...addBooking, [event.target.name]: event.target.value };
+    setAddBooking(newC);
   };
   return (
     <div className="search">
@@ -31,7 +30,7 @@ const AddNew = ({ updateData }) => {
             <div className="search-rows">
               <div className="box">
                 <p scope="co1"> Title: </p>
-                <select onChange={handleInputChange.title}>
+                <select onChange={handleInputChange}>
                   <option value="Mr">Mr</option>
                   <option value="Mrs">Mrs</option>
                   <option value="Miss">Miss</option>
@@ -49,9 +48,9 @@ const AddNew = ({ updateData }) => {
               </div>
               <div className="box">
                 <p scope="co1"> Email: </p>
-                <input type="Email" onChange={handleInputChange} />
+                <input type="Email" />
                 <p scope="co1"> Phone number: </p>
-                <input type="Number" onChange={handleInputChange} />
+                <input type="Number" />
               </div>
               <div className="box">
                 <p scope="co1"> Room: </p>
