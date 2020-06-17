@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import FakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
 
 const SearchResults = () => {
+  const [clickedItem, setClickedItem] = useState(false);
+
+  const clickedRow = () => {
+    let oppositeClickItem = !clickedItem;
+    setClickedItem(oppositeClickItem);
+  };
+
+  console.log(clickedItem);
+
   return (
     <div>
       <table class="table table-hover">
@@ -22,7 +31,10 @@ const SearchResults = () => {
         <tbody>
           {FakeBookings.map(e => {
             return (
-              <tr>
+              <tr
+                onClick={clickedRow}
+                className={clickedItem ? "selectedRow" : null}
+              >
                 <th scope="row">{e.id}</th>
                 <td>{e.title}</td>
                 <td>{e.firstName}</td>

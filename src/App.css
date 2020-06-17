@@ -95,3 +95,7 @@ li {
   display: felx;
   justify-content: space-around;
 }
+
+.selectedRow {
+  background-color: yellow;
+}
