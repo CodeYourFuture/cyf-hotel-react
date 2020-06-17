@@ -64,7 +64,7 @@ const SearchResults = ({ results }) => {
           <tr>
             <th
               onClick={() => {
-                handlerSortById(id);
+                handlerSortById("id");
               }}
               scope="col "
             >
@@ -118,7 +118,7 @@ const SearchResults = ({ results }) => {
         </thead>
 
         <tbody className="result">
-          {isSort.map((result, index) => {
+          {results.map((result, index) => {
             return (
               <TableRow
                 result={result}

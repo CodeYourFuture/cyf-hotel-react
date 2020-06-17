@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
-const Search = props => {
+
+const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
 
   function handleSearchInput(event) {
@@ -16,8 +17,8 @@ const Search = props => {
         <div className="col">
           <form
             onSubmit={e => {
-              props.search(searchInput);
               e.preventDefault();
+              search(searchInput);
             }}
             className="form-group search-box"
           >

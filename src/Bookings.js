@@ -9,7 +9,7 @@ const Bookings = () => {
 
   useEffect(() => {
     setBookings(null);
-    fetch("https://cyf-react.glitch.me/")
+    fetch("https://cyf-react.illicitonion.com/")
       .then(res => res.json())
       .then(data => {
         setBookings(data);
