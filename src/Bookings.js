@@ -9,7 +9,7 @@ const Bookings = () => {
   const [customerId, setCustomerID] = useState("");
   const [counterID, setCounterId] = useState("");
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.illicitonion.com")
       .then(respose => respose.json())
       .then(data => {
         setBookingData(data);
@@ -41,6 +41,7 @@ const Bookings = () => {
         });
     }
   }, [counterID]);
+
   const search = searchVal => {
     let result =
       searchVal !== ""
