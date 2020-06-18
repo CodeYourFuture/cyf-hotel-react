@@ -29,10 +29,9 @@ const Bookings = () => {
       );
   }, []);
 
-  return (
-    // !loaded ? (
-    //   <div>LOADING ...</div>
-    // ) :
+  return !loaded ? (
+    <div>LOADING ...</div>
+  ) : (
     <div className="App-content">
       <div className="container">
         <Search search={search} />

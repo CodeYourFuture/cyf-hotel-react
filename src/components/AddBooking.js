@@ -9,6 +9,7 @@ const AddBooking = ({ results, setBookings }) => {
         onSubmit={e => {
           e.preventDefault();
           setBookings([...results, { ...newBooking, id: results.length + 1 }]);
+          e.target.reset();
         }}
       >
         <div className="form-group">
