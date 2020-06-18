@@ -6,15 +6,15 @@ import TableHead from "./TableHead";
 const SearchResults = ({ results, setBookings }) => {
   const [sorting, setSorting] = useState({ field: "id", order: 0 });
 
-  // order: 0 is ascending, 1 is descending, 2 is none sorted
+  // order: 0 is ascending, 1 is descending, 2 is not sorted
 
   const handleSort = field => {
     if (field === sorting.field) {
       setSorting({ field, order: (sorting.order + 1) % 3 });
     } else {
-      setSorting({ field: field, order: 0 });
+      setSorting({ field: field, order: 2 });
     }
-    console.log(sorting.field);
+    console.log(results);
   };
 
   const sortingFunction = (A, B) => {
@@ -28,15 +28,6 @@ const SearchResults = ({ results, setBookings }) => {
   };
 
   let sortedResults = results;
-
-  // "id": 1,
-  //   "title": "Mr",
-  //   "firstName": "John",
-  //   "surname": "Doe",
-  //   "email": "johndoe@doe.com",
-  //   "roomId": 2,
-  //   "checkInDate": "2017-11-21",
-  //   "checkOutDate": "2017-11-23"
 
   return (
     <>
@@ -80,13 +71,7 @@ const SearchResults = ({ results, setBookings }) => {
                 .sort(sortingFunction)
                 .map((bookingDetails, index) => (
                   <TableRow result={bookingDetails} key={index} />
-                ))
-          // : results
-          //     .sort((A, B) => (A[sorting.field] < B[sorting.field] ? 1 : -1))
-          //     .map((bookingDetails, index) => (
-          //       <TableRow result={bookingDetails} key={index} />
-          //     ))
-          }
+                ))}
         </tbody>
       </table>
       <AddBooking results={results} setBookings={setBookings} />
