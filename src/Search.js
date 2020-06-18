@@ -6,6 +6,7 @@ const Search = props => {
 
   function handleSearchInput(event) {
     setSearchInput(event.target.value);
+    console.log(event.target.value);
     if (event.target.value.length === 0) {
       props.search("");
     }

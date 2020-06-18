@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-function Row(props) {
-  const data = props.data;
+function Row({ data, setId }) {
   const [isSelected, setIsSelected] = useState(false);
 
   function toggle() {
@@ -14,6 +13,11 @@ function Row(props) {
     // const clickedRow = e.target.parentNode.id
     // clickedRow === data.id ? setIsSelected(true) : setIsSelected(false)
   }
+  // function clickBtn() {
+
+  //     <CustomerProfile />
+  //   ;
+  // }
 
   const color = isSelected ? "sth" : "";
 
@@ -25,6 +29,11 @@ function Row(props) {
     return Math.round(duration);
   }
   // id = { data.id }
+  //onClick={()=> props.setUserclick(props.result.id)}
+
+  const onClickhandle = () => {
+    setId(data.id);
+  };
   return (
     <tr key={data.id} onClick={toggle} className={color}>
       <td>{data.id}</td>
@@ -36,9 +45,9 @@ function Row(props) {
       <td>{data.checkInDate}</td>
       <td>{data.checkOutDate}</td>
       <td>{daysDifference(data.checkOutDate, data.checkInDate)}</td>
-      {/* <td>
-        <button onClick={props.clickBtn(data.id)}>Show Profile</button>
-      </td> */}
+      <td>
+        <button onClick={onClickhandle}>Show Profile</button>
+      </td>
     </tr>
   );
 }

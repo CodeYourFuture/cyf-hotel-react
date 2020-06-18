@@ -6,6 +6,7 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [filteredBookings, setFilteredBookings] = useState([]);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
 
@@ -20,6 +21,7 @@ const Bookings = () => {
       setFilteredBookings(bookings);
     }
   };
+
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
       .then(res => res.json())
@@ -28,6 +30,7 @@ const Bookings = () => {
         setFilteredBookings(data);
       });
   }, []);
+
   return (
     <div className="App-content">
       <div className="container">
