@@ -17,7 +17,20 @@ const SearchResults = props => {
       <table>
         <thead>
           <tr>
-            <th className="Head_TH_CSS" />
+            <th
+              className="Head_TH_CSS"
+              onClick={() =>
+                props.sortTableByName_P === "A-Z"
+                  ? props.sortTable_F("Z-A")
+                  : props.sortTable_F("A-Z")
+              }
+            >
+              {props.sortTableByName_P === "A-Z" ? (
+                <i class="fas fa-sort-alpha-down" />
+              ) : (
+                <i class="fas fa-sort-alpha-down-alt" />
+              )}
+            </th>
             <th className="Head_TH_CSS">Title</th>
             <th className="Head_TH_CSS">First Name</th>
             <th className="Head_TH_CSS">Last Name</th>
