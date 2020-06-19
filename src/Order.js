@@ -4,7 +4,7 @@ import Delete from "./DeleteButton";
 
 const Order = props => {
   const [orders, setOrders] = useState(0);
-  const [price, setPrice] = useState(0.0);
+  const [price, setPrice] = useState(0);
 
   const orderOne = () => {
     setOrders(orders + 1);
