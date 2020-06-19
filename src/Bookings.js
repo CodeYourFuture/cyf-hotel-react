@@ -3,70 +3,47 @@ import Search from "./Search";
 import SearchResults from "./SearchResults";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState([]);
-  const [bookingData, setBookingData] = useState([]);
+  const [filteredBookings, setFilteredBookings] = useState([]);
+  const [allBookings, setAllBookings] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
-  const [customerId, setCustomerID] = useState("");
-  const [counterID, setCounterId] = useState("");
   useEffect(() => {
-    fetch("https://cyf-react.illicitonion.com")
+    fetch("https://cyf-react.illicitonion.com/")
       .then(respose => respose.json())
       .then(data => {
-        setBookingData(data);
-        setBookings(data);
-        let ids = [];
-        data.forEach(element => {
-          ids.push(element.id);
-        });
-        setCustomerID(ids);
-        setCounterId(0);
+        setAllBookings(data);
+        setFilteredBookings(data);
       })
       .catch(err => setErrorMessage(err));
   }, []);
 
-  useEffect(() => {
-    if (customerId !== "" && counterID < customerId.length) {
-      fetch(
-        `https://cyf-react.illicitonion.com/customers/${customerId[counterID]}`
-      )
-        .then(results => results.json())
-        .then(data => {
-          let customer = bookingData;
-          customer[counterID].phoneNumber = data.phoneNumber;
-          customer[counterID].vip = data.vip;
-          setBookingData(customer);
-          setBookings(customer);
-          let i = counterID + 1;
-          setCounterId(i);
-        });
-    }
-  }, [counterID]);
-
   const search = searchVal => {
     let result =
       searchVal !== ""
-        ? bookingData.filter(
+        ? allBookings.filter(
             element =>
               element.firstName.toLowerCase().indexOf(searchVal.toLowerCase()) >
                 -1 ||
               element.surname.toLowerCase().indexOf(searchVal.toLowerCase()) >
                 -1
           )
-        : bookingData;
-    setBookings(result);
+        : allBookings;
+    setFilteredBookings(result);
   };
   const addCustomer = newCustomer => {
-    let newData = bookingData;
+    let newData = JSON.parse(JSON.stringify(allBookings));
     newData.push(newCustomer);
-    setBookings(newData);
-    setBookingData(newData);
+    setFilteredBookings(newData);
+    setAllBookings(newData);
   };
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {bookings.length > 0 ? (
-          <SearchResults results={bookings} addCustomer_F={addCustomer} />
+        {filteredBookings.length > 0 ? (
+          <SearchResults
+            results={filteredBookings}
+            addCustomer_F={addCustomer}
+          />
         ) : errorMessage === "" ? (
           <p className="P_Loading_CSS"> Loading . . . </p>
         ) : (

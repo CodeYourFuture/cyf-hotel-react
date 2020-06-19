@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 
-const ShowProfile = ({ closeProfile, profileState_F, profileData }) => {
+const ShowProfile = ({ profileState_F, profileData }) => {
+  const [phoneAndVip, setPhoneAndVip] = useState([]);
+  useEffect(() => {
+    if (profileData.phoneNumber === undefined) {
+      fetch(`https://cyf-react.illicitonion.com/customers/${profileData.id}`)
+        .then(results => results.json())
+        .then(data => {
+          setPhoneAndVip({ phoneNumber: data.phoneNumber, vip: data.vip });
+        });
+    }
+  }, [profileData.id, profileData.phoneNumber]);
   return (
     <div className="Div_ShowProfile_CSS">
       <div className="Div_ShowProfileChild_CSS">
@@ -13,6 +23,10 @@ const ShowProfile = ({ closeProfile, profileState_F, profileData }) => {
             <tr>
               <td>
                 {profileData.vip ? (
+                  <p className="P_VIP_CSS">
+                    <strong>VIP</strong>
+                  </p>
+                ) : null || phoneAndVip.vip ? (
                   <p className="P_VIP_CSS">
                     <strong>VIP</strong>
                   </p>
@@ -43,7 +57,7 @@ const ShowProfile = ({ closeProfile, profileState_F, profileData }) => {
             <tr>
               <td>
                 <strong>Phone: </strong>
-                {profileData.phoneNumber}
+                {profileData.phoneNumber || phoneAndVip.phoneNumber}
               </td>
               <td>
                 <strong>Night: </strong>
