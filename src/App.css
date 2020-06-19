@@ -92,3 +92,16 @@ button {
 .unclicked-row {
   background-color: white;
 }
+.ul-profile {
+  background-color: gray;
+  justify-content: space-around;
+}
+.form-booking {
+  justify-content: space-around;
+}
+.input {
+  border-radius: 5px;
+  border: 0.8px solid rgb(19, 15, 15);
+  padding: 5px 0;
+  margin: 10px 0;
+}

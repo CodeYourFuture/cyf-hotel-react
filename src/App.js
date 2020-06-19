@@ -4,6 +4,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Footer from "./Footer";
 import "./App.css";
+import "./Grid.css";
 import Restaurant from "./Restaurant";
 
 const App = () => {

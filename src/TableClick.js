@@ -20,6 +20,9 @@ const TableClick = props => {
           props.result.checkInDate
         )}
       </td>
+      <td>
+        <button>Show Profile</button>
+      </td>
     </tr>
   );
 };
