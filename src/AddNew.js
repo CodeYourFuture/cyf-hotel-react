@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 const AddNew = props => {
   const [addBooking, setAddBooking] = useState({
+    id: "",
     title: "",
     firstName: "",
     surname: "",
+    email: "",
     roomId: "",
     checkInDate: "",
     checkOutDate: ""
@@ -14,8 +16,8 @@ const AddNew = props => {
     event.preventDefault();
   };
 
-  const handleInputChange = event => {
-    const newC = { ...addBooking, [event.target.name]: event.target.value };
+  const handleInputChange = e => {
+    const newC = { ...addBooking, [e.target.name]: e.target.value };
     setAddBooking(newC);
   };
   return (
@@ -30,7 +32,11 @@ const AddNew = props => {
             <div className="search-rows">
               <div className="box">
                 <p scope="co1"> Title: </p>
-                <select onChange={handleInputChange}>
+                <select
+                  name="title"
+                  onChange={handleInputChange}
+                  value={addBooking.title}
+                >
                   <option value="Mr">Mr</option>
                   <option value="Mrs">Mrs</option>
                   <option value="Miss">Miss</option>
@@ -41,20 +47,41 @@ const AddNew = props => {
                   <option value="Dame">Dame</option>
                   <option value="Madam">Madam</option>
                 </select>
+
                 <p> First Name:</p>
-                <input type="text" onChange={handleInputChange} />
+                <input
+                  name="firstName"
+                  type="text"
+                  value={addBooking.firstName}
+                  onChange={handleInputChange}
+                />
+
                 <p scope="co1"> Sure Name:</p>
-                <input type="text" onChange={handleInputChange} />
+                <input
+                  name="surname"
+                  type="text"
+                  onChange={handleInputChange}
+                  value={addBooking.surname}
+                />
               </div>
               <div className="box">
                 <p scope="co1"> Email: </p>
-                <input type="Email" />
+                <input
+                  name="email"
+                  type="Email"
+                  onChange={handleInputChange}
+                  value={addBooking.email}
+                />
                 <p scope="co1"> Phone number: </p>
                 <input type="Number" />
               </div>
               <div className="box">
                 <p scope="co1"> Room: </p>
-                <select onChange={handleInputChange}>
+                <select
+                  name="roomId"
+                  onChange={handleInputChange}
+                  value={addBooking.roomId}
+                >
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -67,9 +94,19 @@ const AddNew = props => {
                   <option value="10">10</option>
                 </select>
                 <p scope="co1"> Check In Date: </p>
-                <input type="Date" onChange={handleInputChange} />
+                <input
+                  name="checkInDate"
+                  type="Date"
+                  onChange={handleInputChange}
+                  value={addBooking.checkInDate}
+                />
                 <p scope="co1"> Check Out Date: </p>
-                <input type="Date" onChange={handleInputChange} />
+                <input
+                  name="checkOutDate"
+                  type="Date"
+                  onChange={handleInputChange}
+                  value={addBooking.checkOutDate}
+                />
               </div>
             </div>
             <button className="btn btn-primary add">New Customer</button>
