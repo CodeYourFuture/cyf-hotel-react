@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Nights from "./Nights";
 
-const SelectTable = ({ booking, key, setProfile }) => {
+const SelectTable = ({ booking, setProfile }) => {
   const [clicked, setClicked] = useState(false);
 
   const toggle = () => {

@@ -68,6 +68,7 @@ const Bookings = () => {
       if (a.firstName.toLowerCase() > b.firstName.toLowerCase()) {
         return -1;
       }
+      return -1;
     });
   };
   const dessendi = () => {

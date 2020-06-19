@@ -53,13 +53,7 @@ const SearchResults = ({
             <th scope="co1"> ShowProfile</th>
           </tr>
           {data.map((booking, index) => {
-            return (
-              <SelectTable
-                booking={booking}
-                key={index}
-                setProfile={setProfile}
-              />
-            );
+            return <SelectTable booking={booking} setProfile={setProfile} />;
           })}
         </tbody>
       </table>
