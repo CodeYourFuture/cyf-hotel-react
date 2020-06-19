@@ -27,7 +27,7 @@ const Search = props => {
                 id="customerName"
                 value={searchInput}
                 onChange={handleSearchInput}
-                className="form-control"
+                className="Input_Search_CSS"
                 placeholder="Customer name"
               />
               <SearchButton />

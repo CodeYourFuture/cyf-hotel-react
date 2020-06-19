@@ -177,6 +177,15 @@ tr {
   color: #f0f0f0;
   letter-spacing: 2px;
 }
+.Input_Search_CSS {
+  border: none;
+  width: 92%;
+  outline: none;
+  border-radius: 50px;
+  text-indent: 15px;
+  font-size: 16px;
+  box-shadow: 0px 0px 2px 0px rgb(189, 189, 189);
+}
 .Button_Search_CSS {
   width: 80px;
   padding: 8px;
@@ -184,8 +193,11 @@ tr {
   color: white;
   font-family: "Scada", sans-serif;
   font-size: 14px;
-  border-radius: 3px;
+  border-radius: 50px;
   border: none;
+  transition: 200ms;
+  font-size: 15px;
+  letter-spacing: 1px;
 }
 .Button_Search_CSS:hover {
   background-color: #55acf8;
@@ -215,7 +227,7 @@ table {
   text-indent: 10px;
 }
 .Head_TH_CSS:first-child {
-  font-size: 15px;
+  font-size: 16px;
   transition: 200ms;
 }
 .Head_TH_CSS:first-child:hover {
