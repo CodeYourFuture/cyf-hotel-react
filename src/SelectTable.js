@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Nights from "./Nights";
 
-const SelectTable = props => {
+const SelectTable = ({ booking, key, setProfile }) => {
   const [clicked, setClicked] = useState(false);
 
   const toggle = () => {
@@ -10,27 +10,24 @@ const SelectTable = props => {
 
   return (
     <tr className="te" onClick={toggle} className={clicked ? "select" : null}>
-      <th scope="row">{props.booking.id}</th>
-      <td>{props.booking.title}</td>
-      <td>{props.booking.firstName}</td>
-      <td>{props.booking.surname}</td>
-      <td>{props.booking.email}</td>
-      <td>{props.booking.roomId}</td>
-      <td>{props.booking.checkInDate}</td>
-      <td>{props.booking.checkOutDate}</td>
+      <th scope="row">{booking.id}</th>
+      <td>{booking.title}</td>
+      <td>{booking.firstName}</td>
+      <td>{booking.surname}</td>
+      <td>{booking.email}</td>
+      <td>{booking.roomId}</td>
+      <td>{booking.checkInDate}</td>
+      <td>{booking.checkOutDate}</td>
       <td>
-        <Nights
-          timeline={props.booking.checkInDate}
-          timeout={props.booking.checkOutDate}
-        />
+        <Nights timeline={booking.checkInDate} timeout={booking.checkOutDate} />
       </td>
       <th>
         <button
           className="btn btn-primary"
-          key={props.booking.id}
+          key={booking.id}
           onClick={() => {
-            console.log(props.booking.id);
-            props.setProfile(props.booking.id);
+            console.log(booking.id);
+            setProfile(booking.id);
           }}
         >
           profile
@@ -39,4 +36,5 @@ const SelectTable = props => {
     </tr>
   );
 };
+
 export default SelectTable;
