@@ -41,6 +41,23 @@ const Bookings = () => {
     setBookings(searchBooking);
   };
 
+  //sort part
+  const sortByDate = () => {
+    setSort(!sort);
+    sort ? assendi() : dessendi();
+  };
+  const sortSureName = () => {
+    setSort(!sort);
+    sort ? assendi() : dessendi();
+  };
+
+  const sortByRoomId = () => {
+    setSort(!sort);
+    sort
+      ? bookings.sort((a, b) => a.roomId - b.roomId)
+      : bookings.sort((a, b) => b.roomId - a.roomId);
+  };
+
   const sortByFirstName = () => {
     setSort(!sort);
     sort ? assendi() : dessendi();
@@ -71,7 +88,13 @@ const Bookings = () => {
           setBookings={setBookings}
           original={original}
         />
-        <SearchResults data={bookings} sortByFirstName={sortByFirstName} />
+        <SearchResults
+          data={bookings}
+          sortByFirstName={sortByFirstName}
+          sortByRoomId={sortByRoomId}
+          sortSureName={sortSureName}
+          sortByDate={sortByDate}
+        />
       </div>
     </div>
   );
