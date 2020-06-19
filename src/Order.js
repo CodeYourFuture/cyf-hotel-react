@@ -3,10 +3,8 @@ import RestaurantButton from "./RestaurantButton";
 import Delete from "./DeleteButton";
 
 const Order = props => {
-  const [pizzas, setPizzas] = useState(0);
   const [orders, setOrders] = useState(0);
-  const [price, setPrice] = useState(0);
-  const [bill, setBill] = useState(price);
+  const [price, setPrice] = useState(0, 00);
 
   const orderOne = () => {
     setOrders(orders + 1);

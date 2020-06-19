@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Nights from "./Nights";
-import CustomerProfile from "./CustomerProfile";
 
 const SelectTable = props => {
   const [clicked, setClicked] = useState(false);

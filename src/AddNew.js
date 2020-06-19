@@ -31,7 +31,7 @@ const AddNew = props => {
             <label htmlFor="customerName">New Customer</label>
             <div className="search-rows">
               <div className="box">
-                <p scope="co1"> Title: </p>
+                <p> Title: </p>
                 <select
                   name="title"
                   onChange={handleInputChange}
@@ -56,7 +56,7 @@ const AddNew = props => {
                   onChange={handleInputChange}
                 />
 
-                <p scope="co1"> Sure Name:</p>
+                <p> Sure Name:</p>
                 <input
                   name="surname"
                   type="text"
@@ -65,18 +65,18 @@ const AddNew = props => {
                 />
               </div>
               <div className="box">
-                <p scope="co1"> Email: </p>
+                <p> Email: </p>
                 <input
                   name="email"
                   type="Email"
                   onChange={handleInputChange}
                   value={addBooking.email}
                 />
-                <p scope="co1"> Phone number: </p>
+                <p> Phone number: </p>
                 <input type="Number" />
               </div>
               <div className="box">
-                <p scope="co1"> Room: </p>
+                <p> Room: </p>
                 <select
                   name="roomId"
                   onChange={handleInputChange}
@@ -93,14 +93,14 @@ const AddNew = props => {
                   <option value="9">9</option>
                   <option value="10">10</option>
                 </select>
-                <p scope="co1"> Check In Date: </p>
+                <p> Check In Date: </p>
                 <input
                   name="checkInDate"
                   type="Date"
                   onChange={handleInputChange}
                   value={addBooking.checkInDate}
                 />
-                <p scope="co1"> Check Out Date: </p>
+                <p> Check Out Date: </p>
                 <input
                   name="checkOutDate"
                   type="Date"

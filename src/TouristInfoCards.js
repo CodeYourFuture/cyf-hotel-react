@@ -6,7 +6,7 @@ const TouristInfoCards = props => {
       {props.Data.map((Element, index) => {
         return (
           <div className="card" key={index}>
-            <img src={Element.pic} className="card-img-top" />
+            <img alt="City" src={Element.pic} className="card-img-top" />
             <h3 className="Name-card">Visit {Element.City}</h3>
             <p className="Name-card">{Element.info}</p>
             <div className="card-body">
