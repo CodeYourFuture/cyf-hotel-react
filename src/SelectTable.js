@@ -9,7 +9,7 @@ const SelectTable = ({ booking, setProfile }) => {
   };
 
   return (
-    <tr className="te" onClick={toggle} className={clicked ? "select" : null}>
+    <tr onClick={toggle} className={clicked ? "select" : null}>
       <th scope="row">{booking.id}</th>
       <td>{booking.title}</td>
       <td>{booking.firstName}</td>
