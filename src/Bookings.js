@@ -8,7 +8,7 @@ const Bookings = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [sortTableByName, setSortTableByName] = useState("A-Z");
   useEffect(() => {
-    fetch("https://cyf-react.illicitonion.com/")
+    fetch("https://cyf-react.illicitonion.com/delayed")
       .then(respose => respose.json())
       .then(data => {
         setAllBookings(data);
