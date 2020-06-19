@@ -18,7 +18,7 @@ const Bookings = () => {
   if (!bookings) {
     return (
       <div>
-        <img src="https://i.gifer.com/HJkK.gif" />
+        <img alt="loding" src="https://i.gifer.com/HJkK.gif" />
       </div>
     );
   }
