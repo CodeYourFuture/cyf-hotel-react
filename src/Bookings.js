@@ -95,6 +95,7 @@ const Bookings = () => {
             bookings={sortedBookings}
             handleSortTable={handleSortTable}
             handleSortNumber={handleSortNumber}
+            ascending={ascending}
           />
           <NewBookings addNewBookings={addNewBookings} />
         </div>

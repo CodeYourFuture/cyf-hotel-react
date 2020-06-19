@@ -3,7 +3,12 @@ import { Table } from "reactstrap";
 import CustomerProfile from "./CustomerProfile";
 import Row from "./row";
 
-const SearchResults = ({ bookings, handleSortTable, handleSortNumber }) => {
+const SearchResults = ({
+  bookings,
+  handleSortTable,
+  handleSortNumber,
+  ascending
+}) => {
   const [active, setActiveClass] = useState(false);
   const [id, setId] = useState("");
 
@@ -32,57 +37,89 @@ const SearchResults = ({ bookings, handleSortTable, handleSortNumber }) => {
               onClick={() => handleSortTable("title")}
               className={"mx-auto border text-center text-white bg-dark"}
             >
-              <button className="mb-4 ">Sort</button>
-              Title
+              {ascending ? (
+                <button className="mb-4 ">Click For Ascending</button>
+              ) : (
+                <button className="mb-4 ">Click For Descending</button>
+              )}
+              <p>Title</p>
             </th>
             <th
               onClick={() => handleSortTable("firstName")}
               className={"mx-auto border text-center text-white bg-dark"}
             >
-              <button className="mb-1 d-flex ml-2 ">Sort</button>
-              First Name
+              {ascending ? (
+                <button className="mb-4 ">Click For Ascending</button>
+              ) : (
+                <button className="mb-4 ">Click For Descending</button>
+              )}
+              <p>First Name</p>
             </th>
             <th
               onClick={() => handleSortTable("surname")}
               className={"mx-auto border text-center text-white bg-dark"}
             >
-              <button className="mb-1 d-flex ml-2 ">Sort</button>
-              Last Name
+              {ascending ? (
+                <button className="mb-4 ">Click For Ascending</button>
+              ) : (
+                <button className="mb-4 ">Click For Descending</button>
+              )}
+              <p>Last Name</p>
             </th>
             <th
               onClick={() => handleSortTable("email")}
               className={"mx-auto border text-center text-white bg-dark"}
             >
-              <button className="mb-4 d-flex mx-auto">Sort</button>
-              Email
+              {ascending ? (
+                <button className="mb-4 ">Click For Ascending</button>
+              ) : (
+                <button className="mb-4 ">Click For Descending</button>
+              )}
+              <p>Email</p>
             </th>
             <th
               onClick={() => handleSortTable("roomId")}
               className={"mx-auto border text-center text-white bg-dark"}
             >
-              <button className="mb-1 d-flex ml-2 ">Sort</button>
-              Room id
+              {ascending ? (
+                <button className="mb-4 ">Click For ascending</button>
+              ) : (
+                <button className="mb-4 ">Click For Descending</button>
+              )}
+              <p>Room Id</p>
             </th>
             <th
               onClick={() => handleSortNumber("checkInDate")}
               className={"mx-auto border text-center text-white bg-dark"}
             >
-              <button className="mb-1 d-flex ml-2 ">Sort</button>
-              Check in date
+              {ascending ? (
+                <button className="mb-4 ">Click For ascending</button>
+              ) : (
+                <button className="mb-4 ">Click For Descending</button>
+              )}
+              <p>Check In Date</p>
             </th>
             <th
               onClick={() => handleSortNumber("checkOutDate")}
               className={"mx-auto border text-center text-white bg-dark"}
             >
-              <button className="mb-1 d-flex ml-2 ">Sort</button>
-              Check out date
+              {ascending ? (
+                <button className="mb-4 ">Click For ascending</button>
+              ) : (
+                <button className="mb-4 ">Click For Descending</button>
+              )}
+              <p>Check out date</p>
             </th>
             <th
               onClick={() => handleSortNumber("nights")}
               className={"mx-auto border text-center text-white bg-dark"}
             >
-              <button className="mb-4 d-flex ml-2 ">Sort</button>
-              Nights
+              {ascending ? (
+                <button className="mb-4 ">Click For ascending</button>
+              ) : (
+                <button className="mb-4 ">Click For Descending</button>
+              )}
+              <p>Nights</p>
             </th>
           </tr>
         </thead>
