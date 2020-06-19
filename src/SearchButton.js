@@ -1,9 +1,12 @@
 import React from "react";
 
-const SearchButton = () => {
+const SearchButton = (props) => {
+  
   return (
     <div className="search-row">
       <input
+      onChange={props.handleSearchInput}
+      value={props.searchInput}
         type="text"
         id="customerName"
         className="form-control"

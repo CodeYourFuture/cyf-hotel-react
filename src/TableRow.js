@@ -27,6 +27,7 @@ const TableRow = (props) => {
           "days"
         )}
       </th>
+      {/* <th scope="col"><button>Show Profile</button></th> */}
     </tr>
   );
 };
