@@ -1,10 +1,12 @@
 import React, { useState } from "react"
 import TableRow from "./TableRow"
-
+import CustomerProfile from "./CustomerProfile"
 
 
 
 const SearchResults = props => {
+    const [id, setId] = useState("");
+
     return (
         <table className="table table-hover table-dark">
             <thead>
@@ -18,17 +20,17 @@ const SearchResults = props => {
                     <th scope="col">checkInDate</th>
                     <th scope="col">checkOutDate</th>
                     <th scope="col">totalNight</th>
+                    <th scope="col">newColumn</th>
                 </tr>
             </thead>
             <tbody>
-                {props.results.map((bookingData, index) => {
-                    return <TableRow bookingData={bookingData} key={index} />
-                })}
+                {props.results.map((bookingData, index) => <TableRow bookingData={bookingData} key={index} id={id} setId={setId} />
+                )}
+
+                < CustomerProfile id={id} setId={setId} />
             </tbody>
         </table >
-
     )
-
 
 }
 

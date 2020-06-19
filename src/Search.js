@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBtn from "./SearchBtn"
 
 
-const Search = () => {
+const Search = (props) => {
+  const [searchInput, setSearchInput] = useState("")
+  // console.log(searchInput)
+
+  function handleSearchInput(event) {
+    setSearchInput(event.target.value)
+
+  }
   return (
     <div className="search">
       <div className="page-header">
@@ -16,20 +23,22 @@ const Search = () => {
           </form>
           <div className="search-row">
             <input
+              onChange={handleSearchInput}
               type="text"
               id="customerName"
               className="form-control"
               placeholder="Customer name"
+              value={searchInput}
             />
-            <button className="btn btn-primary">Search</button>
-            <input
+            <button onClick={() => props.search(searchInput)} className="btn btn-primary">Search</button>
+            {/* <input
               type="text"
               id="customerId"
               className="form-control"
               placeholder="Customer id"
-            />
+            /> */}
           </div>
-          <SearchBtn />
+          {/* <SearchBtn /> */}
         </div>
       </div>
     </div>

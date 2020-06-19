@@ -6,6 +6,7 @@ import "./App.css";
 import FooterData from './FooterData.json'
 import Footer from "./Footer"
 import Restaurant from "./Restaurant"
+import TableRow from "./TableRow";
 
 const App = () => {
   return (

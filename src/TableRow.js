@@ -19,6 +19,9 @@ function TableRow(props) {
             <td >{props.bookingData.checkInDate}</td>
             <td >{props.bookingData.checkOutDate}</td>
             <td >{moment(props.bookingData.checkOutDate).diff(props.bookingData.checkInDate, "days")}</td>
-        </tr>)
+            <td><button onClick={props.setId(props.bookingData.id)} className="tableButton">{props.newCustomer} show profile</button></td>
+
+        </tr>
+    )
 }
 export default TableRow;
