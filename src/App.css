@@ -1,4 +1,4 @@
-.App {
+.container {
   text-align: left;
 }
 
@@ -16,6 +16,8 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  justify-content: space-around;
 }
 
 .App-title {
@@ -35,6 +37,7 @@
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -54,4 +57,51 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.card-control {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.image-header {
+  height: 40px;
+  margin-top: -20px;
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 20px;
+  margin-left: 1px;
+}
+
+.footer {
+  padding-top: 10px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+button {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.clicked-row {
+  background-color: lightblue;
+}
+.unclicked-row {
+  background-color: white;
+}
+.ul-profile {
+  background-color: gray;
+  justify-content: space-around;
+}
+.form-booking {
+  justify-content: space-around;
+}
+.input {
+  border-radius: 5px;
+  border: 0.8px solid rgb(19, 15, 15);
+  padding: 5px 0;
+  margin: 10px 0;
 }
