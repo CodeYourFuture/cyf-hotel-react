@@ -1,13 +1,17 @@
 import React from "react";
-
-const Footer = props => {
-  console.log(props);
+const footerInfo = [
+  "123 Fake Street, London, E1 4UD",
+  "hello@fakehotel.com",
+  "0123 456789"
+];
+const Footer = () => {
   return (
     <div className="footerMain">
-      <hr />
-      <div className="footer">Email: {props.value[1]}</div>
-      <div className="footer">Tell: {props.value[2]}</div>
-      <div className="footer">Address: {props.value[0]}</div>
+      <ul className="footerUl">
+        {footerInfo.map((x, index) => {
+          return <li key={index}>{x}</li>;
+        })}
+      </ul>
     </div>
   );
 };

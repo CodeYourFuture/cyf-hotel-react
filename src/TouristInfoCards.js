@@ -10,6 +10,7 @@ const TouristInfoCards = () => {
         <img
           src="https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/london-eye/london-eye.jpg?mw=640&hash=C76435E1F43C5E483B25E9730DE0D49BE6861432"
           className="card-img-top"
+          alt="london"
         />
         <div>
           <br />
@@ -29,8 +30,9 @@ const TouristInfoCards = () => {
           <strong>GLASGOW</strong>
         </p>
         <img
-          src="https://peoplemakeglasgow.com/images/Blog/Tomshields/University_of_Glasgow_Cloisters.jpg"
+          src="https://peoplemakeglasgow.com/templates/people/helper/timthumb.php?w=320&h=320&src=images/IntroducingGlasgow/Queens_Drive.jpg"
           className="card-img-top"
+          alt="glasgow"
         />
         <div>
           <br />
@@ -51,6 +53,7 @@ const TouristInfoCards = () => {
         <img
           src="https://www.visitmanchester.com/imageresizer/?image=%2fdmsimgs%2fManchester_Exterior_1__web_135333318.jpg&action=ProductDetailFullWidth2"
           className="card-img-top"
+          alt="manchester"
         />
         <div>
           <br />A trip to the capital wouldn't be complete without seeing the
