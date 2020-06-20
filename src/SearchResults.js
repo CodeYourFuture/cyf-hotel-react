@@ -18,14 +18,14 @@ const SearchResults = props => {
       <table className="table">
         <thead className="thead-dark">
           <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Room</th>
-            <th>Check In</th>
-            <th>Check out</th>
+            <th onClick={props.sortById}>ID</th>
+            <th onClick={props.sortByTitle}>Title</th>
+            <th onClick={props.sortByFirstName}>First Name</th>
+            <th onClick={props.sortBySurname}>Last Name</th>
+            <th onClick={props.sortByEmail}>Email</th>
+            <th onClick={props.sortByRoomId}>Room</th>
+            <th onClick={props.sortByDateIn}>Check In</th>
+            <th onClick={props.sortByDateOut}>Check out</th>
             <th>Duration</th>
           </tr>
         </thead>
