@@ -7,7 +7,7 @@ function CustomerProfile({ id }) {
     fetch(` https://cyf-react.glitch.me/customers/${id}`)
       .then(res => res.json())
       .then(data => setSingleCustomer(data));
-  }, []);
+  });
 
   return (
     <td>
