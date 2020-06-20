@@ -9,7 +9,7 @@ const Restaurant = () => {
   //   setOrder(order + 1);
   // }
   return (
-    <div class="order">
+    <div className="order">
       <h3>Restaurant Orders</h3>
       <div className="row">
         <Order

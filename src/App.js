@@ -6,6 +6,7 @@ import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 // import searchButton from "./searchButton";
 import "./App.css";
+import AddCustomerButton from "./AddCustomerButton";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <AddCustomerButton />
       <Restaurant />
       <Footer
         footerCompInfo={[

@@ -25,7 +25,7 @@ const TouristInfoCards = () => {
             city={"Glasgow"}
           />
         </div>
-        <div class="col-sm-3">
+        <div className="col-sm-3">
           <TouristInfoCard
             img={
               "https://downtowninbusiness.com/wp-content/uploads/2018/05/Manchester-a-young-city.jpg"
@@ -34,7 +34,7 @@ const TouristInfoCards = () => {
             city={"Manchester"}
           />
         </div>
-        <div class="col-sm-3">
+        <div className="col-sm-3">
           <TouristInfoCard
             img={
               "https://cdn.londonandpartners.com/visit/general-london/areas/river/76709-640x360-houses-of-parliament-and-london-eye-on-thames-from-above-640.jpg"

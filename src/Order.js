@@ -8,7 +8,9 @@ const Order = props => {
     setOrder(order + 1);
   }
   function orderRemove() {
-    setOrder(order - 1);
+    // setOrder(order - 1);
+
+    order > 0 ? setOrder(order - 1) : setOrder(0);
   }
   return (
     <div className="col-sm-3">

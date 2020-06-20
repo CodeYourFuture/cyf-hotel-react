@@ -3,7 +3,7 @@ import Table from "./Table";
 
 const SearchResults = props => {
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -15,11 +15,12 @@ const SearchResults = props => {
           <th scope="col">Check in Date</th>
           <th scope="col">Check out Date</th>
           <th scope="col">Number Of Nights</th>
+          <th scope="col">Show Profile</th>
         </tr>
       </thead>
 
-      {props.results.map(data => {
-        return <Table data={data} />;
+      {props.results.map((data, index) => {
+        return <Table data={data} key={index} />;
       })}
     </table>
   );

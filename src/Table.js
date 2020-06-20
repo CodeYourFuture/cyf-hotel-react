@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const Table = props => {
   const [selected, setSelected] = useState(false);
   const toggle = () => {
     setSelected(!selected);
   };
+  const [clicked, setClicked] = useState(false);
+
   const checkIn = moment(props.data.checkOutDate);
   const checkOut = moment(props.data.checkInDate);
   return (
@@ -25,6 +28,15 @@ const Table = props => {
         <td>{props.data.checkInDate}</td>
         <td>{props.data.checkOutDate}</td>
         <td>{checkIn.diff(checkOut, "days")}</td>
+        <td>
+          <button
+            className="btn btn-primary"
+            onClick={() => setClicked(!clicked)}
+          >
+            Show profile
+          </button>
+        </td>
+        {clicked ? <CustomerProfile id={props.data.id} /> : null}
       </tr>
     </tbody>
   );
