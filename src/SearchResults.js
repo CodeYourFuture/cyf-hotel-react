@@ -9,12 +9,7 @@ const SearchResults = ({
   handleSortNumber,
   ascending
 }) => {
-  // const [active, setActiveClass] = useState(false);
   const [id, setId] = useState("");
-
-  // function handleClick() {
-  //   setActiveClass(!active);
-  // }
   function showCustomerProfile(element) {
     setId([element.roomId]);
   }
