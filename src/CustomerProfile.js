@@ -12,7 +12,7 @@ const CustomerProfile = ({ customerId }) => {
         }
       })
       .then(data => setData(data));
-  }, [{ customerId }]);
+  }, [customerId]);
   console.log(data);
 
   if ((data.length = 0 || customerId === "")) {

@@ -31,8 +31,8 @@ const Bookings = () => {
     const searchVal = searchInput => {
       const newBookings = sortedBookings.filter(
         element =>
-          element.firstName.toLowerCase() == searchInput.toLowerCase() ||
-          element.surname.toLowerCase() == searchInput.toLowerCase()
+          element.firstName.toLowerCase() === searchInput.toLowerCase() ||
+          element.surname.toLowerCase() === searchInput.toLowerCase()
       );
       setSortedBookings(newBookings);
     };

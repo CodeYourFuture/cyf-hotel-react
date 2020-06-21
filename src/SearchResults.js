@@ -9,19 +9,19 @@ const SearchResults = ({
   handleSortNumber,
   ascending
 }) => {
-  const [active, setActiveClass] = useState(false);
+  // const [active, setActiveClass] = useState(false);
   const [id, setId] = useState("");
 
-  function handleClick() {
-    setActiveClass(!active);
-  }
+  // function handleClick() {
+  //   setActiveClass(!active);
+  // }
   function showCustomerProfile(element) {
     setId([element.roomId]);
   }
 
   return (
     <div className="col-12">
-      {id == "" ? "" : <CustomerProfile className="col-12" customerId={id} />}
+      {id === "" ? "" : <CustomerProfile className="col-12" customerId={id} />}
       <Table className="col-12">
         <thead>
           <tr className="col-12">
@@ -131,7 +131,7 @@ const SearchResults = ({
                 key={index}
                 index={index}
                 showCustomerProfile={showCustomerProfile}
-                className={active}
+                // className={active}
               />
             );
           })}

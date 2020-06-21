@@ -9,13 +9,9 @@ const Row = ({ element, index, showCustomerProfile }) => {
   function showCustomer() {
     showCustomerProfile(element);
   }
-  function sortTitle() {
-    sortTitle();
-  }
 
   return (
     <tr
-      onClick={handleClick}
       key={index}
       className={
         active
@@ -23,11 +19,12 @@ const Row = ({ element, index, showCustomerProfile }) => {
           : "col-12 text-dark bg-danger "
       }
     >
-      <th>
+      <th onClick={() => handleClick()}>
         <i className={active ? "fas fa-toggle-on" : "fas fa-toggle-off"} />
         {active ? "On" : "Off"}
       </th>
       <th
+        onClick={() => handleClick()}
         scope="row"
         className={
           active ? "bg-warning mx-auto text-white" : "mx-auto text-white border"
@@ -43,6 +40,7 @@ const Row = ({ element, index, showCustomerProfile }) => {
         </button>
       </th>
       <th
+        onClick={() => handleClick()}
         scope="row"
         className={
           active
