@@ -11,7 +11,7 @@ const AddBookingForm = ({
     title: "",
     firstName: "",
     surname: "",
-    roomId: 0,
+    roomId: "",
     email: "",
     checkInDate: "",
     checkOutDate: ""
