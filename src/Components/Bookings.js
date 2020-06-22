@@ -20,11 +20,7 @@ const Bookings = () => {
   }
 
   useEffect(() => {
-    if (initialBookings.length !== 0) {
-      setBookings(initialBookings);
-    } else {
-      fetchApi();
-    }
+    fetchApi();
   }, []);
 
   useEffect(() => {
