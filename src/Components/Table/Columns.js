@@ -34,23 +34,27 @@ const Columns = ({ data, setBookings }) => {
           Id
         </th>
         <th>
-          <button
-            onClick={() => {
-              sortInColumns("title", data, setBookings, sort, setSort);
-            }}
-          >
-            Sort
-          </button>
+          <div>
+            <button
+              onClick={() => {
+                sortInColumns("title", data, setBookings, sort, setSort);
+              }}
+            >
+              Sort
+            </button>
+          </div>
           Title
         </th>
         <th>
-          <button
-            onClick={() => {
-              sortInColumns("firstName", data, setBookings, sort, setSort);
-            }}
-          >
-            Sort
-          </button>
+          <div>
+            <button
+              onClick={() => {
+                sortInColumns("firstName", data, setBookings, sort, setSort);
+              }}
+            >
+              Sort
+            </button>
+          </div>
           First name
         </th>
         <th>
@@ -84,23 +88,27 @@ const Columns = ({ data, setBookings }) => {
           Room Id
         </th>
         <th>
-          <button
-            onClick={() => {
-              sortInColumns("checkIn", data, setBookings, sort, setSort);
-            }}
-          >
-            Sort
-          </button>
+          <div>
+            <button
+              onClick={() => {
+                sortInColumns("checkIn", data, setBookings, sort, setSort);
+              }}
+            >
+              Sort
+            </button>
+          </div>
           Check in date
         </th>
         <th>
-          <button
-            onClick={() => {
-              sortInColumns("checkOut", data, setBookings, sort, setSort);
-            }}
-          >
-            Sort
-          </button>
+          <div>
+            <button
+              onClick={() => {
+                sortInColumns("checkOut", data, setBookings, sort, setSort);
+              }}
+            >
+              Sort
+            </button>
+          </div>
           Check out date
         </th>
 

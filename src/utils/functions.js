@@ -100,19 +100,7 @@ export function sortInColumns(value, data, setFunction, sort, setSort) {
         setFunction(sortByCheckOutDate);
       }
       break;
-    // case "nights":
-    //   if (sort) {
-    //     const sortByCheckOutDate = [...data].sort((a, b) =>
-    //       a.checkOutDate < b.checkOutDate ? -1 : 1
-    //     );
-    //     setFunction(sortByCheckOutDate);
-    //   } else {
-    //     const sortByCheckOutDate = [...data].sort((a, b) =>
-    //       a.checkOutDate > b.checkOutDate ? -1 : 1
-    //     );
-    //     setFunction(sortByCheckOutDate);
-    //   }
-    //   break;
+
     default:
       const sortById = [...data].sort((a, b) => (a.id < b.id ? -1 : 1));
       setFunction(sortById);

@@ -109,6 +109,7 @@ footer {
 .orders {
   align-items: center;
   display: flex;
+  justify-content: space-evenly;
 }
 
 .select {
