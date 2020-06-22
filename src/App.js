@@ -17,7 +17,6 @@ const App = () => {
     <div className="App">
       <Heading logoName={"CYF Hotel Alex"} />
       <ListCards />
-
       <Bookings />
       <Restaurant />
       <Footer data={footerData} />

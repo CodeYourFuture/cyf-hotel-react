@@ -24,7 +24,7 @@ const Order = ({ orderType }) => {
           Add
         </button>
       </div>
-      <div>Price: £ {qty}</div>
+      {/* <div>Price: £ {qty}</div> */}
     </div>
   );
 };
