@@ -25,9 +25,6 @@ const Bookings = () => {
     } else {
       fetchApi();
     }
-  }, []);
-
-  useEffect(() => {
     window.localStorage.setItem("bookings", JSON.stringify(bookings));
   }, [bookings]);
 
