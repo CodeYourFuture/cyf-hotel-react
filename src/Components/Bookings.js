@@ -20,11 +20,14 @@ const Bookings = () => {
   }
 
   useEffect(() => {
-    if (initialBookings && initialBookings.length !== 0) {
+    if (initialBookings.length !== 0) {
       setBookings(initialBookings);
     } else {
       fetchApi();
     }
+  }, []);
+
+  useEffect(() => {
     window.localStorage.setItem("bookings", JSON.stringify(bookings));
   }, [bookings]);
 

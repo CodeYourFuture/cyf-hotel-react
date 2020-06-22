@@ -7,7 +7,7 @@ const AddBooking = ({ bookings, setBookings }) => {
 
   function removeBooking(roomID) {
     var filteredBooking = bookings.filter(
-      booking => booking.roomId !== Number(roomID)
+      booking => booking.roomId.toString() !== roomID
     );
     setBookings(filteredBooking);
   }
