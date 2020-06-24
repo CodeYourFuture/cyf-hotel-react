@@ -2,10 +2,8 @@ import React, { useState } from "react"
 import TableRow from "./TableRow"
 import CustomerProfile from "./CustomerProfile"
 
-
-
 const SearchResults = props => {
-    const [id, setId] = useState("");
+    const [userId, setUserId] = useState("");
 
     return (
         <table className="table table-hover table-dark">
@@ -24,10 +22,10 @@ const SearchResults = props => {
                 </tr>
             </thead>
             <tbody>
-                {props.results.map((bookingData, index) => <TableRow bookingData={bookingData} key={index} id={id} setId={setId} />
+                {props.results.map((bookingData, index) => <TableRow bookingData={bookingData} key={index} setUserId={setUserId} showProfile={props.showProfile} />
                 )}
 
-                < CustomerProfile id={id} setId={setId} />
+                < CustomerProfile userId={userId} />
             </tbody>
         </table >
     )

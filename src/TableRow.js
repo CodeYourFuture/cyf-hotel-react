@@ -3,6 +3,12 @@ import moment from "moment";
 
 function TableRow(props) {
     const [isHighlighted, setIsHightlighted] = useState(false)
+    function customerId() {
+        props.setUserId(props.bookingData.id)
+        // console.log(props.bookingData.id)
+
+
+    }
 
     function handleClick() {
         setIsHightlighted(!isHighlighted)
@@ -19,7 +25,7 @@ function TableRow(props) {
             <td >{props.bookingData.checkInDate}</td>
             <td >{props.bookingData.checkOutDate}</td>
             <td >{moment(props.bookingData.checkOutDate).diff(props.bookingData.checkInDate, "days")}</td>
-            <td><button onClick={props.setId(props.bookingData.id)} className="tableButton">{props.newCustomer} show profile</button></td>
+            <td><button onClick={customerId} className="tableButton">{props.newCustomer} show profile</button></td>
 
         </tr>
     )

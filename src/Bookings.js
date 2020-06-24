@@ -5,6 +5,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
   const search = searchVal => {
     const result = bookings.filter((person) => {
       return (person.firstName.toUpperCase() === searchVal.toUpperCase() || person.surname.toUpperCase() === searchVal.toUpperCase())
@@ -13,10 +14,23 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
   useEffect(() => {
-    fetch(`https://cyf-react.illicitonion.com`)
+    setIsLoading(true)
+
+    fetch(`https://cyf-react.glitch.me/delayed`)
       .then(res => res.json())
-      .then(data => setBookings(data));
+      .then(data => {
+        // setIsLoading(false)
+        setBookings(data)
+      });
   }, []);
+
+  function showProfile(id) {
+    let personProfile = bookings.find(person => {
+      return (person.id === id)
+    })
+    console.log(personProfile)
+  }
+
   if (!bookings) {
     return null;
   }
@@ -24,7 +38,9 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {isLoading ? <p>Loading....</p> : <SearchResults results={bookings} showProfile={showProfile} />}
+
+
       </div>
     </div>
   );
