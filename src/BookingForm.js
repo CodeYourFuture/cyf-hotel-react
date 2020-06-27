@@ -24,42 +24,42 @@ const BookingForm = props => {
 
   return (
     <form className="form-inputs lg-col-11 col-11" onSubmit={submitHandler}>
-      Title :
+      <p className="lable lg-col-2">Title :</p>
       <input
         onChange={changeHandler}
         name="title"
         type="text"
-        className="lg-col-5 input"
+        className="lg-col-4 input"
       />
-      First Name:
+      <p className="lable lg-col-2">First Name:</p>
       <input
         onChange={changeHandler}
         name="firstName"
         type="text"
-        className="lg-col-5 input"
+        className="lg-col-4 input"
       />
-      Surname:
+      <p className="lable lg-col-2">Surname:</p>
       <input
         onChange={changeHandler}
         name="surname"
         type="text"
-        className="lg-col-5 input"
+        className="lg-col-4 input"
       />
-      Room Id:
+      <p className="lable lg-col-2">Room Id:</p>
       <input
         onChange={changeHandler}
         name="roomId"
         type="number"
-        className="lg-col-5 input"
+        className="lg-col-4 input"
       />
-      CheckInDate:
+      <p className="lable lg-col-2">CheckInDate:</p>
       <input
         onChange={changeHandler}
         name="checkInDate"
         type="date"
         className="lg-col-4 input"
       />
-      CheckOutDate:
+      <p className="lable lg-col-2">CheckOutDate:</p>
       <input
         onChange={changeHandler}
         name="checkOutDate"

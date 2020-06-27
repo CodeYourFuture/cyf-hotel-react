@@ -151,6 +151,11 @@ td {
   }
 }
 
+.lable {
+  text-align: center;
+  font-size: 16px;
+}
+
 .order {
   list-style-type: none;
   padding: 30px 0;
