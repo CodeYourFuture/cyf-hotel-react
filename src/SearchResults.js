@@ -16,31 +16,40 @@ const SearchResults = props => {
       <table className="table lg-col-12 col-12">
         <thead className="table-head lg-col-11 col-11">
           <tr>
-            <td onClick={props.sortById} className="head-column">
+            <td onClick={() => props.sortBy("id")} className="head-column">
               Id
             </td>
-            <td onClick={props.sortByTitle} className="head-column">
+            <td onClick={() => props.sortBy("title")} className="head-column">
               Title
             </td>
-            <td onClick={props.sortByFirstName} className="head-column">
+            <td
+              onClick={() => props.sortBy("firstName")}
+              className="head-column"
+            >
               FirstName
             </td>
-            <td onClick={props.sortBySurname} className="head-column">
+            <td onClick={() => props.sortBy("surname")} className="head-column">
               Surname
             </td>
-            <td onClick={props.sortByEmail} className="head-column">
+            <td onClick={() => props.sortBy("email")} className="head-column">
               Email
             </td>
-            <td onClick={props.sortByRoomId} className="head-column">
+            <td onClick={() => props.sortBy("roomId")} className="head-column">
               RoomId
             </td>
-            <td onClick={props.sortByCheckInDate} className="head-column">
+            <td
+              onClick={() => props.sortBy("checkInDate")}
+              className="head-column"
+            >
               CheckInDate
             </td>
-            <td onClick={props.sortByCheckOutDate} className="head-column">
+            <td
+              onClick={() => props.sortBy("checkOutDate")}
+              className="head-column"
+            >
               CheckOutDate
             </td>
-            <td onClick={props.sortByNights}>Nights</td>
+            <td>Nights</td>
             <td>buttons</td>
           </tr>
         </thead>
