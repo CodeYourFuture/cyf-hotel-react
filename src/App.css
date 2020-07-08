@@ -73,5 +73,10 @@ tr {
 }
 
 .change {
-  background-color: lightgray;
+  background-color: rgb(59, 58, 58);
 }
+
+.row-elements:nth-last-child(){
+  align-self: end;
+}
+

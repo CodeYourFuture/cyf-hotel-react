@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
+
 const TableRow = (props) => {
   const [row, setRow] = useState(false);
 
@@ -27,7 +28,6 @@ const TableRow = (props) => {
           "days"
         )}
       </th>
-      {/* <th scope="col"><button>Show Profile</button></th> */}
     </tr>
   );
 };

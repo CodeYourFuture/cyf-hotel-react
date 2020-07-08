@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TableRow from "./TableRow";
-import CustomerProfile from "./CustomerProfile"
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = (props) => {
+  
+  const [id, setId] = useState("")
 
+  // useEffect(()=>{
+  // fetch("https://cyf-react.glitch.me/customers/${props.id}")
+  // .then(res => res.json())
+  // .then(result => setId(result) )
+  // }, [props.id])
+  
   return (
     <div className="table">
       <table className="table table-hover">
@@ -17,49 +25,28 @@ const SearchResults = (props) => {
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
             <th scope="col">Number of nights</th>
-
+            <th scope="col">Show profile</th>
           </tr>
         </thead>
-        <tbody>
-          {props.results.map((result) => (
-           <TableRow result={result} id={result.id} />
-          ))}
-        </tbody>
-        <tbody>
-        <th scope="col"><button onClick={()=>{props.results.map((result) => (
-           <CustomerProfile id={result.id} />
-          ))}}>Show Profile</button></th>
-          {/* {} */}
-        </tbody>
+
+        {props.results.map((result) => (
+          <tbody className="row-elements">
+            <TableRow result={result} id={result.id} />
+            <th scope="col">
+              <button
+                onClick={()=>{setId(result.id)}}>
+                Show Profile
+              </button>
+            </th>
+          </tbody>
+        ))}
+
       </table>
-      
+      <div>
+        <CustomerProfile id={id} />
+      </div>
     </div>
   );
 };
 
 export default SearchResults;
-
-// #### 20. Display a customer profile - step 1
-
-// **Instructions:** Add a new column in the table of
-//  the `<SearchResults />` component and display a `<button>` 
-//  for each row. The text of the button should read "Show profile". 
-//  Then, create a new `<CustomerProfile />` component. This component
-//   should be rendered next to the table in the `<SearchResults />`
-//    component. This component should receive one prop `id`. When 
-//    clicking on a "Show profile" button for a given row, the 
-//    component `<CustomerProfile />` should display the text 
-//    "Customer <ID> Profile", where <ID> is the id of the selected 
-//    customer. Initially, the `<CustomerProfile />` component doesn't 
-//    show anything.
-
-// **Hint:** You
-//  need to record the selected customer id after clicking
-//   on a "Show profile" button. In which component do you think this
-//    state should be defined?
-
-// **Test:** When first showing the page, no customer profile is 
-// displayed. When clicking the first "Show profile" button of the table,
-//  the text "Customer 1 profile" appears. When clickong the second "Show
-//   profile" button of the table, the text "Customer 2 profile" appears 
-//   instead.
