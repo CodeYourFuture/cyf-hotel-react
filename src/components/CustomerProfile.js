@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 const CustomerProfile = ({ customerId }) => {
   const [customerProfile, setCustomerProfile] = useState([]);
   useEffect(() => {
-    fetch(`https://cyf-react.illicitonion.com/${customerId}`)
+    fetch(
+      `https://cyf-byohannes-hotel-server.herokuapp.com/bookings/${customerId}`
+    )
       .then(res => res.json())
       .then(data => setCustomerProfile(data));
   }, [customerId]);
