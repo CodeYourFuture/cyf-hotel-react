@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 
 const CustomerProfile = props => {
   const [customerData, setCustomerData] = useState({});
+  console.log(customerData);
+  const [requestOption, setRequestOption] = useState("GET");
 
   // console.log(props.className);
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${props.profileId}`)
+    fetch(
+      `https://cyf-nader-hotel-server.herokuapp.com/bookings/${props.profileId}`
+    )
       .then(res => res.json())
       .then(data => setCustomerData(data));
   }, [props.profileId]);

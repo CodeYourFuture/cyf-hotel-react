@@ -6,14 +6,30 @@ import "./App.css";
 
 const Bookings = () => {
   const [bookingData, setBookingData] = useState([]);
+  const [route, setRoute] = useState("");
+  const [requestOption, setRequestOption] = useState({ method: "GET" });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [sortAscending, setSortAscending] = useState(false);
+  const [data, setData] = useState({
+    title: "",
+    firstName: "",
+    surname: "",
+    roomId: "",
+    checkInDate: "",
+    checkOutDate: "",
+    email: ""
+  });
+  // console.log(data)
+
   console.log("sort by id is", { sort: sortAscending });
   useEffect(() => {
     //start loading
     setIsLoading(true);
-    fetch("https://cyf-react.glitch.me")
+    fetch(
+      `https://cyf-nader-hotel-server.herokuapp.com/bookings${route}`,
+      requestOption
+    )
       .then(res => res.json())
       //finxish loading
       .then(data => {
@@ -21,7 +37,7 @@ const Bookings = () => {
         setBookingData(data);
       })
       .catch(err => setError(err));
-  }, []);
+  }, [route, requestOption]);
 
   const sortBy = item => {
     setSortAscending(!sortAscending);
@@ -62,6 +78,25 @@ const Bookings = () => {
     setBookingData([...bookingData, formData]);
   };
 
+  const submitHandler = event => {
+    setRoute("/add");
+    // updateData(data);
+    event.preventDefault();
+    setRequestOption({
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(data)
+    });
+    console.log("data = ", data);
+  };
+
+  const changeHandler = event => {
+    const updateData = {
+      ...data,
+      [event.target.name]: event.target.value
+    };
+    setData(updateData);
+  };
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     const searchResult = bookingData.filter(person => {
@@ -82,7 +117,11 @@ const Bookings = () => {
       ) : (
         <div className="result-form lg-col-11 col-10">
           <SearchResults results={bookingData} error={error} sortBy={sortBy} />
-          <BookingForm updateData={updateData} />
+          <BookingForm
+            updateData={updateData}
+            submitHandler={submitHandler}
+            changeHandler={changeHandler}
+          />
         </div>
       )}
     </div>
