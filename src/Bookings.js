@@ -17,7 +17,7 @@ const Bookings = () => {
   );
 
   useEffect(() => {
-    fetch(`https://cyf-react.illicitonion.com/`)
+    fetch(`https://cyf-byohannes-hotel-server.herokuapp.com/bookings`)
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
           return res.json();
