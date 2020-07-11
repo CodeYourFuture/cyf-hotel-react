@@ -12,7 +12,7 @@ const Bookings = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://hamidreza-hotel-server.glitch.me")
       .then(response => response.json())
       .then(data => {
         setIsLoading(false);

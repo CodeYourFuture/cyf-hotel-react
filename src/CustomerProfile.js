@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 function CustomerProfile(props) {
   const [profileData, setProfileData] = useState({});
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${props.userClick}`)
+    fetch(
+      `https://hamidreza-hotel-server.glitch.me/customers/${props.userClick}`
+    )
       .then(response => response.json())
       .then(data => setProfileData(data));
     console.log(profileData);
