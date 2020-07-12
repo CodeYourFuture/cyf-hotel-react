@@ -42,7 +42,6 @@ const TourisrticInfoCards = () => {
           </div>
         );
       })}
-      ;
     </div>
   );
 };
