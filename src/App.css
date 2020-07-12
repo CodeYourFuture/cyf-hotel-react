@@ -211,7 +211,7 @@ button:focus {
   border-radius: 5px;
   border: 0.1px solid rgb(170, 170, 170);
   padding: 5px 0;
-  margin: 10px 0;
+  margin: 3px 0;
 }
 .input:focus {
   outline: none;
@@ -220,4 +220,13 @@ button:focus {
   cursor: pointer;
   background-color: rgb(230, 230, 230);
   transform: translate(3px, 3px);
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+  border-radius: 5px;
+  background-color: powderblue;
 }

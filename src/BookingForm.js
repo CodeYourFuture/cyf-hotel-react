@@ -2,7 +2,7 @@ import React, { useState } from "react";
 const BookingForm = props => {
   return (
     <form
-      className="form-inputs lg-col-11 col-11"
+      className={`${props.showDisplay} lg-col-12 col-11 `}
       onSubmit={props.submitHandler}
     >
       <p className="lable lg-col-2">Title :</p>

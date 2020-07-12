@@ -11,6 +11,7 @@ const Bookings = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [sortAscending, setSortAscending] = useState(false);
+  const [showDisplay, setShowDisplay] = useState("hide");
   const [data, setData] = useState({
     title: "",
     firstName: "",
@@ -20,9 +21,9 @@ const Bookings = () => {
     checkOutDate: "",
     email: ""
   });
-  // console.log(data)
 
-  console.log("sort by id is", { sort: sortAscending });
+  // console.log("sort by id is", { sort: sortAscending });
+
   useEffect(() => {
     //start loading
     setIsLoading(true);
@@ -69,18 +70,8 @@ const Bookings = () => {
     });
   };
 
-  const updateData = newObj => {
-    const formData = {
-      ...newObj,
-      id: bookingData.length + 1
-    };
-
-    setBookingData([...bookingData, formData]);
-  };
-
   const submitHandler = event => {
     setRoute("/add");
-    // updateData(data);
     event.preventDefault();
     setRequestOption({
       method: "POST",
@@ -88,6 +79,7 @@ const Bookings = () => {
       body: JSON.stringify(data)
     });
     console.log("data = ", data);
+    setShowDisplay("hide");
   };
 
   const changeHandler = event => {
@@ -97,16 +89,13 @@ const Bookings = () => {
     };
     setData(updateData);
   };
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
-    const searchResult = bookingData.filter(person => {
-      return (
-        person.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
-        person.surname.toLowerCase().includes(searchVal.toLowerCase())
-      );
-    });
-    setBookingData(searchResult);
+    setRoute(`/search?term=${searchVal}`);
+    setRequestOption({ method: "GET" });
   };
+
   return (
     <div className="App-content row">
       <Search search={search} />
@@ -117,10 +106,19 @@ const Bookings = () => {
       ) : (
         <div className="result-form lg-col-11 col-10">
           <SearchResults results={bookingData} error={error} sortBy={sortBy} />
+          <div>
+            <button
+              onClick={() => setShowDisplay("show")}
+              className="btn btn-primary"
+            >
+              Add booking
+            </button>
+            {/* <button onClick={()=>setShowDisplay("show")} className="btn btn-primary">Edit booking</button> */}
+          </div>
           <BookingForm
-            updateData={updateData}
             submitHandler={submitHandler}
             changeHandler={changeHandler}
+            showDisplay={showDisplay}
           />
         </div>
       )}
