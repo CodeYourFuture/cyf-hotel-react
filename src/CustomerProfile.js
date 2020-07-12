@@ -2,13 +2,20 @@ import React, { useState, useEffect } from "react";
 function CustomerProfile(props) {
   const [profileData, setProfileData] = useState({});
   useEffect(() => {
-    fetch(
-      `https://hamidreza-hotel-server.glitch.me/customers/${props.userClick}`
-    )
-      .then(response => response.json())
-      .then(data => setProfileData(data));
-    console.log(profileData);
-  }, []);
+    if (props.userClick) {
+      fetch(
+        `https://hamidreza-hotel-server.glitch.me/customers/${props.userClick}`
+      )
+        .then(response => response.json())
+        .then(data => setProfileData(data));
+      console.log(profileData);
+    } else {
+      fetch(`https://hamidreza-hotel-server.glitch.me/customers/1`)
+        .then(response => response.json())
+        .then(data => setProfileData(data));
+      console.log(profileData);
+    }
+  }, [props.userClick]);
   return (
     <div>
       <ul className="ul-profile row" key={profileData.id}>
