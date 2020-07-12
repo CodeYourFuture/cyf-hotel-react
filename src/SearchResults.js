@@ -17,13 +17,13 @@ function SearchResults(props) {
         </tr>
       </thead>
       <tbody>
-        {props.results.map(item => {
+        {props.results.map((item, index) => {
           const nightsSpent = moment(item.checkOutDate).diff(
             item.checkInDate,
             "days"
           );
           return (
-            <tr>
+            <tr key={index}>
               <td scope="row">{item.id}</td>
               <td>{item.title}</td>
               <td>{item.firstName}</td>
