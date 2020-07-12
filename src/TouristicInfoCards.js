@@ -35,7 +35,7 @@ const TourisrticInfoCards = () => {
             <img src={card.img} className="card-img-top" />
             <div className="card-body">
               <p>{card.text}</p>
-              <a href={card.link} className="btn btn-primary">
+              <a href={card.link} target="_blank" className="btn btn-primary">
                 {card.name}
               </a>
             </div>
