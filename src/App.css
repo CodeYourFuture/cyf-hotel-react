@@ -8,14 +8,32 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  width: 100%;
+  height: 120px;
   padding: 20px;
   color: white;
-  text-align: left;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 3em;
   font-weight: bold;
+}
+
+#heading {
+  display: flex;
+  background-color: darkcyan;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+#infoCards {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
 }
 
 .App-title {
@@ -35,6 +53,7 @@
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -52,6 +71,12 @@ tr {
   text-align: center;
 }
 
+.footer ul {
+  list-style-type: none;
+}
+
 .card {
   width: 18rem;
+  margin: 20px;
+  align-items: center;
 }
