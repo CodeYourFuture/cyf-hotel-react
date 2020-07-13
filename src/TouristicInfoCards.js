@@ -29,13 +29,18 @@ const cardContents = [
 const TourisrticInfoCards = () => {
   return (
     <div className="card-container">
-      {cardContents.map(card => {
+      {cardContents.map((card, index) => {
         return (
-          <div className="card">
-            <img src={card.img} className="card-img-top" />
+          <div key={index} className="card">
+            <img src={card.img} alt="City views " className="card-img-top" />
             <div className="card-body">
               <p>{card.text}</p>
-              <a href={card.link} target="_blank" className="btn btn-primary">
+              <a
+                href={card.link}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="btn btn-primary"
+              >
                 {card.name}
               </a>
             </div>
