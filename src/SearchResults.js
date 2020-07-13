@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const SearchResults = ({ results }) => {
   console.log(results);
@@ -14,6 +15,7 @@ const SearchResults = ({ results }) => {
           <th scope="col">Room No</th>
           <th scope="col">Check-in Date</th>
           <th scope="col">Check-out Date</th>
+          <th scope="col">Numer of Nights</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +30,9 @@ const SearchResults = ({ results }) => {
               <td>{props.roomId}</td>
               <td>{props.checkInDate}</td>
               <td>{props.checkOutDate}</td>
+              <td>
+                {moment(props.checkOutDate).diff(props.checkInDate, "days")}
+              </td>
             </tr>
           );
         })}
