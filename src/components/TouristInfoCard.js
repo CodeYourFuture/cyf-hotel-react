@@ -4,6 +4,7 @@ const TouristInfoCard = props => {
   return (
     <div className="card">
       <img
+        alt="image"
         src={props.src}
         className="card-img-top"
         style={{ height: "100%" }}
