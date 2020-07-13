@@ -70,3 +70,7 @@ tr {
 .hide-li {
   list-style-type: none;
 }
+
+.text-center {
+  margin-bottom: 25px;
+}
