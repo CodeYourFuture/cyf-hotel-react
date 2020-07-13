@@ -5,6 +5,7 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  width: 80px;
 }
 
 .App-header {
@@ -54,4 +55,13 @@ tr {
 
 .card {
   width: 18rem;
+  background-color: rgb(111, 192, 184);
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.card-img-top {
+  height: 15em;
+  width: 18em;
 }
