@@ -18,6 +18,10 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map((field, index) => {
+          const nightsSpent = moment(field.checkOutDate).diff(
+            field.checkInDate,
+            "days"
+          );
           return (
             <tr key={index}>
               <th scope="row">{field.id}</th>
@@ -28,20 +32,14 @@ const SearchResults = props => {
               <td>{field.roomId}</td>
               <td>{field.checkInDate}</td>
               <td>{field.checkOutDate}</td>
-              <td>{calculateNumDays(field.checkInDate, field.checkOutDate)}</td>
+              <td>{nightsSpent}</td>
             </tr>
           );
         })}
       </tbody>
     </table>
   );
-};
-
-const calculateNumDays = (checkInDate, checkOutDate) => {
-  const dayIn = moment(checkInDate.split("-"));
-  const dayOut = moment(checkOutDate.split("-"));
-
-  return dayOut.diff(dayIn, "days");
+  // };
 };
 
 export default SearchResults;
