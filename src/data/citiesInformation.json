@@ -1,0 +1,20 @@
+[
+  {
+    "city": "Glasgow",
+    "imageSrc": "https://th.bing.com/th/id/OIP.BK3WPngfzt133nP8r4QGYgHaEn?w=266&h=180&c=7&o=5&dpr=2&pid=1.7",
+    "imageAlt": "GlasgowPhoto",
+    "linkHref": "https://www.peoplemakeglasgow.com"
+  },
+  {
+    "city": "Manchester",
+    "imageSrc": "https://th.bing.com/th/id/OIP.KeXgzPo6w9UcVqCPPsECAAHaFj?w=214&h=180&c=7&o=5&dpr=2&pid=1.7",
+    "imageAlt": "ManchesterPhoto",
+    "linkHref": "https://www.visitmanchester.com"
+  },
+  {
+    "city": "London",
+    "imageSrc": "https://th.bing.com/th/id/OIP.vnPp4X0EDGjXpxV1uyA0cgHaEo?w=254&h=180&c=7&o=5&dpr=2&pid=1.7",
+    "imageAlt": "LondonPhoto",
+    "linkHref": "https://www.visitlondon.com"
+  }
+]

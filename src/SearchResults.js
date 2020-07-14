@@ -3,7 +3,7 @@ import Moment from "react-moment";
 
 const SearchResults = props => {
   return (
-    <div class="table-responsive-sm">
+    <div className="table-responsive-sm">
       <table className="table table-bordered">
         <thead className="table-primary fontColor">
           <tr>

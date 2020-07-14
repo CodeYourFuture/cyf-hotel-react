@@ -62,9 +62,18 @@ tr {
 }
 
 .heading {
-  max-width: 200px;
-  display: block;
-  margin: auto;
+  max-width: 100px;
+  margin: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: start;
+}
+
+.headerTitle {
+  align-self: center;
+  color: blue;
 }
 
 .cardsContainer {
@@ -75,4 +84,10 @@ tr {
 
 .fontColor {
   color: white;
+}
+
+.footerlist {
+  list-style-type: none;
+  margin: 10px;
+  padding: 10px;
 }

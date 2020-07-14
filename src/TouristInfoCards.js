@@ -1,27 +1,25 @@
 import React from "react";
 
-const TouristInfoCards = () => {
+const TouristInfoCards = props => {
   return (
     <div className="cardsContainer">
-      <div className="card">
-        <img
-          src="https://th.bing.com/th/id/OIP.BK3WPngfzt133nP8r4QGYgHaEn?w=266&h=180&c=7&o=5&dpr=2&pid=1.7"
-          className="card-img-top"
-          alt="GlasgowPhoto"
-        />
-        <div className="card-body">
-          <h5 className="card-title">Glasgow</h5>
-          <p className="card-text" />
-          <a
-            href="https://www.peoplemakeglasgow.com"
-            className="btn btn-primary"
-          >
-            Explore Glasgow
-          </a>
-        </div>
-      </div>
+      {props.cities.map(city => {
+        return (
+          <div className="card">
+            <img
+              src={city.imageSrc}
+              className="card-img-top"
+              alt={city.imageAlt}
+            />
+            <div className="card-body">
+              <h5 className="card-title">{city.city}</h5>
+              <p className="card-text" />
+              <a href={city.linkHref} className="btn btn-primary">
+                Explore {city.city}
+              </a>
+            </div>
 
-      <div className="card">
+            {/* <div className="card">
         <img
           src="https://th.bing.com/th/id/OIP.KeXgzPo6w9UcVqCPPsECAAHaFj?w=214&h=180&c=7&o=5&dpr=2&pid=1.7"
           className="card-img-top"
@@ -49,7 +47,10 @@ const TouristInfoCards = () => {
             Explore London
           </a>
         </div>
-      </div>
+      </div>*/}
+          </div>
+        );
+      })}
     </div>
   );
 };
