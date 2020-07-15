@@ -1,20 +1,42 @@
 import React from "react";
 
-let image = [
-  "https://avisassets.abgemea.com/dam/jcr:aa3b1977-80d3-4f93-a8ac-09e07feec22e/Glasgow_Squinty_Bridge_Credit_iStock_theasis.jpg",
-  "https://i2-prod.manchestereveningnews.co.uk/incoming/article14967200.ece/ALTERNATES/s615/0_CJH_MEN_Northern_Rail_Piccadilly_310518_11.jpg",
-  "https://cdn.londonandpartners.com/visit/general-london/areas/river/76709-640x360-houses-of-parliament-and-london-eye-on-thames-from-above-640.jpg"
+let data = [
+  {
+    link: "https://peoplemakeglasgow.com",
+    image:
+      "https://s19623.pcdn.co/wp-content/uploads/2015/10/A-weekend-in-Glasgow-48-hour-itinerary-1080x675.jpg",
+    summary:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    destination: "Glasgow"
+  },
+  {
+    link: "https://visitmanchester.com",
+    image:
+      "https://www.complete-ltd.com/wp-content/uploads/2020/01/Manchester_Tram-1024x683.jpeg",
+    summary:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    destination: "Manchester"
+  },
+  {
+    link: "https://visitlondon.com",
+    image:
+      "https://images.unsplash.com/photo-1522961881734-7df1e2635d0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
+    summary:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    destination: "London"
+  }
 ];
 function TouristInfoCards() {
   return (
     <div>
-      {image.map((i, index) => {
+      {data.map((i, index) => {
         return (
           <div key={index} className="card">
-            <img src={i} className="card-img-top" />
+            <img src={i.image} className="card-img-top" />
             <div className="card-body">
-              <a href="#" className="btn btn-primary">
-                Go somewhere
+              <p>{i.summary}</p>
+              <a href={i.link} className="btn btn-primary">
+                {i.destination}
               </a>
             </div>
           </div>
