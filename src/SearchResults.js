@@ -5,15 +5,15 @@ const SearchResults = props => {
     <table className="table">
       <thead>
         <tr>
-          <th scope="">id</th>
-          <th scope="col">title</th>
-          <th scope="col">firstName</th>
-          <th scope="col">surname</th>
-          <th scope="">email</th>
-          <th scope="col">roomId</th>
-          <th scope="col">checkInDate</th>
-          <th scope="col">checkOutDate</th>
-          <th scope="col">number of Nights</th>
+          <th scope="">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">FirstName</th>
+          <th scope="col">Surname</th>
+          <th scope="">Email</th>
+          <th scope="col">Room Id</th>
+          <th scope="col">Check-In-Date</th>
+          <th scope="col">Check-Out-Date</th>
+          <th scope="col">Number of Nights</th>
         </tr>
       </thead>
       <tbody>
@@ -39,7 +39,6 @@ const SearchResults = props => {
       </tbody>
     </table>
   );
-  // };
 };
 
 export default SearchResults;

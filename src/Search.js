@@ -18,6 +18,7 @@ const Search = () => {
                 placeholder="Customer name"
               />
             </div>
+            <div />
           </form>
         </div>
       </div>

@@ -50,11 +50,33 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
-}
-
 .card {
   width: 18rem;
+}
+
+.cardsParent {
+  padding: 50px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  list-style-type: none;
+}
+
+.footer {
+  background-color: #222;
+  margin: 60px 0px 0px 0px;
+  padding: 20px;
+}
+
+li {
+  color: white;
+}
+
+.padding-bottom {
+  margin: 0px 0px 20px;
 }
