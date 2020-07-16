@@ -1,7 +1,7 @@
 import Cities from "./data/cities.json";
 import React from "react";
 
-function TouristInfoCards(props) {
+function TouristInfoCards() {
   return (
     <div className="album py-5">
       <div className="container">
@@ -10,7 +10,11 @@ function TouristInfoCards(props) {
             return (
               <div key={index} className="col-md-4">
                 <div className="card mb-4">
-                  <img src={city.image} className="card-img-top" />
+                  <img
+                    src={city.image}
+                    className="card-img-top"
+                    alt={city.name}
+                  />
                   <div className="card-body">
                     <p className="card-text">{city.text}</p>
                     <a href={city.link} className="btn btn-primary">

@@ -3,7 +3,7 @@ import React from "react";
 function TableRow(props) {
   return (
     <tr>
-      <td scope="row">{props.item.id}</td>
+      <td>{props.item.id}</td>
       <td>{props.item.title}</td>
       <td>{props.item.firstName}</td>
       <td>{props.item.surname}</td>
