@@ -2,27 +2,6 @@ import React from "react";
 import moment from "moment";
 
 function SearchResults(props) {
-  const customerDetails = [
-    {
-      id: 1,
-      Name: "Taslima",
-      Surname: "Patel",
-      email: "taslimapatel26@gmail.com",
-      roomid: "10",
-      CheckInDate: "26/09/2020",
-      CheckOutDate: "30/09/2020"
-    },
-    {
-      id: 2,
-      Name: "Aysha",
-      Surname: "Patel",
-      email: "ayshapatel26@gmail.com",
-      roomid: "10000",
-      CheckInDate: "26/09/2020",
-      CheckOutDate: "30/09/2020"
-    }
-  ];
-
   return (
     <div>
       <table class="table">

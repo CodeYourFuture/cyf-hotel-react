@@ -23,7 +23,7 @@
 //Each card should link to the correct website.
 
 import React from "react";
-import ReactDom from "react-dom";
+
 import "./TouristInfoCard.css";
 
 function TouristInfoCards(props) {
