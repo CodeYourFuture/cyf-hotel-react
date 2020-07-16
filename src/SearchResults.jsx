@@ -4,8 +4,8 @@ import moment from "moment";
 function SearchResults(props) {
   return (
     <div>
-      <table class="table">
-        <thead class="thead-dark">
+      <table className="table">
+        <thead className="thead-dark">
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Title</th>
@@ -22,7 +22,7 @@ function SearchResults(props) {
           return (
             <tbody>
               <tr>
-                <td>{customer.id}</td>
+                <td key={customer.id.toString()}>{customer.id}</td>
                 <td>{customer.title}</td>
                 <td>{customer.firstName}</td>
                 <td>{customer.surname}</td>

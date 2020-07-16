@@ -14,7 +14,7 @@ function Footer(props) {
   return (
     <ul>
       {props.footerData.map(item => {
-        return <li>{item}</li>;
+        return <li key={item.toString()}>{item}</li>;
       })}
     </ul>
   );

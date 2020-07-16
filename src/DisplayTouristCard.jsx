@@ -2,8 +2,8 @@ import React from "react";
 import TouristInfoCards from "./TouristInfoCard";
 function DisplayTouristCard() {
   return (
-    <div class="row">
-      <div class="col-sm">
+    <div className="row">
+      <div className="col-sm">
         <TouristInfoCards
           imageURL="https://d1v9sz08rbysvx.cloudfront.net/careers/media/assets/shutterstock_10061808040-glasgow-town.jpg?ext=.jpg"
           Name="Glasgow"
@@ -13,7 +13,7 @@ function DisplayTouristCard() {
           moreInfoLink="https://peoplemakeglasgow.com/glasgow-now"
         />
       </div>
-      <div class="col-sm">
+      <div className="col-sm">
         <TouristInfoCards
           imageURL="https://governmentbusiness.co.uk/sites/default/files/william-mccue-508892-unsplash_1.jpg"
           Name="Manchester"
@@ -22,7 +22,7 @@ function DisplayTouristCard() {
           moreInfoLink="https://www.visitmanchester.com/"
         />
       </div>
-      <div class="col-sm">
+      <div className="col-sm">
         <TouristInfoCards
           imageURL="https://cdn.londonandpartners.com/visit/general-london/areas/river/76709-640x360-houses-of-parliament-and-london-eye-on-thames-from-above-640.jpg"
           Name="London"

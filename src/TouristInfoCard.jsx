@@ -28,12 +28,12 @@ import "./TouristInfoCard.css";
 
 function TouristInfoCards(props) {
   return (
-    <div class="container">
-      <div class="card">
-        <img src={props.imageURL} class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">{props.Name}</h5>
-          <p class="card-text">{props.descriptionText}</p>
+    <div className="container">
+      <div className="card">
+        <img src={props.imageURL} className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">{props.Name}</h5>
+          <p className="card-text">{props.descriptionText}</p>
           <a href={props.moreInfoLink}>Click here for more information</a>
         </div>
       </div>
