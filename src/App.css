@@ -4,18 +4,20 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 75px;
+  float: right;
+  margin-top: -3px;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 110px;
   padding: 20px;
   color: white;
-  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
+  text-align: center;
 }
 
 .App-title {
@@ -41,6 +43,8 @@
 
 tr {
   color: #5b5757;
+  border: 5px solid green;
+  border-radius: 4px;
 }
 
 .results {
@@ -49,9 +53,45 @@ tr {
 
 .footer {
   padding-top: 20px;
-  text-align: center;
+  background-color: black;
+  color: white;
+  list-style: none;
+  margin: 10px;
+  border-radius: 4px;
 }
 
 .card {
   width: 18rem;
+  margin: 20px;
+}
+.all-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.city-title {
+  text-align: center;
+  font-weight: 550;
+  background-color: green;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 3px;
+  margin-top: 4px;
+  color: white;
+}
+thead {
+  border: green solid 3px;
+  background-color: green;
+  border-radius: 7px;
+  color: white;
+}
+
+.table-row {
+  color: white;
+  border-radius: 4px;
+}
+
+td {
+  border: 3px solid black;
 }
