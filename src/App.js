@@ -2,14 +2,14 @@ import React from "react";
 import Bookings from "./Bookings";
 import Heading from "./Heading";
 import Footer from "./Footer";
-import TouristInfoCards from "./TouristicInfoCards";
 import "./App.css";
+import TourisrticInfoCardsContainer from "./TouristicInfoCardsContainer";
 
 const App = () => {
   return (
     <div className="App">
       <Heading />
-      <TouristInfoCards />
+      <TourisrticInfoCardsContainer />
       <Bookings />
       <Footer
         adress={[
