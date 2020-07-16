@@ -1,8 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-const SearchResults = ({ results }) => {
-  console.log(results);
+const SearchResults = props => {
   return (
     <table className="table">
       <thead>
@@ -19,20 +18,18 @@ const SearchResults = ({ results }) => {
         </tr>
       </thead>
       <tbody>
-        {results.map((props, index) => {
+        {props.results.map((p, index) => {
           return (
             <tr key={index}>
-              <td>{props.id}</td>
-              <td>{props.title}</td>
-              <td>{props.firstName}</td>
-              <td>{props.surname}</td>
-              <td>{props.email}</td>
-              <td>{props.roomId}</td>
-              <td>{props.checkInDate}</td>
-              <td>{props.checkOutDate}</td>
-              <td>
-                {moment(props.checkOutDate).diff(props.checkInDate, "days")}
-              </td>
+              <td>{p.id}</td>
+              <td>{p.title}</td>
+              <td>{p.firstName}</td>
+              <td>{p.surname}</td>
+              <td>{p.email}</td>
+              <td>{p.roomId}</td>
+              <td>{p.checkInDate}</td>
+              <td>{p.checkOutDate}</td>
+              <td>{moment(p.checkOutDate).diff(p.checkInDate, "days")}</td>
             </tr>
           );
         })}
