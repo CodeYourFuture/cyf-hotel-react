@@ -1,5 +1,4 @@
 import React from "react";
-import Cities from "./data/cities.json";
 import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
@@ -15,13 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <div className="album py-5">
-        <div className="container">
-          <div className="row">
-            <TouristInfoCards cities={Cities} />
-          </div>
-        </div>
-      </div>
+      <TouristInfoCards />
       <Bookings />
       <Footer info={footerInfo} />
     </div>
