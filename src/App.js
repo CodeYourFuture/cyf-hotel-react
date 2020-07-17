@@ -1,9 +1,9 @@
 import React from "react";
-import Bookings from "./Bookings";
+import Bookings from "./Components/Bookings";
 import "./App.css";
-import Heading from "./Heading";
-import TouristInfoCards from "./TouristInfoCards";
-import Footer from "./Footer";
+import Heading from "./Components/Heading";
+import TouristInfoCards from "./Components/TouristInfoCards";
+import Footer from "./Components/Footer";
 
 const App = () => {
   const footerInfo = [
