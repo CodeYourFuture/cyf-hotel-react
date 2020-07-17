@@ -4,12 +4,13 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 65px;
+  margin-left: 20px;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -27,6 +28,14 @@
   font-size: large;
 }
 
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -50,6 +59,7 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style: none;
 }
 
 .card {
