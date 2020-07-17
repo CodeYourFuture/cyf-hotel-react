@@ -12,7 +12,6 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <SearchResults />
       <Footer
         address={[
           "123 Fake Street, London, E1 4UD",

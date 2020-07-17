@@ -18,7 +18,8 @@ const SearchResults = () => {
       </thead>
       <thead>
         <tr>
-          <th>#</th>
+          <th>Table heading</th>
+          <th>Table heading</th>
           <th>Table heading</th>
           <th>Table heading</th>
           <th>Table heading</th>
@@ -27,9 +28,9 @@ const SearchResults = () => {
           <th>Table heading</th>
         </tr>
       </thead>
-      {/* <tbody> */}
       <tr>
-        <td>1</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
         <td>Table cell</td>
         <td>Table cell</td>
         <td>Table cell</td>
@@ -38,7 +39,8 @@ const SearchResults = () => {
         <td>Table cell</td>
       </tr>
       <tr>
-        <td>2</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
         <td>Table cell</td>
         <td>Table cell</td>
         <td>Table cell</td>
@@ -47,7 +49,8 @@ const SearchResults = () => {
         <td>Table cell</td>
       </tr>
       <tr>
-        <td>3</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
         <td>Table cell</td>
         <td>Table cell</td>
         <td>Table cell</td>
@@ -55,7 +58,16 @@ const SearchResults = () => {
         <td>Table cell</td>
         <td>Table cell</td>
       </tr>
-      {/* </tbody> */}
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
     </Table>
   );
 };
