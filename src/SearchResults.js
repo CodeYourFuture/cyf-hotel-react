@@ -1,73 +1,40 @@
 import React from "react";
+import moment from "moment";
 import Table from "react-bootstrap/Table";
 
-const SearchResults = () => {
+const SearchResults = props => {
   return (
     <Table className="table">
       <thead>
         <tr>
-          <th>id</th>
-          <th>Title</th>
-          <th>first name</th>
-          <th>surname</th>
-          <th>email</th>
-          <th>room id</th>
-          <th>check in date</th>
-          <th>check out date</th>
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Name</th>
+          <th scope="col">Surname</th>
+          <th scope="col">email</th>
+          <th scope="col">RoomId</th>
+          <th scope="col">Check in Date</th>
+          <th scope="col">Check out Date</th>
+          <th scope="col">Number of Nights</th>
         </tr>
       </thead>
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tr>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-      </tr>
-      <tr>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-      </tr>
-      <tr>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-      </tr>
-      <tr>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-      </tr>
+      {props.results.map(customer => {
+        return (
+          <tr>
+            <td key={customer.id.toString()}>{customer.id}</td>
+            <td>{customer.title}</td>
+            <td>{customer.firstName}</td>
+            <td>{customer.surname}</td>
+            <td>{customer.email}</td>
+            <td>{customer.roomId}</td>
+            <td>{customer.checkInDate}</td>
+            <td>{customer.checkOutDate}</td>
+            <td>
+              {moment(customer.checkOutDate).diff(customer.checkInDate, "days")}
+            </td>
+          </tr>
+        );
+      })}
     </Table>
   );
 };
