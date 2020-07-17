@@ -2,12 +2,12 @@ import React from "react";
 import { Card, Container, Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 const TouristInfoCards = props => {
   const handleClick = () => {
     console.log("clicked");
-    return (window.location.href = `./peoplemakeglasgow.com`);
+    return (window.location.href = `peoplemakeglasgow.com`);
   };
   // const history = useHistory();
   // const navigateTo = () => history.push("./peoplemakeglasgow.com");
