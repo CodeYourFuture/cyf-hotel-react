@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [select, setSelect] = useState("bg-info");
+
+  function handleClick(e) {
+    if (!e.target.parentElement.className) {
+      setSelect("bg-info");
+      e.target.parentElement.className = select;
+    } else {
+      e.target.parentElement.className = "";
+    }
+  }
+
   return (
     <table className="table">
       <thead>
@@ -20,7 +31,7 @@ const SearchResults = props => {
       <tbody>
         {props.results.map((p, index) => {
           return (
-            <tr key={index}>
+            <tr onClick={handleClick} key={index}>
               <td>{p.id}</td>
               <td>{p.title}</td>
               <td>{p.firstName}</td>
