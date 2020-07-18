@@ -1,4 +1,94 @@
-.App {
+.Header-Logo {
+  max-width: 50px;
+  max-height: 50px;
+  margin: 10px;
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(167, 236, 232);
+  height: 110px;
+  margin-bottom: 30px;
+  padding: 20px;
+  color: rgb(167, 14, 14);
+  font-family: cursive;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-content {
+  padding-top: 20px;
+  font-size: large;
+}
+.card-img-top {
+  min-width: auto;
+  min-height: 200px;
+}
+.search {
+  padding: 5px 0 20px 0;
+  margin: 20px;
+  text-align: center;
+}
+
+h4 {
+  margin: 10px;
+  padding: 10px;
+}
+
+.btn {
+  margin: 10px;
+}
+
+input {
+  text-align: center;
+}
+
+tr {
+  color: #5b5757;
+}
+
+.results {
+  padding-top: 15px;
+}
+
+.nav-item {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  margin: 30px;
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  border-top: 5px dotted black;
+  background-color: aqua;
+  padding: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.footer h2 {
+  text-align: center;
+}
+
+/* .App {
   text-align: left;
 }
 
@@ -54,4 +144,4 @@ tr {
 
 .card {
   width: 18rem;
-}
+} */
