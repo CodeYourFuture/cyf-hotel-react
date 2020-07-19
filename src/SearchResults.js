@@ -29,18 +29,20 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map((p, index) => {
+        {props.results.map(p => {
           return (
-            <tr onClick={handleClick} key={index}>
-              <td>{p.id}</td>
-              <td>{p.title}</td>
-              <td>{p.firstName}</td>
-              <td>{p.surname}</td>
-              <td>{p.email}</td>
-              <td>{p.roomId}</td>
-              <td>{p.checkInDate}</td>
-              <td>{p.checkOutDate}</td>
-              <td>{moment(p.checkOutDate).diff(p.checkInDate, "days")}</td>
+            <tr onClick={handleClick} key={p.id}>
+              <td id="id">{p.id}</td>
+              <td id="title">{p.title}</td>
+              <td id="fName">{p.firstName}</td>
+              <td id="sName">{p.surname}</td>
+              <td id="email">{p.email}</td>
+              <td id="roomNo">{p.roomId}</td>
+              <td id="chekIn">{p.checkInDate}</td>
+              <td id="checkOut">{p.checkOutDate}</td>
+              <td id="nights">
+                {moment(p.checkOutDate).diff(p.checkInDate, "days")}
+              </td>
             </tr>
           );
         })}

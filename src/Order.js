@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import RestaurantButton from "./RestaurantButton";
 
 const Orders = ({ orderType }) => {
   const [orders, setOrders] = useState(0);
@@ -7,10 +8,7 @@ const Orders = ({ orderType }) => {
   }
   return (
     <li className="d-flex justify-content-between">
-      {orderType}: {orders}{" "}
-      <button className="btn btn-primary ml-3 mb-1" onClick={orderOne}>
-        Add
-      </button>
+      {orderType}: {orders} <RestaurantButton const clickFunction={orderOne} />
     </li>
   );
 };
