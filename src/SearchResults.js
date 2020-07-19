@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
-  const [select, setSelect] = useState("bg-info");
+  const [select, setSelect] = useState("");
 
   function handleClick(e) {
     if (!e.target.parentElement.className) {

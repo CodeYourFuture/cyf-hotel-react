@@ -25,7 +25,7 @@ const Bookings = () => {
       </div>
     </div>
   ) : (
-    <div className="d-flex justify-content-center text-primary">
+    <div className="d-flex justify-content-center text-primary m-5">
       <div className="spinner-border" role="status" />
     </div>
   );
