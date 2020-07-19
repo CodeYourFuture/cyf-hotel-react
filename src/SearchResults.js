@@ -3,11 +3,33 @@ import Moment from "react-moment";
 import moment from "moment";
 
 const SearchResults = props => {
+  let isClicked = false;
+  // function theRowisclicked(){
+  //   if (!isClicked){
+  //     isClicked=true;
+  //     e.target.classList.add("highLight")
+
+  //   }
+  //   else{
+  //     isClicked=false;
+  //     e.target.classList.remove("highLight")
+  //   }
+  // }
   return (
     <div className="table-responsive-sm">
       <table className="table table-bordered">
         <thead className="table-primary fontColor">
-          <tr>
+          <tr
+            onClick={e => {
+              if (!isClicked) {
+                isClicked = true;
+                e.target.classList.add("highLight");
+              } else {
+                isClicked = false;
+                e.target.classList.remove("highLight");
+              }
+            }}
+          >
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Firstname</th>
@@ -22,7 +44,15 @@ const SearchResults = props => {
         <tbody>
           {props.results.map(result => {
             return (
-              <tr>
+              <tr
+                onClick={e => {
+                  if (e.currentTarget.classList.contains("highLight")) {
+                    e.currentTarget.classList.remove("highLight");
+                  } else {
+                    e.currentTarget.classList.add("highLight");
+                  }
+                }}
+              >
                 <th scope="row">{result.id}</th>
                 <td>{result.title}</td>
                 <td>{result.firstName}</td>

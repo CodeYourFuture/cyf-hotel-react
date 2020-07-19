@@ -15,6 +15,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards cities={citiesInformation} />
       <Bookings />
+      <Restaurant />
       <Footer
         hotelDetails={[
           "123 Fake Street, London, E1 4UD",
