@@ -4,7 +4,6 @@ const Heading = () => {
   return (
     <div>
       <header className="App-header">
-        {" "}
         <img
           alt=""
           className="App-logo"

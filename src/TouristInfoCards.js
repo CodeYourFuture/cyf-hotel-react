@@ -1,7 +1,7 @@
 import React from "react";
 
 const TouristInfoCards = () => {
-  let TouristInfo = [
+  let touristInfo = [
     {
       link: "https://peoplemakeglasgow.com",
       image:
@@ -28,7 +28,7 @@ const TouristInfoCards = () => {
   return (
     <div className="card-container">
       <div className="card-deck">
-        {TouristInfo.map((hotel, index) => {
+        {touristInfo.map((hotel, index) => {
           return (
             <div key={index} className="card">
               <img alt="" src={hotel.image} className="card-img-top" />
