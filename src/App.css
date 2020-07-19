@@ -74,3 +74,13 @@ tr {
 .text-center {
   margin-bottom: 25px;
 }
+
+.ordersDiv {
+  margin: 6rem;
+  line-height: 3rem;
+}
+
+.ordersDiv .btn {
+  width: 5rem;
+  float: right;
+}
