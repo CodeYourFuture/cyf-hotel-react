@@ -4,9 +4,10 @@ const Heading = () => {
   return (
     <header className="App-header">
       <img
-        className="logo"
+        className="logo mr-4"
+        style={{ width: 8 + "rem" }}
         alt="Heading logo"
-        src="https://image.flaticon.com/icons/svg/139/139899.svg"
+        src=".\hotel.png"
       />
       <h4>CYF Hotel</h4>
     </header>

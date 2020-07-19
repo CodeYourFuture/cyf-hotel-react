@@ -29,7 +29,7 @@ const cardContents = [
 
 const TourisrticInfoCardsContainer = () => {
   return (
-    <div className="card-container">
+    <div className="card-container d-flex justify-content-center mt-3">
       <TouristicInfoCards const cardArr={cardContents} />
     </div>
   );
