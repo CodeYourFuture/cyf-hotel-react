@@ -1,24 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
+  const [isActive, setIsActive] = useState([]);
+  const changeColor = id => {
+    if (!isActive.includes(id)) {
+      setIsActive([...isActive, id]);
+    }
+    if (isActive.includes(id)) {
+      setIsActive(isActive.filter(e => e !== id));
+    }
+  };
+
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
-          {Object.keys(results.default[0]).map(p => {
-            return <th scope="col">{p}</th>;
+          {Object.keys(results[0]).map((p, i) => {
+            return (
+              <th key={i} scope="col">
+                {p}
+              </th>
+            );
           })}
         </tr>
       </thead>
       <tbody>
-        {results.default.map(p => {
+        {results.map((p, i) => {
+          console.log(isActive);
           return (
-            <tr>
-              {Object.values(p).map(k => {
-                return <td>{k}</td>;
+            <tr
+              key={i}
+              onClick={() => changeColor(i)}
+              className={`row${!isActive.includes(i) ? "null" : "Selected"}`}
+            >
+              {Object.values(p).map((k, i) => {
+                return <td key={i}>{k}</td>;
               })}
-              <td>{moment(p.checkOutDate).diff(p.checkInDate, "days")}</td>
+              <td> {moment(p.checkOutDate).diff(p.checkInDate, "days")}</td>
             </tr>
           );
         })}
