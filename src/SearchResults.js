@@ -3,31 +3,18 @@ import Moment from "react-moment";
 import moment from "moment";
 
 const SearchResults = props => {
-  let isClicked = false;
-  // function theRowisclicked(){
-  //   if (!isClicked){
-  //     isClicked=true;
-  //     e.target.classList.add("highLight")
-
-  //   }
-  //   else{
-  //     isClicked=false;
-  //     e.target.classList.remove("highLight")
-  //   }
-  // }
   return (
     <div className="table-responsive-sm">
       <table className="table table-bordered">
         <thead className="table-primary fontColor">
           <tr
             onClick={e => {
-              if (!isClicked) {
-                isClicked = true;
-                e.target.classList.add("highLight");
+              if (e.currentTarget.classList.contains("highLight")) {
+                e.currentTarget.classList.remove("highLight");
               } else {
-                isClicked = false;
-                e.target.classList.remove("highLight");
+                e.currentTarget.classList.add("highLight");
               }
+              // const [isClicked, setIsClicked] = useState(true);
             }}
           >
             <th scope="col">#</th>
