@@ -1,0 +1,13 @@
+.card {
+  width: 21rem;
+  margin: 1rem 1.5rem;
+}
+
+.card-text {
+  margin-top: 1rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
