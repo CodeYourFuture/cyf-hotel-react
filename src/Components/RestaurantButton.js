@@ -1,8 +1,8 @@
 import React from "react";
 
-const RestaurantButton = ({ clickAction }) => {
+const RestaurantButton = ({ orderOne }) => {
   return (
-    <button onClick={clickAction} className="btn btn-primary">
+    <button onClick={orderOne} className="btn btn-primary">
       Add
     </button>
   );

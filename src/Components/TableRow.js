@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 
 function TableRow(props) {
-  const [selectedRow, setSelectedRow] = useState(null);
+  const [isSelected, setIsSelected] = useState(false);
+
   const setRowStatus = () => {
-    if (selectedRow === null) {
-      setSelectedRow("table-active");
-    } else {
-      setSelectedRow(null);
-    }
+    setIsSelected(!isSelected);
   };
+
   return (
-    <tr className={selectedRow} onClick={setRowStatus}>
+    <tr className={isSelected ? "table-active" : null} onClick={setRowStatus}>
       <td>{props.item.id}</td>
       <td>{props.item.title}</td>
       <td>{props.item.firstName}</td>

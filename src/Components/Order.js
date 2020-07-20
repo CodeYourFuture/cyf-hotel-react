@@ -3,12 +3,14 @@ import RestaurantButton from "./RestaurantButton";
 
 const Order = ({ orderType }) => {
   const [orders, setOrders] = useState(0);
-  const OrderOne = () => {
+
+  const orderOne = () => {
     setOrders(orders + 1);
   };
+
   return (
     <li>
-      {orderType}: {orders} <RestaurantButton clickAction={OrderOne} />
+      {orderType}: {orders} <RestaurantButton orderOne={orderOne} />
     </li>
   );
 };
