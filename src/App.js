@@ -1,7 +1,6 @@
 import React from "react";
-import SearchButton from "./SearchButton";
-import SearchResults from "./SearchResults";
 import Bookings from "./Bookings";
+import Restaurant from "./Restaurant";
 import "./App.css";
 
 const Heading = () => {
@@ -96,8 +95,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <SearchButton />
-      <SearchResults FakeBookings={"src/data/fakeBookings.json"} />
+      <Restaurant />
       <Footer
         address={[
           "123 Fake Street, London, E1 4UD",
