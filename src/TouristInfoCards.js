@@ -40,7 +40,7 @@ const TouristInfoCards = () => {
             <img src={info.image} className="card-img-top" alt="" />
             <div className="card-body">
               <p>{info.summary}</p>
-              <a href="{info.link}" className="btn btn-success">
+              <a href={info.link} className="btn btn-success">
                 {info.visit}
               </a>
             </div>

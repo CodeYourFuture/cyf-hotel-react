@@ -1,0 +1,14 @@
+h3 {
+  text-align: center;
+  margin: 20px;
+}
+ul {
+  display: flex;
+  margin-left: 200px;
+}
+ul li {
+  margin-left: 60px;
+  width: 200px;
+  list-style-type: none;
+  font-size: 17px;
+}

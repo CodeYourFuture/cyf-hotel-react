@@ -43,7 +43,7 @@
 
 tr {
   color: #5b5757;
-  border: 5px solid green;
+  border: 2px solid green;
   border-radius: 4px;
 }
 
@@ -81,9 +81,8 @@ tr {
   color: white;
 }
 thead {
-  border: green solid 3px;
+  border: green solid 2px;
   background-color: green;
-  border-radius: 7px;
   color: white;
 }
 

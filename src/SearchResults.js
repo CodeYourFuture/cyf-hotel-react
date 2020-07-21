@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 const SearchResults = props => {
-  console.log(props);
+  const [isSelected, setIsSelected] = useState([]);
+  const setClassName = id => {
+    if (!isSelected.includes(id)) {
+      setIsSelected([...isSelected, id]);
+      //or
+      // setIsSelected(isSelected.concat([id]))
+    } else {
+      setIsSelected(isSelected.filter(p => p !== id));
+    }
+  };
 
   return (
     <table className="table">
@@ -21,10 +30,20 @@ const SearchResults = props => {
       <tbody>
         {props.results.map((data, index) => {
           return (
-            <tr key={index}>
+            <tr
+              key={index}
+              onClick={() => setClassName(index)}
+              style={
+                isSelected.includes(index)
+                  ? {
+                      backgroundColor: "cyan"
+                    }
+                  : { backgroundColor: "white" }
+              }
+            >
               <th scope="row">{data.id}</th>
               <td>{data.title}</td>
-              <td>d{data.firstName}</td>
+              <td>{data.firstName}</td>
               <td>{data.surname}</td>
               <td>{data.email}</td>
               <td>{data.roomId}</td>
