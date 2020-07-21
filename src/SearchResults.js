@@ -2,23 +2,19 @@ import React from "react";
 import moment from "moment";
 import Table from "react-bootstrap/Table";
 
-const SearchResults = props => {
+const SearchResults = ({ results }) => {
   return (
     <Table className="table">
       <thead>
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Title</th>
-          <th scope="col">Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">email</th>
-          <th scope="col">RoomId</th>
-          <th scope="col">Check in Date</th>
-          <th scope="col">Check out Date</th>
-          <th scope="col">Number of Nights</th>
+          {Object.keys(results[0]).map((customer, i) => {
+            return <th key={i}>{customer}</th>;
+          })}
+
+          <th>Num Nights</th>
         </tr>
       </thead>
-      {props.results.map(customer => {
+      {results.map(customer => {
         return (
           <tr>
             <td key={customer.id.toString()}>{customer.id}</td>
