@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 // let Bookingdata = [
@@ -26,6 +26,12 @@ import moment from "moment";
 // ];
 
 function SearchResults(props) {
+  const [selected, setSelected] = useState();
+
+  const red = () => {
+    setSelected(!selected);
+  };
+
   return (
     <div>
       <table className="table">
@@ -44,9 +50,17 @@ function SearchResults(props) {
         </thead>
 
         <tbody>
-          {props.results.map((i, index) => {
+          {props.bookings.map((i, index) => {
             return (
-              <tr key={index}>
+              <tr
+                onClick={red}
+                style={
+                  selected
+                    ? { backgroundColor: "red" }
+                    : { backgroundColor: "white" }
+                }
+                key={index}
+              >
                 <th scope="row">{i.id}</th>
                 <td>{i.title}</td>
                 <td>{i.firstname}</td>

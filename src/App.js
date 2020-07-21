@@ -2,10 +2,11 @@ import React from "react";
 
 import Bookings from "./Bookings";
 import "./App.css";
-import SearchButton from "./components/SearchButton";
+
 import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/Footer";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <SearchButton />
+      <Restaurant />
 
       <Footer
         footerdata={[
