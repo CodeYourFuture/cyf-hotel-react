@@ -5,7 +5,7 @@ import "./Card.css";
 const Card = ({ cityInfo }) => {
   return (
     <div>
-      <div className="card" className="display">
+      <div className="card">
         {cityInfo.map((city, key) => {
           return <img key={key} src={city.image} className="card-img-top" />;
         })}
