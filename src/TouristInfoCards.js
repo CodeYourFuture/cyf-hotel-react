@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import CityInfo from "./data/cityInfo.json";
+// import CityInfo from "./data/cityInfo.json";
 
 const TouristInfoCards = () => {
   return (
