@@ -7,9 +7,9 @@ const Order = ({ orderType }) => {
   };
   return (
     <div>
-      <il>
+      <li>
         {orderType}: {orders}
-      </il>
+      </li>
       <RestaurantButton handleClick={orderOne} />{" "}
     </div>
   );
