@@ -4,7 +4,7 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState();
+  const [bookings, setBookings] = useState([]);
   console.log(bookings);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {bookings && <SearchResults results={bookings} />}
+        {bookings.length !== 0 && <SearchResults results={bookings} />}
       </div>
     </div>
   );
