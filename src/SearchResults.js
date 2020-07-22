@@ -1,27 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
-
+import "./SearchResults.css";
 const SearchResults = props => {
+  const [isSelected, setIsSelected] = useState([]);
+  console.log(isSelected);
+  const setClassName = id => {
+    if (!isSelected.includes(id)) {
+      // setIsSelected([...isSelected, id]);
+      setIsSelected(isSelected.concat([id]));
+    } else {
+      setIsSelected(isSelected.filter(p => p !== id));
+    }
+  };
   return (
-    <table class="table">
-      <thead class="thead-dark">
+    <table className="table">
+      <thead>
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Title</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room ID</th>
-          <th scope="col">Check in date</th>
-          <th scope="col">Check out date</th>
-          <th scope="col">Nights</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>First Name</th>
+          <th>Surname</th>
+          <th>Email</th>
+          <th>Room ID</th>
+          <th>Check in date</th>
+          <th>Check out date</th>
+          <th>Nights</th>
         </tr>
       </thead>
-      {props.results.map(booking => {
-        return (
-          <tbody>
-            <tr>
-              <th scope="row">{booking.id}</th>
+      <tbody>
+        {props.results.map((booking, index) => {
+          return (
+            <tr
+              key={index}
+              onClick={() => setClassName(index)}
+              style={
+                isSelected.includes(index)
+                  ? { backgroundColor: "#0a944f" }
+                  : { backgroundColor: "#2c4e64" }
+              }
+            >
+              <td>{booking.id}</td>
               <td>{booking.title}</td>
               <td>{booking.firstName}</td>
               <td>{booking.surname}</td>
@@ -33,9 +51,9 @@ const SearchResults = props => {
                 {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
               </td>
             </tr>
-          </tbody>
-        );
-      })}
+          );
+        })}
+      </tbody>
     </table>
   );
 };

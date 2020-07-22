@@ -1,0 +1,8 @@
+table,
+th,
+tr {
+  border: 2px solid rgb(224, 224, 224);
+  font-size: 15px;
+  background-color: rgb(16, 46, 77);
+  color: #e6e6e6;
+}

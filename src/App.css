@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: rgb(225, 233, 255);
 }
@@ -29,7 +34,6 @@ body {
 
 .App-content {
   padding-top: 20px;
-  font-size: large;
 }
 
 @keyframes App-logo-spin {
@@ -42,19 +46,7 @@ body {
 }
 
 .search {
-  padding: 5px 0 20px 0;
-}
-
-table,
-th,
-td {
-  border: 2px solid rgb(224, 224, 224);
-  font-size: 15px;
-  background-color: rgb(40, 70, 99);
-}
-
-tr {
-  color: #dbdbdb;
+  padding: 5px 0 5px 0;
 }
 
 .results {
@@ -84,4 +76,20 @@ tr {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 900px) {
+  table,
+  th,
+  td {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  table,
+  th,
+  td {
+    font-size: 7px;
+  }
 }
