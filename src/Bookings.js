@@ -8,7 +8,7 @@ const Bookings = () => {
   const [original, setOriginal] = useState();
   const [sort, setSort] = useState(false);
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://peaceful-springs-92943.herokuapp.com/booking")
       .then(res => res.json())
       .then(data => {
         setBookings(data);
