@@ -1,9 +1,14 @@
 import React from "react";
 function Footer(props) {
+  const contactInfo = [
+    "123 Fake Street, London, E1 4UD",
+    "hello@fakehotel.com",
+    "0123 456789"
+  ];
   return (
     <ul className="footer">
-      {props.address.map(item => {
-        return <li>{item}</li>;
+      {contactInfo.map((item, index) => {
+        return <li key={index}>{item}</li>;
       })}
     </ul>
   );

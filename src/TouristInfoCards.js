@@ -10,7 +10,7 @@ function TouristInfoCards() {
         />
         <div className="card-body">
           <a
-            href="www.peoplemakeglasgow.com"
+            href="https://peoplemakeglasgow.com"
             className="btn btn-primary"
             target="_blank"
           >
@@ -25,7 +25,7 @@ function TouristInfoCards() {
         />
         <div className="card-body">
           <a
-            href="www.visitmanchester.com"
+            href="https://visitmanchester.com"
             className="btn btn-primary"
             target="_blank"
           >
@@ -40,7 +40,7 @@ function TouristInfoCards() {
         />
         <div className="card-body">
           <a
-            href="www.visitlondon.com"
+            href="https://visitlondon.com"
             className="btn btn-primary"
             target="_blank"
           >
