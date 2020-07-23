@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const TableBodyRow = ({ content }) => {
@@ -7,8 +7,19 @@ const TableBodyRow = ({ content }) => {
     "days"
   );
 
+  const [isSelected, setIsSelected] = useState(false);
+
+  function onClickHandler() {
+    setIsSelected(!isSelected);
+  }
+
   return (
-    <tr>
+    <tr
+      onClick={onClickHandler}
+      style={
+        !isSelected ? { backgroundColor: "" } : { backgroundColor: "silver" }
+      }
+    >
       <th scope="row">{content.id}</th>
       <td>{content.title}</td>
       <td>{content.firstName}</td>
