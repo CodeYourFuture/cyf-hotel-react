@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
+import Bookings from "./Bookings";
+import "./SearchResults.css";
 
 function SearchResults(props) {
+  const [isSelected, setSelection] = useState(false);
+
+  const changeColors = () => {
+    setSelection(!isSelected);
+  };
+
   return (
     <div>
       <table className="table">
@@ -21,8 +29,11 @@ function SearchResults(props) {
         {props.results.map(customer => {
           return (
             <tbody>
-              <tr>
-                <td key={customer.id.toString()}>{customer.id}</td>
+              <tr
+                className={isSelected ? "yellow-background" : null}
+                onClick={changeColors}
+              >
+                <td key={customer.id}>{customer.id}</td>
                 <td>{customer.title}</td>
                 <td>{customer.firstName}</td>
                 <td>{customer.surname}</td>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Bookings from "./Bookings";
 import Header from "./Heading";
@@ -6,6 +6,8 @@ import DisplayTouristCard from "./DisplayTouristCard";
 import "./App.css";
 import "./TouristInfoCard.css";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
+import RestaurantButton from "./RestaurantButton";
 
 const App = () => {
   return (
@@ -13,6 +15,8 @@ const App = () => {
       <Header />
       <DisplayTouristCard />
       <Bookings />
+      <Restaurant />
+      <RestaurantButton />
 
       <Footer
         footerData={[
