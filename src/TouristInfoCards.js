@@ -12,7 +12,7 @@ const TouristInfoCards = () => {
             <img src={cityInfo.imageUrl} className="card-img-top" />
             <div className="card-body">
               <p>{cityInfo.summary}</p>
-              <a href="#" className="btn btn-primary">
+              <a href={cityInfo.site} className="btn btn-primary">
                 Go to {cityInfo.cityName}
               </a>
             </div>
