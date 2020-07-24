@@ -1,5 +1,7 @@
 import React from "react";
 
+// remember ctrl + f2 for selecting all similar word/texts
+
 const SearchResults = props => {
   // console.log(props);
   // return (
