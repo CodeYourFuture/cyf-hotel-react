@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const TableDetails = props => {
+  const [isSelected, setIsSelected] = useState([]);
+  const setClassName = id => {
+    if (!isSelected.includes(id)) {
+      setIsSelected(isSelected.concat([id]));
+    } else {
+      setIsSelected(isSelected.filter(p => p !== id));
+    }
+  };
   return (
     <tbody>
       {props.results.map((data, index) => {
         return (
-          <tr key={index}>
+          <tr
+            key={index}
+            onClick={() => setClassName(index)}
+            style={
+              isSelected.includes(index)
+                ? { backgroundColor: "gray" }
+                : { backgroundColor: "white" }
+            }
+          >
             <th scope="row" />
             <td>{data.id}</td>
             <td>{data.title}</td>
