@@ -1,9 +1,11 @@
 import React from "react";
+import "./TouristInfoCards.css";
 
 const TouristInfoCards = () => {
   let TouristInfo = [
     {
-      link: "https://peoplemakeglasgow.com",
+      link:
+        "https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/big-ben",
       image:
         "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       summary:
@@ -11,7 +13,7 @@ const TouristInfoCards = () => {
       destination: "The Big Ben"
     },
     {
-      link: "https://visitmanchester.com",
+      link: "https://www.towerbridge.org.uk/plan-your-visit",
       image:
         "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
       summary:
@@ -19,7 +21,7 @@ const TouristInfoCards = () => {
       destination: "London Bridge"
     },
     {
-      link: "https://visitlondon.com",
+      link: "https://www.londoneye.com/",
       image:
         "https://images.unsplash.com/photo-1522961881734-7df1e2635d0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
       summary:

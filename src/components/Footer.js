@@ -1,8 +1,9 @@
 import React from "react";
+import "./Footer.css";
 
 const Footer = props => {
   return (
-    <div className="footer">
+    <div className="app-footer">
       <ul className="flex">
         {props.FooterArray.map((footerInfo, index) => {
           return (
