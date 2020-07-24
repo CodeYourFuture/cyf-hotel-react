@@ -1,6 +1,5 @@
 import React from "react";
-import moment from "moment";
-moment().format();
+import TableRow from "./TableRow.js";
 
 function SearchResults(props) {
   const table = (
@@ -20,22 +19,7 @@ function SearchResults(props) {
       </thead>
       <tbody>
         {props.results.map(result => {
-          let arrivalDate = moment(result.checkInDate, "YYYY-MM-DD");
-          let departureDate = moment(result.checkOutDate, "YYYY-MM-DD");
-          let numberOfNights = departureDate.diff(arrivalDate, "days");
-          return (
-            <tr key={result.id}>
-              <th scope="row">{result.id}</th>
-              <td>{result.title}</td>
-              <td>{result.firstName}</td>
-              <td>{result.surname}</td>
-              <td>{result.email}</td>
-              <td>{result.roomid}</td>
-              <td>{result.checkInDate}</td>
-              <td>{result.checkOutDate}</td>
-              <td>{numberOfNights}</td>
-            </tr>
-          );
+          return <TableRow key={result.id} result={result} />;
         })}
       </tbody>
     </table>

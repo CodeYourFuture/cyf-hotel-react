@@ -2,14 +2,12 @@ import React from "react";
 
 function Footer(props) {
   const footer = (
-    <footer>
-      {props.footerArr.map(footerinfo => {
-        return (
-          <ul>
-            <li>{footerinfo}</li>
-          </ul>
-        );
-      })}
+    <footer className="footer">
+      <ul className="ul-styling">
+        {props.footerArr.map((footerinfo, index) => {
+          return <li key={index}>{footerinfo}</li>;
+        })}
+      </ul>
     </footer>
   );
   return footer;

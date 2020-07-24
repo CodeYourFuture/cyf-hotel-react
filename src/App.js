@@ -2,13 +2,14 @@ import React from "react";
 import Heading from "./Heading.js";
 import TouristInfoCards from "./TouristInfoCards.js";
 import Bookings from "./Bookings";
+import Restaurant from "./Restaurant";
 import Footer from "./Footer.js";
 import "./App.css";
 
 const cities = [
   {
     name: "Manchester",
-    website: "visitmanchester.com",
+    website: "https://visitmanchester.com",
     image:
       "https://www.visitmanchester.com/imageresizer/?image=%2fdbimgs%2fCastlefield%20Basin(1).jpg&action=BlogDetailContent",
     description:
@@ -16,7 +17,7 @@ const cities = [
   },
   {
     name: "Glasgow",
-    website: "peoplemakeglasgow.com",
+    website: "https://peoplemakeglasgow.com",
     image:
       "https://peoplemakeglasgow.com/images/Neighbourhoods/alltogether/South2_1.jpg",
     description:
@@ -24,7 +25,7 @@ const cities = [
   },
   {
     name: "London",
-    website: "visitlondon.com",
+    website: "https://visitlondon.com",
     image:
       "https://cdn.londonandpartners.com/-/media/images/london/visit/general-london/towerbridgecopyrightvisitlondoncomantoinebuchet.jpg?mw=1920&hash=B6672601055B38B34C592E0160B0445AA063B876",
     description:
@@ -42,6 +43,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards cities={cities} />
       <Bookings />
+      <Restaurant />
       <Footer footerArr={footerArr} />
     </div>
   );

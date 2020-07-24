@@ -62,3 +62,27 @@ tr {
 .card {
   width: 18rem;
 }
+
+.ul-styling {
+  list-style-type: none;
+}
+
+.order-list {
+  padding: 10px;
+}
+
+.restaurant-button {
+  float: right;
+}
+
+.highlight-row {
+  background-color: rgb(172, 172, 209);
+}
+
+.restaurant {
+  padding: 20px;
+  margin: 20px;
+}
+.restaurant h3 {
+  text-align: center;
+}

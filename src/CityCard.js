@@ -10,7 +10,11 @@ function CityCard(props) {
       />
       <div className="card-body">
         <p>{props.city.description}</p>
-        <a href={props.city.website} className="btn btn-primary">
+        <a
+          href={props.city.website}
+          className="btn btn-primary"
+          target="_blank"
+        >
           {" "}
           Vist {props.city.name}
         </a>
