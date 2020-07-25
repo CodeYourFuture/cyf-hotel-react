@@ -5,7 +5,7 @@ const Card = props => {
     <div className="card">
       <div className="card-body">
         <a href={props.link} className="btn btn-primary">
-          Go {props.name}
+          Go to {props.name}
         </a>
       </div>
     </div>

@@ -4,6 +4,7 @@ import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -13,13 +14,15 @@ const App = () => {
       <TouristInfoCards link="https://visitmanchester.com" name="Manchester" />
       <TouristInfoCards link="https://visitlondon.com" name="London" />
       <Bookings />
+      <Footer
+        info={[
+          "123 Fake Street, London, E1 4UD",
+          "hello@fakehotel.com",
+          "0123 456789"
+        ]}
+      />
     </div>
   );
 };
 
 export default App;
-
-{
-  /* <TouristInfoCards link="visitmanchester.com" />
-  <TouristInfoCards link="visitlondon.com"  */
-}
