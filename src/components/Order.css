@@ -1,0 +1,13 @@
+.order {
+  margin: 10px;
+  border: 3px solid black;
+  padding: 0.5rem;
+}
+
+.order-type {
+  border: 3px solid black;
+  background-color: rgb(156, 223, 168);
+  width: auto;
+  margin: 5px;
+  padding: 10px;
+}

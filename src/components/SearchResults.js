@@ -1,3 +1,24 @@
+import React from "react";
+import RowHead from "./RowHead";
+import RowBody from "./RowBody";
+
+const SearchResults = ({ results }) => (
+  <div className="table-responsive">
+    <table className="table">
+      <thead>
+        <RowHead />
+      </thead>
+      <tbody>
+        {results.map(result => (
+          <RowBody key={result.roomId} content={result} />
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+export default SearchResults;
+
 // import React from "react";
 // //import TableHead from "./TableHead";
 // //import TableBody from "./TableBody";

@@ -1,0 +1,24 @@
+.card {
+  border: 3px solid black;
+  border-radius: 5px;
+  width: 20rem;
+  margin: 1rem 1.5rem;
+}
+
+.card-img-top {
+  padding: 5px;
+}
+
+.card-text {
+  margin-top: 1rem;
+  text-align: justify;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  border: 3px solid black;
+  border-radius: 13px;
+}

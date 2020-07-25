@@ -1,0 +1,8 @@
+.selected {
+  background-color: #c98621;
+  color: white;
+  font-weight: bolder;
+  color: yellow;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}

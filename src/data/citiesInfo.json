@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Glasgow",
+    "link": "https://peoplemakeglasgow.com",
+    "image": " https://media.tacdn.com/media/attractions-splice-spp-674x446/07/3d/2c/30.jpg ",
+    "description": "Take your time while discovering the many different sides of Glasgow - from its top Instagrammable spots to it's tucked away hidden gems! Glasgow has plenty for you to uncover."
+  },
+  {
+    "id": 2,
+    "name": "Manchester",
+    "link": "https://visitmanchester.com",
+    "image": "  https://www.visitmanchester.com/imageresizer/?image=%2fdbimgs%2fimg_block_home_thingstodo.jpg&action=FeaturedItems3x2  ",
+    "description": "Manchester is one of the most exciting places to visit in the UK right now where everybody and anybody is very warmly welcomed."
+  },
+  {
+    "id": 3,
+    "name": "London",
+    "link": "https://visitlondon.com",
+    "image": "  https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSKnuInN95hMl8O93eB54q88-lYe1bzyH99LA&usqp=CAU  ",
+    "description": "One of the world’s most visited cities, England’s buzzing capital is well worth the visit and has so much to offer, from magnificent history and culture to cutting-edge fashion and food."
+  }
+]

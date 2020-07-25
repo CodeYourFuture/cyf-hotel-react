@@ -1,6 +1,7 @@
 import React from "react";
 import SearchButton1 from "./SearchButton1.js";
 import SearchButton2 from "./SearchButton2.js";
+import "./Search.css";
 
 const Search = () => {
   return (
@@ -11,7 +12,7 @@ const Search = () => {
       <div className="row search-wrapper">
         <div className="col">
           <form className="form-group search-box">
-            <label htmlFor="customerName">Customer ID</label>
+            <label htmlFor="customerID">Customer ID</label>
             <div className="search-row">
               <input
                 type="text/number"
@@ -19,8 +20,8 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer ID"
               />
+              <SearchButton1 />
             </div>
-            <SearchButton1 />
           </form>
         </div>
         <div className="col">
@@ -33,8 +34,8 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer Name"
               />
+              <SearchButton2 />
             </div>
-            <SearchButton2 />
           </form>
         </div>
       </div>

@@ -1,0 +1,20 @@
+.app-logo {
+  height: 40px;
+}
+
+.app-header {
+  background-color: #04304d;
+  border-bottom: 5px solid rgb(149, 241, 177);
+  height: 75px;
+  padding: 15px;
+  color: white;
+  text-align: left;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.app-title {
+  font-size: 1.5rem;
+  padding-left: 0.75rem;
+  vertical-align: middle;
+}

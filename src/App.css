@@ -1,4 +1,100 @@
-.Header-Logo {
+.App {
+  text-align: left;
+}
+
+.table {
+  /* display: flex;
+  flex-direction: column; */
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  /* border: 3px solid black; */
+}
+
+tr {
+  color: #080707;
+  background-color: rgb(218, 245, 245);
+}
+
+td {
+  color: #080707;
+}
+
+th,
+thead {
+  color: rgb(5, 109, 10);
+}
+
+.btn {
+  background-color: #21618c;
+  border: 1px solid #21618c;
+}
+
+.btn:hover {
+  color: #21618c;
+  border: 1px solid #21618c;
+  background-color: white;
+}
+
+/* .App {
+  text-align: left;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 50px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-content {
+  padding-top: 20px;
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.search {
+  padding: 5px 0 20px 0;
+}
+
+tr {
+  color: #5b5757;
+}
+
+.results {
+  padding-top: 15px;
+}
+
+.footer {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.card {
+  width: 18rem;
+} */
+
+/* .Header-Logo {
   max-width: 50px;
   max-height: 50px;
   margin: 10px;

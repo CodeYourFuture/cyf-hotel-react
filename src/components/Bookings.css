@@ -1,0 +1,10 @@
+.bookings {
+  margin: 40px;
+  padding: 20px;
+  border: 4px solid black;
+}
+
+.bookings-content {
+  padding-top: 1rem;
+  font-size: medium;
+}
