@@ -4,15 +4,23 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
-  };
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
       .then(res => res.json())
       .then(data => setBookings(data));
   }, []);
+
+  const search = searchVal => {
+    console.info("TO DO!", searchVal);
+    let searchRes = bookings.filter(booking => {
+      return (
+        booking.firstName.toLowerCase().includes(searchVal) ||
+        booking.surname.toLowerCase().includes(searchVal)
+      );
+    });
+    setBookings(searchRes);
+  };
 
   return (
     <div className="App-content">
