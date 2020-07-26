@@ -10,9 +10,14 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <TouristInfoCards link="https://peoplemakeglasgow.com" name="Glasgow" />
-      <TouristInfoCards link="https://visitmanchester.com" name="Manchester" />
-      <TouristInfoCards link="https://visitlondon.com" name="London" />
+      <div className="flex">
+        <TouristInfoCards link="https://peoplemakeglasgow.com" name="Glasgow" />
+        <TouristInfoCards
+          link="https://visitmanchester.com"
+          name="Manchester"
+        />
+        <TouristInfoCards link="https://visitlondon.com" name="London" />
+      </div>
       <Bookings />
       <Footer
         info={[
