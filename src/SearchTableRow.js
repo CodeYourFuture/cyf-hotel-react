@@ -20,6 +20,7 @@ const SearchTableRow = ({ booking }) => {
       <td id="nights">
         {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
       </td>
+      <button className="btn btn-dark btn-sm m-1">Show Profile</button>
     </tr>
   );
 };
