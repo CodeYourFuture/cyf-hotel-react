@@ -3,7 +3,6 @@ import SearchTableRow from "./SearchTableRow";
 import CustomerProfie from "./CustomerProfie";
 
 const SearchResults = ({ results }) => {
-  console.log(results);
   const [selectedProfile, setSelectedProfile] = useState("");
 
   const selectId = customerId => {

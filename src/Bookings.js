@@ -23,12 +23,6 @@ const Bookings = () => {
     setBookings(selectedBooking);
   };
 
-  // const selectedBookings = bookings.filter(
-  //   (item) => item.firstName.includes(search) || item.surname.includes(search)
-  // );
-
-  // setBookings(setSearch());
-
   return bookings ? (
     <div className="App-content">
       <div className="container">
