@@ -5,7 +5,7 @@ import SearchResults from "./SearchResults";
 const Bookings = () => {
   const [bookings, setBookings] = useState(null);
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
       .then(data => {
         console.log(data);
