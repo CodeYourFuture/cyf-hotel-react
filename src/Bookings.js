@@ -15,7 +15,20 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    const selectedbooking = bookings.filter(
+      item =>
+        item.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        item.surname.toLowerCase().includes(searchVal.toLowerCase())
+    );
+    setBookings(selectedbooking);
+    return selectedbooking;
   };
+
+  // const selectedBookings = bookings.filter(
+  //   (item) => item.firstName.includes(search) || item.surname.includes(search)
+  // );
+
+  // setBookings(setSearch());
 
   return bookings ? (
     <div className="App-content">
