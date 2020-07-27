@@ -3,11 +3,10 @@ import TableRow from "./TableRow.js";
 import CustomerProfile from "./CustomerProfile.js";
 
 function SearchResults(props) {
-  const [showProfile, setShowProfile] = useState(false);
+  const [profileId, setProfileId] = useState(0);
 
-  function handleProfileClick() {
-    setShowProfile(true);
-    console.log("ShowProfile button is clicked");
+  function getProfileId(id) {
+    setProfileId(id);
   }
 
   return (
@@ -34,14 +33,14 @@ function SearchResults(props) {
                 <TableRow
                   key={result.id}
                   result={result}
-                  handleProfileClick={handleProfileClick}
+                  getProfileId={getProfileId}
                 />
-                {showProfile ? <CustomerProfile id={result.id} /> : null}
               </>
             );
           })}
         </tbody>
       </table>
+      <CustomerProfile id={profileId} />
     </>
   );
 }

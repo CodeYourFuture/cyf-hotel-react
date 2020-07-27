@@ -7,9 +7,16 @@ function TableRow(props) {
   function highlightRow() {
     setHighlight(!highlight);
   }
+
+  function handleProfileClick() {
+    // props.getProfileId(0);
+    props.getProfileId(props.result.id);
+  }
+
   const arrivalDate = moment(props.result.checkInDate, "YYYY-MM-DD");
   const departureDate = moment(props.result.checkOutDate, "YYYY-MM-DD");
   const numberOfNights = departureDate.diff(arrivalDate, "days");
+
   return (
     <tr
       className={highlight ? "highlight-row" : null}
@@ -26,7 +33,7 @@ function TableRow(props) {
       <td>{props.result.checkOutDate}</td>
       <td>{numberOfNights}</td>
       <td>
-        <button className="btn btn-primary" onClick={props.handleProfileClick}>
+        <button className="btn btn-primary" onClick={handleProfileClick}>
           Show Profile
         </button>
       </td>
