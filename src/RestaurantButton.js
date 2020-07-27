@@ -1,9 +1,9 @@
 import React from "react";
-const RestaurantButton = ({ handler, message }) => {
-  return (
-    <button onClick={handler} className="btn btn-primary restBut">
-      Add {message}
-    </button>
-  );
-};
+
+const RestaurantButton = ({ orderOne }) => (
+  <button className="btn btn-primary" onClick={orderOne}>
+    Add
+  </button>
+);
+
 export default RestaurantButton;

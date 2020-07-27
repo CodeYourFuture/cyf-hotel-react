@@ -1,19 +1,16 @@
 import React from "react";
-import OrderPizza from "./OrderPizza";
-import OrderSalad from "./OrderSalad";
-import OrderChocolatCake from "./OrderChocolatCake";
+import Order from "./Order";
+import "./Restaurant.css";
 
-const Restaurant = () => {
-  return (
-    <div>
-      <h3>Restaurant Orders</h3>
-      <ul>
-        <OrderPizza />
-        <OrderSalad />
-        <OrderChocolatCake />
-      </ul>
-    </div>
-  );
-};
+const Restaurant = () => (
+  <div className="orders">
+    <h3>Restaurant Orders</h3>
+    <ul>
+      <Order orderType="Pizzas" />
+      <Order orderType="Salads" />
+      <Order orderType="Chocolate cake" />
+    </ul>
+  </div>
+);
 
 export default Restaurant;

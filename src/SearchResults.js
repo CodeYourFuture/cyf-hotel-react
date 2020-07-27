@@ -1,65 +1,32 @@
-import React from "react";
-import Moment from "react-moment";
-import moment from "moment";
+import React, { useState } from "react";
+import HeadingRow from "./HeadingRow";
+import BodyRow from "./BodyRow";
+import CustomerProfile from "./CustomerProfile";
+//import CustomerProfileFetcher from "./11";
 
 const SearchResults = props => {
+  const [customerProf, setCustomerProf] = useState({});
+
   return (
-    <div className="table-responsive-sm">
-      <table className="table table-bordered">
-        <thead className="table-primary fontColor">
-          <tr
-            onClick={e => {
-              if (e.currentTarget.classList.contains("highLight")) {
-                e.currentTarget.classList.remove("highLight");
-              } else {
-                e.currentTarget.classList.add("highLight");
-              }
-              // const [isClicked, setIsClicked] = useState(true);
-            }}
-          >
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Firstname</th>
-            <th scope="col">Surname</th>
-            <th scope="col">Email</th>
-            <th scope="col">Room id</th>
-            <th scope="col">Check in date</th>
-            <th scope="col">Check out date</th>
-            <th scope="col">Duration of stay </th>
-          </tr>
+    <div>
+      <table className="table">
+        <thead>
+          <HeadingRow />
         </thead>
         <tbody>
-          {props.results.map(result => {
-            return (
-              <tr
-                onClick={e => {
-                  if (e.currentTarget.classList.contains("highLight")) {
-                    e.currentTarget.classList.remove("highLight");
-                  } else {
-                    e.currentTarget.classList.add("highLight");
-                  }
-                }}
-              >
-                <th scope="row">{result.id}</th>
-                <td>{result.title}</td>
-                <td>{result.firstName}</td>
-                <td>{result.surname}</td>
-                <td>{result.email}</td>
-                <td>{result.roomId}</td>
-                <td>{result.checkInDate}</td>
-                <td>{result.checkOutDate}</td>
-                <td>
-                  {moment(result.checkOutDate).diff(result.checkInDate, "days")}
-                  {/* <Moment diff={result.checkInDate} unit="days">
-                    {result.checkOutDate}
-                  </Moment> */}
-                </td>
-              </tr>
-            );
-          })}
+          {props.results.map((result, index) => (
+            <BodyRow
+              key={index}
+              content={result}
+              setCustomerProf={setCustomerProf}
+            />
+          ))}
         </tbody>
       </table>
+      {/* <CustomerProfileFetcher props ={customerProf} setCustomerProf={setCustomerProf} />  */}
+      <CustomerProfile props={customerProf} />
     </div>
   );
 };
+
 export default SearchResults;
