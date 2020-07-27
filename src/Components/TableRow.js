@@ -18,6 +18,9 @@ function TableRow(props) {
       <td>{props.item.checkInDate}</td>
       <td>{props.item.checkOutDate}</td>
       <td>{props.nightsSpent}</td>
+      <td>
+        <button className="btn-sm btn-outline-primary">Show profile</button>
+      </td>
     </tr>
   );
 }

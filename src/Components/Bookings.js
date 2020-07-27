@@ -4,8 +4,21 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [countEmptySearches, setCountEmptySearches] = useState(0);
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    let results = bookings.filter(item => {
+      return (
+        item.firstName.toLowerCase() == searchVal.toLowerCase() ||
+        item.surname.toLowerCase() == searchVal.toLowerCase()
+      );
+    });
+    if (results.length > 0) {
+      setBookings(results);
+    } else if (searchVal) {
+      setBookings([]);
+    } else {
+      setCountEmptySearches(countEmptySearches + 1);
+    }
   };
 
   useEffect(() => {
@@ -14,7 +27,7 @@ const Bookings = () => {
       .then(res => {
         setBookings(res);
       });
-  });
+  }, [countEmptySearches]);
 
   return (
     <div className="App-content">

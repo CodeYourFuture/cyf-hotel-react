@@ -13,6 +13,7 @@ function TableHead() {
         <th scope="col">Check-In Date</th>
         <th scope="col">Check-Out Date</th>
         <th scope="col">No. Nights</th>
+        <th scope="col">Guest Profile</th>
       </tr>
     </thead>
   );
