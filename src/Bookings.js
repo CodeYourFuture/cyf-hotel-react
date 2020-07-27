@@ -3,14 +3,24 @@ import Search from "./Search";
 import SearchResults from "./SearchResults";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(null);
+  const [error, setError] = useState();
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [bookings, setBookings] = useState([]);
+
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        setBookings(data);
-      });
+      .then(
+        data => {
+          console.log(data);
+          setIsLoaded(true);
+          setBookings(data);
+        },
+        error => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      );
   }, []);
 
   const search = searchVal => {
@@ -23,18 +33,25 @@ const Bookings = () => {
     setBookings(selectedBooking);
   };
 
-  return bookings ? (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
+  if (error) {
+    console.log(error);
+    return <div>Error: {error.message}</div>;
+  } else if (!isLoaded) {
+    return (
+      <div className="d-flex justify-content-center text-primary m-5">
+        <div className="spinner-border" role="status" />
       </div>
-    </div>
-  ) : (
-    <div className="d-flex justify-content-center text-primary m-5">
-      <div className="spinner-border" role="status" />
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+          <SearchResults results={bookings} />
+        </div>
+      </div>
+    );
+  }
 };
 
 export default Bookings;
