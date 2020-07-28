@@ -2,11 +2,11 @@ h3 {
   text-align: center;
   margin: 20px;
 }
-ul {
+.my-ul {
   display: flex;
   margin-left: 200px;
 }
-ul li {
+.my-ul li {
   margin-left: 60px;
   width: 200px;
   list-style-type: none;
