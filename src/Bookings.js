@@ -3,15 +3,13 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import CustomerProfile from "./CustomerProfile.js";
 
-//import FakeBookings from "./data/fakeBookings.json";
-
 const Bookings = () => {
   const [bookings, setBooking] = useState([]);
   const [error, setError] = useState(false);
   let filteredBookings = [];
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/er`)
-      //fetch(`https://cyf-react.glitch.me/delayed`)
+    //fetch(`https://cyf-react.glitch.me/er`)
+    fetch(`https://cyf-react.glitch.me/delayed`)
       //fetch(`https://cyf-react.glitch.me`)
       .then(res => res.json())
       .then(data => setBooking(data))

@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import HeadingRow from "./HeadingRow";
 import BodyRow from "./BodyRow";
 import CustomerProfile from "./CustomerProfile";
-//import CustomerProfileFetcher from "./11";
 
 const SearchResults = props => {
-  const [customerProf, setCustomerProf] = useState({});
+  const [customerId, setCustomerId] = useState(null);
 
   return (
     <div>
@@ -18,13 +17,13 @@ const SearchResults = props => {
             <BodyRow
               key={index}
               content={result}
-              setCustomerProf={setCustomerProf}
+              setCustomerId={setCustomerId}
             />
           ))}
         </tbody>
       </table>
-      {/* <CustomerProfileFetcher props ={customerProf} setCustomerProf={setCustomerProf} />  */}
-      <CustomerProfile props={customerProf} />
+
+      {customerId ? <CustomerProfile customerId={customerId} /> : null}
     </div>
   );
 };
