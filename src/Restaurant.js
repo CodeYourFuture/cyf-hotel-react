@@ -1,16 +1,14 @@
 import React from "react";
-
-import Orders from "./Order";
+import Order from "./Order";
 
 const Restaurant = () => {
+  const orderList = ["Pizzas", "Salads", "Chocolate Cake"];
   return (
     <div>
-      <h3>Restaurant Orders</h3>
-      <ul>
-        <Orders orderType={"Pizzas"} />
-        <Orders orderType={"Salads"} />
-        <Orders orderType={"Chocolate cake"} />
-      </ul>
+      <h3 className="restaurant-title">Restaurant Order</h3>
+      {orderList.map(item => {
+        return <Order orderType={item} />;
+      })}
     </div>
   );
 };

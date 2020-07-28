@@ -3,11 +3,13 @@ import RestaurantButton from "./RestaurantButton";
 
 const Order = props => {
   const [orders, setOrders] = useState(0);
+
   function orderOne() {
     return setOrders(orders + 1);
   }
+
   return (
-    <div>
+    <div className="restaurant">
       <li>
         {props.orderType}: {orders}
         <RestaurantButton orderOne={orderOne} />

@@ -66,6 +66,15 @@ tr {
   padding-top: 15px;
 }
 
+.restaurant-title {
+  margin-left: 20px;
+}
+
+.restaurant {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
 .footer {
   padding-top: 20px;
   padding-bottom: 20px;

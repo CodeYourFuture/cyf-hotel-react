@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const TableRow = props => {
-  const [handleClick, setHandleClick] = useState(false);
+const TableRow = ({ item }) => {
+  const [hasClick, setHasClick] = useState(false);
+  const tableData = [
+    item.id,
+    item.title,
+    item.firstName,
+    item.surname,
+    item.email,
+    item.roomId,
+    item.checkInDate,
+    item.checkOutDate,
+    moment(item.checkOutDate).diff(item.checkInDate, "days")
+  ];
   return (
     <tr
       id="table-row"
-      className={handleClick ? "tr-selected" : null}
+      className={hasClick ? "tr-selected" : null}
       onClick={() => {
-        setHandleClick(!handleClick);
+        setHasClick(!hasClick);
       }}
     >
       <th scope="row" />
-      <td>{props.item.id}</td>
-      <td>{props.item.title}</td>
-      <td>{props.item.firstName}</td>
-      <td>{props.item.surname}</td>
-      <td>{props.item.email}</td>
-      <td>{props.item.roomId}</td>
-      <td>{props.item.checkInDate}</td>
-      <td>{props.item.checkOutDate}</td>
-      <td>
-        {moment(props.item.checkOutDate).diff(props.item.checkInDate, "days")}
-      </td>
+      {tableData.map(item => {
+        return <td>{item}</td>;
+      })}
     </tr>
   );
 };

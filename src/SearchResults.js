@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import TableHeader from "./TableHeader";
-import TableData from "./TableData";
+import TableRow from "./TableRow";
 
-function SearchResults() {
-  useEffect(() => {
-    console.log("hello react");
-    fetch("https://cyf-react.glitch.me")
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        return setBookings(data);
-      });
-  }, []);
-  const [bookings, setBookings] = useState([]);
+function SearchResults({ results }) {
   return (
     <div>
       <table className="table">
         <TableHeader />
-        <TableData results={bookings} />
+
+        <tbody>
+          {results.map((item, index) => {
+            return <TableRow item={item} key={index} />;
+          })}
+        </tbody>
       </table>
     </div>
   );

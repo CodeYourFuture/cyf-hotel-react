@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
 const Search = () => {
@@ -17,6 +17,7 @@ const Search = () => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
+                value=""
               />
               <SearchButton />
             </div>
