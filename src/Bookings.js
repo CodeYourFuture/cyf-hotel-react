@@ -3,7 +3,7 @@ import Search from "./Search";
 import SearchResults from "./SearchResults";
 
 const Bookings = () => {
-  const [error, setError] = useState();
+  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [bookings, setBookings] = useState([]);
 

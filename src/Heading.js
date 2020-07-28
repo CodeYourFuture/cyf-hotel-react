@@ -9,7 +9,9 @@ const Heading = () => {
         alt="Heading logo"
         src=".\hotel.png"
       />
-      <h4>CYF Hotel</h4>
+      <h3>
+        <b>CYF Hotel</b>
+      </h3>
     </header>
   );
 };
