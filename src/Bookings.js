@@ -17,7 +17,6 @@ const Bookings = () => {
   }, []);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
     let searchRes = bookings.filter(booking => {
       return (
         booking.firstName.toLowerCase().includes(searchVal) ||
