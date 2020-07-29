@@ -1,21 +1,10 @@
 import React, { useState } from "react";
-import moment from "moment";
+
 import Bookings from "./Bookings";
-import "./SearchResults.css";
 import CustomerProfile from "./CustomerProfile";
+import TableRow from "./TableRow";
 function SearchResults(props) {
-  const [isSelected, setSelection] = useState(false);
-  const [rowSelected, setRowSelected] = useState("");
-
-  const changeColors = () => {
-    setSelection(!isSelected);
-  };
-
-  const clickHandler = event => {
-    event.preventDefault();
-    setRowSelected(event.target.id);
-    console.log(event.target.id);
-  };
+  const [customerId, setCustomerId] = useState(null);
 
   return (
     <div>
@@ -34,40 +23,19 @@ function SearchResults(props) {
             <th scope="col">Show Profile</th>
           </tr>
         </thead>
-        {props.results.map((customer, index) => {
-          return (
-            <tbody>
-              <tr
+        <tbody>
+          {props.results.map((customer, index) => {
+            return (
+              <TableRow
+                customer={customer}
+                setCustomerId={setCustomerId}
                 key={index}
-                className={isSelected ? "yellow-background" : null}
-                onClick={changeColors}
-              >
-                <td key={index}>{customer.id}</td>
-                <td>{customer.title}</td>
-                <td>{customer.firstName}</td>
-                <td>{customer.surname}</td>
-                <td>{customer.email}</td>
-                <td>{customer.roomId}</td>
-                <td>{customer.checkInDate}</td>
-                <td>{customer.checkOutDate}</td>
-                <td>
-                  {moment(customer.checkOutDate).diff(
-                    moment(customer.checkInDate),
-                    "days"
-                  )}
-                </td>
-                <td>
-                  {" "}
-                  <button onClick={clickHandler} id={index + 1}>
-                    Show Profile
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          );
-        })}
+              />
+            );
+          })}
+        </tbody>
       </table>
-      <CustomerProfile id={rowSelected} />
+      {customerId ? <CustomerProfile id={customerId} /> : null}
     </div>
   );
 }

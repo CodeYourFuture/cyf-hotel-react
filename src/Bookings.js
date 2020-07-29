@@ -12,8 +12,10 @@ const Bookings = () => {
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/delayed`)
       .then(res => res.json())
-      .then(data => setBookings(data));
-    setLoading(false);
+      .then(data => {
+        setBookings(data);
+        setLoading(false);
+      });
   }, []);
 
   console.log(loading);
