@@ -11,14 +11,12 @@ const Bookings = () => {
     fetch("https://cyf-react.glitch.me")
       .then(res => {
         if (!res.ok) {
-          console.log(res);
           throw Error("Sorry. Page cannot be loaded");
         }
         return res.json();
       })
       .then(
         data => {
-          console.log(data);
           setIsLoaded(true);
           setBookings(data);
         },
@@ -31,7 +29,6 @@ const Bookings = () => {
   }, []);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
     const selectedBooking = bookings.filter(
       item =>
         item.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
