@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
+import InputForm from "./InputForm";
 
 const Bookings = () => {
   // const [error, setError] = useState(null);
@@ -50,6 +51,7 @@ const Bookings = () => {
         <div className="container">
           <Search search={search} />
           <SearchResults results={bookings} />
+          <InputForm results={bookings} />
         </div>
       </div>
     );

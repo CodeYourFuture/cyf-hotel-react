@@ -24,7 +24,7 @@ const CustomerProfile = props => {
           </li>
           <li>
             <b>Is VIP? </b>
-            {profileId.vip ? "yes" : "no"}
+            {profileId.vip ? " Yes" : " No"}
           </li>
           <li>
             <b>Telepone Number :</b> {profileId.phoneNumber}
