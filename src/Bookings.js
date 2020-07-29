@@ -3,23 +3,23 @@ import Search from "./Search";
 import SearchResults from "./SearchResults";
 
 const Bookings = () => {
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me")
       .then(res => res.json())
       .then(
         data => {
           console.log(data);
           setIsLoaded(true);
           setBookings(data);
-        },
-        error => {
-          setIsLoaded(true);
-          setError(error);
         }
+        // (error) => {
+        //   setIsLoaded(true);
+        //   setError(error);
+        // }
       );
   }, []);
 
@@ -33,10 +33,12 @@ const Bookings = () => {
     setBookings(selectedBooking);
   };
 
-  if (error) {
-    console.log(error);
-    return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
+  // if ({ error }) {
+  //   console.log(error);
+  //   return <div>Error: {error}</div>;
+  // } else
+
+  if (!isLoaded) {
     return (
       <div className="d-flex justify-content-center text-primary m-5">
         <div className="spinner-border" role="status" />
