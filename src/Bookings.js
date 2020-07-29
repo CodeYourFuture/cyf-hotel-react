@@ -1,26 +1,32 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
-import InputForm from "./InputForm";
 
 const Bookings = () => {
-  // const [error, setError] = useState(null);
+  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          console.log(res);
+          throw Error("Sorry. Page cannot be loaded");
+        }
+        return res.json();
+      })
       .then(
         data => {
           console.log(data);
           setIsLoaded(true);
           setBookings(data);
+        },
+        error => {
+          setIsLoaded(true);
+          console.log(error);
+          setError(error);
         }
-        // (error) => {
-        //   setIsLoaded(true);
-        //   setError(error);
-        // }
       );
   }, []);
 
@@ -34,12 +40,10 @@ const Bookings = () => {
     setBookings(selectedBooking);
   };
 
-  // if ({ error }) {
-  //   console.log(error);
-  //   return <div>Error: {error}</div>;
-  // } else
-
-  if (!isLoaded) {
+  if (error) {
+    console.log(error);
+    return <h2 className="text-center text-danger"> {error.message}</h2>;
+  } else if (!isLoaded) {
     return (
       <div className="d-flex justify-content-center text-primary m-5">
         <div className="spinner-border" role="status" />
@@ -51,7 +55,6 @@ const Bookings = () => {
         <div className="container">
           <Search search={search} />
           <SearchResults results={bookings} />
-          <InputForm results={bookings} />
         </div>
       </div>
     );
