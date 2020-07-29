@@ -9,7 +9,6 @@ function TableRow(props) {
   }
 
   function handleProfileClick() {
-    // props.getProfileId(0);
     props.getProfileId(props.result.id);
   }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Heading from "./Heading.js";
 import TouristInfoCards from "./TouristInfoCards.js";
 import Bookings from "./Bookings.js";
@@ -39,13 +39,18 @@ const footerArr = [
   "0123 456789"
 ];
 const App = () => {
+  const [newBookingArr, setNewBookingArr] = useState([]);
+  function handleNewBooking(newBookingInfo) {
+    setNewBookingArr(newBookingInfo);
+  }
+
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards cities={cities} />
-      <Bookings />
+      <Bookings newBooking={newBookingArr} />
       <Restaurant />
-      <BookingForm />
+      <BookingForm handleNewBooking={handleNewBooking} />
       <Footer footerArr={footerArr} />
     </div>
   );

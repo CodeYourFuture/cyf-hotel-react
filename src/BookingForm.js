@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SearchResults from "./SearchResults.js";
 import TableRow from "./TableRow.js";
-function BookingForm() {
+function BookingForm({ handleNewBooking }) {
   const [isSubmitClicked, setSubmitClicked] = useState(false);
   const [newBookingInfo, setNewbookingInfo] = useState({
     id: "0",
@@ -59,6 +59,7 @@ function BookingForm() {
       checkInDate: "",
       checkOutDate: ""
     });
+    handleNewBooking(newBookingInfo.items);
 
     setSubmitClicked(true);
     // return(
@@ -184,9 +185,9 @@ function BookingForm() {
         </button>
       </form>
 
-      {isSubmitClicked ? (
+      {/* {isSubmitClicked ? (
         <SearchResults results={newBookingInfo.items} />
-      ) : null}
+      ) : null} */}
     </>
   );
 }

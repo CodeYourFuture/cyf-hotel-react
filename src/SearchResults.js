@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TableRow from "./TableRow.js";
 import CustomerProfile from "./CustomerProfile.js";
 
 function SearchResults(props) {
   const [profileId, setProfileId] = useState(0);
+  const [rows, setRows] = useState(props.results);
 
   function getProfileId(id) {
     setProfileId(id);
   }
+
+  useEffect(() => {
+    if (props.newBookingInfo !== undefined) {
+      let rowsData = props.results.concat(props.newBookingInfo);
+      setRows(rowsData);
+    } else {
+      setRows(props.results);
+    }
+  }, [props.newBookingInfo]);
 
   return (
     <>
@@ -27,12 +37,12 @@ function SearchResults(props) {
           </tr>
         </thead>
         <tbody>
-          {props.results.map(result => {
+          {rows.map(row => {
             return (
               <>
                 <TableRow
-                  key={result.id}
-                  result={result}
+                  key={row.id}
+                  result={row}
                   getProfileId={getProfileId}
                 />
               </>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
-const Bookings = () => {
+const Bookings = ({ newBooking }) => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -30,7 +30,11 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {loading ? <SearchResults results={bookings} /> : <h1>Loading...</h1>}
+        {loading ? (
+          <SearchResults results={bookings} newBookingInfo={newBooking} />
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </div>
     </div>
   );
