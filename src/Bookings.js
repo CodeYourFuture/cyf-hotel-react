@@ -1,45 +1,59 @@
-// ** Instructions:** In the`<Bookings />` component, declare a new state`bookings`
-//with the corresponding setter function `setBookings` to hold the`FakeBookings` data.
-//Instead of passing`FakeBookings` directly to the`<SearchResults />` component,
-//pass the new `bookings` state variable.
-
-// ** Hint:** The new `bookings` state should be initialised with the`FakeBookings`
-//variable.
-
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.jsx";
-
-// import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import AddCustomerForm from "./AddCustomerForm";
 
 const Bookings = () => {
-  const [BookingsData, setBokings] = useState([]);
+  const [Booking, setBookings] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  console.log(loading);
+  console.log(Booking);
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://cyf-react.glitch.me/delayed`)
       .then(res => res.json())
-      .then(data => setBokings(data));
+      .then(data => setBookings(data));
+    setLoading(false);
   }, []);
-  console.log(BookingsData);
+
+  console.log(loading);
+  console.log(Booking);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
-    const filteredBooking = BookingsData.filter(
+    const filteredBooking = Booking.filter(
       booking =>
         booking.firstName.toLowerCase().includes(searchVal) ||
         booking.surname.toLowerCase().includes(searchVal)
     );
 
-    setBokings(filteredBooking);
+    setBookings(filteredBooking);
   };
 
+  const addCustomer = customer => {
+    customer.id = Booking.length + 1;
+    console.log("customer id", customer.id);
+    setBookings([...Booking, customer]);
+  };
   return (
-    <div className="App-content">
-      <div className="container">
-        <SearchResults results={BookingsData} />
+    <div>
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+        </div>
+        {loading ? (
+          <div>
+            <p>Data is loading...</p>
+          </div>
+        ) : (
+          <div>
+            <SearchResults results={Booking} />
+          </div>
+        )}
+        <div>
+          <AddCustomerForm addCustomer={addCustomer} />
+        </div>
       </div>
-      <Search search={search} />
     </div>
   );
 };
-
 export default Bookings;

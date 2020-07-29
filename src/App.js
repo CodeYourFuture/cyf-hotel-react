@@ -8,6 +8,7 @@ import "./TouristInfoCard.css";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant";
 import RestaurantButton from "./RestaurantButton";
+import AddCustomerForm from "./AddCustomerForm";
 
 const App = () => {
   return (
