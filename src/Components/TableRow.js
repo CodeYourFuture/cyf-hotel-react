@@ -7,6 +7,10 @@ function TableRow(props) {
     setIsSelected(!isSelected);
   };
 
+  const handleClick = e => {
+    e.preventDefault();
+    props.setCustomerID(props.item.id);
+  };
   return (
     <tr className={isSelected ? "table-active" : null} onClick={setRowStatus}>
       <td>{props.item.id}</td>
@@ -19,7 +23,9 @@ function TableRow(props) {
       <td>{props.item.checkOutDate}</td>
       <td>{props.nightsSpent}</td>
       <td>
-        <button className="btn-sm btn-outline-primary">Show profile</button>
+        <button onClick={handleClick} className="btn-sm btn-outline-primary">
+          Show profile
+        </button>
       </td>
     </tr>
   );
