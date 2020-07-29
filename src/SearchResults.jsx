@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import moment from "moment";
 import Bookings from "./Bookings";
 import "./SearchResults.css";
-
+import CustomerProfile from "./CustomerProfile";
 function SearchResults(props) {
   const [isSelected, setSelection] = useState(false);
+  const [rowSelected, setRowSelected] = useState("");
 
   const changeColors = () => {
     setSelection(!isSelected);
+  };
+
+  const clickHandler = event => {
+    event.preventDefault();
+    setRowSelected(event.target.id);
+    console.log(event.target.id);
   };
 
   return (
@@ -24,16 +31,18 @@ function SearchResults(props) {
             <th scope="col">Check in date</th>
             <th scope="col">Check Out Date</th>
             <th scope="col">Number Of Nights</th>
+            <th scope="col">Show Profile</th>
           </tr>
         </thead>
-        {props.results.map(customer => {
+        {props.results.map((customer, index) => {
           return (
             <tbody>
               <tr
+                key={index}
                 className={isSelected ? "yellow-background" : null}
                 onClick={changeColors}
               >
-                <td key={customer.id}>{customer.id}</td>
+                <td key={index}>{customer.id}</td>
                 <td>{customer.title}</td>
                 <td>{customer.firstName}</td>
                 <td>{customer.surname}</td>
@@ -47,11 +56,18 @@ function SearchResults(props) {
                     "days"
                   )}
                 </td>
+                <td>
+                  {" "}
+                  <button onClick={clickHandler} id={index + 1}>
+                    Show Profile
+                  </button>
+                </td>
               </tr>
             </tbody>
           );
         })}
       </table>
+      <CustomerProfile id={rowSelected} />
     </div>
   );
 }
