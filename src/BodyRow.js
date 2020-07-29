@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const BodyRow = ({ field }) => {
-  const [isSelected, setIsSelected] = useState(false);
+const BodyRow = props => {
+  const [isSelected, setIsSelected] = useState(null);
+
+  const buttonChangeHandler = event => {
+    props.setClickedBtn(props.field.id);
+    event.stopPropagation();
+  };
   //   const setClassName = id => {
 
   //     if (!isSelected.includes(id)) {
@@ -13,8 +18,8 @@ const BodyRow = ({ field }) => {
   //     }
   //   };
 
-  const nightsSpent = moment(field.checkOutDate).diff(
-    field.checkInDate,
+  const nightsSpent = moment(props.field.checkOutDate).diff(
+    props.field.checkInDate,
     "days"
   );
 
@@ -27,15 +32,24 @@ const BodyRow = ({ field }) => {
           : { backgroundColor: "white" }
       }
     >
-      <th scope="row">{field.id}</th>
-      <td>{field.title}</td>
-      <td>{field.firstName}</td>
-      <td>{field.lastName}</td>
-      <td>{field.email}</td>
-      <td>{field.roomId}</td>
-      <td>{field.checkInDate}</td>
-      <td>{field.checkOutDate}</td>
+      <th scope="row">{props.field.id}</th>
+      <td>{props.field.title}</td>
+      <td>{props.field.firstName}</td>
+      <td>{props.field.surname}</td>
+      <td>{props.field.email}</td>
+      <td>{props.field.roomId}</td>
+      <td>{props.field.checkInDate}</td>
+      <td>{props.field.checkOutDate}</td>
       <td>{nightsSpent}</td>
+      <td>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={buttonChangeHandler}
+        >
+          Show profile
+        </button>
+      </td>
     </tr>
   );
 };
