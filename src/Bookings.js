@@ -58,6 +58,8 @@ const Bookings = () => {
         <div className="container">
           <Search search={search} />
           <SearchResults results={bookings} />
+        </div>
+        <div className="d-flex justify-content-center">
           <InputForm addBooking={addBooking} />
         </div>
       </div>
