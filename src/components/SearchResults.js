@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TableInfo from "./TableInfo.js";
-import TableData from "./TableData.js";
+import TableRow from "./TableRow.js";
+import CustomerProfile from "./CustomerProfile";
 
-function SearchResults() {
-  const [bookings, setBookings] = useState([]);
-  useEffect(() => {
-    fetch("https://cyf-react.glitch.me.")
-      .then(response => response.json())
-      .then(data => setBookings(data));
-  }, []);
+function SearchResults(props) {
+  const [selectedId, setSelectedId] = useState(null);
   return (
     <div>
       <table className="table table-striped">
         <TableInfo />
-        <TableData results={bookings} />
+        <tbody>
+          {props.results.map((data, index) => {
+            return (
+              <TableRow key={index} data={data} handleClick={setSelectedId} />
+            );
+          })}
+        </tbody>
       </table>
+      {selectedId && <CustomerProfile customerId={selectedId} />}
     </div>
   );
 }

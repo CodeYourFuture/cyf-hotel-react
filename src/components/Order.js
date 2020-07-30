@@ -13,7 +13,7 @@ function Order(props) {
       <li>
         {props.orderType}: {orders}{" "}
       </li>
-      <RestaurantButton customerOrders={orderOne} />
+      <RestaurantButton orderOne={orderOne} />
     </div>
   );
 }
