@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
+import InputForm from "./InputForm";
 
 const Bookings = () => {
   const [error, setError] = useState(null);
@@ -37,6 +38,11 @@ const Bookings = () => {
     setBookings(selectedBooking);
   };
 
+  const addBooking = newBooking => {
+    const id = bookings.length + 1;
+    setBookings([...bookings, { id, ...newBooking }]);
+  };
+
   if (error) {
     console.log(error);
     return <h2 className="text-center text-danger"> {error.message}</h2>;
@@ -52,6 +58,7 @@ const Bookings = () => {
         <div className="container">
           <Search search={search} />
           <SearchResults results={bookings} />
+          <InputForm addBooking={addBooking} />
         </div>
       </div>
     );
