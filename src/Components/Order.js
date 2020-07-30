@@ -9,8 +9,9 @@ const Order = ({ orderType }) => {
   };
 
   return (
-    <li>
+    <li className="m-3">
       {orderType}: {orders} <RestaurantButton orderOne={orderOne} />
+      <hr />
     </li>
   );
 };

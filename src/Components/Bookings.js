@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useDebugValue } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
-const Bookings = () => {
+const Bookings = ({ newCustomerInfo }) => {
   const [bookings, setBookings] = useState([]);
   const [countEmptySearches, setCountEmptySearches] = useState(0);
   const [loadingData, setLoadingData] = useState(true);
@@ -24,10 +24,10 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/error")
+    fetch("https://hulking-jumpy-creature.glitch.me/guests")
       .then(res => {
         if (!res.ok) {
-          throw Error(res.statusText);
+          throw Error(res);
         }
         return res.json();
       })
@@ -54,10 +54,10 @@ const Bookings = () => {
         <Search search={search} />
         {loadingData ? (
           <div className="alert alert-secondary" role="alert">
-            Please wait while we fetch customer data
+            Please <strong>wait</strong> while we fetch customer data.
           </div>
         ) : (
-          <SearchResults results={bookings} />
+          <SearchResults results={bookings} newCustomerInfo={newCustomerInfo} />
         )}
       </div>
     </div>

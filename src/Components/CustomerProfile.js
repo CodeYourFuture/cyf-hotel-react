@@ -12,7 +12,7 @@ const CustomerProfile = ({ id }) => {
     if (id) {
       let customerInfoSet = new Set(["id", "email", "vip", "phoneNumber"]);
       return (
-        <div>
+        <div className="alert alert-primary">
           Customer {currentCustomer.id} Profile:
           <ul>
             {Object.keys(currentCustomer).map((key, index) => {
