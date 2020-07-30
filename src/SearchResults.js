@@ -8,6 +8,7 @@ const SearchResults = ({ results }) => {
   const [selectedId, setSelectedId] = useState();
   console.log(selectedId);
   const handelShowProfile = e => {
+    e.preventDefault();
     setSelectedId(e.target.id);
     console.log(e.target.id);
   };
@@ -21,52 +22,60 @@ const SearchResults = ({ results }) => {
     }
   };
   return (
-    <Table className="table">
-      <thead>
-        <tr>
-          {Object.keys(results[0]).map((customer, i) => {
-            return <th key={i}>{customer}</th>;
-          })}
+    <div>
+      <Table className="table">
+        <thead>
+          <tr>
+            {Object.keys(results[0]).map((customer, i) => {
+              return <th key={i}>{customer}</th>;
+            })}
 
-          <th>Num Nights</th>
-        </tr>
-      </thead>
-      <tbody>
-        {results.map((customer, index) => {
-          return (
-            <tr
-              key={index}
-              style={
-                selected.includes(index) ? { backgroundColor: "skyblue" } : null
-              }
-              onClick={() => handleColourChange(index)}
-            >
-              <td key={customer.id.toString()}>{customer.id}</td>
-              <td>{customer.title} </td>
-              <td>{customer.firstName}</td>
-              <td>{customer.surname}</td>
-              <td>{customer.email}</td>
-              <td>{customer.roomId}</td>
-              <td>{customer.checkInDate}</td>
-              <td>{customer.checkOutDate}</td>
-              <td>
-                {moment(customer.checkOutDate).diff(
-                  customer.checkInDate,
-                  "days"
-                )}
-              </td>
-              <td>
-                {" "}
-                <button onClick={handelShowProfile} id={index + 1}>
-                  Show Profile
-                </button>{" "}
-              </td>
-            </tr>
-          );
-        })}
-        {!selectedId ? null : <CutomerProfile id={selectedId} />}
-      </tbody>
-    </Table>
+            <th>Num Nights</th>
+          </tr>
+        </thead>
+        <tbody>
+          {results.map((customer, index) => {
+            return (
+              <tr
+                key={index}
+                style={
+                  selected.includes(index)
+                    ? { backgroundColor: "skyblue" }
+                    : null
+                }
+                onClick={() => handleColourChange(index)}
+              >
+                <td key={customer.id.toString()}>{customer.id}</td>
+                <td>{customer.title} </td>
+                <td>{customer.firstName}</td>
+                <td>{customer.surname}</td>
+                <td>{customer.email}</td>
+                <td>{customer.roomId}</td>
+                <td>{customer.checkInDate}</td>
+                <td>{customer.checkOutDate}</td>
+                <td>
+                  {moment(customer.checkOutDate).diff(
+                    customer.checkInDate,
+                    "days"
+                  )}
+                </td>
+                <td>
+                  {" "}
+                  <button
+                    className="btn btn-primary"
+                    onClick={handelShowProfile}
+                    id={index + 1}
+                  >
+                    Show Profile
+                  </button>{" "}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
+      <div>{!selectedId ? null : <CutomerProfile id={selectedId} />}</div>
+    </div>
   );
 };
 
