@@ -4,9 +4,11 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 30px;
 }
-
+.App-header img {
+  width: 30px;
+}
 .App-header {
   background-color: #222;
   height: 50px;
@@ -27,6 +29,13 @@
   font-size: large;
 }
 
+.all_cards {
+  display: flex;
+  justify-content: space-around;
+}
+.card {
+  text-align: center;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
