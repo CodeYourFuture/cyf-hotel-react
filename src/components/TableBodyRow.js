@@ -13,6 +13,10 @@ const TableBodyRow = ({ content }) => {
     setIsSelected(!isSelected);
   }
 
+  // const handleShowProfile = (props) => {
+  //   props.setCustomerId(Id);
+  // };
+
   return (
     <tr
       onClick={onClickHandler}
@@ -29,6 +33,14 @@ const TableBodyRow = ({ content }) => {
       <td>{content.checkInDate}</td>
       <td>{content.checkOutDate}</td>
       <td>{numberOfNights}</td>
+      <td>
+        <button
+          className="btn btn-primary"
+          // onClick={handleShowProfile}
+        >
+          Show profile
+        </button>
+      </td>
     </tr>
   );
 };

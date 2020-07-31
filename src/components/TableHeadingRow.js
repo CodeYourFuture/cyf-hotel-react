@@ -11,6 +11,7 @@ const TableHeadingRow = () => (
     <th scope="col">Check in date</th>
     <th scope="col">Check out date</th>
     <th scope="col"># of nights</th>
+    <th scope="col">Customer Profile</th>
   </tr>
 );
 export default TableHeadingRow;
