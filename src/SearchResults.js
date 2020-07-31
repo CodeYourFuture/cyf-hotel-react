@@ -29,16 +29,11 @@ const SearchResults = props => {
 };
 
 function NumberNights(result) {
-  let checkIn = moment(formatedDate(result.checkInDate));
-  let checkOut = moment(formatedDate(result.checkOutDate));
-
+  let checkIn = moment(result.checkInDate);
+  let checkOut = moment(result.checkOutDate);
+  console.log(checkIn);
+  console.log(checkOut);
   return checkOut.diff(checkIn, "days");
-}
-
-function formatedDate(string) {
-  string = string.split("-");
-  let result = string.map(str => Number(str));
-  return result;
 }
 
 export default SearchResults;
