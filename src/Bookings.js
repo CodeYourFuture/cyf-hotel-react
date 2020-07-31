@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import BookingForm from "./BookingForm.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -26,6 +27,11 @@ const Bookings = () => {
       );
     });
     setBookings(hasFiltered);
+  };
+
+  const addCustomer = customer => {
+    customer.id = bookings.length + 1;
+    setBookings([...bookings, customer]);
   };
 
   useEffect(() => {
@@ -56,6 +62,9 @@ const Bookings = () => {
       ) : (
         <SearchResults results={bookings} />
       )}
+      <div>
+        <BookingForm addCustomer={addCustomer} />
+      </div>
     </div>
   );
 };
