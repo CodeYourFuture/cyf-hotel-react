@@ -22,7 +22,7 @@ const App = () => {
 
 const Footer = props => {
   return (
-    <ul>
+    <ul class="footer">
       {props.address.map(place => {
         return <li>{place}</li>;
       })}
@@ -35,7 +35,7 @@ const TouristInfoCards = () => {
     <div className="all_cards">
       <div className="card">
         <img
-          src="https://static.tildacdn.com/tild6336-3234-4165-b561-393537373137/Glasgow.jpg"
+          src="https://i2-prod.glasgowlive.co.uk/incoming/article15793259.ece/ALTERNATES/s810/1_City-Chambers-George-Sq-Glasgow-Scotland.jpg"
           className="card-img-top"
           alt="Glasgow's view"
         />
