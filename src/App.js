@@ -3,26 +3,30 @@ import React from "react";
 import Bookings from "./Bookings";
 import "./App.css";
 
-const Heading = () => {
-  return (
-    <header className="App-header">
-      CYF Hotel
-      <img
-        className="App-logo"
-        src="https://image.flaticon.com/icons/svg/139/139899.svg"
-        alt="logo"
-      />
-    </header>
-  );
-};
-
 const App = () => {
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Footer
+        address={[
+          "123 Fake Street, London, E1 4UD",
+          "hello@fakehotel.com",
+          "0123 456789"
+        ]}
+      />
     </div>
+  );
+};
+
+const Footer = props => {
+  return (
+    <ul>
+      {props.address.map(place => {
+        return <li>{place}</li>;
+      })}
+    </ul>
   );
 };
 
@@ -66,6 +70,19 @@ const TouristInfoCards = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const Heading = () => {
+  return (
+    <header className="App-header">
+      CYF Hotel
+      <img
+        className="App-logo"
+        src="https://image.flaticon.com/icons/svg/139/139899.svg"
+        alt="logo"
+      />
+    </header>
   );
 };
 
