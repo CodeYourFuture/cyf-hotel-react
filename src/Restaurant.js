@@ -6,8 +6,8 @@ const Restaurant = () => {
   return (
     <div>
       <h3 className="restaurant-title">Restaurant Order</h3>
-      {orderList.map(item => {
-        return <Order orderType={item} />;
+      {orderList.map((item, index) => {
+        return <Order orderType={item} key={index} />;
       })}
     </div>
   );

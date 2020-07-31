@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
-const TableRow = ({ item }) => {
+const TableRow = props => {
+  function clicked(event) {
+    event.preventDefault();
+    props.handleClick(props.item.id);
+  }
+
   const [hasClick, setHasClick] = useState(false);
   const tableData = [
-    item.id,
-    item.title,
-    item.firstName,
-    item.surname,
-    item.email,
-    item.roomId,
-    item.checkInDate,
-    item.checkOutDate,
-    moment(item.checkOutDate).diff(item.checkInDate, "days")
+    props.item.id,
+    props.item.title,
+    props.item.firstName,
+    props.item.surname,
+    props.item.email,
+    props.item.roomId,
+    props.item.checkInDate,
+    props.item.checkOutDate,
+    moment(props.item.checkOutDate).diff(props.item.checkInDate, "days")
   ];
   return (
     <tr
@@ -23,9 +29,14 @@ const TableRow = ({ item }) => {
       }}
     >
       <th scope="row" />
-      {tableData.map(item => {
-        return <td>{item}</td>;
+      {tableData.map((item, index) => {
+        return <td key={index}>{item}</td>;
       })}
+      <td>
+        <button className="btn btn-primary" onClick={clicked}>
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };

@@ -16,8 +16,12 @@ function TableHeader() {
   return (
     <thead>
       <tr>
-        {tableTitle.map(item => {
-          return <th scope="col">{item}</th>;
+        {tableTitle.map((item, index) => {
+          return (
+            <th scope="col" key={index}>
+              {item}
+            </th>
+          );
         })}
       </tr>
     </thead>

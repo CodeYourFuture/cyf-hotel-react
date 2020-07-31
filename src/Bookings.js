@@ -4,6 +4,8 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
@@ -17,16 +19,44 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    const hasFiltered = bookings.filter(item => {
+      return (
+        item.firstName.toLowerCase().includes(searchVal) ||
+        item.surname.toLowerCase().includes(searchVal)
+      );
+    });
+    setBookings(hasFiltered);
   };
+
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          setHasError(true);
+        }
+      })
+      .then(data => {
+        setBookings(data);
+        setIsLoading(false);
+      })
+      .catch(error => setHasError(true));
+  }, []);
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
       </div>
+      {hasError ? (
+        <div>Oh no something went wrong!</div>
+      ) : isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <SearchResults results={bookings} />
+      )}
     </div>
   );
 };
-
 export default Bookings;
