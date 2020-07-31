@@ -7,7 +7,11 @@ const SearchResults = props => {
       <thead>
         <tr>
           {Object.keys(props.results[0]).map(function(key) {
-            return <th scope="col">{key}</th>;
+            return (
+              <th key={(-Math.random() * 10000000000).toString()} scope="col">
+                {key}
+              </th>
+            );
           })}
           <th scope="col">Number of nights</th>
         </tr>
@@ -17,7 +21,11 @@ const SearchResults = props => {
           return (
             <tr>
               {Object.keys(result).map(function(key) {
-                return <td>{result[key]}</td>;
+                return (
+                  <td key={(Math.random() * 10000000000).toString()}>
+                    {result[key]}
+                  </td>
+                );
               })}
               <td>{NumberNights(result)}</td>
             </tr>
