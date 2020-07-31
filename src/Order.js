@@ -6,10 +6,12 @@ const Order = prop => {
   const orderOne = () => {
     setOrder(order + 1);
   };
-
+  const cancelOrder = () => {
+    setOrder(order * 0);
+  };
   return (
     <li>
-      <RestaurantButton orders={orderOne} />
+      <RestaurantButton cancel={cancelOrder} orders={orderOne} />
       &nbsp;&nbsp;{prop.orderType}: {order}
     </li>
   );

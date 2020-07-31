@@ -25,9 +25,9 @@ const TouristInfoCards = () => {
   ];
   return (
     <div className="cards-container">
-      {cardDetails.map(city => {
+      {cardDetails.map((city, index) => {
         return (
-          <div className="card">
+          <div className="card" key={index}>
             <h1>{city.name}</h1>
             <img src={city.image} className="card-img-top" />
             <div className="card-body">

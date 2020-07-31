@@ -1,0 +1,10 @@
+.customer-profile {
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: rgb(253, 253, 253);
+  padding: 15px;
+  border-radius: 10px;
+}
+.customer-profile li {
+  list-style: none;
+}
