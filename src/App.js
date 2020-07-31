@@ -22,9 +22,9 @@ const App = () => {
 
 const Footer = props => {
   return (
-    <ul class="footer">
-      {props.address.map(place => {
-        return <li>{place}</li>;
+    <ul className="footer">
+      {props.address.map((place, index) => {
+        return <li key={index}>{place}</li>;
       })}
     </ul>
   );
