@@ -7,7 +7,6 @@ const AddBookingForm = ({
   setShowAddForm
 }) => {
   const [userBooking, setUserBooking] = useState({
-    id: "",
     title: "",
     firstName: "",
     surname: "",
@@ -27,31 +26,19 @@ const AddBookingForm = ({
 
   function submit(e) {
     e.preventDefault();
-    const updateBookings = [...bookings, userBooking];
-    setBookings(updateBookings);
+    fetch("https://cyf-alexandru-hotel-server.herokuapp.com/bookings", {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userBooking)
+    });
     setShowAddForm(!showAddForm);
   }
 
   return (
     <form className="add-book-form " onSubmit={submit}>
-      <div>
-        <input
-          name="id"
-          placeholder="Id"
-          type="number"
-          value={userBooking.id}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <input
-          name="title"
-          placeholder="Title"
-          type="text"
-          value={userBooking.title}
-          onChange={handleChange}
-        />
-      </div>
       <div>
         <input
           name="firstName"
