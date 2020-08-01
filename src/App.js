@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-import Bookings from "./Bookings";
-import Header from "./Heading";
-import DisplayTouristCard from "./DisplayTouristCard";
-import "./App.css";
-import "./TouristInfoCard.css";
-import Footer from "./Footer";
-import Restaurant from "./Restaurant";
-import RestaurantButton from "./RestaurantButton";
-import AddCustomerForm from "./AddCustomerForm";
+import Bookings from "./components/Bookings";
+import Header from "./components/Heading";
+import DisplayTouristCard from "./components/DisplayTouristCard";
+
+import "./components/TouristInfoCard";
+import Footer from "./components/Footer";
+import Restaurant from "./components/Restaurant";
+
+import AddCustomerForm from "./components/AddCustomerForm";
 
 const App = () => {
   return (
@@ -17,7 +17,6 @@ const App = () => {
       <DisplayTouristCard />
       <Bookings />
       <Restaurant />
-      <RestaurantButton />
 
       <Footer
         footerData={[

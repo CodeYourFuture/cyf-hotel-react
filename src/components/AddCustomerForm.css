@@ -1,0 +1,9 @@
+.form-group {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-left: 20rem;
+  margin-right: 20rem;
+}

@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.jsx";
 import AddCustomerForm from "./AddCustomerForm";
+import "./Bookings.css";
 
 const Bookings = () => {
   const [Booking, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   console.log(loading);
   console.log(Booking);
@@ -13,9 +15,15 @@ const Bookings = () => {
     fetch(`https://cyf-react.glitch.me/delayed`)
       .then(res => res.json())
       .then(data => {
+        if (data.error) {
+          throw data;
+        }
+
         setBookings(data);
         setLoading(false);
-      });
+      })
+      .catch(error => setError(error));
+    console.log(error);
   }, []);
 
   console.log(loading);
@@ -37,11 +45,8 @@ const Bookings = () => {
     setBookings([...Booking, customer]);
   };
   return (
-    <div>
-      <div className="App-content">
-        <div className="container">
-          <Search search={search} />
-        </div>
+    <div className="App-content" className="App-content">
+      <div>
         {loading ? (
           <div>
             <p>Data is loading...</p>
@@ -51,9 +56,12 @@ const Bookings = () => {
             <SearchResults results={Booking} />
           </div>
         )}
-        <div>
-          <AddCustomerForm addCustomer={addCustomer} />
-        </div>
+      </div>
+      <div className="container">
+        <Search search={search} />
+      </div>
+      <div>
+        <AddCustomerForm addCustomer={addCustomer} />
       </div>
     </div>
   );
