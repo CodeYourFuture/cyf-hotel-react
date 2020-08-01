@@ -1,12 +1,25 @@
 import React, { useState } from "react";
 
-const Search = ({ search, initialBookings, setBookings }) => {
-  const [searchInput, setSearchInput] = useState("");
-
+const Search = ({ setBookings }) => {
+  const [searchedText, setSearchedText] = useState("");
   function handleSearchInput(e) {
-    setSearchInput(e.target.value);
+    setSearchedText(e.target.value);
   }
-
+  const submitSearch = e => {
+    e.preventDefault();
+    if (searchedText !== "") {
+      fetch(
+        "https://cyf-alexandru-hotel-server.herokuapp.com/bookings/search/" +
+          searchedText
+      )
+        .then(res => res.json())
+        .then(data => setBookings(data));
+    } else {
+      fetch("https://cyf-alexandru-hotel-server.herokuapp.com/bookings")
+        .then(res => res.json())
+        .then(data => setBookings(data));
+    }
+  };
   return (
     <div className="search">
       <div className="page-header">
@@ -15,34 +28,20 @@ const Search = ({ search, initialBookings, setBookings }) => {
       <hr />
       <div className="row ">
         <div className="col">
-          <form
-            className="form-group search-box"
-            onSubmit={e => {
-              e.preventDefault();
-              search(searchInput);
-            }}
-          >
+          <form className="form-group search-box" onChange={submitSearch}>
             <div className="search-row">
-              <input
-                type="text"
-                id="customerName"
-                className="form-control"
-                placeholder="Customer name"
-                value={searchInput}
-                onChange={handleSearchInput}
-              />
-              <button className="btn btn-primary">Search</button>
+              <label>
+                Search
+                <input
+                  type="text"
+                  id="customerName"
+                  className="form-control"
+                  placeholder="Customer name"
+                  onChange={handleSearchInput}
+                />
+              </label>
             </div>
           </form>
-          <button
-            className="btn btn-primary clear-search"
-            onClick={() => {
-              setBookings(initialBookings);
-              setSearchInput("");
-            }}
-          >
-            Clear search
-          </button>
         </div>
       </div>
     </div>

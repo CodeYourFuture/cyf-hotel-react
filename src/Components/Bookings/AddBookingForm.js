@@ -33,8 +33,10 @@ const AddBookingForm = ({
         "Content-Type": "application/json"
       },
       body: JSON.stringify(userBooking)
-    });
+    }).then(alert("booking created!"));
     setShowAddForm(!showAddForm);
+
+    window.location.reload();
   }
 
   return (

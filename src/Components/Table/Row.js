@@ -15,6 +15,7 @@ const Row = ({ data, setIsShow, deleted, setDeleted }) => {
       }
     ).then(alert("booking deleted"));
     setDeleted(!deleted);
+    window.location.reload();
   };
 
   return (
