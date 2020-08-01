@@ -1,50 +1,12 @@
 import React, { useState } from "react";
 import { sortInColumns } from "../../utils/functions";
-// import moment from "moment";
-// import fakeData from "../../data/fakeBookings.json";
 
 const Columns = ({ data, setBookings }) => {
   const [sort, setSort] = useState(true);
-  // const nights = data.map((Bookings) => {
-  //   const checkIn = moment(Bookings.checkInDate);
-  //   const checkOut = moment(Bookings.checkOutDate);
-  //   return checkOut.diff(checkIn, "days");
-  // });
 
   return (
     <thead className="thead-dark">
       <tr>
-        {/* {Object.keys(fakeData).map((propriety, index) => {
-          const colName = propriety;
-          return (
-            <th scope="col" key={index}>
-              <button onClick={sortInColumns}>Sort</button>
-              {colName.charAt(0).toUpperCase() + colName.slice(1)}
-            </th>
-          );
-        })} */}
-        <th>
-          <button
-            onClick={() => {
-              sortInColumns("id", data, setBookings, sort, setSort);
-            }}
-          >
-            Sort
-          </button>
-          Id
-        </th>
-        <th>
-          <div>
-            <button
-              onClick={() => {
-                sortInColumns("title", data, setBookings, sort, setSort);
-              }}
-            >
-              Sort
-            </button>
-          </div>
-          Title
-        </th>
         <th>
           <div>
             <button
@@ -112,16 +74,7 @@ const Columns = ({ data, setBookings }) => {
           Check out date
         </th>
 
-        <th>
-          {/* <button
-            onClick={() => {
-              sortInColumns("nights");
-            }}
-          >
-            Sort
-          </button> */}
-          Nights
-        </th>
+        <th>Nights</th>
         <th>Profile</th>
       </tr>
     </thead>

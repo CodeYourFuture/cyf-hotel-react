@@ -1,20 +1,30 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const Row = ({ data, setIsShow }) => {
+const Row = ({ data, setIsShow, deleted, setDeleted }) => {
   const [selectedRow, setSelectedRow] = useState(false);
   const checkIn = moment(data.checkInDate);
   const checkOut = moment(data.checkOutDate);
+
+  const deleteBooking = e => {
+    const bookingId = e.target.value;
+    fetch(
+      "https://cyf-alexandru-hotel-server.herokuapp.com/bookings/" + bookingId,
+      {
+        method: "DELETE"
+      }
+    ).then(alert("booking deleted"));
+    setDeleted(!deleted);
+  };
+
   return (
     <tr
-      key={data.id}
+      key={data._id}
       className={selectedRow ? "select" : ""}
       onClick={() => {
         setSelectedRow(!selectedRow);
       }}
     >
-      <th scope="row">{data.id}</th>
-      <td>{data.title}</td>
       <td>{data.firstName}</td>
       <td>{data.surname}</td>
       <td>{data.email}</td>
@@ -25,13 +35,22 @@ const Row = ({ data, setIsShow }) => {
       <td className="show-profile">
         <button
           className="btn btn-primary"
-          key={data.id}
+          key={data._id}
           onClick={() => {
-            console.log(data.id);
-            setIsShow(data.id);
+            console.log(data._id);
+            setIsShow(data._id);
           }}
         >
           Show profile
+        </button>
+      </td>
+      <td>
+        <button
+          className="btn btn-primary"
+          value={data._id}
+          onClick={deleteBooking}
+        >
+          Delete
         </button>
       </td>
     </tr>

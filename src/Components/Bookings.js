@@ -3,16 +3,14 @@ import AddBooking from "./AddBooking";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 const Bookings = () => {
-  // const initialBookings = JSON.parse(
-  //   window.localStorage.getItem("bookings" || [])
-  // );
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState(false);
+  const [deleted, setDeleted] = useState(false);
 
   async function fetchApi() {
     setIsLoading(true);
-    await fetch("https://cyf-react.illicitonion.com/")
+    await fetch("https://cyf-alexandru-hotel-server.herokuapp.com/bookings")
       .then(response => response.json())
       .then(data => setBookings(data))
       .catch(err => setErr(err));
@@ -22,10 +20,6 @@ const Bookings = () => {
   useEffect(() => {
     fetchApi();
   }, []);
-
-  // useEffect(() => {
-  //   window.localStorage.setItem("bookings", JSON.stringify(bookings));
-  // }, [bookings]);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
@@ -40,23 +34,17 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <AddBooking
-          bookings={bookings}
-          setBookings={setBookings}
-          // initialBookings={initialBookings}
-        />
+        <AddBooking bookings={bookings} setBookings={setBookings} />
         <br />
-        <Search
-          search={search}
-          // initialBookings={initialBookings}
-          setBookings={setBookings}
-        />
+        <Search search={search} setBookings={setBookings} />
 
         <SearchResults
           data={bookings}
           loading={isLoading}
           error={err}
           setBookings={setBookings}
+          deleted={deleted}
+          setDeleted={setDeleted}
         />
       </div>
     </div>

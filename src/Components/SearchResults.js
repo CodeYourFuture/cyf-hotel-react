@@ -3,7 +3,14 @@ import Columns from "../Components/Table/Columns";
 import Row from "./Table/Row";
 import CustomerProfile from "./Table/CustomerProfile";
 
-const SearchResults = ({ data, loading, error, setBookings }) => {
+const SearchResults = ({
+  data,
+  loading,
+  error,
+  setBookings,
+  deleted,
+  setDeleted
+}) => {
   const [isShow, setIsShow] = useState(null);
   const [customerData, setCustomerData] = useState([]);
 
@@ -37,7 +44,13 @@ const SearchResults = ({ data, loading, error, setBookings }) => {
             <tbody>
               {data.map(booking => {
                 return (
-                  <Row data={booking} key={booking.id} setIsShow={setIsShow} />
+                  <Row
+                    data={booking}
+                    key={booking._id}
+                    setIsShow={setIsShow}
+                    deleted={deleted}
+                    setDeleted={setDeleted}
+                  />
                 );
               })}
             </tbody>
