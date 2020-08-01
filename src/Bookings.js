@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "./Search.js";
+// import moment from 'moment';
 import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
@@ -7,6 +8,9 @@ const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
+
+  // const [bookings, setBookings] = useState({});
+  // setBookings(FakeBookings)
 
   return (
     <div className="App-content">
@@ -19,5 +23,3 @@ const Bookings = () => {
 };
 
 export default Bookings;
-
-// results = { FakeBookings } />

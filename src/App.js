@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant.js";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <TouristInfoCards link="https://visitlondon.com" name="London" />
       </div>
       <Bookings />
+      <Restaurant />
       <Footer
         info={[
           "123 Fake Street, London, E1 4UD",
