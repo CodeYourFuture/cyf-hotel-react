@@ -41,6 +41,11 @@ function SearchResults({ results }) {
               </button>
             </th>
             <th scope="col">
+              <button type="button" onClick={() => setSortedField("title")}>
+                Title
+              </button>
+            </th>
+            <th scope="col">
               <button type="button" onClick={() => setSortedField("email")}>
                 email
               </button>
@@ -67,7 +72,15 @@ function SearchResults({ results }) {
               </button>
             </th>
 
-            <th scope="col">Number Of Nights</th>
+            <th scope="col">
+              <button
+                type="button"
+                onClick={() => setSortedField("numberOfNights")}
+              >
+                Number of Nights
+              </button>
+            </th>
+
             <th scope="col">Show Profile</th>
           </tr>
         </thead>
