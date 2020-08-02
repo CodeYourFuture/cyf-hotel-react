@@ -4,7 +4,11 @@ import "./Card.css";
 const Card = ({ cityInfo }) => {
   return (
     <div>
-      <div className="card">
+      <div
+        className="card"
+        // className="d-flex flex-row bd-highlight mb-3"
+        // style={{ width: "18rem" }}
+      >
         {cityInfo.map((city, key) => {
           return (
             <img key={key} src={city.image} className="card-img-top" alt="" />
