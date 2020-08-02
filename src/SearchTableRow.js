@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const SearchTableRow = ({ booking, selectId }) => {
+const SearchTableRow = ({ booking, selectId, sortList }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const handleProfile = id => {
@@ -10,6 +10,10 @@ const SearchTableRow = ({ booking, selectId }) => {
 
   const handleClick = () => {
     setIsSelected(!isSelected);
+  };
+
+  sortList = booking => {
+    console.log(booking.email);
   };
   return (
     <tr className={isSelected ? "bg-info" : null} onClick={handleClick}>

@@ -2,8 +2,22 @@ import React, { useState } from "react";
 import SearchTableRow from "./SearchTableRow";
 import CustomerProfie from "./CustomerProfie";
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ results, setBookings }) => {
   const [selectedProfile, setSelectedProfile] = useState("");
+  const [isSorted, setIsSorted] = useState(false);
+
+  const sortTable = () => {
+    if (!isSorted) {
+      const sortedBookings = results.sort((a, b) =>
+        a.surname.localeCompare(b.surname)
+      );
+      setIsSorted(true);
+      setBookings([...sortedBookings]);
+    } else {
+      const reversedBookings = results.reverse();
+      setBookings([...reversedBookings]);
+    }
+  };
 
   const selectId = customerId => {
     setSelectedProfile(customerId);
@@ -12,7 +26,7 @@ const SearchResults = ({ results }) => {
     <>
       <table className="table">
         <thead>
-          <tr>
+          <tr onClick={sortTable}>
             <th scope="col">ID</th>
             <th scope="col">Title</th>
             <th scope="col">First name</th>
