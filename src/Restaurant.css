@@ -1,4 +1,6 @@
-.row {
-  display: flex;
+.decoration {
   list-style: none;
+}
+.center {
+  text-align: center;
 }

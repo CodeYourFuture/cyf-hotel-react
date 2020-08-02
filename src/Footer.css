@@ -1,3 +1,6 @@
 .footer {
   list-style: none;
+  background-color: rgb(0, 38, 53);
+  color: white;
+  max-height: 10rem;
 }

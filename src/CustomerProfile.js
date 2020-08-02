@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Modal from "react-bootstrap/Modal";
 
 const CustomerProfile = ({ id }) => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+
   console.log(id);
   const [user, setUser] = useState([]);
   console.log(user);
@@ -14,12 +18,16 @@ const CustomerProfile = ({ id }) => {
   }, [id]);
   return (
     <div>
+      {/* <Modal show={show} onHide={handleClose}> */}
+      {/* <Modal.Body> */}
       Custromer {id} profile
       <ul>
         <li> Customer email : {user.email}</li>
         <li> Customer phone number : {user.phoneNumber}</li>
         <li> Customer VIP : {user.vip ? "Yes" : "No"}</li>
       </ul>
+      {/* </Modal.Body> */}
+      {/* </Modal> */}
     </div>
   );
 };

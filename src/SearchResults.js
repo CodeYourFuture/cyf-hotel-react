@@ -6,6 +6,9 @@ import CutomerProfile from "./CustomerProfile";
 const SearchResults = ({ results }) => {
   const [selected, setSelected] = useState([]);
   const [selectedId, setSelectedId] = useState();
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
   console.log(selectedId);
   const handelShowProfile = e => {
     e.preventDefault();
