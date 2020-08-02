@@ -8,7 +8,7 @@ import TourisrticInfoCardsContainer from "./TouristicInfoCardsContainer";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="bg-secondary">
       <Heading />
       <TourisrticInfoCardsContainer />
       <Bookings />

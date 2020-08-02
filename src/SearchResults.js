@@ -23,7 +23,7 @@ const SearchResults = ({ results, setBookings }) => {
     setSelectedProfile(customerId);
   };
   return (
-    <>
+    <div className="text-white">
       <table className="table">
         <thead>
           <tr onClick={sortTable}>
@@ -52,7 +52,7 @@ const SearchResults = ({ results, setBookings }) => {
         </tbody>
       </table>
       <CustomerProfie id={selectedProfile} />
-    </>
+    </div>
   );
 };
 
