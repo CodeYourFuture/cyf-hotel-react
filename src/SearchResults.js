@@ -21,8 +21,9 @@ const SearchResults = ({ results, setBooking }) => {
     let sortedBookings = [];
     let reversedBookings = [];
     let key = event.target.title;
-    console.log(key);
-    if (!isSorted.key) {
+
+    console.log(isSorted[key]);
+    if (!isSorted[key]) {
       if (key == "roomId") {
         sortedBookings = results.sort((a, b) => a[key] - b[key]);
       } else if (key == "numOfNight") {
@@ -33,7 +34,13 @@ const SearchResults = ({ results, setBooking }) => {
         );
       } else
         sortedBookings = results.sort((a, b) => a[key].localeCompare(b[key]));
-      setIsSorted(true);
+      const updatedkeystatus = {
+        ...isSorted,
+        [key]: true
+      };
+
+      setIsSorted(updatedkeystatus);
+      console.log(updatedkeystatus);
       setBooking([...sortedBookings]);
     } else {
       if (key == "roomId") {
@@ -46,8 +53,12 @@ const SearchResults = ({ results, setBooking }) => {
         );
       } else
         reversedBookings = results.sort((a, b) => b[key].localeCompare(a[key]));
+      const updatedkeystatus = {
+        ...isSorted,
+        [key]: false
+      };
       setBooking([...reversedBookings]);
-      setIsSorted(false);
+      setIsSorted(updatedkeystatus);
     }
   };
 
