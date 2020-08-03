@@ -24,7 +24,9 @@ const HeadingRow = ({ sortBookings }) => (
     <th scope="col" title="checkOutDate" onClick={sortBookings}>
       Check out date
     </th>
-    <th scope="col"># of nights</th>
+    <th scope="col" title="numOfNight" onClick={sortBookings}>
+      # of nights
+    </th>
   </tr>
 );
 

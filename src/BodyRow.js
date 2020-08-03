@@ -37,7 +37,9 @@ const BodyRow = ({ content, setCustomerId, sortBookings }) => {
       <td title="checkOutDate" onClick={sortBookings}>
         {content.checkOutDate}
       </td>
-      <td>{moment(content.checkOutDate).diff(content.checkInDate, "days")}</td>
+      <td title="numOfNight" onClick={sortBookings}>
+        {moment(content.checkOutDate).diff(content.checkInDate, "days")}
+      </td>
       <td>
         <button className="btn btn-primary" onClick={handleShowProfile}>
           Show Profile
