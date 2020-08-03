@@ -36,7 +36,7 @@ const Bookings = () => {
         <Search search={search} />
         {!error ? (
           bookings.length ? (
-            <SearchResults results={bookings} />
+            <SearchResults results={bookings} setBooking={setBooking} />
           ) : (
             "Loading..."
           )
