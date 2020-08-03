@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import CustomerProfile from "./CustomerProfile.js";
+import AddingForm from "./AddingForm";
 
 const Bookings = () => {
   const [bookings, setBooking] = useState([]);
@@ -9,8 +9,8 @@ const Bookings = () => {
   let filteredBookings = [];
   useEffect(() => {
     //fetch(`https://cyf-react.glitch.me/er`)
-    fetch(`https://cyf-react.glitch.me/delayed`)
-      //fetch(`https://cyf-react.glitch.me`)
+    //fetch(`https://cyf-react.glitch.me/delayed`)
+    fetch(`https://cyf-react.glitch.me`)
       .then(res => res.json())
       .then(data => setBooking(data))
       .catch(function(e) {
@@ -43,6 +43,7 @@ const Bookings = () => {
         ) : (
           "Error"
         )}
+        <AddingForm bookings={bookings} setBooking={setBooking} />
       </div>
     </div>
   );
