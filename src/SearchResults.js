@@ -19,7 +19,7 @@ const SearchResults = props => {
       <tbody>
         {props.results.map(result => {
           return (
-            <tr>
+            <tr key={(Math.random() / 10000000000).toString()}>
               {Object.keys(result).map(function(key) {
                 return (
                   <td key={(Math.random() * 10000000000).toString()}>
@@ -39,8 +39,7 @@ const SearchResults = props => {
 function NumberNights(result) {
   let checkIn = moment(result.checkInDate);
   let checkOut = moment(result.checkOutDate);
-  console.log(checkIn);
-  console.log(checkOut);
+
   return checkOut.diff(checkIn, "days");
 }
 

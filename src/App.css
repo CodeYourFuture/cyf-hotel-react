@@ -36,6 +36,10 @@
 .card {
   text-align: center;
 }
+.restaraunt {
+  text-align: center;
+}
+
 .footer {
   display: flex;
   flex-direction: row;
