@@ -55,3 +55,7 @@ tr {
 .card {
   width: 18rem;
 }
+
+.HighlightedRow {
+  background-color: cornflowerblue;
+}
