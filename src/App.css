@@ -39,6 +39,9 @@
 .restaurant {
   text-align: center;
 }
+ul {
+  list-style-type: none;
+}
 
 .footer {
   display: flex;
