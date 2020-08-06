@@ -15,7 +15,7 @@ const CustomerProfile = ({ id }) => {
         <li> Customer title: {customer.title} </li>
         <li>firstName: {customer.firstName} </li>
         <li>surname: {customer.surname} </li>
-        <li>Email address {customer.email} </li>
+        <li>Email address: {customer.email} </li>
         <li>Is VIP: {customer.vip ? "Yes" : "No"} </li>
         <li> Phone Number: {customer.phoneNumber} </li>
       </ul>
