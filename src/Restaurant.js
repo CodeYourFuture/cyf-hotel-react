@@ -1,13 +1,14 @@
 import React from "react";
 import Order from "./Order";
-import RestaurantButton from "./RestaurantButton";
 
 const Restaurant = props => {
   return (
-    <div className="restaraunt">
+    <div className="restaurant">
       <h3>Restaurant Orders</h3>
       <ul>
-        <Order />
+        <Order orderType={"Pizzas"} />
+        <Order orderType={"Salads"} />
+        <Order orderType={"Chocolate cake"} />
       </ul>
     </div>
   );
