@@ -2,6 +2,18 @@ import React from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  let selectedTd;
+
+  function highlightWhenClicked(event) {
+    let target = event.target;
+    selectedTd = target;
+    if (selectedTd.parentNode.className === "bookings highlight") {
+      selectedTd.parentNode.classList.remove("highlight");
+      return;
+    }
+    selectedTd.parentNode.classList.add("highlight");
+  }
+
   return (
     <table className="table">
       <thead>
@@ -19,7 +31,11 @@ const SearchResults = props => {
       <tbody>
         {props.results.map(result => {
           return (
-            <tr key={(Math.random() / 10000000000).toString()}>
+            <tr
+              className="bookings"
+              onClick={highlightWhenClicked}
+              key={(Math.random() / 10000000000).toString()}
+            >
               {Object.keys(result).map(function(key) {
                 return (
                   <td key={(Math.random() * 10000000000).toString()}>

@@ -49,6 +49,10 @@ ul {
   justify-content: space-evenly;
   list-style-type: none;
 }
+
+.highlight {
+  background-color: #ffff00;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
