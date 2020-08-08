@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import BookingForm from "./BookingForm";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
 
@@ -17,7 +19,10 @@ const Bookings = () => {
     });
     setBookings(filterBookings);
   };
-
+  const addCustomer = customer => {
+    customer.id = bookings.length + 1;
+    setBookings([...bookings, customer]);
+  };
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
       .then(response => {
@@ -46,8 +51,11 @@ const Bookings = () => {
       ) : isLoading ? (
         <div>Loading...</div>
       ) : (
-        <SearchResults results={bookings} />
+        <SearchResults results={bookings} setBookings={setBookings} />
       )}
+      <div>
+        <BookingForm addCustomer={addCustomer} />
+      </div>
     </div>
   );
 };

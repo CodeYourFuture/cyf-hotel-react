@@ -15,7 +15,7 @@ function CustomerProfile(props) {
       <p>Customer {props.customerId} Profile</p>
       <ul>
         <li>Customer ID:{customerData.id}</li>
-        <li>Vip:{customerData.vip ? "Yes" : "no"}</li>
+        <li>Vip:{customerData.vip ? "Yes" : "No"}</li>
         <li>Customer Email:{customerData.email}</li>
         <li>Customer Phone Number:{customerData.phoneNumber}</li>
       </ul>

@@ -1,23 +1,28 @@
 import React from "react";
 
-function TableInfo() {
+const TableInfo = ({ sortBookings }) => {
+  const columns = {
+    none: "#",
+    id: "ID",
+    title: "Title",
+    firstName: "First name",
+    surname: "Surname",
+    email: "Email",
+    roomId: "Room ID",
+    checkInDate: "Check in date",
+    checkOutDate: "Check out date",
+    numOfNights: "Number of nights"
+  };
+
   return (
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">ID</th>
-        <th scope="col">Title</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Surname</th>
-        <th scope="col">Email</th>
-        <th scope="col">Room Id</th>
-        <th scope="col">Check in date</th>
-        <th scope="col">Check out date</th>
-        <th scope="col">Number of nights</th>
-        <th scope="col">Buttons</th>
-      </tr>
-    </thead>
+    <tr>
+      {Object.entries(columns).map(([key, value]) => (
+        <th scope="col" key={key} title={key} onClick={sortBookings}>
+          {value}
+        </th>
+      ))}
+    </tr>
   );
-}
+};
 
 export default TableInfo;
