@@ -3,7 +3,7 @@ import React from "react";
 import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
-import TouristInfoCards from "./TouristInfoCards";
+import TouristInfoCard from "./TouristInfoCard";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant.js";
 
@@ -12,12 +12,9 @@ const App = () => {
     <div className="App">
       <Heading />
       <div className="flex">
-        <TouristInfoCards link="https://peoplemakeglasgow.com" name="Glasgow" />
-        <TouristInfoCards
-          link="https://visitmanchester.com"
-          name="Manchester"
-        />
-        <TouristInfoCards link="https://visitlondon.com" name="London" />
+        <TouristInfoCard link="https://peoplemakeglasgow.com" name="Glasgow" />
+        <TouristInfoCard link="https://visitmanchester.com" name="Manchester" />
+        <TouristInfoCard link="https://visitlondon.com" name="London" />
       </div>
       <Bookings />
       <Restaurant />
