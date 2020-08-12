@@ -6,7 +6,17 @@ const Bookings = () => {
   let [bookings, setBookings] = useState([]);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    // searchVal = searchVal.toUppercase();
+    console.log(searchVal.toUpperCase());
+    setBookings(
+      (bookings = bookings.filter(
+        booking =>
+          booking.firstName.toUpperCase() === searchVal.toUpperCase() ||
+          booking.surname.toUpperCase() === searchVal.toUpperCase()
+      ))
+    );
   };
+
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
       .then(res => res.json())

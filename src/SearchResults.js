@@ -5,8 +5,7 @@ const SearchResults = props => {
   let selectedTd;
 
   function highlightWhenClicked(event) {
-    let target = event.target;
-    selectedTd = target;
+    selectedTd = event.target;
     if (selectedTd.parentNode.className === "bookings highlight") {
       selectedTd.parentNode.classList.remove("highlight");
       return;
