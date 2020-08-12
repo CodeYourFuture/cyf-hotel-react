@@ -4,7 +4,7 @@ import { Card, Collapse } from "react-bootstrap";
 const Restaurant = () => {
   const [cardOpen, setCardOpen] = useState(false);
   return (
-    <Card className="d-flex justify-content-center">
+    <Card className="position">
       <Card.Header
         className="center"
         aria-controls="example-collapse-text"
