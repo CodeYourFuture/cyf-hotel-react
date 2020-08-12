@@ -31,7 +31,7 @@ const Bookings = () => {
     setBookings(user);
   };
   if (loading) {
-    return <div className="center"> Loading ...</div>;
+    return <div className="center"> Loading ... Please wait</div>;
   }
 
   return (
