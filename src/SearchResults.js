@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 import moment from "moment";
 
 const SearchResults = props => {
   let selectedTd;
+
+  let [currentId, setCurrentId] = useState("");
 
   function highlightWhenClicked(event) {
     selectedTd = event.target;
@@ -13,41 +16,58 @@ const SearchResults = props => {
     selectedTd.parentNode.classList.add("highlight");
   }
 
+  function handleShowProfile(event) {
+    /*   currentId = event.target.id;
+    console.log(currentId); */
+    setCurrentId(event.target.id);
+  }
+
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          {Object.keys(props.results[0]).map(function(key) {
+    <div>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">Profile</th>
+            {Object.keys(props.results[0]).map(function(key) {
+              return (
+                <th key={(-Math.random() * 10000000000).toString()} scope="col">
+                  {key}
+                </th>
+              );
+            })}
+            <th scope="col">Number of nights</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.results.map(result => {
             return (
-              <th key={(-Math.random() * 10000000000).toString()} scope="col">
-                {key}
-              </th>
+              <tr
+                className="bookings"
+                key={(Math.random() / 10000000000).toString()} //here was onClick
+              >
+                <td>
+                  <button id={result.id} onClick={handleShowProfile}>
+                    Show profile
+                  </button>
+                </td>
+                {Object.keys(result).map(function(key) {
+                  return (
+                    <td
+                      key={(Math.random() * 10000000000).toString()}
+                      onClick={highlightWhenClicked} //replaced from line 44
+                    >
+                      {result[key]}
+                    </td>
+                  );
+                })}
+                <td>{NumberNights(result)}</td>
+              </tr>
             );
           })}
-          <th scope="col">Number of nights</th>
-        </tr>
-      </thead>
-      <tbody>
-        {props.results.map(result => {
-          return (
-            <tr
-              className="bookings"
-              onClick={highlightWhenClicked}
-              key={(Math.random() / 10000000000).toString()}
-            >
-              {Object.keys(result).map(function(key) {
-                return (
-                  <td key={(Math.random() * 10000000000).toString()}>
-                    {result[key]}
-                  </td>
-                );
-              })}
-              <td>{NumberNights(result)}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+      <CustomerProfile id={currentId} />
+    </div>
   );
 };
 
