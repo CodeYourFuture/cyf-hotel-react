@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import "./Bookings.css";
-import FakeBookings from "./data/fakeBookings.json";
-
+import NewBooking from "./NewBooking";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -40,6 +39,7 @@ const Bookings = () => {
         <Search search={search} />
         {bookings.length !== 0 && <SearchResults results={bookings} />}
       </div>
+      <NewBooking />
     </div>
   );
 };
