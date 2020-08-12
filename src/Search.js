@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
-import Bookings from "./Bookings";
 const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
 

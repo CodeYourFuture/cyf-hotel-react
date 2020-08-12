@@ -1,19 +1,14 @@
 import React from "react";
 import Heading from "./Heading";
-import Bookings from "./Bookings";
-import TouristInfoCards from "./TouristInfoCards";
-import SearchResults from "./SearchResults";
-import Restaurant from "./Restaurant";
 import Footer from "./Footer";
+import NavBar from "./NavBar";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <Heading />
-      <TouristInfoCards />
-      <Bookings />
-      <Restaurant />
+      {/* <Heading /> */}
+      <NavBar />
       <Footer
         address={[
           "123 Fake Street, London, E1 4UD",

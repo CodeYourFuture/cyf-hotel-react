@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const TouristInfoCards = () => {
   return (
-    <div>
+    <div className="position">
       <Card
         cityInfo={[
           {
