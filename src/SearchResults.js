@@ -66,7 +66,8 @@ const SearchResults = props => {
           })}
         </tbody>
       </table>
-      <CustomerProfile id={currentId} />
+
+      {currentId ? <CustomerProfile id={currentId} /> : null}
     </div>
   );
 };
