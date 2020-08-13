@@ -6,6 +6,7 @@ import NewBooking from "./NewBooking";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(false);
   console.log(bookings);
 
   useEffect(() => {
@@ -17,7 +18,8 @@ const Bookings = () => {
         console.log(data);
         setBookings(data);
         setLoading(false);
-      });
+      })
+      .catch();
   }, []);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
