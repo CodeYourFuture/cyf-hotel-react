@@ -23,7 +23,7 @@ const CustomerProfile = props => {
         {Object.keys(customerProfile).map(function(key) {
           return (
             <li key={(Math.random() * 10000000000).toString()}>
-              {customerProfile[key]}{" "}
+              {key}: {customerProfile[key]}
             </li>
           );
         })}
