@@ -6,20 +6,28 @@ import NewBooking from "./NewBooking";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState(false);
+  const [error, setError] = useState(false);
   console.log(bookings);
 
   useEffect(() => {
     // fetch(`https://cyf-react.glitch.me`)
     setLoading(true);
     fetch(`https://cyf-react.glitch.me/delayed`)
-      .then(res => res.json())
+      // fetch("https://cyf-react.glitch.me/error")
+      .then(res => {
+        if (!res.ok) {
+          setError(true);
+        } else {
+          return res.json();
+        }
+      })
       .then(data => {
         console.log(data);
         setBookings(data);
         setLoading(false);
-      })
-      .catch();
+      });
+    //   .catch((error) => setError(error));
+    // console.log("500 HTTP Error");
   }, []);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
@@ -31,11 +39,12 @@ const Bookings = () => {
     );
     setBookings(user);
   };
-  if (loading) {
-    return <div className="center"> Loading ... Please wait</div>;
-  }
 
-  return (
+  return error ? (
+    <div className="center"> Sorry....request not found</div>
+  ) : loading ? (
+    <div className="center"> Loading ... Please wait</div>
+  ) : (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
