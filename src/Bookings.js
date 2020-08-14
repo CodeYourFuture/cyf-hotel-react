@@ -3,7 +3,7 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState(null);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
 
@@ -34,13 +34,15 @@ const Bookings = () => {
   //}
 
   console.log(search);
-  return (
+  return bookings ? (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
         <SearchResults results={bookings} />
       </div>
     </div>
+  ) : (
+    "Loading..."
   );
 };
 

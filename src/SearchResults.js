@@ -5,7 +5,7 @@ import CustomerProfile from "./CustomerProfile.js";
 
 const SearchResults = props => {
   const [keys, setKeys] = useState([]);
-  const [customerId, setelectedustomerId] = useState(null);
+  const [customerId, setSelectedustomerId] = useState(null);
 
   function handlerOnClick(key) {
     let newKeys = keys.slice(); // create an array newKeys which is a *copy* of keys - we are not allowed to edit keys directly,
@@ -45,7 +45,7 @@ const SearchResults = props => {
                     "days"
                   )}
                 </td>
-                <button onClick={() => setelectedustomerId(result.id)}>
+                <button onClick={() => setSelectedustomerId(result.id)}>
                   Show profile
                 </button>
               </tr>

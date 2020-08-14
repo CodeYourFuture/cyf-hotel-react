@@ -11,7 +11,7 @@ const CustomerProfile = props => {
       .then(data => setCustomerProfile(data));
   }, [props.id]);
 
-  return (
+  return props.id ? (
     <div>
       <ul>
         <li>Customer {customerProfile.id} </li>
@@ -20,8 +20,7 @@ const CustomerProfile = props => {
         <li> VIP: {customerProfile.vip ? "yes" : "no"} </li>
       </ul>
     </div>
-    //<p>Customer profile {props.id}</p>
-  );
+  ) : null;
 };
 
 export default CustomerProfile;
