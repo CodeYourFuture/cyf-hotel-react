@@ -4,6 +4,8 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState(null);
+  const [hasError, setHasError] = useState(false);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
 
@@ -17,8 +19,14 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
-      .then(res => res.json())
+    fetch(`https://cyf-react.glitch.me/error`)
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          setHasError(true);
+        }
+      })
       .then(data => setBookings(data));
   }, []);
 
@@ -34,15 +42,19 @@ const Bookings = () => {
   //}
 
   console.log(search);
-  return bookings ? (
+  return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
       </div>
+      {hasError ? (
+        <div> ops.. something has gone wrong... </div>
+      ) : bookings ? (
+        <SearchResults results={bookings} />
+      ) : (
+        "Loading..."
+      )}
     </div>
-  ) : (
-    "Loading..."
   );
 };
 
