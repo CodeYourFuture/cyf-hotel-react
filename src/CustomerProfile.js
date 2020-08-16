@@ -12,7 +12,7 @@ const CustomerProfile = props => {
         console.log(props.id);
         console.log(customerProfile);
       });
-  }, [props.id, customerProfile]);
+  }, [props.id]);
 
   return !customerProfile ? (
     <p>Not loading yet</p>

@@ -17,7 +17,7 @@ const AddBookings = props => {
     checkInDate: "",
     checkOutDate: ""
   });
-
+  const [bookingList, setBookingList] = useState(props.bookings);
   function handleChange(event) {
     const updatedBooking = {
       ...addBooking,
@@ -30,8 +30,8 @@ const AddBookings = props => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("----", addBooking);
-    props.bookings.push(addBooking);
+
+    setBookingList(bookingList.push(addBooking));
   }
   console.log(props.bookings);
   return (

@@ -72,7 +72,6 @@ const Bookings = () => {
       });
   }, []);
 
-  console.log(error);
   //////////////////////////////
 
   return !bookings.length ? (
@@ -81,7 +80,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-
+        <SearchResults results={bookings} />
         <AddBookings bookings={bookings} />
       </div>
     </div>

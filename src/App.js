@@ -1,7 +1,7 @@
 import React from "react";
 import Restaurant from "./Restaurant";
 import Bookings from "./Bookings";
-import AddBookings from "./AddBookings";
+//import AddBookings from "./AddBookings";
 
 import "./App.css";
 
