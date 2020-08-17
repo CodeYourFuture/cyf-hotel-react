@@ -22,7 +22,8 @@ const AddBookings = props => {
   function handleChange(event) {
     const updatedBooking = {
       ...addBooking,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
+      id: props.bookings.length + 1
     };
     setAddBooking(updatedBooking);
     console.log(addBooking);

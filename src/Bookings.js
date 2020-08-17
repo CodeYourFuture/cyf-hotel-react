@@ -51,7 +51,7 @@ const Bookings = () => {
         <div className="container">
           <Search search={search} />
           <SearchResults results={bookings} />
-          <AddBookings addBooking={addBooking} />
+          <AddBookings bookings={bookings} addBooking={addBooking} />
         </div>
       </div>
     );
