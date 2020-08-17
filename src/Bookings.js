@@ -7,7 +7,7 @@ const Bookings = () => {
   let [bookings, setBookings] = useState([]);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
-    // searchVal = searchVal.toUppercase();
+
     console.log(searchVal.toUpperCase());
     setBookings(
       (bookings = bookings.filter(
@@ -19,38 +19,7 @@ const Bookings = () => {
   };
   /////////////////////////////////////////////////////////////////////////////////////////////
 
-  // Now call the function inside fetch promise resolver
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-  /*   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/error`)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Something went wrong");
-        }
-      })
-      .then((responseJson) => {
-        // Do something with the response
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []); */
-
-  ///////////////////////////
-
-  /*   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
-      .then((res) => res.json())
-      .then((data) => {
-        setBookings(data);
-        console.log("loaded");
-      });
-  }, []); */
-  ///////////////////////////
-  let error;
+  /////////////////////////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/`)
@@ -61,8 +30,6 @@ const Bookings = () => {
         if (res.ok) {
           return res.json();
         } else {
-          error = res.status;
-
           console.log("error" + res.status);
         }
       })
@@ -72,19 +39,23 @@ const Bookings = () => {
       });
   }, []);
 
-  //////////////////////////////
+  if (!bookings.length) {
+    return <p>Not loading yet</p>;
+  } else {
+    const addBooking = bookingValue => {
+      setBookings(bookings.concat(bookingValue));
+    };
 
-  return !bookings.length ? (
-    <p>Not loading yet</p>
-  ) : (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
-        <AddBookings bookings={bookings} />
+    return (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+          <SearchResults results={bookings} />
+          <AddBookings addBooking={addBooking} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Bookings;

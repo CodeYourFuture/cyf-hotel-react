@@ -17,23 +17,25 @@ const AddBookings = props => {
     checkInDate: "",
     checkOutDate: ""
   });
-  let newArr = props.bookings.slice(0);
-  const [bookingList, setBookingList] = useState(newArr);
 
-  console.log(bookingList);
+  //console.log(bookingList);
   function handleChange(event) {
     const updatedBooking = {
       ...addBooking,
-      [event.target.name]: event.target.value,
-      id: bookingList.length + 1
+      [event.target.name]: event.target.value
     };
     setAddBooking(updatedBooking);
     console.log(addBooking);
   }
 
+  /////////////////////////////
+
+  ////////////////////////////
+
   function handleSubmit(event) {
     event.preventDefault();
-    setBookingList(bookingList.concat(addBooking));
+    props.addBooking(addBooking);
+    /*     setBookingList(bookingList.concat(addBooking));
     setAddBooking({
       id: "",
       title: "",
@@ -42,11 +44,11 @@ const AddBookings = props => {
       email: "",
       roomId: "",
       checkInDate: "",
-      checkOutDate: ""
-    });
+      checkOutDate: "", 
+     }); */
   }
-  console.log("addbook", addBooking);
-  console.log(bookingList);
+  /*  console.log("addbook", addBooking);
+  console.log(bookingList); */
 
   return (
     <div>
