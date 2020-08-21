@@ -9,7 +9,8 @@ const SearchResults = props => {
 
   function highlightWhenClicked(event) {
     selectedTd = event.target;
-    if (selectedTd.parentNode.className === "bookings highlight") {
+    console.log(selectedTd.className);
+    if (selectedTd.parentNode.className.includes("bookings highlight")) {
       selectedTd.parentNode.classList.remove("highlight");
       return;
     }
@@ -50,11 +51,12 @@ const SearchResults = props => {
                     Show profile
                   </button>
                 </td>
-                {Object.keys(result).map(function(key) {
+                {Object.keys(result).map(function(key, index) {
                   return (
                     <td
                       key={(Math.random() * 10000000000).toString()}
-                      onClick={highlightWhenClicked} //replaced from line 44
+                      onClick={highlightWhenClicked}
+                      className={index} //replaced from line 44
                     >
                       {result[key]}
                     </td>

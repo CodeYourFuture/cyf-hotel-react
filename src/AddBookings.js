@@ -36,7 +36,7 @@ const AddBookings = props => {
   function handleSubmit(event) {
     event.preventDefault();
     props.addBooking(addBooking);
-    /*     setBookingList(bookingList.concat(addBooking));
+
     setAddBooking({
       id: "",
       title: "",
@@ -45,8 +45,8 @@ const AddBookings = props => {
       email: "",
       roomId: "",
       checkInDate: "",
-      checkOutDate: "", 
-     }); */
+      checkOutDate: ""
+    });
   }
   /*  console.log("addbook", addBooking);
   console.log(bookingList); */

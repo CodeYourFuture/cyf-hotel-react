@@ -8,7 +8,6 @@ const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
 
-    console.log(searchVal.toUpperCase());
     setBookings(
       (bookings = bookings.filter(
         booking =>
