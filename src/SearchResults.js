@@ -3,90 +3,23 @@ import CustomerProfile from "./CustomerProfile";
 import moment from "moment";
 
 const SearchResults = props => {
-  const [alphaSort, setAlphaSort] = useState({
-    id: 1,
-    title: 1,
-    firstName: 1,
-    surname: 1,
-    email: 1,
-    roomId: 1,
-    checkInDate: 1,
-    checkOutDate: 1,
-    "Number of nights": 1
-  });
-  console.log(alphaSort);
   let selectedTd;
 
   let [currentId, setCurrentId] = useState("");
-  let readyArr = props.results.slice(0);
-  //////////////////////////////
-  readyArr.forEach(element => {
-    element["Number of nights"] = NumberNights(element);
-  });
-  const [passedArr, setPassedArr] = useState(readyArr);
-  //////////////////////////////////////////
 
-  ////////////////////////////////////////////
   function highlightWhenClicked(event) {
     selectedTd = event.target;
-    let selectedKey = selectedTd.className;
-    function azSorting(a, b) {
-      let textA = a[selectedKey]; //let textA = a[selectedKey].toUpperCase();
-      let textB = b[selectedKey]; //let textB = b[selectedKey].toUpperCase();
-      return textA < textB ? -1 : textA > textB ? 1 : 0;
-    }
-
-    function zaSorting(a, b) {
-      let textA = a[selectedKey];
-      let textB = b[selectedKey];
-
-      return textA > textB ? -1 : textA < textB ? 1 : 0;
-    }
-
-    function sortedArray(func) {
-      setPassedArr(readyArr.sort(func).slice(0));
-    }
-    ///////////////////////////////////////////////////////
-
+    console.log(selectedTd.className);
     if (selectedTd.parentNode.className.includes("bookings highlight")) {
       selectedTd.parentNode.classList.remove("highlight");
       return;
     }
     selectedTd.parentNode.classList.add("highlight");
-    //////////////////////////////////////////////////////
-    /*   const updatedUserData = {
-      ...userData,
-      [event.target.name]: event.target.value,
-    };
-
-    setUserData(updatedUserData);
- */
-    console.log(selectedKey);
-    console.log([selectedKey]);
-    console.log(alphaSort[selectedKey]);
-    //////////////////////////////////////////////////////
-    if (alphaSort.selectedKey === 0) {
-      // sortedArray(azSorting);
-      const updatedData = {
-        ...alphaSort,
-        [selectedKey]: 1
-      };
-      setAlphaSort(updatedData);
-    } else {
-      // sortedArray(zaSorting);
-      const updatedData = {
-        ...alphaSort,
-        [selectedKey]: 1
-      };
-      setAlphaSort(updatedData);
-    }
-    console.log(alphaSort);
-    //////////////////////////////////////////////////////////
   }
 
   function handleShowProfile(event) {
-    currentId = event.target.id;
-    console.log(currentId);
+    /*   currentId = event.target.id;
+    console.log(currentId); */
     setCurrentId(event.target.id);
   }
 
@@ -106,7 +39,7 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {passedArr.map(result => {
+          {props.results.map(result => {
             return (
               <tr
                 className="bookings"
@@ -141,12 +74,5 @@ const SearchResults = props => {
     </div>
   );
 };
-
-function NumberNights(result) {
-  let checkIn = moment(result.checkInDate);
-  let checkOut = moment(result.checkOutDate);
-
-  return checkOut.diff(checkIn, "days");
-}
 
 export default SearchResults;

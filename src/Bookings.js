@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import AddBookings from "./AddBookings.js";
+import moment from "moment";
 
 const Bookings = () => {
   let [bookings, setBookings] = useState([]);
@@ -44,7 +45,8 @@ const Bookings = () => {
     const addBooking = bookingValue => {
       setBookings(bookings.concat(bookingValue));
     };
-
+    console.log(bookings);
+    bookings.forEach(elem => (elem["rrr"] = NumberNights(elem)));
     return (
       <div className="App-content">
         <div className="container">
@@ -56,5 +58,12 @@ const Bookings = () => {
     );
   }
 };
+
+function NumberNights(result) {
+  let checkIn = moment(result.checkInDate);
+  let checkOut = moment(result.checkOutDate);
+
+  return checkOut.diff(checkIn, "days");
+}
 
 export default Bookings;
