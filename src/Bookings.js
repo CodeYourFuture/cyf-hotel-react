@@ -46,12 +46,12 @@ const Bookings = () => {
       setBookings(bookings.concat(bookingValue));
     };
     console.log(bookings);
-    bookings.forEach(elem => (elem["rrr"] = NumberNights(elem)));
+    bookings.forEach(elem => (elem["Number of nights"] = NumberNights(elem)));
     return (
       <div className="App-content">
         <div className="container">
           <Search search={search} />
-          <SearchResults results={bookings} />
+          <SearchResults bookings={bookings} />
           <AddBookings bookings={bookings} addBooking={addBooking} />
         </div>
       </div>
