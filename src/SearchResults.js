@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Row from "./Row";
 import CustomerProfile from "./CustomerProfile";
+import NewBooking from "./NewBooking";
 
 const SearchResults = props => {
   const [id, setId] = useState(null);
@@ -23,8 +24,14 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {props.result.map(data => (
-            <Row data={data} key={data.id} setId={setId} />
+            <Row
+              data={data}
+              key={data.id}
+              setId={setId}
+              deleteBookings={props.deleteBookings}
+            />
           ))}
+          <NewBooking />
         </tbody>
       </table>
       <CustomerProfile id={id} />

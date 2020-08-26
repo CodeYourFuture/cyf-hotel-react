@@ -1,12 +1,10 @@
 import React from "react";
-import "./App.css";
 import Bookings from "./Bookings";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
-
 import Restaurant from "./Restaurant";
-
+import "./App.css";
 const details = [
   "123 Fake Street, London, E1 4UD",
   "hello@fakehotel.com",

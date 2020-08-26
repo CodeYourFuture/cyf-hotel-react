@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-function Row({ data, setId }) {
+function Row({ data, setId, deleteBookings }) {
   const [isSelected, setIsSelected] = useState(false);
 
   function toggle() {
@@ -31,9 +31,17 @@ function Row({ data, setId }) {
   // id = { data.id }
   //onClick={()=> props.setUserclick(props.result.id)}
 
-  const onClickhandle = () => {
+  const onClickHandle = () => {
     setId(data.id);
   };
+  const onClickDelete = id => {
+    console.log("explore :", id);
+    fetch(`http://localhost:3003/bookings/${id}`, { method: "DELETE" })
+      .catch(error => console.log(error))
+      .then(res => res.json())
+      .then(data => deleteBookings(data));
+  };
+
   return (
     <tr key={data.id} onClick={toggle} className={color}>
       <td>{data.id}</td>
@@ -46,7 +54,10 @@ function Row({ data, setId }) {
       <td>{data.checkOutDate}</td>
       <td>{daysDifference(data.checkOutDate, data.checkInDate)}</td>
       <td>
-        <button onClick={onClickhandle}>Show Profile</button>
+        <button onClick={onClickHandle}>Show Profile</button>
+      </td>
+      <td>
+        <button onClick={() => onClickDelete(data.id)}>Delete</button>
       </td>
     </tr>
   );
