@@ -122,7 +122,6 @@ const SearchResults = props => {
                     </td>
                   );
                 })}
-                {/*   <td>{NumberNights(result)}</td> */}
               </tr>
             );
           })}

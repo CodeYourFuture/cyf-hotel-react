@@ -9,10 +9,8 @@ const CustomerProfile = props => {
       .then(res => res.json())
       .then(data => {
         setCustomerProfile(data);
-        console.log(props.id);
-        console.log(customerProfile);
       });
-  }, [props.id, customerProfile]);
+  }, [props.id]);
 
   return !customerProfile ? (
     <p>Not loading yet</p>
