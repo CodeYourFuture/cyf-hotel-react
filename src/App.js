@@ -13,6 +13,7 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
+
       <Footer
         footerArray={[
           "123 Fake Street, London, E1 4UD",

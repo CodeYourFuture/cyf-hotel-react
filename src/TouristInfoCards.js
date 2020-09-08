@@ -3,6 +3,7 @@ import React from "react";
 const TouristInfoCards = () => {
   let touristInfo = [
     {
+      name: "Glasgow",
       link: "https://peoplemakeglasgow.com",
       image:
         "https://images.unsplash.com/photo-1531152369337-1d0b0b9ef20d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
@@ -10,6 +11,7 @@ const TouristInfoCards = () => {
         "With amazing architecture, shopping, tours, trails & more, now's the time to discover Glasgow. "
     },
     {
+      name: "Manchester",
       link: "https://visitmanchester.com",
       image:
         "https://images.unsplash.com/photo-1580841896374-96ff5ea79689?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
@@ -17,6 +19,7 @@ const TouristInfoCards = () => {
         "Find your space and reconnect with Manchester – discover what’s on your doorstep to explore..."
     },
     {
+      name: "London",
       link: "https://visitlondon.com",
       image:
         "https://images.unsplash.com/photo-1581279218402-2c82762e4779?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80",
@@ -35,7 +38,7 @@ const TouristInfoCards = () => {
               <div className="card-body">
                 <p>{hotel.summary}</p>
                 <a href={hotel.link} className="btn btn-primary">
-                  For more info
+                  Visit {hotel.name}
                 </a>
               </div>
             </div>
