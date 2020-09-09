@@ -5,8 +5,8 @@ import SearchResults from "./SearchResults.js";
 const Bookings = ({ newCustomerInfo }) => {
   const [bookings, setBookings] = useState([]);
   const [countEmptySearches, setCountEmptySearches] = useState(0);
-  const [loadingData, setLoadingData] = useState(true);
-  const [error, setError] = useState(null);
+  const [isLoadingData, setIsLoadingData] = useState(true);
+  const [isError, setIsError] = useState(false);
   const search = searchVal => {
     let results = bookings.filter(item => {
       return (
@@ -24,7 +24,7 @@ const Bookings = ({ newCustomerInfo }) => {
   };
 
   useEffect(() => {
-    fetch("https://hulking-jumpy-creature.glitch.me/guests")
+    fetch("https://osman-hotel-server.herokuapp.com/bookings")
       .then(res => {
         if (!res.ok) {
           throw Error(res);
@@ -33,32 +33,35 @@ const Bookings = ({ newCustomerInfo }) => {
       })
       .then(res => {
         setBookings(res);
-        setLoadingData(false);
+        setIsLoadingData(false);
       })
-      .catch(error => setError(error));
+      .catch(() => setIsError(true));
   }, [countEmptySearches]);
 
-  if (error) {
-    return (
+  return isError ? (
+    <div className="container">
+      <div className="alert alert-danger" role="alert">
+        <strong>Oh snap!</strong> something went really wrong, we will fix it
+        though.
+      </div>
+    </div>
+  ) : isLoadingData ? (
+    <div className="App-content">
       <div className="container">
-        <div className="alert alert-danger" role="alert">
-          <strong>Oh snap!</strong> something went really wrong, we will fix it
-          though.
+        <div className="alert alert-secondary" role="alert">
+          Please <strong>wait</strong> while we fetch customer data.
         </div>
       </div>
-    );
-  }
-  return (
+    </div>
+  ) : (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {loadingData ? (
-          <div className="alert alert-secondary" role="alert">
-            Please <strong>wait</strong> while we fetch customer data.
-          </div>
-        ) : (
-          <SearchResults results={bookings} newCustomerInfo={newCustomerInfo} />
-        )}
+        <SearchResults
+          setBookings={setBookings}
+          bookings={bookings}
+          newCustomerInfo={newCustomerInfo}
+        />
       </div>
     </div>
   );

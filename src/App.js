@@ -17,6 +17,7 @@ const App = () => {
   const handleNewCustomerSubmit = info => {
     setNewCustomerInfo(info);
   };
+
   return (
     <div className="App">
       <Heading />

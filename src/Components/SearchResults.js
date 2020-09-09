@@ -4,25 +4,22 @@ import TableHead from "./TableHead";
 import TableRow from "./TableRow";
 import CustomerProfile from "./CustomerProfile";
 
-function SearchResults({ results, newCustomerInfo }) {
-  const [customerID, setCustomerID] = useState(0);
-  const [allCustomers, setAllCustomers] = useState(results);
+function SearchResults({ bookings, setBookings, newCustomerInfo }) {
+  const [customerID, setCustomerID] = useState(null);
 
   useEffect(() => {
     if (newCustomerInfo) {
-      newCustomerInfo.id = allCustomers.length + 1;
-      let tempvar = allCustomers.concat(newCustomerInfo);
-      setAllCustomers(tempvar);
+      newCustomerInfo.id = bookings[bookings.length - 1].id + 1;
+      setBookings(bookings.concat(newCustomerInfo));
     }
   }, [newCustomerInfo]);
-  console.log(newCustomerInfo);
 
   return (
     <div>
       <table className="table">
         <TableHead />
         <tbody>
-          {allCustomers.map((item, index) => {
+          {bookings.map((item, index) => {
             const nightsSpent = moment(item.checkOutDate).diff(
               item.checkInDate,
               "days"
@@ -38,7 +35,7 @@ function SearchResults({ results, newCustomerInfo }) {
           })}
         </tbody>
       </table>
-      <CustomerProfile id={customerID} />
+      {customerID && <CustomerProfile id={customerID} />}
     </div>
   );
 }
