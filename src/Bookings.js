@@ -43,6 +43,7 @@ const Bookings = () => {
     );
     setBookings(filteredBooking);
   };
+
   const addCustomer = customer => {
     fetch("https://nawal-hotel-server.herokuapp.com/bookings", {
       method: "POST",
@@ -68,6 +69,7 @@ const Bookings = () => {
     customer.id = bookings.length + 1;
     setBookings([...bookings, customer]);
   };
+
   if (loading && !error) {
     return <div> Loading...</div>;
   }

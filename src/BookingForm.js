@@ -10,6 +10,7 @@ const BookingForm = ({ addCustomer, newBooking, setNewBooking }) => {
     console.log(e.target.id, e.target.name);
     setNewBooking(updatedBooking);
   };
+
   const onSubmitHandle = e => {
     e.preventDefault();
     handleChange(e, addCustomer(newBooking));
@@ -47,6 +48,7 @@ const BookingForm = ({ addCustomer, newBooking, setNewBooking }) => {
               type="text"
               id="firstName"
               placeholder="First Name"
+              defaultValue=""
             />
             <input
               onChange={handleChange}
