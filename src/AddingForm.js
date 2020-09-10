@@ -1,13 +1,40 @@
 import React, { useState, useEffect } from "react";
-const AddingForm = ({ bookings, setBooking }) => {
+const AddingForm = ({ bookings, setBooking, resource, params }) => {
   const [newBookings, setNewBooking] = useState({});
   function createNewBooking(event) {
     event.preventDefault();
     newBookings.id = bookings.length + 1;
-    console.log(newBookings);
-    console.log(Object.values(newBookings));
     if (Object.values(newBookings).length == 8) {
       setBooking(bookings.concat(newBookings));
+      const id = newBookings.id;
+      const title = newBookings.title;
+      const firstName = newBookings.firstName;
+      const surname = newBookings.surname;
+      const email = newBookings.email;
+      const roomId = newBookings.roomId;
+      const checkInDate = newBookings.checkInDate;
+      const checkOutDate = newBookings.checkOutDate;
+      const options = {
+        method: "POST",
+        body: JSON.stringify({
+          id,
+          title,
+          firstName,
+          surname,
+          email,
+          roomId,
+          checkInDate,
+          checkOutDate
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+
+      fetch(`${resource}${params}`, options).then(
+        fetch(`${resource}${params}`)
+      );
+
       setNewBooking({});
     } else alert(`Please make sure that you enter a value in all the inputs`);
   }
@@ -16,7 +43,9 @@ const AddingForm = ({ bookings, setBooking }) => {
       ...newBookings,
       [event.target.name]: event.target.value
     };
-
+    //  let setTheInput=eval("set".concat(event.target.name))
+    // setTheInput=event.target.value
+    // console.log(setTheInput);
     setNewBooking(tempBooking);
   }
   return (

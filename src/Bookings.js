@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import AddingForm from "./AddingForm";
-
+const resource = "https://sleepy-basin-67457.herokuapp.com";
+const params = "/bookings";
 const Bookings = () => {
   const [bookings, setBooking] = useState([]);
   const [error, setError] = useState(false);
@@ -10,7 +11,8 @@ const Bookings = () => {
   useEffect(() => {
     //fetch(`https://cyf-react.glitch.me/er`)
     //fetch(`https://cyf-react.glitch.me/delayed`)
-    fetch(`https://cyf-react.glitch.me`)
+    //fetch(`https://cyf-react.glitch.me`)
+    fetch(`${resource}${params}`)
       .then(res => res.json())
       .then(data => setBooking(data))
       .catch(function(e) {
@@ -43,7 +45,12 @@ const Bookings = () => {
         ) : (
           "Error"
         )}
-        <AddingForm bookings={bookings} setBooking={setBooking} />
+        <AddingForm
+          bookings={bookings}
+          setBooking={setBooking}
+          resource={resource}
+          params={params}
+        />
       </div>
     </div>
   );
