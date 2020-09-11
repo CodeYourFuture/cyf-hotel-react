@@ -19,7 +19,7 @@ const Bookings = () => {
   });
 
   useEffect(() => {
-    fetch("https://nawal-hotel-server.herokuapp.com/bookings")
+    fetch("https://nawal-hotel-server.glitch.me/bookings")
       //    fetch("https://cyf-react.glitch.me/delayed")
       //fetch("https://cyf-react.glitch.me/error")
       .then(response => response.json())
@@ -45,7 +45,7 @@ const Bookings = () => {
   };
 
   const addCustomer = customer => {
-    fetch("https://nawal-hotel-server.herokuapp.com/bookings", {
+    fetch("https://nawal-hotel-server.glitch.me/bookings", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
