@@ -9,7 +9,7 @@ const TouristInfoCards = () => {
         return (
           <div className="card" key={cityInfo.id}>
             <h2>{cityInfo.cityName}</h2>
-            <img src={cityInfo.imageUrl} className="card-img-top" />
+            <img src={cityInfo.imageUrl} alt="" className="card-img-top" />
             <div className="card-body">
               <p>{cityInfo.summary}</p>
               <a href={cityInfo.site} className="btn btn-primary">

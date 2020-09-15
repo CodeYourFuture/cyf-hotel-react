@@ -1,32 +1,59 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
-//import FakeBookings from "./data/fakeBookings.json";
-import SearchResults from "./SearchResults";
+import SearchResults from "./SearchResults.js";
+import FakeBookings from "./data/fakeBookings.json";
+import NewBooking from "./NewBooking";
 
 const Bookings = () => {
-  const [Bookings, setBookings] = useState([]);
-
+  const [bookings, setBookings] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    let filteredBooking = bookings.filter(
+      booking =>
+        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+    );
+    setBookings(filteredBooking);
+  };
+
+  const addNewBooking = newBooking => {
+    const id = bookings.length + 1;
+    setBookings([...bookings, { id, ...newBooking }]);
   };
 
   useEffect(() => {
+    setBookings("");
     fetch("https://cyf-react.glitch.me")
+      // fetch("https://cyf-react.glitch.me/delayed")
+      // fetch("https://cyf-react.glitch.me/error")
       .then(res => res.json())
-      .then(data => setBookings(data));
+      .then(data => {
+        if (data.error) {
+          throw data;
+        }
+        setBookings(data);
+        setLoading(false);
+      })
+      .catch(error => setErrorMessage(error));
+    console.log("500 HTTP error");
   }, []);
-
-  if (Bookings !== null) {
+  if (loading && !errorMessage) {
+    return <p>Loading...</p>;
+  }
+  if (errorMessage == null) {
     return (
       <div className="App-content">
         <div className="container">
           <Search search={search} />
-          <SearchResults results={Bookings} />
+          <SearchResults results={bookings} />
+          <NewBooking getNewBooking={addNewBooking} />
         </div>
       </div>
     );
   } else {
-    return <p>Please wait ...</p>;
+    return <div>{errorMessage.error}</div>;
   }
 };
 
