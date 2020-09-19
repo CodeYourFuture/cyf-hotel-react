@@ -55,3 +55,8 @@ tr {
 .card {
   width: 18rem;
 }
+
+img {
+  width: 50px;
+  height: 50px;
+}
