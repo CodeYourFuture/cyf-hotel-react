@@ -9,7 +9,7 @@ export default function TouristInfoCards() {
             <img
               className="card-img-top"
               src="https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/United%20Kingdom/London/london-aerial-thames-guide-xlarge.jpg"
-              alt="Card image cap"
+              alt="Card  cap"
             />
             <div className="card-body">
               <h5 className="card-title">Explore London</h5>
@@ -28,7 +28,7 @@ export default function TouristInfoCards() {
             <img
               className="card-img-top"
               src="https://ilovemanchester.com/wp-content/uploads/2019/10/manchester-cityscape-696x407.jpg"
-              alt="Card image cap"
+              alt="Card  cap"
             />
             <div className="card-body">
               <h5 className="card-title">Explore Manchester</h5>
@@ -47,7 +47,7 @@ export default function TouristInfoCards() {
             <img
               className="card-img-top"
               src="https://www.telegraph.co.uk/content/dam/Travel/Cruise/June-2020/glasgow-scotland-city-skyline-getty.jpg?imwidth=450"
-              alt="Card image cap"
+              alt="Card  cap"
             />
             <div className="card-body">
               <h5 className="card-title">Explore Glasgow</h5>
