@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
+import FakeBookings from "./data/fakeBookings.json";
 
 const SearchResults = () => {
   return (
-    <table class="table table-striped">
+    <table className="table table-striped">
       <TableHead />
-      <TableBody />
+      <TableBody results={FakeBookings} />
     </table>
   );
 };
@@ -26,38 +27,24 @@ const TableHead = () => {
   );
 };
 
-const TableBody = () => {
+const TableBody = props => {
   return (
     <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mr</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <th>@mdo</th>
-        <td>1021</td>
-        <td>21/02/20</td>
-        <td>21/02/20</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Mr</td>
-        <td>Jacob</td>
-        <td>Wilson-Sey</td>
-        <th>@mdoom</th>
-        <td>1024</td>
-        <td>21/02/20</td>
-        <td>21/02/20</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Mr</td>
-        <td>Oswald</td>
-        <td>Barking</td>
-        <th>@thty</th>
-        <td>1035</td>
-        <td>23/02/20</td>
-        <td>28/02/20</td>
+        {props.results.map(booking => (
+          <Fragment>
+            <th scope="row" key={booking.id}>
+              {booking.id}
+            </th>
+            <td key={booking.title}>{booking.title}</td>
+            <td key={booking.firstName}>{booking.firstName}</td>
+            <td key={booking.surname}>{booking.surname}</td>
+            <th key={booking.email}>{booking.email}</th>
+            <td key={booking.roomId}>{booking.roomId}</td>
+            <td key={booking.checkInDate}>{booking.checkInDate}</td>
+            <td key={booking.checkOutDate}>{booking.checkOutDate}</td>
+          </Fragment>
+        ))}
       </tr>
     </tbody>
   );
