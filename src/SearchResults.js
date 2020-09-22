@@ -1,31 +1,31 @@
 import React from "react";
 
-export default function SearchResults() {
+export default function SearchResults(props) {
   return (
     <div>
       <table className="table table-striped">
         <thead className="thead-dark">
           <tr>
-            <th scope="col">id</th>
+            <th scope="col">#</th>
             <th scope="col">Title</th>
-            <th scope="col">First Name </th>
+            <th scope="col">First Name</th>
             <th scope="col">Surname</th>
-            <th scope="col">Email</th>
-            <th scope="col">Room Number</th>
-            <th scope="col">Check in Date</th>
+            <th scope="col">E Mail</th>
+            <th scope="col">Room Id</th>
+            <th scope="col">Check In Date</th>
             <th scope="col">Check Out Date</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Mr</td>
-            <td>David</td>
-            <td>Larry</td>
-            <td>davidlarry@gmail.com</td>
-            <td>216</td>
-            <td>21/09/2020</td>
-            <td>23/09/2020</td>
+            <td>props.title</td>
+            <td>props.firstName</td>
+            <td>props.surname</td>
+            <td>props.email</td>
+            <td>props.roomId</td>
+            <td>props.checkInDate</td>
+            <td>props.checkOutDate</td>
           </tr>
 
           <tr>
