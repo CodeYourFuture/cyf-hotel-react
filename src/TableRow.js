@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const TableRow = ({
   booking: {
@@ -21,8 +22,16 @@ const TableRow = ({
       <td>{roomId}</td>
       <td>{checkInDate}</td>
       <td>{checkOutDate}</td>
+      <td>{calcNumberOfNights(checkInDate, checkOutDate)}</td>
     </tr>
   );
+};
+
+const calcNumberOfNights = (checkInDate, checkOutDate) => {
+  const checkIn = moment(checkInDate);
+  const checkOut = moment(checkOutDate);
+
+  return checkOut.diff(checkIn, "days");
 };
 
 export default TableRow;
