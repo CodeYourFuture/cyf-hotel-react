@@ -14,13 +14,13 @@ const TableRow = ({
 }) => {
   return (
     <tr key={id}>
-      <td scope="row">{title}</td>
-      <td scope="row">{firstName}</td>
-      <td scope="row">{surname}</td>
-      <td scope="row">{email}</td>
-      <td scope="row">{roomId}</td>
-      <td scope="row">{checkInDate}</td>
-      <td scope="row">{checkOutDate}</td>
+      <td>{title}</td>
+      <td>{firstName}</td>
+      <td>{surname}</td>
+      <td>{email}</td>
+      <td>{roomId}</td>
+      <td>{checkInDate}</td>
+      <td>{checkOutDate}</td>
     </tr>
   );
 };
