@@ -10,12 +10,13 @@
 .App-header {
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 5px 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
 }
 
 .App-title {
@@ -51,7 +52,21 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
+.footer-list {
+  list-style-type: none;
+}
 
 .card {
   width: 18rem;
+}
+
+.cards-section {
+  margin: 5rem auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
 }
