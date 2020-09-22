@@ -2,10 +2,12 @@ import React from "react";
 
 const Footer = ({ info }) => {
   return (
-    <footer>
-      <ul>
+    <footer className="footer text-muted">
+      <ul className="footer-list container d-md-flex justify-content-between mx-auto">
         {info.map((infoItem, index) => (
-          <li key={index}>{infoItem}</li>
+          <li key={index} className="text-right">
+            {infoItem}
+          </li>
         ))}
       </ul>
     </footer>

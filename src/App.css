@@ -27,8 +27,8 @@
 }
 
 .App-content {
-  padding-top: 20px;
   font-size: large;
+  padding: 3rem 0;
 }
 
 @keyframes App-logo-spin {
@@ -54,10 +54,16 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
-  text-align: center;
+  padding: 3rem 0;
+  background-color: #222;
+  /* color: #fff; */
 }
 
 .card {
   width: 18rem;
+}
+
+.footer-list {
+  margin: 0;
+  list-style: none;
 }
