@@ -9,11 +9,14 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
 
+  let BookingData = require("./data/fakeBookings.json");
+  // console.log(typeof BookingData);
+
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults />
+        <SearchResults BookingData={BookingData} />
       </div>
     </div>
   );

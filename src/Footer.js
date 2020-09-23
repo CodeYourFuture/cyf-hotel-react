@@ -1,7 +1,7 @@
 import React from "react";
 
 function Footer(props) {
-  console.log(props.footer); //props.footer is the array here.
+  //props.footer is the array here.
   return (
     <ul>
       <li className="address">{"Address: " + props.footer[0]}</li>
