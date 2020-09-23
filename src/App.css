@@ -55,3 +55,27 @@ tr {
 .card {
   width: 18rem;
 }
+
+.logoPic {
+  width: 30px;
+  height: 20px;
+}
+.threeCards {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  padding-top: 10px;
+}
+li {
+  list-style: none;
+  background-color: #222;
+  color: antiquewhite;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+}
