@@ -1,5 +1,5 @@
 import React from "react";
-import SearchButton from "./SearchButton";
+import SearchButton from "/home/cyf/Desktop/react/cyf-hotel-react/src/SearchButton.js";
 const Search = () => {
   return (
     <div className="search">
