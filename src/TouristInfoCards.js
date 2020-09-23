@@ -15,11 +15,7 @@ function TouristInfoCards() {
             populous city in the United Kingdom, as of the 2019 estimated city
             population of 611,748.
           </p>
-          <a
-            href="https://peoplemakeglasgow.com/"
-            target="_blank"
-            className="btn btn-primary"
-          >
+          <a href="https://peoplemakeglasgow.com/" className="btn btn-primary">
             Go Glasgow
           </a>
         </div>
@@ -35,11 +31,7 @@ function TouristInfoCards() {
             population of 2.5 million[8] and third-most populous metropolitan
             area, a population of 3.3 million.
           </p>
-          <a
-            href="https://visitmanchester.com"
-            target="_blank"
-            className="btn btn-primary"
-          >
+          <a href="https://visitmanchester.com" className="btn btn-primary">
             Go Manchester
           </a>
         </div>
@@ -54,11 +46,7 @@ function TouristInfoCards() {
             England, at the head of its 50-mile (80 km) estuary leading to the
             North Sea. London has been a major settlement for two millennia.
           </p>
-          <a
-            href="https://visitlondon.com"
-            target="_blank"
-            className="btn btn-primary"
-          >
+          <a href="https://visitlondon.com" className="btn btn-primary">
             Go London
           </a>
         </div>
