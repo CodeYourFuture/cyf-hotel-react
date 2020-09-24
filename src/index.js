@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "/home/cyf/Desktop/react/cyf-hotel-react/src/index.css";
-import App from "/home/cyf/Desktop/react/cyf-hotel-react/src/App.js";
+import "./index.css";
+import App from "./App";
 ReactDOM.render(<App />, document.getElementById("root"));

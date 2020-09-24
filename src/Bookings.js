@@ -1,7 +1,7 @@
 import React from "react";
-import Search from "/home/cyf/Desktop/react/cyf-hotel-react/src/Search.js";
+import Search from "./Search.js";
 //import SearchButton from "./SearchButton.js";
-import SearchResults from "/home/cyf/Desktop/react/cyf-hotel-react/src/SearchResults.js";
+import SearchResults from "./SearchResults.js";
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 

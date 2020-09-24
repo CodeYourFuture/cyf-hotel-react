@@ -1,5 +1,5 @@
 import React from "react";
-import fakeBookings from "/home/cyf/Desktop/react/cyf-hotel-react/src/data/fakeBookings.json";
+import fakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
 const cssStyleTr = {
   color: "rgb(0,0,0)",
