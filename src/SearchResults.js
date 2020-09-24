@@ -29,10 +29,10 @@ const TableHead = () => {
 
 const TableBody = props => {
   return (
-    <tbody>
-      <tr>
+    <Fragment>
+      <tbody>
         {props.results.map(booking => (
-          <Fragment>
+          <tr>
             <th scope="row" key={booking.id}>
               {booking.id}
             </th>
@@ -43,10 +43,10 @@ const TableBody = props => {
             <td key={booking.roomId}>{booking.roomId}</td>
             <td key={booking.checkInDate}>{booking.checkInDate}</td>
             <td key={booking.checkOutDate}>{booking.checkOutDate}</td>
-          </Fragment>
+          </tr>
         ))}
-      </tr>
-    </tbody>
+      </tbody>
+    </Fragment>
   );
 };
 

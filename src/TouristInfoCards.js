@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 const TouristInfoCards = () => {
   return (
     <Fragment>
-      <div className="App-container">
+      <div className="card-group">
         <div className="card">
           <img
             src="https://peoplemakeglasgow.com/images/Things_to_do/Top_attractions/Main-image-995.JPG"
