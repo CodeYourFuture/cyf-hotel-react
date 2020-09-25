@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import moment from "moment";
 //import "./Bookings.css";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
@@ -17,7 +18,7 @@ const Bookings = () => {
     checkInDate: "",
     checkOutDate: ""
   });
-
+  console.log(newBooking);
   useEffect(() => {
     fetch("https://nawal-hotel-server.glitch.me/bookings")
       //    fetch("https://cyf-react.glitch.me/delayed")
@@ -35,14 +36,59 @@ const Bookings = () => {
     console.log("500 HTTP error");
   }, []);
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
-    let filteredBooking = bookings.filter(
-      booking =>
-        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
-        booking.surname.toLowerCase().includes(searchVal.toLowerCase())
-    );
-    setBookings(filteredBooking);
+    // console.info("TO DO!", searchVal);
+    // let filteredBooking = bookings.filter(
+    //   booking =>
+    //     booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+    //     booking.surname.toLowerCase().includes(searchVal.toLowerCase()) ||
+    //     booking.email.toLowerCase().includes(searchVal.toLowerCase()) ||
+    //     booking.checkInDate.toLowerCase().includes(searchVal.toLowerCase())
+    // );
+    let getResource;
+    const term = searchVal.toLowerCase();
+    if (searchVal) {
+      getResource = fetch(
+        `https://nawal-hotel-server.glitch.me/bookings/search?term=${term}`
+      );
+    }
+
+    if (moment(term, "YYYY-MM-DD", true).isValid()) {
+      getResource = fetch(
+        `https://nawal-hotel-server.glitch.me/bookings/search?date=${term}`
+      );
+    }
+
+    return getResource
+      .then(response => response.json())
+      .then(data => {
+        setBookings(data);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
   };
+
+  /*
+  body: JSON.stringify({
+        firstName: newBooking.firstName,
+        surname: newBooking.surname,
+        email: newBooking.email,
+        roomId: newBooking.roomId,
+        checkInDate: newBooking.checkInDate,
+        checkOutDate: newBooking.checkOutDate
+      })
+  */
+
+  // const schema = yup.object.shape({
+  //   firstName: yup.string().required('firstname is not valid'),
+  //   surname:  yup.string().required(),
+  //   email: yup.string().email(),
+  //   roomId: yup.number(),
+  //   checkInDate: yup.string().test('is-valid-check-in-date', 'check in date is not valid', checkValidStateDate),
+  //   checkOutDate: yup.string().test('is-valid-check-in-date', '', checkValidEndDate),
+  // })
+
+  // schema.validate(bookings)
 
   const addCustomer = customer => {
     fetch("https://nawal-hotel-server.glitch.me/bookings", {

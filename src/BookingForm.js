@@ -13,6 +13,7 @@ const BookingForm = ({ addCustomer, newBooking, setNewBooking }) => {
 
   const onSubmitHandle = e => {
     e.preventDefault();
+
     handleChange(e, addCustomer(newBooking));
   };
 
