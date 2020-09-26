@@ -5,16 +5,18 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  margin: 0.5rem 3rem 0.5rem 1rem;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  /* height: 50px;  */
+  margin-right: 20px;
+  padding: 0.8rem;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 5em;
   font-weight: bold;
 }
 
@@ -50,8 +52,31 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: black;
+  color: white;
+  margin-top: 2rem;
+  padding: 1rem;
 }
 
-.card {
-  width: 18rem;
+#contact-details {
+  list-style: none;
+}
+
+#cards-container {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 2rem auto;
+}
+
+.card-img-top {
+  width: 300px;
+}
+
+.info-card {
+  border: 1px solid #bbb;
+}
+
+img {
+  padding: 10px;
 }
