@@ -7,11 +7,13 @@ const Footer = () => {
     "0123 456789"
   ];
   return (
-    <ul>
-      {address.map(add => (
-        <li>{add}</li>
-      ))}
-    </ul>
+    <div className="footer">
+      <ul>
+        {address.map(add => (
+          <li>{add}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
