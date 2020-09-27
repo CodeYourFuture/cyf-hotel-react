@@ -1,5 +1,6 @@
 import React from "react";
-import Moment from "moment";
+
+import SearchResultsLine from "./SearchResultsLine";
 
 const SearchResults = ({ results }) => (
   <table className="table">
@@ -17,33 +18,9 @@ const SearchResults = ({ results }) => (
       </tr>
     </thead>
     <tbody>
-      {results.map(
-        (
-          {
-            id,
-            title,
-            firstName,
-            surname,
-            email,
-            roomId,
-            checkInDate,
-            checkOutDate
-          },
-          ind
-        ) => (
-          <tr key={ind}>
-            <th scope="row">{id}</th>
-            <td>{title}</td>
-            <td>{firstName}</td>
-            <td>{surname}</td>
-            <td>{email}</td>
-            <td>{roomId}</td>
-            <td>{checkInDate}</td>
-            <td>{checkOutDate}</td>
-            <td>{Moment(checkOutDate).diff(Moment(checkInDate), "days")}</td>
-          </tr>
-        )
-      )}
+      {results.map((item, ind) => (
+        <SearchResultsLine item={item} ind={ind} />
+      ))}
     </tbody>
   </table>
 );

@@ -62,3 +62,7 @@ tr {
 .card {
   width: 18rem;
 }
+
+.selected {
+  background-color: cornflowerblue;
+}

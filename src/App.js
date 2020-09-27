@@ -6,6 +6,7 @@ import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import TouristCards from "./data/TouristCards.json";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards cards={TouristCards} />
       <Bookings />
+      <Restaurant />
       <Footer
         info={[
           "123 Fake Street, London, E1 4UD",
