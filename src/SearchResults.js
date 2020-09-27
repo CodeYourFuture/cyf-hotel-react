@@ -7,7 +7,6 @@ import moment from "moment";
 // import '../dist/react-bootstrap-table-all.min.css'
 
 const SearchResults = ({ results }) => {
-  // let NumberOfNights =
   return (
     <table class="table">
       <thead>
