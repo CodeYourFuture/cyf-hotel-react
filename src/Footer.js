@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer(props) {
   return (
-    <div>
-      <ul>
+    <div className="footer">
+      <ul className="list-group">
         {props.props.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
