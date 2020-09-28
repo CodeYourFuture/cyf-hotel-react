@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 import "./App.css";
 
 const App = () => {
+  const [orders, setOrders] = useState(0);
+
+  const orderOne = () => {
+    setOrders(orders + 1);
+  };
+
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant orderOne={orderOne} orders={orders} />
+
       <Footer
         myArr={[
           "123 Fake Street, London, E1 4UD",
