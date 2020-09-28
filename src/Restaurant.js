@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Order from "./Order";
 //
 
@@ -7,7 +7,9 @@ const Restaurant = () => {
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        <Order />
+        <Order orderType={"Pizzas"} />
+        <Order orderType={"Salad"} />
+        <Order orderType={"ChocolateCake"} />
       </ul>
     </div>
   );

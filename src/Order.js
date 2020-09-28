@@ -3,7 +3,7 @@ import RestaurantButton from "./RestaurantButton";
 
 import { useState } from "react";
 
-export default function Order() {
+export default function Order({ orderType }) {
   const [orders, setOrders] = useState(0);
 
   const orderOne = () => {
@@ -12,7 +12,7 @@ export default function Order() {
   return (
     <div>
       <li>
-        Pizzas: {orders} <RestaurantButton orderOne={orderOne} />
+        {orderType}: {orders} <RestaurantButton orderOne={orderOne} />
       </li>
     </div>
   );
