@@ -1,6 +1,7 @@
-import React from "react";
-import FakeBookings from "./FakeBookings";
-import moment from "moment";
+import React, { useState } from "react";
+// import FakeBookings from "./FakeBookings";
+
+import SearchLine from "./SearchLine";
 // import {BootstrapTable, TableHeaderColumn} from
 //        'react-bootstrap-table'
 // import '../css/Table.css'
@@ -23,19 +24,7 @@ const SearchResults = ({ results }) => {
       </thead>
       <tbody>
         {results.map(item => (
-          <tr>
-            {/* <th scope="row">1</th> */}
-            <td>{item.title}</td>
-            <td>{item.firstName}</td>
-            <td>{item.surname}</td>
-            <td>{item.email}</td>
-            <td>{item.roomId}</td>
-            <td>{item.checkInDate}</td>
-            <td>{item.checkOutDate}</td>
-            <td>
-              {moment(item.checkOutDate).diff(moment(item.checkInDate), "days")}
-            </td>
-          </tr>
+          <SearchLine item={item} />
         ))}
       </tbody>
     </table>

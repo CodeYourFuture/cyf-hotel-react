@@ -1,6 +1,6 @@
 import React from "react";
 import SearchButton from "./SearchButton.js";
-import Heading from "./Heading";
+
 const Search = () => {
   return (
     <div className="search">
