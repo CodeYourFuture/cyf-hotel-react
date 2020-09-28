@@ -13,7 +13,7 @@ const TouristInfoCards = () => {
     {
       Title: "Manchester",
       Image:
-        "https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2016/05/manchester-hero.jpg",
+        "https://www.jcaseminars.com/wp-content/uploads/2020/04/manchester-hero.jpg",
       Address: "https://www.visitmanchester.com/",
       Description:
         "Manchester city centre is jam-packed with unique and eclectic restaurants,bars,museums,hotels and places to stay whilst the surrounding Greater Manchester boroughs offer a patch-work of visitor experiences including quaint market towns,beautiful green spaces and ..."
