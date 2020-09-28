@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const TableRow = ({
@@ -13,8 +13,18 @@ const TableRow = ({
     checkOutDate
   }
 }) => {
+  const [selected, setSelected] = useState(false);
+
+  const toggleHighlight = () => {
+    setSelected(!selected);
+  };
+
   return (
-    <tr key={id}>
+    <tr
+      className={selected ? "table-active" : ""}
+      key={id}
+      onClick={toggleHighlight}
+    >
       <td>{title}</td>
       <td>{firstName}</td>
       <td>{surname}</td>
