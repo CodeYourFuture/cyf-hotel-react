@@ -6,6 +6,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 
 import "./App.css";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer
         footInfo={[
           "123 Fake Street, London, E1 4UD",
