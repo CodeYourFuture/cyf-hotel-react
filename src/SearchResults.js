@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import FakeBookings from "./data/fakeBookings.json";
+import moment from "moment";
 
 const SearchResults = () => {
   return (
@@ -22,16 +23,17 @@ const TableHead = () => {
         <th scope="col">Room Id</th>
         <th scope="col">Check In Date</th>
         <th scope="col">Check Out Date</th>
+        <th scope="col">No of Nights Stayed</th>
       </tr>
     </thead>
   );
 };
 
-const TableBody = props => {
+const TableBody = ({ results }) => {
   return (
     <Fragment>
       <tbody>
-        {props.results.map(booking => (
+        {results.map(booking => (
           <tr>
             <th scope="row" key={booking.id}>
               {booking.id}
@@ -43,6 +45,12 @@ const TableBody = props => {
             <td key={booking.roomId}>{booking.roomId}</td>
             <td key={booking.checkInDate}>{booking.checkInDate}</td>
             <td key={booking.checkOutDate}>{booking.checkOutDate}</td>
+            <td>
+              {moment(booking.checkOutDate).diff(
+                moment(booking.checkInDate),
+                "days"
+              )}
+            </td>
           </tr>
         ))}
       </tbody>
