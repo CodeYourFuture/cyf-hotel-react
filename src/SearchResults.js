@@ -5,7 +5,7 @@ import TableHead from "./TableHead";
 const SearchResults = ({ bookingsList }) => {
   return (
     <div>
-      <table className="table">
+      <table className="table table-hover">
         <TableHead bookingsList={bookingsList} />
         <TableBody bookingsList={bookingsList} />
       </table>

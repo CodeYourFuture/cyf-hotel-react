@@ -70,3 +70,11 @@ tr {
   height: 200px;
   object-fit: cover;
 }
+.red-bg {
+  background-color: rgba(54, 241, 126, 0.466);
+}
+tr {
+  cursor: pointer;
+}
+
+/*RESTAURANT SECTION*/

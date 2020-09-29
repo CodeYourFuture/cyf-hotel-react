@@ -4,7 +4,7 @@ const TableHead = ({ bookingsList }) => {
   const ColumnTitles = Object.keys(bookingsList[0]);
 
   return (
-    <thead className="thead-dark">
+    <thead className="table-danger">
       <tr>
         {ColumnTitles.map((title, index) => (
           <th key={index}>{title}</th>

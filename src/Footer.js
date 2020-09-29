@@ -1,10 +1,16 @@
 import React from "react";
 
-const Footer = props => {
+const info = [
+  "123 Fake Street, London, E1 4UD",
+  "hello@fakehotel.com",
+  "0123 456789"
+];
+
+const Footer = () => {
   return (
-    <div className="footer">
+    <div className="container-fluid bg-secondary py-5 text-center text-light">
       <ul className="footer-list">
-        {props.info.map((item, index) => (
+        {info.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ul>

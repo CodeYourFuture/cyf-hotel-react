@@ -5,7 +5,7 @@ const TouristInfoCard = props => {
     <div className="card">
       <img src={props.imgURL} className="card-img-top" alt="city" />
       <div className="card-body">
-        <a href={props.URL} className="btn btn-primary">
+        <a href={props.URL} className="btn btn-danger">
           Go somewhere
         </a>
       </div>

@@ -6,6 +6,7 @@ import Header from "./Header";
 
 import Footer from "./Footer";
 import CardsSection from "./CardsSection";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -13,13 +14,8 @@ const App = () => {
       <Header />
       <CardsSection />
       <Bookings />
-      <Footer
-        info={[
-          "123 Fake Street, London, E1 4UD",
-          "hello@fakehotel.com",
-          "0123 456789"
-        ]}
-      />
+      <Restaurant />
+      <Footer />
     </div>
   );
 };
