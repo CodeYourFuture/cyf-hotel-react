@@ -1,5 +1,5 @@
 import React from "react";
-
+import Restaurant from "./Restaurant";
 import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
@@ -11,7 +11,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-
+      <Restaurant />
       <Footer
         props={[
           "123 Fake Street, London, E1 4UD",
