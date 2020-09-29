@@ -52,6 +52,10 @@ tr {
   text-align: center;
 }
 
+.footer ul {
+  list-style-type: none;
+}
+
 .card {
   width: 18rem;
 }
