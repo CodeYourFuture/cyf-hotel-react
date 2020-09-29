@@ -58,3 +58,9 @@ tr {
 .card {
   width: 18rem;
 }
+.unHighlight {
+  background-color: transparent;
+}
+.setHighlight {
+  background-color: yellow;
+}
