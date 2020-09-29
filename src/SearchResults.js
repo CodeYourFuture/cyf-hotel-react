@@ -1,5 +1,5 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
 const HotelBookings = [
   `Id`,
@@ -12,6 +12,14 @@ const HotelBookings = [
   `Check out date`
 ];
 const SearchResults = props => {
+  const [color, setColor] = useState("");
+
+  const highlight = () => {
+    if (color === "") {
+      setColor("red");
+    } else setColor("");
+  };
+
   return (
     <div class="BookingTable">
       <table>
@@ -21,12 +29,17 @@ const SearchResults = props => {
           })}
           <th>Nights</th>
         </tr>
-        {props.fakeBookings.map(item => {
-          let dOut = moment(item.checkOutDate);
-          let dIn = moment(item.checkInDate);
+        {props.fakeBookings.map((item, index) => {
+          let dOut = moment(item.checkOutDate); // dOut = date out
+          let dIn = moment(item.checkInDate); // dIn = date in
           let Nights = dOut.diff(dIn, "days");
           return (
-            <tr>
+            <tr
+              id={index}
+              style={{ backgroundColor: color }}
+              onClick={highlight}
+            >
+              {console.log(index)}
               <td> {item.id} </td>
               <td> {item.title} </td>
               <td> {item.firstName} </td>
