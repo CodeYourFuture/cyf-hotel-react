@@ -10,7 +10,9 @@ const Restaurant = () => {
   return (
     <div>
       <ul>
-        <Order />
+        <Order orderType="Pizza" />
+        <Order orderType="Salads" />
+        <Order orderType="Chocolate cake" />
       </ul>
     </div>
   );
