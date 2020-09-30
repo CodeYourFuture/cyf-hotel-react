@@ -5,7 +5,11 @@ import TouristInfoCards from "./TouristInfoCards";
 import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 import "./App.css";
-
+const address = [
+  "123 Fake Street, London, E1 4UD",
+  "hello@fakehotel.com",
+  "0123 456789"
+];
 const App = () => {
   return (
     <div className="App">
@@ -13,7 +17,7 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <Footer />
+      <Footer add={address} />
     </div>
   );
 };

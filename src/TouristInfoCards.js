@@ -1,13 +1,14 @@
 import React from "react";
-// const cssStyle={
-//     width:"20px",
-//     height:"20px",
-//     color:'rgb(255,0,0)'
 
-// }
 function TouristInfoCards() {
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        height: "13rem"
+      }}
+    >
       {/* ......london */}
       <div className="card">
         <img

@@ -1,51 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
 import fakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
-const cssStyleTr = {
-  color: "rgb(0,0,0)",
-  fontSize: "14px"
-  // backgroundColor:'rgb(255,0,0)'
-};
 
 //{fakeBookings[1].id}
 //alert(moment(moment(fakeBookings[0].check)).diff(moment(),'days))
-function SearchResults() {
+const SearchResults = prop => {
+  // console.log(prop.people)
+  //alert(prop.people.title)
+  let cssStyleTr = {};
+  let [state, setState] = useState(0);
+  function select() {
+    if (state === 1) {
+      //selectRow. backgroundColor='rgb(255,0,0)'
+      setState(0);
+      alert(state);
+    }
+    if (state === 0) {
+      setState(1);
+      alert(state);
+    }
+  }
+
+  if (state === 1) {
+  }
   return (
-    <div>
-      <table>
-        <tr style={cssStyleTr}>
-          <th style={{ width: "20px" }}>Title</th>
-          <th style={{ width: "80px" }}>First Name</th>
-          <th style={{ width: "80px" }}>SurNAme</th>
-          <th style={{ width: "100px" }}>Email</th>
-          <th style={{ width: "20px" }}>RoomID</th>
-          <th style={{ width: "150px" }}>Check in Date</th>
-          <th style={{ width: "150px" }}>Check out Date</th>
-          <th style={{ width: "400px" }}>stay</th>
-        </tr>
-        {fakeBookings.map(function(obj) {
-          return (
-            <tr style={cssStyleTr}>
-              <td>{obj.id}</td>
-              <td>{obj.title}</td>
-              <td>{obj.surname}</td>
-              <td>{obj.email}</td>
-              <td>{obj.roomId}</td>
-              <td>{obj.checkInDate}</td>
-              <td>{obj.checkOutDate}</td>
-              <td>
-                Mr {obj.firstName} has a booking for{" "}
-                {moment(moment(obj.checkOutDate, "YYYY-MM-DD")).diff(
-                  moment(obj.checkInDate, "YYYY-MM-DD"),
-                  "days"
-                )}{" "}
-                nights
-              </td>
-            </tr>
-          );
-        })}
+    <div class="table-responsive">
+      <table class="table table-striped table-light table-bordered table-hover table-sm">
+        <caption>List of users</caption>
+        <thead class="thead-light">
+          <th scope="col">#</th>
+          <th scop="col">Title</th>
+          <th scope="col" style={{ width: "100px" }}>
+            First Name
+          </th>
+          <th scope="col">SurNAme</th>
+          <th scope="col">Email</th>
+          <th scope="col">RoomID</th>
+          <th scope="col" style={{ width: "150px" }}>
+            Check in Date
+          </th>
+          <th scope="col" style={{ width: "150px" }}>
+            Check out Date
+          </th>
+          <th scope="col">stay</th>
+          <th scope="col">select</th>
+        </thead>
+        <tbody>
+          {fakeBookings.map(function(props) {
+            return (
+              <tr>
+                <td>{props.id}</td>
+                <td>{props.title}</td>
+                <td>{props.firstName}</td>
+                <td>{props.surname}</td>
+                <td>{props.email}</td>
+                <td>{props.roomId}</td>
+                <td>{props.checkInDate}</td>
+                <td>{props.checkOutDate}</td>
+                <td>
+                  Mr {props.firstName} has a booking for{" "}
+                  {moment(moment(props.checkOutDate, "YYYY-MM-DD")).diff(
+                    moment(props.checkInDate, "YYYY-MM-DD"),
+                    "days"
+                  )}{" "}
+                  nights
+                </td>
+                <td>
+                  <button onClick={select}>click</button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );
-}
+};
 export default SearchResults;
