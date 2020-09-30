@@ -5,6 +5,7 @@ import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <header className="App-header">CYF Hotel</header>
       <Heading />
       <Bookings />
+      <Restaurant />
       <TouristInfoCards />
       <Footer
         Contact={[
