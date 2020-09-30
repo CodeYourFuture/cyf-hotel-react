@@ -6,13 +6,19 @@ const RestaurantButton = ({ addOrder }) => (
     Add
   </button>
 );
-const Orders = () => {
+const Order = ({ orderType }) => {
   const [orders, setOrders] = useState(0);
-  // const pizzas = 0;
   const orderOne = () => {
     setOrders(orders + 1);
   };
-  return <li>Pizzas: {orders}</li>;
+  return (
+    <Fragment>
+      <li>
+        {orderType}: {orders}
+      </li>
+      <RestaurantButton addOrder={orderOne} />
+    </Fragment>
+  );
 };
 
 const Restaurant = () => {
@@ -21,8 +27,9 @@ const Restaurant = () => {
       <div className="App-content">
         <h3>Restaurant Orders</h3>
         <ul>
-          <Orders />
-          <RestaurantButton addOrder={orderOne} />
+          <Order orderType="Pizzas" />
+          <Order orderType="Salads" />
+          <Order orderType="Chocolate Cakes" />
         </ul>
       </div>
     </Fragment>
