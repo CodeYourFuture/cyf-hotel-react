@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 const RestaurantButton = ({ addOrder }) => (
@@ -12,19 +12,19 @@ const Order = ({ orderType }) => {
     setOrders(orders + 1);
   };
   return (
-    <Fragment>
+    <div className="d-inline-flex justify-content-center">
+      <RestaurantButton addOrder={orderOne} />
       <li>
         {orderType}: {orders}
       </li>
-      <RestaurantButton addOrder={orderOne} />
-    </Fragment>
+    </div>
   );
 };
 
 const Restaurant = () => {
   return (
-    <Fragment>
-      <div className="App-content">
+    <div className="App-content">
+      <div className="container">
         <h3>Restaurant Orders</h3>
         <ul>
           <Order orderType="Pizzas" />
@@ -32,7 +32,7 @@ const Restaurant = () => {
           <Order orderType="Chocolate Cakes" />
         </ul>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
