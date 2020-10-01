@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ searchResults }) => {
+  const [selected, setSeleted] = useState("");
+  const selectLine = () => {
+    setSeleted(selected ? "" : "selected");
+  };
+
   return (
     <table className="table">
       <thead>
@@ -29,7 +34,8 @@ const SearchResults = ({ searchResults }) => {
             checkInDate,
             checkOutDate
           }) => (
-            <tr>
+            //<tr onClick ={selectLine} style = {{backgroundColor: selected}}>
+            <tr onClick={selectLine} className={selected}>
               <th scope="row">{id}</th>
               <td>{title}</td>
               <td>{firstName}</td>

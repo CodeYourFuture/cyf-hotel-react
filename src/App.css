@@ -59,6 +59,9 @@ tr {
   display: flex;
   justify-content: space-evenly;
 }
+.selected {
+  background-color: aquamarine;
+}
 .footerList {
   display: flex;
   justify-content: space-evenly;
