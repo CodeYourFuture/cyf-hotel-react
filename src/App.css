@@ -55,3 +55,15 @@ tr {
 .card {
   width: 18rem;
 }
+.cardContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+.selected {
+  background-color: aquamarine;
+}
+.footerList {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
