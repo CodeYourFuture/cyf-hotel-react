@@ -3,7 +3,7 @@ import React from "react";
 
 const SearchResults = ({ results }) => {
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">id</th>
@@ -19,7 +19,7 @@ const SearchResults = ({ results }) => {
       </thead>
       <tbody>
         {results.map(item => (
-          <tr>
+          <tr key={item.id}>
             <td> {item.id}</td>
             <td> {item.title}</td>
             <td> {item.firstName}</td>

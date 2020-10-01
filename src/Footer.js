@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="footer">
       <ul>
         {address.map(add => (
-          <li>{add}</li>
+          <li key={add}>{add}</li>
         ))}
       </ul>
     </div>

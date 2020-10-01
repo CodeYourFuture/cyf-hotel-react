@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState(FakeBookings);
-  const bookingFunction = () => {
-    setBookings(bookings);
-  };
+  useEffect(() => {
+    console.log("testing");
+    fetch(`https://cyf-react.glitch.me`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setBookings(data);
+      });
+  }, []);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
@@ -23,11 +30,3 @@ const Bookings = () => {
 };
 
 export default Bookings;
-
-// #### 14. Passing bookings from a state variable
-
-// **Instructions:** In the `<Bookings />` component, declare a new state `bookings` with the corresponding setter function `setBookings` to hold the `FakeBookings` data. Instead of passing `FakeBookings` directly to the `<SearchResults />` component, pass the new `bookings` state variable.
-
-// **Hint:** The new `bookings` state should be initialised with the `FakeBookings` variable.
-
-// **Test:** Check that the bookings are still rendered correctly in the page.
