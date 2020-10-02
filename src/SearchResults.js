@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import FakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
 
@@ -30,11 +30,25 @@ const TableHead = () => {
 };
 
 const TableBody = ({ results }) => {
+  const [state, setState] = useState({
+    isOn: false
+  });
+  function toggleRow() {
+    const { isOn } = state;
+    setState({ isOn: !isOn });
+    console.log("It's On");
+  }
+  const { isOn } = state;
   return (
     <Fragment>
       <tbody>
         {results.map(booking => (
-          <tr>
+          <tr
+            onClick={toggleRow}
+            style={{
+              background: isOn ? "yellow" : "none"
+            }}
+          >
             <th scope="row" key={booking.id}>
               {booking.id}
             </th>
