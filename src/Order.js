@@ -9,7 +9,7 @@ const Order = props => {
   return (
     <div>
       <li>
-        Pizzas Order(s): {orders} {props.orderType}{" "}
+        Order(s): {orders} {props.orderType}{" "}
         <RestaurantButton pizzaOrder={orderOne} />
       </li>
     </div>

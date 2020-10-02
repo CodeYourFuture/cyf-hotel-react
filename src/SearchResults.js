@@ -1,5 +1,6 @@
-import moment from "moment";
+// import moment from "moment";
 import React from "react";
+import TableExtracted from "./TableExtracted";
 
 const SearchResults = ({ results }) => {
   return (
@@ -19,19 +20,7 @@ const SearchResults = ({ results }) => {
       </thead>
       <tbody>
         {results.map(item => (
-          <tr key={item.id}>
-            <td> {item.id}</td>
-            <td> {item.title}</td>
-            <td> {item.firstName}</td>
-            <td> {item.surname}</td>
-            <td> {item.email}</td>
-            <td> {item.roomId}</td>
-            <td> {item.checkInDate}</td>
-            <td> {item.checkOutDate}</td>
-            <td>
-              {moment(item.checkOutDate).diff(moment(item.checkInDate), "days")}
-            </td>
-          </tr>
+          <TableExtracted item={item} />
         ))}
       </tbody>
     </table>

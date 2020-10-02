@@ -38,9 +38,14 @@
 .search {
   padding: 5px 0 20px 0;
 }
-
+/* 
 tr {
   color: #5b5757;
+} */
+
+.tableRow {
+  background-color: rgb(77, 67, 13);
+  color: white;
 }
 
 .results {
