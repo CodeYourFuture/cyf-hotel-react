@@ -4,9 +4,8 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState(FakeBookings);
   useEffect(() => {
-    console.log("this is from useEffect", FakeBookings);
     fetch("https://cyf-react.glitch.me")
       .then(response => response.json())
       .then(data => setBookings(data))

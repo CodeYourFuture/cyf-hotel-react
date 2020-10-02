@@ -31,10 +31,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -54,9 +56,14 @@ tr {
 
 .card {
   width: 18rem;
+  display: inline-block;
 }
 
 .logo {
   width: 50px;
   height: 50px;
+}
+
+.highlight {
+  background-color: aquamarine;
 }

@@ -1,7 +1,9 @@
 import React from "react";
-import moment from "moment";
+import IndividualBooking from "./IndividualBooking";
+// import IndividualBooking from "./IndividualBooking";
 
 const SearchResults = ({ data }) => {
+  console.log(data);
   return (
     <div>
       <table className="table">
@@ -19,24 +21,11 @@ const SearchResults = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map(item => {
-            const checkIn = moment(item.checkInDate);
-            const checkOut = moment(item.checkOutDate);
-            const numOfNights = checkOut.diff(checkIn, "days");
-            return (
-              <tr>
-                <th scope="row">{item.id}</th>
-                <td>{item.title}</td>
-                <td>{item.firstName}</td>
-                <td>{item.surname}</td>
-                <td>{item.email}</td>
-                <td>{item.roomId}</td>
-                <td>{item.checkInDate}</td>
-                <td>{item.checkOutDate}</td>
-                <td>{numOfNights}</td>
-              </tr>
-            );
-          })}
+          <IndividualBooking item={data[0]} />
+          <IndividualBooking item={data[1]} />
+          <IndividualBooking item={data[2]} />
+          <IndividualBooking item={data[3]} />
+          <IndividualBooking item={data[4]} />
         </tbody>
       </table>
     </div>
