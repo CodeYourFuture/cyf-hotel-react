@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
-  console.log(results[0].id);
+  const [clicked, setState] = useState(false);
+
   return (
-    <table class="table">
-      <thead class="thead-dark">
+    <table className="table">
+      <thead className="thead-dark">
         <tr>
           <th scope="col">id</th>
           <th scope="col">title</th>
@@ -19,8 +20,11 @@ const SearchResults = ({ results }) => {
         </tr>
       </thead>
       <tbody>
-        {results.map(el => (
-          <tr>
+        {results.map((el, index) => (
+          <tr
+            onClick={() => setState(true)}
+            className={clicked ? "bg-primary" : "null"}
+          >
             <th scope="row">{el.id}</th>
             <td>{el.title}</td>
             <td>{el.firstName}</td>
