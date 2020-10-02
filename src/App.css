@@ -54,3 +54,7 @@ tr {
   display: flex;
   justify-content: space-around;
 }
+
+.highlighted {
+  background-color: yellow;
+}

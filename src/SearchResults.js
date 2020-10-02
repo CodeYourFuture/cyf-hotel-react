@@ -1,6 +1,34 @@
 import React from "react";
+import { useState } from "react";
 import moment from "moment";
-//moment().format();
+
+function Person(props) {
+  let [isHighlighted, setHighlight] = useState(false);
+  let changeSelection = () => setHighlight(!isHighlighted);
+
+  return (
+    <tr
+      className={isHighlighted ? "highlighted" : ""}
+      onClick={changeSelection}
+    >
+      <th>{props.person.id}</th>
+      <th>{props.person.title}</th>
+      <th>{props.person.firstName}</th>
+      <th>{props.person.surname}</th>
+      <th>{props.person.email}</th>
+      <th>{props.person.roomId}</th>
+      <th>{props.person.checkInDate}</th>
+      <th>{props.person.checkOutDate}</th>
+      <th>
+        {moment(props.person.checkOutDate).diff(
+          props.person.checkInDate,
+          "days"
+        )}{" "}
+        days
+      </th>
+    </tr>
+  );
+}
 
 function SearchResults(props) {
   return (
@@ -19,21 +47,8 @@ function SearchResults(props) {
         </tr>
       </thead>
       <tbody>
-        {props.results.map(person => (
-          <tr scope="row">
-            <th>{person.id}</th>
-            <th>{person.title}</th>
-            <th>{person.firstName}</th>
-            <th>{person.surname}</th>
-            <th>{person.email}</th>
-            <th>{person.roomId}</th>
-            <th>{person.checkInDate}</th>
-            <th>{person.checkOutDate}</th>
-            <th>
-              {moment(person.checkOutDate).diff(person.checkInDate, "days")}{" "}
-              days
-            </th>
-          </tr>
+        {props.results.map(result => (
+          <Person person={result} />
         ))}
       </tbody>
     </table>
