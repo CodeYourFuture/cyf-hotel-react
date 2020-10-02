@@ -94,11 +94,11 @@ table th {
 table tr td {
   color: #f1ecce;
   text-align: center;
-  border: 2px solid rebeccapurple;
+  border: 2px solid #1b5299;
   border-radius: 10px;
   box-sizing: border-box;
   font-size: large;
   width: 12rem;
   height: 3rem;
-  background-color: #694d75;
+  /* background-color: #694d75; */
 }
