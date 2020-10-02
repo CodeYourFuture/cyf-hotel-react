@@ -4,12 +4,27 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchBookings = () => {
       return fetch("https://cyf-react.glitch.me")
         .then(res => res.json())
-        .then(data => setBookings(data));
+        .then(
+          data => {
+            setIsLoaded(true);
+            setBookings(data);
+          },
+          // From https://reactjs.org/docs/faq-ajax.html
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          error => {
+            setIsLoaded(true);
+            setError(error);
+          }
+        );
     };
     fetchBookings();
   }, []);
@@ -18,11 +33,19 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
 
+  let searchResults;
+  if (error) {
+    searchResults = <div>Error: {error.message}</div>;
+  } else if (!isLoaded) {
+    searchResults = <div>Loading...</div>;
+  } else {
+    searchResults = <SearchResults results={bookings} />;
+  }
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {searchResults}
       </div>
     </div>
   );
