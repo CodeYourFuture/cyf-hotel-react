@@ -16,7 +16,7 @@ const Bookings = () => {
       .then(data => {
         setBookings(data);
       });
-  });
+  }, []);
   return (
     <div className="App-content">
       <div className="container">
