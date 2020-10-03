@@ -35,8 +35,9 @@
     transform: rotate(360deg);
   }
 }
-.search {
+.Search {
   padding: 5px 0 20px 0;
+  width: 400px;
 }
 
 tr {
@@ -52,6 +53,17 @@ tr {
   text-align: center;
 }
 
+ul {
+  list-style: none;
+}
+li {
+  margin: 1rem 2rem;
+}
+.Cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
 .card {
   width: 18rem;
 }
