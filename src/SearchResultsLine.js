@@ -18,6 +18,9 @@ const SearchResultsLine = ({ item, ind }) => {
       <td>
         {Moment(item.checkOutDate).diff(Moment(item.checkInDate), "days")}
       </td>
+      <td>
+        <button>Show profile</button>
+      </td>
     </tr>
   );
 };
