@@ -27,6 +27,13 @@
   font-size: large;
 }
 
+.red {
+  background-color: rgb(255, 158, 158);
+}
+
+.green {
+  background-color: rgb(144, 224, 119);
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

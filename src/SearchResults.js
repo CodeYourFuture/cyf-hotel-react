@@ -6,7 +6,7 @@ function SearchResults(props) {
   // console.log("dOWN HERE IS PROPS")
   // console.log(props.BookingData[0]);
   return (
-    <table className="table table-hover table-dark">
+    <table className="table table-dark">
       <TableHead />
       <tbody>
         <TableRow booking={props.BookingData[0]} />

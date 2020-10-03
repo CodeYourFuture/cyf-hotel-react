@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 // import SearchResults from "./SearchResults.js";
@@ -10,13 +10,14 @@ const Bookings = () => {
   };
 
   let BookingData = require("./data/fakeBookings.json");
-  // console.log(typeof BookingData);
+  // eslint-disable-next-line
+  const [Booking, setBooking] = useState(BookingData);
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults BookingData={BookingData} />
+        <SearchResults BookingData={Booking} />
       </div>
     </div>
   );
