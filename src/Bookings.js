@@ -1,26 +1,33 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import fakeBookings from "./data/fakeBookings.json";
+
 const Bookings = () => {
-  const [bookings, setBookings] = useState();
-  useEffect(() => {
-    console.log("@@@@@@@@@use effect");
-    fetch("https://cyf-react.glitch.me")
-      .then(function(obj) {
-        return obj.json();
-      })
-      .then(function(data) {
-        setBookings(data);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  });
+  const [bookings, setBookings] = useState([]);
+
+  // useEffect(() => {
+  //   console.log("@@@@@@@@@use effect");
+  //   fetch("https://cyf-react.glitch.me")
+  //     .then(function(obj) {
+  //       return obj.json();
+  //     })
+  //     .then(function(data) {
+
+  //      setBookings(booking1.concat(data));
+
+  //     // console.log("++++++++++++++++++++++"+booking1[0].title)
+  //     })
+  //     .catch(function(error) {
+  //       console.log(error);
+  //     });
+  // });
+
   return (
     <div className="App-content">
       <div className="container">
         <Search />
-        <SearchResults people={bookings} />
+        {<SearchResults people={fakeBookings} />}
       </div>
     </div>
   );

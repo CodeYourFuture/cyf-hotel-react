@@ -5,12 +5,25 @@ const Order = props => {
   function orderOne() {
     setOrder(order + 1);
   }
-
+  const cssStyle = {
+    width: "300px",
+    marginTop: "4px",
+    display: "flex",
+    //flexDirection:'row',
+    // justifyContent:'space between',
+    fontStyle: "italic",
+    fontSize: "18px"
+  };
   return (
-    <li>
-      {props.orderType}: {order}
-      <RestaurantButton order={orderOne} />
-    </li>
+    <span style={cssStyle}>
+      <li style={{ width: "150px" }}>
+        {props.orderType}: {order}
+      </li>
+
+      <li>
+        <RestaurantButton order={orderOne} />
+      </li>
+    </span>
   );
 };
 export default Order;
