@@ -134,6 +134,7 @@ const NewCustomer = ({ addCustomer }) => {
                       ? Moment(checkOut).diff(Moment(checkIn), "days")
                       : ""
                   }
+                  readOnly
                 />
               </td>
               <td>

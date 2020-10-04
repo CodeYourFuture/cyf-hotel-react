@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Moment from "moment";
 
-const SearchResultsLine = ({ item, ind, chooseProfile }) => {
+const SearchResultsLine = ({ item, chooseProfile }) => {
   const [selected, setSelected] = useState("");
   const selectLine = e =>
     !e.target.name && setSelected(selected ? "" : "selected");
@@ -9,7 +9,7 @@ const SearchResultsLine = ({ item, ind, chooseProfile }) => {
     chooseProfile(item.id);
   };
   return (
-    <tr key={ind} onClick={selectLine} className={selected}>
+    <tr onClick={selectLine} className={selected}>
       <th scope="row">{item.id}</th>
       <td>{item.title}</td>
       <td>{item.firstName}</td>

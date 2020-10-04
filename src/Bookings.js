@@ -21,7 +21,7 @@ const Bookings = () => {
         return response.json();
       })
       .then(data => {
-        console.log(data);
+        // console.log(data);
         setBookings(data);
       });
   }, []);
@@ -29,6 +29,16 @@ const Bookings = () => {
   const addCustomer = newCustomer => {
     setBookings(bookings.concat(newCustomer));
   };
+
+  // const sortBookings = () => {
+  // //   alert("Hooray!");
+  // // setBookings(bookings.filter(
+  // //   item =>
+  // //     item.firstName.toLowerCase() === "john"
+  // // ));
+  // setBookings(bookings.sort((a, b) => a.title.localeCompare(b.title)))
+  // console.log(bookings);
+  // };
 
   if (bookings.error) {
     return <div>Error: {bookings.error}</div>;
@@ -39,6 +49,7 @@ const Bookings = () => {
           <NewCustomer addCustomer={addCustomer} />
           <Search search={search} />
           <SearchResults results={bookings} />
+          {/* <button onClick={sortBookings}>Try</button> */}
         </div>
       </div>
     );

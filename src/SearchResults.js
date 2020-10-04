@@ -16,8 +16,8 @@ const SearchResults = ({ results }) => {
         <tbody>
           {results.map((item, ind) => (
             <SearchResultsLine
+              key={ind}
               item={item}
-              ind={ind}
               chooseProfile={chooseProfile}
             />
           ))}
