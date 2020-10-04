@@ -55,7 +55,7 @@ const NewCustomer = ({ addCustomer }) => {
               <td>
                 <input
                   name="id"
-                  type="number"
+                  type="text"
                   className="addId"
                   value={id}
                   onChange={e => setId(e.target.value)}
@@ -100,7 +100,7 @@ const NewCustomer = ({ addCustomer }) => {
               <td>
                 <input
                   name="roomId"
-                  type="number"
+                  type="text"
                   className="addRoomId"
                   value={roomId}
                   onChange={e => setRoomId(e.target.value)}
@@ -139,7 +139,6 @@ const NewCustomer = ({ addCustomer }) => {
               <td>
                 <SearchButton btnName="Submit" />{" "}
               </td>
-              {/* <td> <input type="submit" value="Submit" className="btn btn-primary"/></td> */}
             </tr>
           </tbody>
         </table>
