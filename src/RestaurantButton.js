@@ -1,10 +1,12 @@
 import React from "react";
 
-const RestaurantButton = ({ addPizza }) => {
+const RestaurantButton = ({ on }) => {
   return (
-    <button onClick={addPizza} className="btn btn-primary">
-      Add
-    </button>
+    <div>
+      <button onClick={on} className="btn btn-primary">
+        Add
+      </button>
+    </div>
   );
 };
 

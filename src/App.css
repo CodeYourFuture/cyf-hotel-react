@@ -79,3 +79,11 @@ li {
   display: flex;
   justify-content: center;
 }
+
+.tr {
+  background-color: lightgrey;
+}
+
+.tr-none {
+  background-color: none;
+}

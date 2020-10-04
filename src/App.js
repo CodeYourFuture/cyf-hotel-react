@@ -7,18 +7,12 @@ import Restaurant from "./Restaurant";
 import "./App.css";
 
 const App = () => {
-  const [orders, setOrders] = useState(0);
-
-  const orderOne = () => {
-    setOrders(orders + 1);
-  };
-
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <Restaurant orderOne={orderOne} orders={orders} />
+      <Restaurant />
 
       <Footer
         myArr={[

@@ -1,7 +1,13 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import moment from "moment";
 
 const TableBody = ({ data }) => {
+  const [selected, setSelected] = useState(0);
+
+  const isSelected = () => {
+    setSelected(selected + 1);
+    console.log(selected);
+  };
   return (
     <Fragment>
       {data.map(e => {
@@ -12,7 +18,7 @@ const TableBody = ({ data }) => {
         let dateOut = moment(endDate);
         let numOfDays = dateOut.diff(dateIn, "days");
         return (
-          <tr>
+          <tr onClick={isSelected}>
             <th scope="row">{e.id}</th>
             <td>{e.title}</td>
             <td>{e.firstName}</td>
