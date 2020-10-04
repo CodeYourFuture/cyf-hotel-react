@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "./Search";
+// import Search from "./Search";
 import Restaurant from "./Restaurant.js";
 import TouristInfoCards from "./TouristInfoCards.js";
 import Bookings from "./Bookings";
@@ -14,7 +14,7 @@ const App = () => {
 
       <header className="App-header">CYF Hotel..</header>
       <TouristInfoCards />
-      <Search />
+
       <Bookings />
       <Restaurant />
 
