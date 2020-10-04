@@ -1,31 +1,24 @@
 import React, { useState } from "react";
-
+import Row from "./Row";
 import moment from "moment";
 
-//{fakeBookings[1].id}
-//alert(moment(moment(fakeBookings[0].check)).diff(moment(),'days))
 const SearchResults = prop => {
-  let currentId;
   let [color, changeColor] = useState("white");
   function setColor(event) {
-    //alert(event.currentTarget.id.backgroundColor)
-    // alert(event.currentTarget.style.backgroundColor)
-    currentId = document.getElementById(event.currentTarget.id);
-    //alert(currentId..style.backgroundColor)
-    if (currentId.style.backgroundColor === "white") {
-      //alert(currentId.style.backgroundColor)
-      //changeColor('blue')
-      document.getElementById(event.currentTarget.id).style.backgroundColor =
-        "#1E90FF";
-
-      //changeColor('blue')
-    } else {
-      changeColor("white");
-      //currentId.style.backgroundColor='white'
-      //changeColor('white')
-      document.getElementById(event.currentTarget.id).style.backgroundColor =
-        "white";
+    if (color === "white") {
+      changeColor("#1E90FF");
     }
+    if (color === "#1E90FF") {
+      changeColor("white");
+    }
+    // document.getElementById(event.currentTarget.id).style.backgroundColor =
+    //   "#1E90FF";
+
+    // document.getElementById(event.currentTarget.id).style.backgroundColor =
+    //   "white";
+  }
+  function click(event) {
+    alert(document.getElementById(event.target.id));
   }
 
   return (
@@ -45,34 +38,8 @@ const SearchResults = prop => {
           <th scope="col">select</th>
         </thead>
         <tbody>
-          {prop.people.map(function(props) {
-            return (
-              <tr
-                id={props.id}
-                style={{ backgroundColor: color }}
-                onClick={setColor}
-              >
-                <td>{props.id}</td>
-                <td>{props.title}</td>
-                <td>{props.firstName}</td>
-                <td>{props.surname}</td>
-                <td>{props.email}</td>
-                <td style={{ textAlign: "center" }}>{props.roomId}</td>
-                <td>{props.checkInDate}</td>
-                <td>{props.checkOutDate}</td>
-                <td>
-                  Mr {props.firstName} has a booking for{" "}
-                  {moment(moment(props.checkOutDate, "YYYY-MM-DD")).diff(
-                    moment(props.checkInDate, "YYYY-MM-DD"),
-                    "days"
-                  )}{" "}
-                  nights
-                </td>
-                <td id="d">
-                  <button>click</button>
-                </td>
-              </tr>
-            );
+          {prop.people.map(function(obj) {
+            return <Row props={obj} />;
           })}
         </tbody>
       </table>
