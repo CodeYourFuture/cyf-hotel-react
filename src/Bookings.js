@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import NewCustomer from "./NewCustomer.js";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
@@ -24,15 +25,21 @@ const Bookings = () => {
         setBookings(data);
       });
   }, []);
-  console.log();
+
+  const addCustomer = newCustomer => {
+    alert(newCustomer);
+    setBookings(bookings.concat(newCustomer));
+  };
+
   if (bookings.error) {
     return <div>Error: {bookings.error}</div>;
   } else {
     return (
       <div className="App-content">
         <div className="container">
+          <NewCustomer addCustomer={addCustomer} />
           <Search search={search} />
-          {<SearchResults results={bookings} />}
+          <SearchResults results={bookings} />
         </div>
       </div>
     );

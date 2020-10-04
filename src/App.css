@@ -66,3 +66,37 @@ tr {
 .selected {
   background-color: cornflowerblue;
 }
+
+.addId,
+.addRoomId {
+  width: 40px;
+}
+
+.addTitle {
+  width: 55px;
+}
+
+.addFirstName {
+  width: 110px;
+}
+
+.addSurname {
+  width: 120px;
+}
+
+.addEmail {
+  width: 220px;
+}
+
+.nights {
+  width: 40px;
+  margin: 0px;
+}
+
+/* .submit {
+
+} */
+.addCheckIn,
+.addCheckOut {
+  width: 160px;
+}
