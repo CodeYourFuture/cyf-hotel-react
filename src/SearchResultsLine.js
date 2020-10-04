@@ -3,7 +3,8 @@ import Moment from "moment";
 
 const SearchResultsLine = ({ item, ind, chooseProfile }) => {
   const [selected, setSelected] = useState("");
-  const selectLine = () => setSelected(selected ? "" : "selected");
+  const selectLine = e =>
+    !e.target.name && setSelected(selected ? "" : "selected");
   const showProfile = () => {
     chooseProfile(item.id);
   };
@@ -21,7 +22,7 @@ const SearchResultsLine = ({ item, ind, chooseProfile }) => {
         {Moment(item.checkOutDate).diff(Moment(item.checkInDate), "days")}
       </td>
       <td>
-        <button className="btn btn-primary" onClick={showProfile}>
+        <button name="rowBtn" className="btn btn-primary" onClick={showProfile}>
           Show profile
         </button>
       </td>
