@@ -1,57 +1,232 @@
-.App {
-  text-align: left;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.logo-hotel {
+  height: 70px;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .App-title {
   font-size: 1.5em;
 }
 
+.cards {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
 .App-content {
   padding-top: 20px;
   font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
+}
+
+.search-input {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  font-size: 16px;
 }
 
 tr {
   color: #5b5757;
 }
 
+td {
+  text-align: left;
+}
+
 .results {
   padding-top: 15px;
 }
 
+.table-head {
+  background-color: #d2d2d2;
+  font-weight: bold;
+}
+
+.selected-row {
+  background-color: lightskyblue;
+}
+
+.unselected-row {
+  background-color: lightblue;
+}
+
+.result-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .footer {
   padding-top: 20px;
+  margin-top: 50px;
   text-align: center;
 }
 
-.card {
-  width: 18rem;
+.footer-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #222;
+  height: 50px;
+  padding: 20px 0;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.restaurand-order {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.orders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  /* lg */
+  .orders {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .cards {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .form-inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    background-color: powderblue;
+  }
+}
+
+.lable {
+  text-align: center;
+  font-size: 16px;
+}
+
+.order {
+  list-style-type: none;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-list {
+  padding: 20px 0;
+}
+
+.show-profile-btn {
+  cursor: pointer;
+  border: 0.1px solid lightgray;
+  border-radius: 15px;
+  font-size: 14px;
+}
+button:focus {
+  outline: none;
+}
+
+.customer-profile {
+  list-style-type: none;
+  height: 60px;
+}
+
+.dispaly-show {
+  display: flex;
+  justify-content: space-around;
+  background-color: lightgray;
+  list-style-type: none;
+  padding: 20px;
+  color: gray;
+  border-radius: 2px;
+  height: 60px;
+}
+
+.form-inputs {
+  border-radius: 5px;
+  background-color: powderblue;
+}
+
+.submit-form {
+  margin: 15px 0;
+  padding: 5px;
+  border: 0.1px solid rgb(170, 170, 170);
+  border-radius: 5px;
+}
+
+.input {
+  border-radius: 5px;
+  border: 0.1px solid rgb(170, 170, 170);
+  padding: 5px 0;
+  margin: 3px 0;
+}
+.input:focus {
+  outline: none;
+}
+.head-column:hover {
+  cursor: pointer;
+  background-color: rgb(230, 230, 230);
+  transform: translate(3px, 3px);
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+  border-radius: 5px;
+  background-color: powderblue;
 }
