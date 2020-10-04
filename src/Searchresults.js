@@ -6,9 +6,12 @@ const SearchResults = ({ results }) => {
   const [color, setColor] = useState("");
 
   const highlight = e => {
-    if (!color) {
-      e.target.parentElement.style.backgroundColor = "yellow";
+    e.preventDefault();
+    if (color === "") {
+      e.target.parentElement.className = "highlight";
+      setColor("unhighlight");
     } else {
+      e.target.parentElement.className = "unhighlight";
       setColor("");
     }
   };
