@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
 const Search = () => {
+  const [searchInput, setSearchInput] = useState(" ");
+
+  function handleSearchInput(event) {
+    console.log(event.target.value);
+    setSearchInput(event.target.value);
+  }
+
   return (
     <div className="search">
       <div className="page-header">
@@ -15,8 +22,10 @@ const Search = () => {
               <input
                 type="text"
                 id="customerName"
+                value={searchInput}
                 className="form-control"
                 placeholder="Customer name"
+                onChange={handleSearchInput}
               />
               <SearchButton />
             </div>
