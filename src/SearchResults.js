@@ -1,26 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Row from "./Row";
-import moment from "moment";
 
 const SearchResults = prop => {
-  let [color, changeColor] = useState("white");
-  function setColor(event) {
-    if (color === "white") {
-      changeColor("#1E90FF");
-    }
-    if (color === "#1E90FF") {
-      changeColor("white");
-    }
-    // document.getElementById(event.currentTarget.id).style.backgroundColor =
-    //   "#1E90FF";
-
-    // document.getElementById(event.currentTarget.id).style.backgroundColor =
-    //   "white";
-  }
-  function click(event) {
-    alert(document.getElementById(event.target.id));
-  }
-
   return (
     <div class="table-responsive" style={{ fontSize: "14px" }}>
       <table class="table table-striped table-light table-bordered table-hover table-sm">
