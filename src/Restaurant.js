@@ -1,14 +1,33 @@
 import React from "react";
+import { useState } from "react";
 
+const RestaurantButton = props => {
+  return (
+    <button className="btn btn-primary" onClick={props.order}>
+      Add
+    </button>
+  );
+};
+
+const Order = props => {
+  const [orders, setOrders] = useState(0);
+  function orderOne() {
+    setOrders(orders + 1);
+  }
+  return (
+    <li>
+      {props.why}: {orders} <RestaurantButton order={orderOne} />
+    </li>
+  );
+};
 const Restaurant = () => {
-  const pizzas = 0;
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+        <Order why="Pizzas" />
+        <Order why="Salads" />
+        <Order why="Chocolate cake" />
       </ul>
     </div>
   );

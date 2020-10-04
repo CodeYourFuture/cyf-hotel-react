@@ -1,7 +1,17 @@
 import React from "react";
 import moment from "moment";
+import { useState } from "react";
 
 const SearchResults = ({ results }) => {
+  const [color, setColor] = useState("");
+
+  const highlight = e => {
+    if (!color) {
+      e.target.parentElement.style.backgroundColor = "yellow";
+    } else {
+      setColor("");
+    }
+  };
   return (
     <div>
       <table className="table">
@@ -23,7 +33,11 @@ const SearchResults = ({ results }) => {
             let checkInDate = moment(result.checkInDate);
             let checkOutDate = moment(result.checkOutDate);
             return (
-              <tr key={index}>
+              <tr
+                key={index}
+                onClick={highlight}
+                style={{ backgroundColor: color }}
+              >
                 <th scope="row">{result.id}</th>
 
                 <td>{result.title}</td>
