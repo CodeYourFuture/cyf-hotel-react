@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Moment from "moment";
 
-const SearchResultsLine = ({ item, ind }) => {
+const SearchResultsLine = ({ item, ind, chooseProfile }) => {
   const [selected, setSelected] = useState("");
   const selectLine = () => setSelected(selected ? "" : "selected");
-
+  const showProfile = () => {
+    chooseProfile(item.id);
+  };
   return (
     <tr key={ind} onClick={selectLine} className={selected}>
       <th scope="row">{item.id}</th>
@@ -19,7 +21,9 @@ const SearchResultsLine = ({ item, ind }) => {
         {Moment(item.checkOutDate).diff(Moment(item.checkInDate), "days")}
       </td>
       <td>
-        <button>Show profile</button>
+        <button className="rowButton" onClick={showProfile}>
+          Show profile
+        </button>
       </td>
     </tr>
   );

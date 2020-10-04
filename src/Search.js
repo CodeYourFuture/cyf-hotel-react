@@ -13,7 +13,6 @@ const Search = ({ search }) => {
     search(searchInput);
   };
 
-  console.log(searchInput);
   return (
     <div className="search">
       <div className="page-header">
