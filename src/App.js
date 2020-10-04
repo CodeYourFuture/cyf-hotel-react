@@ -13,8 +13,8 @@ const App = () => {
       <Heading />
       <header className="App-header">CYF Hotel..</header>
       <TouristInfoCards />
-
       <Bookings />
+
       <Restaurant />
 
       <div>
