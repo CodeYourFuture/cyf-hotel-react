@@ -21,7 +21,7 @@ const SearchResultsLine = ({ item, ind, chooseProfile }) => {
         {Moment(item.checkOutDate).diff(Moment(item.checkInDate), "days")}
       </td>
       <td>
-        <button className="rowButton" onClick={showProfile}>
+        <button className="btn btn-primary" onClick={showProfile}>
           Show profile
         </button>
       </td>
