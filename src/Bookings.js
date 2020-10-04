@@ -27,7 +27,6 @@ const Bookings = () => {
   }, []);
 
   const addCustomer = newCustomer => {
-    alert(newCustomer);
     setBookings(bookings.concat(newCustomer));
   };
 
