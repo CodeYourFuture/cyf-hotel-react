@@ -12,6 +12,7 @@ const TableHead = () => {
         <th scope="col">Check in date</th>
         <th scope="col">Check out date</th>
         <th scope="col">Number of nights</th>
+        <th scope="col">Profile</th>
       </tr>
     </thead>
   );

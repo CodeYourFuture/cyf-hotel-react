@@ -11,7 +11,8 @@ const TableRow = ({
     roomId,
     checkInDate,
     checkOutDate
-  }
+  },
+  handleButtonClick
 }) => {
   const [selected, setSelected] = useState(false);
 
@@ -33,6 +34,15 @@ const TableRow = ({
       <td>{checkInDate}</td>
       <td>{checkOutDate}</td>
       <td>{calcNumberOfNights(checkInDate, checkOutDate)}</td>
+      <td>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => handleButtonClick(id)}
+        >
+          Show profile
+        </button>
+      </td>
     </tr>
   );
 };
