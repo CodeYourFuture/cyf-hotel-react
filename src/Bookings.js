@@ -4,6 +4,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [allBookings, setAllBookings] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(null);
 
@@ -15,6 +16,7 @@ const Bookings = () => {
           data => {
             setIsLoaded(true);
             setBookings(data);
+            setAllBookings(data);
           },
           // From https://reactjs.org/docs/faq-ajax.html
           // Note: it's important to handle errors here
@@ -30,7 +32,14 @@ const Bookings = () => {
   }, []);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    const matchingBookings = allBookings.filter(({ firstName, surname }) => {
+      return (
+        firstName.toLowerCase().includes(searchVal) ||
+        surname.toLowerCase().includes(searchVal)
+      );
+    });
+
+    setBookings(matchingBookings);
   };
 
   let searchResults;

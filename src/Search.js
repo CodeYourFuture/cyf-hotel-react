@@ -10,7 +10,7 @@ const Search = ({ search }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    search(searchInput);
+    search(searchInput.toLowerCase());
   };
 
   return (
