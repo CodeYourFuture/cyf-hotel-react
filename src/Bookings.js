@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
-import SearchResults from "./SearchResults.js";
+import SearchResults from "./SearchResults";
+import BookingsForm from "./BookingsForm";
 import Loader from "./Loader";
 
 const Bookings = () => {
@@ -46,6 +47,12 @@ const Bookings = () => {
     setBookings(matchingBookings);
   };
 
+  const addBooking = booking => {
+    const highestId = Math.max(...bookings.map(booking => booking.id));
+    booking.id = highestId + 1;
+    setBookings(bookings.concat(booking));
+  };
+
   let searchResults;
   if (error) {
     searchResults = <div>Error: {error.message}</div>;
@@ -59,6 +66,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         {searchResults}
+        <BookingsForm addBooking={addBooking} />
       </div>
     </div>
   );
