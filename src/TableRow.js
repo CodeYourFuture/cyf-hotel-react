@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import moment from "moment";
 
 const TableRow = ({
   booking: {
@@ -10,7 +9,8 @@ const TableRow = ({
     email,
     roomId,
     checkInDate,
-    checkOutDate
+    checkOutDate,
+    numberOfNights
   },
   handleButtonClick
 }) => {
@@ -33,7 +33,7 @@ const TableRow = ({
       <td>{roomId}</td>
       <td>{checkInDate}</td>
       <td>{checkOutDate}</td>
-      <td>{calcNumberOfNights(checkInDate, checkOutDate)}</td>
+      <td>{numberOfNights}</td>
       <td>
         <button
           type="button"
@@ -45,13 +45,6 @@ const TableRow = ({
       </td>
     </tr>
   );
-};
-
-const calcNumberOfNights = (checkInDate, checkOutDate) => {
-  const checkIn = moment(checkInDate);
-  const checkOut = moment(checkOutDate);
-
-  return checkOut.diff(checkIn, "days");
 };
 
 export default TableRow;

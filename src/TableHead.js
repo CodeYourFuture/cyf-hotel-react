@@ -1,17 +1,33 @@
 import React from "react";
 
-const TableHead = () => {
+const TableHead = ({ handleClick }) => {
   return (
     <thead>
       <tr>
-        <th scope="col">Title</th>
-        <th scope="col">First name</th>
-        <th scope="col">Surname</th>
-        <th scope="col">Email</th>
-        <th scope="col">Room id</th>
-        <th scope="col">Check in date</th>
-        <th scope="col">Check out date</th>
-        <th scope="col">Number of nights</th>
+        <th scope="col" onClick={() => handleClick("title")}>
+          Title
+        </th>
+        <th scope="col" onClick={() => handleClick("firstName")}>
+          First name
+        </th>
+        <th scope="col" onClick={() => handleClick("surname")}>
+          Surname
+        </th>
+        <th scope="col" onClick={() => handleClick("email")}>
+          Email
+        </th>
+        <th scope="col" onClick={() => handleClick("roomId")}>
+          Room id
+        </th>
+        <th scope="col" onClick={() => handleClick("checkInDate")}>
+          Check in date
+        </th>
+        <th scope="col" onClick={() => handleClick("checkOutDate")}>
+          Check out date
+        </th>
+        <th scope="col" onClick={() => handleClick("numberOfNights")}>
+          Number of nights
+        </th>
         <th scope="col">Profile</th>
       </tr>
     </thead>
