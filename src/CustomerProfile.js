@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Loader from "./Loader";
 
 const CustomerProfile = ({ id }) => {
   const [profile, setProfile] = useState(null);
@@ -24,7 +25,7 @@ const CustomerProfile = ({ id }) => {
   if (error) {
     return <div>{error}</div>;
   } else if (loading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   } else {
     const { firstName, surname, email, vip, phoneNumber } = profile;
     return (

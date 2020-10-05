@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import Loader from "./Loader";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -10,7 +11,7 @@ const Bookings = () => {
 
   useEffect(() => {
     const fetchBookings = () => {
-      return fetch("https://cyf-react.glitch.me")
+      return fetch("https://cyf-react.glitch.me/delayed")
         .then(res => res.json())
         .then(
           data => {
@@ -46,7 +47,7 @@ const Bookings = () => {
   if (error) {
     searchResults = <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    searchResults = <div>Loading...</div>;
+    searchResults = <Loader />;
   } else {
     searchResults = <SearchResults results={bookings} />;
   }
