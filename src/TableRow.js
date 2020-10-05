@@ -16,8 +16,11 @@ const TableRow = ({
 }) => {
   const [selected, setSelected] = useState(false);
 
-  const toggleHighlight = () => {
-    setSelected(!selected);
+  const toggleHighlight = e => {
+    // don't toggle highlight when Show Profile button is clicked
+    if (e.target.type !== "button") {
+      setSelected(!selected);
+    }
   };
 
   return (
