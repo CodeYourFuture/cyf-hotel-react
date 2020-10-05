@@ -20,6 +20,17 @@ const BookingsForm = ({ addBooking }) => {
       checkInDate,
       checkOutDate
     });
+    clearForm();
+  };
+
+  const clearForm = () => {
+    setFirstName("");
+    setSurname("");
+    setTitle("");
+    setEmail("");
+    setRoomId("");
+    setCheckInDate("");
+    setCheckOutDate("");
   };
 
   return (
