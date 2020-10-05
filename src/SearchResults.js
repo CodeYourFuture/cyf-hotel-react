@@ -10,7 +10,7 @@ const SearchResults = ({ results }) => {
           <TableHead />
         </thead>
         <tbody>
-          <TableBody data={results} />
+          <TableBody data={results} color="red" />
         </tbody>
       </table>
     </div>

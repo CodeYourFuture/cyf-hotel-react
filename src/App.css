@@ -80,10 +80,19 @@ li {
   justify-content: center;
 }
 
-.tr {
+.lightGrey {
   background-color: lightgrey;
 }
+.cadetBlue {
+  background-color: cadetblue;
+}
+.grey {
+  background-color: gray;
+}
+.red {
+  background-color: red;
+}
 
-.tr-none {
+.none {
   background-color: none;
 }
