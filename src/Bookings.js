@@ -11,11 +11,14 @@ const Bookings = () => {
 
   useEffect(() => {
     const fetchBookings = () => {
-      return fetch("https://cyf-react.glitch.me/delayed")
+      return fetch("https://cyf-react.glitch.me/")
         .then(res => res.json())
         .then(
           data => {
             setIsLoaded(true);
+            if (data.error) {
+              return setError({ message: data.error });
+            }
             setBookings(data);
             setAllBookings(data);
           },
@@ -24,8 +27,8 @@ const Bookings = () => {
           // instead of a catch() block so that we don't swallow
           // exceptions from actual bugs in components.
           error => {
-            setIsLoaded(true);
             setError(error);
+            setIsLoaded(true);
           }
         );
     };
