@@ -16,7 +16,19 @@ const Bookings = () => {
   }, []);
 
   const search = searchVal => {
+    setBookings(
+      bookings.filter(
+        item =>
+          item.firstName.toLowerCase() === searchVal.toLowerCase() ||
+          item.surname.toLowerCase() === searchVal.toLowerCase()
+      )
+    );
     console.info("TO DO!", searchVal);
+
+    // alternative approach //
+    // const searchValue = bookings.filter(item => item.firstName.toLowerCase() === searchVal.toLowerCase() ||
+    // item.surname.toLowerCase() === searchVal.toLowerCase())
+    // setBookings(searchValue);
   };
 
   return (

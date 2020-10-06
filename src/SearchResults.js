@@ -20,7 +20,7 @@ const SearchResults = ({ results }) => {
       </thead>
       <tbody>
         {results.map(item => (
-          <TableExtracted item={item} />
+          <TableExtracted item={item} key={item.id} />
         ))}
       </tbody>
     </table>

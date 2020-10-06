@@ -142,7 +142,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** Verify that each row of your table can be highlighted (on and off) independently when being clicked.
 
-## Lesson 3
+## LessoBn 3
 
 #### 17. Storing the search input in a state
 
