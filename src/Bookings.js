@@ -5,15 +5,20 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [bookingsReserve, setBookingsReserve] = useState([]);
   const [sortDirection, setSortDirection] = useState(-1);
   const search = searchVal => {
-    setBookings(
-      bookings.filter(
-        item =>
-          item.firstName.toLowerCase() === searchVal.toLowerCase() ||
-          item.surname.toLowerCase() === searchVal.toLowerCase()
-      )
-    );
+    if (searchVal) {
+      setBookings(
+        bookings.filter(
+          item =>
+            item.firstName.toLowerCase() === searchVal.toLowerCase() ||
+            item.surname.toLowerCase() === searchVal.toLowerCase()
+        )
+      );
+    } else {
+      setBookings(bookingsReserve);
+    }
   };
   useEffect(() => {
     // fetch("https://cyf-react.glitch.me/error")
@@ -23,6 +28,7 @@ const Bookings = () => {
       })
       .then(data => {
         setBookings(data);
+        setBookingsReserve(data);
       });
   }, []);
 

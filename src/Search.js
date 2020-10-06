@@ -3,6 +3,7 @@ import SearchButton from "./SearchButton";
 
 const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
+  const [buttonName, setButtonName] = useState("Search");
 
   const handleSearchInput = e => {
     setSearchInput(e.target.value);
@@ -10,7 +11,16 @@ const Search = ({ search }) => {
 
   const submitForm = e => {
     e.preventDefault();
-    search(searchInput);
+    if (buttonName === "Search") {
+      if (searchInput) {
+        search(searchInput);
+        setButtonName("Reset");
+      }
+    } else {
+      search("");
+      setSearchInput("");
+      setButtonName("Search");
+    }
   };
 
   return (
@@ -31,7 +41,7 @@ const Search = ({ search }) => {
                 value={searchInput}
                 onChange={handleSearchInput}
               />
-              <SearchButton btnName="Search" />
+              <SearchButton btnName={buttonName} />
             </div>
           </form>
         </div>
