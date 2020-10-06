@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Glasgow",
+    "link": "http://www.peoplemakeglasgow.com/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Glasgow_new_montage%2C_2017.jpg",
+    "text": "Glasgow is the most populous city in Scotland, and the third most populous city in the United Kingdom"
+  },
+  {
+    "name": "Manchester",
+    "link": "https://www.visitmanchester.com/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Manchester_Montage_2017.jpg",
+    "text": "Manchester is a city and metropolitan borough in Greater Manchester, England. It is historically and traditionally a part of the county of Lancashire"
+  },
+  {
+    "name": "London",
+    "link": "https://www.visitlondon.com/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/London_Montage_L.jpg/275px-London_Montage_L.jpg",
+    "text": "London is the capital and largest city of England and the United Kingdom"
+  }
+]
