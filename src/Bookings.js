@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import fakeData from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  // const search = searchVal => {
-  //   console.info("TO DO!", searchVal);
-  // };
+  const search = searchVal => {
+    console.info("TO DO!", searchVal);
+
+    let filteredBookings = bookings.filter(
+      data =>
+        data.firstName
+          .toLocaleLowerCase()
+          .includes(searchVal.toLocaleLowerCase()) ||
+        data.surname.toLocaleLowerCase().includes(searchVal.toLocaleLowerCase())
+    );
+    setBookings(filteredBookings);
+  };
 
   const [bookings, setBookings] = useState([{}]);
 
@@ -18,7 +28,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search />
+        <Search search={search} />
         <SearchResults bookingsList={bookings} />
       </div>
     </div>

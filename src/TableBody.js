@@ -3,7 +3,7 @@ import moment from "moment";
 
 let prevRow;
 
-const TableBody = ({ bookingsList }) => {
+const TableBody = ({ bookingsList, getTheId }) => {
   let titles = Object.keys(bookingsList[0]);
 
   const [rowSelect, setRowSelect] = useState(true);
@@ -22,6 +22,10 @@ const TableBody = ({ bookingsList }) => {
     return e.currentTarget.classList.add("table-success");
   };
 
+  const handleButtonClick = e => {
+    getTheId(e.currentTarget.parentNode.parentNode.firstChild.innerHTML);
+  };
+
   return (
     <tbody>
       {bookingsList.map(result => {
@@ -34,6 +38,11 @@ const TableBody = ({ bookingsList }) => {
               <td key={result[item]}> {result[item]} </td>
             ))}
             <td>{checkOutDate.diff(checkInDate, "days")}</td>
+            <td>
+              <button onClick={handleButtonClick} className="btn btn-danger">
+                Show Profile
+              </button>
+            </td>
           </tr>
         );
       })}
