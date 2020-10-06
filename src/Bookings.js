@@ -34,6 +34,7 @@ const Bookings = () => {
 
   const addCustomer = newCustomer => {
     setBookings(bookings.concat(newCustomer));
+    setBookingsReserve(bookingsReserve.concat(newCustomer));
   };
 
   const sortBookings = name => {

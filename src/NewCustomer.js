@@ -138,7 +138,7 @@ const NewCustomer = ({ addCustomer }) => {
                 />
               </td>
               <td>
-                <SearchButton btnName="Submit" />{" "}
+                <SearchButton btnName="Submit" />
               </td>
             </tr>
           </tbody>
