@@ -17,13 +17,13 @@ const Bookings = () => {
     setBookings(filteredBookings);
   };
 
-  const [bookings, setBookings] = useState([{}]);
+  const [bookings, setBookings] = useState(fakeData);
 
-  useEffect(() => {
-    fetch("https://cyf-react.glitch.me/")
-      .then(res => res.json())
-      .then(data => setBookings(data));
-  });
+  // useEffect(() => {
+  //   fetch("https://cyf-react.glitch.me/")
+  //     .then(res => res.json())
+  //     .then(data => setBookings(data));
+  // });
 
   return (
     <div className="App-content">

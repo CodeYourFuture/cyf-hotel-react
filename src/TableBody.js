@@ -23,7 +23,7 @@ const TableBody = ({ bookingsList, getTheId }) => {
   };
 
   const handleButtonClick = e => {
-    getTheId(e.currentTarget.parentNode.parentNode.firstChild.innerHTML);
+    getTheId(e.currentTarget.parentNode.parentNode.firstChild.innerHTML.trim());
   };
 
   return (
