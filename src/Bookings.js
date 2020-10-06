@@ -5,7 +5,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [sortDirection, setSortDirection] = useState(1);
+  const [sortDirection, setSortDirection] = useState(-1);
   const search = searchVal => {
     setBookings(
       bookings.filter(
