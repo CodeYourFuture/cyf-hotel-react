@@ -30,15 +30,13 @@ const Bookings = () => {
     setBookings(bookings.concat(newCustomer));
   };
 
-  // const sortBookings = () => {
-  // //   alert("Hooray!");
-  // // setBookings(bookings.filter(
-  // //   item =>
-  // //     item.firstName.toLowerCase() === "john"
-  // // ));
-  // setBookings(bookings.sort((a, b) => a.title.localeCompare(b.title)))
-  // console.log(bookings);
-  // };
+  const sortBookings = name => {
+    if (name === "Title") {
+      setBookings(
+        bookings.sort((a, b) => a.title.localeCompare(b.title)).slice()
+      );
+    }
+  };
 
   if (bookings.error) {
     return <div>Error: {bookings.error}</div>;
@@ -48,8 +46,7 @@ const Bookings = () => {
         <div className="container">
           <NewCustomer addCustomer={addCustomer} />
           <Search search={search} />
-          <SearchResults results={bookings} />
-          {/* <button onClick={sortBookings}>Try</button> */}
+          <SearchResults results={bookings} sortBookings={sortBookings} />
         </div>
       </div>
     );

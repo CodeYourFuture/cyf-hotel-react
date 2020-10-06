@@ -4,7 +4,8 @@ import CustomerProfile from "./CustomerProfile";
 import SearchResultsLine from "./SearchResultsLine";
 import TableHead from "./TableHead";
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ results, sortBookings }) => {
+  console.log(results);
   const [chosenProfile, setChosenProfile] = useState("");
   const chooseProfile = customerId => {
     setChosenProfile(customerId);
@@ -12,11 +13,11 @@ const SearchResults = ({ results }) => {
   return (
     <>
       <table className="table">
-        <TableHead />
+        <TableHead sortBookings={sortBookings} />
         <tbody>
           {results.map((item, ind) => (
             <SearchResultsLine
-              key={ind}
+              key={item.id}
               item={item}
               chooseProfile={chooseProfile}
             />
