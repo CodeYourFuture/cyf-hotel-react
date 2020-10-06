@@ -40,6 +40,7 @@ const Bookings = () => {
             } else if (a.id < b.id) {
               return -1 * sortDirection;
             }
+            return 0;
           })
           .slice()
       );
@@ -52,6 +53,7 @@ const Bookings = () => {
             } else if (a.title < b.title) {
               return -1 * sortDirection;
             }
+            return 0;
           })
           .slice()
       );
@@ -64,6 +66,7 @@ const Bookings = () => {
             } else if (a.firstName < b.firstName) {
               return -1 * sortDirection;
             }
+            return 0;
           })
           .slice()
       );
@@ -76,6 +79,7 @@ const Bookings = () => {
             } else if (a.surname < b.surname) {
               return -1 * sortDirection;
             }
+            return 0;
           })
           .slice()
       );
@@ -88,6 +92,7 @@ const Bookings = () => {
             } else if (a.email < b.email) {
               return -1 * sortDirection;
             }
+            return 0;
           })
           .slice()
       );
@@ -100,6 +105,7 @@ const Bookings = () => {
             } else if (a.roomId < b.roomId) {
               return -1 * sortDirection;
             }
+            return 0;
           })
           .slice()
       );
@@ -112,6 +118,7 @@ const Bookings = () => {
             } else if (a.checkInDate < b.checkInDate) {
               return -1 * sortDirection;
             }
+            return 0;
           })
           .slice()
       );
@@ -124,6 +131,7 @@ const Bookings = () => {
             } else if (a.checkOutDate < b.checkOutDate) {
               return -1 * sortDirection;
             }
+            return 0;
           })
           .slice()
       );
