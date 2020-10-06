@@ -93,9 +93,9 @@ tr {
   margin: 0px;
 }
 
-/* .submit {
-
-} */
+.sortHeader {
+  cursor: pointer;
+}
 .addCheckIn,
 .addCheckOut {
   width: 160px;

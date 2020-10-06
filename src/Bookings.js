@@ -5,6 +5,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [sortDirection, setSortDirection] = useState(1);
   const search = searchVal => {
     setBookings(
       bookings.filter(
@@ -31,11 +32,104 @@ const Bookings = () => {
   };
 
   const sortBookings = name => {
-    if (name === "Title") {
+    if (name === "id") {
       setBookings(
-        bookings.sort((a, b) => a.title.localeCompare(b.title)).slice()
+        bookings
+          .sort((a, b) => {
+            if (a.id > b.id) {
+              return 1 * sortDirection;
+            } else if (a.id < b.id) {
+              return -1 * sortDirection;
+            }
+          })
+          .slice()
+      );
+    } else if (name === "Title") {
+      setBookings(
+        bookings
+          .sort((a, b) => {
+            if (a.title > b.title) {
+              return 1 * sortDirection;
+            } else if (a.title < b.title) {
+              return -1 * sortDirection;
+            }
+          })
+          .slice()
+      );
+    } else if (name === "First name") {
+      setBookings(
+        bookings
+          .sort((a, b) => {
+            if (a.firstName > b.firstName) {
+              return 1 * sortDirection;
+            } else if (a.firstName < b.firstName) {
+              return -1 * sortDirection;
+            }
+          })
+          .slice()
+      );
+    } else if (name === "Surname") {
+      setBookings(
+        bookings
+          .sort((a, b) => {
+            if (a.surname > b.surname) {
+              return 1 * sortDirection;
+            } else if (a.surname < b.surname) {
+              return -1 * sortDirection;
+            }
+          })
+          .slice()
+      );
+    } else if (name === "Email") {
+      setBookings(
+        bookings
+          .sort((a, b) => {
+            if (a.email > b.email) {
+              return 1 * sortDirection;
+            } else if (a.email < b.email) {
+              return -1 * sortDirection;
+            }
+          })
+          .slice()
+      );
+    } else if (name === "Room id") {
+      setBookings(
+        bookings
+          .sort((a, b) => {
+            if (a.roomId > b.roomId) {
+              return 1 * sortDirection;
+            } else if (a.roomId < b.roomId) {
+              return -1 * sortDirection;
+            }
+          })
+          .slice()
+      );
+    } else if (name === "Check in date") {
+      setBookings(
+        bookings
+          .sort((a, b) => {
+            if (a.checkInDate > b.checkInDate) {
+              return 1 * sortDirection;
+            } else if (a.checkInDate < b.checkInDate) {
+              return -1 * sortDirection;
+            }
+          })
+          .slice()
+      );
+    } else if (name === "Check out date") {
+      setBookings(
+        bookings
+          .sort((a, b) => {
+            if (a.checkOutDate > b.checkOutDate) {
+              return 1 * sortDirection;
+            } else if (a.checkOutDate < b.checkOutDate) {
+              return -1 * sortDirection;
+            }
+          })
+          .slice()
       );
     }
+    setSortDirection(sortDirection === 1 ? -1 : 1);
   };
 
   if (bookings.error) {

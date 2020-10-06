@@ -9,28 +9,28 @@ const TableHead = ({ sortBookings }) => {
     return (
       <thead>
         <tr>
-          <th scope="col" onClick={sortIt}>
+          <th className="sortHeader" scope="col" onClick={sortIt}>
             id
           </th>
-          <th scope="col" onClick={sortIt}>
+          <th className="sortHeader" scope="col" onClick={sortIt}>
             Title
           </th>
-          <th scope="col" onClick={sortIt}>
+          <th className="sortHeader" scope="col" onClick={sortIt}>
             First name
           </th>
-          <th scope="col" onClick={sortIt}>
+          <th className="sortHeader" scope="col" onClick={sortIt}>
             Surname
           </th>
-          <th scope="col" onClick={sortIt}>
+          <th className="sortHeader" scope="col" onClick={sortIt}>
             Email
           </th>
-          <th scope="col" onClick={sortIt}>
+          <th className="sortHeader" scope="col" onClick={sortIt}>
             Room id
           </th>
-          <th scope="col" onClick={sortIt}>
+          <th className="sortHeader" scope="col" onClick={sortIt}>
             Check in date
           </th>
-          <th scope="col" onClick={sortIt}>
+          <th className="sortHeader" scope="col" onClick={sortIt}>
             Check out date
           </th>
           <th scope="col">Qty of nights</th>
