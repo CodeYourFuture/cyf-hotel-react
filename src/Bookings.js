@@ -22,7 +22,6 @@ const Bookings = () => {
         return response.json();
       })
       .then(data => {
-        // console.log(data);
         setBookings(data);
       });
   }, []);
