@@ -57,6 +57,11 @@ tr {
   color: #5b5757;
 }
 
+.clicked {
+  background-color: rgb(155, 126, 136);
+  color: #222;
+}
+
 .results {
   padding-top: 15px;
 }

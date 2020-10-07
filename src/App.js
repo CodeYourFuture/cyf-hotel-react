@@ -4,6 +4,7 @@ import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import "./App.css";
+import Resturant from "./Restaurant";
 
 const App = () => {
   const footerArr = [
@@ -16,6 +17,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Resturant />
       <Footer footerItems={footerArr} />
     </div>
   );

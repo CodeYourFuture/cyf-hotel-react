@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import SearchRow from "./SearchRow";
 const SearchResults = ({ searchReslt }) => (
   <table className="table table-hover">
     <thead>
@@ -17,22 +18,7 @@ const SearchResults = ({ searchReslt }) => (
     </thead>
     <tbody>
       {searchReslt.map(booking => (
-        <tr>
-          <th scope="row">{booking.id}</th>
-          <td>{booking.title}</td>
-          <td>{booking.firstName}</td>
-          <td>{booking.surname}</td>
-          <td>{booking.email}</td>
-          <td>{booking.roomId}</td>
-          <td>{booking.checkInDate}</td>
-          <td>{booking.checkOutDate}</td>
-          <td>
-            {moment(booking.checkOutDate).diff(
-              moment(booking.checkInDate),
-              "days"
-            )}
-          </td>
-        </tr>
+        <SearchRow bookingRow={booking} />
       ))}
     </tbody>
   </table>
