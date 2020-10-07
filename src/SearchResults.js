@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 import moment from "moment";
 moment().format();
 
 const SearchResults = ({ results }) => {
-  console.log(results);
+  const [color, setColor] = useState("");
+  const highlight = () => {
+    if (color === "") {
+      setColor("red");
+    } else setColor("");
+  };
   return (
     <div>
       <table className="table table-striped">
@@ -27,7 +32,11 @@ const SearchResults = ({ results }) => {
             let checkInDate = moment(result.checkInDate);
             let checkOutDate = moment(result.checkOutDate);
             return (
-              <tr key={result.id}>
+              <tr
+                key={result.id}
+                style={{ backgroundColor: color }}
+                onClick={highlight}
+              >
                 <td>{result.id}</td>
                 <td>{result.title}</td>
                 <td>{result.firstName}</td>
