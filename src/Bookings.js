@@ -34,7 +34,8 @@ const Bookings = () => {
         setLoading(false);
       })
       .catch(error => setErrorMessage(error));
-    console.log("500 HTTP error");
+    return <p>You have an error</p>;
+    //console.log("500 HTTP error");
   }, []);
 
   if (loading && !errorMessage) {
