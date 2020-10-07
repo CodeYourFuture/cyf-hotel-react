@@ -1,0 +1,8 @@
+.style-ul {
+  background-color: cyan;
+}
+.style-ul li {
+  background-color: cyan;
+  list-style: none;
+  color: black;
+}
