@@ -1,5 +1,7 @@
 import moment from "moment";
+import "./App.css";
 import React, { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 
 const OneRecord = props => {
   let dOut = moment(props.item.checkOutDate); // dOut = date out
@@ -7,6 +9,13 @@ const OneRecord = props => {
   let Nights = dOut.diff(dIn, "days");
 
   const [color, setColor] = useState("");
+
+  // const [customerId, setCustomerId] = useState (props.item.id);
+
+  // const customerProfileHandler = () => {
+  //   setCustomerId (props.item.id);
+  //  <CustomerProfile id = {idcustomerId}/>
+  // };
 
   const highlight = () => {
     if (color === "") {
@@ -25,6 +34,11 @@ const OneRecord = props => {
       <td>{props.item.checkInDate}</td>
       <td>{props.item.checkOutDate}</td>
       <td>{Nights}</td>
+      <td>
+        <button onClick={props.updateId} id={props.item.id}>
+          Show profile
+        </button>
+      </td>
     </tr>
   );
 };

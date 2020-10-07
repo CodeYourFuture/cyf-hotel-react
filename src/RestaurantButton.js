@@ -1,5 +1,6 @@
 import React from "react";
 import Restaurant from "./Restaurant";
+import "./App.css";
 
 const RestaurantButton = props => {
   return (
