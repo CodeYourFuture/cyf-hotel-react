@@ -4,22 +4,18 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
+  const [bookings, setBookings] = useState([]);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
-    bookings.filter(el => {
-      if (
-        el.firstName.toLowerCase() === searchVal.toLowerCase() ||
-        el.surname.toLowerCase() === searchVal.toLowerCase()
-      ) {
-        console.log(`${searchVal} firstname found`);
-        setBookings(searchVal);
-      } else {
-        console.log("not found");
-      }
-    });
-    console.log(bookings);
+    setBookings(
+      bookings.filter(
+        el =>
+          el.firstName.toLowerCase() === searchVal.toLowerCase() ||
+          el.surname.toLowerCase() === searchVal.toLowerCase()
+      )
+    );
   };
-  const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
@@ -37,6 +33,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         <SearchResults results={bookings} />
+
         {/* <SearchResults /> */}
       </div>
     </div>

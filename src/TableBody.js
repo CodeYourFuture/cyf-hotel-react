@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import moment from "moment";
 
-const TableBody = ({ data, color }) => {
+const TableBody = ({ data, color, changeId }) => {
   let [selected, setSelected] = useState("gray");
   let [rowTwo, setRowTwo] = useState("red");
 
@@ -34,6 +34,9 @@ const TableBody = ({ data, color }) => {
             <td key={data.checkInDate}>{e.checkInDate}</td>
             <td key={data.checkOutDate}>{e.checkOutDate}</td>
             <td>{numOfDays}</td>
+            <td>
+              <button className="btn btn-primary">Show profile</button>
+            </td>
           </tr>
         );
       })}
