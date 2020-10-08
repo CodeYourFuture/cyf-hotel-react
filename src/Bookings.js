@@ -7,6 +7,8 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [bookingsReserve, setBookingsReserve] = useState([]);
   const [sortDirection, setSortDirection] = useState(-1);
+  const [dataIsLoading, setDataIsLoading] = useState(true);
+
   const search = searchVal => {
     if (searchVal) {
       setBookings(
@@ -22,6 +24,7 @@ const Bookings = () => {
   };
   useEffect(() => {
     // fetch("https://cyf-react.glitch.me/error")
+    // fetch("https://cyf-react.glitch.me/delayed")
     fetch("https://cyf-react.glitch.me")
       .then(function(response) {
         return response.json();
@@ -29,6 +32,7 @@ const Bookings = () => {
       .then(data => {
         setBookings(data);
         setBookingsReserve(data);
+        setDataIsLoading(false);
       });
   }, []);
 
@@ -154,7 +158,11 @@ const Bookings = () => {
         <div className="container">
           <NewCustomer addCustomer={addCustomer} />
           <Search search={search} />
-          <SearchResults results={bookings} sortBookings={sortBookings} />
+          {dataIsLoading ? (
+            <p>"Data is loading... Still loading..."</p>
+          ) : (
+            <SearchResults results={bookings} sortBookings={sortBookings} />
+          )}
         </div>
       </div>
     );
