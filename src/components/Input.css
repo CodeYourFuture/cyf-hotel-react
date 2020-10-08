@@ -1,0 +1,16 @@
+.form-field {
+  display: block;
+  width: 250px;
+  padding-bottom: 0.5rem;
+  margin: 0 auto;
+}
+
+.field-label {
+  margin: 0;
+  display: block;
+  float: left;
+}
+
+input {
+  width: 100%;
+}

@@ -1,0 +1,11 @@
+.booking-form {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #ebf5fb;
+}
+
+.booking-btn {
+  width: 100px;
+  margin-top: 0.5rem;
+}
