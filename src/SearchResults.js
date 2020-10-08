@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import moment from "moment";
+import SearchResultItem from "./SearchResultItem";
 
 const SearchResults = ({ searchResults }) => {
-  const [selected, setSeleted] = useState("");
-  const selectLine = () => {
-    setSeleted(selected ? "" : "selected");
-  };
-
   return (
     <table className="table">
       <thead>
@@ -23,31 +19,9 @@ const SearchResults = ({ searchResults }) => {
         </tr>
       </thead>
       <tbody>
-        {searchResults.map(
-          ({
-            id,
-            title,
-            firstName,
-            surname,
-            email,
-            roomId,
-            checkInDate,
-            checkOutDate
-          }) => (
-            //<tr onClick ={selectLine} style = {{backgroundColor: selected}}>
-            <tr onClick={selectLine} className={selected}>
-              <th scope="row">{id}</th>
-              <td>{title}</td>
-              <td>{firstName}</td>
-              <td>{surname}</td>
-              <td>{email}</td>
-              <td>{roomId}</td>
-              <td>{checkInDate}</td>
-              <td>{checkOutDate}</td>
-              <td>{moment(checkOutDate).diff(moment(checkInDate), "days")}</td>
-            </tr>
-          )
-        )}
+        {searchResults.map(props => (
+          <SearchResultItem {...props} />
+        ))}
       </tbody>
     </table>
   );
