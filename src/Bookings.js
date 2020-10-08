@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import NewBooking from "./NewBooking";
 import "./Booking.css";
 //import FakeBookings from "./data/fakeBookings.json";
 
@@ -19,6 +20,11 @@ const Bookings = () => {
         booking.surname.toLowerCase().includes(searchVal.toLowerCase())
     );
     setBookings(filteredBooking);
+  };
+
+  const addNewBooking = newBooking => {
+    const id = bookings.length + 1;
+    setBookings([...bookings, { id, ...newBooking }]);
   };
 
   useEffect(() => {
@@ -47,6 +53,8 @@ const Bookings = () => {
           <Search search={search} />
           {/* <SearchResults results={FakeBookings} /> */}
           <SearchResults results={bookings} />
+
+          <NewBooking getNewBooking={addNewBooking} />
         </div>
       </div>
     );
