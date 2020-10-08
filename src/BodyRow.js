@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import moment from "moment";
+import "./BodyRow.css";
 
-const BodyRow = props => {
+const BodyRow = ({ field, setClickedBtn, deleteBooking }) => {
   const [isSelected, setIsSelected] = useState(null);
 
+  console.log(field.id);
+  const deleteChangeHandler = event => {
+    deleteBooking(field.id);
+    event.stopPropagation();
+  };
+
   const buttonChangeHandler = event => {
-    props.setClickedBtn(props.field.id);
+    setClickedBtn(field.id);
     event.stopPropagation();
   };
   //   const setClassName = id => {
@@ -18,8 +25,8 @@ const BodyRow = props => {
   //     }
   //   };
 
-  const nightsSpent = moment(props.field.checkOutDate).diff(
-    props.field.checkInDate,
+  const nightsSpent = moment(field.checkOutDate).diff(
+    field.checkInDate,
     "days"
   );
 
@@ -32,24 +39,32 @@ const BodyRow = props => {
           : { backgroundColor: "white" }
       }
     >
-      <th scope="row">{props.field.id}</th>
-      <td>{props.field.title}</td>
-      <td>{props.field.firstName}</td>
-      <td>{props.field.surname}</td>
-      <td>{props.field.email}</td>
-      <td>{props.field.roomId}</td>
-      <td>{props.field.checkInDate}</td>
-      <td>{props.field.checkOutDate}</td>
+      <th class="table" scope="row">
+        {field.id}
+      </th>
+      <td>{field.title}</td>
+      <td>{field.firstName}</td>
+      <td>{field.surname}</td>
+      <td>{field.email}</td>
+      <td>{field.roomId}</td>
+      <td>{field.checkInDate}</td>
+      <td>{field.checkOutDate}</td>
       <td>{nightsSpent}</td>
-      <td>
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={buttonChangeHandler}
-        >
-          Show profile
-        </button>
-      </td>
+      <button
+        type="button"
+        className="btn btn-danger"
+        onClick={deleteChangeHandler}
+      >
+        X
+      </button>
+
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={buttonChangeHandler}
+      >
+        Profile
+      </button>
     </tr>
   );
 };

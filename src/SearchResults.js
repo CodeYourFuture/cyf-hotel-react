@@ -3,7 +3,7 @@ import HeadingRow from "./HeadingRow";
 import BodyRow from "./BodyRow";
 import CustomerProfile from "./CustomerProfile";
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ results, deleteBooking }) => {
   const [customerSelected, setCustomerSelected] = useState(null);
   const [isSorted, setIsSorted] = useState({});
   console.log(customerSelected);
@@ -40,9 +40,10 @@ const SearchResults = ({ results }) => {
           {results.map(field => {
             return (
               <BodyRow
-                key={field.id}
                 field={field}
                 setClickedBtn={setCustomerSelected}
+                id={field.id}
+                deleteBooking={deleteBooking}
               />
             );
           })}

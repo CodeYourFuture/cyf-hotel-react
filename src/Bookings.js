@@ -11,6 +11,7 @@ const Bookings = () => {
   const [error, setError] = useState(null);
   const [newBooking, setNewBooking] = useState({
     id: null,
+    title: "",
     firstName: "",
     surname: "",
     email: "",
@@ -18,6 +19,7 @@ const Bookings = () => {
     checkInDate: "",
     checkOutDate: ""
   });
+
   console.log(newBooking);
   useEffect(() => {
     fetch("https://nawal-hotel-server.glitch.me/bookings")
@@ -36,14 +38,6 @@ const Bookings = () => {
     console.log("500 HTTP error");
   }, []);
   const search = searchVal => {
-    // console.info("TO DO!", searchVal);
-    // let filteredBooking = bookings.filter(
-    //   booking =>
-    //     booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
-    //     booking.surname.toLowerCase().includes(searchVal.toLowerCase()) ||
-    //     booking.email.toLowerCase().includes(searchVal.toLowerCase()) ||
-    //     booking.checkInDate.toLowerCase().includes(searchVal.toLowerCase())
-    // );
     let getResource;
     const term = searchVal.toLowerCase();
     if (searchVal) {
@@ -67,7 +61,13 @@ const Bookings = () => {
         console.error("Error:", error);
       });
   };
-
+  const onDeleteBooking = id => {
+    fetch(`https://nawal-hotel-server.glitch.me/bookings/${id}`, {
+      method: "DELETE"
+    })
+      .then(res => res.json())
+      .then(data => setBookings(data));
+  };
   /*
   body: JSON.stringify({
         firstName: newBooking.firstName,
@@ -124,7 +124,7 @@ const Bookings = () => {
       <div className="App-content">
         <div className="container">
           <Search search={search} />
-          <SearchResults results={bookings} />
+          <SearchResults results={bookings} deleteBooking={onDeleteBooking} />
           <div>
             <BookingForm
               addCustomer={addCustomer}
