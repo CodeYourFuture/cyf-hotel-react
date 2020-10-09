@@ -1,8 +1,9 @@
 import React from "react";
+import CustomerProfile from "./CustomerProfile";
 import IndividualBooking from "./IndividualBooking";
-// import IndividualBooking from "./IndividualBooking";
+// import CustomerProfile from "./CustomerProfile";
 
-const SearchResults = ({ data }) => {
+const SearchResults = ({ data, getId, id }) => {
   console.log(data);
   return (
     <div>
@@ -18,16 +19,16 @@ const SearchResults = ({ data }) => {
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
             <th scope="col">Total number of nights</th>
+            <th scope="col">Customer Profile</th>
           </tr>
         </thead>
         <tbody>
-          <IndividualBooking item={data[0]} />
-          <IndividualBooking item={data[1]} />
-          <IndividualBooking item={data[2]} />
-          <IndividualBooking item={data[3]} />
-          <IndividualBooking item={data[4]} />
+          {data.map(person => (
+            <IndividualBooking getId={getId} item={person} />
+          ))}
         </tbody>
       </table>
+      {id && <CustomerProfile id={id} />}
     </div>
   );
 };
