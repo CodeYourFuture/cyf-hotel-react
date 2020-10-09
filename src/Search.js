@@ -6,9 +6,25 @@ const Search = ({ searchVal }) => {
   function handleSearchInput(event) {
     setSearchInput(event.target.value);
   }
-  function handleSubmit(event) {
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    searchVal(searchInput);
+    await fetch("https://hotel-server.herokuapp.com/bookings/search", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        firstName: searchInput,
+        email: searchInput,
+        surName: searchInput
+      })
+    })
+      .then(res => res.json())
+      .then(res => console.log("Res", res))
+      .then(data => {
+        searchVal(searchInput);
+      });
   }
   return (
     <div className="search col-12 mt-3">

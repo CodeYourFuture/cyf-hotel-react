@@ -7,9 +7,7 @@ const Bookings = () => {
   const [sortedBookings, setSortedBookings] = useState();
   const [ascending, setAscending] = useState(false);
   useEffect(() => {
-    fetch("https://cyf-react.illicitonion.com")
-      // fetch("https://cyf-react.glitch.me/delayed")
-      // fetch("https://cyf-react.glitch.me/error")
+    fetch("https://hotel-server.herokuapp.com/bookings")
       .then(response => {
         if (!response.ok) {
           throw response;
@@ -32,7 +30,8 @@ const Bookings = () => {
       const newBookings = sortedBookings.filter(
         element =>
           element.firstName.toLowerCase() === searchInput.toLowerCase() ||
-          element.surname.toLowerCase() === searchInput.toLowerCase()
+          element.surname.toLowerCase() === searchInput.toLowerCase() ||
+          element.email.toLowerCase() === searchInput.toLowerCase()
       );
       setSortedBookings(newBookings);
     };

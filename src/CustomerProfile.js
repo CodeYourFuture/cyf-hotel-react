@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const CustomerProfile = ({ customerId }) => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${customerId}`)
+    fetch(`https://hotel-server.herokuapp.com/bookings/${customerId}`)
       .then(res => {
         if (res) {
           return res.json();
