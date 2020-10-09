@@ -31,18 +31,30 @@ const NewForm = ({ addNewBookings }) => {
     setCheckOut(event.target.value);
   }
 
-  const handleSubmit = event => {
-    addNewBookings({
-      title,
-      firstName,
-      surName,
-      roomId,
-      email,
-      checkIn,
-      checkOut
-    });
+  async function handleSubmit(event) {
     event.preventDefault();
-  };
+    await fetch("https://hotel-server.herokuapp.com/bookings/newBooking", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        title: title,
+        firstName: firstName,
+        surName: surName,
+        roomId: roomId,
+        email: email,
+        checkIn: checkIn,
+        checkOut: checkOut
+      })
+    })
+      .then(res => res.json())
+      .then(res => console.log("Res", res))
+      .then(data => {
+        console.log(data);
+        window.location.reload();
+      });
+  }
 
   return (
     <form

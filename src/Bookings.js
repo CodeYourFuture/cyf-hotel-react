@@ -36,27 +36,17 @@ const Bookings = () => {
       setSortedBookings(newBookings);
     };
 
-    const addNewBookings = ({
-      title,
-      firstName,
-      surName,
-      roomId,
-      email,
-      checkIn,
-      checkOut,
-      id
-    }) => {
+    const addNewBookings = data => {
       setSortedBookings([
         ...sortedBookings,
         {
-          id: id,
-          title: title,
-          firstName: firstName,
-          surname: surName,
-          roomId: roomId,
-          email: email,
-          checkInDate: checkIn,
-          checkOutDate: checkOut
+          title: data.title,
+          firstName: data.firstName,
+          surname: data.surName,
+          roomId: data.roomId,
+          email: data.email,
+          checkInDate: data.checkIn,
+          checkOutDate: data.checkOut
         }
       ]);
     };
@@ -96,7 +86,7 @@ const Bookings = () => {
             handleSortNumber={handleSortNumber}
             ascending={ascending}
           />
-          <NewBookings addNewBookings={addNewBookings} />
+          <NewBookings addNewBookings={data => addNewBookings(data)} />
         </div>
       </div>
     );
