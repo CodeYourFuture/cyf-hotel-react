@@ -58,3 +58,7 @@ tr {
 .highlighted {
   background-color: yellow;
 }
+
+.profile-button {
+  font-size: 12px;
+}

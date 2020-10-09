@@ -15,6 +15,17 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    let results = [];
+
+    for (let i = 0; i < bookings.length; ++i) {
+      if (
+        searchVal.toLowerCase().includes(bookings[i].firstName.toLowerCase()) ||
+        searchVal.toLowerCase().includes(bookings[i].firstName.toLowerCase())
+      ) {
+        results.push(bookings[i]);
+      }
+    }
+    setBookings(results);
   };
 
   if (bookings) {
