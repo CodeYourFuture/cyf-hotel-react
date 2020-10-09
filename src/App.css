@@ -3,8 +3,8 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /*animation: App-logo-spin infinite 20s linear;*/
+  height: 50px;
 }
 
 .App-header {
@@ -35,6 +35,13 @@
     transform: rotate(360deg);
   }
 }
+
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
 .search {
   padding: 5px 0 20px 0;
 }
@@ -54,4 +61,42 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.selected {
+  background-color: cornflowerblue;
+}
+
+.addId,
+.addRoomId {
+  width: 40px;
+}
+
+.addTitle {
+  width: 55px;
+}
+
+.addFirstName {
+  width: 110px;
+}
+
+.addSurname {
+  width: 120px;
+}
+
+.addEmail {
+  width: 220px;
+}
+
+.nights {
+  width: 40px;
+  margin: 0px;
+}
+
+.sortHeader {
+  cursor: pointer;
+}
+.addCheckIn,
+.addCheckOut {
+  width: 160px;
 }
