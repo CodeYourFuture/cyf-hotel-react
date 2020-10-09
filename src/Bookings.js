@@ -2,19 +2,26 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import fakeBookings from "./data/fakeBookings.json"; // API does not get fetched as it should
 
-const Bookings = () => {
-  let [bookings, setBookings] = useState(null);
+function Bookings() {
+  let [bookings, setBookings] = useState(fakeBookings);
+  let [message, setMessage] = useState("Loading...");
 
-  useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then(response => response.json())
-      .then(json => setBookings(json));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://cyf-react.glitch.me/delayed")
+  //     .then(response => {
+  //       if(response.status >= 200 && response.status <= 299) {
+  //         response.json()
+  //       }
+  //       else {
+  //         throw Error(response.statusText);
+  //       }})
+  //     .then(json => setBookings(json))
+  //     .catch(error => setMessage(String(error)))
+  // }, []);
 
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
+  function search(searchVal) {
     let results = [];
 
     for (let i = 0; i < bookings.length; ++i) {
@@ -26,7 +33,7 @@ const Bookings = () => {
       }
     }
     setBookings(results);
-  };
+  }
 
   if (bookings) {
     return (
@@ -38,8 +45,8 @@ const Bookings = () => {
       </div>
     );
   } else {
-    return null;
+    return <h5 id="loading-bookings">{message}</h5>;
   }
-};
+}
 
 export default Bookings;

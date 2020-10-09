@@ -62,3 +62,8 @@ tr {
 .profile-button {
   font-size: 12px;
 }
+
+#loading-bookings {
+  margin: 24px;
+  text-align: center;
+}
