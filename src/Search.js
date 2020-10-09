@@ -17,7 +17,10 @@ const Search = ({ searchVal }) => {
       body: JSON.stringify({
         firstName: searchInput,
         email: searchInput,
-        surName: searchInput
+        surName: searchInput,
+        roomId: searchInput,
+        checkInDate: searchInput,
+        checkOutDate: searchInput
       })
     })
       .then(res => res.json())

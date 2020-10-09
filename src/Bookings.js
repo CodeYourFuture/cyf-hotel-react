@@ -16,7 +16,7 @@ const Bookings = () => {
       })
       .then(data => setSortedBookings(data))
       .catch(err => {
-        throw new Error(err.url + " Error has occured:" + err.status);
+        console.log(err.url + " Error has occured:" + err.status);
       });
   }, []);
   if (!sortedBookings) {
@@ -31,25 +31,28 @@ const Bookings = () => {
         element =>
           element.firstName.toLowerCase() === searchInput.toLowerCase() ||
           element.surname.toLowerCase() === searchInput.toLowerCase() ||
-          element.email.toLowerCase() === searchInput.toLowerCase()
+          element.email.toLowerCase() === searchInput.toLowerCase() ||
+          element.roomId.toLowerCase() === searchInput.toLowerCase() ||
+          element.checkInDate.toLowerCase() === searchInput.toLowerCase() ||
+          element.checkOutDate.toLowerCase() === searchInput.toLowerCase()
       );
       setSortedBookings(newBookings);
     };
 
-    const addNewBookings = data => {
-      setSortedBookings([
-        ...sortedBookings,
-        {
-          title: data.title,
-          firstName: data.firstName,
-          surname: data.surName,
-          roomId: data.roomId,
-          email: data.email,
-          checkInDate: data.checkIn,
-          checkOutDate: data.checkOut
-        }
-      ]);
-    };
+    // const addNewBookings = data => {
+    //   setSortedBookings([
+    //     ...sortedBookings,
+    //     {
+    //       title: data.title,
+    //       firstName: data.firstName,
+    //       surname: data.surName,
+    //       roomId: data.roomId,
+    //       email: data.email,
+    //       checkInDate: data.checkIn,
+    //       checkOutDate: data.checkOut
+    //     }
+    //   ]);
+    // };
 
     function handleSortTable(header) {
       let newSortedBookings = [...sortedBookings];
@@ -86,7 +89,7 @@ const Bookings = () => {
             handleSortNumber={handleSortNumber}
             ascending={ascending}
           />
-          <NewBookings addNewBookings={data => addNewBookings(data)} />
+          <NewBookings />
         </div>
       </div>
     );

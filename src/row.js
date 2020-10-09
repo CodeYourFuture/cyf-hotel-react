@@ -60,7 +60,7 @@ const Row = ({ element, index, showCustomerProfile }) => {
             : "mx-auto text-white bg-dark"
         }
       >
-        {element.surname}
+        {element.surName}
       </td>
       <td className={active ? "bg-success text-white" : " text-white "}>
         {element.email}
@@ -75,7 +75,7 @@ const Row = ({ element, index, showCustomerProfile }) => {
         {element.roomId}
       </td>
       <td className={active ? "bg-success text-white" : " text-white "}>
-        {element.checkInDate}
+        {element.checkIn}
       </td>
       <td
         className={
@@ -84,11 +84,11 @@ const Row = ({ element, index, showCustomerProfile }) => {
             : "mx-auto text-white bg-dark"
         }
       >
-        {element.checkOutDate}
+        {element.checkOut}
       </td>
       <td className={active ? "bg-success text-white" : "text-white"}>
         {" "}
-        {moment(element.checkOutDate).diff(moment(element.checkInDate), "days")}
+        {moment(element.checkOut).diff(moment(element.checkIn), "days")}
       </td>
     </tr>
   );

@@ -1,39 +1,46 @@
 import React, { useState } from "react";
 
-const NewForm = ({ addNewBookings }) => {
+const NewForm = () => {
   const [title, setTitle] = useState("");
   const [firstName, setFirstName] = useState("");
   const [surName, setSurName] = useState("");
   const [roomId, setRoomId] = useState("");
   const [email, setEmail] = useState("");
-  const [checkIn, setCheckIn] = useState("");
-  const [checkOut, setCheckOut] = useState("");
+  const [checkIn, setCheckIn] = useState();
+  const [checkOut, setCheckOut] = useState();
 
-  function handleTitle(event) {
-    setTitle(event.target.value);
-  }
-  function handleFirstName(event) {
-    setFirstName(event.target.value);
-  }
-  function handleSurName(event) {
-    setSurName(event.target.value);
-  }
-  function handleRoomId(event) {
-    setRoomId(event.target.value);
-  }
-  function handleEmail(event) {
-    setEmail(event.target.value);
-  }
-  function handleCheckIn(event) {
-    setCheckIn(event.target.value);
-  }
-  function handleCheckOut(event) {
-    setCheckOut(event.target.value);
+  function handleChange(event) {
+    const { value, name } = event.target;
+    switch (name) {
+      case name === "title":
+        setTitle(value);
+        break;
+      case name === "firstName":
+        setFirstName(value);
+        break;
+      case name === "surName":
+        setSurName(value);
+        break;
+      case name === "roomId":
+        setRoomId(value);
+        break;
+      case name === "email":
+        setEmail(value);
+        break;
+      case name === "checkIn":
+        setCheckIn(value);
+        break;
+      case name === "checkOut":
+        setCheckOut(value);
+        break;
+      default:
+        console.log(`Sorry`);
+    }
   }
 
   async function handleSubmit(event) {
     event.preventDefault();
-    await fetch("https://hotel-server.herokuapp.com/bookings/newBooking", {
+    fetch("https://hotel-server.herokuapp.com/bookings/newBooking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -42,8 +49,8 @@ const NewForm = ({ addNewBookings }) => {
         title: title,
         firstName: firstName,
         surName: surName,
-        roomId: roomId,
         email: email,
+        roomId: roomId,
         checkIn: checkIn,
         checkOut: checkOut
       })
@@ -68,27 +75,30 @@ const NewForm = ({ addNewBookings }) => {
           name="title"
           className="form-group my-2"
           value={title}
-          onChange={handleTitle}
+          handleChange={handleChange}
+          onChange={event => setTitle(event.target.value)}
         />
       </div>
       <div className="form-group mb-2 mx-2">
         <label className="col-form-label mr-1">First Name:</label>
         <input
           type="text"
-          name="firstname"
+          name="firstName"
           className="form-group mt-2 mr-1 mb-2"
           value={firstName}
-          onChange={handleFirstName}
+          handleChange={handleChange}
+          onChange={event => setFirstName(event.target.value)}
         />
       </div>
       <div className="form-group mb-2">
         <label className="col-form-label mr-1">SurName:</label>
         <input
           type="text"
-          name="surname"
+          name="surName"
           className="form-group mt-2 mb-2"
           value={surName}
-          onChange={handleSurName}
+          handleChange={handleChange}
+          onChange={event => setSurName(event.target.value)}
         />
       </div>
       <div className="form-group mb-2">
@@ -99,7 +109,8 @@ const NewForm = ({ addNewBookings }) => {
           className="form-group mt-2 mb-2"
           name="email"
           value={email}
-          onChange={handleEmail}
+          handleChange={handleChange}
+          onChange={event => setEmail(event.target.value)}
         />
       </div>
       <div className="form-group mb-2">
@@ -109,27 +120,30 @@ const NewForm = ({ addNewBookings }) => {
           name="roomId"
           className="form-group mt-2 mb-2"
           value={roomId}
-          onChange={handleRoomId}
+          handleChange={handleChange}
+          onChange={event => setRoomId(event.target.value)}
         />
       </div>
       <div className="form-group mb-2">
         <label className="col-form-label mx-1">Check in date:</label>
         <input
           type="date"
-          name="check-in"
+          name="checkIn"
           className="form-group mt-2 mb-2"
           value={checkIn}
-          onChange={handleCheckIn}
+          handleChange={handleChange}
+          onChange={event => setCheckIn(event.target.value)}
         />
       </div>
       <div className="form-group mb-2">
         <label className="col-form-label mx-2">Check out date:</label>
         <input
           type="date"
-          name="check-out"
+          name="checkOut"
           className="form-group mt-2 mb-2 mr-1"
           value={checkOut}
-          onChange={handleCheckOut}
+          handleChange={handleChange}
+          onChange={event => setCheckOut(event.target.value)}
         />
       </div>
       <input
