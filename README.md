@@ -122,7 +122,17 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** Check that the bookings are still rendered correctly in the page.
 
-#### 15. Load bookings remotely
+#### 15. Highlight booking row when clicked
+
+**Instructions:** Within the `<SearchResults />` component or its child components, add an `onClick` handler to each row in the table (hint: on the `<tr>` element). When clicked, the row is "selected" and highlighted with a different colour. When clicked again, the row is unselected and the coloured highlighting is removed.
+
+**Hint:** Use a new state variable for each row to record if the row is selected or not, and use this value to set a class to the `className` prop of the row.
+
+**Test:** Verify that each row of your table can be highlighted (on and off) independently when being clicked.
+
+## Lesson 3
+
+#### 16. Load bookings remotely
 
 **Instructions:** Instead of getting the existing bookings from the file `data/fakeBookings.json`, we will get and load the bookings from a remote API. In the `<Bookings />` component, use the React function `useEffect` to `console.log()` some text only when the page first renders on the screen. Verify that when you refresh the page, the text appears once in the console. Then, in the `useEffect` function, use the `fetch()` function to get data from `https://cyf-react.glitch.me`.
 
@@ -133,16 +143,6 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 - When the response comes back, use `setBookings` to update the results
 
 **Test:** Verify the customers data are still displayed correctly in the table.
-
-#### 16. Highlight booking row when clicked
-
-**Instructions:** Within the `<SearchResults />` component or its child components, add an `onClick` handler to each row in the table (hint: on the `<tr>` element). When clicked, the row is "selected" and highlighted with a different colour. When clicked again, the row is unselected and the coloured highlighting is removed.
-
-**Hint:** Use a new state variable for each row to record if the row is selected or not, and use this value to set a class to the `className` prop of the row.
-
-**Test:** Verify that each row of your table can be highlighted (on and off) independently when being clicked.
-
-## Lesson 3
 
 #### 17. Storing the search input in a state
 
