@@ -5,15 +5,24 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState(FakeBookings);
+  const [appLoading, setAppLoading] = useState(false);
+
   useEffect(() => {
+    setTimeout(() => {
+      APIFetchFn();
+    }, 5000);
+  }, []);
+
+  const APIFetchFn = () => {
     console.log("testing");
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://cyf-react.glitch.me/`)
       .then(response => response.json())
       .then(data => {
         console.log(data);
         setBookings(data);
       });
-  }, []);
+    setAppLoading(true);
+  };
 
   const search = searchVal => {
     setBookings(
@@ -31,14 +40,22 @@ const Bookings = () => {
     // setBookings(searchValue);
   };
 
-  return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
+  return !appLoading ? (
+    <p> Please wait...data is downloading</p>
+  ) : (
+    <>
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+          <SearchResults results={bookings} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
 export default Bookings;
+
+// references used to solve delayed API fetch for task ####22 :
+// 1. https://stackoverflow.com/questions/50772982/how-to-delay-the-return-in-react-until-fetch-is-done
+// 2. https://www.youtube.com/watch?v=scVRfoTEctc

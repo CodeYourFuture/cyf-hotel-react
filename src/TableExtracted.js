@@ -1,11 +1,17 @@
 import moment from "moment";
 import React, { useState } from "react";
 
-const TableExtracted = ({ item }) => {
-  const [state, setState] = useState("");
+const TableExtracted = ({ item, changeCustomerId }) => {
+  const [state, setState] = useState();
+
   function highlightFn() {
     setState(state ? "" : "tableRow");
   }
+
+  const buttonClickFn = () => {
+    changeCustomerId(item.id);
+  };
+
   return (
     <tr className={state} onClick={highlightFn} key={item.id}>
       <td> {item.id}</td>
@@ -18,6 +24,9 @@ const TableExtracted = ({ item }) => {
       <td> {item.checkOutDate}</td>
       <td>
         {moment(item.checkOutDate).diff(moment(item.checkInDate), "days")}
+      </td>
+      <td>
+        <button onClick={buttonClickFn}> Show profile </button>
       </td>
     </tr>
   );

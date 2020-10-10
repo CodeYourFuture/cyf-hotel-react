@@ -1,8 +1,14 @@
 // import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 import TableExtracted from "./TableExtracted";
 
 const SearchResults = ({ results }) => {
+  const [customerId, setCustomerId] = useState("");
+  // const changeCustomerId = (id) => {
+  // setCustomerId(id)
+  // }
+
   return (
     <table className="table">
       <thead>
@@ -20,9 +26,14 @@ const SearchResults = ({ results }) => {
       </thead>
       <tbody>
         {results.map(item => (
-          <TableExtracted item={item} key={item.id} />
+          <TableExtracted
+            item={item}
+            key={item.id}
+            changeCustomerId={setCustomerId}
+          />
         ))}
       </tbody>
+      <CustomerProfile customerId={customerId} />
     </table>
   );
 };
