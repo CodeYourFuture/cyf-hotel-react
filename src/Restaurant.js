@@ -4,7 +4,7 @@ import React from "react";
 const Restaurant = () => {
   return (
     <div>
-      <h2>Restaurant Orders</h2>
+      <h4>Restaurant Orders</h4>
       <ul style={{ listStyleType: "none" }}>
         <table>
           <tr>

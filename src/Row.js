@@ -1,18 +1,31 @@
 import React, { useState } from "react";
 import moment from "moment";
+import "./App.css";
+//import CustomerProfile from "./CustomerProfile";
 const Row = props => {
   const [color, changeColor] = useState("white");
-  function setColor(event) {
+
+  function selectId(event) {
+    props.selectRow(event.target.id);
+  }
+  //function to change color of row
+  function setColorAndId(event) {
     if (color === "white") {
       changeColor("lightBlue");
     } else {
       changeColor("white");
     }
+
+    //setId(event.target.id);
   }
-  console.log(props);
+
   return (
     <>
-      <tr id={props.id} onClick={setColor} style={{ backgroundColor: color }}>
+      <tr
+        id={props.props.id}
+        onClick={setColorAndId}
+        style={{ backgroundColor: color }}
+      >
         <td>{props.props.id}</td>
         <td>{props.props.title}</td>
         <td>{props.props.firstName}</td>
@@ -30,8 +43,12 @@ const Row = props => {
           nights
         </td>
         <td>
-          <button onClick={setColor} style={{ backgroundColor: color }}>
-            click
+          <button
+            id={props.props.id}
+            onClick={selectId}
+            style={{ backgroundColor: color }}
+          >
+            Show profile
           </button>
         </td>
       </tr>
