@@ -8,6 +8,11 @@ import AddEntry from "./AddEntry";
 const Bookings = prop => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(null);
+  //common b/t this doc and newentry.jj
+  function addEntryFunction(cancelEntry) {
+    document.getElementById("addEntryDiv").style.display = "none";
+    //document.getElementById("table-responsive").style.display="none"
+  }
   //common between this doc and search result
   function sorting(order, item) {
     let sortedArray;
@@ -131,6 +136,7 @@ const Bookings = prop => {
   //common between this doc and inputsButton.
   function addEntryDivBlock() {
     document.getElementById("addEntryDiv").style.display = "block";
+    //document.getElementById("table-responsive").style.display="block"
   }
   ////////common between this doc and search.js
   function search(searchVal) {
@@ -197,7 +203,16 @@ const Bookings = prop => {
                 marginBottom: "1px"
               }}
             >
-              <AddEntry addEntryDivNone={addEntryDivNone} />
+              <div
+                class="table-responsive"
+                id="table-responsive"
+                style={{ display: "table", fontSize: "14px" }}
+              >
+                <AddEntry
+                  addEntryDivNone={addEntryDivNone}
+                  addEntryFunction={addEntryFunction}
+                />
+              </div>
             </div>
             {/* <SearchResults people={bookings} /> */}
 

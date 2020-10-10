@@ -2,8 +2,9 @@ import React, { useState } from "react";
 const AddEntry = prop => {
   ///cancel form
   function cancelForm() {
-    // alert( document.getElementById("table-responsive").style.display)
+    //document.getElementById("table-responsive").style.display="block"
     //document.getElementById("frmCustomer").preventDefault;
+    prop.addEntryFunction("cancelEntry");
   }
   //style of this doc
 
@@ -82,102 +83,96 @@ const AddEntry = prop => {
   }
   return (
     <>
-      <div
-        class="table-responsive"
-        id="table-responsive"
-        style={{ display: "table", fontSize: "14px" }}
-      >
-        <form onSubmit={submit} onLoad={load} id="frmCustomer">
-          <table class="table table-striped table-light table-bordered table-hover table-sm">
-            <thead class="thead-light">
-              <th scop="col">Title</th>
-              <th scope="col">First Name</th>
-              <th scope="col">SurNAme</th>
-              <th scope="col">Email</th>
-              <th scope="col">RoomID</th>
-              <th scope="col">Check in Date</th>
-              <th scope="col">Check out Date</th>
-              <th scope="col">Phone</th>
-              <th scope="col" onClick={cancelForm}>
-                X
-              </th>
-            </thead>
-            <tbody>
-              <tr id="selectedRowId">
-                <td>
-                  <input
-                    type="text"
-                    id="txtTitle"
-                    onChange={handleTitle}
-                    style={{ width: "40px" }}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="txtFirstName"
-                    onChange={handleFirstName}
-                    style={{ width: "100px" }}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="txtSurName"
-                    onChange={handleSurName}
-                    style={{ width: "100px" }}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="txtEmail"
-                    onChange={handleEmail}
-                    style={{ width: "100px" }}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="txtRoomID"
-                    onChange={handleRoomID}
-                    style={{ width: "40px" }}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="txtCheckIn"
-                    onChange={handleCheckIn}
-                    style={{ width: "100px" }}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="txtCheckOut"
-                    onChange={handleCheckOut}
-                    style={{ width: "100px" }}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="txtPhone"
-                    onChange={handlePhone}
-                    style={{ width: "100px" }}
-                  />
-                </td>
-                <td>
-                  <button className="btn btn-primary" onClick={Add}>
-                    Add
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </form>
-      </div>
+      <form onSubmit={submit} onLoad={load} id="frmCustomer">
+        <table class="table table-striped table-light table-bordered table-hover table-sm">
+          <thead class="thead-light">
+            <th scop="col">Title</th>
+            <th scope="col">First Name</th>
+            <th scope="col">SurNAme</th>
+            <th scope="col">Email</th>
+            <th scope="col">RoomID</th>
+            <th scope="col">Check in Date</th>
+            <th scope="col">Check out Date</th>
+            <th scope="col">Phone</th>
+            <th scope="col" onClick={cancelForm}>
+              X
+            </th>
+          </thead>
+          <tbody>
+            <tr id="selectedRowId">
+              <td>
+                <input
+                  type="text"
+                  id="txtTitle"
+                  onChange={handleTitle}
+                  style={{ width: "40px" }}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="txtFirstName"
+                  onChange={handleFirstName}
+                  style={{ width: "100px" }}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="txtSurName"
+                  onChange={handleSurName}
+                  style={{ width: "100px" }}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="txtEmail"
+                  onChange={handleEmail}
+                  style={{ width: "100px" }}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="txtRoomID"
+                  onChange={handleRoomID}
+                  style={{ width: "40px" }}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="txtCheckIn"
+                  onChange={handleCheckIn}
+                  style={{ width: "100px" }}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="txtCheckOut"
+                  onChange={handleCheckOut}
+                  style={{ width: "100px" }}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="txtPhone"
+                  onChange={handlePhone}
+                  style={{ width: "100px" }}
+                />
+              </td>
+              <td>
+                <button className="btn btn-primary" onClick={Add}>
+                  Add
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
     </>
   );
 };
