@@ -9,37 +9,38 @@ const NewForm = () => {
   const [checkIn, setCheckIn] = useState();
   const [checkOut, setCheckOut] = useState();
 
-  function handleChange(event) {
-    const { value, name } = event.target;
-    switch (name) {
-      case name === "title":
-        setTitle(value);
-        break;
-      case name === "firstName":
-        setFirstName(value);
-        break;
-      case name === "surName":
-        setSurName(value);
-        break;
-      case name === "roomId":
-        setRoomId(value);
-        break;
-      case name === "email":
-        setEmail(value);
-        break;
-      case name === "checkIn":
-        setCheckIn(value);
-        break;
-      case name === "checkOut":
-        setCheckOut(value);
-        break;
-      default:
-        console.log(`Sorry`);
-    }
-  }
+  // function handleChange(event) {
+  //   const { value, name } = event.target;
+  //   switch (name) {
+  //     case name === "title":
+  //       setTitle(value);
+  //       break;
+  //     case name === "firstName":
+  //       setFirstName(value);
+  //       break;
+  //     case name === "surName":
+  //       setSurName(value);
+  //       break;
+  //     case name === "roomId":
+  //       setRoomId(value);
+  //       break;
+  //     case name === "email":
+  //       setEmail(value);
+  //       break;
+  //     case name === "checkIn":
+  //       setCheckIn(value);
+  //       break;
+  //     case name === "checkOut":
+  //       setCheckOut(value);
+  //       break;
+  //     default:
+  //       console.log(`Sorry`);
+  //   }
+  // }
 
   async function handleSubmit(event) {
     event.preventDefault();
+
     fetch("https://hotel-server.herokuapp.com/bookings/newBooking", {
       method: "POST",
       headers: {
@@ -59,6 +60,7 @@ const NewForm = () => {
       .then(res => console.log("Res", res))
       .then(data => {
         console.log(data);
+        console.log(event);
         window.location.reload();
       });
   }
@@ -75,8 +77,11 @@ const NewForm = () => {
           name="title"
           className="form-group my-2"
           value={title}
-          handleChange={handleChange}
-          onChange={event => setTitle(event.target.value)}
+          // handleChange={handleChange}
+          onChange={event => {
+            event.persist();
+            setTitle(event.target.value);
+          }}
         />
       </div>
       <div className="form-group mb-2 mx-2">
@@ -86,8 +91,11 @@ const NewForm = () => {
           name="firstName"
           className="form-group mt-2 mr-1 mb-2"
           value={firstName}
-          handleChange={handleChange}
-          onChange={event => setFirstName(event.target.value)}
+          // handleChange={handleChange}
+          onChange={event => {
+            event.persist();
+            setFirstName(event.target.value);
+          }}
         />
       </div>
       <div className="form-group mb-2">
@@ -97,8 +105,12 @@ const NewForm = () => {
           name="surName"
           className="form-group mt-2 mb-2"
           value={surName}
-          handleChange={handleChange}
-          onChange={event => setSurName(event.target.value)}
+          // handleChange={handleChange}
+          onChange={event => {
+            event.persist();
+            setSurName(event.target.value);
+            console.log(surName.trim());
+          }}
         />
       </div>
       <div className="form-group mb-2">
@@ -109,8 +121,11 @@ const NewForm = () => {
           className="form-group mt-2 mb-2"
           name="email"
           value={email}
-          handleChange={handleChange}
-          onChange={event => setEmail(event.target.value)}
+          // handleChange={handleChange}
+          onChange={event => {
+            event.persist();
+            setEmail(event.target.value);
+          }}
         />
       </div>
       <div className="form-group mb-2">
@@ -120,8 +135,11 @@ const NewForm = () => {
           name="roomId"
           className="form-group mt-2 mb-2"
           value={roomId}
-          handleChange={handleChange}
-          onChange={event => setRoomId(event.target.value)}
+          // handleChange={handleChange}
+          onChange={event => {
+            event.persist();
+            setRoomId(event.target.value);
+          }}
         />
       </div>
       <div className="form-group mb-2">
@@ -131,8 +149,12 @@ const NewForm = () => {
           name="checkIn"
           className="form-group mt-2 mb-2"
           value={checkIn}
-          handleChange={handleChange}
-          onChange={event => setCheckIn(event.target.value)}
+          // handleChange={handleChange}
+          onChange={event => {
+            event.persist();
+            setCheckIn(event.target.value);
+            console.log(event.target.value);
+          }}
         />
       </div>
       <div className="form-group mb-2">
@@ -142,8 +164,11 @@ const NewForm = () => {
           name="checkOut"
           className="form-group mt-2 mb-2 mr-1"
           value={checkOut}
-          handleChange={handleChange}
-          onChange={event => setCheckOut(event.target.value)}
+          // handleChange={handleChange}
+          onChange={event => {
+            event.persist();
+            setCheckOut(event.target.value);
+          }}
         />
       </div>
       <input
