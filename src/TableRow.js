@@ -1,19 +1,25 @@
 import React, { useState } from "react";
-
+// need to use  a state variable for each button to remmber id may be
 function TableRow(props) {
-  console.log(props.booking.id);
   let customer = props.booking;
+  // console.log("Hey I am customer"+customer)
 
   const [colorClass, setColorClass] = useState("red");
+  // eslint-disable-next-line
+  const [id, setId] = useState(customer.id);
+  // eslint-disable-next-line
+  const [number, setNumber] = useState(customer.phoneNumber); // eslint-disable-next-line
+  // console.log("Hey i am from table row number"+customer.phoneNumber)
+  const [email, setEmail] = useState(customer.email);
+
+  // setId(customer.id)
 
   function ChangeColor() {
-    console.log("Yes I was clicked mann " + colorClass);
     if (colorClass === "red") {
       green();
     } else {
       Red();
     }
-    console.log("Now I am " + colorClass);
   }
 
   function green() {
@@ -22,6 +28,11 @@ function TableRow(props) {
   function Red() {
     setColorClass("red");
   }
+
+  function handleClick() {
+    props.handler(id, email, number);
+  }
+
   return (
     <tr className={colorClass} onClick={ChangeColor}>
       <th scope="row">{customer.id}</th>
@@ -32,6 +43,12 @@ function TableRow(props) {
       <td>{customer.roomId}</td>
       <td>{customer.checkInDate}</td>
       <td>{customer.checkOutDate}</td>
+      <td>
+        {" "}
+        <button onClick={handleClick} className="show-profile">
+          show Profile
+        </button>
+      </td>
     </tr>
   );
 }

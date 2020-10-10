@@ -12,6 +12,7 @@ function TableHead() {
         <th scope="col">Room-ID</th>
         <th scope="col">CheckIn</th>
         <th scope="col">CheckOut</th>
+        <th scope="col">Button</th>
       </tr>
     </thead>
   );
