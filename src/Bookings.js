@@ -14,12 +14,24 @@ const Bookings = () => {
   }, []);
 
   const APIFetchFn = () => {
-    console.log("testing");
     fetch(`https://cyf-react.glitch.me/`)
-      .then(response => response.json())
+      // fetch(`https://cyf-react.glitch.me/error`) // for error message ####23
+
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          alert(response.status);
+          alert("Something went wrong!!!");
+        }
+        response.json();
+      })
       .then(data => {
         console.log(data);
         setBookings(data);
+      })
+      .catch(error => {
+        console.error("Error:", error);
       });
     setAppLoading(true);
   };
@@ -59,3 +71,7 @@ export default Bookings;
 // references used to solve delayed API fetch for task ####22 :
 // 1. https://stackoverflow.com/questions/50772982/how-to-delay-the-return-in-react-until-fetch-is-done
 // 2. https://www.youtube.com/watch?v=scVRfoTEctc
+
+// references for error HTTP CODE display ####23:
+// https://stackoverflow.com/questions/55447472/how-can-i-get-my-fetch-error-to-show-an-http-status-code
+// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
