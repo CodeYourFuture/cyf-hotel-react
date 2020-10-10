@@ -12,7 +12,7 @@ const CustomerProfile = props => {
   }, [props.id]);
 
   return (
-    <div isOpen={false}>
+    <div>
       <p>Customer Id {props.id} </p>
       <ul>
         <li>

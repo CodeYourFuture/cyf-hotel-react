@@ -68,6 +68,14 @@ const Bookings = () => {
       .then(res => res.json())
       .then(data => setBookings(data));
   };
+
+  const updateBooking = id => {
+    fetch(`https://nawal-hotel-server.glitch.me/bookings/${id}`, {
+      method: "UPDATE"
+    })
+      .then(res => res.json())
+      .then(data => setBookings(data));
+  };
   /*
   body: JSON.stringify({
         firstName: newBooking.firstName,
@@ -108,12 +116,12 @@ const Bookings = () => {
       .then(response => response.json())
       .then(data => {
         console.log("Success:", data);
+        customer.id = data.id;
+        setBookings([...bookings, customer]);
       })
       .catch(error => {
         console.error("Error:", error);
       });
-    customer.id = bookings.length + 1;
-    setBookings([...bookings, customer]);
   };
 
   if (loading && !error) {

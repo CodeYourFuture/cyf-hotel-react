@@ -4,6 +4,7 @@ import "./BodyRow.css";
 
 const BodyRow = ({ field, setClickedBtn, deleteBooking }) => {
   const [isSelected, setIsSelected] = useState(null);
+  const [isClicked, setIsClicked] = useState(false);
 
   console.log(field.id);
   const deleteChangeHandler = event => {
@@ -12,7 +13,9 @@ const BodyRow = ({ field, setClickedBtn, deleteBooking }) => {
   };
 
   const buttonChangeHandler = event => {
-    setClickedBtn(field.id);
+    const id = isClicked ? null : field.id;
+    setClickedBtn(id);
+    setIsClicked(!isClicked);
     event.stopPropagation();
   };
   //   const setClassName = id => {
