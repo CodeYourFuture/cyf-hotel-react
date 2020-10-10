@@ -9,35 +9,6 @@ const NewForm = () => {
   const [checkIn, setCheckIn] = useState();
   const [checkOut, setCheckOut] = useState();
 
-  // function handleChange(event) {
-  //   const { value, name } = event.target;
-  //   switch (name) {
-  //     case name === "title":
-  //       setTitle(value);
-  //       break;
-  //     case name === "firstName":
-  //       setFirstName(value);
-  //       break;
-  //     case name === "surName":
-  //       setSurName(value);
-  //       break;
-  //     case name === "roomId":
-  //       setRoomId(value);
-  //       break;
-  //     case name === "email":
-  //       setEmail(value);
-  //       break;
-  //     case name === "checkIn":
-  //       setCheckIn(value);
-  //       break;
-  //     case name === "checkOut":
-  //       setCheckOut(value);
-  //       break;
-  //     default:
-  //       console.log(`Sorry`);
-  //   }
-  // }
-
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -60,7 +31,6 @@ const NewForm = () => {
       .then(res => console.log("Res", res))
       .then(data => {
         console.log(data);
-        console.log(event);
         window.location.reload();
       });
   }
@@ -77,7 +47,6 @@ const NewForm = () => {
           name="title"
           className="form-group my-2"
           value={title}
-          // handleChange={handleChange}
           onChange={event => {
             event.persist();
             setTitle(event.target.value);
@@ -91,7 +60,6 @@ const NewForm = () => {
           name="firstName"
           className="form-group mt-2 mr-1 mb-2"
           value={firstName}
-          // handleChange={handleChange}
           onChange={event => {
             event.persist();
             setFirstName(event.target.value);
@@ -105,7 +73,6 @@ const NewForm = () => {
           name="surName"
           className="form-group mt-2 mb-2"
           value={surName}
-          // handleChange={handleChange}
           onChange={event => {
             event.persist();
             setSurName(event.target.value);
@@ -121,7 +88,6 @@ const NewForm = () => {
           className="form-group mt-2 mb-2"
           name="email"
           value={email}
-          // handleChange={handleChange}
           onChange={event => {
             event.persist();
             setEmail(event.target.value);
@@ -135,7 +101,6 @@ const NewForm = () => {
           name="roomId"
           className="form-group mt-2 mb-2"
           value={roomId}
-          // handleChange={handleChange}
           onChange={event => {
             event.persist();
             setRoomId(event.target.value);
@@ -149,7 +114,6 @@ const NewForm = () => {
           name="checkIn"
           className="form-group mt-2 mb-2"
           value={checkIn}
-          // handleChange={handleChange}
           onChange={event => {
             event.persist();
             setCheckIn(event.target.value);
@@ -164,7 +128,6 @@ const NewForm = () => {
           name="checkOut"
           className="form-group mt-2 mb-2 mr-1"
           value={checkOut}
-          // handleChange={handleChange}
           onChange={event => {
             event.persist();
             setCheckOut(event.target.value);

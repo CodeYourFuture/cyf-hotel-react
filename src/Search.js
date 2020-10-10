@@ -19,13 +19,14 @@ const Search = ({ searchVal }) => {
         email: searchInput,
         surName: searchInput,
         roomId: searchInput,
-        checkInDate: searchInput,
-        checkOutDate: searchInput
+        checkIn: searchInput,
+        checkOut: searchInput
       })
     })
       .then(res => res.json())
       .then(res => console.log("Res", res))
       .then(data => {
+        console.log("Search result :", data);
         searchVal(searchInput);
       });
   }

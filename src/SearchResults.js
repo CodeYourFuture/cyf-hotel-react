@@ -11,7 +11,7 @@ const SearchResults = ({
 }) => {
   const [id, setId] = useState("");
   function showCustomerProfile(element) {
-    setId([element.roomId]);
+    setId(element._id);
   }
 
   return (
@@ -51,7 +51,7 @@ const SearchResults = ({
               <p>First Name</p>
             </th>
             <th
-              onClick={() => handleSortTable("surname")}
+              onClick={() => handleSortTable("surName")}
               className={"mx-auto border text-center text-white bg-dark"}
             >
               {ascending ? (
@@ -84,7 +84,7 @@ const SearchResults = ({
               <p>Room Id</p>
             </th>
             <th
-              onClick={() => handleSortNumber("checkInDate")}
+              onClick={() => handleSortNumber("checkIn")}
               className={"mx-auto border text-center text-white bg-dark"}
             >
               {ascending ? (
@@ -95,7 +95,7 @@ const SearchResults = ({
               <p>Check In Date</p>
             </th>
             <th
-              onClick={() => handleSortNumber("checkOutDate")}
+              onClick={() => handleSortNumber("checkOut")}
               className={"mx-auto border text-center text-white bg-dark"}
             >
               {ascending ? (

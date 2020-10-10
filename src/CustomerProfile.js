@@ -11,23 +11,25 @@ const CustomerProfile = ({ customerId }) => {
           throw new Error("Something went wrong");
         }
       })
-      .then(data => setData(data));
+      .then(data => {
+        setData(data);
+        console.log("ProfileData", data);
+      });
   }, [customerId]);
-  console.log(data);
 
-  if ((data.length = 0 || customerId === "")) {
+  if (customerId === "") {
     return null;
   } else {
     return (
-      <div className="bg-danger text-white mx-auto">
-        <p className="ml-3 mt-2">Customer Id : {customerId}</p>
-        <p className="ml-3">Customer Email :{data.email} </p>
-        <p className="ml-3">
-          {data.vip
-            ? "This Customer is VIP customer"
-            : "This Customer is NOT VIP customer"}{" "}
+      <div className="bg-secondary text-white mx-auto ">
+        <p className="ml-3 font-weight-bold pt-3">Customer Information</p>
+        <p className="ml-3 font-weight-bold">
+          Full Name:{data.firstName} {data.surName}
         </p>
-        <p className="ml-3">Phone Number : {data.phoneNumber}</p>
+        <p className="ml-3 font-weight-bold mt-2">Room:{data.roomId}</p>
+        <p className="ml-3 font-weight-bold">Contact:{data.email} </p>
+        <p className="ml-3 font-weight-bold">Day of leaving: {data.checkOut}</p>
+        <p className="ml-3 font-weight-bold" />
       </div>
     );
   }

@@ -30,29 +30,14 @@ const Bookings = () => {
       const newBookings = sortedBookings.filter(
         element =>
           element.firstName.toLowerCase() === searchInput.toLowerCase() ||
-          element.surname.toLowerCase() === searchInput.toLowerCase() ||
+          element.surName.toLowerCase() === searchInput.toLowerCase() ||
           element.email.toLowerCase() === searchInput.toLowerCase() ||
           element.roomId.toLowerCase() === searchInput.toLowerCase() ||
-          element.checkInDate.toLowerCase() === searchInput.toLowerCase() ||
-          element.checkOutDate.toLowerCase() === searchInput.toLowerCase()
+          element.checkIn.toLowerCase() === searchInput.toLowerCase() ||
+          element.checkOut.toLowerCase() === searchInput.toLowerCase()
       );
       setSortedBookings(newBookings);
     };
-
-    // const addNewBookings = data => {
-    //   setSortedBookings([
-    //     ...sortedBookings,
-    //     {
-    //       title: data.title,
-    //       firstName: data.firstName,
-    //       surname: data.surName,
-    //       roomId: data.roomId,
-    //       email: data.email,
-    //       checkInDate: data.checkIn,
-    //       checkOutDate: data.checkOut
-    //     }
-    //   ]);
-    // };
 
     function handleSortTable(header) {
       let newSortedBookings = [...sortedBookings];
