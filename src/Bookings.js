@@ -2,24 +2,25 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import fakeBookings from "./data/fakeBookings.json"; // API does not get fetched as it should
+// import Form from "./Form";
+// import fakeBookings from "./data/fakeBookings.json"; // API does not get fetched as it should
 
 function Bookings() {
-  let [bookings, setBookings] = useState(fakeBookings);
+  let [bookings, setBookings] = useState(null);
   let [message, setMessage] = useState("Loading...");
 
-  // useEffect(() => {
-  //   fetch("https://cyf-react.glitch.me/delayed")
-  //     .then(response => {
-  //       if(response.status >= 200 && response.status <= 299) {
-  //         response.json()
-  //       }
-  //       else {
-  //         throw Error(response.statusText);
-  //       }})
-  //     .then(json => setBookings(json))
-  //     .catch(error => setMessage(String(error)))
-  // }, []);
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me/")
+      .then(response => {
+        if (response.status >= 200 && response.status <= 299) {
+          response.json();
+        } else {
+          throw Error(response.statusText);
+        }
+      })
+      .then(json => setBookings(json))
+      .catch(error => setMessage(String(error)));
+  }, []);
 
   function search(searchVal) {
     let results = [];

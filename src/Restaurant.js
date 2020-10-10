@@ -20,7 +20,7 @@ function Order(props) {
   );
 }
 
-const Restaurant = () => {
+function Restaurant() {
   return (
     <div>
       <h3>Restaurant Orders</h3>
@@ -31,6 +31,6 @@ const Restaurant = () => {
       </ul>
     </div>
   );
-};
+}
 
 export default Restaurant;

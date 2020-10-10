@@ -4,7 +4,7 @@ function SearchButton() {
   return <button className="btn btn-primary">Search</button>;
 }
 
-const Search = props => {
+function Search(props) {
   const [searchInput, setSearchInput] = useState("");
 
   function handleSearchInput(event) {
@@ -41,6 +41,6 @@ const Search = props => {
       </div>
     </div>
   );
-};
+}
 
 export default Search;

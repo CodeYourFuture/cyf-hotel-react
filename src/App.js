@@ -7,7 +7,7 @@ import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 
-const App = () => {
+function App() {
   return (
     <div className="App">
       <Heading />
@@ -23,6 +23,6 @@ const App = () => {
       />
     </div>
   );
-};
+}
 
 export default App;
