@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [rowColor, setRowColor] = useState(true);
+  const clickRow = click => {
+    click.defultColor();
+    setRowColor(!rowColor);
+    let colorType = click.target.parentElement;
+    if (rowColor) {
+      colorType.className = "highlightRow";
+    } else {
+      colorType.className = "unHighlightRow";
+    }
+  };
   return (
     <table className="table">
       <thead className="table-head">
-        <tr>
+        <tr onClick={clickRow}>
           <th scope="col">title</th>
           <th scope="col">id</th>
           <th scope="col">first name</th>

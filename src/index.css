@@ -24,3 +24,9 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+.highlightRow {
+  background-color: plum;
+}
+.unHighlightRow {
+  background-color: springgreen;
+}
