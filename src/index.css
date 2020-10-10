@@ -73,7 +73,6 @@ table {
   background-color: teal;
 }
 table tr {
-  display: flex;
 }
 table tr th {
   background-color: #1b5299;

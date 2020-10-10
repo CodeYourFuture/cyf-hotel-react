@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 
 const OneRecord = props => {
+  console.log(props);
   let dOut = moment(props.item.checkOutDate); // dOut = date out
-  let dIn = moment(props.item.checkInDate); // dIn = date in
+  let dIn = moment(props.item.checkInDate); // dIn = date inz
   let Nights = dOut.diff(dIn, "days");
 
   const [color, setColor] = useState("");

@@ -3,24 +3,26 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import fakeBookings from "../src/data/fakeBookings.json";
 import "./index.css";
+import NewRecordForm from "./NewRecordForm.js";
 
 var allData;
 var errorType;
 
-const Bookings = () => {
+const Bookings = props => {
   const [bookings, setBookings] = useState([]);
-  const bookingRecord = () => {
-    setBookings(fakeBookings + 1);
+
+  const bookingRecord = data => {
+    setBookings(bookings.concat(data));
   };
 
   const [loading, setLoading] = useState(true);
 
   const [catchError, setCatchError] = useState(false);
-  // const[errorType,setErrorType] = useState(null)
+
   const [displayError, setDisplayError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/error`)
+    fetch(`https://cyf-react.glitch.me`)
       .then(res => {
         console.log(res);
         if (!res.ok) {
@@ -65,6 +67,7 @@ const Bookings = () => {
           <span>Loading ...</span>
         )}
       </div>
+      <NewRecordForm bookingRecord={bookingRecord} />
     </div>
   );
 };

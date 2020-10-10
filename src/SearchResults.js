@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import OneRecord from "./OneRecord";
 import CustomerProfile from "./CustomerProfile";
 import "./App.css";
+import SortColumnAsc from "./SortColumnAsc";
 
 const HotelBookings = [
   `Id`,
@@ -15,6 +16,7 @@ const HotelBookings = [
   `Check out date`
 ];
 const SearchResults = props => {
+  console.log("here is new form " + props.newForm);
   const [customerId, setCustomerId] = useState("");
 
   const customerProfileHandler = event => {
@@ -26,7 +28,9 @@ const SearchResults = props => {
       <table>
         <tr>
           {HotelBookings.map(element => {
-            return <th>{element}</th>;
+            return (
+              <SortColumnAsc element={element} data={props.fakeBookings} />
+            );
           })}
           <th>Nights</th>
           <th>Show profile</th>
@@ -40,6 +44,12 @@ const SearchResults = props => {
             />
           );
         })}
+        {/*        
+        <OneRecord
+          item={props.newForm}
+          updateId={customerProfileHandler}
+          class="select"
+        /> */}
       </table>
 
       <CustomerProfile id={customerId} />

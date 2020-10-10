@@ -3,9 +3,9 @@ import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant";
-
 import Bookings from "./Bookings";
 import "./App.css";
+import NewRecordForm from "./NewRecordForm";
 
 const App = () => {
   return (
@@ -14,6 +14,7 @@ const App = () => {
       <Bookings />
       <Restaurant />
       <TouristInfoCards />
+      {/* <NewRecordForm /> */}
       <Footer
         AboutUs={[
           "123 Fake Street, London, E1 4UD",
