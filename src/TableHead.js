@@ -1,15 +1,17 @@
 import React from "react";
 
-const TableHead = ({ bookingsList }) => {
-  const columnTitles = Object.keys(bookingsList[0]);
-
+const TableHead = () => {
   return (
     <thead className="table-danger">
       <tr>
-        {columnTitles.map((title, index) => (
-          <th key={index}>{title}</th>
-        ))}
-
+        <th>Id</th>
+        <th>Title</th>
+        <th>FirstName</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>RoomID</th>
+        <th>CheckIn</th>
+        <th>CheckOut</th>
         <th>Nights</th>
         <th />
       </tr>

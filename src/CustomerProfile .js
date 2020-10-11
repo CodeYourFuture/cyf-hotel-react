@@ -2,12 +2,16 @@ import React from "react";
 
 export default function CustomerProfile({ id, data }) {
   return (
-    <div>
-      <h1>Customer {id} profile</h1>
-      <p>ID: {data.id}</p>
-      <p>Email: {data.email}</p>
-      <p>VIP: {data.vip ? "Yes" : "No"}</p>
-      <p>Phone: {data.phoneNumber}</p>
+    <div className="card my-4 mx-auto">
+      <ul className="list-group list-group-flush">
+        <li className="list-group-item text-center bg-danger text-white">
+          Customer {id} profile
+        </li>
+        <li className="list-group-item">ID: {data.id}</li>
+        <li className="list-group-item">Email: {data.email}</li>
+        <li className="list-group-item">VIP: {data.vip ? "Yes" : "No"}</li>
+        <li className="list-group-item">Phone: {data.phoneNumber}</li>
+      </ul>
     </div>
   );
 }

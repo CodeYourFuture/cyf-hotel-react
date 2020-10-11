@@ -19,10 +19,15 @@ const SearchResults = ({ bookingsList }) => {
 
   return (
     <div>
-      <table className="table table-hover">
-        <TableHead bookingsList={bookingsList} />
-        <TableBody bookingsList={bookingsList} getTheId={getTheId} />
-      </table>
+      {bookingsList.length > 0 ? (
+        <table className="table table-hover">
+          <TableHead />
+          <TableBody bookingsList={bookingsList} getTheId={getTheId} />
+        </table>
+      ) : (
+        <p className="text-center">Sorry... we couldn' find any booking</p>
+      )}
+
       {id ? <CustomerProfile id={id} data={data} /> : ""}
     </div>
   );
