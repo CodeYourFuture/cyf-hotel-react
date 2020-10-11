@@ -7,7 +7,7 @@ function CustomerProfile({ id }) {
       .then(response => response.json())
       .then(data => setProfileData(data))
       .catch(error => console.error(error));
-  }, []);
+  }, [id]);
 
   return (
     <ul>
