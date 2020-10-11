@@ -8,6 +8,12 @@ import AddEntry from "./AddEntry";
 const Bookings = prop => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(null);
+  const [bookingBackup, setbookingBackup] = useState(null);
+  //common between this doc and searchresults
+  function refresh(inp) {
+    setBookings(bookingBackup);
+    setLoading(inp);
+  }
   //common b/t this doc and newentry.jj
   function addEntryFunction(cancelEntry) {
     document.getElementById("addEntryDiv").style.display = "none";
@@ -165,6 +171,8 @@ const Bookings = prop => {
         .then(function(data) {
           setBookings(data);
           // alert(prop.loading)
+          //  bookingBackup=bookings;
+          setbookingBackup(data);
           setLoading(prop.loading);
         })
         .then(function(error) {
@@ -216,7 +224,11 @@ const Bookings = prop => {
             </div>
             {/* <SearchResults people={bookings} /> */}
 
-            <SearchResults people={bookings} sorting={sorting} />
+            <SearchResults
+              people={bookings}
+              sorting={sorting}
+              refresh={refresh}
+            />
           </>
         ) : (
           <div class="alert alert-dark" role="alert">

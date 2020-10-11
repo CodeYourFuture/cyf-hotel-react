@@ -4,6 +4,10 @@ import CustomerProfile from "./CustomerProfile";
 const SearchResults = prop => {
   // alert(props.length)
   const [stateRowId, setRowId] = useState(null);
+  //common b/w this and booing
+  function refresh() {
+    prop.refresh("r");
+  }
   //common between row.js and this document
   function selectRow(rowid) {
     document.getElementById("selectedProfile").style.display = "block";
@@ -120,7 +124,14 @@ const SearchResults = prop => {
             <th scope="col">Check-In</th>
             <th scope="col">Check-Out</th>
             <th scope="col">stay</th>
-            <th scope="col">select</th>
+            <th scope="col">
+              <img
+                style={{ width: "30px", height: "25px" }}
+                onClick={refresh}
+                alt="refresh"
+                src="https://www.freeiconspng.com/thumbs/refresh-icon/refresh-icon-0.png"
+              />
+            </th>
           </thead>
           <tbody>
             {prop.people.map(function(obj) {
