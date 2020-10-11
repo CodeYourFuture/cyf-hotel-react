@@ -71,6 +71,7 @@ export default Bookings;
 // references used to solve delayed API fetch for task ####22 :
 // 1. https://stackoverflow.com/questions/50772982/how-to-delay-the-return-in-react-until-fetch-is-done
 // 2. https://www.youtube.com/watch?v=scVRfoTEctc
+// 3. https://reactgo.com/react-display-loading-screen/
 
 // references for error HTTP CODE display ####23:
 // https://stackoverflow.com/questions/55447472/how-can-i-get-my-fetch-error-to-show-an-http-status-code
