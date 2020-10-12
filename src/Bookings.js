@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader.js";
+import LoadErrorMessage from "./LoadErrorMessage.js";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 //import FakeBookings from "./data/fakeBookings.json";
@@ -29,10 +30,11 @@ const Bookings = () => {
         console.log(data);
         setBookings(data);
         setLoading(true);
+        setFailedToLoad(true);
       });
   }, []);
 
-  return loading ? (
+  return loading || failedToLoad ? (
     <div className="App-content">
       <div className="container">
         <Search search={search} />

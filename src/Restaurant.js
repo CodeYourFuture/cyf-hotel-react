@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import RestaurantButton from "./RestaurantButton";
+import React from "react";
 import Order from "./Order";
 
 const Restaurant = () => {

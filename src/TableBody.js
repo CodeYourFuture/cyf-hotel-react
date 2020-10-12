@@ -1,5 +1,4 @@
-import React, { Fragment, useState } from "react";
-import moment from "moment";
+import React from "react";
 import TableRow from "./TableRow";
 
 const TableBody = ({ bookings, changeId }) => {
