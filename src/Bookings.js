@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import Loader from "./Loader.js";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
+//import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [failedToLoad, setFailedToLoad] = useState(false);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
@@ -18,25 +21,26 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(response => {
         return response.json();
       })
       .then(data => {
         console.log(data);
         setBookings(data);
+        setLoading(true);
       });
   }, []);
 
-  return (
+  return loading ? (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
         <SearchResults results={bookings} />
-
-        {/* <SearchResults /> */}
       </div>
     </div>
+  ) : (
+    <Loader />
   );
 };
 

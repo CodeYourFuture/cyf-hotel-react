@@ -6,16 +6,16 @@ import CustomerProfile from "./CustomerProfile";
 const SearchResults = ({ results, id }) => {
   const [customerId, setCustomerId] = useState("");
 
+  function changeId(id) {
+    id > 0 && setCustomerId(id);
+  }
+
   return (
     <div>
       <table className="table">
-        <thead>
-          <TableHead />
-        </thead>
-        <tbody>
-          <TableBody data={results} color="red" />
-          <CustomerProfile id={id} />
-        </tbody>
+        <TableHead />
+        <TableBody bookings={results} changeId={changeId} />
+        <CustomerProfile id={customerId} />
       </table>
     </div>
   );

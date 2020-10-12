@@ -96,3 +96,13 @@ li {
 .none {
   background-color: none;
 }
+.profileDiv {
+  border: 2px solid green;
+  padding: 10px;
+  min-width: 300px;
+}
+
+.loader {
+  text-align: center;
+  font-size: 40px;
+}
