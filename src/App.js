@@ -12,9 +12,10 @@ const App = () => {
     <div className="App">
       <header className="App-header">CYF Hotel</header>
       <Heading />
+      <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <TouristInfoCards />
+
       <Footer
         Contact={[
           "123 Fake Street, London, E1 4UD",
