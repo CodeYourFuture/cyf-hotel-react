@@ -10,8 +10,6 @@ const CustomerProfile = props => {
       .then(data => setcustomersData(data));
   }, [props.costomerId]);
 
-  console.log(props.costomerId);
-
   return (
     <div>
       <table class="table table-borderless table-dark">

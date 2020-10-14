@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
-function RowColorChanger({ el, customerProfile }) {
+function RowColorChanger({ el, costomerId }) {
   const [click, setClick] = useState("noHighlight");
-  const [profile, seProfile] = useState(``);
 
   function classChanger() {
     if (click === "highlight") {
@@ -13,9 +12,6 @@ function RowColorChanger({ el, customerProfile }) {
       setClick("highlight");
     }
   }
-  /* const onClickFun = () => {
-    rowColorChanger(el.id);
-  }; */
 
   return (
     <tr onClick={classChanger} className={click}>
@@ -30,9 +26,7 @@ function RowColorChanger({ el, customerProfile }) {
       <td>{moment(el.checkOutDate).diff(moment(el.checkInDate), "days")}</td>
       <td>
         {
-          <button
-            className="btn btn-success" /* onClick ={...customerProfile.customerProfile(1)} */
-          >
+          <button className="btn btn-success" onClick={() => costomerId(el.id)}>
             Show profile
           </button>
         }

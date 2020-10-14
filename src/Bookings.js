@@ -5,7 +5,14 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [backup, setBackup] = useState([]);
+  const [id, setId] = useState(null);
+
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
+      .then(response => response.json())
+      .then(data => setBookings(data));
+  }, []);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
 
@@ -14,30 +21,29 @@ const Bookings = () => {
         searchVal.toLowerCase() == el.firstName.toLowerCase() ||
         searchVal.toLowerCase() == el.surname.toLowerCase()
       ) {
-        setBackup(bookings);
         setBookings([el]);
       }
     });
-
-    if (searchVal == "") {
-      setBookings(backup);
-    }
   };
-  useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then(response => response.json())
-      .then(data => setBookings(data));
-  }, []);
 
-  return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
+  function costomerId(userId) {
+    setId(userId);
+    console.log("user ID ", userId);
+  }
 
-        {<SearchResults results={bookings} />}
+  if (bookings.length > 0) {
+    return (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+
+          {<SearchResults results={bookings} costomerId={costomerId} id={id} />}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <h1>Loadding...</h1>;
+  }
 };
 
 export default Bookings;
