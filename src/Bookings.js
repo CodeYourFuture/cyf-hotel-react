@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader.js";
-import LoadErrorMessage from "./LoadErrorMessage.js";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 //import FakeBookings from "./data/fakeBookings.json";
@@ -8,7 +7,7 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [failedToLoad, setFailedToLoad] = useState(false);
+  const [error, setError] = useState(false);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
@@ -28,13 +27,17 @@ const Bookings = () => {
       })
       .then(data => {
         console.log(data);
-        setBookings(data);
         setLoading(true);
-        setFailedToLoad(true);
+        setError(true);
+        setBookings(data);
       });
   }, []);
 
-  return loading || failedToLoad ? (
+  if (bookings.error) {
+    return error && <p className="httpError">HTTP Error 500...</p>;
+  }
+
+  return loading ? (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
