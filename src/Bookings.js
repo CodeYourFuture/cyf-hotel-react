@@ -6,9 +6,13 @@ import FakeBookings from "./data/fakeBookings.json";
 const Bookings = () => {
   const [bookings, setBookings] = useState(FakeBookings);
   const search = searchVal => {
+    setBookings(
+      FakeBookings.filter(
+        name => name.firstName.toLowerCase() === searchVal.toLowerCase()
+      )
+    );
     console.info("TO DO!", searchVal);
   };
-
   return (
     <div className="App-content">
       <div className="container">
