@@ -27,6 +27,34 @@
   font-size: large;
 }
 
+.red {
+  background-color: rgb(255, 158, 158);
+}
+
+.green {
+  background-color: rgb(144, 224, 119);
+}
+
+.show-profile {
+  background-color: rgb(52, 63, 63);
+  color: rgb(140, 187, 201);
+}
+
+.loading {
+  width: 100%;
+  background-color: rgb(66, 230, 230);
+  font-size: 2rem;
+  border: 2px solid;
+  text-align: center;
+}
+.customer-profile {
+  background-color: rgb(45, 219, 161);
+  width: 100%;
+  color: rgb(20, 70, 49);
+  font-size: 2rem;
+  text-align: center;
+  border: 2px solid;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -54,4 +82,9 @@ tr {
 
 .card {
   width: 18rem;
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
