@@ -1,5 +1,5 @@
-import moment from "moment";
 import React from "react";
+// import Moment from "react-moment";
 
 const HotelBookings = [
   `Id`,
@@ -12,6 +12,10 @@ const HotelBookings = [
   `Check out date`
 ];
 const SearchResults = props => {
+  function handleButtonClick(booking) {
+    console.log(booking.title);
+  }
+
   return (
     <div class="BookingTable">
       <table>
@@ -21,10 +25,10 @@ const SearchResults = props => {
           })}
           <th>Nights</th>
         </tr>
-        {props.fakeBookings.map(item => {
-          let dOut = moment(item.checkOutDate);
-          let dIn = moment(item.checkInDate);
-          let Nights = dOut.diff(dIn, "days");
+        {props.bookings.map(item => {
+          // let dOut = Moment(item.checkOutDate);
+          // let dIn = Moment(item.checkInDate);
+          // let Nights = dOut.diff(dIn, "days");
           return (
             <tr>
               <td> {item.id} </td>
@@ -35,7 +39,12 @@ const SearchResults = props => {
               <td> {item.roomId} </td>
               <td>{item.checkInDate}</td>
               <td>{item.checkOutDate}</td>
-              <td>{Nights}</td>
+              <td>
+                <button onClick={() => handleButtonClick(item)}>
+                  Show Profile
+                </button>
+              </td>
+              {/* <td>{Nights}</td> */}
             </tr>
           );
         })}

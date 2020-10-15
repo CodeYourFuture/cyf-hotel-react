@@ -1,10 +1,10 @@
 import React from "react";
 
-const Footer = prop => {
+const Footer = props => {
   return (
     <footer>
       <ul>
-        {prop.AboutUs.map((element, index) => {
+        {props.contact.map((element, index) => {
           return <li key={index}>{element}</li>;
         })}
       </ul>
