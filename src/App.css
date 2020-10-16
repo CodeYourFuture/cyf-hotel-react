@@ -59,9 +59,5 @@ tr {
 }
 
 .highlight {
-  background-color: yellow;
-}
-
-.unhighlight {
-  background-color: white;
+  color: yellow;
 }

@@ -1,20 +1,28 @@
 import React from "react";
 import moment from "moment";
 import { useState } from "react";
+import CustomerProfile from "./Customerprofile.js";
 
 const SearchResults = ({ results }) => {
   const [color, setColor] = useState("");
+  const [customerId, setCustomerId] = useState("");
+
+  const ShowId = event => {
+    let id = event.target.id;
+    setCustomerId(id);
+  };
 
   const highlight = e => {
-    e.preventDefault();
-    if (color === "") {
-      e.target.parentElement.className = "highlight";
-      setColor("unhighlight");
-    } else {
-      e.target.parentElement.className = "unhighlight";
+    if (!color) {
+      e.target.parentElement.style.backgroundColor = "yellow";
+
+      setColor("highlighted");
+    } else if (e.target.parentElement.style.backgroundColor === "yellow") {
+      e.target.parentElement.style.backgroundColor = "white";
       setColor("");
     }
   };
+
   return (
     <div>
       <table className="table">
@@ -51,11 +59,19 @@ const SearchResults = ({ results }) => {
                 <td>{result.checkInDate}</td>
                 <td>{result.checkOutDate}</td>
                 <td>{checkOutDate.diff(checkInDate, "days")}</td>
+                <td>
+                  <button onClick={ShowId} id={result.id}>
+                    Show Profile
+                  </button>
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      <div>
+        <CustomerProfile id={customerId} />
+      </div>
     </div>
   );
 };
