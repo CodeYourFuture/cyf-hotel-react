@@ -1,6 +1,8 @@
 import React from "react";
-import moment from "moment";
-const SearchResults = ({ results }) => {
+import "./SearchResults.css";
+import BookingRow from "./BookingRow";
+
+const SearchResults = ({ results, handler }) => {
   return (
     <table className="table">
       <thead>
@@ -14,26 +16,16 @@ const SearchResults = ({ results }) => {
           <th scope="col">Check In Date</th>
           <th scope="col">Check Out Date</th>
           <th scope="col">Nights</th>
+          <th scope="col">Show Profile</th>
         </tr>
       </thead>
       <tbody>
         {results.map(booking => {
-          return (
-            <tr key={booking.id}>
-              {Object.keys(booking).map(key => (
-                <td key={booking[key]}>{booking[key]}</td>
-              ))}
-              <td key="totalNights">
-                {moment(booking.checkOutDate).diff(
-                  moment(booking.checkInDate),
-                  "days"
-                )}
-              </td>
-            </tr>
-          );
+          return <BookingRow booked={booking} handler={handler} />;
         })}
       </tbody>
     </table>
   );
 };
+
 export default SearchResults;
