@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import moment from "moment";
+
 import SearchResultItem from "./SearchResultItem";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ searchResults }) => {
+  const [customerId, setCustomerId] = useState("");
+
   return (
     <table className="table">
       <thead>
@@ -19,10 +22,11 @@ const SearchResults = ({ searchResults }) => {
         </tr>
       </thead>
       <tbody>
-        {searchResults.map(props => (
-          <SearchResultItem {...props} />
+        {searchResults.map(line => (
+          <SearchResultItem line={line} setCustomerId={setCustomerId} />
         ))}
       </tbody>
+      <CustomerProfile profile={customerId} />
     </table>
   );
 };
