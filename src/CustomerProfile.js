@@ -1,10 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import Search from "./Search.js";
-import SearchResults from "./SearchResults.js";
-import Search from "./Search.js";
-import FakeBookings from "./data/fakeBookings.json";
-import SearchLine from "./SearchLine.js";
-import search from "./Bookings.js";
 
 const CustomerProfile = ({ id }) => {
   const [clientProfile, setClientProfile] = useState("");

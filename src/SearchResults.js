@@ -15,7 +15,7 @@ const SearchResults = ({ results }) => {
   };
   return (
     <>
-      <table className="table">
+      <table className="table-responsive">
         <thead>
           <tr>
             <th scope="col">Title</th>

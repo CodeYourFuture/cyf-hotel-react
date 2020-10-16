@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton.js";
 
-const Search = ({ search }) => {
+const Search = ({ search, FakeBookings }) => {
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearchInput = event => {
@@ -29,7 +29,7 @@ const Search = ({ search }) => {
                 value={searchInput}
                 onChange={handleSearchInput}
               />
-              <SearchButton />
+              <SearchButton btnName="Search" />
             </div>
           </form>
         </div>

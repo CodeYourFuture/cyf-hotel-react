@@ -3,11 +3,9 @@ import moment from "moment";
 
 const SearchLine = ({ item, id, profileDisplay }) => {
   const [highLight, setHighLight] = useState("");
-  // const[customerProfile, setCustomerProfile] = useState("")
   const selected = () => setHighLight(highLight ? "" : "selected");
   const handleClick = () => {
     console.log(id);
-    // setCustomerProfile(id)
     profileDisplay(item.id);
   };
   return (
