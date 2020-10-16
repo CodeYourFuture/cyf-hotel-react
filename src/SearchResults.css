@@ -1,0 +1,17 @@
+.selected {
+  background-color: #0069d9;
+  border-color: #0069d9;
+  color: white;
+}
+
+.selected button {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #0069d9;
+}
+
+.selected button:hover {
+  border: 1px solid #97c9ff;
+  background-color: #97c9ff;
+  color: #0069d9;
+}
