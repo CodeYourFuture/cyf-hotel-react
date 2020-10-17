@@ -15,14 +15,14 @@ const SortColumnAsc = props => {
   return (
     <th>
       {props.element}
-      <button
+      {/* <button
         id={props.element}
         onClick={event => {
-          sortCol(event.target.id);
+           sortCol(event.target.id);
         }}
       >
         sort &#8595;
-      </button>
+      </button> */}
     </th>
   );
 };

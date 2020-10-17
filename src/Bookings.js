@@ -56,7 +56,7 @@ const Bookings = props => {
   };
   return (
     <div className="App-content">
-      <div className="container">
+      <div className="container1">
         <Search search={search} />
 
         {catchError ? (
@@ -67,7 +67,9 @@ const Bookings = props => {
           <span>Loading ...</span>
         )}
       </div>
-      <NewRecordForm bookingRecord={bookingRecord} />
+      <div className="newRec">
+        <NewRecordForm bookingRecord={bookingRecord} />
+      </div>
     </div>
   );
 };

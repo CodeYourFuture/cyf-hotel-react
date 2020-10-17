@@ -24,10 +24,10 @@ const NewRecordForm = ({ bookingRecord }) => {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <table>
+        <table id="newR">
           {HotelBookingsForm.map(item => {
             return (
-              <tr>
+              <th>
                 <td>
                   {" "}
                   <label>{item}</label>
@@ -41,14 +41,12 @@ const NewRecordForm = ({ bookingRecord }) => {
                     required
                   />
                 </td>
-              </tr>
+              </th>
             );
           })}
-          <tr>
-            {" "}
-            <input type="submit" />
-          </tr>
+          <tr> </tr>
         </table>
+        <input type="submit" value="ADD" className="btn btn-primary" />
       </form>
     </div>
   );

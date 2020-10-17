@@ -20,11 +20,11 @@ const CustomerProfile = props => {
   if (customer) {
     if (customer.vip && customer.phoneNumber) {
       return (
-        <div>
+        <div id="profile">
           <table class="customer">
             <th>{`Customer ${props.id} profile`}</th>
-            <tr>{customer.id}</tr>
-            <tr>{customer.email}</tr>{" "}
+            <td>{`ID: ${customer.id}`}</td>
+            <td>{`Email: ${customer.email}`}</td>{" "}
           </table>
         </div>
       );

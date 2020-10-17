@@ -25,7 +25,7 @@ const SearchResults = props => {
 
   return (
     <div class="BookingTable">
-      <table>
+      <table id="tableRec">
         <tr>
           {HotelBookings.map(element => {
             return (

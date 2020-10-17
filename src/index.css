@@ -27,21 +27,27 @@ body {
 img {
   width: 5rem;
   height: auto;
-  margin-right: 45%;
+  margin-right: 32%;
 }
 header.App-header {
+  text-align: center;
   font-size: xx-large;
   font-family: sans-serif;
   display: flex;
+  margin-bottom: 4rem;
   height: 6rem;
   display: flex;
   align-items: center;
+  background-color: #d37573;
+  box-shadow: 5px 5px 10px gray;
+  font-family: "Pacifico", cursive;
 }
+
 footer {
   display: flex;
   align-items: center;
   height: 4rem;
-  background-color: black;
+  background-color: #d37573;
   color: white;
 }
 footer ul {
@@ -64,34 +70,26 @@ footer ul li {
   justify-content: space-evenly;
 }
 
-.BookingTable {
-  display: flex;
-  justify-content: center;
+#tableRec {
+  background-color: #dd9492;
+  margin-bottom: 4rem;
 }
-
+.BookingTable #tableRec tr {
+  width: 80rem;
+}
 table {
-  background-color: teal;
+  background-color: #9bc53d;
 }
 table tr {
 }
 table tr th {
-  background-color: #1b5299;
-}
-table th {
-  color: #f1ecce;
-  text-align: center;
-  border: 2px solid #6461a0;
-  border-radius: 10px;
-  box-sizing: border-box;
-  font-size: large;
-  width: 10rem;
-  height: 3rem;
-  background-color: #b68cb8;
+  background-color: #bed981;
+  border: 2px solid #88ad34;
 }
 table tr td {
   color: #f1ecce;
   text-align: center;
-  border: 2px solid #1b5299;
+  border: 2px solid #c44945;
   border-radius: 10px;
   box-sizing: border-box;
   font-size: large;
@@ -101,4 +99,101 @@ table tr td {
 span {
   font-size: 4rem;
   color: black;
+}
+.card-img-top {
+}
+.London {
+  width: 23rem;
+  background-color: #bed981;
+  transition: 500ms;
+}
+.London:hover {
+  transform: scale(1.05);
+}
+.Glasgow {
+  width: 23rem;
+  background-color: #5bc0eb;
+  transition: 500ms;
+}
+.Glasgow:hover {
+  transform: scale(1.05);
+}
+.Manchester {
+  width: 23rem;
+  background-color: #dd9492;
+  transition: 500ms;
+}
+.Manchester:hover {
+  transform: scale(1.05);
+}
+.search {
+  width: 60%;
+  text-align: left;
+  font-weight: bolder;
+}
+.container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+.App-content {
+}
+.newRec {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
+}
+.searchInputBtn {
+  display: flex;
+}
+#searchBtn {
+  margin: 2rem 2rem 1rem 0;
+}
+#customerName {
+  border-radius: 6px;
+  margin: 2rem 2rem 1rem 0;
+  width: 80%;
+}
+.list {
+  list-style-type: none;
+  display: flex;
+  justify-content: left;
+}
+.list li {
+  width: 14rem;
+}
+#newR {
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #5bc0eb;
+  border: 1px solid rgb(85, 130, 172);
+  color: white;
+  margin-bottom: 1rem;
+}
+#newR td {
+  border: 1px dotted rgb(85, 130, 172);
+  width: 9rem;
+}
+
+.btn {
+  width: 10rem;
+}
+#profile {
+  color: white;
+  font-size: x-large;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #dd9492;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+#profile .customer {
+  width: 50%;
+  border-radius: 50%;
 }

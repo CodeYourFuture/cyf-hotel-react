@@ -20,7 +20,7 @@ const OneRecord = props => {
 
   const highlight = () => {
     if (color === "") {
-      setColor("red");
+      setColor("#5BC0EB");
     } else setColor("");
   };
 
@@ -36,7 +36,11 @@ const OneRecord = props => {
       <td>{props.item.checkOutDate}</td>
       <td>{Nights}</td>
       <td>
-        <button onClick={props.updateId} id={props.item.id}>
+        <button
+          onClick={props.updateId}
+          id={props.item.id}
+          className="btn btn-primary"
+        >
           Show profile
         </button>
       </td>
