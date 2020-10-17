@@ -1,7 +1,6 @@
 import moment from "moment";
 import "./App.css";
 import React, { useState } from "react";
-import CustomerProfile from "./CustomerProfile";
 
 const OneRecord = props => {
   console.log(props);

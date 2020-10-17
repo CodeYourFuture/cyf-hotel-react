@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Bookings from "./Bookings";
 import SearchButton from "./SearchButton";
 import "./index.css";
 

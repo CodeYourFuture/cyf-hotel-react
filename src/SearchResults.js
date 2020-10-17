@@ -1,4 +1,3 @@
-import moment from "moment";
 import React, { useState } from "react";
 import OneRecord from "./OneRecord";
 import CustomerProfile from "./CustomerProfile";

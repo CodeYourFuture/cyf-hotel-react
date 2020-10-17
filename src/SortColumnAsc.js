@@ -8,9 +8,9 @@ const SortColumnAsc = props => {
     setAscending(!ascending);
   };
 
-  const sortColAsc = col => {};
+  // const sortColAsc = col => {};
 
-  const sortColDesc = col => {};
+  // const sortColDesc = col => {};
 
   return <th>{props.element}</th>;
 };
