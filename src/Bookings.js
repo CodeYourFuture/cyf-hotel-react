@@ -41,8 +41,8 @@ const Bookings = props => {
     let filtered = [];
     bookings.forEach(record => {
       if (
-        record.firstName.toLowerCase() == searchVal ||
-        record.surname.toLowerCase() == searchVal
+        record.firstName.toLowerCase() === searchVal ||
+        record.surname.toLowerCase() === searchVal
       ) {
         filtered.push(record);
       }
