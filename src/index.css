@@ -80,8 +80,7 @@ footer ul li {
 table {
   background-color: #9bc53d;
 }
-table tr {
-}
+
 table tr th {
   background-color: #bed981;
   border: 2px solid #88ad34;
@@ -100,8 +99,7 @@ span {
   font-size: 4rem;
   color: black;
 }
-.card-img-top {
-}
+
 .London {
   width: 23rem;
   background-color: #bed981;
@@ -137,8 +135,7 @@ span {
   align-items: center;
   margin-top: 4rem;
 }
-.App-content {
-}
+
 .newRec {
   width: 80%;
   margin-left: auto;

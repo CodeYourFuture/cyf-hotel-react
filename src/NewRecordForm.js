@@ -1,7 +1,5 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Bookings from "./Bookings";
-import SearchResults from "./SearchResults";
 
 const HotelBookingsForm = [
   `id`,

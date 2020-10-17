@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import Restaurant from "./Restaurant";
 import Bookings from "./Bookings";
 import "./App.css";
-import NewRecordForm from "./NewRecordForm";
 
 const App = () => {
   return (
@@ -14,8 +13,6 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-
-      {/* <NewRecordForm /> */}
       <Footer
         AboutUs={[
           "123 Fake Street, London, E1 4UD",

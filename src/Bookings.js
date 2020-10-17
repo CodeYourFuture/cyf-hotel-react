@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import fakeBookings from "../src/data/fakeBookings.json";
 import "./index.css";
 import NewRecordForm from "./NewRecordForm.js";
-
-var allData;
-var errorType;
 
 const Bookings = props => {
   const [bookings, setBookings] = useState([]);

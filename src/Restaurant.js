@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import RestaurantButton from "./RestaurantButton";
 import Order from "./Order";
 import "./index.css";
 

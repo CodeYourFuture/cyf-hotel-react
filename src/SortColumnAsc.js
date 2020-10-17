@@ -12,19 +12,7 @@ const SortColumnAsc = props => {
 
   const sortColDesc = col => {};
 
-  return (
-    <th>
-      {props.element}
-      {/* <button
-        id={props.element}
-        onClick={event => {
-           sortCol(event.target.id);
-        }}
-      >
-        sort &#8595;
-      </button> */}
-    </th>
-  );
+  return <th>{props.element}</th>;
 };
 
 export default SortColumnAsc;

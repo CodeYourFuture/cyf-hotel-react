@@ -44,12 +44,6 @@ const SearchResults = props => {
             />
           );
         })}
-        {/*        
-        <OneRecord
-          item={props.newForm}
-          updateId={customerProfileHandler}
-          class="select"
-        /> */}
       </table>
 
       <CustomerProfile id={customerId} />

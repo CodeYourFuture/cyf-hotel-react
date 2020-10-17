@@ -11,13 +11,6 @@ const OneRecord = props => {
 
   const [color, setColor] = useState("");
 
-  // const [customerId, setCustomerId] = useState (props.item.id);
-
-  // const customerProfileHandler = () => {
-  //   setCustomerId (props.item.id);
-  //  <CustomerProfile id = {idcustomerId}/>
-  // };
-
   const highlight = () => {
     if (color === "") {
       setColor("#5BC0EB");
