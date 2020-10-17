@@ -32,7 +32,7 @@ const TouristInfoCards = () => {
       {CityCards.map(element => {
         return (
           <div className={element.city}>
-            <img src={element.image} className="card-img-top" alt="image" />
+            <img src={element.image} className="card-img-top" alt="element" />
             <div className="card-body">
               <p>{element.about}</p>
               <a href={element.url} className="btn btn-primary">
