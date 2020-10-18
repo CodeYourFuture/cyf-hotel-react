@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
-  const [rowColor, setRowColor] = useState(true);
-  const clickRow = click => {
-    click.defultColor();
-    setRowColor(!rowColor);
-    let colorType = click.target.parentElement;
-    if (rowColor) {
-      colorType.className = "highlightRow";
-    } else {
-      colorType.className = "unHighlightRow";
-    }
-  };
+  // const [rowColor, setRowColor] = useState(true);
+  // const clickRow = click => {
+  //   click.defultColor();
+  //   setRowColor(!rowColor);
+  //   let colorType = click.target.parentElement;
+  //   if (rowColor) {
+  //     colorType.className = "highlightRow";
+  //   } else {
+  //     colorType.className = "unHighlightRow";
+  //   }
+  // };
   return (
     <table className="table">
       <thead className="table-head">
-        <tr onClick={clickRow}>
+        <tr>
           <th scope="col">title</th>
           <th scope="col">id</th>
           <th scope="col">first name</th>
@@ -26,6 +26,7 @@ const SearchResults = props => {
           <th scope="col">check in date</th>
           <th scope="col">check out date</th>
           <th scope="col">Number of Booking Days</th>
+          <th scope="col">Show profile</th>
         </tr>
       </thead>
       <tbody>

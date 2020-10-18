@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import CustomerProfile from "./CustomerProfile.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
@@ -28,6 +29,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         <SearchResults results={bookings} />
+        <CustomerProfile />
       </div>
     </div>
   );
