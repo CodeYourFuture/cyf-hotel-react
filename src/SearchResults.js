@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 import RowColorChanger from "./RowColorChanger";
 
-const SearchResults = ({ results, id, costomerId }) => {
+const SearchResults = ({ results }) => {
+  const [id, setId] = useState(null);
+
+  function costomerId(userId) {
+    setId(userId);
+    console.log("user ID ", userId);
+  }
+
   return (
     <div>
       <table className="table">
@@ -20,13 +27,13 @@ const SearchResults = ({ results, id, costomerId }) => {
           </tr>
         </thead>
         <tbody>
-          {results.map(element => (
-            <RowColorChanger el={element} costomerId={costomerId} />
+          {results.map(el => (
+            <RowColorChanger el={el} costomerId={costomerId} />
           ))}
         </tbody>
       </table>
 
-      {id && <CustomerProfile id={id} />}
+      {<CustomerProfile costomerId={id} />}
     </div>
   );
 };
