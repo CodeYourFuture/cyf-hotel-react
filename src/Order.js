@@ -8,9 +8,11 @@ const Order = ({ orderType }) => {
     setOrders(orders + 1);
   };
   return (
-    <li>
-      {orderType}:{orders} <RestaurantButton prop={OrderOne} />
-    </li>
+    <div className="order">
+      <li className="orderItem">
+        {orderType}:{orders} <RestaurantButton prop={OrderOne} />
+      </li>
+    </div>
   );
 };
 

@@ -1,9 +1,9 @@
 import React from "react";
 const Footer = ({ props }) => {
   return (
-    <ul>
+    <ul className="footer">
       {props.map(El => (
-        <li>{El}</li>
+        <li className="footerItem">{El}</li>
       ))}
     </ul>
   );

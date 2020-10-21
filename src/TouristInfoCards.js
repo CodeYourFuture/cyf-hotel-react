@@ -2,7 +2,7 @@ import React from "react";
 
 const TouristInfoCards = () => {
   return (
-    <div>
+    <div className="TouristInfoCards">
       <div className="card">
         <img
           src="https://cdn.pixabay.com/photo/2019/02/16/18/23/pollock-4000724__340.jpg"

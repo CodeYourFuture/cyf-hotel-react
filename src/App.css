@@ -1,3 +1,6 @@
+body {
+  background-color: LightSteelBlue;
+}
 .App {
   text-align: left;
 }
@@ -50,18 +53,55 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: teal;
+}
+.footerItem {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 6rem;
+  color: white;
 }
 
 .card {
   width: 18rem;
+  display: inline-block;
+  margin-left: 6rem;
 }
 #logo {
   width: 30px;
   margin-left: 10px;
+}
+.card-img-top {
+  height: 18rem;
 }
 .highlight {
   background-color: aqua;
 }
 .noHighlight {
   background-color: white;
+}
+
+.order {
+  display: inline-block;
+  margin-left: 6rem;
+}
+.orderItem {
+  display: inline-block;
+  margin-left: 6rem;
+}
+
+input,
+label {
+  display: block;
+}
+
+.title,
+.form-id,
+.roomId {
+  width: 35px;
+}
+.firstName,
+.surname,
+.email {
+  width: 160px;
 }
