@@ -44,6 +44,9 @@ const SearchResults = props => {
               {moment(visitor.checkOutDate).diff(visitor.checkInDate, "days")}{" "}
               days
             </th>
+            <button className="button" onClick="btn btn-primary">
+              Profiel
+            </button>
           </tr>
         ))}
       </tbody>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import SearchButton from "./SearchButton";
 const Search = props => {
   const [searchInput, setSearchInput] = useState("");
   function handleSearchInput(event) {
@@ -31,7 +31,8 @@ const Search = props => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <button className="btn btn-primary">Search</button>
+              {/* <button className="btn btn-primary">Search</button> */}
+              <SearchButton />
             </div>
           </form>
         </div>
