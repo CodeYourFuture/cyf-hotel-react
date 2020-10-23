@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const SearchRow = ({ bookingRow }) => {
+const SearchRow = ({ bookingRow, setCustomerId }) => {
   console.log(bookingRow);
   const [clicked, setClicked] = useState("false");
 
+  const handleShowProfile = () => {
+    setCustomerId(bookingRow.id);
+  };
+
   return (
     <tr
+      key={bookingRow.id}
       onClick={() => setClicked(!clicked)}
       className={clicked ? "clicked" : "tr"}
     >
-      <th scope="row">{bookingRow.id}</th>
+      <td>{bookingRow.id}</td>
       <td>{bookingRow.title}</td>
       <td>{bookingRow.firstName}</td>
       <td>{bookingRow.surname}</td>
@@ -23,6 +28,10 @@ const SearchRow = ({ bookingRow }) => {
           moment(bookingRow.checkInDate),
           "days"
         )}
+      </td>
+
+      <td>
+        <button onClick={handleShowProfile}>Show profile</button>
       </td>
     </tr>
   );
