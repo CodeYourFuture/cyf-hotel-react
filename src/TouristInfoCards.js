@@ -30,7 +30,7 @@ const TouristInfoCards = () => {
             <img src={city.img} className="card-img-top" />
             <div className="card-body">
               <a href={city.link} className="btn btn-primary">
-                Go somewhere
+                {city.name}
               </a>
             </div>
           </div>
