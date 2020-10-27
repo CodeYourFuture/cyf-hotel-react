@@ -1,5 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: left;
+  max-width: 100%;
 }
 
 .App-logo {
@@ -7,6 +13,28 @@
   height: 80px;
 }
 
+.NewCustomer {
+  width: 70%;
+}
+.Orders {
+  display: inline-block;
+  margin: 10px;
+}
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+.tableHead {
+  width: 70%;
+  font-size: 13px;
+}
+
+.header-image {
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100px;
+}
 .App-header {
   background-color: #222;
   height: 50px;
@@ -25,6 +53,10 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+form {
+  display: block;
+  margin-top: 0em;
 }
 
 @keyframes App-logo-spin {
@@ -53,5 +85,8 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 10rem;
+}
+.selected {
+  background-color: aquamarine;
 }
