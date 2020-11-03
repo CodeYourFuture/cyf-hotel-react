@@ -164,7 +164,9 @@ const Bookings = prop => {
   }
   useEffect(
     function() {
-      fetch("https://cyf-react.glitch.me/delayed")
+      //https://zubeda-hotel-server.glitch.me/bookings/
+      //https://cyf-react.glitch.me/delayed
+      fetch("https://zubeda-hotel-server.glitch.me/bookings")
         .then(function(obj) {
           return obj.json();
         })
