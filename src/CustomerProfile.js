@@ -12,7 +12,8 @@ const CustomerProfile = prop => {
   }
   useEffect(
     function() {
-      fetch(`https://cyf-react.glitch.me/customers/${prop.id}`)
+      //https://cyf-react.glitch.me/customers/${prop.id}
+      fetch(`https://zubeda-hotel-server.glitch.me/bookings/${prop.id}`)
         // alert("====="+prop.id)
         .then(function(obj) {
           return obj.json();
