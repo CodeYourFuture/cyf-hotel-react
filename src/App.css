@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(205, 214, 228);
   height: 50px;
   padding: 20px;
   color: white;
@@ -25,6 +25,7 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
@@ -39,10 +40,6 @@
   padding: 5px 0 20px 0;
 }
 
-tr {
-  color: #5b5757;
-}
-
 .results {
   padding-top: 15px;
 }
@@ -50,8 +47,4 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
-}
-
-.card {
-  width: 18rem;
 }
