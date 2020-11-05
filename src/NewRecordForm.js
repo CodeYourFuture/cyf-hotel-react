@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const HotelBookingsForm = [
   `id`,
@@ -14,7 +15,10 @@ const HotelBookingsForm = [
 
 const NewRecordForm = ({ bookingRecord }) => {
   const onSubmit = data => {
-    console.log(data);
+    axios
+      .post("https://cyf-hotel-1.glitch.me/bookings", data)
+      .then(response => console.log(response))
+      .catch(error => console.log(error));
     bookingRecord(data);
   };
 

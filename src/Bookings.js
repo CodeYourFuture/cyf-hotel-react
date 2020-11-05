@@ -8,6 +8,16 @@ const Bookings = props => {
   const [bookings, setBookings] = useState([]);
 
   const bookingRecord = data => {
+    // const options = {
+    //   method: 'POST',
+    //   header: {
+    //     'Content-Type': 'application/json',
+    //     body: JSON.stringify (data),
+    //   },
+    // };
+
+    // fetch ('https://cyf-hotel-1.glitch.me/bookings', options);
+
     setBookings(bookings.concat(data));
   };
 
@@ -18,7 +28,7 @@ const Bookings = props => {
   const [displayError, setDisplayError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://cyf-hotel-1.glitch.me/bookings`)
       .then(res => {
         console.log(res);
         if (!res.ok) {
