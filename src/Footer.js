@@ -10,7 +10,7 @@ const Footer = () => {
     <>
       <ul>
         {footerArray.map(name => (
-          <li>{name}</li>
+          <li key={name}>{name}</li>
         ))}
       </ul>
     </>

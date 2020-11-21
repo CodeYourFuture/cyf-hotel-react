@@ -55,3 +55,12 @@ tr {
 .card {
   width: 18rem;
 }
+
+.selected {
+  background-color: aliceblue;
+}
+
+.vertical {
+  display: flex;
+  justify-content: space-between;
+}
