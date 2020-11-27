@@ -6,11 +6,23 @@ import CustomerPofile from "./CustomerProfile";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showError, setShowError] = useState(false);
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
-      .then(res => res.json())
+    fetch(`https://cyf-react.glitch.me/error`)
+      .then(res => {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
+
       .then(data => {
         setBookings(data);
+      })
+      .catch(e => {
+        setShowError(true);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
 
@@ -41,8 +53,12 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
+        {loading && <p>loading</p>}
+        {!loading && (
+          <SearchResults result={searchResults2} ClickId={ClickId} />
+        )}
+        {showError && <p>esta pasando algo raro</p>}
 
-        <SearchResults result={searchResults2} ClickId={ClickId} />
         <CustomerPofile id={clickOnButton} />
       </div>
     </div>
