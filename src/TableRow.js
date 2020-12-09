@@ -10,6 +10,7 @@ function TableRow(props) {
   // eslint-disable-next-line
   const [number, setNumber] = useState(customer.phoneNumber); // eslint-disable-next-line
   // console.log("Hey i am from table row number"+customer.phoneNumber)
+  // eslint-disable-next-line
   const [email, setEmail] = useState(customer.email);
 
   // setId(customer.id)

@@ -4,6 +4,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   let BookingData = require("./data/fakeBookings.json");
+  // let BookingData=requir
   // console.log("Yoo I am in booking.js"+BookingData)
   // eslint-disable-next-line
   let [Booking, setBooking] = useState(BookingData);
@@ -28,7 +29,8 @@ const Bookings = () => {
 
   useEffect(() => {
     // fetch(`https://cyf-react.glitch.me/delayed`)
-    fetch("https://cyf-react.glitch.me/error")
+    // fetch("https://cyf-react.glitch.me/error")
+    fetch(`https://davibaweja-node-challenge-hotel-server.glitch.me/bookings`)
       .then(response => {
         if (response.status === 500) {
           alert("error Loading data");
