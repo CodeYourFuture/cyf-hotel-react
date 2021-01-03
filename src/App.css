@@ -16,6 +16,18 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.App-header > img {
+  height: 30px;
+  margin-right: 3rem;
+}
+
+.App-header > p {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .App-title {
@@ -25,6 +37,26 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+
+.cardSection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.card,
+.card-body {
+  display: flex;
+  justify-content: center;
+}
+
+.card-img-top {
+  height: 80%;
+}
+
+.btn-primary {
+  height: 40px;
 }
 
 @keyframes App-logo-spin {
