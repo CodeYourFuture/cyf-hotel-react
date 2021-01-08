@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Search from "./Search.js";
-import SearchResults from "./SearchResults.js";
+import Search from "./Search";
+import SearchResults from "./SearchResults";
+import BookingForm from "./BookingForm";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -42,6 +43,7 @@ const Bookings = () => {
         )}
         {isError && <div>There was an error</div>}
       </div>
+      <BookingForm bookings={bookings} setBookings={setBookings} />
     </div>
   );
 };

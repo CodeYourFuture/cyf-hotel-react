@@ -26,7 +26,11 @@ const SearchResult = props => {
         <td>{props.roomId}</td>
         <td>{props.checkInDate}</td>
         <td>{props.checkOutDate}</td>
-        <td>{diffInDays(props.checkOutDate, props.checkInDate)}</td>
+        <td>
+          {diffInDays(props.checkOutDate, props.checkInDate)
+            ? diffInDays(props.checkOutDate, props.checkInDate)
+            : ""}
+        </td>
         <td>
           <button className="btn btn-primary" onClick={props.handleProfile}>
             Profile
