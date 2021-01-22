@@ -19,6 +19,12 @@ const SearchResults = ({ results }) => {
     }
   ]);
 
+  useEffect(() => {
+    setSortedResults([results, sortedResults[1]]);
+  }, [results]);
+
+  //console.log(sortedResults)
+
   const handleProfile = e => {
     setUserId(e.target.parentElement.parentElement.firstElementChild.innerText);
   };
@@ -29,7 +35,6 @@ const SearchResults = ({ results }) => {
         (a, b) => a[colName] < b[colName]
       );
       setSortedResults([newResults, { ...sortedResults[1], [colName]: false }]);
-      console.log("gone this way");
     } else {
       const newResults = [...sortedResults[0]].sort(
         (a, b) => a[colName] > b[colName]
@@ -37,10 +42,9 @@ const SearchResults = ({ results }) => {
       setSortedResults([newResults, { ...sortedResults[1], [colName]: true }]);
     }
   };
-  console.log(sortedResults[1]);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${userId}`)
+    fetch(`https://cbaggini-hotel-server.glitch.me/bookings/${userId}`)
       .then(response => response.json())
       .then(data => setUserProfile(data));
   }, [userId]);
