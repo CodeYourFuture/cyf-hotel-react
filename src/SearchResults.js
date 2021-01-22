@@ -21,11 +21,10 @@ const SearchResults = ({ results }) => {
 
   useEffect(() => {
     setSortedResults([results, sortedResults[1]]);
-  }, [results]);
-
-  //console.log(sortedResults)
+  }, [results, sortedResults]);
 
   const handleProfile = e => {
+    e.preventDefault();
     setUserId(e.target.parentElement.parentElement.firstElementChild.innerText);
   };
 

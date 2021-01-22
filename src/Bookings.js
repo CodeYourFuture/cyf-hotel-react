@@ -47,7 +47,7 @@ const Bookings = () => {
         }
       })
       .catch(e => console.log(e));
-  }, []);
+  }, [searchedBookings.length]);
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/")
