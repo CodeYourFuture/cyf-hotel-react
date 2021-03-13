@@ -29,7 +29,11 @@
   padding-top: 20px;
   font-size: large;
 }
-
+.cities-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
