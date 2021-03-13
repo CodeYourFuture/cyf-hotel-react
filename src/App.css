@@ -3,8 +3,9 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  width: auto;
+  height: 300%;
+  margin-right: 43%;
 }
 
 .App-header {
@@ -16,6 +17,24 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+}
+
+.cardSection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.card,
+.card-body {
+  display: flex;
+  justify-content: center;
+  width: 25rem;
+}
+
+.card-img-top {
+  height: 80%;
 }
 
 .App-title {
@@ -51,7 +70,10 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
+hr {
+  border: 1px solid rgb(31, 144, 209);
+}
 
-.card {
-  width: 18rem;
+.ul {
+  list-style-type: none;
 }
