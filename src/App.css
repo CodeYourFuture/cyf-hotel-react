@@ -17,7 +17,10 @@
   font-size: 1em;
   font-weight: bold;
 }
-
+.logo-image {
+  height: 30px;
+  width: 50px;
+}
 .App-title {
   font-size: 1.5em;
 }
