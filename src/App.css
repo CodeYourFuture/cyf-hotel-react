@@ -5,6 +5,30 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  margin: 1.2rem 0 0 1rem;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card-body {
+  background-color: rgb(193, 217, 238);
+}
+
+.card-img-top {
+  height: 220px;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+}
+
+.Header {
+  background-color: #222;
 }
 
 .App-header {
