@@ -23,7 +23,7 @@ const Bookings = () => {
             "room id",
             "check in date",
             "check out date",
-            "number of nights"
+            "staying for"
           ]}
         />
       </div>

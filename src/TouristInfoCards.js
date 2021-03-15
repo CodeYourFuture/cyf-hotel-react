@@ -6,7 +6,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           className="card-img-top"
-          src="https://s0.geograph.org.uk/geophotos/05/91/02/5910275_02d04e4a.jpg"
+          src="https://images-na.ssl-images-amazon.com/images/I/91uAXURQq4L._SX500_.jpg"
           alt="Glasgow"
         />
         <div className="card-body">
