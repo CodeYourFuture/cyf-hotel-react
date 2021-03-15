@@ -1,0 +1,21 @@
+.logo {
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 40px;
+  /* width: 10px; */
+}
+
+.logo2 {
+  width: 20px;
+  height: 20px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 50px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
