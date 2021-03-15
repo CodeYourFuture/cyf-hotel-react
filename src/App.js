@@ -34,7 +34,7 @@ const App = () => {
       </div>
 
       <Bookings />
-      <SearchResults />
+      {/* <SearchResults /> */}
       <Footer
         list={[
           "123 Fake Street, London, E1 4UD",
