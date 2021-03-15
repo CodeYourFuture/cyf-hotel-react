@@ -4,7 +4,7 @@ import { useState } from "react";
 const Restaurant = () => {
   const orders = 0;
   return (
-    <div>
+    <div className="restaurant-orders">
       <h3>Restaurant Orders</h3>
       <ul>
         <li>

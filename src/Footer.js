@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = props => {
   return (
-    <div>
+    <div className="footer">
       <ul>
         {props.footer.map(fake => (
           <li>{fake}</li>
