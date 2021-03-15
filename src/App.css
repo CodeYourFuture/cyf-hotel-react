@@ -2,15 +2,13 @@
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  height: 6rem;
+  /* padding: 0.5rem; */
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -18,7 +16,16 @@
   font-weight: bold;
 }
 
+.App-logo {
+  /* animation: App-logo-spin infinite 20s linear; */
+  /* width: 50%; */
+  /* height: 80px; */
+  margin: 1rem;
+  height: 100%;
+}
+
 .App-title {
+  margin: 1rem;
   font-size: 1.5em;
 }
 
@@ -34,6 +41,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.infoCards {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem;
+  padding: 1rem;
 }
 .search {
   padding: 5px 0 20px 0;
@@ -53,5 +67,12 @@ tr {
 }
 
 .card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   width: 18rem;
+}
+
+.card img {
+  height: 15rem;
 }
