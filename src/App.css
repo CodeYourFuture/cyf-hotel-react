@@ -4,7 +4,7 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 60px;
+  height: 50px;
   margin: 1rem;
 }
 
@@ -41,6 +41,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  margin-top: 0.5em;
 }
 
 .App-title {
@@ -62,6 +63,11 @@
   background-color: #222;
   color: white;
   padding-bottom: 0.1rem;
+}
+
+.footer ul {
+  display: flex;
+  justify-content: space-around;
 }
 
 li {
