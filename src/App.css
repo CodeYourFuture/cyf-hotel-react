@@ -4,8 +4,8 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-  margin: 1.2rem 0 0 1rem;
+  height: 60px;
+  margin: 1rem;
 }
 
 .card-container {
@@ -28,6 +28,7 @@
 }
 
 .Header {
+  display: flex;
   background-color: #222;
 }
 

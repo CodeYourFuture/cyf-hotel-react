@@ -1,16 +1,18 @@
 import React from "react";
-import Heading from "./Heading";
+import AppHeader from "./AppHeader";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Footer from "./Footer";
 import "./App.css";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
     <div className="App">
-      <Heading />
+      <AppHeader />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer
         footer={[
           "123 Fake Street, London, E1 4UD",

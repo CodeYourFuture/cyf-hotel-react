@@ -1,13 +1,13 @@
 import React from "react";
 
 const Restaurant = () => {
-  const pizzas = 0;
+  const orders = 0;
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
+          Orders: {orders} <button className="btn btn-primary">Add</button>
         </li>
       </ul>
     </div>

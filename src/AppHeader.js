@@ -1,6 +1,6 @@
 import React from "react";
 
-const Heading = () => (
+const AppHeader = () => (
   <div className="Header">
     <img
       className="App-logo"
@@ -11,4 +11,4 @@ const Heading = () => (
   </div>
 );
 
-export default Heading;
+export default AppHeader;

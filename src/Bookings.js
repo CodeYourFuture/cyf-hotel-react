@@ -12,7 +12,20 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={FakeBookings} />
+        <SearchResults
+          results={FakeBookings}
+          tableHeaders={[
+            "id",
+            "title",
+            "first name",
+            "surname",
+            "email",
+            "room id",
+            "check in date",
+            "check out date",
+            "number of nights"
+          ]}
+        />
       </div>
     </div>
   );
