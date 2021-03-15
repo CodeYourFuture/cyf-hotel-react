@@ -7,14 +7,19 @@ const TouristInfoCards = props => {
         <div className="card" key={index}>
           <img src={item.img} alt={item.city} className="card-img-top" />
           <div className="card-body">
-            <a
-              href={item.link}
-              className="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Go to {item.city}
-            </a>
+            <p className="text-center">
+              For more information about the city of {item.city} click on the
+              link below
+              <br />
+              <a
+                href={item.link}
+                className="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit {item.city}
+              </a>
+            </p>
           </div>
         </div>
       ))}
