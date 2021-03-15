@@ -22,6 +22,7 @@
 
 .cardSection {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 1rem;
 }
@@ -34,7 +35,7 @@
 }
 
 .card-img-top {
-  height: 80%;
+  height: 70%;
 }
 
 .App-title {
