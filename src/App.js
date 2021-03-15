@@ -10,19 +10,19 @@ const cards = [
     city: "Glasgow",
     link: "http://peoplemakeglasgow.com",
     img:
-      "https://media.gettyimages.com/photos/riverside-view-of-a-city-at-night-picture-id519375418?s=612x612"
+      "https://i2-prod.glasgowlive.co.uk/incoming/article11108743.ece/ALTERNATES/s615/pizapcom14592618842071.jpg"
   },
   {
     city: "Manchester",
     link: "http://visitmanchester.com",
     img:
-      "https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/880/cached.offlinehbpl.hbpl.co.uk/news/OTM/Manchester-Zuzanna-Neziri-6272043372_5cd92b0ea9_b-Flickr-CC-20190620063742491.jpg"
+      "https://previews.123rf.com/images/tupungato/tupungato1609/tupungato160900093/62861701-manchester-uk-travel-photos-collage-collage-includes-major-landmarks-like-city-hall-castlefield-wate.jpg"
   },
   {
     city: "London",
     link: "http://visitlondon.com",
     img:
-      "https://learnenglishteens.britishcouncil.org/sites/teens/files/rs5693_71263137-low.jpg"
+      "https://previews.123rf.com/images/tupungato/tupungato1501/tupungato150100512/35938217-travel-photo-collage-from-london-uk-collage-includes-major-landmarks-like-big-ben-saint-paul-s-cathe.jpg"
   }
 ];
 
