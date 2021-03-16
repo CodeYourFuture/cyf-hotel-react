@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Table = props => {
   return (
@@ -41,8 +41,17 @@ const TBody = props => {
 };
 
 const DataRow = props => {
+  const [className, setClassName] = useState("");
+  // highlight/unhighlight a table row when it is clicked
+  const changeColour = () => {
+    if (className === "") {
+      setClassName("selected");
+      return;
+    }
+    setClassName("");
+  };
   return (
-    <tr>
+    <tr className={className} onClick={changeColour}>
       {Object.values(props.values).map((value, index) => (
         <Data key={index} value={value} />
       ))}
