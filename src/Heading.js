@@ -6,7 +6,7 @@ function Heading() {
       <img
         className="logo-image"
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
-        alt="hotel logo image"
+        alt=""
       />
     </header>
   );
