@@ -18,7 +18,6 @@ import "./App.css";
 const fakeBookings = fakeBookingsArr.map(item => {
   const a = moment(item.checkOutDate);
   const b = moment(item.checkInDate);
-  console.log(a);
   const noOfNights = a.diff(b, "day");
 
   return (item = {
