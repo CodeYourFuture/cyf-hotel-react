@@ -57,6 +57,11 @@ tr {
   color: #5b5757;
 }
 
+td:first-child {
+  display: table-cell;
+  font-weight: bold;
+}
+
 .results {
   padding-top: 15px;
 }
