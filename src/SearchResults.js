@@ -10,7 +10,8 @@ const SearchResults = props => {
     "Email",
     "Room ID",
     "Check-In Date",
-    "Check-Out Date"
+    "Check-Out Date",
+    "Number of Nights"
   ];
 
   return <Table tableColumns={tableColumns} results={props.results} />;
