@@ -57,6 +57,10 @@ tr {
   color: #5b5757;
 }
 
+tr.selected {
+  background-color: deepskyblue;
+}
+
 td:first-child {
   display: table-cell;
   font-weight: bold;
@@ -66,16 +70,31 @@ td:first-child {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
-  list-style-type: none;
-}
-
 .card {
   width: 18rem;
 }
 
 .table {
   text-align: center;
+}
+
+div.orders {
+  padding: 0.5em;
+}
+
+div.orders ul {
+  list-style-type: none;
+  margin: 0em;
+  padding: 0em;
+}
+div.orders ul li {
+  margin: 0.25em 0;
+  padding: 0.3em;
+}
+
+/* FOOTER STYLES */
+.footer {
+  padding-top: 20px;
+  text-align: center;
+  list-style-type: none;
 }
