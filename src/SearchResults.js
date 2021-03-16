@@ -1,7 +1,7 @@
 import React from "react";
-const SearchResults = () => {
+const SearchResults = props => {
   return (
-    <table class="table">
+    <table class="table mt-3 mb-2">
       <thead class="thead-dark">
         <tr>
           <th scope="col">title</th>
@@ -15,16 +15,18 @@ const SearchResults = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mr</td>
-          <td>X</td>
-          <td>Y</td>
-          <td>XY@gmail.com</td>
-          <td>1</td>
-          <td>12/12/21</td>
-          <td>15/12/21</td>
-        </tr>
+        {props.results.map(result => (
+          <tr>
+            <td>{result.id}</td>
+            <td>{result.title}</td>
+            <td>{result.firstName}</td>
+            <td>{result.surname}</td>
+            <td>{result.email}</td>
+            <td>{result.roomId}</td>
+            <td>{result.checkInDate}</td>
+            <td>{result.checkOutDate}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
