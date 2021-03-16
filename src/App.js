@@ -8,21 +8,29 @@ import Footer from "./Components/Footer/Footer";
 //DATA
 import dataToTouristInfoCardArr from "./data/dataRequiredByTouristInfoCards.json";
 import contactDetailsOfHotelArr from "./data/contactDetailsOfHotel.json";
+import fakeBookings from "./data/fakeBookings.json";
+import SearchResults from "../src/Components/SearchResults/SearchResults";
 
 import "./App.css";
 
-const contactArr = [
-  "123 Fake Street, London, E1 4UD",
-  "hello@fakehotel.com",
-  "0123 456789"
+const tableTitle = [
+  "ID",
+  "Title",
+  "First Name",
+  "Surname",
+  "Email",
+  "Room ID",
+  "Check in date",
+  "Check out date"
 ];
-// console.log(contactDetailsOfHotelArr);
+
 const App = () => {
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards touristInfoArray={dataToTouristInfoCardArr} />
       <Bookings />
+      <SearchResults fakeBooking={fakeBookings} tableHeader={tableTitle} />
       <Footer addressArray={contactDetailsOfHotelArr} />
     </div>
   );
