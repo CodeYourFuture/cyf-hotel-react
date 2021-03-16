@@ -18,6 +18,7 @@ const TrElement = props => {
         <TdElement element={props.fakeBookingItem.roomId} />
         <TdElement element={props.fakeBookingItem.checkInDate} />
         <TdElement element={props.fakeBookingItem.checkOutDate} />
+        <TdElement element={props.fakeBookingItem.numberOfNights} />
       </tr>
     );
   }

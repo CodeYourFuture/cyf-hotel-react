@@ -1,5 +1,5 @@
 import React from "react";
-import moment, { diff } from "moment";
+import moment from "moment";
 
 //Components
 import TouristInfoCards from "../src/Components/TouristInfoCards/TouristInfoCards";
@@ -9,17 +9,17 @@ import Footer from "./Components/Footer/Footer";
 //DATA
 import dataToTouristInfoCardArr from "./data/dataRequiredByTouristInfoCards.json";
 import contactDetailsOfHotelArr from "./data/contactDetailsOfHotel.json";
-import fakeBookings from "./data/fakeBookings.json";
+import fakeBookingsArr from "./data/fakeBookings.json";
 import SearchResults from "../src/Components/SearchResults/SearchResults";
 
 import "./App.css";
 
-//brutal solution to keep entire logic in one place "only one smart element"
-fakeBookings = fakeBookings.map(item => {
-  const a = new Date(item.checkOutDate.moment);
-  const b = new Date(item.checkInDate);
+// //brutal solution to keep entire logic in one place "only one smart element"
+const fakeBookings = fakeBookingsArr.map(item => {
+  const a = moment(item.checkOutDate);
+  const b = moment(item.checkInDate);
   console.log(a);
-  // const noOfNights = a.diff(b, "days");
+  const noOfNights = a.diff(b, "day");
 
   return (item = {
     id: item.id,
@@ -30,7 +30,7 @@ fakeBookings = fakeBookings.map(item => {
     roomId: item.roomId,
     checkInDate: item.checkInDate,
     checkOutDate: item.checkOutDate,
-    numberOfNights: moment.duration(b.diff(a)).get("days")
+    numberOfNights: noOfNights
   });
 });
 
