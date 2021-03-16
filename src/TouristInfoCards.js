@@ -25,7 +25,12 @@ const TouristInfoCards = () => {
         <div className="card">
           <img src={city.image} alt="city" className="card-img-top" />
           <div className="card-body">
-            <a href={city.website} target="_blank" className="btn btn-primary">
+            <a
+              href={city.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
               VIsit {city.name}
             </a>
           </div>
