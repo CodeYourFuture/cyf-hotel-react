@@ -6,6 +6,7 @@ import TouristInfoCards from "../src/Components/TouristInfoCards/TouristInfoCard
 import Heading from "../src/Components/Heading/Heading";
 import Bookings from "./Bookings";
 import Footer from "./Components/Footer/Footer";
+import Restaurant from "./Restaurant";
 //DATA
 import dataToTouristInfoCardArr from "./data/dataRequiredByTouristInfoCards.json";
 import contactDetailsOfHotelArr from "./data/contactDetailsOfHotel.json";
@@ -51,6 +52,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards touristInfoArray={dataToTouristInfoCardArr} />
       <Bookings />
+      <Restaurant />
       <SearchResults fakeBooking={fakeBookings} tableHeader={tableTitle} />
       <Footer addressArray={contactDetailsOfHotelArr} />
     </div>
