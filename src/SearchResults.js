@@ -1,4 +1,7 @@
+import moment from "moment";
 import React from "react";
+import FakeBooking from "./data/fakeBookings.json";
+import Rows from "./Rows";
 function SearchResults(props) {
   return (
     <>
@@ -13,20 +16,25 @@ function SearchResults(props) {
             <th scope="col">RoomId</th>
             <th scope="col">check-in date</th>
             <th scope="col">check-out date</th>
+            <th scope="col">number-of-nights</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mrs</td>
-            <td>Emma</td>
-            <td>Jackson</td>
-            <td>emma@Jackson.com</td>
-            <td>123</td>
-            <td>12/03/2020</td>
-            <td>20/03/2020</td>
-          </tr>
-        </tbody>
+        {FakeBooking.map(el => (
+          <Rows
+            id={el.id}
+            title={el.title}
+            firstName={el.firstName}
+            surName={el.surName}
+            email={el.email}
+            roomId={el.roomId}
+            checkInDate={el.checkInDate}
+            checkOutDate={el.checkOutDate}
+            numberOfNights={moment(el.checkOutDate).diff(
+              moment(el.checkInDate),
+              "days"
+            )}
+          />
+        ))}
       </table>
     </>
   );
