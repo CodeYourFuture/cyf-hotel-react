@@ -1,6 +1,5 @@
 import React from "react";
 function SearchResults(props) {
-  console.log(props);
   return (
     <>
       <table className="table">
