@@ -1,7 +1,7 @@
 import React from "react";
 import Bookings from "./Bookings";
 import "./App.css";
-import SearchButton from "./SearchButton";
+
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
@@ -12,7 +12,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <SearchButton />
+
       <Footer
         hotelAddress={[
           "123 Fake Street, London, E1 4UD",
