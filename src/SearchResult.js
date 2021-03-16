@@ -8,7 +8,17 @@ const diffInDays = (a, b) => {
   return diffDays;
 };
 
-const SearchResult = props => {
+const SearchResult = ({
+  id,
+  title,
+  firstName,
+  surname,
+  email,
+  roomId,
+  checkInDate,
+  checkOutDate,
+  handleProfile
+}) => {
   const [selected, setSelected] = useState(false);
 
   const highlight = () => {
@@ -18,21 +28,17 @@ const SearchResult = props => {
   return (
     <>
       <tr className={selected ? "highlighted" : null} onClick={highlight}>
-        <th scope="row">{props.id}</th>
-        <td>{props.title}</td>
-        <td>{props.firstName}</td>
-        <td>{props.surname}</td>
-        <td>{props.email}</td>
-        <td>{props.roomId}</td>
-        <td>{props.checkInDate}</td>
-        <td>{props.checkOutDate}</td>
+        <th scope="row">{id}</th>
+        <td>{title}</td>
+        <td>{firstName}</td>
+        <td>{surname}</td>
+        <td>{email}</td>
+        <td>{roomId}</td>
+        <td>{checkInDate}</td>
+        <td>{checkOutDate}</td>
+        <td>{diffInDays(checkOutDate, checkInDate) || ""}</td>
         <td>
-          {diffInDays(props.checkOutDate, props.checkInDate)
-            ? diffInDays(props.checkOutDate, props.checkInDate)
-            : ""}
-        </td>
-        <td>
-          <button className="btn btn-primary" onClick={props.handleProfile}>
+          <button className="btn btn-primary" onClick={handleProfile}>
             Profile
           </button>
         </td>
