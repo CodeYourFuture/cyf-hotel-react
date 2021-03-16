@@ -11,7 +11,6 @@ import Restaurant from "./Restaurant";
 import dataToTouristInfoCardArr from "./data/dataRequiredByTouristInfoCards.json";
 import contactDetailsOfHotelArr from "./data/contactDetailsOfHotel.json";
 import fakeBookingsArr from "./data/fakeBookings.json";
-import SearchResults from "../src/Components/SearchResults/SearchResults";
 
 import "./App.css";
 
@@ -34,26 +33,14 @@ const fakeBookings = fakeBookingsArr.map(item => {
   });
 });
 
-const tableTitle = [
-  "ID",
-  "Title",
-  "First Name",
-  "Surname",
-  "Email",
-  "Room ID",
-  "Check in date",
-  "Check out date",
-  "No. of nights"
-];
-
 const App = () => {
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards touristInfoArray={dataToTouristInfoCardArr} />
-      <Bookings />
+      <Bookings bookingData={fakeBookings} />
       <Restaurant />
-      <SearchResults fakeBooking={fakeBookings} tableHeader={tableTitle} />
+
       <Footer addressArray={contactDetailsOfHotelArr} />
     </div>
   );
