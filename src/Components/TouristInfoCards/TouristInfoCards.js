@@ -1,5 +1,18 @@
 import React from "react";
 
-const TouristInfoCards = () => {
-  return;
+const TouristInfoCards = props => {
+  return props.touristInfoArray.map(item => {
+    return (
+      <div className="card">
+        <img src={item.img} className="card-img-top" />
+        <div className="card-body">
+          <a href="item.TouristInfo" className="btn btn-primary">
+            Go somewhere
+          </a>
+        </div>
+      </div>
+    );
+  });
 };
+
+export default TouristInfoCards;
