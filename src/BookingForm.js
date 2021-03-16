@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const BookingForm = ({ bookings, setBookings }) => {
   const handleSubmit = e => {
@@ -22,11 +22,21 @@ const BookingForm = ({ bookings, setBookings }) => {
     })
       .then(response => {
         if (response.status !== 200) {
-          alert("all fields are mandatory");
+          alert("Invalid input");
         }
         return response.json();
       })
-      .then(data => setBookings(data));
+      .then(data => {
+        setBookings(data);
+      });
+    e.target.title.value = "";
+    e.target.firstName.value = "";
+    e.target.surname.value = "";
+    e.target.email.value = "";
+    e.target.roomId.value = "";
+    e.target.checkInDate.value = "";
+    e.target.checkOutDate.value = "";
+    // This is code to use the static bookings file, the app now works with a glitch backend
     // if (
     //   e.target.title.value &&
     //   e.target.firstName.value &&

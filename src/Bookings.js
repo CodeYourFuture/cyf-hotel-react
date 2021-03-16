@@ -21,7 +21,7 @@ const Bookings = () => {
       console.log("No search value");
       setSearchedBookings(bookings);
     }
-
+    // This is to work with the static bookings file
     // const newBookings = bookings.filter(
     //   el =>
     //     el.firstName.toLowerCase().includes(searchVal) ||
@@ -29,7 +29,6 @@ const Bookings = () => {
     // );
     // setBookings(newBookings);
   };
-  //console.log(searchedBookings)
 
   useEffect(() => {
     fetch("https://cbaggini-hotel-server.glitch.me/bookings")
