@@ -12,6 +12,7 @@ const SearchResults = props => {
           <th scope="col">room id</th>
           <th scope="col">check in date</th>
           <th scope="col">check out date</th>
+          <th scope="col">No of nights</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +26,7 @@ const SearchResults = props => {
             <td>{result.roomId}</td>
             <td>{result.checkInDate}</td>
             <td>{result.checkOutDate}</td>
+            <td>10</td>
           </tr>
         ))}
       </tbody>
