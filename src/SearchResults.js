@@ -27,18 +27,6 @@ function SearchResults(props) {
             <td>12/03/2020</td>
             <td>20/03/2020</td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td />
-            <td />
-            <td />
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td />
-            <td />
-            <td />
-          </tr>
         </tbody>
       </table>
     </>
