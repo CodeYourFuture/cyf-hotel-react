@@ -8,9 +8,8 @@ const Heading = () => {
           src="https://image.flaticon.com/icons/svg/139/139899.svg"
           width="25"
           height="25"
-          className="d-inline-block align-top"
+          className="d-inline-block align-top mr-1 mb-1"
           alt="Site Logo"
-          className="mr-1 mb-1"
         />
         CYF Hotel
       </header>
