@@ -27,6 +27,37 @@
   font-size: large;
 }
 
+.card-img-top,
+.card,
+.heading {
+  width: 888px;
+  margin: 0px;
+}
+
+.card-body {
+  width: 888px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotel-logo {
+  height: 88px;
+}
+
+.card {
+  display: flex;
+}
+
+.card img {
+  width: 200px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -50,8 +81,4 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
-}
-
-.card {
-  width: 18rem;
 }
