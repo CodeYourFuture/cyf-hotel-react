@@ -6,7 +6,7 @@ const TouristInfoCards = props => {
       <div className="card">
         <img src={item.img} className="card-img-top" />
         <div className="card-body">
-          <a href="item.TouristInfo" className="btn btn-primary">
+          <a href={item.touristInfo} className="btn btn-primary">
             Go somewhere
           </a>
         </div>
