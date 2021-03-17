@@ -4,9 +4,13 @@ import TdElement from "../TdElement/TdElement";
 
 const TrElement = props => {
   if (props.th) {
-    return props.tableHeader.map(item => {
-      return <ThElement title={item} />;
-    });
+    return (
+      <tr className={props.className}>
+        {props.tableHeader.map((item, index) => {
+          return <ThElement key={item} title={item} />;
+        })}
+      </tr>
+    );
   } else if (!props.th) {
     return (
       <tr>
