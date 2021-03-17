@@ -30,14 +30,23 @@
 .card-img-top,
 .card,
 .heading {
-  width: 888px;
+  width: auto;
   margin: 0px;
+  padding: 0.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .card-body {
   width: 888px;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .heading {
@@ -48,10 +57,6 @@
 
 .hotel-logo {
   height: 88px;
-}
-
-.card {
-  display: flex;
 }
 
 .card img {
@@ -66,6 +71,7 @@
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -81,4 +87,8 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+
+.footer ul {
+  list-style: none;
 }
