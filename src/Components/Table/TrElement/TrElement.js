@@ -5,7 +5,7 @@ import TdElement from "../TdElement/TdElement";
 const TrElement = props => {
   if (props.th) {
     return (
-      <tr>
+      <tr className={props.className}>
         {props.tableHeader.map((item, index) => {
           return <ThElement key={item} title={item} />;
         })}
