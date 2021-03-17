@@ -12,7 +12,7 @@ const TouristInfoCards = props => {
             rel="noopener noreferrer"
             className="btn btn-primary"
           >
-            {elem.city};
+            {elem.city}
           </a>
         </div>
       ))}
