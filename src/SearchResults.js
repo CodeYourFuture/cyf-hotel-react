@@ -1,18 +1,19 @@
+import moment from "moment";
 import React from "react";
 const SearchResults = props => {
   return (
     <table class="table mt-3 mb-2">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">title</th>
-          <th scope="col">title</th>
-          <th scope="col">first name </th>
-          <th scope="col">surname</th>
-          <th scope="col">email</th>
-          <th scope="col">room id</th>
-          <th scope="col">check in date</th>
-          <th scope="col">check out date</th>
-          <th scope="col">No of nights</th>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">First Name </th>
+          <th scope="col">Surname</th>
+          <th scope="col">Email</th>
+          <th scope="col">Room Id</th>
+          <th scope="col">Check in Date</th>
+          <th scope="col">Check out Date</th>
+          <th scope="col">No of Nights</th>
         </tr>
       </thead>
       <tbody>
@@ -26,7 +27,9 @@ const SearchResults = props => {
             <td>{result.roomId}</td>
             <td>{result.checkInDate}</td>
             <td>{result.checkOutDate}</td>
-            <td>10</td>
+            <td>
+              {moment(result.checkOutDate).diff(result.checkInDate, "days")}
+            </td>
           </tr>
         ))}
       </tbody>

@@ -29,9 +29,9 @@ const TouristInfoCards = () => {
               href={city.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary"
+              className="btn btn-dark"
             >
-              VIsit {city.name}
+              Visit {city.name}
             </a>
           </div>
         </div>
