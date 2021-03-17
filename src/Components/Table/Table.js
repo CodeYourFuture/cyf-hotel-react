@@ -4,10 +4,12 @@ import TrElement from "./TrElement/TrElement";
 const TableElement = props => {
   return (
     <table>
-      <TrElement th={true} tableHeader={props.tableHeader} />
-      {props.fakeBooking.map(item => {
-        return <TrElement th={false} fakeBookingItem={item} />;
-      })}
+      <tbody>
+        <TrElement th={true} tableHeader={props.tableHeader} />
+        {props.fakeBooking.map((item, index) => {
+          return <TrElement key={index} th={false} fakeBookingItem={item} />;
+        })}
+      </tbody>
     </table>
   );
 };
