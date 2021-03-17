@@ -1,6 +1,5 @@
 import React from "react";
 import TableElement from "../Table/Table";
-import classes from "./SearchResults.css";
 
 const SearchResults = props => {
   const selectTrElementHAndler = e => {
