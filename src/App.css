@@ -1,5 +1,7 @@
 .App {
-  text-align: left;
+  max-width: 100%;
+  margin: auto;
+  /* text-align: left; */
 }
 
 .App-logo {
@@ -40,7 +42,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #0b171d;
 }
 
 .results {
@@ -52,6 +54,30 @@ tr {
   text-align: center;
 }
 
-.card {
+/* .card {
   width: 18rem;
+} */
+
+.Hotel-logo {
+  width: 10rem;
+  height: 10rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 25rem;
+  height: 30rem;
+}
+
+.card-img-top {
+  width: 25rem;
+  height: 25rem;
+  padding: 0.5rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgb(102, 111, 238);
 }
