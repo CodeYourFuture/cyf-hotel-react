@@ -3,13 +3,16 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 50px;
+
 }
 
 .App-header {
+  display: flex;
+  justify-content: center;
   background-color: #222;
-  height: 50px;
+  height: 70px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -54,4 +57,11 @@ tr {
 
 .card {
   width: 18rem;
+
+}
+.cardContainer{
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  text-align: center;
 }
