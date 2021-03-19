@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "moment";
 const TouristInfoCards = () => {
   return (
     <div className="card">
@@ -80,13 +81,14 @@ const Footer = props => {
 
 const SearchResults = props => {
   const bookingDetails = props.results;
-  console.log(bookingDetails[0]);
+  console.log(bookingDetails);
   const bookingKeys = Object.keys(bookingDetails[0]);
-  console.log(bookingKeys);
+  // console.log(bookingKeys[1]);
+
   return (
     <div>
-      <table>
-        <thead>
+      <table className="table table-striped table table-bordered">
+        <thead className="primary">
           <tr>
             {bookingKeys.map(bookingKey => (
               <th scope="col" key={bookingKey}>
@@ -94,6 +96,7 @@ const SearchResults = props => {
                 {bookingKey}{" "}
               </th>
             ))}
+            <th> number of nights </th>
           </tr>
         </thead>
         <tbody>
@@ -103,6 +106,14 @@ const SearchResults = props => {
                 {bookingKeys.map(bookingKey => (
                   <td key={bookingKey}> {bookingDetail[bookingKey]}</td>
                 ))}
+
+                <td>
+                  {Moment.duration(
+                    Moment(bookingDetail["checkOutDate"]).diff(
+                      Moment(bookingDetail["checkInDate"])
+                    )
+                  ).asDays()}
+                </td>
               </tr>
             );
           })}
