@@ -5,14 +5,21 @@ import Bookings from "./Bookings";
 import Footer from "./Footer";
 import "./App.css";
 
+const contact = [
+  "123 Fake Street, London, E1 4UD",
+  "hello@fakehotel.com",
+  "0123 456789"
+];
+
 const App = () => {
   return (
     <div className="App">
+      <Heading className="App" />
       <TouristInfoCards />
       <Bookings />
-      <Heading className="App" />
+      {/* <SearchResults /> */}
       {/* <header className="App-header">CYF Hotel</header> */}
-      <Footer />
+      <Footer address={contact} />
     </div>
   );
 };

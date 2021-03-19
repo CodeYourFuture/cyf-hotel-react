@@ -7,6 +7,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           src="https://www.shoosmiths.co.uk/-/media/images/locations/glasgow.jpg"
+          alt=""
           className="card-img"
         />
         <div className="class-body">
@@ -19,7 +20,11 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img src="https://i.redd.it/s5ifau44bvd31.jpg" className="card-img" />
+        <img
+          src="https://i.redd.it/s5ifau44bvd31.jpg"
+          alt=""
+          className="card-img"
+        />
         <div className="class-body">
           <h4>MANCHESTER</h4>
           <p>
@@ -38,6 +43,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           src="https://www.fodors.com/assets/destinations/2869/tower-bridge-london-england_980x650.jpg"
+          alt=""
           className="card-img"
         />
         <div className="class-body">
