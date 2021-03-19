@@ -9,16 +9,16 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
-  text-align: left;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
 }
 .logo-image {
-  height: 30px;
+  height: 50px;
   width: 50px;
 }
 .App-title {
@@ -54,11 +54,21 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
+.footer ul {
+  background-color: #d8d6d6;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer ul > li {
+  list-style: none;
 }
 
 .card {
   width: 18rem;
+}
+.card > img {
+  height: 80%;
 }

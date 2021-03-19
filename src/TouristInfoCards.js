@@ -3,7 +3,7 @@ import citiesData from "./CitiesData";
 
 function TouristInfoCards() {
   return (
-    <div className="cities-cards">
+    <div className="cities-cards mt-5">
       {citiesData.map(item => (
         <div className="card">
           <h5>{item.city}</h5>
