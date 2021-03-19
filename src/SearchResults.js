@@ -1,10 +1,10 @@
 import React from "react";
+import moment from "moment";
 
 export const SearchResults = ({ results }) => {
-  console.log(results);
   return (
     <div>
-      <table class="table table-dark">
+      <table className="table table-dark">
         <thead>
           <tr>
             <th scope="col">Title</th>
@@ -19,24 +19,19 @@ export const SearchResults = ({ results }) => {
         </thead>
         <tbody>
           {results.map((item, index) => (
-            <tr>
-              <th key={index} scope="row">
-                {item.title}
-              </th>
-              <th key={index} scope="row">
-                {item.firstName}
-              </th>
-              <th key={index} scope="row">
-                {item.surname}
-              </th>
-              <th key={index} scope="row">
-                {item.email}
-              </th>
-              <th key={index} scope="row">
-                {item.id}
-              </th>
-              <th key={index} scope="row">
-                {item.id}
+            <tr key={index}>
+              <th scope="row">{item.title}</th>
+              <th scope="row">{item.firstName}</th>
+              <th scope="row">{item.surname}</th>
+              <th scope="row">{item.email}</th>
+              <th scope="row">{item.id}</th>
+              <th scope="row">{item.checkInDate}</th>
+              <th scope="row">{item.checkOutDate}</th>
+              <th scope="row">
+                {moment(item.checkOutDate).diff(
+                  moment(item.checkInDate),
+                  "days"
+                )}
               </th>
             </tr>
           ))}
