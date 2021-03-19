@@ -1,5 +1,6 @@
 import React from "react";
 import Bookings from "./Bookings.js";
+// import Moment from "moment";
 import "./App.css";
 // import {TouristInfoCards, Heading, SearchResults, Footer} from "./Hotel.js";
 import allComponents from "./Hotel.js";
