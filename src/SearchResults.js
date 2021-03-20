@@ -19,8 +19,9 @@ function SearchResults(props) {
             <th scope="col">number-of-nights</th>
           </tr>
         </thead>
-        {FakeBooking.map(el => (
+        {FakeBooking.map((el, index) => (
           <Rows
+            key={index}
             id={el.id}
             title={el.title}
             firstName={el.firstName}

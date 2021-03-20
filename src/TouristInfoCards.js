@@ -4,8 +4,8 @@ import citiesData from "./CitiesData";
 function TouristInfoCards() {
   return (
     <div className="cities-cards mt-5">
-      {citiesData.map(item => (
-        <div className="card">
+      {citiesData.map((item, index) => (
+        <div className="card" key={index}>
           <h5>{item.city}</h5>
           <img src={item.image} className="card-img-top" alt="" />
           <div className="card-body">

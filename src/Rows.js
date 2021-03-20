@@ -3,7 +3,7 @@ import React from "react";
 const Rows = props => {
   return (
     <tbody>
-      <tr>
+      <tr key>
         <th scope="row">{props.id}</th>
         <td>{props.title}</td>
         <td>{props.firstName}</td>

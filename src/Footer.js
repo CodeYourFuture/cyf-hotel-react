@@ -8,8 +8,8 @@ function Footer() {
   return (
     <div className="footer">
       <ul>
-        {foot.map(item => (
-          <li>{item}</li>
+        {foot.map((item, index) => (
+          <li key={index}>{item}</li>
         ))}
       </ul>
     </div>
