@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Rows = props => {
+  const [highlight, setHighlight] = useState();
+  function highlighter() {
+    setHighlight("red");
+    if (highlight) {
+      setHighlight();
+    }
+  }
   return (
     <tbody>
-      <tr key>
+      <tr key onClick={highlighter} className={highlight}>
         <th scope="row">{props.id}</th>
         <td>{props.title}</td>
         <td>{props.firstName}</td>

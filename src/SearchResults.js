@@ -1,6 +1,5 @@
-import moment from "moment";
 import React from "react";
-import FakeBooking from "./data/fakeBookings.json";
+import moment from "moment";
 import Rows from "./Rows";
 function SearchResults(props) {
   return (
@@ -19,7 +18,7 @@ function SearchResults(props) {
             <th scope="col">number-of-nights</th>
           </tr>
         </thead>
-        {FakeBooking.map((el, index) => (
+        {props.allBookings.map((el, index) => (
           <Rows
             key={index}
             id={el.id}
