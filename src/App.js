@@ -1,6 +1,7 @@
 import React from "react";
 import Bookings from "./Bookings";
 import Heading from "./Heading";
+import Restaurant from "./Restaurant";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import "./App.css";
@@ -12,6 +13,7 @@ const App = () => {
         <Heading />
         <TouristInfoCards />
         <Bookings />
+        <Restaurant />
       </div>
       <Footer />;
     </>
