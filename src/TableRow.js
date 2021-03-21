@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 moment().format();
 
 const TableRow = props => {
-  // console.log(props.result.checkInDate);
-  // console.log(props.result.checkOutDate);
-  const startDate = moment(props.result.checkInDate.split("-"));
-  const endDate = moment(props.result.checkOutDate.split("-"));
+  const [highlightClass, setHighlightClass] = useState("noHighlight");
+
+  const highlightRow = () => {
+    setHighlightClass(highlightClass => {
+      if (highlightClass === "noHighlight") {
+        return "highlight";
+      } else {
+        return "noHighlight";
+      }
+    });
+  };
+
+  const startDate = moment(props.result.checkInDate);
+  const endDate = moment(props.result.checkOutDate);
   let numberOfNights = endDate.diff(startDate, "days", true);
-  // console.log(startDate);
-  // console.log(endDate);
-  // console.log(numberOfNights);
-  if (isNaN(numberOfNights)) {
-    numberOfNights = "Unknown";
-  }
 
   return (
-    <tr>
+    <tr onClick={highlightRow} className={highlightClass}>
       <th scope="row">{props.result.id}</th>
       <td>{props.result.title}</td>
       <td>{props.result.firstName}</td>

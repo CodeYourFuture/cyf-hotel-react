@@ -3,6 +3,7 @@ import React from "react";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
+import Restaurant from "./Restaurant";
 // import SearchResults from "./SearchResults";
 import Footer from "./Footer";
 
@@ -34,6 +35,7 @@ const App = () => {
       </div>
 
       <Bookings />
+      <Restaurant />
       {/* <SearchResults /> */}
       <Footer
         list={[
