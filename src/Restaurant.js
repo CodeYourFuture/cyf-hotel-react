@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import RestaurantButton from "./components/RestaurantButton.js";
 
 const Restaurant = () => {
   const [pizzas, setPizzas] = useState(0);
@@ -12,10 +13,11 @@ const Restaurant = () => {
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
-          Pizzas: {pizzas}{" "}
-          <button className="btn btn-primary" onClick={incrementCount}>
+          Pizzas: {pizzas}
+          <RestaurantButton setPizzas={incrementCount} />
+          {/* <button className="btn btn-primary" onClick={incrementCount}>
             Add
-          </button>
+          </button> */}
         </li>
       </ul>
     </div>
