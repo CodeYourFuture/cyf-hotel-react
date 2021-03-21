@@ -7,6 +7,9 @@
   height: 300%;
   margin-right: 43%;
 }
+.color {
+  background-color: rgb(185, 185, 207);
+}
 
 .App-header {
   background-color: #222;
