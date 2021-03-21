@@ -55,3 +55,55 @@ tr {
 .card {
   width: 18rem;
 }
+
+.logoPic {
+  width: 30px;
+  height: 20px;
+}
+.threeCards {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  padding-top: 10px;
+}
+li {
+  list-style: none;
+  background-color: #222;
+  color: antiquewhite;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.lightGrey {
+  background-color: lightgrey;
+}
+.cadetBlue {
+  background-color: cadetblue;
+}
+.grey {
+  background-color: gray;
+}
+.red {
+  background-color: red;
+}
+
+.none {
+  background-color: none;
+}
+.profileDiv {
+  border: 2px solid green;
+  padding: 10px;
+  min-width: 300px;
+}
+
+.loader,
+.httpError {
+  text-align: center;
+  font-size: 40px;
+}
