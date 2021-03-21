@@ -8,7 +8,7 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
 
-  const [bookings, setBookings] = useState(FakeBookings);
+  const [bookings /*setBookings*/] = useState(FakeBookings);
 
   return (
     <div className="App-content">
