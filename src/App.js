@@ -1,9 +1,9 @@
 import React from "react";
 import Bookings from "./Bookings.js";
-// import Moment from "moment";
+import Restaurant from "./Restaurant.js";
 import "./App.css";
-// import {TouristInfoCards, Heading, SearchResults, Footer} from "./Hotel.js";
 import allComponents from "./Hotel.js";
+
 const Info = [
   "123 Fake Street, London, E1 4UD",
   "hello@fakehotel.com",
@@ -15,6 +15,7 @@ const App = () => {
     <div className="App">
       <allComponents.Heading />
       <Bookings />
+      <Restaurant />
       <allComponents.TouristInfoCards />
       {/* <allComponents.SearchResults/> */}
       <allComponents.Footer Info={Info} />
