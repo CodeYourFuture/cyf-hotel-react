@@ -3,10 +3,13 @@ import React, { useState } from "react";
 const GuestsDetails = props => {
   const [highlight, setHighlight] = useState(props);
   const rowHighlighter = e => {
-    if (e.target.parentElement.style.backgroundColor !== "crimson") {
-      setHighlight((e.target.parentElement.style.backgroundColor = "crimson"));
+    if (e.target.parentElement.style.backgroundColor !== "royalblue") {
+      setHighlight(
+        (e.target.parentElement.style.backgroundColor = "royalblue")
+      );
     } else {
-      return (e.target.parentElement.style.backgroundColor = "rgb(65, 80, 92)");
+      return (e.target.parentElement.style.backgroundColor =
+        "rgb(96, 108, 119)");
     }
   };
   return (
