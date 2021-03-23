@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
+import "./index.css";
 
 export const SearchResults = ({ results }) => {
+  const [colour, setColour] = useState("green");
+
+  function highlightWhenClicked() {
+    setColour("orange");
+  }
   return (
     <div>
       <table className="table table-dark">
         <thead>
-          <tr>
+          <tr className={colour} onClick={highlightWhenClicked}>
             <th scope="col">Title</th>
             <th scope="col">First Name</th>
             <th scope="col">Surname</th>
@@ -19,7 +25,7 @@ export const SearchResults = ({ results }) => {
         </thead>
         <tbody>
           {results.map((item, index) => (
-            <tr key={index}>
+            <tr className={colour} onClick={highlightWhenClicked} key={index}>
               <th scope="row">{item.title}</th>
               <th scope="row">{item.firstName}</th>
               <th scope="row">{item.surname}</th>

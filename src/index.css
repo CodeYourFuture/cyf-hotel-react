@@ -49,3 +49,11 @@ img {
 #footer-address {
   list-style-type: none;
 }
+
+.orange {
+  background-color: #dd6b20;
+}
+
+.green {
+  background-color: #38a169;
+}
