@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "./Search.js";
-import SearchResult from "./Hotel.js";
+import SearchResult from "./Hotel";
 import FakeBookings from "./data/fakeBookings.json";
-//
-// const results = FakeBookings;
-// console.log(FakeBookings);
+console.log(FakeBookings);
+
 const Bookings = () => {
+  const [bookings, setBookings] = useState(FakeBookings);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
@@ -14,8 +14,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResult.SearchResults results={FakeBookings} />
-        {/* <SearchResult.SearchResults/> */}
+        <SearchResult.SearchResults results={bookings} />
       </div>
     </div>
   );

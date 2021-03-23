@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Moment from "moment";
 const TouristInfoCards = () => {
   return (
@@ -83,12 +83,10 @@ const SearchResults = props => {
   const bookingDetails = props.results;
   console.log(bookingDetails);
   const bookingKeys = Object.keys(bookingDetails[0]);
-  // console.log(bookingKeys[1]);
-
   return (
     <div>
-      <table className="table table-striped table table-bordered">
-        <thead className="primary">
+      <table className="table table-striped table-bordered">
+        <thead className="table table-danger thead-light">
           <tr>
             {bookingKeys.map(bookingKey => (
               <th scope="col" key={bookingKey}>
@@ -102,7 +100,8 @@ const SearchResults = props => {
         <tbody>
           {bookingDetails.map((bookingDetail, i) => {
             return (
-              <tr key={i}>
+              <tr key={i} onClick={props.changeColor}>
+                {/* {const [color, setColor] = useState(false)} */}
                 {bookingKeys.map(bookingKey => (
                   <td key={bookingKey}> {bookingDetail[bookingKey]}</td>
                 ))}
