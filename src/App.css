@@ -9,13 +9,27 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bolder;
+  display: flex;
+}
+
+.App-footer {
+  background-color: #224;
+  height: 20px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.1 em;
+  font-weight: small;
+  display: flex;
+  justify-content: space-between;
 }
 
 .App-title {
@@ -43,6 +57,11 @@ tr {
   color: #5b5757;
 }
 
+.clicked {
+  background-color: rgb(155, 126, 136);
+  color: #222;
+}
+
 .results {
   padding-top: 15px;
 }
@@ -50,6 +69,11 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+
+.cards-parent {
+  display: flex;
+  justify-content: space-around;
 }
 
 .card {
