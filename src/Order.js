@@ -7,9 +7,9 @@ const Order = props => {
     serOrders(orders + 1);
   };
   return (
-    <li>
-      {props.orderType}: {orders}
+    <li className="orders">
       <RestaurantButton order={orderOne} />
+      {props.orderType}: {orders}
     </li>
   );
 };

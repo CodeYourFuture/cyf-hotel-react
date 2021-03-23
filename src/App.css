@@ -53,10 +53,44 @@
   font-size: large;
 }
 
+.table {
+  border-style: solid;
+}
+
+.table-header {
+  border-style: groove;
+  background-color: rgb(43, 60, 75);
+  color: aliceblue;
+}
+
+.table-body {
+  border-style: solid;
+  background-color: rgb(65, 80, 92);
+}
+
+.t-body {
+  border-right: groove;
+  color: aliceblue;
+}
+
 .restaurant-orders {
+  margin-bottom: 1em;
+}
+
+.restaurant {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.orders {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.rBtn {
+  margin-right: 1em;
+  margin-top: -0.5em;
 }
 
 .footer {
