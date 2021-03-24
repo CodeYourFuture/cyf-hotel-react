@@ -4,7 +4,8 @@ import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./components/Heading.js";
 import TouristInfoCards from "./components/TouristInfoCards.js";
-import Footer from "./components/footer.js";
+import Footer from "./components/Footer.js";
+import Restaurant from "./Restaurant.js";
 
 const contactDetail = [
   "123 Fake Street, London, E1 4UD",
@@ -36,10 +37,10 @@ const cards = [
 const App = () => {
   return (
     <div className="App">
-      {/* <header className="App-header">CYF Hotel</header> */}
       <Heading />
       <TouristInfoCards cards={cards} />
       <Bookings />
+      <Restaurant />
       <Footer contactDetail={contactDetail} />
     </div>
   );

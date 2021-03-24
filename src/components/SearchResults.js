@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const TableHead = () => {
@@ -19,23 +19,43 @@ const TableHead = () => {
   );
 };
 
+const TableRow = props => {
+  const [selected, setSelected] = useState("notHighlighted");
+  const highlight = () => {
+    setSelected(selected => {
+      if (selected === "notHighlighted") {
+        return "highlight";
+      } else {
+        return "notHighlighted";
+      }
+    });
+  };
+
+  return (
+    <tr className={selected} onClick={highlight}>
+      <th scope="row">{props.booking.id}</th>
+      <td>{props.booking.title}</td>
+      <td>{props.booking.firstName}</td>
+      <td>{props.booking.surname}</td>
+      <td>{props.booking.email}</td>
+      <td>{props.booking.roomId}</td>
+      <td>{props.booking.checkInDate}</td>
+      <td>{props.booking.checkOutDate}</td>
+      <td>
+        {moment(props.booking.checkOutDate).diff(
+          moment(props.booking.checkInDate),
+          "days"
+        )}
+      </td>
+    </tr>
+  );
+};
+
 const TableBody = props => {
   return (
     <tbody>
-      {props.result.map((elem, index) => (
-        <tr key={index}>
-          <th scope="row">{elem.id}</th>
-          <td>{elem.title}</td>
-          <td>{elem.firstName}</td>
-          <td>{elem.surname}</td>
-          <td>{elem.email}</td>
-          <td>{elem.roomId}</td>
-          <td>{elem.checkInDate}</td>
-          <td>{elem.checkOutDate}</td>
-          <td>
-            {moment(elem.checkOutDate).diff(moment(elem.checkInDate), "days")}
-          </td>
-        </tr>
+      {props.result.map((booking, index) => (
+        <TableRow booking={booking} key={index} />
       ))}
     </tbody>
   );
