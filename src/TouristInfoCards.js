@@ -21,8 +21,8 @@ const TouristInfoCards = () => {
   ];
   return (
     <div className="cities">
-      {cities.map(city => (
-        <div className="card">
+      {cities.map((city, index) => (
+        <div key={index} className="card">
           <img src={city.image} alt="city" className="card-img-top" />
           <div className="card-body">
             <a

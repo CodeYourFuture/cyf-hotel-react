@@ -19,6 +19,9 @@ h3 {
   padding-top: 20px;
   font-size: large;
 }
+.selected {
+  background-color: rgb(127, 245, 235);
+}
 
 /* @keyframes App-logo-spin {
   from {

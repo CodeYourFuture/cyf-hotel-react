@@ -1,9 +1,14 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 const SearchResults = props => {
+  const [inActive, setActive] = useState(-1);
+
+  function colorChanger(index) {
+    setActive(index === inActive ? -1 : index);
+  }
   return (
-    <table class="table mt-3 mb-2">
-      <thead class="thead-dark">
+    <table className="table mt-3 mb-2">
+      <thead className="thead-dark">
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Title</th>
@@ -17,8 +22,13 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map(result => (
-          <tr>
+        {props.results.map((result, index) => (
+          <tr
+            key={index}
+            onClick={e => colorChanger(index)}
+            className={inActive === index ? "selected" : ""}
+            // style={{background: "green"}}
+          >
             <td>{result.id}</td>
             <td>{result.title}</td>
             <td>{result.firstName}</td>
