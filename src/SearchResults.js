@@ -1,5 +1,6 @@
 import moment from "moment";
 import React, { useState } from "react";
+
 const SearchResults = props => {
   const [inActive, setActive] = useState(-1);
 
@@ -25,9 +26,9 @@ const SearchResults = props => {
         {props.results.map((result, index) => (
           <tr
             key={index}
-            onClick={e => colorChanger(index)}
+            onClick={() => colorChanger(index)}
             className={inActive === index ? "selected" : ""}
-            // style={{background: "green"}}
+            style={{ cursor: "pointer" }}
           >
             <td>{result.id}</td>
             <td>{result.title}</td>

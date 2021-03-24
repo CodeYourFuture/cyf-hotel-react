@@ -12,6 +12,7 @@ const Restaurant = () => {
         <Order orderType="Pizza" />
         <Order orderType="Salad" />
         <Order orderType="Pasta" />
+        <Order orderType="Burger" />
       </ul>
     </div>
   );
