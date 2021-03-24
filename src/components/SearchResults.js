@@ -20,19 +20,19 @@ const TableHead = () => {
 };
 
 const TableRow = props => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState("notHighlighted");
   const highlight = () => {
     setSelected(selected => {
-      if (selected === false) {
-        return true;
+      if (selected === "notHighlighted") {
+        return "highlight";
       } else {
-        return false;
+        return "notHighlighted";
       }
     });
   };
 
   return (
-    <tr className="highlight" onClick={highlight}>
+    <tr className={selected} onClick={highlight}>
       <th scope="row">{props.booking.id}</th>
       <td>{props.booking.title}</td>
       <td>{props.booking.firstName}</td>

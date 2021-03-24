@@ -84,13 +84,8 @@ tr {
   padding-top: 15px;
 }
 
-.highlighted {
+.highlight {
   background-color: palevioletred;
-}
-
-.row:focus {
-  outline: none;
-  background-color: green;
 }
 
 .footer {
