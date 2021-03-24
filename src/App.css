@@ -84,6 +84,10 @@ tr {
   padding-top: 15px;
 }
 
+.highlighted {
+  background-color: palevioletred;
+}
+
 .footer {
   padding-top: 20px;
   text-align: center;

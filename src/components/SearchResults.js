@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const TableHead = () => {
@@ -20,12 +20,30 @@ const TableHead = () => {
 };
 
 const TableBody = props => {
+  const [selected, setSelected] = useState(0);
+
+  function higlight(index) {
+    if (index === 0) {
+      setSelected(!selected);
+      console.log(index);
+      console.log(setSelected);
+      console.log(selected);
+    }
+  }
+
   return (
     <tbody>
       {props.result.map((elem, index) => (
-        <tr key={index}>
+        <tr
+          key={index}
+          className={selected ? "highlighted" : ""}
+          onClick={() => console.log(index)}
+        >
           <th scope="row">{elem.id}</th>
-          <td>{elem.title}</td>
+          <td>
+            {elem.title}
+            {console.log(elem.title)}
+          </td>
           <td>{elem.firstName}</td>
           <td>{elem.surname}</td>
           <td>{elem.email}</td>
