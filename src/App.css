@@ -88,6 +88,11 @@ tr {
   background-color: palevioletred;
 }
 
+.row:focus {
+  outline: none;
+  background-color: green;
+}
+
 .footer {
   padding-top: 20px;
   text-align: center;
