@@ -3,7 +3,10 @@ import React, { useState } from "react";
 
 const SearchResults = props => {
   const [inActive, setActive] = useState(-1);
-
+  /* 
+  - using the state the colorChanger will toggle between -1 and index of each person object in the array
+  - and each row do of object will have a class added if the state variable inActive === index of each object in the array
+  */
   function colorChanger(index) {
     setActive(index === inActive ? -1 : index);
   }

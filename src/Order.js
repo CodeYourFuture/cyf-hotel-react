@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
+/*
+- orders variable initialized to 0 and the setOrders will increment by 1 on button click
+- OrderType will be passed as props from the Restaurant and the function order one will be passed to RestaurantButton as a prop
 
+*/
 const Order = props => {
   const [orders, setOrders] = useState(0);
 
