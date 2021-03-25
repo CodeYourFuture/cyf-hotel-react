@@ -75,3 +75,6 @@ tr {
 .red {
   background-color: rgb(248, 230, 128);
 }
+tbody:hover {
+  background-color: rgb(173, 169, 169);
+}

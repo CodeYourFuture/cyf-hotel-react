@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
 const Rows = props => {
-  const [highlight, setHighlight] = useState();
-  function highlighter() {
-    setHighlight("red");
-    if (highlight) {
-      setHighlight();
+  const [selected, setSelected] = useState();
+  function selector() {
+    setSelected("red");
+    if (selected) {
+      setSelected();
     }
   }
   return (
     <tbody>
-      <tr key onClick={highlighter} className={highlight}>
+      <tr key onClick={selector} className={selected}>
         <th scope="row">{props.id}</th>
         <td>{props.title}</td>
         <td>{props.firstName}</td>
