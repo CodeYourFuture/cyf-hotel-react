@@ -6,12 +6,14 @@ const Order = props => {
     setOrders(orders => orders + 1);
   }
   return (
-    <>
+    <div className="order-button">
       <li>
         {props.orderType}: {orders}{" "}
       </li>
-      <RestaurantButton handler={orderOne} />
-    </>
+      <div>
+        <RestaurantButton handler={orderOne} />
+      </div>
+    </div>
   );
 };
 export default Order;
