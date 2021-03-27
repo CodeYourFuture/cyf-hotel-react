@@ -99,21 +99,17 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {bookingDetails.map((bookingDetail, i) => {
-            return (
-              <tr key={i} onClick={props.changeColor}>
-                {/* {const [color, setColor] = useState(false)} */}
-                {bookingKeys.map(bookingKey => (
-                  <td key={bookingKey}> {bookingDetail[bookingKey]}</td>
-                ))}
+            // const [color, setColor] = useState(false);
 
-                <td>
-                  {Moment.duration(
-                    Moment(bookingDetail["checkOutDate"]).diff(
-                      Moment(bookingDetail["checkInDate"])
-                    )
-                  ).asDays()}
-                </td>
-              </tr>
+            // const changeColor = () => {
+            //   console.log(color);
+            // }
+            return (
+              <TableRow
+                i={i}
+                bookingKeys={bookingKeys}
+                bookingDetail={bookingDetail}
+              />
             );
           })}
         </tbody>
@@ -121,6 +117,27 @@ const SearchResults = props => {
     </div>
   );
   // console.log(bookingKey);
+};
+
+const TableRow = props => {
+  const bookingKeys = props.bookingKeys;
+  const bookingDetail = props.bookingDetail;
+
+  return (
+    <tr key={props.i}>
+      {props.bookingKeys.map(bookingKey => (
+        <td key={bookingKey}> {props.bookingDetail[bookingKey]}</td>
+      ))}
+
+      <td>
+        {Moment.duration(
+          Moment(props.bookingDetail["checkOutDate"]).diff(
+            Moment(props.bookingDetail["checkInDate"])
+          )
+        ).asDays()}
+      </td>
+    </tr>
+  );
 };
 
 export default { TouristInfoCards, Heading, SearchResults, Footer };
