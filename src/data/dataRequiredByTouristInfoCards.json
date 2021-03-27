@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "touristInfo": "https://peoplemakeglasgow.com",
+    "img": "https://peoplemakeglasgow.com/templates/people/helper/timthumb.php?w=320&h=320&src=images/Things_to_do/Tours/Glascottours.jpg"
+  },
+
+  {
+    "id": 2,
+    "touristInfo": "https://visitmanchester.com",
+    "img": "https://www.visitmanchester.com/imageresizer/?image=%2Fdbimgs%2Fcorrie.jpg&action=BlogDetailContent"
+  },
+
+  {
+    "id": 1,
+    "touristInfo": "https://visitlondon.com",
+    "img": "https://cdn.londonandpartners.com/-/media/images/london/visit/london-organisations/coca-cola-london-eye/coca-cola-london-eye-640.jpg"
+  }
+]
