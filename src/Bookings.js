@@ -2,9 +2,6 @@ import React from "react";
 import moment from "moment";
 import Search from "./Search.js";
 import SearchResults from "../src/Components/SearchResults/SearchResults";
-// import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
-// import classes from "./";
 
 const Bookings = props => {
   const [bookingsData, bookingHandler] = React.useState([]);
@@ -27,7 +24,6 @@ const Bookings = props => {
         console.log(data);
         selectByIdHandler(data);
       });
-    // selectByIdHandler(data);
   };
 
   const tableTitle = [
@@ -79,9 +75,8 @@ const Bookings = props => {
   }, []);
 
   const searchHandlerEvent = e => {
-    // e.preventDefault();
-    // console.log(e.target);
-    // if (e.target === "button") return;
+    e.preventDefault();
+
     const query = document.querySelector("#customerName");
     const copy = [...bookingsData];
     console.log(query.value);
@@ -120,7 +115,6 @@ const Bookings = props => {
     );
   }
 
-  // search = { search };
   return (
     <div className="App-content">
       <div className="container">
