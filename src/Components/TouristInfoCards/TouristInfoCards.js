@@ -1,7 +1,7 @@
 import React from "react";
 
 const TouristInfoCards = props => {
-  return props.touristInfoArray.map((item, index) => {
+  const element = props.touristInfoArray.map((item, index) => {
     return (
       <div key={index} className="card">
         <img src={item.img} className="card-img-top" />
@@ -13,6 +13,7 @@ const TouristInfoCards = props => {
       </div>
     );
   });
+  return <div className="cardContainer">{element}</div>;
 };
 
 export default TouristInfoCards;

@@ -2,14 +2,19 @@ import React from "react";
 import TableElement from "../Table/Table";
 
 const SearchResults = props => {
-  const selectTrElementHAndler = e => {
-    if (e.target.closest("tr").classList.contains("tablesHeader")) return;
-    e.target.closest("tr").classList.toggle("selected");
+  const selectBooking = e => {
+    if (e.target.classList.contains("toStopEvent")) return;
+    const target = e.target.closest("tr");
+
+    target.classList.contains("selected")
+      ? target.classList.remove("selected")
+      : target.classList.add("selected");
   };
 
   return (
     <TableElement
-      selectHandlerClick={selectTrElementHAndler}
+      selectIdHandlerFunction={props.selectIdHandlerFunction}
+      selectHandler={selectBooking}
       tableHeader={props.tableHeader}
       fakeBooking={props.fakeBooking}
     />
