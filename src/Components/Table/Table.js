@@ -11,7 +11,14 @@ const TableElement = props => {
           tableHeader={props.tableHeader}
         />
         {props.fakeBooking.map((item, index) => {
-          return <TrElement key={index} th={false} fakeBookingItem={item} />;
+          return (
+            <TrElement
+              selectHandler={props.selectHandler}
+              key={index}
+              th={false}
+              fakeBookingItem={item}
+            />
+          );
         })}
       </tbody>
     </table>

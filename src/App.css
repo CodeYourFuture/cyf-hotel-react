@@ -1,5 +1,5 @@
 .App {
-  text-align: left;
+  text-align: center;
 }
 
 .App-title {
@@ -38,4 +38,24 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  margin-top: 4rem;
+  gap: 4rem;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  margin: 0.25rem;
+}
+
+.selected {
+  background-color: black;
 }

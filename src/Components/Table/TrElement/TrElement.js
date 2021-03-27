@@ -13,7 +13,10 @@ const TrElement = props => {
     );
   } else if (!props.th) {
     return (
-      <tr>
+      <tr
+        onClick={props.selectHandler}
+        data-bookingid={props.fakeBookingItem.id}
+      >
         <TdElement element={props.fakeBookingItem.id} />
         <TdElement element={props.fakeBookingItem.title} />
         <TdElement element={props.fakeBookingItem.firstName} />
