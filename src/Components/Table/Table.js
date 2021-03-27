@@ -17,6 +17,7 @@ const TableElement = props => {
               key={index}
               th={false}
               fakeBookingItem={item}
+              selectIdHandlerFunction={props.selectIdHandlerFunction}
             />
           );
         })}

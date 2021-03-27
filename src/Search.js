@@ -9,7 +9,10 @@ const Search = props => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form
+            onSubmit={props.searchFunction}
+            className="form-group search-box"
+          >
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
@@ -18,7 +21,7 @@ const Search = props => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <SearchButton searchFunction={props.searchFunction} />
+              <SearchButton />
             </div>
           </form>
         </div>

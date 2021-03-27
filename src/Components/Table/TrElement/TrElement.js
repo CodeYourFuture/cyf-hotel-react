@@ -26,6 +26,22 @@ const TrElement = props => {
         <TdElement element={props.fakeBookingItem.checkInDate} />
         <TdElement element={props.fakeBookingItem.checkOutDate} />
         <TdElement element={props.fakeBookingItem.numberOfNights} />
+        <TdElement
+          className="toStopEvent"
+          onClick={e =>
+            props.selectIdHandlerFunction(e, props.fakeBookingItem.id)
+          }
+          element={
+            <button
+              onClick={e =>
+                props.selectIdHandlerFunction(e, props.fakeBookingItem.id)
+              }
+              className="toStopEvent"
+            >
+              Customer Profile
+            </button>
+          }
+        />
       </tr>
     );
   }

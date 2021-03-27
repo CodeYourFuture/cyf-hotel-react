@@ -2,12 +2,8 @@ import React from "react";
 import TableElement from "../Table/Table";
 
 const SearchResults = props => {
-  const selectTrElementHAndler = e => {
-    // if (e.target.closest("tr").classList.contains("tablesHeader")) return;
-    // e.target.closest("tr").classList.add("selected");
-  };
-
   const selectBooking = e => {
+    if (e.target.classList.contains("toStopEvent")) return;
     const target = e.target.closest("tr");
 
     target.classList.contains("selected")
@@ -17,6 +13,7 @@ const SearchResults = props => {
 
   return (
     <TableElement
+      selectIdHandlerFunction={props.selectIdHandlerFunction}
       selectHandler={selectBooking}
       tableHeader={props.tableHeader}
       fakeBooking={props.fakeBooking}
