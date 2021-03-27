@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Moment from "moment";
 const TouristInfoCards = () => {
   return (
@@ -67,7 +67,6 @@ const Heading = () => {
 };
 
 const Footer = props => {
-  // console.log(props);
   return (
     <div>
       <ul>
@@ -99,11 +98,6 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {bookingDetails.map((bookingDetail, i) => {
-            // const [color, setColor] = useState(false);
-
-            // const changeColor = () => {
-            //   console.log(color);
-            // }
             return (
               <TableRow
                 i={i}
@@ -116,13 +110,9 @@ const SearchResults = props => {
       </table>
     </div>
   );
-  // console.log(bookingKey);
 };
 
 const TableRow = props => {
-  const bookingKeys = props.bookingKeys;
-  const bookingDetail = props.bookingDetail;
-
   return (
     <tr key={props.i}>
       {props.bookingKeys.map(bookingKey => (
