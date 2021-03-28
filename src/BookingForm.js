@@ -32,7 +32,6 @@ const BookingForm = ({ bookings, setBookings }) => {
         return response.json();
       })
       .then(data => {
-        console.log(data);
         setBookings(bookings => bookings.concat(data));
         setFormBooking({
           title: "",
