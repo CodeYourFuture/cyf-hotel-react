@@ -41,8 +41,8 @@ const TBody = props => {
 };
 
 const DataRow = props => {
-  const [className, setClassName] = useState("");
   // highlight/unhighlight a table row when it is clicked
+  const [className, setClassName] = useState("");
   const changeColour = () => {
     if (className === "") {
       setClassName("selected");

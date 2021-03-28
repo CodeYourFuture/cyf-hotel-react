@@ -49,6 +49,17 @@
     transform: rotate(360deg);
   }
 }
+
+p.loading,
+p.error {
+  margin: 2em auto;
+  text-align: center;
+}
+
+p.error {
+  color: red;
+}
+
 .search {
   padding: 5px 0 20px 0;
 }
