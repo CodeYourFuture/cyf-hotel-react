@@ -1,10 +1,10 @@
 import React from "react";
-import Bookings from "./Bookings";
+import Bookings from "./component/Bookings";
 import "./App.css";
-import Heading from "./Heading";
-import TouristInfoCards from "./TouristInfoCards";
-import Footer from "./Footer";
-import Restaurant from "./Restaurant";
+import Heading from "./component/Heading";
+import TouristInfoCards from "./component/TouristInfoCards";
+import Footer from "./component/Footer";
+import Restaurant from "./component/Restaurant";
 
 const cards = [
   {
