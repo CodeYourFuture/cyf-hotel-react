@@ -4,8 +4,8 @@ import TableRows from "./TableRows";
 const TableBody = props => {
   return (
     <tbody>
-      {props.results.map(result => (
-        <TableRows result={result} />
+      {props.results.map((result, index) => (
+        <TableRows result={result} key={index} />
       ))}
     </tbody>
   );
