@@ -42,6 +42,14 @@ img {
   width: 10%;
 }
 
+.purple {
+  background-color: rgb(172, 151, 172);
+}
+
+.white {
+  background-color: white;
+}
+
 .CardGroup {
   display: flex;
   align-content: center;
