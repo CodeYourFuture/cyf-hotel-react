@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(57, 120, 238);
   height: 50px;
   padding: 20px;
   color: white;
@@ -16,6 +16,9 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+}
+.App-header img {
+  margin-top: 100em;
 }
 
 .App-title {
@@ -40,18 +43,39 @@
 }
 
 tr {
-  color: #5b5757;
+  color: rgb(137, 137, 145);
 }
-
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 .results {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(57, 120, 238);
+  color: white;
   text-align: center;
+  /* margin-bottom: 2em; */
+}
+footer ul {
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .card {
-  width: 18rem;
+  display: flex;
+  flex-direction: row;
+  width: 15rem;
+  margin-left: 8em;
+}
+.App-header img {
+  margin-top: 2em;
+  align-content: center;
+  margin-top: 52em;
+  margin-bottom: 21em;
 }
