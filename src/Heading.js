@@ -4,7 +4,7 @@ const Heading = () => {
   return (
     <header className="App-header">
       CYF Hotel
-      <img alt="" src="https://i.pinimg.com/originals/da/b9/13/dab913ab4fec9a9cb5b38b6ce8c00902.png" />
+      <img alt="" src="https://cdn.imgbin.com/11/22/7/imgbin-hotel-cartoon-house-illustration-inn-hotel-small-house-2Wp66tgEQQXFJp6Q6WqdF05hU.jpg" />
     </header>
   );
 };

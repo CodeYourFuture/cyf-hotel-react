@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: rgb(57, 120, 238);
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -17,10 +17,6 @@
   font-size: 1em;
   font-weight: bold;
 }
-.App-header img {
-  margin-top: 100em;
-}
-
 .App-title {
   font-size: 1.5em;
 }
@@ -53,7 +49,7 @@ tr:nth-child(even) {
 }
 
 footer {
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
@@ -70,12 +66,11 @@ footer ul {
 .card {
   display: flex;
   flex-direction: row;
-  width: 15rem;
-  margin-left: 8em;
+  width: 10rem;
+  margin-left: 1em;
 }
 .App-header img {
-  margin-top: 2em;
-  align-content: center;
-  margin-top: 52em;
-  margin-bottom: 21em;
+  margin-top: 0em;
+  margin-left: 1em;
+  width:5%;
 }
