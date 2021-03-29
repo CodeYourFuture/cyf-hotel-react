@@ -4,13 +4,29 @@ import SearchResults from "./SearchResults";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then(response => response.json())
-      .then(data => setBookings(bookings => data));
+    setTimeout(function() {
+      fetch("https://cyf-react.glitch.me")
+        .then(response => response.json())
+        .then(data => setBookings(bookings => data))
+        .catch(error => console.log(error));
+    }, 1000);
   }, []);
+
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    console.info(searchVal);
+    if (searchVal !== "") {
+      setBookings(
+        bookings.filter(
+          el =>
+            searchVal.toLowerCase() === el.firstName.toLowerCase() ||
+            searchVal.toLowerCase() === el.surname.toLowerCase()
+        )
+      );
+    } else {
+      return <SearchResults allBookings={bookings} />;
+    }
   };
 
   return (

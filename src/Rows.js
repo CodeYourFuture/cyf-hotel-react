@@ -20,6 +20,9 @@ const Rows = props => {
         <td>{props.checkInDate}</td>
         <td>{props.checkOutDate}</td>
         <td>{props.numberOfNights}</td>
+        <td>
+          <button className="bg-primary">Show Profile</button>
+        </td>
       </tr>
     </tbody>
   );

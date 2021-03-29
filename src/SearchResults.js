@@ -16,6 +16,7 @@ function SearchResults(props) {
             <th scope="col">check-in date</th>
             <th scope="col">check-out date</th>
             <th scope="col">number-of-nights</th>
+            <th scope="col" />
           </tr>
         </thead>
         {props.allBookings.map((el, index) => (
@@ -24,7 +25,7 @@ function SearchResults(props) {
             id={el.id}
             title={el.title}
             firstName={el.firstName}
-            surName={el.surName}
+            surName={el.surname}
             email={el.email}
             roomId={el.roomId}
             checkInDate={el.checkInDate}
