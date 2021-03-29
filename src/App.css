@@ -12,10 +12,9 @@
   padding: 5px 0 20px 0;
 }
 
-/* .App-header {
-  width: 50em;
-  height: 50em;
-} */
+.App-header {
+  background-color: rgb(74, 144, 202);
+}
 
 .App-title {
   font-size: 1.5em;
@@ -27,7 +26,6 @@
   display: block;
   height: 200px;
   align-items: flex-start;
-  position: relative;
 }
 
 img {
@@ -42,12 +40,16 @@ img {
   width: 10%;
 }
 
-.purple {
-  background-color: rgb(172, 151, 172);
+/* .page-header{
+  border: #5b5757 2px solid;
+} */
+
+.form-control {
+  border: rgb(74, 144, 202) 2px solid;
 }
 
-.white {
-  background-color: white;
+.purple {
+  background-color: rgb(172, 151, 172);
 }
 
 .CardGroup {
@@ -57,7 +59,7 @@ img {
 
 .card {
   flex: 1;
-  border: 2px solid;
+  border: 2px;
   margin-right: 20px;
 }
 
