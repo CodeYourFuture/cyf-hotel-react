@@ -31,7 +31,7 @@ const CustomerProfile = props => {
           <li>surname: {profile.surname}</li>
           <li>email: {profile.email}</li>
           <li>phone number: {profile.phoneNumber}</li>
-          <li>vip: {profile.vip}</li>
+          <li>vip: {`${profile.vip}`}</li>
         </ul>
       </td>
     </div>
