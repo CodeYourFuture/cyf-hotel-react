@@ -55,6 +55,8 @@
 
 .table {
   border-style: solid;
+  width: 90vw;
+  margin-left: -7em;
 }
 
 .table-header {
@@ -72,6 +74,17 @@
   border-right: groove;
   color: aliceblue;
   font-weight: 500;
+}
+
+.d-block {
+  color: aliceblue;
+}
+
+.loading-span {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  background-color: aliceblue;
 }
 
 .restaurant-orders {

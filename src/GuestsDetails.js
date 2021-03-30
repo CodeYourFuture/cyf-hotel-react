@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 
 const GuestsDetails = props => {
   const [highlight, setHighlight] = useState(props);
+
   const rowHighlighter = e => {
     if (e.target.parentElement.style.backgroundColor !== "royalblue") {
       setHighlight(
@@ -12,6 +14,7 @@ const GuestsDetails = props => {
         "rgb(96, 108, 119)");
     }
   };
+
   return (
     <tbody className="table-body">
       {props.guests.map(guest => {
@@ -32,6 +35,7 @@ const GuestsDetails = props => {
             <td className="t-body">{guest.checkInDate}</td>
             <td className="t-body">{guest.checkOutDate}</td>
             <td className="t-body">{numberOfNights + " "}nights</td>
+            <CustomerProfile id={guest.id} />
           </tr>
         );
       })}
