@@ -8,7 +8,7 @@ const Search = props => {
   };
 
   const onSubmitHandLer = event => {
-    props.search(searchInput);
+    props.search(searchInput.toLocaleLowerCase());
     event.preventDefault();
   };
 
