@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const TableHead = () => {
   return (
@@ -14,10 +15,13 @@ const TableHead = () => {
         <th scope="col">Check-In Date</th>
         <th scope="col">Check-Out Date</th>
         <th scope="col">No. of Nights</th>
+        <th scope="col">Profile</th>
       </tr>
     </thead>
   );
 };
+
+let bookingId = "";
 
 const TableRow = props => {
   const [selected, setSelected] = useState("notHighlighted");
@@ -29,6 +33,13 @@ const TableRow = props => {
         return "notHighlighted";
       }
     });
+  };
+
+  const [bookingId, setBookingId] = useState("null");
+
+  const profileClick = elem => {
+    console.log("profile", elem);
+    setBookingId(1);
   };
 
   return (
@@ -46,6 +57,11 @@ const TableRow = props => {
           moment(props.booking.checkInDate),
           "days"
         )}
+      </td>
+      <td>
+        <button className="btn btn-success" onClick={profileClick}>
+          Show Profile
+        </button>
       </td>
     </tr>
   );
