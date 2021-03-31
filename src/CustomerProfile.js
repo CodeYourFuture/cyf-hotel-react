@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function CustomerProfile(props) {
   const [selectedCustomerData, setSelectedCustomerData] = useState("");
+
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
       .then(res => res.json())
