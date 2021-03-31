@@ -10,7 +10,7 @@ const Search = props => {
 
   const searchBookings = event => {
     event.preventDefault();
-    props.search(setSearchInput);
+    props.search(searchInput);
   };
 
   return (
