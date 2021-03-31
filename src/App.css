@@ -19,6 +19,11 @@
   background-color: rgb(127, 245, 235);
 }
 
+.card {
+  display: block;
+  margin: 0 auto;
+}
+
 /* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

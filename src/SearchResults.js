@@ -64,7 +64,7 @@ const SearchResults = props => {
           ))}
         </tbody>
       </table>
-      <CustomerProfile id={selectedCustomerId} />
+      <CustomerProfile id={selectedCustomerId} className="customer-profile" />
     </>
   );
 };
