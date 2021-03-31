@@ -28,7 +28,7 @@ function CustomerProfile(props) {
           Customer-Email: {selectedCustomerData.email}
         </li>
         <li className="list-group-item">
-          Customer-phoneNumber: {selectedCustomerData.vip}
+          Customer-phoneNumber: {selectedCustomerData.phoneNumber}
         </li>
 
         <li className="list-group-item">
