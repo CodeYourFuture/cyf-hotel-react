@@ -51,6 +51,7 @@ const SearchResults = props => {
               </td>
               <td>
                 <button
+                  className=" btn btn-dark"
                   onClick={() => {
                     console.log(result.id);
 
