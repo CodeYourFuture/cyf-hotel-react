@@ -5,8 +5,12 @@ const Search = props => {
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearchInput = event => {
-    event.preventDefault();
     setSearchInput(event.target.value);
+  };
+
+  const searchBookings = event => {
+    event.preventDefault();
+    props.search(setSearchInput);
   };
 
   return (
