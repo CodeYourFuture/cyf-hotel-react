@@ -27,7 +27,7 @@ const SearchResult = ({
 
   return (
     <>
-      <tr className={selected ? "highlighted" : null} onClick={highlight}>
+      <tr className={selected && "highlighted"} onClick={highlight}>
         <th scope="row">{id}</th>
         <td>{title}</td>
         <td>{firstName}</td>
