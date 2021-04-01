@@ -3,6 +3,7 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
+  const [bookings, setBookings] = useState([]);
   const search = searchVal => {
     setBookings(
       bookings.filter(
@@ -14,7 +15,6 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
 
-  const [bookings, setBookings] = useState([]);
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
       .then(response => response.json())

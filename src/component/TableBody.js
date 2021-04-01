@@ -13,9 +13,13 @@ const TableRow = props => {
     });
   };
 
+  const handleShowProfile = () => {
+    props.selectCustomer(props.booking.id);
+  };
+
   return (
     <tr onClick={highlightRow} className={highLight}>
-      <th scope="row" />
+      <th scope="row">{props.booking.id}</th>
       <td>{props.booking.title}</td>
       <td>{props.booking.firstName}</td>
       <td>{props.booking.surname}</td>
@@ -30,7 +34,9 @@ const TableRow = props => {
         )}
       </td>
       <td>
-        <button className="btn btn-primary">Show profile</button>
+        <button onClick={handleShowProfile} className="btn btn-primary">
+          Show profile
+        </button>
       </td>
     </tr>
   );
@@ -40,7 +46,11 @@ const TableBody = props => {
   return (
     <tbody>
       {props.bookings.map((booking, index) => (
-        <TableRow booking={booking} key={index} />
+        <TableRow
+          booking={booking}
+          key={index}
+          selectCustomer={props.selectCustomer}
+        />
       ))}
     </tbody>
   );
