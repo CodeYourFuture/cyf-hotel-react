@@ -22,7 +22,7 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/error")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(res => {
         if (!res.ok === true) {
           throw new Error(
