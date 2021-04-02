@@ -7,8 +7,9 @@ const CustomerProfile = props => {
       <tr>
         <td>
           <strong>
-            {`${props.userProfile.firstName} 
-        ${props.userProfile.surname}'s Profile`}
+            {`${props.userProfile.firstName} ${
+              props.userProfile.surname
+            }'s Profile`}
           </strong>
         </td>
       </tr>
