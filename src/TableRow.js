@@ -15,6 +15,10 @@ const TableRow = props => {
     });
   };
 
+  const handleShowProfile = () => {
+    props.selectCustomer(props.result.id);
+  };
+
   const startDate = moment(props.result.checkInDate);
   const endDate = moment(props.result.checkOutDate);
   let numberOfNights = endDate.diff(startDate, "days", true);
@@ -30,6 +34,9 @@ const TableRow = props => {
       <td>{props.result.checkInDate}</td>
       <td>{props.result.checkOutDate}</td>
       <td>{numberOfNights}</td>
+      <td>
+        <button onClick={handleShowProfile}>Show Profile</button>
+      </td>
     </tr>
   );
 };

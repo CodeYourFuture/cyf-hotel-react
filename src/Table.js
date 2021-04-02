@@ -6,7 +6,10 @@ const Table = props => {
   return (
     <table className="table">
       <TableHeader tableColumns={props.tableColumns} />
-      <TableBody results={props.results} />
+      <TableBody
+        results={props.results}
+        selectCustomer={props.selectCustomer}
+      />
     </table>
   );
 };
