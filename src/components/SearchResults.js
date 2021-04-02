@@ -21,8 +21,6 @@ const TableHead = () => {
   );
 };
 
-let bookingId = "";
-
 const TableRow = props => {
   const [selected, setSelected] = useState("notHighlighted");
   const highlight = () => {
@@ -36,7 +34,6 @@ const TableRow = props => {
   };
 
   const [bookingId, setBookingId] = useState("null");
-
   const profileClick = elem => {
     console.log("profile", elem);
     setBookingId(1);
@@ -83,6 +80,8 @@ const SearchResults = props => {
       <table className="table">
         <TableHead />
         <TableBody result={props.results} />
+        <ProfileTable bookingId={bookingId} />{" "}
+        {/* want to create a new component for profile */}
       </table>
     </div>
   );
