@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const TableHead = () => {
   return (
@@ -14,6 +15,7 @@ const TableHead = () => {
         <th scope="col">Check-In Date</th>
         <th scope="col">Check-Out Date</th>
         <th scope="col">No. of Nights</th>
+        <th scope="col">Profile</th>
       </tr>
     </thead>
   );
@@ -47,6 +49,11 @@ const TableRow = props => {
           "days"
         )}
       </td>
+      <td>
+        <button className="btn btn-success" onClick={props.profileClick}>
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };
@@ -55,20 +62,49 @@ const TableBody = props => {
   return (
     <tbody>
       {props.result.map((booking, index) => (
-        <TableRow booking={booking} key={index} />
+        <TableRow
+          booking={booking}
+          key={index}
+          profileClick={props.profileClick}
+        />
       ))}
     </tbody>
   );
 };
 
 const SearchResults = props => {
+  const [userId, setUserId] = useState("null");
+  const profileClick = elem => {
+    setUserId(
+      elem.target.parentElement.parentElement.firstElementChild.innerText
+    );
+  };
+
+  const [userProfile, setUserProfile] = useState({});
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${userId}`)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        setUserProfile(data);
+      })
+      .catch(error => {
+        // setError(true);
+        console.log(error);
+      });
+  }, [userId]);
+
   return (
-    <div>
+    <>
       <table className="table">
         <TableHead />
-        <TableBody result={props.results} />
+        <TableBody result={props.results} profileClick={profileClick} />
       </table>
-    </div>
+      <table>
+        {userProfile.id && <CustomerProfile userProfile={userProfile} />}
+      </table>
+    </>
   );
 };
 
