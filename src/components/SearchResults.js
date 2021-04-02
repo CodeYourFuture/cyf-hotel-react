@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
@@ -33,12 +33,6 @@ const TableRow = props => {
     });
   };
 
-  const [bookingId, setBookingId] = useState("null");
-  const profileClick = elem => {
-    console.log("profile", elem);
-    setBookingId(1);
-  };
-
   return (
     <tr className={selected} onClick={highlight}>
       <th scope="row">{props.booking.id}</th>
@@ -56,7 +50,7 @@ const TableRow = props => {
         )}
       </td>
       <td>
-        <button className="btn btn-success" onClick={profileClick}>
+        <button className="btn btn-success" onClick={props.profileClick}>
           Show Profile
         </button>
       </td>
@@ -68,22 +62,49 @@ const TableBody = props => {
   return (
     <tbody>
       {props.result.map((booking, index) => (
-        <TableRow booking={booking} key={index} />
+        <TableRow
+          booking={booking}
+          key={index}
+          profileClick={props.profileClick}
+        />
       ))}
     </tbody>
   );
 };
 
 const SearchResults = props => {
+  const [userId, setUserId] = useState("null");
+  const profileClick = elem => {
+    setUserId(
+      elem.target.parentElement.parentElement.firstElementChild.innerText
+    );
+  };
+
+  const [userProfile, setUserProfile] = useState({});
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${userId}`)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        setUserProfile(data);
+      })
+      .catch(error => {
+        // setError(true);
+        console.log(error);
+      });
+  }, [userId]);
+
   return (
-    <div>
+    <>
       <table className="table">
         <TableHead />
-        <TableBody result={props.results} />
-        <ProfileTable bookingId={bookingId} />{" "}
-        {/* want to create a new component for profile */}
+        <TableBody result={props.results} profileClick={profileClick} />
       </table>
-    </div>
+      <table>
+        {userProfile.id && <CustomerProfile userProfile={userProfile} />}
+      </table>
+    </>
   );
 };
 
