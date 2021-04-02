@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import Rows from "./Rows";
+import CustomerProfile from "./CustomerProfile";
+
 function SearchResults(props) {
+  const [custId, setCustId] = useState(null);
+  function handler(id) {
+    setCustId(id);
+  }
   return (
     <>
       <table className="table">
@@ -21,6 +27,7 @@ function SearchResults(props) {
         </thead>
         {props.allBookings.map((el, index) => (
           <Rows
+            handler={handler}
             key={index}
             id={el.id}
             title={el.title}
@@ -37,6 +44,7 @@ function SearchResults(props) {
           />
         ))}
       </table>
+      {custId && <CustomerProfile id={custId} />}
     </>
   );
 }

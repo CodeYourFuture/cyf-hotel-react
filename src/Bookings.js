@@ -4,14 +4,18 @@ import SearchResults from "./SearchResults";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    setTimeout(function() {
-      fetch("https://cyf-react.glitch.me")
-        .then(response => response.json())
-        .then(data => setBookings(bookings => data))
-        .catch(error => console.log(error));
-    }, 1000);
+    fetch("https://cyf-react.glitch.me/delayed")
+      .then(response => response.json())
+      .then(data => {
+        setError(true);
+        setLoading(true);
+        setBookings(bookings => data);
+      })
+      .catch(() => setError(true));
   }, []);
 
   const search = searchVal => {
@@ -25,18 +29,40 @@ const Bookings = () => {
         )
       );
     } else {
-      return <SearchResults allBookings={bookings} />;
+      setBookings(bookings);
     }
   };
 
-  return (
+  if (loading) {
+    return (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+          <SearchResults allBookings={bookings} />
+        </div>
+      </div>
+    );
+  } else if (loading === false) {
+    return <h3>Loading.............</h3>;
+  } else {
+    return <p>An error occurred while fetching data</p>;
+  }
+
+  /* return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-        <SearchResults allBookings={bookings} />
+        {loading ? (
+          <div>
+            <Search search={search} />
+            <SearchResults allBookings={bookings} />
+          </div>
+        ) : (
+          <h3>Loading.............</h3>
+        )}
+       
       </div>
     </div>
-  );
+  ); */
 };
 
 export default Bookings;

@@ -21,7 +21,12 @@ const Rows = props => {
         <td>{props.checkOutDate}</td>
         <td>{props.numberOfNights}</td>
         <td>
-          <button className="bg-primary">Show Profile</button>
+          <button
+            className="bg-primary"
+            onClick={() => props.handler(props.id)}
+          >
+            Show Profile
+          </button>
         </td>
       </tr>
     </tbody>
