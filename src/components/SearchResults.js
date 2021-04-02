@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
@@ -21,8 +21,6 @@ const TableHead = () => {
   );
 };
 
-let bookingId = "";
-
 const TableRow = props => {
   const [selected, setSelected] = useState("notHighlighted");
   const highlight = () => {
@@ -33,13 +31,6 @@ const TableRow = props => {
         return "notHighlighted";
       }
     });
-  };
-
-  const [bookingId, setBookingId] = useState("null");
-
-  const profileClick = elem => {
-    console.log("profile", elem);
-    setBookingId(1);
   };
 
   return (
@@ -59,7 +50,7 @@ const TableRow = props => {
         )}
       </td>
       <td>
-        <button className="btn btn-success" onClick={profileClick}>
+        <button className="btn btn-success" onClick={props.profileClick}>
           Show Profile
         </button>
       </td>
@@ -71,19 +62,49 @@ const TableBody = props => {
   return (
     <tbody>
       {props.result.map((booking, index) => (
-        <TableRow booking={booking} key={index} />
+        <TableRow
+          booking={booking}
+          key={index}
+          profileClick={props.profileClick}
+        />
       ))}
     </tbody>
   );
 };
 
 const SearchResults = props => {
+  const [userId, setUserId] = useState("null");
+  const profileClick = elem => {
+    // elem.preventDefault();
+    // console.log(elem.target.parentElement.parentElement.firstElementChild.innerText);
+    setUserId(
+      elem.target.parentElement.parentElement.firstElementChild.innerText
+    );
+  };
+
+  const [userProfile, setUserProfile] = useState({});
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${userId}`)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        setUserProfile(data);
+        console.log(data);
+      })
+      .catch(error => {
+        // setError(true);
+        console.log(error);
+      });
+  }, [userId]);
+
   return (
     <div>
       <table className="table">
         <TableHead />
-        <TableBody result={props.results} />
+        <TableBody result={props.results} profileClick={profileClick} />
       </table>
+      {userProfile.id && <CustomerProfile userProfile={userProfile} />}
     </div>
   );
 };
