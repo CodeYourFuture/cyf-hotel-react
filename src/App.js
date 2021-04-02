@@ -13,7 +13,9 @@ const App = () => {
         <Heading />
         <TouristInfoCards />
         <Bookings />
-        <Restaurant />
+        <div>
+          <Restaurant />
+        </div>
       </div>
       <Footer />;
     </>

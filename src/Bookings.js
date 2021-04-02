@@ -8,15 +8,22 @@ const Bookings = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
-      .then(response => response.json())
-      .then(data => {
+    fetch("https://cyf-react.glitch.me/delayed").then(response => {
+      if (response.ok) {
+        response
+          .json()
+          .then(data => {
+            setLoading(true);
+            setBookings(bookings => data);
+          })
+          .catch();
+      } else {
         setError(true);
-        setLoading(true);
-        setBookings(bookings => data);
-      })
-      .catch(() => setError(true));
+      }
+    });
   }, []);
+
+  // filter function
 
   const search = searchVal => {
     console.info(searchVal);
@@ -33,7 +40,11 @@ const Bookings = () => {
     }
   };
 
-  if (loading) {
+  // conditional rendering
+
+  if (error && loading === false) {
+    return <h3>Whoops Something went wrong</h3>;
+  } else if (loading) {
     return (
       <div className="App-content">
         <div className="container">
@@ -44,25 +55,7 @@ const Bookings = () => {
     );
   } else if (loading === false) {
     return <h3>Loading.............</h3>;
-  } else {
-    return <p>An error occurred while fetching data</p>;
   }
-
-  /* return (
-    <div className="App-content">
-      <div className="container">
-        {loading ? (
-          <div>
-            <Search search={search} />
-            <SearchResults allBookings={bookings} />
-          </div>
-        ) : (
-          <h3>Loading.............</h3>
-        )}
-       
-      </div>
-    </div>
-  ); */
 };
 
 export default Bookings;
