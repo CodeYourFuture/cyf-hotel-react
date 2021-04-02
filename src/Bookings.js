@@ -17,7 +17,7 @@ const Bookings = () => {
   const [result, setResult] = useState([]);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/")
       .then(response => {
         return response.json();
       })
@@ -27,6 +27,7 @@ const Bookings = () => {
       })
       .catch(error => {
         setError(true);
+        alert("cannot load data");
       });
   }, []);
 
