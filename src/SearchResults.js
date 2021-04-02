@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import moment from "moment";
 import "./index.css";
+import CustomerProfile from "./CustomerProfile";
+import FakeBookings from "./data/fakeBookings.json";
 
 export const SearchResults = ({ results }) => {
   const [colour, setColour] = useState("transparent");
+  const [customerId, setCustomerId] = useState("");
+
+  // function buttonHandler(){
+  //   setCustomerId();
+  // }
 
   function highlightWhenClicked(index) {
     setColour(index === colour ? "" : index);
@@ -21,6 +28,7 @@ export const SearchResults = ({ results }) => {
             <th scope="col">Check in Date</th>
             <th scope="col">Check out Date</th>
             <th scope="col">Number of Nights</th>
+            <th scope="col">Customer Profile</th>
           </tr>
         </thead>
         <tbody>
@@ -43,10 +51,19 @@ export const SearchResults = ({ results }) => {
                   "days"
                 )}
               </th>
+              <th scope="row">
+                <button
+                  onClick={() => setCustomerId(item.id)}
+                  className="btn btn-primary"
+                >
+                  Show Profile
+                </button>
+              </th>
             </tr>
           ))}
         </tbody>
       </table>
+      <CustomerProfile id={customerId} />
     </div>
   );
 };

@@ -48,12 +48,52 @@ img {
 
 #footer-address {
   list-style-type: none;
+  font-size: 20px;
+  margin-top: 2%;
+  margin-left: 5%;
 }
 
 .orange {
-  background-color: #dd6b20;
+  background-color: #6d472c;
 }
 
 .transparent {
   background-color: transparent;
+}
+
+#customer-info {
+  list-style-type: none;
+}
+
+#customer-info-container {
+  width: 50%;
+  margin-left: 25%;
+  border: 4px solid black;
+  background-color: rgb(56, 55, 55);
+  color: white;
+  text-align: center;
+}
+
+#customerName {
+  width: 20%;
+}
+
+.food-orders-container {
+  background-image: url(https://images.unsplash.com/photo-1613758235256-43a7bdc21d82?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTMyfHxwYXR0ZXJuJTIwYmFja2dyb3VuZHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60);
+  margin-top: 2%;
+  margin-left: 20%;
+  width: 65%;
+  display: flex;
+  padding: 5%;
+  border: 2px solid rgb(81, 161, 236);
+}
+
+.food-orders-container ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.btn {
+  margin-right: 5%;
 }
