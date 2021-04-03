@@ -9,6 +9,8 @@ const Bookings = () => {
   console.log(bookings);
   console.log("Before useEffect");
 
+  const [loading, setLoading] = useState(false);
+
   const search = searchVal => {
     searchVal = searchVal.toLowerCase();
     const filteredSearch = bookings.filter(function(booking) {
@@ -26,27 +28,34 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
 
-  useEffect(() => {
+  const DelayedFunc = () => {
     fetch("https://cyf-react.glitch.me")
       .then(response => response.json())
       .then(data => {
         console.log(data);
         setBookings(data);
+        setLoading(true);
         // console.log(bookings)
-      });
+      })
+      .catch(error => alert("Refresh The page, something went wrong"));
+  };
+
+  useEffect(() => {
+    setTimeout(() => DelayedFunc(), 5000);
   }, []);
-  console.log(bookings);
 
-  // console.log("Hello world");
-
-  return bookings ? (
+  return loading ? (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
         <SearchResult.SearchResults results={bookings} />
       </div>
     </div>
-  ) : null;
+  ) : (
+    <div className="delay">
+      <span>Data Loading ...</span>
+    </div>
+  );
 };
 
 export default Bookings;
