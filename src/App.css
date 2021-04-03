@@ -66,13 +66,20 @@
 }
 
 .table-body {
+  display: table-row-group;
   border-style: solid;
-  background-color: rgb(96, 108, 119);
+  background-color: aliceblue;
+}
+.true {
+  background-color: rgb(139, 157, 173);
+}
+.false {
+  background-color: aliceblue;
 }
 
 .t-body {
   border-right: groove;
-  color: aliceblue;
+  color: rgb(1, 49, 90);
   font-weight: 500;
 }
 

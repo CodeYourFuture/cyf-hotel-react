@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 
 const GuestsDetails = props => {
-  const [highlight, setHighlight] = useState(props);
+  const [highlight, setHighlight] = useState(null);
 
   const rowHighlighter = e => {
-    if (e.target.parentElement.style.backgroundColor !== "royalblue") {
+    if (e.target.parentElement.style.backgroundColor !== "rgb(139, 157, 173)") {
       setHighlight(
-        (e.target.parentElement.style.backgroundColor = "royalblue")
+        (e.target.parentElement.style.backgroundColor = "rgb(139, 157, 173)")
       );
     } else {
-      return (e.target.parentElement.style.backgroundColor =
-        "rgb(96, 108, 119)");
+      return (e.target.parentElement.style.backgroundColor = "aliceblue");
     }
   };
 
