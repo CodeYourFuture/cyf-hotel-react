@@ -24,3 +24,14 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+button {
+  background-color: rgb(161, 248, 219);
+  border-radius: 0.5rem;
+}
+
+.Hotel-logo {
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+}
