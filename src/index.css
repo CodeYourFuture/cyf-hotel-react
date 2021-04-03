@@ -35,3 +35,17 @@ button {
   height: 5rem;
   text-align: center;
 }
+
+.delay {
+  text-align: center;
+  font-size: 5rem;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(43, 132, 216);
+  animation: glow 1s linear infinite;
+}
+
+@keyframes glow {
+  50% {
+    opacity: 0;
+  }
+}
