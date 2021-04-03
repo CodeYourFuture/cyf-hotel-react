@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Bookings from "./Bookings.js";
 import Restaurant from "./Restaurant.js";
 import "./App.css";
