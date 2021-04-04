@@ -17,7 +17,7 @@ const CustomerProfile = props => {
         <p> ID: {profile.id} </p>
         <p> Email: {profile.email} </p>
         <p> Phone Number: {profile.phoneNumber} </p>
-        <p> {profile.vip && "VIP"} </p>
+        <p> VIP: {profile.vip === true ? "Yes" : "No"} </p>
       </div>
     )
   );

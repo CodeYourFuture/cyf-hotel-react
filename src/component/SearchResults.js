@@ -6,7 +6,6 @@ import CustomerProfile from "./CustomerProfile";
 const SearchResults = props => {
   const [selectedCustomer, setSelectCustomer] = useState("");
   const selectCustomer = customerId => {
-    console.log("yeyyyy" + customerId);
     setSelectCustomer(customerId);
   };
 
