@@ -4,8 +4,8 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [errMessage, setErrmessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState({ status: false, message: "" });
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
@@ -19,15 +19,33 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/")
-      .then(response => response.json())
-      .then(data => {
-        setBookings(data);
-        setIsLoaded(true);
-      });
-  }, [isLoaded]);
+    const fetchData = async () => {
+      setIsLoading(true);
+      setError({ status: false, message: "" });
+      let result = [];
 
-  if (isLoaded) {
+      try {
+        const response = await fetch("https://cyf-react.glitch.me/");
+
+        if (!response.ok) {
+          const { error } = await response.json();
+          throw error;
+        }
+
+        result = await response.json();
+
+        setIsLoading(false);
+      } catch (err) {
+        setError({ status: true, message: err });
+      }
+
+      setBookings(result);
+    };
+
+    fetchData();
+  }, []);
+
+  if (!isLoading && !error.status) {
     return (
       <div className="App-content">
         <div className="container">
@@ -39,22 +57,14 @@ const Bookings = () => {
   } else {
     return (
       <div>
-        <p>Please wait. The booking data is being loaded.</p>
+        {error.status ? (
+          <p>{error.message}</p>
+        ) : (
+          <p>Please wait. The booking data is being loaded.</p>
+        )}
       </div>
     );
   }
-  // return isLoaded ? (
-  //   <div className="App-content">
-  //     <div className="container">
-  //       <Search search={search} />
-  //       <SearchResults results={bookings} />
-  //     </div>
-  //   </div>
-  // ) : (
-  //   <div>
-  //     <p>Please wait. The booking data is being loaded.</p>
-  //   </div>
-  // );
 };
 
 export default Bookings;
