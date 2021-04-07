@@ -1,7 +1,9 @@
 import React from "react";
+import Table from "./Table";
 
 const TableHeader = props => {
   return (
+    <table>
     <thead>
       <tr>
         {props.tableColumns.map((column, index) => (
@@ -11,6 +13,7 @@ const TableHeader = props => {
         ))}
       </tr>
     </thead>
+    </table>
   );
 };
 

@@ -13,8 +13,10 @@ const SearchResults = props => {
     "Check-Out Date",
     "Number of Nights"
   ];
-
   return <Table tableColumns={tableColumns} results={props.results} />;
 };
 
 export default SearchResults;
+
+
+

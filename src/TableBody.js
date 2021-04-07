@@ -1,12 +1,11 @@
 import React from "react";
 import TableRows from "./TableRows";
+import Table from "./Table";
 
 const TableBody = props => {
   return (
     <tbody>
-      {props.results.map((result, index) => (
-        <TableRows result={result} key={index} />
-      ))}
+    <TableRows results={props.results} />
     </tbody>
   );
 };
