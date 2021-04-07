@@ -1,11 +1,11 @@
 import React from "react";
 
-import Heading from "./Heading";
-import TouristInfoCards from "./TouristInfoCards";
-import Bookings from "./Bookings";
-import Restaurant from "./Restaurant";
+import Heading from "./components/heading/Heading";
+import TouristInfoCards from "./components/info-card/TouristInfoCards";
+import Bookings from "./components/booking/Bookings";
+import Restaurant from "./components/restaurant/Restaurant";
 // import SearchResults from "./SearchResults";
-import Footer from "./Footer";
+import Footer from "./components/footer/Footer";
 
 import "./App.css";
 
