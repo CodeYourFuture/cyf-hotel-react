@@ -25,7 +25,7 @@ const Bookings = () => {
       let result = [];
 
       try {
-        const response = await fetch("https://cyf-react.glitch.me/");
+        const response = await fetch("https://cyf-react.glitch.me/error");
 
         if (!response.ok) {
           const { error } = await response.json();
@@ -58,9 +58,9 @@ const Bookings = () => {
     return (
       <div>
         {error.status ? (
-          <p>{error.message}</p>
+          <h5>{error.message}</h5>
         ) : (
-          <p>Please wait. The booking data is being loaded.</p>
+          <h5>Please wait. The booking data is being loaded.</h5>
         )}
       </div>
     );

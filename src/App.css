@@ -1,5 +1,8 @@
 .App {
   text-align: left;
+  width: 90%;
+  margin: auto;
+  padding: 0 2rem;
 }
 
 .App-header {
@@ -39,6 +42,17 @@
   padding: 1rem;
 }
 
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 18rem;
+}
+
+.card img {
+  height: 15rem;
+}
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -51,23 +65,23 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
-}
-
-.card {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 18rem;
-}
-
-.card img {
-  height: 15rem;
-}
-
 .highlight {
   background-color: #fed9b7;
   font-weight: bolder;
+}
+
+.order {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.footer {
+  padding: 2rem;
+  text-align: center;
+}
+
+.list-group {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
