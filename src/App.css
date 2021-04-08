@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  height: 100vh;
 }
 
 .App-logo {
@@ -10,12 +11,13 @@
 .App-header {
   background-color: #222;
   height: 50px;
-  padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .App-title {
@@ -27,14 +29,30 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img-logo {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  margin-left: 30px;
 }
+
+.list-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+li {
+  list-style: none;
+  color: white;
+  padding: 5px;
+}
+
+ul {
+  padding: 10px;
+  text-align: center;
+}
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -47,11 +65,169 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
+footer {
   padding-top: 20px;
   text-align: center;
+  margin-top: 50px;
 }
 
 .card {
   width: 18rem;
+  margin: 30px;
+}
+
+.card-img-top {
+  height: 150px;
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
+}
+
+.table thead th {
+  vertical-align: middle;
+}
+
+.booking-days {
+  text-align: center;
+}
+
+.pizzas ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pizzas li {
+  width: 300px;
+  color: #333;
+  text-align: left;
+  padding: 10px;
+}
+
+.orders {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.select {
+  background-color: #007bff;
+  color: white;
+}
+
+.notShow {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.customer-details {
+  border: 2px solid #007bff;
+  padding: 20px;
+}
+
+.customer-details div {
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.customer-details button {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.vip {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+footer {
+  background-color: #222;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loading {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.show-AddBookingForm {
+  display: block;
+  flex-direction: column;
+}
+
+.not-show-AddBookingForm {
+  display: none;
+}
+
+.add-book-form input {
+  margin-top: 10px;
+  width: 400px;
+}
+
+.booking-submit-btn {
+  margin-top: 10px;
+}
+
+.title-add-booking {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.title-add-booking button {
+  margin-left: 10px;
+}
+
+.btn-remove input {
+  margin-left: 10px;
+}
+
+.btn-remove {
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.title-add-booking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+th button {
+  background-color: grey;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  /* padding: 5px; */
+  color: white;
+  border: none;
+}
+
+th button:hover {
+  background-color: #007bff;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.clear-search {
+  margin-left: 10px;
 }
