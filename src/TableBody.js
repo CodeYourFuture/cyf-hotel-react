@@ -1,13 +1,17 @@
 import React from "react";
 import TableRows from "./TableRows";
-import Table from "./Table";
 
-const TableBody = props => {
+const TableBody = ({ bookings, changeId }) => {
   return (
     <tbody>
-    <TableRows results={props.results} />
+      {bookings &&
+        bookings.length > 0 &&
+        bookings.map(booking => (
+          <TableRows key={booking.id} booking={booking} changeId={changeId} />
+        ))}
     </tbody>
   );
 };
 
 export default TableBody;
+

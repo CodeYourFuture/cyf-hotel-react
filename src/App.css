@@ -5,11 +5,13 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  margin: 1rem;
 }
 
 .App-header {
+  display: flex;
   background-color: rgb(57, 120, 238);
-  height: 80px;
+  height: 140px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -73,4 +75,9 @@ footer ul {
   margin-top: 0em;
   margin-left: 1em;
   width:5%;
+}
+.App-header h1 {
+  margin-left: 20em;
+  margin-top: 2em;
+  font-size: 20px;
 }

@@ -1,22 +1,22 @@
-import React from "react";
-import Table from "./Table";
-const SearchResults = props => {
-  const tableColumns = [
-    "ID",
-    "Title",
-    "First Name",
-    "Surname",
-    "Email",
-    "Room ID",
-    "Check-In Date",
-    // "Check-Out Date"
-    "Check-Out Date",
-    "Number of Nights"
-  ];
-  return <Table tableColumns={tableColumns} results={props.results} />;
+import React, { useState } from "react";
+import TableHeader from "./TableHeader";
+import TableBody from "./TableBody";
+import CustomerProfile from "./CustomerProfile";
+
+const SearchResults = ({ results, id }) => {
+  console.log("my results", results);
+  const [customerID, setCustomerID] = useState("");
+  console.log("the customerId", { customerID });
+  function changeId(id) {
+    setCustomerID(id);
+  }
+  return (
+    <table className="table">
+      <TableHeader />
+      <TableBody bookings={results} changeId={changeId} />
+      <CustomerProfile id={customerID} />
+    </table>
+  );
 };
 
 export default SearchResults;
-
-
-

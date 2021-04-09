@@ -1,42 +1,53 @@
-import React from "react";
-// import moment from "moment";
-import TableBody from "./TableBody";
-// moment().format();
+import React, { useState } from "react";
+import moment from "moment";
 
-const TableRows = props => {
-  // const startDate = moment(props.results.checkInDate.split("-"));
-  // console.log("khalid")
-  // const endDate = moment(props.results.checkOutDate.split("-"));
-  // let numberOfNights = endDate.diff(startDate, "days", true);
-  // if (isNaN(numberOfNights)) {
-  //   numberOfNights = "Unknown";
-  // }
+const TableRows = ({ booking, changeId }) => {
+  console.log("This is the changeId function", changeId);
+  const [rowClass, setRowClass] = useState(false);
+  function handleClick() {
+    setRowClass(!rowClass);
+  }
+  const NumberOfNights = (checkInDate, checkOutDate) => {
+    const checkIn = moment(checkInDate);
+    const checkOut = moment(checkOutDate);
+
+    return checkOut.diff(checkIn, "days");
+  };
+  const {
+    id,
+    title,
+    firstName,
+    surname,
+    email,
+    roomId,
+    checkInDate,
+    checkOutDate,
+    showProfile
+  } = booking;
+  console.log("Booking id", booking.id);
+  function handleButtonClick() {
+    changeId(id);
+  }
 
   return (
-    <tbody>
-    {props.results.map(result => {
-      const moment = require ("moment");
-      const checkIn = moment(result.checkInDate);
-      const checkOut = moment(result.checkOutDate);
-      const numberOfNights = checkOut.diff(checkIn, "days");
-      return (
-        <tr>
-         <th scope="row">{result.id}</th>
-         <td>{result.title}</td>
-         <td>{result.firstName}</td>
-         <td>{result.surname}</td>
-         <td>{result.email}</td>
-         <td>{result.roomId}</td>
-         <td>{result.checkInDate}</td>
-         <td>{result.checkOutDate}</td>
-         <td>{numberOfNights}</td>
-        </tr>
-        
-
-      )
-    })}
-     
-    </tbody>
+    <tr className={rowClass ? "highlight" : ""} onClick={handleClick}>
+      <td>{id}</td>
+      <td>{title}</td>
+      <td>{firstName}</td>
+      <td>{surname}</td>
+      <td>{email}</td>
+      <td>{roomId}</td>
+      <td>{checkInDate}</td>
+      <td>{checkOutDate}</td>
+      <td>{NumberOfNights(checkInDate, checkOutDate)}</td>
+      <button
+        onClick={handleButtonClick}
+        className="btn btn-outline-success"
+        id={id}
+      >
+        Show Profile {showProfile}
+      </button>
+    </tr>
   );
 };
 export default TableRows;
