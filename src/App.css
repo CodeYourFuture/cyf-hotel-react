@@ -5,11 +5,13 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  margin: 1rem;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  display: flex;
+  background-color: rgb(57, 120, 238);
+  height: 140px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -17,7 +19,6 @@
   font-size: 1em;
   font-weight: bold;
 }
-
 .App-title {
   font-size: 1.5em;
 }
@@ -40,18 +41,43 @@
 }
 
 tr {
-  color: #5b5757;
+  color: rgb(137, 137, 145);
 }
-
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 .results {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
+footer {
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(57, 120, 238);
+  color: white;
   text-align: center;
+  /* margin-bottom: 2em; */
+}
+footer ul {
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .card {
-  width: 18rem;
+  display: flex;
+  flex-direction: row;
+  width: 10rem;
+  margin-left: 1em;
+}
+.App-header img {
+  margin-top: 0em;
+  margin-left: 1em;
+  width:5%;
+}
+.App-header h1 {
+  margin-left: 20em;
+  margin-top: 2em;
+  font-size: 20px;
 }
