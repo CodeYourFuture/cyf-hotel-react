@@ -79,12 +79,15 @@
 
 .t-body {
   border-right: groove;
-  color: rgb(1, 49, 90);
+  color: rgb(3, 36, 65);
   font-weight: 500;
 }
 
 .d-block {
-  color: aliceblue;
+  color: rgb(3, 36, 65);
+}
+.d-none {
+  display: none;
 }
 
 .loading-span {

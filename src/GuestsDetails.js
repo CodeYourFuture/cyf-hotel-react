@@ -9,9 +9,7 @@ const GuestsDetails = props => {
       setHighlight(
         (e.target.parentElement.style.backgroundColor = "rgb(139, 157, 173)")
       );
-    } else {
-      return (e.target.parentElement.style.backgroundColor = "aliceblue");
-    }
+    } else return (e.target.parentElement.style.backgroundColor = "aliceblue");
   };
 
   return (
