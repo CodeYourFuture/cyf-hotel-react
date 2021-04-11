@@ -20,7 +20,7 @@ const GuestsDetails = props => {
         const checkOut = moment(guest.checkOutDate);
         const numberOfNights = checkOut.diff(checkIn, "days");
         return (
-          <tr onClick={rowHighlighter} className={highlight}>
+          <tr key={guest.id} onClick={rowHighlighter} className={highlight}>
             <th className="t-body" scope="row">
               {guest.id}
             </th>
@@ -32,7 +32,9 @@ const GuestsDetails = props => {
             <td className="t-body">{guest.checkInDate}</td>
             <td className="t-body">{guest.checkOutDate}</td>
             <td className="t-body">{numberOfNights + " "}nights</td>
-            <CustomerProfile id={guest.id} />
+            <td>
+              <CustomerProfile id={guest.id} />
+            </td>
           </tr>
         );
       })}

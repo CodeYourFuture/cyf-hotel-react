@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-//import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -9,10 +8,13 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    console.log(searchVal);
     const filteredSearch = bookings.filter(booking => {
+      console.log(booking.id);
       return (
         booking.firstName.includes(searchVal) ||
-        booking.surname.includes(searchVal)
+        booking.surname.includes(searchVal) ||
+        searchVal.includes(booking.id)
       );
     });
     setBookings(filteredSearch);

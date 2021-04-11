@@ -6,8 +6,8 @@ const SearchResults = props => {
     <table className="table">
       <thead>
         <tr>
-          {props.tableHeaders.map(header => (
-            <th className="table-header" scope="col">
+          {props.tableHeaders.map((header, index) => (
+            <th key={index} className="table-header" scope="col">
               {header}
             </th>
           ))}

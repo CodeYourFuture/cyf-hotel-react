@@ -8,10 +8,23 @@
   margin: 1rem;
 }
 
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .card-container {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.card {
+  width: 18rem;
 }
 
 .card-body {
@@ -53,6 +66,13 @@
   font-size: large;
 }
 
+.search-bookings {
+  padding: 00.5em;
+  background-color: rgb(139, 157, 173);
+  color: rgb(1, 49, 90);
+  font-weight: 800;
+}
+
 .table {
   border-style: solid;
   width: 90vw;
@@ -68,12 +88,6 @@
 .table-body {
   display: table-row-group;
   border-style: solid;
-  background-color: aliceblue;
-}
-.true {
-  background-color: rgb(139, 157, 173);
-}
-.false {
   background-color: aliceblue;
 }
 
@@ -99,6 +113,8 @@
 
 .restaurant-orders {
   margin-bottom: 1em;
+  color: rgb(1, 49, 90);
+  font-weight: 800;
 }
 
 .restaurant {
@@ -132,16 +148,16 @@ li {
   list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
+  width: 100%;
+  margin-bottom: 2em;
+}
+.search-ids {
+  width: 8em;
+}
+.search-names {
+  width: 11em;
 }
 
 tr {
@@ -155,8 +171,4 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
-}
-
-.card {
-  width: 18rem;
 }

@@ -17,24 +17,20 @@ const CustomerProfile = props => {
   }, [profile, props.id]);
 
   return (
-    <div>
-      <td>
-        <button onClick={profileSearch} className="btn btn-primary">
-          Show Profile
-        </button>
-      </td>
-      <td>
-        <ul className={profile ? "d-block" : "d-none"}>
-          <li>id: {profile.id}</li>
-          <li>title: {profile.title}</li>
-          <li>first name: {profile.firstName}</li>
-          <li>surname: {profile.surname}</li>
-          <li>email: {profile.email}</li>
-          <li>phone number: {profile.phoneNumber}</li>
-          <li>vip: {`${profile.vip}`}</li>
-        </ul>
-      </td>
-    </div>
+    <>
+      <button onClick={profileSearch} className="btn btn-primary">
+        Show Profile
+      </button>
+      <ul className={profile ? "d-block" : "d-none"}>
+        <li>id: {profile.id}</li>
+        <li>title: {profile.title}</li>
+        <li>first name: {profile.firstName}</li>
+        <li>surname: {profile.surname}</li>
+        <li>email: {profile.email}</li>
+        <li>phone number: {profile.phoneNumber}</li>
+        <li>vip: {`${profile.vip}`}</li>
+      </ul>
+    </>
   );
 };
 
