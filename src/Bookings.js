@@ -5,7 +5,9 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [error, setError] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [dataIsFetched, setDataIsFetched] = useState(false);
 
   const search = searchVal => {
     setBookings(
@@ -19,28 +21,41 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/")
-      .then(response => response.json())
-      .then(data => setBookings(data))
+    fetch("https://cyf-react.glitch.me/delayed")
+      .then(response => {
+        if (!response.ok === true) {
+          throw new Error("fetching failed");
+        }
+        return response.json();
+      })
+
+      .then(data => {
+        setBookings(data);
+        setDataIsFetched(true);
+        setIsLoaded(true);
+      })
       .catch(error => {
-        setError(true);
+        setErrorMessage(error);
       });
   }, []);
 
-  return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        {bookings[0] ? (
-          <SearchResults results={bookings} />
-        ) : error ? (
-          <strong>There was an error loading the data!</strong>
-        ) : (
-          <strong>Loading Data...</strong>
-        )}
-      </div>
-    </div>
-  );
+  if (dataIsFetched === true) {
+    if (isLoaded === true) {
+      return (
+        <div className="App-content">
+          <div className="container">
+            <Search search={search} />
+
+            <SearchResults results={bookings} />
+          </div>
+        </div>
+      );
+    } else {
+      return <h1>Loading bookings....</h1>;
+    }
+  } else {
+    return <div className="container">{errorMessage}</div>;
+  }
 };
 
 export default Bookings;
