@@ -55,4 +55,18 @@ tr {
 
 .card {
   width: 18rem;
+  margin-left: 20px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 0 30px 0;
+  background-color: darkgray;
+}
+
+.card-img-top {
+  height: 200px;
+  width: 100%;
 }
