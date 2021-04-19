@@ -1,16 +1,18 @@
 .App {
   text-align: left;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  width: 90%;
+  margin: auto;
+  padding: 0 2rem;
 }
 
 .App-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  background-color: rgb(106, 209, 250);
+  height: 6rem;
+  /* padding: 0.5rem; */
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -18,7 +20,13 @@
   font-weight: bold;
 }
 
+.App-logo {
+  margin: 1rem;
+  height: 100%;
+}
+
 .App-title {
+  margin: 1rem;
   font-size: 1.5em;
 }
 
@@ -27,14 +35,24 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.infoCards {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem;
+  padding: 1rem;
 }
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 18rem;
+}
+
+.card img {
+  height: 15rem;
+}
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -47,11 +65,23 @@ tr {
   padding-top: 15px;
 }
 
+.highlight {
+  background-color: #fed9b7;
+  font-weight: bolder;
+}
+
+.order {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
 .footer {
-  padding-top: 20px;
+  padding: 2rem;
   text-align: center;
 }
 
-.card {
-  width: 18rem;
+.list-group {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
