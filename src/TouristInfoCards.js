@@ -10,6 +10,7 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
+          <h1>GLASGOW</h1>
           <p>
             Glasgow has a rich and varied architectural heritage. The city's
             wealthy past has left a legacy of some of the finest Victorian
@@ -18,9 +19,14 @@ const TouristInfoCards = () => {
             Glasgow Cathedral is one of the finest examples of medieval
             architecture that remains in Scotland and adjacent to the Cathedral
             is the mesmerising Necropolis – a cemetery full of wonderful
-            sculptures and fascinating stories.{" "}
+            sculptures and fascinating stories.
           </p>
-          <a href="www.peoplemakeglasgow.com" className="btn btn-primary">
+          <a
+            href={"https://www.peoplemakeglasgow.com"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
             More Information
           </a>
         </div>
@@ -32,6 +38,7 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
+          <h1>Manchester</h1>
           <p>
             Whether you’re seeking culture, nightlife, history, or just good
             fun, there are plenty of things to do in Manchester.Be absorbed by
@@ -42,7 +49,12 @@ const TouristInfoCards = () => {
             contemporary arts redifined at HOME; or even learn to ski at Chill
             Factore.
           </p>
-          <a href="visitmanchester.com" className="btn btn-primary">
+          <a
+            href="https://www.visitmanchester.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
             More Information
           </a>
         </div>
@@ -51,8 +63,10 @@ const TouristInfoCards = () => {
         <img
           src="https://content.thriveglobal.com/wp-content/uploads/2020/01/london_panorama.jpg"
           className="card-img-top"
+          alt="London"
         />
         <div className="card-body">
+          <h1>LONDON</h1>
           <p>
             Welcome to London! Discover the best of London with Visit London,
             the official guide to England’s exciting capital. Find things to do
@@ -61,7 +75,12 @@ const TouristInfoCards = () => {
             able to visit just yet, plan ahead to make the most of your next
             visit.
           </p>
-          <a href="visitlondon.com" className="btn btn-primary">
+          <a
+            href="https://www.visitlondon.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
             More Information
           </a>
         </div>
