@@ -51,7 +51,12 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
-
+ul {
+  list-style-type: none;
+}
 .card {
   width: 18rem;
+}
+.yellow {
+  background-color: yellow;
 }
