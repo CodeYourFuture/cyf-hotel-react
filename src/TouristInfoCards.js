@@ -5,6 +5,7 @@ const TouristInfoCards = () => {
     <div className="cards-container">
       <div className="card">
         <img
+          alt="holiday-london"
           src="https://www.cityam.com/wp-content/uploads/2020/02/London_Tower_Bridge_City.jpg"
           className="card-img-top"
         />
@@ -24,6 +25,7 @@ const TouristInfoCards = () => {
 
       <div className="card">
         <img
+          alt="holiday-glasgow"
           src="https://api.wearehomesforstudents.com/wp-content/uploads/2020/08/student-accommodation-glasgow.jpg"
           className="card-img-top"
         />
@@ -46,6 +48,7 @@ const TouristInfoCards = () => {
 
       <div className="card">
         <img
+          alt="holiday-manchester"
           src="https://absolutely.london/wp-content/uploads/2017/05/MANCHESTER-HERO-1068x712.jpg"
           className="card-img-top"
         />
