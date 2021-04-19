@@ -5,10 +5,10 @@ const Heading = () => {
     <div>
       <header className="App-header">
         <img
-          class="App-logo"
+          className="App-logo"
           src="https://image.flaticon.com/icons/svg/139/139899.svg"
         />
-        <spne class="App-title">CYF Hotel</spne>
+        <p className="App-title">CYF Hotel</p>
       </header>
     </div>
   );
