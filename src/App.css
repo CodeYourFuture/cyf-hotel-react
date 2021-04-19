@@ -46,6 +46,8 @@ tr {
 
 .results {
   padding-top: 15px;
+  width: 70%;
+  margin: auto;
 }
 
 .footer {
