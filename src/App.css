@@ -51,8 +51,13 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: black;
+  color: azure;
+  text-decoration: none;
 }
-
+li {
+  list-style: none;
+}
 .card {
   width: 18rem;
   margin-left: 20px;
