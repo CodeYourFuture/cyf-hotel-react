@@ -63,3 +63,7 @@ tr {
 .card {
   width: 18rem;
 }
+.cards-wrapper {
+  display: flex;
+  flex-direction: row;
+}
