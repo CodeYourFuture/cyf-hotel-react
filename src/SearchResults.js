@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 const SearchResults = props => {
   return (
     <table className="table  results">
@@ -12,10 +13,15 @@ const SearchResults = props => {
           <th scope="col">Room Id</th>
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
+          <th scope="col">Number of Night</th>
         </tr>
       </thead>
       <tbody>
         {props.results.map(item => {
+          const startDate = moment(item.checkInDate);
+          const endDate = moment(item.checkOutDate);
+          let numberOfNights = endDate.diff(startDate, "days", true);
+
           return (
             <tr key={item.id}>
               <td>{item.id}</td>
@@ -26,6 +32,7 @@ const SearchResults = props => {
               <td>{item.roomId}</td>
               <td>{item.checkInDate}</td>
               <td>{item.checkOutDate}</td>
+              <td>{numberOfNights} </td>
             </tr>
           );
         })}

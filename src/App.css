@@ -42,8 +42,12 @@
 
 tr {
   color: #5b5757;
+  font-size: 1rem;
 }
 
+th {
+  font-size: 0.9rem;
+}
 .results {
   padding-top: 15px;
   margin: 0 auto;
