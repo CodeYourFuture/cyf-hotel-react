@@ -4,6 +4,7 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
+  //const [] =
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
