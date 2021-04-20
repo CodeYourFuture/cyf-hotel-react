@@ -52,10 +52,20 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style-type: none;
+  background-color: #5b5757;
+  height: 5rem;
+  color: aliceblue;
+  margin: 0;
+}
+
+.footer li {
+  display: inline-block;
+  padding: 0 2rem;
 }
 
 .card {
-  width: 18rem;
+  max-width: 25rem;
 }
 
 .card-body {
@@ -68,5 +78,6 @@ tr {
 .card-wrapper {
   padding-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
