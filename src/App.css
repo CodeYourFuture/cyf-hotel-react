@@ -58,3 +58,7 @@ tr {
 .card {
   width: 18rem;
 }
+
+.rowcolor {
+  background-color: brown;
+}

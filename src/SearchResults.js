@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [isActive, setIsActive] = useState(null);
+
+  const toggleActive = i => {
+    //Remove the if statement if you don't want to unselect an already selected item
+    if (i === isActive) {
+      setIsActive(isActive => (isActive = null));
+    } else {
+      setIsActive(isActive => (isActive = i));
+    }
+  };
   return (
     <table className="table">
       <thead>
@@ -17,7 +27,7 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map(result => {
+        {props.results.map((result, i) => {
           const {
             id,
             title,
@@ -31,7 +41,13 @@ const SearchResults = props => {
           var a = moment(checkOutDate);
           var b = moment(checkInDate);
           return (
-            <tr key={id}>
+            <tr
+              style={
+                isActive === i ? { background: "yellow" } : { background: "" }
+              }
+              key={id}
+              onClick={() => toggleActive(i)}
+            >
               <th scope="row">{title}</th>
               <td>{firstName}</td>
               <td>{surname}</td>
