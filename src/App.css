@@ -4,12 +4,12 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 3rem;
 }
 
 .App-header {
   background-color: #222;
-  height: 8rem;
+  height: 5rem;
   padding: 1.3rem;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -56,4 +56,17 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-wrapper {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-around;
 }
