@@ -48,5 +48,15 @@
     "roomId": 3,
     "checkInDate": "2017-08-30",
     "checkOutDate": "2017-10-02"
+  },
+  {
+    "id": 5,
+    "title": "Princess",
+    "firstName": "Adriana",
+    "surname": "Chelentana",
+    "email": "anu@selvam.net",
+    "roomId": 3,
+    "checkInDate": "2017-08-20",
+    "checkOutDate": "2017-10-09"
   }
 ]

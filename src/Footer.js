@@ -5,7 +5,7 @@ const Footer = props => {
     <footer>
       <ul>
         {props.elements.map(element => {
-          return <li>{element}</li>;
+          return <li key={element}>{element}</li>;
         })}
       </ul>
     </footer>
