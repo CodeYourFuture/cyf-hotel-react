@@ -2,8 +2,8 @@ import React from "react";
 import moment from "moment";
 function SearchResults({ results }) {
   return (
-    <>
-      <table className="table table-hover">
+    <div className="search-result-table">
+      <table className="table table-hover ">
         <thead>
           <tr>
             <th scope="col">id</th>
@@ -38,7 +38,7 @@ function SearchResults({ results }) {
           })}
         </tbody>
       </table>
-    </>
+    </div>
   );
 }
 
