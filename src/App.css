@@ -44,6 +44,9 @@ tr {
   color: #5b5757;
   font-size: 1rem;
 }
+.red {
+  background-color: crimson;
+}
 
 th {
   font-size: 0.9rem;

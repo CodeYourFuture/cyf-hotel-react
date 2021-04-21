@@ -1,6 +1,13 @@
 import React from "react";
 import moment from "moment";
+import { useState } from "react";
 const SearchResults = props => {
+  const [color, setColor] = useState("transparent");
+
+  function highlightRow(index) {
+    setColor(index === color ? "" : index);
+  }
+
   return (
     <table className="table  results">
       <thead>
@@ -17,13 +24,17 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map(item => {
+        {props.results.map((item, index) => {
           const startDate = moment(item.checkInDate);
           const endDate = moment(item.checkOutDate);
           let numberOfNights = endDate.diff(startDate, "days", true);
 
           return (
-            <tr key={item.id}>
+            <tr
+              className={color === index ? "red" : "transparent"}
+              onClick={() => highlightRow(index)}
+              key={index}
+            >
               <td>{item.id}</td>
               <td>{item.title}</td>
               <td>{item.firstName}</td>
