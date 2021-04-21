@@ -1,7 +1,6 @@
 import React from "react";
 import moment from "moment";
 function SearchResults({ results }) {
-  console.log(results);
   return (
     <>
       <table className="table table-hover">
