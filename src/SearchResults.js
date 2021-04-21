@@ -30,7 +30,12 @@ const SearchResults = ({ results }) => {
                 <td>{customer.roomId}</td>
                 <td>{customer.checkInDate}</td>
                 <td>{customer.checkOutDate}</td>
-                {/* <td>{moment().diff()}</td> */}
+                <td>
+                  {moment(customer.checkOutDate).diff(
+                    moment(customer.checkInDate),
+                    "days"
+                  )}
+                </td>
               </tr>
             );
           })}
