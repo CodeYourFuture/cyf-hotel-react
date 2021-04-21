@@ -45,13 +45,6 @@ const SearchResults = props => {
 
   const { items, requestSort } = useSortableData(props.bookings);
 
-  // const getClassNamesFor = (name) => {
-  //   if (!sortConfig) {
-  //     return;
-  //   }
-  //   return sortConfig.key === name ? sortConfig.direction : undefined;
-  // };
-
   const toggleActive = i => {
     //Remove the if statement if you don't want to unselect an already selected item
     if (i === isActive) {

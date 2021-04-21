@@ -22,8 +22,10 @@ const Bookings = () => {
 
   let addBooking = newBooking => {
     console.log("hello world", newBooking);
-    Object.assign(newBooking, { id: bookings.length + 1 });
-    setBookings(bookings.push(newBooking));
+    newBooking["id"] = bookings.length + 1;
+    bookings.push(newBooking);
+    setBookings(bookings);
+    console.log(bookings);
   };
   useEffect(() => {
     let url = "https://cyf-react.glitch.me/";

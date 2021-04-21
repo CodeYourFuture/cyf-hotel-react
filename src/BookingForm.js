@@ -19,7 +19,15 @@ const BookingForm = props => {
   const handleSubmit = event => {
     event.preventDefault();
     props.addBooking(addBooking);
-    setAddBooking(addBooking);
+    setAddBooking({
+      title: "",
+      firstName: "",
+      surname: "",
+      email: "",
+      roomId: "",
+      checkInDate: "",
+      checkOutDate: ""
+    });
   };
 
   return (
