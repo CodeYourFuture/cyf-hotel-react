@@ -7,6 +7,7 @@ const TouristInfoCards = () => {
         <img
           src="https://www.shoosmiths.co.uk/-/media/images/locations/glasgow.jpg"
           className="card-img-top"
+          alt="Glasgow City"
         />
         <div className="card-body">
           <p>
@@ -28,6 +29,7 @@ const TouristInfoCards = () => {
         <img
           src="https://www.aboutmanchester.co.uk/wp-content/uploads/2020/03/manchester-cityscape01-696x392.jpg"
           className="card-img-top"
+          alt="Manchester City"
         />
         <div className="card-body">
           <p>
@@ -49,6 +51,7 @@ const TouristInfoCards = () => {
         <img
           src="https://images.musement.com/cover/0002/49/big-ben-westminster-bridge-on-river-thames-in-london-jpg_header-148518.jpeg"
           className="card-img-top"
+          alt="London City"
         />
         <div className="card-body">
           <p>
