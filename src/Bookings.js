@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults";
+import BookingForm from "./BookingForm";
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
@@ -8,8 +9,9 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    // console.info("TO DO!", searchVal);
     let result = bookings.filter(
       booking =>
         booking.firstName.toLowerCase() === searchVal.toLowerCase() ||
@@ -17,9 +19,16 @@ const Bookings = () => {
     );
     setBookings(result);
   };
+
+  let addBooking = newBooking => {
+    console.log("hello world", newBooking);
+    Object.assign(newBooking, { id: bookings.length + 1 });
+    setBookings(bookings.push(newBooking));
+  };
   useEffect(() => {
     let url = "https://cyf-react.glitch.me/";
-
+    // let url = "https://cyf-react.glitch.me/delayed";
+    // let url = "https://cyf-react.glitch.me/error";
     fetch(url)
       .then(response => {
         if (response.ok) {
@@ -47,6 +56,9 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         <SearchResults results={bookings} />
+      </div>
+      <div className="container">
+        <BookingForm addBooking={addBooking} />
       </div>
     </div>
   );
