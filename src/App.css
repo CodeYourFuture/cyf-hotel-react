@@ -72,3 +72,16 @@ tr {
 img {
   height: 200px;
 }
+
+.footer-container {
+  display: flex;
+  background-color: #222;
+  color: white;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
