@@ -10,6 +10,12 @@ const Bookings = () => {
   const [error, setError] = useState(null);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    let result = bookings.filter(
+      booking =>
+        booking.firstName.toLowerCase() === searchVal.toLowerCase() ||
+        booking.surname.toLowerCase() === searchVal.toLowerCase()
+    );
+    setBookings(result);
   };
   useEffect(() => {
     let url = "https://cyf-react.glitch.me/";
