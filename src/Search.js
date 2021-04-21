@@ -5,7 +5,7 @@ const Search = props => {
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearchInput = event => {
-    setSearchInput(console.log(event.target.value));
+    setSearchInput(event.target.value);
   };
 
   function handleSubmit(event) {
@@ -29,7 +29,7 @@ const Search = props => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
-                defaultValue={searchInput}
+                value={searchInput}
                 onChange={handleSearchInput}
               />
               <SearchButton />

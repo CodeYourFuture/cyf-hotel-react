@@ -6,7 +6,16 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-
+.table-container {
+  display: flex;
+}
+.profile-table {
+  flex: 2;
+  background-color: brown;
+}
+.table {
+  flex: 1;
+}
 .App-header {
   background-color: #222;
   height: 120px;

@@ -4,17 +4,35 @@ import SearchResults from "./SearchResults.js";
 import { useState, useEffect } from "react";
 
 const Bookings = () => {
-  const [Bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(false);
+
   const search = searchVal => {
-    //console.info("TO DO!", searchVal);
-    return searchVal;
+    console.info("TO DO!", searchVal);
+    let searchResults = bookings.filter(
+      booking =>
+        booking.firstName.toLowerCase() === searchVal.toLowerCase() ||
+        booking.surname.toLowerCase() === searchVal.toLowerCase()
+    );
+
+    setBookings(searchResults);
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then(response => response.json())
+    fetch("https://cyf-react.glitch.me/")
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+      })
+
       .then(data => {
         setBookings(data);
+        setIsLoaded(true);
+      })
+      .catch(() => {
+        setError(true);
       });
   }, []);
 
@@ -22,7 +40,13 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={Bookings} />
+        {isLoaded ? (
+          <SearchResults results={bookings} />
+        ) : error ? (
+          <strong>sorry but there was an error loading data!!</strong>
+        ) : (
+          <strong>Loading Data please wait...</strong>
+        )}
       </div>
     </div>
   );
