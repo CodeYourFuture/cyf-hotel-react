@@ -57,3 +57,18 @@ tr {
 .card {
   width: 18rem;
 }
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.card-body {
+  flex-direction: column;
+}
+
+img {
+  height: 200px;
+}
