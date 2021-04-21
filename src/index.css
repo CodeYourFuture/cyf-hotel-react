@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+.App-logo {
+  width: 100%;
+}
+
 .search-wrapper {
   border-top: 1px solid #e9ecef;
 }
