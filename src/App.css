@@ -4,12 +4,19 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  width: 35px;
+  margin-left: 20px;
+}
+
+.Header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  background-color: #222;
+  height: 55px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -23,7 +30,6 @@
 }
 
 .App-content {
-  padding-top: 20px;
   font-size: large;
 }
 
@@ -35,6 +41,7 @@
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -47,11 +54,34 @@ tr {
   padding-top: 15px;
 }
 
+.Restaurant {
+  margin-left: 90px;
+  padding-top: 40px;
+}
+
+.Orders {
+  list-style: none;
+  padding-left: 0;
+}
+
 .footer {
-  padding-top: 20px;
+  padding-top: 75px;
   text-align: center;
 }
 
+.footer ul {
+  list-style: none;
+}
+
 .card {
+  display: inline-block;
   width: 18rem;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  margin-left: 100px;
+}
+
+.btn-primary {
+  display: flex;
+  justify-content: center;
 }
