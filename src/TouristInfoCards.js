@@ -1,4 +1,7 @@
 import React from "react";
+import London from "./images/london.jpeg";
+import Glasgow from "./images/glasgow.jpeg";
+import Manchester from "./images/manchester.jpeg";
 // import picture from "pic.jpeg";
 
 const TouristInfoCards = () => {
@@ -6,7 +9,7 @@ const TouristInfoCards = () => {
     <div className="card-container text-center">
       <div className="card">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/8/86/City_of_London%2C_seen_from_Tower_Bridge.jpg"
+          src={London}
           alt="A photo of London city"
           className="card-img-top"
         />
@@ -31,7 +34,7 @@ const TouristInfoCards = () => {
 
       <div className="card">
         <img
-          src="https://www.shoosmiths.co.uk/-/media/images/locations/glasgow.jpg"
+          src={Glasgow}
           alt="A photo of Glasgow city"
           className="card-img-top"
         />
@@ -56,7 +59,7 @@ const TouristInfoCards = () => {
 
       <div className="card">
         <img
-          src="https://governmentbusiness.co.uk/sites/default/files/william-mccue-508892-unsplash_1.jpg"
+          src={Manchester}
           alt="A photo of Manchester city"
           className="card-img-top"
         />
