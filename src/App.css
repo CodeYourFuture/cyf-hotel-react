@@ -10,12 +10,13 @@
 .App-header {
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 10px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
+  line-height: normal;
 }
 
 .App-title {
@@ -48,10 +49,53 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
   text-align: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-top: 2px solid rgb(145, 145, 145);
 }
 
 .card {
   width: 18rem;
+}
+
+.hotel-logo {
+  width: 4%;
+  padding-left: 10px;
+}
+
+.name-logo {
+  display: flex;
+  background-color: #222;
+  margin-bottom: 30px;
+}
+
+.cards-layout {
+  display: flex;
+  justify-content: space-around;
+  width: 85vw;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+#root {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.inline {
+  display: inline;
+}
+
+.resItems {
+  width: 300px;
+  display: felx;
+  justify-content: space-around;
+}
+
+.selectedRow {
+  background-color: yellow;
 }
