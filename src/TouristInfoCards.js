@@ -7,7 +7,7 @@ function TouristInfoCards() {
         <img
           src="https://peoplemakeglasgow.com/images/Things_to_do/Top_attractions/City-Chambers-995.jpg"
           className="card-img-top"
-          alt="Glasgow Photo"
+          alt="Glasgow"
         />
         <div className="card-body">
           <h4>Glasgow</h4>
@@ -27,7 +27,7 @@ function TouristInfoCards() {
         <img
           src="https://eu-assets.simpleview-europe.com/manchester2016/imageresizer/?image=%2Fdmsimgs%2FTown_Hall_Manchester_-_External_669297268.jpg&action=ProductDetail"
           className="card-img-top"
-          alt="Manchester Photo"
+          alt="Manchester"
         />
         <div className="card-body">
           <h4>Manchester</h4>
@@ -46,7 +46,7 @@ function TouristInfoCards() {
         <img
           src="https://cdn.londonandpartners.com/asset/london-by-night-open-top-bus-tour_london-by-night-open-top-bus-tour-image-courtesy-of-golden-tours_a78a06aa1761ee29c3c3c7bcff4d1939.jpg"
           className="card-img-top"
-          alt="London Photo"
+          alt="London"
         />
         <div className="card-body">
           <h4>London</h4>
