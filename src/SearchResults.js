@@ -1,6 +1,8 @@
+import moment from "moment";
 import React from "react";
 
 const SearchResults = ({ bookings }) => {
+  console.log(bookings);
   return (
     <table className="table table-striped">
       <thead>
@@ -12,10 +14,14 @@ const SearchResults = ({ bookings }) => {
           <th scope="col">Room id</th>
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
+          <th scope="col">Nights</th>
         </tr>
       </thead>
       <tbody>
         {bookings.map(booking => {
+          const checkIn = moment(booking.checkInDate);
+          const checkOut = moment(booking.checkOutDate);
+          const nights = checkOut.diff(checkIn, "days");
           return (
             <tr>
               <th>{booking.title}</th>
@@ -25,6 +31,7 @@ const SearchResults = ({ bookings }) => {
               <td>{booking.roomId}</td>
               <td>{booking.checkInDate}</td>
               <td>{booking.checkOutDate}</td>
+              <td>{nights}</td>
             </tr>
           );
         })}
