@@ -8,6 +8,10 @@ body {
   font-family: sans-serif;
 }
 
+li {
+  list-style-type: none;
+}
+
 .search-wrapper {
   border-top: 1px solid #e9ecef;
 }
