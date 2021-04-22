@@ -24,3 +24,7 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.card-img-top {
+  width: 50px;
+}
