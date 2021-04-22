@@ -52,6 +52,25 @@ tr {
   text-align: center;
 }
 
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .card {
-  width: 18rem;
+  width: 25rem;
+  margin: 2rem auto;
+}
+
+@media (min-width: 600px) {
+  .cards {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .card {
+    width: 20rem;
+  }
 }
