@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 function SearchResults(props) {
   return (
     <table className="table table-hover">
@@ -26,7 +27,9 @@ function SearchResults(props) {
             <td>{book.roomId}</td>
             <td>{book.checkInDate}</td>
             <td>{book.checkOutDate}</td>
-            <td>{book.roomId}</td>
+            <td>
+              {moment(book.checkOutDate).diff(moment(book.checkInDate), "days")}
+            </td>
           </tr>
         </tbody>
       ))}
