@@ -24,7 +24,7 @@ const SearchResults = ({ results }) => {
   }, [results, sortedResults]);
 
   const handleProfile = e => {
-    e.preventDefault();
+    e.stopPropagation();
     setUserId(e.target.parentElement.parentElement.firstElementChild.innerText);
   };
 
@@ -43,9 +43,11 @@ const SearchResults = ({ results }) => {
   };
 
   useEffect(() => {
-    fetch(`https://cbaggini-hotel-server.glitch.me/bookings/${userId}`)
-      .then(response => response.json())
-      .then(data => setUserProfile(data));
+    if (userId !== null) {
+      fetch(`https://cbaggini-hotel-server.glitch.me/bookings/${userId}`)
+        .then(response => response.json())
+        .then(data => setUserProfile(data));
+    }
   }, [userId]);
 
   return (
