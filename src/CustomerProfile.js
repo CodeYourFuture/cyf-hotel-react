@@ -1,34 +1,39 @@
 import React, { useState, useEffect } from "react";
 
 const CustomerProfile = props => {
-  const [profile, setProfile] = useState(false);
-
+  const [details, setDetails] = useState({});
   const profileSearch = () => {
-    if (profile !== props.id) return setProfile(props.id);
-    else return setProfile(false);
+    if (details !== props.id) {
+      setDetails({ id: props.id });
+    }
   };
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${profile}`)
-      .then(res => res.json())
-      .then(data => {
-        if (profile === props.id) return setProfile(data);
-      });
-  }, [profile, props.id]);
+    if (details.id) {
+      fetch(`https://cyf-react.glitch.me/customers/${details.id}`)
+        .then(res => res.json())
+        .then(data => {
+          if (details.id === props.id) {
+            setDetails(data);
+          }
+        })
+        .catch(err => console.log(err));
+    }
+  }, [details, props.id]);
 
   return (
     <>
       <button onClick={profileSearch} className="btn btn-primary">
         Show Profile
       </button>
-      <ul className={profile ? "d-block" : "d-none"}>
-        <li>id: {profile.id}</li>
-        <li>title: {profile.title}</li>
-        <li>first name: {profile.firstName}</li>
-        <li>surname: {profile.surname}</li>
-        <li>email: {profile.email}</li>
-        <li>phone number: {profile.phoneNumber}</li>
-        <li>vip: {`${profile.vip}`}</li>
+      <ul className={details.id ? "d-block" : "d-none"}>
+        <li>id: {details.id}</li>
+        <li>title: {details.title}</li>
+        <li>first name: {details.firstName}</li>
+        <li>surname: {details.surname}</li>
+        <li>email: {details.email}</li>
+        <li>phone number: {details.phoneNumber}</li>
+        <li>vip: {`${details.vip}`}</li>
       </ul>
     </>
   );
