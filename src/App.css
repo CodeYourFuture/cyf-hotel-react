@@ -9,13 +9,18 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 75px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+}
+
+.App-header img {
+  max-width: 40px;
+  margin-left: 5px;
 }
 
 .App-title {
@@ -54,4 +59,9 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.info-list {
+  list-style-type: none;
+  font-size: 15px;
 }
