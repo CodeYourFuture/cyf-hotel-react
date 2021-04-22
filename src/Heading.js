@@ -2,12 +2,15 @@ import React from "react";
 
 const Heading = () => {
   return (
-    <div className="">
-      <header className="App-header">CYF Hotel</header>
+    <div className=" App-header mb-4 d-flex justify-content-around align-items-center">
+      <header>
+        <h2>CYF HOTEL</h2>
+      </header>
       <img
-        className="App-logo"
-        src="https://cdn.pixabay.com/photo/2012/04/18/02/30/city-36593__340.png"
-        alt="#"
+        width="100"
+        height="100"
+        src="https://pics.freeicons.io/uploads/icons/png/992585301578378318-512.png"
+        alt="Hotels logo with a plate 5 gold star"
       />
     </div>
   );
