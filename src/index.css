@@ -24,3 +24,6 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+.App-Logo {
+  width: 80px;
+}
