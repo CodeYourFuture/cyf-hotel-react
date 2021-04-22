@@ -2,7 +2,6 @@ import moment from "moment";
 import React from "react";
 
 const SearchResults = ({ bookings }) => {
-  console.log(bookings);
   return (
     <table className="table table-striped">
       <thead>

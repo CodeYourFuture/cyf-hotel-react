@@ -5,10 +5,12 @@ const TouristInfoCards = props => {
   return (
     <div className="card">
       <img src={props.city.image} className="card-img-top" alt="pic" />
-      <div className="card-body" />
-      <a href={props.city.link} className="btn btn-primary">
-        Visit {props.city.name}
-      </a>
+      <div className="card-body">
+        <p>{props.city.description}</p>
+        <a href={props.city.link} className="btn btn-primary">
+          Visit {props.city.name}
+        </a>
+      </div>
     </div>
   );
 };
