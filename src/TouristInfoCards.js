@@ -7,7 +7,11 @@ function TouristInfoCards() {
     <div>
       {/* London */}
       <div className="card">
-        <img src="./london.jpg" alt="london big ben" className="card-img-top" />
+        <img
+          src={require("./images/london.jpg")}
+          alt="london big ben"
+          className="card-img-top"
+        />
         <h1>London </h1>
         <div className="card-body">
           <a href="https://www.visitlondon.com" className="btn btn-primary">
@@ -17,7 +21,11 @@ function TouristInfoCards() {
       </div>
       {/* Manchester */}
       <div className="card">
-        <img src="./manchester.jpg" alt="Manchester" className="card-img-top" />
+        <img
+          src={require("./images/manchester.jpg")}
+          alt="Manchester"
+          className="card-img-top"
+        />
         <h1>Manchester </h1>
         <div className="card-body">
           <a href="https://www.visitmanchester.com" className="btn btn-primary">
@@ -27,7 +35,11 @@ function TouristInfoCards() {
       </div>
       {/*Glasgow  */}
       <div className="card">
-        <img src="./glasgow.jpg" alt="Glasgow" className="card-img-top" />
+        <img
+          src={require("./images/glasgow.jpg")}
+          alt="Glasgow"
+          className="card-img-top"
+        />
         <h1>Glasgow </h1>
         <div className="card-body">
           <a

@@ -7,7 +7,7 @@ function Heading() {
   return (
     <div>
       <header className="App-header">CYF Hotel</header>
-      <img src={logo} alt="logo image" />
+      <img src={logo} alt="logo " />
     </div>
   );
 }

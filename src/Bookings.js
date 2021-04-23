@@ -1,6 +1,7 @@
 /* eslint-disable indent*/
 import React from "react";
 import Search from "./Search.js";
+import SearchResults from "./SearchResults.js";
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
@@ -15,6 +16,7 @@ const Bookings = () => {
         <Search search={search} />
         {/* <SearchResults results={FakeBookings} /> */}
       </div>
+      <SearchResults />
     </div>
   );
 };
