@@ -34,7 +34,6 @@ const TuristInfoCards = () => {
         </div>
       ))}
       <img src="" alt="" />
-      <button className="btn btn-primary">More Info</button>
     </div>
   );
 };
