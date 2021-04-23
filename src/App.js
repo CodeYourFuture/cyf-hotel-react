@@ -9,7 +9,6 @@ import "./App.css";
 const App = () => {
   return (
     <div className="App">
-      {/* <header className="App-header">CYF Hotel</header> */}
       <Heading />
       <TouristInfoCards />
       <Bookings />

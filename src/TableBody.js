@@ -1,7 +1,5 @@
 /* eslint-disable indent*/
-
 import React from "react";
-// import {LengthOfStay} from "./Helpers";
 function LengthOfStay(endDate, startDate) {
   const diff = new Date(endDate) - new Date(startDate);
   return Math.floor(diff / 86400000);

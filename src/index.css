@@ -29,9 +29,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.card-img-top {
-  /* width: 50px; */
-}
+
 .contact > li {
   list-style-type: none;
 }
