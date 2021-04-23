@@ -8,7 +8,7 @@ const TouristInfoCards = () => {
     <div className=" container App-content">
       <div className="row justify-content-around text-center">
         <div className="card">
-          <img src={London} className="card-img-top" />
+          <img src={London} className="card-img-top" alt="London" />
           <h3 className="pt-2">London</h3>
           <p className="p-1">
             Welcome to London!
@@ -22,7 +22,7 @@ const TouristInfoCards = () => {
           </div>
         </div>
         <div className="card">
-          <img src={Manchester} className="card-img-top" />
+          <img src={Manchester} className="card-img-top" alt="Manchester" />
           <h3 className="pt-2">Manchester</h3>
           <p className="p-1">
             Manchester is one of the most exciting places to visit in the UK
@@ -38,7 +38,7 @@ const TouristInfoCards = () => {
           </div>
         </div>
         <div className="card">
-          <img src={Glasgow} className="card-img-top" />
+          <img src={Glasgow} className="card-img-top" alt="Glasgow" />
           <h3 className="pt-2">Glasgow</h3>
           <p className="p-1">
             We encourage you to stay safe and enjoy your time in the city whilst
