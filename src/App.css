@@ -4,18 +4,20 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 3rem;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  height: 5rem;
+  padding: 1.3rem;
   color: white;
-  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5rem;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .App-title {
@@ -39,10 +41,6 @@
   padding: 5px 0 20px 0;
 }
 
-tr {
-  color: #5b5757;
-}
-
 .results {
   padding-top: 15px;
 }
@@ -50,8 +48,32 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style-type: none;
+  background-color: #5b5757;
+  height: 5rem;
+  color: aliceblue;
+  margin: 0;
+}
+
+.footer li {
+  display: inline-block;
+  padding: 0 2rem;
 }
 
 .card {
-  width: 18rem;
+  max-width: 25rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-wrapper {
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
