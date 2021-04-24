@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 import FakeBookings from "./data/fakeBookings.json";
 
@@ -14,6 +15,7 @@ const SearchResults = props => {
           <th scope="col">Room ID</th>
           <th scope="col">Check-in Date</th>
           <th scope="col">Check-out Date</th>
+          <th scope="col">No. of Nights</th>
         </tr>
       </thead>
       <tbody>
@@ -27,6 +29,9 @@ const SearchResults = props => {
             <th scope="col">{booking.roomId}</th>
             <th scope="col">{booking.checkInDate}</th>
             <th scope="col">{booking.checkOutDate}</th>
+            <th scope="col">
+              {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
+            </th>
           </tr>
         ))}
       </tbody>
