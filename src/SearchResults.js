@@ -1,7 +1,9 @@
-const SearchResult = props => (
+import moment from "moment";
+
+const SearchResults = props => (
     <table className="table table-striped">
-        <thead className="bg-dark text-white">
-            <tr>
+        <thead>
+            <tr className="bg-dark text-white">
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">First Name</th>
@@ -24,8 +26,11 @@ const SearchResult = props => (
                     <td>{guest.roomId}</td>
                     <td>{guest.checkInDate}</td>
                     <td>{guest.checkOutDate}</td>
+                    <td>{moment(guest.checkOutDate).diff(moment(guest.checkInDate))}</td>
                 </tr>
             ))}
         </tbody>
     </table>
 )
+
+export default SearchResults;
