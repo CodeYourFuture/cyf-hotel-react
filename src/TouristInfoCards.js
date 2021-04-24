@@ -9,7 +9,7 @@ function TouristInfoCards(){
             <h2>Glasgow</h2>
             <p>Voted one of the friendliest cities in the world, Scotland’s biggest city is a stylish mix of arts, 
                 culture and unique Celtic charm</p>
-		    <a href="https://peoplemakeglasgow.com/" target="_blank" className="btn btn-primary">More Information</a>
+		    <a href="https://peoplemakeglasgow.com/" className="btn btn-primary">More Information</a>
 	    </div>
     </div>
     <div className="card">
@@ -18,7 +18,7 @@ function TouristInfoCards(){
             <h2>Manchester</h2>
             <p>Youthful, diverse, energetic and bursting with character; Manchester is one of the most exciting places to 
                 visit in the UK right now where everybody and anybody is very warmly welcomed</p>
-		    <a href="https://www.visitmanchester.com/" target="_blank" className="btn btn-primary">More Information</a>
+		    <a href="https://www.visitmanchester.com/" className="btn btn-primary">More Information</a>
 	    </div>
     </div>
     <div className="card">
@@ -26,7 +26,7 @@ function TouristInfoCards(){
 	    <div className="card-body">
             <h2>London</h2>
             <p>Find things to do in London, from iconic sightseeing spots and fun-filled days out to top restaurants, theatre and unmissable London events. </p>
-		    <a href="visitlondon.com" target="_blank" className="btn btn-primary">More Information</a>
+		    <a href="https://www.visitlondon.com"  className="btn btn-primary">More Information</a>
 	    </div>
     </div>
     </div>
