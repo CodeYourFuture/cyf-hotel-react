@@ -4,6 +4,11 @@ body {
   font-family: sans-serif;
 }
 
+.logo {
+  display: flex;
+  height: 100px;
+}
+
 .search-wrapper {
   border-top: 1px solid #e9ecef;
 }
@@ -12,7 +17,7 @@ body {
   font-weight: bold;
   padding: 0.75rem;
   margin-bottom: 0;
-  color: #5b5757;
+  color: #0a1d58;
 }
 
 .search-row {
@@ -23,4 +28,14 @@ body {
 
 .search-row input {
   margin-right: 10px;
+}
+
+.footer {
+  background-color: rgb(120, 167, 204);
+}
+
+li {
+  font-weight: bold;
+  padding-bottom: 5px;
+  color: white;
 }
