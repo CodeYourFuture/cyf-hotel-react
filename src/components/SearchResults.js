@@ -1,29 +1,6 @@
 import React from "react";
 
-function SearchResults() {
-  const bookings = [
-    {
-      id: "001",
-      title: "Mr",
-      firstname: "Jhon",
-      surname: "Jhon",
-      email: "jhon@jhon.com",
-      roomid: "123",
-      checkindate: "12/12/12",
-      checkoutdate: "13/13/13"
-    },
-    {
-      id: "002",
-      title: "Mrs",
-      firstname: "Angel",
-      surname: "Angel",
-      email: "angel@angel.com",
-      roomid: "124",
-      checkindate: "14/12/12",
-      checkoutdate: "15/13/13"
-    }
-  ];
-
+function SearchResults(props) {
   return (
     <table class="table">
       <thead>
@@ -38,15 +15,15 @@ function SearchResults() {
         </tr>
       </thead>
       <tbody>
-        {bookings.map(booking => (
+        {props.results.map(booking => (
           <tr>
             <td>{booking.title}</td>
-            <td>{booking.firstname}</td>
+            <td>{booking.firstName}</td>
             <td>{booking.surname}</td>
             <td>{booking.email}</td>
-            <td>{booking.roomid}</td>
-            <td>{booking.checkindate}</td>
-            <td>{booking.checkoutdate}</td>
+            <td>{booking.roomId}</td>
+            <td>{booking.checkInDate}</td>
+            <td>{booking.checkOutDate}</td>
           </tr>
         ))}
       </tbody>
