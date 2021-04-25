@@ -14,9 +14,9 @@ const App = () => {
       <Bookings />
       <Footer
         address={[
-          "123 Fake Street, London, E1 4UD",
-          "hello@fakehotel.com",
-          "0123 456789"
+          "1965, Bay Lake, London, United Kingdom",
+          "hello@cyfhotel.com",
+          "+44 075 339 70813"
         ]}
       />
     </div>
