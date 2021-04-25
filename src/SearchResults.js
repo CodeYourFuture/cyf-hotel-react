@@ -32,7 +32,7 @@ const SearchResults = props => (
             <td>
               {moment(guest.checkOutDate).diff(
                 moment(guest.checkInDate),
-                "nights"
+                "days"
               )}
             </td>
           </tr>
