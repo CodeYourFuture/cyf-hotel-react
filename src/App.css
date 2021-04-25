@@ -7,11 +7,15 @@
   width: 20rem;
 }
 
+.highlight-row {
+  background-color: gold;
+}
+
 .App-title {
   font-size: 1.5em;
 }
 
-.App-content {
+.content {
   padding-top: 20px;
   font-size: large;
 }

@@ -1,5 +1,5 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
 const SearchResults = props => (
   <table className="table table-striped">
@@ -18,9 +18,14 @@ const SearchResults = props => (
     </thead>
     <tbody>
       {props.results.map(guest => {
-        console.log(moment(guest.checkInDate.date));
+        const [highlight, setHighlight] = useState(false);
+        const Toggle = () => setHighlight(!highlight);
         return (
-          <tr key={guest.id}>
+          <tr
+            key={guest.id}
+            className={highlight ? "highlight-row" : null}
+            onClick={Toggle}
+          >
             <td>{guest.id}</td>
             <td>{guest.title}</td>
             <td>{guest.firstName}</td>
