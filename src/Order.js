@@ -8,7 +8,7 @@ const Order = props => {
   return (
     <li className="list-group-item m-3 m-auto order">
       {props.orderType}: {order}
-      <RestaurantButton handleClick={orderOne} />
+      <RestaurantButton handleClick={orderOne} orderType={props.orderType} />
     </li>
   );
 };
