@@ -2,6 +2,7 @@ import React from "react";
 
 import Bookings from "./Bookings";
 import Heading from "./components/Heading";
+import TouristInfoCards from "./components/TouristInfoCards";
 import "./App.css";
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
     <div className="App">
       <Heading />
       <Bookings />
+      <TouristInfoCards />
     </div>
   );
 };
