@@ -20,7 +20,7 @@ const SearchResults = props => (
       {props.results.map(guest => {
         console.log(moment(guest.checkInDate.date));
         return (
-          <tr>
+          <tr key={guest.id}>
             <td>{guest.id}</td>
             <td>{guest.title}</td>
             <td>{guest.firstName}</td>
