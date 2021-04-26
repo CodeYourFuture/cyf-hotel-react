@@ -2,7 +2,7 @@
   text-align: left;
 }
 
-.App-logo {
+.App-Logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
@@ -54,4 +54,14 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.overflow {
+  height: 200px;
+  overflow: hidden;
+}
+
+.footer-list-item {
+  list-style: none;
+  padding-right: 1rem;
 }
