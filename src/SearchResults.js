@@ -1,7 +1,14 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
 const SearchResults = ({ results }) => {
+  const [color, setColor] = useState();
+
+  const makeHighlight = e => {
+    console.log(e.currentTarget);
+    setColor("table-row-highlight");
+  };
+
   return (
     <div className="table-responsive">
       <table className="table table-hover">
@@ -19,9 +26,9 @@ const SearchResults = ({ results }) => {
           </tr>
         </thead>
         <tbody>
-          {results.map(customer => {
+          {results.map((customer, index) => {
             return (
-              <tr>
+              <tr key={index} onClick={makeHighlight} className={color}>
                 <th scope="row">{customer.id}</th>
                 <td>{customer.title}</td>
                 <td>{customer.firstName}</td>

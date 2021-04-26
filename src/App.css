@@ -67,6 +67,15 @@ tr {
   width: 18rem;
 }
 
+.footer {
+  margin-top: 2rem;
+  border-top: 2px solid grey;
+}
+
 .footer-list {
   list-style: none;
+}
+
+.table-row-highlight {
+  background-color: rgb(212, 203, 203);
 }
