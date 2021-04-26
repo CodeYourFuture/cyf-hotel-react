@@ -11,7 +11,7 @@ const Order = props => {
     });
   };
   return (
-    <li>
+    <li className="mt-2">
       {props.orderType}: {orders} <RestaurantButton orderOne={orderOne} />
     </li>
   );

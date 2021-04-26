@@ -2,7 +2,7 @@ import React from "react";
 
 const TouristInfoCards = () => {
   return (
-    <div className="cards text-center p-2 ml-5">
+    <div className="cards text-center">
       <div className="card">
         <img
           src="https://thenomadvisor.com/wp-content/uploads/2019/03/wheretostayinglasgow-780x584.jpg"
