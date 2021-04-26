@@ -3,7 +3,7 @@ import Order from "./Order";
 const Restaurant = () => {
   return (
     <div
-      style={{ textAlign: "center", left: "50%", border: "10px solid green" }}
+      style={{ textAlign: "center", left: "50%", border: "10px solid grey" }}
     >
       <h3>Restaurant Orders</h3>
       <ul
