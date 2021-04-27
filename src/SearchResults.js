@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 function SearchResults(props) {
+  const [highlight, setHighlight] = useState("transparent");
+  function highlightWhenClicked() {
+    setHighlight(highlight === "transparent" ? "highlighted" : "transparent");
+  }
+
   return (
     <div>
       <table className="table table-bordered">
@@ -19,8 +24,13 @@ function SearchResults(props) {
           </tr>
         </thead>
         <tbody>
-          {props.results.map(result => (
-            <tr>
+          {props.results.map((result, index) => (
+            <tr
+              key={index}
+              id={index}
+              onClick={highlightWhenClicked}
+              className={highlight}
+            >
               <td>{result.id}</td>
               <td>{result.title}</td>
               <td>{result.firstName}</td>
