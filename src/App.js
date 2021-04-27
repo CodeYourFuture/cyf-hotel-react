@@ -1,10 +1,11 @@
 import React from "react";
 import Bookings from "./Bookings";
-import Heading from "./Heading.js";
+import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
-import Footer from "./Footer.js";
-import "./App.css";
+import Footer from "./Footer";
 import { cities } from "./data/cities";
+import Restaurant from "./Restaurant";
+import "./App.css";
 
 const footerInfo = [
   "123 Fake Street, London, E1 4UD",
@@ -22,6 +23,7 @@ const App = () => {
         })}
       </div>
       <Bookings />
+      <Restaurant />
       <Footer elements={footerInfo} />
     </div>
   );
