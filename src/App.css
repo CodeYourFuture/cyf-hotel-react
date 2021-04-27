@@ -1,10 +1,37 @@
 .App {
   text-align: left;
+  background-color: rgb(248, 244, 244);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.header-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin-top: 15px;
+
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
 }
 
 .App-header {
@@ -16,27 +43,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.search {
-  padding: 5px 0 20px 0;
+  width: 100%;
 }
 
 tr {
@@ -47,11 +54,102 @@ tr {
   padding-top: 15px;
 }
 
+.table th {
+  color: rgb(87, 22, 22);
+}
+
 .footer {
-  padding-top: 20px;
+  padding: 10px 10px;
   text-align: center;
+  background-color: #000000;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
 }
 
 .card {
   width: 18rem;
+  margin-top: 15px;
+}
+
+a {
+  height: 38px;
+}
+
+.highlight {
+  background-color: rgb(243, 226, 205);
+  padding: 10px;
+  box-shadow: 1px 3px 5px #888888;
+  font-weight: bold;
+  color: black;
+}
+
+.order-list,
+h3 {
+  display: flex;
+  margin-left: 20px;
+  padding: 20px;
+}
+
+h3 {
+  margin-left: 25px;
+}
+
+.order-list li {
+  margin-left: 20px;
+  padding-right: 20px;
+}
+
+hr {
+  width: 100%;
+}
+
+.profile {
+  background-color: rgb(228, 221, 214);
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.loader-text {
+  transition: color 2.5s ease;
+  color: rgb(2, 36, 41);
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+}
+.loader {
+  margin: auto;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid rgb(74, 74, 240);
+  border-right: 10px solid rgb(104, 235, 104);
+  border-bottom: 10px solid rgb(245, 79, 79);
+  border-left: 10px solid rgb(237, 240, 58);
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

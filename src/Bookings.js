@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
-// import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
+  const [bookings, setBookings] = useState(null);
+
+  useEffect(() => {
+    return fetch(`https://cyf-react.illicitonion.com/delayed`)
+      .then(results => results.json())
+      .then(data => setBookings(data));
+  }, []);
+
+  const returnButton = () => {
+    return fetch(`https://cyf-react.illicitonion.com`)
+      .then(results => results.json())
+      .then(data => setBookings(data));
   };
 
-  return (
+  const search = searchVal => {
+    setBookings(
+      bookings.filter(
+        item =>
+          item.firstName.toLowerCase() === searchVal ||
+          item.surname.toLowerCase() === searchVal
+      )
+    );
+  };
+
+  return bookings ? (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
+        <Search search={search} returnButton={returnButton} />
+        <SearchResults results={bookings} />
       </div>
+    </div>
+  ) : (
+    <div>
+      <div className="loader-text">
+        ..<b>loading booking data</b>......
+      </div>
+      <div class="loader" />
     </div>
   );
 };
