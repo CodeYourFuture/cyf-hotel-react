@@ -18,6 +18,11 @@
   font-weight: bold;
 }
 
+.Header-img {
+  width: 100px;
+  height: 100px;
+}
+
 .App-title {
   font-size: 1.5em;
 }
