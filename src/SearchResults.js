@@ -1,9 +1,13 @@
 import moment from "moment";
-import React from "react";
-import Moment from "react-moment";
-import Bookings from "./Bookings";
+import React, { useState } from "react";
 
 const SearchResults = prob => {
+  const [selectedRow, setSelectedRow] = useState("-1");
+
+  const changeColor = index => {
+    setSelectedRow(selectedRow === index ? "-1" : index);
+  };
+
   return (
     <table className="table">
       <thead className="thead-dark">
@@ -24,9 +28,13 @@ const SearchResults = prob => {
           let checkInDate = moment(Bookings.checkInDate);
           let checkOutDate = moment(Bookings.checkOutDate);
           return (
-            <tr key={index}>
+            <tr
+              key={index}
+              className={selectedRow === index ? "table-active" : ""}
+              onClick={() => changeColor(index)}
+            >
               <td>{Bookings.id}</td>
-              <td>{Bookings.title}</td>
+              <td>{Bookings.title}bg-success</td>
               <td>{Bookings.firstName}</td>
               <td>{Bookings.surname}</td>
               <td>{Bookings.email}</td>
