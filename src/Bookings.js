@@ -4,7 +4,7 @@ import SearchResults from "./SearchResults";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings);
+  // const [bookings, setBookings] = useState(FakeBookings);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
@@ -28,7 +28,7 @@ const Bookings = () => {
               </tr>
             </thead>
             <tbody>
-              {bookings.map((booking, index) => {
+              {FakeBookings.map((booking, index) => {
                 return <SearchResults results={booking} key={index} />;
               })}
             </tbody>

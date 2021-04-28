@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
 function Order({ orderType }) {
-  const [orders, setOrders] = useState(0);
+  const [orderNumber, setOrderNumber] = useState(0);
   function orderOne() {
-    setOrders(orders + 1);
+    setOrderNumber(orderNumber + 1);
   }
   return (
     <li className="order-info">
       <p className="order-type">
-        {orderType}: {orders}
+        {orderType}: {orderNumber}
       </p>
       <RestaurantButton orderOne={orderOne} />
     </li>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Bookings from "./Bookings";
 import Heading from "./Heading";
@@ -15,7 +15,6 @@ const App = () => {
   ];
   return (
     <div className="App">
-      {/* <header className="App-header">CYF Hotel</header> */}
       <Heading />
       <TouristInfoCards />
       <Bookings />
