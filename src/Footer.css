@@ -1,0 +1,12 @@
+footer {
+  background-color: black;
+  color: white;
+  margin: 0;
+  text-align: center;
+  padding: 10px;
+}
+
+footer li {
+  list-style-type: none;
+  margin-top: 5px;
+}

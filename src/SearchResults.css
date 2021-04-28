@@ -1,0 +1,12 @@
+.selected {
+  background-color: chartreuse;
+}
+
+.tableColor {
+  background-color: #c2dde6;
+  margin-bottom: 45px;
+}
+
+tr {
+  color: #5b5757;
+}

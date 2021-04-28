@@ -2,100 +2,10 @@
   text-align: right;
 }
 
-.App-logo {
-  /* animation: App-logo-spin infinite 20s linear; */
-  width: 30px;
-  height: 30px;
-  margin-right: 25px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 65px;
-  padding: 20px;
-  margin-bottom: 25px;
-  color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.App-title {
-  font-size: 1.5em;
-  color: white;
-}
-
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .search {
   padding: 5px 0 20px 0;
 }
 
-tr {
-  color: #5b5757;
-}
-
 .results {
   padding-top: 15px;
-}
-
-.touristCards {
-  padding-left: 5px;
-}
-
-.card {
-  width: 18rem;
-  display: flex;
-}
-
-.card-title {
-  font-size: 40px;
-  text-align: center;
-  font-family: "Lora", serif;
-}
-
-.card-text {
-  font-size: 15px;
-  text-align: left;
-  font-family: "Eczar", serif;
-  letter-spacing: 2px;
-}
-
-.visitButton {
-  font-family: "Lora", serif;
-  letter-spacing: 2px;
-  text-align: center;
-  width: 40%;
-  font-size: 20px;
-  font-weight: bold;
-  color: #ccc;
-  background-color: #431c5d;
-  border: medium solid #ccc;
-}
-
-.tableColor {
-  background-color: #c2dde6;
-  margin-bottom: 45px;
-}
-
-.footer {
-  list-style-type: none;
-  background-color: black;
-  color: white;
-  margin: 0;
-  text-align: center;
-  padding: 15px;
 }

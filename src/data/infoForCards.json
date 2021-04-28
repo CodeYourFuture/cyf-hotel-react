@@ -1,0 +1,26 @@
+[
+  {
+    "index": 1,
+    "cityName": "Glasgow",
+    "cityDescription": "Glasgow is a lively and friendly city brimming with personality, charm, and unforgettable experiences. You'll discover world-className tourist attractions, unique neighbourhoods, breathtaking architecture, an ever-changing food and drink scene, and legendary nightlife no matter when you come.",
+    "imageSource": "/images/glasgow-skyline.jpeg",
+    "imageAlt": "Glasgow",
+    "website": "https://peoplemakeglasgow.com/"
+  },
+  {
+    "index": 2,
+    "cityName": "Manchester",
+    "cityDescription": "One of the most exciting places to visit in the UK right now, with a welcoming atmosphere for all. It is youthful, diverse, enthusiastic, and full of character. Away from the hustle and bustle of the city centre, the surrounding areas provide quaint market towns, stunning green spaces and accessible waterways.",
+    "imageSource": "/images/manchester-city.jpg",
+    "imageAlt": "Manchester",
+    "website": "https://visitmanchester.com/"
+  },
+  {
+    "index": 3,
+    "cityName": "London",
+    "cityDescription": "From legendary sightseeing spots, film locations, and fun-filled days out to top restaurants, theatre, and must-see activities. Music or food festivals are very popular, museums entice you to keep updated and diverse natural spaces within reach. There's always something for everyone who wants to venture out!",
+    "imageSource": "/images/london-skyline.jpg",
+    "imageAlt": "London",
+    "website": "https://visitlondon.com/"
+  }
+]

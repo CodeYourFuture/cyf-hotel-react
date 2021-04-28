@@ -1,11 +1,24 @@
-import React from "react";
+/* I had help with task: L2 T15 */
+
+import React, { useState } from "react";
 import FakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
+import "./SearchResults.css";
 
-const SearchResults = props => {
+const SearchResults = () => {
+  const [selectedRow, setSelectedRow] = useState(-1);
+
+  function rowSelected(index) {
+    if (index !== selectedRow) {
+      setSelectedRow(index);
+    } else {
+      setSelectedRow(-1);
+    }
+  }
+
   return (
     <div className="table-responsive-lg table-responsive-xl">
-      <table className="table tableColor table-bordered table-hover table-striped">
+      <table className="table tableColor table-bordered">
         <thead>
           <tr>
             <th scope="col">#id</th>
@@ -21,7 +34,11 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {FakeBookings.map((booking, index) => (
-            <tr key={index}>
+            <tr
+              key={index}
+              className={`${selectedRow === index ? "selected" : ""}`}
+              onClick={() => rowSelected(index)}
+            >
               <td>{booking.id}</td>
               <td>{booking.title}</td>
               <td>{booking.firstName}</td>

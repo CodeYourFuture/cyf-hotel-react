@@ -1,4 +1,5 @@
 import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   const footerDetails = [
@@ -7,13 +8,13 @@ const Footer = () => {
     "0123 456789"
   ];
   return (
-    <div>
-      <ul className="footer">
+    <footer>
+      <ul>
         {footerDetails.map((detail, index) => (
           <li key={index}>{detail}</li>
         ))}
       </ul>
-    </div>
+    </footer>
   );
 };
 
