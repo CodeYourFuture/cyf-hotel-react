@@ -1,0 +1,14 @@
+.card {
+  font-size: 1px;
+  letter-spacing: -1px;
+  width: 80%; /*o lo necesario*/
+  margin: auto;
+}
+.card div {
+  display: inline-block;
+  word-spacing: normal;
+  font-size: 2rem; /*u otra unidad para IE8 y -*/
+  letter-spacing: normal;
+  white-space: normal;
+  width: 25%; /*El valor necesario*/
+}
