@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Order from "./Order";
 
 const Restaurant = () => {
-  const [orders, setOrders] = useState(0);
-
-  const orderOne = () => {
-    return setOrders(orders + 1);
-  };
   return (
     <div>
       <h3 className="text-center">Restaurant Orders</h3>
