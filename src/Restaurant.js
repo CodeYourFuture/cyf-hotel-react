@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Order from "./Order";
-import RestaurantButton from "./RestaurantButton";
 
 const Restaurant = () => {
   const [orders, setOrders] = useState(0);
@@ -12,8 +11,9 @@ const Restaurant = () => {
     <div>
       <h3 className="text-center">Restaurant Orders</h3>
       <ul>
-        <Order numberOfOrder={orders} />
-        <RestaurantButton order={orderOne} />
+        <Order orderType={"Pizzas"} />
+        <Order orderType={"Salads"} />
+        <Order orderType={"Chocolate cake"} />
       </ul>
     </div>
   );
