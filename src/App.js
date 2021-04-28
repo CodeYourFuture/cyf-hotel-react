@@ -2,8 +2,9 @@ import React from "react";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
-
+import Restaurant from "./Restaurant";
 import Bookings from "./Bookings";
+import Cards from "./Cards";
 import "./App.css";
 
 const App = () => {
@@ -12,11 +13,13 @@ const App = () => {
     "hello@fakehotel.com",
     "0123 456789"
   ];
+
   return (
     <div className="App">
       <Heading />
-      <TouristInfoCards />
+      <TouristInfoCards cardsInfo={Cards} />
       <Bookings />
+      <Restaurant />
       <Footer footerDetails={footerDetails} />
     </div>
   );

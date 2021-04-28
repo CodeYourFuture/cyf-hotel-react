@@ -9,7 +9,7 @@ const Bookings = () => {
   };
 
   return (
-    <div className="App-content">
+    <div className="app-content">
       <div className="container">
         <Search search={search} />
         <SearchResults results={FakeBookings} />

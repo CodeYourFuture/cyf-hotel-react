@@ -1,14 +1,15 @@
 import React from "react";
+import "./Footer.css";
 
 const Footer = props => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <ul>
         {props.footerDetails.map((details, index) => (
           <li key={index}>{details}</li>
         ))}
       </ul>
-    </div>
+    </footer>
   );
 };
 
