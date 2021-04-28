@@ -64,6 +64,10 @@ tr {
   text-align: center;
 }
 
+.selected {
+  background-color: green;
+}
+
 @media (min-width: 600px) {
   .cards {
     flex-direction: row;

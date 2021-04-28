@@ -1,9 +1,10 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
+import SearchResultRow from "./SearchResultRow";
 
 const SearchResults = ({ bookings }) => {
   return (
-    <table className="table table-striped">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">Title</th>
@@ -21,18 +22,7 @@ const SearchResults = ({ bookings }) => {
           const checkIn = moment(booking.checkInDate);
           const checkOut = moment(booking.checkOutDate);
           const nights = checkOut.diff(checkIn, "days");
-          return (
-            <tr>
-              <th>{booking.title}</th>
-              <td>{booking.firstName}</td>
-              <td>{booking.surname}</td>
-              <td>{booking.email}</td>
-              <td>{booking.roomId}</td>
-              <td>{booking.checkInDate}</td>
-              <td>{booking.checkOutDate}</td>
-              <td>{nights}</td>
-            </tr>
-          );
+          return <SearchResultRow booking={booking} nights={nights} />;
         })}
       </tbody>
     </table>
