@@ -1,7 +1,7 @@
 import moment from "moment";
 import React, { useState } from "react";
 
-const SearchResults = prob => {
+const SearchResults = props => {
   const [selectedRow, setSelectedRow] = useState("-1");
 
   const changeColor = index => {
@@ -24,23 +24,23 @@ const SearchResults = prob => {
         </tr>
       </thead>
       <tbody>
-        {prob.results.map((Bookings, index) => {
-          let checkInDate = moment(Bookings.checkInDate);
-          let checkOutDate = moment(Bookings.checkOutDate);
+        {props.results.map((booking, index) => {
+          let checkInDate = moment(booking.checkInDate);
+          let checkOutDate = moment(booking.checkOutDate);
           return (
             <tr
               key={index}
               className={selectedRow === index ? "table-active" : ""}
               onClick={() => changeColor(index)}
             >
-              <td>{Bookings.id}</td>
-              <td>{Bookings.title}bg-success</td>
-              <td>{Bookings.firstName}</td>
-              <td>{Bookings.surname}</td>
-              <td>{Bookings.email}</td>
-              <td>{Bookings.roomId}</td>
-              <td>{Bookings.checkInDate}</td>
-              <td>{Bookings.checkOutDate}</td>
+              <td>{booking.id}</td>
+              <td>{booking.title}bg-success</td>
+              <td>{booking.firstName}</td>
+              <td>{booking.surname}</td>
+              <td>{booking.email}</td>
+              <td>{booking.roomId}</td>
+              <td>{booking.checkInDate}</td>
+              <td>{booking.checkOutDate}</td>
               <td>{checkOutDate.diff(checkInDate, "days")}</td>
             </tr>
           );
