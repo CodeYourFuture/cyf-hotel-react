@@ -1,9 +1,9 @@
 import React from "react";
-import Order from "./Order";
+import Order from "../components/Order";
 
 const Restaurant = () => {
   return (
-    <div>
+    <div className="mx-3 mt-2">
       <h3>Restaurant Orders</h3>
       <ul>
         <Order orderType="Pizzas" />

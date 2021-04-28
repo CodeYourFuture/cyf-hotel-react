@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RestaurantButton from "./RestaurantButton";
+import RestaurantButton from "./buttons/RestaurantButton";
 
 const Order = ({ orderType }) => {
   const [orders, setOrders] = useState(0);
@@ -9,7 +9,7 @@ const Order = ({ orderType }) => {
   };
 
   return (
-    <li>
+    <li className="order-block">
       {orderType}: {orders}
       <RestaurantButton orderOne={orderOne} />
     </li>
