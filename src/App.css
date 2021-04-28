@@ -85,3 +85,9 @@ ul {
   align-items: center;
   list-style-type: none;
 }
+
+.selected {
+  background-color: rgba(76, 85, 82, 0.514) !important;
+  color: white;
+  font-weight: bold;
+}
