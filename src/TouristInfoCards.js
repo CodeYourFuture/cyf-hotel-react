@@ -10,8 +10,8 @@ function TouristInfoCards() {
           alt="Glasgow"
         />
         <div className="card-body">
-          <h5 class="card-title">Glasgow</h5>
-          <p class="card-text">
+          <h5 className="card-title">Glasgow</h5>
+          <p className="card-text">
             Glasgow is the largest city in Scotland and there are so many things
             to do in Glasgow! The city is home to fantastic art galleries,
             historical National Trust properties, leafy green spaces, amazing
@@ -35,8 +35,8 @@ function TouristInfoCards() {
           alt="Manchester"
         />
         <div className="card-body">
-          <h5 class="card-title">Manchester</h5>
-          <p class="card-text">
+          <h5 className="card-title">Manchester</h5>
+          <p className="card-text">
             Manchester is one of the most exciting places to visit in the UK
             right now where everybody and anybody is very warmly welcomed. Known
             throughout the world as the birthplace of the industrial revolution,
@@ -60,8 +60,8 @@ function TouristInfoCards() {
           alt="London"
         />
         <div className="card-body">
-          <h5 class="card-title">London</h5>
-          <p class="card-text">
+          <h5 className="card-title">London</h5>
+          <p className="card-text">
             London, the capital of England and the United Kingdom, is a
             21st-century city with history stretching back to Roman times. At
             its centre stand the imposing Houses of Parliament, the iconic ‘Big

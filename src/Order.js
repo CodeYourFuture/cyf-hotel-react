@@ -7,8 +7,11 @@ function Order({ orderType }) {
     setOrders(orders + 1);
   }
   return (
-    <li>
-      {orderType}: {orders} <RestaurantButton orderOne={orderOne} />
+    <li className="order-info">
+      <p className="order-type">
+        {orderType}: {orders}
+      </p>
+      <RestaurantButton orderOne={orderOne} />
     </li>
   );
 }

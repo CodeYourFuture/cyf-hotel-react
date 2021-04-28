@@ -81,7 +81,38 @@ tr {
 .search-result-table {
   overflow-x: auto;
 }
+.table-row {
+  cursor: pointer;
+}
+.row-highlight {
+  background-color: gray;
+  color: white;
+}
+.orders-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  padding: 0px;
+}
 
+.order-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+.order-info p {
+  margin-bottom: 0px;
+}
+.order-type {
+  margin-right: 20px;
+}
 .footer-wrapper {
   background-color: #5b5757;
   color: white;
@@ -93,7 +124,6 @@ tr {
 .footer-list {
   list-style: none;
 }
-
 @media screen and (min-width: 768px) {
   .cards-wrapper {
     margin-left: 1vw;
