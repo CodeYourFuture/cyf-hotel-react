@@ -1,4 +1,4 @@
-.touristCards {
+.tourist-cards {
   padding-left: 5px;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@
   letter-spacing: 2px;
 }
 
-.visitButton {
+.visit-button {
   font-family: "Lora", serif;
   letter-spacing: 2px;
   text-align: center;
@@ -40,10 +40,17 @@
   border: medium solid rgb(230, 227, 227);
 }
 
-.visitButton:hover {
+.visit-button:hover {
   color: #431c5d;
   background-color: #a95c68;
   border: medium solid #431c5d;
+}
+
+@media (min-width: 306px) and (max-width: 1000px) {
+  .tourist-cards:after {
+    content: "";
+    flex: auto;
+  }
 }
 
 @media (min-width: 506px) {
@@ -54,7 +61,7 @@
 }
 
 @media (min-width: 786px) {
-  .touristCards {
+  .tourist-cards {
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -65,9 +72,9 @@
   }
 }
 
-@media (min-width: 1092px) {
+@media (min-width: 992px) {
   .card {
-    width: 25.1%; /* 3 Columns */
+    min-width: 25.1%; /* 3 Columns */
     margin: 4px 1% !important;
   }
 }

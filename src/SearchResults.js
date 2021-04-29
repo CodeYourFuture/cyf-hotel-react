@@ -18,7 +18,7 @@ const SearchResults = () => {
 
   return (
     <div className="table-responsive-lg table-responsive-xl">
-      <table className="table tableColor table-bordered">
+      <table className="table table-color table-bordered">
         <thead>
           <tr>
             <th scope="col">#id</th>

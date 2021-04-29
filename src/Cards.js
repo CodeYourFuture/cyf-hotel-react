@@ -5,7 +5,7 @@ import "./Cards.css";
 const Cards = () => {
   return (
     <section>
-      <div className="card-deck touristCards">
+      <div className="card-deck tourist-cards">
         {infoForCards.map((info, index) => (
           <div key={index} className="card text-center">
             <div
@@ -21,7 +21,11 @@ const Cards = () => {
             <div className="card-body">
               <h5 className="card-title">{info.cityName}</h5>
               <p className="card-text">{info.cityDescription}</p>
-              <a href={info.website} className="btn visitButton" target="blank">
+              <a
+                href={info.website}
+                className="btn visit-button"
+                target="blank"
+              >
                 Visit
               </a>
             </div>
