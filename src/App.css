@@ -65,3 +65,11 @@ tr {
   list-style-type: none;
   font-size: 15px;
 }
+
+.highlighted {
+  background-color: rgb(245, 127, 127);
+}
+
+.noColor {
+  background-color: none;
+}

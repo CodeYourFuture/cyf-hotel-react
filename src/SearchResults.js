@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = function(props) {
+  let [color] = useState("noColor");
+
+  function highlighter(e) {
+    e.persist();
+
+    if (e.target.parentElement.className === "noColor") {
+      e.target.parentElement.className = "highlighted";
+    } else {
+      e.target.parentElement.className = "noColor";
+    }
+  }
+
   return (
     <table className="table">
       <thead className="thead-light">
@@ -20,7 +32,7 @@ const SearchResults = function(props) {
       <tbody>
         {props.results.map((customer, customerIndex) => {
           return (
-            <tr key={customerIndex}>
+            <tr key={customerIndex} className={color} onClick={highlighter}>
               <td>{customer.id}</td>
               <td>{customer.title}</td>
               <td>{customer.firstName}</td>
