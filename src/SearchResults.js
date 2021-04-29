@@ -1,10 +1,40 @@
 import React, { useState } from "react";
-import moment from "moment";
+import TableRow from "./TableRow";
 
 function SearchResults(props) {
-  const [highlight, setHighlight] = useState("transparent");
-  function highlightWhenClicked() {
-    setHighlight(highlight === "transparent" ? "highlighted" : "transparent");
+  return (
+    <div>
+      <table className="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Room Id</th>
+            <th scope="col">Check in Date</th>
+            <th scope="col">Check out Date</th>
+            <th scope="col">Number of Nights Stay</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.results.map((result, index) => (
+            <TableRow row={result} key={index} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+export default SearchResults;
+
+/*
+function SearchResults(props) {
+  const [highlight, setHighlight] = useState("no-highlight");
+
+  function highlightRow(index) {
+    setHighlight(index === highlight ? "" : index);
   }
 
   return (
@@ -26,11 +56,9 @@ function SearchResults(props) {
         <tbody>
           {props.results.map((result, index) => (
             <tr
-              key={index}
-              id={index}
-              onClick={highlightWhenClicked}
-              className={highlight}
-            >
+              className={highlight === index ? "highlighted" : "no-highlight"}
+              onClick={() => highlightRow(index)}
+              key={index}>
               <td>{result.id}</td>
               <td>{result.title}</td>
               <td>{result.firstName}</td>
@@ -52,5 +80,4 @@ function SearchResults(props) {
     </div>
   );
 }
-
-export default SearchResults;
+*/
