@@ -19,5 +19,3 @@ const Bookings = () => {
 };
 
 export default Bookings;
-
-//denemememememememe
