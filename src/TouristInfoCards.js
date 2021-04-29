@@ -1,6 +1,5 @@
 import React from "react";
 import cities from "./Cities";
-import Footer from "./Footer";
 
 const TouristInfoCards = () => {
   return (

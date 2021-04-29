@@ -1,5 +1,3 @@
-import React from "react";
-
 let address = [
   "123 Fake Street, London, E1 4UD",
   "hello@fakehotel.com",
