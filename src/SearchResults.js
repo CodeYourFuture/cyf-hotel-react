@@ -1,5 +1,5 @@
 import moment from "moment";
-import React, { useState } from "react";
+import React from "react";
 import SearchResultRow from "./SearchResultRow";
 
 const SearchResults = ({ bookings }) => {
