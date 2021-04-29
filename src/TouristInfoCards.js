@@ -52,7 +52,7 @@ function TouristInfoCards() {
           </div>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div className="col-sm-4">
         <div className="card">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Palace_of_Westminster_from_the_dome_on_Methodist_Central_Hall_%28cropped%29.jpg/1000px-Palace_of_Westminster_from_the_dome_on_Methodist_Central_Hall_%28cropped%29.jpg"

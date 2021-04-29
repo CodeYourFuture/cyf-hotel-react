@@ -1,9 +1,9 @@
 import React from "react";
-import moment from "moment";
+import RowTable from "./RowTable";
 function SearchResults(props) {
   return (
     <table className="table table-hover">
-      <thead class="thead-light">
+      <thead className="thead-light">
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Title</th>
@@ -16,21 +16,9 @@ function SearchResults(props) {
           <th scope="col">Number of Nights</th>
         </tr>
       </thead>
-      {props.results.map(book => (
-        <tbody>
-          <tr>
-            <th scope="row">{book.id}</th>
-            <td>{book.title}</td>
-            <td>{book.firstName}</td>
-            <td>{book.surname}</td>
-            <td>{book.email}</td>
-            <td>{book.roomId}</td>
-            <td>{book.checkInDate}</td>
-            <td>{book.checkOutDate}</td>
-            <td>
-              {moment(book.checkOutDate).diff(moment(book.checkInDate), "days")}
-            </td>
-          </tr>
+      {props.results.map((book, index) => (
+        <tbody key={"tbody" + index}>
+          <RowTable book={book} />
         </tbody>
       ))}
     </table>

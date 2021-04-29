@@ -3,8 +3,8 @@ function Footing(props) {
   return (
     <footer>
       <ul>
-        {props.address.map(adres => (
-          <li>{adres}</li>
+        {props.address.map((adres, index) => (
+          <li key={index}>{adres}</li>
         ))}
       </ul>
     </footer>

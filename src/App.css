@@ -48,8 +48,13 @@
   padding: 5px 0 20px 0;
 }
 
-tr {
+tr,
+.not-selected {
   color: #5b5757;
+}
+
+.selected {
+  background-color: aqua;
 }
 
 .results {
