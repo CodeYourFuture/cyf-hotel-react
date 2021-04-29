@@ -4,7 +4,45 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 50px;
+  margin: 1rem;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 18rem;
+}
+
+.card-body {
+  background-color: rgb(193, 217, 238);
+}
+
+.card-img-top {
+  height: 220px;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+}
+
+.Header {
+  display: flex;
+  background-color: #222;
 }
 
 .App-header {
@@ -16,6 +54,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  margin-top: 0.5em;
 }
 
 .App-title {
@@ -27,16 +66,98 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-bookings {
+  padding: 00.5em;
+  background-color: rgb(139, 157, 173);
+  color: rgb(1, 49, 90);
+  font-weight: 800;
 }
+
+.table {
+  border-style: solid;
+  width: 90vw;
+  margin-left: -7em;
+}
+
+.table-header {
+  border-style: groove;
+  background-color: rgb(1, 49, 90);
+  color: aliceblue;
+}
+
+.table-body {
+  display: table-row-group;
+  border-style: solid;
+  background-color: aliceblue;
+}
+
+.t-body {
+  border-right: groove;
+  color: rgb(3, 36, 65);
+  font-weight: 500;
+}
+
+.d-block {
+  color: rgb(3, 36, 65);
+}
+.d-none {
+  display: none;
+}
+
+.loading-span {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  background-color: aliceblue;
+}
+
+.restaurant-orders {
+  margin-bottom: 1em;
+  color: rgb(1, 49, 90);
+  font-weight: 800;
+}
+
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.orders {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.rBtn {
+  margin-right: 1em;
+  margin-top: -0.5em;
+}
+
+.footer {
+  background-color: #222;
+  color: white;
+  padding-bottom: 0.1rem;
+}
+
+.footer ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  list-style: none;
+}
+
 .search {
   padding: 5px 0 20px 0;
+  width: 100%;
+  margin-bottom: 2em;
+}
+.search-ids {
+  width: 8em;
+}
+.search-names {
+  width: 11em;
 }
 
 tr {
@@ -50,8 +171,4 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
-}
-
-.card {
-  width: 18rem;
 }
