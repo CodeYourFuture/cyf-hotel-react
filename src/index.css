@@ -34,8 +34,17 @@ body {
   background-color: rgb(120, 167, 204);
 }
 
+.highlight {
+  background-color: aqua;
+}
+
 li {
   font-weight: bold;
   padding-bottom: 5px;
   color: white;
+  padding-left: 80px;
+}
+
+h3 {
+  padding-left: 155px;
 }
