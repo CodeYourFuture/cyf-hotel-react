@@ -2,7 +2,7 @@ import React from "react";
 
 const TouristInfoCards = () => {
   return (
-    <div className="cards text-center">
+    <div className="cards text-center d-inline-flex">
       <div className="card">
         <img
           src="https://thenomadvisor.com/wp-content/uploads/2019/03/wheretostayinglasgow-780x584.jpg"
@@ -64,6 +64,7 @@ const TouristInfoCards = () => {
           src="https://content.thriveglobal.com/wp-content/uploads/2020/01/london_panorama.jpg"
           className="card-img-top"
           alt="London"
+          height="50%"
         />
         <div className="card-body">
           <h1>LONDON</h1>
@@ -80,6 +81,7 @@ const TouristInfoCards = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
+            style={{ marginTop: "50px" }}
           >
             More Information
           </a>
