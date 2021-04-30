@@ -1,5 +1,9 @@
+body {
+  background-color: rgb(172, 172, 211);
+}
+
 .App-header {
-  background-color: rgb(200, 200, 245);
+  background-color: rgb(228, 207, 218);
   height: 80px;
   padding: 20px;
   color: white;
@@ -19,9 +23,9 @@
 }
 
 #logo {
-  margin-top: -20px;
-  width: 90px;
-  height: 80px;
+  margin-top: -15px;
+  width: 85px;
+  height: 70px;
 }
 
 .card {
