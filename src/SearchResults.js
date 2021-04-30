@@ -37,22 +37,18 @@ const useSortableData = (items, config = null) => {
 };
 
 const SearchResults = props => {
-  const [isActive, setIsActive] = useState(null);
   const [index, setIndex] = useState("");
-  const { bookings } = props;
-  let sortedResults = [...bookings];
-  console.log(sortedResults);
-
+  const [selected, setSelected] = useState([]);
   const { items, requestSort } = useSortableData(props.bookings);
 
   const toggleActive = i => {
-    //Remove the if statement if you don't want to unselect an already selected item
-    if (i === isActive) {
-      setIsActive(isActive => (isActive = null));
+    if (!selected.includes(i)) {
+      setSelected(selected.concat(i));
     } else {
-      setIsActive(isActive => (isActive = i));
+      setSelected(selected.filter(element => element !== i));
     }
   };
+  console.log(selected);
   const getId = id => {
     setIndex(id);
   };
@@ -151,7 +147,9 @@ const SearchResults = props => {
             return (
               <tr
                 style={
-                  isActive === i ? { background: "yellow" } : { background: "" }
+                  selected.includes(i)
+                    ? { backgroundColor: "red" }
+                    : { backgroundColor: "#fff" }
                 }
                 key={id}
                 onClick={() => toggleActive(i)}
