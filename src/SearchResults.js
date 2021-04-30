@@ -1,6 +1,8 @@
 import React from "react";
+import FakeBookings from "./data/fakeBookings.json";
+import moment from "moment";
 
-const SearchResults = props => {
+const SearchResults = () => {
   return (
     <div>
       <table className="table">
@@ -14,28 +16,32 @@ const SearchResults = props => {
             <th scope="col">room id</th>
             <th scope="col">check in date</th>
             <th scope="col">check out date</th>
+            <th scope="col">nights</th>
           </tr>
         </thead>
         <tbody className="bodyClass">
-          {props.fakes.map((person, index) => {
+          {FakeBookings.map((props, index) => {
             return (
               <tr key={index}>
-                <td>{person.id}</td>
-                <td>{person.title}</td>
-                <td>{person.firstName}</td>
-                <td>{person.surname}</td>
-                <td>{person.email}</td>
-                <td>{person.roomId}</td>
-                <td>{person.checkInDate}</td>
-                <td>{person.checkOutDate}</td>
+                <td>{props.id}</td>
+                <td>{props.title}</td>
+                <td>{props.firstName}</td>
+                <td>{props.surname}</td>
+                <td>{props.email}</td>
+                <td>{props.roomId}</td>
+                <td>{props.checkInDate}</td>
+                <td>{props.checkOutDate}</td>
+                <td>
+                  {moment(props.checkOutDate).diff(
+                    moment(props.checkInDate),
+                    "days"
+                  )}
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-
-      {/* <table class="table">
-        <thead class="thead-light"> */}
     </div>
   );
 };

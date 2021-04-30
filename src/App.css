@@ -1,25 +1,3 @@
-.App {
-  text-align: left;
-}
-
-.card {
-  text-align: center;
-}
-#logo {
-  margin-top: -20px;
-  width: 90px;
-  height: 80px;
-}
-
-.card img {
-  margin-top: 5px;
-  width: 350px;
-  height: 250px;
-}
-.footer li {
-  list-style: none;
-}
-
 .App-header {
   background-color: rgb(200, 200, 245);
   height: 80px;
@@ -40,14 +18,24 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#logo {
+  margin-top: -20px;
+  width: 90px;
+  height: 80px;
 }
+
+.card {
+  text-align: center;
+}
+
+.card img {
+  height: 250px;
+}
+
+.footer li {
+  list-style: none;
+}
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -63,8 +51,4 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
-}
-
-.card {
-  width: 18rem;
 }
