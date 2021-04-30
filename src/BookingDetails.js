@@ -1,9 +1,8 @@
 import React from "react";
 import moment from "moment";
 
-function BookingDetails(props) {
-  let {
-    id,
+function BookingDetails({ info }) {
+  const {
     title,
     firstName,
     surname,
@@ -11,22 +10,20 @@ function BookingDetails(props) {
     roomId,
     checkInDate,
     checkOutDate
-  } = props.props;
+  } = info;
   let startDate = moment([checkInDate], "YYYY-MM-DD");
   let endDate = moment([checkOutDate], "YYYY-MM-DD");
   var stayDuration = endDate.diff(startDate, "days");
   return (
     <>
-      <tr key={id}>
-        <td>{title}</td>
-        <td>{firstName}</td>
-        <td>{surname}</td>
-        <td>{email}</td>
-        <td>{roomId}</td>
-        <td>{checkInDate}</td>
-        <td>{checkOutDate}</td>
-        <td>{stayDuration}</td>
-      </tr>
+      <td>{title}</td>
+      <td>{firstName}</td>
+      <td>{surname}</td>
+      <td>{email}</td>
+      <td>{roomId}</td>
+      <td>{checkInDate}</td>
+      <td>{checkOutDate}</td>
+      <td>{stayDuration}</td>
     </>
   );
 }

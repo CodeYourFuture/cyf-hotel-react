@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import BookingDetails from "./BookingDetails.js";
+import Highlight from "./Highlight.js";
 
-const SearchResults = props => {
-  let results = props.results;
+const SearchResults = ({ results }) => {
+  const [row, setRow] = useState({
+    activeRow: null,
+    results
+  });
+
+  function HandleClick(e, index) {
+    let selectedRowClassList = e.target.parentElement.classList.value;
+    if (selectedRowClassList.includes("highlight-row")) {
+      setRow({ ...row, activeRow: null });
+    } else {
+      setRow({ ...row, activeRow: row.results[index] });
+    }
+  }
 
   return (
     <>
@@ -21,8 +34,16 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {results.map(info => (
-            <BookingDetails props={info} />
+          {row.results.map((info, index) => (
+            <tr
+              key={index}
+              className={Highlight(index, row)}
+              onClick={event => {
+                HandleClick(event, index);
+              }}
+            >
+              <BookingDetails info={info} />
+            </tr>
           ))}
         </tbody>
       </table>

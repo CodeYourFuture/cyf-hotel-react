@@ -65,3 +65,7 @@ tr {
   list-style: none;
   padding-right: 1rem;
 }
+
+.highlight-row {
+  background-color: darkkhaki;
+}

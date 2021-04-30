@@ -2,8 +2,6 @@ import React from "react";
 
 function Footer(props) {
   let footerProps = props.props;
-  console.log(props);
-  console.log(footerProps);
   return (
     <>
       <ul className="row justify-content-center">
