@@ -7,11 +7,9 @@ const Order = props => {
     setOrders(orders + 1);
   };
   return (
-    <div>
-      <li className="my-2">
-        {props.orderType}: {orders} <RestaurantButton orderOne={orderOne} />
-      </li>
-    </div>
+    <li className="list-group-item d-flex justify-content-between align-items-center my-1 mx-4 px-4">
+      {props.orderType}: {orders} <RestaurantButton orderOne={orderOne} />
+    </li>
   );
 };
 

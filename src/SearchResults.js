@@ -1,7 +1,15 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
 const SearchResults = props => {
+  const [color] = useState("");
+  function highlightRow(e) {
+    if (e.target.parentElement.className === "") {
+      e.target.parentElement.className = "gray";
+    } else {
+      e.target.parentElement.className = "";
+    }
+  }
   return (
     <div className="overflow-auto">
       <table className="table">
@@ -20,7 +28,7 @@ const SearchResults = props => {
         </thead>
         <tbody className="text-center">
           {props.results.map((person, index) => (
-            <tr key={index}>
+            <tr key={index} onClick={highlightRow} className={color}>
               <td>{person.id}</td>
               <td>{person.title}</td>
               <td>{person.firstName}</td>
