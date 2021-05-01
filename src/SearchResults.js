@@ -1,8 +1,7 @@
 import React from "react";
-import FakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
 
-const SearchResults = () => {
+const SearchResults = ({ bookings }) => {
   return (
     <div>
       <table className="table">
@@ -20,7 +19,7 @@ const SearchResults = () => {
           </tr>
         </thead>
         <tbody className="bodyClass">
-          {FakeBookings.map((props, index) => {
+          {bookings.map((props, index) => {
             return (
               <tr key={index}>
                 <td>{props.id}</td>
