@@ -1,11 +1,16 @@
 import moment from "moment";
-import React from "react";
-import FakeBookings from "./data/fakeBookings.json";
+import React, { useState } from "react";
 
 const SearchResults = props => {
+  let [highlightRow, setHighlightRow] = useState(false);
+
+  const highlightSelection = () => {
+    setHighlightRow(highlightRow => !highlightRow);
+  };
+
   return (
-    <table class="table table-striped">
-      <thead class="thead-dark">
+    <table className="table table-striped">
+      <thead className="thead-dark">
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Title</th>
@@ -19,8 +24,13 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {FakeBookings.map((booking, index) => (
-          <tr key={index}>
+        {props.results.map((booking, index) => (
+          <tr
+            key={index}
+            id={index}
+            onClick={highlightSelection}
+            className={highlightRow ? "highlight-row" : ""}
+          >
             <th scope="col">{booking.id}</th>
             <th scope="col">{booking.title}</th>
             <th scope="col">{booking.firstName}</th>

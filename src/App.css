@@ -59,3 +59,7 @@ tr {
 .restaurantButton {
   margin: 10px;
 }
+
+.highlight-row {
+  background-color: yellow;
+}
