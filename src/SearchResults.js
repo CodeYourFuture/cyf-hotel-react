@@ -46,7 +46,7 @@ function SearchResults(props) {
             <tr
               onClick={() => changeColor(id)}
               key={id}
-              className={selectedrow === id && "highlight"}
+              className={selectedrow === id ? "highlight" : ""}
             >
               <th scope="row">{id}</th>
               <td>{title}</td>
