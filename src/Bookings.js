@@ -8,15 +8,12 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
   const [bookings, setBookings] = useState(bookingData);
-  //   function updateBookings() {
-  //   setBookings;
-  // }
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
       </div>
-      <SearchResults />
+      <SearchResults data={bookings} />
     </div>
   );
 };
