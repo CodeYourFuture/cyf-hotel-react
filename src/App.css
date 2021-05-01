@@ -63,6 +63,6 @@ tr {
 .add-btn {
   margin: 10px;
 }
-.highlight {
+tr.highlight {
   background-color: blue;
 }

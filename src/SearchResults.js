@@ -1,23 +1,22 @@
 /* eslint-disable indent*/
-
 import React, { useState } from "react";
-// import TableBody from "./TableBody";
-import bookingData from "./data/fakeBookings.json";
 
+import bookingData from "./data/fakeBookings.json";
 function LengthOfStay(endDate, startDate) {
   const diff = new Date(endDate) - new Date(startDate);
   return Math.floor(diff / 86400000);
 }
-
 function SearchResults(props) {
-  const [defaultcolor, setColor] = useState("");
-  function updateColor(e) {
-    e.currentTarget.style.background === "skyblue"
-      ? (e.currentTarget.style.background = null)
-      : (e.currentTarget.style.background = "skyblue");
+  const [selectedrow, setSelectedrow] = useState(0);
+  // trying out toggling
+  // const [isHighlighted, setHighlight] = useState(false);
+
+  function changeColor(id) {
+    setSelectedrow(id);
   }
+
   return (
-    <table className="table table-hover table-striped table-bordered ">
+    <table className="table   table-bordered ">
       <thead>
         <tr>
           <th scope="col">id</th>
@@ -32,7 +31,6 @@ function SearchResults(props) {
         </tr>
       </thead>
 
-      {/* <TableBody data={bookingData} /> */}
       <tbody>
         {props.data.map(
           ({
@@ -45,7 +43,11 @@ function SearchResults(props) {
             checkInDate,
             checkOutDate
           }) => (
-            <tr onClick={updateColor} key={id}>
+            <tr
+              onClick={() => changeColor(id)}
+              key={id}
+              className={selectedrow === id && "highlight"}
+            >
               <th scope="row">{id}</th>
               <td>{title}</td>
               <td>{firstName}</td>
@@ -62,5 +64,4 @@ function SearchResults(props) {
     </table>
   );
 }
-
 export default SearchResults;
