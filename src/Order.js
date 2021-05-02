@@ -5,7 +5,7 @@ const Order = ({ orderType }) => {
   const [orders, setOrders] = useState(0);
 
   const orderOne = () => {
-    setOrders(orders + 1);
+    setOrders(orders => orders + 1);
   };
 
   return (

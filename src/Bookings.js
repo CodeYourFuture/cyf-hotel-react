@@ -21,13 +21,6 @@ const Bookings = () => {
       console.log("No search value");
       setSearchedBookings(bookings);
     }
-    // This is to work with the static bookings file
-    // const newBookings = bookings.filter(
-    //   el =>
-    //     el.firstName.toLowerCase().includes(searchVal) ||
-    //     el.surname.toLowerCase().includes(searchVal)
-    // );
-    // setBookings(newBookings);
   };
 
   useEffect(() => {
@@ -47,21 +40,6 @@ const Bookings = () => {
       })
       .catch(e => console.log(e));
   }, [searchedBookings.length]);
-
-  useEffect(() => {
-    fetch("https://cyf-react.glitch.me/")
-      .then(response => response.json())
-      .then(data => {
-        if (data.error) {
-          setIsError(true);
-          setIsLoading(false);
-        } else {
-          setBookings(data);
-          setIsLoading(false);
-        }
-      })
-      .catch(e => console.log(e));
-  }, []);
 
   return (
     <div className="App-content">

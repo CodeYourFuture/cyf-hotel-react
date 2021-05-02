@@ -43,39 +43,6 @@ const BookingForm = ({ bookings, setBookings }) => {
           checkOutDate: ""
         });
       });
-
-    // This is code to use the static bookings file, the app now works with a glitch backend
-    // if (
-    //   e.target.title.value &&
-    //   e.target.firstName.value &&
-    //   e.target.surname.value &&
-    //   e.target.email.value &&
-    //   e.target.roomId.value &&
-    //   e.target.checkInDate.value &&
-    //   e.target.checkOutDate.value
-    // ) {
-    //   const maxId = bookings.length + 1;
-    //   const newBooking = {
-    //     id: maxId,
-    //     title: e.target.title.value,
-    //     firstName: e.target.firstName.value,
-    //     surname: e.target.surname.value,
-    //     email: e.target.email.value,
-    //     roomId: e.target.roomId.value,
-    //     checkInDate: e.target.checkInDate.value,
-    //     checkOutDate: e.target.checkOutDate.value
-    //   };
-    //   setBookings(bookings.concat(newBooking));
-    //   e.target.title.value = "";
-    //   e.target.firstName.value = "";
-    //   e.target.surname.value = "";
-    //   e.target.email.value = "";
-    //   e.target.roomId.value = "";
-    //   e.target.checkInDate.value = "";
-    //   e.target.checkOutDate.value = "";
-    // } else {
-    //   alert("all fields are mandatory");
-    // }
   };
   return (
     <form className="form" onSubmit={handleSubmit}>
