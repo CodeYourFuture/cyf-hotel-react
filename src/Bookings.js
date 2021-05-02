@@ -7,6 +7,15 @@ const Bookings = () => {
   const [bookings, setBookings] = useState("");
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    let filteredBookings = bookings.filter(booking => {
+      return (
+        booking.firstName.toUpperCase().includes(searchVal.toUpperCase()) ||
+        booking.surname.toUpperCase().includes(searchVal.toUpperCase())
+      );
+    });
+    console.log(filteredBookings);
+    setBookings(filteredBookings);
+    console.log(bookings);
   };
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
