@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  // const [bookings, setBookings] = useState(FakeBookings);
+  const [bookings, setBookings] = useState("");
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
-
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
+      .then(resp => resp.json())
+      .then(data => {
+        console.log(data);
+        setBookings(data);
+      });
+  }, []);
   return (
     <div className="App-content">
       <div className="container">
@@ -28,9 +35,11 @@ const Bookings = () => {
               </tr>
             </thead>
             <tbody>
-              {FakeBookings.map((booking, index) => {
-                return <SearchResults results={booking} key={index} />;
-              })}
+              {bookings
+                ? bookings.map((booking, index) => {
+                    return <SearchResults results={booking} key={index} />;
+                  })
+                : null}
             </tbody>
           </table>
         </div>
