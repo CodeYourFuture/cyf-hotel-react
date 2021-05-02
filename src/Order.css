@@ -1,0 +1,39 @@
+.order-container {
+  padding: 2.5rem 0 1.8rem 1rem;
+  padding-top: 2.5rem;
+}
+
+.order-container h4 {
+  border-top: 1.5px solid #dee2e6;
+  border-bottom: 1.5px solid #dee2e6;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 16%;
+}
+
+.items-container {
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  display: flex;
+  align-items: center;
+}
+
+#orders {
+  margin-top: 1.5rem;
+}
+#item {
+  font-size: 1.5;
+  font-weight: 400;
+  text-align: right;
+  align-self: center;
+  width: 10%;
+  sbackgrou10d-color: red;
+  margin-left: 0px;
+}
+
+.btn-id {
+  width: 80px;
+  height: 30px;
+  margin: 0.2rem 1rem;
+}

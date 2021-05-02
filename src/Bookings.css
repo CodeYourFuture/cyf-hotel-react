@@ -1,0 +1,22 @@
+#customer-info-container {
+  display: flex;
+}
+
+#loading {
+  font-size: 5rem;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #0069d9;
+  color: white;
+  border-radius: 15px;
+}
+
+#fetch-error-message {
+  font-size: 5rem;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #db2800;
+  border-radius: 15px;
+}
