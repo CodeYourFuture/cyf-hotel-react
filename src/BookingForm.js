@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const BookingForm = props => {
+  console.log(props);
   const [addBooking, setAddBooking] = useState({
     title: "",
     firstName: "",
@@ -12,8 +13,7 @@ const BookingForm = props => {
   });
 
   const handleSearchInput = event => {
-    const newBooking = { ...addBooking };
-    newBooking[event.target.id] = event.target.value;
+    const newBooking = { ...addBooking, [event.target.id]: event.target.value };
     setAddBooking(newBooking);
   };
   const handleSubmit = event => {

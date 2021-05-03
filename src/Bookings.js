@@ -23,9 +23,7 @@ const Bookings = () => {
   let addBooking = newBooking => {
     console.log("hello world", newBooking);
     newBooking["id"] = bookings.length + 1;
-    bookings.push(newBooking);
-    setBookings(bookings);
-    console.log(bookings);
+    setBookings(bookings.concat(newBooking));
   };
   useEffect(() => {
     let url = "https://cyf-react.glitch.me/";
