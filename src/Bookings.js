@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults";
 import CustomerProfile from "./CustomerProfile";
+import Spinner from "react-bootstrap/Spinner";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState("");
+  const [buttonId, setButtonId] = useState(null);
+  const [loading, setLoading] = useState(true);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     let filteredBookings = bookings.filter(booking => {
@@ -17,56 +20,61 @@ const Bookings = () => {
     setBookings(filteredBookings);
   };
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/error")
       .then(resp => resp.json())
       .then(data => {
         setBookings(data);
-      });
+        setLoading(false);
+      })
+      .catch(error);
   }, []);
-  const [buttonId, setButtonId] = useState(null);
   function changeButtonId(e) {
     setButtonId(e.target.id);
   }
 
-  return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <div className="searchresults-profile-wrapper">
-          <div className="search-result-table">
-            <table className="table  ">
-              <thead>
-                <tr>
-                  <th scope="col">id</th>
-                  <th scope="col">First Name</th>
-                  <th scope="col">Last Name</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Room Id</th>
-                  <th scope="col">Check In Date</th>
-                  <th scope="col">Check Out date</th>
-                  <th scope="col">Number of Nights</th>
-                </tr>
-              </thead>
-              <tbody>
-                {bookings
-                  ? bookings.map((booking, index) => {
-                      return (
-                        <SearchResults
-                          changeButtonId={changeButtonId}
-                          results={booking}
-                          key={index}
-                        />
-                      );
-                    })
-                  : null}
-              </tbody>
-            </table>
+  if (loading) {
+    return <Spinner animation="border" className="spinner" />;
+  } else {
+    return (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+          <div className="searchresults-profile-wrapper">
+            <div className="search-result-table">
+              <table className="table  ">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Room Id</th>
+                    <th scope="col">Check In Date</th>
+                    <th scope="col">Check Out date</th>
+                    <th scope="col">Number of Nights</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {bookings
+                    ? bookings.map((booking, index) => {
+                        return (
+                          <SearchResults
+                            changeButtonId={changeButtonId}
+                            results={booking}
+                            key={index}
+                          />
+                        );
+                      })
+                    : null}
+                </tbody>
+              </table>
+            </div>
+            <CustomerProfile buttonId={buttonId} />
           </div>
-          <CustomerProfile buttonId={buttonId} />
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Bookings;

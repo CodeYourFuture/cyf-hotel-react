@@ -1,6 +1,8 @@
-/* .App {
-  text-align: left;
-} */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .App-logo {
   /* animation: App-logo-spin infinite 20s linear; */
@@ -17,6 +19,7 @@
   height: 80px;
   padding: 20px;
   color: white;
+  width: 100%;
   /* text-align: left; */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
@@ -46,6 +49,10 @@ tr {
 .more-information-button {
   position: absolute;
   bottom: 0px;
+}
+
+.spinner {
+  margin-bottom: 50px;
 }
 
 .results {
