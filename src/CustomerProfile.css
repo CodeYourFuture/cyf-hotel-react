@@ -1,0 +1,41 @@
+.customer-profile {
+  position: absolute;
+  background-color: #ffffff;
+  -webkit-box-shadow: 7px 5px 5px 0px rgba(207, 207, 207, 1);
+  -moz-box-shadow: 7px 5px 5px 0px rgba(207, 207, 207, 1);
+  box-shadow: 7px 5px 5px 0px rgba(207, 207, 207, 1);
+  border: solid #ebebeb 1px;
+  min-height: 200px;
+  margin: auto;
+  width: 50%;
+  top: 20%;
+  left: 20%;
+  border-radius: 5px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.customer-profile > div:first-child {
+  align-self: flex-end;
+  background-color: rgb(255, 255, 255);
+}
+
+.customer-profile > div:first-child > p {
+  text-align: center;
+  margin: 10px;
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  cursor: pointer;
+}
+
+.customer-profile > div:last-child {
+  padding: 10px;
+}
+
+.vip-image {
+  height: auto;
+  width: 200px;
+}

@@ -1,0 +1,23 @@
+footer {
+  background-color: whitesmoke;
+  min-height: 200px;
+  padding: 50px;
+  margin-top: 40px;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer ul li {
+  line-height: 40px;
+}
+
+footer p {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 0.85em;
+  display: block;
+  width: 100%;
+  border: 1px dashed rgb(223, 223, 223);
+}
