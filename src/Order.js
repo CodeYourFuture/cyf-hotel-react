@@ -7,8 +7,12 @@ const Order = props => {
     setOrders(orders + 1);
   };
   return (
-    <li>
-      {props.orderType}: {orders} <RestaurantButton orderOne={orderOne} />
+    <li className="p-2">
+      <span className="mr-2">
+        {" "}
+        {props.orderType}: {orders}{" "}
+      </span>
+      <RestaurantButton orderOne={orderOne} />
     </li>
   );
 };

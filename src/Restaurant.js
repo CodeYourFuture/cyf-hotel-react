@@ -3,9 +3,9 @@ import Order from "./Order.js";
 
 const Restaurant = () => {
   return (
-    <div>
+    <div className="container text-center">
       <h3>Restaurant Orders</h3>
-      <ul>
+      <ul className="list-unstyled">
         <Order orderType="Pizzas" />
         <Order orderType="Salads" />
         <Order orderType="Chocolate cake" />
