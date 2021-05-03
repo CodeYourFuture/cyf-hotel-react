@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "type": "Pizza",
+    "order": 0,
+    "setOrder": "setorderP"
+  },
+  {
+    "id": 1,
+    "type": "Salad",
+    "order": 0,
+    "setOrder": "setorderS"
+  },
+  {
+    "id": 1,
+    "type": "Chocolate Cake",
+    "order": 0,
+    "setOrder": "setorderC"
+  }
+]
