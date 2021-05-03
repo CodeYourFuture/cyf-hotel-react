@@ -1,4 +1,4 @@
-import React, { StyleSheet } from "react";
+import React from "react";
 import "./TouristInfoCards.css";
 
 function TouristInfoCards() {
