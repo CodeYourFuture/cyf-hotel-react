@@ -1,4 +1,5 @@
-import React from "react";
+import React, { StyleSheet } from "react";
+import "./TouristInfoCards.css";
 
 function TouristInfoCards() {
   const cities = [
@@ -29,7 +30,7 @@ function TouristInfoCards() {
   ];
 
   return (
-    <div>
+    <div className="Container">
       {cities.map(city => (
         <div className="card">
           <img src={city.image} alt={city.name} className="card-img-top" />
