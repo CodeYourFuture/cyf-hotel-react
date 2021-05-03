@@ -4,6 +4,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [submit, setSubmit] = useState("");
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
@@ -12,11 +13,9 @@ const Bookings = () => {
       .catch(err => console.error(err));
   }, []);
   return (
-    <div className="content">
-      <div className="container">
-        <Search />
-        <SearchResults results={bookings} />
-      </div>
+    <div>
+      <Search setSubmit={setSubmit} />
+      <SearchResults bookings={bookings} submit={submit} />
     </div>
   );
 };
