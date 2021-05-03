@@ -58,3 +58,7 @@ tr {
 .card {
   width: 18rem;
 }
+
+.highlight {
+  background-color: yellowgreen;
+}
