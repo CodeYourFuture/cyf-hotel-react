@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(51, 144, 231);
   height: 50px;
   padding: 20px;
   color: white;
@@ -45,4 +45,8 @@ tr {
 
 .highlighted {
   background-color: aqua;
+}
+
+img {
+  height: 350px;
 }
