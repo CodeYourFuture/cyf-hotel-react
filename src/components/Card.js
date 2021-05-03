@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = props => {
   return (
-    <div className="card col-10 lg-col-4">
+    <div className="card col-4 lg-col-4">
       <img
         className="card-img col-12 lg-col-12"
         src={props.city.imgSource}

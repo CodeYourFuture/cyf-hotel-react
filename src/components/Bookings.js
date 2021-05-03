@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import BookingForm from "./BookingForm";
-import "./App.css";
+import "../App.css";
 
 const Bookings = () => {
   const [bookingData, setBookingData] = useState([]);

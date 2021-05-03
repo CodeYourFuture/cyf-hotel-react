@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 import Row from "./Row";
-import "./App.css";
+import "../App.css";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {

@@ -1,9 +1,9 @@
 import React from "react";
-import Bookings from "./Bookings";
-import Restaurant from "./Restaurant";
-import Footer from "./Footer";
-import TouristInfoCards from "./TouristInfoCards";
-import Heading from "./Heading";
+import Bookings from "../src/components/Bookings";
+import Restaurant from "../src/components/Restaurant";
+import Footer from "../src/components/Footer";
+import TouristInfoCards from "../src/components/TouristInfoCards";
+import Heading from "../src/components/Heading";
 import "./App.css";
 import "./Grid.css";
 

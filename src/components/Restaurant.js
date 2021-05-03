@@ -1,6 +1,6 @@
 import React from "react";
 import Order from "./Order";
-import "./App.css";
+import "../App.css";
 
 const Restaurant = () => {
   return (
