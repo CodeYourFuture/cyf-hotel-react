@@ -4,37 +4,43 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 40px;
+  margin-right: 2em;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
 }
 
 .App-title {
   font-size: 1.5em;
+  align-self: center;
+  margin: 0;
 }
 
 .App-content {
-  padding-top: 20px;
   font-size: large;
+  padding: 3rem 0;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -48,10 +54,16 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
-  text-align: center;
+  padding: 3rem 0;
+  background-color: #222;
+  margin-top: 6rem;
 }
 
 .card {
   width: 18rem;
+}
+
+.footer-list {
+  margin: 0;
+  list-style: none;
 }
