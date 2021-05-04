@@ -9,13 +9,18 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  height: 80px;
   color: white;
-  text-align: left;
+
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.hotel-logo {
+  height: 80px;
 }
 
 .App-title {
@@ -54,4 +59,26 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+img {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  height: auto;
+}
+/* .cards {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px 10px;
+} */
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.sth {
+  background: red;
 }
