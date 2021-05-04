@@ -52,10 +52,7 @@ const Bookings = () => {
         )}
         {isError && <div>There was an error</div>}
       </div>
-      <BookingForm
-        bookings={searchedBookings}
-        setBookings={setSearchedBookings}
-      />
+      <BookingForm bookings={bookings} setBookings={setBookings} />
     </div>
   );
 };
