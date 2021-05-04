@@ -1,14 +1,29 @@
+import Order from "./Order";
 import React from "react";
 
 const Restaurant = () => {
-  const pizzas = 0;
   return (
     <div>
-      <h3>Restaurant Orders</h3>
-      <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+      <h4>Restaurant Orders</h4>
+      <ul style={{ listStyleType: "none" }}>
+        <table>
+          <tr>
+            <td style={{ border: "2px solid #778899" }}>
+              {" "}
+              <Order orderType="Pizzas" />
+            </td>
+          </tr>
+          <tr>
+            <td style={{ border: "2px solid #778899" }}>
+              <Order orderType="Salads" />
+            </td>
+          </tr>
+          <tr>
+            <td style={{ border: "2px solid #778899" }}>
+              <Order orderType="Chocolate cake" />
+            </td>
+          </tr>
+        </table>
       </ul>
     </div>
   );
