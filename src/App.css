@@ -6,7 +6,9 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-
+img {
+  max-height: 200px;
+}
 .App-header {
   background-color: #222;
   height: 50px;
@@ -53,5 +55,13 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 25rem;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.unhighlight {
+  background-color: white;
 }
