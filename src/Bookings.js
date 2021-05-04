@@ -4,7 +4,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const allBookings = useRef([]);
+  const allBookings = useRef([]); // to use when searching name or surname
 
   const search = searchVal => {
     const filteredBookings = allBookings.current.filter(booking => {

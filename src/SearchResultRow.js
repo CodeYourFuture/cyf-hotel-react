@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+// import CustomerProfile from "./CustomerProfile";
 
-const SearchResultRow = ({ booking, nights }) => {
+const SearchResultRow = ({ booking, nights, buttonClickHandler }) => {
   const [isSelected, setSelected] = useState(false);
 
-  const handleClick = () => {
+  const handleRowClick = () => {
     setSelected(!isSelected);
   };
 
   return (
-    <tr onClick={handleClick} className={isSelected ? "selected" : null}>
+    <tr onClick={handleRowClick} className={isSelected ? "selected" : null}>
       <th>{booking.title}</th>
       <td>{booking.firstName}</td>
       <td>{booking.surname}</td>
@@ -17,6 +18,14 @@ const SearchResultRow = ({ booking, nights }) => {
       <td>{booking.checkInDate}</td>
       <td>{booking.checkOutDate}</td>
       <td>{nights}</td>
+      <td>
+        <button
+          className="button button-secondary"
+          onClick={() => buttonClickHandler(booking.id)}
+        >
+          Show profile
+        </button>
+      </td>
     </tr>
   );
 };
