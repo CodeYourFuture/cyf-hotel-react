@@ -1,0 +1,8 @@
+.loading {
+  border: 6px solid cyan;
+  font-size: 2rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+}

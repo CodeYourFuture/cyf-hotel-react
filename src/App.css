@@ -26,6 +26,9 @@
   padding-top: 20px;
   font-size: large;
 }
+.footer-list {
+  list-style-type: none;
+}
 
 @keyframes App-logo-spin {
   from {
