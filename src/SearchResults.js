@@ -11,7 +11,7 @@ function SearchResults({ results, changeButtonId }) {
   return (
     <>
       <tr
-        key={results.id}
+        // key={results.id}
         className={isClicked ? "row-highlight table-row" : "table-row"}
         onClick={highlighter}
         id={results.id}

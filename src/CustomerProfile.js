@@ -14,12 +14,13 @@ function CustomerProfile({ buttonId }) {
   if (profileData) {
     return (
       <div>
-        <ul>
-          <li>Customer Id:{profileData.id} </li>
-          <li>Email:{profileData.email} </li>
-          <li>Phone Number:{profileData.phoneNumber} </li>
-          <li>VIP:{profileData.vip} </li>
-        </ul>
+        <h3>Customer Profile</h3>
+        <div className="profile-wrapper">
+          <p>Customer Id:{profileData.id} </p>
+          <p>Email:{profileData.email} </p>
+          <p>Phone Number:{profileData.phoneNumber} </p>
+          <p>Customer is {profileData.vip ? "VIP" : "not VIP"} </p>
+        </div>
         {/* <p>hello from profile{buttonId}</p>
              <p>Customer ID : {profileData.id}</p> */}
       </div>

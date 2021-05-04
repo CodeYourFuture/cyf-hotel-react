@@ -101,6 +101,24 @@ tr {
   background-color: gray;
   color: white;
 }
+
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.customer-booking-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+.form-element {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
 .orders-wrapper {
   display: flex;
   flex-direction: column;
@@ -132,6 +150,7 @@ tr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 100%;
 }
 
 .footer-list {
