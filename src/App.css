@@ -4,17 +4,17 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 40px;
 }
 
 .App-header {
-  background-color: #222;
+  /* background-color: #222; */
   height: 50px;
   padding: 20px;
-  color: white;
+  color: orangered;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.4em;
   font-weight: bold;
 }
 
@@ -25,6 +25,28 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+
+.background-white {
+  background-color: whitesmoke;
+}
+
+.background-blue {
+  background-color: rgb(8, 8, 83);
+  color: aliceblue;
+}
+
+.buttonload {
+  background-color: #2f4f4f;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+  width: 100%;
+}
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
 }
 
 @keyframes App-logo-spin {
@@ -50,8 +72,17 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style-type: none;
+  background-color: skyblue;
 }
 
 .card {
   width: 18rem;
+}
+
+@media screen and (max-width: 680px) {
+  .card {
+    width: 100%;
+    height: auto;
+  }
 }
