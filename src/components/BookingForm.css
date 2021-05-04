@@ -1,0 +1,12 @@
+.New-Booking {
+  margin: 30px;
+  background-color: rgb(215, 225, 226);
+  padding: 20px;
+  text-align: center;
+}
+.booking-form {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
