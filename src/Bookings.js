@@ -1,16 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
+  const [bookings, setBookings] = useState([]);
+  const allBookings = useRef([]);
+
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    const filteredBookings = allBookings.current.filter(booking => {
+      const name = booking.firstName.toLowerCase();
+      const lastName = booking.surname.toLowerCase();
+      searchVal.toLowerCase();
+      return name === searchVal || lastName === searchVal;
+    });
+    setBookings(filteredBookings);
   };
 
-  const [bookings, setBookings] = useState([]);
   useEffect(() => {
     fetch("https://cyf-react.glitch.me").then(response =>
-      response.json().then(data => setBookings(data))
+      response.json().then(data => {
+        setBookings(data);
+        allBookings.current = data;
+      })
     );
   }, []);
 
