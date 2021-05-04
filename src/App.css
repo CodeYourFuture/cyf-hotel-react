@@ -1,20 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(225, 233, 255);
+}
+
 .App {
   text-align: left;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 60px;
+  float: right;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
 }
 
@@ -24,7 +34,6 @@
 
 .App-content {
   padding-top: 20px;
-  font-size: large;
 }
 
 @keyframes App-logo-spin {
@@ -35,12 +44,9 @@
     transform: rotate(360deg);
   }
 }
-.search {
-  padding: 5px 0 20px 0;
-}
 
-tr {
-  color: #5b5757;
+.search {
+  padding: 5px 0 5px 0;
 }
 
 .results {
@@ -48,10 +54,42 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  background-color: rgb(20, 20, 20);
+  color: rgb(153, 153, 153);
+  padding: 20px;
   text-align: center;
+}
+.footer li {
+  list-style: none;
 }
 
 .card {
   width: 18rem;
+  margin: 20px;
+}
+.card h1 {
+  text-align: center;
+  font-weight: 600;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  table,
+  th,
+  td {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  table,
+  th,
+  td {
+    font-size: 7px;
+  }
 }

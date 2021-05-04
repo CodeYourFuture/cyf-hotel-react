@@ -1,0 +1,23 @@
+#restaurant {
+  text-align: left;
+  margin: 20px 8em 20px 8em;
+  background-color: rgb(51, 62, 129);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#restaurant ul li {
+  display: flex;
+  text-align: left;
+  margin: 10px;
+  list-style: none;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#restaurant h3 {
+  color: rgb(236, 206, 33);
+  font-weight: 600;
+}
