@@ -12,7 +12,7 @@ function BookingRow(props) {
     <tr
       key={props.index}
       className={!selectedRow ? "table-active" : ""}
-      onClick={() => changeColor()}
+      onClick={changeColor}
     >
       <td>{booking.id}</td>
       <td>{booking.title}</td>
