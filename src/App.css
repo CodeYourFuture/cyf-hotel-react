@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 80px;
 }
 .table-container {
@@ -53,7 +53,7 @@ tr {
   color: #5b5757;
   font-size: 1rem;
 }
-.red {
+.rowBackground {
   background-color: crimson;
 }
 
@@ -108,4 +108,39 @@ li {
 
 .btnAdd {
   padding-left: 10px;
+}
+
+.addNewInput {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.dropDown {
+  width: 40%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+}
+
+.addBtn {
+  width: 30%;
+  padding: 12px 20px;
+  margin-left: 70px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.formContainer {
+  text-align: center;
+}
+
+label {
+  width: 200px;
+  display: inline-block;
+}
+
+.inputWrapper {
+  padding-top: 20px;
+  background-color: yellowgreen;
 }

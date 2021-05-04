@@ -4,19 +4,23 @@ import { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
-  const [color, setColor] = useState("transparent");
   const [customerId, setCustomerId] = useState("");
-
-  function highlightRow(index) {
-    setColor(index === color ? "" : index);
-  }
+  const [color, setColor] = useState([]); // set color == empty array
 
   const getCustomerId = id => {
     setCustomerId(id);
   };
 
+  const highlightRow = currentIndex => {
+    if (!color.includes(currentIndex)) {
+      setColor([...color, currentIndex]);
+    } else {
+      setColor(color.filter(item => item !== currentIndex));
+    }
+  };
+  //className="table-container"
   return (
-    <div className="table-container">
+    <div>
       <table className="table  results">
         <thead>
           <tr>
@@ -32,16 +36,20 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map((item, index) => {
+          {props.results.map((item, currentRowIndex) => {
             const startDate = moment(item.checkInDate);
             const endDate = moment(item.checkOutDate);
             let numberOfNights = endDate.diff(startDate, "days", true);
 
             return (
               <tr
-                className={color === index ? "red" : "transparent"}
-                onClick={() => highlightRow(index)}
-                key={index}
+                style={
+                  color.includes(currentRowIndex)
+                    ? { backgroundColor: "orange" }
+                    : { backgroundColor: "transparent" }
+                }
+                key={currentRowIndex}
+                onClick={() => highlightRow(currentRowIndex)}
               >
                 <td>{item.id}</td>
                 <td>{item.title}</td>

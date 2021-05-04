@@ -5,7 +5,8 @@ const CustomerProfile = ({ props }) => {
   const { id, email, vip, phoneNumber } = profile;
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${props}`)
+    let url = `https://cyf-react.glitch.me/customers/${props}`;
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         setProfile(data);

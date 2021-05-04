@@ -2,7 +2,7 @@ import React from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import { useState, useEffect } from "react";
-
+import AddNewBooking from "./AddNewBooking";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -35,7 +35,10 @@ const Bookings = () => {
         setError(true);
       });
   }, []);
-
+  let addBooking = newBooking => {
+    newBooking["id"] = bookings.length + 1;
+    setBookings(bookings.concat(newBooking));
+  };
   return (
     <div className="App-content">
       <div className="container">
@@ -47,6 +50,8 @@ const Bookings = () => {
         ) : (
           <strong>Loading Data please wait...</strong>
         )}
+
+        <AddNewBooking addBooking={addBooking} />
       </div>
     </div>
   );
