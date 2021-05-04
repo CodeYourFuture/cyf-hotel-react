@@ -1,8 +1,14 @@
-import moment from "moment";
 import React, { useState } from "react";
+import CustomerProfile from "../../pages/CustomerProfile";
 import TableRow from "./TableRow";
 
 const SearchResults = ({ results }) => {
+  const [customerId, setCustomerId] = useState("");
+
+  const selectCustomer = id => {
+    setCustomerId(id);
+  };
+
   return (
     <div className="table-responsive">
       <table className="table">
@@ -21,10 +27,16 @@ const SearchResults = ({ results }) => {
         </thead>
         <tbody>
           {results.map((customer, index) => (
-            <TableRow customer={customer} index={index} />
+            <TableRow
+              key={index}
+              customer={customer}
+              index={index}
+              selectCustomer={selectCustomer}
+            />
           ))}
         </tbody>
       </table>
+      <CustomerProfile customerId={customerId} />
     </div>
   );
 };
