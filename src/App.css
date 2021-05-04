@@ -55,3 +55,28 @@ tr {
 .card {
   width: 18rem;
 }
+
+.tourist-cards{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 5%;
+}
+
+.footer-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+  background-color: black;
+  color:white;
+}
+
+.change {
+  background-color: rgb(59, 58, 58);
+}
+
+.row-elements:nth-last-child(){
+  align-self: end;
+}
+
