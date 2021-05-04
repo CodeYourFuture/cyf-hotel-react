@@ -83,3 +83,9 @@ tr {
 .order-block {
   margin-top: 1rem;
 }
+
+.error {
+  color: red;
+  font-weight: 700;
+  font-size: 1.5rem;
+}

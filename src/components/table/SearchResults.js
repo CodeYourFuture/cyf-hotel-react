@@ -12,7 +12,7 @@ const SearchResults = ({ results }) => {
   return (
     <div className="table-responsive">
       <table className="table">
-        <thead>
+        <thead className="table-light">
           <tr>
             <th scope="col">#</th>
             <th scope="col">Title</th>
