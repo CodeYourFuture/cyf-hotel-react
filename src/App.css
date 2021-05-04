@@ -7,6 +7,11 @@
   height: 80px;
 }
 
+#Logo {
+  width: 25px;
+  margin: 0 0 0 10px;
+}
+
 .App-header {
   background-color: #222;
   height: 50px;
@@ -53,5 +58,32 @@ tr {
 }
 
 .card {
+  display: inline-block;
+  /* justify-content: center;
+  align-items: center; */
   width: 18rem;
+  margin: 0 100px 0 0;
+}
+
+#Footer {
+  margin: 0 0 0 0;
+  padding: 20px 0 0 0;
+  border: 3px solid #000;
+  background-color: blueviolet;
+}
+
+#BookingsTable {
+  margin-bottom: 100px;
+}
+
+#BookingInfo {
+  padding: 0 120px 0 0;
+}
+
+.highlighted {
+  background-color: rgb(70, 228, 70);
+}
+
+.highlightNon {
+  background-color: #ffffff;
 }
