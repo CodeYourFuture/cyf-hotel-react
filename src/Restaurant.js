@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import RestaurantButton from "./RestaurantButton"
+import Order from "./Order"
+
 
 const Restaurant = () => {
-  const pizzas = 0;
   return (
     <div>
-      <h3>Restaurant Orders</h3>
-      <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+      <h3 className="ordersHeader">Restaurant Orders</h3>
+      <ul className="orders">
+        <li><Order orderType="Pizza" /></li>
+        <li><Order orderType="Salad" /></li>
+        <li><Order orderType="Chocolate-cake" /></li>
       </ul>
     </div>
   );

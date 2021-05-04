@@ -1,0 +1,19 @@
+[
+  {
+    "cityLink": "https://www.peoplemakeglasgow.com",
+    "image": "https://images.trvl-media.com/media/content/shared/images/travelguides/destination/602905/Greater-Glasgow-40791.jpg",
+    "name": "Glasgow"
+  },
+
+  {
+    "cityLink": "https://www.visitmanchester.com",
+    "image": "https://media.timeout.com/images/101691869/image.jpg",
+    "name": "Manchester"
+  },
+
+  {
+    "cityLink": "https://www.visitlondon.com",
+    "image": "http://www.clinkhostels.com/wp-content/uploads/2015/03/london22.jpg",
+    "name": "London"
+  }
+]
