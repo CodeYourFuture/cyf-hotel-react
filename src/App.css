@@ -1,40 +1,3 @@
-.App {
-  text-align: left;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
 }
@@ -54,4 +17,47 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+#header-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.tourist-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer {
+  background-color: coral;
+}
+
+.footer-info {
+  list-style-type: none;
+  display: inline;
+  text-align: center;
+}
+
+.card-info {
+  text-align: center;
+}
+
+.orders {
+  text-align: center;
+}
+
+.food-orders {
+  list-style-type: none;
+}
+
+.loading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: coral;
+}
+
+.profile-list {
+  list-style-type: none;
 }
