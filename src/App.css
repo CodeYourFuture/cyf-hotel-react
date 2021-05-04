@@ -3,12 +3,12 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 80px;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: royalblue;
   height: 50px;
   padding: 20px;
   color: white;
@@ -37,6 +37,7 @@
 }
 .search {
   padding: 5px 0 20px 0;
+  background-color: orange;
 }
 
 tr {
@@ -46,12 +47,63 @@ tr {
 .results {
   padding-top: 15px;
 }
+.order {
+  border: solid 2px lightslategray;
+  margin: 10px;
+  padding: 5px;
+}
+
+.tourist-info {
+  border: solid 2px rgb(141, 119, 153);
+  margin: 10px;
+  padding: 5px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+}
 
 .footer {
-  padding-top: 20px;
+  background-color: royalblue;
+  color: white;
+  margin: 10px;
+  padding: 5px;
   text-align: center;
 }
 
 .card {
   width: 18rem;
+}
+
+.logo {
+  width: 100px;
+  margin: 20 px;
+}
+
+.highlight {
+  color: white;
+  background-color: skyblue;
+}
+img {
+  width: 100%;
+}
+.restaurant-image {
+  width: 100%;
+}
+.restaurant-card {
+  display: flex;
+  flex-direction: column;
+}
+.loader {
+  margin: 10px;
+  padding: 10px;
+  color: tomato;
+  font-size: 1.5 rem;
+  text-align: center;
 }
