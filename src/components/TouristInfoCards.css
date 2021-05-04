@@ -1,0 +1,12 @@
+.card {
+  width: 18rem;
+}
+
+.cardsParent {
+  padding: 50px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
