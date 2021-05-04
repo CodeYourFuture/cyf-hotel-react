@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const GuestRow = ({ guest }) => {
+const GuestRow = ({ guest, setGuestID }) => {
   const [highlight, setHighlight] = useState(false);
+
   const Toggle = () => setHighlight(!highlight);
+
+  const handleGuestID = e => {
+    e.stopPropagation();
+    setGuestID(guest.id);
+  };
 
   return (
     <tr className={highlight ? "highlight-row" : null} onClick={Toggle}>
@@ -17,6 +23,15 @@ const GuestRow = ({ guest }) => {
       <td>{guest.checkOutDate}</td>
       <td>
         {moment(guest.checkOutDate).diff(moment(guest.checkInDate), "days")}
+      </td>
+      <td>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={handleGuestID}
+        >
+          Show Profile
+        </button>
       </td>
     </tr>
   );
