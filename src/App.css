@@ -3,11 +3,13 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 25px;
+  margin-top: auto;
 }
 
 .App-header {
+  display: flex;
   background-color: #222;
   height: 50px;
   padding: 20px;
@@ -20,6 +22,11 @@
 
 .App-title {
   font-size: 1.5em;
+}
+.Tourist-Cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
 }
 
 .App-content {
@@ -54,4 +61,28 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.ul-styling {
+  list-style-type: none;
+}
+
+.order-list {
+  padding: 10px;
+}
+
+.restaurant-button {
+  float: right;
+}
+
+.highlight-row {
+  background-color: rgb(172, 172, 209);
+}
+
+.restaurant {
+  padding: 20px;
+  margin: 20px;
+}
+.restaurant h3 {
+  text-align: center;
 }
