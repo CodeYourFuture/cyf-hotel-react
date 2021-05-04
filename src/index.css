@@ -24,3 +24,45 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.App-header {
+  display: flex;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.title {
+  margin: 15px;
+}
+
+.footer {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+}
+
+.highlited {
+  background-color: aquamarine;
+}
+
+.cards-wrapper {
+  margin-top: 30px;
+}
+
+.card-body {
+  margin: auto;
+}
+
+.orders {
+  text-align: center;
+}
+
+.list-orders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
