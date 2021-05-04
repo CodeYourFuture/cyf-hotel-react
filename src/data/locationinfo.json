@@ -1,0 +1,17 @@
+[
+  {
+    "img": "https://www.visitbritain.com/sites/default/files/styles/consumer_campaigns_hero_mobile/public/consumer_components_enhanced/header_image/vb34141644.jpg?itok=9qBFm0pJ",
+    "href": "https://visitlondon.com",
+    "place": "London"
+  },
+  {
+    "img": "https://www.visitmanchester.com/imageresizer/?image=%2fdbimgs%2fMartyn%20skyline.jpg&action=FeaturedItems2x1",
+    "href": "https://visitmanchester.com",
+    "place": "Manchester"
+  },
+  {
+    "img": "https://peoplemakeglasgow.com/images/CTA_Images/114605-GCMB-Generic_Homepage_Banner_RR_V1.png",
+    "href": "https://peoplemakeglasgow.com",
+    "place": "Glasgow"
+  }
+]
