@@ -12,7 +12,6 @@ body {
 }
 .page-header {
   background-color: rgb(19, 237, 245);
-
   padding: 1rem;
   font-weight: bold;
 }
@@ -58,4 +57,9 @@ ul {
   margin: 2rem;
   padding: 1rem;
   font-weight: bold;
+}
+
+.customer-profile {
+  padding: 1rem;
+  background-color: rgb(186, 243, 245);
 }
