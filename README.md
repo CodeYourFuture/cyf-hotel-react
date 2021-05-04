@@ -54,7 +54,16 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 5. Create a table to show hotel bookings
 
-**Instructions:** Create a `<SearchResults />` component that shows hotel bookings in a `<table>` element. Each booking will have an `id`, `title`, `first name`, `surname`, `email`, `room id`, `check in date` and `check out date`. You can make up data in the `<SearchResults />` component to show in the table. Then show `<SearchResults />` component within the `<Bookings />` component that is provided. Be sure to split out your components into small well-named components, similar to the method used in exercise 1.
+**Instructions:**
+1.Create a `<SearchResults />` component that shows hotel bookings in a `<table>` element.
+
+2.Each booking will have an `id`, `title`, `first name`, `surname`, `email`, `room id`, `check in date` and `check out date`.
+
+3.You can make up data in the `<SearchResults />` component to show in the table.
+
+4.Then show `<SearchResults />` component within the `<Bookings />` component that is provided.
+
+5.Be sure to split out your components into small well-named components, similar to the method used in exercise 1.
 
 **Hint:** You will find some useful `<table>` examples in the [Bootstrap documentation for tables](https://getbootstrap.com/docs/4.2/content/tables/#examples).
 
@@ -72,7 +81,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** Add another column to your `<SearchResults />` table which shows the number of nights a guest is staying.
 
-**Hint:** Try installing the [moment.js library](http://momentjs.com/) (you'll need to install it with `npm install moment --save`) and using the [`.diff()` method](http://momentjs.com/docs/#/displaying/difference/) to compare dates.
+**Hint:** Try installing the [moment.js library](http://momentjs.com/) (you'll need to install it with `npm install moment --save`) and using the [`.diff()`] method, (http://momentjs.com/docs/#/displaying/difference/) to compare dates.
 
 **Test:** Each booking in your table should show the number of nights in a separate column. For example, Mr John Doe has a booking for **2** nights.
 
@@ -86,7 +95,8 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 9. Preparing to add more pizzas
 
-**Instructions:** At the moment, the number of pizzas a guest can order is static and set to 0, even if they click on the 'Add' button. We will change that in the following to let a guest add more pizzas to their order. First, declare a new state variable `orders` along with the function to set the orders state `setOrders`. The initial value of the `orders` state should be **0**. Use the new `orders` variable instead of the `pizzas` variable (that you can now delete).
+**Instructions:** At the moment, the number of pizzas a guest can order is static and set to 0, even if they click on the 'Add' button. We will change that in the following to let a guest add more pizzas to their order.
+First, declare a new state variable `orders` along with the function to set the orders state `setOrders`. The initial value of the `orders` state should be **0**. Use the new `orders` variable instead of the `pizzas` variable (that you can now delete).
 
 **Hint:** You need to use the React function `useState` to create a state variable. Remember to import the function at the top with `import React, {useState} from "react";`.
 
