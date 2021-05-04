@@ -20,7 +20,7 @@ let Cities = [
     img:
       "https://cdn.londonandpartners.com/asset/london-by-night-open-top-bus-tour_london-by-night-open-top-bus-tour-image-courtesy-of-golden-tours_a78a06aa1761ee29c3c3c7bcff4d1939.jpg",
     info:
-      "A city which has something for everyone: from history and culture to parks. United Kingdom’s capital is one of the world’s most visited cities with the iconic buildings and landmarks, museums, art galleries, verdant royal parks gardens and green spaces, cutesy farmers markets and street foods.",
+      "A city which has something for everyone, from history and culture to parks. United Kingdom’s capital is one of the world’s most visited cities with the iconic buildings and landmarks, museums, art galleries, verdant royal parks gardens and green spaces, cutesy farmers markets and street foods. ",
     link: "https://visitlondon.com/"
   }
 ];

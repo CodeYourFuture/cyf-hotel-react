@@ -10,6 +10,12 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.page-header {
+  background-color: rgb(19, 237, 245);
+
+  padding: 1rem;
+  font-weight: bold;
+}
 
 .search-wrapper {
   border-top: 1px solid #e9ecef;
@@ -33,7 +39,7 @@ body {
 }
 
 .footer {
-  background-color: aqua;
+  background-color: rgb(201, 227, 241);
 }
 
 .highlight {
@@ -48,7 +54,7 @@ ul {
 
 .order {
   text-align: center;
-  background-color: rgb(190, 157, 174);
+  background-color: rgb(19, 237, 245);
   margin: 2rem;
   padding: 1rem;
   font-weight: bold;
