@@ -1,21 +1,37 @@
 .App {
   text-align: left;
+  background-color: rgb(236, 235, 235);
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
+  display: flex;
+  justify-content: flex-start;
   height: 50px;
   padding: 20px;
-  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+}
+.headerFont {
+  display: flex;
+  justify-content: flex-start;
+  align-self: center;
+  height: 50px;
+  margin-bottom: 0.2rem;
+  color: rgb(12, 17, 12);
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+}
+
+.img-header {
+  height: 50px;
+  margin-top: -20px;
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 20px;
+  margin-left: 1px;
 }
 
 .App-title {
@@ -23,20 +39,26 @@
 }
 
 .App-content {
-  padding-top: 20px;
-  font-size: large;
+  max-width: fit-content;
+}
+.card {
+  height: 550px;
+  overflow: scroll;
+}
+.card-img {
+  width: auto;
+  height: 300px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  margin-left: 11rem;
+  padding: 2px 2px;
 }
 
 tr {
@@ -51,7 +73,6 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
-
-.card {
-  width: 18rem;
+.table {
+  overflow-x: scroll;
 }
