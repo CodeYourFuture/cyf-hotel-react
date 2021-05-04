@@ -17,6 +17,9 @@
   font-size: 1em;
   font-weight: bold;
 }
+li {
+  list-style-type: none;
+}
 
 .App-title {
   font-size: 1.5em;
