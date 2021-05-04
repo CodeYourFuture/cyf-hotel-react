@@ -1,0 +1,9 @@
+.footer {
+  list-style: none;
+  background-color: rgb(0, 38, 53);
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
