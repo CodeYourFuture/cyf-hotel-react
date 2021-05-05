@@ -29,6 +29,7 @@ const Bookings = () => {
   }, []);
 
   return (
+    // show message if "loading" state is true, render all bookings if state is false
     <div className="App-content">
       {loading ? (
         <LoadingMessage />
