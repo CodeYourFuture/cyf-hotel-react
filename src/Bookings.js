@@ -6,7 +6,8 @@ import LoadingMessage from "./LoadingMessage";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const allBookings = useRef([]); // to use when searching name or surname
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); // to show loading message
+  const [error, setError] = useState(null); // to show loading message
 
   const search = searchVal => {
     const filteredBookings = allBookings.current.filter(booking => {
@@ -19,9 +20,14 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed").then(response =>
+    fetch("https://cyf-react.glitch.me/error").then(response =>
       response.json().then(data => {
-        setLoading(false);
+        setLoading(false); // Ending loading
+        // Check if response is 200 OK, otherwise error out
+        if (!response.ok) {
+          setError(data?.error);
+          return;
+        }
         setBookings(data);
         allBookings.current = data;
       })
@@ -33,6 +39,8 @@ const Bookings = () => {
     <div className="App-content">
       {loading ? (
         <LoadingMessage />
+      ) : error != null ? (
+        <h1>Error {error}</h1>
       ) : (
         <div className="container">
           <Search search={search} />
