@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 const CustomerProfile = ({ customerId }) => {
   const [customerInfo, setCustomerInfo] = useState(null);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/customers/${customerId}`)
