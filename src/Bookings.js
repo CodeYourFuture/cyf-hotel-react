@@ -20,7 +20,7 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/error").then(response =>
+    fetch("https://cyf-react.glitch.me/").then(response =>
       response.json().then(data => {
         setLoading(false); // Ending loading
         // Check if response is 200 OK, otherwise error out
@@ -35,7 +35,7 @@ const Bookings = () => {
   }, []);
 
   return (
-    // show message if "loading" state is true, render all bookings if state is false
+    // show message if "loading" state is true | If found an error show error message | render all bookings if all good
     <div className="App-content">
       {loading ? (
         <LoadingMessage />
