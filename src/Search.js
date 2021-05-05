@@ -1,23 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import SearchBooking from "./SearchBooking";
 import SearchButton from "./SearchButton";
+import SearchCustomerLabel from "./SearchCustomerLabel";
+import SearchInput from "./SearchInput";
 
 const Search = () => {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearchInput = event => {
+    setSearchInput(event.target.value);
+  };
   return (
     <div className="search">
-      <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
-      </div>
+      <SearchBooking />
       <div className="row search-wrapper">
         <div className="col">
           <form className="form-group search-box">
-            <label htmlFor="customerName">Customer name</label>
+            <SearchCustomerLabel />
             <div className="search-row">
-              <input
-                type="text"
-                id="customerName"
-                className="form-control"
-                placeholder="Customer name"
-              />
+              <SearchInput value={searchInput} onChange={handleSearchInput} />
               <SearchButton />
             </div>
           </form>
