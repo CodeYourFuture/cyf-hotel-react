@@ -75,7 +75,12 @@ tr {
 }
 
 .vip {
-  color: rgb(12, 46, 240);
+  color: rgb(56, 138, 31);
+}
+
+.loading-message {
+  color: rgb(6, 136, 39);
+  text-align: center;
 }
 
 @media (min-width: 600px) {
