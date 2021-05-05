@@ -5,11 +5,11 @@ const SearchResults = props => {
   let [highlightRow, setHighlightRow] = useState(false);
 
   const highlightSelection = () => {
-    setHighlightRow(highlightRow => !highlightRow);
+    setHighlightRow(!highlightRow);
   };
 
   return (
-    <table className="table table-striped">
+    <table className="table">
       <thead className="thead-dark">
         <tr>
           <th scope="col">ID</th>
@@ -27,7 +27,6 @@ const SearchResults = props => {
         {props.results.map((booking, index) => (
           <tr
             key={index}
-            id={index}
             onClick={highlightSelection}
             className={highlightRow ? "highlight-row" : ""}
           >
