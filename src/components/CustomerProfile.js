@@ -1,8 +1,11 @@
 import React from "react";
 
-const CustomerProfile = ({ profileID }) => {
+const CustomerProfile = ({ profileID, guestID }) => {
   return profileID !== null ? (
     <section className="customer-profile">
+      <h3 className={guestID ? "loading" : "loaded"}>
+        Loading Customer Profile
+      </h3>
       <p>
         Guest First Name:<span>{profileID.firstName}</span>
       </p>
@@ -19,7 +22,9 @@ const CustomerProfile = ({ profileID }) => {
         Guest Email:<span>{profileID.email}</span>
       </p>
     </section>
-  ) : null;
+  ) : (
+    <h3>Loading</h3>
+  );
 };
 
 export default CustomerProfile;

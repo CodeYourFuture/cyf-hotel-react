@@ -48,7 +48,7 @@ const SearchResults = ({ bookings, submit }) => {
           ))}
         </tbody>
       </table>
-      <CustomerProfile profileID={profileID} />
+      <CustomerProfile profileID={profileID} guestID={guestID} />
     </div>
   );
 };
