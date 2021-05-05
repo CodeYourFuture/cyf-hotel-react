@@ -3,13 +3,22 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 80px;
 }
-
+.table-container {
+  display: flex;
+}
+.profile-table {
+  flex: 2;
+  background-color: brown;
+}
+.table {
+  flex: 1;
+}
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 120px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -20,6 +29,7 @@
 
 .App-title {
   font-size: 1.5em;
+  padding-left: 20px;
 }
 
 .App-content {
@@ -41,17 +51,106 @@
 
 tr {
   color: #5b5757;
+  font-size: 1rem;
+}
+.rowBackground {
+  background-color: crimson;
 }
 
+th {
+  font-size: 0.9rem;
+}
 .results {
   padding-top: 15px;
+  margin: 0 auto;
 }
 
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: black;
+  color: azure;
+  text-decoration: none;
 }
-
+li {
+  list-style: none;
+}
 .card {
   width: 18rem;
+  margin-left: 20px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 0 30px 0;
+  background-color: darkgray;
+}
+
+.card-img-top {
+  height: 200px;
+  width: 100%;
+}
+
+.orders {
+  background-color: yellow;
+  text-align: center;
+}
+.menuItems {
+  display: flex;
+}
+.foods {
+  display: flex;
+  margin: 0 auto;
+  width: 15%;
+}
+
+.btnAdd {
+  padding-left: 10px;
+}
+
+.addNewInput {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.dropDown {
+  width: 40%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+}
+
+.addBtn {
+  width: 30%;
+  padding: 12px 20px;
+  margin-left: 70px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.formContainer {
+  text-align: center;
+}
+
+label {
+  width: 200px;
+  display: inline-block;
+}
+
+.inputWrapper {
+  padding-top: 20px;
+  background-color: yellowgreen;
+}
+
+.pointer {
+  cursor: pointer;
+  background-color: rgb(143, 237, 100);
+  transition: 0.6s ease-out;
+}
+.pointer:hover {
+  background-color: rgb(69, 201, 64);
+  color: white;
 }
