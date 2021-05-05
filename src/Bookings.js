@@ -44,7 +44,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         {isLoaded ? (
-          <SearchResults results={bookings} />
+          <SearchResults BookingsResults={bookings} />
         ) : error ? (
           <strong>sorry but there was an error loading data!!</strong>
         ) : (

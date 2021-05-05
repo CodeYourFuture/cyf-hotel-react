@@ -1,11 +1,47 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import moment from "moment";
-import { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
+
+const SortableData = (items, config = null) => {
+  const [sortConfig, setSortConfig] = useState(config);
+
+  const sortedItems = useMemo(() => {
+    let sortableItems = [...items];
+
+    if (sortConfig !== null) {
+      sortableItems.sort((a, b) => {
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+          return sortConfig.direction === "ascending" ? -1 : 1;
+        }
+        if (a[sortConfig.key] > b[sortConfig.key]) {
+          return sortConfig.direction === "ascending" ? 1 : -1;
+        }
+        return 0;
+      });
+    }
+    return sortableItems;
+  }, [items, sortConfig]);
+
+  const getSorted = key => {
+    let direction = "ascending";
+    if (
+      sortConfig &&
+      sortConfig.key === key &&
+      sortConfig.direction === "ascending"
+    ) {
+      direction = "descending";
+    }
+    setSortConfig({ key, direction });
+  };
+
+  return { items: sortedItems, getSorted, sortConfig };
+};
 
 const SearchResults = props => {
   const [customerId, setCustomerId] = useState("");
   const [color, setColor] = useState([]); // set color == empty array
+
+  const { items, getSorted } = SortableData(props.BookingsResults);
 
   const getCustomerId = id => {
     setCustomerId(id);
@@ -18,7 +54,9 @@ const SearchResults = props => {
       setColor(color.filter(item => item !== currentIndex));
     }
   };
+
   //className="table-container"
+
   return (
     <div>
       <table className="table  results">
@@ -26,17 +64,64 @@ const SearchResults = props => {
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Title</th>
-            <th scope="col">First name</th>
-            <th scope="col">Surname</th>
-            <th scope="col">Email</th>
-            <th scope="col">Room Id</th>
-            <th scope="col">Check in date</th>
-            <th scope="col">Check out date</th>
+            <th
+              className="pointer"
+              onClick={() => getSorted("firstName")}
+              scope="col"
+            >
+              First name
+            </th>
+            <th
+              className="pointer"
+              onClick={() => getSorted("surname")}
+              scope="col"
+            >
+              Surname
+            </th>
+            <th
+              className="pointer"
+              onClick={() => getSorted("email")}
+              scope="col"
+            >
+              Email
+            </th>
+            <th
+              className="pointer"
+              onClick={() => getSorted("roomId")}
+              scope="col"
+            >
+              Room Id
+            </th>
+            <th
+              className="pointer"
+              onClick={() => getSorted("checkInDate")}
+              scope="col"
+            >
+              Check in date
+            </th>
+            <th
+              className="pointer"
+              onClick={() => getSorted("checkOutDate")}
+              scope="col"
+            >
+              Check out date
+            </th>
             <th scope="col">Number of Night</th>
           </tr>
         </thead>
         <tbody>
-          {props.results.map((item, currentRowIndex) => {
+          {items.map((item, currentRowIndex) => {
+            const {
+              id,
+              title,
+              firstName,
+              surname,
+              email,
+              roomId,
+              checkInDate,
+              checkOutDate
+            } = item;
+
             const startDate = moment(item.checkInDate);
             const endDate = moment(item.checkOutDate);
             let numberOfNights = endDate.diff(startDate, "days", true);
@@ -51,17 +136,17 @@ const SearchResults = props => {
                 key={currentRowIndex}
                 onClick={() => highlightRow(currentRowIndex)}
               >
-                <td>{item.id}</td>
-                <td>{item.title}</td>
-                <td>{item.firstName}</td>
-                <td>{item.surname}</td>
-                <td>{item.email}</td>
-                <td>{item.roomId}</td>
-                <td>{item.checkInDate}</td>
-                <td>{item.checkOutDate}</td>
+                <td>{id}</td>
+                <td>{title}</td>
+                <td>{firstName}</td>
+                <td>{surname}</td>
+                <td>{email}</td>
+                <td>{roomId}</td>
+                <td>{checkInDate}</td>
+                <td>{checkOutDate}</td>
                 <td>{numberOfNights} </td>
                 <td>
-                  <button onClick={() => getCustomerId(item.id)}>
+                  <button onClick={() => getCustomerId(id)}>
                     Show profile
                   </button>{" "}
                 </td>

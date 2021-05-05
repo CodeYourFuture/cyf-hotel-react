@@ -11,11 +11,14 @@ const AddNewBooking = props => {
     checkOutDate: ""
   });
 
+  //handel chanfe event on textbox
   const handleInput = e => {
     const newBooking = { ...addBooking, [e.target.id]: e.target.value };
+    console.log(newBooking);
     setAddBooking(newBooking);
   };
 
+  // handel submit button
   const handleSubmit = event => {
     event.preventDefault();
     props.addBooking(addBooking);
