@@ -6,7 +6,6 @@ function CustomerProfile({ buttonId }) {
       fetch(`https://cyf-react.glitch.me/customers/${buttonId}`)
         .then(resp => resp.json())
         .then(data => {
-          console.log(data);
           setProfileData(data);
         });
     }
@@ -21,8 +20,6 @@ function CustomerProfile({ buttonId }) {
           <p>Phone Number:{profileData.phoneNumber} </p>
           <p>Customer is {profileData.vip ? "VIP" : "not VIP"} </p>
         </div>
-        {/* <p>hello from profile{buttonId}</p>
-             <p>Customer ID : {profileData.id}</p> */}
       </div>
     );
   } else {

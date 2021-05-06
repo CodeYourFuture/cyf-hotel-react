@@ -3,21 +3,12 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults";
 import CustomerProfile from "./CustomerProfile";
 import Spinner from "react-bootstrap/Spinner";
-import FakeBookings from "./data/fakeBookings.json";
 import BookingForm from "./BookingForm";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState("");
   const [buttonId, setButtonId] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  // const [title, setTitle] = useState("");
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
-  // const [roomId, setRoomId] = useState("");
-  // const [checkInDate, setCheckInDate] = useState("");
-  // const [checkOutDate, setCheckOutDate] = useState("");
-
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     let filteredBookings = bookings.filter(booking => {
@@ -39,32 +30,6 @@ const Bookings = () => {
   function changeButtonId(e) {
     setButtonId(e.target.id);
   }
-  //  function handleFormChange(event) {
-  //    if (event.target.name === "title") {
-  //      setTitle(event.target.value);
-  //      console.log(event.target.value);
-  //    } else if (event.target.name === "firstName") {
-  //      setFirstName(event.target.value);
-  //      console.log(event.target.value);
-  //    } else if (event.target.name === "lastName") {
-  //      setLastName(event.target.value);
-  //      console.log(event.target.value);
-  //    } else if (event.target.name === "roomId") {
-  //      setRoomId(event.target.value);
-  //      console.log(event.target.value);
-  //    } else if (event.target.name === "checkInDate") {
-  //      setCheckInDate(event.target.value);
-  //      console.log(event.target.value);
-  //    } else if (event.target.name === "checkOutDate") {
-  //      setCheckOutDate(event.target.value);
-  //      console.log(event.target.value);
-  //    }
-  //  }
-
-  //  function submitHandler(event) {
-  //    event.preventDefault();
-  //    console.log("submitted");
-  //  }
   const [columnClicked, setColumnClicked] = useState([
     false,
     false,
@@ -73,38 +38,43 @@ const Bookings = () => {
   ]);
 
   function columnSorter(e) {
-    console.log(typeof e.target.id);
-    if (e.target.id == 0) {
+    let id = parseInt(e.target.id);
+    if (id === 0) {
       if (columnClicked[0] === false) {
         setColumnClicked([true, false, false, false]);
         let newBookings = bookings.sort((book1, book2) => {
           return book2.id - book1.id;
         });
-        newBookings = [...newBookings];
         setBookings(newBookings);
       } else {
         setColumnClicked([false, false, false, false]);
         let newBookings = bookings.sort((book1, book2) => {
           return book1.id - book2.id;
         });
-        newBookings = [...newBookings];
         setBookings(newBookings);
       }
-    } else if (e.target.id == 1) {
-      setColumnClicked([false, true, false, false]);
-      let newBookings = bookings.sort((book1, book2) => {
-        return book1.firstName.localeCompare(book2.firstName);
-      });
-      newBookings = [...newBookings];
-      setBookings(newBookings);
-    } else if (e.target.id == 2) {
+    } else if (id === 1) {
+      if (columnClicked[1] === false) {
+        setColumnClicked([false, true, false, false]);
+        let newBookings = bookings.sort((book1, book2) => {
+          return book1.firstName.localeCompare(book2.firstName);
+        });
+        setBookings(newBookings);
+      } else {
+        setColumnClicked([false, false, false, false]);
+        let newBookings = bookings.sort((book1, book2) => {
+          return book2.firstName.localeCompare(book1.firstName);
+        });
+        setBookings(newBookings);
+      }
+    } else if (id === 2) {
       setColumnClicked([false, false, true, false]);
       let newBookings = bookings.sort((book1, book2) => {
         return book1.surname.localeCompare(book2.surname);
       });
       newBookings = [...newBookings];
       setBookings(newBookings);
-    } else if (e.target.id == 3) {
+    } else if (id === 3) {
       setColumnClicked([false, false, false, true]);
       let newBookings = bookings.sort((book1, book2) => {
         return book1.email.localeCompare(book2.email);
@@ -112,10 +82,7 @@ const Bookings = () => {
       newBookings = [...newBookings];
       setBookings(newBookings);
     }
-    // console.log(newBookings);
-    // setBookings(newBookings);
   }
-  console.log(bookings);
   if (loading) {
     return <Spinner animation="border" className="spinner" />;
   } else {

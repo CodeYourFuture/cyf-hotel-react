@@ -23,23 +23,11 @@ function BookingForm({ bookings, setBookings }) {
       setCheckOutDate(event.target.value);
     } else if (event.target.name === "email") {
       setEmail(event.target.value);
-      console.log(event.target.value);
     }
   }
 
   function submitHandler(event) {
     event.preventDefault();
-    // if (
-    //   title === "" ||
-    //   firstName === "" ||
-    //   surname === "" ||
-    //   email === "" ||
-    //   roomId === "" ||
-    //   checkInDate === "" ||
-    //   checkOutDate === ""
-    // ) {
-    //   alert("Please fill all fields! ");
-    // } else {
     let id = bookings.length + 1;
     let newBook = {
       id,
@@ -52,11 +40,7 @@ function BookingForm({ bookings, setBookings }) {
       checkOutDate
     };
     let newBookings = [...bookings, newBook];
-    // console.log("submitted")
-    // console.log(newBookings)
-    console.log(bookings);
     setBookings(newBookings);
-    // }
   }
   return (
     <form className="customer-booking-form" onSubmit={submitHandler}>
@@ -134,7 +118,7 @@ function BookingForm({ bookings, setBookings }) {
         />
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit">Add Booking</button>
       </div>
     </form>
   );
