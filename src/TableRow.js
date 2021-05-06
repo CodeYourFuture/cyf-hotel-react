@@ -9,8 +9,9 @@ function TableRow(props) {
     setHighlight(!highlight);
   }
 
-  function handleShowProfile() {
+  function handleShowProfile(event) {
     props.selectCustomer(props.result.id);
+    event.stopPropagation();
   }
 
   return (
