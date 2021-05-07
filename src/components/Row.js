@@ -1,12 +1,6 @@
 import React from "react";
 
-const Row = ({
-  row,
-  setSelectedRow,
-  isSelected,
-  getDuration,
-  setProfileId
-}) => {
+const Row = ({ row, setSelectedRow, isSelected, getDuration, showProfile }) => {
   const {
     _id,
     title,
@@ -35,7 +29,7 @@ const Row = ({
           <button
             onClick={() => {
               console.log("is _id:", _id);
-              setProfileId(_id);
+              showProfile(_id);
             }}
             className="show-profile-btn"
           >
