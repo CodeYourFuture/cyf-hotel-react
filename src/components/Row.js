@@ -1,30 +1,45 @@
 import React from "react";
 
-const Row = props => {
+const Row = ({
+  row,
+  setSelectedRow,
+  isSelected,
+  getDuration,
+  setProfileId
+}) => {
+  const {
+    _id,
+    title,
+    firstName,
+    surname,
+    email,
+    roomId,
+    checkInDate,
+    checkOutDate
+  } = row;
   return (
     <tbody className="table-body table-striped lg-col-11 col-11">
       <tr
-        onClick={() => props.setSelectedRow(props.row.id)}
-        className={props.isSelected ? "selected-row" : "unselected-row"}
+        onClick={() => setSelectedRow(_id)}
+        className={isSelected ? "selected-row" : "unselected-row"}
       >
-        <td>{props.row.id}</td>
-        <td>{props.row.title}</td>
-        <td>{props.row.firstName}</td>
-        <td>{props.row.surname}</td>
-        <td>{props.row.email}</td>
-        <td>{props.row.roomId}</td>
-        <td>{props.row.checkInDate}</td>
-        <td>{props.row.checkOutDate}</td>
-        <td>{props.row1}</td>
+        <td>{title}</td>
+        <td>{firstName}</td>
+        <td>{surname}</td>
+        <td>{email}</td>
+        <td>{roomId}</td>
+        <td>{checkInDate}</td>
+        <td>{checkOutDate}</td>
+        <td>{getDuration(checkOutDate, checkInDate)}</td>
         <td>
           <button
             onClick={() => {
-              props.showProfile(props.row.id);
-              props.setClassName("dispaly-show");
+              console.log("is _id:", _id);
+              setProfileId(_id);
             }}
             className="show-profile-btn"
           >
-            show profile
+            Show profile
           </button>
         </td>
       </tr>
