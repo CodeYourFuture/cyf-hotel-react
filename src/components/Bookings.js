@@ -11,6 +11,7 @@ const Bookings = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [sortAscending, setSortAscending] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [showDisplay, setShowDisplay] = useState("hide");
   const [data, setData] = useState({
     title: "",
@@ -22,15 +23,11 @@ const Bookings = () => {
     email: ""
   });
 
-  // console.log("sort by id is", { sort: sortAscending });
-
   useEffect(() => {
     //start loading
     setIsLoading(true);
-    fetch(
-      `https://cyf-nader-hotel-server.herokuapp.com/bookings${route}`,
-      requestOption
-    )
+    setIsSubmitted(false);
+    fetch(`http://localhost:3000/bookings`, { method: "GET" })
       .then(res => res.json())
       //finxish loading
       .then(data => {
@@ -38,7 +35,7 @@ const Bookings = () => {
         setBookingData(data);
       })
       .catch(err => setError(err));
-  }, [route, requestOption]);
+  }, [isSubmitted]);
 
   const sortBy = item => {
     setSortAscending(!sortAscending);
@@ -46,7 +43,6 @@ const Bookings = () => {
   };
   const assending = key => {
     bookingData.sort(function(a, b) {
-      console.log(a[key]);
       if (a[key].substring) {
         if (a[key].toLowerCase() > b[key].toLowerCase()) {
           return -1;
@@ -59,7 +55,6 @@ const Bookings = () => {
 
   const dessending = key => {
     bookingData.sort(function(a, b) {
-      console.log(a[key]);
       if (a[key].substring) {
         if (a[key].toLowerCase() < b[key].toLowerCase()) {
           return -1;
@@ -71,15 +66,22 @@ const Bookings = () => {
   };
 
   const submitHandler = event => {
-    setRoute("/add");
     event.preventDefault();
-    setRequestOption({
+    setShowDisplay("hide");
+    fetch(`http://localhost:3000/bookings/add`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(data)
-    });
-    console.log("data = ", data);
-    setShowDisplay("hide");
+    })
+      .then(res => res.json())
+      //finxish loading
+      .then(data => {
+        setIsLoading(false);
+        // setBookingData(data);
+      })
+      .catch(err => setError(err));
+
+    setIsSubmitted(true);
   };
 
   const changeHandler = event => {
@@ -104,7 +106,7 @@ const Bookings = () => {
       ) : isLoading ? (
         <p>loading...</p>
       ) : (
-        <div className="result-form lg-col-11 col-10">
+        <div className="result-form lg-col-12 col-12">
           <SearchResults results={bookingData} error={error} sortBy={sortBy} />
           <div>
             <button
