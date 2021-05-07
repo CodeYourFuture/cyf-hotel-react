@@ -184,7 +184,7 @@ button:focus {
   height: 60px;
 }
 
-.dispaly-show {
+.display-show {
   display: flex;
   justify-content: space-around;
   background-color: lightgray;
