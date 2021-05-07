@@ -35,16 +35,39 @@ body {
 }
 
 .highlight {
-  background-color: aqua;
+  background-color: rgb(255, 196, 0);
 }
 
 li {
   font-weight: bold;
   padding-bottom: 5px;
-  color: white;
+  color: rgb(82, 78, 78);
   padding-left: 80px;
 }
 
 h3 {
-  padding-left: 155px;
+  padding-left: 115px;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+  font-size: 20px;
+}
+
+.order {
+  text-align: center;
+  background-color: tomato;
+  color: white;
+  margin: 2rem;
+  border-radius: 0.5rem;
+  margin-left: 110px;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.customer-profile {
+  padding: 1rem;
+  background-color: rgb(186, 243, 245);
 }
