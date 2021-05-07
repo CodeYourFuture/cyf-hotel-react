@@ -6,7 +6,6 @@ function SearchResults(props) {
   const [sorted, setSorted] = useState(0);
   const [booking, setBooking] = useState(props.results);
   function sortNum(event) {
-    console.log(event.target.innerText);
     if (sorted % 2 === 0) {
       if (event.target.innerText === "ID")
         setBooking(booking.sort((a, b) => a.id - b.id).reverse());

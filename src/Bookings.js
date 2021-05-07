@@ -60,7 +60,7 @@ const Bookings = () => {
 
   function handleChange(event) {
     if (event.target.name === "firstName") {
-      console.log(event.target.name);
+      setFirstName(event.target.value);
     } else if (event.target.name === "surName") {
       setSurname(event.target.value);
     } else if (event.target.name === "title") {
@@ -113,9 +113,7 @@ const Bookings = () => {
         surname,
         title
       };
-      console.log(tempArr);
       setBooking(booking.concat(tempArr));
-      console.log(booking);
       setFirstName("");
       setSurname("");
       setTitle("");
