@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Form from "./Form.js";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
@@ -7,7 +8,7 @@ const Bookings = () => {
   const [appLoading, setAppLoading] = useState(false);
 
   const APIFetchFunction = () => {
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://chizim-hotel-server.herokuapp.com/bookings`)
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -45,8 +46,7 @@ const Bookings = () => {
 
   return !appLoading ? (
     <p className=" blinker text-center display-4">
-      {" "}
-      Please wait data is downloading...
+      Please wait while data is loading...
     </p>
   ) : (
     <div className="App-content">
@@ -54,6 +54,7 @@ const Bookings = () => {
         <Search search={search} />
         <SearchResults results={bookings} />
       </div>
+      <Form bookings={bookings} setBookings={setBookings} />
     </div>
   );
 };

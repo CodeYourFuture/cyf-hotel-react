@@ -4,7 +4,7 @@ const CustomerProfile = props => {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+    fetch(`https://chizim-hotel-server.herokuapp.com/bookings/${props.id}`)
       .then(response => response.json())
       .then(data => {
         setProfile(data);

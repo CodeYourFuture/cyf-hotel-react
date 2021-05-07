@@ -50,15 +50,6 @@
   font-size: large;
 }
 
-.blinker {
-  animation: blinker 1s linear infinite;
-}
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-
 .search {
   padding: 5px 0 20px 0;
 }
