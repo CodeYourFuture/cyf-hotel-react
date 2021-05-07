@@ -1,9 +1,9 @@
 import React from "react";
 
-const ManchesterButton = () => {
+const Button = props => {
   return (
     <a
-      href="https://visitlondon.com/"
+      href={props.link}
       target="_blank"
       rel="noopener noreferrer"
       className="btn btn-primary"
@@ -13,4 +13,4 @@ const ManchesterButton = () => {
   );
 };
 
-export default ManchesterButton;
+export default Button;

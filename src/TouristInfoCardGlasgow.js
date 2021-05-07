@@ -2,14 +2,14 @@ import React from "react";
 import GlasgowButton from "./GlasgowButton";
 import GlasgowImage from "./GlasgowImage";
 import GlasgowInfo from "./GlasgowInfo";
-import GlasgowTitle from "./GlasgowTitle";
+import Title from "./components/Title";
 
 const TouristInfoCardGlasgow = () => {
   return (
     <div className="card">
       <GlasgowImage />
       <div className="card-body">
-        <GlasgowTitle />
+        <Title cityName="London" />
         <GlasgowInfo />
         <GlasgowButton />
       </div>
