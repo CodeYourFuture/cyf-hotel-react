@@ -21,7 +21,7 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://biruk-hotel-server.herokuapp.com/bookings")
       .then(res => res.json())
       .then(data => {
         setLoading(true);

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const CustomerProfile = props => {
   const [details, setDetails] = useState({});
+  const [controller, setController] = useState(false);
   const profileSearch = () => {
     if (details !== props.id) {
       setDetails({ id: props.id });
@@ -9,17 +10,18 @@ const CustomerProfile = props => {
   };
 
   useEffect(() => {
-    if (details.id) {
-      fetch(`https://cyf-react.glitch.me/customers/${details.id}`)
+    if (details.id && !controller) {
+      fetch(`https://biruk-hotel-server.herokuapp.com/bookings/${details.id}`)
         .then(res => res.json())
         .then(data => {
           if (details.id === props.id) {
             setDetails(data);
+            setController(true);
           }
         })
         .catch(err => console.log(err));
     }
-  }, [details, props.id]);
+  }, [details, props.id, controller]);
 
   return (
     <>
