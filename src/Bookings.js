@@ -87,7 +87,6 @@ const Bookings = () => {
     ) {
       setMsg("Please, enter all data");
     } else {
-      setMsg("");
       fetch("https://httpstat.us/200", {
         method: "POST",
         body: JSON.stringify({
@@ -113,7 +112,9 @@ const Bookings = () => {
         surname,
         title
       };
+      console.log(tempArr);
       setBooking(booking.concat(tempArr));
+      console.log(booking);
       setFirstName("");
       setSurname("");
       setTitle("");

@@ -4,7 +4,10 @@ import RowTable from "./RowTable";
 function SearchResults(props) {
   const [customerId, setCustomerId] = useState("");
   const [sorted, setSorted] = useState(0);
-  const [booking, setBooking] = useState(props.results);
+  let [booking, setBooking] = useState(props.results);
+  booking = [...props.results];
+  console.log(".results", props.results);
+  console.log("booking", booking);
   function sortNum(event) {
     if (sorted % 2 === 0) {
       if (event.target.innerText === "ID")
@@ -134,14 +137,7 @@ function SearchResults(props) {
             <th className="set-pointer" scope="col" onClick={sortNum}>
               Check out Date
             </th>
-            <th
-              className="set-pointer"
-              name="nights"
-              scope="col"
-              onClick={sortNum}
-            >
-              Number of Nights
-            </th>
+            <th scope="col">Number of Nights</th>
             <th />
             <th />
           </tr>
