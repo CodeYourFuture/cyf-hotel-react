@@ -69,3 +69,27 @@ tr,
 .card {
   width: 18rem;
 }
+
+.asideDiv {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: lightgray;
+  /* display: none; */
+}
+
+.my-input {
+  width: 12%;
+  margin-right: 2rem;
+}
+
+.my-label {
+  width: 10%;
+  margin-left: 2rem;
+}
+
+.set-pointer {
+  cursor: pointer;
+}

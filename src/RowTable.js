@@ -8,7 +8,10 @@ function RowTable(props) {
     } else {
       setClicked("selected");
     }
-    console.log(clicked);
+  }
+
+  function showProfile(event) {
+    props.selectCustomer(props.book.id);
   }
   return (
     <tr key={props.book.id} className={clicked} onClick={setClassName}>
@@ -25,6 +28,11 @@ function RowTable(props) {
           moment(props.book.checkInDate),
           "days"
         )}
+      </td>
+      <td>
+        <button className="btn btn-primary" onClick={showProfile}>
+          Show Profile
+        </button>
       </td>
     </tr>
   );
