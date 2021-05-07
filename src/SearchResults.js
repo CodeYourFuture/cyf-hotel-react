@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ bookings }) => {
+  const [color] = useState("");
+
+  function highLightRow(e) {
+    if (e.target.parentNode.className === "") {
+      e.target.parentNode.className = "yellow";
+    } else {
+      e.target.parentNode.className = "";
+    }
+  }
+
   return (
     <div>
       <table className="table">
@@ -21,7 +31,7 @@ const SearchResults = ({ bookings }) => {
         <tbody className="bodyClass">
           {bookings.map((props, index) => {
             return (
-              <tr key={index}>
+              <tr key={index} onClick={highLightRow} className={color}>
                 <td>{props.id}</td>
                 <td>{props.title}</td>
                 <td>{props.firstName}</td>
@@ -46,4 +56,3 @@ const SearchResults = ({ bookings }) => {
 };
 
 export default SearchResults;
-//.

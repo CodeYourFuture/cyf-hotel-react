@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(172, 172, 211);
+  /* background-color: rgb(172, 172, 211); */
 }
 
 .App-header {
@@ -39,9 +39,20 @@ body {
 .footer li {
   list-style: none;
 }
+.orders {
+  text-align: center;
+}
+.orders li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 .search {
   padding: 5px 0 20px 0;
+}
+.gray {
+  background-color: gray;
 }
 
 tr {
@@ -55,4 +66,7 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+.yellow {
+  background: yellow;
 }
