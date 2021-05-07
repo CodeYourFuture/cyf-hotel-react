@@ -9,6 +9,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState("");
   const [buttonId, setButtonId] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     let filteredBookings = bookings.filter(booking => {
@@ -21,10 +22,20 @@ const Bookings = () => {
   };
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/delayed")
-      .then(resp => resp.json())
+      .then(resp => {
+        if (!resp.ok) {
+          throw new Error(resp.status);
+        } else {
+          return resp.json();
+        }
+      })
       .then(data => {
         setBookings(data);
         setLoading(false);
+      })
+      .catch(error => {
+        console.log(error);
+        setError(error.message);
       });
   }, []);
   function changeButtonId(e) {
@@ -83,7 +94,9 @@ const Bookings = () => {
       setBookings(newBookings);
     }
   }
-  if (loading) {
+  if (error) {
+    return <h1>Error: {error} Please try again later</h1>;
+  } else if (loading) {
     return <Spinner animation="border" className="spinner" />;
   } else {
     return (
