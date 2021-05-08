@@ -1,0 +1,15 @@
+.button-head {
+  background-color: white !important;
+}
+
+.button-head:hover {
+  color: blue !important;
+}
+
+.button-width {
+  width: 110px;
+}
+
+.profile-guest {
+  cursor: not-allowed !important;
+}

@@ -1,8 +1,8 @@
 import React from "react";
-import infoForCards from "./data/infoForCards.json";
-import "./Cards.css";
+import infoForCards from "../data/infoForCards.json";
+import "./TouristCards.css";
 
-const Cards = () => {
+const TouristCards = () => {
   return (
     <section>
       <div className="card-deck tourist-cards">
@@ -36,4 +36,4 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default TouristCards;

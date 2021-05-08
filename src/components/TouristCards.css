@@ -37,6 +37,7 @@
   font-weight: bold;
   color: rgb(230, 227, 227);
   background-color: #431c5d;
+  border-radius: 10px;
   border: medium solid rgb(230, 227, 227);
 }
 

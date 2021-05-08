@@ -1,0 +1,16 @@
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker {
+  border-color: lightgray !important;
+}
+
+.date-picker-wrapper {
+  line-height: 34px;
+  width: 100% !important;
+  margin-top: 4px;
+  border-radius: 4px;
+  border-color: rgb(212, 209, 209) !important;
+  border-width: thin;
+}

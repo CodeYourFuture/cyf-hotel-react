@@ -7,7 +7,7 @@ const Heading = () => {
       <a href="#home">
         <img
           alt="Logo"
-          src="https://image.flaticon.com/icons/svg/139/139899.svg"
+          src="/images/hotel-logo.png"
           className="d-inline-block align-top app-logo"
         />
       </a>

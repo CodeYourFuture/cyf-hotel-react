@@ -11,7 +11,9 @@ header {
 }
 
 .app-logo {
-  width: 30px;
-  height: 30px;
+  background-color: white;
+  width: 40px;
+  height: auto;
   margin-right: 25px;
+  margin-top: -6px;
 }

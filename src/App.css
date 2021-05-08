@@ -9,3 +9,12 @@
 .results {
   padding-top: 15px;
 }
+
+.restaurant-newbooking-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.newbooking-form {
+}

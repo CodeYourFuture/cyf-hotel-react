@@ -1,0 +1,7 @@
+.select-container select {
+  padding: 0;
+  margin: 0;
+  color: grey !important;
+  margin-top: 4px !important;
+  height: 38px;
+}

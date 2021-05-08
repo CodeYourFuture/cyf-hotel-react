@@ -1,10 +1,10 @@
 import React from "react";
-import Cards from "./Cards.js";
+import TouristCards from "./TouristCards.js";
 
 const TouristInfoCards = () => {
   return (
     <div className="container-fluid">
-      <Cards />
+      <TouristCards />
     </div>
   );
 };
