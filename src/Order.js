@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
 const Order = props => {
-  let [orders, setOrders] = useState(0);
-  let orderOne = () => {
+  const [orders, setOrders] = useState(0);
+  const orderOne = () => {
     setOrders((orders += 1));
   };
   return (
