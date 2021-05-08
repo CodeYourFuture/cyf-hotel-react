@@ -210,9 +210,19 @@ button:focus {
 .input {
   border-radius: 5px;
   border: 0.1px solid rgb(170, 170, 170);
-  padding: 5px 0;
-  margin: 3px 0;
 }
+
+.input,
+.lable {
+  padding: 5px 0;
+  margin: 10px 0;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
 .input:focus {
   outline: none;
 }
@@ -226,7 +236,12 @@ button:focus {
   display: none;
 }
 .show {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   background-color: powderblue;
+  padding: 20px;
+  margin: 20px;
 }
