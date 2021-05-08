@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Row = ({ row, setSelectedRow, isSelected, getDuration, showProfile }) => {
+const Row = ({ row, getDuration, showProfile }) => {
+  const [isSelected, setIsSelected] = useState(false);
   const {
     _id,
     title,
@@ -14,7 +15,7 @@ const Row = ({ row, setSelectedRow, isSelected, getDuration, showProfile }) => {
   return (
     <tbody className="table-body table-striped lg-col-11 col-11">
       <tr
-        onClick={() => setSelectedRow(_id)}
+        onClick={() => setIsSelected(!isSelected)}
         className={isSelected ? "selected-row" : "unselected-row"}
       >
         <td>{title}</td>

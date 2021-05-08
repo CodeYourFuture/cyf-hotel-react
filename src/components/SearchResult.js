@@ -5,9 +5,7 @@ import "../App.css";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
-  const [selectedRow, setSelectedRow] = useState(null);
   const [profileId, setProfileId] = useState(null);
-  const [className, setClassName] = useState("customer-profile lg-col-5");
   const showProfile = id => {
     setProfileId(id);
   };
@@ -58,11 +56,8 @@ const SearchResults = props => {
             <Row
               row={result}
               key={result.id}
-              row1={getDuration(result.checkOutDate, result.checkInDate)}
-              isSelected={result.id === selectedRow}
-              setSelectedRow={setSelectedRow}
               showProfile={showProfile}
-              setClassName={setClassName}
+              getDuration={getDuration}
             />
           );
         })}
