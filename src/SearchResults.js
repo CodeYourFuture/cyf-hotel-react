@@ -1,13 +1,7 @@
-import moment from "moment";
-import React, { useState } from "react";
+import React from "react";
+import TableRow from "./TableRow";
 
 const SearchResults = props => {
-  let [highlightRow, setHighlightRow] = useState(false);
-
-  const highlightSelection = () => {
-    setHighlightRow(!highlightRow);
-  };
-
   return (
     <table className="table">
       <thead className="thead-dark">
@@ -24,25 +18,9 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map((booking, index) => (
-          <tr
-            key={index}
-            onClick={highlightSelection}
-            className={highlightRow ? "highlight-row" : ""}
-          >
-            <th scope="col">{booking.id}</th>
-            <th scope="col">{booking.title}</th>
-            <th scope="col">{booking.firstName}</th>
-            <th scope="col">{booking.surname}</th>
-            <th scope="col">{booking.email}</th>
-            <th scope="col">{booking.roomId}</th>
-            <th scope="col">{booking.checkInDate}</th>
-            <th scope="col">{booking.checkOutDate}</th>
-            <th scope="col">
-              {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
-            </th>
-          </tr>
-        ))}
+        {props.results.map(booking => {
+          return <TableRow booking={booking} />;
+        })}
       </tbody>
     </table>
   );
