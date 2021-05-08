@@ -27,7 +27,9 @@ const Bookings = () => {
     //start loading
     setIsLoading(true);
     setIsSubmitted(false);
-    fetch(`http://localhost:3000/bookings`, { method: "GET" })
+    fetch(`https://cyf-nader-hotel-server.herokuapp.com/bookings`, {
+      method: "GET"
+    })
       .then(res => res.json())
       //finxish loading
       .then(data => {
@@ -68,7 +70,7 @@ const Bookings = () => {
   const submitHandler = event => {
     event.preventDefault();
     setShowDisplay("hide");
-    fetch(`http://localhost:3000/bookings/add`, {
+    fetch(`https://cyf-nader-hotel-server.herokuapp.com/bookings/add`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(data)
