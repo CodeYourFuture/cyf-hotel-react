@@ -120,6 +120,8 @@ const Bookings = () => {
             submitHandler={submitHandler}
             changeHandler={changeHandler}
             showDisplay={showDisplay}
+            setShowDisplay={setShowDisplay}
+            data={data}
           />
         </div>
       )}
