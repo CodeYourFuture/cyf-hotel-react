@@ -2,7 +2,7 @@ import moment from "moment";
 import React, { useState } from "react";
 
 const TableRow = ({ booking }) => {
-  let [highlightRow, setHighlightRow] = useState(false);
+  const [highlightRow, setHighlightRow] = useState(false);
 
   const highlightSelection = () => {
     setHighlightRow(!highlightRow);
