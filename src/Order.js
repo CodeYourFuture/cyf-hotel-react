@@ -7,9 +7,9 @@ const Order = function(props) {
   function orderOne() {
     setOrders(orders + 1);
   }
-  //add bootstrap class to <li>
+
   return (
-    <li>
+    <li className="list-group-item order-item">
       {props.orderType} {orders} <RestaurantButton orderOne={orderOne} />
     </li>
   );

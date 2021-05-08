@@ -1,58 +1,81 @@
 import React, { useState } from "react";
-import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
+import TableRow from "./TableRow";
+import LoadingRow from "./LoadingRow";
 
 const SearchResults = function(props) {
-  let [color] = useState("");
+  if (props.error) {
+    return <LoadingRow loading={false} error={props.error} />;
+  } else if (props.loading) {
+    return <LoadingRow loading={true} error={false} />;
+  } else {
+    let [customerId, setCustomerId] = useState(false);
 
-  function highlight(e) {
-    e.persist();
-
-    if (e.target.parentElement.className === "") {
-      e.target.parentElement.className = "highlighted";
-    } else {
-      e.target.parentElement.className = "";
+    function search(id) {
+      //added an if else to collapse the list (customer info)
+      if (customerId === id) {
+        setCustomerId(false);
+      } else if (customerId) {
+        setCustomerId(id);
+      } else {
+        setCustomerId(id);
+      }
     }
-  }
 
-  return (
-    <table className="table">
-      <thead className="thead-light">
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Title</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room id</th>
-          <th scope="col">Check in date</th>
-          <th scope="col">Check out date</th>
-          <th scope="col">Number of nights</th>
-        </tr>
-      </thead>
-      <tbody>
-        {props.results.map((customer, customerIndex) => {
-          return (
-            <tr key={customerIndex} className={color} onClick={highlight}>
-              <td>{customer.id}</td>
-              <td>{customer.title}</td>
-              <td>{customer.firstName}</td>
-              <td>{customer.surname}</td>
-              <td>{customer.email}</td>
-              <td>{customer.roomId}</td>
-              <td>{customer.checkInDate}</td>
-              <td>{customer.checkOutDate}</td>
-              <td>
-                {moment(customer.checkOutDate).diff(
-                  moment(customer.checkInDate),
-                  "days"
-                )}
-              </td>
+    return (
+      <div className="table-responsive">
+        <table className="table">
+          <thead className="thead-light">
+            <tr>
+              <th className="table-header" scope="col">
+                ID
+              </th>
+              <th className="table-header" scope="col">
+                Title
+              </th>
+              <th className="table-header" scope="col">
+                First Name
+              </th>
+              <th className="table-header" scope="col">
+                Last Name
+              </th>
+              <th className="table-header" scope="col">
+                Email
+              </th>
+              <th className="table-header" scope="col">
+                Room id
+              </th>
+              <th className="table-header" scope="col">
+                Check in date
+              </th>
+              <th className="table-header" scope="col">
+                Check out date
+              </th>
+              <th className="table-header" scope="col">
+                Number of nights
+              </th>
+              <th className="table-header" scope="col">
+                Customer Profile
+              </th>
             </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  );
+          </thead>
+          <tbody className="table-body">
+            {props.results.map((customer, customerIndex) => {
+              return (
+                <TableRow
+                  key={customerIndex}
+                  customer={customer}
+                  customerIndex={customerIndex}
+                  searchId={search}
+                />
+              );
+            })}
+          </tbody>
+        </table>
+        <CustomerProfile selectedId={customerId} />
+      </div>
+    );
+  }
 };
 
 export default SearchResults;

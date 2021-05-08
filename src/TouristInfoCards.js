@@ -10,7 +10,7 @@ const TouristInfoCards = function() {
           className="card-img-top"
         />
         <div className="card-body">
-          <h5 className="card-title">Glasgow</h5>
+          <h3 className="card-title">Glasgow</h3>
           <p className="card-text">
             Glasgow is a vibrant and welcoming city bursting with character,
             personality and great experiences. No matter when you visit, you’ll
@@ -18,6 +18,8 @@ const TouristInfoCards = function() {
             stunning architecture, an ever-evolving food and drink scene and
             legendary nightlife.
           </p>
+        </div>
+        <div class="card-footer text-center">
           <a
             href="https://peoplemakeglasgow.com/"
             target="_blank"
@@ -34,7 +36,7 @@ const TouristInfoCards = function() {
           className="card-img-top"
         />
         <div className="card-body">
-          <h5 className="card-title">Manchester</h5>
+          <h3 className="card-title">Manchester</h3>
           <p className="card-text">
             Whether you’re seeking culture, nightlife, history, or just good
             fun, there are plenty of things to do in Manchester.
@@ -45,6 +47,8 @@ const TouristInfoCards = function() {
             and the Imperial War Museum North; see contemporary arts redifined
             at HOME; or even learn to ski at Chill Factore.
           </p>
+        </div>
+        <div class="card-footer text-center">
           <a
             href="https://www.visitmanchester.com/"
             target="_blank"
@@ -61,12 +65,14 @@ const TouristInfoCards = function() {
           className="card-img-top"
         />
         <div className="card-body">
-          <h5 className="card-title">London</h5>
+          <h3 className="card-title">London</h3>
           <p className="card-text">
             One of the world’s most visited cities, England’s buzzing capital is
             well worth the visit and has so much to offer, from magnificent
             history and culture to cutting-edge fashion and food.
           </p>
+        </div>
+        <div class="card-footer text-center">
           <a
             href="https://www.visitlondon.com/"
             target="_blank"
