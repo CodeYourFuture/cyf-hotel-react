@@ -8,6 +8,7 @@ function SearchResultRow({ booking }) {
   function handleRowClick() {
     setIsRowSelected(!isRowSelected);
   }
+
   return (
     <tr
       key={booking.id}
