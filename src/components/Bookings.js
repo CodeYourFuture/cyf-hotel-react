@@ -7,7 +7,6 @@ import "../App.css";
 const Bookings = () => {
   const [bookingData, setBookingData] = useState([]);
   const [route, setRoute] = useState("");
-  const [requestOption, setRequestOption] = useState({ method: "GET" });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [sortAscending, setSortAscending] = useState(false);
@@ -27,7 +26,7 @@ const Bookings = () => {
     //start loading
     setIsLoading(true);
     setIsSubmitted(false);
-    fetch(`https://cyf-nader-hotel-server.herokuapp.com/bookings`, {
+    fetch(`https://cyf-nader-hotel-server.herokuapp.com/bookings${route}`, {
       method: "GET"
     })
       .then(res => res.json())
@@ -37,7 +36,7 @@ const Bookings = () => {
         setBookingData(data);
       })
       .catch(err => setError(err));
-  }, [isSubmitted]);
+  }, [isSubmitted, route]);
 
   const sortBy = item => {
     setSortAscending(!sortAscending);
@@ -94,15 +93,13 @@ const Bookings = () => {
     setData(updateData);
   };
 
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
+  const searchForName = searchVal => {
     setRoute(`/search?term=${searchVal}`);
-    setRequestOption({ method: "GET" });
   };
 
   return (
     <div className="App-content row">
-      <Search search={search} />
+      <Search searchForName={searchForName} />
       {error ? (
         <p>this is an API error</p>
       ) : isLoading ? (

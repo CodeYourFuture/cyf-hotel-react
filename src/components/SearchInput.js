@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SearchInput = props => {
+const SearchInput = ({ searchForName }) => {
   const [inputValue, setInputValue] = useState("");
 
   const changeEvent = event => {
@@ -8,7 +8,7 @@ const SearchInput = props => {
   };
   const searchClick = event => {
     event.preventDefault();
-    props.searchForName(inputValue);
+    searchForName(inputValue);
   };
   return (
     <form
