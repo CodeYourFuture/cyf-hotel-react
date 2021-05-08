@@ -1,7 +1,7 @@
 /* eslint-disable indent*/
 
 import React from "react";
-
+// use touristcard object --> [{city:...,page-link:...}]
 function TouristInfoCards() {
   return (
     <div>

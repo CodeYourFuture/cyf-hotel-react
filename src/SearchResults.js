@@ -2,19 +2,9 @@
 import React, { useState } from "react";
 
 import bookingData from "./data/fakeBookings.json";
-function LengthOfStay(endDate, startDate) {
-  const diff = new Date(endDate) - new Date(startDate);
-  return Math.floor(diff / 86400000);
-}
+import TableRow from "./TableRow";
+
 function SearchResults(props) {
-  const [selectedrow, setSelectedrow] = useState(0);
-  // trying out toggling
-  // const [isHighlighted, setHighlight] = useState(false);
-
-  function changeColor(id) {
-    setSelectedrow(id);
-  }
-
   return (
     <table className="table   table-bordered ">
       <thead>
@@ -32,34 +22,9 @@ function SearchResults(props) {
       </thead>
 
       <tbody>
-        {props.data.map(
-          ({
-            id,
-            title,
-            firstName,
-            surname,
-            email,
-            roomId,
-            checkInDate,
-            checkOutDate
-          }) => (
-            <tr
-              onClick={() => changeColor(id)}
-              key={id}
-              className={selectedrow === id ? "highlight" : ""}
-            >
-              <th scope="row">{id}</th>
-              <td>{title}</td>
-              <td>{firstName}</td>
-              <td>{surname}</td>
-              <td>{email}</td>
-              <td>{roomId}</td>
-              <td>{checkInDate}</td>
-              <td>{checkOutDate}</td>
-              <td>{LengthOfStay(checkOutDate, checkInDate)}</td>
-            </tr>
-          )
-        )}
+        {props.data.map(elem => (
+          <TableRow elem={elem} />
+        ))}
       </tbody>
     </table>
   );
