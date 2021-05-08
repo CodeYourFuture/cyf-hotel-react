@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults";
 
-const Bookings = () => {
+const Bookings = props => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
 
@@ -22,7 +22,7 @@ const Bookings = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/delayed`)
+    fetch(`https://cyf-react.glitch.me`)
       .then(response => {
         if (response.status >= 400) {
           throw new Error(
@@ -47,7 +47,12 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} loading={loading} error={error} />
+        <SearchResults
+          results={bookings}
+          loading={loading}
+          error={error}
+          addedBooking={props.newBooking}
+        />
       </div>
     </div>
   );

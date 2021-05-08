@@ -19,7 +19,7 @@ const TouristInfoCards = function() {
             legendary nightlife.
           </p>
         </div>
-        <div class="card-footer text-center">
+        <div className="card-footer text-center">
           <a
             href="https://peoplemakeglasgow.com/"
             target="_blank"
@@ -48,7 +48,7 @@ const TouristInfoCards = function() {
             at HOME; or even learn to ski at Chill Factore.
           </p>
         </div>
-        <div class="card-footer text-center">
+        <div className="card-footer text-center">
           <a
             href="https://www.visitmanchester.com/"
             target="_blank"
@@ -72,7 +72,7 @@ const TouristInfoCards = function() {
             history and culture to cutting-edge fashion and food.
           </p>
         </div>
-        <div class="card-footer text-center">
+        <div className="card-footer text-center">
           <a
             href="https://www.visitlondon.com/"
             target="_blank"

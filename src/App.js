@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./App.css";
 
@@ -7,6 +7,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant";
+import NewBookingsForm from "./NewBookingsForm";
 
 const hotelInfos = [
   "123 Fake Street, London, E1 4UD",
@@ -15,12 +16,19 @@ const hotelInfos = [
 ];
 
 const App = () => {
+  const [newBooking, setNewBooking] = useState("");
+
+  function getNewBooking(booking) {
+    setNewBooking(booking);
+  }
+
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards />
-      <Bookings />
+      <Bookings newBooking={newBooking} />
       <Restaurant />
+      <NewBookingsForm getBooking={getNewBooking} />
       <Footer hotelInfos={hotelInfos} />
     </div>
   );

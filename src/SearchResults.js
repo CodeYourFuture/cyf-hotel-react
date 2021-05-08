@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 import TableRow from "./TableRow";
 import LoadingRow from "./LoadingRow";
+import NewBookingsTableRow from "./NewBookingsTableRow";
 
 const SearchResults = function(props) {
   if (props.error) {
@@ -71,6 +72,14 @@ const SearchResults = function(props) {
               );
             })}
           </tbody>
+          <tfoot>
+            {props.addedBooking ? (
+              <NewBookingsTableRow
+                customer={props.addedBooking}
+                searchId={search}
+              />
+            ) : null}
+          </tfoot>
         </table>
         <CustomerProfile selectedId={customerId} />
       </div>
