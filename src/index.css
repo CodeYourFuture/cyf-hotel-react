@@ -24,3 +24,8 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: row;
+}
