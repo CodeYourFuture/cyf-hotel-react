@@ -8,6 +8,13 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    console.log(bookings);
+    setFilteredBookings(
+      bookings.filter(({ firstName, surname }) => {
+        return firstName.includes(searchVal) || surname.includes(searchVal);
+      })
+      //TODO: after first, search can get only filtered users not all users
+    );
   };
 
   useEffect(() => {
