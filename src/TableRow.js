@@ -1,5 +1,6 @@
-import moment from "moment";
 import React, { useState } from "react";
+import moment from "moment";
+import ProfileButton from "./ProfileButton";
 
 const TableRow = ({ booking }) => {
   const [highlightRow, setHighlightRow] = useState(false);
@@ -24,6 +25,7 @@ const TableRow = ({ booking }) => {
       <th scope="col">
         {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
       </th>
+      <ProfileButton />
     </tr>
   );
 };
