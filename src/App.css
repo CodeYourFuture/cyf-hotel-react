@@ -3,7 +3,6 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
@@ -54,4 +53,12 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.restaurantButton {
+  margin: 10px;
+}
+
+.highlight-row {
+  background-color: yellow;
 }
