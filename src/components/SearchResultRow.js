@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 import moment from "moment";
 import "../App.css";
+import "./SearchResults.css";
 
-function SearchResultRow({ booking }) {
+function SearchResultRow({ booking, showProfile }) {
   const [isRowSelected, setIsRowSelected] = useState(false);
 
-  function handleRowClick() {
-    setIsRowSelected(!isRowSelected);
+  function handleRowClick(event) {
+    if (event.target.getAttribute("name") !== "profile") {
+      setIsRowSelected(!isRowSelected);
+    }
+  }
+
+  function handleProfileClick(event) {
+    if (event.target.getAttribute("name") === "profile") {
+      showProfile(booking.id);
+    }
   }
 
   return (
@@ -24,6 +33,11 @@ function SearchResultRow({ booking }) {
       <td>{booking.checkOutDate}</td>
       <td>
         {moment(booking.checkOutDate).diff(moment(booking.checkInDate), "day")}
+      </td>
+      <td>
+        <button name="profile" onClick={handleProfileClick}>
+          Show profile
+        </button>
       </td>
     </tr>
   );
