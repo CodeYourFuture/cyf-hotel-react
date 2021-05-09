@@ -9,13 +9,22 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 70px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+}
+
+.headerTitle {
+  margin-left: 5rem;
+  color: red;
+}
+
+.imgHeader {
+  width: 3rem;
 }
 
 .App-title {
@@ -39,8 +48,13 @@
   padding: 5px 0 20px 0;
 }
 
-tr {
+tr,
+.not-selected {
   color: #5b5757;
+}
+
+.selected {
+  background-color: aqua;
 }
 
 .results {
@@ -54,4 +68,28 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.asideDiv {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: lightgray;
+  /* display: none; */
+}
+
+.my-input {
+  width: 12%;
+  margin-right: 2rem;
+}
+
+.my-label {
+  width: 10%;
+  margin-left: 2rem;
+}
+
+.set-pointer {
+  cursor: pointer;
 }
