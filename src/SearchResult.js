@@ -4,10 +4,13 @@ import moment from "moment";
 const SearchResult = props => {
   const [isSelected, setSelected] = useState(false);
 
-  const handleClick = () => {
+  const highlightRow = () => {
     setSelected(selected => !selected);
   };
 
+  const test = () => {
+    props.handleClickButton(props.info.id);
+  };
   const { info, index } = props;
   let checkInDate = moment(info.checkInDate);
   let checkOutDate = moment(info.checkOutDate);
@@ -17,7 +20,7 @@ const SearchResult = props => {
     <tr
       key={index}
       className={isSelected ? "selected" : ""}
-      onClick={handleClick}
+      onClick={highlightRow}
     >
       <td>{info.title}</td>
       <td>{info.firstName}</td>
@@ -27,6 +30,9 @@ const SearchResult = props => {
       <td>{info.checkInDate}</td>
       <td>{info.checkOutDate}</td>
       <td>{lengthOfStay} Night(s)</td>
+      <button className="btn btn-primary" onClick={test}>
+        Show profile
+      </button>
     </tr>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const TableHeading = () => {
   return (
@@ -12,6 +12,7 @@ const TableHeading = () => {
         <th scope="col">Check in date</th>
         <th scope="col">Check out date</th>
         <th scope="col">Staying length</th>
+        <th scope="col">Customer info</th>
       </tr>
     </thead>
   );
