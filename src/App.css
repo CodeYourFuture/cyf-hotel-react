@@ -4,17 +4,19 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 100px;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
@@ -54,4 +56,38 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.card-body {
+  flex-direction: column;
+}
+
+img {
+  height: 200px;
+}
+
+.footer-container {
+  display: flex;
+  background-color: #222;
+  color: white;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+
+.selected {
+  background-color: rgba(76, 85, 82, 0.514) !important;
+  color: white;
+  font-weight: bold;
 }
