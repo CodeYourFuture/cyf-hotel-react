@@ -1,0 +1,23 @@
+.newbooking-section {
+  font-family: "Lora", serif;
+  margin: 20px;
+  grid-template-areas:
+    "head head"
+    "main  aside"
+    "main  aside"
+    "main  aside"
+    "main  aside";
+  /* width: 50%; */
+}
+
+.text-center {
+  grid-area: head;
+}
+
+.main-field {
+  grid-area: main;
+}
+
+.aside-field {
+  grid-area: aside;
+}

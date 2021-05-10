@@ -1,0 +1,5 @@
+.input-number-container input {
+  color: grey !important;
+  line-height: 50px;
+  margin-top: 4px !important;
+}

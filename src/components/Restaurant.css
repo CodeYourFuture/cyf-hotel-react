@@ -1,0 +1,16 @@
+section h3 {
+  font-family: "Lora", serif;
+}
+.restaurant-orders {
+  font-family: "Lora", serif;
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+@media screen and (max-width: 868px) {
+  .collapse-list {
+    display: block;
+    margin-top: 20px;
+  }
+}

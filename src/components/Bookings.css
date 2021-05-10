@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: #ffc107 !important;
+}
+
+.fetching-message {
+  display: flex;
+  justify-content: center;
+  background-color: #ffc107 !important;
+  margin: 10px;
+  padding: 10px;
+}

@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.6.0",
+    "moment": "^2.29.1",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.5.2",
+    "react-datepicker": "^3.8.0",
     "react-dom": "^16.8.6",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "reactstrap": "^8.9.0"
   },
   "scripts": {
     "start": "react-scripts start",

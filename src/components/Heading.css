@@ -1,0 +1,19 @@
+header {
+  background-color: #222;
+  height: 65px;
+  padding: 20px;
+  margin-bottom: 25px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.app-logo {
+  background-color: white;
+  width: 40px;
+  height: auto;
+  margin-right: 25px;
+  margin-top: -6px;
+}

@@ -1,0 +1,7 @@
+{
+  "extends": ["react-app", "@codeyourfuture/standard"],
+  "rules": {
+    "indent": "off",
+    "linebreak-style": "off"
+  }
+}
