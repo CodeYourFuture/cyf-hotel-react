@@ -3,7 +3,7 @@ import SearchInput from "./SearchInput";
 
 const Search = ({ searchForName }) => {
   return (
-    <div className="search lg-col-10">
+    <div className="search lg-col-6">
       <div className="page-header">
         <h4 className="text-left">Search Bookings</h4>
       </div>

@@ -105,7 +105,7 @@ const Bookings = () => {
       ) : isLoading ? (
         <p>loading...</p>
       ) : (
-        <div className="result-form lg-col-12 col-12">
+        <div className="result-form lg-col-10 col-12">
           <SearchResults results={bookingData} error={error} sortBy={sortBy} />
           <div>
             <button

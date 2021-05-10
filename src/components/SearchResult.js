@@ -10,7 +10,7 @@ const SearchResults = props => {
     setProfileId(id);
   };
   return (
-    <div className="lg-col-12 col-12">
+    <div className="lg-col-10 col-10">
       <table className="table lg-col-12 col-12">
         <thead className="table-head lg-col-11 col-11">
           <tr>
