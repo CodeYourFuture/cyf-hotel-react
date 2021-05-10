@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./components/SearchResults";
-//import FakeBookings from "./data/fakeBookings.json";
+import AddBooking from "./components/AddBooking.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState(null);
@@ -18,14 +18,30 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/error") //"https://cyf-react.glitch.me/delayed""https://cyf-react.glitch.me"
+    const apiArr = [
+      "https://cyf-react.glitch.me/error",
+      "https://cyf-react.glitch.me/delayed",
+      "https://cyf-react.glitch.me"
+    ];
+
+    let iter = 6;
+    let randomIndex = 0;
+    do {
+      randomIndex = Math.floor(Math.random() * apiArr.length);
+      iter--;
+    } while (iter > 0 && randomIndex !== 2);
+
+    fetch(apiArr[randomIndex])
       .then(response => {
         if (!response.ok) {
           throw Error(response.status);
         }
         return response.json();
       })
-      .then(data => setBookings(data))
+      .then(data => {
+        setBookings(data);
+        console.log(data);
+      })
       .catch(err => setBookings(`HTTP ${err}`));
   }, []);
 
@@ -43,6 +59,11 @@ const Bookings = () => {
           <div>Loading..</div>
         )}
       </div>
+      <AddBooking
+        addNewCustomer={item => {
+          setBookings(bookings.concat(item));
+        }}
+      />
     </div>
   );
 };

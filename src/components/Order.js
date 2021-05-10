@@ -9,7 +9,7 @@ function Order(props) {
     setOrders(orders + 1);
   }
   return (
-    <li>
+    <li className="list-group-item">
       <RestaurantButton clickFunc={orderOne} />
       {props.orderType}: {orders}
     </li>

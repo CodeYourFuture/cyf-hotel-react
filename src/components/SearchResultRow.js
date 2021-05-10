@@ -35,7 +35,11 @@ function SearchResultRow({ booking, showProfile }) {
         {moment(booking.checkOutDate).diff(moment(booking.checkInDate), "day")}
       </td>
       <td>
-        <button name="profile" onClick={handleProfileClick}>
+        <button
+          name="profile"
+          className="btn btn-info"
+          onClick={handleProfileClick}
+        >
           Show profile
         </button>
       </td>

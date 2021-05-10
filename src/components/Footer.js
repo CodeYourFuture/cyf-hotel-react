@@ -2,9 +2,11 @@ import React from "react";
 
 function Footer(props) {
   return (
-    <ul>
+    <ul className="list-group-flush row">
       {props.info.map((data, index) => (
-        <li key={index}>{data}</li>
+        <li className="list-group-item col" key={index}>
+          {data}
+        </li>
       ))}
     </ul>
   );
