@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import SearchButton from "./SearchButton";
 
 function AddBooking(props) {
   const [title, setTitle] = useState("");
