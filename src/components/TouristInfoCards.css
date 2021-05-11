@@ -1,0 +1,8 @@
+.Container {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  margin: 1%;
+}
