@@ -18,7 +18,7 @@ const Search = ({ setSubmit }) => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box" onClick={handleSubmit}>
+          <form className="form-group search-box" onSubmit={handleSubmit}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input

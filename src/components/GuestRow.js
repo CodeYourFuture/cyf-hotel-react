@@ -4,7 +4,7 @@ import moment from "moment";
 const GuestRow = ({ guest, setGuestID }) => {
   const [highlight, setHighlight] = useState(false);
 
-  const Toggle = () => setHighlight(!highlight);
+  const toggle = () => setHighlight(!highlight);
 
   const handleGuestID = e => {
     e.stopPropagation();
@@ -12,7 +12,7 @@ const GuestRow = ({ guest, setGuestID }) => {
   };
 
   return (
-    <tr className={highlight ? "highlight-row" : null} onClick={Toggle}>
+    <tr className={highlight ? "highlight-row" : null} onClick={toggle}>
       <td>{guest.id}</td>
       <td>{guest.title}</td>
       <td>{guest.firstName}</td>

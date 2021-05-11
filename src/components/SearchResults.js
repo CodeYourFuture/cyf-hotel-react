@@ -4,16 +4,17 @@ import CustomerProfile from "./CustomerProfile.js";
 
 const SearchResults = ({ bookings, submit }) => {
   const [profileID, setProfileID] = useState(null);
-
+  const [isLoading, setIsLoading] = useState(false);
   const [guestID, setGuestID] = useState(null);
 
   useEffect(() => {
     if (guestID !== null) {
+      setIsLoading(true);
       fetch(`https://cyf-react.glitch.me/customers/${guestID}`)
         .then(res => res.json())
         .then(data => {
           setProfileID(data);
-          console.table(data);
+          setIsLoading(false);
         })
         .catch(err => console.error(err));
     }
@@ -48,7 +49,11 @@ const SearchResults = ({ bookings, submit }) => {
           ))}
         </tbody>
       </table>
-      <CustomerProfile profileID={profileID} guestID={guestID} />
+      {isLoading === true ? (
+        <h3>Loading...</h3>
+      ) : (
+        <CustomerProfile profileID={profileID} />
+      )}
     </div>
   );
 };
