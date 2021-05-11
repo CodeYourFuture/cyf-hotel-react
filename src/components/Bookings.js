@@ -5,19 +5,26 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [submit, setSubmit] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    setIsLoading(true);
+    fetch("https://cyf-react.glitch.me/")
       .then(res => res.json())
       .then(data => {
         setBookings(data);
+        setIsLoading(false);
       })
       .catch(err => console.error(err));
   }, []);
   return (
     <div>
       <Search setSubmit={setSubmit} />
-      <SearchResults bookings={bookings} submit={submit} />
+      {isLoading === true ? (
+        <h2>Loading...</h2>
+      ) : (
+        <SearchResults bookings={bookings} submit={submit} />
+      )}
     </div>
   );
 };
