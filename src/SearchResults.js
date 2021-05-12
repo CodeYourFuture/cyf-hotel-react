@@ -1,25 +1,20 @@
 import React, { useState } from "react";
 import BookingDetails from "./BookingDetails.js";
-import Highlight from "./Highlight.js";
+import CustomerProfile from "./CustomerProfile";
 
-const SearchResults = ({ results }) => {
-  const [row, setRow] = useState({
-    activeRow: null,
-    results
-  });
+const SearchResults = ({ bookings }) => {
+  const [row, setRow] = useState([]);
+  const [id, setId] = useState("");
 
-  function HandleClick(e, index) {
-    let selectedRowClassList = e.target.parentElement.classList.value;
-    if (selectedRowClassList.includes("highlight-row")) {
-      setRow({ ...row, activeRow: null });
-    } else {
-      setRow({ ...row, activeRow: row.results[index] });
-    }
+  function profileClick(event) {
+    const id = event.target.parentElement.parentElement.id;
+    setId(id);
   }
 
   return (
     <>
       <h1>Hello World</h1>
+      <CustomerProfile guestId={id} />
       <table className="table">
         <thead>
           <tr>
@@ -31,19 +26,18 @@ const SearchResults = ({ results }) => {
             <th scope="col">Check In</th>
             <th scope="col">Check Out</th>
             <th scope="col">Duration</th>
+            <th scope="col">Show Profile</th>
           </tr>
         </thead>
         <tbody>
-          {row.results.map((info, index) => (
-            <tr
-              key={index}
-              className={Highlight(index, row)}
-              onClick={event => {
-                HandleClick(event, index);
-              }}
-            >
-              <BookingDetails info={info} />
-            </tr>
+          {bookings.map(info => (
+            <BookingDetails
+              key={info.id}
+              info={info}
+              row={row}
+              setRow={setRow}
+              profileClick={profileClick}
+            />
           ))}
         </tbody>
       </table>
