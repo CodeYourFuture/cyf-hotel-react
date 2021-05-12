@@ -1,0 +1,19 @@
+.loading {
+  display: block;
+  text-align: center;
+}
+
+.loaded {
+  display: none;
+}
+
+p {
+  display: inline-block;
+}
+
+.customer-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
