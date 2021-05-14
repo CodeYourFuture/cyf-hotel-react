@@ -1,15 +1,14 @@
-import moment from "moment";
 import React, { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
+import SearchResultRow from "./SearchResultRow";
 
 const SearchResults = props => {
-  const [color] = useState("");
-  function highlightRow(e) {
-    if (e.target.parentElement.className === "") {
-      e.target.parentElement.className = "gray";
-    } else {
-      e.target.parentElement.className = "";
-    }
-  }
+  const [customerId, setCustomerId] = useState("");
+
+  const selectCustomer = id => {
+    setCustomerId(id);
+  };
+
   return (
     <div className="overflow-auto">
       <table className="table">
@@ -23,27 +22,21 @@ const SearchResults = props => {
             <th scope="col">Room</th>
             <th scope="col">Check in</th>
             <th scope="col">Check out</th>
-            <th scope="col">nights</th>
+            <th scope="col">Nights</th>
+            <th scope="col">Profile</th>
           </tr>
         </thead>
         <tbody className="text-center">
           {props.results.map((person, index) => (
-            <tr key={index} onClick={highlightRow} className={color}>
-              <td>{person.id}</td>
-              <td>{person.title}</td>
-              <td>{person.firstName}</td>
-              <td>{person.surname}</td>
-              <td>{person.email}</td>
-              <td>{person.roomId}</td>
-              <td>{person.checkInDate}</td>
-              <td>{person.checkOutDate}</td>
-              <td>
-                {moment(person.checkOutDate).diff(person.checkInDate, "days")}
-              </td>
-            </tr>
+            <SearchResultRow
+              key={index}
+              person={person}
+              selectCustomer={selectCustomer}
+            />
           ))}
         </tbody>
       </table>
+      <CustomerProfile customerId={customerId} />
     </div>
   );
 };
