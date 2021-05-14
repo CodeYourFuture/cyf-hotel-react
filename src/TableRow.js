@@ -8,7 +8,16 @@ function lengthOfStay(endDate, startDate) {
 }
 function TableRow({ elem }) {
   const [isselectedrow, setSelectedrow] = useState(false);
-
+  const {
+    id,
+    title,
+    firstName,
+    surname,
+    email,
+    roomId,
+    checkInDate,
+    checkOutDate
+  } = elem;
   function highlight() {
     setSelectedrow(!isselectedrow);
   }
@@ -16,17 +25,17 @@ function TableRow({ elem }) {
     <tr
       className={isselectedrow ? "highlight" : ""}
       onClick={highlight}
-      key={elem.id}
+      key={id}
     >
-      <th scope="row">{elem.id}</th>
-      <td>{elem.title}</td>
-      <td>{elem.firstName}</td>
-      <td>{elem.surname}</td>
-      <td>{elem.email}</td>
-      <td>{elem.roomId}</td>
-      <td>{elem.checkInDate}</td>
-      <td>{elem.checkOutDate}</td>
-      <td>{lengthOfStay(elem.checkOutDate, elem.checkInDate)}</td>
+      <th scope="row">{id}</th>
+      <td>{title}</td>
+      <td>{firstName}</td>
+      <td>{surname}</td>
+      <td>{email}</td>
+      <td>{roomId}</td>
+      <td>{checkInDate}</td>
+      <td>{checkOutDate}</td>
+      <td>{lengthOfStay(checkOutDate, checkInDate)}</td>
     </tr>
   );
 }
