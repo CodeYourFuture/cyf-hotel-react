@@ -1,14 +1,18 @@
+/* eslint-disable indent*/
 import React from "react";
-
+import RestaurantButton from "./RestaurantButton";
+import Order from "./Order";
+import { useState } from "react";
 const Restaurant = () => {
-  const pizzas = 0;
+  // const pizzas = 0;
+
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+        <Order orderType="Pizzas" />
+        <Order orderType="Salads" />
+        <Order orderType="Chocolate" />
       </ul>
     </div>
   );

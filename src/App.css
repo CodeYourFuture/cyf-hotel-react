@@ -55,3 +55,14 @@ tr {
 .card {
   width: 18rem;
 }
+
+.order-list {
+  padding: 15px;
+  /* margin:5px 0; */
+}
+.add-btn {
+  margin: 10px;
+}
+tr.highlight {
+  background-color: blue;
+}
