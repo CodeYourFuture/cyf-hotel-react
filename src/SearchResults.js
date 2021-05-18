@@ -2,16 +2,6 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ bookings }) => {
-  const [color] = useState("");
-
-  function highLightRow(e) {
-    if (e.target.parentNode.className === "") {
-      e.target.parentNode.className = "yellow";
-    } else {
-      e.target.parentNode.className = "";
-    }
-  }
-
   return (
     <div>
       <table className="table">
@@ -29,29 +19,39 @@ const SearchResults = ({ bookings }) => {
           </tr>
         </thead>
         <tbody className="bodyClass">
-          {bookings.map((props, index) => {
-            return (
-              <tr key={index} onClick={highLightRow} className={color}>
-                <td>{props.id}</td>
-                <td>{props.title}</td>
-                <td>{props.firstName}</td>
-                <td>{props.surname}</td>
-                <td>{props.email}</td>
-                <td>{props.roomId}</td>
-                <td>{props.checkInDate}</td>
-                <td>{props.checkOutDate}</td>
-                <td>
-                  {moment(props.checkOutDate).diff(
-                    moment(props.checkInDate),
-                    "days"
-                  )}
-                </td>
-              </tr>
-            );
+          {bookings.map(booking => {
+            return <TableRow rowData={booking} />;
           })}
         </tbody>
       </table>
     </div>
+  );
+};
+
+const TableRow = ({ rowData }) => {
+  console.log(rowData);
+  const [color, setColor] = useState("");
+  function highLightRow() {
+    if (color === "") {
+      setColor("yellow");
+    } else {
+      setColor("");
+    }
+  }
+  return (
+    <tr onClick={highLightRow} className={color}>
+      <td>{rowData.id}</td>
+      <td>{rowData.title}</td>
+      <td>{rowData.firstName}</td>
+      <td>{rowData.surname}</td>
+      <td>{rowData.email}</td>
+      <td>{rowData.roomId}</td>
+      <td>{rowData.checkInDate}</td>
+      <td>{rowData.checkOutDate}</td>
+      <td>
+        {moment(rowData.checkOutDate).diff(moment(rowData.checkInDate), "days")}
+      </td>
+    </tr>
   );
 };
 
