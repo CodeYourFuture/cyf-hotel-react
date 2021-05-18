@@ -1,34 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 
-const NewFunc = () => {
-  const [test, reTest] = useState(0);
+export default function App() {
+  useEffect(function() {
+    console.log("Effect");
+  });
   return (
     <div>
-      <h4>click me! {test}</h4>
-      <button
-        onClick={() => {
-          reTest(test - 1);
-        }}
-      >
-        Increase
-      </button>
-
-      <button
-        onClick={() => {
-          reTest(test + 1);
-        }}
-      >
-        Decrease
-      </button>
-      <button
-        onClick={() => {
-          reTest(0);
-        }}
-      >
-        Reset
-      </button>
+      <h1>Effect</h1>
     </div>
   );
-};
+}
 
-export default NewFunc;
+// const NewFunc = () => {
+//   const [test, reTest] = useState(0);
+//   return (
+//     <div>
+//       <h4>click me! {test}</h4>
+//       <button
+//         onClick={() => {
+//           reTest(test - 1);
+//         }}
+//       >
+//         Increase
+//       </button>
+
+//       <button
+//         onClick={() => {
+//           reTest(test + 1);
+//         }}
+//       >
+//         Decrease
+//       </button>
+//       <button
+//         onClick={() => {
+//           reTest(0);
+//         }}
+//       >
+//         Reset
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default NewFunc;
