@@ -5,9 +5,23 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    // console.info("TO DO!", searchVal);
+    const filteredNames = bookings.filter(booking => {
+      return (
+        booking.firstName.toUpperCase().includes(searchVal.toUpperCase()) ||
+        booking.surname.toUpperCase().includes(searchVal.toUpperCase())
+      );
+    });
+    setBookings(filteredNames);
   };
-  const [bookings] = useState(FakeBookings);
+  const [bookings, setBookings] = useState([]);
+  useEffect(() => {
+    // console.log("Some Text");
+    fetch("https://cyf-react.glitch.me")
+      .then(res => res.json())
+      .then(data => setBookings(data))
+      .catch(err => console.error(err));
+  }, []);
 
   return (
     <div className="App-content">
