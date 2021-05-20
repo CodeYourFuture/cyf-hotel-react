@@ -1,5 +1,4 @@
 import React from "react";
-import DaysStayed from "./DaysStayed-moment";
 
 const SearchResults = props => {
   return (
@@ -15,7 +14,6 @@ const SearchResults = props => {
             <th scope="col">Room Id</th>
             <th scope="col">Check In Date</th>
             <th scope="col">Check Out Date</th>
-            <th scope="col">Days Stayed</th>
           </tr>
         </thead>
         <tbody>
@@ -31,9 +29,6 @@ const SearchResults = props => {
               <td>{el.roomId}</td>
               <td>{el.checkInDate}</td>
               <td>{el.checkOutDate}</td>
-              <td>
-                <DaysStayed />
-              </td>
             </tr>
           ))}
         </tbody>
