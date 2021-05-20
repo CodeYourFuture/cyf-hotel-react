@@ -1,9 +1,10 @@
 import React from "react";
+import DaysStayed from "./DaysStayed-moment";
 
 const SearchResults = props => {
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -14,12 +15,15 @@ const SearchResults = props => {
             <th scope="col">Room Id</th>
             <th scope="col">Check In Date</th>
             <th scope="col">Check Out Date</th>
+            <th scope="col">Days Stayed</th>
           </tr>
         </thead>
         <tbody>
           {props.results.map(el => (
             <tr>
-              <th scope="row">{el.id}</th>
+              <th scope="row" key>
+                {el.id}
+              </th>
               <td>{el.title}</td>
               <td>{el.firstName}</td>
               <td>{el.surname}</td>
@@ -27,6 +31,9 @@ const SearchResults = props => {
               <td>{el.roomId}</td>
               <td>{el.checkInDate}</td>
               <td>{el.checkOutDate}</td>
+              <td>
+                <DaysStayed />
+              </td>
             </tr>
           ))}
         </tbody>
