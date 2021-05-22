@@ -1,25 +1,14 @@
-.App {
-  text-align: left;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  padding: 0.6rem;
   font-weight: bold;
-}
-
-.App-title {
-  font-size: 1.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .App-content {
@@ -50,8 +39,35 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: #c2b6b6;
+  padding: 2rem;
 }
 
 .card {
-  width: 18rem;
+  width: 25rem;
+}
+.header-image {
+  margin-left: 1rem;
+  height: 4rem;
+  width: auto;
+}
+.header-text {
+  margin-left: 2rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+ul {
+  list-style: none;
+}
+.card-body {
+  text-align: center;
+}
+
+.card-img-top {
+  height: 17rem;
+  padding: 0.6rem;
 }
