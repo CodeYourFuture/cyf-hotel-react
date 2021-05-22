@@ -1,7 +1,7 @@
 import React from "react";
-
+import SingleSearchResult from "./SingleSearchResult";
 const SearchResults = props => (
-  <table class="table">
+  <table className="table">
     <thead>
       <tr>
         <th scope="col">id</th>
@@ -12,22 +12,12 @@ const SearchResults = props => (
         <th scope="col">room id</th>
         <th scope="col">check in date</th>
         <th scope="col">check out date</th>
-        {/* <th scope="col">nights booked</th> */}
+        <th scope="col">nights booked</th>
       </tr>
     </thead>
     <tbody>
       {props.results.map(guestElem => (
-        <tr>
-          <td scope="row">{guestElem.id}</td>
-          <td>{guestElem.title}</td>
-          <td>{guestElem.firstName}</td>
-          <td>{guestElem.surname}</td>
-          <td>{guestElem.email}</td>
-          <td>{guestElem.roomId}</td>
-          <td>{guestElem.checkInDate}</td>
-          <td>{guestElem.checkOutDate}</td>
-          {/* <td>{moment().guestElem.checkOutDate.diff(guestElem.checkInDate)}</td> */}
-        </tr>
+        <SingleSearchResult guestElem={guestElem} />
       ))}
     </tbody>
   </table>
