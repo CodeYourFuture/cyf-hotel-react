@@ -59,3 +59,10 @@ tr {
   display:flex;
   justify-content: space-between;
 }
+#Jumbotron{
+  height: 50vh;
+  width: 100%;
+}
+.card-img-top{
+  height: 30%;
+}
