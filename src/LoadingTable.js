@@ -1,6 +1,6 @@
 import React from "react";
 
-function TableRow(props) {
+function LoadingTable(props) {
   return (
     <div className="table-responsive">
       <table className="table">
@@ -37,4 +37,4 @@ function TableRow(props) {
   );
 }
 
-export default TableRow;
+export default LoadingTable;

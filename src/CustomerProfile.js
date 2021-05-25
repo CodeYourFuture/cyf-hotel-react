@@ -4,10 +4,31 @@ function CustomerProfile(props) {
   if (props.selectedId) {
     const [customerData, setCustomerData] = useState("");
 
+    const [loading, setLoading] = useState(true);
+
+    const [error, setError] = useState(null);
+
     useEffect(() => {
       fetch(`https://cyf-react.glitch.me/customers/${props.selectedId}`)
-        .then(response => response.json())
-        .then(data => setCustomerData(data));
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error(
+              `Encountered something unexpected: ${response.status}`
+            );
+          }
+        })
+        .then(
+          data => {
+            setCustomerData(data);
+            setLoading(false);
+          },
+          error => {
+            setError(error);
+            setLoading(false);
+          }
+        );
     }, [props.selectedId]);
 
     return (
@@ -15,19 +36,33 @@ function CustomerProfile(props) {
         <ul>
           <li>
             <b>ID: </b>
-            {customerData.id}
+            {loading ? "Loading..." : error ? error.message : customerData.id}
           </li>
           <li>
             <b>Email: </b>
-            {customerData.email}
+            {loading
+              ? "Loading..."
+              : error
+              ? error.message
+              : customerData.email}
           </li>
           <li>
             <b>VIP: </b>
-            {customerData.vip ? "Yes" : "No"}
+            {loading
+              ? "Loading..."
+              : error
+              ? error.message
+              : customerData.vip
+              ? "Yes"
+              : "No"}
           </li>
           <li>
             <b>Phone Number: </b>
-            {customerData.phoneNumber}
+            {loading
+              ? "Loading..."
+              : error
+              ? error.message
+              : customerData.phoneNumber}
           </li>
         </ul>
       </div>

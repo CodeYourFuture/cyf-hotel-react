@@ -3,6 +3,14 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults";
 
 const Bookings = props => {
+  const [bookings, setBookings] = useState([]);
+
+  const [newBookings, setNewBookings] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+  const [error, setError] = useState(null);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
 
@@ -15,25 +23,22 @@ const Bookings = props => {
     setBookings(searchedPerson);
   };
 
-  const [bookings, setBookings] = useState([]);
-
-  const [loading, setLoading] = useState(true);
-
-  const [error, setError] = useState(null);
-
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
       .then(response => {
-        if (response.status >= 400) {
+        if (response.ok) {
+          return response.json();
+        } else {
           throw new Error(
             `Encountered something unexpected: ${response.status}`
           );
         }
-        return response.json();
       })
       .then(
         data => {
           setBookings(data);
+          if (props.newBooking)
+            setNewBookings(newBookings.concat(props.newBooking));
           setLoading(false);
         },
         error => {
@@ -41,7 +46,7 @@ const Bookings = props => {
           setLoading(false);
         }
       );
-  }, []);
+  }, [props.newBooking]);
 
   return (
     <div className="App-content">
@@ -51,7 +56,7 @@ const Bookings = props => {
           results={bookings}
           loading={loading}
           error={error}
-          addedBooking={props.newBooking}
+          addedBooking={newBookings}
         />
       </div>
     </div>

@@ -16,7 +16,7 @@ const hotelInfos = [
 ];
 
 const App = () => {
-  const [newBooking, setNewBooking] = useState("");
+  const [newBooking, setNewBooking] = useState(null);
 
   function getNewBooking(booking) {
     setNewBooking(booking);

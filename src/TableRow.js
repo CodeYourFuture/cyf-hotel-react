@@ -14,7 +14,6 @@ function TableRow(props) {
 
   return (
     <tr
-      key={props.customerIndex}
       onClick={highlightWhenClicked}
       className={highlight ? "highlighted body-rows" : "body-rows"}
     >

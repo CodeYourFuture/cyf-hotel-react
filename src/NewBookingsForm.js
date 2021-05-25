@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function NewBookingsForm(props) {
   const [newBooking, setNewBooking] = useState("");
 
+  const [id, setId] = useState(6);
   const [firstName, setFirstName] = useState("");
   const [surname, setSurname] = useState("");
   const [title, setTitle] = useState("");
@@ -29,8 +30,10 @@ function NewBookingsForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
 
+    setId(id + 1);
+
     setNewBooking({
-      id: 6,
+      id: id,
       firstName: firstName,
       surname: surname,
       title: title,

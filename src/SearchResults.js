@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 import TableRow from "./TableRow";
-import LoadingRow from "./LoadingRow";
-import NewBookingsTableRow from "./NewBookingsTableRow";
+import LoadingTable from "./LoadingTable";
 
 const SearchResults = function(props) {
   if (props.error) {
-    return <LoadingRow loading={false} error={props.error} />;
+    return <LoadingTable loading={false} error={props.error} />;
   } else if (props.loading) {
-    return <LoadingRow loading={true} error={false} />;
+    return <LoadingTable loading={true} error={false} />;
   } else {
     let [customerId, setCustomerId] = useState(false);
 
@@ -16,8 +15,6 @@ const SearchResults = function(props) {
       //added an if else to collapse the list (customer info)
       if (customerId === id) {
         setCustomerId(false);
-      } else if (customerId) {
-        setCustomerId(id);
       } else {
         setCustomerId(id);
       }
@@ -73,12 +70,17 @@ const SearchResults = function(props) {
             })}
           </tbody>
           <tfoot>
-            {props.addedBooking ? (
-              <NewBookingsTableRow
-                customer={props.addedBooking}
-                searchId={search}
-              />
-            ) : null}
+            {props.addedBooking
+              ? props.addedBooking.map((customer, customerIndex) => {
+                  return (
+                    <TableRow
+                      key={customerIndex}
+                      customer={customer}
+                      searchId={search}
+                    />
+                  );
+                })
+              : null}
           </tfoot>
         </table>
         <CustomerProfile selectedId={customerId} />
