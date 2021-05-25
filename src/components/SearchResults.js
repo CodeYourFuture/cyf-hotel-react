@@ -10,7 +10,7 @@ const SearchResults = props => {
               id
             </th>
             <th key="2" scope="col">
-              Title
+              title
             </th>
             <th key="3" scope="col">
               first name
@@ -50,7 +50,7 @@ const SearchResults = props => {
                 <th key={index + 2} scope="row">
                   {item.id}
                 </th>
-                <td key={index + 3}>{item.Title}</td>
+                <td key={index + 3}>{item.title}</td>
                 <td key={index + 4}>{item.firstName}</td>
                 <td key={index + 5}>{item.surname}</td>
                 <td key={index + 6}>{item.email}</td>
