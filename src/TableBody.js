@@ -1,16 +1,28 @@
 import React from "react";
 
 const TableBody = (props)=>{
-    console.log(props.Body);
-    return(
-        <tr>
-            {props.Body.map((data, index)=>{
-                if(props.Body.indexOf(data) === 0){
-                    return <th scope="row" key={index}>{data}</th>
-                }
-                    return <td key={index}>{data}</td>})}
-        </tr>
-    )
+        console.log("This is props",props.Body);
+            let dataArr = props.Body;
+            
+        return(
+                dataArr.map((data, index)=>(
+                    <tr key={index}>
+
+                    <th>{data.id}</th>
+                    <td>{data.title}</td>
+                    <td>{data.firstName}</td>
+                    <td>{data.surname}</td>
+                    <td>{data.email}</td>
+                    <td>{data.roomId}</td>
+                    <td>{data.checkInDate}</td>
+                    <td>{data.checkOutDate}</td>
+                    
+                     </tr>
+                     ))
+        
+                )
 }
+
+
 
 export default TableBody;
