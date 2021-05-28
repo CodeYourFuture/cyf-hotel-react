@@ -1,12 +1,19 @@
 import React from "react";
+import moment from "moment";
+moment().format();
 
 const TableBody = (props)=>{
         console.log("This is props",props.Body);
             let dataArr = props.Body;
+
             
         return(
-                dataArr.map((data, index)=>(
-                    <tr key={index}>
+                dataArr.map((data, index)=>{
+
+                    let dateLeaving = moment(data.checkOutDate);
+                    let dateArriving = moment(data.checkInDate);
+
+                    return (<tr key={index}>
 
                     <th>{data.id}</th>
                     <td>{data.title}</td>
@@ -16,9 +23,10 @@ const TableBody = (props)=>{
                     <td>{data.roomId}</td>
                     <td>{data.checkInDate}</td>
                     <td>{data.checkOutDate}</td>
+                    <td>{dateLeaving.diff(dateArriving,"days")}</td>
                     
-                     </tr>
-                     ))
+                     </tr>)
+                })
         
                 )
 }

@@ -8,7 +8,7 @@ const SearchResults = (props)=>{
 return(
     <table className="table">
         <thead>
-            <TableHeader Headings={[`id`, `title`, `first name`, `surname`, `email`, `room id`, `check in date`,`check out date`]}/>
+            <TableHeader Headings={[`Id`, `Title`, `First name`, `Surname`, `Email`, `Room id`, `Check in date`,`Check out date`,`Number of nights staying`]}/>
         </thead>
         <tbody>
             <TableBody Body={props.results}/>
