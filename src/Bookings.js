@@ -26,7 +26,7 @@ const Bookings = () => {
     setBookings(bookings.concat(newBooking));
   };
   useEffect(() => {
-    let url = "https://cyf-react.glitch.me/";
+    let url = "https://cyf-yunusfirat-hotelserver.herokuapp.com/bookings";
     // let url = "https://cyf-react.glitch.me/delayed";
     // let url = "https://cyf-react.glitch.me/error";
     fetch(url)

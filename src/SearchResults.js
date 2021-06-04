@@ -135,15 +135,15 @@ const SearchResults = props => {
             const {
               id,
               title,
-              firstName,
+              firstname,
               surname,
               email,
-              roomId,
-              checkInDate,
-              checkOutDate
+              roomid,
+              checkindate,
+              checkoutdate
             } = item;
-            var a = moment(checkOutDate);
-            var b = moment(checkInDate);
+            var a = moment(checkoutdate);
+            var b = moment(checkindate);
             return (
               <tr
                 style={
@@ -155,14 +155,14 @@ const SearchResults = props => {
                 onClick={() => toggleActive(i)}
               >
                 <th scope="row">{title}</th>
-                <td>{firstName}</td>
+                <td>{firstname}</td>
                 <td>{surname}</td>
                 <td>{email}</td>
-                <td>{roomId}</td>
-                <td>{checkInDate}</td>
-                <td>{checkOutDate}</td>
+                <td>{roomid}</td>
+                <td>{checkindate}</td>
+                <td>{checkoutdate}</td>
                 <td>
-                  {title} {firstName} has a booking for {a.diff(b, "days")}{" "}
+                  {title} {firstname} has a booking for {a.diff(b, "days")}{" "}
                   nights
                 </td>
                 <td>
