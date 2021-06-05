@@ -1,32 +1,67 @@
 import React, { useState } from "react";
-
+// import axios from "axios";
+import moment from "moment";
+// import FormData from "form-data"
 const BookingForm = props => {
-  console.log(props);
   const [addBooking, setAddBooking] = useState({
     title: "",
-    firstName: "",
+    firstname: "",
     surname: "",
     email: "",
-    roomId: "",
-    checkInDate: "",
-    checkOutDate: ""
+    roomid: "",
+    checkindate: moment("").format("YYYY-MM-DD"),
+    checkoutdate: moment("").format("YYYY-MM-DD")
   });
 
   const handleSearchInput = event => {
     const newBooking = { ...addBooking, [event.target.id]: event.target.value };
+    console.log(newBooking);
     setAddBooking(newBooking);
   };
+  // const handleSubmit = event => {
+  //   event.preventDefault();
+  //   props.addBooking(addBooking);
+  //   setAddBooking({
+  //     title: "",
+  //     firstName: "",
+  //     surname: "",
+  //     email: "",
+  //     roomId: "",
+  //     checkInDate: "",
+  //     checkOutDate: ""
+  //   });
+  // };
+
   const handleSubmit = event => {
     event.preventDefault();
-    props.addBooking(addBooking);
+    // const form_data = new FormData();
+    // form_data.append(addBooking);
+
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(addBooking)
+    };
+    console.log(addBooking);
+    fetch(
+      "https://cyf-yunusfirat-hotelserver.herokuapp.com/bookings",
+      requestOptions
+    )
+      .then(response => response.json())
+      .then(data => {
+        props.addBooking(data);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
     setAddBooking({
       title: "",
-      firstName: "",
+      firstname: "",
       surname: "",
       email: "",
-      roomId: "",
-      checkInDate: "",
-      checkOutDate: ""
+      roomid: "",
+      checkindate: "",
+      checkoutdate: ""
     });
   };
 
@@ -46,7 +81,7 @@ const BookingForm = props => {
           value={addBooking.firstName}
           onChange={handleSearchInput}
           type="text"
-          id="firstName"
+          id="firstname"
           className="form-control"
           placeholder="Customer name"
         />
@@ -67,26 +102,26 @@ const BookingForm = props => {
           placeholder="Customer surname"
         />
         <input
-          value={addBooking.roomId}
+          value={addBooking.roomid}
           onChange={handleSearchInput}
           type="number"
-          id="roomId"
+          id="roomid"
           className="form-control"
           placeholder="Room id"
         />
         <input
-          value={addBooking.checkInDate}
+          value={addBooking.checkindate}
           onChange={handleSearchInput}
           type="date"
-          id="checkInDate"
+          id="checkindate"
           className="form-control"
           placeholder="check in date"
         />
         <input
-          value={addBooking.checkOutDate}
+          value={addBooking.checkoutdate}
           onChange={handleSearchInput}
           type="date"
-          id="checkOutDate"
+          id="checkoutdate"
           className="form-control"
           placeholder="check out date"
         />

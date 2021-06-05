@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults";
 import BookingForm from "./BookingForm";
+import axios from "axios";
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
@@ -12,18 +13,30 @@ const Bookings = () => {
 
   const search = searchVal => {
     // console.info("TO DO!", searchVal);
-    let result = bookings.filter(
-      booking =>
-        booking.firstName.toLowerCase() === searchVal.toLowerCase() ||
-        booking.surname.toLowerCase() === searchVal.toLowerCase()
-    );
-    setBookings(result);
+    let re = /^(\d{4})-(\d{1,2})-(\d{1,2})$/;
+    function validate() {
+      if (searchVal.match(re)) {
+        return true;
+      }
+    }
+    if (validate()) {
+      let url = `https://cyf-yunusfirat-hotelserver.herokuapp.com/bookings/search?date=${searchVal}`;
+      axios.get(url).then(resp => {
+        setBookings(resp.data);
+      });
+    } else {
+      let url = `https://cyf-yunusfirat-hotelserver.herokuapp.com/bookings/search?term=${searchVal}`;
+      axios.get(url).then(resp => {
+        setBookings(resp.data);
+      });
+    }
   };
 
   let addBooking = newBooking => {
-    console.log("hello world", newBooking);
-    newBooking["id"] = bookings.length + 1;
+    // console.log("hello world", newBooking);
+    // newBooking["id"] = bookings.length + 1;
     setBookings(bookings.concat(newBooking));
+    // setBookings(newBooking);
   };
   useEffect(() => {
     let url = "https://cyf-yunusfirat-hotelserver.herokuapp.com/bookings";

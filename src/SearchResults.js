@@ -36,10 +36,10 @@ const useSortableData = (items, config = null) => {
   return { items: sortedItems, requestSort, sortConfig };
 };
 
-const SearchResults = props => {
+const SearchResults = ({ bookings }) => {
   const [index, setIndex] = useState("");
   const [selected, setSelected] = useState([]);
-  const { items, requestSort } = useSortableData(props.bookings);
+  const { items, requestSort } = useSortableData(bookings);
 
   const toggleActive = i => {
     if (!selected.includes(i)) {
@@ -48,7 +48,6 @@ const SearchResults = props => {
       setSelected(selected.filter(element => element !== i));
     }
   };
-  console.log(selected);
   const getId = id => {
     setIndex(id);
   };
@@ -71,7 +70,7 @@ const SearchResults = props => {
               <button
                 className="btn btn-primary"
                 type="button"
-                onClick={() => requestSort("firstName")}
+                onClick={() => requestSort("firstname")}
               >
                 Firstname
               </button>
@@ -99,7 +98,7 @@ const SearchResults = props => {
                 className="btn btn-primary"
                 style={{ fontSize: "10px", padding: "30px" }}
                 type="button"
-                onClick={() => requestSort("roomId")}
+                onClick={() => requestSort("roomid")}
               >
                 Room id
               </button>
@@ -108,7 +107,7 @@ const SearchResults = props => {
               <button
                 className="btn btn-primary"
                 type="button"
-                onClick={() => requestSort("checkInDate")}
+                onClick={() => requestSort("checkindate")}
               >
                 Check in date
               </button>
@@ -117,7 +116,7 @@ const SearchResults = props => {
               <button
                 className="btn btn-primary"
                 type="button"
-                onClick={() => requestSort("checkOutDate")}
+                onClick={() => requestSort("checkoutdate")}
               >
                 Check out date
               </button>
