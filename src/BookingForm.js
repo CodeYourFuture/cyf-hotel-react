@@ -75,7 +75,7 @@ const BookingForm = props => {
           type="text"
           id="title"
           className="form-control"
-          placeholder="Customer title"
+          placeholder="Title"
         />
         <input
           value={addBooking.firstName}
@@ -83,7 +83,7 @@ const BookingForm = props => {
           type="text"
           id="firstname"
           className="form-control"
-          placeholder="Customer name"
+          placeholder="Name"
         />
         <input
           value={addBooking.surname}
@@ -91,7 +91,7 @@ const BookingForm = props => {
           type="text"
           id="surname"
           className="form-control"
-          placeholder="Customer surname"
+          placeholder="Surname"
         />
         <input
           value={addBooking.email}
@@ -99,7 +99,7 @@ const BookingForm = props => {
           type="email"
           id="email"
           className="form-control"
-          placeholder="Customer surname"
+          placeholder="Email"
         />
         <input
           value={addBooking.roomid}
@@ -107,7 +107,7 @@ const BookingForm = props => {
           type="number"
           id="roomid"
           className="form-control"
-          placeholder="Room id"
+          placeholder="Room Id"
         />
         <input
           value={addBooking.checkindate}
@@ -115,7 +115,7 @@ const BookingForm = props => {
           type="date"
           id="checkindate"
           className="form-control"
-          placeholder="check in date"
+          placeholder="Check-In-Date"
         />
         <input
           value={addBooking.checkoutdate}
@@ -123,7 +123,7 @@ const BookingForm = props => {
           type="date"
           id="checkoutdate"
           className="form-control"
-          placeholder="check out date"
+          placeholder="Check-Out-Date"
         />
         <button className="btn btn-primary">Add new Booking</button>
       </div>

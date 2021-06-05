@@ -56,7 +56,7 @@ tr {
 }
 
 .card {
-  width: 31rem;
+  width: 28rem;
   top: 50%;
   margin: 0 6px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -66,4 +66,21 @@ tr {
 
 .rowcolor {
   background-color: brown;
+}
+
+input[type="text"] {
+  font-size: 15px;
+  font-weight: bold;
+}
+input[type="email"] {
+  font-size: 15px;
+  font-weight: bold;
+}
+input[type="date"] {
+  font-size: 15px;
+  font-weight: bold;
+}
+input[type="number"] {
+  font-size: 15px;
+  font-weight: bold;
 }

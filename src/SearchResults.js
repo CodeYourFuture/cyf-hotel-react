@@ -96,7 +96,11 @@ const SearchResults = ({ bookings }) => {
             <th scope="col">
               <button
                 className="btn btn-primary"
-                style={{ fontSize: "10px", padding: "30px" }}
+                style={{
+                  paddingRight: "10px",
+                  display: "inline",
+                  textAlign: "center"
+                }}
                 type="button"
                 onClick={() => requestSort("roomid")}
               >
