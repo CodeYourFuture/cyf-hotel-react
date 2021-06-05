@@ -55,14 +55,14 @@ tr {
 .card {
   width: 18rem;
 }
-.card-container{
-  display:flex;
+.card-container {
+  display: flex;
   justify-content: space-between;
 }
-#Jumbotron{
+#Jumbotron {
   height: 50vh;
   width: 100%;
 }
-.card-img-top{
+.card-img-top {
   height: 30%;
 }
