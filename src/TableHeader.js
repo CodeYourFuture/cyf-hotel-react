@@ -7,9 +7,12 @@ const TableHeader = (props) => {
     let headRow = document.getElementById("header-row");
     console.log(headRow);
     if(!headRow.style.backgroundColor){
-      headRow.style.backgroundColor = "yellow";
-    }else if(headRow.style.backgroundColor === "yellow"){
+    headRow.style.backgroundColor = "yellow";
+    }
+    else if(headRow.style.backgroundColor === "yellow"){
       headRow.style.backgroundColor = "white";
+    }else if(headRow.style.backgroundColor === "white"){
+      headRow.style.backgroundColor = "yellow";
     }
   };
   return (

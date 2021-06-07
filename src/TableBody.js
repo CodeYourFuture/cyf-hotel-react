@@ -9,9 +9,12 @@ const TableBody = props => {
   return dataArr.map((data, index) => {
     let dateLeaving = moment(data.checkOutDate);
     let dateArriving = moment(data.checkInDate);
+    const highlight = (domElement)=>{
+      console.log("This function works");
+    }
 
     return (
-      <tr key={index}>
+      <tr key={index} id={`body-row-${index}`} onClick={()=>highlight()}>
         <th>{data.id}</th>
         <td>{data.title}</td>
         <td>{data.firstName}</td>
