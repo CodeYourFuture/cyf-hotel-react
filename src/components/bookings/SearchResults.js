@@ -1,6 +1,30 @@
-import moment from "moment";
-import React from "react";
+import { localeData } from "moment";
+import React, { useState } from "react";
 export const SearchResults = props => {
+  const initialState = { backgroundColor: white, selectedIndex: -1}
+  const [{ backgroundColor, selectedIndex}, setBackGroundColor] = useState(
+    initialState
+  );
+
+  function handleColorChange(e) {
+    console.log(e);
+    const newColor =
+      id === selectedIndex ? backgroundColor === white ? blue : white : blue;
+    setBackGroundColor({ backgroundColor: newColor, selectedIndex: id})
+  }
+  
+  function getDifferenceInDays(start, end) {
+    const date1 = new Date(start);
+    const date2 = new Date(end);
+    // One day in ms.
+    const oneDay = 1000 * 60 * 60 * 24;
+    // time difference between two dates
+    const diffInTime = date2.getTime() - date1.getTime();
+    // number of days between two dates
+    const diffInDays = Math.round(diffInTime / oneDay);
+    return diffInDays;
+  }
+
   return (
     <div className="table-responsive">
       <table className="table">
@@ -46,7 +70,12 @@ export const SearchResults = props => {
               .format("D");
 
             return (
-              <tr key={index + 1}>
+              <tr key={index + 1 } 
+              style ={item.id === selectedIndex
+                ? { backgroundColor: backgroundColor}
+                : { backgroundColor: white}
+                } onClick={() => handleColorChange(item.id)}
+              >
                 <th key={index + 2} scope="row">
                   {item.id}
                 </th>
