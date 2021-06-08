@@ -1,9 +1,9 @@
 import React from "react";
-import Heading from "./components/Heading";
-import TouristInfoCards from "./components/TouristInfoCards";
+import Heading from "./components/main/Heading";
+import {TouristInfoCards} from "./components/TouristInfoCards";
 import Bookings from "./components/Bookings";
-import Footer from "./components/Footer";
-import "./App.css";
+import Footer from "./components/main/Footer";
+import "./styles/App.css";
 
 const App = () => {
   let cityDetails = [

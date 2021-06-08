@@ -1,5 +1,5 @@
 import React from "react";
-const TouristInfoCards = props => {
+export const TouristInfoCards = props => {
   return (
     <div className="card-group">
       <img src={props.src} alt="" className="card-img-top" />
@@ -11,5 +11,3 @@ const TouristInfoCards = props => {
     </div>
   );
 };
-
-export default TouristInfoCards;
