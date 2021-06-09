@@ -1,4 +1,4 @@
-import { localeData } from "moment";
+import moment from "moment";
 import React, { useState } from "react";
 export const SearchResults = props => {
   const initialState = { backgroundColor: white, selectedIndex: -1}
@@ -6,8 +6,7 @@ export const SearchResults = props => {
     initialState
   );
 
-  function handleColorChange(e) {
-    console.log(e);
+  function handleColorChange(e) {;
     const newColor =
       id === selectedIndex ? backgroundColor === white ? blue : white : blue;
     setBackGroundColor({ backgroundColor: newColor, selectedIndex: id})

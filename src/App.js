@@ -2,6 +2,7 @@ import React from "react";
 import Heading from "./components/main/Heading";
 import {TouristInfoCards} from "./components/TouristInfoCards";
 import Bookings from "./components/Bookings";
+import Restaurant from "./components/restaurant/Restaurant"
 import Footer from "./components/main/Footer";
 import "./styles/App.css";
 

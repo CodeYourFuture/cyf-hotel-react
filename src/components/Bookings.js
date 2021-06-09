@@ -1,27 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./bookings/Search.js";
 import {SearchResults} from "./bookings/SearchResults.js";
-import FakeBookings from "../data/fakeBookings.json";
 
 const Bookings = () => {
-  const initialState = FakeBookings;
-  const [bookings, setBookings] = useState(initialState);
-
-  {
-    () => setBookings(bookings);
-  }
+  
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
 
-  return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults customerData={FakeBookings} />
+  const [error, setError] = useState(null);
+  const [loaded, setLoaded] = useState(false);
+  const [bookings, setBookings] = useState([]);
+
+  useEffect(() => {
+    fetch("https://cyf-react-glitch.me")
+    .then(response => response.json())
+    .then(
+      result => {
+        setLoaded(true);
+        setBookings(result)
+      },
+
+      error => {
+        setLoaded(true);
+        setError(error)
+      }
+    );
+  }, [])
+
+  if (error) {
+    return <div>Error: {error.message}</div>
+  } else if (!loaded) {
+    return <div>Loading, Please wait a moment...</div>
+  } else {
+    return (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+          <SearchResults bookings={bookings}/>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Bookings;
