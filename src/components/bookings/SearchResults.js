@@ -1,98 +1,105 @@
-import moment from "moment";
 import React, { useState } from "react";
-export const SearchResults = props => {
-  const initialState = { backgroundColor: white, selectedIndex: -1}
-  const [{ backgroundColor, selectedIndex}, setBackGroundColor] = useState(
+import CustomerProfile from "../CustomerProfile";
+
+function SearchResults({ bookings }) {
+  const [id, setId] = useState(null);
+
+  let cyan = "#42c8f5";
+  let white = "white";
+
+  const initialState = { backgroundColor: white, selectedIndex: -1 };
+  const [{ backgroundColor, selectedIndex }, setBackGColor] = useState(
     initialState
   );
 
-  function handleColorChange(e) {;
+  function handleColorChange(id) {
     const newColor =
-      id === selectedIndex ? backgroundColor === white ? blue : white : blue;
-    setBackGroundColor({ backgroundColor: newColor, selectedIndex: id})
+      id === selectedIndex
+        ? backgroundColor === white
+          ? cyan
+          : white
+        : cyan;
+    setBackGColor({ backgroundColor: newColor, selectedIndex: id });
   }
-  
+
   function getDifferenceInDays(start, end) {
     const date1 = new Date(start);
     const date2 = new Date(end);
-    // One day in ms.
+
+    // One day in milliseconds
     const oneDay = 1000 * 60 * 60 * 24;
-    // time difference between two dates
+
+    // Calculating the time difference between two dates
     const diffInTime = date2.getTime() - date1.getTime();
-    // number of days between two dates
+
+    // Calculating the no. of days between two dates
     const diffInDays = Math.round(diffInTime / oneDay);
+
     return diffInDays;
   }
+
+  // const handleOnClick =
 
   return (
     <div className="table-responsive">
       <table className="table">
+        {/* <caption>List of Customers</caption> */}
         <thead>
           <tr>
-            <th key="1" scope="col">
-              id
-            </th>
-            <th key="2" scope="col">
-              title
-            </th>
-            <th key="3" scope="col">
-              first name
-            </th>
-            <th key="4" scope="col">
-              surname
-            </th>
-            <th key="5" scope="col">
-              email
-            </th>
-            <th key="6" scope="col">
-              room id
-            </th>
-            <th key="7" scope="col">
-              check in date
-            </th>
-            <th key="8" scope="col">
-              check out date
-            </th>
-            <th key="9" scope="col">
-              number of nights
-            </th>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Room ID</th>
+            <th scope="col">Check in Date</th>
+            <th scope="col">Check out Date</th>
+            <th scope="col">Number Of Nights</th>
+            <th scope="col">Profile</th>
           </tr>
         </thead>
         <tbody>
-          {props.customerData.map((item, index) => {
-            let dateOut = item.checkOutDate;
-            let dateIn = item.checkInDate;
-            let nights = moment
-              .utc(
-                moment(dateOut, "YYYY-MM-DD").diff(moment(dateIn, "YYYY-MM-DD"))
-              )
-              .format("D");
-
+          {bookings.map(data => {
             return (
-              <tr key={index + 1 } 
-              style ={item.id === selectedIndex
-                ? { backgroundColor: backgroundColor}
-                : { backgroundColor: white}
-                } onClick={() => handleColorChange(item.id)}
+              <tr
+                key={data.id}
+                style={
+                  data.id === selectedIndex
+                    ? { backgroundColor: backgroundColor }
+                    : { backgroundColor: white }
+                }
+                onClick={() => handleColorChange(data.id)}
               >
-                <th key={index + 2} scope="row">
-                  {item.id}
-                </th>
-                <td key={index + 3}>{item.title}</td>
-                <td key={index + 4}>{item.firstName}</td>
-                <td key={index + 5}>{item.surname}</td>
-                <td key={index + 6}>{item.email}</td>
-                <td key={index + 7}>{item.roomId}</td>
-                <td key={index + 8}>{item.checkInDate}</td>
-                <td key={index + 9}>{item.checkOutDate}</td>
-                <td key={index + 10}>{nights - 1}</td>
+                <td scope="col">{data.id}</td>
+                <td scope="col">{data.title}</td>
+                <td scope="col">{data.firstName}</td>
+                <td scope="col">{data.surname}</td>
+                <td scope="col">{data.email}</td>
+                <td scope="col">{data.roomId}</td>
+                <td scope="col">{data.checkInDate}</td>
+                <td scope="col">{data.checkOutDate}</td>
+                <td scope="col">
+                  {getDifferenceInDays(data.checkInDate, data.checkOutDate)}
+                </td>
+                <td scope="col">
+                  <button
+                    onClick={() => {
+                      setId(data.id);
+                    }}
+                    type="text"
+                  >
+                    Show Profile
+                  </button>
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      <br />
+      {id ? <CustomerProfile id={id} /> : null}
     </div>
   );
-};
+}
 
-// export default SearchResults;
+export default SearchResults;

@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Search from "./bookings/Search.js";
-import {SearchResults} from "./bookings/SearchResults.js";
+import SearchResults from "./bookings/SearchResults.js";
 
 const Bookings = () => {
   
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    const newBookings = bookings;
+    let filteredBooking = newBookings.filter(
+      client =>
+        client.firstName.toUpperCase() === searchVal.toUpperCase() ||
+        client.surname.toUpperCase() === searchVal.toUpperCase()
+    );
+    setBookings(filteredBooking)
   };
 
   const [error, setError] = useState(null);
