@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CustomerProfile from "../CustomerProfile";
 
 function SearchResults({ bookings }) {
-  const [id, setId] = useState([]);
+  const [id, setId] = useState(null);
 
   let cyan = "#42c8f5";
   let white = "white";
@@ -81,10 +81,9 @@ function SearchResults({ bookings }) {
                 <td scope="col">
                   {getDifferenceInDays(data.checkInDate, data.checkOutDate)}
                 </td>
-                <th>
+                <th scope="col">
                   <button
                     onClick={() => {
-                      console.log("Buttin is working!");
                       setId(data.id);
                     }}
                     type="text"
@@ -99,7 +98,7 @@ function SearchResults({ bookings }) {
         </tbody>
       </table>
       <br />
-      <CustomerProfile id={id} />
+      {id ? <CustomerProfile id={id} /> : null}
     </div>
   );
 }
