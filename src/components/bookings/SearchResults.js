@@ -7,19 +7,14 @@ function SearchResults({ bookings }) {
   let cyan = "#42c8f5";
   let white = "white";
 
-  const initialState = { backgroundColor: white, selectedIndex: -1 };
-  const [{ backgroundColor, selectedIndex }, setBackGColor] = useState(
-    initialState
-  );
+  const [selectedRows, setSelectedRows] = useState([]);
 
   function handleColorChange(id) {
-    const newColor =
-      id === selectedIndex
-        ? backgroundColor === white
-          ? cyan
-          : white
-        : cyan;
-    setBackGColor({ backgroundColor: newColor, selectedIndex: id });
+    if (selectedRows.includes(id)) {
+      setSelectedRows(selectedRows.filter(el => el !== id));
+    } else {
+      setSelectedRows(selectedRows.concat(id));
+    }
   }
 
   function getDifferenceInDays(start, end) {
@@ -64,8 +59,8 @@ function SearchResults({ bookings }) {
               <tr
                 key={data.id}
                 style={
-                  data.id === selectedIndex
-                    ? { backgroundColor: backgroundColor }
+                  selectedRows.includes(data.id)
+                    ? { backgroundColor: cyan }
                     : { backgroundColor: white }
                 }
                 onClick={() => handleColorChange(data.id)}
