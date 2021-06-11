@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "./Header";
 
 import Bookings from "./Bookings";
 import "./App.css";
@@ -6,7 +7,7 @@ import "./App.css";
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">CYF Hotel</header>
+      <Header />
       <Bookings />
     </div>
   );
