@@ -4,7 +4,7 @@ import SearchResults from "./bookings/SearchResults.js";
 
 const Bookings = () => {
   const search = searchVal => {
-    const newBookings = bookings;
+    const newBookings = Bookings;
     let filteredBooking = newBookings.filter(
       client =>
         client.firstName.toUpperCase() === searchVal.toUpperCase() ||
