@@ -1,27 +1,29 @@
 import React,{useState} from "react";
 import moment from "moment";
-moment().format();
+// moment().format();
 
 const TableBody = props => {
   console.log("This is props", props.Body);
   let dataArr = props.Body;
-  const initial = "white";
-  let [highlight, setHighlight] = useState(initial);
-  const toggleHighlight = ()=>{
-    if(highlight === "white"){
-      setHighlight("yellow");
+  let [selectedRows, setSelectedRows] = useState([]);
+  const toggleHighlight = (rowId)=>{
+    if(selectedRows.includes(rowId)){
+      setSelectedRows(selectedRows.filter(el=>el!==rowId));
     }else{
-      setHighlight("white");
+      setSelectedRows(selectedRows.concat(rowId));
     }
   }
-
-  return dataArr.map((data, index) => {
+  return dataArr.map((data) => {
     let dateLeaving = moment(data.checkOutDate);
     let dateArriving = moment(data.checkInDate);
     
-  
     return (
-      <tr key={index} id={`body-row-${index}`} style={{backgroundColor:highlight}} onClick={toggleHighlight}>
+      <tr key={data.id}
+      style={(selectedRows.includes(data.id))
+        ? {backgroundColor:"yellow"}
+        : {backgroundColor:"white"}
+      }
+      onClick={()=>toggleHighlight(data.id)}>
         <th>{data.id}</th>
         <td>{data.title}</td>
         <td>{data.firstName}</td> 
