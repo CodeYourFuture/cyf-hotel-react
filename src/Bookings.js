@@ -8,6 +8,7 @@ const Bookings = () => {
     if(searchVal){
       let lowerCase = searchVal.toLowerCase();
     console.info("TO DO!", searchVal);
+    // eslint-disable-next-line
     const filteredBookings = hotelBookings.filter((booking)=>{
       if (booking.firstName.toLowerCase() === lowerCase || booking.surname.toLowerCase() === lowerCase){
     return booking;}
