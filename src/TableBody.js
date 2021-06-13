@@ -12,12 +12,12 @@ const TableBody = props => {
       setSelectedRows(selectedRows.concat(rowId));
     }
   }
-  return dataArr.map((data) => {
+  return dataArr.map((data,index) => {
     let dateLeaving = moment(data.checkOutDate);
     let dateArriving = moment(data.checkInDate);
     
     return (
-      <tr key={data.id}
+      <tr key={index}
       style={(selectedRows.includes(data.id))
         ? {backgroundColor:"yellow"}
         : {backgroundColor:"white"}
