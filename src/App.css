@@ -94,3 +94,30 @@ thead{
 p, h1, h2{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow{
+  background-color: yellow;
+}
+
+tr {
+  cursor: pointer;
+}
+
+.list-tag{
+  display: flex;
+  padding: 20px;
+}
+
+.rest-div{
+  display: flex;
+  justify-content:space-around;
+  /* align-self: center; */
+}

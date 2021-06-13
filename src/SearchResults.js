@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 //import Bookings from "./Bookings"
 
 function getDifferenceInDays(date1, date2) {
@@ -7,12 +7,18 @@ function getDifferenceInDays(date1, date2) {
 }
 
 const SearchResults = (props) => {
+    const [color, setColor] = useState(props.color);
+
+    function selected (color){
+      setColor(color);
+    }
+
     return(
         <div>
             <div>
             <table className = "tables">
                 <thead>
-                <tr>
+                <tr className ={color} onClick ={() => selected("red")} onMouseOut ={() => selected("white")}>
                     <th>ID</th>
                     <th>Title</th>
                     <th>First Name</th>
@@ -25,7 +31,7 @@ const SearchResults = (props) => {
                 </thead>
                 {props.data.map((log, index) => (
                 <tbody>
-                <tr>
+                <tr className ={color} onClick ={() => selected("yellow")} onMouseOut ={() => selected("white")}>
                     <td key = {index}>{log.id}</td>
                     <td key = {index}>{log.title}</td>
                     <td key = {index}>{log.firstName}</td>
