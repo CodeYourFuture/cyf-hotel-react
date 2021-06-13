@@ -6,9 +6,10 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const search = (searchVal) => {
     if(searchVal){
+      let lowerCase = searchVal.toLowerCase();
     console.info("TO DO!", searchVal);
     const filteredBookings = hotelBookings.filter((booking)=>{
-      if (booking.firstName == searchVal || booking.surname == searchVal){
+      if (booking.firstName.toLowerCase() === lowerCase || booking.surname.toLowerCase() === lowerCase){
     return booking;}
   });
     setHotelBookings(filteredBookings);}
