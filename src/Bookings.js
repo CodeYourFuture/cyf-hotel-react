@@ -12,7 +12,7 @@ const Bookings = () => {
       if (booking.firstName.toLowerCase() === lowerCase || booking.surname.toLowerCase() === lowerCase){
     return booking;}
   });
-    setHotelBookings(filteredBookings);}
+    setHotelBookings(filteredBookings);} //trying to reset table if search is clicked with an empty input
     else{setHotelBookings(hotelBookings);}
   };
 
