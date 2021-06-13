@@ -3,7 +3,6 @@ import moment from "moment";
 // moment().format();
 
 const TableBody = props => {
-  console.log("This is props", props.Body);
   let dataArr = props.Body;
   let [selectedRows, setSelectedRows] = useState([]);
   const toggleHighlight = (rowId)=>{
