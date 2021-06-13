@@ -16,7 +16,8 @@ const Search = (props) => {
         <div className="col">
           <form className="form-group search-box" onSubmit={(event)=>{
             event.preventDefault();
-            props.search(searchInput);}}>
+            props.search(searchInput);
+            setSearchInput("");}}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
