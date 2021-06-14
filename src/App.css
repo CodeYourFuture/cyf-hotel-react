@@ -57,6 +57,21 @@ tr {
   text-align: center;
 }
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .card {
   width: 18rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
