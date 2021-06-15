@@ -16,6 +16,7 @@
   /*font-family: Arial, Helvetica, sans-serif;*/
   font-size: 1em;
   font-weight: bold;
+  margin-bottom: 25px;
 }
 
 .App-title {
@@ -53,10 +54,11 @@ tr {
 }
 
 .card {
-  width: 20rem;
+  width: 25rem;
   border: 5px solid green;
   display: flex;
   text-align: justify;
+  margin-bottom: 50px;
 }
 
 .logo {
@@ -118,6 +120,18 @@ tr {
 
 .rest-div{
   display: flex;
-  justify-content:space-around;
-  /* align-self: center; */
+  justify-content:center;
+  align-items: center;
+}
+
+.footer-app{
+  display: flex;
+  text-align: center;
+  justify-content: center; 
+  margin-top: 70px;
+}
+
+.restaurant-btn{
+  display: flex;
+  justify-content: center;
 }

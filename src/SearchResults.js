@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 //import Bookings from "./Bookings"
 
 function getDifferenceInDays(date1, date2) {
@@ -8,6 +9,11 @@ function getDifferenceInDays(date1, date2) {
 
 const SearchResults = (props) => {
     const [color, setColor] = useState(props.color);
+    // const [bookingID, setBookingID] = useState("null");
+
+    // function profileHandler (){
+    //   setBookingID(1);
+    // };
 
     function selected (color){
       setColor(color);
@@ -27,6 +33,7 @@ const SearchResults = (props) => {
                     <th>Check In Date</th>
                     <th>Check Out Date</th>
                     <th>Number of Nights</th>
+                    <th>Customer Profile</th>
                 </tr>
                 </thead>
                 {props.data.map((log, index) => (
@@ -40,6 +47,7 @@ const SearchResults = (props) => {
                     <td key = {index}>{log.checkInDate}</td>
                     <td key = {index}>{log.checkOutDate}</td>
                     <td key ={index}> {getDifferenceInDays(log.checkInDate, log.checkOutDate)}</td>
+                    <td><button>Show Profile</button></td>
                 </tr>
                 </tbody>
             ))} 
