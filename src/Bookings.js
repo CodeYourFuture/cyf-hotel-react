@@ -5,7 +5,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const search = (searchVal) => {
-    if(searchVal){
+    if(searchVal.length > 0){
       let lowerCase = searchVal.toLowerCase();
     console.info("TO DO!", searchVal);
     // eslint-disable-next-line
@@ -14,8 +14,13 @@ const Bookings = () => {
     return booking;}
   });
     setHotelBookings(filteredBookings);} //trying to reset table if search is clicked with an empty input
-    else{setHotelBookings(hotelBookings);}
-  };
+    else{
+    fetch(`https://cyf-react.glitch.me`)
+    .then((res)=> res.json())
+    .then((data)=> setHotelBookings(data));
+  }
+};
+  
 
   const [hotelBookings, setHotelBookings] = useState([]);
   useEffect(()=>{
