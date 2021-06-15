@@ -1,19 +1,23 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 //Css syntax that works in JSX - style={{backgroundColor:"white"}}
 
-const TableHeader = (props) => {
+const TableHeader = props => {
   const initial = "white";
   let [highlight, setHighlight] = useState(initial);
-  const toggleHighlight = ()=>{
-    if(highlight === "white"){
+  const toggleHighlight = () => {
+    if (highlight === "white") {
       setHighlight("yellow");
-    }else{
+    } else {
       setHighlight("white");
     }
-  }
+  };
   return (
-    <tr id="header-row" onClick={toggleHighlight} style={{backgroundColor:highlight}}>
+    <tr
+      id="header-row"
+      onClick={toggleHighlight}
+      style={{ backgroundColor: highlight }}
+    >
       {props.Headings.map((heading, index) => (
         <th scope="col" key={index}>
           {heading}

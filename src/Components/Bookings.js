@@ -4,32 +4,36 @@ import SearchResults from "./Bookings/SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const search = (searchVal) => {
-    if(searchVal.length > 0){
+  const search = searchVal => {
+    if (searchVal.length > 0) {
       let lowerCase = searchVal.toLowerCase();
-    console.info("TO DO!", searchVal);
-    // eslint-disable-next-line
-    const filteredBookings = hotelBookings.filter((booking)=>{
-      if (booking.firstName.toLowerCase() === lowerCase || booking.surname.toLowerCase() === lowerCase){
-    return booking;}
-  });
-    setHotelBookings(filteredBookings);} //trying to reset table if search is clicked with an empty input
-    else{
-    fetch(`https://cyf-react.glitch.me`)
-    .then((res)=> res.json())
-    .then((data)=> setHotelBookings(data))
-    .catch((err)=>console.log(err));
-  }
-};
-  
+      console.info("TO DO!", searchVal);
+      // eslint-disable-next-line
+      const filteredBookings = hotelBookings.filter(booking => {
+        if (
+          booking.firstName.toLowerCase() === lowerCase ||
+          booking.surname.toLowerCase() === lowerCase
+        ) {
+          return booking;
+        }
+      });
+      setHotelBookings(filteredBookings);
+    } //trying to reset table if search is clicked with an empty input
+    else {
+      fetch(`https://cyf-react.glitch.me`)
+        .then(res => res.json())
+        .then(data => setHotelBookings(data))
+        .catch(err => console.log(err));
+    }
+  };
 
   const [hotelBookings, setHotelBookings] = useState([]);
-  useEffect(()=>{
+  useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
-    .then((res)=> res.json())
-    .then((data)=> setHotelBookings(data))
-    .catch((err)=>console.log(err));
-  },[]);
+      .then(res => res.json())
+      .then(data => setHotelBookings(data))
+      .catch(err => console.log(err));
+  }, []);
   return (
     <div className="App-content">
       <div className="container">
