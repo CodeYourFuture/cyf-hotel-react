@@ -17,7 +17,8 @@ const SearchResults = props => {
             `Room id`,
             `Check in date`,
             `Check out date`,
-            `Number of nights staying`
+            `Number of nights staying`,
+            `Customer Profile`
           ]}
         />
       </thead>
