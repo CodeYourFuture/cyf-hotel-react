@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Profile from "./Profile";
+//import Profile from "./Profile";
 //import Bookings from "./Bookings"
 
 function getDifferenceInDays(date1, date2) {
