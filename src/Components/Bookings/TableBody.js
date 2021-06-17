@@ -4,6 +4,7 @@ import moment from "moment";
 
 const TableBody = props => {
   let dataArr = props.Body;
+  let [id, setId] = useState("");
   let [selectedRows, setSelectedRows] = useState([]);
   const toggleHighlight = rowId => {
     if (selectedRows.includes(rowId)) {
@@ -35,7 +36,7 @@ const TableBody = props => {
         <td>{data.checkInDate}</td>
         <td>{data.checkOutDate}</td>
         <td>{dateLeaving.diff(dateArriving, "days")}</td>
-        <button>Show profile</button>
+        <button onClick={()=>setId(data.id)}>Show profile</button>
       </tr>
     );
   });
