@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import moment from "moment";
-// moment().format();
+// import CustomerProfile from "./CustomerProfile";
 
 const TableBody = props => {
   let dataArr = props.Body;
   let [id, setId] = useState("");
+  console.log(id);
   let [selectedRows, setSelectedRows] = useState([]);
   const toggleHighlight = rowId => {
     if (selectedRows.includes(rowId)) {
