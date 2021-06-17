@@ -3,8 +3,10 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /* animation: App-logo-spin infinite 20s linear; */
+  width: 2%;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 .App-header {
@@ -16,6 +18,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
 }
 
 .App-title {
@@ -48,10 +51,36 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding-top: 50px;
   text-align: center;
 }
 
 .card {
-  width: 18rem;
+  width: 28rem;
+  top: 50%;
+  margin: 0 6px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.rowcolor {
+  background-color: brown;
+}
+
+input[type="text"] {
+  font-size: 15px;
+  font-weight: bold;
+}
+input[type="email"] {
+  font-size: 15px;
+  font-weight: bold;
+}
+input[type="date"] {
+  font-size: 15px;
+  font-weight: bold;
+}
+input[type="number"] {
+  font-size: 15px;
+  font-weight: bold;
 }
