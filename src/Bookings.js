@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults";
-import FakeBookings from "./data/fakeBookings.json";
+// import FakeBookings from "./data/fakeBookings.json";
+import CustomerProfile from "./CustomerProfile";
 
 const Bookings = () => {
   const search = searchVal => {
@@ -15,6 +16,13 @@ const Bookings = () => {
     setBookings(filteredNames);
   };
   const [bookings, setBookings] = useState([]);
+  const [customer, setCustomer] = useState();
+  const [profileID, setProfileID] = useState();
+
+  function handleProfile(e) {
+    setProfileID(e.target.id);
+    console.log(e.target.id);
+  }
   useEffect(() => {
     // console.log("Some Text");
     fetch("https://cyf-react.glitch.me")
@@ -27,7 +35,8 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults bookings={bookings} />
+        <SearchResults bookings={bookings} handleProfile={handleProfile} />
+        <CustomerProfile profileID={profileID} bookings={bookings} />
       </div>
     </div>
   );

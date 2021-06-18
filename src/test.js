@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 
-export default function App() {
-  useEffect(function() {
-    console.log("Effect");
-  });
-  return (
-    <div>
-      <h1>Effect</h1>
-    </div>
-  );
-}
+// export default function App() {
+//   useEffect(function() {
+//     console.log("Effect");
+//   });
+//   return (
+//     <div>
+//       <h1>Effect</h1>
+//     </div>
+//   );
+// }
 
 // const NewFunc = () => {
 //   const [test, reTest] = useState(0);
