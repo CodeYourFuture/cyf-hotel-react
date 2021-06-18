@@ -4,13 +4,13 @@ import TableBody from "./TableBody";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
- const [customerId, setCustomerId] = useState(null);
- const updateCustomerId = (id)=>{
-   console.log("This is id after click:",id);
+  const [customerId, setCustomerId] = useState(null);
+  const updateCustomerId = id => {
+    console.log("This is id after click:", id);
     setCustomerId(id);
- }
+  };
   return (
-    <div className="Container" style={{display:"flex"}}>
+    <div className="Container" style={{ display: "flex" }}>
       <table className="table">
         <thead>
           <TableHeader

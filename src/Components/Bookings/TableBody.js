@@ -34,7 +34,9 @@ const TableBody = props => {
         <td>{data.checkInDate}</td>
         <td>{data.checkOutDate}</td>
         <td>{dateLeaving.diff(dateArriving, "days")}</td>
-        <button onClick={() => props.updateFunction(data.id)}>Show profile</button>
+        <button onClick={() => props.updateFunction(data.id)}>
+          Show profile
+        </button>
       </tr>
     );
   });
