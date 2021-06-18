@@ -5,7 +5,7 @@ import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
   return (
-    <div className="Container">
+    <div className="Container" style={{display:flex}}>
       <table className="table">
         <thead>
           <TableHeader
@@ -29,7 +29,7 @@ const SearchResults = props => {
             <TableBody Body={[`1781`,`Mrs/Her/Hers`,`Genevieve`,`Basson`,`GBasson@here.com`,`9357`,`21/05/21`,`28/05/21`]}/> */}
         </tbody>
       </table>
-      <CustomerProfile customerId="" />
+      <CustomerProfile id="" />
     </div>
   );
 };
