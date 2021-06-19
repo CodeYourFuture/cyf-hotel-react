@@ -31,12 +31,19 @@
 .card img {
   height: 250px;
 }
+.footer {
+  background-color: rgb(228, 207, 218);
+}
 
 .footer li {
   list-style: none;
 }
 .orders {
+  display: flex;
+  justify-content: center;
   text-align: center;
+  background-color: rgb(250, 255, 0);
+  border-style: solid;
 }
 .orders li {
   display: flex;
@@ -65,4 +72,14 @@ tr {
 }
 .yellow {
   background: yellow;
+}
+
+.customer {
+  border-style: solid;
+  text-align: center;
+  background: rgb(141, 141, 211);
+}
+
+.vip {
+  background-color: orangered;
 }

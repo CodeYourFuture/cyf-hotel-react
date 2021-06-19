@@ -13,8 +13,8 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <Footer />
       <Restaurant />
+      <Footer />
     </div>
   );
 };

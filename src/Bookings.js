@@ -16,12 +16,11 @@ const Bookings = () => {
     setBookings(filteredNames);
   };
   const [bookings, setBookings] = useState([]);
-  const [customer, setCustomer] = useState();
-  const [profileID, setProfileID] = useState();
+  const [customerId, setCustomerId] = useState();
 
   function handleProfile(e) {
-    setProfileID(e.target.id);
-    console.log(e.target.id);
+    setCustomerId(e.target.id);
+    // console.log(e.target.id);
   }
   useEffect(() => {
     // console.log("Some Text");
@@ -36,7 +35,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         <SearchResults bookings={bookings} handleProfile={handleProfile} />
-        <CustomerProfile profileID={profileID} bookings={bookings} />
+        <CustomerProfile customerId={customerId} />
       </div>
     </div>
   );

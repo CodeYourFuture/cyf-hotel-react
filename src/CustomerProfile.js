@@ -1,20 +1,19 @@
-import React, { useState } from "react";
-const CustomerProfile = ({ profileID, bookings }) => {
-  console.log(profileID);
-  console.log(bookings);
-  let profileClient;
-  if (bookings) {
-    profileClient = bookings.filter(booking => {
-      return booking.id == profileID;
-    });
-  }
-  console.log(profileClient);
+import React, { useEffect, useState } from "react";
+const CustomerProfile = ({ customerId }) => {
+  const [profile, setProfile] = useState([]);
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${customerId}`)
+      .then(res => res.json())
+      .then(data => setProfile(data));
+  }, [customerId]);
+
   return (
-    <div>
-      {profileClient[0] && <h2>Customer {profileClient[0].id} Profile</h2>}
-      {profileClient[0] && <h4>Customer ID:{profileClient[0].id}</h4>}
-      {profileClient[0] && <h4>Title:{profileClient[0].title}</h4>}
-      {profileClient[0] && <h4>Email:{profileClient[0].email}</h4>}
+    <div className="customer">
+      <h2>Customer Profile</h2>
+      <p>{profile.vip && <h4 className="vip">VIP Customer</h4>}</p>
+      <p>ID: {customerId}</p>
+      <p>Email: {profile.email}</p>
+      <p>Phone: {profile.phoneNumber}</p>
     </div>
   );
 };
