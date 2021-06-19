@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Bookings/Search.js";
 import SearchResults from "./Bookings/SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import NewBooking from "./Bookings/NewBooking";
 
 const Bookings = () => {
   const search = searchVal => {
@@ -28,7 +28,7 @@ const Bookings = () => {
   };
   const [hotelBookings, setHotelBookings] = useState([]);
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/error`)
+    fetch(`https://cyf-react.glitch.me`)
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
           return res.json();
@@ -46,6 +46,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
+        <NewBooking />
         <SearchResults results={hotelBookings} />
       </div>
     </div>
