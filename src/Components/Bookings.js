@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Bookings/Search.js";
 import SearchResults from "./Bookings/SearchResults.js";
-import NewBooking from "./Bookings/NewBooking";
 
 const Bookings = () => {
   const search = searchVal => {
@@ -46,7 +45,6 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <NewBooking />
         <SearchResults results={hotelBookings} />
       </div>
     </div>
