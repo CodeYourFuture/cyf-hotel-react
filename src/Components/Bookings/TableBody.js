@@ -11,6 +11,13 @@ const TableBody = props => {
       setSelectedRows(selectedRows.concat(rowId));
     }
   };
+  while(dataArr.length < 1){
+    return (
+      <tr>
+        <span>Loading...</span>
+      </tr>
+    );
+  }
   return dataArr.map((data, index) => {
     let dateLeaving = moment(data.checkOutDate);
     let dateArriving = moment(data.checkInDate);

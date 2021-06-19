@@ -26,7 +26,6 @@ const Bookings = () => {
         .catch(err => console.log(err));
     }
   };
-
   const [hotelBookings, setHotelBookings] = useState([]);
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
