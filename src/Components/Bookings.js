@@ -28,11 +28,19 @@ const Bookings = () => {
   };
   const [hotelBookings, setHotelBookings] = useState([]);
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
-      .then(res => res.json())
+    fetch(`https://cyf-react.glitch.me/error`)
+      .then(res => {
+        if (res.status >= 200 && res.status < 300) {
+          return res.json();
+        } else {
+          throw new Error(`${res.status}:${res.text}`);
+        }
+      })
       .then(data => setHotelBookings(data))
-      .catch(err => {setHotelBookings([err])
-      alert(err)});
+      .catch(err => {
+        setHotelBookings([]);
+        alert(err);
+      });
   }, []);
   return (
     <div className="App-content">
