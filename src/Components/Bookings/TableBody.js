@@ -11,7 +11,7 @@ const TableBody = props => {
       setSelectedRows(selectedRows.concat(rowId));
     }
   };
-  while(dataArr.length < 1){
+  while (dataArr.length < 1) {
     return (
       <tr>
         <span>Loading...</span>
