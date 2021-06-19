@@ -31,7 +31,8 @@ const Bookings = () => {
     fetch(`https://cyf-react.glitch.me`)
       .then(res => res.json())
       .then(data => setHotelBookings(data))
-      .catch(err => console.log(err));
+      .catch(err => {setHotelBookings([err])
+      alert(err)});
   }, []);
   return (
     <div className="App-content">
