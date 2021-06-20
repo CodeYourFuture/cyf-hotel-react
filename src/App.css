@@ -1,15 +1,7 @@
-.App {
-  text-align: left;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
-  height: 50px;
+  display: flex;
+  background-color: rgb(228, 207, 218);
+  height: 80px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -27,16 +19,44 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#logo {
+  margin-top: -15px;
+  width: 85px;
+  height: 70px;
 }
+
+.card {
+  text-align: center;
+}
+
+.card img {
+  height: 250px;
+}
+.footer {
+  background-color: rgb(228, 207, 218);
+}
+
+.footer li {
+  list-style: none;
+}
+.orders {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(250, 255, 0);
+  border-style: solid;
+}
+.orders li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .search {
   padding: 5px 0 20px 0;
+}
+.gray {
+  background-color: gray;
 }
 
 tr {
@@ -51,7 +71,16 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
+.yellow {
+  background: yellow;
+}
 
-.card {
-  width: 18rem;
+.customer {
+  border-style: solid;
+  text-align: center;
+  background: rgb(141, 141, 211);
+}
+
+.vip {
+  background-color: orangered;
 }
