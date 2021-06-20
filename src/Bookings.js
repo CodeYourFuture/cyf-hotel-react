@@ -28,8 +28,8 @@ const Bookings = () => {
   useEffect(() => {
     // console.log("Some Text");
     // fetch("https://cyf-react.glitch.me")
-    // fetch("https://cyf-react.glitch.me/delayed")
-    fetch("https://cyf-react.glitch.me/error")
+    fetch("https://cyf-react.glitch.me/delayed")
+      // fetch("https://cyf-react.glitch.me/error")
       .then(response => {
         if (response.ok) {
           return response.json();

@@ -44,11 +44,7 @@ const TableRow = ({ rowData, handleProfile }) => {
       setColor("");
     }
   }
-  const [id, setId] = useState();
-  // function handleProfile(e) {
-  //   console.log(e.target.id);
-  //   setProfileID(e.target.id);
-  // }
+
   return (
     <tr onClick={highLightRow} className={color}>
       <td>{rowData.id}</td>
