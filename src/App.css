@@ -1,4 +1,5 @@
 .App-header {
+  display: flex;
   background-color: rgb(228, 207, 218);
   height: 80px;
   padding: 20px;

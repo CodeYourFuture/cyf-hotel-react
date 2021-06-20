@@ -17,6 +17,7 @@ const Bookings = () => {
   };
   const [bookings, setBookings] = useState([]);
   const [customerId, setCustomerId] = useState();
+  const [loading, setLoading] = useState(true);
 
   function handleProfile(e) {
     setCustomerId(e.target.id);
@@ -24,9 +25,13 @@ const Bookings = () => {
   }
   useEffect(() => {
     // console.log("Some Text");
-    fetch("https://cyf-react.glitch.me")
+    // fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
-      .then(data => setBookings(data))
+      .then(data => {
+        setBookings(data);
+        setLoading(false);
+      })
       .catch(err => console.error(err));
   }, []);
 
@@ -34,6 +39,18 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
+        {loading && (
+          <div>
+            <button class="btn btn-primary" type="button" disabled>
+              <span
+                class="spinner-border spinner-border-sm "
+                role="status"
+                aria-hidden="true"
+              />
+              Loading...
+            </button>{" "}
+          </div>
+        )}
         <SearchResults bookings={bookings} handleProfile={handleProfile} />
         <CustomerProfile customerId={customerId} />
       </div>
