@@ -8,13 +8,17 @@ import Restaurant from "./Restaurant";
 import NewBooking from "./Bookings/NewBooking";
 
 const App = () => {
+  const dataConvert = dataArray => {
+    let dataObj = Object.fromEntries(dataArray);
+    console.log(dataObj);
+  };
   return (
     <div className="App">
       <Heading />
       <Bookings />
       <Restaurant />
       <TouristInfoCards />
-      <NewBooking />
+      <NewBooking DataFunc={dataConvert}/>
       <Footer
         Address={[
           "123 Fake Street, London, E1 4UD",

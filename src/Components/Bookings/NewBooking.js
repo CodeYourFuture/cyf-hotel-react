@@ -1,6 +1,6 @@
 import React from "react";
 
-const NewBooking = () => {
+const NewBooking = (prop) => {
   const bookingData = [["id",Math.ceil(Math.random()*50)]];
   const collectData = event => {
     let data = [event.target.id, event.target.value];
@@ -47,7 +47,7 @@ const NewBooking = () => {
       <input type="date" id="checkInDate" onBlur={collectData} />
       <label>Check-out:</label>
       <input type="date" id="checkOutDate" onBlur={collectData} />
-      <button onClick={event => console.log(Object.fromEntries(bookingData))}>
+      <button onClick={()=>prop.DataFunc(bookingData)}>
         Submit
       </button>
     </form>
