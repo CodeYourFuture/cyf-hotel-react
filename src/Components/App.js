@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Heading from "./Partials/Heading";
 import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
@@ -8,8 +8,11 @@ import Restaurant from "./Restaurant";
 import NewBooking from "./Bookings/NewBooking";
 
 const App = () => {
+  const [dataObj, setDataObj] = useState({});
   const dataConvert = dataArray => {
-    let dataObj = Object.fromEntries(dataArray);
+    let newEntry = Object.fromEntries(dataArray);
+    console.log({...dataObj, ...newEntry});
+    setDataObj({...newEntry});
     console.log(dataObj);
   };
   return (
