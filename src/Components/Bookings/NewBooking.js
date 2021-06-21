@@ -1,29 +1,55 @@
 import React from "react";
 
 const NewBooking = () => {
+  const bookingData = [["id",Math.ceil(Math.random()*50)]];
+  const collectData = event => {
+    let data = [event.target.id, event.target.value];
+    bookingData.push(data);
+  };
   return (
-    <form
-      onSubmit={event => event.preventDefault()}
-      style={{ display: "flex" }}
-    >
+    <form onSubmit={event => event.preventDefault()}>
       <label>First Name:</label>
       <input
         type="text"
         placeholder="Enter name here..."
         id="firstName"
-        onChange={event => console.log(event.target.value)}
+        onBlur={collectData}
       />
       <label>Surname:</label>
-      <input type="text" id="surname" placeholder="Enter surname here..." />
+      <input
+        type="text"
+        id="surname"
+        placeholder="Enter surname here..."
+        onBlur={collectData}
+      />
       <label>Title:</label>
-      <input type="text" id="title" placeholder="Enter title here..." />
+      <input
+        type="text"
+        id="title"
+        placeholder="Enter title here..."
+        onBlur={collectData}
+      />
+      <label>Email:</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter email here..."
+        onBlur={collectData}
+      />
       <label>Room id:</label>
-      <input type="number" id="roomId" placeholder="Enter room id here..." />
+      <input
+        type="number"
+        id="roomId"
+        placeholder="Enter room id here..."
+        onBlur={collectData}
+      />
       <label>Check-in:</label>
-      <input type="date" id="checkIn" placeholder="Check-in" />
+      <input type="date" id="checkInDate" onBlur={collectData} />
       <label>Check-out:</label>
-      <input type="date" id="checkOut" placeholder="Check-out" />
-      <button onClick={event => console.log(event.target.value)}>Submit</button>
+      <input type="date" id="checkOutDate" onBlur={collectData} />
+      <button onClick={event => console.log(Object.fromEntries(bookingData))}>
+        Submit
+      </button>
     </form>
   );
 };
