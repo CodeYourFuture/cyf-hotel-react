@@ -5,15 +5,17 @@ import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Partials/Footer";
 import "../Styles/App.css";
 import Restaurant from "./Restaurant";
-import NewBooking from "./Bookings/NewBooking"; 
+import NewBooking from "./Bookings/NewBooking";
 
 const App = () => {
-  const [dataObj, setDataObj] = useState({});
+  const [dataObj, setDataObj] = useState([]);
+  console.log("This is data object on initial load", dataObj);
   const dataConvert = dataArray => {
-    let newEntry = Object.fromEntries(dataArray);
-    console.log({...dataObj, ...newEntry});
-    setDataObj({...newEntry});
-    console.log(dataObj);
+    console.log("This is the function return", dataArray);
+    console.log("This is the state before set", dataObj);
+    setDataObj([...dataObj, ...dataArray]);
+    console.log("This is data array after set", dataArray);
+    console.log("This happens before React changes the state", dataObj);
   };
   return (
     <div className="App">
@@ -21,7 +23,7 @@ const App = () => {
       <Bookings />
       <Restaurant />
       <TouristInfoCards />
-      <NewBooking DataFunc={dataConvert}/>
+      <NewBooking DataFunc={dataConvert} />
       <Footer
         Address={[
           "123 Fake Street, London, E1 4UD",
