@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 function SearchResults({ results }) {
   const day1 = new moment("2021-05-21");
   const day2 = new moment("2021-05-27");
-  console.log(moment.duration(day2.diff(day1)).as("days"));
+  //console.log(moment.duration(day2.diff(day1)).as('days'));
 
   return (
     <table className="table">
@@ -23,8 +23,8 @@ function SearchResults({ results }) {
       </thead>
       <tbody>
         {results.map((entry, index) => (
-          <tr key={index}>
-            <th scope="row">{entry.id}</th>
+          <tr key={index} id={"row-" + index}>
+            <td scope="row">{entry.id}</td>
             <td>{entry.title}</td>
             <td>{entry.firstName}</td>
             <td>{entry.surname}</td>

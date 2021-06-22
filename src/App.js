@@ -3,6 +3,7 @@ import React from "react";
 import Bookings from "./Bookings";
 import "./App.css";
 import placesToTravel from "./data/placesToTravel.json";
+import Restaurant from "./Restaurant";
 
 const footerInfo = [
   "123 Fake Street, London, E1 4UD",
@@ -16,6 +17,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer array={footerInfo} />
     </div>
   );

@@ -71,3 +71,11 @@ ul {
   height: 17rem;
   padding: 0.6rem;
 }
+
+.highlight {
+  background-color: aquamarine;
+}
+
+.no-highlight {
+  background-color: #00000000;
+}
