@@ -5,7 +5,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Partials/Footer";
 import "../Styles/App.css";
 import Restaurant from "./Restaurant";
-import NewBooking from "./Bookings/NewBooking";
+import NewBooking from "./Bookings/NewBooking"; 
 
 const App = () => {
   const [dataObj, setDataObj] = useState({});
