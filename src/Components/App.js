@@ -20,7 +20,7 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <Bookings />
+      <Bookings NewEntry={dataObj} />
       <Restaurant />
       <TouristInfoCards />
       <NewBooking DataFunc={dataConvert} />

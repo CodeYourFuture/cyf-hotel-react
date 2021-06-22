@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Bookings/Search.js";
 import SearchResults from "./Bookings/SearchResults.js";
 
-const Bookings = () => {
+const Bookings = props => {
   const search = searchVal => {
     if (searchVal.length > 0) {
       let lowerCase = searchVal.toLowerCase();
@@ -45,7 +45,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={hotelBookings} />
+        <SearchResults results={hotelBookings} NewEntry={props.NewEntry} />
       </div>
     </div>
   );
