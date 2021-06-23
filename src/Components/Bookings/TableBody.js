@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const TableBody = props => {
-  const [dataArr, setDataArr] = useState(props.Body);
-  if(props.NewEntry){
-  let newEntry = Object.fromEntries(props.NewEntry);
-  setDataArr(dataArr.concat(newEntry));
-  }
+  const dataArr = props.Body;
+  console.log("This is data array after set", dataArr);
   let [selectedRows, setSelectedRows] = useState([]);
   const toggleHighlight = rowId => {
     if (selectedRows.includes(rowId)) {

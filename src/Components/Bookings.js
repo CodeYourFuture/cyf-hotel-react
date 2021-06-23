@@ -3,6 +3,7 @@ import Search from "./Bookings/Search.js";
 import SearchResults from "./Bookings/SearchResults.js";
 
 const Bookings = props => {
+  console.log("This is props.NewEntry converted", Object.fromEntries(props.NewEntry));
   const search = searchVal => {
     if (searchVal.length > 0) {
       let lowerCase = searchVal.toLowerCase();
@@ -41,11 +42,15 @@ const Bookings = props => {
         alert(err);
       });
   }, []);
+  // if(props.NewEntry.length > 1){
+  //   setHotelBookings([...hotelBookings, ...props.NewEntry])
+  //   return console.log(hotelBookings);
+  // }
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={hotelBookings} NewEntry={props.NewEntry} />
+        <SearchResults results={hotelBookings} />
       </div>
     </div>
   );
