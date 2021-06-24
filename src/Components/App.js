@@ -11,10 +11,10 @@ const App = () => {
   const [dataObj, setDataObj] = useState([]);
   console.log("This is data object on initial load", dataObj);
   const dataConvert = dataArray => {
-    console.log("This is the function return", dataArray);
+    // console.log("This is the function return", dataArray);
     console.log("This is the state before set", dataObj);
     setDataObj([...dataObj, ...dataArray]);
-    console.log("This is data array after set", dataArray);
+    // console.log("This is data array after set", dataArray);
     console.log("This happens before React changes the state", dataObj);
   };
   return (
