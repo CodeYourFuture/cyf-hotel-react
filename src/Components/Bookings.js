@@ -3,9 +3,10 @@ import Search from "./Bookings/Search.js";
 import SearchResults from "./Bookings/SearchResults.js";
 
 const Bookings = props => {
+    let convertedEntry = Object.fromEntries(props.NewEntry);
   console.log(
-    "This is props.NewEntry before conversion",
-  props.NewEntry
+    "This is props.NewEntry after conversion",
+  convertedEntry
   );
   const search = searchVal => {
     if (searchVal.length > 0) {
@@ -45,11 +46,12 @@ const Bookings = props => {
         alert(err);
       });
   }, []);
-  console.log("This is props.NewEntry.length before conditional", props.NewEntry.length);
-  if(props.NewEntry.length > 1 && props.NewEntry.length < 9){
-    let convertedEntry = Object.fromEntries(props.NewEntry);
-    setHotelBookings(hotelBookings.concat(convertedEntry));
+  console.log(convertedEntry.id);
+  if(convertedEntry.id && !hotelBookings.includes(convertedEntry.id)){
+    setHotelBookings([...hotelBookings,...convertedEntry]);
     console.log("This is in conditional statement",hotelBookings);
+  }else{
+    console.log("Entry already captured");
   }
   return (
     <div className="App-content">
