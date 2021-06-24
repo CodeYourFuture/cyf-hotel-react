@@ -3,7 +3,10 @@ import Search from "./Bookings/Search.js";
 import SearchResults from "./Bookings/SearchResults.js";
 
 const Bookings = props => {
-  console.log("This is props.NewEntry converted", Object.fromEntries(props.NewEntry));
+  console.log(
+    "This is props.NewEntry converted",
+    Object.fromEntries(props.NewEntry)
+  );
   let convertedEntry = Object.fromEntries(props.NewEntry);
   const search = searchVal => {
     if (searchVal.length > 0) {
@@ -43,8 +46,11 @@ const Bookings = props => {
         alert(err);
       });
   }, []);
-  console.log("This is converted entry length",Object.keys(convertedEntry).length);
-  // for(let i = 0; i< 1; i++){
+  console.log(
+    "This is converted entry length",
+    Object.keys(convertedEntry).length
+  );
+  // if(Object.keys(convertedEntry).length > 0 && Object.keys(convertedEntry).length < 9){
   //   setHotelBookings(hotelBookings.concat(convertedEntry));
   //   console.log("This is in conditional statement",hotelBookings);
   // }
