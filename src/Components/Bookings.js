@@ -4,10 +4,9 @@ import SearchResults from "./Bookings/SearchResults.js";
 
 const Bookings = props => {
   console.log(
-    "This is props.NewEntry converted",
-    Object.fromEntries(props.NewEntry)
+    "This is props.NewEntry before conversion",
+  props.NewEntry
   );
-  let convertedEntry = Object.fromEntries(props.NewEntry);
   const search = searchVal => {
     if (searchVal.length > 0) {
       let lowerCase = searchVal.toLowerCase();
@@ -46,14 +45,12 @@ const Bookings = props => {
         alert(err);
       });
   }, []);
-  console.log(
-    "This is converted entry length",
-    Object.keys(convertedEntry).length
-  );
-  // if(Object.keys(convertedEntry).length > 0 && Object.keys(convertedEntry).length < 9){
-  //   setHotelBookings(hotelBookings.concat(convertedEntry));
-  //   console.log("This is in conditional statement",hotelBookings);
-  // }
+  console.log("This is props.NewEntry.length before conditional", props.NewEntry.length);
+  if(props.NewEntry.length > 1 && props.NewEntry.length < 9){
+    let convertedEntry = Object.fromEntries(props.NewEntry);
+    setHotelBookings(hotelBookings.concat(convertedEntry));
+    console.log("This is in conditional statement",hotelBookings);
+  }
   return (
     <div className="App-content">
       <div className="container">
