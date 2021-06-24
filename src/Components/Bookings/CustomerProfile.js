@@ -9,7 +9,7 @@ const CustomerProfile = props => {
       .catch(err => console.log(err));
   }, [props.id]);
   if (props.id) {
-    console.log("This is the id in Component:", props.id);
+    // console.log("This is the id in Component:", props.id);
     return (
       <div>
         <p>Customer {props.id} Profile</p>
