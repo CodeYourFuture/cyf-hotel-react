@@ -1,10 +1,14 @@
 import React from "react";
 import moment from "moment";
 
+const handleClick = () => {
+  console.log("Row Clicked!");
+};
+
 const SearchResults = props => {
   const tableData = props.results;
   const newTableData = tableData.map(resultData => (
-    <tr>
+    <tr onClick={handleClick}>
       <th scope="row">{resultData.id}</th>
       <td>{resultData.title}</td>
       <td>{resultData.firstName}</td>
