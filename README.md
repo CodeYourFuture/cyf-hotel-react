@@ -112,7 +112,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 13. Render more orders
 
-**Instructions:** Pass a new prop named `orderType` to the `<Order />` component with the value "Pizzas". Then render the `orderType` prop instead of "Pizzas" in the `<Order />` component. Make sure that "Pizzas" is still displayed on the screen. In the `<ul>` list of the `<Restaurant />` component, render 2 others `<Order />` components but this time pass different values for the `orderType` prop: "Salads" and "Chocolate cake".
+**Instructions:** Pass a new prop named `orderType` to the `<Order />` component with the value "Pizzas". Then render the `orderType` prop instead of "Pizzas" in the `<Order />` component. Make sure that "Pizzas" is still displayed on the screen. In the `<ul>` list of the `<Restaurant />` component, render 2 other `<Order />` components but this time pass different values for the `orderType` prop: "Salads" and "Chocolate cake".
 
 **Test:** For each order, the number of items can be incremented independently. Verify that you are able to explain what is happening.
 
@@ -120,7 +120,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** In the `<Bookings />` component, declare a new state `bookings` with the corresponding setter function `setBookings` to hold the `FakeBookings` data. Instead of passing `FakeBookings` directly to the `<SearchResults />` component, pass the new `bookings` state variable.
 
-**Hint:** The new `bookings` state should be initialised with the `FakeBookings` variable.
+**Hint:** The new `bookings` state should be initialized with the `FakeBookings` variable.
 
 **Test:** Check that the bookings are still rendered correctly in the page.
 
@@ -136,11 +136,11 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 16. Load bookings remotely
 
-**Instructions:** Instead of getting the existing bookings from the file `data/fakeBookings.json`, we will get and load the bookings from a remote API. In the `<Bookings />` component, use the React function `useEffect` to `console.log()` some text only when the page first renders on the screen. Verify that when you refresh the page, the text appears once in the console. Then, in the `useEffect` function, use the `fetch()` function to get data from `https://cyf-react.glitch.me`.
+**Instructions:** Instead of getting the existing bookings from the file `data/fakeBookings.json`, we will get and load the bookings from a remote API. In the `<Bookings />` component, use the React function `useEffect` to `console.log()` some text only when the page first renders on the screen. Verify that when you refresh the page, the text appears once in the console. Then, in the `useEffect` function, use the `fetch()` function to get data from `https://cyf-react.gl itch.me`.
 
 **Hints:**
 
-- Replace `FakeBookings` in the bookings state and initialise it with `[]` (because we haven't fetched any results yet!)
+- Replace `FakeBookings` in the bookings state and initialize it with `[]` (because we haven't fetched any results yet!)
 - After calling the `fetch()` function, use `.then()` to handle the response. Try looking at your Pokemon app that you worked on in class for an example
 - When the response comes back, use `setBookings` to update the results
 
@@ -158,7 +158,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** Still in the `<Search />` component, add a `onSubmit` handler to the `<form>` tag. When the form is submitted (try clicking the search button), get the value of the state `searchInput` and pass it as a parameter to the `search` prop function that has been provided for you (the `search` prop is passed from the `<Bookings />` component).
 
-**Note:** Also your submit handler should take an `event` parameter and add the line `event.preventDefault()` to prevent the browser to implicitely submit the form).
+**Note:** Also your submit handler should take an `event` parameter and add the line `event.preventDefault()` to prevent the browser from implicitly submitting the form).
 
 **Test:** Look in the console, you should see the text that is typed in the search input field when submitting the form.
 
@@ -174,7 +174,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Hint:** You need to record the selected customer id after clicking on a "Show profile" button. In which component do you think this state should be defined?
 
-**Test:** When first showing the page, no customer profile is displayed. When clicking the first "Show profile" button of the table, the text "Customer 1 profile" appears. When clickong the second "Show profile" button of the table, the text "Customer 2 profile" appears instead.
+**Test:** When first showing the page, no customer profile is displayed. When clicking the first "Show profile" button of the table, the text "Customer 1 profile" appears. When clicking the second "Show profile" button of the table, the text "Customer 2 profile" appears instead.
 
 #### 21. Display a customer profile - step 2
 
