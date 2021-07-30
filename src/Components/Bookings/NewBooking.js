@@ -1,6 +1,7 @@
 import React from "react";
 
 const NewBooking = (prop) => {
+  // const [dataObj, setDataObj] = useState([]);
   const bookingData = [["id",Math.ceil(Math.random()*50)]];
   const collectData = event => {
     let data = [event.target.id, event.target.value];
