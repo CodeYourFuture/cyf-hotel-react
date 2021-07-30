@@ -8,6 +8,11 @@ import Restaurant from "./Restaurant";
 import NewBooking from "./Bookings/NewBooking";
 
 let counter = 0
+/*
+On click the dataConvert is called - I need to use this event to pass data to bookings and then add it to the table,
+by removing the useState from App.js I prevent the issue of the state being reset every-time it loads,
+ the counter might still be useful in this process.
+*/
 
 const App = () => {
   const dataConvert = dataArray => {
