@@ -1,13 +1,52 @@
 import React from "react";
-
-import Bookings from "./Bookings";
-import "./App.css";
+import Heading from "./components/main/Heading";
+import {TouristInfoCards} from "./components/TouristInfoCards";
+import Bookings from "./components/Bookings";
+import Restaurant from "./components/restaurant/Restaurant"
+import Footer from "./components/main/Footer";
+import "./styles/App.css";
 
 const App = () => {
+  let cityDetails = [
+    {
+      name: "Glasgow",
+      image: "https://tinyurl.com/4uadj546",
+      url: "https://peoplemakeglasgow.com"
+    },
+    {
+      name: "Manchester",
+      image: "https://tinyurl.com/3969xzf5",
+      url: "https://visitmanchester.com"
+    },
+    {
+      name: "London",
+      image: "https://tinyurl.com/75c99bpv",
+      url: "https://visitlondon.com"
+    }
+  ];
+
+  let footerItems = [
+    "123 Fake Street, London, E1 4UD",
+    "hello@fakehotel.com",
+    "0123 456789"
+  ];
   return (
     <div className="App">
-      <header className="App-header">CYF Hotel</header>
+      <Heading />
+      <div className="card">
+        {cityDetails.map((item, index) => {
+          return (
+            <TouristInfoCards
+              key={index}
+              cityName={item.name}
+              src={item.image}
+              url={item.url}
+            />
+          );
+        })}
+      </div>
       <Bookings />
+      <Footer footerItems={footerItems} />
     </div>
   );
 };
