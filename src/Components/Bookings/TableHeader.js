@@ -18,7 +18,7 @@ const TableHeader = props => {
       setCount(0);
     }
   };
-  const initial = "white";
+  // const initial = "white";
   // let [highlight, setHighlight] = useState(initial);
   // const toggleHighlight = () => {
   //   if (highlight === "white") {
@@ -31,7 +31,7 @@ const TableHeader = props => {
     <tr
       id="header-row"
       // onClick={toggleHighlight}
-      style={{ backgroundColor: initial }}
+      // style={{ backgroundColor: initial }}
     >
       {headingSort.map((heading, index) => (
         <th scope="col" key={index} onClick={sortFunction}>
