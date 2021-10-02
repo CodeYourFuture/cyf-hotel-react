@@ -68,6 +68,15 @@ tr {
   text-align: center;
 }
 
+img {
+  width: auto;
+  height: 300px;
+}
 .card {
+  padding: 30px;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: grabbing;
+  box-shadow: 2px 2px chocolate;
   width: 18rem;
 }
