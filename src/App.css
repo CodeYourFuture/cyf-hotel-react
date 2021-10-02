@@ -74,6 +74,7 @@ img {
 }
 .card {
   padding: 30px;
+  text-align: justify;
   border-radius: 10px;
   margin: 10px;
   cursor: grabbing;

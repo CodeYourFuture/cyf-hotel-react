@@ -30,6 +30,14 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
+          <p>
+            Manchester is a city and metropolitan borough in Greater Manchester,
+            England. The city has the country's fifth-largest population at
+            547,627 and lies within the United Kingdom's second-most populous
+            urban area, with a population of 2.7 million, third most-populous
+            county, at around 2.8 million, and third-most populous metropolitan
+            area, with a population of 3.3 million.
+          </p>
           <a
             href="http://visitmanchester.com"
             target="_blank"
@@ -46,6 +54,12 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
+          <p>
+            Glasgow is the most populous city in Scotland and the fourth-most
+            populous city in the United Kingdom, as well as being the 27th
+            largest city by population in Europe. In 2020, it had an estimated
+            population of 635,640.{" "}
+          </p>
           <a
             href="http://peoplemakeglasgow.com"
             target="_blank"
