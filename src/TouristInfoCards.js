@@ -8,6 +8,7 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
+          <h2>London</h2>
           <p>
             London is the capital and largest city of England and the United
             Kingdom. It stands on the River Thames in south-east England at the
@@ -30,6 +31,7 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
+          <h2>Manchester</h2>
           <p>
             Manchester is a city and metropolitan borough in Greater Manchester,
             England. The city has the country's fifth-largest population at
@@ -54,6 +56,7 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
+          <h2>Glasgow</h2>
           <p>
             Glasgow is the most populous city in Scotland and the fourth-most
             populous city in the United Kingdom, as well as being the 27th
