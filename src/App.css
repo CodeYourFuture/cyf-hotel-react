@@ -9,8 +9,8 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  height: 90px;
+  padding: 10px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -20,6 +20,12 @@
 
 .App-title {
   font-size: 1.5em;
+}
+.header_logo {
+  width: 70px;
+  height: auto;
+  margin-top: 0;
+  margin-right: 10px;
 }
 
 .App-content {
