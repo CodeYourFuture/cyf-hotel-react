@@ -1,8 +1,8 @@
 import React from "react";
 
-const Header = () => {
+const Heading = () => {
   return (
-    <header className="App-header">
+    <header className="card-header  App-header">
       <img
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
         alt="cyf-hotel"
@@ -12,4 +12,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Heading;
