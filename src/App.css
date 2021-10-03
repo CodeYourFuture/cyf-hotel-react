@@ -29,6 +29,12 @@
   margin-left: 10px;
 }
 
+.App-cards {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+}
+
 .App-title {
   font-size: 1.5em;
 }
