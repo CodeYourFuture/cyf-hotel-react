@@ -1,7 +1,7 @@
 import React from "react";
 
 // Renders page heading, called by `App.js`
-let Heading = () => {
+const Heading = () => {
   return (
     <header className="App-header">
       <img
