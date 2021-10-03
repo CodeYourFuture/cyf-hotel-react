@@ -6,6 +6,7 @@ const TouristInfoCards = () => {
         <img
           src="https://tse3.mm.bing.net/th?id=OIP.VURrH1cM4rNMrNgm0z_bVgHaEo&pid=Api&P=0&w=259&h=162"
           className="card-img-top"
+          alt="London city"
         />
         <div className="card-body">
           <h2>London</h2>
@@ -18,6 +19,7 @@ const TouristInfoCards = () => {
           <a
             href="http://visitlondon.com"
             target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary"
           >
             Go somewhere
@@ -43,6 +45,7 @@ const TouristInfoCards = () => {
           <a
             href="http://visitmanchester.com"
             target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary"
           >
             Go somewhere
@@ -66,6 +69,7 @@ const TouristInfoCards = () => {
           <a
             href="http://peoplemakeglasgow.com"
             target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary"
           >
             Go somewhere
