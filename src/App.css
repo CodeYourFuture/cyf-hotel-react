@@ -54,4 +54,15 @@ tr {
 
 .card {
   width: 18rem;
+  height: 32rem;
+}
+.cardContainer {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.city-info {
+  height: 12rem;
+  overflow: scroll;
 }
