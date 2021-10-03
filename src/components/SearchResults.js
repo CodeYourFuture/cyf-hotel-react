@@ -1,9 +1,10 @@
 import React from "react";
+import moment from "moment";
 
 const SearchResults = ({ results }) => {
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -14,11 +15,12 @@ const SearchResults = ({ results }) => {
             <th scope="col">Room id</th>
             <th scope="col">Check-in Date</th>
             <th scope="col">Check-out Date</th>
+            <th scope="col">Number of Nights</th>
           </tr>
         </thead>
         <tbody>
-          {results.map(result => (
-            <tr>
+          {results.map((result, index) => (
+            <tr key={index}>
               <th scope="row">{result.id}</th>
               <td>{result.title}</td>
               <td>{result.firstName}</td>
@@ -27,6 +29,12 @@ const SearchResults = ({ results }) => {
               <td>{result.roomId}</td>
               <td>{result.checkInDate}</td>
               <td>{result.checkOutDate}</td>
+              <td>
+                {moment(result.checkOutDate).diff(
+                  moment(result.checkInDate),
+                  "days"
+                )}
+              </td>
             </tr>
           ))}
         </tbody>

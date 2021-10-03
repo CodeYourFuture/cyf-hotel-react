@@ -10,8 +10,8 @@ const Footer = () => {
   return (
     <div className="card-footer text-center">
       <ul className="list-unstyled">
-        {footerDetails.map(contact => (
-          <li>{contact}</li>
+        {footerDetails.map((contact, index) => (
+          <li key={index}>{contact}</li>
         ))}
       </ul>
     </div>
