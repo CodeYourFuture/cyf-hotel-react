@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "./Search.js";
+import Search from "./components/Search";
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
