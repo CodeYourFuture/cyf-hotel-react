@@ -3,7 +3,7 @@ import moment from "moment";
 
 const SearchResults = prop => {
   return (
-    <table class="table table-hover table-dark">
+    <table className="table table-hover table-dark">
       <thead>
         <tr>
           <th scope="col">id</th>
@@ -18,7 +18,7 @@ const SearchResults = prop => {
         </tr>
       </thead>
       <tbody>
-        {prop.results.map(element => {
+        {prop.results.map((element, index) => {
           let a = moment(element.checkInDate);
 
           let b = moment(element.checkOutDate);
@@ -26,7 +26,7 @@ const SearchResults = prop => {
           let c = b.diff(a, "days");
 
           return (
-            <tr>
+            <tr key={index}>
               <td>{element.id}</td>
               <td>{element.title}</td>
               <td>{element.firstName}</td>

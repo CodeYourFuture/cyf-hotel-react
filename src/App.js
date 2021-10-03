@@ -3,7 +3,7 @@ import Heading from "./Heading";
 import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
-import SearchResults from "./SearchResults";
+//import SearchResults from "./SearchResults";
 import "./App.css";
 
 const App = () => {

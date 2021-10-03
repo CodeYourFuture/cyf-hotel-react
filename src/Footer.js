@@ -3,8 +3,8 @@ const Footer = prop => {
   const hotelInfo = prop.hotelContact;
   return (
     <ul>
-      {hotelInfo.map(info => (
-        <li>{info}</li>
+      {hotelInfo.map((info, index) => (
+        <li key={index}>{info}</li>
       ))}
     </ul>
   );
