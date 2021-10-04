@@ -28,7 +28,7 @@ const TouristInfoCards = () => {
       </div>
       <div className="card">
         <img
-          src="https://tse1.mm.bing.net/th?id=OIP.K_zQ812cnQDY18ocKh0ijAHaEK&pid=Api&P=0&w=327&h=185"
+          src="https://www.makeurmove.co.uk/images/articles/uploads/0/0_1594983951608.jpg"
           alt="Manchester City"
           className="card-img-top"
         />

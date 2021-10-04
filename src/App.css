@@ -9,6 +9,10 @@
 .headerWrapper {
   position: relative;
 }
+td,
+th {
+  color: white;
+}
 .App-header {
   background-color: rgb(134, 29, 29);
   height: 100px;
@@ -23,7 +27,12 @@
 }
 .cardWrapper {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-items: center;
   justify-content: center;
+  width: 100%;
+  margin: auto;
 }
 .image {
   position: absolute;
@@ -67,7 +76,16 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
-
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  font-weight: 900;
+}
+li {
+  padding: 5px;
+}
 img {
   width: auto;
   height: 300px;
@@ -76,8 +94,14 @@ img {
   padding: 30px;
   text-align: justify;
   border-radius: 10px;
-  margin: 10px;
+  margin: auto;
   cursor: grabbing;
-  box-shadow: 2px 2px chocolate;
-  width: 18rem;
+  width: 100%;
+  box-shadow: 6px 6px rgb(61, 57, 54);
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  body {
+    background-color: olive;
+  }
 }

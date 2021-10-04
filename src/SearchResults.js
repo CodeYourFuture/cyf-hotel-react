@@ -2,8 +2,9 @@ import React from "react";
 import moment from "moment";
 
 const SearchResults = prop => {
+  const customer = prop.results;
   return (
-    <table className="table table-hover table-dark">
+    <table className="table table-responsive-lg table-hover table-dark">
       <thead>
         <tr>
           <th scope="col">id</th>
@@ -18,28 +19,24 @@ const SearchResults = prop => {
         </tr>
       </thead>
       <tbody>
-        {prop.results.map((element, index) => {
-          let a = moment(element.checkInDate);
+        {customer.map((customer, index) => {
+          let checkInDate = moment(customer.checkInDate);
 
-          let b = moment(element.checkOutDate);
+          let checkOutDate = moment(customer.checkOutDate);
 
-          let c = b.diff(a, "days");
+          let nightStay = checkOutDate.diff(checkInDate, "days");
 
           return (
             <tr key={index}>
-              <td>{element.id}</td>
-              <td>{element.title}</td>
-              <td>{element.firstName}</td>
-
-              <td>{element.surname}</td>
-
-              <td> {element.email} </td>
-              <td>{element.roomId}</td>
-
-              <td>{element.checkInDate}</td>
-              <td>{element.checkOutDate}</td>
-
-              <td>{c}</td>
+              <td>{customer.id}</td>
+              <td>{customer.title}</td>
+              <td>{customer.firstName}</td>
+              <td>{customer.surname}</td>
+              <td> {customer.email} </td>
+              <td>{customer.roomId}</td>
+              <td>{customer.checkInDate}</td>
+              <td>{customer.checkOutDate}</td>
+              <td>{nightStay}</td>
             </tr>
           );
         })}
