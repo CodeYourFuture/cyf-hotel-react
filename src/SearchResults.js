@@ -4,7 +4,7 @@ import moment from "moment";
 const SearchResults = prop => {
   const customer = prop.results;
   return (
-    <table className="table table-responsive-lg table-hover table-dark">
+    <table className="table table-responsive table-hover table-dark">
       <thead>
         <tr>
           <th scope="col">id</th>

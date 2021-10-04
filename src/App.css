@@ -79,11 +79,14 @@ tr {
 ul {
   list-style: none;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   font-style: italic;
   font-weight: 900;
 }
 li {
+  display: flex;
+  justify-content: space-evenly;
   margin: auto;
 }
 img {
