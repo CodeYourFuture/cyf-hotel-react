@@ -17,6 +17,15 @@
   font-size: 1em;
   font-weight: bold;
 }
+.App-header-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 250px;
+}
+
+.App-header-logo img {
+  height: 550px;
+}
 
 .App-title {
   font-size: 1.5em;
