@@ -13,33 +13,48 @@ const cities = [
     name: "Manchester",
     image:
       "https://images.unsplash.com/photo-1605021149343-bb75d2a2fa44?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
-    info: "",
+    info:
+      "Youthful, diverse, energetic and bursting with character; Manchester is one of the most exciting places to visit in the UK right now where everybody and anybody is very warmly welcomed.",
     link: "visitmanchester.com"
   },
   {
     name: "London",
     image:
       "https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
-    info: "",
+    info:
+      "Explore the city on sightseeing tours, soak up culture at museums and galleries, or choose from the many free things to do. Treat yourself on famous shopping streets or celebrate special occasions at world-class theatre shows, restaurants and bars.",
     link: "visitlondon.com."
   }
 ];
 
+// const TouristInfoCards = () => {
+//   return (
+//     <div className="card">
+//       <img
+//         src="https://image.flaticon.com/icons/svg/139/139899.svg"
+//         alt="city-img"
+//         className="card-img-top"
+//       />
+//       <div className="card-body">
+//         <a href="#" className="btn btn-primary">
+//           Go somewhere
+//         </a>
+//       </div>
+//     </div>
+//   );
+// };
+
 const TouristInfoCards = () => {
-  return (
+  return cities.map(city => (
     <div className="card">
-      <img
-        src="https://image.flaticon.com/icons/svg/139/139899.svg"
-        alt="city-img"
-        className="card-img-top"
-      />
+      <img src={city.image} alt="city-img" className="card-img-top" />
       <div className="card-body">
         <a href="#" className="btn btn-primary">
           Go somewhere
         </a>
       </div>
     </div>
-  );
+  ));
 };
 
 export default TouristInfoCards;
