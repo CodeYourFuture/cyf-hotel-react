@@ -4,12 +4,13 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 50px;
+  margin-right: 4rem;
 }
 
 .App-header {
   background-color: #222;
-  height: 70px;
+  height: 90px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -18,13 +19,12 @@
   font-weight: bold;
 }
 
-.App-header > img {
-  width: 1.9rem;
-  margin-right: 1rem;
-}
-
 .App-title {
   font-size: 1.5em;
+}
+
+.App-card-width {
+  width: 20rem;
 }
 
 .App-content {
@@ -40,24 +40,19 @@
     transform: rotate(360deg);
   }
 }
-.search {
+.App-search {
   padding: 5px 0 20px 0;
 }
 
-tr {
+.App-table {
+  margin-bottom: 3rem;
+}
+
+.App-tr {
   color: #5b5757;
 }
 
-.results {
-  padding-top: 15px;
-}
-
-.footer {
+.App-footer {
   padding-top: 20px;
-  text-align: center;
   list-style: none;
-}
-
-.card {
-  width: 18rem;
 }

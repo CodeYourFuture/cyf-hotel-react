@@ -1,10 +1,10 @@
 import React from "react";
 
-// Render bookings table heading, called by `SearchResults.js`
+// Render bookings table heading, called by `SearchResults.js`.
 const ResultsTableHeading = () => {
   return (
     <thead>
-      <tr className="text-center">
+      <tr className="text-center App-tr">
         <th scope="col">ID</th>
         <th scope="col">Title</th>
         <th scope="col">First Name</th>
@@ -13,7 +13,7 @@ const ResultsTableHeading = () => {
         <th scope="col">Room ID</th>
         <th scope="col">Check In Date</th>
         <th scope="col">Check Out Date</th>
-        <th scope="col">Staying</th>
+        <th scope="col">Stay Length</th>
       </tr>
     </thead>
   );

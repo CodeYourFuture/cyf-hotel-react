@@ -3,6 +3,7 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
+// Renders bookings container (eventually will perform a search), called by `App.js`.
 const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);

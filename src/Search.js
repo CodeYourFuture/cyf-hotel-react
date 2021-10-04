@@ -1,11 +1,12 @@
 import React from "react";
 import SearchButton from "./SearchButton";
 
+// Renders bookings search box, called by `Bookings.js`.
 const Search = () => {
   return (
-    <div className="search">
+    <div className="App-search">
       <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
+        <h2 className="text-center">Search Bookings</h2>
       </div>
       <div className="row search-wrapper">
         <div className="col">

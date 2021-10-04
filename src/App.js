@@ -5,9 +5,9 @@ import CardCities from "./data/cardCities.json";
 import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
 import Footer from "./Footer";
-
 import "./App.css";
 
+// Initiates App, called from `index.html` by the ReactDOM.render.
 const App = () => {
   return (
     <div className="App">
@@ -18,7 +18,7 @@ const App = () => {
       <Footer
         contactInfo={[
           "123 Fake Street, London, E1 4UD",
-          "hello@fakehotel.com",
+          "mailto:hello@fakehotel.com",
           "0123 456789"
         ]}
       />

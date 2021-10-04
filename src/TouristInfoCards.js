@@ -1,4 +1,5 @@
 import React from "react";
+import TouristInfoCardButton from "./TouristInfoCardButton";
 
 // Renders tourist information cards, called by `Apps.js`.
 const TouristInfoCards = props => {
@@ -6,7 +7,7 @@ const TouristInfoCards = props => {
     <div className="card-container d-flex justify-content-center flex-wrap">
       {props.cities.map((city, index) => (
         <div
-          className="card d-flex justify-content-space-between m-5"
+          className="card d-flex justify-content-space-between m-5 shadow App-card-width"
           key={index}
         >
           <img
@@ -17,12 +18,7 @@ const TouristInfoCards = props => {
           <div className="card-body">
             <h2 className="d-flex justify-content-center">{city.name}</h2>
             <p className="d-flex justify-content-center">{city.comment}</p>
-            <a
-              href={city.link}
-              className="btn btn-primary d-flex justify-content-center"
-            >
-              Visit {city.name}
-            </a>
+            <TouristInfoCardButton city={city} />
           </div>
         </div>
       ))}

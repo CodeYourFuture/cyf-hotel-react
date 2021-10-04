@@ -2,15 +2,15 @@ import React from "react";
 import ResultsTableHeading from "./ResultsTableHeading";
 import GetBookingLength from "./GetBookingLength";
 
-// Renders complete bookings result table, called by `Bookings.js`
+// Renders complete bookings result table, called by `Bookings.js`.
 const SearchResults = props => {
   return (
-    <table class="table">
+    <table className="table App-table table-responsive">
       <ResultsTableHeading />
 
       <tbody>
         {props.results.map((guest, index) => (
-          <tr className="text-center" key={index}>
+          <tr className="text-center App-tr" key={index}>
             <td>{guest.id}</td>
             <td>{guest.title}</td>
             <td>{guest.firstName}</td>
