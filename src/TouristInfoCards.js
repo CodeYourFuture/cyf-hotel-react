@@ -1,0 +1,50 @@
+import React from "react";
+
+const cities = [
+  {
+    name: "Glasgow",
+    image:
+      "https://images.unsplash.com/photo-1611605877189-b9743c2ef324?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80",
+    info:
+      "From independent stores to high street retailers, Glasgow is the best shopping city.",
+    link: "peoplemakeglasgow.com"
+  },
+  {
+    name: "Manchester",
+    image:
+      "https://images.unsplash.com/photo-1605021149343-bb75d2a2fa44?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
+    info: "",
+    link: "visitmanchester.com"
+  },
+  {
+    name: "London",
+    image:
+      "https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
+    info: "",
+    link: "visitlondon.com."
+  }
+];
+
+const TouristInfoCards = () => {
+  return (
+    <div className="card">
+      <img
+        src="https://image.flaticon.com/icons/svg/139/139899.svg"
+        alt="city-img"
+        className="card-img-top"
+      />
+      <div className="card-body">
+        <a href="#" className="btn btn-primary">
+          Go somewhere
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default TouristInfoCards;
+
+//1. img of city x3 (Glasgw, Manny, Ldn)
+//2. City name
+//3. info abt city
+//4. link to city page
