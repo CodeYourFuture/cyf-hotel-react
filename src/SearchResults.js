@@ -1,6 +1,6 @@
 import React from "react";
 import ResultsTableHeading from "./ResultsTableHeading";
-import BookingLength from "./BookingLength";
+import GetBookingLength from "./GetBookingLength";
 
 // Renders complete bookings result table, called by `Bookings.js`
 const SearchResults = props => {
@@ -19,7 +19,7 @@ const SearchResults = props => {
             <td>{guest.roomId}</td>
             <td>{guest.checkInDate}</td>
             <td>{guest.checkOutDate}</td>
-            <td>{<BookingLength guest={guest} />} Days</td>
+            <td>{<GetBookingLength guest={guest} />} Days</td>
           </tr>
         ))}
       </tbody>
