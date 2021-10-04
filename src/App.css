@@ -79,12 +79,12 @@ tr {
 ul {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   font-style: italic;
   font-weight: 900;
 }
 li {
-  padding: 5px;
+  margin: auto;
 }
 img {
   width: auto;
@@ -94,14 +94,23 @@ img {
   padding: 30px;
   text-align: justify;
   border-radius: 10px;
-  margin: auto;
+  margin: 10px;
   cursor: grabbing;
-  width: 100%;
+  padding: 10px;
+
   box-shadow: 6px 6px rgb(61, 57, 54);
-  width: 100%;
+  width: auto;
 }
 @media screen and (min-width: 600px) {
   body {
-    background-color: olive;
+    background-color: rgb(161, 161, 129);
+  }
+  .cardWrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .card {
+    width: 30%;
   }
 }
