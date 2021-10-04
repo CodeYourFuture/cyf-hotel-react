@@ -50,14 +50,14 @@ const TouristInfoCards = () => {
       <img src={city.image} alt="city-img" className="card-img-top" />
       <div className="card-body">
         <p>{city.info}</p>
-        <a href={city.link} className="btn btn-primary" target="_blank">
-          Go somewhere
-        </a>
-        {/* <a
-          href="https://visitlondon.com/"
+        <a
+          href={city.link}
           className="btn btn-primary"
           target="_blank"
-        /> */}
+          rel="noopener noreferrer"
+        >
+          Visit {city.name}
+        </a>
       </div>
     </div>
   ));
