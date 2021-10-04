@@ -9,7 +9,8 @@ const headingItems = [
   "Email",
   "Room ID",
   "Check in Date",
-  "Check out Date"
+  "Check out Date",
+  "Number Of Nights"
 ];
 export default function SearchResults({ fakeBookings }) {
   return (
