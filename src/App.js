@@ -19,7 +19,6 @@ const App = () => {
           "0123 456789"
         ]}
       />
-      <SearchResults />
     </div>
   );
 };
