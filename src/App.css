@@ -1,4 +1,4 @@
-app css body {
+body {
   margin: 2rem;
 }
 
@@ -68,7 +68,35 @@ tr {
 
 .card {
   overflow: hidden;
-  box-shadow: 0, 2px;
+  box-shadow: 0, 2px 20px #adb5bd;
+  border-radius: 0.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+}
 
-  /* width: 18rem; */
+.card__title {
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.card__description {
+  padding: 0 1rem;
+}
+
+.btn {
+  margin: 0 2.8rem;
+  text-align: center;
+  transition: background 200ms ease-in, color 200ms ease-in;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.btn:hover {
+  background: #fff;
+  color: #007bff;
 }
