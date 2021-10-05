@@ -23,6 +23,16 @@ const SearchResults = () => {
         <th>5/10/21</th>
         <th>7/10/21</th>
       </tr>
+      <tr>
+        <th>2</th>
+        <th>Mr</th>
+        <th>Joe</th>
+        <th>Smith</th>
+        <th>joe.smith@gmail.com</th>
+        <th>224</th>
+        <th>5/10/21</th>
+        <th>7/10/21</th>
+      </tr>
     </table>
   );
 };
