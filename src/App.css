@@ -2,13 +2,8 @@
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
+  background-color: rgb(51, 144, 231);
   height: 50px;
   padding: 20px;
   color: white;
@@ -27,16 +22,8 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
-  padding: 5px 0 20px 0;
+  padding: 30px 0 30px 0;
 }
 
 tr {
@@ -54,4 +41,12 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.highlighted {
+  background-color: aqua;
+}
+
+img {
+  height: 350px;
 }
