@@ -1,4 +1,5 @@
 import React from "react";
+import "./Footer.css";
 
 // Renders footer component, called by `App.js`
 // I realise this is probably overkill but I just
@@ -6,16 +7,16 @@ import React from "react";
 let Footer = props => {
   return (
     <footer>
-      <ul className="App-footer d-flex justify-content-center flex-wrap">
-        {props.contactInfo.map((method, index) =>
-          method.includes("@") ? (
-            <li className="m-3" key={index}>
+      <ul className="Footer-content d-flex justify-content-center flex-wrap">
+        {props.contactInfo.map((contactMethod, index) =>
+          contactMethod.includes("@") ? (
+            <li className="m-sm-0 m-lg-3 px-2" key={index}>
               {" "}
-              <a href={method}>Email</a>
+              <a href={contactMethod}>hello@fakehotel.com</a>
             </li>
           ) : (
-            <li className="m-3" key={index}>
-              {method}
+            <li className="m-sm-0 m-lg-3 px-2" key={index}>
+              {contactMethod}
             </li>
           )
         )}

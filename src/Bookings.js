@@ -1,7 +1,7 @@
 import React from "react";
+import FakeBookings from "./data/fakeBookings.json";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
 
 // Renders bookings container (eventually will perform a search), called by `App.js`.
 const Bookings = () => {
@@ -10,7 +10,7 @@ const Bookings = () => {
   };
 
   return (
-    <div className="App-content">
+    <div className="Bookings-content">
       <div className="container">
         <Search search={search} />
         <SearchResults results={FakeBookings} />

@@ -1,5 +1,6 @@
 import React from "react";
 import TouristInfoCardButton from "./TouristInfoCardButton";
+import "./TouristInfoCards.css";
 
 // Renders tourist information cards, called by `Apps.js`.
 const TouristInfoCards = props => {
@@ -7,7 +8,7 @@ const TouristInfoCards = props => {
     <div className="card-container d-flex justify-content-center flex-wrap">
       {props.cities.map((city, index) => (
         <div
-          className="card d-flex justify-content-space-between m-5 shadow App-card-width"
+          className="card d-flex justify-content-space-between m-5 shadow TouristInfoCards-width"
           key={index}
         >
           <img
