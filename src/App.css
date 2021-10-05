@@ -1,3 +1,7 @@
+app css body {
+  margin: 2rem;
+}
+
 .App {
   text-align: left;
 }
@@ -26,7 +30,6 @@
   padding-top: 20px;
   font-size: large;
 }
-
 .Header-logo {
   width: 10%;
 }
@@ -56,6 +59,16 @@ tr {
   text-align: center;
 }
 
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 18rem));
+  gap: 2rem;
+  justify-content: center;
+}
+
 .card {
-  width: 18rem;
+  overflow: hidden;
+  box-shadow: 0, 2px;
+
+  /* width: 18rem; */
 }
