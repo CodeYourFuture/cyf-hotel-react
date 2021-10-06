@@ -9,8 +9,8 @@ const footerInfo = [
 const Footer = () => {
   return (
     <ul className="footer">
-      {footerInfo.map(info => (
-        <li>{info}</li>
+      {footerInfo.map((info, index) => (
+        <li key={index}>{info}</li>
       ))}
     </ul>
   );

@@ -27,23 +27,6 @@ const cities = [
   }
 ];
 
-// const TouristInfoCards = () => {
-//   return (
-//     <div className="card">
-//       <img
-//         src="https://image.flaticon.com/icons/svg/139/139899.svg"
-//         alt="city-img"
-//         className="card-img-top"
-//       />
-//       <div className="card-body">
-//         <a href="#" className="btn btn-primary">
-//           Go somewhere
-//         </a>
-//       </div>
-//     </div>
-//   );
-// };
-
 const TouristInfoCards = () => {
   return cities.map(city => (
     <div className="card">
