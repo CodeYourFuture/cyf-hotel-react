@@ -9,22 +9,24 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
-}
-.App-header-logo {
   display: flex;
   justify-content: center;
-  margin-top: 250px;
 }
 
-.App-header-logo img {
-  height: 550px;
+.App-header h1 {
+  letter-spacing: 5px;
+}
+
+.App-header img {
+  align-content: center;
+  padding: 5px 5px 20px 15px;
 }
 
 .App-title {
@@ -61,6 +63,20 @@ tr {
   text-align: center;
 }
 
+.cardWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .card {
-  width: 18rem;
+  /* width: 25rem;
+  height: 35rem;
+  margin-right: auto;
+  margin-left: 3rem; */
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.card img {
 }
