@@ -5,11 +5,13 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  float: left;
+  margin-right: 1.5rem;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 7rem;
   padding: 20px;
   color: white;
   text-align: left;
@@ -52,6 +54,18 @@ tr {
   text-align: center;
 }
 
+.card-container {
+  height: fit-content;
+}
+
 .card {
   width: 18rem;
+  height: 100%;
+  display: flex;
+  align-items: space-between;
+}
+
+footer {
+  border-top: 2px solid rgb(187, 185, 185);
+  padding: 10px;
 }
