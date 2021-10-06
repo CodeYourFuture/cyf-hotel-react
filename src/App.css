@@ -3,19 +3,23 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin alternate 5s linear;
   height: 80px;
+  width: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  height: 100px;
+  width: auto;
+  padding: 10px;
+  background-color: rgb(7, 7, 7);
+  /* height: 50px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: bold; */
 }
 
 .App-title {
