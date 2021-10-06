@@ -57,5 +57,10 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  float: left;
+  width: 30%;
+  padding: 10px;
+  margin: 20px;
+  border-style: solid;
+  border-color: black;
 }
