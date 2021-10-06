@@ -9,9 +9,9 @@ const Footer = props => {
         <div className="row">
           <div className="col-6">
             <ul className="nav flex-column">
-              <li className="nav-item mb-1">
-                {props.addrArray.map(address => address)}
-              </li>
+              {props.addrArray.map(address => (
+                <li className="nav-item mb-1">{address}</li>
+              ))}
             </ul>
           </div>
         </div>
