@@ -102,3 +102,8 @@ tr {
   background: #fff;
   color: #007bff;
 }
+
+.Footer li {
+  font-size: 0.75rem;
+  list-style-type: none;
+}
