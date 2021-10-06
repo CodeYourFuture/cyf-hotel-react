@@ -1,5 +1,5 @@
 import React from "react";
-const searchButton = () => {
+const SearchButton = () => {
   return <button className="btn btn-primary">Search</button>;
 };
-export default searchButton;
+export default SearchButton;

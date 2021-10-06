@@ -6,8 +6,6 @@ function Heading() {
       <img
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
         alt="hotel logo"
-        width="100"
-        height="50"
       />
     </header>
   );
