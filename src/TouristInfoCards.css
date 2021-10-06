@@ -1,0 +1,4 @@
+.visit-cards {
+  display: flex;
+  flex-direction: row;
+}
