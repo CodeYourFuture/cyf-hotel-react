@@ -1,4 +1,6 @@
 .visit-cards {
   display: flex;
+  align-items: right;
   flex-direction: row;
+  gap: 40px;
 }
