@@ -4,7 +4,7 @@ import fakeBookings from "./data/fakeBookings.json";
 const SearchResults = props => {
   return (
     <div>
-      <table className="table table-striped table-hover">
+      <table className="table table-hover">
         <thead>
           <tr>
             <th scope="col">Id</th>

@@ -5,16 +5,12 @@ import React from "react";
 const Footer = props => {
   return (
     <div className="container">
-      <footer className="d-flex flex-wrap justify-content-between align-items-center py-1 my-5 border-top">
-        <div className="row">
-          <div className="col-6">
-            <ul className="nav flex-column">
-              {props.addrArray.map(address => (
-                <li className="nav-item mb-1">{address}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <footer className=" d-flex flex-wrap justify-content-between  py-3 my-5 border-top">
+        <ul className="nav flex-column">
+          {props.addrArray.map(address => (
+            <li className="nav-item mb-1">{address}</li>
+          ))}
+        </ul>
         <span className="text-muted">© 2021 React training CYF, Inc</span>
       </footer>
     </div>
