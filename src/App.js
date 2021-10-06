@@ -5,6 +5,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import ManchesterImg from "./Manchester.jpeg";
 import LondonImg from "./London.jpeg";
 import GlasgowImg from "./Glasgow.jpeg";
+import Footer from "./Footer";
 import "./App.css";
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         cardtext="Glasgow grew from a small rural settlement on the River Clyde to become the largest seaport in Scotland, and tenth largest by tonnage in Britain. Expanding from the medieval bishopric and royal burgh, and the later establishment of the University of Glasgow in the 15th century."
       />
       <Bookings />
+      <Footer />
     </div>
   );
 };
