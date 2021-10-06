@@ -32,7 +32,7 @@ function TouristInfoCards() {
     <div>
       {cities.map(city => (
         <div className="card">
-          <img src={city.image} alt="cityimage" className="card-img-top" />
+          <img src={city.image} alt={city.name} className="card-img-top" />
           <div className="card-body">
             <h1>{city.name}</h1>
             <p>{city.text}</p>
