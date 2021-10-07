@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 
-// renders restaurant orders, called by `App.js`.
+// Renders restaurant orders, called by `App.js`.
 const Restaurant = () => {
-  const [pizzas, setPizzas] = useState(0);
+  // set state variable `pizza` to 0 then when called by the
+  // add pizza button increments the count state variable by 1
+  const [pizzas, setPizzasQuantity] = useState(0);
+  const orderOne = () => setPizzasQuantity(pizzas + 1);
 
   return (
     <div className="d-flex justify-content-center orders-container">
@@ -10,7 +13,10 @@ const Restaurant = () => {
         <h2>Restaurant Orders</h2>
         <ul>
           <li>
-            Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
+            Pizzas: {pizzas}{" "}
+            <button onClick={orderOne} className="btn btn-primary">
+              Add
+            </button>
           </li>
         </ul>
       </div>
