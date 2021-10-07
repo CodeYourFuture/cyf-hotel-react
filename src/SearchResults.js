@@ -1,6 +1,7 @@
 import React from "react";
+import moment from "moment";
 
-const SearchResults = () => {
+const SearchResults = props => {
   return (
     <table class="table table-striped">
       <thead>
@@ -12,28 +13,24 @@ const SearchResults = () => {
           <th scope="col">Email</th>
           <th scope="col">Room Id</th>
           <th scope="col">Check In Date</th>
-          <th scope="col">check Out Date</th>
+          <th scope="col">Check Out Date</th>
+          <th scope="col">Duration</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        {props.results.map(result => (
+          <tr>
+            <th scope="row">{result.id}</th>
+            <td>{result.title}</td>
+            <td>{result.firstName}</td>
+            <td>{result.surname}</td>
+            <td>{result.email}</td>
+            <td>{result.roomId}</td>
+            <td>{result.checkInDate}</td>
+            <td>{result.checkOutDate}</td>
+            <td>{moment(result.checkOutDate).diff(result.checkInDate)}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
