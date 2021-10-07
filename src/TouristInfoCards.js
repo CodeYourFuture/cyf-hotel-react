@@ -8,7 +8,12 @@ const TouristInfoCards = props => {
         <img src={props.img} width="200px" />
         <h3>{props.city}</h3>
         <p>{props.cardtext}</p>
-        <a href={props.url} target="_blank" className="btn btn-primary">
+        <a
+          href={props.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary"
+        >
           Go Somewhere
         </a>
       </div>

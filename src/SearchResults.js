@@ -1,42 +1,53 @@
 import React from "react";
+import moment from "moment";
 
-const userInfor = [
-  {
-    id: "9898",
-    title: "Miss",
-    firstName: "Sam",
-    surname: "Smith",
-    email: "Sam.Smith@hotmail.com",
-    roomId: "676",
-    checkInDate: "20/10/21",
-    checkOutDate: "22/10/21"
-  }
-];
+// const userInfor = [{
+//     id: "9898",
+//     title: "Miss",
+//     firstName: "Sam",
+//     surname: "Smith",
+//     email: "Sam.Smith@hotmail.com",
+//     roomId: "676",
+//     checkInDate: "20/10/21",
+//     checkOutDate: "22/10/21",
+// }]
 
 const SearchResults = props => {
   console.log(props.formInfo);
   return (
-    <table>
+    <table className="table">
       <thead>
-        {props.formInfo.map(deatils => (
-          <th>{deatils}</th>
-        ))}
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Surname</th>
+          <th scope="col">Email</th>
+          <th scope="col">Room Id</th>
+          <th scope="col">Check in Date</th>
+          <th scope="col">Check out Date</th>
+          <th scope="col">Duration</th>
+        </tr>
       </thead>
       <tbody>
-        <tr>
-          {userInfor.map(userDetails => (
-            <>
-              <td>{userDetails.id}</td>
-              <td>{userDetails.title}</td>
-              <td>{userDetails.firstName}</td>
-              <td>{userDetails.surname}</td>
-              <td>{userDetails.email}</td>
-              <td>{userDetails.roomId}</td>
-              <td>{userDetails.checkInDate}</td>
-              <td>{userDetails.checkOutDate}</td>
-            </>
-          ))}
-        </tr>
+        {props.results.map(result => (
+          <tr>
+            <th scope="row">{result.id}</th>
+            <td scope="row">{result.title}</td>
+            <td scope="row">{result.firstName}</td>
+            <td scope="row">{result.surname}</td>
+            <td scope="row">{result.email}</td>
+            <td scope="row">{result.roomId}</td>
+            <td scope="row">{result.checkInDate}</td>
+            <td scope="row">{result.checkOutDate}</td>
+            <td>
+              {moment(result.checkOutDate.replace(/"-"/g, ",")).diff(
+                result.checkInDate.replace(/"-"/g, ","),
+                "days"
+              )}
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

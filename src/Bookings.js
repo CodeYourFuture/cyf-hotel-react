@@ -17,24 +17,16 @@ const Bookings = () => {
         {
           <SearchResults
             results={FakeBookings}
-            formInfo={[
-              "id",
-              "title",
-              "first Name",
-              "surname",
-              "email",
-              "room Id",
-              "check in date",
-              "check out date"
-            ]}
-            // id="hh"
-            // title=""
-            // first name=""
-            // surname=""
-            // email=""
-            // room Id=""
-            // check in date=""
-            // check out date=""
+            // formInfo={[
+            //   "id",
+            //   "title",
+            //   "first Name",
+            //   "surname",
+            //   "email",
+            //   "room Id",
+            //   "check in date",
+            //   "check out date"
+            // ]}
           />
         }
       </div>
