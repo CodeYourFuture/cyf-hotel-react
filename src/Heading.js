@@ -4,8 +4,10 @@ import Logo from "./Logo";
 const Heading = () => {
   return (
     <header className="App-header">
-      <Logo />
-      <div>CYF Hotel </div>
+      <div>
+        <Logo className="App-logo" />
+        <p className="App-title">CYF Hotel </p>
+      </div>
     </header>
   );
 };
