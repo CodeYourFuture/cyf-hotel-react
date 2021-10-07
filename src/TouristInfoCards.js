@@ -3,9 +3,9 @@ import React from "react";
 const TouristInfoCards = props => {
   return (
     <div className="card">
-      <img scr="" className="card-img-top" />
+      {/* <img className="card-img-top" /> */}
       <div className="card-body">
-        <img src={props.img} width="200px" />
+        <img src={props.img} width="200px" alt={props.city} />
         <h3>{props.city}</h3>
         <p>{props.cardtext}</p>
         <a

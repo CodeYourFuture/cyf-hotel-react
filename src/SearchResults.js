@@ -31,15 +31,15 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map(result => (
-          <tr>
+          <tr key={result.id}>
             <th scope="row">{result.id}</th>
-            <td scope="row">{result.title}</td>
-            <td scope="row">{result.firstName}</td>
-            <td scope="row">{result.surname}</td>
-            <td scope="row">{result.email}</td>
-            <td scope="row">{result.roomId}</td>
-            <td scope="row">{result.checkInDate}</td>
-            <td scope="row">{result.checkOutDate}</td>
+            <td>{result.title}</td>
+            <td>{result.firstName}</td>
+            <td>{result.surname}</td>
+            <td>{result.email}</td>
+            <td>{result.roomId}</td>
+            <td>{result.checkInDate}</td>
+            <td>{result.checkOutDate}</td>
             <td>
               {moment(result.checkOutDate.replace(/"-"/g, ",")).diff(
                 result.checkInDate.replace(/"-"/g, ","),

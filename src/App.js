@@ -39,6 +39,7 @@ const App = () => {
       <div className="cardWrapper">
         {touristInfoData.map(touristInfo => (
           <TouristInfoCards
+            key={touristInfo.city}
             city={touristInfo.city}
             url={touristInfo.url}
             img={touristInfo.img}

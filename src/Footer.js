@@ -11,7 +11,7 @@ const Footer = props => {
     <footer>
       <ul>
         {addressHotel.map(address => (
-          <li>{address}</li>
+          <li key={address}>{address}</li>
         ))}
       </ul>
     </footer>
