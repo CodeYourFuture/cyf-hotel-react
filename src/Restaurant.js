@@ -7,8 +7,10 @@ const Restaurant = () => {
     <div className="d-flex justify-content-center orders-container">
       <div>
         <h2>Restaurant Orders</h2>
-        <ul>
-          <Order />
+        <ul className="list-group">
+          <Order orderType="Pizzas" />
+          <Order orderType="Salads" />
+          <Order orderType="Chocolate cake" />
         </ul>
       </div>
     </div>
