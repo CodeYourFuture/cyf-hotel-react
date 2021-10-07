@@ -3,7 +3,7 @@ import React from "react";
 const Restaurant = () => {
   const pizzas = 0;
   return (
-    <div>
+    <div className="container border-top py-5">
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
