@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 // renders restaurant orders, called by `App.js`.
 const Restaurant = () => {
-  const pizzas = 0;
+  const [pizzas, setPizzas] = useState(0);
+
   return (
     <div className="d-flex justify-content-center orders-container">
       <div>
