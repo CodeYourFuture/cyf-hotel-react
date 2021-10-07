@@ -14,7 +14,7 @@ const cities = [
     image:
       "https://images.unsplash.com/photo-1605021149343-bb75d2a2fa44?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
     info:
-      "Youthful, diverse, energetic and bursting with character; Manchester is one of the most exciting places to visit in the UK right now where everybody and anybody is very warmly welcomed.",
+      "Youthful, diverse, energetic and bursting with character, where everybody and anybody is very warmly welcomed.",
     link: "https://visitmanchester.com"
   },
   {
@@ -22,28 +22,32 @@ const cities = [
     image:
       "https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
     info:
-      "Explore the city on sightseeing tours, soak up culture at museums and galleries, or choose from the many free things to do. Treat yourself on famous shopping streets or celebrate special occasions at world-class theatre shows, restaurants and bars.",
+      "Explore the city on sightseeing tours, soak up culture at museums and galleries, or choose from the many free things to do.",
     link: "https://visitlondon.com/"
   }
 ];
 
 const TouristInfoCards = () => {
-  return cities.map(city => (
-    <div className="card">
-      <img src={city.image} alt="city-img" className="card-img-top" />
-      <div className="card-body">
-        <p>{city.info}</p>
-        <a
-          href={city.link}
-          className="btn btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit {city.name}
-        </a>
-      </div>
+  return (
+    <div className="card-wrapper">
+      {cities.map((city, index) => (
+        <div className="card" key={index}>
+          <img src={city.image} alt="city-img" className="card-img-top" />
+          <div className="card-body">
+            <p>{city.info}</p>
+            <a
+              href={city.link}
+              className="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit {city.name}
+            </a>
+          </div>
+        </div>
+      ))}
     </div>
-  ));
+  );
 };
 
 export default TouristInfoCards;

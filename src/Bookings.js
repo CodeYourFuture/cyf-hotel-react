@@ -19,15 +19,3 @@ const Bookings = () => {
 };
 
 export default Bookings;
-
-//import fakebooking in booking-Done
-//comment out you searchResults component-Done
-//uncomment default searchRresults comp-Done
-
-//SearcRsults file
-//comment out searchResults
-//make copy of function
-// maybe import fakebookigs & bookings?
-//pass props argument in SearchResults
-//copy code from table & thx8
-//maybe use {results.keys} to access json data

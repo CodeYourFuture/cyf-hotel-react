@@ -37,6 +37,12 @@
     transform: rotate(360deg);
   }
 }
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .search {
   padding: 5px 0 20px 0;
 }
