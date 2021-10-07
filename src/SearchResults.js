@@ -1,5 +1,4 @@
 import React from "react";
-import fakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
 
 const SearchResults = props => {
@@ -22,7 +21,7 @@ const SearchResults = props => {
         <tbody className="table-striped">
           {props.results.map(result => {
             return (
-              <tr>
+              <tr key={result.id}>
                 <td>{result.id}</td>
                 <td>{result.title}</td>
                 <td>{result.firstName}</td>
