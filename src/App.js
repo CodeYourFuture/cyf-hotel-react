@@ -34,14 +34,16 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      {touristInfoData.map(touristInfo => (
-        <TouristInfoCards
-          img={touristInfo.img}
-          title={touristInfo.title}
-          description={touristInfo.description}
-          button={touristInfo.button}
-        />
-      ))}
+      <div className="wrapper">
+        {touristInfoData.map(touristInfo => (
+          <TouristInfoCards
+            img={touristInfo.img}
+            title={touristInfo.title}
+            description={touristInfo.description}
+            button={touristInfo.button}
+          />
+        ))}
+      </div>
       <Bookings />
       <Restaurant />
       <Footer
