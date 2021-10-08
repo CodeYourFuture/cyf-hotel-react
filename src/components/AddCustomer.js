@@ -17,7 +17,7 @@ const AddCustomer = props => {
         <td>{customer.checkOutDate}</td>
         <td>
           {calculateDuration(customer.checkInDate, customer.checkOutDate)}{" "}
-          days(s)
+          day(s)
         </td>
       </tr>
     );
