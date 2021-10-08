@@ -9,8 +9,9 @@ const Table = () => {
         <th>Surname</th>
         <th>email</th>
         <th>Room ID</th>
-        <th>Check-in date</th>
-        <th>Check-out date</th>
+        <th>Check in date</th>
+        <th>Check out date</th>
+        <th>Duration</th>
       </tr>
     </thead>
   );
