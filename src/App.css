@@ -63,6 +63,17 @@ tr {
   text-align: center;
 }
 
+.footer li {
+  text-align: center;
+  list-style-type: none;
+  line-height: 30px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .card {
   width: 18rem;
 }

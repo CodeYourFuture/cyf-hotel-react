@@ -2,18 +2,22 @@ import React from "react";
 
 const TouristInfoCards = props => {
   return (
-    <div>
-      {props.imgs.map((img, index) => (
+    <div className="card-container">
+      {props.cardInfo.map((card, index) => (
         <div className="card">
-          <img key={index} src={img} className="card-img-top" />
-        </div>
-      ))}
-
-      {props.links.map((link, index) => (
-        <div className="card-body">
-          <a key={index} href={link} className="btn btn-primary">
-            Go somewhere
-          </a>
+          <img
+            src={card.image}
+            alt={card.alt}
+            key={index}
+            className="card-img-top"
+          />
+          <div className="card-body">
+            <h3>{card.title}</h3>
+            <p>{card.desc}</p>
+            <a href={card.link} key={index} className="btn btn-primary">
+              Go somewhere
+            </a>
+          </div>
         </div>
       ))}
     </div>
