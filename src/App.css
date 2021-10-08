@@ -53,11 +53,20 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
+.footer li {
   text-align: center;
+  list-style-type: none;
+  line-height: 30px;
 }
 
 .card {
   width: 18rem;
+}
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
