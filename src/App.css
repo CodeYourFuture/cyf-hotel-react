@@ -60,3 +60,7 @@ tr {
 .card {
   width: 18rem;
 }
+
+li {
+  list-style: none;
+}
