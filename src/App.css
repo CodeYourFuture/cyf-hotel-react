@@ -9,13 +9,24 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  /* height: 50px; */
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+}
+
+.App-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App-header-wrapper img {
+  max-width: 50px;
+  width: 100%;
 }
 
 .App-title {
