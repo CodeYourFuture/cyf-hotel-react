@@ -8,8 +8,8 @@ const Footer = () => {
   ];
   return (
     <ul className="footer">
-      {information.map(e => {
-        return <li>{e}</li>;
+      {information.map((el, index) => {
+        return <li key={index}>{el}</li>;
       })}
     </ul>
   );
