@@ -9,7 +9,7 @@ const Bookings = () => {
   };
   const [bookings, setBookings] = useState(FakeBookings);
 
-  console.log(bookings);
+  // console.log(bookings);
   return (
     <div className="App-content">
       <div className="container">
