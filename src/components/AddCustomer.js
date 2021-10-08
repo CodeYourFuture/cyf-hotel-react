@@ -13,17 +13,17 @@ const AddCustomer = props => {
         <td>{customer.roomId}</td>
         <td>{customer.checkInDate}</td>
         <td>{customer.checkOutDate}</td>
-        <td>
+        {/* <td>
           {CalculateDuration(customer.checkInDate, customer.checkOutDate)}
-        </td>
+        </td> */}
       </tr>
     );
   });
   return <tbody>{customerEntry}</tbody>;
 };
-function CalculateDuration(checkInDate, checkOutDate) {
-  checkInDay = moment(checkInDate);
-  checkOutDay = moment(checkOutDate);
-  return checkOutDate.diff(checkInDate, "days");
-}
+// function CalculateDuration(checkInDate, checkOutDate) {
+//   checkInDay = moment(checkInDate);
+//   checkOutDay = moment(checkOutDate);
+//   return checkOutDate.diff(checkInDate, "days");
+// }
 export default AddCustomer;
