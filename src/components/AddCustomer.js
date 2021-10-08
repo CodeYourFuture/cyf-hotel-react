@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 // import fakeBookings from "../data/fakeBookings.json";
 
 const AddCustomer = props => {
@@ -14,17 +15,18 @@ const AddCustomer = props => {
         <td>{customer.roomId}</td>
         <td>{customer.checkInDate}</td>
         <td>{customer.checkOutDate}</td>
-        {/* <td>
-          {CalculateDuration(customer.checkInDate, customer.checkOutDate)}
-        </td> */}
+        <td>
+          {calculateDuration(customer.checkInDate, customer.checkOutDate)}{" "}
+          days(s)
+        </td>
       </tr>
     );
   });
   return <tbody>{customerEntry}</tbody>;
 };
-// function CalculateDuration(checkInDate, checkOutDate) {
-//   checkInDay = moment(checkInDate);
-//   checkOutDay = moment(checkOutDate);
-//   return checkOutDate.diff(checkInDate, "days");
-// }
+function calculateDuration(checkInDate, checkOutDate) {
+  let checkInDay = moment(checkInDate);
+  let checkOutDay = moment(checkOutDate);
+  return checkOutDay.diff(checkInDay, "days");
+}
 export default AddCustomer;
