@@ -1,7 +1,8 @@
 import React from "react";
-// import fakeBookings from "../data/fakeBookings.json";  PROPS LARLA RESULT A CEVIRDIK
+// import fakeBookings from "../data/fakeBookings.json";
 
 const AddCustomer = props => {
+  console.log(props.result);
   const customerEntry = props.result.map(customer => {
     return (
       <tr key={customer.id}>

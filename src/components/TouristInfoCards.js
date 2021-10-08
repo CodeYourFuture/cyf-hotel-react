@@ -34,7 +34,7 @@ const locations = [
   {
     name: "Glasgow",
     image:
-      "https://www.visitbritain.com/sites/default/files/styles/consumer_vertical_hero__1920x1080/public/consumer_components_enhanced/header_image/vb34141644.jpg?itok=3pp7tR6y",
+      "https://www.businessgreen.com/api/v1/wps/3b5f3e2/b7c8bef6-be02-4c9c-915f-414df7fdf1e6/9/Glasgow-CreditMarioGuti-580x358.jpg",
     cityInfo: "Lorem Ipsum",
     url: "https://peoplemakeglasgow.com"
   }
