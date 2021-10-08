@@ -30,6 +30,7 @@ body {
   padding-top: 20px;
   font-size: large;
 }
+
 .Header-logo {
   width: 15%;
 }
@@ -60,7 +61,7 @@ tr {
 }
 
 .wrapper {
-  margin: 1rem;
+  margin: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,6 +111,11 @@ li {
 }
 
 @media only screen and (min-width: 468px) {
+  body {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
   .App-header {
     font-size: 3rem;
   }

@@ -8,10 +8,10 @@ import "./App.css";
 
 const touristInfoData = [
   {
-    img: require("./images/glasgow_cathedral.png"),
+    img: require("./images/glasgow.png"),
     title: "Glasgow",
     description:
-      "From independent stores to high street retailers, Glasgow is the best shopping city. The city is also rich in artists and creators which makes for a thriving and exciting independent shopping scene.",
+      "From independent stores to high street retailers, Glasgow is the best shopping city. Glasgow's city centre is home to flagship stores, impressive shopping centres and designer favourites all within an easily walkable area.The city is also rich in artists and creators which makes for a thriving and exciting independent shopping scene.",
     button: "https://peoplemakeglasgow.com/"
   },
   {
