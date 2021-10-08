@@ -9,8 +9,10 @@ const Order = props => {
   const orderOne = () => setQuantity(quantity + 1);
 
   return (
-    <li className="list-group-item m-1">
-      {props.orderType}: <div> {quantity}</div>
+    <li className="list-group-item m-1 text-center shadow">
+      <div>
+        {props.orderType}: {quantity}
+      </div>
       <RestaurantButton click={orderOne} />
     </li>
   );

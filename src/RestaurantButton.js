@@ -4,7 +4,7 @@ import React from "react";
 const RestaurantButton = props => {
   return (
     <>
-      <button onClick={props.click} className="btn btn-primary">
+      <button onClick={props.click} className="btn btn-primary mt-2">
         Add
       </button>
     </>
