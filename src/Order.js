@@ -6,14 +6,16 @@ const Order = props => {
   // Set state variable `pizza` to 0 then when called by the
   // add pizza button increments the count state variable by 1
   const [quantity, setQuantity] = useState(0);
-  const orderOne = () => setQuantity(quantity + 1);
+  const incrementOrder = () => {
+    setQuantity(quantity + 1);
+  };
 
   return (
     <li className="list-group-item m-1 text-center shadow">
       <div>
         {props.orderType}: {quantity}
       </div>
-      <RestaurantButton click={orderOne} />
+      <RestaurantButton click={incrementOrder} />
     </li>
   );
 };

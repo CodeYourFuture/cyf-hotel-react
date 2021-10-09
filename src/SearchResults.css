@@ -5,3 +5,7 @@
 .SearchResults-tr {
   color: #5b5757;
 }
+
+.SearchResults-tr:hover {
+  cursor: pointer;
+}
