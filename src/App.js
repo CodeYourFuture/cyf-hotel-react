@@ -13,9 +13,9 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <Footer />
-      <SearchResults />
       <Restaurant />
+      <SearchResults />
+      <Footer />
     </div>
   );
 };
