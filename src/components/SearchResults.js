@@ -12,11 +12,11 @@ const headingItems = [
   "Check out Date",
   "Number Of Nights"
 ];
-export default function SearchResults({ fakeBookings }) {
+export default function SearchResults({ results }) {
   return (
     <table className="table table-hover">
       <SearchResultHeading headingItems={headingItems} />
-      <SearchResultsBody bookings={fakeBookings} />
+      <SearchResultsBody bookings={results} />
     </table>
   );
 }

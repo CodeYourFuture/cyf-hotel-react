@@ -4,8 +4,6 @@ import "./App.css";
 import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/Footer";
-import SearchResults from "./components/SearchResults";
-import fakeBookings from "./data/fakeBookings.json";
 import Restaurant from "./Restaurant";
 
 const hotelAddress = [
@@ -24,7 +22,6 @@ const App = () => {
       </div>
       <Bookings />
       <Restaurant />
-      <SearchResults fakeBookings={fakeBookings} />
       <Footer addresses={hotelAddress} />
     </div>
   );
