@@ -4,7 +4,7 @@ const InfoCards = props => {
   return (
     <div className="info-card-container">
       {props.cards.map(city => (
-        <div className="card">
+        <div key={city.cityName} className="card">
           <img className="card-img-top" src={city.image} alt={city.alt} />
           <div className="card-body">
             <h3>{city.cityName}</h3>
