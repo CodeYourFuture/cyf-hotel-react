@@ -9,7 +9,7 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
 
-  const [bookings, setBookings] = useState(FakeBookings);
+  const [bookings] = useState(FakeBookings);
 
   return (
     <div className="Bookings-content">
