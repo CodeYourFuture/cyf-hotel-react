@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
-export default function Order() {
+export default function Order({ orderType }) {
   const [orders, setOrders] = useState(0);
   function orderOne() {
     setOrders(orders + 1);
   }
   return (
     <li>
-      Pizzas: {orders} <RestaurantButton handleClick={orderOne} />
+      {orderType}: {orders} <RestaurantButton handleClick={orderOne} />
     </li>
   );
 }
