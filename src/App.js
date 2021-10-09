@@ -4,6 +4,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Footer from "./Footer";
 import SearchResults from "./SearchResults";
+import Restaurant from "./Restaurant";
 import "./App.css";
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       <Bookings />
       <Footer />
       <SearchResults />
+      <Restaurant />
     </div>
   );
 };
