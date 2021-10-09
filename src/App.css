@@ -74,3 +74,13 @@ tr {
   margin-top: -200px;
   padding-top: 20px;
 }
+.card:hover {
+  opacity: 2;
+  transform: scale(1.05);
+  box-shadow: 2px 2px 10px 14px rgba(255, 255, 255, 0.2);
+  background-color: rgb(14, 165, 21);
+}
+.thead {
+  background-color: black;
+  color: rgb(240, 10, 10);
+}

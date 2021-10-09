@@ -4,8 +4,8 @@ import moment from "moment";
 function SearchResults(props) {
   return (
     <table class="table">
-      <thead>
-        <tr>
+      <thead class="thead">
+        <tr class="thead">
           <th scope="col">Title</th>
           <th scope="col">First name</th>
           <th scope="col">Surname</th>
