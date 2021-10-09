@@ -4,6 +4,7 @@ import Bookings from "./components/Bookings";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/Footer";
 //import SearchResults from "./SearchResults";
+import Restaurant from "./Restaurant.js";
 import "./App.css";
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer hotelContact={hotelContact} />
     </div>
   );
