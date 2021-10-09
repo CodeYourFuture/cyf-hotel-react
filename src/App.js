@@ -4,7 +4,7 @@ import Bookings from "./components/Bookings";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/Footer";
 //import SearchResults from "./SearchResults";
-import Restaurant from "./Restaurant.js";
+import Restaurant from "./components/Restaurant.js";
 import "./App.css";
 
 const App = () => {
