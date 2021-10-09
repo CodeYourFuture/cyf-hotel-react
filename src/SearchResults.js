@@ -1,19 +1,19 @@
 import React from "react";
-
+import moment from "moment";
 function SearchResult({ results }) {
   return (
-    <table>
-      <thead>
+    <table class="table">
+      <thead className="thead-warning">
         <tr>
-          <th>Id </th>
-          <th>Title </th>
-          <th>FirstName </th>
-          <th>Surname</th>
-          <th>Email </th>
-          <th>RoomId </th>
-          <th>Check-in-Date </th>
-          <th>Check-out-Date </th>
-          <th>NumberofNight </th>
+          <th scope="col">Id</th>
+          <th scope="col">Title </th>
+          <th scope="col">FirstName </th>
+          <th scope="col">Surname</th>
+          <th scope="col">Email </th>
+          <th scope="col">RoomId </th>
+          <th scope="col">Check-in-Date </th>
+          <th scope="col">Check-out-Date </th>
+          <th scope="col">Number of Nights </th>
         </tr>
       </thead>
       <tbody>
@@ -29,6 +29,10 @@ function SearchResult({ results }) {
                 <td>{booking.roomId} </td>
                 <td>{booking.checkInDate} </td>
                 <td>{booking.checkOutDate} </td>
+                {moment(booking.checkInDate).diff(
+                  moment(booking.checkOutDate),
+                  "days"
+                )}
               </tr>
             );
           })}

@@ -1,6 +1,7 @@
 import React from "react";
 import PlacesToVisitData from "./PlacesToVisitData";
 import "./TouristInfoCards.css";
+
 function TouristInfoCards() {
   return (
     <div className="visit-cards">
@@ -12,6 +13,7 @@ function TouristInfoCards() {
             <p>{item.summary}</p>
 
             <a href={item.website} className="btn btn-primary">
+              Visit
               {item.city}
             </a>
           </div>
