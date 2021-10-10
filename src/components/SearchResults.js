@@ -1,8 +1,10 @@
-import React from "react";
-import moment from "moment";
+import React, { useState } from "react";
+
+import TableRow from "./TableRow";
 
 const SearchResults = prop => {
   const customer = prop.results;
+
   return (
     <table className="table table-responsive table-hover table-dark">
       <thead>
@@ -19,26 +21,8 @@ const SearchResults = prop => {
         </tr>
       </thead>
       <tbody>
-        {customer.map((customer, index) => {
-          let checkInDate = moment(customer.checkInDate);
-
-          let checkOutDate = moment(customer.checkOutDate);
-
-          let nightStay = checkOutDate.diff(checkInDate, "days");
-
-          return (
-            <tr key={index}>
-              <td>{customer.id}</td>
-              <td>{customer.title}</td>
-              <td>{customer.firstName}</td>
-              <td>{customer.surname}</td>
-              <td> {customer.email} </td>
-              <td>{customer.roomId}</td>
-              <td>{customer.checkInDate}</td>
-              <td>{customer.checkOutDate}</td>
-              <td>{nightStay}</td>
-            </tr>
-          );
+        {customer.map(customer => {
+          return <TableRow customerdata={customer} />;
         })}
       </tbody>
     </table>

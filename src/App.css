@@ -64,9 +64,9 @@ th {
   padding: 5px 0 20px 0;
 }
 
-tr {
+/* tr {
   color: #5b5757;
-}
+} */
 
 .results {
   padding-top: 15px;
@@ -75,6 +75,12 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+.red {
+  background-color: rgba(221, 183, 173, 0.534);
+}
+.ap {
+  background-color: rgb(9, 4, 10);
 }
 ul {
   list-style: none;
