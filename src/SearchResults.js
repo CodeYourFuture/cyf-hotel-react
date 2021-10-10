@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
+import "./App.css";
+import SearchResult from "./SearchResult";
 
 //import SearchButton from "./SearchButton";
 
@@ -8,12 +10,6 @@ const SearchResults = props => {
     backgroundColor: "grey"
   };
 
-  const [colour, setColour] = useState(highlight.backgroundColor);
-  console.log(colour);
-  const highlightRow = e => {
-    return console.log(e.target.id);
-    // setColour("blue")
-  };
   return (
     <div>
       <table className="table">
@@ -31,44 +27,8 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {/* 
-       <tr>
-          <td>1</td>
-          <td>Mr</td>
-          <td>Abadi</td>
-          <td>Salman</td>
-          <td>a.s@gmail.com</td>
-          <td>005</td>
-          <td>15:30</td>
-          <td>17:00</td>
-        </tr>
-       */}
-          {props.results.map((result, index) => (
-            <tr id={index} style={highlightRow()}>
-              <td>{result.id}</td>
-              <td>{result.title}</td>
-              <td>{result.firstName}</td>
-              <td>{result.surname}</td>
-              <td>{result.email}</td>
-              <td>{result.roomId}</td>
-              <td>{result.checkInDate}</td>
-              <td>{result.checkOutDate}</td>
-              <td>
-                {moment(result.checkOutDate).diff(
-                  moment(result.checkInDate),
-                  "days"
-                )}
-              </td>
-              <td>
-                <button
-                  id={index}
-                  className="btn btn-primary"
-                  onClick={highlightRow}
-                >
-                  Highlight
-                </button>
-              </td>
-            </tr>
+          {props.results.map(oneObj => (
+            <SearchResult result={oneObj} />
           ))}
         </tbody>
       </table>
