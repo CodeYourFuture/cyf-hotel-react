@@ -14,7 +14,6 @@ const Order = props => {
         {props.orderType}: {quantity};
       </div>
       <RestaurantButton click={incrementOrder} />
-      gi
     </li>
   );
 };
