@@ -14,7 +14,7 @@ const headingItems = [
 ];
 export default function SearchResults({ results }) {
   return (
-    <table className="table table-hover">
+    <table className="table ">
       <SearchResultHeading headingItems={headingItems} />
       <SearchResultsBody bookings={results} />
     </table>

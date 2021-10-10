@@ -58,6 +58,19 @@ tr {
   height: 12rem;
   overflow: scroll;
 }
+
+table tr {
+  transition: all 0.5s ease;
+}
+table tr:hover {
+  background-color: rgb(223, 223, 223);
+  cursor: pointer;
+}
+table tr.selected {
+  background-color: #fab2f6;
+  color: #000;
+}
+
 footer {
   background-color: #efefef;
   padding: 1rem 0;
