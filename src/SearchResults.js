@@ -7,7 +7,7 @@ import "./SearchResults.css";
 const SearchResults = props => {
   const [highlight, setHighlight] = useState([]);
 
-  // Toggles table row when clicked, filter used to prevent mutation of state.
+  // On a click event, toggles background colour via bootstrap class, filter used to prevent mutation of state.
   const handleClick = index => {
     !highlight.includes(index)
       ? setHighlight(indexes => indexes.concat(index))
