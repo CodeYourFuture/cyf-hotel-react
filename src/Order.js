@@ -11,7 +11,7 @@ const Order = props => {
   return (
     <li className="list-group-item m-1 text-center shadow">
       <div>
-        {props.orderType}: {quantity};
+        {props.orderType}: {quantity}
       </div>
       <RestaurantButton click={incrementOrder} />
     </li>
