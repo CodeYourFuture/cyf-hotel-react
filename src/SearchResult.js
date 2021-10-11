@@ -6,13 +6,13 @@ const SearchResult = props => {
   const ini = false;
   const [isHighlight, setHighlight] = useState(ini);
   const highlightRow = () => {
-    setHighlight(currentIsHighlight => {
-      if (currentIsHighlight === false) {
-        currentIsHighlight = true;
+    setHighlight(prevIsHighlight => {
+      if (prevIsHighlight === false) {
+        prevIsHighlight = true;
       } else {
-        currentIsHighlight = false;
+        prevIsHighlight = false;
       }
-      return currentIsHighlight;
+      return prevIsHighlight;
     });
 
     // setColour("blue")
