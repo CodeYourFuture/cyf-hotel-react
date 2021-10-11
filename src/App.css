@@ -42,6 +42,12 @@
   font-size: large;
 }
 
+.App-cards .container .row .col {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
