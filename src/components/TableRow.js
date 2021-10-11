@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const TableRow = customer => {
-  //  let colo = customer.className;
-  const [isActive, setActive] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
 
   const changeColor = () => {
-    setActive(!isActive);
+    setIsSelected(!isSelected);
   };
 
   let checkInDate = moment(customer.customerdata.checkInDate);
-  // console.log(checkInDate);
+
   let checkOutDate = moment(customer.customerdata.checkOutDate);
   let nightStay = checkOutDate.diff(checkInDate, "days");
   return (
-    <tr onClick={changeColor} className={isActive ? "ap" : "red"}>
+    <tr
+      onClick={changeColor}
+      className={isSelected ? "highlighted" : "primary"}
+    >
       <td>{customer.customerdata.id}</td>
       <td>{customer.customerdata.title}</td>
       <td>{customer.customerdata.firstName}</td>

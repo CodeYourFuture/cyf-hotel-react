@@ -3,7 +3,7 @@ import RestaurantButton from "./RestaurantButton";
 
 const Order = props => {
   const [orders, setOrders] = useState(0);
-  //const pizzas = 0;
+
   const orderOne = () => {
     setOrders(orders + 1);
   };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import TableRow from "./TableRow";
 
@@ -21,8 +21,8 @@ const SearchResults = prop => {
         </tr>
       </thead>
       <tbody>
-        {customer.map(customer => {
-          return <TableRow customerdata={customer} />;
+        {customer.map((customer, index) => {
+          return <TableRow key={index} customerdata={customer} />;
         })}
       </tbody>
     </table>

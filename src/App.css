@@ -76,11 +76,11 @@ th {
   padding-top: 20px;
   text-align: center;
 }
-.red {
-  background-color: rgba(221, 183, 173, 0.534);
+.highlighted {
+  background-color: rgba(134, 28, 1, 0.534);
 }
-.ap {
-  background-color: rgb(9, 4, 10);
+.primary {
+  background-color: rgba(4, 4, 17, 0.425);
 }
 ul {
   list-style: none;
