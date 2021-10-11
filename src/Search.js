@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 import "./Search.css";
 
 // Renders bookings search box, called by `Bookings.js`.
 const Search = () => {
+  const [searchInput, setSearchInput] = useState("");
+  const handleSearchInput = event => setSearchInput(event.target.value);
+
   return (
     <div className="Search-content">
       <div className="page-header">
@@ -17,8 +20,10 @@ const Search = () => {
               <input
                 type="text"
                 id="customerName"
+                value={searchInput}
                 className="form-control"
                 placeholder="Customer name"
+                onChange={handleSearchInput}
               />
               <SearchButton />
             </div>

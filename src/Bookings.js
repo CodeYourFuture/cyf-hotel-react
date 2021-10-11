@@ -9,6 +9,8 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
 
+  const [bookings, setBookings] = useState(null);
+
   // Fetch and convert data to a usable format with error/status checking.
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
@@ -21,15 +23,19 @@ const Bookings = () => {
       )
       .then(data => setBookings(data))
       .catch(error => console.log(`Error received: ${error}`));
-  });
+  }, []);
 
-  const [bookings, setBookings] = useState([]);
+  // Render bookings table if fetch had complete and bookings contains data.
   return (
-    <div className="Bookings-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
-      </div>
+    <div>
+      {bookings ? (
+        <div className="Bookings-content">
+          <div className="container">
+            <Search search={search} />
+            <SearchResults results={bookings} />
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };
