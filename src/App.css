@@ -39,20 +39,18 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
-}
-
 .card {
   width: 18rem;
   height: 32rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
 }
+
 .cardContainer {
   display: flex;
   align-items: flex-end;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .city-info {
   height: 12rem;
@@ -71,10 +69,40 @@ table tr.selected {
   color: #000;
 }
 
+/* order Cards */
+.restaurant {
+  border-top: 1px solid #000;
+  text-align: center;
+}
+.orderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+.orderCard {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+  width: 20%;
+}
+.orderCard img {
+  width: 50px;
+}
+
 footer {
   background-color: #efefef;
   padding: 1rem 0;
 }
 footer ul li {
   list-style-type: none;
+}
+.footer {
+  padding-top: 20px;
+  text-align: center;
 }
