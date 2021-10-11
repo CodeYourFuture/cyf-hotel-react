@@ -1,24 +1,12 @@
-import React, { useState } from "react";
-import RestaurantButton from "./RestaurantButton";
+import React from "react";
+import Order from "./Order";
 
 const Restaurant = () => {
-  const [orders, setCountOrders] = useState(0);
-
-  function setOrders() {
-    setCountOrders(order => order + 1);
-  }
-
-  function orderOne(props) {
-    return setOrders();
-  }
-
   return (
     <div className="container border-top py-5">
       <h3>Restaurant Orders</h3>
       <ul>
-        <li>
-          Pizzas: {orders} <RestaurantButton addPizza={() => orderOne()} />
-        </li>
+        <Order />
       </ul>
     </div>
   );
