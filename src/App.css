@@ -1,15 +1,12 @@
 .App {
   text-align: left;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  background-color: #c9c1c1;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: #3f3d3d;
+  width: 100em;
+  height: 90px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -17,12 +14,34 @@
   font-size: 1em;
   font-weight: bold;
 }
+.box {
+  display: flex;
+  flex-direction: row;
+}
 
 .logo {
-  width: 30em;
-  height: 20em;
-  margin-top: 10em;
-  margin-left: 5em;
+  width: 10em;
+  height: 5em;
+  height: 5.5em;
+}
+.tourist-info-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  justify-content: center;
+}
+.card {
+  justify-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.cityimage {
+  width: 15em;
+  height: 15em;
+}
+h2 {
+  padding: 10px;
 }
 
 .App-title {
@@ -61,4 +80,11 @@ tr {
 
 .card {
   width: 18rem;
+}
+.footerpage {
+  background-color: #3f3d3d;
+}
+ul {
+  padding-left: 50em;
+  padding-top: 1em;
 }
