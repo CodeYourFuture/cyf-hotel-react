@@ -57,4 +57,11 @@ tr {
 
 .card {
   width: 18rem;
+  margin: 1.5rem;
+}
+.card-conteiner {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
