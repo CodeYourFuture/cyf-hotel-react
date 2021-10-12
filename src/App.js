@@ -1,15 +1,23 @@
 import React from "react";
-
+import Heading from "./Heading";
 import Bookings from "./Bookings";
+import TouristInfoCards from "./TouristInfoCards";
 import "./App.css";
-import SearchButton from "./SearchButton.js";
+import Footer from "./Footer";
 
 const App = () => {
+  const contactList = [
+    "123 Fake Street, London, E1 4UD",
+    "hello@fakehotel.com",
+    "0123 456789"
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">CYF Hotel</header>
-      <button className="btn btn-primary" button />
+      <Heading />
+      <TouristInfoCards />
       <Bookings />
+      <Footer contacts={contactList} />
     </div>
   );
 };
