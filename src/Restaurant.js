@@ -1,21 +1,16 @@
 import React, { useState } from "react";
+import Order from "./Order";
 import RestaurantButton from "./RestaurantButton";
 
 const Restaurant = () => {
-  const [orders, setOrders] = useState(0);
-
-  function orderOne() {
-    //increment orders value by 1
-    setOrders(orders + 1);
-  }
-
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        <li>
+        {/* <li>
           Pizzas: {orders} <RestaurantButton handleClick={orderOne} />
-        </li>
+        </li> */}
+        <Order />
       </ul>
     </div>
   );
