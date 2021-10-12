@@ -16,16 +16,16 @@ function SearchResults(props) {
         </tr>
       </thead>
       <tbody>
-        {props.tableInfo.map((body, i) => (
+        {props.FakeInfo.map((info, i) => (
           <tr key={i}>
-            <th scope="row">{body.id}</th>
-            <th scope="row">{body.title}</th>
-            <th scope="row">{body.firstName}</th>
-            <th scope="row">{body.surName}</th>
-            <th scope="row">{body.email}</th>
-            <th scope="row">{body.roomId}</th>
-            <th scope="row">{body.checkin}</th>
-            <th scope="row">{body.checkout}</th>
+            <th scope="row">{info.id}</th>
+            <th scope="row">{info.title}</th>
+            <th scope="row">{info.firstName}</th>
+            <th scope="row">{info.surname}</th>
+            <th scope="row">{info.email}</th>
+            <th scope="row">{info.roomId}</th>
+            <th scope="row">{info.checkInDate}</th>
+            <th scope="row">{info.checkOutDate}</th>
           </tr>
         ))}
       </tbody>
