@@ -3,8 +3,7 @@ import moment from "moment";
 import "./App.css";
 
 const SearchResult = props => {
-  const ini = false;
-  const [isHighlight, setHighlight] = useState(ini);
+  const [isHighlight, setHighlight] = useState(false);
   const highlightRow = () => {
     setHighlight(prevIsHighlight => {
       if (prevIsHighlight === false) {
