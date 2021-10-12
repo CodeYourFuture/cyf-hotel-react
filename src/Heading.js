@@ -3,8 +3,14 @@ import React from "react";
 function Heading() {
   return (
     <div>
-      <header className="App-header">CYF Hotel</header>
-      <img src="https://image.flaticon.com/icons/svg/139/139899.svg" />
+      <header className="App-header">
+        <img
+          src="https://image.flaticon.com/icons/svg/139/139899.svg"
+          width="70"
+          height="70"
+        />
+        <span className="App-title">CYF Hotel </span>
+      </header>
     </div>
   );
 }
