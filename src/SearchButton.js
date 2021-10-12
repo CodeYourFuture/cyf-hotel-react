@@ -1,11 +1,13 @@
 import React from "react";
 
-const Search = () => {
+const SearchButton = props => {
   return (
     <div>
-      <button className="btn btn-primary">Search</button>;
+      <div className="search">
+        <button className="btn btn-primary">Search{props.SearchButton}</button>
+      </div>
     </div>
   );
 };
 
-export default Search;
+export default SearchButton;
