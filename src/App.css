@@ -7,10 +7,14 @@
   height: 80px;
 }
 
+.logo {
+  height: 50px;
+  margin: 0 0 1.5rem 1rem;
+}
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  height: 65px;
+  padding: 0px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -19,7 +23,8 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.8rem;
+  margin: 30px;
 }
 
 .App-content {
