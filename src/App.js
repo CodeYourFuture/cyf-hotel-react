@@ -7,6 +7,7 @@ import LondonImg from "./London.jpeg";
 import GlasgowImg from "./Glasgow.jpeg";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant";
+import RestaurantButton from "./RestaurantButton";
 import "./App.css";
 
 const touristInfoData = [
@@ -50,6 +51,7 @@ const App = () => {
       </div>
       <Bookings />
       <Restaurant />
+      <RestaurantButton />
       <Footer />
     </div>
   );
