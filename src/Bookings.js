@@ -4,7 +4,7 @@ import SearchResults from "./components/SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings);
+  const [bookings] = useState(FakeBookings);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
