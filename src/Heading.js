@@ -10,6 +10,7 @@ const Heading = () => {
           width="70"
           height="70"
         />
+        <span className="App-header"> CYF HOTEL</span>
       </header>
       ;
     </div>

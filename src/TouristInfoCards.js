@@ -14,8 +14,10 @@ const TouristInfoCards = () => {
             <div className="card-body">
               <h5 className="card-title">Glasgow</h5>
               <p className="card-title">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                From independent stores to high street retailers, Glasgow is the
+                best shopping city. Glasgow's city centre is home to flagship
+                stores, impressive shopping centres and designer favourites all
+                within an easily walkable area.
               </p>
               <a
                 href="https://www.peoplemakeglasgow.com"
@@ -38,8 +40,11 @@ const TouristInfoCards = () => {
             <div className="card-body">
               <h5 className="card-title">Manchester</h5>
               <p className="card-title">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Manchester is a major city in the northwest of England with a
+                rich industrial heritage. The Castlefield conservation area’s
+                18th-century canal system recalls the city’s days as a textile
+                powerhouse, and visitors can trace this history at the
+                interactive Museum of Science & Industry.
               </p>
               <a
                 href="https://www.visitmanchester.com"
@@ -62,8 +67,11 @@ const TouristInfoCards = () => {
             <div className="card-body">
               <h5 className="card-title">London</h5>
               <p className="card-title">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                London, the capital of England and the United Kingdom, is a
+                21st-century city with history stretching back to Roman times.
+                At its centre stand the imposing Houses of Parliament, the
+                iconic ‘Big Ben’ clock tower and Westminster Abbey, site of
+                British monarch coronations. Across the Thames River,
               </p>
               <a
                 href="https://www.visitlondon.com"
