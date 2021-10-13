@@ -34,6 +34,11 @@
   justify-items: center;
   text-align: center;
   padding: 30px;
+  margin-top: 40px;
+}
+
+.btn {
+  background-color: #3f3d3d;
 }
 
 .cityimage {
@@ -77,7 +82,9 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
-
+li {
+  color: #c9c1c1;
+}
 .card {
   width: 18rem;
 }
@@ -87,4 +94,7 @@ tr {
 ul {
   padding-left: 50em;
   padding-top: 1em;
+}
+.tablesearch {
+  padding-top: 5em;
 }
