@@ -4,8 +4,8 @@ const Footer = props => (
   <footer>
     <p>Contact Us By </p>
     <ul>
-      {props.contacts.map(contact => (
-        <li>{contact}</li>
+      {props.contacts.map((contact, i) => (
+        <li key={i}>{contact}</li>
       ))}
     </ul>
   </footer>

@@ -27,7 +27,7 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map(oneObj => (
+          {props.results.map((oneObj, index) => (
             <SearchResult result={oneObj} />
           ))}
         </tbody>
