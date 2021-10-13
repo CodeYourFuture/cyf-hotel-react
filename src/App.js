@@ -6,15 +6,19 @@ import SearchButton from "./SearchButton";
 import Header from "./Header";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
+import SearchResults from "./SearchResults";
 
 const App = () => {
   return (
     <div className="App">
       <Header />
-      <TouristInfoCards />
       <Bookings />
+      {/* <SearchResults /> */}
+      {/* </Bookings> */}
       <SearchButton />
-      <Footer data />
+      <TouristInfoCards />
+
+      <Footer />
     </div>
   );
 };
