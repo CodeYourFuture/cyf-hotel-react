@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
+  const [selectRow, setSelectRow] = useState({
+    activeRow: null
+  });
+
+  const toggleActive = index => {
+    setSelectRow({ activeRow: index });
+  };
+
+  const toggleActiveStyle = index => {
+    if (index === selectRow.activeRow) {
+      return "purple";
+    }
+  };
   return (
     <div>
       <table className="table">
@@ -20,7 +33,11 @@ const SearchResults = ({ results }) => {
         </thead>
         <tbody>
           {results.map((result, index) => (
-            <tr key={index}>
+            <tr
+              className={toggleActiveStyle(index)}
+              key={index}
+              onClick={() => toggleActive(index)}
+            >
               <th scope="row">{result.id}</th>
               <td>{result.title}</td>
               <td>{result.firstName}</td>

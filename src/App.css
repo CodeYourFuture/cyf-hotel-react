@@ -59,7 +59,12 @@
 tr {
   color: #5b5757;
 }
-
+.purple {
+  background-color: purple;
+}
+.white {
+  background-color: red;
+}
 .results {
   padding-top: 15px;
 }
