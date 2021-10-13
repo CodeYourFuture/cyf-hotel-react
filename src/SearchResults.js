@@ -2,7 +2,6 @@ import React from "react";
 import moment from "moment";
 
 function SearchResults(props) {
-  console.log(props);
   return (
     <table className="table table-light mb-5">
       <thead>
