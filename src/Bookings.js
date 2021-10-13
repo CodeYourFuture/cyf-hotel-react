@@ -36,7 +36,8 @@ const Bookings = () => {
     }
   };
 
-  // Render bookings table if fetch completed and bookings contains data.
+  // Render bookings table if fetch completed and bookings contains data. Sends either `bookings` state variable
+  // or the `filteredBookings` state variable depending on whether there has been a search and `filteredBookings` contains elements.
   return (
     <div>
       {bookings ? (
