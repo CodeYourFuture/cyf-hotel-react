@@ -89,6 +89,10 @@ tr {
   color: #007bff;
 }
 
+.highlighted {
+  background-color: #ffff00;
+}
+
 li {
   list-style-type: none;
 }
