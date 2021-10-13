@@ -10,7 +10,7 @@ const Order = props => {
   return (
     <li>
       {props.orderType}: {orders}
-      {"\b"}
+      <pre> </pre>
       <RestaurantButton add={orderOne} />
     </li>
   );
