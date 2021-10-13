@@ -18,7 +18,7 @@ function SearchResults(props) {
         </tr>
       </thead>
       <tbody>
-        {props.FakeInfo.map((info, i) => (
+        {props.FakeBookings.map((info, i) => (
           <tr key={i}>
             <td>{info.id}</td>
             <td>{info.title}</td>
