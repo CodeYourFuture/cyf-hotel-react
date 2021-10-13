@@ -3,7 +3,6 @@ import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Heading from "./Heading";
 import Footer from "./Footer";
-import SearchResults from "./SearchResults";
 import "./App.css";
 
 const App = () => {
@@ -11,16 +10,19 @@ const App = () => {
     {
       city: "Glasgow",
       img: "./images/Glasgow.jpeg",
+      alt: "Glasgow",
       link: "https://peoplemakeglasgow.com"
     },
     {
       city: "Manchester",
       img: "./images/Manchester.jpeg",
+      alt: "Manchester",
       link: "https://visitmanchester.com"
     },
     {
       city: "London",
       img: "./images/London.jpeg",
+      alt: "London",
       link: "https://visitlondon.com"
     }
   ];
