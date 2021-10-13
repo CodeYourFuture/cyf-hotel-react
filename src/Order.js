@@ -10,8 +10,13 @@ function Order(props) {
   }
 
   return (
-    <li>
-      {props.orderType}: {orders}{" "}
+    <li className="list-group-item d-flex  align-items-start card flex-row justify-content-between">
+      {props.orderType}:
+      <h5>
+        <span className="badge bg-warning rounded-pill bg-waring">
+          {orders}
+        </span>
+      </h5>
       <button onClick={() => orderOne()} className="btn btn-primary">
         Add
       </button>

@@ -6,8 +6,8 @@ const Restaurant = () => {
     <div className="container border-top py-5">
       <h3>Restaurant Orders</h3>
       <ul>
-        <Order orderType="setOrders" />
-        <Order orderType="Salad" />
+        <Order orderType="Pizza    " />
+        <Order orderType="Salad    " />
         <Order orderType="Chocolate" />
       </ul>
     </div>
