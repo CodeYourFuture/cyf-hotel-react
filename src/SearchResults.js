@@ -6,7 +6,7 @@ const SearchResults = props => {
 
   const [highlight, setHighlight] = useState([]); //state for tr
 
-  //highlights row using true false toggle
+  //Checks if index elem is in highlight array; removes index elem if it is present
   const highlightRow = index => {
     if (highlight.includes(index)) {
       const filteredRow = highlight.filter(row => row !== index);
@@ -14,8 +14,6 @@ const SearchResults = props => {
     } else {
       setHighlight([...highlight, index]);
     }
-
-    console.log(highlight);
   };
 
   return (
@@ -35,14 +33,13 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {/* Map through results/FakeBookings json, render tr with child tdx8 elems for each guest */}
-
-        {/* CLASSNAME CHANGES FOR ALL ROWS WHEN ANY ROW IS CLICKED. POSSIBLE COS OF CLASSNAME={HIGHLIGHT} ONCLICK SEEMS TO BE OK */}
         {results.map((result, index) => (
           //adds unique key to each tr elem
           <tr
             key={index}
             onClick={() => highlightRow(index)}
-            className={highlight.includes(index) ? "highlight" : ""}
+            // checks if row elem has index, changes background colour if true, stays blank if flase
+            className={highlight.includes(index) ? "highlight-color" : ""}
           >
             <td>{result.id}</td>
             <td>{result.title}</td>
