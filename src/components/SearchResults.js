@@ -5,7 +5,7 @@ import AddCustomer from "./AddCustomer";
 const SearchResults = props => {
   return (
     <div>
-      <table className="table table-striped">
+      <table className="table">
         <Table />
         <AddCustomer result={props.results} />
       </table>
