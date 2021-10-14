@@ -15,15 +15,35 @@ function SearchResults(props) {
           <th scope="col">Check In</th>
           <th scope="col">Check Out</th>
           <th scope="col">Nights Staying</th>
+          <th scope="col">Select Booking</th>
         </tr>
       </thead>
       <tbody>
         {props.results.map(function(element, index) {
           const a = moment(element.checkInDate);
           const b = moment(element.checkOutDate);
+          let hightLightBoolean = false;
+
+          function BackgroundHighlight() {
+            console.log(element);
+            const bookingContainer = document.getElementsByClassName(
+              "bookingContainer"
+            );
+
+            if (hightLightBoolean === false) {
+              bookingContainer[element.id - 1].className =
+                "bookingContainer highlight";
+              hightLightBoolean = true;
+            } else {
+              bookingContainer[element.id - 1].className = "bookingContainer";
+              hightLightBoolean = false;
+            }
+
+            console.log(bookingContainer[element.id - 1].className);
+          }
 
           return (
-            <tr>
+            <tr className="bookingContainer">
               <th scope="row">{element.id}</th>
               <td>{element.title}</td>
               <td>{element.firstName}</td>
@@ -33,6 +53,14 @@ function SearchResults(props) {
               <td>{element.checkInDate}</td>
               <td>{element.checkOutDate}</td>
               <td>{b.diff(a, "days")}</td>
+              <td>
+                <button
+                  onClick={BackgroundHighlight}
+                  className="btn btn-primary"
+                >
+                  Select
+                </button>
+              </td>
             </tr>
           );
         })}

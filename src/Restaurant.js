@@ -1,40 +1,44 @@
 import React, { useState } from "react";
 
-function RestaurantButton(prop) {
-  console.log(prop.orderNum);
-  return (
-    <button onClick={prop.orderNum} className="btn btn-primary">
-      Add
-    </button>
-  );
-}
-
 function Order(prop) {
   let orderArray = prop.orderType;
+  console.log(orderArray);
 
   for (let index = 0; index < orderArray.length; index++) {
     const element = orderArray[index];
     console.log(element);
 
-    const orders = 0;
-    const [count, setOrders] = useState(orders);
+    const [countA, setOrdersA] = useState(0);
+    const [countB, setOrdersB] = useState(0);
+    const [countC, setOrdersC] = useState(0);
 
     console.log(orderArray);
 
     function orderOne() {
-      setOrders(1 + count);
+      setOrdersA(countA + 1);
+      console.log("countA : " + countA);
     }
-
-    console.log(count);
+    function orderTwo() {
+      setOrdersB(1 + countB);
+      console.log("countB : " + countB);
+    }
+    function orderThree() {
+      setOrdersC(1 + countC);
+      console.log("countC : " + countC);
+    }
 
     return (
       <div>
         <ul>
           {orderArray.map(function(element, index) {
+            const countArray = [countA, countB, countC];
             return (
               <li>
-                {orderArray[index]} : {count}{" "}
-                <RestaurantButton orderNum={orderOne} />
+                {orderArray[index]} : {countArray[index]}{" "}
+                <RestaurantButton
+                  orderNum={[orderOne, orderTwo, orderThree]}
+                  currentIndex={index}
+                />
               </li>
             );
           })}
@@ -42,6 +46,20 @@ function Order(prop) {
       </div>
     );
   }
+}
+
+function RestaurantButton(prop) {
+  // console.log(prop);
+  // console.log(prop.orderNum[prop.currentIndex]);
+  // console.log(prop.currentIndex)
+  return (
+    <button
+      onClick={prop.orderNum[prop.currentIndex]}
+      className="btn btn-primary"
+    >
+      Add
+    </button>
+  );
 }
 
 const Restaurant = () => {
