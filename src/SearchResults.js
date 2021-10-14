@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SearchResults = props => {
   const moment = require("moment"); //adds moment library to file
   const results = props.results; //stores results prop
+
+  const [highlight, setHighlight] = useState([]); //state for tr
+
+  //highlights row using true false toggle
+  const highlightRow = index => {
+    if (highlight.includes(index)) {
+      const filteredRow = highlight.filter(row => row !== index);
+      setHighlight(filteredRow);
+    } else {
+      setHighlight([...highlight, index]);
+    }
+
+    console.log(highlight);
+  };
 
   return (
     <table className="table">
@@ -21,9 +35,15 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {/* Map through results/FakeBookings json, render tr with child tdx8 elems for each guest */}
+
+        {/* CLASSNAME CHANGES FOR ALL ROWS WHEN ANY ROW IS CLICKED. POSSIBLE COS OF CLASSNAME={HIGHLIGHT} ONCLICK SEEMS TO BE OK */}
         {results.map((result, index) => (
           //adds unique key to each tr elem
-          <tr key={index}>
+          <tr
+            key={index}
+            onClick={() => highlightRow(index)}
+            className={highlight.includes(index) ? "highlight" : ""}
+          >
             <td>{result.id}</td>
             <td>{result.title}</td>
             <td>{result.firstName}</td>
