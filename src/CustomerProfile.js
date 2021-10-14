@@ -22,6 +22,7 @@ const CustomerProfile = props => {
   }, [props.id]);
 
   // Render use profile data if the state variable `profile` and `props.id` return true, otherwise no render takes place.
+
   return profile && props.id ? (
     <div className="container p-3 mb-5 shadow border border-1 CustomerProfile-tr rounded">
       <h2 className="text-center">Customer {profile.id} Profile</h2>

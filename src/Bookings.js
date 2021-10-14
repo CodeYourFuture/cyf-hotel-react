@@ -6,21 +6,21 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState(null);
   const [filteredBookings, setFilteredBookings] = useState([]);
-  const [dataLoadStatus, setDataLoadStatus] = useState(false);
+  const [dataFetched, setDataFetched] = useState(false);
+  const [status, setStatus] = useState(false);
 
   // Fetch and convert data to a usable format with error/status checking.
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/")
+      // fetch("https://cyf-react.glitch.me/error") // Left in for debug
       .then(response =>
         response.status >= 200 && response.status <= 299
           ? response.json()
-          : new Error(
-              `Unexpected Error: ${response.status} ${response.statusText}`
-            )
+          : setStatus(response.status)
       )
       .then(data => {
         setBookings(data);
-        setDataLoadStatus(true);
+        setDataFetched(true);
       })
       .catch(error => console.log(`Error received: ${error}`));
   }, []);
@@ -44,14 +44,12 @@ const Bookings = () => {
   // or the `filteredBookings` state variable depending on whether there has been a search and `filteredBookings` contains elements.
   return (
     <div>
-      {dataLoadStatus ? (
+      {dataFetched && !status ? (
         <div className="Bookings-content">
           <div className="container">
             <Search search={search} />
             <SearchResults
-              results={
-                filteredBookings.length === 0 ? bookings : filteredBookings
-              }
+              results={!filteredBookings.length ? bookings : filteredBookings}
             />
           </div>
         </div>
@@ -59,7 +57,10 @@ const Bookings = () => {
         <div>
           <div className="d-flex justify-content-center m-5">
             <span className="spinner-border text-primary" role="status" />
-            <div className="px-3">Loading...</div>
+            <div className="px-3">
+              {" "}
+              {status ? `Error Loading: ${status}` : "Loading..."}
+            </div>
           </div>
         </div>
       )}
