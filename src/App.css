@@ -2,19 +2,32 @@
   text-align: left;
 }
 
+header {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(74, 97, 99, 1) 35%,
+    rgba(178, 242, 255, 1) 100%
+  );
+  border-bottom: #4a6163 4px solid;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  position: relative;
+  left: 2vw;
+  top: 2vh;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
-  text-align: left;
+  /* background-color: #222; */
+
+  color: black;
+  text-align: right;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 3em;
   font-weight: bold;
 }
 
@@ -39,6 +52,10 @@
   padding: 5px 0 20px 0;
 }
 
+.highlight {
+  background-color: #aeecf965;
+}
+
 tr {
   color: #5b5757;
 }
@@ -50,8 +67,42 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: #4a6163;
+}
+
+.footerInfo {
+  list-style-type: none;
+}
+
+.cityCardContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1vw;
+  padding-top: 20px;
 }
 
 .card {
   width: 18rem;
+  border: 3px solid #334244;
+  border-radius: 7px;
+}
+
+.card-body {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: #7ea9b1;
+}
+
+.btn-primary {
+  align-self: center;
+  justify-self: center;
+  background-color: #4a6163;
+  font-size: x-large;
+  border-color: #334244;
+}
+
+.card-img-top {
+  max-height: 50%;
 }
