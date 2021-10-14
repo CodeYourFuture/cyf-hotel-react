@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Order = prop => {
   const [order, setOrder] = useState(0);
-  console.log(order);
+
   function orderOne() {
     setOrder(order => order + 1);
   }
@@ -11,6 +11,9 @@ const Order = prop => {
       {prop.orderType}
       {Order}
       {""}
+      <h5>
+        <span className="badge">{order}</span>
+      </h5>
       <button onClick={() => orderOne()} className="btn btn-primary">
         Add
       </button>

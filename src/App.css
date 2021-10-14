@@ -50,6 +50,13 @@ tr {
   padding-top: 15px;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding-top: 2rem;
+}
+
 .footer {
   padding-top: 20px;
   text-align: center;
