@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 const SearchResults2 = props => {
+  // const [selected, setSelected]= useState("text-light");
+  const [selected, setSelected] = useState(["", "", "", "", ""]);
   console.log(props.results[1].firstName);
+  const handleClick = i => {
+    console.log(i);
+    let selectedItems = selected;
+    if (selectedItems[i] == "text-light") {
+      selectedItems[i] = "";
+      // setSelected(selected);
+    } else {
+      selectedItems[i] = "text-light";
+      // setSelected(selected);
+    }
+    console.log(selectedItems);
+    setSelected(selectedItems);
+  };
   return (
     <table className="table">
       <thead>
@@ -19,7 +34,7 @@ const SearchResults2 = props => {
       </thead>
       <tbody>
         {props.results.map((item, i) => (
-          <tr key={i}>
+          <tr key={i} onClick={() => handleClick(i)} className={selected[i]}>
             <th scope="row">{item.id}</th>
             <td>{item.title}</td>
             <td>{item.firstName}</td>
@@ -37,4 +52,5 @@ const SearchResults2 = props => {
     </table>
   );
 };
+
 export default SearchResults2;

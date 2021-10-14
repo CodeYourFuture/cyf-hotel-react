@@ -4,12 +4,22 @@ const TouristInfoCards = () => {
     <div className="cardComponent">
       <div className="card">
         <img
-          src="https://cdn.pixabay.com/photo/2017/10/02/22/45/duke-2810646_960_720.jpg"
+          src="https://peoplemakeglasgow.com/imager/general/169082/High-Street-Shopping-Buchanan-Street-Content-Block_8dc3bdbc8660ad389ec95cdf9b15d797.jpg"
           className="card-img-top"
           alt=""
         />
+        <div>
+          <h5>People Make Glasgow</h5>
+          <p>
+            In Glasgow city centre, there are huge pieces of art adorning some
+            of the city's buildings which form the City Centre Mural Trail.
+            Discover where you can find these vibrant splashes of colour.
+          </p>
+        </div>
         <div className="card-body">
-          <a href="https://www.peoplemakeglasgow.com">People Make Glasgow </a>
+          <button>
+            <a href="https://www.peoplemakeglasgow.com">People Make Glasgow </a>
+          </button>
         </div>
       </div>
       <div className="card">
@@ -18,8 +28,20 @@ const TouristInfoCards = () => {
           className="card-img-top"
           alt=""
         />
+        <div>
+          <h4>Manchester</h4>
+          <p>
+            Known throughout the world as the birthplace of the industrial
+            revolution, Manchester has a proud history in science, politics,
+            music, arts and sport. And today the city combines this heritage
+            with a progressive vision to be a city that delivers surprise and
+            delight in equal measures.
+          </p>
+        </div>
         <div className="card-body">
-          <a href="https://www.visitmanchester.com">Visit Manchester </a>
+          <button>
+            <a href="https://www.visitmanchester.com">Visit Manchester </a>
+          </button>
         </div>
       </div>
       <div className="card">
@@ -28,8 +50,21 @@ const TouristInfoCards = () => {
           className="card-img-top"
           alt=""
         />
+        <div>
+          <h5>London</h5>
+          <p>
+            Welcome to London! Discover the best of London with Visit London,
+            the official guide to England’s exciting capital. Find things to do
+            in London, from iconic sightseeing spots and fun-filled days out to
+            top restaurants, theatre and unmissable London events. If you’re not
+            able to visit just yet, plan ahead to make the most of your next
+            visit.
+          </p>
+        </div>
         <div className="card-body">
-          <a href="https://www.visitlondon.com">Visit London </a>
+          <button>
+            <a href="https://www.visitlondon.com">Visit London </a>
+          </button>
         </div>
       </div>
     </div>
