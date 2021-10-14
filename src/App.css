@@ -52,7 +52,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #292424;
 }
 
 .results {
@@ -75,6 +75,11 @@ tr {
 .city-img {
   margin-top: 30px;
   height: 200px;
+}
+li button {
+  background-color: burlywood;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 .footer {
   display: flex;

@@ -1,9 +1,9 @@
-import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
+import CreateTableRow from "./CreateTableRow";
 
 const SearchResults = props => {
-  const tableRows = props.results;
-  console.log(tableRows);
+  const customerData = props.results;
+
   return (
     <table className="table table-striped">
       <thead>
@@ -22,24 +22,9 @@ const SearchResults = props => {
       {/* {props.results} */}
 
       <tbody>
-        {tableRows.map((result, index) => (
-          <tr>
-            <td>{result.id}</td>
-            <td>{result.title}</td>
-            <td>{result.firstName}</td>
-            <td>{result.surname}</td>
-            <td>{result.email}</td>
-            <td>{result.roomId}</td>
-            <td>{result.checkInDate}</td>
-            <td>{result.checkOutDate}</td>
-            <td>
-              {moment(result.checkOutDate).diff(
-                moment(result.checkInDate),
-                "days"
-              )}
-            </td>
-          </tr>
-        ))}
+        {customerData.map(result => {
+          return <CreateTableRow data={result} />;
+        })}
       </tbody>
     </table>
   );
