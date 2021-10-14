@@ -22,7 +22,7 @@ const SearchResults = prop => {
       </thead>
       <tbody>
         {customer.map((customer, index) => {
-          return <TableRow key={index} customerdata={customer} />;
+          return <TableRow key={index} customerdata={customer} class={index} />;
         })}
       </tbody>
     </table>

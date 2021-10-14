@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const TableRow = customer => {
-  const [isSelected, setIsSelected] = useState(false);
+  const [isSelected, setIsSelected] = useState([]);
 
-  const changeColor = () => {
-    setIsSelected(!isSelected);
+  const changeColor = index => {
+    index = customer.class;
+
+    if (isSelected.includes(index)) {
+      setIsSelected([]);
+    } else setIsSelected(isSelected.concat(index));
   };
 
   let checkInDate = moment(customer.customerdata.checkInDate);
@@ -14,8 +18,10 @@ const TableRow = customer => {
   let nightStay = checkOutDate.diff(checkInDate, "days");
   return (
     <tr
-      onClick={changeColor}
-      className={isSelected ? "highlighted" : "primary"}
+      onClick={() => changeColor(customer.class)}
+      className={
+        isSelected.includes(customer.class) ? "highlighted1" : "primary"
+      }
     >
       <td>{customer.customerdata.id}</td>
       <td>{customer.customerdata.title}</td>
