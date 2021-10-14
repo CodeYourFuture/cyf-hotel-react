@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
-const SearchResults = props => {
-  console.log(props);
+const SearchResults = (props) => {
   return (
     <div className="Search-results">
       <div className="container">
         <div className="table-responsive mb-3 mt-3">
           <table
-            className="table table-bordered table-hover"
+            className="table table-bordered"
             width="100%"
             id="bookingsTable"
           >
@@ -26,7 +25,7 @@ const SearchResults = props => {
               </tr>
             </thead>
             <tbody>
-              {props.results.map(
+              {props.results.FakeBookings.map(function EachRow
                 ({
                   firstName,
                   surname,
@@ -35,12 +34,24 @@ const SearchResults = props => {
                   email,
                   checkInDate,
                   checkOutDate,
-                  roomId
-                }) => {
+                  roomId,
+                }) {
                   const checkOut = moment(checkOutDate);
                   const checkIn = moment(checkInDate);
+                  const [selected, setSelected] = useState(false);
+                  const [rowClassName, setRowClassName] = useState("");
+                  const handleSelected = () => {
+                    const newSelected = !selected;
+                    setSelected(newSelected);
+                    if (newSelected) setRowClassName("rowSelected");
+                    else setRowClassName("");
+                  };
                   return (
-                    <tr key={id}>
+                    <tr
+                      key={id}
+                      onClick={handleSelected}
+                      className={rowClassName}
+                    >
                       <th scope="row">{id}</th>
                       <td>{title}</td>
                       <td>{firstName}</td>

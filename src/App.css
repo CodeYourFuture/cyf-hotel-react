@@ -42,6 +42,11 @@
   font-size: large;
 }
 
+li {
+  list-style-type: none;
+  padding: 5px;
+}
+
 .App-cards .container .row .col {
   display: flex;
   flex-direction: row;
@@ -62,6 +67,10 @@
 
 tr {
   color: #5b5757;
+}
+
+.rowSelected {
+  background-color: rgb(157, 206, 223);
 }
 
 .results {
