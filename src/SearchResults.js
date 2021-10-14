@@ -2,6 +2,7 @@ import moment from "moment";
 import React from "react";
 
 const SearchResults = props => {
+  console.log(props.guests);
   return (
     <div className="table-responsive">
       <table className="table table-striped">
