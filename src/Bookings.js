@@ -6,10 +6,11 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState(null);
   const [filteredBookings, setFilteredBookings] = useState([]);
+  const [dataLoadStatus, setDataLoadStatus] = useState(false);
 
   // Fetch and convert data to a usable format with error/status checking.
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/")
       .then(response =>
         response.status >= 200 && response.status <= 299
           ? response.json()
@@ -17,7 +18,10 @@ const Bookings = () => {
               `Unexpected Error: ${response.status} ${response.statusText}`
             )
       )
-      .then(data => setBookings(data))
+      .then(data => {
+        setBookings(data);
+        setDataLoadStatus(true);
+      })
       .catch(error => console.log(`Error received: ${error}`));
   }, []);
 
@@ -40,7 +44,7 @@ const Bookings = () => {
   // or the `filteredBookings` state variable depending on whether there has been a search and `filteredBookings` contains elements.
   return (
     <div>
-      {bookings ? (
+      {dataLoadStatus ? (
         <div className="Bookings-content">
           <div className="container">
             <Search search={search} />
@@ -51,7 +55,14 @@ const Bookings = () => {
             />
           </div>
         </div>
-      ) : null}
+      ) : (
+        <div>
+          <div className="d-flex justify-content-center m-5">
+            <span className="spinner-border text-primary" role="status" />
+            <div className="px-3">Loading...</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

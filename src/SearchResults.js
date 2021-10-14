@@ -34,44 +34,46 @@ const SearchResults = props => {
   // Render table.
   return (
     <>
-      <table className="table Search-table table-responsive">
-        <ResultsTableHeading />
+      <div>
+        <table className="table Search-table table-responsive">
+          <ResultsTableHeading />
 
-        <tbody>
-          {props.results.map((guest, index) => (
-            <tr
-              className={`text-center SearchResults-tr ${
-                highlight.includes(index)
-                  ? "bg-success text-light rounded"
-                  : " "
-              }`}
-              key={index}
-              onClick={() => handleRowClick(index)}
-            >
-              <td>{guest.id}</td>
-              <td>{guest.title}</td>
-              <td>{guest.firstName}</td>
-              <td>{guest.surname}</td>
-              <td>{guest.email}</td>
-              <td>{guest.roomId}</td>
-              <td>{guest.checkInDate}</td>
-              <td>{guest.checkOutDate}</td>
-              <td>{<GetBookingLength guest={guest} />} Days</td>
-              <td>
-                <button
-                  className="btn btn-primary SearchResults-profile-button"
-                  onClick={() => handleButtonClick(guest.id)}
-                >
-                  {showCustomerProfile && guestId === index + 1
-                    ? "Hide"
-                    : "Show"}
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <CustomerProfile id={guestId} />
+          <tbody>
+            {props.results.map((guest, index) => (
+              <tr
+                className={`text-center SearchResults-tr ${
+                  highlight.includes(index)
+                    ? "bg-success text-light rounded"
+                    : " "
+                }`}
+                key={index}
+                onClick={() => handleRowClick(index)}
+              >
+                <td>{guest.id}</td>
+                <td>{guest.title}</td>
+                <td>{guest.firstName}</td>
+                <td>{guest.surname}</td>
+                <td>{guest.email}</td>
+                <td>{guest.roomId}</td>
+                <td>{guest.checkInDate}</td>
+                <td>{guest.checkOutDate}</td>
+                <td>{<GetBookingLength guest={guest} />} Days</td>
+                <td>
+                  <button
+                    className="btn btn-primary SearchResults-profile-button"
+                    onClick={() => handleButtonClick(guest.id)}
+                  >
+                    {showCustomerProfile && guestId === index + 1
+                      ? "Hide"
+                      : "Show"}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <CustomerProfile id={guestId} />
+      </div>
     </>
   );
 };
