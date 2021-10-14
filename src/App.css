@@ -50,10 +50,12 @@
 .card-wrapper {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .card {
   width: 18rem;
+  margin-bottom: 20px;
 }
 
 .search {
