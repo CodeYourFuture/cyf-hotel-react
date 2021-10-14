@@ -15,6 +15,7 @@ const ResultsTableHeading = () => {
         <th scope="col">Check In Date</th>
         <th scope="col">Check Out Date</th>
         <th scope="col">Stay Length</th>
+        <th scope="col">Customer Profile</th>
       </tr>
     </thead>
   );

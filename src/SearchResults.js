@@ -8,19 +8,30 @@ import CustomerProfile from "./CustomerProfile";
 const SearchResults = props => {
   const [highlight, setHighlight] = useState([]);
   const [guestId, setGuestId] = useState("");
+  const [showCustomerProfile, setProfileButtonText] = useState(false);
 
-  // On a click event, toggles background colour via bootstrap class, filter used to prevent mutation of state.
+  // On a click event, toggles background colour via bootstrap class.
   const handleRowClick = index => {
     !highlight.includes(index)
       ? setHighlight(indexes => indexes.concat(index))
       : setHighlight(indexes => indexes.filter(i => i !== index));
   };
 
-  // On a click event, sets state variable `guestId` to either an empty string (default) or the id of the button clicked.
+  // On a click event, sets state variable `guestId` to either an empty string (default) or
+  // the id of the button when clicked and removes the row highlighting from a row if a different iD
+  // is passed as an argument. Also toggles show/hide text based on the state boolean `showCustomerProfile`
   const handleButtonClick = iD => {
-    guestId === "" || guestId !== iD ? setGuestId(iD) : setGuestId("");
+    if (guestId === "" || guestId !== iD) {
+      setGuestId(iD);
+      setProfileButtonText(true);
+      setHighlight([]);
+    } else {
+      setGuestId("");
+      setProfileButtonText(false);
+    }
   };
 
+  // Render table.
   return (
     <>
       <table className="table Search-table table-responsive">
@@ -30,7 +41,9 @@ const SearchResults = props => {
           {props.results.map((guest, index) => (
             <tr
               className={`text-center SearchResults-tr ${
-                highlight.includes(index) ? "bg-success text-light" : " "
+                highlight.includes(index)
+                  ? "bg-success text-light rounded"
+                  : " "
               }`}
               key={index}
               onClick={() => handleRowClick(index)}
@@ -46,10 +59,12 @@ const SearchResults = props => {
               <td>{<GetBookingLength guest={guest} />} Days</td>
               <td>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-primary SearchResults-profile-button"
                   onClick={() => handleButtonClick(guest.id)}
                 >
-                  Show profile
+                  {showCustomerProfile && guestId === index + 1
+                    ? "Hide"
+                    : "Show"}
                 </button>
               </td>
             </tr>
