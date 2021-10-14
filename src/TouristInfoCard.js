@@ -1,13 +1,19 @@
 import React from "react";
 const TouristInfoCard = ({ cityName, imageUrl, description, href }) => {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      <div className="tourist-info-card">
-        <h2>{cityName}</h2>
-        <img src={imageUrl} alt="city-pic" />
-        <p>{description}</p>
-      </div>
-    </a>
+    <div className="tourist-info-card">
+      <a
+        className="tourist-info-card-link"
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="fas fa-anchor" />
+      </a>
+      <h2 className="tourist-info-card-title">{cityName}</h2>
+      <img className="tourist-info-card-image" src={imageUrl} alt="city-pic" />
+      <p className="tourist-info-card-description">{description}</p>
+    </div>
   );
 };
 export default TouristInfoCard;

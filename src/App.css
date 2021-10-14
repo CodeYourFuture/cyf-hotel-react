@@ -30,7 +30,38 @@
   padding-top: 20px;
   font-size: large;
 }
-
+/*tourist info card style*/
+.tourist-info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.tourist-info-card img {
+  width: 100%;
+}
+.tourist-info-card {
+  display: grid;
+  grid-template-rows: 1fr, 3fr, 4fr;
+  grid-template-areas:
+    "link"
+    "head"
+    "description"
+    "image";
+  max-width: 350px;
+  margin: 20px;
+  padding: 10px;
+}
+.tourist-info-card-link {
+  grid-area: link;
+}
+.tourist-info-card-title {
+  grid-area: head;
+}
+.tourist-info-card-image {
+  grid-area: image;
+}
+.tourist-info-card-description {
+  grid-area: description;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
