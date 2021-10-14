@@ -56,7 +56,7 @@ function TouristInfoCards() {
   ];
 
   return (
-    <div class="cityCardContainer">
+    <div className="cityCardContainer">
       {cities.map(function(element, index) {
         const src = element.src;
         const city = element.city;

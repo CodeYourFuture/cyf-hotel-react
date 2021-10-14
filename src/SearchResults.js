@@ -3,7 +3,7 @@ import moment from "moment";
 
 function SearchResults(props) {
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">#</th>
