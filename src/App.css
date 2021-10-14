@@ -1,6 +1,11 @@
-.App {
-  text-align: left;
+* {
+  margin: 0;
+  padding: 0;
 }
+
+/* .App {
+  text-align: left;
+} */
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -9,13 +14,23 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 70px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App-header h1 {
+  font-size: 1.5em;
   font-weight: bold;
+}
+
+.App-header img {
+  max-height: 50px;
 }
 
 .App-title {
@@ -25,6 +40,17 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+
+li {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.App-cards .container .row .col {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
@@ -43,6 +69,10 @@ tr {
   color: #5b5757;
 }
 
+.rowSelected {
+  background-color: rgb(157, 206, 223);
+}
+
 .results {
   padding-top: 15px;
 }
@@ -54,4 +84,31 @@ tr {
 
 .card {
   width: 18rem;
+  height: 80vh;
+  margin: 20px 10px;
+  box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 150px;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+footer ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+footer ul li {
+  font-size: 1.1em;
 }
