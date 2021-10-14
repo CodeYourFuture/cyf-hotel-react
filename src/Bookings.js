@@ -7,8 +7,10 @@ const Bookings = () => {
   const [bookings, setBookings] = useState(FakeBookings);
 
   const search = searchVal => {
-    const searchedNames = bookings.filter(person =>
-      person.firstName.includes(searchVal)
+    const searchedNames = FakeBookings.filter(
+      person =>
+        person.firstName.toLowerCase().includes(searchVal) ||
+        person.surname.toLowerCase().includes(searchVal)
     );
     setBookings(searchedNames);
   };

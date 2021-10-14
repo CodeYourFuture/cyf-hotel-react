@@ -1,7 +1,7 @@
 import React from "react";
 import SearchButton from "./SearchButton";
 
-const Search = () => {
+const Search = ({ search }) => {
   return (
     <div className="search">
       <div className="page-header">
@@ -17,6 +17,7 @@ const Search = () => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
+                onChange={e => search(e.target.value.toLowerCase())}
               />
               <SearchButton />
             </div>

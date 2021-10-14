@@ -8,7 +8,7 @@ export default function Order({ orderType, img }) {
   }
   return (
     <li className="orderCard">
-      <img src={require(`../data/${img}`)} />
+      <img src={require(`../data/${img}`)} alt="icon" />
       <p>
         {orderType}: {orders}
       </p>
