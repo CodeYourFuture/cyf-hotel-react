@@ -45,6 +45,7 @@
 
 tr {
   color: #5b5757;
+  cursor: pointer;
 }
 
 .results {
@@ -98,4 +99,18 @@ p {
   color: white;
   list-style: none;
   margin-right: 20px;
+}
+.orderCard p {
+  /* border: 2px solid red; */
+  color: black;
+}
+table tr.tableRow {
+  background-color: cadetblue;
+  color: whitesmoke;
+}
+.btn-primary {
+  background-color: cadetblue;
+  border: none;
+  border-radius: 8px;
+  margin-left: 10px;
 }
