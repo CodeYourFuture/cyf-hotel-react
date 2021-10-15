@@ -20,7 +20,8 @@ const SearchResults = props => {
     }
   };
   const [highlighted, setHighlighted] = useState(backgroudColour.red);
-  function updateColour() {
+  function updateColour(event) {
+    let newColour = event.target.value;
     setHighlighted(backgroudColour);
   }
   return (
@@ -40,9 +41,9 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map(result => (
-          <tr onClick={highlighted} key={result.id}>
+          <tr key={result.id}>
             <th scope="row">{result.id}</th>
-            <td>{result.title}</td>
+            <td onClick={e => updateColour(e)}>{result.title}</td>
             <td>{result.firstName}</td>
             <td>{result.surname}</td>
             <td>{result.email}</td>
