@@ -4,7 +4,11 @@ const TouristInfoCards = () => {
   return (
     <div className="d-flex flex-column align-items-center flex-md-row justify-content-around  align-items-md-start">
       <div className="card-mb2">
-        <img src="" alt="#" className="card-image-top" />
+        <img
+          src="https://images.pexels.com/photos/427679/pexels-photo-427679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=200"
+          alt="#"
+          className="card-image-top"
+        />
         <div className="card-body">
           <h3 className="text-center">London</h3>
           <p>
@@ -23,7 +27,7 @@ const TouristInfoCards = () => {
       </div>
       <div className="card-mb2">
         <img
-          src="https://https://www.pexels.com/photo/city-landscape-skyline-building-7784807/"
+          src="https://images.pexels.com/photos/7784807/pexels-photo-7784807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=200"
           alt="#"
           className="card-image-top"
         />
@@ -44,7 +48,11 @@ const TouristInfoCards = () => {
         </div>
       </div>
       <div className="card-mb2">
-        <img src="" alt="#" className="card-image-top" />
+        <img
+          src="https://images.pexels.com/photos/3035106/pexels-photo-3035106.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=200"
+          alt="#"
+          className="card-image-top"
+        />
         <div className="card-body">
           <h3 className="text-center">Glasgow</h3>
           <p>

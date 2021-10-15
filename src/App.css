@@ -1,14 +1,15 @@
 .App {
   text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.headerWrapper {
+/* .headerWrapper {
   position: relative;
-}
+} */
 
 .app-header {
   background-color: #222;
-  height: 50px;
+  height: 120px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -63,4 +64,12 @@ tr {
 
 li {
   list-style: none;
+}
+
+td {
+  font-size: 0.8em;
+}
+
+img {
+  height: 100%;
 }

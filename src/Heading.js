@@ -3,12 +3,15 @@ import React from "react";
 
 const Heading = () => {
   return (
-    <div className="headerWrapper">
-      <header className="app-header">CYF Hotel</header>
+    <div className="app-header mb-4 d-flex justify-content-between align-items-center">
+      <header className="app-header d-flex align-items-center">
+        CYF Hotel
+      </header>
       <img
-        className="app-logo"
+        width="100"
+        height="100"
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
-        alt="#"
+        alt="Hotel's logo"
       />
     </div>
   );
