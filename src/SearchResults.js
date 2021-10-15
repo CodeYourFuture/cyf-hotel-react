@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [selectedBookingId, setSelectedBookingId] = useState(null);
   return (
     <div>
       <table className="table table-hover">
@@ -21,7 +22,17 @@ const SearchResults = props => {
         <tbody className="table-striped">
           {props.results.map(result => {
             return (
-              <tr key={result.id}>
+              <tr
+                key={result.id}
+                className={
+                  selectedBookingId === result.id ? "table-warning" : ""
+                }
+                onClick={() =>
+                  setSelectedBookingId(
+                    result.id === selectedBookingId ? null : result.id
+                  )
+                }
+              >
                 <td>{result.id}</td>
                 <td>{result.title}</td>
                 <td>{result.firstName}</td>
@@ -42,5 +53,4 @@ const SearchResults = props => {
     </div>
   );
 };
-
 export default SearchResults;
