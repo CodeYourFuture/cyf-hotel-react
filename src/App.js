@@ -1,5 +1,6 @@
 import React from "react";
 import Bookings from "./Bookings";
+import Restaurant from "./Restaurant";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 
@@ -18,6 +19,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer contacts={contactList} />
     </div>
   );
