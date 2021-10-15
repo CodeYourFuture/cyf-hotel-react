@@ -1,10 +1,10 @@
 import React from "react";
-import moment from "moment";
+import SearchResultsTableRows from "./SearchResultsTableRows";
 
 const SearchResults = props => {
   return (
     <div>
-      <table className="table table-striped">
+      <table class="table table-sm">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -20,19 +20,7 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {props.results.map(booking => (
-            <tr key={booking.id}>
-              <th scope="row">{booking.id}</th>
-              <td>{booking.title}</td>
-              <td>{booking.firstName}</td>
-              <td>{booking.surname}</td>
-              <td>{booking.email}</td>
-              <td>{booking.roomId}</td>
-              <td>{booking.checkInDate}</td>
-              <td>{booking.checkOutDate}</td>
-              <td>
-                {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
-              </td>
-            </tr>
+            <SearchResultsTableRows booking={booking} />
           ))}
         </tbody>
       </table>
