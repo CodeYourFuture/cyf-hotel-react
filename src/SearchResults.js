@@ -2,6 +2,19 @@ import React from "react";
 import moment from "moment";
 
 export default function SearchResult({ results }) {
+  results = results.map(booking => {
+    const checkInDate = booking.checkInDate;
+    const checkOutDate = booking.checkOutDate;
+    const nights = howManyNights(checkInDate, checkOutDate);
+    booking.nights = nights;
+    return booking;
+  });
+  function howManyNights(checkInDate, checkOutDate) {
+    checkInDate = moment(checkInDate);
+    checkOutDate = moment(checkOutDate);
+    return checkOutDate.diff(checkInDate, "days");
+  }
+
   const booking = results[0];
   const tableHeadings = Object.keys(booking); //this converts object keys in array
 
@@ -18,7 +31,7 @@ export default function SearchResult({ results }) {
   ));
 
   return (
-    <table>
+    <table className="table table-responsive table-striped">
       <thead>
         <tr>{tableHeadingElements}</tr>
       </thead>
@@ -26,9 +39,3 @@ export default function SearchResult({ results }) {
     </table>
   );
 }
-
-// function howManyNights(checkInDate, checkOutDate) {
-//   checkInDate = moment(checkInDate);
-//   checkOutDate = moment(checkOutDate);
-//   return checkOutDate.diff(checkInDate, "days");
-// }

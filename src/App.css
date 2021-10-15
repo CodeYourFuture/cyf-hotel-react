@@ -42,25 +42,34 @@
   display: grid;
   grid-template-rows: 1fr, 3fr, 4fr;
   grid-template-areas:
-    "link"
     "head"
+    "image"
     "description"
-    "image";
-  max-width: 350px;
-  margin: 20px;
+    "link";
+  max-width: 380px;
+  margin: 10px;
   padding: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px #fff4eb;
+  box-shadow: 5px 5px 15px 5px #fff4eb;
 }
 .tourist-info-card-link {
   grid-area: link;
+  padding: 10px;
 }
 .tourist-info-card-title {
   grid-area: head;
+  padding: 10px;
+  color: #5b5757;
 }
 .tourist-info-card-image {
   grid-area: image;
+  padding: 10px;
 }
 .tourist-info-card-description {
   grid-area: description;
+  text-align: justify;
+  padding: 10px;
+  color: #5b5757;
 }
 @keyframes App-logo-spin {
   from {

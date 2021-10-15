@@ -1,7 +1,7 @@
 import React from "react";
 const TouristInfoCard = ({ cityName, imageUrl, description, href }) => {
   return (
-    <div className="tourist-info-card">
+    <div className="tourist-info-card mb-3">
       <a
         className="tourist-info-card-link"
         href={href}
@@ -12,7 +12,7 @@ const TouristInfoCard = ({ cityName, imageUrl, description, href }) => {
       </a>
       <h2 className="tourist-info-card-title">{cityName}</h2>
       <img className="tourist-info-card-image" src={imageUrl} alt="city-pic" />
-      <p className="tourist-info-card-description">{description}</p>
+      <p className="tourist-info-card-description mb-3">{description}</p>
     </div>
   );
 };
