@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 function SearchResults(props) {
+  const [ishighlight, setishighlight] = useState(false);
+  function highlight() {
+    setishighlight(!ishighlight);
+  }
   return (
     <div>
       <table className="table table-hover">
@@ -21,7 +25,11 @@ function SearchResults(props) {
         <tbody>
           {props.results.map((result, index) => {
             return (
-              <tr key={index}>
+              <tr
+                key={index}
+                onClick={highlight}
+                className={ishighlight ? "dark" : " "}
+              >
                 <td>{result.id}</td>
                 <td>{result.title}</td>
                 <td>{result.firstName}</td>

@@ -65,3 +65,6 @@ tr {
   flex-direction: row;
   justify-content: center;
 }
+.dark {
+  background-color: black;
+}
