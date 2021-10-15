@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 export default function SearchResult({ results }) {
+  const [selected, setSelected] = useState(false);
+
+  const highlighterRows = () => {
+    setSelected(!selected);
+  };
+
   results = results.map(booking => {
     const checkInDate = booking.checkInDate;
     const checkOutDate = booking.checkOutDate;
@@ -14,7 +20,7 @@ export default function SearchResult({ results }) {
     checkOutDate = moment(checkOutDate);
     return checkOutDate.diff(checkInDate, "days");
   }
-
+  //populating our table
   const booking = results[0];
   const tableHeadings = Object.keys(booking); //this converts object keys in array
 
@@ -23,7 +29,11 @@ export default function SearchResult({ results }) {
   ));
 
   const tableRows = results.map((booking, i) => (
-    <tr key={i}>
+    <tr
+      onClick={highlighterRows}
+      className={selected ? "selected" : "not-selected"}
+      key={i}
+    >
       {Object.values(booking).map((bookingDetail, j) => (
         <td key={j}>{bookingDetail} </td>
       ))}
@@ -31,7 +41,7 @@ export default function SearchResult({ results }) {
   ));
 
   return (
-    <table className="table table-responsive table-striped">
+    <table className="table table-responsive table-hover table-light">
       <thead>
         <tr>{tableHeadingElements}</tr>
       </thead>

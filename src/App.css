@@ -11,7 +11,7 @@
 
 .App-header {
   padding-bottom: 10px;
-  justify-content: space-around;
+  justify-content: space-between;
   display: flex;
   background-color: #222;
   height: 70px;
@@ -23,7 +23,7 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3em;
 }
 
 .App-content {
@@ -98,4 +98,10 @@ tr {
 
 .card {
   width: 18rem;
+}
+.selected {
+  background-color: rgb(190, 216, 225); /*rgba(88, 52, 43, 0.534);*/
+}
+.not-selected {
+  background-color: rgb(238, 242, 243);
 }
