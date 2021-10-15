@@ -1,6 +1,5 @@
 import React from "react";
-import fakeBookings from "../data/fakeBookings.json";
-import moment from "moment";
+import SearchResultsBody from "./SearchResultsBody";
 
 const itemsTitle = [
   <thead key={11} className="thead-dark">
@@ -15,42 +14,17 @@ const itemsTitle = [
       <th scope="col">Check Out</th>
       <th scope="col">Nights</th>
     </tr>
-  </thead>
+  </thead>,
 ];
-
-const SearchResultsBody = () => {
-  return (
-    <tbody>
-      {fakeBookings.map(booking => {
-        return (
-          <tr key={booking.id}>
-            <th scope="row">{booking.id}</th>
-            <td>{booking.title}</td>
-            <td>{booking.firstName}</td>
-            <td>{booking.surname}</td>
-            <td>{booking.email}</td>
-            <td>{booking.roomId}</td>
-            <td>{booking.checkInDate}</td>
-            <td>{booking.checkOutDate}</td>
-            <td>
-              {moment(booking.checkOutDate).diff(
-                moment(booking.checkInDate),
-                "days"
-              )}
-            </td>
-          </tr>
-        );
-      })}
-    </tbody>
-  );
-};
 
 const SearchResults = () => {
   return (
-    <table className="table">
-      {itemsTitle}
-      <SearchResultsBody />
-    </table>
+    <div className="container">
+      <table className="table">
+        {itemsTitle}
+        <SearchResultsBody />
+      </table>
+    </div>
   );
 };
 
