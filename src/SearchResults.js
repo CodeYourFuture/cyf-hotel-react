@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
+import classNames from "classnames";
 
 const TableHeader = () => {
   return (
@@ -20,12 +21,31 @@ const TableHeader = () => {
 };
 
 const SearchResults = props => {
+  // const [isHighlighted, setIsHighlighted] = useState("false");
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  // function handleClick(selected) {
+  //   setSelectedIndex(() => {
+  //     console.log("toggled index", selected);
+  //     console.log("selected state", selectedIndex);
+  //     return selected;
+  //   });
+  // }
   return (
     <table className="table">
       <TableHeader />
       <tbody>
         {props.results.map((result, index) => (
-          <tr key={index}>
+          <tr
+            key={index}
+            onClick={Event =>
+              setSelectedIndex(selectedIndex === index ? null : index)
+            }
+            className={classNames("alert alert-info msg", {
+              "bk-color-clicked ": selectedIndex === index,
+              "bk-color-default": selectedIndex !== index
+            })}
+          >
             <th scope="row">{result.id}</th>
             <td>{result.title}</td>
             <td>{result.firstName}</td>

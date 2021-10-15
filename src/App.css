@@ -54,6 +54,14 @@ tr {
   color: #5b5757;
 }
 
+.bk-color-default {
+  background-color: #fff;
+}
+
+.bk-color-clicked {
+  background-color: cadetblue;
+}
+
 .results {
   padding-top: 15px;
 }
