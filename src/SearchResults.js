@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 // const userInfor = [{
@@ -14,6 +14,15 @@ import moment from "moment";
 
 const SearchResults = props => {
   console.log(props.formInfo);
+  const backgroudColour = {
+    red: {
+      color: "#786fa6"
+    }
+  };
+  const [highlighted, setHighlighted] = useState(backgroudColour.red);
+  function updateColour() {
+    setHighlighted(backgroudColour);
+  }
   return (
     <table className="table">
       <thead>
@@ -31,7 +40,7 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map(result => (
-          <tr key={result.id}>
+          <tr onClick={highlighted} key={result.id}>
             <th scope="row">{result.id}</th>
             <td>{result.title}</td>
             <td>{result.firstName}</td>
