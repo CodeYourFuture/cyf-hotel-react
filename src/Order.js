@@ -2,8 +2,12 @@ import React, { useState } from "react";
 
 const Order = props => {
   const [order, setOrder] = useState(0);
-  //console.log(order)
-  //console.log(setOrder)
+  // const state = useState(0)
+  // console.log("State", state);
+  // const or = [0]
+  // console.log("or", or);
+  // const setOr = state[1]
+  // console.log("setOr", setOr)
 
   function orderOne() {
     setOrder(order => order + 1);
@@ -11,7 +15,7 @@ const Order = props => {
   return (
     <li>
       {props.orderType}: {order}{" "}
-      <button onClick={() => orderOne()} className="btn btn-primary">
+      <button onClick={orderOne} className="btn btn-primary">
         Add
       </button>
     </li>

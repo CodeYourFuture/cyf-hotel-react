@@ -39,6 +39,14 @@ const SearchResults = props => {
               showId={showId}
               displayProfile={displayProfile}
             />
+            //const [selectedBookingId, setSelectedBookingId] = useState(null)
+            //<tr
+            //key={result.id}
+            //className={selectedBookingId === result.id ? "table-warning" : ""}
+            //onClick={() =>‏
+            // setSelectedBookingId(result.id === selectedBookingId ? null : result.id)
+            //}
+            //>
           ))}
         </tbody>
       </table>
