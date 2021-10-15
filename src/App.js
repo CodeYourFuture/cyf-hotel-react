@@ -6,6 +6,7 @@ import "./App.css";
 // My import
 import Header from "./Header";
 import TouristInfoCards from "./TouristInfoCards";
+import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 
 const App = () => {
@@ -46,6 +47,8 @@ const App = () => {
           }
         ]}
       />
+
+      <Restaurant />
 
       <Footer
         info={[
