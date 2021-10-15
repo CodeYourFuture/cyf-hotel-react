@@ -1,15 +1,20 @@
 import React, { useState } from "react";
-import moment from "moment";
 import "./App.css";
 import SearchResult from "./SearchResult";
+import CustomerProfile from "./CustomerProfile";
 
 //import SearchButton from "./SearchButton";
 
 const SearchResults = props => {
-  const highlight = {
-    backgroundColor: "grey"
+  const [id, setId] = useState(0);
+  const showId = newId => {
+    setId(() => newId);
   };
-
+  const [display, setDisplay] = useState(false);
+  const displayProfile = () => {
+    setDisplay(!display); //!display: You will need click to display to remove the old id and click to display again
+    //setDisplay(true); // one click to display and then it will automatically change the id
+  };
   return (
     <div>
       <table className="table">
@@ -28,11 +33,17 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {props.results.map((oneObj, index) => (
-            <SearchResult result={oneObj} />
+            <SearchResult
+              result={oneObj}
+              keys={index}
+              showId={showId}
+              displayProfile={displayProfile}
+            />
           ))}
         </tbody>
       </table>
       {/*{props.children}*/}
+      {display && <CustomerProfile id={id} />}
     </div>
   );
 };

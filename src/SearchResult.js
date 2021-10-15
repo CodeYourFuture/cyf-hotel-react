@@ -4,6 +4,10 @@ import "./App.css";
 
 const SearchResult = props => {
   const [isHighlight, setHighlight] = useState(false);
+  const a = moment(props.result.checkOutDate);
+  const b = moment(props.result.checkInDate);
+  const difference = a.diff(b, "days");
+
   const highlightRow = () => {
     setHighlight(prevIsHighlight => {
       if (prevIsHighlight === false) {
@@ -13,11 +17,14 @@ const SearchResult = props => {
       }
       return prevIsHighlight;
     });
-
-    // setColour("blue")
+  };
+  const showId = () => {
+    console.log(props.result.id);
+    props.showId(props.result.id);
+    props.displayProfile();
   };
   return (
-    <tr className={isHighlight ? "highlight" : "white"}>
+    <tr className={isHighlight ? "highlight" : "white"} key={props.keys}>
       <td>{props.result.id}</td>
       <td>{props.result.title}</td>
       <td>{props.result.firstName}</td>
@@ -26,15 +33,15 @@ const SearchResult = props => {
       <td>{props.result.roomId}</td>
       <td>{props.result.checkInDate}</td>
       <td>{props.result.checkOutDate}</td>
-      <td>
-        {moment(props.result.checkOutDate).diff(
-          moment(props.result.checkInDate),
-          "days"
-        )}
-      </td>
+      <td>{difference}</td>
       <td>
         <button className="btn btn-primary" onClick={highlightRow}>
           Highlight
+        </button>
+      </td>
+      <td>
+        <button className="btn btn-primary" onClick={showId}>
+          Show Profile
         </button>
       </td>
     </tr>
