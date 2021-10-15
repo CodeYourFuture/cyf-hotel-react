@@ -4,6 +4,7 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
+  //removed the setBookings state for now as it's not being used yet
   let [bookings] = useState(FakeBookings);
   const search = searchVal => {
     console.info("TO DO!", searchVal);

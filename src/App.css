@@ -90,7 +90,8 @@ tr {
 }
 
 .highlighted {
-  background-color: #ffff00;
+  background-color: #007bff;
+  color: #fff;
 }
 
 li {
@@ -119,4 +120,15 @@ li {
   .wrapper {
     flex-direction: row;
   }
+}
+
+.restaurant-wrapper {
+  margin-left: 5%;
+}
+
+.restaurant-wrapper ul {
+  max-width: 20%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: -2%;
 }

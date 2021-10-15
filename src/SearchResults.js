@@ -2,7 +2,6 @@ import React from "react";
 import SearchResultsRow from "./SearchResultsRow";
 
 const SearchResults = props => {
-  //let []
   return (
     <div className="table-wrapper">
       <table className="table">
