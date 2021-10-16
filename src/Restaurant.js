@@ -4,7 +4,7 @@ import Order from "./Order";
 // Renders restaurant orders, called by `App.js`.
 const Restaurant = () => {
   return (
-    <div className="d-flex justify-content-center orders-container">
+    <div className="d-flex justify-content-center">
       <div>
         <h2>Restaurant Orders</h2>
         <ul className="list-group">

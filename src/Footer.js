@@ -4,7 +4,7 @@ import "./Footer.css";
 // Renders footer component, called by `App.js`
 // I realise this is probably overkill but I just
 // wanted to experiment with conditionals in JSX.
-let Footer = props => {
+const Footer = props => {
   return (
     <footer>
       <ul className="Footer-content d-flex justify-content-center flex-wrap">

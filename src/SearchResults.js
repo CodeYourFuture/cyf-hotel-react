@@ -13,8 +13,8 @@ const SearchResults = props => {
   // On a click event, toggles background colour via bootstrap class.
   const handleRowClick = index => {
     !highlight.includes(index)
-      ? setHighlight(indexes => indexes.concat(index))
-      : setHighlight(indexes => indexes.filter(i => i !== index));
+      ? setHighlight(indexes => indexes.concat(index)) // Add id if not in array
+      : setHighlight(indexes => indexes.filter(i => i !== index)); // Else if in array, filter and remove id (toggle)
   };
 
   // On a click event, sets state variable `guestId` to either an empty string (default) or
@@ -72,7 +72,7 @@ const SearchResults = props => {
             ))}
           </tbody>
         </table>
-        <CustomerProfile id={guestId} />
+        <CustomerProfile id={guestId} data={props} />
       </div>
     </>
   );
