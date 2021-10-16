@@ -1,9 +1,19 @@
+import { useState } from "react";
 import React from "react";
 import Search from "./Search";
 import moment from "moment";
+import "./App.css";
 moment().format();
 
 function SearchResults(props) {
+  const [isClicked, setIsClicked] = useState(false);
+
+  function toggleColor(event) {
+    setIsClicked(!isClicked);
+    isClicked
+      ? (event.target.parentNode.className = "highlight")
+      : (event.target.parentNode.className = "noHighlight");
+  }
   return (
     <table className="table">
       <thead>
@@ -22,7 +32,7 @@ function SearchResults(props) {
       <tbody>
         {props.results.map(result => {
           return (
-            <tr>
+            <tr onClick={toggleColor}>
               <th scope="row">{result.id}</th>
               <td>{result.title}</td>
               <td>{result.firstName}</td>
