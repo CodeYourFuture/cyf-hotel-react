@@ -39,6 +39,11 @@
   padding: 5px 0 20px 0;
 }
 
+#hotel-logo {
+  width: 150px;
+  height: 150px;
+}
+
 tr {
   color: #5b5757;
 }
@@ -54,4 +59,12 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.container {
+  display: flex;
+}
+
+.selected {
+  background-color: lightsteelblue;
 }
