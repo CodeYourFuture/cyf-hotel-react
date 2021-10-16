@@ -1,11 +1,11 @@
-import moment from "moment";
 import React from "react";
+import TableRows from "./TableRows";
 
 const SearchResults = props => {
   console.log(props.guests);
   return (
     <div className="table-responsive">
-      <table className="table table-striped">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -21,22 +21,7 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {props.guests.map(guest => (
-            <tr>
-              <th scope="row">{guest.id}</th>
-              <td>{guest.title}</td>
-              <td>{guest.firstName}</td>
-              <td>{guest.surname}</td>
-              <td>{guest.email}</td>
-              <td>{guest.roomId}</td>
-              <td>{guest.checkInDate}</td>
-              <td>{guest.checkOutDate}</td>
-              <td>
-                {moment(guest.checkOutDate).diff(
-                  moment(guest.checkInDate),
-                  "days"
-                )}
-              </td>
-            </tr>
+            <TableRows guest={guest} />
           ))}
         </tbody>
       </table>

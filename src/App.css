@@ -64,3 +64,7 @@ tr {
 .container {
   display: flex;
 }
+
+.selected {
+  background-color: lightsteelblue;
+}
