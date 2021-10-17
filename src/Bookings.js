@@ -11,6 +11,7 @@ const Bookings = () => {
   const [dataFetched, setDataFetched] = useState(false);
   const [fetchError, setFetchError] = useState(false);
 
+  // Form state values
   const [firstName, setFirstName] = useState("");
   const [title, setTitle] = useState("");
   const [surname, setSurname] = useState("");
@@ -55,11 +56,14 @@ const Bookings = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
+    // Generate a new id using either `existingAndNewBookings` or `bookings` as a baseline, keeping
+    // the generated id concurrent with existing data.
     let newId = null;
     existingAndNewBookings.length
       ? (newId = existingAndNewBookings.length + 1)
       : (newId = bookings.length + 1);
 
+    // Pull all booking information stored in state into an object.
     const newBooking = [
       {
         id: newId,
@@ -75,6 +79,8 @@ const Bookings = () => {
       }
     ];
 
+    // Append using spread `newBooking` to either `existingAndNewBookings` or `bookings` depending
+    // on `existingAndNewBookings` length.
     setExistingAndNewBookings(
       existingAndNewBookings.length
         ? [...existingAndNewBookings, ...newBooking]
@@ -136,6 +142,11 @@ const Bookings = () => {
                   </option>
                   <option value="Mr">Mr</option>
                   <option value="Mrs">Mrs</option>
+                  <option value="Doctor">Doctor</option>
+                  <option value="Prince">Prince</option>
+                  <option value="Princess">Princess</option>
+                  <option value="Sir">Sir</option>
+                  <option value="Dame">Dame</option>
                 </select>
               </div>
               <div className="mb-3">
