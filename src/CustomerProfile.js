@@ -1,18 +1,31 @@
 import React, { useState, useEffect } from "react";
 import "./CustomerProfile.css";
 
-// Fetches customers booking information and renders the data when a customers Show Profile button is clicked or
+// Displays customer information when the show Profile button is clicked or
 // hides their profile if the button is clicked a second time or another profile is selected.
 const CustomerProfile = props => {
   const [profile, setProfile] = useState(null);
-  const [customerId, setCustomerId] = useState(1);
+  const [customerId, setCustomerId] = useState("");
+  const [customers, setCustomers] = useState([]);
 
+  // Updates `customerId` when `props.id` state changes
   useEffect(() => {
-    if (props.id !== "") {
-      fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+    setCustomerId(props.id);
+  }, [props.id]);
+
+  // Updates `customers` when `props.data.results` state changes
+  useEffect(() => {
+    setCustomers(props.data.results);
+  }, [props.data.results]);
+
+  // Fetches and updates `profile` when `customerId` state changes, contains a
+  // boundary condition to prevent errors when content is not required.
+  useEffect(() => {
+    if (customerId !== "" && customerId) {
+      fetch(`https://cyf-react.glitch.me/customers/${customerId}`)
         .then(response =>
           response.status >= 200 && response.status <= 299
-            ? (setCustomerId(props.id), response.json())
+            ? response.json()
             : new Error(
                 `Unexpected Error: ${response.status} ${response.statusText}`
               )
@@ -20,35 +33,34 @@ const CustomerProfile = props => {
         .then(data => setProfile(data))
         .catch(err => console.log(err));
     }
-  }, [props.id]);
+  }, [customerId]);
 
-  // Render use profile data if the state variable `profile` and `props.id` return true, otherwise no render takes place.
-  return profile && props.id ? (
+  // Render profile data if the state variable `profile` and `customers` contain data
+  // and `customerId` is not an empty string, otherwise no render takes place.
+  return profile && customers && customerId !== "" ? (
     <div className="container p-3 mb-5 shadow border border-1 CustomerProfile-tr rounded">
       <h2 className="text-center">
-        Customer {profile.id ? profile.id : props.data.results[customerId].id}
+        Customer {profile.id ? profile.id : customers[customerId - 1].id}{" "}
         Profile
       </h2>
       <ul className="list-unstyled">
         <li className="list-item p-1">
-          <b>Type:</b>
-          {profile.vip || props.data.results[customerId].vip
-            ? "VIP Booking"
-            : "Standard Booking"}
+          <b>Type: </b>
+          {profile.vip ? "VIP Booking" : "Standard Booking"}
         </li>
         <li className="list-item p-1">
-          <b>Customer id:</b>
-          {profile.id ? profile.id : props.data.results[customerId].id}
+          <b>Customer id: </b>
+          {profile.id ? profile.id : customers[customerId - 1].id}
         </li>
         <li className="list-item p-1">
-          <b>Email:</b>
-          {profile.id ? profile.email : props.data.results[customerId].email}
+          <b>Email: </b>
+          {profile.email ? profile.email : customers[customerId - 1].email}
         </li>
         <li className="list-item p-1">
-          <b>Phone Number:</b>
-          {profile.id
+          <b>Phone Number: </b>
+          {profile.phoneNumber
             ? profile.phoneNumber
-            : props.data.results[customerId].phoneNumber}
+            : customers[customerId - 1].phoneNumber}
         </li>
       </ul>
     </div>

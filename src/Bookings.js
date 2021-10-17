@@ -199,7 +199,7 @@ const Bookings = () => {
 
                 <input
                   className="form-control"
-                  type="number"
+                  type="tel"
                   name="phoneNumber"
                   placeholder="01324 716256"
                   value={phoneNumber}
