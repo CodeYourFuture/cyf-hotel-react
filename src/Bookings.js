@@ -86,6 +86,12 @@ const Bookings = () => {
         ? [...existingAndNewBookings, ...newBooking]
         : [...bookings, ...newBooking]
     );
+
+    alert(`      
+    
+                BOOKING ADDED - Click OK to continue...
+                            
+                                                              `);
   };
 
   // Render bookings table if fetch completed and bookings contains data. Sends either `bookings` state variable
