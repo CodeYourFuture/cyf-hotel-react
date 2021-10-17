@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 function SearchResult({ results }) {
   return (
-    <table class="table">
+    <table className="table">
       <thead className="thead-warning">
         <tr>
           <th scope="col">Id</th>
@@ -29,8 +29,8 @@ function SearchResult({ results }) {
                 <td>{booking.roomId} </td>
                 <td>{booking.checkInDate} </td>
                 <td>{booking.checkOutDate} </td>
-                {moment(booking.checkInDate).diff(
-                  moment(booking.checkOutDate),
+                {moment(booking.checkOutDate).diff(
+                  moment(booking.checkInDate),
                   "days"
                 )}
               </tr>

@@ -10,7 +10,7 @@ const CustomerProfile = props => {
       });
   }, [props.id]);
   return (
-    customerName && (
+    customerData && (
       <div>
         <h3>Customer {props.id} Profile</h3>
         <p>

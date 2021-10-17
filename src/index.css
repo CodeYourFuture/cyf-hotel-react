@@ -24,3 +24,12 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+button {
+  background-color: #24a0ed;
+  color: white;
+  text-decoration: none;
+}
+
+.orders li {
+  list-style-type: none;
+}

@@ -9,9 +9,9 @@ function Order(props) {
   }
   return (
     <div>
-      <li>
+      <ul>
         {props.orderType}: {order}
-      </li>
+      </ul>
       <button onClick={orderIncrement}>Add</button>
     </div>
   );

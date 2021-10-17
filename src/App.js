@@ -3,7 +3,6 @@ import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Footer from "./Footer";
-import SearchResults from "./SearchResults";
 import Restaurant from "./Restaurant";
 import "./App.css";
 
@@ -14,7 +13,6 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <SearchResults />
       <Footer />
     </div>
   );
