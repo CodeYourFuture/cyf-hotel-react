@@ -8,6 +8,7 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
   const [bookings, setBookings] = useState(fakeBookings);
+  console.log(setBookings);
 
   return (
     <div className="App-content">
