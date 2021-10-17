@@ -9,7 +9,7 @@ const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
-
+  console.log(setBookings);
   return (
     <div className="App-content">
       <div className="container">

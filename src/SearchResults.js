@@ -1,6 +1,5 @@
 import { useState } from "react";
 import React from "react";
-import Search from "./Search";
 import moment from "moment";
 import "./App.css";
 moment().format();
