@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import CustomerProfile from "./CustomerProfile";
 
 import SearchResultHeading from "./SearchResultHeading";
 import SearchResultsBody from "./SearchResultsBody";
@@ -12,11 +14,19 @@ const headingItems = [
   "Check out Date",
   "Number Of Nights"
 ];
+
 export default function SearchResults({ results }) {
+  const [customerProfileId, setCustomerProfileId] = useState("");
   return (
-    <table className="table ">
-      <SearchResultHeading headingItems={headingItems} />
-      <SearchResultsBody bookings={results} />
-    </table>
+    <section className="searchResultTableContainer">
+      <table className="table ">
+        <SearchResultHeading headingItems={headingItems} />
+        <SearchResultsBody
+          bookings={results}
+          setCustomerProfileId={setCustomerProfileId}
+        />
+      </table>
+      <CustomerProfile id={customerProfileId} />
+    </section>
   );
 }

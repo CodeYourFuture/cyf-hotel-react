@@ -1,9 +1,13 @@
 import React from "react";
 import TableRows from "./TableRows";
 
-export default function SearchResultsBody({ bookings }) {
+export default function SearchResultsBody({ bookings, setCustomerProfileId }) {
   const tableRows = bookings.map(booking => (
-    <TableRows booking={booking} key={booking.id} />
+    <TableRows
+      setCustomerProfileId={setCustomerProfileId}
+      booking={booking}
+      key={booking.id}
+    />
   ));
   return <tbody>{tableRows}</tbody>;
 }

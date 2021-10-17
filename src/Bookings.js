@@ -25,12 +25,12 @@ const Bookings = () => {
   }, []);
 
   return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
-      </div>
-    </div>
+    // <div className="App-content">
+    <section className="container">
+      <Search search={search} />
+      <SearchResults results={bookings} />
+    </section>
+    // </div>
   );
 };
 

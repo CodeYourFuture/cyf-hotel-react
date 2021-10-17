@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-export default function TableRows({ booking }) {
+export default function TableRows({ booking, setCustomerProfileId }) {
   const [selectedClass, setSelectedClass] = useState("");
   function toggleClassName() {
     setSelectedClass(previousClass => (previousClass === "" ? "selected" : ""));
@@ -10,8 +10,13 @@ export default function TableRows({ booking }) {
     checkOutDate = moment(checkOutDate);
     return checkOutDate.diff(checkInDate, "days");
   }
+
+  function handleSetCustomerProfileId() {
+    setCustomerProfileId(booking.id);
+  }
+
   return (
-    <tr className={selectedClass} onClick={toggleClassName}>
+    <tr className={`table-row ${selectedClass}`} onClick={toggleClassName}>
       <td>{booking.title}</td>
       <td>{booking.firstName}</td>
       <td>{booking.surname}</td>
@@ -20,6 +25,9 @@ export default function TableRows({ booking }) {
       <td>{booking.checkInDate}</td>
       <td>{booking.checkOutDate}</td>
       <td>{howManyDay(booking.checkInDate, booking.checkOutDate)}</td>
+      <td className="displayProfileButton" onClick={handleSetCustomerProfileId}>
+        Show profile
+      </td>
     </tr>
   );
 }

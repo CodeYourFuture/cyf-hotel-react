@@ -68,6 +68,10 @@ table tr.selected {
   background-color: #fab2f6;
   color: #000;
 }
+.displayProfileButton {
+  background-color: blue;
+  color: white;
+}
 
 /* order Cards */
 .restaurant {
