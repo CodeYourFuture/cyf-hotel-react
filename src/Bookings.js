@@ -12,7 +12,12 @@ const Bookings = props => {
       });
   }, [props.bookings]);
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    const filterSearch = bookings.filter(
+      nameInput =>
+        nameInput.firstName.toLowerCase().includes(searchVal) ||
+        nameInput.surname.toLowerCase().includes(searchVal)
+    );
+    setBookings(filterSearch);
   };
 
   return (
