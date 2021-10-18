@@ -1,29 +1,8 @@
-import React, { useState } from "react";
-import moment from "moment";
+import React from "react";
 
-// const userInfor = [{
-//     id: "9898",
-//     title: "Miss",
-//     firstName: "Sam",
-//     surname: "Smith",
-//     email: "Sam.Smith@hotmail.com",
-//     roomId: "676",
-//     checkInDate: "20/10/21",
-//     checkOutDate: "22/10/21",
-// }]
+import CustomerBookings from "./CustomerBookings";
 
 const SearchResults = props => {
-  console.log(props.formInfo);
-  const backgroudColour = {
-    red: {
-      color: "#786fa6"
-    }
-  };
-  const [highlighted, setHighlighted] = useState(backgroudColour.red);
-  function updateColour(event) {
-    let newColour = event.target.value;
-    setHighlighted(backgroudColour);
-  }
   return (
     <table className="table">
       <thead>
@@ -41,22 +20,7 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map(result => (
-          <tr key={result.id}>
-            <th scope="row">{result.id}</th>
-            <td onClick={e => updateColour(e)}>{result.title}</td>
-            <td>{result.firstName}</td>
-            <td>{result.surname}</td>
-            <td>{result.email}</td>
-            <td>{result.roomId}</td>
-            <td>{result.checkInDate}</td>
-            <td>{result.checkOutDate}</td>
-            <td>
-              {moment(result.checkOutDate.replace(/"-"/g, ",")).diff(
-                result.checkInDate.replace(/"-"/g, ","),
-                "days"
-              )}
-            </td>
-          </tr>
+          <CustomerBookings result={result} key={result.id} />
         ))}
       </tbody>
     </table>

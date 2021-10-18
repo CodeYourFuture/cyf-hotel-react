@@ -78,5 +78,6 @@ tr {
   flex-grow: 1;
 }
 
-.card img {
+.colourPurple {
+  background-color: #c945d4;
 }
