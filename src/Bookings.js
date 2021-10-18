@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
-const Bookings = () => {
+const Bookings = props => {
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
@@ -10,7 +10,7 @@ const Bookings = () => {
       .then(data => {
         setBookings(data);
       });
-  }, []);
+  }, [props.bookings]);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
