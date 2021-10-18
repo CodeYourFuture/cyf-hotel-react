@@ -3,7 +3,7 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
-  let [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState([]);
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
       .then(res => res.json())
