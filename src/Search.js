@@ -8,6 +8,22 @@ const Search = () => {
     setSearchInput(event.target.value);
     console.log(event.target.value);
   };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    console.log("Sending data to server");
+
+    // fetch("https://cyf-react.glitch.me", {
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     firstName: firstName
+    //   }),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+  };
+
   return (
     <div className="search">
       <div className="page-header">
@@ -15,7 +31,7 @@ const Search = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form className="form-group search-box" onSubmit={handleSubmit}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
