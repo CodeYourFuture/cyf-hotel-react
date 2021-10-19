@@ -25,8 +25,13 @@ export default function TableRows({ booking, setCustomerProfileId }) {
       <td>{booking.checkInDate}</td>
       <td>{booking.checkOutDate}</td>
       <td>{howManyDay(booking.checkInDate, booking.checkOutDate)}</td>
-      <td className="displayProfileButton" onClick={handleSetCustomerProfileId}>
-        Show profile
+      <td>
+        <button
+          className="btn btn-primary"
+          onClick={handleSetCustomerProfileId}
+        >
+          Show profile
+        </button>
       </td>
     </tr>
   );

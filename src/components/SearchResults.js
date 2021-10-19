@@ -26,7 +26,12 @@ export default function SearchResults({ results }) {
           setCustomerProfileId={setCustomerProfileId}
         />
       </table>
-      {customerProfileId && <CustomerProfile id={customerProfileId} />}
+      {customerProfileId !== "" ? (
+        <CustomerProfile
+          id={customerProfileId}
+          setCustomerProfileId={setCustomerProfileId}
+        />
+      ) : null}
     </section>
   );
 }

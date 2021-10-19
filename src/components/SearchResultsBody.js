@@ -9,5 +9,5 @@ export default function SearchResultsBody({ bookings, setCustomerProfileId }) {
       key={booking.id}
     />
   ));
-  return <tbody>{tableRows}</tbody>;
+  return <tbody className="tbodyContainer">{tableRows}</tbody>;
 }

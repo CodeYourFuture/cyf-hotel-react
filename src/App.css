@@ -41,22 +41,45 @@ tr {
 
 .card {
   width: 18rem;
-  height: 32rem;
+  /* height: 28rem; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
 }
-
 .cardContainer {
   display: flex;
   align-items: flex-end;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin: 2rem 0;
 }
 .city-info {
-  height: 12rem;
+  height: 8rem;
   overflow: scroll;
 }
-
+.searchSection {
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+.loading-message {
+  background-color: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.8;
+}
+.error-message {
+  background-color: #fff;
+  border: 1px solid rgb(250, 85, 85);
+  color: rgb(175, 5, 5);
+  font-size: 2rem;
+  opacity: 1;
+  text-decoration: underline;
+}
 table tr {
   transition: all 0.5s ease;
 }
@@ -68,9 +91,11 @@ table tr.selected {
   background-color: #fab2f6;
   color: #000;
 }
-.displayProfileButton {
-  background-color: blue;
-  color: white;
+td {
+  padding: 0.5;
+}
+.customerProfile {
+  margin: 2rem auto;
 }
 
 /* order Cards */
