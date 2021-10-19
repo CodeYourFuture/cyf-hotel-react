@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import RestaurantButton from "./RestaurantButton";
 
 export default function Order({ orderType, img }) {
   const [orders, setOrders] = useState(0);
-  function orderOne() {
+  function deleteItem() {
+    setOrders(prevOrder => (prevOrder > 0 ? orders - 1 : 0));
+  }
+  function addItem() {
     setOrders(orders + 1);
   }
   return (
@@ -12,7 +14,14 @@ export default function Order({ orderType, img }) {
       <p>
         {orderType}: {orders}
       </p>
-      <RestaurantButton handleClick={orderOne} />
+      <div className="btn-group" role="group" aria-label="Basic example">
+        <button className="btn btn-primary" onClick={deleteItem}>
+          -
+        </button>
+        <button className="btn btn-primary" onClick={addItem}>
+          +
+        </button>
+      </div>
     </li>
   );
 }
