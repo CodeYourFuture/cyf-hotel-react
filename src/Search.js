@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
 const Search = () => {
+  const [searchInput, setSearchInput] = useState("");
+
+  function handleSearchInput(evt) {
+    console.log(evt.target.value);
+    // not working why
+    // setSearchInput((inputValue) => {
+    //   return evt.target.value;
+    // });
+    setSearchInput(evt.target.value);
+  }
   return (
     <div className="search">
       <div className="page-header">
@@ -17,6 +27,8 @@ const Search = () => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
+                value={searchInput}
+                onChange={handleSearchInput}
               />
               <SearchButton />
             </div>
