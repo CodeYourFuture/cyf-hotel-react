@@ -6,8 +6,19 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [booking, setBooking] = useState([]);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    let searchQuery = searchVal.toLowerCase();
+    let filtered = booking.filter(data => {
+      if (
+        data.firstName.toLowerCase() === searchQuery ||
+        data.surname.toLowerCase() === searchQuery
+      ) {
+        return data;
+      }
+    });
+    setBooking(filtered);
   };
 
   useEffect(() => {
