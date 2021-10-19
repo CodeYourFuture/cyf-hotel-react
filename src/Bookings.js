@@ -13,33 +13,48 @@ const Bookings = () => {
     setBookings(searchedNames);
   };
   const [isLoading, setIsLoading] = useState(true);
-
+  const [isError, setIsError] = useState(true);
   useEffect(() => {
     async function fetchData() {
-      console.log("data fetch....");
-      const response = await fetch("https://cyf-react.glitch.me/delayed");
-      const data = await response.json();
-      setBookings(data);
-      setIsLoading(!isLoading);
+      try {
+        const response = await fetch("https://cyf-react.glitch.me/delayed");
+        if (!response.ok) {
+          setIsLoading(false); //delete loading message from screen
+          throw new Error("SERVER RESPONSE ERROR !!!");
+        }
+        const data = await response.json();
+        setBookings(data);
+        setIsLoading(!isLoading);
+        setIsError(true);
+      } catch (error) {
+        console.log(error);
+        setIsError(false);
+      }
     }
     fetchData();
   }, []);
 
   return (
-    // <div className="App-content">
     <section className="searchSection">
       <Search search={search} />
       <div
         style={{ display: `${!isLoading ? "none" : ""}` }}
         className="loading-message"
       >
-        <div class="spinner-border text-info" role="status">
-          <span class="sr-only">Loading...</span>
+        <div className="spinner-border text-info" role="status">
+          <span className="sr-only">Loading...</span>
         </div>
+        Loading data...
       </div>
-      <SearchResults results={bookings} />
+      {isError ? (
+        <SearchResults results={bookings} />
+      ) : (
+        <div className="loading-message error-message">
+          {" "}
+          There is a proplem in the server, please try again later....
+        </div>
+      )}
     </section>
-    // </div>
   );
 };
 
