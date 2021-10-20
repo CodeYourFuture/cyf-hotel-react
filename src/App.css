@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  /* height: 50px; */
   padding: 20px;
   color: white;
   text-align: left;
@@ -18,13 +18,26 @@
   font-weight: bold;
 }
 
+.App-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App-header-wrapper img {
+  max-width: 50px;
+  width: 100%;
+}
+
 .App-title {
   font-size: 1.5em;
 }
 
 .App-content {
-  padding-top: 20px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   font-size: large;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
@@ -43,6 +56,14 @@ tr {
   color: #5b5757;
 }
 
+.bk-color-default {
+  background-color: #fff;
+}
+
+.bk-color-clicked {
+  background-color: cadetblue;
+}
+
 .results {
   padding-top: 15px;
 }
@@ -52,6 +73,38 @@ tr {
   text-align: center;
 }
 
+.footer li {
+  text-align: center;
+  list-style-type: none;
+  line-height: 30px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .card {
   width: 18rem;
+}
+
+/*  */
+
+.restaurant-container {
+  text-align: center;
+  padding: 3rem;
+}
+
+.order-list {
+  list-style: none;
+  padding: 1rem;
+}
+
+.order-list li {
+  margin: 0.5rem 0;
+}
+
+.order-list button {
+  margin: 0 1rem;
+  padding: 0 2rem;
 }
