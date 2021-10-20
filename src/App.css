@@ -34,8 +34,10 @@
 }
 
 .App-content {
-  padding-top: 20px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   font-size: large;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
@@ -84,4 +86,25 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+/*  */
+
+.restaurant-container {
+  text-align: center;
+  padding: 3rem;
+}
+
+.order-list {
+  list-style: none;
+  padding: 1rem;
+}
+
+.order-list li {
+  margin: 0.5rem 0;
+}
+
+.order-list button {
+  margin: 0 1rem;
+  padding: 0 2rem;
 }

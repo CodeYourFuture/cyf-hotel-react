@@ -4,10 +4,12 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 import CustomerProfile from "./CustomerProfile.js";
+import Loader from "react-loader-spinner";
 
 const Bookings = () => {
   const [booking, setBooking] = useState([]);
   const [customerId, setCustomerId] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const search = searchVal => {
     // console.info("TO DO!", searchVal);
@@ -30,19 +32,27 @@ const Bookings = () => {
   useEffect(() => {
     // console.log("Fetch Data Remotely");
 
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://cyf-react.glitch.me/delayed`)
+      .then(setIsLoading(true))
       .then(res => res.json())
-      .then(bookingData => setBooking(bookingData));
+      .then(bookingData => {
+        setBooking(bookingData);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
     <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        {/* <SearchResults /> */}
-        <SearchResults results={booking} setCustomerId={receiveCustomerId} />
-        <CustomerProfile id={customerId} />
-      </div>
+      {isLoading ? (
+        <Loader type="Circles" color="#00BFFF" height={80} width={80} />
+      ) : (
+        <div className="container">
+          <Search search={search} />
+          {/* <SearchResults /> */}
+          <SearchResults results={booking} setCustomerId={receiveCustomerId} />
+          <CustomerProfile id={customerId} />
+        </div>
+      )}
     </div>
   );
 };
