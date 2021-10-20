@@ -97,7 +97,13 @@ td {
 .customerProfile {
   margin: 2rem auto;
 }
-
+.newCustomerSection {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
 /* order Cards */
 .restaurant {
   border-top: 1px solid #000;

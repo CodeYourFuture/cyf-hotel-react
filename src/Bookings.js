@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CreateNewBooking from "./components/CreateNewBooking";
 import Search from "./components/Search";
 import SearchResults from "./components/SearchResults";
 const Bookings = () => {
@@ -17,7 +18,7 @@ const Bookings = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("https://cyf-react.glitch.me/delayed");
+        const response = await fetch("https://cyf-react.glitch.me/");
         if (!response.ok) {
           setIsLoading(false); //delete loading message from screen
           throw new Error("SERVER RESPONSE ERROR !!!");
@@ -35,26 +36,28 @@ const Bookings = () => {
   }, []);
 
   return (
-    <section className="searchSection">
-      <Search search={search} />
-      <div
-        style={{ display: `${!isLoading ? "none" : ""}` }}
-        className="loading-message"
-      >
-        <div className="spinner-border text-info" role="status">
-          <span className="sr-only">Loading...</span>
+    <>
+      <section className="searchSection">
+        <Search search={search} />
+        <div
+          style={{ display: `${!isLoading ? "none" : ""}` }}
+          className="loading-message"
+        >
+          <div className="spinner-border text-info" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+          Loading data...
         </div>
-        Loading data...
-      </div>
-      {isError ? (
-        <SearchResults results={bookings} />
-      ) : (
-        <div className="loading-message error-message">
-          {" "}
-          There is a proplem in the server, please try again later....
-        </div>
-      )}
-    </section>
+        {isError ? (
+          <SearchResults results={bookings} />
+        ) : (
+          <div className="loading-message error-message">
+            There is a proplem in the server, please try again later....
+          </div>
+        )}
+      </section>
+      <CreateNewBooking setBookings={setBookings} />
+    </>
   );
 };
 
