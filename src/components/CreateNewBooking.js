@@ -55,6 +55,7 @@ export default function CreateNewBooking({ setBookings }) {
         <div className="form-group">
           <label htmlFor="customerTitle">Title</label>
           <input
+            required
             type="text"
             value={title}
             name="title"
@@ -67,6 +68,7 @@ export default function CreateNewBooking({ setBookings }) {
         <div className="form-group">
           <label htmlFor="firstName">First Name</label>
           <input
+            required
             type="text"
             value={firstName}
             name="firstName"
@@ -79,6 +81,7 @@ export default function CreateNewBooking({ setBookings }) {
         <div className="form-group">
           <label htmlFor="surname">Surname</label>
           <input
+            required
             type="text"
             value={surname}
             name="surname"
@@ -91,6 +94,7 @@ export default function CreateNewBooking({ setBookings }) {
         <div className="form-group">
           <label htmlFor="email">Email Addresss</label>
           <input
+            required
             type="email"
             value={email}
             name="email"
@@ -103,6 +107,7 @@ export default function CreateNewBooking({ setBookings }) {
         <div className="form-group">
           <label htmlFor="roomId">Room Id</label>
           <input
+            required
             type="text"
             value={roomId}
             name="roomId"
@@ -115,6 +120,7 @@ export default function CreateNewBooking({ setBookings }) {
         <div className="form-group">
           <label htmlFor="checkInDate">Check In Date</label>
           <input
+            required
             type="date"
             value={checkInDate}
             name="checkInDate"
@@ -126,6 +132,7 @@ export default function CreateNewBooking({ setBookings }) {
         <div className="form-group">
           <label htmlFor="checkOutDate">Check Out Date</label>
           <input
+            required
             type="date"
             value={checkOutDate}
             name="checkOutDate"
