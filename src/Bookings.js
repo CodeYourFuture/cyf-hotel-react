@@ -3,12 +3,14 @@ import Search from "./Search.js";
 // import SearchButton from "./SearchButton.js";
 import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
+import CustomerProfile from "./CustomerProfile.js";
 
 const Bookings = () => {
   const [booking, setBooking] = useState([]);
+  const [customerId, setCustomerId] = useState(null);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    // console.info("TO DO!", searchVal);
     let searchQuery = searchVal.toLowerCase();
     let filtered = booking.filter(data => {
       if (
@@ -21,8 +23,12 @@ const Bookings = () => {
     setBooking(filtered);
   };
 
+  const receiveCustomerId = id => {
+    setCustomerId(id);
+  };
+
   useEffect(() => {
-    console.log("Fetch Data Remotely");
+    // console.log("Fetch Data Remotely");
 
     fetch(`https://cyf-react.glitch.me`)
       .then(res => res.json())
@@ -34,7 +40,8 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         {/* <SearchResults /> */}
-        <SearchResults results={booking} />
+        <SearchResults results={booking} setCustomerId={receiveCustomerId} />
+        <CustomerProfile id={customerId} />
       </div>
     </div>
   );

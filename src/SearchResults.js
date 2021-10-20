@@ -14,7 +14,8 @@ const TableHeader = () => {
         <th scope="col">Room ID</th>
         <th scope="col">Check In</th>
         <th scope="col">Check Out</th>
-        <th scope="col"> number of nights</th>
+        <th scope="col"> Number of nights</th>
+        <th scope="col"> Profile</th>
       </tr>
     </thead>
   );
@@ -31,6 +32,7 @@ const SearchResults = props => {
   //     return selected;
   //   });
   // }
+
   return (
     <table className="table">
       <TableHeader />
@@ -59,6 +61,14 @@ const SearchResults = props => {
                 moment(result.checkInDate),
                 "days"
               )}
+            </td>
+            <td>
+              <button
+                className="btn btn-light"
+                onClick={() => props.setCustomerId(result.id)}
+              >
+                Show Profile
+              </button>
             </td>
           </tr>
         ))}
