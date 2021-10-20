@@ -18,23 +18,43 @@ const Bookings = () => {
     setBookings(() => filteredVal);
     //console.log("bookings", bookings)
   };
-
+  const [display, setDisplay] = useState(true);
+  const [error, setError] = useState(null);
   useEffect(() => {
     console.log("Page Uploaded");
-    fetch("https://cyf-react.glitch.me")
-      .then(response => response.json())
+    fetch("https://cyf-react.glitch.me/error")
+      .then(response => {
+        if (!response.ok) {
+          throw Error("We could not fetch the data for that resource");
+        }
+        return response.json();
+      })
       .then(data => {
         console.log(data);
         setBookings(data);
+        setDisplay(false);
+        setError(null);
       })
-      .catch(error => console.log(error));
+      .catch(err => {
+        console.log("error message: ", err.message);
+        setError(err.message);
+        setDisplay(false);
+      });
   }, []);
   return (
     <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
-      </div>
+      {error && <div>{error}</div>}
+      {display && <div>Loading...</div>}
+      {bookings && (
+        <div className="container">
+          <Search search={search} />
+          <SearchResults results={bookings} />
+        </div>
+      )
+      // ) : (
+      //   <h1>Loading...</h1>
+      // )
+      }
     </div>
   );
 };

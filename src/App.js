@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Heading";
 import Card from "./TouristInfoCards";
 import Bookings from "./Bookings";
@@ -12,13 +12,23 @@ const App = () => {
     "hello@fakehotel.com",
     "0123 456789"
   ];
+  const [display, setDisplay] = useState(false);
+  useEffect(() => {
+    setDisplay(true);
+  }, []);
   return (
     <div className="App">
-      <Header />
-      <Card />
-      <Bookings />
-      <Restaurant />
-      <Footer contacts={contactsList} />
+      {display ? (
+        <div>
+          <Header />
+          <Card />
+          <Bookings />
+          <Restaurant />
+          <Footer contacts={contactsList} />
+        </div>
+      ) : (
+        <h1>Loading ...</h1>
+      )}
     </div>
   );
 };
