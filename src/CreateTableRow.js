@@ -18,7 +18,10 @@ const CreateTableRow = props => {
       <td>{props.data.checkInDate}</td>
       <td>{props.data.checkOutDate}</td>
       <td>
-        {moment(props.checkOutDate).diff(moment(props.checkInDate), "days")}
+        {moment(props.data.checkOutDate).diff(
+          moment(props.data.checkInDate),
+          "days"
+        )}
       </td>
     </tr>
   );
