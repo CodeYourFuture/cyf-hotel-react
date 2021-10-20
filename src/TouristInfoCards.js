@@ -6,6 +6,7 @@ function TouristInfoCards() {
       <div className="card1">
         <img
           src="https://www.ephotozine.com/resize/2018/25/xlrg/1616_1529882978.jpg?RTUdGk5cXyJFAQgJSEc4egtnfAYYGkVUGwBdOh80SxgRBAAhdSMKY1dhB2osTU0LIjUVDw=="
+          alt=""
           className="card-img-top"
         />
         <div className="card-body">
@@ -23,6 +24,7 @@ function TouristInfoCards() {
       <div className="card2">
         <img
           src="https://blog.redletterdays.co.uk/wp-content/uploads/2017/01/show-brooke-2.jpg"
+          alt=""
           className="card-img-top"
         />
         <div className="card-body">
@@ -43,6 +45,7 @@ function TouristInfoCards() {
       <div className="card3">
         <img
           src="https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/tower-bridge/thames_copyright_visitlondon_antoinebuchet640x360.jpg?mw=640&hash=27AEBE2D1B7279A196CC1B4548638A9679BE107A"
+          alt=""
           className="card-img-top"
         />
         <div className="card-body">

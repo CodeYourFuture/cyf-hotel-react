@@ -35,9 +35,11 @@
 .search {
   padding: 5px 0 20px 0;
 }
-
-tr {
+.SrachResults-tr {
   color: #5b5757;
+}
+.SrachResults-tr:hover {
+  cursor: pointer;
 }
 
 .results {
@@ -56,4 +58,10 @@ tr {
   display: flex;
   justify-content: space-around;
   padding-top: 10px;
+}
+.show {
+  background-color: silver;
+}
+.hidde {
+  background-color: blue;
 }

@@ -2,7 +2,10 @@
   "name": "react-hotel",
   "version": "0.1.0",
   "private": true,
+  "moment": "^2.29.1",
   "dependencies": {
+    "classnames": "^2.3.1",
+    "moment": "^2.29.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.4.1"

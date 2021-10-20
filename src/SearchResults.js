@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-/*const [row1, setRow1] = useState("");
-const [row2, setRow2] = useState("");
-const [row3, setRow3] = useState("");
-const [row4, setRow4] = useState("");*/
+import classNames from "classnames";
+import BookingGaust from "./BookingGaust";
 
 function SearchResults(props) {
+  const [highlight, setHighlight] = useState(null);
+
   return (
     <table className="table">
       <thead class="thead-dark">
@@ -21,7 +21,14 @@ function SearchResults(props) {
       </thead>
       <tbody>
         {props.results.map((result, index) => (
-          <tr key={index}>
+          <tr
+            key={index}
+            onClick={() => setHighlight(highlight === index ? null : index)}
+            className={classNames("salem", {
+              hidde: highlight === index,
+              show: highlight !== index
+            })}
+          >
             <td>{result.title}</td>
             <td>{result.firstName}</td>
             <td>{result.surname}</td>
@@ -29,6 +36,7 @@ function SearchResults(props) {
             <td>{result.roomId}</td>
             <td>{result.checkInDate}</td>
             <td>{result.checkOutDate}</td>
+            <td>{<BookingGaust guest={result} />} Days</td>
           </tr>
         ))}
       </tbody>
