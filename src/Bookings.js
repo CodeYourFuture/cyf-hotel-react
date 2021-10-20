@@ -10,6 +10,10 @@ const Bookings = () => {
   const [booking, setBooking] = useState([]);
   const [customerId, setCustomerId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  // const url = `https://cyf-react.glitch.me/delayed`;
+  const url = `https://cyf-react.glitch.me/error`;
 
   const search = searchVal => {
     // console.info("TO DO!", searchVal);
@@ -32,18 +36,50 @@ const Bookings = () => {
   useEffect(() => {
     // console.log("Fetch Data Remotely");
 
-    fetch(`https://cyf-react.glitch.me/delayed`)
-      .then(setIsLoading(true))
-      .then(res => res.json())
+    //   const fetchBooking = async () => {
+    //     setIsLoading(true);
+    //     setHasError(false);
+    //     try {
+    //       fetch(url)
+    //         .then((response) => response.json())
+    //         .then((fetchedBookingData) => {
+    //           setBooking(fetchedBookingData);
+    //           setIsLoading(false);
+    //         })
+    //         .catch((err) => setHasError(true));
+    //     } catch (err) {
+    //       setHasError(true);
+    //     }
+    //     setIsLoading(false);
+    //   };
+    //   fetchBooking();
+    let unmounted = false;
+
+    setIsLoading(true);
+    setHasError(false);
+    fetch(url)
+      .then(response => response.json())
       .then(bookingData => {
-        setBooking(bookingData);
+        if (!unmounted) {
+          setBooking(bookingData);
+          setIsLoading(false);
+        }
+      })
+      .catch(err => {
+        setHasError(true);
         setIsLoading(false);
       });
+    return () => {
+      unmounted = true;
+    };
   }, []);
 
   return (
     <div className="App-content">
-      {isLoading ? (
+      {/* {console.log(isLoading)} */}
+      {hasError ? (
+        <p>Something went wrong.</p>
+      ) : isLoading ? (
         <Loader type="Circles" color="#00BFFF" height={80} width={80} />
       ) : (
         <div className="container">
