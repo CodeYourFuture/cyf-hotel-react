@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 function SearchResults(props) {
+  const [rowColor, setRowColor] = useState([]);
+
+  const handleClick = i => {
+    !rowColor.includes(i)
+      ? setRowColor(rows => rows.concat(i))
+      : setRowColor(rows => rows.filter(x => x !== i));
+  };
+
   return (
     <table className="table table-light mb-5">
       <thead>
@@ -19,7 +27,11 @@ function SearchResults(props) {
       </thead>
       <tbody>
         {props.results.map((item, i) => (
-          <tr key={i}>
+          <tr
+            key={i}
+            onClick={() => handleClick(i)}
+            className={`${rowColor.includes(i) ? "bg-info" : " "}`}
+          >
             <th scope="row">{item.id}</th>
             <td>{item.title}</td>
             <td>{item.firstName}</td>

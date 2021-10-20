@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
 const Order = props => {
+  console.log(props);
   const [orders, setOrders] = useState(0);
 
   const OrderOne = props => {
@@ -16,14 +17,25 @@ const Order = props => {
 
   return (
     <div>
-      <li>
+      {props.orderType.map((item, i) => (
+        <li key={i}>
+          {item} {orders} {OrderOne}
+        </li>
+      ))}
+      <RestaurantButton
+        orderOne={OrderOne}
+        decreaseOrder={decreaseOrder}
+        cancel={cancel}
+      />
+
+      {/* <li>
         {props.orderType}: {orders}
         <RestaurantButton
           orderOne={OrderOne}
           decreaseOrder={decreaseOrder}
           cancel={cancel}
         />
-      </li>
+      </li> */}
     </div>
   );
 };
