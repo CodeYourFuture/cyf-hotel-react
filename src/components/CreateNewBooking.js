@@ -1,36 +1,20 @@
 import React, { useState } from "react";
 
 export default function CreateNewBooking({ setBookings }) {
-  const [title, setTitle] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
-  const [roomId, setRoomId] = useState("");
-  const [checkInDate, setCheckInDate] = useState("");
-  const [checkOutDate, setCheckOutDate] = useState("");
-  function handleChange(formChangeEvent) {
-    if (formChangeEvent.target.name === "title") {
-      setTitle(formChangeEvent.target.value);
+  function useFormState(initial) {
+    const [value, setValue] = useState(initial);
+    function setEventValue(event) {
+      setValue(event.target.value);
     }
-    if (formChangeEvent.target.name === "firstName") {
-      setFirstName(formChangeEvent.target.value);
-    }
-    if (formChangeEvent.target.name === "surname") {
-      setSurname(formChangeEvent.target.value);
-    }
-    if (formChangeEvent.target.name === "email") {
-      setEmail(formChangeEvent.target.value);
-    }
-    if (formChangeEvent.target.name === "roomId") {
-      setRoomId(formChangeEvent.target.value);
-    }
-    if (formChangeEvent.target.name === "checkInDate") {
-      setCheckInDate(formChangeEvent.target.value);
-    }
-    if (formChangeEvent.target.name === "checkOutDate") {
-      setCheckOutDate(formChangeEvent.target.value);
-    }
+    return [value, setEventValue];
   }
+  const [title, setTitle] = useFormState("");
+  const [firstName, setFirstName] = useFormState("");
+  const [surname, setSurname] = useFormState("");
+  const [email, setEmail] = useFormState("");
+  const [roomId, setRoomId] = useFormState("");
+  const [checkInDate, setCheckInDate] = useFormState("");
+  const [checkOutDate, setCheckOutDate] = useFormState("");
 
   function handleSubmitEvent(submitEvent) {
     submitEvent.preventDefault();
@@ -46,6 +30,7 @@ export default function CreateNewBooking({ setBookings }) {
     };
     setBookings(previous => previous.concat(newCustomer));
   }
+
   return (
     <section className="newCustomerSection">
       <h3>
@@ -62,7 +47,7 @@ export default function CreateNewBooking({ setBookings }) {
             className="form-control"
             id="customerTitle"
             placeholder="Mr Ms Doctor etc"
-            onChange={handleChange}
+            onChange={setTitle}
           />
         </div>
         <div className="form-group">
@@ -75,7 +60,7 @@ export default function CreateNewBooking({ setBookings }) {
             className="form-control"
             id="firstName"
             placeholder="Enter First Name"
-            onChange={handleChange}
+            onChange={setFirstName}
           />
         </div>
         <div className="form-group">
@@ -88,7 +73,7 @@ export default function CreateNewBooking({ setBookings }) {
             className="form-control"
             id="surname"
             placeholder="Enter Surname"
-            onChange={handleChange}
+            onChange={setSurname}
           />
         </div>
         <div className="form-group">
@@ -101,7 +86,7 @@ export default function CreateNewBooking({ setBookings }) {
             className="form-control"
             id="email"
             placeholder="Enter email"
-            onChange={handleChange}
+            onChange={setEmail}
           />
         </div>
         <div className="form-group">
@@ -114,7 +99,7 @@ export default function CreateNewBooking({ setBookings }) {
             className="form-control"
             id="roomId"
             placeholder="Enter roomId"
-            onChange={handleChange}
+            onChange={setRoomId}
           />
         </div>
         <div className="form-group">
@@ -126,7 +111,7 @@ export default function CreateNewBooking({ setBookings }) {
             name="checkInDate"
             className="form-control"
             id="checkInDate"
-            onChange={handleChange}
+            onChange={setCheckInDate}
           />
         </div>
         <div className="form-group">
@@ -138,7 +123,7 @@ export default function CreateNewBooking({ setBookings }) {
             name="checkOutDate"
             className="form-control"
             id="checkOutDate"
-            onChange={handleChange}
+            onChange={setCheckOutDate}
           />
         </div>
 
