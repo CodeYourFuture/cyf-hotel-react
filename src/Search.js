@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
-const Search = () => {
+const Search = props => {
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearchInput = event => {
@@ -12,6 +12,7 @@ const Search = () => {
   const handleSubmit = event => {
     event.preventDefault();
     console.log("Sending data to server");
+    props.search(searchInput);
 
     // fetch("https://cyf-react.glitch.me", {
     //   method: "POST",

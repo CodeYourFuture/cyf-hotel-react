@@ -2,12 +2,23 @@ import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
-const Bookings = props => {
+const Bookings = () => {
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    if (searchVal === "") {
+      setFilterBookings(bookings);
+    } else {
+      let bookingFinds = bookings.filter(booking => {
+        return (
+          booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+          booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+        );
+      });
+      setFilterBookings(bookingFinds);
+    }
   };
 
   const [bookings, setBookings] = useState([]);
+  const [filteredBookings, setFilterBookings] = useState([]);
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
@@ -21,7 +32,7 @@ const Bookings = props => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        <SearchResults results={filteredBookings} />
       </div>
     </div>
   );
