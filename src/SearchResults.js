@@ -16,11 +16,16 @@ const SearchResults = props => {
             <th scope="col">Check-in Date</th>
             <th scope="col">Check-out Date</th>
             <th scope="col">Duration</th>
+            <th scope="col" />
           </tr>
         </thead>
         <tbody>
-          {props.bookings.map(booking => (
-            <SearchResultsRow booking={booking} />
+          {props.bookings.map((booking, index) => (
+            <SearchResultsRow
+              booking={booking}
+              key={index}
+              onShowProfile={props.onShowProfile}
+            />
           ))}
         </tbody>
       </table>

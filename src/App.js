@@ -35,8 +35,9 @@ const App = () => {
     <div className="App">
       <Header />
       <div className="wrapper">
-        {touristInfoData.map(touristInfo => (
+        {touristInfoData.map((touristInfo, index) => (
           <TouristInfoCards
+            key={index}
             img={touristInfo.img}
             title={touristInfo.title}
             description={touristInfo.description}

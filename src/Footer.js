@@ -4,8 +4,8 @@ const Footer = props => {
   return (
     <div className="Footer">
       <ul>
-        {props.address.map(data => (
-          <li>{data}</li>
+        {props.address.map((data, index) => (
+          <li key={index}>{data}</li>
         ))}
       </ul>
     </div>

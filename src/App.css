@@ -28,7 +28,7 @@ body {
 
 .Header-logo {
   margin: 0.75em;
-  width: 15%;
+  width: 10%;
 }
 
 .search {
@@ -90,8 +90,7 @@ tr {
 }
 
 .highlighted {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #ccc;
 }
 
 li {
@@ -131,4 +130,8 @@ li {
   display: flex;
   justify-content: space-between;
   margin-left: -2%;
+}
+
+.text-center {
+  padding: 10%;
 }
