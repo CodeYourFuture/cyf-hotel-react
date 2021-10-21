@@ -29,7 +29,6 @@ export default function TableRows({ booking, setCustomerProfileId }) {
         {/* https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation */}
         <button
           className="btn btn-primary"
-          style={{ zIndex: 1 }}
           onClick={handleSetCustomerProfileId}
         >
           Show profile

@@ -18,14 +18,14 @@ const Bookings = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("https://cyf-react.glitch.me/");
+        const response = await fetch("https://cyf-react.glitch.me/delayed");
         if (!response.ok) {
           setIsLoading(false); //delete loading message from screen
           throw new Error("SERVER RESPONSE ERROR !!!");
         }
         const data = await response.json();
         setBookings(data);
-        setIsLoading(!isLoading);
+        setIsLoading(false);
         setIsError(true);
       } catch (error) {
         console.log(error);

@@ -58,7 +58,7 @@ tr {
 }
 .searchSection {
   position: relative;
-  width: 80%;
+  width: 95%;
   margin: auto;
 }
 .loading-message {
@@ -79,6 +79,9 @@ tr {
   font-size: 2rem;
   opacity: 1;
   text-decoration: underline;
+}
+table {
+  word-break: break-word;
 }
 table tr {
   transition: all 0.5s ease;
@@ -111,7 +114,6 @@ td {
 }
 .orderContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
   list-style-type: none;
 }
