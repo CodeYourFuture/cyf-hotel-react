@@ -3,8 +3,4 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
-function HelloWorld() {
-  return <div />;
-}
-
 ReactDOM.render(<App />, document.getElementById("root"));

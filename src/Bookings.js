@@ -4,10 +4,24 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
+  const [bookings, setBookings] = useState([]);
+  const [filterSearchResult, setFilterSearchResult] = useState([]);
+  console.log(bookings);
   const search = searchVal => {
+    if (searchVal === "") {
+      setFilterSearchResult(bookings);
+    } else {
+      const newBooking = bookings.filter(book => {
+        return (
+          book.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+          book.surName.toLowerCase().includes(searchVal.toLowerCase())
+        );
+      });
+      setFilterSearchResult(newBooking);
+    }
+
     console.info("TO DO!", searchVal);
   };
-  const [bookings, setBookings] = useState([]);
   // console.log(bookings)
 
   useEffect(() => {
@@ -20,7 +34,11 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        <SearchResults
+          results={
+            filterSearchResult.length === 0 ? bookings : filterSearchResult
+          }
+        />
       </div>
     </div>
   );

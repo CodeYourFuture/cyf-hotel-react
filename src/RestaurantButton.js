@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const RestaurantButton = props => {
-  console.log(props);
   return (
     <div>
       <button className="btn btn-primary" onClick={props.orderOne}>

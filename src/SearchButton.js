@@ -1,7 +1,7 @@
 import React from "react";
 
-function SearchButton() {
-  return <button className="btn btn-info">Search</button>;
+function SearchButton({ search }) {
+  return <button className="btn btn-info text-nowrap">{search}</button>;
 }
 
 export default SearchButton;

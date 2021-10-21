@@ -1,7 +1,6 @@
 import React from "react";
 
 function Footer(props) {
-  console.log(props);
   return (
     <div className="text-white bg-dark p-3 footer">
       <ul>
