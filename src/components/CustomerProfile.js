@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 //const[id,setId]
 
 const CustomerProfile = props => {
-  const [sid, setSid] = useState(0);
-  const [email, setEmail] = useState("");
+  const [customerId, setCustomerId] = useState(0);
+  const [customerEmail, setCustomerEmail] = useState("");
+  const [customerPhone, setCustomerPhone] = useState("");
   const [isVip, setIsVip] = useState(false);
 
   useEffect(() => {
@@ -11,17 +12,21 @@ const CustomerProfile = props => {
       .then(res => res.json())
       .then(data => {
         if (data) {
-          setSid(data.id);
-          setEmail(data.email);
-          setIsVip(!data.vip);
+          setCustomerId(data.id);
+          setCustomerEmail(data.email);
+          setCustomerPhone(data.phoneNumber);
+          setIsVip(data.vip);
         }
       });
   }, [props.id]);
   return (
     <div>
-      {sid}
-      {email}
-      <p>true or {isVip} </p>
+      <ul>
+        <li> Id: {customerId}</li>
+        <li> Email: {customerEmail}</li>
+        {isVip ? <li> VIP Customer </li> : ""}
+        <li>Phone {customerPhone}</li>
+      </ul>
     </div>
   );
 };

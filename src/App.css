@@ -76,21 +76,14 @@ th {
   padding-top: 20px;
   text-align: center;
 }
-.highlighted0 {
+.highlighted {
   background-color: rgba(134, 28, 1, 0.534);
-}
-.highlighted1 {
-  background-color: rgba(134, 28, 1, 0.534);
-}
-.highlighted2 {
-  background-color: rgba(134, 28, 1, 0.534);
-}
-.highlighted3 {
-  background-color: rgba(134, 28, 1, 0.534);
+  cursor: pointer;
 }
 
 .primary {
   background-color: rgba(4, 4, 17, 0.425);
+  cursor: pointer;
 }
 ul {
   list-style: none;

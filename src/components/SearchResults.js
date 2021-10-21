@@ -1,24 +1,46 @@
-import React, { useState } from "react";
-import moment from "moment";
+import React, { useState, useEffect } from "react";
+
 import CustomerProfile from "./CustomerProfile.js";
+import TableRow from "./TableRow.js";
 
 const SearchResults = prop => {
   const customer = prop.results;
+
+  const [sortedcustomer, setSortedCustomers] = useState(prop.results);
+  const [data, setData] = useState(false);
+
   const [isSelected, setIsSelected] = useState([]);
 
   const [cusid, setCusId] = useState(0);
+  const [isFirst, setIsFirst] = useState(false);
 
   const viewProfile = index => {
     setCusId(customer[index].id);
+    setIsFirst(true);
   };
 
-  const changeColor = index => {
-    // index = index;
+  const handleClick = p => {
+    // setData(customer);
+    let s = [...customer].sort((a, b) => {
+      let fa = a[p].toLowerCase(),
+        fb = b[p].toLowerCase();
 
-    if (isSelected.includes(index)) {
-      setIsSelected(isSelected.filter(row => row !== index));
-    } else setIsSelected(isSelected.concat(index));
+      if (fa < fb) {
+        return -1;
+      }
+      if (fa > fb) {
+        return 1;
+      }
+      return 0;
+    });
+
+    setSortedCustomers(s);
+    setData(true);
+    // customer = prop.results;
+    console.log(sortedcustomer);
   };
+
+  // console.log(sortedcustomers);
 
   return (
     <>
@@ -27,8 +49,12 @@ const SearchResults = prop => {
           <tr>
             <th scope="col">id</th>
             <th scope="col">title</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
+            <th onClick={() => handleClick("firstName")} scope="col">
+              First Name
+            </th>
+            <th onClick={() => handleClick("surname")} scope="col">
+              Last Name
+            </th>
             <th scope="col">Email</th>
             <th scope="col">RoomId</th>
             <th scope="col">CheckInDate</th>
@@ -38,40 +64,21 @@ const SearchResults = prop => {
           </tr>
         </thead>
         <tbody>
-          {customer.map((customer, index) => {
-            let checkInDate = moment(customer.checkInDate);
-
-            let checkOutDate = moment(customer.checkOutDate);
-            let nightStay = checkOutDate.diff(checkInDate, "days");
+          {[...sortedcustomer].map((customer, index) => {
             return (
-              // <TableRow key={index} customerdata={customer} class={index} />
-              <tr
+              <TableRow
                 key={index}
-                onClick={() => changeColor(index)}
-                className={
-                  isSelected.includes(index) ? "highlighted1" : "primary"
-                }
-              >
-                <td>{customer.id}</td>
-                <td>{customer.title}</td>
-                <td>{customer.firstName}</td>
-                <td>{customer.surname}</td>
-                <td>{customer.email} </td>
-                <td>{customer.roomId}</td>
-                <td>{customer.checkInDate}</td>
-                <td>{customer.checkOutDate}</td>
-                <td>{nightStay}</td>
-                <td>
-                  <button onClick={() => viewProfile(index)} type="submit">
-                    Show Profile{" "}
-                  </button>
-                </td>
-              </tr>
+                handleClick={() => {
+                  viewProfile(index);
+                }}
+                customer={customer}
+                class={index}
+              />
             );
           })}
         </tbody>
       </table>
-      <CustomerProfile id={cusid} />
+      {isFirst && <CustomerProfile id={cusid} />}
     </>
   );
 };

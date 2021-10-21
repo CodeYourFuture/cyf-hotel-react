@@ -5,7 +5,7 @@ const Search = prop => {
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearchInput = event => {
-    setSearchInput(event.target.value);
+    setSearchInput(event.target.value.toLowerCase());
   };
 
   const handleSubmit = event => {
