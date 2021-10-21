@@ -5,6 +5,7 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  color: rgb(36, 195, 235);
 }
 
 .App-header {
@@ -31,6 +32,19 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+.profile_info {
+  margin-top: 10px !important;
+  box-shadow: 0 0px 30px rgba(126, 223, 230, 0.5);
+  border-radius: 10px;
+}
+.tables {
+  font-size: 14px !important;
+  box-shadow: 0 0px 30px rgba(126, 223, 230, 0.5);
+  border-radius: 10px;
+}
+.bg_color {
+  background-color: rgba(126, 223, 230, 0.5);
 }
 
 @keyframes App-logo-spin {

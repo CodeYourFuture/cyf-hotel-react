@@ -3,13 +3,22 @@ import React, { useState } from "react";
 const RestaurantButton = props => {
   return (
     <div>
-      <button className="btn btn-primary" onClick={props.orderOne}>
+      <button
+        className="btn bg-info text-nowrap text-white"
+        onClick={props.orderOne}
+      >
         Add
       </button>{" "}
-      <button className="btn btn-primary" onClick={props.decreaseOrder}>
+      <button
+        className="btn bg-info text-nowrap text-white"
+        onClick={props.decreaseOrder}
+      >
         -
       </button>{" "}
-      <button className="btn btn-primary" onClick={props.cancel}>
+      <button
+        className="btn bg-info text-nowrap text-white"
+        onClick={props.cancel}
+      >
         X
       </button>
     </div>

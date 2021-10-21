@@ -4,7 +4,7 @@ import CustomerProfile from "./CustomerProfile";
 
 function SearchResults(props) {
   const [rowColor, setRowColor] = useState([]);
-  const [newCustomer, setNewCustomer] = useState([]);
+  const [newCustomer, setNewCustomer] = useState("");
 
   const handleClick = i => {
     !rowColor.includes(i)
@@ -19,19 +19,37 @@ function SearchResults(props) {
 
   return (
     <div>
-      <table className="table table-light mb-5">
+      <table className="table table-light mb-5 tables">
         <thead>
           <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Title</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Surname</th>
-            <th scope="col">Email</th>
-            <th scope="col">Room ID</th>
-            <th scope="col">Check In Date</th>
-            <th scope="col">Check Out Date</th>
-            <th scope="col">Number Of Nights</th>
-            <th scope="col">kj</th>
+            <th scope="col" className="text-nowrap ">
+              ID
+            </th>
+            <th scope="col" className="text-nowrap">
+              Title
+            </th>
+            <th scope="col" className="text-nowrap">
+              First Name
+            </th>
+            <th scope="col" className="text-nowrap">
+              Surname
+            </th>
+            <th scope="col" className="text-nowrap">
+              Email
+            </th>
+            <th scope="col" className="text-nowrap">
+              Room ID
+            </th>
+            <th scope="col" className="text-nowrap">
+              Check In Date
+            </th>
+            <th scope="col" className="text-nowrap">
+              Check Out Date
+            </th>
+            <th scope="col" className="text-nowrap">
+              Number Of Nights
+            </th>
+            <th scope="col" />
           </tr>
         </thead>
         <tbody>
@@ -39,7 +57,7 @@ function SearchResults(props) {
             <tr
               key={i}
               onClick={() => handleClick(i)}
-              className={`${rowColor.includes(i) ? "bg-info" : " "}`}
+              className={`${rowColor.includes(i) ? "bg_color" : " "}`}
             >
               <th scope="row">{item.id}</th>
               <td>{item.title}</td>
@@ -57,10 +75,11 @@ function SearchResults(props) {
               </td>
               <td>
                 <button
-                  className="btn bg-info text-nowrap "
+                  className="btn bg-info text-nowrap text-white"
                   onClick={() => handleButton(item.id)}
                 >
-                  Show profile
+                  {" "}
+                  Show profile{" "}
                 </button>
               </td>
             </tr>
