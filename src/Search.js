@@ -5,7 +5,6 @@ const Search = ({ search }) => {
 
   function handleSearchInput(event) {
     setSearchInput(event.target.value);
-    console.log(event.target.value);
   }
   function handleSubmit(event) {
     event.preventDefault();
