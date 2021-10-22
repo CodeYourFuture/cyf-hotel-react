@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import moment from "moment";
+// import CustomerProfile from "./CustomerProfile";
 
-const TableRow = ({ customer }) => {
-  const [highlight, setHighlight] = useState("");
+const TableRow = ({ customer, getProfileId, id }) => {
+  const [highlightRow, setHighlightRow] = useState("");
   function highlightSelectedRow() {
-    if (highlight === "") {
-      setHighlight("tableRow");
+    if (highlightRow === "") {
+      setHighlightRow("tableRow");
     } else {
-      setHighlight("");
+      setHighlightRow("");
     }
   }
   return (
-    <tr className={highlight} onClick={highlightSelectedRow}>
+    <tr className={highlightRow} onClick={highlightSelectedRow}>
       <td>{customer.id}</td>
       <td>{customer.title}</td>
       <td>{customer.firstName}</td>
@@ -23,6 +24,14 @@ const TableRow = ({ customer }) => {
       <td>
         {calculateDuration(customer.checkInDate, customer.checkOutDate)} day(s)
       </td>
+      <th>
+        <button
+          className="customerProfile"
+          onClick={() => getProfileId(customer.id)}
+        >
+          Show Profile
+        </button>
+      </th>
     </tr>
   );
 };
