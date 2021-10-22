@@ -12,6 +12,7 @@ const Table = () => {
         <th>Check in date</th>
         <th>Check out date</th>
         <th>Duration</th>
+        <th>Customer Profile</th>
       </tr>
     </thead>
   );
