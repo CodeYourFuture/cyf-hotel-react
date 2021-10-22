@@ -108,9 +108,31 @@ table tr.tableRow {
   background-color: cadetblue;
   color: whitesmoke;
 }
+
+table tr.tableRow .customerProfile {
+  background-color: whitesmoke;
+  color: teal;
+}
 .btn-primary {
   background-color: cadetblue;
   border: none;
   border-radius: 8px;
   margin-left: 10px;
+  color: whitesmoke;
+}
+
+.customerProfile {
+  background-color: cadetblue;
+  border: none;
+  border-radius: 8px;
+  color: whitesmoke;
+  margin-top: 10pxx;
+}
+
+.restaurant {
+  align-content: center;
+}
+
+.profileCard p {
+  color: black;
 }
