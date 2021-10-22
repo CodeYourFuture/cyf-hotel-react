@@ -9,6 +9,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [filterSearchResult, setFilterSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState({});
 
   const search = searchVal => {
     if (searchVal === "") {
@@ -18,7 +19,7 @@ const Bookings = () => {
         console.log(book);
         return (
           book.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
-          book.surName.toLowerCase().includes(searchVal.toLowerCase())
+          book.surname.toLowerCase().includes(searchVal.toLowerCase())
         );
       });
       setFilterSearchResult(newBooking);
@@ -26,7 +27,6 @@ const Bookings = () => {
 
     console.info("TO DO!", searchVal);
   };
-  // console.log(bookings)
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
@@ -34,7 +34,8 @@ const Bookings = () => {
       .then(data => {
         setBookings(data);
         setLoading(true);
-      });
+      })
+      .catch(err => console.log(err));
   }, []);
   // console.log(bookings);
   return (

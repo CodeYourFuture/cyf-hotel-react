@@ -14,7 +14,7 @@ const footer = [
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App ">
       <Heading />
       <Bookings />
       <TouristInfoCards />

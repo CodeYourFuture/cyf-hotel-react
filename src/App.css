@@ -2,15 +2,11 @@
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-  color: rgb(36, 195, 235);
-}
-
 .App-header {
-  background-color: #222;
-  height: 90px;
+  background-image: url("https://www.otelfiyat.com/media/blog/blog_icerik/358324anaresim.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 140px;
   padding: 10px;
   color: white;
   text-align: left;
@@ -23,10 +19,11 @@
   font-size: 1.5em;
 }
 .header_logo {
-  width: 70px;
+  width: 100px;
   height: auto;
   margin-top: 0;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 .App-content {
@@ -66,11 +63,18 @@ tr {
 .results {
   padding-top: 15px;
 }
-
+.footer {
+  background-image: url("https://www.otelfiyat.com/media/blog/blog_icerik/358324anaresim.jpg");
+  background-size: cover;
+  background-position: bottom;
+  opacity: 0.5;
+}
 .footer li {
   text-align: center;
   list-style-type: none;
   line-height: 30px;
+  color: #000000;
+  font-weight: bolder;
 }
 
 .card {
@@ -83,4 +87,11 @@ tr {
   align-items: center;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+.tour_card {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 68%;
+  box-shadow: 0 0px 30px rgba(126, 223, 230, 0.5);
+  border-radius: 10px;
 }

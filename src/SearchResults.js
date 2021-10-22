@@ -21,7 +21,7 @@ function SearchResults(props) {
     <div>
       <table className="table table-light mb-5 tables">
         <thead>
-          <tr>
+          <tr className="text-info bg-light">
             <th scope="col" className="text-nowrap ">
               ID
             </th>

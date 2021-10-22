@@ -2,13 +2,13 @@ import React from "react";
 
 function TouristInfoCards() {
   return (
-    <div className="d-flex  justify-content-center">
-      <div className="card  text-center ">
+    <div className="d-flex justify-content-center   tour_card">
+      <div className="card  text-center border-info m-2">
         <img
           src="https://peoplemakeglasgow.com/imager/general/43423/St_Mungo_Mural_8dc3bdbc8660ad389ec95cdf9b15d797.jpeg"
           className="card-img-top"
         />
-        <div className="card-body">
+        <div className="card-body ">
           <h2>Glasgow</h2>
           <p>
             In recent years, many of Glasgow's lanes and buildings have
@@ -25,7 +25,7 @@ function TouristInfoCards() {
         </div>
       </div>
 
-      <div className="card  text-center ml-5">
+      <div className="card  text-center ml-5 border-info m-2">
         <img
           src="https://eu-assets.simpleview-europe.com/manchester2016/imageresizer/?image=%2Fdmsimgs%2FBusy_mall1200x619_136550926.jpg&action=ProductDetailFullWidth2"
           className="card-img-top"
@@ -47,7 +47,7 @@ function TouristInfoCards() {
         </div>
       </div>
 
-      <div className="card  text-center ml-5">
+      <div className="card  text-center ml-5 border-info m-2">
         <img
           src="https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/london-eye/lastminutelondoneye640x360.jpg?mw=640&hash=369C7DBB3A75160763BFD8572303D124F316A65C"
           className="card-img-top"
