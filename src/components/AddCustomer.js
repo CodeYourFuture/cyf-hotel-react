@@ -5,7 +5,13 @@ import TableRow from "./TableRow";
 
 const AddCustomer = props => {
   const customerEntry = props.result.map(customer => {
-    return <TableRow key={customer.id} customer={customer} />;
+    return (
+      <TableRow
+        getProfileId={props.getProfileId}
+        key={customer.id}
+        customer={customer}
+      />
+    );
   });
   return <tbody>{customerEntry}</tbody>;
 };
