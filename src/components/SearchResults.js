@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import CustomerProfile from "./CustomerProfile.js";
 import TableRow from "./TableRow.js";
@@ -7,9 +7,7 @@ const SearchResults = prop => {
   const customer = prop.results;
 
   const [sortedcustomer, setSortedCustomers] = useState(prop.results);
-  const [data, setData] = useState(false);
-
-  const [isSelected, setIsSelected] = useState([]);
+  const [data, setData] = useState([]);
 
   const [cusid, setCusId] = useState(0);
   const [isFirst, setIsFirst] = useState(false);
@@ -21,41 +19,60 @@ const SearchResults = prop => {
 
   const handleClick = p => {
     // setData(customer);
-    let s = [...customer].sort((a, b) => {
-      let fa = a[p].toLowerCase(),
-        fb = b[p].toLowerCase();
+    let result = data.some(ele => ele === p);
+    if (result) {
+      let desceding = [...customer].sort((a, b) => {
+        let fa = a[p].toLowerCase(),
+          fb = b[p].toLowerCase();
 
-      if (fa < fb) {
-        return -1;
-      }
-      if (fa > fb) {
-        return 1;
-      }
-      return 0;
-    });
+        if (fa > fb) {
+          return -1;
+        }
+        if (fa < fb) {
+          return 1;
+        }
+        return 0;
+      });
+      setSortedCustomers(desceding);
+      setData([]);
+    } else {
+      let s = [...customer].sort((a, b) => {
+        let fa = a[p].toLowerCase(),
+          fb = b[p].toLowerCase();
 
-    setSortedCustomers(s);
-    setData(true);
-    // customer = prop.results;
+        if (fa < fb) {
+          return -1;
+        }
+        if (fa > fb) {
+          return 1;
+        }
+        return 0;
+      });
+      setData(data.concat(p));
+
+      setSortedCustomers(s);
+    }
+
     console.log(sortedcustomer);
   };
-
-  // console.log(sortedcustomers);
-
   return (
     <>
       <table className="table table-responsive table-hover table-dark">
         <thead>
           <tr>
             <th scope="col">id</th>
-            <th scope="col">title</th>
+            <th onClick={() => handleClick("title")} scope="col">
+              title
+            </th>
             <th onClick={() => handleClick("firstName")} scope="col">
               First Name
             </th>
             <th onClick={() => handleClick("surname")} scope="col">
               Last Name
             </th>
-            <th scope="col">Email</th>
+            <th onClick={() => handleClick("email")} scope="col">
+              Email
+            </th>
             <th scope="col">RoomId</th>
             <th scope="col">CheckInDate</th>
             <th scope="col">CheckOutDate</th>
