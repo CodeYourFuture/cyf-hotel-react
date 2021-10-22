@@ -1,5 +1,4 @@
 import React from "react";
-import Search from "./Search";
 import Header from "./components/Header";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/Footer";
@@ -20,7 +19,6 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <Search />
       <Footer contactInfo={contactInfo} />
     </div>
   );
