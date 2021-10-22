@@ -22,7 +22,7 @@ const Bookings = () => {
   const [error, setError] = useState(null);
   useEffect(() => {
     console.log("Page Uploaded");
-    fetch("https://cyf-react.glitch.me/error")
+    fetch("https://cyf-react.glitch.me")
       .then(response => {
         if (!response.ok) {
           throw Error("We could not fetch the data for that resource");
