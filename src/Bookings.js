@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const search = searchVal => {
@@ -13,7 +12,10 @@ const Bookings = () => {
       .then(res => res.json())
       .then(data => {
         setBookings(data);
-      });
+      })
+      .catch(error => {
+        console.log("The error is " + error);
+      }); //Use "catch" and "console.error"
   }, []);
 
   return (
