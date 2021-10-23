@@ -9,7 +9,6 @@ const TableRow = prop => {
     } else setIsSelected(isSelected.concat(index));
   };
   let checkInDate = moment(prop.customer.checkInDate);
-
   let checkOutDate = moment(prop.customer.checkOutDate);
   let nightStay = checkOutDate.diff(checkInDate, "days");
   return (

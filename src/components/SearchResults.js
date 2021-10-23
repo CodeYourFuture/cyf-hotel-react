@@ -81,18 +81,31 @@ const SearchResults = prop => {
           </tr>
         </thead>
         <tbody>
-          {[...sortedcustomer].map((customer, index) => {
-            return (
-              <TableRow
-                key={index}
-                handleClick={() => {
-                  viewProfile(index);
-                }}
-                customer={customer}
-                class={index}
-              />
-            );
-          })}
+          {[...sortedcustomer].length > 0
+            ? [...sortedcustomer].map((customer, index) => {
+                return (
+                  <TableRow
+                    key={index}
+                    handleClick={() => {
+                      viewProfile(index);
+                    }}
+                    customer={customer}
+                    class={index}
+                  />
+                );
+              })
+            : customer.map((customer, index) => {
+                return (
+                  <TableRow
+                    key={index}
+                    handleClick={() => {
+                      viewProfile(index);
+                    }}
+                    customer={customer}
+                    class={index}
+                  />
+                );
+              })}
         </tbody>
       </table>
       {isFirst && <CustomerProfile id={cusid} />}
