@@ -4,7 +4,11 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    setBookings(
+      bookings.filter(booking => {
+        return (booking.firstName + booking.surname).includes(searchVal);
+      })
+    );
   };
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
@@ -28,5 +32,4 @@ const Bookings = () => {
     </div>
   );
 };
-
 export default Bookings;
