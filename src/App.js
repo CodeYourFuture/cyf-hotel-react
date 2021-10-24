@@ -15,6 +15,7 @@ const App = () => {
       <Header />
       <Bookings />
       <Restaurant />
+
       <SearchButton />
       <TouristInfoCards />
 
