@@ -15,6 +15,7 @@ function SearchResults(props) {
             <th scope="col">Room ID</th>
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
+            <th scope="col">tootal nights</th>
           </tr>
         </thead>
         <tbody>

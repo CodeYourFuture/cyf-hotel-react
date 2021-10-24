@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 function BookingTable({ result }) {
   return (
@@ -11,6 +12,9 @@ function BookingTable({ result }) {
       <td>{result.roomId}</td>
       <td>{result.checkInDate}</td>
       <td>{result.checkOutDate}</td>
+      <td>
+        {moment(result.checkOutDate).diff(moment(result.checkInDate), "days")}
+      </td>
     </tr>
   );
 }
