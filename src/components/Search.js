@@ -10,6 +10,7 @@ const Search = prop => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    console.log(event);
     prop.search(searchInput);
   };
   return (
@@ -19,7 +20,10 @@ const Search = prop => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box" onSubmit={handleSubmit}>
+          <form
+            onClick={event => handleSubmit(event)}
+            className="form-group search-box"
+          >
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input

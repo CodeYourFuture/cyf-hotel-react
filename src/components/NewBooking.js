@@ -7,8 +7,8 @@ function NewBooking(props) {
   const [surname, setSurName] = useState("");
   const [email, setEmail] = useState("");
   const [roomId, setRoomId] = useState(0);
-  const [checkInDate, setCheckInDate] = useState(Date);
-  const [checkOutDate, setCheckOutDate] = useState(Date);
+  const [checkInDate, setCheckInDate] = useState(new Date().toLocaleString());
+  const [checkOutDate, setCheckOutDate] = useState(new Date().toLocaleString());
   const [entry, setEntry] = useState({});
 
   function handleChange(event) {
@@ -52,8 +52,11 @@ function NewBooking(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="newbooking" onSubmit={handleSubmit}>
+      <h3>Enter New Booking </h3>
       <div>
+        <label name="customerid">Customer id</label>
+
         <input
           type="number"
           name="customerid"
@@ -64,6 +67,8 @@ function NewBooking(props) {
       </div>
 
       <div>
+        <label name="title">Customer Title</label>
+
         <input
           type="text"
           name="title"
@@ -73,15 +78,19 @@ function NewBooking(props) {
         />
       </div>
       <div>
+        <label name="username">First Name</label>
+
         <input
           type="text"
           name="username"
-          placeholder="Username"
+          placeholder="First Name"
           value={firstName}
           onChange={handleChange}
         />
       </div>
       <div>
+        <label name="lastname">Last Name</label>
+
         <input
           type="text"
           name="lastname"
@@ -91,6 +100,8 @@ function NewBooking(props) {
         />
       </div>
       <div>
+        <label name="email">Customer's Email</label>
+
         <input
           type="text"
           name="email"
@@ -100,6 +111,8 @@ function NewBooking(props) {
         />
       </div>
       <div>
+        <label name="roomid">Room id</label>
+
         <input
           type="number"
           name="roomid"
@@ -110,6 +123,8 @@ function NewBooking(props) {
       </div>
 
       <div>
+        <label name="checkindate">CheckIn Date</label>
+
         <input
           type="date"
           name="checkindate"
@@ -120,6 +135,8 @@ function NewBooking(props) {
       </div>
 
       <div>
+        <label name="checkoutdate">CheckOut Date</label>
+
         <input
           type="date"
           name="checkoutdate"

@@ -41,15 +41,17 @@ const Bookings = () => {
   };
 
   let formvals = entry => {
-    //  console.log(entry)
+    console.log(entry);
     setBookings(bookings.concat(entry));
   };
 
   return (
     <div className="App-content">
       <div className="container">
-        {error && <p>error while retrieving data from resource</p>}
-        {loaded && <p>loading data from resource</p>}
+        {error && (
+          <p className="message">error while retrieving data from resource</p>
+        )}
+        {loaded && <p className="message">loading data from resource</p>}
         <Search search={search} />
 
         {bookings && <SearchResults results={bookings} />}

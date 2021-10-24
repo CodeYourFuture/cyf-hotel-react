@@ -80,11 +80,77 @@ th {
   background-color: rgba(134, 28, 1, 0.534);
   cursor: pointer;
 }
-
+.message {
+  font-weight: 800;
+  font-size: 2rem;
+}
 .primary {
   background-color: rgba(4, 4, 17, 0.425);
   cursor: pointer;
 }
+h3 {
+  font-size: 3rem;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.orders {
+  margin: auto;
+  margin-top: 10px;
+
+  font-size: x-large;
+}
+.newbooking {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 10px solid black;
+}
+input {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  height: 100px;
+  width: 500px;
+}
+li > div {
+  margin-top: 20px;
+}
+button {
+  width: 200px;
+  align-self: center;
+  margin: 10px;
+  height: 50px;
+}
+label {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  font-weight: 500;
+  font-size: 2rem;
+
+  text-align: center;
+  height: 100px;
+  width: 500px;
+}
+.newbooking > div {
+  display: flex;
+  flex-direction: row;
+
+  align-content: space-between;
+  justify-content: space-evenly;
+}
+
+li {
+  display: flex;
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 ul {
   list-style: none;
   display: flex;

@@ -3,6 +3,7 @@ import moment from "moment";
 
 const TableRow = prop => {
   const [isSelected, setIsSelected] = useState([]);
+
   const changeColor = index => {
     if (isSelected.includes(index)) {
       setIsSelected(isSelected.filter(row => row !== index));
@@ -11,9 +12,9 @@ const TableRow = prop => {
   let checkInDate = moment(prop.customer.checkInDate);
   let checkOutDate = moment(prop.customer.checkOutDate);
   let nightStay = checkOutDate.diff(checkInDate, "days");
+
   return (
     <tr
-      // key={index}
       onClick={() => changeColor(prop.index)}
       className={isSelected.includes(prop.index) ? "highlighted" : "primary"}
     >

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
+import Restaurantsubtract from "./Restaurantsubtract";
 
 const Order = props => {
   const [orders, setOrders] = useState(0);
@@ -7,11 +8,17 @@ const Order = props => {
   const orderOne = () => {
     setOrders(orders + 1);
   };
+  const subtractOne = () => {
+    setOrders(orders - 1);
+  };
   return (
-    <li>
-      {props.orderType}: {orders}
+    <li className="orders">
+      <div>
+        {props.orderType}: {orders}{" "}
+      </div>
       <pre> </pre>
       <RestaurantButton add={orderOne} />
+      <Restaurantsubtract subtract={subtractOne} />
     </li>
   );
 };

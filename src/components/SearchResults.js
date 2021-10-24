@@ -13,54 +13,67 @@ const SearchResults = prop => {
   const [isFirst, setIsFirst] = useState(false);
 
   const viewProfile = index => {
-    setCusId(customer[index].id);
+    setCusId(index);
     setIsFirst(true);
   };
 
-  const handleClick = p => {
-    // setData(customer);
-    let result = data.some(ele => ele === p);
-    if (result) {
-      let desceding = [...customer].sort((a, b) => {
-        let fa = a[p].toLowerCase(),
-          fb = b[p].toLowerCase();
-
-        if (fa > fb) {
-          return -1;
-        }
-        if (fa < fb) {
-          return 1;
-        }
-        return 0;
-      });
-      setSortedCustomers(desceding);
-      setData([]);
-    } else {
-      let s = [...customer].sort((a, b) => {
-        let fa = a[p].toLowerCase(),
-          fb = b[p].toLowerCase();
-
-        if (fa < fb) {
-          return -1;
-        }
-        if (fa > fb) {
-          return 1;
-        }
-        return 0;
-      });
-      setData(data.concat(p));
-
-      setSortedCustomers(s);
+  const handleClick = field => {
+    if (
+      field === "firstName" ||
+      field === "title" ||
+      field === "surname" ||
+      field === "email"
+    ) {
+      [...customer].map(customer => customer[field].toLowerCase());
     }
 
-    console.log(sortedcustomer);
+    let descending;
+    let result = data.some(result => result === field);
+    if (result) {
+      descending = [...customer].sort((a, b) => {
+        let fa = a[field],
+          fb = b[field];
+
+        if (fa > fb) {
+          return -1;
+        }
+        if (fa < fb) {
+          return 1;
+        }
+        return 0;
+      });
+
+      setSortedCustomers(descending);
+      setData([]);
+    } else {
+      let ascending;
+
+      ascending = [...customer].sort((a, b) => {
+        let fa = a[field],
+          fb = b[field];
+
+        if (fa < fb) {
+          return -1;
+        }
+        if (fa > fb) {
+          return 1;
+        }
+        return 0;
+      });
+
+      setData(data.concat(field));
+
+      setSortedCustomers(ascending);
+    }
   };
   return (
     <>
       <table className="table table-responsive table-hover table-dark">
         <thead>
           <tr>
-            <th scope="col">id</th>
+            <th onClick={() => handleClick("id")} scope="col">
+              id
+            </th>
             <th onClick={() => handleClick("title")} scope="col">
               title
             </th>
@@ -73,11 +86,19 @@ const SearchResults = prop => {
             <th onClick={() => handleClick("email")} scope="col">
               Email
             </th>
-            <th scope="col">RoomId</th>
-            <th scope="col">CheckInDate</th>
-            <th scope="col">CheckOutDate</th>
-            <th scope="col">Nights Stay</th>
-            <th scope="col">New Col</th>
+            <th onClick={() => handleClick("roomId")} scope="col">
+              RoomId
+            </th>
+            <th onClick={() => handleClick("checkInDate")} scope="col">
+              CheckInDate
+            </th>
+            <th onClick={() => handleClick("checkOutDate")} scope="col">
+              CheckOutDate
+            </th>
+            <th onClick={() => handleClick("nightStay")} scope="col">
+              Nights Stay
+            </th>
+            <th scope="col">Profile</th>
           </tr>
         </thead>
         <tbody>
@@ -87,7 +108,7 @@ const SearchResults = prop => {
                   <TableRow
                     key={index}
                     handleClick={() => {
-                      viewProfile(index);
+                      viewProfile(customer.id);
                     }}
                     customer={customer}
                     class={index}
@@ -99,7 +120,7 @@ const SearchResults = prop => {
                   <TableRow
                     key={index}
                     handleClick={() => {
-                      viewProfile(index);
+                      viewProfile(customer.id);
                     }}
                     customer={customer}
                     class={index}
