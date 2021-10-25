@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Search from "./Search.js";
-import SearchResults from "./SearchResults.js";
+import Search from "./Search";
+import SearchResults from "./SearchResults";
 
 const Bookings = () => {
   const search = searchVal => {
     setBookings(
       bookings.filter(booking => {
-        return (booking.firstName + booking.surname).includes(searchVal);
+        return `${booking.firstName} ${booking.surname}`
+          .toLocaleLowerCase()
+          .includes(searchVal.toLowerCase());
       })
     );
   };

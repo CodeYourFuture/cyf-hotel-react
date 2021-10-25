@@ -1,5 +1,5 @@
 import React from "react";
-import Order from "./Order.js";
+import Order from "./Order";
 
 const Restaurant = () => {
   return (
