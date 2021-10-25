@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RestaurantButtons from "../RestaurantButtons";
+import RestaurantButtons from "./RestaurantButtons";
 
 const Order = ({ orderType }) => {
   const [orders, setOrders] = useState(0); //pizza order count starts at 0

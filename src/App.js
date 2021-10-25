@@ -18,8 +18,8 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <Footer footerAddress={footerAddress} />
       <Restaurant />
+      <Footer footerAddress={footerAddress} />
     </div>
   );
 };

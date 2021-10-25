@@ -1,7 +1,7 @@
 import React from "react";
 function Footer({ footerAddress }) {
   return (
-    <footer>
+    <footer className="footer-style">
       <ul>
         {footerAddress.map((line, i) => (
           <li key={i} style={{ listStyle: "none" }}>

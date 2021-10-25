@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import moment from "moment";
-
 export default function SearchResult({ results }) {
   const [selected, setSelected] = useState(false);
 
   const highlighterRows = () => {
     setSelected(!selected);
   };
-
   results = results.map(booking => {
     const checkInDate = booking.checkInDate;
     const checkOutDate = booking.checkOutDate;
@@ -39,7 +37,6 @@ export default function SearchResult({ results }) {
       ))}
     </tr>
   ));
-
   return (
     <table className="table table-responsive table-hover table-light">
       <thead>

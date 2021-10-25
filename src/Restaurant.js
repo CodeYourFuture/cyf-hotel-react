@@ -1,5 +1,5 @@
 import React from "react";
-import Order from "./components/Order.js";
+import Order from "./Order.js";
 
 const Restaurant = () => {
   const orderTypes = ["Pizza", "Salads", "Chocolate Cake"];
