@@ -2,13 +2,13 @@ import React from "react";
 
 const Footer = props => {
   return (
-    <div>
+    <footer className="footer">
       <ul>
         {props.footerDetails.map((details, index) => (
           <li key={index}>{details}</li>
         ))}
       </ul>
-    </div>
+    </footer>
   );
 };
 

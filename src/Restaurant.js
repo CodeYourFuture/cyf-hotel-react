@@ -3,9 +3,9 @@ import React from "react";
 const Restaurant = () => {
   const pizzas = 0;
   return (
-    <div>
+    <div className="app-content container text-center">
       <h3>Restaurant Orders</h3>
-      <ul>
+      <ul className="container">
         <li>
           Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
         </li>
