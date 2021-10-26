@@ -31,7 +31,7 @@ const SearchResult = props => {
       key={props.keys}
       onClick={highlightRow}
     >
-      <td>{props.result.id}</td>
+      <td>{props.keys}</td>
       <td>{props.result.title}</td>
       <td>{props.result.firstName}</td>
       <td>{props.result.surname}</td>

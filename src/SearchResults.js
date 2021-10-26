@@ -35,7 +35,7 @@ const SearchResults = props => {
           {props.results.map((oneObj, index) => (
             <SearchResult
               result={oneObj}
-              keys={index}
+              keys={index + 1}
               showId={showId}
               displayProfile={displayProfile}
             />

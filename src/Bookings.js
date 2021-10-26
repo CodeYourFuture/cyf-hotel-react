@@ -69,18 +69,42 @@ const Bookings = () => {
     } else if (e.target.name === "firstName") {
       setFirstNameInput(e.target.value);
     } else if (e.target.name === "surname") {
-      setFirstNameInput(e.target.value);
+      setSurnameInput(e.target.value);
     } else if (e.target.name === "email") {
-      setFirstNameInput(e.target.value);
+      setEmailInput(e.target.value);
     } else if (e.target.name === "roomId") {
-      setFirstNameInput(e.target.value);
+      setRoomIdInput(e.target.value);
     } else if (e.target.name === "checkInDate") {
-      setFirstNameInput(e.target.value);
+      setCheckInDateInput(e.target.value);
     } else if (e.target.name === "checkOutDate") {
-      setFirstNameInput(e.target.value);
+      setCheckOutDateInput(e.target.value);
     }
   };
 
+  const submitForm = e => {
+    e.preventDefault();
+    //console.log(e.target["title"].value);
+    setBookings([
+      ...bookings,
+      {
+        title: e.target["title"].value,
+        firstName: e.target["firstName"].value,
+        surname: e.target["surname"].value,
+        email: e.target["email"].value,
+        roomId: e.target["roomId"].value,
+        checkInDate: e.target["checkInDate"].value,
+        checkOutDate: e.target["checkOutDate"].value
+      }
+    ]);
+    //console.log(bookings);
+    setTitleInput("");
+    setFirstNameInput("");
+    setSurnameInput("");
+    setEmailInput("");
+    setRoomIdInput("");
+    setCheckInDateInput("");
+    setCheckOutDateInput("");
+  };
   return (
     <div className="App-content">
       {/* if there is error, error will come up, display of table will stop */}
@@ -92,7 +116,7 @@ const Bookings = () => {
           <Search search={search} />
           <SearchResults results={bookings} />
 
-          <form class="needs-validation" novalidate>
+          <form class="needs-validation" onSubmit={submitForm}>
             <div class="form-row">
               {/*  */}
               <div class="col-md-4 mb-3">
@@ -118,7 +142,7 @@ const Bookings = () => {
                 />
               </div>
               <div class="col-md-4 mb-3">
-                <label for="validationCustom02">Surname</label>
+                <label>Surname</label>
                 <input
                   type="text"
                   name="surname"
@@ -133,7 +157,7 @@ const Bookings = () => {
             <div class="form-row">
               {/*  */}
               <div class="col-md-6 mb-3">
-                <label for="validationCustom03">Email</label>
+                <label>Email</label>
                 <input
                   type="email"
                   name="email"
@@ -144,7 +168,7 @@ const Bookings = () => {
                 />
               </div>
               <div class="col-md-6 mb-3">
-                <label for="validationCustom03">Room Id</label>
+                <label>Room Id</label>
                 <input
                   type="text"
                   name="roomId"
@@ -155,7 +179,7 @@ const Bookings = () => {
                 />
               </div>
               <div class="col-md-6 mb-3">
-                <label for="validationCustom03">Check In</label>
+                <label>Check In</label>
                 <input
                   type="text"
                   name="checkInDate"
@@ -166,7 +190,7 @@ const Bookings = () => {
                 />
               </div>
               <div class="col-md-6 mb-3">
-                <label for="validationCustom03">Check Out</label>
+                <label>Check Out</label>
                 <input
                   type="text"
                   name="checkOutDate"
