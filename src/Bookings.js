@@ -9,6 +9,7 @@ const Bookings = () => {
   const [titleInput, setTitleInput] = useState("");
   const [firstNameInput, setFirstNameInput] = useState("");
   const [surnameInput, setSurnameInput] = useState("");
+  const [emailInput, setEmailInput] = useState("");
   const [roomIdInput, setRoomIdInput] = useState("");
   const [checkInDateInput, setCheckInDateInput] = useState("");
   const [checkOutDateInput, setCheckOutDateInput] = useState("");
@@ -63,7 +64,20 @@ const Bookings = () => {
   // function handling change of input
   const changeHandler = e => {
     if (e.target.name === "title") {
+      //console.log("title: ", e.target.value);
       setTitleInput(e.target.value);
+    } else if (e.target.name === "firstName") {
+      setFirstNameInput(e.target.value);
+    } else if (e.target.name === "surname") {
+      setFirstNameInput(e.target.value);
+    } else if (e.target.name === "email") {
+      setFirstNameInput(e.target.value);
+    } else if (e.target.name === "roomId") {
+      setFirstNameInput(e.target.value);
+    } else if (e.target.name === "checkInDate") {
+      setFirstNameInput(e.target.value);
+    } else if (e.target.name === "checkOutDate") {
+      setFirstNameInput(e.target.value);
     }
   };
 
@@ -77,32 +91,63 @@ const Bookings = () => {
         <div className="container">
           <Search search={search} />
           <SearchResults results={bookings} />
-          <form>
-            <table className="table">
-              <thead className="thead-light">
-                <tr>
-                  <th>Title</th>
-                  <th>First Name</th>
-                  <th>Surname</th>
-                  <th>Email</th>
-                  <th>Room Id</th>
-                  <th>Check In</th>
-                  <th>Check Out</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <input
-                      type="text"
-                      name="title"
-                      value={titleInput}
-                      onChange={changeHandler}
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+
+          <form class="needs-validation" novalidate>
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom01">First name</label>
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Title..."
+                  value={titleInput}
+                  onChange={changeHandler}
+                />
+              </div>
+            </div>
+
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name..."
+              value={firstNameInput}
+              onChange={changeHandler}
+            />
+            <input
+              type="text"
+              name="surname"
+              placeholder="Surname..."
+              value={surnameInput}
+              onChange={changeHandler}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email..."
+              value={emailInput}
+              onChange={changeHandler}
+            />
+            <input
+              type="text"
+              name="roomId"
+              placeholder="Room Id..."
+              value={roomIdInput}
+              onChange={changeHandler}
+            />
+            <input
+              type="text"
+              name="checkInDate"
+              placeholder="Check In Date..."
+              value={checkInDateInput}
+              onChange={changeHandler}
+            />
+            <input
+              type="text"
+              name="checkOutDate"
+              placeholder="Check Out Date..."
+              value={checkOutDateInput}
+              onChange={changeHandler}
+            />
           </form>
         </div>
       )
