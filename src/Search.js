@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
-const Search = () => {
+const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
 
   function handleSearchInput(event) {
     setSearchInput(event.target.value);
     console.log(event.target.value);
   }
+
+  function handleSearch(e) {
+    e.preventDefault();
+    search(searchInput);
+  }
+
   return (
     <div className="search">
       <div className="page-header">
@@ -26,7 +32,7 @@ const Search = () => {
                 value={searchInput}
                 onChange={handleSearchInput}
               />
-              <SearchButton />
+              <SearchButton onClick={handleSearch} />
             </div>
           </form>
         </div>
