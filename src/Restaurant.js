@@ -4,9 +4,9 @@ import Order from "./Order";
 
 const Restaurant = () => {
   return (
-    <div className="app-content container text-center">
+    <div className="restaurant-orders my-4">
       <h3>Restaurant Orders</h3>
-      <ul className="container">
+      <ul className="list-group mx-2">
         <Order orderType={"Pizzas"} />
         <Order orderType={"Salads"} />
         <Order orderType={"Chocolate cake"} />

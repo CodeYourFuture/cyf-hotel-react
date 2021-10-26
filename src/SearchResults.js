@@ -1,7 +1,16 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
 const SearchResults = props => {
+  const [color] = useState("");
+  function highlightRow(element) {
+    if (element.target.parentElement.className === "") {
+      element.target.parentElement.className = "gray";
+    } else {
+      element.target.parentElement.className = "";
+    }
+  }
+
   return (
     <div>
       <div>
@@ -21,7 +30,7 @@ const SearchResults = props => {
           </thead>
           <tbody className="text-center">
             {props.results.map((person, index) => (
-              <tr key={index}>
+              <tr key={index} onClick={highlightRow} className={color}>
                 <td>{person.id}</td>
                 <td>{person.title}</td>
                 <td>{person.firstName}</td>

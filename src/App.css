@@ -73,3 +73,12 @@ td {
 img {
   height: 100%;
 }
+
+.gray {
+  background-color: gray;
+}
+
+.restaurant-orders {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
