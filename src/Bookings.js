@@ -94,60 +94,93 @@ const Bookings = () => {
 
           <form class="needs-validation" novalidate>
             <div class="form-row">
+              {/*  */}
               <div class="col-md-4 mb-3">
-                <label for="validationCustom01">First name</label>
+                <label>Title</label>
                 <input
                   type="text"
                   name="title"
                   placeholder="Title..."
+                  class="form-control"
                   value={titleInput}
                   onChange={changeHandler}
                 />
               </div>
+              <div class="col-md-4 mb-3">
+                <label>First name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="First Name..."
+                  class="form-control"
+                  value={firstNameInput}
+                  onChange={changeHandler}
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom02">Surname</label>
+                <input
+                  type="text"
+                  name="surname"
+                  placeholder="Surname..."
+                  class="form-control"
+                  value={surnameInput}
+                  onChange={changeHandler}
+                />
+              </div>
+              {/*  */}
             </div>
-
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First Name..."
-              value={firstNameInput}
-              onChange={changeHandler}
-            />
-            <input
-              type="text"
-              name="surname"
-              placeholder="Surname..."
-              value={surnameInput}
-              onChange={changeHandler}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email..."
-              value={emailInput}
-              onChange={changeHandler}
-            />
-            <input
-              type="text"
-              name="roomId"
-              placeholder="Room Id..."
-              value={roomIdInput}
-              onChange={changeHandler}
-            />
-            <input
-              type="text"
-              name="checkInDate"
-              placeholder="Check In Date..."
-              value={checkInDateInput}
-              onChange={changeHandler}
-            />
-            <input
-              type="text"
-              name="checkOutDate"
-              placeholder="Check Out Date..."
-              value={checkOutDateInput}
-              onChange={changeHandler}
-            />
+            <div class="form-row">
+              {/*  */}
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom03">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email..."
+                  class="form-control"
+                  value={emailInput}
+                  onChange={changeHandler}
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom03">Room Id</label>
+                <input
+                  type="text"
+                  name="roomId"
+                  placeholder="Room Id..."
+                  class="form-control"
+                  value={roomIdInput}
+                  onChange={changeHandler}
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom03">Check In</label>
+                <input
+                  type="text"
+                  name="checkInDate"
+                  placeholder="Check In Date..."
+                  class="form-control"
+                  value={checkInDateInput}
+                  onChange={changeHandler}
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom03">Check Out</label>
+                <input
+                  type="text"
+                  name="checkOutDate"
+                  placeholder="Check Out Date..."
+                  class="form-control"
+                  value={checkOutDateInput}
+                  onChange={changeHandler}
+                />
+              </div>
+              {/*  */}
+            </div>
+            <button class="btn btn-primary" type="submit">
+              Submit form
+            </button>
           </form>
         </div>
       )
