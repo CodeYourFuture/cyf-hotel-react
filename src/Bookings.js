@@ -8,8 +8,17 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+
+    const filteredBookings = bookings.filter(booking => {
+      const firstName = booking.firstName;
+      const surname = booking.surname;
+      return searchVal === firstName || searchVal === surname;
+    });
+
+    console.log(filteredBookings);
+    setBookings(filteredBookings);
   };
-  //console.log(FakeBookings);
+
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
       .then(response => response.json())
@@ -20,7 +29,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {bookings.length !== 0 ? <SearchResults results={bookings} /> : ""}
       </div>
     </div>
   );

@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import moment from "moment";
+import TableRow from "./TableRow";
 
 export default function SearchResults({ results }) {
-  const [selected, setSelected] = useState(false);
-
-  const highlighterRows = () => {
-    setSelected(!selected);
-  };
   results = results.map(booking => {
     const checkInDate = booking.checkInDate;
     const checkOutDate = booking.checkOutDate;
@@ -28,15 +24,7 @@ export default function SearchResults({ results }) {
   ));
 
   const tableRows = results.map((booking, i) => (
-    <tr
-      onClick={highlighterRows}
-      className={selected ? "selected" : "not-selected"}
-      key={i}
-    >
-      {Object.values(booking).map((bookingDetail, j) => (
-        <td key={j}>{bookingDetail} </td>
-      ))}
-    </tr>
+    <TableRow key={i} booking={booking} />
   ));
   return (
     <table className="table table-responsive table-hover table-light">
