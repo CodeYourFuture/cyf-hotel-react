@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
-export default function SearchResult({ results }) {
+
+export default function SearchResults({ results }) {
   const [selected, setSelected] = useState(false);
 
   const highlighterRows = () => {
