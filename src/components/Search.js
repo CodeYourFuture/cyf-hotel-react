@@ -10,7 +10,7 @@ const Search = prop => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(event);
+    console.log(searchInput);
     prop.search(searchInput);
   };
   return (

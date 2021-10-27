@@ -68,7 +68,10 @@ const SearchResults = prop => {
   };
   return (
     <>
-      <table className="table table-responsive table-hover table-dark">
+      <table
+        id="table"
+        className="table table-responsive table-hover table-dark"
+      >
         <thead>
           <tr>
             <th onClick={() => handleClick("id")} scope="col">

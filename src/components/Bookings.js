@@ -36,7 +36,9 @@ const Bookings = () => {
         booking.firstName.toLowerCase() === searchVal ||
         booking.surname.toLowerCase() === searchVal
     );
+    console.log("search calling", searchVal);
     //console.info("TO DO!", searchVal);
+    setAllBookings(false);
     setBookings(searched);
   };
 
@@ -44,7 +46,10 @@ const Bookings = () => {
     console.log(entry);
     setBookings(bookings.concat(entry));
   };
-
+  const [allBookings, setAllBookings] = useState(false);
+  const bookingsAll = () => {
+    return setAllBookings(true);
+  };
   return (
     <div className="App-content">
       <div className="container">
@@ -53,9 +58,12 @@ const Bookings = () => {
         )}
         {loaded && <p className="message">loading data from resource</p>}
         <Search search={search} />
-
-        {bookings && <SearchResults results={bookings} />}
-
+        {allBookings ? (
+          <SearchResults results={bookingsData} />
+        ) : (
+          <SearchResults results={bookings} />
+        )}
+        <button onClick={bookingsAll}>Show All Bookings</button>
         <NewBooking formvals={formvals} />
       </div>
     </div>

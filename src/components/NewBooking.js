@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 
+const dateFormat = date => {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return `${year}-${month}-${day}`;
+};
 function NewBooking(props) {
   const [id, setId] = useState(0);
   const [title, setTitle] = useState("");
@@ -7,8 +13,8 @@ function NewBooking(props) {
   const [surname, setSurName] = useState("");
   const [email, setEmail] = useState("");
   const [roomId, setRoomId] = useState(0);
-  const [checkInDate, setCheckInDate] = useState(new Date().toLocaleString());
-  const [checkOutDate, setCheckOutDate] = useState(new Date().toLocaleString());
+  const [checkInDate, setCheckInDate] = useState(dateFormat(new Date()));
+  const [checkOutDate, setCheckOutDate] = useState(dateFormat(new Date()));
   const [entry, setEntry] = useState({});
 
   function handleChange(event) {
@@ -62,7 +68,7 @@ function NewBooking(props) {
           name="customerid"
           placeholder="ID"
           value={id}
-          onChange={handleChange}
+          onChange={event => handleChange(event)}
         />
       </div>
 
@@ -74,7 +80,7 @@ function NewBooking(props) {
           name="title"
           placeholder="title"
           value={title}
-          onChange={handleChange}
+          onChange={event => handleChange(event)}
         />
       </div>
       <div>
@@ -85,7 +91,7 @@ function NewBooking(props) {
           name="username"
           placeholder="First Name"
           value={firstName}
-          onChange={handleChange}
+          onChange={event => handleChange(event)}
         />
       </div>
       <div>
@@ -96,7 +102,7 @@ function NewBooking(props) {
           name="lastname"
           placeholder="Lastname"
           value={surname}
-          onChange={handleChange}
+          onChange={event => handleChange(event)}
         />
       </div>
       <div>
@@ -107,7 +113,7 @@ function NewBooking(props) {
           name="email"
           placeholder="Email"
           value={email}
-          onChange={handleChange}
+          onChange={event => handleChange(event)}
         />
       </div>
       <div>
@@ -118,7 +124,7 @@ function NewBooking(props) {
           name="roomid"
           placeholder="Roomid"
           value={roomId}
-          onChange={handleChange}
+          onChange={event => handleChange()}
         />
       </div>
 
@@ -130,7 +136,7 @@ function NewBooking(props) {
           name="checkindate"
           placeholder="checkindate"
           value={checkInDate}
-          onChange={handleChange}
+          onChange={event => handleChange(event)}
         />
       </div>
 
@@ -142,7 +148,7 @@ function NewBooking(props) {
           name="checkoutdate"
           placeholder="checkoutdate"
           value={checkOutDate}
-          onChange={handleChange}
+          onChange={event => handleChange(event)}
         />
       </div>
       <button>Submit</button>
