@@ -18,23 +18,37 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed") //"https://cyf-react.glitch.me"
-      .then(res => res.json())
+    fetch("https://cyf-react.glitch.me/error") //"https://cyf-react.glitch.me/delayed""https://cyf-react.glitch.me"
+      .then(response => {
+        if (!response.ok) {
+          throw Error(response.status);
+        }
+        return response.json();
+      })
       .then(data => setBookings(data))
-      .catch(err => alert(err));
+      .catch(err => setBookings(`HTTP ${err}`));
   }, []);
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {bookings ? (
+        {/* {bookings ? (
           <SearchResults results={bookings} />
         ) : (
           <div>
             <p className="loadingText">Loading...</p>
             <div className="loader" />
           </div>
+        )} */}
+        {bookings ? (
+          bookings.includes("HTTP") ? (
+            <div>{bookings}</div>
+          ) : (
+            <SearchResults results={bookings} />
+          )
+        ) : (
+          <div>Loading...</div>
         )}
       </div>
     </div>
