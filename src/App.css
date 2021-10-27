@@ -8,8 +8,10 @@
 }
 
 .App-header {
+  display: flex;
+  flex-direction: row;
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -20,6 +22,7 @@
 
 .App-title {
   font-size: 1.5em;
+  padding: 1rem;
 }
 
 .App-content {
@@ -35,7 +38,7 @@
     transform: rotate(360deg);
   }
 }
-.search {
+.SearchButton {
   padding: 5px 0 20px 0;
 }
 
@@ -47,11 +50,25 @@ tr {
   padding-top: 15px;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding-top: 2rem;
+}
+
 .footer {
   padding-top: 20px;
   text-align: center;
 }
 
 .card {
+  margin: 1.5rem;
   width: 18rem;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
