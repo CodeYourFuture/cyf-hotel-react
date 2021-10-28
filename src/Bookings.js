@@ -11,7 +11,10 @@ const Bookings = () => {
     //console.log(bookings);
     setBookings(
       bookings.filter(({ firstName, surname }) => {
-        return firstName.includes(searchVal) || surname.includes(searchVal);
+        return (
+          firstName.toLowerCase().includes(searchVal) ||
+          surname.toLowerCase().includes(searchVal)
+        );
       })
       //TODO: after first, search can get only filtered users not all users
     );
