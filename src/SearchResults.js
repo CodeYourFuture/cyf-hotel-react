@@ -10,8 +10,7 @@ const SearchResults = props => {
   const [id, setId] = useState(0);
 
   const handler = () => {
-    props.sortHandler();
-    props.refresh();
+    props.sortHandler("title");
   };
   // showId function
   const showId = newId => {

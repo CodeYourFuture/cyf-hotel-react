@@ -5,7 +5,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [update, setUpdate] = useState(0);
+  const [sort, setSort] = useState("asc");
   // useStates for input
   const [titleInput, setTitleInput] = useState("");
   const [firstNameInput, setFirstNameInput] = useState("");
@@ -20,6 +20,7 @@ const Bookings = () => {
   const [error, setError] = useState(null);
 
   // search bar to find out the details of guests
+  // function search (searchVal){}
   const search = searchVal => {
     //console.info("TO DO!", searchVal);
     // searchVal is the value coming from search component. That is way we use Paranthasess in search component.
@@ -64,7 +65,7 @@ const Bookings = () => {
         // when there is error in fetching, update display state to false, so stop displaying everything
         setDisplay(false);
       });
-  }, [update]);
+  }, []);
 
   // function handling change of input
   const changeHandler = e => {
@@ -112,23 +113,26 @@ const Bookings = () => {
     setCheckOutDateInput("");
   };
   // sort
-  const sortHandler = () => {
-    // setUpdate((prev) => prev + 1);
-    // let sortedBookings = bookings.sort((a, b) =>
-    //   a.title > b.title ? 1 : b.title > a.title ? -1 : 0
-    // );
-    // setBookings(() => sortedBookings)
-    setBookings(prev => {
-      return prev.sort((a, b) =>
-        a.title > b.title ? 1 : b.title > a.title ? -1 : 0
-      );
-    });
-    //prev.sort((a, b) => (a.title > b.title ? 1 : b.title > a.title ? -1 : 0))
-    //prev.sort((a, b) => a.title - b.title)
-
-    console.log("sort", bookings);
+  const sortHandler = col => {
+    // if (sort === "acs"){
+    //   setBookings((prev) => {
+    //     prev.sort((a, b) => (a[col] > b[col] ? 1 : b[col] > a[col] ? -1 : 0));
+    //   });
+    //   setBookings(() => sorted)
+    //   setSort("dsc")
+    // }
+    // if (sort === "dsc"){
+    //   setBookings((prev) => {
+    //     prev.sort((a, b) => (a[col] < b[col] ? 1 : b[col] < a[col] ? -1 : 0));
+    //   });
+    //   setBookings(() => sorted);
+    //   setSort("asc");
+    // }
+    // //prev.sort((a, b) => (a.title > b.title ? 1 : b.title > a.title ? -1 : 0))
+    // //prev.sort((a, b) => a.title - b.title)
+    // console.log("sort", bookings);
   };
-  console.log("update", update);
+
   return (
     <div className="App-content">
       {/* if there is error, error will come up, display of table will stop */}
@@ -139,11 +143,7 @@ const Bookings = () => {
         <div className="container">
           <Search search={search} />{" "}
           {/* the value from search component will come through search prop. as input to the function search. */}
-          <SearchResults
-            results={bookings}
-            sortHandler={sortHandler}
-            refresh={() => setUpdate(() => update + 1)}
-          />
+          <SearchResults results={bookings} sortHandler={sortHandler} />
           <form class="needs-validation" onSubmit={submitForm}>
             <div class="form-row">
               {/*  */}
