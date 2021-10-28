@@ -5,6 +5,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [update, setUpdate] = useState(0);
   // useStates for input
   const [titleInput, setTitleInput] = useState("");
   const [firstNameInput, setFirstNameInput] = useState("");
@@ -17,9 +18,13 @@ const Bookings = () => {
   // useState for displaying Loading and error
   const [display, setDisplay] = useState(true);
   const [error, setError] = useState(null);
+
   // search bar to find out the details of guests
   const search = searchVal => {
     //console.info("TO DO!", searchVal);
+    // searchVal is the value coming from search component. That is way we use Paranthasess in search component.
+
+    // Filter
     const filteredVal = bookings.filter(
       booking =>
         booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
@@ -59,7 +64,7 @@ const Bookings = () => {
         // when there is error in fetching, update display state to false, so stop displaying everything
         setDisplay(false);
       });
-  }, []);
+  }, [update]);
 
   // function handling change of input
   const changeHandler = e => {
@@ -97,6 +102,7 @@ const Bookings = () => {
       }
     ]);
     //console.log(bookings);
+    // After submitting, clear all inputs
     setTitleInput("");
     setFirstNameInput("");
     setSurnameInput("");
@@ -105,6 +111,24 @@ const Bookings = () => {
     setCheckInDateInput("");
     setCheckOutDateInput("");
   };
+  // sort
+  const sortHandler = () => {
+    // setUpdate((prev) => prev + 1);
+    // let sortedBookings = bookings.sort((a, b) =>
+    //   a.title > b.title ? 1 : b.title > a.title ? -1 : 0
+    // );
+    // setBookings(() => sortedBookings)
+    setBookings(prev => {
+      return prev.sort((a, b) =>
+        a.title > b.title ? 1 : b.title > a.title ? -1 : 0
+      );
+    });
+    //prev.sort((a, b) => (a.title > b.title ? 1 : b.title > a.title ? -1 : 0))
+    //prev.sort((a, b) => a.title - b.title)
+
+    console.log("sort", bookings);
+  };
+  console.log("update", update);
   return (
     <div className="App-content">
       {/* if there is error, error will come up, display of table will stop */}
@@ -113,9 +137,13 @@ const Bookings = () => {
       {display && <div>Loading...</div>}
       {bookings && (
         <div className="container">
-          <Search search={search} />
-          <SearchResults results={bookings} />
-
+          <Search search={search} />{" "}
+          {/* the value from search component will come through search prop. as input to the function search. */}
+          <SearchResults
+            results={bookings}
+            sortHandler={sortHandler}
+            refresh={() => setUpdate(() => update + 1)}
+          />
           <form class="needs-validation" onSubmit={submitForm}>
             <div class="form-row">
               {/*  */}

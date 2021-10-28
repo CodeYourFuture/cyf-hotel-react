@@ -2,14 +2,23 @@ import React, { useState } from "react";
 import "./App.css";
 import SearchResult from "./SearchResult";
 import CustomerProfile from "./CustomerProfile";
+import Sort from "./Sort";
 
 //import SearchButton from "./SearchButton";
 
 const SearchResults = props => {
   const [id, setId] = useState(0);
+
+  const handler = () => {
+    props.sortHandler();
+    props.refresh();
+  };
+  // showId function
   const showId = newId => {
+    // update the id state variable
     setId(() => newId);
   };
+  // displayProfile() will be implemented once show profile button clicked
   const [display, setDisplay] = useState(false);
   const displayProfile = () => {
     setDisplay(!display); //!display: You will need click to display to remove the old id and click to display again
@@ -21,7 +30,9 @@ const SearchResults = props => {
         <thead className="thead-light">
           <tr>
             <th>Id</th>
-            <th>Title</th>
+            <th>
+              Title <Sort handler={handler} />
+            </th>
             <th>First Name</th>
             <th>Surname</th>
             <th>Email</th>
@@ -50,7 +61,7 @@ const SearchResults = props => {
           ))}
         </tbody>
       </table>
-      {/*{props.children}*/}
+      {/*{if display is true, CustomerProfile will be shown. But if display is false, CustomerProfile will not be shown. Notice that CustomerProfile has a prop called id}*/}
       {display && <CustomerProfile id={id} />}
     </div>
   );

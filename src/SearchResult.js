@@ -8,9 +8,12 @@ const SearchResult = props => {
   const b = moment(props.result.checkInDate);
   const difference = a.diff(b, "days");
 
+  // when show profile button clicked
   const showId = () => {
     console.log(props.result.id);
+    // as discussed in search field, take props.result.id and pass it as a parameter to showId function in searchResults.
     props.showId(props.result.id);
+    // implement the displayProfile() function in searchResults.
     props.displayProfile();
   };
 
@@ -46,6 +49,7 @@ const SearchResult = props => {
         </button> */}
       </td>
       <td>
+        {/* create a button which when it is clicked, showId function will be implemented */}
         <button className="btn btn-primary" onClick={showId}>
           Show Profile
         </button>
