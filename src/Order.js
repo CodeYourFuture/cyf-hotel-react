@@ -2,39 +2,28 @@ import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
 const Order = props => {
-  const [orders, setOrders] = useState(0);
+  const [order, setOrder] = useState(0);
 
-  const OrderOne = props => {
-    setOrders(orders + 1);
+  const added = props => {
+    setOrder(order + 1);
   };
-  const decreaseOrder = () => {
-    setOrders(orders - 1);
+  const reduceHandle = props => {
+    setOrder(order - 1);
   };
-  const cancel = () => {
-    setOrders(0);
+  const cancelled = props => {
+    setOrder(0);
   };
-
   return (
-    <div>
-      {props.orderType.map((item, i) => (
-        <li key={i}>
-          {item} {orders} {OrderOne}
-        </li>
-      ))}
-      <RestaurantButton
-        orderOne={OrderOne}
-        decreaseOrder={decreaseOrder}
-        cancel={cancel}
-      />
+    <div className="d-flex ">
+      <li className="m-2  pt-3 ">
+        {props.orderType} {order}
+      </li>
 
-      {/* <li>
-        {props.orderType}: {orders}
-        <RestaurantButton
-          orderOne={OrderOne}
-          decreaseOrder={decreaseOrder}
-          cancel={cancel}
-        />
-      </li> */}
+      <RestaurantButton
+        order={added}
+        reduce={reduceHandle}
+        cancel={cancelled}
+      />
     </div>
   );
 };

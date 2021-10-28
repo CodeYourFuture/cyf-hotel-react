@@ -35,7 +35,7 @@ const Bookings = () => {
         setBookings(data);
         setLoading(true);
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log("Error " + err));
   }, []);
   // console.log(bookings);
   return (
