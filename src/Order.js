@@ -10,7 +10,7 @@ function Order(props) {
   }
   return (
     <li>
-      <RestaurantButton clickFunc={orderOne} />
+      <RestaurantButton orderOne={orderOne} />
       {props.orderType}: {orders}
     </li>
   );
