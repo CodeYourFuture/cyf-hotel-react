@@ -5,7 +5,7 @@ const SearchResults = props => {
   return (
     <div className="table-wrapper">
       <table className="table">
-        <thead>
+        <thead className="table-header">
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Title</th>

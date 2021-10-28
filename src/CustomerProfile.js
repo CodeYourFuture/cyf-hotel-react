@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const CustomerProfile = ({ profileId }) => {
+const CustomerProfile = ({ profileId, resetCustomerProfileId }) => {
   const [customer, setCustomer] = useState();
 
   useEffect(() => {
@@ -13,14 +13,22 @@ const CustomerProfile = ({ profileId }) => {
     }
   }, [profileId]);
 
-  if (customer) {
+  if (profileId && customer) {
     return (
-      <div>
-        <ul>
-          <li>{customer.id}</li>
-          <li>{customer.email}</li>
-          <li>{customer.vip}</li>
-          <li>{customer.phoneNumber}</li>
+      <div className="profile-card card">
+        <ul className="list-group">
+          <li className="list-group-item">ID: {customer.id}</li>
+          <li className="list-group-item">Email: {customer.email}</li>
+          <li className="list-group-item">Phone: {customer.phoneNumber}</li>
+          {customer.vip ? <li className="list-group-item">VIP</li> : null}
+          <li className="list-group-item">
+            <button
+              className="btn btn-primary"
+              onClick={() => resetCustomerProfileId("")}
+            >
+              Close
+            </button>
+          </li>
         </ul>
       </div>
     );

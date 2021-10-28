@@ -5,29 +5,38 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = props => {
   const [bookings, setBookings] = useState([]);
-  const [profileId, setProfileId] = useState();
+  const [profileId, setProfileId] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   const onShowProfile = id => {
     setProfileId(id);
   };
+
+  const resetCustomerProfileId = () => {
+    setProfileId(null);
+  };
+
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/delayed`)
-      /* fetch(`https://cyf-react.glitch.me/`) */
-      .then(res => res.json())
-      .then(data => {
+    const fetchBookings = async () => {
+      const res = await fetch("https://cyf-react.glitch.me/error");
+      if (res.ok) {
+        const data = await res.json();
         setBookings(data);
-        //delayed response
         setLoading(false);
-      });
+      } else {
+        setLoading(false);
+        setError(true);
+      }
+    };
+    /* fetch(`https://cyf-react.glitch.me/delayed`) */
+    /* fetch(`https://cyf-react.glitch.me/`) */
+    fetchBookings();
   }, [props.bookings]);
   if (loading) {
     return (
-      <div className="text-center">
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-        <p>Loading...</p>
+      <div className="alert alert-danger" role="alert">
+        This is a danger alert—check it out!
       </div>
     );
   }
@@ -45,7 +54,12 @@ const Bookings = props => {
       <div className="container">
         <Search search={search} />
         <SearchResults bookings={bookings} onShowProfile={onShowProfile} />
-        <CustomerProfile profileId={profileId} />
+        {profileId !== null && (
+          <CustomerProfile
+            profileId={profileId}
+            resetCustomerProfileId={resetCustomerProfileId}
+          />
+        )}
       </div>
     </div>
   );

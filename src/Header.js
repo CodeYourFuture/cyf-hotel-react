@@ -2,10 +2,10 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div>
+    <div className="header-container">
       <header className="App-header">CYF Hotel</header>
       <img
-        src="https://image.flaticon.com/icons/svg/139/139899.svg"
+        src={require("./images/hotel-icon.png")}
         alt="logo"
         className="Header-logo"
       />

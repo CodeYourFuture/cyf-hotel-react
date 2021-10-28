@@ -1,18 +1,28 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
-const Order = ({ orderType }) => {
+const Order = ({ orderType, img }) => {
   let [orders, setOrders] = useState(0);
   const orderOne = () => {
     setOrders(orders + 1);
   };
+  const minusOne = () => {
+    setOrders(orders - 1);
+  };
   return (
-    <div>
-      <li>
+    <li className="order">
+      <img src={img} alt="food-icon" id="food-icon" />
+      <p>
         {orderType}: {orders}
-        <RestaurantButton orderOne={orderOne} />
-      </li>
-    </div>
+      </p>
+      <div class="btn-group" role="group" aria-label="food-icons">
+        <RestaurantButton
+          orderOne={orderOne}
+          minusOne={minusOne}
+          className="restaurant-btn"
+        />
+      </div>
+    </li>
   );
 };
 
