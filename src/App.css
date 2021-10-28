@@ -124,7 +124,7 @@ button {
   height: 50px;
 }
 #customerName {
-  width: 600px;
+  width: 80%vw;
 }
 label {
   margin-top: 10px;

@@ -24,7 +24,7 @@ const Search = prop => {
             onClick={event => handleSubmit(event)}
             className="form-group search-box"
           >
-            <label htmlFor="customerName">Customer name</label>
+            {/* <label htmlFor="customerName">Customer name</label> */}
             <div className="search-row">
               <input
                 type="text"

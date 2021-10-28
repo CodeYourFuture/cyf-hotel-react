@@ -6,9 +6,9 @@ body {
   opacity: 0.99;
 }
 
-.search-wrapper {
+/* .search-wrapper {
   border-top: 1px solid #e9ecef;
-}
+} */
 
 .search-box label {
   font-weight: bold;
@@ -17,11 +17,11 @@ body {
   color: #5b5757;
 }
 
-.search-row {
+/* .search-row {
   display: flex;
   border-top: 2px solid #e9ecef;
   padding-top: 15px;
-}
+} */
 
 .search-row input {
   margin-right: 10px;
