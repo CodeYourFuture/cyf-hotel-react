@@ -23,6 +23,11 @@ const CreateTableRow = props => {
           "days"
         )}
       </td>
+      <td>
+        <button id="profile-button" className="btn btn-primary">
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };

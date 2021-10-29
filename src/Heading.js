@@ -6,7 +6,7 @@ const Heading = () => {
       <img
         className="logo-image"
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
-        alt="log"
+        alt="logo"
       />
       <header className="App-header">CYF Hotel</header>
     </div>

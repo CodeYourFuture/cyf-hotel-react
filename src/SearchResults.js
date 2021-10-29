@@ -17,6 +17,7 @@ const SearchResults = props => {
           <th scope="col">check-in date</th>
           <th scope="col">check-out date</th>
           <th scope="col">nights booked in</th>
+          <th scope="col">cumtomer profile</th>
         </tr>
       </thead>
       {/* {props.results} */}
