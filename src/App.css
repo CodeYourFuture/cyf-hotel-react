@@ -2,6 +2,10 @@ body {
   margin: 2rem;
 }
 
+.centered {
+  text-align: center;
+}
+
 h3 {
   text-align: center;
 }

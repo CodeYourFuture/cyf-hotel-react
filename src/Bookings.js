@@ -19,7 +19,9 @@ const Bookings = props => {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const res = await fetch("https://cyf-react.glitch.me/error");
+      const res = await fetch("https://cyf-react.glitch.me/delayed");
+      /* fetch(`https://cyf-react.glitch.me/error`) */
+
       if (res.ok) {
         const data = await res.json();
         setBookings(data);
@@ -29,14 +31,24 @@ const Bookings = props => {
         setError(true);
       }
     };
-    /* fetch(`https://cyf-react.glitch.me/delayed`) */
-    /* fetch(`https://cyf-react.glitch.me/`) */
+
     fetchBookings();
   }, [props.bookings]);
   if (loading) {
     return (
-      <div className="alert alert-danger" role="alert">
-        This is a danger alert—check it out!
+      <div className="text-center">
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+        <p>Loading...</p>
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div className="centered">
+        <h1>500 Server Error</h1>
+        <p>It's broken, but it's not your fault!</p>
       </div>
     );
   }
