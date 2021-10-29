@@ -20,7 +20,7 @@ const Bookings = () => {
   };
 
   const [bookings, setBookings] = useState([]);
-  const [filteredBookings, setFilterBookings] = useState([]);
+  //const [filteredBookings, setFilterBookings] = useState([]);
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/delayed")

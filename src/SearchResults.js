@@ -3,7 +3,7 @@ import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
-  const [idProfile, setIdProfile] = useState(0);
+  const [idProfile, setIdProfile] = useState(1);
 
   const showProfileHandler = id => {
     setIdProfile(() => id);
