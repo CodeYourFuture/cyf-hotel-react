@@ -6,8 +6,12 @@ const SearchResultsTableRows = props => {
   function changeRowClass() {
     setSelected(previousColor => (previousColor ? "" : "selected"));
   }
+  function handleClick() {
+    props.getProfileId(props.booking.id);
+    console.log("button clicked");
+  }
   return (
-    <tr className={selected} key={props.booking.id} onClick={changeRowClass}>
+    <tr className={selected} onClick={changeRowClass}>
       <th scope="row">{props.booking.id}</th>
       <td>{props.booking.title}</td>
       <td>{props.booking.firstName}</td>
@@ -21,6 +25,11 @@ const SearchResultsTableRows = props => {
           props.booking.checkInDate,
           "days"
         )}
+      </td>
+      <td>
+        <button className="btn btn-primary" onClick={handleClick}>
+          Show Profile
+        </button>
       </td>
     </tr>
   );

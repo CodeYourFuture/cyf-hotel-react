@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchResultsTableRows from "./SearchResultsTableRows";
-
+import CustomerProfile from "./CustomerProfile";
 const SearchResults = props => {
+  const [profileId, setProfileId] = useState(null);
+
+  function getProfileId(id) {
+    setProfileId(id);
+  }
+
   return (
     <div>
-      <table class="table table-sm">
+      <table className="table table-sm">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -15,15 +21,21 @@ const SearchResults = props => {
             <th scope="col">Room id</th>
             <th scope="col">Check-In</th>
             <th scope="col">Check-Out</th>
-            <th scope="col">Number of nights</th>
+            <th scope="col">Nights</th>
+            <th scope="col">Profiles</th>
           </tr>
         </thead>
         <tbody>
-          {props.results.map(booking => (
-            <SearchResultsTableRows booking={booking} />
+          {props.result.map(booking => (
+            <SearchResultsTableRows
+              key={booking.id}
+              booking={booking}
+              getProfileId={getProfileId}
+            />
           ))}
         </tbody>
       </table>
+      {profileId ? <CustomerProfile id={profileId} /> : null}
     </div>
   );
 };
