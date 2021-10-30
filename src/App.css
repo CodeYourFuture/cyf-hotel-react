@@ -1,30 +1,63 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
 .App {
   text-align: left;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 30px;
 }
 
 .App-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   background-color: #222;
   height: 50px;
   padding: 20px;
   color: white;
   text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
   font-weight: bold;
 }
 
 .App-title {
+  padding-left: 20px;
   font-size: 1.5em;
 }
 
 .App-content {
   padding-top: 20px;
-  font-size: large;
+  font-size: small;
+}
+
+.info-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 30px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.card {
+  height: auto;
+  width: auto;
+  margin-bottom: 20px;
+  box-shadow: 10px 10px 10px rgb(98, 98, 98);
+}
+.card-img-top {
+  height: auto;
+}
+.card-body {
+  text-align: center;
+}
+.card-paragraph {
+  height: 100px;
+  text-align: start;
 }
 
 @keyframes App-logo-spin {
@@ -35,23 +68,105 @@
     transform: rotate(360deg);
   }
 }
+
+.table-small-display {
+  overflow: scroll;
+}
+
 .search {
   padding: 5px 0 20px 0;
+  max-width: 100%;
+}
+
+table {
+  margin: 0px;
 }
 
 tr {
   color: #5b5757;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.selected {
+  background-color: rgb(196, 215, 213);
 }
 
 .results {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
+.restaurant-heading {
+  padding: 20px 0px 20px 0px;
+  border-top: rgb(109, 109, 109) solid 2px;
+  border-bottom: rgb(109, 109, 109) solid 2px;
 }
 
-.card {
-  width: 18rem;
+ul {
+  padding-inline-start: 0px;
+}
+
+.order-box {
+  list-style: none;
+  padding-bottom: 20px;
+  margin: 20px;
+  padding-left: 20px;
+  border: rgb(81, 80, 80) solid 1px;
+  box-shadow: 10px 10px 10px rgb(98, 98, 98);
+}
+
+.order-item-list {
+  margin: 20px 0px 20px 0px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0px 30px 0px 0px;
+  font-size: small;
+}
+
+.footer {
+  width: 100%;
+  padding: 20px 0px 20px 0px;
+  background-color: #222;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 780px) {
+  .info-card-container {
+    flex-direction: row;
+  }
+  .card {
+    height: 400px;
+    width: 15rem;
+  }
+
+  .card-img-top {
+    height: 160px;
+  }
+
+  .table-small-display {
+    table-layout: auto;
+    max-width: auto;
+    margin: 30px;
+    box-sizing: border-box;
+    font-size: large;
+    overflow: visible;
+  }
+
+  .footer-content {
+    font-size: large;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .card {
+    width: 19rem;
+  }
 }
