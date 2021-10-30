@@ -14,7 +14,7 @@ function CustomerProfile(props) {
         setProfile(data);
       })
       .catch(error => console.log(error));
-  }, []);
+  }, [props.id]);
   return (
     <div>
       <h1>Show Profile for</h1>

@@ -40,7 +40,7 @@ const Bookings = () => {
 
   useEffect(() => {
     console.log("Page Uploaded");
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(response => {
         // if there is error throw this text
         if (!response.ok) {
@@ -114,23 +114,23 @@ const Bookings = () => {
   };
   // sort
   const sortHandler = col => {
-    // if (sort === "acs"){
-    //   setBookings((prev) => {
-    //     prev.sort((a, b) => (a[col] > b[col] ? 1 : b[col] > a[col] ? -1 : 0));
-    //   });
-    //   setBookings(() => sorted)
-    //   setSort("dsc")
-    // }
-    // if (sort === "dsc"){
-    //   setBookings((prev) => {
-    //     prev.sort((a, b) => (a[col] < b[col] ? 1 : b[col] < a[col] ? -1 : 0));
-    //   });
-    //   setBookings(() => sorted);
-    //   setSort("asc");
-    // }
-    // //prev.sort((a, b) => (a.title > b.title ? 1 : b.title > a.title ? -1 : 0))
-    // //prev.sort((a, b) => a.title - b.title)
-    // console.log("sort", bookings);
+    if (sort === "acs") {
+      setBookings(prev => {
+        prev.sort((a, b) => (a[col] > b[col] ? 1 : b[col] > a[col] ? -1 : 0));
+      });
+      // setBookings(() => sorted)
+      setSort("dsc");
+    }
+    if (sort === "dsc") {
+      setBookings(prev => {
+        prev.sort((a, b) => (a[col] < b[col] ? 1 : b[col] < a[col] ? -1 : 0));
+      });
+      // setBookings(() => sorted);
+      setSort("asc");
+    }
+    //prev.sort((a, b) => (a.title > b.title ? 1 : b.title > a.title ? -1 : 0))
+    //prev.sort((a, b) => a.title - b.title)
+    console.log("sort", bookings);
   };
 
   return (

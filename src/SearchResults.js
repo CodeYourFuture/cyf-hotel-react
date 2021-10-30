@@ -7,10 +7,10 @@ import Sort from "./Sort";
 //import SearchButton from "./SearchButton";
 
 const SearchResults = props => {
-  const [id, setId] = useState(0);
+  const [id, setId] = useState(1);
 
-  const handler = () => {
-    props.sortHandler("title");
+  const handler = cal => {
+    props.sortHandler(cal);
   };
   // showId function
   const showId = newId => {
@@ -30,7 +30,7 @@ const SearchResults = props => {
           <tr>
             <th>Id</th>
             <th>
-              Title <Sort handler={handler} />
+              Title <Sort handler={() => handler("title")} />
             </th>
             <th>First Name</th>
             <th>Surname</th>
