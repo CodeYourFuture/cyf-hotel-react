@@ -5,6 +5,7 @@ import "./App.css";
 import Heading from "./Header";
 import TouristInfoCard from "./TouristInfoCards";
 import Footer from "./footer";
+import Restaurant from "./Restaurant";
 
 const footer = [
   "123 Fake Street, London, E1 4UD",
@@ -18,6 +19,7 @@ const App = () => {
       <Heading />
       <TouristInfoCard />
       <Bookings />
+      <Restaurant />
       <Footer adress={footer} />
     </div>
   );

@@ -31,7 +31,7 @@ const TouristInfoCard = () => {
     <div className="tourist-info-cards">
       {cardsinfo.map((cardcityinfo, index) => (
         <div className="card" key={index}>
-          <img class="cityimage" src={cardcityinfo.image} alt="" />
+          <img className="cityimage" src={cardcityinfo.image} alt="" />
           <h2> {cardcityinfo.city}</h2>
           <p> {cardcityinfo.description}</p>
           <a href={cardcityinfo.href} className="btn btn-primary">

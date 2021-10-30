@@ -1,7 +1,7 @@
 import React from "react";
 const Heading = () => {
   return (
-    <div class="box">
+    <div className="box">
       <div>
         <img
           className="logo"
@@ -10,7 +10,7 @@ const Heading = () => {
         />
       </div>
       <header className="App-header">
-        <div class="title"> CYF Hotel</div>
+        <div className="title"> CYF Hotel</div>
       </header>
       ;
     </div>

@@ -33,9 +33,9 @@ const SearchResults = props => {
   ];*/
 
   return (
-    <div class="tablesearch">
-      <table class="table">
-        <thead class="thead-dark">
+    <div className="tablesearch">
+      <table className="table">
+        <thead className="thead-dark">
           <tr>
             <th>id</th>
             <th>title</th>
@@ -49,8 +49,8 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map(result => (
-            <tr>
+          {props.results.map((result, i) => (
+            <tr key={i}>
               <td>{result.id}</td>
               <td>{result.title}</td>
               <td>{result.surname}</td>
