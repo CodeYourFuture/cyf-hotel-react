@@ -9,13 +9,15 @@
 
 .App-header {
   background-color: #222;
-  height: 60px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: bold;
+  padding-left: 135px;
+  display: block;
+  position: relative;
 }
 
 .App-title {
@@ -24,7 +26,6 @@
 
 .App-content {
   padding-top: 20px;
-  font-size: large;
 }
 
 @keyframes App-logo-spin {
@@ -36,11 +37,6 @@
   }
 }
 
-.logo {
-  height: 100px;
-  margin-top: 10px;
-  margin-left: 15px;
-}
 .search {
   padding: 5px 0 20px 0;
 }
@@ -71,11 +67,13 @@ tr {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-top: 12px;
 }
 
 footer {
   border-top: 1px solid #cacdd1;
   background-color: #f3f4f4;
+  width: 100%;
 }
 
 footer ul {
@@ -90,10 +88,27 @@ footer ul li {
 }
 
 .order-container {
-  width: 30%;
+  width: 400px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 15px;
   margin-bottom: 25px;
+}
+.container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.logo1 {
+  position: absolute;
+  height: 95px;
+  width: 95px;
+  border-radius: 50px;
+  border: 4px solid white;
+  margin-left: 25px;
+  top: 20px;
+  background: #fff;
+  box-shadow: 0px 0px 4px #18181875;
 }

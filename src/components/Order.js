@@ -5,7 +5,9 @@ import RestaurantButton from "./RestaurantButton";
 const Order = ({ orderType }) => {
   const [orders, setOrders] = useState(0);
   const orderOne = () => {
-    setOrders(orders + 1);
+    if (orders < 20) {
+      setOrders(orders + 1);
+    }
   };
   const orderRemove = () => {
     if (orders > 0) {

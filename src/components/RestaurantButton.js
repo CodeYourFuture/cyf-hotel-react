@@ -1,13 +1,13 @@
 import React from "react";
 
-const RestaurantButton = (props) => {
+const RestaurantButton = props => {
   return (
     <div>
-      <button onClick={props.orderOne} className="btn btn-primary">
-        +
-      </button>
-      <button onClick={props.orderRemove} className="btn btn-primary">
+      <button onClick={props.orderRemove} className="btn btn-danger">
         -
+      </button>
+      <button onClick={props.orderOne} className="btn btn-success">
+        +
       </button>
     </div>
   );
