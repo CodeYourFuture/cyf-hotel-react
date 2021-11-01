@@ -64,3 +64,7 @@ tr {
 .dark {
   background-color: grey;
 }
+
+.selected {
+  background-color: pink;
+}

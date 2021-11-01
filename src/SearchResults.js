@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
+import "./App.css";
 
 function SearchResults(props) {
   const [selectedId, setSelectedId] = useState(null);
@@ -23,13 +24,17 @@ function SearchResults(props) {
         </thead>
         <tbody>
           {props.FakeBookings.map((info, i) => (
-            <tr key={i}>
+            <tr
+              key={i}
+              className={selectedId === info.id ? "selected" : null}
+              onClick={() =>
+                selectedId === info.id
+                  ? setSelectedId(null)
+                  : setSelectedId(info.id)
+              }
+            >
               <td>{info.id}</td>
               <td>{info.title}</td>
-              <td>{info.firstName}</td>
-              <td>{info.surname}</td>
-              <td>{info.email}</td>
-              <td>{info.roomId}</td>
               <td>{info.checkInDate}</td>
               <td>{info.checkOutDate}</td>
               <td>
