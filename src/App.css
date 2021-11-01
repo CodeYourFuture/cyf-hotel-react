@@ -55,6 +55,9 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .card {

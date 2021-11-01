@@ -4,6 +4,8 @@ import Heading from "./Heading";
 
 import TouristInfoCards from "./TouristInfoCards";
 
+import Footer from "./Footer";
+
 import Bookings from "./Bookings";
 import "./App.css";
 
@@ -37,11 +39,19 @@ const App = () => {
       link: "visitlondon.com"
     }
   ];
+
+  const footer = [
+    "123 Fake Street, London, E1 4UD",
+    "hello@fakehotel.com",
+    "0123 456789"
+  ];
+
   return (
     <div className="App">
       <Heading />;
-      <TouristInfoCards cards={cards} />
       <Bookings />;
+      <TouristInfoCards cards={cards} />
+      <Footer footer={footer} />
     </div>
   );
 };
