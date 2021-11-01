@@ -4,7 +4,7 @@ import Order from "./Order";
 const Restaurant = () => {
   return (
     <div>
-      <h3>Restaurant Orders</h3>
+      <h3 className="orders-header">Restaurant Orders</h3>
       <ul>
         <Order orderType="Pizza" />
         <Order orderType="Salad" />

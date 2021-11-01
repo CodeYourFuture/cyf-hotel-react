@@ -81,6 +81,9 @@ li button {
   margin-top: 10px;
   margin-left: 20px;
 }
+li {
+  margin-left: 40px;
+}
 .footer {
   display: flex;
   flex-direction: row;
@@ -88,4 +91,15 @@ li button {
   color: white;
   background-color: rgb(8, 128, 226);
   margin-top: 50px;
+}
+.loading {
+  display: grid;
+  place-items: center;
+}
+.text-danger {
+  text-align: center;
+  font-size: larger;
+}
+.orders-header {
+  margin-left: 40px;
 }

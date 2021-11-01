@@ -3,9 +3,15 @@ import moment from "moment";
 
 const CreateTableRow = props => {
   const [bgColor, setBgColor] = useState(false);
+
   function Highlighter() {
     setBgColor(!bgColor);
   }
+
+  const grabCustomerId = () => {
+    props.selectCustomer(props.data.id);
+    // console.log(customerId);
+  };
 
   return (
     <tr className={bgColor ? "bg-success" : ""} onClick={Highlighter}>
@@ -24,7 +30,11 @@ const CreateTableRow = props => {
         )}
       </td>
       <td>
-        <button id="profile-button" className="btn btn-primary">
+        <button
+          id="profile-button"
+          className="btn btn-primary"
+          onClick={grabCustomerId}
+        >
           Show Profile
         </button>
       </td>
