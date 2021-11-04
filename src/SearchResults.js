@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 function SearchResults(props) {
   const [ishighlight, setishighlight] = useState(false);
+  const [id, setId] = useState(1);
   function highlight() {
     setishighlight(!ishighlight);
   }
+
+  function getIdHandle(id) {
+    //setId(id);
+  }
+
   return (
     <div>
       <table className="table table-hover">
@@ -42,11 +49,17 @@ function SearchResults(props) {
                   {moment(result.checkOutDate).diff(result.checkInDate, "day") +
                     " nights"}
                 </td>
+
+                <td>
+                  <button onClick={getIdHandle(result.id)}>Show profile</button>
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+
+      <CustomerProfile />
     </div>
   );
 }
