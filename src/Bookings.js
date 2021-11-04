@@ -16,6 +16,13 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    const filteredVal = bookings.filter(
+      booking =>
+        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+    );
+
+    setBookings(filteredVal);
   };
 
   return (
