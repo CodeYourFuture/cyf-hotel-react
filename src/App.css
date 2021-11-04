@@ -60,7 +60,12 @@ tr {
   padding: 0;
 }
 
+.text-style {
+  list-style-type: none;
+}
 .card {
+  /* display: flex;
+  justify-content: space-around; */
   width: 18rem;
   text-align: center;
 }
