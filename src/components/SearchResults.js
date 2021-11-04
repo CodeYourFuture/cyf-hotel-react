@@ -18,12 +18,7 @@ const SearchResults = prop => {
   };
 
   const handleClick = field => {
-    if (
-      field === "firstName" ||
-      field === "title" ||
-      field === "surname" ||
-      field === "email"
-    ) {
+    if (field === "firstName" || field === "title" || field === "surname") {
       [...customer].map(customer => customer[field].toLowerCase());
     }
 

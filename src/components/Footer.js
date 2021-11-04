@@ -1,6 +1,6 @@
 import React from "react";
-const Footer = prop => {
-  const hotelInfo = prop.hotelContact;
+const Footer = ({ hotelContact }) => {
+  const hotelInfo = hotelContact;
   return (
     <ul>
       {hotelInfo.map((info, index) => (

@@ -65,9 +65,12 @@ function NewBooking(props) {
 
         <input
           type="number"
+          min="6"
+          max="1000"
           name="customerid"
           placeholder="ID"
           value={id}
+          required
           onChange={event => handleChange(event)}
         />
       </div>
@@ -80,6 +83,7 @@ function NewBooking(props) {
           name="title"
           placeholder="title"
           value={title}
+          required
           onChange={event => handleChange(event)}
         />
       </div>
@@ -91,6 +95,7 @@ function NewBooking(props) {
           name="username"
           placeholder="First Name"
           value={firstName}
+          required
           onChange={event => handleChange(event)}
         />
       </div>
@@ -102,6 +107,7 @@ function NewBooking(props) {
           name="lastname"
           placeholder="Lastname"
           value={surname}
+          required
           onChange={event => handleChange(event)}
         />
       </div>
@@ -113,6 +119,7 @@ function NewBooking(props) {
           name="email"
           placeholder="Email"
           value={email}
+          required
           onChange={event => handleChange(event)}
         />
       </div>
@@ -124,7 +131,10 @@ function NewBooking(props) {
           name="roomid"
           placeholder="Roomid"
           value={roomId}
-          onChange={event => handleChange()}
+          required
+          min="7"
+          max="500"
+          onChange={event => handleChange(event)}
         />
       </div>
 
@@ -136,6 +146,7 @@ function NewBooking(props) {
           name="checkindate"
           placeholder="checkindate"
           value={checkInDate}
+          required
           onChange={event => handleChange(event)}
         />
       </div>
@@ -148,6 +159,7 @@ function NewBooking(props) {
           name="checkoutdate"
           placeholder="checkoutdate"
           value={checkOutDate}
+          required
           onChange={event => handleChange(event)}
         />
       </div>

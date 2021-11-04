@@ -9,7 +9,7 @@ const Order = props => {
     setOrders(orders + 1);
   };
   const subtractOne = () => {
-    setOrders(orders - 1);
+    setOrders(orders === 0 ? orders : orders - 1);
   };
   return (
     <li className="orders">

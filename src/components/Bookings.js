@@ -5,16 +5,16 @@ import NewBooking from "./NewBooking";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [bookingsData, setData] = useState([]);
+  const [bookingsData, setBookingsData] = useState([]);
 
-  const [loaded, setLoaded] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/delayed")
       .then(res => {
         if (!res.ok) {
           setError(true);
-          setLoaded(false);
+          setLoading(false);
           throw Error("Error loading the resource");
         } else return res.json();
       })
@@ -22,8 +22,8 @@ const Bookings = () => {
       .then(data => {
         //console.log(data);
         setBookings(data);
-        setData(bookingsData.concat(data));
-        setLoaded(false);
+        setBookingsData(bookingsData.concat(data));
+        setLoading(false);
       })
       .catch(error => {
         console.log(error);
@@ -56,7 +56,7 @@ const Bookings = () => {
         {error && (
           <p className="message">error while retrieving data from resource</p>
         )}
-        {loaded && <p className="message">loading data from resource</p>}
+        {loading && <p className="message">loading data from resource</p>}
         <Search search={search} />
         {allBookings ? (
           <SearchResults results={bookingsData} />
