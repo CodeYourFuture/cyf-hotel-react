@@ -179,7 +179,7 @@ img {
   cursor: grabbing;
   padding: 10px;
 
-  box-shadow: 6px 6px rgb(61, 57, 54);
+  box-shadow:  6px 6px 10px #3d3936; 
   width: auto;
 }
 @media screen and (min-width: 600px) {
