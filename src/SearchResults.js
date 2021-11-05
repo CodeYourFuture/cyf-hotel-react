@@ -9,10 +9,6 @@ function SearchResults(props) {
     setishighlight(!ishighlight);
   }
 
-  function getIdHandle(id) {
-    //setId(id);
-  }
-
   return (
     <div>
       <table className="table table-hover">
@@ -51,7 +47,9 @@ function SearchResults(props) {
                 </td>
 
                 <td>
-                  <button onClick={getIdHandle(result.id)}>Show profile</button>
+                  <button onClick={() => setId(() => result.id)}>
+                    Show profile
+                  </button>
                 </td>
               </tr>
             );
@@ -59,7 +57,7 @@ function SearchResults(props) {
         </tbody>
       </table>
 
-      <CustomerProfile />
+      <CustomerProfile id={id} />
     </div>
   );
 }
