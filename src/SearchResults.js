@@ -1,9 +1,15 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
 const SearchResults = props => {
+  const [selected, setSelected] = useState([]);
+
+  const handleClick = index => {
+    setSelected(index);
+  };
+
   return (
-    <table className="table table-striped table-bordered table-sm">
+    <table className="table  table-bordered">
       <thead className="thead-dark">
         <tr>
           <th scope="col">Id</th>
@@ -19,7 +25,11 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map((info, index) => (
-          <tr key={index}>
+          <tr
+            key={index}
+            onClick={() => handleClick(index)}
+            className={index === selected ? "bg-color-marked" : ""}
+          >
             <td scope="row">{info.id}</td>
             <td scope="row">{info.title}</td>
             <td scope="row">{info.firstName}</td>

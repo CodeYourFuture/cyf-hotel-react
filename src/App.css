@@ -48,6 +48,14 @@ tr {
   color: #5b5757;
 }
 
+bg-color-primary {
+  background-color: #222;
+}
+
+bg-color-marked {
+  background-color: azure;
+}
+
 .results {
   padding-top: 15px;
 }
