@@ -2,11 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: rgba(161, 147, 147, 0.5);
+  opacity: 0.99;
 }
 
-.search-wrapper {
+/* .search-wrapper {
   border-top: 1px solid #e9ecef;
-}
+} */
 
 .search-box label {
   font-weight: bold;
@@ -15,11 +17,11 @@ body {
   color: #5b5757;
 }
 
-.search-row {
+/* .search-row {
   display: flex;
   border-top: 2px solid #e9ecef;
   padding-top: 15px;
-}
+} */
 
 .search-row input {
   margin-right: 10px;
