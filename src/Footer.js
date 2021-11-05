@@ -3,7 +3,7 @@ import React from "react";
 const Footer = props => {
   return (
     <footer className="footer">
-      <ul>
+      <ul className="text-style">
         {props.footer.map((info, index) => (
           <li key={index}>{info}</li>
         ))}

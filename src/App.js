@@ -46,8 +46,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <Heading />;
-      <Bookings />;
+      <Heading />
+      <Bookings />
       <TouristInfoCards cards={cards} />
       <Restaurant />
       <Footer footer={footer} />

@@ -5,7 +5,7 @@ const Restaurant = () => {
   return (
     <div>
       <h3>Restaurant Orders</h3>
-      <ul>
+      <ul className="text-style">
         <Order />
       </ul>
     </div>
