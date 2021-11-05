@@ -2,7 +2,7 @@ import React from "react";
 
 const TouristInfoCards = props => {
   return (
-    <div>
+    <div className="container">
       {props.cards.map((cardInfo, index) => (
         <div className="card">
           <img

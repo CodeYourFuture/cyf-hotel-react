@@ -77,6 +77,15 @@ tr {
 .text-style {
   list-style-type: none;
 }
+
+.container {
+  align-items: center;
+  justify-content: center;
+  display: block;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
 .card {
   /* display: flex;
   justify-content: space-around; */
