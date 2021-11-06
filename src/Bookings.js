@@ -40,7 +40,7 @@ const Bookings = () => {
 
   useEffect(() => {
     console.log("Page Uploaded");
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me")
       .then(response => {
         // if there is error throw this text
         if (!response.ok) {
