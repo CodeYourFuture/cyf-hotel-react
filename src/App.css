@@ -129,10 +129,38 @@ table tr.tableRow .customerProfile {
   margin-top: 10pxx;
 }
 
-.restaurant {
+.restaurant ul {
   align-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
-
+.restaurant li {
+  list-style: none;
+  border: none;
+  box-shadow: 5px 5px 20px;
+  width: 20%;
+  text-align: center;
+}
+.profileCard {
+  width: 300px;
+  border: none;
+  box-shadow: 5px 5px 20px;
+}
 .profileCard p {
   color: black;
+  padding: 10px;
+}
+
+.profileCard li {
+  list-style: none;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.fas .fa-times-circle {
+  align-self: flex-end;
+}
+
+.orderCard {
 }

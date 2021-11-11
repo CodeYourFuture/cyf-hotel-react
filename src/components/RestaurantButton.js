@@ -4,10 +4,10 @@ const RestaurantButton = ({ orderOne, removeOne }) => {
   return (
     <div>
       <button className="btn-primary" onClick={orderOne}>
-        Add
+        <i class="fas fa-plus" />
       </button>
       <button className="btn-primary" onClick={removeOne}>
-        Remove
+        <i class="fas fa-minus" />
       </button>
     </div>
   );

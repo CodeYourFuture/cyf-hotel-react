@@ -15,15 +15,16 @@ function CustomerProfile({ id }) {
 
   return (
     <div className="profileCard">
+      <i className="fas fa-times-circle" />
       <p>Customer Profile: {id}</p>
       <ul>
-        <li>{profileCard.title}</li>
-        <li>{profileCard.firstName}</li>
-        <li>{profileCard.surname}</li>
-        <li>{profileCard.email}</li>
-        <li>{profileCard.phoneNumber}</li>
-        <li>{profileCard.roomId}</li>
-        <li>{profileCard.vip && "VIP"}</li>
+        <li>Title:{profileCard.title}</li>
+        <li>
+          Name:{profileCard.firstName} {profileCard.surname}
+        </li>
+        <li>Email address:{profileCard.email}</li>
+        <li>Phone number:{profileCard.phoneNumber}</li>
+        <li>VIP/NoVIP{profileCard.vip && "VIP"}</li>
       </ul>
     </div>
   );
