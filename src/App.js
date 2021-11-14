@@ -4,6 +4,7 @@ import "./App.css";
 import Bookings from "./Bookings";
 import Header from "./Heading";
 import PlaceCard from "./TouristInfoCards";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -30,6 +31,13 @@ const App = () => {
         />
       </div>
       <Bookings />
+      <Footer
+        location={[
+          "123 Fake Street, London, E1 4UD",
+          "hello@fakehotel.com",
+          "0123 456789"
+        ]}
+      />
     </div>
   );
 };
