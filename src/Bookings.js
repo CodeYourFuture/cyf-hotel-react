@@ -14,7 +14,7 @@ const Bookings = () => {
   };
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://cyf-react.glitch.me/delayed`)
       .then(res => res.json())
       .then(data => {
         setBookings(data);
@@ -28,8 +28,8 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
-        <SearchResults FakeBookings={bookings} />
+        {/* <SearchResults results={Bookings} /> */}
+        <SearchResults Bookings={bookings} />
       </div>
     </div>
   );

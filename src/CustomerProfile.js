@@ -1,9 +1,9 @@
 import React from "react";
 function CustomerProfile(props) {
   return (
-    <div>
-      <p>Customer {props.id} profile</p>
-      <p />
+    <div class="border">
+      Customer {props.id} profile
+      <button onClick={props.onClose}>x</button>
     </div>
   );
 }
