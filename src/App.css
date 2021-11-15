@@ -55,3 +55,17 @@ tr {
 .card {
   width: 18rem;
 }
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.search-results-table {
+  width: 100%;
+}
+.search-results-table,
+th,
+td {
+  border: solid 2px;
+  border-collapse: collapse;
+}
