@@ -3,11 +3,10 @@ import React from "react";
 import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
 import "./App.css";
-import Search from "./Search";
 const Heading = () => {
   return (
     <header className="App-header">
-      <img src="/hotel.jpg" alt="" />
+      <img src="/hotel.jpg" alt="hotel" />
       CYF Hotel
     </header>
   );

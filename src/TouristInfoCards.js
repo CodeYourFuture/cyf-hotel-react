@@ -4,7 +4,7 @@ const TouristInfoCards = () => {
   return (
     <div id="allcards">
       <div className="card">
-        <img src="/glasgow.jpg" className="card-img-top" />
+        <img src="/glasgow.jpg" className="card-img-top" alt="" />
         <div className="card-body">
           <h4>Glasgow</h4>
           <p>
@@ -17,8 +17,9 @@ const TouristInfoCards = () => {
           </p>
           <a
             href="https://peoplemakeglasgow.com/"
-            target="_blank"
             className="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             More Information
           </a>
@@ -26,7 +27,7 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img src="/manchester.jpg" className="card-img-top" />
+        <img src="/manchester.jpg" className="card-img-top" alt="" />
         <div className="card-body">
           <h4>Manchester</h4>
           <p>
@@ -42,6 +43,7 @@ const TouristInfoCards = () => {
           <a
             href="https://www.visitmanchester.com/"
             target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary"
           >
             More Information
@@ -50,7 +52,7 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img src="/manchester.jpg" className="card-img-top" />
+        <img src="/manchester.jpg" className="card-img-top" alt="" />
         <div className="card-body">
           <h4>london</h4>
           <p>
@@ -65,6 +67,7 @@ const TouristInfoCards = () => {
             href="https://visitlondon.com/"
             target="_blank"
             className="btn btn-primary"
+            rel="noopener noreferrer"
           >
             More Information
           </a>
