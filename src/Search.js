@@ -1,10 +1,14 @@
 import React from "react";
 
+const SearchButton = () => {
+  return <button className="btn btn-primary">Search</button>;
+};
+
 const Search = () => {
   return (
     <div className="search">
       <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
+        <h4 className="text-left">Search</h4>
       </div>
       <div className="row search-wrapper">
         <div className="col">
@@ -17,7 +21,8 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <button className="btn btn-primary">Search</button>
+              <SearchButton />
+              {/* <button className="btn btn-primary">Search</button> */}
             </div>
           </form>
         </div>
