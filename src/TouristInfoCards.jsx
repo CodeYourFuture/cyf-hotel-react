@@ -21,6 +21,7 @@ const TouristInfoCards = () => {
             href="https://peoplemakeglasgow.com/"
             className="tourist-info-card"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Visit peoplemakeglasgow.com
           </a>
@@ -45,6 +46,7 @@ const TouristInfoCards = () => {
             href="https://www.visitmanchester.com/"
             className="tourist-info-card"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Visit visitmanchester.com
           </a>
@@ -69,6 +71,7 @@ const TouristInfoCards = () => {
             href="https://visitlondon.com/"
             className="tourist-info-card"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Visit visitlondon.com
           </a>
