@@ -37,7 +37,6 @@ const SearchResults = props => {
               </td>
             </tr>
           ))}
-          ;
         </tbody>
       </table>
     </div>
