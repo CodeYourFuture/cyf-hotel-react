@@ -15,8 +15,8 @@ const Footer = props => {
   return (
     <div>
       <ul className="footer">
-        {props.info.map(element => (
-          <li>{element}</li>
+        {props.info.map((element, index) => (
+          <li key={index}>{element}</li>
         ))}
       </ul>
     </div>

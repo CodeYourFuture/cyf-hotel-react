@@ -60,9 +60,20 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 100%;
+  margin-top: 3rem;
+  border-color: rgb(56, 183, 233);
+}
+.card h4 {
+  text-align: center;
 }
 
 #allcards {
   margin: 3% 30%;
+}
+.card-body a {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 40%;
 }
