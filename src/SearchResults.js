@@ -6,8 +6,13 @@ import "./App.css";
 function SearchResults(props) {
   const [selectedId, setSelectedId] = useState(null);
   const [showProfile, setShowProfile] = useState(false);
-  if (props.Bookings.length === 0) return <div>Loading.....</div>;
-  else
+  if (props.Bookings === null) {
+    return <div>Oops...</div>;
+  } else if (props.Bookings.length === 0 && props.LoadingInProgress === true) {
+    return <div>Loading.....</div>;
+  } else if (props.Bookings.length === 0 && props.LoadingInProgress === false) {
+    return <div>Got no result...</div>;
+  } else
     return (
       <div>
         <table className="table">

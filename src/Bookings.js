@@ -13,15 +13,26 @@ const Bookings = () => {
     );
   };
   const [bookings, setBookings] = useState([]);
+  const [loadingInProgress, setLoadingInProgress] = useState(false);
   useEffect(() => {
+    setLoadingInProgress(true);
     fetch(`https://cyf-react.glitch.me/delayed`)
-      .then(res => res.json())
+      .then(res => {
+        if (res.status === 200) {
+          return res.json();
+        }
+        return null;
+      })
       .then(data => {
         setBookings(data);
       })
       .catch(error => {
         console.log("The error is " + error);
-      }); //Use "catch" and "console.error"
+        setBookings(null);
+      })
+      .finally(() => {
+        setLoadingInProgress(false);
+      });
   }, []);
 
   return (
@@ -29,7 +40,10 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         {/* <SearchResults results={Bookings} /> */}
-        <SearchResults Bookings={bookings} />
+        <SearchResults
+          Bookings={bookings}
+          LoadingInProgress={loadingInProgress}
+        />
       </div>
     </div>
   );
