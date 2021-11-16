@@ -1,3 +1,11 @@
+.header-logo {
+  width: 50px;
+}
+.header-wrapper {
+  display: flex;
+  background-color: #222;
+}
+
 .App {
   text-align: left;
 }
