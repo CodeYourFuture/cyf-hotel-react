@@ -5,6 +5,7 @@ import Bookings from "./Bookings";
 import Header from "./Heading";
 import PlaceCard from "./TouristInfoCards";
 import Footer from "./Footer";
+import SearchResults from "./SearchResults";
 
 const App = () => {
   return (
