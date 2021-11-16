@@ -8,7 +8,7 @@ function CustomerProfile(props) {
       .then(data => {
         setProfile(data);
       });
-  }, []);
+  }, [props.id]);
 
   return (
     <div class="border">

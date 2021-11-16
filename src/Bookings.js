@@ -16,7 +16,7 @@ const Bookings = () => {
   const [loadingInProgress, setLoadingInProgress] = useState(false);
   useEffect(() => {
     setLoadingInProgress(true);
-    fetch(`https://cyf-react.glitch.me/delayed`)
+    fetch(`https://cyf-react.glitch.me/error`)
       .then(res => {
         if (res.status === 200) {
           return res.json();
