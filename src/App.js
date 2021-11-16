@@ -2,7 +2,6 @@ import React from "react";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Footer from "./Footer";
-import SearchResults from "./SearchResults";
 import "./App.css";
 
 const placeHolderPeopleData = [
@@ -55,7 +54,6 @@ const App = () => {
         <header className="App-header">CYF Hotel</header>
         <TouristInfoCards />
         <Bookings />
-        <SearchResults peopleArray={placeHolderPeopleData} />
       </div>
       <Footer
         arrayProp={[

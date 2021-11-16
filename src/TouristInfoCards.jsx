@@ -16,7 +16,12 @@ const TouristInfoCards = () => {
             Lanarkshire. The city occupies much of the lower Clyde valley, and
             its suburbs extend into surrounding districts.
           </p>
-          <a href="peoplemakeglasgow.com" className="tourist-info-card">
+          {/* for some reason these links just reload the page */}
+          <a
+            href="peoplemakeglasgow.com"
+            className="tourist-info-card"
+            target="_blank"
+          >
             Visit peoplemakeglasgow.com
           </a>
         </div>
@@ -36,7 +41,11 @@ const TouristInfoCards = () => {
             has lost the extraordinary vitality and unique influence that put it
             at the forefront of the Industrial Revolution.
           </p>
-          <a href="visitmanchester.com" className="tourist-info-card">
+          <a
+            href="visitmanchester.com"
+            className="tourist-info-card"
+            target="_blank"
+          >
             Visit visitmanchester.com
           </a>
         </div>
@@ -56,7 +65,11 @@ const TouristInfoCards = () => {
             centre. London is also among the oldest of the world's great cities,
             with its history spanning nearly two millennia.
           </p>
-          <a href="visitlondon.com" className="tourist-info-card">
+          <a
+            href="visitlondon.com"
+            className="tourist-info-card"
+            target="_blank"
+          >
             Visit visitlondon.com
           </a>
         </div>
