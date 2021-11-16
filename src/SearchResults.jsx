@@ -1,7 +1,16 @@
 import React from "react";
+import moment from "moment";
 
 const SearchResults = props => {
-  console.log("the whole object ", props.results[0]);
+  console.log(
+    "Check in ",
+    props.results[1].checkInDate,
+    "Check out ",
+    props.results[1].checkOutDate
+  );
+
+  console.log();
+
   return (
     <div id="table">
       <table className="table table-striped table-hover">
@@ -15,13 +24,14 @@ const SearchResults = props => {
             <th scope="col">Room ID </th>
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
+            <th scope="col">Total nights</th>
           </tr>
         </thead>
         <tbody>
-          {props.results.map((person, i) => {
+          {props.results.map((person, index) => {
             return (
-              <tr key={(person, i)}>
-                <th scope="row">{i}</th>
+              <tr key={(person, index)}>
+                <th scope="row">{index}</th>
                 <td key={person.title}>{person.title}</td>
                 <td key={person.firstName}>{person.firstName}</td>
                 <td key={person.surname}>{person.surname}</td>
@@ -29,6 +39,9 @@ const SearchResults = props => {
                 <td key={person.roomId}>{person.roomId}</td>
                 <td key={person.checkInDate}>{person.checkInDate}</td>
                 <td key={person.checkOutDate}>{person.checkOutDate}</td>
+                <td key={person + " totalNights"}>
+                  {moment(person.checkOutDate).diff(person.checkInDate, "days")}
+                </td>
               </tr>
             );
           })}
