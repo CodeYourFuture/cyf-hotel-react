@@ -3,8 +3,16 @@
 }
 
 .App-logo {
+  border-radius: 60%;
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 180px;
+  width: 180px;
+}
+.cards-Wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .App-header {

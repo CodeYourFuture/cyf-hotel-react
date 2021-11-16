@@ -1,6 +1,6 @@
 import React from "react";
 import SearchButton from "./SearchButton";
-import Heading from "./Heading";
+import Heading from "./Heading.jsx";
 
 const Search = () => {
   return (
