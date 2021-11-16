@@ -12,6 +12,5 @@ const Heading = () => {
   );
 };
 export default Heading;
-{
-  /*Exported in Search.js*/
-}
+
+//Exported in Search.js

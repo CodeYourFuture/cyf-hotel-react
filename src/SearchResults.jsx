@@ -35,9 +35,7 @@ const SearchResults = props => {
   );
 };
 
-{
-  /*Function to find the number of nights a person stayed*/
-}
+// Function to find the number of nights a person stayed
 
 function findTheNumberOfDays(checkInDate, checkOutDate) {
   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
