@@ -52,7 +52,7 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img src="/manchester.jpg" className="card-img-top" alt="" />
+        <img src="/london.jpg" className="card-img-top" alt="" />
         <div className="card-body">
           <h4>london</h4>
           <p>
