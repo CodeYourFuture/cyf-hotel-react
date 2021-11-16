@@ -27,6 +27,12 @@
   font-size: large;
 }
 
+.cities {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
