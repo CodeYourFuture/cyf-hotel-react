@@ -1,60 +1,98 @@
-.App {
-  text-align: left;
+/* @import url("https://fonts.googleapis.com/css?family=Quicksand:300,500"); */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .App-header {
   background-color: #222;
   height: 3rem;
-  padding: 0.5rem;
   color: white;
-  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
+  display: flex;
 }
 
-.title {
-  font-size: 1.5em;
-  margin-bottom: 0.5rem;
-  border: 1px solid green;
+.logo {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.app-title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* border: 1px solid hotpink; */
+}
+
+.app-title {
+  margin: 0 auto;
+  /* border: 1px solid hotpink; */
+  padding-right: 3rem;
+}
+
+.page-header {
+  margin-top: 1.5rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  box-shadow: darkorchid 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.my-table {
+  margin: 0rem;
+}
+
+.table-caption {
+  text-align: center;
 }
 
 .cards-wrapper {
+  margin: 1rem;
+  padding-top: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 4rem;
   /* border: 2px solid hotpink; */
 }
 
-.App-content {
-  padding-top: 20px;
-  font-size: large;
+.cards {
+  box-shadow: darkorchid 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+  border: 3px solid rgb(155, 193, 250);
+  border-radius: 100px;
 }
+
+.card-body {
+  display: flex;
+  justify-content: center;
+}
+
 .search {
   padding: 5px 0 20px 0;
-}
-
-tr {
-  color: #5b5757;
 }
 
 .results {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
+.card {
+  width: 19rem;
 }
 
-.card {
-  width: 18rem;
+.footer {
+  padding: 0.4rem;
+  text-align: center;
+  font-family: "Archivo Black", sans-serif;
+  background-color: #222;
+  color: white;
 }

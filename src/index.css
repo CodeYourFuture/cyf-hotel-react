@@ -4,6 +4,11 @@ body {
   font-family: sans-serif;
 }
 
+.app-title {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 500;
+}
+
 .search-wrapper {
   border-top: 1px solid #e9ecef;
 }
@@ -12,7 +17,7 @@ body {
   font-weight: bold;
   padding: 0.75rem;
   margin-bottom: 0;
-  color: #5b5757;
+  color: darkorchid;
 }
 
 .search-row {
@@ -23,4 +28,9 @@ body {
 
 .search-row input {
   margin-right: 10px;
+}
+
+.search-title {
+  text-align: center;
+  margin-bottom: 1rem;
 }
