@@ -80,7 +80,7 @@ img {
   width: 5%;
 }
 
-.card div a {
+.card button {
   color: #fafad2;
   background-color: #a52a2a; /*#808080;*/
 }

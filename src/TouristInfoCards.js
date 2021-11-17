@@ -18,9 +18,7 @@ function TouristInfoCards() {
           unchanged
         </p>
         <div className="card-body">
-          <a href="#" className="btn btn-secondary">
-            peoplemakeglasgow.com
-          </a>
+          <button className="btn btn-secondary">peoplemakeglasgow.com</button>
         </div>
       </div>
       <div className="card">
@@ -38,9 +36,7 @@ function TouristInfoCards() {
           unchanged
         </p>
         <div className="card-body">
-          <a href="#" className="btn btn-secondary">
-            visitmanchester.com
-          </a>
+          <button className="btn btn-secondary">visitmanchester.com</button>
         </div>
       </div>
       <div className="card">
@@ -58,9 +54,7 @@ function TouristInfoCards() {
           unchanged
         </p>
         <div className="card-body">
-          <a href="#" className="btn btn-secondary">
-            visitlondon.com
-          </a>
+          <button className="btn btn-secondary">visitlondon.com</button>
         </div>
       </div>
     </div>
