@@ -1,7 +1,11 @@
 import React from "react";
 
+// I need to unpack dateDiff from date.js cause I havent export it as default
+import { dateDiff } from "./utils/date";
+
 function SearchResult(props) {
   const { results } = props;
+
   return (
     <div>
       <table className="table">
@@ -15,6 +19,7 @@ function SearchResult(props) {
             <th>roomId</th>
             <th>checkInDate</th>
             <th>checkOutDate</th>
+            <th>numberOfNights</th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +34,7 @@ function SearchResult(props) {
                 <td>{row.roomId}</td>
                 <td>{row.checkInDate}</td>
                 <td>{row.checkOutDate}</td>
+                <td>{dateDiff(row.checkInDate, row.checkOutDate)}</td>
               </tr>
             );
           })}
