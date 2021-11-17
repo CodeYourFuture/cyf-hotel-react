@@ -9,8 +9,8 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <Bookings />
       <InfoCards cities={cities} />
+      <Bookings />
       <Footer contacts={contacts} />
     </div>
   );

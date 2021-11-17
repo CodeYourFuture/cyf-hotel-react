@@ -9,8 +9,19 @@ body {
   font-weight: 500;
 }
 
+.places-heading {
+  font-family: "Pacifico", cursive;
+  margin-top: 5rem;
+  color: rgb(29, 29, 179);
+  /* border: 1px solid yellow; */
+}
+
 .search-wrapper {
   border-top: 1px solid #e9ecef;
+}
+
+.search-title {
+  font-weight: bolder;
 }
 
 .search-box label {

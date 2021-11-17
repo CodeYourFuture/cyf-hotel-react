@@ -5,7 +5,7 @@ const Search = () => {
   return (
     <div className="search">
       <div className="page-header">
-        <h4 className="search-title">Search Bookings</h4>
+        <h4 className="search-title">Search Hotel Bookings</h4>
       </div>
       <div className="row search-wrapper">
         <div className="col">
