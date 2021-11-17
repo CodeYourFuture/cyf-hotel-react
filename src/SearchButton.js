@@ -5,7 +5,3 @@ const SearchButton = props => {
 };
 
 export default SearchButton;
-
-{
-  /* <button className="btn btn-primary">Search</button> */
-}

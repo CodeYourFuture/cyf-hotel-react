@@ -5,7 +5,7 @@ const Heading = props => {
   return (
     <header className={props.className}>
       CYF Hotel
-      <img src="bed.png" />
+      <img src="bed.png" alt="" />
     </header>
   );
 };
