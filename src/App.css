@@ -12,10 +12,24 @@
   height: 50px;
   padding: 20px;
   color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  text-align: center;
+  font-family: "Alfa Slab One", cursive;
+  font-size: 2em;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header img {
+  height: 40px;
+  margin-left: 10px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
 }
 
 .App-title {
@@ -25,6 +39,11 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+
+ul {
+  text-align: center;
+  list-style-type: none;
 }
 
 @keyframes App-logo-spin {
