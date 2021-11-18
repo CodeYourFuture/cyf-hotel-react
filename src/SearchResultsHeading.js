@@ -13,6 +13,7 @@ function SearchResultsHeading() {
           <th scope="col">Check-in Date</th>
           <th scope="col">Check-out Date</th>
           <th scope="col">Staying Night</th>
+          <th scope="col" />
         </tr>
       </thead>
     );

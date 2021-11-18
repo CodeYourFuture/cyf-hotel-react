@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchResultsHeading from "./SearchResultsHeading";
 import SearchResultsBody from "./SearchResultsBody"
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = (props) => {
+  const [customerId, setCustomerId] = useState("");
   return (
     <div className="Search-results">
       <div className="container">
@@ -14,11 +15,13 @@ const SearchResults = (props) => {
             id="bookingsTable"
           >
             <SearchResultsHeading />
-            <SearchResultsBody bookings={props.results} />
+            <SearchResultsBody bookings={props.results} setCustomerId={setCustomerId}/>
           </table>
         </div>
         <div>
-          <CustomerProfile id={props.id} /> 
+          {
+            customerId !== "" ? <CustomerProfile id={customerId} setCustomerId={setCustomerId} /> : null
+          } 
         </div>
       </div>
     </div>
