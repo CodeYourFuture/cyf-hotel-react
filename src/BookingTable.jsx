@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 function BookingTable({ result }) {
+  const [selected, setSelected] = useState(false);
   return (
-    <tr>
-      <th scope="row"> {result.id}</th>
+    <tr
+      class={selected ? "table-primary" : " "}
+      onClick={() => {
+        setSelected(!selected);
+      }}
+    >
+      <th scope="row "> {result.id}</th>
       <td>{result.title}</td>
       <td>{result.firstName}</td>
       <td>{result.surname}</td>

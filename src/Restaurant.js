@@ -1,20 +1,19 @@
 import React, { useState } from "react";
+import Order from "./Order";
 
 const Restaurant = () => {
-  const [order, setOrder] = useState(0);
-  function incraseOrder() {
-    let newValue = order + 1;
-    setOrder(newValue);
-  }
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
-          Pizzas: {order}{" "}
-          <button className="btn btn-primary" onClick={incraseOrder}>
+          {/* <button className="btn btn-primary" onClick={incraseOrder}>
             Add
-          </button>
+          </button> */}
+          {/* <RestaurantButton addOrder={incraseOrder} /> */}
+          <Order orderType={"pizza"} />
+          <Order orderType={"salad"} />
+          <Order orderType={"chocolate cake"} />
         </li>
       </ul>
     </div>
