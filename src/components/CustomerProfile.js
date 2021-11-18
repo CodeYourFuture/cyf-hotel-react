@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-function CustomerProfile({ id }) {
+function CustomerProfile({ endpoint, id }) {
   const [profileCard, setProfileCard] = useState({});
   useEffect(() => {
     if (id !== null) {
-      fetch(`https://cyf-react.glitch.me/customers/${id}`)
+      fetch(`https://gulnihal-hotel-server.herokuapp.com/bookings/${id}`)
         .then(res => res.json())
         .then(data => {
           console.log("Fetch Data:", data);
-          setProfileCard(data);
+          setProfileCard(data[0]);
         });
     }
   }, [id]);

@@ -14,7 +14,9 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(
+      `https://gulnihal-hotel-server.herokuapp.com${window.location.pathname}`
+    )
       .then(res => res.json())
       .then(data => setBooking(data));
     console.log("loading...");
