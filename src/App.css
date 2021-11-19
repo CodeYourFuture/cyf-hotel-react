@@ -3,21 +3,29 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 80px;
+  margin-left: 2rem;
+  padding: 0.3rem;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
 }
-
+.Tourist-Cards {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .App-title {
   font-size: 1.5em;
 }
@@ -27,14 +35,14 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 .search {
   padding: 5px 0 20px 0;
 }
@@ -54,4 +62,7 @@ tr {
 
 .card {
   width: 18rem;
+}
+.card-img-top {
+  max-height: 175px;
 }
