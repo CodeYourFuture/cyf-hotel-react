@@ -9,7 +9,14 @@ const TouristInfoCards = ({ imageUrl, cityName, description, link }) => (
     <Image src={imageUrl} alt="city-thumb" />
     <h3>{cityName}</h3>
     <p>{description}</p>
-    <SearchButton key={cityName} text="hello" href={link} />
+    <SearchButton
+      key={cityName}
+      text={
+        <a href={link} target="_blank">
+          Visit {cityName}
+        </a>
+      }
+    />
   </Wrapper>
 );
 

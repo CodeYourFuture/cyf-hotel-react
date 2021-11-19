@@ -6,6 +6,7 @@ import london from "./images/london.jpeg";
 // Components:
 import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
+import Footer from "./components/Footer";
 
 import Bookings from "./Bookings";
 import "./App.css";
@@ -35,6 +36,13 @@ const App = () => {
           link="https://visitlondon.com/"
         />
       </div>
+      <Footer
+        footerArr={[
+          "123 Fake Street, London, E1 4UD",
+          "hello@fakehotel.com",
+          "0123 456789"
+        ]}
+      />
     </div>
   );
 };

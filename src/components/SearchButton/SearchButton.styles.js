@@ -15,6 +15,11 @@ export const Wrapper = styled.button`
   outline: none;
   cursor: pointer;
 
+  a {
+    text-decoration: none;
+    color: var(--white);
+  }
+
   :hover {
     opacity: 0.8;
   }
