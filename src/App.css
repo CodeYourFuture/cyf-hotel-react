@@ -9,6 +9,9 @@
 .App {
   text-align: left;
 }
+.highlighted {
+  background-color: lightblue;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
