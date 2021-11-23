@@ -1,9 +1,26 @@
 import React from "react";
+import { useState } from "react";
 
 const SearchResults = props => {
+  const [selectedRowColor, setSelectedRowColor] = useState([]);
+
+  const HighLight = id => {
+    let selectedRow = [...selectedRowColor];
+
+    if (selectedRow.includes(id)) {
+      const index = selectedRow.indexOf(id);
+      selectedRow.splice(index, 1);
+
+      setSelectedRowColor(selectedRow);
+    } else {
+      selectedRow.push(id);
+      setSelectedRowColor(selectedRow);
+    }
+  };
+
   return (
     <div className="table-responsive">
-      <table className="table table-bordered table-hover">
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -20,7 +37,17 @@ const SearchResults = props => {
         <tbody>
           {props.results.map(person => {
             return (
-              <tr key={person.id}>
+              <tr
+                key={person.id}
+                onClick={e => {
+                  HighLight(person.id);
+                }}
+                className={
+                  selectedRowColor.includes(person.id)
+                    ? "lightBlueBackground"
+                    : ""
+                }
+              >
                 <td>{person.id}</td>
                 <td>{person.title}</td>
                 <td>{person.firstName}</td>
