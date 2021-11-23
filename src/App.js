@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Heading from "./Heading";
+import Restaurant from "./Restaurant";
 import "./App.css";
 
 let ContactDetails = [
@@ -18,6 +19,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer data={ContactDetails} />
     </div>
   );
