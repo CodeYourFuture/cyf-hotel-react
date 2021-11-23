@@ -51,9 +51,9 @@ tr {
   color: #5b5757;
 }
 
-.results {
+/* .results {
   padding-top: 15px;
-}
+} */
 
 .footer {
   padding-top: 20px;
@@ -65,4 +65,18 @@ tr {
 }
 .card-img-top {
   max-height: 175px;
+}
+
+.lightPinkBackground {
+  background-color: lightpink;
+}
+h3 {
+  text-align: center;
+}
+.restaurantOrders {
+  gap: 1.5rem;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
