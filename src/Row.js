@@ -1,5 +1,4 @@
 import React from "react";
-import FakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
 
 const Row = props => {
