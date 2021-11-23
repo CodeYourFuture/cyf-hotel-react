@@ -12,6 +12,9 @@
 .highlighted {
   background-color: lightblue;
 }
+.blueTextColor th {
+  color: lightblue !important;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

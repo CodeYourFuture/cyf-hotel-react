@@ -6,8 +6,9 @@ import { dateDiff } from "./utils/date";
 function SearchResult(props) {
   const { results } = props;
   const [selectedRows, setSelectedRows] = useState([]);
+  const [headerHighlited, setHeaderHighlited] = useState(false);
+
   const handleRowClick = id => {
-    //
     let clonedSelectedRows = [...selectedRows];
     if (clonedSelectedRows.includes(id)) {
       const index = clonedSelectedRows.indexOf(id);
@@ -22,7 +23,10 @@ function SearchResult(props) {
     <div>
       <table className="table">
         <thead className="thead-dark">
-          <tr>
+          <tr
+            onClick={() => setHeaderHighlited(!headerHighlited)}
+            className={headerHighlited ? "blueTextColor" : ""}
+          >
             <th>id</th>
             <th>title</th>
             <th>firstName</th>
