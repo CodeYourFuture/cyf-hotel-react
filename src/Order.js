@@ -1,6 +1,7 @@
 import React from "react";
-
+import RestaurantButton from "./RestaurantButton";
 import { useState } from "react";
+
 const Order = props => {
   const [orders, setOrders] = useState(0);
 
@@ -18,14 +19,8 @@ const Order = props => {
 
   return (
     <li className="restaurantOrder">
-      {props.orderType}: {orders}{" "}
-      <button className="btn btn-primary" onClick={orderOne}>
-        Add One
-      </button>
-      {/* button to remove one item */}
-      <button className="btn btn-primary" onClick={removeOne}>
-        Remove One
-      </button>
+      {props.orderType}: {orders}
+      <RestaurantButton addOrder={orderOne} removeOrder={removeOne} />
     </li>
   );
 };
