@@ -13,9 +13,9 @@ const Bookings = () => {
   };
   const [bookings, setBookings] = useState(FakeBookings);
   //Remember to delete "addBooking" function
-  const addBooking = () => {
-    setBookings(booking => booking + 1);
-  };
+  // const addBooking = () => {
+  //   setBookings(booking => booking + 1);
+  // };
 
   return (
     <div className="App-content">
