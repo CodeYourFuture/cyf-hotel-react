@@ -58,17 +58,26 @@ ul {
   padding: 5px 0 20px 0;
 }
 
-tr {
-  color: #5b5757;
-}
-
 .results {
   padding-top: 15px;
 }
 
-.footer {
+table {
   padding-top: 20px;
   text-align: center;
+  width: 100%;
+  border: 1px solid black;
+}
+
+td,
+th {
+  border: 1px solid black;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.skyBlue {
+  background: skyblue;
 }
 
 .card {

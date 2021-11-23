@@ -1,9 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [rowArray, setRowArray] = useState([]);
+
+  const addToArray = event => {
+    const rowId = event.currentTarget.id;
+    if (!rowArray.includes(rowId)) {
+      setRowArray(previousValue => previousValue.concat(rowId));
+      event.currentTarget.className = "skyBlue";
+    }
+
+    if (rowArray.includes(rowId)) {
+      event.currentTarget.className = "";
+      setRowArray(previousValue => {
+        previousValue.splice(previousValue.indexOf(rowId), 1);
+        return previousValue;
+      });
+    }
+  };
+
+  console.log(rowArray);
+
+  const rowData = props.results.map(element => {
+    return (
+      <tr className="" onClick={addToArray} id={`${element.id}`}>
+        <td>{element.id}</td>
+        <td>{element.title}</td>
+        <td>{element.firstName}</td>
+        <td>{element.surname}</td>
+        <td>{element.email}</td>
+        <td>{element.roomId}</td>
+        <td>{element.checkInDate}</td>
+        <td>{element.checkOutDate}</td>
+        <td>
+          {moment(element.checkOutDate).diff(
+            moment(element.checkInDate),
+            "days"
+          )}
+        </td>
+      </tr>
+    );
+  });
+
   return (
-    <table className="table">
+    <table id="john">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -17,26 +58,7 @@ const SearchResults = props => {
           <th scope="col">Number of Nights</th>
         </tr>
       </thead>
-      <tbody>
-        {props.results.map(element => (
-          <tr>
-            <td>{element.id}</td>
-            <td>{element.title}</td>
-            <td>{element.firstName}</td>
-            <td>{element.surname}</td>
-            <td>{element.email}</td>
-            <td>{element.roomId}</td>
-            <td>{element.checkInDate}</td>
-            <td>{element.checkOutDate}</td>
-            <td>
-              {moment(element.checkOutDate).diff(
-                moment(element.checkInDate),
-                "days"
-              )}
-            </td>
-          </tr>
-        ))}
-      </tbody>
+      <tbody>{rowData}</tbody>
     </table>
   );
 };
