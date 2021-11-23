@@ -20,11 +20,14 @@ const SearchResults = props => {
     }
   };
 
-  console.log(rowArray);
-
   const rowData = props.results.map(element => {
     return (
-      <tr className="" onClick={addToArray} id={`${element.id}`}>
+      <tr
+        className=""
+        onClick={addToArray}
+        id={`${element.id}`}
+        key={element.id}
+      >
         <td>{element.id}</td>
         <td>{element.title}</td>
         <td>{element.firstName}</td>
