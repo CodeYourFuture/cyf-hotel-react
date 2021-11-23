@@ -2,6 +2,7 @@ import React from "react";
 
 import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
+import Restaurant from "./Restaurant";
 import "./App.css";
 const Heading = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer
         info={[
           "123 Fake Street, London, E1 4UD",

@@ -77,3 +77,12 @@ tr {
   display: block;
   width: 40%;
 }
+h1 {
+  text-align: center;
+}
+.restaurant {
+  text-align: center;
+}
+.colored {
+  background: crimson;
+}

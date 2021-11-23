@@ -54,7 +54,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img src="/london.jpg" className="card-img-top" alt="" />
         <div className="card-body">
-          <h4>london</h4>
+          <h4>London</h4>
           <p>
             Welcome to London! Discover the best of London with Visit London,
             the official guide to England’s exciting capital. Find things to do
