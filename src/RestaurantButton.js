@@ -1,8 +1,8 @@
 import React from "react";
 
-const RestaurantButton = props => {
+const RestaurantButton = ({ order }) => {
   return (
-    <button className="btn btn-primary" onClick={props.order}>
+    <button className="btn btn-primary" onClick={order}>
       Add
     </button>
   );

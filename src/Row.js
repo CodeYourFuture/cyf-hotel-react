@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const Row = props => {
+  const [selectedRow, setSelectedRow] = useState(null);
+  const clickHandler = () => {
+    setSelectedRow(previousState => props.Id);
+    if (selectedRow === props.Id) {
+      setSelectedRow(previousState => null);
+    }
+  };
   return (
-    <tr>
+    <tr
+      key={props.Id}
+      className={selectedRow === props.Id ? "colored" : ""}
+      onClick={clickHandler}
+    >
       <td key={1}>{props.Id}</td>
       <td key={2}>{props.Title}</td>
       <td key={3}>{props.FirstName}</td>
