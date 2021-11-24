@@ -4,9 +4,9 @@ import moment from "moment";
 const Row = props => {
   const [selectedRow, setSelectedRow] = useState(null);
   const clickHandler = () => {
-    setSelectedRow(previousState => props.Id);
+    setSelectedRow(props.Id);
     if (selectedRow === props.Id) {
-      setSelectedRow(previousState => null);
+      setSelectedRow(null);
     }
   };
   return (
