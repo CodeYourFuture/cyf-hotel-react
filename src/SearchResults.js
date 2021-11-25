@@ -1,37 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
-  /*const results = [
-    {
-      id: "675",
-      title: "ddd",
-      Lastname: "hhgg",
-      email: "hgbgvgg",
-      roomid: "hgg",
-      checkindate: "15/5/2020",
-      checkoutdate: "15/7/20",
-    },
-    {
-      id: "675",
-      title: "ccc",
-      Lastname: "hhgg",
-      email: "hgbgvgg",
-      roomid: "hgg",
-      checkindate: "15/5/2020",
-      checkoutdate: "15/7/20",
-    },
-    {
-      id: "675",
-      title: "bbb",
-      Lastname: "hhgg",
-      email: "hgbgvgg",
-      roomid: "hgg",
-      checkindate: "15/5/2020",
-      checkoutdate: "15/7/20",
-    },
-  ];*/
+  const [highlight, sethighlight] = useState([]);
 
+  function handleclick(id) {
+    if (highlight.includes(id)) {
+      const filterhighlight = highlight.filter(rowid => {
+        return rowid !== id;
+      });
+      sethighlight(filterhighlight);
+    } else {
+      const newarray = highlight.concat(id);
+      sethighlight(newarray);
+    }
+  }
+
+  function getclassName(id) {
+    if (highlight.includes(id)) {
+      return "highlight";
+    } else {
+      return "";
+    }
+  }
   return (
     <div className="tablesearch">
       <table className="table">
@@ -49,8 +40,14 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map((result, i) => (
-            <tr key={i}>
+          {props.FakeBookings.map((result, i) => (
+            <tr
+              key={i}
+              onClick={() => {
+                handleclick(result.id);
+              }}
+              className={getclassName(result.id)}
+            >
               <td>{result.id}</td>
               <td>{result.title}</td>
               <td>{result.surname}</td>

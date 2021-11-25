@@ -83,7 +83,7 @@ tr {
   text-align: center;
 }
 li {
-  color: #c9c1c1;
+  color: white;
 }
 .card {
   width: 18rem;
@@ -97,4 +97,7 @@ ul {
 }
 .tablesearch {
   padding-top: 5em;
+}
+.highlight {
+  background-color: white;
 }
