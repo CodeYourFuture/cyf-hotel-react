@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [background, setBackground] = useState("");
+
+  const highlightRow = () => {
+    setBackground(background => (background = "bg-primary"));
+  };
+
   return (
-    <table className="table table-striped table-hover my-5">
+    <table className="table table-hover my-5">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -19,7 +25,11 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map((person, index) => (
-          <tr key={person.firstName}>
+          <tr
+            key={person.firstName}
+            onClick={highlightRow}
+            className={background}
+          >
             <td>{index}</td>
             <td>{person.firstName}</td>
             <td>{person.surname}</td>
