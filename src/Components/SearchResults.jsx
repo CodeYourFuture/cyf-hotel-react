@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import moment from "moment";
 
 const SearchResults = props => {
-  const [background, setBackground] = useState("");
+  const highlightedRow = person => {
+    const getElement = document.getElementById(person);
 
-  const highlightRow = () => {
-    setBackground(background => (background = "bg-primary"));
+    getElement.hasAttribute("style")
+      ? getElement.removeAttribute("style")
+      : (getElement.style.background = "#e4e4e4");
   };
 
   return (
@@ -27,8 +29,8 @@ const SearchResults = props => {
         {props.results.map((person, index) => (
           <tr
             key={person.firstName}
-            onClick={highlightRow}
-            className={background}
+            onClick={() => highlightedRow(index)}
+            id={index}
           >
             <td>{index}</td>
             <td>{person.firstName}</td>
