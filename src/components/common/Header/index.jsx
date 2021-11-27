@@ -1,5 +1,5 @@
-function Heading() {
+function Header() {
   return <header className="App-header">CYF Hotel</header>;
 }
 
-export default Heading
+export default Header;

@@ -1,4 +1,3 @@
-import React from "react";
 import Search from "./Search.jsx";
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
