@@ -1,6 +1,7 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import Bookings from "../Bookings";
+import Heading from "../Heading";
 import "./App.css";
-import Bookings from "./Bookings";
-import Heading from "./Heading";
 
 const App = () => {
   return (
