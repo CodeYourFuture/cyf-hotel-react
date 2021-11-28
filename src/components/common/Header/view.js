@@ -11,7 +11,7 @@ const logoSpin = keyframes({
 
 export const Heading = styled.div({
   backgroundColor: "#222",
-  height: 60,
+  height: "4.2rem",
   color: "white",
   fontSize: "0.7em",
   fontWeight: "bold",
