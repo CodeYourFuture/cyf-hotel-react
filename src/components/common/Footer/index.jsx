@@ -1,6 +1,6 @@
 const Footer = ({ hotelInfo }) => {
   return (
-    <footer className="bg-secondary pt-2 text-center">
+    <footer className="bg-secondary py-2 text-center">
       <ul className="list-inline text-light">
         {hotelInfo.map((info, index) => (
           <li key={index}>{info}</li>
