@@ -1,18 +1,30 @@
+import { FaCopyright, FaEnvelope, FaGithub, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+
 const Footer = ({ hotelInfo }) => {
+  const icons = [<FaMapMarkerAlt />, <FaEnvelope />, <FaPhoneAlt />];
+
   return (
-    <footer className="bg-secondary py-2 text-center">
-      <ul className="list-inline text-light">
+    <footer className="bg-secondary py-2 text-center text-light d-flex flex-column fs-5">
+      <ul className="list-inline d-flex justify-content-around m-0">
         {hotelInfo.map((info, index) => (
-          <li key={index}>{info}</li>
+          <li key={index}>
+            {icons[index]}
+            {info}
+          </li>
         ))}
-        <li>
-          View Source on{" "}
+      </ul>
+      <div className="d-flex justify-content-around">
+        <div>
+          <FaCopyright />
+          Copyright, 2021 &copy; All Rights Reserved.
+        </div>
+        <div>
+          View Source on <FaGithub />
           <a className="text-warning" href="https://github.com/Amir-Pourhadi/CYF-React-Hotel" target="_blank">
             GitHub
           </a>
-        </li>
-        <li>Copyright, 2021 &copy; All Rights Reserved.</li>
-      </ul>
+        </div>
+      </div>
     </footer>
   );
 };
