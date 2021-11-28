@@ -1,3 +1,9 @@
+* {
+  background-color: rgb(255, 248, 220, 0.1); /* AntiqueWhite*/
+  font-size: 16px;
+  z-index: 10;
+}
+
 .App {
   text-align: left;
 }
@@ -27,6 +33,66 @@
   font-size: large;
 }
 
+form {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.form-div {
+  width: 50%;
+}
+
+button {
+  white-space: nowrap;
+  margin-right: 1.5rem;
+}
+
+.search {
+  padding: 5px 0 20px 0;
+}
+
+tr {
+  color: #8b0000; /*#FAFAD2;*/ /*#FFD700 Gold*/
+}
+
+th {
+  background-color: #f5f5f5;
+}
+
+td {
+  color: #2f4f4f;
+}
+.results {
+  padding-top: 15px;
+}
+
+.footer {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  width: 30%;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #fff5ee; /* #FFDAB9;*/ /*Cornsilk*/
+}
+
+img {
+  width: 5%;
+}
+
+.card button {
+  color: #fafad2;
+  background-color: #a52a2a; /*#808080;*/
+  padding: 1rem;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,10 +101,8 @@
     transform: rotate(360deg);
   }
 }
-.search {
-  padding: 5px 0 20px 0;
-}
 
+/* 
 tr {
   color: #5b5757;
 }
@@ -50,8 +114,8 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
-}
-
+} */
+/* 
 .card {
   width: 18rem;
-}
+} */
