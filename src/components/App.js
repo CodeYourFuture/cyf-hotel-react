@@ -9,8 +9,10 @@ const App = () => {
     <>
       <GlobalStyle />
       <Header />
-      <TouristsInfoCards />
-      <Bookings />
+      <main>
+        <TouristsInfoCards />
+        <Bookings />
+      </main>
       <Footer />
     </>
   );
