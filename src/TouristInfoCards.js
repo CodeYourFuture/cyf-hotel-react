@@ -9,7 +9,7 @@ function TouristInfoCards() {
           className="card-img-top"
           alt=""
         />
-        <h3>Glasgow</h3>
+        <h3 className="greenFormat">Glasgow</h3>
         <p className="text-justify">
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s, when an unknown printer took a galley of type and scrambled it
@@ -23,7 +23,7 @@ function TouristInfoCards() {
             className="btn btn-secondary"
             target="blank"
           >
-            More Info
+            More Information
           </a>
         </div>
       </div>
@@ -33,7 +33,7 @@ function TouristInfoCards() {
           alt=""
           className="card-img-top"
         />
-        <h3>Manchester</h3>
+        <h3 className="greenFormat">Manchester</h3>
         <p className="text-justify">
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s, when an unknown printer took a galley of type and scrambled it
@@ -47,7 +47,7 @@ function TouristInfoCards() {
             target="blank"
             className="btn btn-secondary"
           >
-            More Info
+            More Information
           </a>
         </div>
       </div>
@@ -57,7 +57,7 @@ function TouristInfoCards() {
           className="card-img-top"
           alt=""
         />
-        <h3>London</h3>
+        <h3 className="greenFormat">London</h3>
         <p className="text-justify">
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s, when an unknown printer took a galley of type and scrambled it
@@ -71,7 +71,7 @@ function TouristInfoCards() {
             target="blank"
             className="btn btn-secondary"
           >
-            More Info
+            More Information
           </a>
         </div>
       </div>

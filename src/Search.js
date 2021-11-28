@@ -5,7 +5,7 @@ const Search = () => {
   return (
     <div className="search">
       <div className="page-header">
-        <h4 className="text-left text-success font-weight-bold">
+        <h4 className="text-left font-weight-bold text-success">
           Search Bookings
         </h4>
       </div>
