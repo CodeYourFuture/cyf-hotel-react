@@ -4,7 +4,7 @@ import { Heading, Logo, PrideMonth, Title } from "./view";
 function Header() {
   return (
     <header>
-      <Heading className="d-flex align-items-center">
+      <Heading className="d-flex align-items-center text-light fw-bold">
         <Logo src={logoImg} alt="hotel logo" />
         <Title>Welcome to Amir's Hotel!</Title>
       </Heading>

@@ -10,17 +10,15 @@ const logoSpin = keyframes({
 });
 
 export const Heading = styled.div({
-  backgroundColor: "#222",
+  backgroundColor: "#333",
   height: "4.2rem",
-  color: "white",
   fontSize: "0.7em",
-  fontWeight: "bold",
 });
 
 export const Logo = styled.img({
   animation: css`${logoSpin} infinite 20s ease-in-out`,
   width: 120,
-  padding: "0 35px",
+  padding: "2rem",
 });
 
 export const Title = styled.div({
@@ -28,8 +26,7 @@ export const Title = styled.div({
 });
 
 export const PrideMonth = styled.div({
-  width: "100vw",
-  height: "0.5rem",
+  height: "0.6rem",
   background:
     "linear-gradient(90deg, rgb(100, 91, 83) 0%, rgb(235, 82, 82) 18.23%,rgb(247, 143, 47) 34.37%,rgb(244, 193, 81) 48.96%,rgb(82, 187, 118) 66.15%,rgb(38, 165, 215) 82.29%,rgb(224, 105, 183) 100%)",
 });
