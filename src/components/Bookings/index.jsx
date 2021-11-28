@@ -1,19 +1,17 @@
-import Search from "./Search.jsx";
-// import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import FakeBookings from "../../data/fakeBookings.json";
+import Search from "./Search-Form";
+import SearchResults from "./SearchResults";
 
 const Bookings = () => {
-  const search = searchVal => {
+  const search = (searchVal) => {
     console.info("TO DO!", searchVal);
   };
 
   return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
-      </div>
-    </div>
+    <section className="container py-5">
+      <Search search={search} />
+      <SearchResults results={FakeBookings} />
+    </section>
   );
 };
 
