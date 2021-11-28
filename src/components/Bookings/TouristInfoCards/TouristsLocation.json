@@ -1,0 +1,20 @@
+[
+  {
+    "location": "Glasgow",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Glasgow_City_Chambers_Exterior.jpg/375px-Glasgow_City_Chambers_Exterior.jpg",
+    "link": "https://peoplemakeglasgow.com",
+    "desc": "Glasgow is a port city on the River Clyde in Scotland's western Lowlands. It's famed for its Victorian and art nouveau architecture, a rich legacy of the city's 18th–20th-century prosperity due to trade and shipbuilding."
+  },
+  {
+    "location": "Manchester",
+    "img": "https://i2-prod.manchestereveningnews.co.uk/incoming/article19303263.ece/ALTERNATES/s810/0_Coronavirus.jpg",
+    "link": "https://visitmanchester.com",
+    "desc": "Manchester is fringed by the Cheshire Plain to the south, the Pennines to the north and east, and an arc of towns with which it forms a continuous conurbation. The local authority for the city is Manchester City Council."
+  },
+  {
+    "location": "London",
+    "img": "https://etravel.today/wp-content/uploads/2019/12/iStock-6290747981.jpg",
+    "link": "https://visitlondon.com",
+    "desc": "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations."
+  }
+]
