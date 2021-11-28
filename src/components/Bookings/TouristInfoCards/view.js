@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   width: 28.5rem;
-  height: 300px;
+  height: 19rem;
   margin: 20px 5px 10px;
   perspective: 1000px;
   transition: all 1s;
