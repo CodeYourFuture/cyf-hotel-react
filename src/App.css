@@ -69,3 +69,7 @@ td {
   border: solid 2px;
   border-collapse: collapse;
 }
+
+.high-lighted {
+  background-color: red;
+}
