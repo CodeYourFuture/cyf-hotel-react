@@ -1,12 +1,13 @@
-import { PrideMonth } from "./view";
+import logoImg from "./logo.svg";
+import { Heading, Logo, PrideMonth, Title } from "./view";
 
 function Header() {
   return (
     <header>
-      <div className="header d-flex align-items-center">
-        <img className="logo" src="https://image.flaticon.com/icons/svg/139/139899.svg" alt="hotel logo" />
-        <div className="title">Welcome to Amir's Hotel!</div>
-      </div>
+      <Heading className="d-flex align-items-center">
+        <Logo src={logoImg} alt="hotel logo" />
+        <Title>Welcome to Amir's Hotel!</Title>
+      </Heading>
       <PrideMonth />
     </header>
   );

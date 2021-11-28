@@ -1,4 +1,31 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const logoSpin = keyframes({
+  from: {
+    transform: "rotateY(0deg)",
+  },
+  to: {
+    transform: "rotateY(360deg)",
+  },
+});
+
+export const Heading = styled.div({
+  backgroundColor: "#222",
+  height: 60,
+  color: "white",
+  fontSize: "0.7em",
+  fontWeight: "bold",
+});
+
+export const Logo = styled.img({
+  animation: css`${logoSpin} infinite 20s ease-in-out`,
+  width: 120,
+  padding: "0 35px",
+});
+
+export const Title = styled.div({
+  fontSize: "2em",
+});
 
 export const PrideMonth = styled.div({
   width: "100vw",
