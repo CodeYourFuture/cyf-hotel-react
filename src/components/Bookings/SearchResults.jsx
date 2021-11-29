@@ -1,32 +1,46 @@
+import moment from "moment";
+
 function SearchResults({ results }) {
+  const tableHead = [
+    "ID",
+    "Title",
+    "FirstName",
+    "Surname",
+    "Email",
+    "Room ID",
+    "Check in Date",
+    "Check out Date",
+    "Nights",
+  ];
+
+  const getDifference = (date1, date2) => {
+    const start = new moment(date1);
+    const end = new moment(date2);
+    return end.diff(start, "days");
+  };
+
   return (
     <table className="table table-striped text-center mt-2">
       <caption className="caption-top text-center">Customers</caption>
       <thead className="table-secondary">
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Title</th>
-          <th scope="col">Firstname</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room ID</th>
-          <th scope="col">Check in Date</th>
-          <th scope="col">Check out Date</th>
+          {tableHead.map((head, index) => (
+            <th key={index}>{head}</th>
+          ))}
         </tr>
       </thead>
       <tbody>
-        {results.map((result) => (
-          <tr key={result.id}>
-            <td scope="row">{result.id}</td>
-            <td>{result.title}</td>
-            <td>{result.firstName}</td>
-            <td>{result.surname}</td>
-            <td>{result.email}</td>
-            <td>{result.roomId}</td>
-            <td>{result.checkInDate}</td>
-            <td>{result.checkOutDate}</td>
-          </tr>
-        ))}
+        {results.map((person, index) => {
+          const { checkInDate, checkOutDate } = person;
+          return (
+            <tr key={index}>
+              {Object.keys(person).map((props, i) => (
+                <td key={i}>{person[props]}</td>
+              ))}
+              <td>{getDifference(checkInDate, checkOutDate)}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
