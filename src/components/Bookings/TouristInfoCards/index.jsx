@@ -3,12 +3,12 @@ import { Card, CardBack, CardDesc, CardFront, CardImg, CardInner } from "./view"
 
 const TouristsInfoCard = ({ location, img, link, desc }, index) => {
   return (
-    <Card className="card shadow mx-3" key={index}>
-      <CardInner className="card-body d-flex justify-content-center w-100 h-100 py-2">
+    <Card className="card shadow" key={index}>
+      <CardInner className="card-body d-flex justify-content-center w-100 h-100 py-3">
         <CardFront>
-          <CardImg src={img} className="card-img p-1" alt={location} />
+          <CardImg src={img} className="card-img" alt={location} />
         </CardFront>
-        <CardBack className="position-absolute my-2 text-white text-center">
+        <CardBack className="position-absolute my-1 text-white text-center">
           <CardDesc className="position-absolute fs-6">
             <h5>{location}</h5>
             <p>{desc}</p>

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  width: 28.5rem;
-  height: 19rem;
+  width: 22rem;
+  height: 22.5rem;
   margin: 20px 5px 10px;
   perspective: 1000px;
   transition: all 1s;
@@ -17,10 +17,11 @@ export const Card = styled.div`
 
 export const CardImg = styled.img`
   border-radius: 20px;
+  height: 20rem;
 `;
 
 export const CardDesc = styled.div`
-  width: 90%;
+  width: 93%;
   top: 5%;
   left: 5%;
 `;
