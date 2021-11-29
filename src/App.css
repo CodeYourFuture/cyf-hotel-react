@@ -75,3 +75,19 @@ c .card {
 .card {
   margin: 4rem;
 }
+
+.orderSection {
+  text-align: center;
+  border: 1px solid black;
+  width: 50%;
+  margin-left: 25%;
+  margin-left: 25%;
+}
+.orderSection li {
+  list-style-type: none;
+}
+
+.highlight {
+  background-color: gold;
+  color: red;
+}

@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import TableHeader from "./TableHeader";
 import moment from "moment";
 
-const SearchResults = props => {
+const SearchResults = ({ results }) => {
+  const [rowsSelected, setRowsSelected] = useState(false);
+  function rowsSelector() {
+    setRowsSelected(!rowsSelected);
+  }
   return (
     <div className="search-results">
       <table className="table table-striped">
         <TableHeader />
         <tbody>
-          {props.results.map((entry, index) => {
+          {results.map(entry => {
             return (
-              <tr key={index}>
+              <tr
+                key={entry.id}
+                onClick={e => {
+                  rowsSelector();
+                }}
+                className={rowsSelected ? "highlight" : ""}
+              >
+                <td>{entry.id}</td>
                 <td>{entry.title}</td>
                 <td>{entry.firstName}</td>
                 <td>{entry.surname}</td>
                 <td>{entry.email}</td>
                 <td>{entry.roomId}</td>
-                <td>{entry.ID}</td>
                 <td>{entry.checkInDate}</td>
                 <td>{entry.checkOutDate}</td>
                 <td>
