@@ -9,7 +9,7 @@ const Bookings = () => {
 
   return (
     <section className="container py-5">
-      <h4>Search Bookings</h4>
+      <h3>Search Bookings</h3>
       <Search search={search} />
       <SearchResults results={FakeBookings} />
     </section>
