@@ -5,10 +5,14 @@ const TableRowsLoop = props => {
   const toggleHighLight = index => {
     setHighLightedState((highLightedState[index] = !highLightedState[index]));
   };
+  const appendNewBool = () => {
+    // from what I can gather:
+    //                    this is taking the old array and adding false onto the end
+    //                    |   sort of like array.push()
+    //                    V
+    setHighLightedState(array => (array = [...highLightedState, false]));
+  };
   return props.results.map((person, index) => {
-    const appendNewBool = () => {
-      setHighLightedState(array => (array = [...highLightedState, false]));
-    };
     appendNewBool();
     return (
       <tr
