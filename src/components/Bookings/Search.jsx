@@ -1,14 +1,20 @@
 import { useState } from "react";
 
-const Search = () => {
+const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearchInput = (e) => {
     setSearchInput(e.target.value);
   };
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    search(searchInput);
+    setSearchInput("");
+  };
+
   return (
-    <form className="form-group d-flex justify-content-center py-3">
+    <form className="form-group d-flex justify-content-center py-3" onSubmit={handleSearchSubmit}>
       <input
         type="text"
         className="form-control w-50"
@@ -16,6 +22,7 @@ const Search = () => {
         value={searchInput}
         onChange={handleSearchInput}
       />
+      <button className="btn btn-primary ms-3">Search</button>
     </form>
   );
 };
