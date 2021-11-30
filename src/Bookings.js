@@ -1,24 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./Components/SearchResults.jsx";
-import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
 
-  const [bookings, setBookings] = useState(FakeBookings);
+  const [bookings, setBookings] = useState([]);
 
-  // this allows me to upload it to Netify. Is there a better way? Most definitely. Is there a funnier way? Definitely not.
-  const pleaseLetMeUpload = () =>
-    setBookings(bookings => (bookings = FakeBookings));
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
+      .then(response => response.json())
+      .then(data => setBookings(bookings => (bookings = data)))
+      .catch(error => console.log(error));
+  });
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} onClick={pleaseLetMeUpload} />
+        <SearchResults results={bookings} />
       </div>
     </div>
   );
