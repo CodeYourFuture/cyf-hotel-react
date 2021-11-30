@@ -8,7 +8,7 @@ import { Wrapper } from "./SearchButton.styles";
 const SearchButton = ({ text }) => <Wrapper type="button">{text}</Wrapper>;
 
 SearchButton.propTypes = {
-  text: PropTypes.string
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
 };
 
 export default SearchButton;

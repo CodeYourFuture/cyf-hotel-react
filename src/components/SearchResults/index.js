@@ -11,35 +11,37 @@ const SearchResults = () => (
   <Wrapper>
     <Content>
       <table>
-        <tr>
-          <th>id</th>
-          <th>Title</th>
-          <th>First Name</th>
-          <th>Surname</th>
-          <th>Email</th>
-          <th>Room id</th>
-          <th>Check in date</th>
-          <th>Check out date</th>
-          <th>Duration of Stay</th>
-        </tr>
-        {FakeBookings.map(booking => {
-          let a = moment(new Date(booking.checkOutDate));
-          let b = moment(new Date(booking.checkInDate));
+        <tbody>
+          <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Room id</th>
+            <th>Check in date</th>
+            <th>Check out date</th>
+            <th>Duration of Stay</th>
+          </tr>
+          {FakeBookings.map((booking, index) => {
+            let a = moment(new Date(booking.checkOutDate));
+            let b = moment(new Date(booking.checkInDate));
 
-          return (
-            <tr>
-              <th>{booking.id}</th>
-              <th>{booking.title}</th>
-              <th>{booking.firstName}</th>
-              <th>{booking.surname}</th>
-              <th>{booking.email}</th>
-              <th>{booking.roomId}</th>
-              <th>{booking.checkInDate}</th>
-              <th>{booking.checkOutDate}</th>
-              <th>{a.diff(b, "days")}</th>
-            </tr>
-          );
-        })}
+            return (
+              <tr key={index + 1}>
+                <th>{booking.id}</th>
+                <th>{booking.title}</th>
+                <th>{booking.firstName}</th>
+                <th>{booking.surname}</th>
+                <th>{booking.email}</th>
+                <th>{booking.roomId}</th>
+                <th>{booking.checkInDate}</th>
+                <th>{booking.checkOutDate}</th>
+                <th>{a.diff(b, "days")}</th>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </Content>
   </Wrapper>

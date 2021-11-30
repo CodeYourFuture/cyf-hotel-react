@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   overflow-x: auto;
 `;
 
-export const Content = styled.table`
+export const Content = styled.div`
   width: 100%;
   table {
     border-collapse: collapse;

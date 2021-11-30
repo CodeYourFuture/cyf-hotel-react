@@ -8,8 +8,8 @@ const Footer = ({ footerArr }) => (
   <Wrapper>
     <Content>
       <ul>
-        {footerArr.map(footerField => (
-          <li>{footerField}</li>
+        {footerArr.map((footerField, index) => (
+          <li key={index}>{footerField}</li>
         ))}
       </ul>
     </Content>
@@ -17,7 +17,7 @@ const Footer = ({ footerArr }) => (
 );
 
 Footer.propTypes = {
-  footerArr: PropTypes.object
+  footerArr: PropTypes.array
 };
 
 export default Footer;
