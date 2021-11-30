@@ -4,6 +4,7 @@ import SearchResults from "./components/SearchResults/index.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
+  // eslint-disable-next-line
   const [bookings, setBookings] = useState(FakeBookings);
 
   const search = searchVal => {
