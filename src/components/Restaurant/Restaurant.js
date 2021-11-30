@@ -1,23 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
 // Style
 import { Wrapper } from "./Restaurant.styles";
 
 // Components
-import SearchButton from "../SearchButton/index";
+import Order from "../Order/Order";
 
 const Restaurant = () => {
-  let [orders, setOrders] = useState("0");
-  const orderOne = () => setOrders(orders + 1);
-
   return (
     <Wrapper>
       <h3>Restaurant Orders</h3>
       <ul>
-        <li>
-          Pizzas: {orders.length}{" "}
-          <SearchButton text="Add" functionality={orderOne} />
-        </li>
+        <Order orderType="Pizzas" />
+        <Order orderType="Salads" />
+        <Order orderType="Chocolate cake" />
       </ul>
     </Wrapper>
   );
