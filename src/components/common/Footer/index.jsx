@@ -10,7 +10,7 @@ const Footer = ({ hotelInfo }) => {
 
   return (
     <StyledFooter className="bg-secondary py-2 text-center text-light d-flex flex-column fs-5">
-      <ul className="list-inline d-flex justify-content-around m-0">
+      <ul className="list-inline d-flex justify-content-around my-2">
         {hotelInfo.map((info, index) => (
           <li key={index}>
             {icons[index]}
