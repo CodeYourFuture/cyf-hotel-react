@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Style
 import { Wrapper } from "./Restaurant.styles";
@@ -7,13 +7,16 @@ import { Wrapper } from "./Restaurant.styles";
 import SearchButton from "../SearchButton/index";
 
 const Restaurant = () => {
-  const pizzas = 0;
+  let [orders, setOrders] = useState("0");
+  const orderOne = () => setOrders(orders + 1);
+
   return (
     <Wrapper>
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
-          Pizzas: {pizzas} <SearchButton text="Add" />
+          Pizzas: {orders.length}{" "}
+          <SearchButton text="Add" functionality={orderOne} />
         </li>
       </ul>
     </Wrapper>
