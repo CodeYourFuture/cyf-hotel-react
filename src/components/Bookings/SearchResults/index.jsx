@@ -1,4 +1,4 @@
-import moment from "moment";
+import Row from "./Row";
 
 function SearchResults({ results }) {
   const tableHead = [
@@ -13,12 +13,6 @@ function SearchResults({ results }) {
     "Nights",
   ];
 
-  const getDifference = (date1, date2) => {
-    const start = new moment(date1);
-    const end = new moment(date2);
-    return end.diff(start, "days");
-  };
-
   return (
     <table className="table table-striped text-center mt-2">
       <caption className="caption-top text-center">Customers</caption>
@@ -30,17 +24,9 @@ function SearchResults({ results }) {
         </tr>
       </thead>
       <tbody>
-        {results.map((person, index) => {
-          const { checkInDate, checkOutDate } = person;
-          return (
-            <tr key={index}>
-              {Object.keys(person).map((props, i) => (
-                <td key={i}>{person[props]}</td>
-              ))}
-              <td>{getDifference(checkInDate, checkOutDate)}</td>
-            </tr>
-          );
-        })}
+        {results.map((person, index) => (
+          <Row key={index} person={person} />
+        ))}
       </tbody>
     </table>
   );

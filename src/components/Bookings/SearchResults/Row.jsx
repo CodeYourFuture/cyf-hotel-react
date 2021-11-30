@@ -1,0 +1,25 @@
+import moment from "moment";
+import { useState } from "react";
+
+function Row({ person }) {
+  const [selected, setSelected] = useState(false);
+
+  const getDifference = (date1, date2) => {
+    const start = new moment(date1);
+    const end = new moment(date2);
+    return end.diff(start, "days");
+  };
+
+  const { checkInDate, checkOutDate } = person;
+
+  return (
+    <tr>
+      {Object.keys(person).map((props, i) => (
+        <td key={i}>{person[props]}</td>
+      ))}
+      <td>{getDifference(checkInDate, checkOutDate)}</td>
+    </tr>
+  );
+}
+
+export default Row;
