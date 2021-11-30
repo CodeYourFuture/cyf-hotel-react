@@ -10,7 +10,6 @@ const Search = ({ search }) => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     search(searchInput);
-    setSearchInput("");
   };
 
   return (

@@ -5,7 +5,11 @@ import SearchResults from "./SearchResults";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
-  useEffect(async () => {
+  useEffect(() => {
+    getBookings();
+  }, []);
+
+  const getBookings = async () => {
     try {
       const response = await fetch("https://cyf-react.glitch.me");
       const data = await response.json();
@@ -13,10 +17,15 @@ const Bookings = () => {
     } catch (err) {
       console.error(err);
     }
-  }, []);
+  };
 
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    if (!searchVal.trim()) return getBookings();
+    const regExp = new RegExp(searchVal.trim(), "i");
+    const filteredCustomers = bookings.filter(
+      ({ firstName, surname }) => regExp.test(firstName) || regExp.test(surname)
+    );
+    setBookings(() => filteredCustomers);
   };
 
   return (
