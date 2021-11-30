@@ -1,6 +1,7 @@
 import React from "react";
 
 import CustomerBookings from "./CustomerBookings";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
   return (
@@ -16,6 +17,7 @@ const SearchResults = props => {
           <th scope="col">Check in Date</th>
           <th scope="col">Check out Date</th>
           <th scope="col">Duration</th>
+          <th scope="col">Button</th>
         </tr>
       </thead>
       <tbody>
