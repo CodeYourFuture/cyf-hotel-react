@@ -1,5 +1,6 @@
 import moment from "moment";
 import { useState } from "react";
+import styled from "styled-components";
 
 function Row({ person }) {
   const [selected, setSelected] = useState(false);
@@ -13,13 +14,17 @@ function Row({ person }) {
   const { checkInDate, checkOutDate } = person;
 
   return (
-    <tr>
+    <TableRow selected={selected} onClick={() => setSelected((prevSelected) => !prevSelected)}>
       {Object.keys(person).map((props, i) => (
         <td key={i}>{person[props]}</td>
       ))}
       <td>{getDifference(checkInDate, checkOutDate)}</td>
-    </tr>
+    </TableRow>
   );
 }
+
+const TableRow = styled.tr`
+  background-color: ${({ selected }) => (selected ? "lightblue" : "")};
+`;
 
 export default Row;

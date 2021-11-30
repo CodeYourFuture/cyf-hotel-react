@@ -14,7 +14,7 @@ function SearchResults({ results }) {
   ];
 
   return (
-    <table className="table table-striped text-center mt-2">
+    <table className="table text-center mt-2">
       <caption className="caption-top text-center">Customers</caption>
       <thead className="table-secondary">
         <tr>
