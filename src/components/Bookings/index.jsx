@@ -21,7 +21,6 @@ const Bookings = () => {
 
   return (
     <section className="container py-5">
-      <h3>Search Bookings</h3>
       <Search search={search} />
       <SearchResults results={bookings} />
     </section>
