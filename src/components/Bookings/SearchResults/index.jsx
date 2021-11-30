@@ -11,6 +11,7 @@ function SearchResults({ results }) {
     "Check in Date",
     "Check out Date",
     "Nights",
+    "Actions",
   ];
 
   return (

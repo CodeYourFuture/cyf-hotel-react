@@ -19,6 +19,9 @@ function Row({ person }) {
         <td key={i}>{person[props]}</td>
       ))}
       <td>{getDifference(checkInDate, checkOutDate)}</td>
+      <td>
+        <button className="btn btn-sm btn-outline-success">Show Profile</button>
+      </td>
     </TableRow>
   );
 }
