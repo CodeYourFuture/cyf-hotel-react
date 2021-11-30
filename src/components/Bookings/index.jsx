@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Search from "./Search-Form";
+import Search from "./Search";
 import SearchResults from "./SearchResults";
 
 const Bookings = () => {
