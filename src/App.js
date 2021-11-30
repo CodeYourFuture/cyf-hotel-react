@@ -1,5 +1,7 @@
 import React from "react";
 import glasgow from "./images/glasgow.jpeg";
+
+// Images
 import manchester from "./images/manchester.jpeg";
 import london from "./images/london.jpeg";
 
@@ -7,6 +9,7 @@ import london from "./images/london.jpeg";
 import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/Footer";
+import Restaurant from "./components/Restaurant/Restaurant";
 
 import Bookings from "./Bookings";
 import "./App.css";
@@ -16,6 +19,9 @@ const App = () => {
     <div className="App">
       <Heading />
       <Bookings />
+      <br />
+      <br />
+      <Restaurant />
       <br />
       <br />
       <div className="cities">

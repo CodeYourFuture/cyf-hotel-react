@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // Styles
 import { Wrapper, Image } from "./TouristInfoCards.styles";
@@ -19,5 +20,12 @@ const TouristInfoCards = ({ imageUrl, cityName, description, link }) => (
     />
   </Wrapper>
 );
+
+TouristInfoCards.propTypes = {
+  imageUrl: PropTypes.string,
+  cityName: PropTypes.string,
+  description: PropTypes.string,
+  link: PropTypes.string
+};
 
 export default TouristInfoCards;
