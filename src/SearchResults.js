@@ -2,11 +2,14 @@ import React, { useState } from "react";
 
 // I need to unpack dateDiff from date.js cause I havent export it as default
 import { dateDiff } from "./utils/date";
+import CustomerProfile from "./CustomerProfile";
 
 function SearchResult(props) {
   const { results } = props;
   const [selectedRows, setSelectedRows] = useState([]);
   const [headerHighlited, setHeaderHighlited] = useState(false);
+  // this state is needed to keep row ids.
+  const [profileId, setProfileId] = useState(null);
 
   const handleRowClick = id => {
     let clonedSelectedRows = [...selectedRows];
@@ -19,6 +22,7 @@ function SearchResult(props) {
       setSelectedRows(clonedSelectedRows);
     }
   };
+
   return (
     <div>
       <table className="table">
@@ -57,11 +61,23 @@ function SearchResult(props) {
                 <td>{row.checkInDate}</td>
                 <td>{row.checkOutDate}</td>
                 <td>{dateDiff(row.checkInDate, row.checkOutDate)}</td>
+                <td>
+                  <button
+                    className="btn btn-primary"
+                    onClick={e => {
+                      e.stopPropagation();
+                      setProfileId(row.id);
+                    }}
+                  >
+                    Show profile
+                  </button>
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      <CustomerProfile id={profileId} />
     </div>
   );
 }

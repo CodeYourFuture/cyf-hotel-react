@@ -40,6 +40,9 @@
   padding-top: 20px;
   font-size: large;
 }
+.customerProfile {
+  border: 2px dashed rgb(103, 103, 199);
+}
 
 @keyframes App-logo-spin {
   from {
