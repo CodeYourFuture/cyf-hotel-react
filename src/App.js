@@ -16,6 +16,8 @@ const App = () => {
     <div className="App">
       <Heading />
       <Bookings />
+      <br />
+      <br />
       <div className="cities">
         <TouristInfoCards
           imageUrl={glasgow}
@@ -36,6 +38,8 @@ const App = () => {
           link="https://visitlondon.com/"
         />
       </div>
+      <br />
+      <br />
       <Footer
         footerArr={[
           "123 Fake Street, London, E1 4UD",
