@@ -29,8 +29,8 @@ const SearchResults = props => {
         {props.results.map((person, index) => (
           <tr
             key={person.firstName}
-            onClick={() => highlightedRow(index)}
-            id={index}
+            onClick={() => highlightedRow(index++)}
+            id={(index += 1)}
           >
             <td>{index}</td>
             <td>{person.firstName}</td>
