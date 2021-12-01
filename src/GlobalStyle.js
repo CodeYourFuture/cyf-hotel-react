@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-  
+export const GlobalStyle = createGlobalStyle`  
   body {
     user-select: none;
     -moz-user-select: none;
