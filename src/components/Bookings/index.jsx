@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
+import CustomerProfile from "./SearchResults/CustomerProfile";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [id, setId] = useState(null);
 
   useEffect(() => {
     getBookings();
@@ -28,10 +30,18 @@ const Bookings = () => {
     setBookings(() => filteredCustomers);
   };
 
+  const handleChangeId = (CustomerId) => {
+    setId((id) => {
+      if (id === CustomerId) return null;
+      return CustomerId;
+    });
+  };
+
   return (
     <section className="container py-5">
       <Search search={search} />
-      <SearchResults results={bookings} />
+      <SearchResults results={bookings} handleChangeId={handleChangeId} />
+      {id && <CustomerProfile id={id} />}
     </section>
   );
 };
