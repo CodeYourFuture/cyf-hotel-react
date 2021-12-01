@@ -3,9 +3,9 @@ import { LoadingImg, LoadingText } from "./view";
 
 function Loading() {
   return (
-    <div>
+    <div className="my-5 d-flex justify-content-center align-items-center">
       <LoadingImg src={image} alt="Loading" />
-      <LoadingText>Loading...</LoadingText>
+      <LoadingText className="mx-5">Loading ...</LoadingText>
     </div>
   );
 }
