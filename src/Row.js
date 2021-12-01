@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const Row = props => {
+  const [showId, setShowId] = useState("");
+  const idHandler = () => {
+    setShowId(props.Id);
+  };
+
   const [selectedRow, setSelectedRow] = useState(null);
+
   const clickHandler = () => {
     setSelectedRow(props.Id);
     if (selectedRow === props.Id) {
@@ -15,6 +21,9 @@ const Row = props => {
       className={selectedRow === props.Id ? "colored" : ""}
       onClick={clickHandler}
     >
+      <td>
+        <button onClick={idHandler}>Show profile</button>
+      </td>
       <td key={1}>{props.Id}</td>
       <td key={2}>{props.Title}</td>
       <td key={3}>{props.FirstName}</td>

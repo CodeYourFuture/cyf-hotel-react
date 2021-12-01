@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import "./App.css";
-const data = [
+const Data = [
+  "Button",
   "id",
   "title",
   "first name",
@@ -15,10 +16,10 @@ const data = [
 ];
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState([]);
+  let [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    console.log("Working !!!!!!!!");
+    console.log("Working !");
     fetch("https://cyf-react.glitch.me/")
       .then(res => res.json())
       .then(data => setBookings(data));
@@ -26,6 +27,19 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    console.log(bookings);
+    console.log(searchVal);
+    if (searchVal === "") {
+      return setBookings(bookings);
+    } else {
+      bookings = bookings.filter(
+        booking =>
+          booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+          booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+      );
+      console.log(bookings);
+      setBookings(bookings);
+    }
   };
 
   return (
@@ -33,7 +47,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         <h1>Bookings</h1>
-        <SearchResults table={data} results={bookings} />
+        <SearchResults table={Data} results={bookings} />
       </div>
     </div>
   );
