@@ -1,11 +1,11 @@
 import image from "./image.svg";
-import { LoadingImg } from "./view";
+import { LoadingImg, LoadingText } from "./view";
 
 function Loading() {
   return (
     <div>
       <LoadingImg src={image} alt="Loading" />
-      <span>Loading...</span>
+      <LoadingText>Loading...</LoadingText>
     </div>
   );
 }
