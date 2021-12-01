@@ -13,7 +13,6 @@ const TableRow = props => {
       setSelected(props.booking.id);
     }
   };
-
   return (
     <tr
       onClick={highlightingRow}
@@ -28,6 +27,17 @@ const TableRow = props => {
       <td>{props.booking.checkInDate}</td>
       <td>{props.booking.checkOutDate}</td>
       <td>{checkOut.diff(checkIn, "days")}</td>
+      <td>
+        <button
+          className="btn btn-primary ButtonInfoCard"
+          onClick={e => {
+            e.stopPropagation();
+            props.func(props.booking.id);
+          }}
+        >
+          Show profile
+        </button>
+      </td>
     </tr>
   );
 };

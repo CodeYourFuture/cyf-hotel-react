@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import TableRow from "./TableRow";
+import CustomerProfile from "./CustomerProfile";
 
 //Solution for step 5 lesson 1 -Hardcoded data
 // const SearchResults = () => {
@@ -26,24 +27,41 @@ import TableRow from "./TableRow";
 // }
 
 const SearchResults = props => {
-  const tableHeadings = Object.keys(props.results[0]);
+  const tableHeadings = [
+    "Id",
+    "Title",
+    "First Name",
+    "Surname",
+    "Email",
+    "Room Id",
+    "Check-in Date",
+    "Check-out date"
+  ];
+  const [id, setId] = useState(null);
+
+  const getId = clickedId => {
+    setId(clickedId);
+  };
   return (
-    <table>
-      <caption className="Caption">Hotel Bookings</caption>
-      <thead>
-        <tr>
-          {tableHeadings.map((heading, index) => (
-            <th key={index}>{heading}</th>
-          ))}
-          <th>nightsNumbers</th>
-        </tr>
-      </thead>
-      <tbody>
-        {props.results.map((booking, index) => {
-          return <TableRow key={index} booking={booking} />;
-        })}
-      </tbody>
-    </table>
+    <div>
+      <table>
+        <caption className="Caption">Hotel Bookings</caption>
+        <thead>
+          <tr>
+            {tableHeadings.map((heading, index) => (
+              <th key={index}>{heading}</th>
+            ))}
+            <th>Nights Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.results.map((booking, index) => {
+            return <TableRow key={index} booking={booking} func={getId} />;
+          })}
+        </tbody>
+      </table>
+      {id == null ? "" : <CustomerProfile customerId={id} />}
+    </div>
   );
 };
 
