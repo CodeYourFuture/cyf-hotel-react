@@ -31,8 +31,8 @@ const Bookings = () => {
   };
 
   const handleChangeId = (CustomerId) => {
-    setId((id) => {
-      if (id === CustomerId) return null;
+    setId((prevId) => {
+      if (prevId === CustomerId) return null;
       return CustomerId;
     });
   };
