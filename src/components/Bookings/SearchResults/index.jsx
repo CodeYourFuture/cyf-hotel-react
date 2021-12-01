@@ -1,6 +1,6 @@
 import Row from "./Row";
 
-function SearchResults({ results }) {
+function SearchResults({ results, handleChangeId }) {
   const tableHead = [
     "ID",
     "Title",
@@ -26,7 +26,7 @@ function SearchResults({ results }) {
       </thead>
       <tbody>
         {results.map((person, index) => (
-          <Row key={index} person={person} />
+          <Row key={index} person={person} handleChangeId={handleChangeId} />
         ))}
       </tbody>
     </table>
