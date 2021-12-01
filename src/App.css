@@ -86,3 +86,6 @@ h1 {
 .colored {
   background: crimson;
 }
+ul {
+  list-style-type: none;
+}

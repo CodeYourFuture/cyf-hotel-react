@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const Row = props => {
   const [showId, setShowId] = useState("");
+  const [clicked, setClicked] = useState(false);
   const idHandler = () => {
+    setClicked(!clicked);
     setShowId(props.Id);
+    console.log(props.Id);
   };
 
   const [selectedRow, setSelectedRow] = useState(null);
@@ -38,6 +42,8 @@ const Row = props => {
           "days"
         )}
       </td>
+
+      <CustomerProfile id={clicked ? showId : null} />
     </tr>
   );
 };

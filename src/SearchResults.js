@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Row from "./Row";
-import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ results, table }) => {
   return (
@@ -33,9 +32,6 @@ const SearchResults = ({ results, table }) => {
           })}
         </tbody>
       </table>
-      {results.map(element => (
-        <CustomerProfile id={element.id} />
-      ))}
     </>
   );
 };

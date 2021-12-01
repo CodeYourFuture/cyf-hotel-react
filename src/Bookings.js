@@ -12,7 +12,8 @@ const Data = [
   "room id",
   "check in date",
   "check out date",
-  "number of nights"
+  "number of nights",
+  "customer's profile"
 ];
 
 const Bookings = () => {
