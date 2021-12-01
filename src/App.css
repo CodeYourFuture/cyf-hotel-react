@@ -1,5 +1,19 @@
+.header-logo {
+  width: 50px;
+}
+.header-wrapper {
+  display: flex;
+  background-color: #222;
+}
+
 .App {
   text-align: left;
+}
+.highlighted {
+  background-color: lightblue;
+}
+.blueTextColor th {
+  color: lightblue !important;
 }
 
 .App-logo {
@@ -25,6 +39,9 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+.customerProfile {
+  border: 2px dashed rgb(103, 103, 199);
 }
 
 @keyframes App-logo-spin {
