@@ -12,6 +12,10 @@ function CustomerProfile({ id }) {
     } catch (err) {
       console.error(err);
     }
+
+    return () => {
+      setCustomer({});
+    };
   }, [id]);
 
   return (
@@ -26,11 +30,11 @@ function CustomerProfile({ id }) {
       </thead>
       <tbody>
         <tr>
-          {Object.keys(customer).map((props, i) => {
+          {Object.keys(customer).map((props, index) => {
             if (typeof customer[props] === "boolean") {
-              return <td>{customer[props] ? "Yes" : "No"}</td>;
+              return <td key={index}>{customer[props] ? "Yes" : "No"}</td>;
             }
-            return <td key={i}>{customer[props]}</td>;
+            return <td key={index}>{customer[props]}</td>;
           })}
         </tr>
       </tbody>
