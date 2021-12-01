@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Loading from "./Loading";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
 import CustomerProfile from "./SearchResults/CustomerProfile";
@@ -6,6 +7,7 @@ import CustomerProfile from "./SearchResults/CustomerProfile";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [id, setId] = useState(null);
+  const [loading, setLoading] = useState(null);
 
   useEffect(() => {
     getBookings();
@@ -13,9 +15,11 @@ const Bookings = () => {
 
   const getBookings = async () => {
     try {
-      const response = await fetch("https://cyf-react.glitch.me");
+      setLoading(true);
+      const response = await fetch("https://cyf-react.glitch.me/delayed");
       const data = await response.json();
       setBookings(data);
+      setLoading(false);
     } catch (err) {
       console.error(err);
     }
@@ -38,9 +42,9 @@ const Bookings = () => {
   };
 
   return (
-    <section className="container py-5">
+    <section className="py-5">
       <Search search={search} />
-      <SearchResults results={bookings} handleChangeId={handleChangeId} />
+      {loading ? <Loading /> : <SearchResults results={bookings} handleChangeId={handleChangeId} />}
       {id && <CustomerProfile id={id} />}
     </section>
   );
