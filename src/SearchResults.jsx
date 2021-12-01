@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
   const [selectedRowColor, setSelectedRowColor] = useState([]);
+  const [profileId, setProfileId] = useState(null);
 
   const HighLight = id => {
     let selectedRow = [...selectedRowColor];
@@ -59,11 +61,23 @@ const SearchResults = props => {
                 <td>
                   {findTheNumberOfDays(person.checkInDate, person.checkOutDate)}
                 </td>
+                <td>
+                  <button
+                    className="btn btn-primary"
+                    onClick={e => {
+                      e.stopPropagation();
+                      setProfileId(person.id);
+                    }}
+                  >
+                    Show profile
+                  </button>
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      <CustomerProfile id={profileId} />
     </div>
   );
 };

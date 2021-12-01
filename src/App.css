@@ -101,3 +101,15 @@ h3 {
   flex-wrap: wrap;
   gap: 1.5rem;
 }
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: all 1s ease;
+}
+.dataLoadingMessage {
+  background-color: green;
+  color: white;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
