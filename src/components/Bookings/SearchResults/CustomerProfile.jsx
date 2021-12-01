@@ -17,7 +17,7 @@ function CustomerProfile({ id }) {
   return (
     <table className="table text-center mt-2">
       <caption className="caption-top text-center">Customer #{id}</caption>
-      <thead className="table-secondary">
+      <thead className="table-secondary table-danger">
         <tr>
           {tableHead.map((head, index) => (
             <th key={index}>{head}</th>
