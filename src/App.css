@@ -62,18 +62,36 @@ ul {
   padding-top: 15px;
 }
 
+.tableBox {
+  display: flex;
+}
+
 table {
   padding-top: 20px;
   text-align: center;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid #ccc;
 }
 
 td,
 th {
-  border: 1px solid black;
+  border: 1px solid #ccc;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+td {
+  cursor: pointer;
+}
+
+button {
+  height: 40px;
+  width: 100px;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
 }
 
 .skyBlue {
@@ -82,4 +100,9 @@ th {
 
 .card {
   width: 18rem;
+}
+
+.customer-para {
+  font-size: 14px;
+  text-align: left;
 }
