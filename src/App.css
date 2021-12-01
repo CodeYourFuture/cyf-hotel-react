@@ -67,3 +67,8 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
 }
+.loadingData {
+  color: white;
+  background-color: black;
+  text-align: center;
+}
