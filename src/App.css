@@ -84,7 +84,7 @@ h1 {
   text-align: center;
 }
 .colored {
-  background: crimson;
+  background: rgb(211, 201, 111);
 }
 ul {
   list-style-type: none;
