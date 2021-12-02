@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const LoadingImg = styled.img`
+export const Image = styled.img`
   width: 7rem;
 `;
 
-export const LoadingText = styled.span`
+export const Text = styled.span`
   font: italic bold 3rem "Montserrat", sans-serif;
   text-transform: uppercase;
-  color: orange;
+  color: ${({ isLoad }) => (isLoad ? "orange" : "red")};
   letter-spacing: 1rem;
 `;
