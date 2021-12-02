@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./Components/SearchResults.jsx";
-import FakeBookings from "./data/fakeBookings.json"; // local data
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings);
+  const [bookings, setBookings] = useState([]);
+  const [dataLoadedCorrectly, setDataLoadedCorrectly] = useState();
 
   const search = searchVal => {
     searchVal = searchVal.toLowerCase().trim(); //sanitize the users input
@@ -20,22 +20,35 @@ const Bookings = () => {
     });
   };
 
-  // useEffect(() => {
-  //   fetch("https://cyf-react.glitch.me")
-  //     .then((response) => {
-  //       console.log("API was called"); // making sure I know when the API is called
-  //       return response.json();
-  //     })
-  //     .then((data) => setBookings(data))
-  //     .catch((error) => console.log(error));
-  // }, []);
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
+      .then(response => {
+        console.log("Bookings API was called"); // making sure I know when the API is called
+        if (response.ok) return response.json();
+        else throw new Error("Something went wrong");
+      })
+      .then(data => setBookings(data))
+      .catch(error => {
+        setDataLoadedCorrectly(false);
+        console.log(error);
+      });
+  }, []);
 
-  return (
-    <div className="App-content">
-      <div className="container">
+  // if the bookings.length === 0 that means we haven't updated the state yet. An empty array is a truthy value which is why we need to check the length
+  return bookings.length > 0 ? (
+    <div>
+      <div className="container-fluid text-center ">
         <Search search={search} />
         <SearchResults results={bookings} />
       </div>
+    </div>
+  ) : dataLoadedCorrectly === false ? (
+    <div className="text-center display-5 mb-5">
+      This is weird, something went wrong. Please try again later.
+    </div>
+  ) : (
+    <div className="text-center display-5 mb-5">
+      Loading data, please wait...
     </div>
   );
 };
