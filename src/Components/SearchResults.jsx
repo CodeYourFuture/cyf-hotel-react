@@ -1,15 +1,7 @@
-import React from "react";
-import moment from "moment";
+import React, { useState } from "react";
+import TableRow from "./TableRow";
 
 const SearchResults = props => {
-  const highlightedRow = person => {
-    const getElement = document.getElementById(person);
-
-    getElement.hasAttribute("style")
-      ? getElement.removeAttribute("style")
-      : (getElement.style.background = "#e4e4e4");
-  };
-
   return (
     <table className="table table-hover my-5">
       <thead>
@@ -27,23 +19,7 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map((person, index) => (
-          <tr
-            key={person.firstName}
-            onClick={() => highlightedRow(index++)}
-            id={(index += 1)}
-          >
-            <td>{index}</td>
-            <td>{person.firstName}</td>
-            <td>{person.surname}</td>
-            <td>{person.surname}</td>
-            <td>{person.email}</td>
-            <td>{person.roomId}</td>
-            <td>{person.checkInDate}</td>
-            <td>{person.checkOutDate}</td>
-            <td>
-              {moment(person.checkOutDate).diff(person.checkInDate, "days")}
-            </td>
-          </tr>
+          <TableRow person={person} index={index} key={person.firstName} />
         ))}
       </tbody>
     </table>
