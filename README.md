@@ -1,6 +1,18 @@
+<div align="center">
+
+  [![wakatime](https://wakatime.com/badge/github/Amir-Pourhadi/CYF-React-Hotel.svg)](https://wakatime.com/badge/github/Amir-Pourhadi/CYF-React-Hotel)
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/d9ade705-faa7-4e05-9b94-d2d16787c59e/deploy-status)](https://app.netlify.com/sites/amir-react-hotel/deploys)
+  [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_CYF-React-Hotel&metric=ncloc)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_CYF-React-Hotel)
+  [![CodeFactor](https://www.codefactor.io/repository/github/amir-pourhadi/cyf-react-hotel/badge)](https://www.codefactor.io/repository/github/amir-pourhadi/cyf-react-hotel)  
+  [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_CYF-React-Hotel&metric=alert_status)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_CYF-React-Hotel)
+  [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_CYF-React-Hotel&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_CYF-React-Hotel)
+  [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_CYF-React-Hotel&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_CYF-React-Hotel)
+  [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_CYF-React-Hotel&metric=security_rating)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_CYF-React-Hotel)
+</div>
+
 A hotel booking application in React. Homework for the [CodeYourFuture React module](https://codeyourfuture.github.io/syllabus-master/react/)
 
-![Bookings Search page](Bookings.png)
+![Bookings Search page](public/readme-images/Bookings.png	)
 
 # Installation
 
@@ -29,7 +41,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** In `src/App.js`, above the `<Bookings />` component add a new component called `TouristInfoCards` which shows 3 _cards_. A card is a common user interface pattern with an image at the top and some related text underneath. The cards must link to `peoplemakeglasgow.com`, `visitmanchester.com` and `visitlondon.com`. The cards should contain the name of the city and an image of the city. Here is an example of what an info card should look like:
 
-![Info Card](InfoCard.png)
+![Info Card](public/readme-images/InfoCard.png)
 
 **Hint:** Use the same className as the example below to benefit from [Bootstrap](https://getbootstrap.com/docs/4.2/components/card) library which is already imported for you in the project. Use the JSX code below as an example of one card (note that in JSX, you'll need to use `className` instead of `class`):
 
