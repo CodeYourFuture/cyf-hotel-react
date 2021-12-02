@@ -11,10 +11,6 @@ function CustomerProfile({ id }) {
     } catch (err) {
       console.error(err);
     }
-
-    return () => {
-      setCustomer({});
-    };
   }, [id]);
 
   return (
