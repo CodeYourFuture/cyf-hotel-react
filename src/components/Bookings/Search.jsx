@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Search = ({ search }) => {
+const Search = ({ search, isDisable }) => {
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
@@ -18,6 +18,7 @@ const Search = ({ search }) => {
       placeholder="Live Search Customers"
       value={searchInput}
       onChange={handleSearchInput}
+      disabled={isDisable}
     />
   );
 };
