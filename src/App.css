@@ -13,7 +13,7 @@
 }
 
 .App-header {
-  background-color: #2f4f4f; /*#222 */
+  background-color: #2f4f4f;
   height: 50px;
   padding: 20px;
   color: #faf0e6;
@@ -87,10 +87,14 @@ td {
 
 .card-body a {
   color: #faf0e6; /* #fafad2 */
-  background-color: rgb(165, 42, 42); /*#808080;*/ /*brown*/
+  background-color: #2f4f4f; /*#808080;*/ /*brown*/
   padding: 0.7rem 2rem;
   border: none;
 }
+/* 
+.card img {
+  border: 2px solid rgb(165, 42, 42); 
+} */
 
 h3,
 p {
@@ -101,10 +105,16 @@ p {
 h4 {
   margin-top: 2rem;
 }
-
+/* 
 .greenFormat {
   color: green;
   text-shadow: -1px 0 green, 0 1px green, 1px 0 green, 0 -1px green;
+}  */
+
+.greenFormat {
+  color: rgb(165, 42, 42);
+  text-shadow: -1px 0 rgb(165, 42, 42), 0 1px rgb(165, 42, 42),
+    1px 0 rgb(165, 42, 42), 0 -1px rgb(165, 42, 42);
 }
 
 ul {
@@ -114,7 +124,38 @@ ul {
 }
 
 .highlight {
-  background-color: #f0e68c;
+  background-color: #ffe4c4;
+}
+
+.profileListStyle ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileListStyle li {
+  color: #b22222;
+}
+
+.profileListStyle h5 {
+  text-align: center;
+  padding-top: 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #2f4f4f;
+}
+
+.showProfileBtn {
+  background-color: #ffe4c4;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: #2f4f4f;
+}
+
+.profileListStyle {
+  background-color: #ffe4c4;
+  border-left: 2px solid #2f4f4f;
+  border-right: 2px solid #2f4f4f;
 }
 
 @keyframes App-logo-spin {
@@ -125,16 +166,6 @@ ul {
     transform: rotate(360deg);
   }
 }
-
-/* 
-tr {
-  color: #5b5757;
-}
-
-.results {
-  padding-top: 15px;
-}
-*/
 
 .footer-container {
   padding-top: 1.5rem;
@@ -149,7 +180,3 @@ tr {
   background-color: transparent;
   color: #ffffe0;
 }
-/* 
-.card {
-  width: 18rem;
-} */

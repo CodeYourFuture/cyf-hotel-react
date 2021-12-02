@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Thead from "./Thead.js";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 // import Tbody from './Tbody.js';
 
 function SearchResults(props) {
@@ -13,6 +14,8 @@ function SearchResults(props) {
     }
   }
 
+  const [id, setId] = useState(null);
+
   return (
     <div className="table-container">
       <table className="table table-bordered table-hover">
@@ -23,6 +26,8 @@ function SearchResults(props) {
               className={highlightRow === index ? "highlight" : ""}
               onClick={() => highlightRowHandler(index)}
             >
+              {" "}
+              {console.log(index)}
               <td key={index + 1}>{detail.title}</td>
               <td key={index + 2}>{detail.firstName}</td>
               <td key={index + 3}>{detail.surname}</td>
@@ -37,10 +42,22 @@ function SearchResults(props) {
                 )}{" "}
                 night(s)
               </td>
+              <td>
+                <button
+                  className="showProfileBtn"
+                  onClick={e => {
+                    e.preventDefault();
+                    setId(detail.id);
+                  }}
+                >
+                  Show profile
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+      {id ? <CustomerProfile customerId={id} /> : null}
     </div>
   );
 }
