@@ -124,7 +124,7 @@ ul {
 }
 
 .highlight {
-  background-color: #ffe4c4;
+  background-color: #f5f5dc; /*#ffe4c4;*/
 }
 
 .profileListStyle ul {
@@ -145,15 +145,15 @@ ul {
 }
 
 .showProfileBtn {
-  background-color: #ffe4c4;
-  border: none;
+  background-color: #f5f5dc; /*#ffe4c4;*/
+  border: 1px solid #2f4f4f; /*#F5F5DC;*/
   border-radius: 4px;
   padding: 0.5rem;
   color: #2f4f4f;
 }
 
 .profileListStyle {
-  background-color: #ffe4c4;
+  background-color: #f5f5dc;
   border-left: 2px solid #2f4f4f;
   border-right: 2px solid #2f4f4f;
 }
