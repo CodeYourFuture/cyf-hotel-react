@@ -6,8 +6,7 @@ function CustomerProfile({ id }) {
 
   useEffect(async () => {
     try {
-      const response = await fetch(`https://cyf-react.glitch.me/customers/${id}`);
-      const data = await response.json();
+      const data = await fetch(`https://cyf-react.glitch.me/customers/${id}`).then((res) => res.json());
       setCustomer(data);
     } catch (err) {
       console.error(err);
