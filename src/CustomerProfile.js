@@ -10,7 +10,7 @@ function CustomerProfile(props) {
 
   return customerData ? (
     <div className="profileListStyle">
-      <h5>Customer {props.customerId} profile</h5>
+      <h5>Customer {props.customerId} profile:</h5>
       <ul>
         <li>{customerData.id}</li>
         <li>{customerData.email}</li>
