@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import ErrorHandler from "./ErrorHandler";
-import Loading from "./Loading";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
 import CustomerProfile from "./SearchResults/CustomerProfile";
+import StatusHandler from "./StatusHandler";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -19,11 +18,11 @@ const Bookings = () => {
     try {
       setLoading(true);
       const response = await fetch("https://cyf-react.glitch.me/delayed");
-      if (!response.ok) throw new Error("An error occurred while fetching data from the server!");
+      if (!response.ok) throw Error();
       const data = await response.json();
       setBookings(data);
     } catch (err) {
-      setError(err.message);
+      setError(err.name + "!");
     } finally {
       setLoading(false);
     }
@@ -46,9 +45,9 @@ const Bookings = () => {
   };
 
   const renderSearchResults = () => {
-    if (loading) return <Loading />;
-    if (error) return <ErrorHandler error={error} />;
-    if (!bookings.length) return <ErrorHandler error="No bookings found!" />;
+    if (loading) return <StatusHandler loading={loading} />;
+    if (error) return <StatusHandler error={error} />;
+    if (!bookings.length) return <StatusHandler error="Nothing!" />;
     return <SearchResults results={bookings} handleChangeId={handleChangeId} />;
   };
 
