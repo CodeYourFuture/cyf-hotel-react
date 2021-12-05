@@ -18,14 +18,28 @@ const Data = [
 
 const Bookings = () => {
   let [bookings, setBookings] = useState([]);
-
+  const [loaded, setLoaded] = useState(false);
+  const [err, setErr] = useState(false);
   useEffect(() => {
     console.log("Working !");
-    fetch("https://cyf-react.glitch.me/")
-      .then(res => res.json())
-      .then(data => setBookings(data));
-  }, []);
+    //   try loading data from https://cyf-react.glitch.me/error to see the error message
+    fetch("https://cyf-react.glitch.me/delayed")
+      .then(function(response) {
+        if (response.ok) {
+          return response.json();
+        }
+        throw Error("error");
+      })
+      .then(data => {
+        setLoaded(true);
+        setBookings(data);
+      })
 
+      .catch(function(err) {
+        console.log(err.message);
+        setErr(true);
+      });
+  }, []);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     console.log(bookings);
@@ -43,14 +57,26 @@ const Bookings = () => {
     }
   };
 
-  return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <h1>Bookings</h1>
-        <SearchResults table={Data} results={bookings} />
+  return !err ? (
+    loaded ? (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+          <h1>Bookings</h1>
+          <SearchResults table={Data} results={bookings} />
+        </div>
       </div>
-    </div>
+    ) : (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+          <h1>Bookings</h1>
+          <h3>loading...</h3>
+        </div>
+      </div>
+    )
+  ) : (
+    <h1 className="error">Error,Can not load the information!!</h1>
   );
 };
 

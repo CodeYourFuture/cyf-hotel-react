@@ -89,3 +89,6 @@ h1 {
 ul {
   list-style-type: none;
 }
+.error {
+  color: crimson;
+}
