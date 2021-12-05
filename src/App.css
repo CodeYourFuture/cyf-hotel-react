@@ -1,17 +1,22 @@
+* {
+  background-color: rgb(255, 248, 220, 0.1); /* AntiqueWhite*/
+  font-size: 16px;
+  z-index: 10;
+}
+
 .App {
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.logo {
+  width: 5%;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #2f4f4f; /*DarkSlateGray*/
   height: 50px;
   padding: 20px;
-  color: white;
+  color: #faf0e6; /* Linen */
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
@@ -27,22 +32,35 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form {
+  display: flex;
+  justify-content: flex-start;
 }
+
+.form-div {
+  width: 50%;
+}
+
+button {
+  white-space: nowrap;
+  margin-right: 1.5rem;
+}
+
 .search {
   padding: 5px 0 20px 0;
 }
 
 tr {
-  color: #5b5757;
+  color: #8b0000; /*DarkRed*/
 }
 
+th {
+  background-color: #f5f5f5; /*WhiteSmoke*/
+}
+
+td {
+  color: #2f4f4f; /*DarkSlateGray*/
+}
 .results {
   padding-top: 15px;
 }
@@ -52,6 +70,109 @@ tr {
   text-align: center;
 }
 
+.card-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
 .card {
-  width: 18rem;
+  width: 30%;
+  padding: 0.8rem;
+  text-align: center;
+  background-color: rgb(220, 220, 220, 0.2); /*Gainsboro*/
+  min-height: 50vh;
+  border: 0.25px solid #add8e6; /*LightBlue*/
+  margin: 2rem 0;
+}
+
+.card-body a {
+  color: #faf0e6; /* Linen */
+  background-color: #2f4f4f; /*DarkSlateGray*/
+  padding: 0.7rem 2rem;
+  border: none;
+}
+
+h3,
+p {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+h4 {
+  margin-top: 2rem;
+}
+/* 
+.greenFormat {
+  color: green;
+  text-shadow: -1px 0 green, 0 1px green, 1px 0 green, 0 -1px green;
+}  */
+
+.greenFormat {
+  color: rgb(165, 42, 42);
+  text-shadow: -1px 0 rgb(165, 42, 42), 0 1px rgb(165, 42, 42),
+    1px 0 rgb(165, 42, 42), 0 -1px rgb(165, 42, 42);
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.highlight {
+  background-color: #f5f5dc; /*Beige*/
+}
+
+.profileListStyle ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileListStyle li {
+  color: #d2691e; /*Chocolate*/
+}
+
+.profileListStyle h5 {
+  text-align: center;
+  padding-top: 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #2f4f4f; /*DarkSlateGray*/
+}
+
+.showProfileBtn {
+  background-color: #f5f5dc; /*Beige*/
+  border: 1px solid #2f4f4f; /*#F5F5DC;*/
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: #2f4f4f; /*DarkSlateGray*/
+}
+
+.profileListStyle {
+  background-color: #f5f5dc; /*Beige*/
+  border-left: 2px solid #2f4f4f; /*DarkSlateGray*/
+  border-right: 2px solid #2f4f4f; /*DarkSlateGray*/
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer-container {
+  padding-top: 1.5rem;
+  text-align: center;
+  background-color: #2f4f4f; /*DarkSlateGray*/
+  z-index: -1;
+}
+
+.footer-container ul li {
+  list-style: none;
+  margin: 1rem;
+  background-color: transparent;
+  color: #ffffe0; /*LightYellow*/
 }
