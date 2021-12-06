@@ -22,13 +22,13 @@ const Bookings = () => {
   const [err, setErr] = useState(false);
   useEffect(() => {
     console.log("Working !");
-    //   try loading data from https://cyf-react.glitch.me/error to see the error message
+    // cyf-react.glitch.me/error   try this to see the error message
     fetch("https://cyf-react.glitch.me/delayed")
       .then(function(response) {
         if (response.ok) {
           return response.json();
         }
-        throw Error("error");
+        throw Error("Can not load the data");
       })
       .then(data => {
         setLoaded(true);
@@ -76,7 +76,7 @@ const Bookings = () => {
       </div>
     )
   ) : (
-    <h1 className="error">Error,Can not load the information!!</h1>
+    <h1 className="error">Can not load the data</h1>
   );
 };
 

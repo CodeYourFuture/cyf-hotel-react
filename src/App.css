@@ -1,3 +1,7 @@
+body {
+  background: rgb(241, 184, 163);
+}
+
 .App {
   text-align: left;
 }
@@ -91,4 +95,28 @@ ul {
 }
 .error {
   color: crimson;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 1rem auto;
+}
+input {
+  margin-top: 1rem;
+}
+input[type="submit"] {
+  width: 20%;
+  margin: 1rem auto;
+}
+.search-button {
+  height: 2rem;
+  margin-top: 1.3rem;
+  background: cornflowerblue;
+  border-style: none;
+  border-radius: 5px;
+}
+.tbody {
+  background: rgb(163, 221, 163);
 }
