@@ -1,5 +1,4 @@
 import React from "react";
-// import RestaurantButton from "./RestaurantButton";
 import Order from "./Order";
 
 const Restaurant = () => {

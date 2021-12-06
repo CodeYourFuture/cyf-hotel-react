@@ -16,7 +16,6 @@ const CustomerProfile = props => {
       });
   }, [props.id]);
 
-  console.log(profile);
   return (
     <td>
       <p className="customer-para">

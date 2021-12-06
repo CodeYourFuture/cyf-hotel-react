@@ -4,12 +4,24 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
-      .then(res => res.json())
+    fetch(`https://cyf-react.glitch.me/`)
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw Error(`${res.status} Internal Server error`);
+      })
       .then(data => {
         setBookings(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setLoading(false);
+        setError(err.message);
       });
   }, []);
 
@@ -29,7 +41,9 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {error && <div>{error}</div>}
+        {loading && <div>Loading....</div>}
+        {bookings && <SearchResults results={bookings} />}
       </div>
     </div>
   );
