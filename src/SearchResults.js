@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
-import FakeBookings from "./data/fakeBookings.json";
 
-const SearchResults = () => {
-  const [bookings] = useState(FakeBookings);
-
+const SearchResults = ({ results }) => {
   return (
     <div className="search-results">
       <table className="table table-bordered">
         <TableHeader />
         <tbody>
-          <TableRow results={bookings} />
+          <TableRow results={results} />
         </tbody>
       </table>
     </div>
