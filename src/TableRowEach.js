@@ -7,7 +7,11 @@ const TableRowEach = props => {
     setRowsSelected(!rowsSelected);
   }
   return (
-    <tr onClick={rowsSelector} className={rowsSelected ? "highlight" : ""}>
+    <tr
+      id={props.entry.id}
+      onClick={rowsSelector}
+      className={rowsSelected ? "highlight" : ""}
+    >
       <td>{props.entry.id}</td>
       <td>{props.entry.title}</td>
       <td>{props.entry.firstName}</td>

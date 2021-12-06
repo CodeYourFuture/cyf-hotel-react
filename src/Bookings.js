@@ -13,8 +13,12 @@ const Bookings = () => {
   }, []);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
-    // bookings.filter(word => word.includes(searchVal));
-    console.log(searchVal);
+    let filteredSearch = bookings.filter(
+      booking =>
+        booking.firstName.includes(searchVal) ||
+        booking.surname.includes(searchVal)
+    );
+    setBookings(filteredSearch);
   };
 
   return (
