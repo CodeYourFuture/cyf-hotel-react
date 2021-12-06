@@ -1,5 +1,5 @@
 body {
-  background: rgb(241, 184, 163);
+  background: rgb(194, 114, 84);
 }
 
 .App {
@@ -96,27 +96,48 @@ ul {
 .error {
   color: crimson;
 }
-
-form {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  margin: 1rem auto;
-}
-input {
-  margin-top: 1rem;
-}
 input[type="submit"] {
-  width: 20%;
-  margin: 1rem auto;
+  width: 10%;
+  margin: 1rem 43% 3rem;
+  background: cornflowerblue;
+  border-style: none;
+  border-radius: 5px;
 }
 .search-button {
-  height: 2rem;
-  margin-top: 1.3rem;
+  height: 2.1rem;
   background: cornflowerblue;
   border-style: none;
   border-radius: 5px;
 }
 .tbody {
   background: rgb(163, 221, 163);
+}
+.form-align {
+  margin: 1rem 30%;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 5px;
+}
+.form-align label {
+  text-align: right;
+}
+.form-align label:after {
+  content: ":";
+}
+form h3 {
+  margin: 3rem 40% 1rem;
+}
+.order-button {
+  margin-left: 1rem;
+  background: cornflowerblue;
+  border-style: none;
+  border-radius: 5px;
+}
+button {
+  background: cornflowerblue;
+  border-style: none;
+  border-radius: 5px;
+}
+.container h2 {
+  color: cornsilk;
 }

@@ -85,61 +85,71 @@ const SearchResults = ({ results, table }) => {
 
       <form onSubmit={submitHandler}>
         <h3>Add a booking</h3>
-        <input
-          type="text"
-          name="id"
-          required="required"
-          placeholder="Enter an id"
-          onChange={addHandler}
-        />
-        <input
-          type="text"
-          name="title"
-          required="required"
-          placeholder="Enter a title"
-          onChange={addHandler}
-        />
-        <input
-          type="text"
-          name="firstName"
-          required="required"
-          placeholder="Enter a first name"
-          onChange={addHandler}
-        />
-        <input
-          type="text"
-          name="surname"
-          required="required"
-          placeholder="Enter a surname"
-          onChange={addHandler}
-        />
-        <input
-          type="text"
-          name="email"
-          required="required"
-          placeholder="Enter an email"
-          onChange={addHandler}
-        />
-        <input
-          type="date"
-          name="checkInDate"
-          required="required"
-          placeholder="Enter a checkInDate"
-          onChange={addHandler}
-        />
-        <input
-          type="date"
-          name="checkOutDate"
-          required="required"
-          onChange={addHandler}
-        />
-        <input
-          type="text"
-          name="roomId"
-          required="required"
-          placeholder="Enter a roomId"
-          onChange={addHandler}
-        />
+        <div className="form-align">
+          <label htmlFor="id">Id</label>
+          <input
+            type="text"
+            name="id"
+            required="required"
+            placeholder="Enter an id"
+            onChange={addHandler}
+          />
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            name="title"
+            required="required"
+            placeholder="Enter a title"
+            onChange={addHandler}
+          />
+          <label htmlFor="firstName">First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            required="required"
+            placeholder="Enter a first name"
+            onChange={addHandler}
+          />
+          <label htmlFor="surname">SureName</label>
+          <input
+            type="text"
+            name="surname"
+            required="required"
+            placeholder="Enter a surname"
+            onChange={addHandler}
+          />
+          <label htmlFor="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            required="required"
+            placeholder="Enter an email"
+            onChange={addHandler}
+          />
+          <label htmlFor="checkInDate">Check In Date</label>
+          <input
+            type="date"
+            name="checkInDate"
+            required="required"
+            placeholder="Enter a checkInDate"
+            onChange={addHandler}
+          />
+          <label htmlFor="checkOutDate">Check Out Date</label>
+          <input
+            type="date"
+            name="checkOutDate"
+            required="required"
+            onChange={addHandler}
+          />
+          <label htmlFor="roomId">Room Id</label>
+          <input
+            type="text"
+            name="roomId"
+            required="required"
+            placeholder="Enter a roomId"
+            onChange={addHandler}
+          />
+        </div>
         <input type="submit" value="Submit" />
       </form>
     </>

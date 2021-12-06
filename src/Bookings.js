@@ -71,7 +71,7 @@ const Bookings = () => {
         <div className="container">
           <Search search={search} />
           <h1>Bookings</h1>
-          <h3>loading...</h3>
+          <h2>Loading The Data...</h2>
         </div>
       </div>
     )
