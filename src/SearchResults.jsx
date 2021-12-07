@@ -1,5 +1,5 @@
 import React from "react";
-import TableRowFixed from "./TableRowFixed";
+import TableRowStatic from "./TableRowStatic";
 import TableRowsLoop from "./TableRowsLoop";
 
 const SearchResults = props => {
@@ -8,7 +8,7 @@ const SearchResults = props => {
       <tbody>
         {/* it was easiest for me to just separate
         these into separate components */}
-        <TableRowFixed />
+        <TableRowStatic />
         <TableRowsLoop results={props.results} />
       </tbody>
     </table>

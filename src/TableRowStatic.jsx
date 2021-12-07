@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const TableRowFixed = () => {
+const TableRowStatic = () => {
   const [highLightedState, setHighLightedState] = useState(false);
   const toggleHighLight = () => {
     setHighLightedState(!highLightedState);
@@ -22,4 +22,4 @@ const TableRowFixed = () => {
     </tr>
   );
 };
-export default TableRowFixed;
+export default TableRowStatic;
