@@ -17,12 +17,11 @@ const Data = [
 ];
 
 const Bookings = () => {
-  let [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [err, setErr] = useState(false);
   useEffect(() => {
     console.log("Working !");
-    // cyf-react.glitch.me/error   try this to see the error message
     fetch("https://cyf-react.glitch.me/delayed")
       .then(function(response) {
         if (response.ok) {
@@ -47,13 +46,14 @@ const Bookings = () => {
     if (searchVal === "") {
       return setBookings(bookings);
     } else {
-      bookings = bookings.filter(
-        booking =>
-          booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
-          booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+      setBookings(
+        bookings.filter(
+          booking =>
+            booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+            booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+        )
       );
       console.log(bookings);
-      setBookings(bookings);
     }
   };
 
