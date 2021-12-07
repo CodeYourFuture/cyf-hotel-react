@@ -15,7 +15,6 @@ const SearchResults = ({ results, table }) => {
   });
   console.log(addData);
   const addHandler = event => {
-    event.preventDefault();
     const inputName = event.target.getAttribute("name");
     const inputValue = event.target.value;
     const addedCustomer = { ...addData };
@@ -36,6 +35,16 @@ const SearchResults = ({ results, table }) => {
     };
     let bookings = [...booking, newBooking];
     setBooking(bookings);
+    setAddData({
+      id: "",
+      title: "",
+      firstName: "",
+      surname: "",
+      email: "",
+      checkOutDate: "",
+      checkInDate: "",
+      roomId: ""
+    });
   };
   return (
     <>
@@ -93,6 +102,7 @@ const SearchResults = ({ results, table }) => {
             required="required"
             placeholder="Enter an id"
             onChange={addHandler}
+            value={addData.id}
           />
           <label htmlFor="title">Title</label>
           <input
@@ -101,6 +111,7 @@ const SearchResults = ({ results, table }) => {
             required="required"
             placeholder="Enter a title"
             onChange={addHandler}
+            value={addData.title}
           />
           <label htmlFor="firstName">First Name</label>
           <input
@@ -109,6 +120,7 @@ const SearchResults = ({ results, table }) => {
             required="required"
             placeholder="Enter a first name"
             onChange={addHandler}
+            value={addData.firstName}
           />
           <label htmlFor="surname">SureName</label>
           <input
@@ -117,6 +129,7 @@ const SearchResults = ({ results, table }) => {
             required="required"
             placeholder="Enter a surname"
             onChange={addHandler}
+            value={addData.surname}
           />
           <label htmlFor="email">Email</label>
           <input
@@ -125,6 +138,7 @@ const SearchResults = ({ results, table }) => {
             required="required"
             placeholder="Enter an email"
             onChange={addHandler}
+            value={addData.email}
           />
           <label htmlFor="checkInDate">Check In Date</label>
           <input
@@ -133,6 +147,7 @@ const SearchResults = ({ results, table }) => {
             required="required"
             placeholder="Enter a checkInDate"
             onChange={addHandler}
+            value={addData.checkInDate}
           />
           <label htmlFor="checkOutDate">Check Out Date</label>
           <input
@@ -140,6 +155,7 @@ const SearchResults = ({ results, table }) => {
             name="checkOutDate"
             required="required"
             onChange={addHandler}
+            value={addData.checkOutDate}
           />
           <label htmlFor="roomId">Room Id</label>
           <input
@@ -148,6 +164,7 @@ const SearchResults = ({ results, table }) => {
             required="required"
             placeholder="Enter a roomId"
             onChange={addHandler}
+            value={addData.roomId}
           />
         </div>
         <input type="submit" value="Submit" />
