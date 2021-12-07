@@ -14,10 +14,17 @@ const SearchResults = ({ results }) => {
   });
 
   const toggleActive = index => {
-    setRowHighlight({
-      ...rowHighlight,
-      activeObject: rowHighlight.objects[index]
-    });
+    if (rowHighlight.activeObject !== null) {
+      setRowHighlight({
+        ...rowHighlight,
+        activeObject: null
+      });
+    } else {
+      setRowHighlight({
+        ...rowHighlight,
+        activeObject: rowHighlight.objects[index]
+      });
+    }
   };
 
   const toggleActiveStyles = index => {
@@ -51,7 +58,7 @@ const SearchResults = ({ results }) => {
               return (
                 <tr
                   key={index}
-                  className={toggleActiveStyles(index)}
+                  className={`${toggleActiveStyles(index)}`}
                   onClick={() => {
                     toggleActive(index);
                   }}

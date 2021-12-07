@@ -3,7 +3,7 @@ import React from "react";
 // Components
 import SearchButton from "./components/SearchButton";
 
-const Search = () => {
+const Search = ({ searchVal, handler }) => {
   return (
     <div className="search">
       <div className="page-header">
@@ -19,6 +19,8 @@ const Search = () => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
+                value={searchVal}
+                onChange={handler}
               />
               <SearchButton text="Search" />
             </div>
