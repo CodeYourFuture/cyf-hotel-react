@@ -4,6 +4,7 @@ import Bookings from "./Bookings";
 import Footer from "./Footer";
 import Heading from "./Heading";
 import InfoCards from "./Infocards";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Heading />
       <InfoCards cities={cities} />
       <Bookings />
+      <Restaurant />
       <Footer contacts={contacts} />
     </div>
   );
