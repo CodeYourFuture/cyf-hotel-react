@@ -40,9 +40,12 @@
   margin-top: 1.5rem;
 }
 
-.places-heading {
+h1 {
   margin-top: 2rem;
   text-align: center;
+  font-family: "Pacifico", cursive;
+  font-size: 3em;
+  color: rgb(1, 107, 217);
 }
 
 .table-wrapper {

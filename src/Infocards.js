@@ -3,6 +3,7 @@ import React from "react";
 export const Cards = props => {
   return (
     <div class="outer-wrapper">
+      <h1>Places to visit ... </h1>
       <div className="cards-wrapper">
         {props.cities.map((city, index) => (
           <div key={index} className="card cards">
