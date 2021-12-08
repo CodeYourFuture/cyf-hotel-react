@@ -4,6 +4,10 @@ import React from "react";
 import SearchButton from "./components/SearchButton";
 
 const Search = ({ searchVal, handler }) => {
+  const formSubmitHandler = event => {
+    event.preventDefault();
+    console.log(searchVal);
+  };
   return (
     <div className="search">
       <div className="page-header">
@@ -11,7 +15,7 @@ const Search = ({ searchVal, handler }) => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form className="form-group search-box" onSubmit={formSubmitHandler}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
@@ -22,7 +26,7 @@ const Search = ({ searchVal, handler }) => {
                 value={searchVal}
                 onChange={handler}
               />
-              <SearchButton text="Search" />
+              <SearchButton text="Search" functionality={formSubmitHandler} />
             </div>
           </form>
         </div>
