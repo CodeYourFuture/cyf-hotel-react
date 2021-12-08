@@ -4,11 +4,10 @@ const TouristInfoCards = props => {
   return (
     <div className="container">
       {props.cards.map((cardInfo, index) => (
-        <div className="card">
+        <div className="card" key={index}>
           <img
             src={cardInfo.image}
             alt={cardInfo.alt}
-            key={index}
             className="card-img-top"
           />
           <div className="card-body">

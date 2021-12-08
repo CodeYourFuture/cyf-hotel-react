@@ -20,8 +20,8 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map(guest => (
-          <TableRow guest={guest} />
+        {props.results.map((guest, index) => (
+          <TableRow key={index} guest={guest} />
         ))}
       </tbody>
     </table>
