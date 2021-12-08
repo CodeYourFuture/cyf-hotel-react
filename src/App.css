@@ -100,3 +100,7 @@ bg-color-marked {
   width: 18rem;
   text-align: center;
 }
+
+.highlighted {
+  background-color: lightsteelblue;
+}

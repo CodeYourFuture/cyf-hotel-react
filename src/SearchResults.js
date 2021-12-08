@@ -1,15 +1,11 @@
-import moment from "moment";
-import React, { useState } from "react";
+import React from "react";
+import TableRow from "./TableRow";
 
 const SearchResults = props => {
-  const [selected, setSelected] = useState([]);
-
-  const handleClick = index => {
-    setSelected(index);
-  };
+  console.log(props.guests);
 
   return (
-    <table className="table  table-bordered">
+    <table className="table table-bordered">
       <thead className="thead-dark">
         <tr>
           <th scope="col">Id</th>
@@ -24,24 +20,8 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map((info, index) => (
-          <tr
-            key={index}
-            onClick={() => handleClick(index)}
-            className={index === selected ? "bg-color-marked" : ""}
-          >
-            <td scope="row">{info.id}</td>
-            <td scope="row">{info.title}</td>
-            <td scope="row">{info.firstName}</td>
-            <td scope="row">{info.surname}</td>
-            <td scope="row">{info.email}</td>
-            <td scope="row">{info.roomId}</td>
-            <td scope="row">{info.checkInDate}</td>
-            <td scope="row">{info.checkOutDate}</td>
-            <td>
-              {moment(info.checkOutDate).diff(moment(info.checkInDate), "days")}
-            </td>
-          </tr>
+        {props.results.map(guest => (
+          <TableRow guest={guest} />
         ))}
       </tbody>
     </table>
