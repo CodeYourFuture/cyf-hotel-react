@@ -8,12 +8,12 @@ const TouristInfoCards = () => {
         <div className="card-body">
           <h4>Glasgow</h4>
           <p>
-            The city has world-class museums, galleries and attractions
-            including Kelvingrove Art Gallery and Museum. There are also hidden
-            gems like the Britannia Panopticon - the oldest surviving music hall
-            in the world. Families will enjoy Glasgow Science Centre or
-            Riverside Museum and if cutting-edge art is your scene then check
-            out Tramway or the Gallery of Modern Art.
+            Welcome to London! Discover the best of London with Visit London,
+            the official guide to England’s exciting capital. Find things to do
+            in London, from iconic sightseeing spots and fun-filled days out to
+            top restaurants, theatre and unmissable London events. If you’re not
+            able to visit just yet, plan ahead to make the most of your next
+            visit.
           </p>
           <a
             href="https://peoplemakeglasgow.com/"
@@ -31,14 +31,12 @@ const TouristInfoCards = () => {
         <div className="card-body">
           <h4>Manchester</h4>
           <p>
-            Whether you’re seeking culture, nightlife, history, or just good
-            fun, there are plenty of things to do in Manchester. Be absorbed by
-            the beautiful attractions such as the gothic architecture at John
-            Rylands Library and Manchester Cathedral; take in fine art at
-            Manchester Art Gallery and the Whitworth; discover history, old and
-            new, at Manchester Museum and the Imperial War Museum North; see
-            contemporary arts redefined at HOME; or even learn to ski at Chill
-            Factore.
+            Welcome to London! Discover the best of London with Visit London,
+            the official guide to England’s exciting capital. Find things to do
+            in London, from iconic sightseeing spots and fun-filled days out to
+            top restaurants, theatre and unmissable London events. If you’re not
+            able to visit just yet, plan ahead to make the most of your next
+            visit.
           </p>
           <a
             href="https://www.visitmanchester.com/"

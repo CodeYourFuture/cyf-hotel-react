@@ -2,23 +2,14 @@ body {
   background: rgb(194, 114, 84);
 }
 
-.App {
-  text-align: left;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
+  background-color: rgb(184, 98, 67);
   height: 100px;
   padding: 20px;
-  color: white;
+  color: rgb(26, 21, 21);
   text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-family: monospace;
+  font-size: 2em;
   font-weight: bold;
 }
 .App-header img {
@@ -26,25 +17,9 @@ body {
   right: 0;
   position: absolute;
   height: 5rem;
+  padding-bottom: 1rem;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
 }
@@ -65,15 +40,18 @@ tr {
 
 .card {
   width: 100%;
-  margin-top: 3rem;
+  margin: 1rem;
   border-color: rgb(56, 183, 233);
+  font-size: large;
+  height: 35rem;
 }
 .card h4 {
   text-align: center;
 }
 
 #allcards {
-  margin: 3% 30%;
+  margin: 3% 1%;
+  display: flex;
 }
 .card-body a {
   margin-left: auto;
@@ -141,3 +119,13 @@ button {
 .container h2 {
   color: cornsilk;
 }
+.card img {
+  height: 40%;
+}
+/* .card-body{
+  background-color: rgb(207, 173, 37);
+  height:50%;
+} */
+/* .btn btn-primary{
+  margin-bottom: 1rem;
+} */

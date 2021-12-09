@@ -7,7 +7,10 @@ import "./App.css";
 const Heading = () => {
   return (
     <header className="App-header">
-      <img src="/hotel.jpg" alt="hotel" />
+      <img
+        src="/Hotel free vector icons designed by Retinaicons.png"
+        alt="hotel"
+      />
       CYF Hotel
     </header>
   );
