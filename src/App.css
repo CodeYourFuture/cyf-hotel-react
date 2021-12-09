@@ -1,5 +1,7 @@
 body {
   background: rgb(194, 114, 84);
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
@@ -89,6 +91,7 @@ input[type="submit"] {
 }
 .tbody {
   background: rgb(163, 221, 163);
+  width: 100%;
 }
 .form-align {
   margin: 1rem 30%;
@@ -122,10 +125,36 @@ button {
 .card img {
   height: 40%;
 }
-/* .card-body{
-  background-color: rgb(207, 173, 37);
-  height:50%;
-} */
-/* .btn btn-primary{
-  margin-bottom: 1rem;
-} */
+
+@media only screen and (max-width: 1281px) {
+  body {
+    background-color: lightblue;
+  }
+  .card {
+    width: 100%;
+    margin: 1rem;
+    border-color: rgb(56, 183, 233);
+    font-size: large;
+    height: 50rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  #allcards {
+    margin: 3% 1%;
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    margin: 1rem;
+    border-color: rgb(56, 183, 233);
+    font-size: large;
+    height: 40rem;
+  }
+  .tbody {
+    background: rgb(163, 221, 163);
+  }
+}
