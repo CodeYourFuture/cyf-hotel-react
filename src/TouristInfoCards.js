@@ -8,10 +8,10 @@ const TouristInfoCards = () => {
         <div className="card-body">
           <h4>Glasgow</h4>
           <p>
-            Welcome to London! Discover the best of London with Visit London,
-            the official guide to England’s exciting capital. Find things to do
-            in London, from iconic sightseeing spots and fun-filled days out to
-            top restaurants, theatre and unmissable London events. If you’re not
+            Welcome to the city! Discover the best of the city with Visit Our
+            City, the official guide to England’s exciting city. Find things to
+            do in the city, from iconic sightseeing spots and fun-filled days
+            out to top restaurants, theatre and unmissable events. If you’re not
             able to visit just yet, plan ahead to make the most of your next
             visit.
           </p>
@@ -31,10 +31,10 @@ const TouristInfoCards = () => {
         <div className="card-body">
           <h4>Manchester</h4>
           <p>
-            Welcome to London! Discover the best of London with Visit London,
-            the official guide to England’s exciting capital. Find things to do
-            in London, from iconic sightseeing spots and fun-filled days out to
-            top restaurants, theatre and unmissable London events. If you’re not
+            Welcome to the city! Discover the best of the city with Visit Our
+            City, the official guide to England’s exciting city. Find things to
+            do in the city, from iconic sightseeing spots and fun-filled days
+            out to top restaurants, theatre and unmissable events. If you’re not
             able to visit just yet, plan ahead to make the most of your next
             visit.
           </p>
@@ -54,10 +54,10 @@ const TouristInfoCards = () => {
         <div className="card-body">
           <h4>London</h4>
           <p>
-            Welcome to London! Discover the best of London with Visit London,
-            the official guide to England’s exciting capital. Find things to do
-            in London, from iconic sightseeing spots and fun-filled days out to
-            top restaurants, theatre and unmissable London events. If you’re not
+            Welcome to the city! Discover the best of the city with Visit Our
+            City, the official guide to England’s exciting city. Find things to
+            do in the city, from iconic sightseeing spots and fun-filled days
+            out to top restaurants, theatre and unmissable events. If you’re not
             able to visit just yet, plan ahead to make the most of your next
             visit.
           </p>
