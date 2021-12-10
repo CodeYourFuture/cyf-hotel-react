@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [selected, setSelected] = useState(false);
+
+  const isSelected = () => {
+    setSelected(!selected);
+  };
+
   return (
     <div className="table-wrapper">
-      <table className="table table-hover table-striped table-bordered my-table ">
+      <table className="table table-bordered my-table ">
         <caption className="table-caption">List of Bookings</caption>
         <thead>
           <tr>
@@ -21,11 +27,15 @@ const SearchResults = props => {
         </thead>
 
         <tbody>
-          {props.bookingData.map(person => {
+          {props.results.map((person, index) => {
             let checkIn = moment(person.checkInDate);
             let checkOut = moment(person.checkOutDate);
             return (
-              <tr key={person.id}>
+              <tr
+                key={person.id}
+                onClick={isSelected}
+                className={selected ? "highlight-row table-row" : "table-row"}
+              >
                 <th>{person.id}</th>
                 <td>{person.title}</td>
                 <td>{person.firstName}</td>

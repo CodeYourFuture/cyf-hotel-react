@@ -56,6 +56,19 @@ h1 {
   text-align: center;
 }
 
+.table-row:hover {
+  background-color: rgb(207, 217, 250);
+  cursor: pointer;
+}
+
+.highlight-row {
+  background-color: rgb(207, 217, 250);
+}
+
+.transparent-row {
+  background-color: transparent;
+}
+
 .cards-wrapper {
   margin: 1rem;
   padding-top: 1rem;
