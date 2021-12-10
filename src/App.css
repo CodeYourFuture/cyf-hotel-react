@@ -42,17 +42,17 @@ tr {
 
 .card {
   width: 100%;
-  margin: 1rem;
   border-color: rgb(56, 183, 233);
   font-size: large;
   height: 35rem;
+  margin: 1rem;
 }
 .card h4 {
   text-align: center;
 }
 
 #allcards {
-  margin: 3% 1%;
+  margin-top: 3%;
   display: flex;
 }
 .card-body a {
@@ -95,8 +95,9 @@ input[type="submit"] {
 .form-align {
   display: grid;
   justify-content: center;
-  grid-template-columns: max-content max-content;
+  grid-template-columns: min-content max-content;
   grid-gap: 5px;
+  width: 100%;
 }
 .form-align label {
   text-align: right;
@@ -105,7 +106,10 @@ input[type="submit"] {
   content: ":";
 }
 form h3 {
-  margin: 3rem 40% 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 5%;
+  text-align: center;
 }
 .order-button {
   margin-left: 1rem;
@@ -147,7 +151,8 @@ button {
 }
 @media only screen and (max-width: 600px) {
   body {
-    background-color: lightblue;
+    background-color: rgb(73, 27, 55);
+    color: cornsilk;
   }
   #allcards {
     display: flex;
@@ -155,10 +160,12 @@ button {
   }
   .card {
     width: 100%;
-    margin: 1rem;
     border-color: rgb(56, 183, 233);
     font-size: large;
     height: 40rem;
+    margin: 0;
+    margin-top: 1rem;
+    color: rgb(7, 7, 54);
   }
   .tbody {
     background: rgb(163, 221, 163);
@@ -180,5 +187,13 @@ button {
     flex-direction: column;
     text-align: center;
     font-size: medium;
+  }
+  .form-align {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: min-content max-content;
+    grid-gap: 5px;
+    font-size: small;
+    width: 100%;
   }
 }

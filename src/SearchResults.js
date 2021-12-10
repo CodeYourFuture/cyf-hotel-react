@@ -95,7 +95,7 @@ const SearchResults = ({ results, table }) => {
       </div>
       <div className="form-container">
         <form onSubmit={submitHandler}>
-          <h3>Add a booking</h3>
+          <h3>Add a Booking</h3>
           <div className="form-align">
             <label htmlFor="id">Id</label>
             <input
