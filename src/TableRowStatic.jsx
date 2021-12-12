@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 const TableRowStatic = () => {
-  const [highLightedState, setHighLightedState] = useState(false);
-  const toggleHighLight = () => {
-    setHighLightedState(!highLightedState);
-  };
+  // const [highLightedRows, setHighLightedRows] = useState([]);
   return (
     <tr
       key="locked-table-row"
-      className={highLightedState ? "high-lighted" : ""}
-      onClick={toggleHighLight}
+      // commented to prevent static row highlighting
+      // id="locked-table-row"
+      // className={
+      //   highLightedRows.includes("locked-table-row") ? "high-lighted" : ""
+      // }
+      // onClick={() => setHighLightedRows((oldArr) => {
+      //   const index = oldArr.findIndex(x => x === "locked-table-row");
+      //   return index === -1 ? [...oldArr, "locked-table-row"] : oldArr.filter(x => x !== "locked-table-row");
+      // })}
     >
       <th key="locked-table-row-th1">ID:</th>
       <th key="locked-table-row-th2">Title:</th>
