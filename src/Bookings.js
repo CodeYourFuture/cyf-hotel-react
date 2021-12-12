@@ -5,7 +5,7 @@ import SearchResults from "./SearchResults";
 const Bookings = () => {
   // eslint-disable-next-line
   const [bookings, setBookings] = useState([]);
-
+  const [filteredBookings, setFilteredBookings] = useState([]);
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
       .then(response => {
@@ -13,18 +13,18 @@ const Bookings = () => {
       })
       .then(data => {
         setBookings(data);
+        setFilteredBookings(data);
       })
       .catch(error => {
         console.log(`ERROR = ${error}`);
       });
   }, []);
-  let filteredResults = bookings;
   const searchFilter = searchVal => {
+    setFilteredBookings(bookings);
     console.log(searchVal);
-    console.log(filteredResults);
-    if (searchVal !== "" || searchVal !== null) {
-      setBookings(
-        filteredResults.filter(candidate => {
+    if (searchVal.length > 0) {
+      setFilteredBookings(
+        filteredBookings.filter(candidate => {
           const formSrch = searchVal.toLowerCase();
           const formFN = candidate.firstName.toLowerCase();
           const formSN = candidate.surname.toLowerCase();
@@ -32,8 +32,8 @@ const Bookings = () => {
         })
       );
     } else {
-      filteredResults = bookings;
-      return filteredResults;
+      setFilteredBookings(bookings);
+      return filteredBookings;
     }
   };
 
@@ -41,7 +41,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={searchFilter} />
-        <SearchResults results={filteredResults} />
+        <SearchResults results={filteredBookings} />
       </div>
     </div>
   );
