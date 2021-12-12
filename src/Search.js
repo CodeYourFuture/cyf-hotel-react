@@ -16,6 +16,7 @@ const Search = props => {
             className="form-group search-box"
             onSubmit={event => {
               event.preventDefault();
+              // call back allowing me to pass the value up
               props.search(searchInput);
             }}
           >
