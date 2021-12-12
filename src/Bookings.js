@@ -17,32 +17,31 @@ const Bookings = () => {
       .catch(error => {
         console.log(`ERROR = ${error}`);
       });
-  });
-
-  let displayedResults = bookings;
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
-    displayedResults.filter(candidate => {
-      const formattedFN = candidate.firstName.toLowerCase();
-      const formattedSN = candidate.surname.toLowerCase();
-      if (searchVal === "") {
-        return candidate;
-      } else {
-        if (
-          formattedFN.includes(searchVal.toLowerCase()) ||
-          formattedSN.includes(searchVal.toLowerCase())
-        ) {
-          return candidate;
-        }
-      }
-    });
+  }, []);
+  let filteredResults = bookings;
+  const searchFilter = searchVal => {
+    console.log(searchVal);
+    console.log(filteredResults);
+    if (searchVal !== "" || searchVal !== null) {
+      setBookings(
+        filteredResults.filter(candidate => {
+          const formSrch = searchVal.toLowerCase();
+          const formFN = candidate.firstName.toLowerCase();
+          const formSN = candidate.surname.toLowerCase();
+          return formFN.includes(formSrch) || formSN.includes(formSrch);
+        })
+      );
+    } else {
+      filteredResults = bookings;
+      return filteredResults;
+    }
   };
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-        <SearchResults results={displayedResults} />
+        <Search search={searchFilter} />
+        <SearchResults results={filteredResults} />
       </div>
     </div>
   );
