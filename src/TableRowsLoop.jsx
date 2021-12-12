@@ -31,7 +31,13 @@ const TableRowsLoop = props => {
           {FindDateDifference(person.checkInDate, person.checkOutDate)}
         </td>
         <td>
-          <button>Show Profile</button>
+          <button
+            onClick={() => {
+              props.idSwitcher(person.id);
+            }}
+          >
+            Show Profile
+          </button>
         </td>
       </tr>
     );
