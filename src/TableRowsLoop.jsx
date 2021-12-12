@@ -24,11 +24,14 @@ const TableRowsLoop = props => {
         <td key={`fname-${index}`}>{person.firstName}</td>
         <td key={`lname-${index}`}>{person.surname}</td>
         <td key={`email-${index}`}>{person.email}</td>
-        <td key={`roomID-${index}`}>{person.roomID}</td>
+        <td key={`roomID-${index}`}>{person.roomId}</td>
         <td key={`inDate-${index}`}>{person.checkInDate}</td>
         <td key={`outDate-${index}`}>{person.checkOutDate}</td>
         <td key={`timeStayed-${index}`}>
           {FindDateDifference(person.checkInDate, person.checkOutDate)}
+        </td>
+        <td>
+          <button>Show Profile</button>
         </td>
       </tr>
     );
