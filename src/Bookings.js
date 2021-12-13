@@ -8,7 +8,7 @@ const Bookings = () => {
   const [filteredBookings, setFilteredBookings] = useState([]);
   const [loadState, setLoadState] = useState(false);
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me/error")
       .then(response => {
         return response.json();
       })
@@ -22,6 +22,7 @@ const Bookings = () => {
       })
       .catch(error => {
         console.log(`ERROR = ${error}`);
+        alert(`ERROR - ${error}`);
       });
   }, []);
   if (!loadState) {
