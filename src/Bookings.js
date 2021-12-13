@@ -6,8 +6,9 @@ const Bookings = () => {
   // eslint-disable-next-line
   const [bookings, setBookings] = useState([]);
   const [filteredBookings, setFilteredBookings] = useState([]);
+  const [loadState, setLoadState] = useState(false);
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(response => {
         return response.json();
       })
@@ -17,11 +18,15 @@ const Bookings = () => {
         // allowing the search function to work
         setBookings(data);
         setFilteredBookings(data);
+        setLoadState(true);
       })
       .catch(error => {
         console.log(`ERROR = ${error}`);
       });
   }, []);
+  if (!loadState) {
+    alert("Loading...");
+  }
   const searchFilter = searchVal => {
     // reset the value to the backup with each new search
     setFilteredBookings(bookings);
