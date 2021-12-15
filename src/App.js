@@ -4,7 +4,7 @@ import Bookings from "./Bookings";
 import "./App.css";
 //Added my heading//
 import Heading from "./Heading";
-import TouristInfoCards from "./TouristInfoCards";
+import TouristinfoCards from "./TouristinfoCards";
 import Footer from "./Footer";
 import NewBooking from "./NewBooking";
 
@@ -30,20 +30,22 @@ const cities = [
 const App = () => {
   return (
     <div className="App">
-       <Heading />
-      <TouristInfoCards cities={cities} />
+      <Heading />
+      <TouristinfoCards cities={cities} />
       <Bookings />
       <div className="order-newBooking">
         <Restaurant />
         <NewBooking />
       </div>
       <Footer
-        address={
-          ["123 Fake Street, London, E1 4UD",
+        address={[
+          "123 Fake Street, London, E1 4UD",
           "hello@fakehotel.com",
-          "0123 456789"]
-        }
+          "0123 456789"
+        ]}
       />
- </div>
+    </div>
   );
 };
+
+export default App;
