@@ -1,0 +1,7 @@
+.visit-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 2rem;
+  flex-direction: row;
+}
