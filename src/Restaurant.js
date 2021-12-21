@@ -2,7 +2,7 @@ import React from "react";
 import Order from "./Order";
 
 const Restaurant = () => {
-  const pizzas = 0;
+  // const pizzas = 0;
   return (
     <div>
       <h3>Restaurant Orders</h3>
