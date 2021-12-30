@@ -2,16 +2,16 @@ import moment from "moment";
 import React, { useState } from "react";
 
 function TableRow(props) {
-  const [selectedBackGround, setSelectedBackGround] = useState("");
+  const [selectedStatus, setSelectedStatus] = useState("");
   function handleClick() {
-    setSelectedBackGround(() => {
-      return "azure";
-    });
+    return selectedStatus === ""
+      ? setSelectedStatus(() => "table-primary")
+      : setSelectedStatus(() => "");
   }
 
   return (
-    <tr style={{ background: selectedBackGround }} onClick={handleClick}>
-      <th scope="row">{props.data.id}</th>
+    <tr className={selectedStatus} onClick={handleClick}>
+      <td scope="row">{props.data.id}</td>
       <td>{props.data.title}</td>
       <td>{props.data.firstName}</td>
       <td>{props.data.surname}</td>

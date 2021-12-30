@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import TableRow from "./TableRow";
 
 function SearchResults(props) {
-  const [background, setBackGround] = useState("");
-  function handleClick() {
-    setBackGround(() => {
-      return "azure";
-    });
-  }
   return (
     <table class="table">
       <thead>
