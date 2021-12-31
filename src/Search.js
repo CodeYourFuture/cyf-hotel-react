@@ -6,7 +6,6 @@ import SearchButton from "./components/SearchButton";
 const Search = ({ searchVal, handler }) => {
   const formSubmitHandler = event => {
     event.preventDefault();
-    console.log(searchVal);
   };
   return (
     <div className="search">

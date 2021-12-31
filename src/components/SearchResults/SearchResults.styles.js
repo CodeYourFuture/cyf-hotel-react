@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
   width: 100%;
+
   table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -18,13 +19,12 @@ export const Content = styled.div`
       padding: 8px;
     }
 
-    .tr:nth-child(even) {
+    tr:nth-child(even) {
       background-color: rgba(0, 100, 200, 0.2);
     }
 
-    .tra {
-      background-color: purple;
-      color: white;
+    .tr.active {
+      background-color: rgba(200, 0, 0, 0.1);
     }
   }
 `;

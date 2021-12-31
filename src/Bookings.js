@@ -16,7 +16,6 @@ const Bookings = () => {
     fetch("https://cyf-react.glitch.me")
       .then(response => response.json())
       .then(data => setBookings(data));
-    console.log("some text");
   }, []);
 
   return (

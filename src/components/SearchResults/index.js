@@ -8,31 +8,12 @@ import { Wrapper, Content } from "./SearchResults.styles";
 // import FakeBookings from "../../data/fakeBookings.json";
 
 const SearchResults = ({ results }) => {
-  const [rowHighlight, setRowHighlight] = useState({
-    activeObject: null,
-    objects: results
-  });
+  const [rowHighlight, setRowHighlight] = useState({ selected: null });
 
   const toggleActive = index => {
-    if (rowHighlight.activeObject !== null) {
-      setRowHighlight({
-        ...rowHighlight,
-        activeObject: null
-      });
-    } else {
-      setRowHighlight({
-        ...rowHighlight,
-        activeObject: rowHighlight.objects[index]
-      });
-    }
-  };
-
-  const toggleActiveStyles = index => {
-    if (rowHighlight.objects[index] === rowHighlight.activeObject) {
-      return "tra";
-    } else {
-      return "tr";
-    }
+    rowHighlight.selected
+      ? setRowHighlight({ selected: null })
+      : setRowHighlight({ selected: results[index] });
   };
 
   return (
@@ -58,10 +39,10 @@ const SearchResults = ({ results }) => {
               return (
                 <tr
                   key={index}
-                  className={`${toggleActiveStyles(index)}`}
-                  onClick={() => {
-                    toggleActive(index);
-                  }}
+                  className={`tr ${
+                    rowHighlight.selected === results[index] ? "active" : ""
+                  }`}
+                  onClick={event => toggleActive(index)}
                 >
                   <th>{booking.id}</th>
                   <th>{booking.title}</th>
