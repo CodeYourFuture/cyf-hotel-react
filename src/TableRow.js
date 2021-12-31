@@ -11,7 +11,7 @@ function TableRow(props) {
 
   return (
     <tr className={selectedStatus} onClick={handleClick}>
-      <td scope="row">{props.data.id}</td>
+      <td>{props.data.id}</td>
       <td>{props.data.title}</td>
       <td>{props.data.firstName}</td>
       <td>{props.data.surname}</td>
@@ -24,6 +24,16 @@ function TableRow(props) {
           moment(props.data.checkInDate),
           "days"
         )}
+      </td>
+      <td>
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            props.setRecordedId(props.data.id);
+          }}
+        >
+          Profile
+        </button>
       </td>
     </tr>
   );
