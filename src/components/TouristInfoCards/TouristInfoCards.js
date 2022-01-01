@@ -19,6 +19,7 @@ const TouristInfoCards = () => {
             cityName={cityName}
             description={description}
             link={link}
+            button={true}
           />
         )
       )}

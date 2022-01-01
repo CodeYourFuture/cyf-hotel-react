@@ -4,9 +4,22 @@ import moment from "moment";
 // Style
 import { Wrapper, Content } from "./SearchResults.styles";
 
+// Components
+import SearchButton from "../SearchButton/index";
+import CustomerProfile from "../CustomerProfile/CustomerProfile";
+
 const SearchResults = ({ results }) => {
+  const [selectedCustomer, setSelectedCustomer] = useState({
+    selectedId: null
+  });
+
+  const toggleActiveId = index => {
+    selectedCustomer.selectedId
+      ? setSelectedCustomer({ selectedId: null })
+      : setSelectedCustomer({ selectedId: results[index].id });
+  };
+
   const [rowHighlight, setRowHighlight] = useState({ selected: null });
-  console.log(results);
 
   const toggleActive = index => {
     rowHighlight.selected
@@ -41,7 +54,7 @@ const SearchResults = ({ results }) => {
                   className={`tr ${
                     rowHighlight.selected === results[index] ? "active" : ""
                   }`}
-                  onClick={event => toggleActive(index)}
+                  onClick={() => toggleActive(index)}
                 >
                   <th>{booking.id}</th>
                   <th>{booking.title}</th>
@@ -52,11 +65,18 @@ const SearchResults = ({ results }) => {
                   <th>{booking.checkInDate}</th>
                   <th>{booking.checkOutDate}</th>
                   <th>{a.diff(b, "days")}</th>
+                  <th>
+                    <SearchButton
+                      text="Show Profile"
+                      functionality={event => toggleActiveId(index)}
+                    />
+                  </th>
                 </tr>
               );
             })}
           </tbody>
         </table>
+        <CustomerProfile id={selectedCustomer.selectedId} />
       </Content>
     </Wrapper>
   );

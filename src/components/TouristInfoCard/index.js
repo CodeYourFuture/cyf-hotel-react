@@ -5,19 +5,27 @@ import PropTypes from "prop-types";
 import { Wrapper, Image } from "./TouristInfoCard.styles";
 import SearchButton from "../SearchButton";
 
-const TouristInfoCards = ({ imageUrl, cityName, description, link }) => (
+const TouristInfoCards = ({
+  imageUrl,
+  cityName,
+  description,
+  link,
+  button
+}) => (
   <Wrapper>
     <Image src={imageUrl} alt="city-thumb" />
     <h3>{cityName}</h3>
     <p>{description}</p>
-    <SearchButton
-      key={cityName}
-      text={
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          Visit {cityName}
-        </a>
-      }
-    />
+    {button && (
+      <SearchButton
+        key={cityName}
+        text={
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            Visit {cityName}
+          </a>
+        }
+      />
+    )}
   </Wrapper>
 );
 
