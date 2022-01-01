@@ -4,11 +4,9 @@ import moment from "moment";
 // Style
 import { Wrapper, Content } from "./SearchResults.styles";
 
-// component
-// import FakeBookings from "../../data/fakeBookings.json";
-
 const SearchResults = ({ results }) => {
   const [rowHighlight, setRowHighlight] = useState({ selected: null });
+  console.log(results);
 
   const toggleActive = index => {
     rowHighlight.selected
@@ -31,6 +29,7 @@ const SearchResults = ({ results }) => {
               <th>Check in date</th>
               <th>Check out date</th>
               <th>Duration of Stay</th>
+              <th>Profile</th>
             </tr>
             {results.map((booking, index) => {
               let a = moment(new Date(booking.checkOutDate));

@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Components
 import SearchButton from "./components/SearchButton";
 
-const Search = ({ searchVal, handler }) => {
+const Search = ({ handler }) => {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearchInput = event => {
+    console.log(event.target.value);
+    // handler(searchInput);
+    setSearchInput(event.target.value);
+  };
+
   const formSubmitHandler = event => {
     event.preventDefault();
+    console.log("from search.js ...");
+    console.log(searchInput);
+    handler(searchInput);
+    setSearchInput("");
   };
   return (
     <div className="search">
@@ -22,8 +34,8 @@ const Search = ({ searchVal, handler }) => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
-                value={searchVal}
-                onChange={handler}
+                value={searchInput}
+                onChange={handleSearchInput}
               />
               <SearchButton text="Search" functionality={formSubmitHandler} />
             </div>

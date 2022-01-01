@@ -6,10 +6,12 @@ import SearchResults from "./components/SearchResults/index.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-  console.log(searchInput);
 
-  const handleSearchInput = event => {
-    setSearchInput(event.target.value);
+  const handleSearchInput = userSearch => {
+    console.log("from Bookings.js ...");
+    console.log(userSearch);
+    setSearchInput(userSearch);
+    console.log("booking.js search input:");
   };
 
   useEffect(() => {
@@ -23,7 +25,21 @@ const Bookings = () => {
       <div className="container">
         <Search searchVal={searchInput} handler={handleSearchInput} />
 
-        <SearchResults results={bookings} />
+        <SearchResults
+          results={
+            searchInput
+              ? bookings.filter(
+                  booking =>
+                    booking.firstName
+                      .toLowerCase()
+                      .includes(searchInput.toLowerCase()) ||
+                    booking.surname
+                      .toLowerCase()
+                      .includes(searchInput.toLowerCase())
+                )
+              : bookings
+          }
+        />
       </div>
     </div>
   );

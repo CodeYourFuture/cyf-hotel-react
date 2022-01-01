@@ -11,14 +11,17 @@ import { Wrapper } from "./TouristInfoCards.styles";
 const TouristInfoCards = () => {
   return (
     <Wrapper className="cities">
-      {touristInfoCardsData.map(({ imageUrl, cityName, description, link }) => (
-        <TouristInfoCard
-          imageUrl={imageUrl}
-          cityName={cityName}
-          description={description}
-          link={link}
-        />
-      ))}
+      {touristInfoCardsData.map(
+        ({ imageUrl, cityName, description, link }, index) => (
+          <TouristInfoCard
+            key={index}
+            imageUrl={imageUrl}
+            cityName={cityName}
+            description={description}
+            link={link}
+          />
+        )
+      )}
     </Wrapper>
   );
 };
