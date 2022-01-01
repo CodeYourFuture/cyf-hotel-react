@@ -1,5 +1,6 @@
 import React from "react";
 
+// logo img
 import cyfHotelLogo from "../../images/cyf-hotel-logo.jpg";
 
 // Styles

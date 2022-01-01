@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // Styles
-import { Wrapper, Image } from "./TouristInfoCards.styles";
+import { Wrapper, Image } from "./TouristInfoCard.styles";
 import SearchButton from "../SearchButton";
 
 const TouristInfoCards = ({ imageUrl, cityName, description, link }) => (
