@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Search from "./Search.js";
 import SearchResults from "./components/SearchResults/index.js";
 // import FakeBookings from "./data/fakeBookings.json";
@@ -16,17 +16,30 @@ const Bookings = () => {
     console.log("booking.js search input:");
   };
 
+  const fetchBookings = useCallback(async () => {
+    try {
+      const response = await fetch("https://cyf-react.glitch.me");
+
+      const data = await response.json();
+
+      setBookings(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   useEffect(() => {
     if (bookings.length === 0) {
-      fetch("https://cyf-react.glitch.me")
-        .then(response => response.json())
-        .then(data => setBookings(data));
+      // fetch("https://cyf-react.glitch.me")
+      //   .then(response => response.json())
+      //   .then(data => setBookings(data));
+      fetchBookings();
     }
 
     if (bookings.length > 0 && isLoading) {
       setIsLoading(false);
     }
-  }, [bookings, isLoading]);
+  }, [fetchBookings, bookings, isLoading]);
 
   let content;
 
