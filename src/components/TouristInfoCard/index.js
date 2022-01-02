@@ -10,7 +10,8 @@ const TouristInfoCards = ({
   cityName,
   description,
   link,
-  button
+  button,
+  vip
 }) => (
   <Wrapper>
     <Image src={imageUrl} alt="city-thumb" />
@@ -26,6 +27,7 @@ const TouristInfoCards = ({
         }
       />
     )}
+    {vip && <h3>{vip}</h3>}
   </Wrapper>
 );
 

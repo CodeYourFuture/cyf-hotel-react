@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import { Wrapper } from "./CustomerProfile.styles";
 
+import { RiVipFill } from "react-icons/ri";
+
 // component
 import TouristInfoCard from "../TouristInfoCard/index";
 
@@ -42,10 +44,9 @@ const CustomerProfile = ({ id }) => {
           }`}
           description={`id: ${customerInformation.id} \b email: ${
             customerInformation.email
-          } \b vip: ${customerInformation.vip} \b phone-Number: ${
-            customerInformation.phoneNumber
-          }`}
+          } \b phone-Number: ${customerInformation.phoneNumber}`}
           button={false}
+          vip={customerInformation.vip && <RiVipFill />}
         />
       )}
     </Wrapper>
