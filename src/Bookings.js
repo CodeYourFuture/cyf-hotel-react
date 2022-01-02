@@ -6,6 +6,10 @@ import SearchResults from "./components/SearchResults/index.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [errorMessage, setErrorMessage] = useState({
+    display: false,
+    error: null
+  });
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,13 +22,27 @@ const Bookings = () => {
 
   const fetchBookings = useCallback(async () => {
     try {
-      const response = await fetch("https://cyf-react.glitch.me");
+      const response = await fetch("https://cyf-react.glitch.me/error");
+      if (!response.ok) {
+        setErrorMessage(prev => {
+          const currErrorStatus = { ...prev };
+          currErrorStatus.display = true;
+          currErrorStatus.error = response;
+          console.log(currErrorStatus);
+          return currErrorStatus;
+        });
+      }
 
       const data = await response.json();
 
       setBookings(data);
     } catch (error) {
-      console.log(error);
+      setErrorMessage(prev => {
+        const currErrorStatus = { ...prev };
+        currErrorStatus.display = true;
+        currErrorStatus.error = error;
+        return currErrorStatus;
+      });
     }
   }, []);
 
@@ -43,7 +61,7 @@ const Bookings = () => {
 
   let content;
 
-  if (isLoading) {
+  if (isLoading && !errorMessage) {
     content = (
       <h4
         style={{
@@ -60,7 +78,7 @@ const Bookings = () => {
       </h4>
     );
   }
-  if (!isLoading) {
+  if (!isLoading && !errorMessage) {
     content = (
       <div className="container">
         <Search searchVal={searchInput} handler={handleSearchInput} />
@@ -80,6 +98,27 @@ const Bookings = () => {
           }
         />
       </div>
+    );
+  }
+
+  if (errorMessage.display) {
+    content = (
+      <h4
+        style={{
+          background: "rgba(200, 0, 0, 0.1)",
+          width: "100%",
+          height: "100px",
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "space-around",
+          padding: "1.5rem 0 0 5%",
+          overflow: "hidden"
+        }}
+      >
+        {" "}
+        Sorry, it appears something is wrong, an error with code{" "}
+        {errorMessage.error.status} was generated
+      </h4>
     );
   }
 
