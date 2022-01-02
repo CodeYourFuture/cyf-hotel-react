@@ -22,7 +22,7 @@ const Bookings = () => {
 
   const fetchBookings = useCallback(async () => {
     try {
-      const response = await fetch("https://cyf-react.glitch.me/error");
+      const response = await fetch("https://cyf-react.glitch.me");
       if (!response.ok) {
         setErrorMessage(prev => {
           const currErrorStatus = { ...prev };
@@ -61,7 +61,7 @@ const Bookings = () => {
 
   let content;
 
-  if (isLoading && !errorMessage) {
+  if (isLoading) {
     content = (
       <h4
         style={{
@@ -78,7 +78,7 @@ const Bookings = () => {
       </h4>
     );
   }
-  if (!isLoading && !errorMessage) {
+  if (!isLoading) {
     content = (
       <div className="container">
         <Search searchVal={searchInput} handler={handleSearchInput} />
