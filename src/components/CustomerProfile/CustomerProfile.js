@@ -20,7 +20,6 @@ const CustomerProfile = ({ id }) => {
         const data = await response.json();
 
         setCustomerInformation(data);
-        //   console.log(customerInformation);
       } catch (error) {
         console.log(error);
       }
@@ -35,12 +34,15 @@ const CustomerProfile = ({ id }) => {
     <Wrapper>
       {isLoading && <p>Loading...</p>}
       {id && (
+        // using TouristInfoCard component although the fields are different, but they fit the purpose and the design (minus the button) is relevant to the overall design
         <TouristInfoCard
           imageUrl="https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
           cityName={`${customerInformation.firstName} ${
             customerInformation.surname
           }`}
-          description={`email: ${customerInformation.email} \b phone-Number: ${
+          description={`id: ${customerInformation.id} \b email: ${
+            customerInformation.email
+          } \b vip: ${customerInformation.vip} \b phone-Number: ${
             customerInformation.phoneNumber
           }`}
           button={false}
@@ -48,8 +50,6 @@ const CustomerProfile = ({ id }) => {
       )}
     </Wrapper>
   );
-
-  //   return <Wrapper>{id ? `Customer ${id} s profile` : ""}</Wrapper>;
 };
 
 export default CustomerProfile;
