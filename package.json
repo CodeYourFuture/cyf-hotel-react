@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ansi-html-community": "^0.0.8",
+    "history": "^5.1.0",
+    "immer": "^9.0.7",
+    "moment": "^2.29.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "^3.4.1"
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.0.0-beta.8",
+    "react-scripts": "^3.4.1",
+    "styled-components": "^5.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
