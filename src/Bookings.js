@@ -7,6 +7,8 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
+  const [isLoading, setIsLoading] = useState(true);
+
   const handleSearchInput = userSearch => {
     console.log("from Bookings.js ...");
     console.log(userSearch);
@@ -15,16 +17,40 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then(response => response.json())
-      .then(data => setBookings(data));
-  }, []);
+    if (bookings.length === 0) {
+      fetch("https://cyf-react.glitch.me")
+        .then(response => response.json())
+        .then(data => setBookings(data));
+    }
 
-  return (
-    <div className="App-content">
+    if (bookings.length > 0 && isLoading) {
+      setIsLoading(false);
+    }
+  }, [bookings, isLoading]);
+
+  let content;
+
+  if (isLoading) {
+    content = (
+      <h4
+        style={{
+          background: "rgba(200, 0, 0, 0.1)",
+          width: "100%",
+          height: "50px",
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "space-around",
+          padding: "0.5rem 0 0 5%"
+        }}
+      >
+        Loading...
+      </h4>
+    );
+  }
+  if (!isLoading) {
+    content = (
       <div className="container">
         <Search searchVal={searchInput} handler={handleSearchInput} />
-
         <SearchResults
           results={
             searchInput
@@ -41,8 +67,10 @@ const Bookings = () => {
           }
         />
       </div>
-    </div>
-  );
+    );
+  }
+
+  return <div className="App-content">{content}</div>;
 };
 
 export default Bookings;

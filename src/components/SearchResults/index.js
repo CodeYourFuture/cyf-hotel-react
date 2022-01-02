@@ -41,7 +41,7 @@ const SearchResults = ({ results }) => {
               <th>Room id</th>
               <th>Check in date</th>
               <th>Check out date</th>
-              <th>Duration of Stay</th>
+              <th>Duration of Stay (days)</th>
               <th>Profile</th>
             </tr>
             {results.map((booking, index) => {
