@@ -1,25 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import TableHeader from "./TableHeader";
-import TableRow from "./TableRow";
+// import TableRow from "./TableRow";
 import CustomerProfile from "./CustomerProfile";
-import handleClick from "./TableRowEach";
+// import ID from "./TableRowEach";
+import TableRowEach from "./TableRowEach";
 
 const SearchResults = ({ results }) => {
-  //  const handleClick = (event) => {
-  //    let customerProfileID = event.target.value;
-  //    return customerProfileID;
-  //    //  setProfileID(customerProfileID);
-  //    //  console.log(customerProfileID);
-  //  };
+  const [id, setId] = useState("");
+  const idSetter = (e, id) => {
+    // e.stopPropagation();
+    setId(id);
+  };
   return (
     <div className="search-results">
       <table className="table table-bordered">
         <TableHeader />
         <tbody>
-          <TableRow results={results} />
+          {results.map((entry, index) => {
+            return (
+              <TableRowEach entry={entry} key={index} idSetter={idSetter} />
+            );
+          })}
         </tbody>
       </table>
-      <CustomerProfile func={handleClick} className="customer-profile" />
+      <CustomerProfile customerId={id} className="customer-profile" />
     </div>
   );
 };

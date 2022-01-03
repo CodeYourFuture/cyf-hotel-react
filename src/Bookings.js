@@ -12,7 +12,6 @@ const Bookings = () => {
       });
   }, []);
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
     let filteredSearch = bookings.filter(
       booking =>
         booking.firstName.includes(searchVal) ||
