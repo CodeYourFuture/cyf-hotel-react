@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import moment from "moment";
+// import CustomerProfile from "./CustomerProfile";
+// import SearchResults from "./SearchResults";
 
 const TableRowEach = props => {
   const [rowsSelected, setRowsSelected] = useState(false);
   function rowsSelector() {
     setRowsSelected(!rowsSelected);
   }
+
+  const handleClick = event => {
+    let customerProfileID = event.target.value;
+    return customerProfileID;
+    //  setProfileID(customerProfileID);
+    //  console.log(customerProfileID);
+  };
+
   return (
     <tr
       id={props.entry.id}
@@ -25,6 +35,11 @@ const TableRowEach = props => {
           moment(props.entry.checkInDate, "YYYY/MM/DD"),
           "days"
         )}
+      </td>
+      <td>
+        <button value={props.entry.id} onClick={handleClick}>
+          Show Profile
+        </button>
       </td>
     </tr>
   );

@@ -91,3 +91,7 @@ c .card {
   background-color: darkolivegreen;
   color: white;
 }
+
+.search-results {
+  display: flex;
+}
