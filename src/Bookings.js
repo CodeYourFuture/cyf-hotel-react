@@ -4,11 +4,24 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [dataLoading, setDataLoading] = useState(true);
+  const [error, setError] = useState(false);
+
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then(res => res.json())
+    fetch("https://cyf-react.glitch.me/delayed")
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw Error("Error fetching data");
+      })
       .then(data => {
         setBookings(data);
+        setDataLoading(false);
+      })
+      .catch(err => {
+        console.log(err.message);
+        setError(true);
       });
   }, []);
   const search = searchVal => {
@@ -20,12 +33,22 @@ const Bookings = () => {
     setBookings(filteredSearch);
   };
 
-  return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
+  return !error ? (
+    !dataLoading ? (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+          <SearchResults results={bookings} />
+        </div>
       </div>
+    ) : (
+      <div className="text-center display-5 mb-5">
+        Loading booking info...Please be patient
+      </div>
+    )
+  ) : (
+    <div className="text-center display-5 mb-5">
+      "Oops, we've encountered a problem when loading the bookings data"
     </div>
   );
 };

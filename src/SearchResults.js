@@ -23,7 +23,9 @@ const SearchResults = ({ results }) => {
           })}
         </tbody>
       </table>
-      <CustomerProfile customerId={id} className="customer-profile" />
+      {id === "" ? null : (
+        <CustomerProfile customerId={id} className="customer-profile" />
+      )}
     </div>
   );
 };
