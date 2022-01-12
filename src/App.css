@@ -1,21 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+
 .App {
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/* .App-logo {
+  /* animation: App-logo-spin infinite 20s linear; */
+
+.logo {
+  height: 6rem;
+  margin-right: 2rem;
 }
 
 .App-header {
-  background-color: #222;
+  /* display: flex; */
+  padding: 10px;
+  /* background-color: #222;
   height: 50px;
-  padding: 20px;
-  color: white;
+  color: white;*/
   text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Josefin Sans, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  /* padding: 40px; */
+  background: #888888;
+  color: rgb(219, 200, 200);
+}
+
+h4 {
+  font-family: Josefin Sans, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
 }
 
 .App-title {
@@ -27,20 +43,12 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
 }
 
 tr {
-  color: #5b5757;
+  color: #050202;
 }
 
 .results {
@@ -53,5 +61,111 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  /* margin: 0;
+  padding: 0;
+  box-shadow: 0 3px 10px 0 #aaa;
+  cursor: pointer;
+  width: 70%;
+  display: flex;
+  margin: 5rem auto;
+  align-items: center;
+  box-shadow: 0.5rem 0.5rem 0.5rem grey;
+  color: black; */
+  /* width: 18rem; */
+  /* margin: 10px;
+  border: none; 
+  width: "100%";
+  height: auto;  */
+  /* transition: all 500ms ease; */
+  /* overflow:hidden;
+ border-radius:20px; */
+  /* min-height:450px; */
+  /* box-shadow: 0 0 12px 0 rgba(0,0,0,0.2); */
+  /*width: auto;*/
+  /* @media (max-width: 768px) {
+  min-height:350px;
+}
+
+@media (max-width: 420px) {
+  min-height:300px;
+} */
+}
+
+#idContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px; */
+  margin: 10px;
+  border: none;
+  /* transition: all 500ms ease; */
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 450px;
+}
+.btn {
+  color: #000000;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgb(194, 104, 104);
+}
+
+.btn:hover {
+  background-color: rgba(236, 90, 90, 0.589);
+}
+/* #card-body{ 
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+} */
+
+h3 {
+  font-family: Josefin Sans, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(221, 221, 221);
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 30px;
+  color: slategray;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #151414;
+  color: white;
+  text-align: center;
+  font-family: Josefin Sans, sans-serif;
+  font-size: 1em;
+}
+
+table {
+  background-color: white;
+  margin: 2rem auto 5rem auto;
+  border: 1px solid black;
+  text-align: center;
+}
+
+th {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+td {
+  padding: 0.5rem;
+}
+
+.newForm {
 }
