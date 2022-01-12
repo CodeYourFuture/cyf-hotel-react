@@ -1,14 +1,15 @@
 import React from "react";
+import Order from "./Order";
+import "./index.css";
 
 const Restaurant = () => {
-  const pizzas = 0;
   return (
     <div>
       <h3>Restaurant Orders</h3>
-      <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+      <ul className="list">
+        <Order orderType="Pizza" />
+        <Order orderType="Salads" />
+        <Order orderType="Chocolate" />
       </ul>
     </div>
   );

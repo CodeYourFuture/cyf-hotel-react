@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.24.0",
+    "moment": "^2.29.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-hook-form": "^7.21.2",
+    "react-hook-form-resolvers": "^0.0.1",
     "react-scripts": "^3.4.1"
   },
   "scripts": {
