@@ -8,9 +8,7 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
-    console.log(searchVal);
     const filteredSearch = bookings.filter(booking => {
-      console.log(booking.id);
       return (
         booking.firstName.includes(searchVal) ||
         booking.surname.includes(searchVal) ||

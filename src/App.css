@@ -6,16 +6,17 @@
   animation: App-logo-spin infinite 20s linear;
   height: 50px;
   margin: 1rem;
+  margin-left: 2.5rem;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .card-container {
   display: flex;
