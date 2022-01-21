@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -23,4 +23,39 @@ body {
 
 .search-row input {
   margin-right: 10px;
+} */
+
+.App-header {
+  background-color: #222;
+  height: 50px;
+  height: 100px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+.App-header img {
+  width: 10rem;
+  right: 0;
+  position: absolute;
+  height: 5rem;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+.footer {
+  padding-top: 20px;
+  text-align: center;
+  list-style-type: none;
+}
+
+.card {
+  width: 18rem;
+}
+
+#allcards {
+  margin: 3% 30%;
 }
