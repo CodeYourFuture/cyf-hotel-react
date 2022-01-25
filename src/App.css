@@ -27,6 +27,31 @@
   font-size: large;
 }
 
+.card-deck {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+.btn-primary {
+  width: 100%;
+  margin: auto;
+}
+
+.list {
+  list-style: none;
+  color: aliceblue;
+}
+
+.footer {
+  background-color: #222;
+  padding: 10px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
