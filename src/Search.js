@@ -24,15 +24,15 @@ const Search = props => {
       <div className="row search-wrapper">
         <div className="col">
           <form onSubmit={submitIdSearchInput}>
-            <label className="customer-id" htmlFor="customerId">
+            {/* <label className="customer-id" htmlFor="customerId">
               Customer ID
-            </label>
+            </label> */}
             <div className="search-row">
               <input
                 type="number"
                 id="customerID"
                 className="form-control"
-                placeholder="Customer id"
+                placeholder="Search by customer's id"
                 value={idSearchInput}
                 onChange={idSearchHandler}
               />
@@ -42,15 +42,15 @@ const Search = props => {
         </div>
         <div className="col">
           <form onSubmit={submitSearchInput}>
-            <label className="customer-name" htmlFor="customerName">
+            {/* <label className="customer-name" htmlFor="customerName">
               Customer name
-            </label>
+            </label> */}
             <div className="search-row">
               <input
                 type="text"
                 id="customerName"
                 className="form-control"
-                placeholder="Customer name"
+                placeholder="Search by customer's name"
                 value={searchInput}
                 onChange={handleSearchInput}
               />
