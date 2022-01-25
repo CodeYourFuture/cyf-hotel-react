@@ -37,14 +37,19 @@
   height: 15vw;
   object-fit: cover;
 }
+
 .btn-primary {
   width: 100%;
   margin: auto;
 }
 
+.highlight {
+  background-color: hsl(0, 2%, 75%);
+}
+
 .list {
   list-style: none;
-  color: aliceblue;
+  color: rgb(207, 207, 209);
 }
 
 .footer {

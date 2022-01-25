@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 function CustomerData(props) {
+  const [isClicked, setIsClicked] = useState(false);
+
+  function handleClick() {
+    setIsClicked(prevState => !prevState);
+  }
+
   return (
-    <tr>
+    <tr onClick={handleClick} className={isClicked ? "highlight" : ""}>
       <td>{props.id}</td>
       <td>{props.title}</td>
       <td>{props.firstName}</td>

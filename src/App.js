@@ -5,6 +5,7 @@ import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 
 const contactDetails = [
   "123 Fake Street, London, E1 4UD",
@@ -18,6 +19,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       {contactDetails.map((contactDetail, index) => {
         return <Footer key={index} contact={contactDetail} />;
       })}
