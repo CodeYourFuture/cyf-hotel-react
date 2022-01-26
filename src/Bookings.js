@@ -5,8 +5,6 @@ import SearchResults from "./SearchResults.jsx";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
-  // The filter function should return bookings where `firstName` or `surname` match `searchVal`. Once filtered, use the `setBookings` function to update the results rendered in `<SearchResults />`.
-
   const search = searchVal => {
     const filteredBookings = bookings.filter(booking => {
       return (
@@ -18,7 +16,6 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    console.log("useEffect");
     fetch("https://cyf-react.glitch.me")
       .then(response => response.json())
       .then(data => {

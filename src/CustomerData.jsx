@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 
 function CustomerData(props) {
   const [isClicked, setIsClicked] = useState(false);
 
   function handleClick() {
     setIsClicked(prevState => !prevState);
+  }
+
+  function handleChange() {
+    props.onClick(props.id);
   }
 
   return (
@@ -19,6 +24,11 @@ function CustomerData(props) {
       <td>{props.checkInDate}</td>
       <td>{props.checkOutDate}</td>
       <td>{props.nights}</td>
+      <td>
+        <button className="btn btn-primary" onClick={handleChange}>
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 }
