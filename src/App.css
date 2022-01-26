@@ -1,32 +1,30 @@
 .App {
   text-align: left;
 }
-
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  animation: App-logo-spin infinite 50s linear;
+  height: 40px;
+  margin-right: 2em;
 }
-
 .App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
+  background-color: aqua blue;
+  height: 80px;
+  padding: 15px;
   color: white;
-  text-align: left;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
 }
-
 .App-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
+  align-self: center;
+  margin: 0;
 }
-
 .App-content {
-  padding-top: 20px;
   font-size: large;
+  background-color: #311b00;
 }
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,13 +36,74 @@
 .search {
   padding: 5px 0 20px 0;
 }
-
 tr {
   color: #5b5757;
 }
-
 .results {
   padding-top: 15px;
+}
+.footer {
+  padding-top: 20px;
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+}
+.card {
+  width: 18rem;
+  background-color: aqua;
+}
+.yellow {
+  background-color: yellow;
+}
+
+/* .App {
+  text-align: left;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: rgb(1, 1, 12);
+  height: 50px;
+  padding: 15px;
+  color: rgb(206, 199, 199);
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.App-title {
+  font-size: 1.8em;
+}
+
+.App-content {
+  padding-top: 15px;
+  font-size: 1.5em;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.search {
+  padding: 10px 0 20px 0;
+}
+
+tr {
+  color: #242424;
+}
+
+.results {
+  padding-top: 20px;
 }
 
 .footer {
@@ -53,5 +112,5 @@ tr {
 }
 
 .card {
-  width: 18rem;
-}
+  width: 20rem;
+} */
