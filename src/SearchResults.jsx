@@ -4,8 +4,7 @@ import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
 function SearchResults(props) {
-  // You need to record the selected customer id after clicking on a "Show profile" button.
-  const results = props.results;
+  const results = props.bookings;
   const [selectedCustomerId, setSelectedCustomerId] = useState(null);
 
   function displayProfile(id) {

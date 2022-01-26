@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CustomerProfile from "./CustomerProfile";
 
 function CustomerData(props) {
   const [isClicked, setIsClicked] = useState(false);
