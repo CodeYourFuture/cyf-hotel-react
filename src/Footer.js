@@ -5,7 +5,7 @@ const Footer = ({ arr }) => {
     <div>
       <ul className="list-unstyled text-center">
         {arr.map(item => {
-          return <li>{item}</li>;
+          return <li key={item.length}>{item}</li>;
         })}
       </ul>
     </div>
