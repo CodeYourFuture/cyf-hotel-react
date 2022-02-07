@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import { useState } from "react";
 //import Bookings from './Bookings';
 
 const SearchResults = ({ results }) => {
@@ -22,19 +23,19 @@ const SearchResults = ({ results }) => {
           {results.map(item => {
             return (
               <tr key={item.id}>
-                <th>{item.title}</th>
-                <th>{item.firstName}</th>
-                <th>{item.surname}</th>
-                <th>{item.email}</th>
-                <th>{item.roomId}</th>
-                <th>{item.checkInDate}</th>
-                <th>{item.checkOutDate}</th>
-                <th>
+                <td>{item.title}</td>
+                <td>{item.firstName}</td>
+                <td>{item.surname}</td>
+                <td>{item.email}</td>
+                <td>{item.roomId}</td>
+                <td>{item.checkInDate}</td>
+                <td>{item.checkOutDate}</td>
+                <td>
                   {moment(item.checkOutDate).diff(
                     moment(item.checkInDate),
                     "days"
                   )}
-                </th>
+                </td>
               </tr>
             );
           })}

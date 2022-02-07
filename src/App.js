@@ -5,6 +5,7 @@ import Bookings from "./Bookings";
 import "./App.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   const arr = [
@@ -18,6 +19,7 @@ const App = () => {
       <Header />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer arr={arr} />
     </div>
   );
