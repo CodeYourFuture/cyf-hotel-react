@@ -1,7 +1,7 @@
 import React from "react";
-import moment from "moment";
-import { useState } from "react";
-//import Bookings from './Bookings';
+/*import { useState } from 'react';
+import moment from "moment";*/
+import Row from "./Row";
 
 const SearchResults = ({ results }) => {
   return (
@@ -21,8 +21,16 @@ const SearchResults = ({ results }) => {
         </thead>
         <tbody>
           {results.map(item => {
+            return <Row key={item.id} results={item} />;
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+/*{results.map(item => {
             return (
-              <tr key={item.id}>
+              <tr key={item.id} id={item.id} className={clicked === item.id ? "highlight" : ''} onClick={() => toggleClass(results)}>
                 <td>{item.title}</td>
                 <td>{item.firstName}</td>
                 <td>{item.surname}</td>
@@ -37,12 +45,6 @@ const SearchResults = ({ results }) => {
                   )}
                 </td>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
-  );
-};
-
+              );
+          })}*/
 export default SearchResults;

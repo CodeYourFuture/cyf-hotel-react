@@ -6,9 +6,13 @@ const Order = ({ orderType }) => {
   const [orders, setOrders] = useState(0);
   //const pizzas = 0;
 
-  const orderOne = () => {
+  /*const orderOne = () => {
     const addOne = orders + 1;
     setOrders(addOne);
+  };*/
+
+  const orderOne = () => {
+    setOrders(prev => prev + 1);
   };
 
   return (
