@@ -1,11 +1,16 @@
 import React from "react";
-/*import { useState } from 'react';
-import moment from "moment";*/
+import CustomerProfile from "./CustomerProfile";
+import { useState } from "react";
+//import moment from "moment";
 import Row from "./Row";
 
 const SearchResults = ({ results }) => {
+  const [cusid, setCusid] = useState(null);
+
+  const clickEvent = value => setCusid(value);
+
   return (
-    <div>
+    <div className="d-flex">
       <table className="table table-bordered">
         <thead>
           <tr>
@@ -17,34 +22,17 @@ const SearchResults = ({ results }) => {
             <th scope="col">check in date</th>
             <th scope="col">check out date</th>
             <th scope="col">number of nights</th>
+            <th />
           </tr>
         </thead>
         <tbody>
           {results.map(item => {
-            return <Row key={item.id} results={item} />;
+            return <Row key={item.id} results={item} clickEvent={clickEvent} />;
           })}
         </tbody>
       </table>
+      {!cusid ? "" : <CustomerProfile customerId={cusid} />}
     </div>
   );
 };
-/*{results.map(item => {
-            return (
-              <tr key={item.id} id={item.id} className={clicked === item.id ? "highlight" : ''} onClick={() => toggleClass(results)}>
-                <td>{item.title}</td>
-                <td>{item.firstName}</td>
-                <td>{item.surname}</td>
-                <td>{item.email}</td>
-                <td>{item.roomId}</td>
-                <td>{item.checkInDate}</td>
-                <td>{item.checkOutDate}</td>
-                <td>
-                  {moment(item.checkOutDate).diff(
-                    moment(item.checkInDate),
-                    "days"
-                  )}
-                </td>
-              </tr>
-              );
-          })}*/
 export default SearchResults;

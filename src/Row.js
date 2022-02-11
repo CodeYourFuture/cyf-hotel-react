@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import moment from "moment";
 
-const Row = ({ results }) => {
+const Row = ({ results, clickEvent }) => {
   const [clicked, setClicked] = useState(null);
 
   const toggleClass = () => {
@@ -26,22 +26,18 @@ const Row = ({ results }) => {
       <td>
         {moment(results.checkOutDate).diff(moment(results.checkInDate), "days")}
       </td>
+      <td>
+        <button
+          className="btn btn-primary"
+          onClick={i => {
+            i.stopPropagation();
+            clickEvent(results.id);
+          }}
+        >
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };
-/*<tr key={item.id} id={item.id} className={clicked === item.id ? "highlight" : ''} onClick={() => toggleClass(results)}>
-                <td>{item.title}</td>
-                <td>{item.firstName}</td>
-                <td>{item.surname}</td>
-                <td>{item.email}</td>
-                <td>{item.roomId}</td>
-                <td>{item.checkInDate}</td>
-                <td>{item.checkOutDate}</td>
-                <td>
-                  {moment(item.checkOutDate).diff(
-                    moment(item.checkInDate),
-                    "days"
-                  )}
-                </td>
-              </tr>*/
 export default Row;
