@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
+  const [color, setColor] = useState("red");
+  const highLight = () => {
+    setColor("blue");
+  };
+
   return (
     <div>
       <table className="table table-hover">
@@ -23,7 +28,7 @@ const SearchResults = ({ results }) => {
             let checkIn = moment(result.checkInDate);
             let checkOut = moment(result.checkOutDate);
             return (
-              <tr key={i}>
+              <tr key={i} className={color} onClick={highLight}>
                 <th scope="row">{result.id}</th>
                 <td>{result.title}</td>
                 <td>{result.firstName}</td>
