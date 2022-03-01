@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-import moment from "moment";
+import React from "react";
+
+import Row from "./Row";
 
 const SearchResults = ({ results }) => {
-  const [color, setColor] = useState("red");
-  const highLight = () => {
-    setColor("blue");
-  };
-
   return (
     <div>
       <table className="table table-hover">
@@ -24,22 +20,8 @@ const SearchResults = ({ results }) => {
           </tr>
         </thead>
         <tbody>
-          {results.map((result, i) => {
-            let checkIn = moment(result.checkInDate);
-            let checkOut = moment(result.checkOutDate);
-            return (
-              <tr key={i} className={color} onClick={highLight}>
-                <th scope="row">{result.id}</th>
-                <td>{result.title}</td>
-                <td>{result.firstName}</td>
-                <td>{result.surname}</td>
-                <td>{result.email}</td>
-                <td>{result.roomId}</td>
-                <td>{result.checkInDate}</td>
-                <td>{result.checkOutDate}</td>
-                <td>{checkOut.diff(checkIn, "days")}</td>
-              </tr>
-            );
+          {results.map(result => {
+            return <Row key={result.id} results={result} />;
           })}
         </tbody>
       </table>
