@@ -25,11 +25,11 @@ const cityDetails = {
 
 const TouristInfoCards = () => {
   return (
-    <>
+    <div className="InfoCards">
       <Card {...cityDetails.glasow} />
       <Card {...cityDetails.manchester} />
       <Card {...cityDetails.london} />
-    </>
+    </div>
   );
 };
 
