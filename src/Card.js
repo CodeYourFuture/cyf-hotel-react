@@ -1,16 +1,18 @@
 import React from "react";
 
-const Card = props => {
+const Card = ({ title, link, desc, imgSrc }) => {
   return (
     <div className="card">
-      <img src={props.imgSrc} className="card-img-top" />
+      <img src={imgSrc} className="card-img-top" />
       <div className="card-body">
-        <h2>{props.title}</h2>
-        <p>{props.desc}</p>
-        <a href="#" className="btn btn-primary">
+        <h2>{title}</h2>
+        <p>{desc}</p>
+        <a href={link} className="btn btn-primary">
           More Information
         </a>
       </div>
     </div>
   );
 };
+
+export default Card;
