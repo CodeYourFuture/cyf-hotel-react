@@ -1,18 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
-// import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
+  const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://johng-hotel-server.glitch.me/bookings`)
+      .then(res => {
+        console.log(res);
+        if (res.ok) {
+          return res.json();
+        }
+        throw Error(`${res.status} Internal Server error`);
+      })
+      .then(data => {
+        setBookings(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setLoading(false);
+        setError(err.message);
+      });
+  }, []);
+
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    if (searchVal.length !== 0) {
+      let matchingGuests = bookings.filter(element => {
+        return (
+          element.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+          element.surname.toLowerCase().includes(searchVal.toLowerCase())
+        );
+      });
+      setBookings(matchingGuests);
+    }
   };
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
+        {error && <div>{error}</div>}
+        {loading && <div>Loading....</div>}
+        {bookings && <SearchResults results={bookings} />}
       </div>
     </div>
   );
