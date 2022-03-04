@@ -137,3 +137,10 @@ button {
   justify-content: space-evenly;
   margin-top: 2rem;
 }
+
+.food-order-list button.btn-primary {
+  height: 30px;
+  width: 80px;
+  padding: 6px 6px;
+  margin: 0 5px 0 5px;
+}

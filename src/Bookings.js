@@ -8,8 +8,9 @@ const Bookings = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/`)
+    fetch(`https://johng-hotel-server.glitch.me/bookings`)
       .then(res => {
+        console.log(res);
         if (res.ok) {
           return res.json();
         }

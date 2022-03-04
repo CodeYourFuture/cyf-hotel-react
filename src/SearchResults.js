@@ -32,9 +32,9 @@ const SearchResults = props => {
           {rowData.map(element => {
             return <Row row={element} idSetter={rowIdSetter} />;
           })}
-          {rowId === "" ? null : <CustomerProfile id={rowId} />}
         </tbody>
       </table>
+      {rowId === "" ? null : <CustomerProfile id={rowId} />}
     </div>
   );
 };
