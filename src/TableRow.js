@@ -26,6 +26,15 @@ const TableRow = props => {
           "days"
         )}
       </td>
+      <td>
+        <button
+          className="btn btn-primary"
+          type="submit"
+          onClick={() => props.setCustomerId(props.guest.id)}
+        >
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };
