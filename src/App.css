@@ -7,10 +7,15 @@
   height: 80px;
 }
 
+.logo {
+  height: 60px;
+  padding: 10px;
+}
+
 .App-header {
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 8px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -43,15 +48,59 @@ tr {
   color: #5b5757;
 }
 
+bg-color-primary {
+  background-color: #222;
+}
+
+bg-color-marked {
+  background-color: azure;
+}
+
 .results {
   padding-top: 15px;
+}
+
+.btn {
+  border-radius: 6px;
+  margin: 2em 1em;
+  flex: 0 0 calc(100vw -2em -1em);
+  height: 7vh;
+  display: block;
+  transition: all 300ms;
+  color: rgb(248, 245, 245);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.text-style {
+  list-style-type: none;
+}
+
+.container {
+  align-items: center;
+  justify-content: center;
+  display: block;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 .card {
+  /* display: flex;
+  justify-content: space-around; */
   width: 18rem;
+  text-align: center;
+}
+
+.highlighted {
+  background-color: lightsteelblue;
 }
