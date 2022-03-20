@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "husky": "^2.3.0",
+    "moment": "^2.29.1",
     "prettier": "^1.17.0",
     "pretty-quick": "^1.10.0"
   },

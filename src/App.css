@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -9,13 +10,16 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+}
+
+.App-header img {
+  height: 3.5rem;
 }
 
 .App-title {
@@ -50,6 +54,10 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+
+.footer ul {
+  list-style: none;
 }
 
 .card {
