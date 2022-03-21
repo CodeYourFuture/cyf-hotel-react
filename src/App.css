@@ -52,6 +52,20 @@ tr {
   text-align: center;
 }
 
+.cardBox {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .card {
   width: 18rem;
+}
+
+.footer {
+  display: inline;
+}
+
+ul {
+  list-style: none;
 }
