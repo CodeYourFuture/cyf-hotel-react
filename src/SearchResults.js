@@ -2,12 +2,6 @@ import React from "react";
 import FakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
 
-// function difference () {
-//   let a = moment([2007, 0, 29]);
-//   let b = moment([2007, 0, 28]);
-//   a.diff(b, 'days')
-// }
-
 function SearchResults() {
   const DisplayData = FakeBookings.map(info => {
     return (
