@@ -56,6 +56,13 @@ tr {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  text-align: center;
+}
+
+p {
+  font-family: "Smokum", cursive;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .card {
@@ -68,4 +75,8 @@ tr {
 
 ul {
   list-style: none;
+}
+
+img {
+  height: 200px;
 }

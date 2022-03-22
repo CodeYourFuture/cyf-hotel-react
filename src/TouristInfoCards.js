@@ -1,11 +1,30 @@
 import React from "react";
 
+// const CardCreator = ({imageSource, city, hyperTextRef}) => {
+//  return (
+//     <div className="card">
+//         <img
+//           src="{imageSource}"
+//           alt=""
+//           className="card-img-top"
+//         />
+//         <div className="card-body">
+//           <p>{city}</p>
+//           <a href="{hyperTextRef}" className="btn btn-primary">
+//             Go somewhere
+//           </a>
+//         </div>
+//       </div>
+
+//  )
+// }
+
 const TouristInfoCards = () => {
   return (
     <div className="cardBox">
       <div className="card">
         <img
-          src="/home/deago/CYF/cyf-hotel-react/cardImages/jason-jeandron-o5aYYDkLgYU-unsplash.jpg"
+          src={require("./jason-jeandron-o5aYYDkLgYU-unsplash.jpg")}
           alt=""
           className="card-img-top"
         />
@@ -19,7 +38,7 @@ const TouristInfoCards = () => {
 
       <div className="card">
         <img
-          src="/home/deago/CYF/cyf-hotel-react/cardImages/craig-mckay-gndl-el3n00-unsplash.jpg"
+          src={require("./craig-mckay-gndl-el3n00-unsplash.jpg")}
           alt=""
           className="card-img-top"
         />
@@ -33,7 +52,7 @@ const TouristInfoCards = () => {
 
       <div className="card">
         <img
-          src="/home/deago/CYF/cyf-hotel-react/cardImages/giammarco-q140lHKzXZY-unsplash.jpg"
+          src={require("./giammarco-q140lHKzXZY-unsplash.jpg")}
           alt=""
           className="card-img-top"
         />
