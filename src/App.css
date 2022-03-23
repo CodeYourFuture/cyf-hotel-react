@@ -18,6 +18,12 @@
   font-weight: bold;
 }
 
+.small-profile {
+  height: 150px;
+  border-radius: 50%;
+  border: 10px solid #D4AF37;
+}
+
 .App-title {
   font-size: 1.5em;
 }
