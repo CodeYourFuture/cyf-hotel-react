@@ -1,13 +1,10 @@
 import React from "react";
+import logo from "./images/logo.png";
 
 function Heading() {
   return (
     <header className="App-header">
-      <img
-        src="https://www.fleurette-constructeur.fr/wp-content/uploads/2019/09/logo-placeholder-png-6.png"
-        alt="logo"
-        style={{ width: "80px" }}
-      />
+      <img src={logo} alt="logo" style={{ width: "80px" }} />
       <p>CYF Hotel</p>
     </header>
   );

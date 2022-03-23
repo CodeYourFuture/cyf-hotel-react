@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Heading";
+import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards.js";
 import Bookings from "./Bookings";
 
@@ -9,7 +9,7 @@ import "./App.css";
 const App = () => {
   return (
     <div className="App">
-      <Header />
+      <Heading />
       <TouristInfoCards />
       <Bookings />
       <Footer />
