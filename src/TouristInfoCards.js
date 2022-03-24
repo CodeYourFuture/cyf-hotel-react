@@ -7,7 +7,11 @@ const TouristInfoCards = ({ cardData }) => {
         {cardData.map(data => {
           return (
             <div className="card">
-              <img src={data.imageUrl} className="card-img-top" />
+              <img
+                src={data.imageUrl}
+                alt="card image"
+                className="card-img-top"
+              />
               <div className="card-body">
                 <h5 className="card-title">{data.title}</h5>
                 <p className="card-text">{data.description}</p>
