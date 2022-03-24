@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Restaurant = () => {
-  const pizzas = 0;
   return (
-    <div>
+    <div className="container">
       <h3>Restaurant Orders</h3>
-      <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+      <ul className="list-group">
+        <Order orderType="Pizzas" />
+        <Order orderType="Burgers" />
+        <Order orderType="Salads" />
+        <Order orderType="Chocolate cake" />
       </ul>
     </div>
+  );
+};
+
+const Order = props => {
+  const [orders, setOrders] = useState(0);
+  const orderOne = () => setOrders(orders + 1);
+  return (
+    <li className="list-group-item d-flex justify-content-between align-items-center">
+      {props.orderType}: {orders}{" "}
+      <button className="btn btn-primary m-1" onClick={orderOne}>
+        Add
+      </button>
+    </li>
   );
 };
 
