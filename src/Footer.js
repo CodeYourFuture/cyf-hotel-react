@@ -1,10 +1,10 @@
 import React from "react";
 
-const Footer = ({ footer }) => {
+const Footer = ({ contact }) => {
   //   console.log(footer);
   return (
     <ul style={AppFooter}>
-      {footer.map((data, index) => {
+      {contact.map((data, index) => {
         // console.log(data);
         return <li key={index}>{data}</li>;
       })}

@@ -14,7 +14,7 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Footer
-        footer={[
+        contact={[
           "123 Fake Street, London, E1 4UD",
           "hello@fakehotel.com",
           "0123 456789"
