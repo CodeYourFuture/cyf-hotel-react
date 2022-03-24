@@ -2,14 +2,20 @@ import React from "react";
 
 function TouristInfoCard() {
   return (
-    <div>
+    <div className="cardContainer">
       <div className="card">
         <img
           src="https://cdn.pixabay.com/photo/2017/03/25/12/38/glasgow-2173449_960_720.jpg"
+          alt="Glasgow"
           className="card-img-top"
         />
         <div className="card-body">
-          <a href="#" className="btn btn-primary">
+          <p>Glasgow</p>
+          <a
+            href="https://peoplemakeglasgow.com"
+            target="_blank"
+            className="btn btn-primary"
+          >
             Go somewhere
           </a>
         </div>
@@ -20,7 +26,12 @@ function TouristInfoCard() {
           className="card-img-top"
         />
         <div className="card-body">
-          <a href="#" className="btn btn-primary">
+          <p>Manchester</p>
+          <a
+            href="https://www.visitmanchester.com/"
+            target="_blank"
+            className="btn btn-primary"
+          >
             Go somewhere
           </a>
         </div>
@@ -31,7 +42,12 @@ function TouristInfoCard() {
           className="card-img-top"
         />
         <div className="card-body">
-          <a href="#" className="btn btn-primary">
+          <p>London</p>
+          <a
+            href="https://www.visitlondon.com/"
+            target="_blank"
+            className="btn btn-primary"
+          >
             Go somewhere
           </a>
         </div>
