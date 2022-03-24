@@ -55,3 +55,14 @@ tr {
 .card {
   width: 18rem;
 }
+/* header component*/
+.header {
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  grid-gap: 10px;
+  width: 100%;
+}
+img {
+  margin-left: 2rem;
+  width: 43%;
+}
