@@ -1,3 +1,11 @@
+:root {
+  --golden: #d4af37;
+}
+
+body {
+  margin: 4rem;
+}
+
 .App {
   text-align: left;
 }
@@ -16,12 +24,14 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .small-profile {
   height: 150px;
   border-radius: 50%;
-  border: 10px solid #D4AF37;
+  border: 10px solid var(--golden);
 }
 
 .App-title {
@@ -41,8 +51,35 @@
     transform: rotate(360deg);
   }
 }
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.infocard-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  padding: 0.6rem;
+}
+
+.card-body {
+  margin: auto;
+}
+
+.nobullets {
+  list-style-type: none;
+  margin-left: 3rem;
+}
+
 .search {
   padding: 5px 0 20px 0;
+}
+
+.centre {
+  text-align: center;
 }
 
 tr {
