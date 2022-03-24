@@ -6,8 +6,11 @@ const Heading = () => {
       <header className="App-header">
         <div>
           <img
-            class="hotel-logo"
-            src="https://img.freepik.com/free-vector/minimal-letter-e-home-logo-design-real-estate-vector-graphic_490655-172.jpg?w=826"
+            className="hotel-logo"
+            src={
+              "https://img.freepik.com/free-vector/minimal-letter-e-home-logo-design-real-estate-vector-graphic_490655-172.jpg?w=826"
+            }
+            alt="company logo"
           />
         </div>
 

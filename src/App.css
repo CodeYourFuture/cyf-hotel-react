@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   background-color: rgb(27, 151, 173);
-  height: 150px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -70,4 +70,9 @@ tr {
   display: flex;
   justify-content: space-evenly;
   padding: 5%;
+}
+
+ul {
+  text-align: center;
+  list-style: none;
 }
