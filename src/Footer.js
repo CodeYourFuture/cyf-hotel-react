@@ -5,9 +5,10 @@ const contactInfo = [
   "hello@fakehotel.com",
   "0123 456789"
 ];
+
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <ul>
         {contactInfo.map((name, index) => (
           <li key={index}>{name}</li>

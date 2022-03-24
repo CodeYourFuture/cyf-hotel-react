@@ -48,11 +48,16 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding: 20px 0;
   text-align: center;
+  background-color: #5b5757;
+  color: #fff;
 }
-
+.footer ul {
+  list-style: none;
+}
 .cardContainer {
+  padding: 30px 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
