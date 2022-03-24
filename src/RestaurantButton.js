@@ -3,7 +3,11 @@ import React from "react";
 function RestaurantButton(props) {
   return (
     <div>
-      <button onClick={props.handleClick} className="btn btn-primary">
+      <button
+        name="secondButton"
+        onClick={props.handleClick}
+        className="btn btn-primary"
+      >
         Add
       </button>
     </div>

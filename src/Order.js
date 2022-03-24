@@ -10,13 +10,9 @@ const Order = props => {
 
   return (
     <div>
-      <ul>
-        <li>
-          <RestaurantButton handleClick={orderOne} />
-          pizzas: {oders}
-          {props.orderType}
-        </li>
-      </ul>
+      <RestaurantButton handleClick={orderOne} />
+      pizzas: {oders}
+      {props.orderType}
     </div>
   );
 };

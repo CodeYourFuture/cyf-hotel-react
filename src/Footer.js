@@ -7,11 +7,11 @@ function Footer() {
     "0123 "
   ];
   return (
-    <ul>
-      {array.map(name => {
-        return <li>{name}</li>;
+    <div className="idFooter">
+      {array.map((name, index) => {
+        return <li key={index}>{name}</li>;
       })}
-    </ul>
+    </div>
   );
 }
 export default Footer;

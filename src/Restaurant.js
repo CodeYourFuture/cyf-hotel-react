@@ -4,10 +4,8 @@ import Order from "./Order";
 function Restaurant(props) {
   return (
     <div>
-      <p>
-        {" "}
-        <h3>Restaurant Orders</h3>
-      </p>
+      {" "}
+      <h3>Restaurant Orders</h3>
       <ul className="list-group">
         <Order />
         <Order orderType={"salade"} />
