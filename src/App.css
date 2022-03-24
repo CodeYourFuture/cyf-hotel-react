@@ -33,6 +33,9 @@
   font-size: large;
 }
 
+.table {
+  width: 100%;
+}
 .search {
   padding: 5px 0 20px 0;
 }
