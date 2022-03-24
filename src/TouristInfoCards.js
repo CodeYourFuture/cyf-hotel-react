@@ -8,7 +8,7 @@ const TouristInfoCards = ({ cardData }) => {
           return (
             <div className="card">
               <img
-                src={data.imageUrl}
+                src={data.imgUrl}
                 alt="card image"
                 className="card-img-top"
               />
