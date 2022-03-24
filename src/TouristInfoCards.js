@@ -7,6 +7,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           src="https://images.unsplash.com/photo-1571494146906-86de15d3817b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1388&q=80"
+          alt="Glasgow"
           className="card-img-top"
         />
         <p className="card-text">
@@ -25,6 +26,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           src="https://images.unsplash.com/photo-1624699820262-1c6629eed741?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+          alt="Manchester"
           className="card-img-top"
         />
         <p className="card-text">
@@ -44,6 +46,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+          alt="London"
           className="card-img-top"
         />
         <p className="card-text">
