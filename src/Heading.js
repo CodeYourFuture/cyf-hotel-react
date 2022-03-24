@@ -1,9 +1,10 @@
 import React from "react";
+import hotel from "./hotel.png";
 
 const Heading = () => {
   return (
     <header className="App-header">
-      <img src="https://image.flaticon.com/icons/svg/139/139899.svg" />
+      <img src={hotel} />
       CYF Hotel
     </header>
   );
