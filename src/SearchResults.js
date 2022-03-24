@@ -22,8 +22,8 @@ function SearchResults() {
   });
 
   return (
-    <div>
-      <table class="table table-striped">
+    <div className="table-container">
+      <table className="table table-striped">
         <thead>
           <tr>
             <th scope="col">Id</th>
