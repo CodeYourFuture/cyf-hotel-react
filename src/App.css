@@ -7,6 +7,10 @@
   .card {
     margin: 20px 0;
   }
+
+  .table {
+    width: 100vw;
+  }
 }
 
 .App {
@@ -33,9 +37,6 @@
   font-size: large;
 }
 
-.table {
-  width: 100vw;
-}
 .search {
   padding: 5px 0 20px 0;
 }
