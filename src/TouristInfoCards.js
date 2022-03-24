@@ -13,6 +13,7 @@ function TouristInfoCard() {
           <p>Glasgow</p>
           <a
             href="https://peoplemakeglasgow.com"
+            rel="noopener noreferrer"
             target="_blank"
             className="btn btn-primary"
           >
@@ -29,6 +30,7 @@ function TouristInfoCard() {
           <p>Manchester</p>
           <a
             href="https://www.visitmanchester.com/"
+            rel="noopener noreferrer"
             target="_blank"
             className="btn btn-primary"
           >
@@ -45,6 +47,7 @@ function TouristInfoCard() {
           <p>London</p>
           <a
             href="https://www.visitlondon.com/"
+            rel="noopener noreferrer"
             target="_blank"
             className="btn btn-primary"
           >
