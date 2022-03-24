@@ -8,11 +8,11 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(70, 4, 4);
   height: 50px;
   padding: 20px;
   color: white;
-  text-align: left;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
@@ -35,12 +35,24 @@
     transform: rotate(360deg);
   }
 }
+.logo-image {
+  display: grid;
+  place-items: center;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 .search {
   padding: 5px 0 20px 0;
 }
 
 tr {
-  color: #5b5757;
+  color: #292424;
 }
 
 .results {
@@ -51,7 +63,43 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
-
+.tourist-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .card {
   width: 18rem;
+  border: none;
+}
+.city-img {
+  margin-top: 30px;
+  height: 200px;
+}
+li button {
+  background-color: burlywood;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+li {
+  margin-left: 40px;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: white;
+  background-color: rgb(8, 128, 226);
+  margin-top: 50px;
+}
+.loading {
+  display: grid;
+  place-items: center;
+}
+.text-danger {
+  text-align: center;
+  font-size: larger;
+}
+.orders-header {
+  margin-left: 40px;
 }
