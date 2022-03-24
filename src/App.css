@@ -53,5 +53,15 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  /* width: 18rem; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-body {
+  width: 25vw;
+  height: auto;
 }
