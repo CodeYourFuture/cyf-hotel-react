@@ -9,14 +9,12 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
   color: white;
-  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 0.2em;
   font-weight: bold;
   display: flex;
+  gap: 20px;
 }
 
 .App-title {
@@ -60,4 +58,5 @@ tr {
 
 .containerOne {
   display: flex;
+  margin: 40px;
 }
