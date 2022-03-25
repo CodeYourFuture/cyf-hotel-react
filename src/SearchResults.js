@@ -1,5 +1,12 @@
 import React from "react";
 import fakeBookings from "./data/fakeBookings.json";
+import moment from "moment";
+
+const NumberOfNights = (dateIn, dateOut) => {
+  let a = moment(dateIn);
+  let b = moment(dateOut);
+  return b.diff(a, "days");
+};
 
 const SearchResults = props => {
   return (
@@ -27,6 +34,7 @@ const SearchResults = props => {
               <td>{result.roomId}</td>
               <td>{result.checkInDate}</td>
               <td>{result.checkOutDate}</td>
+              <td>{NumberOfNights(result.checkInDate, result.checkOutDate)}</td>
             </tr>
           );
         })}
