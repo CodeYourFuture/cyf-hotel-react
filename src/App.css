@@ -1,14 +1,13 @@
 .App {
   text-align: left;
 }
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(109, 9, 171);
   height: 50px;
   padding: 20px;
   color: white;
@@ -17,7 +16,11 @@
   font-size: 1em;
   font-weight: bold;
 }
-
+.App-header img {
+  height: 30px;
+  margin-top: 0px;
+  margin-right: 10px;
+}
 .App-title {
   font-size: 1.5em;
 }
