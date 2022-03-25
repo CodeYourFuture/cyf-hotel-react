@@ -2,10 +2,14 @@ import React from "react";
 
 function Footer(props) {
   return (
-    <div>
-      <ul>
+    <div className="footer">
+      <ul className="footer-info">
         {props.contact.map(info => {
-          return <li key={info}>{info}</li>;
+          return (
+            <li className="info" key={info}>
+              {info}
+            </li>
+          );
         })}
       </ul>
     </div>

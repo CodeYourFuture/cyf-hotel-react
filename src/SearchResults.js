@@ -15,8 +15,8 @@ const headings = [
 
 function SearchResults(props) {
   return (
-    <table>
-      <thead>
+    <table className="table">
+      <thead className="table-header">
         <tr>
           {headings.map(heading => {
             return <th scope="col">{heading}</th>;
