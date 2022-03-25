@@ -10,7 +10,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -77,6 +77,6 @@ tr {
 .card-body {
 }
 .hotel-logo {
-  width: 30px;
+  width: 50px;
   margin-left: 0.5rem;
 }

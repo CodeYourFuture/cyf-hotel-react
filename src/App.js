@@ -3,10 +3,9 @@ import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCard from "./TouristInfoCards";
-// import ReactTable from "react-table"
 import Restaurant from "./Restaurant";
 import Footer from "./Footer";
-import SearchResult from "./SearchResults";
+//import SearchResult from "./SearchResults";
 //import FakeBookings from "./data/fakeBookings.json";
 
 const App = () => {
@@ -15,7 +14,7 @@ const App = () => {
       <Heading />
       <TouristInfoCard />
       <Bookings />
-      <SearchResult />
+      {/* <SearchResult /> */}
       <Restaurant />
       <Footer
         addresses={[
