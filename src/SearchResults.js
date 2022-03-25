@@ -4,13 +4,13 @@ import moment from "moment";
 const headings = [
   `id`,
   `title`,
-  `First Name`,
-  `Surname`,
-  `Email`,
-  `Room Id`,
-  `check-In`,
-  `check Out`,
-  `Number Of Nights`
+  `firstName`,
+  `surname`,
+  `email`,
+  `roomId`,
+  `checkInDate`,
+  `checkOutDate`,
+  `numberOfNights`
 ];
 
 const SearchResults = props => {
