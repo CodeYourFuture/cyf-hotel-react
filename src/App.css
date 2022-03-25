@@ -52,8 +52,17 @@ tr {
   text-align: center;
 }
 
+/* card component */
+
 .card {
-  width: 18rem;
+  width: 50%;
+  margin: auto;
+  border: #007bff solid 10px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.card-body {
+  text-align: center;
 }
 /* header component*/
 .header {
@@ -62,7 +71,7 @@ tr {
   grid-gap: 10px;
   width: 100%;
 }
-img {
+.header > img {
   margin-left: 2rem;
-  width: 43%;
+  width: 40%;
 }
