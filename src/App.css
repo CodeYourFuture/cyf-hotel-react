@@ -55,3 +55,11 @@ tr {
 .card {
   width: 18rem;
 }
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+#imgLogo {
+  width: 35px;
+}
