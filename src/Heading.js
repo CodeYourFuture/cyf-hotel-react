@@ -6,7 +6,7 @@ const Heading = () => {
       CYF Hotel
       <img
         id="logo"
-        src="https://d3jmn01ri1fzgl.cloudfront.net/photoadking/webp_thumbnail/61023bed99921_json_image_1627536365.webp"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQMH_PsYf7VSpXf3Cs-pnVn58pv18TOZztBg&usqp=CAU"
         alt="hotel logo"
       />
     </div>
