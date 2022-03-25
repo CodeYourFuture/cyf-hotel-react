@@ -1,4 +1,6 @@
 import React from "react";
+import moment from "moment";
+
 const SearchResult = (props) => {
   const dataArray = props.data;
   return (
@@ -13,6 +15,7 @@ const SearchResult = (props) => {
           <th scope="col">Room ID</th>
           <th scope="col">Check In Date</th>
           <th scope="col">Check Out Date</th>
+          <th scope="col">Number of nights</th>
         </tr>
       </thead>
       <tbody>
@@ -26,6 +29,9 @@ const SearchResult = (props) => {
             <th scope="row">{item.roomId}</th>
             <th scope="row">{item.checkInDate}</th>
             <th scope="row">{item.checkOutDate}</th>
+            <th scope="row">
+              {moment(item.checkOutDate).diff(item.checkInDate, "day")}
+            </th>
           </tr>
         ))}
       </tbody>
