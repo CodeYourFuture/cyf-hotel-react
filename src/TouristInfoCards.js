@@ -26,7 +26,7 @@ const TouristInfoCards = () => {
       {cities.map(cities => {
         return (
           <div className="card">
-            <img src="..." className="card-img-top" />
+            <img src={cities.image} alt="city" className="card-img-top" />
             <div className="card-body">
               <a href={cities.link} className="btn btn-primary">
                 Go somewhere like {cities.name}

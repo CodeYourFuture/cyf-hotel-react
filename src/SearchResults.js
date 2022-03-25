@@ -22,7 +22,6 @@ function SearchResults(props) {
             return <th scope="col">{heading} </th>;
           })}
         </tr>
-        >
       </thead>
       <tbody>
         {props.bookings.map(booked => {
