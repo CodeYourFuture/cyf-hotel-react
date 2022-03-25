@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../../css/restaurant.css";
 const Restaurant = () => {
   const pizzas = 0;
   return (

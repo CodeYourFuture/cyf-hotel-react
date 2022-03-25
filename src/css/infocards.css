@@ -1,0 +1,28 @@
+.city_card {
+  width: 90%;
+  margin: 10px auto;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 0 2px black;
+}
+
+.img_card {
+  max-width: 100%;
+}
+
+.city_card h1 {
+  color: black;
+  align-self: center;
+}
+
+.city_card p {
+  color: black;
+}
+
+.info_btn {
+  align-self: center;
+  padding: 1em;
+  background-color: turquoise;
+  cursor: pointer;
+}
