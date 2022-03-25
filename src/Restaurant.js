@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Restaurant = () => {
-  const [order, setOrder] = useState(0);
+  const order = 0;
 
   return (
     <div>
