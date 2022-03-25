@@ -44,7 +44,6 @@ const SearchResults = props => {
             </tr>
           );
         })}
-        ;
       </tbody>
     </table>
   );
