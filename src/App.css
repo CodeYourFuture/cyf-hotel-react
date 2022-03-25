@@ -1,3 +1,9 @@
+:root {
+  --main-color: rgb(189, 189, 189);
+  --second-color: rgb(159, 159, 159);
+  --font-color: #5b5757;
+}
+
 .App {
   text-align: left;
 }
@@ -8,7 +14,7 @@
 }
 
 .App-header {
-  background-color: rgb(159, 159, 159);
+  background-color: var(--main-color);
   padding: 15px;
   color: white;
   text-align: left;
@@ -22,7 +28,7 @@
 }
 
 .logo-wrapper {
-  background-color: rgb(159, 159, 159);
+  background-color: var(--main-color);
   padding: 5px;
   display: flex;
   align-content: center;
@@ -57,7 +63,7 @@ tr {
 .footer {
   padding-block: 20px;
   text-align: center;
-  background-color: rgb(159, 159, 159);
+  background-color: var(--main-color);
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
@@ -72,6 +78,7 @@ tr {
   display: flex;
   width: 100%;
   padding: 1.8rem;
+  margin-top: 35px;
 }
 
 .card {
@@ -87,7 +94,7 @@ tr {
 .card-text {
   padding: 0.8rem;
   margin: 0;
-  color: #5b5757;
+  color: var(--font-color);
   font-size: 0.95rem;
 }
 
@@ -96,6 +103,6 @@ tr {
 }
 
 .btn-primary {
-  background-color: rgb(136, 155, 145);
-  border-color: rgb(136, 155, 145);
+  background-color: var(--second-color);
+  border-color: var(--second-color);
 }
