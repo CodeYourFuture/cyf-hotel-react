@@ -1,6 +1,6 @@
 A hotel booking application in React. Homework for the [CodeYourFuture React module](https://codeyourfuture.github.io/syllabus-master/react/)
 
-![Bookings Search page] ![image](https://user-images.githubusercontent.com/25634451/160085472-24a4d631-303f-488e-bfb1-73b5693967c5.png)
+![image](https://user-images.githubusercontent.com/25634451/160085472-24a4d631-303f-488e-bfb1-73b5693967c5.png)
 
 
 # Installation
