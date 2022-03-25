@@ -8,8 +8,8 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: #e9e9e9;
+  height: 134px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -54,4 +54,26 @@ tr {
 
 .card {
   width: 18rem;
+  display: flex;
+  align-items: center;
+  margin-left: 106em;
+}
+
+img {
+  width: 115px;
+  height: auto;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 184px;
+  list-style: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #003e71;
+  border-color: #003e71;
 }
