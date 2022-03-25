@@ -53,7 +53,7 @@ export default function TouristInfoCards() {
           <img
             className="card-img-top"
             src="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg"
-            alt="london image"
+            alt="london"
             srcset=""
           />
           <h1>London</h1>
