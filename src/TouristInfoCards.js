@@ -29,7 +29,7 @@ const cityInfo = {
 
 const TouristInfoCards = () => {
   return (
-    <div>
+    <div className="card-wrapper">
       {Object.keys(cityInfo).map((city, ind) => {
         return (
           <div className="card" key={ind}>
