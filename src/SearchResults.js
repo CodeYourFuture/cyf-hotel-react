@@ -15,7 +15,7 @@ const headings = [
 
 const SearchResults = props => {
   return (
-    <table class="table">
+    <table class="table table-striped">
       <thead>
         <tr>
           {headings.map(heading => {

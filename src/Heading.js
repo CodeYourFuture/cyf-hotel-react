@@ -1,7 +1,7 @@
 import React from "react";
 const Heading = () => {
   return (
-    <div>
+    <div className="header">
       <header className="App-header" />
       CYF Hotel
       <img

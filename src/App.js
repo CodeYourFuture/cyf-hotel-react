@@ -5,7 +5,7 @@ import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 import "./App.css";
-// import SearchResults from "./SearchResults";
+
 import FakeBookings from "./data/fakeBookings.json";
 
 const App = () => {
@@ -15,7 +15,6 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      {/* <SearchResults props={FakeBookings} /> */}
       <Footer
         addresses={[
           "123 Fake Street, London, E1 4UD",
