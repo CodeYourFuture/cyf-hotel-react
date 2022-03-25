@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "./components/Heading";
 // import SearchButton from "./components/SearchButton";
 import Footer from "./components/Footer";
-// import Bookings from "./components/Bookings";
+import Bookings from "./components/Bookings";
 import TouristInfoCards from "./components/TouristInfoCards";
 // import SearchResults from "./components/SearchResults";
 
@@ -20,10 +20,11 @@ const App = () => {
     <div className="App">
       <Heading />
       <TouristInfoCards />
-      <Footer contacts={contact} />
+
       {/* <SearchResults /> */}
-      {/* <Bookings /> */}
+      <Bookings />
       {/* <SearchButton /> */}
+      <Footer contacts={contact} />
     </div>
   );
 };

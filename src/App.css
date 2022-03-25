@@ -13,9 +13,10 @@
   --primary: #fecacc; /* pink :) */
   --secondary: #373737; /* dark grey */
   --light-1: #ededee; /* light grey  */
-  --light: #d4d4d4; /* mid grey  */
+  --light: #f0efef; /* mid grey  */
   --accent: #ffff; /* white */
   --d-accent: #808080; /*grey */
+  --m-button: #0000ffe8;
 
   /* font */
   --font-primary: "Roboto", sans-serif;
@@ -31,10 +32,9 @@ body {
 h1 {
   text-align: center;
   padding: 40px 10px 10px 10px;
-  font-size: 14px;
   font-size: 22px;
   font-family: inherit;
-  color: var(--dark);
+  color: var(--accent);
 }
 
 p {
@@ -80,39 +80,53 @@ h5 {
 } */
 
 /* card --------------------------- */
+.tourist-cards {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
 .card {
-  margin-left: auto;
-  margin-right: auto;
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
-  /* box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3); */
   width: 30%;
-  /* height: 200px; */
-  /* border: 1px solid rgba(0, 0, 0, 0.1); */
-  padding: 15px;
   border-radius: 4px;
-  /* display: flex; */
-  /* flex-flow: column wrap; */
   background-color: var(--light);
-  margin: 10px auto 20px auto;
+  margin: 10px 10px 20px 10px;
   border-radius: 3px;
 }
 img {
   width: 100%;
   height: 100%;
 }
+.Tourist-Cards {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 12rem 10px 12rem;
+}
+.table {
+  align-items: center;
+  /*border-bottom: #8a08df 12px solid; */
+  /* box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2); */
+  width: 80%;
+  border-radius: 4px;
+  background-color: var(--light);
+  margin: 25px 28px 30px 107px;
+  border-radius: 3px;
+  border: 1px solid var(--secondary);
+}
+thead {
+  background: var(--secondary);
+  text-align: center;
+  padding: 40px 10px 10px 10px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--accent);
+}
 
-/* .App-logo {
-  width: 100%;
-  height: 10%;
-  object-fit: scale-down;
-} */
-
-/* MEDIA QUERY  -------------------
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
+header {
+  background-color: var(--secondary);
+}
 
 .App-header {
   background-color: #282c34;
@@ -122,23 +136,43 @@ img {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-/* .App-link {
-  color: #61dafb;
+/* form --------------------------- */
+/* button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 } */
+
+/* search -------------------------- */
+
+.search-row {
+  /* display: flex; */
+  /* text-align: center; */
+  /* border-top: 2px solid #e9ecef;
+  padding-top: 15px; */
+  /* display: flex; */
+  justify-content: center;
+  margin-top: 2rem;
+}
 
 /* BUTTON ------------------------- */
 
 a {
   text-decoration: none;
+  color: var(--accent);
 }
 
 .Btn {
   width: 100%;
   height: 30px;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   border-radius: 3px;
   border: none;
   transition: 0.6s;
@@ -147,7 +181,6 @@ a {
   font-family: inherit;
   font-size: 14px;
   font-weight: bold;
-  color: var(--d-accent);
 }
 /* button hover */
 button:hover {
@@ -155,35 +188,16 @@ button:hover {
   color: var(--accent);
 }
 
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 /* FOOTER ------------------------------- */
 
-/* .footer {
-  color: yellow;
-  outline: none;
-  text-decoration: none;
-  transition: 0.8s;
-  padding: 10px 0px;
-} */
-
 .footer {
-  color: var(--secondary);
-  font-weight: 500;
+  color: var(--accent);
+  font-size: 16px;
   outline: none;
   text-decoration: none;
   transition: 0.8s;
   padding: 10px 0px;
-}
-
-/* hover  */
-.footer a:hover {
-  color: var(--accent);
+  background-color: var(--secondary);
+  /* position: fixed; */
+  bottom: 0px;
 }

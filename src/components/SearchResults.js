@@ -9,23 +9,11 @@ const CalculateNumberOfNights = (inDate, outDate) => {
 
 // check the shape of the data against the fakedata
 
-// {
-//   "id": 1,
-//   "title": "Mr",
-//   "firstName": "John",
-//   "surname": "Doe",
-//   "email": "johndoe@doe.com",
-//   "roomId": 2,
-//   "checkInDate": "2017-11-21",
-//   "checkOutDate": "2017-11-23"
-// },
-
 const SearchResults = (props) => {
   return (
     <table className="table">
       <thead>
         <tr>
-          <th scope="col">ID</th>
           <th scope="col">Title</th>
           <th scope="col">First Name</th>
           <th scope="col">Family Name</th>
@@ -43,9 +31,9 @@ const SearchResults = (props) => {
             <tr key={result.id}>
               <td>{result.title}</td>
               <td>{result.firstName}</td>
-              <td>{result.familyName}</td>
+              <td>{result.surname}</td>
               <td>{result.email}</td>
-              <td>{result.roomID}</td>
+              <td>{result.roomId}</td>
               <td>{result.checkInDate}</td>
               <td>{result.checkOutDate}</td>
               <td>

@@ -17,7 +17,9 @@ const TouristInfoCards = () => {
 
         <button className="Btn">
           {" "}
-          <a href="https://www.visitlondon.com/">More Info </a>
+          <a href="https://www.visitlondon.com/" target="window">
+            More Info{" "}
+          </a>
         </button>
       </div>
 
@@ -33,7 +35,9 @@ const TouristInfoCards = () => {
 
         <button className="Btn">
           {" "}
-          <a href="https://peoplemakeglasgow.com/">More Info </a>
+          <a href="https://peoplemakeglasgow.com/" target="window">
+            More Info{" "}
+          </a>
         </button>
       </div>
 
@@ -49,7 +53,9 @@ const TouristInfoCards = () => {
 
         <button className="Btn">
           {" "}
-          <a href="https://www.visitmanchester.com/">More Info </a>
+          <a href="https://www.visitmanchester.com/" target="window">
+            More Info{" "}
+          </a>
         </button>
       </div>
     </div>
