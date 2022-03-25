@@ -8,8 +8,8 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: rgb(0, 0, 0);
+  height: fit-content;
   padding: 20px;
   color: white;
   text-align: left;
@@ -53,5 +53,39 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 21rem;
+  text-align: center;
+  align-self: stretch;
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
+  /* padding-bottom: 15px; */
+}
+
+.card-body a {
+  text-align: center;
+  align-self: flex-end;
+  /* justify-self: center; */
+}
+
+.cards-wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  /* flex-direction: row; */
+}
+
+.logo-image {
+  width: 5rem;
+}
+
+.city-name {
+  margin: 15px;
+}
+
+.city-text {
+  text-align: justify;
+  padding: 0 15px;
 }
