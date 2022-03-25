@@ -2,6 +2,7 @@
   "name": "react-hotel",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://cyf-timeareich-hotel-react.netlify.app",
   "dependencies": {
     "babel-core": "^7.13.0",
     "moment": "^2.29.1",
