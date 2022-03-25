@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const headings = [
   "id",
@@ -8,13 +9,14 @@ const headings = [
   "email",
   "room id",
   "checkInDate",
-  "checkOutDate"
+  "checkOutDate",
+  "numberOfNights"
 ];
 
 function SearchResults(props) {
   return (
-    <table>
-      <thead>
+    <table className="search-result-table">
+      <thead className="search-result-table-head">
         <tr>
           {headings.map(heading => {
             return <th scope="col"> {heading}</th>;
@@ -29,6 +31,11 @@ function SearchResults(props) {
               {headings.map(heading => {
                 if (heading === "id") {
                   return null;
+                } else if (heading === "numberOfNights") {
+                  const checkIn = moment(booking.checkInDate);
+                  const checkOut = moment(booking.checkOutDate);
+                  const difference = checkOut.diff(checkIn, "days");
+                  return <td>{difference}</td>;
                 } else {
                   return <td> {booking[heading]} </td>;
                 }

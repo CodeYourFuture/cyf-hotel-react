@@ -61,6 +61,7 @@ tr {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
+  margin-top: 50px;
 }
 
 .footer ul {
@@ -72,6 +73,7 @@ tr {
   width: 100%;
   padding: 1.8rem;
 }
+
 .card {
   width: 28%;
   margin: auto;
@@ -94,6 +96,6 @@ tr {
 }
 
 .btn-primary {
-  background-color: rgb(171, 193, 181);
-  border-color: rgb(171, 193, 181);
+  background-color: rgb(136, 155, 145);
+  border-color: rgb(136, 155, 145);
 }
