@@ -33,7 +33,8 @@ const TouristInfoCards = () => {
         return (
           <div key={index} className="card">
             <img
-              src={require(`${city.image} alt=${city.alt}`)}
+              src={require(`${city.image}`)}
+              alt={city.alt}
               className="card-img-top"
             />
             <h2 className="city-name">{city.cityName}</h2>
