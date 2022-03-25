@@ -10,7 +10,7 @@ function TouristInfoCards() {
           className="card-img-top"
         />
         <div className="card-body">
-          <h5 className="card-title">Glasgow</h5>
+          <h5 className="card-title">Test</h5>
           <a href="http://peoplemakeglasgow.com" className="btn btn-primary">
             Go somewhere
           </a>
