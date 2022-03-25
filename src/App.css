@@ -48,15 +48,8 @@ tr {
   padding-top: 15px;
 }
 
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-}
-
 .footer {
-  /* padding-top: 20px; */
+  padding-top: 20px;
   text-align: center;
   align-items: flex-end;
   display: inline;
@@ -74,8 +67,12 @@ ul {
   display: flex;
   justify-content: space-evenly;
 }
-/* 
-Footer{
-  display: flex;
-  align-items: flex-end;
-} */
+
+@media only screen and (max-width: 850px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

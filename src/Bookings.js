@@ -12,21 +12,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
-        <TableHeader />
-        {FakeBookings.map(data => (
-          <SearchResults
-            key={data["id"]}
-            id={data["id"]}
-            title={data["title"]}
-            firstName={data["firstName"]}
-            surname={data["surname"]}
-            email={data["email"]}
-            room={data["roomId"]}
-            dateIn={data["checkInDate"]}
-            dateOut={data["checkOutDate"]}
-          />
-        ))}
+        <SearchResults bookings={FakeBookings} />
       </div>
     </div>
   );
