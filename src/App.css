@@ -4,7 +4,7 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 50px;
 }
 
 .App-header {
@@ -16,6 +16,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
 }
 
 .App-title {
@@ -40,7 +41,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #e2dede;
 }
 
 .results {
@@ -50,8 +51,13 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: rgb(167, 164, 164);
 }
 
 .card {
-  width: 18rem;
+  width: 20rem;
+}
+
+.containerOne {
+  display: flex;
 }
