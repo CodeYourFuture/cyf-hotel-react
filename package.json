@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "husky": "^2.3.0",
+    "netlify-cli": "^9.13.5",
     "prettier": "^1.17.0",
     "pretty-quick": "^1.10.0"
   },
