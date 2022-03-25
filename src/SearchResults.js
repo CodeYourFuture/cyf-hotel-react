@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const headings = [
   "id",
@@ -31,7 +32,10 @@ function SearchResults(props) {
                 if (heading === "id") {
                   return null;
                 } else if (heading === "numberOfNights") {
-                  return <td>figure something out here</td>;
+                  const checkIn = moment(booking.checkInDate);
+                  const checkOut = moment(booking.checkOutDate);
+                  const difference = checkOut.diff(checkIn, "days");
+                  return <td>{difference}</td>;
                 } else {
                   return <td>{booking[heading]}</td>;
                 }
