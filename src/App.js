@@ -1,5 +1,6 @@
 import React from "react";
 
+import Footer from "./Footer";
 import TouristInfoCards from "./TouristInfoCards";
 import Heading from "./Heading";
 import Bookings from "./Bookings";
@@ -11,6 +12,13 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Footer
+        addressInfo={[
+          "123 Fake Street, London, E1 4UD",
+          "hello@fakehotel.com",
+          "0123 456789"
+        ]}
+      />
     </div>
   );
 };
