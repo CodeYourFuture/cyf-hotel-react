@@ -48,7 +48,7 @@ const TouristInfoCard = ({ city, text, image, link }) => {
 const TouristInfoCards = props => {
   props = cities;
   return (
-    <div className="TouristInfoCards-box">
+    <div className="card-deck">
       {props.map(prop => {
         return (
           <TouristInfoCard
