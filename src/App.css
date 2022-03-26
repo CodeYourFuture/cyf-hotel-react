@@ -4,13 +4,17 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 50px;
+  width: 50px;
+  border-radius: 20%;
+  margin-top: 0%;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
+  display: flex;
+  background-color: rgb(170, 35, 35);
+  height: 10px;
+  padding: 60px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -23,7 +27,7 @@
 }
 
 .App-content {
-  padding-top: 20px;
+  padding-top: 10px;
   font-size: large;
 }
 
@@ -40,7 +44,9 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #3a3838;
+  font-size: large;
+  background-color: darkgoldenrod;
 }
 
 .results {
@@ -48,10 +54,25 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding-top: 30px;
   text-align: center;
+  background-color: rgb(133, 87, 29);
+  font-size: x-large;
+  font-style: italic;
+  font-weight: bolder;
+  border-radius: 5%;
 }
 
 .card {
-  width: 18rem;
+  background-color: chocolate;
+  margin: 25px;
+  width: 35rem;
+  height: 38rem;
+  padding: 25px;
+  display: inline-flex;
+}
+img {
+  width: 200px;
+  height: 300px;
+  margin: 10px;
 }
