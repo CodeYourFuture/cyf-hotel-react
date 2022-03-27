@@ -4,7 +4,7 @@ import React from "react";
 const Heading = () => {
   return (
     <div>
-      <header className="label">
+      <header className="App-header">
         <i class="fa fa-h-square" aria-hidden="true" alt="Hotel Logo"></i>
         <h1> CYF Hotel</h1>
 
