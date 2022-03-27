@@ -218,6 +218,7 @@ button:hover {
 
 /* MEDIA  -------------------------------------------- */
 
+/* Cards */
 @media screen and (min-width: 40em) {
   .Tourist-Cards {
     display: flex;
@@ -231,5 +232,20 @@ button:hover {
 @media screen and (min-width: 60em) {
   .Tourist-Cards {
     flex: 0 1 calc(25% - 1em);
+  }
+}
+
+/* table */
+@media screen and (max-width: 800px) {
+  tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5em 0;
+    border: 1px solid var(--d-accent);
+  }
+  td,
+  th {
+    flex: 1 1 150px;
   }
 }
