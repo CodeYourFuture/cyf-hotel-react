@@ -24,3 +24,11 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.footer {
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  color: white;
+  text-align: center;
+}
