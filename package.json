@@ -2,9 +2,9 @@
   "name": "react-hotel",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cyf-timeareich-hotel-react.netlify.app",
+  "homepage": "cyf-timeareich-hotel-react.netlify.app",
   "dependencies": {
-    "babel-core": "^7.13.0",
+    "babel-core": "^6.26.3",
     "moment": "^2.29.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -32,5 +32,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8"
   }
 }

@@ -67,7 +67,9 @@ tr {
 .card-container {
   margin-top: 2rem;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 .card {
   width: 18rem;
