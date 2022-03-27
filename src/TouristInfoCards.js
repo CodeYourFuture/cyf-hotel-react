@@ -28,25 +28,30 @@ const TouristInfoCards = () => {
     }
   ];
   return (
-    <div className="cards-wrapper">
-      {cities.map((city, index) => {
-        return (
-          <div key={index} className="card">
-            <img
-              src={require(`${city.image}`)}
-              alt={city.alt}
-              className="card-img-top"
-            />
-            <h2 className="city-name">{city.cityName}</h2>
-            <p className="city-text">{city.text}</p>
-            <div className="card-body">
-              <a href={`${city.link}`} className="btn btn-primary">
-                Go to {city.cityName}
-              </a>
+    <div className="full-cards-wrapper">
+      <div>
+        <h1>Visit our Hotels</h1>
+      </div>
+      <div className="cards-wrapper">
+        {cities.map((city, index) => {
+          return (
+            <div key={index} className="card">
+              <img
+                src={require(`${city.image}`)}
+                alt={city.alt}
+                className="card-img-top"
+              />
+              <h2 className="city-name">{city.cityName}</h2>
+              <p className="city-text">{city.text}</p>
+              <div className="card-body">
+                <a href={`${city.link}`} className="btn btn-primary">
+                  Go to {city.cityName}
+                </a>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

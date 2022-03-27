@@ -4,10 +4,12 @@ import TableBody from "./TableBody";
 
 const SearchResults = props => {
   return (
-    <table className="table table-hover table-responsive">
-      <TableHeading />
-      <TableBody data={props} />
-    </table>
+    <div className="table-responsive-md">
+      <table className="table table-hover">
+        <TableHeading />
+        <TableBody data={props} />
+      </table>
+    </div>
   );
 };
 

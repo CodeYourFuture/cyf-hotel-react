@@ -11,7 +11,7 @@
   background-color: rgb(255, 255, 255);
   height: fit-content;
   padding: 20px;
-  border-bottom: 1px solid #e8c00e;
+  /* border-bottom: 1px solid #e8c00e; */
 }
 
 .App-title {
@@ -43,43 +43,56 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
+.footer-info {
   padding-top: 20px;
   text-align: center;
+  border-top: 2px solid #e8c00e;
 }
 
 .card {
-  width: 21rem;
-  text-align: center;
-  align-self: stretch;
+  min-width: 18rem;
   border: 1px solid #e8c00e;
   box-shadow: 0 0 3px 2px #e8c00e;
+  margin: 20px;
+  text-align: center;
+}
+
+.cards-wrapper h1 {
+  color: #e8c00e;
 }
 
 .card-body {
   display: flex;
   justify-content: center;
-  /* padding-bottom: 15px; */
 }
 
 .card-body a {
   text-align: center;
   align-self: flex-end;
-  /* justify-self: center; */
+}
+
+.full-cards-wrapper {
+  padding: 20px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: 2px solid #e8c00e;
+  border-width: 2px 0;
+}
+
+.full-cards-wrapper h1 {
+  color: #e8c00e;
 }
 
 .cards-wrapper {
-  padding: 20px 0;
-  width: 100vw;
-  display: flex;
-  justify-content: space-evenly;
-  box-sizing: border-box;
-  background-color: black;
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  align-content: center;
 }
-
-/* .container {
-  
-} */
 
 .logo-image {
   width: 5rem;
@@ -92,13 +105,20 @@ tr {
 .city-text {
   text-align: justify;
   padding: 0 15px;
+  font-size: 0.8rem;
 }
 .container {
   margin: 0;
+  width: 100%;
 }
 
 .btn {
   background-color: black;
   color: #e8c00e;
   border: 1px solid #e8c00e;
+}
+
+.footer-info li {
+  list-style-type: none;
+  text-align: center;
 }
