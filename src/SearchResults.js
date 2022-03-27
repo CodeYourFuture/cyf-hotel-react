@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import BookingGaust from "./BookingGaust";
-import CustomerProfile from "./CoustomerProfile";
-//import Search from "./Search";
+import CustomerProfile from "./CoustomerProfile.js";
+
+//  filter data and search for deferent type of from the table
 
 function SearchResults(props) {
   const [highlight, setHighlight] = useState("");
-  const [light, setLight] = useState("");
+  const [resultSearch, setRresultSearch] = useState("");
 
   return (
     <div className="inputResult">
@@ -15,9 +16,9 @@ function SearchResults(props) {
         <input
           type="text"
           id="customerName"
-          value={light}
+          value={resultSearch}
           placeholder="Customer search..."
-          onChange={e => setLight(e.target.value)}
+          onChange={e => setRresultSearch(e.target.value)}
         />
         <button name="firstButton" className="btn btn-primary">
           search ...
@@ -41,10 +42,14 @@ function SearchResults(props) {
         <tbody>
           {props.results
             .filter(val => {
-              if (light === "") {
+              if (highlight !== "") {
                 return val;
               } else if (
-                val.firstName.toLowerCase().includes(light.toLowerCase())
+                val.firstName
+                  .toLowerCase()
+                  .includes(resultSearch.toLowerCase()) ||
+                val.email.toLowerCase().includes(resultSearch.toLowerCase()) ||
+                val.surname.toLowerCase().includes(resultSearch.toLowerCase())
               ) {
                 return val;
               } else {
@@ -55,7 +60,7 @@ function SearchResults(props) {
               <tr
                 key={index}
                 onClick={() => setHighlight(highlight === index ? null : index)}
-                className={classNames("salem", {
+                className={classNames("hightOrder", {
                   hidde: highlight === index,
                   show: highlight !== index
                 })}
@@ -72,7 +77,10 @@ function SearchResults(props) {
                 <td>
                   <div>
                     {" "}
-                    <button onCLICK={CustomerProfile} name="firstButton">
+                    <button
+                      onClick={() => setHighlight(result.id)}
+                      name="firstButton"
+                    >
                       show profile
                     </button>
                   </div>
@@ -81,7 +89,7 @@ function SearchResults(props) {
             ))}
         </tbody>
       </table>
-      <CustomerProfile id={props.id} />
+      {highlight !== undefined && <CustomerProfile id={highlight} />}
     </div>
   );
 }

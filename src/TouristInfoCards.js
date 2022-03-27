@@ -2,9 +2,9 @@ import React from "react";
 
 function TouristInfoCards() {
   return (
-    <div class="container">
-      <div class="row">
-        <div class="col">
+    <div className="container">
+      <div className="row">
+        <div className="col">
           <img
             src="https://www.ephotozine.com/resize/2018/25/xlrg/1616_1529882978.jpg?RTUdGk5cXyJFAQgJSEc4egtnfAYYGkVUGwBdOh80SxgRBAAhdSMKY1dhB2osTU0LIjUVDw=="
             width="290px"
@@ -24,7 +24,7 @@ function TouristInfoCards() {
             people make glasgow.com
           </a>
         </div>
-        <div class="col">
+        <div className="col">
           <img
             src="https://blog.redletterdays.co.uk/wp-content/uploads/2017/01/show-brooke-2.jpg"
             width="290"
@@ -46,7 +46,7 @@ function TouristInfoCards() {
             visit manchester.com
           </a>
         </div>
-        <div class="col">
+        <div className="col">
           <img
             src="https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/tower-bridge/thames_copyright_visitlondon_antoinebuchet640x360.jpg?mw=640&hash=27AEBE2D1B7279A196CC1B4548638A9679BE107A"
             width="290px"

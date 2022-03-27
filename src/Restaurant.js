@@ -1,9 +1,9 @@
 import React from "react";
 import Order from "./Order";
-
+// add more order and select dy number incresment
 function Restaurant(props) {
   return (
-    <div>
+    <div className="restuarant">
       {" "}
       <h3>Restaurant Orders</h3>
       <ul className="list-group">
