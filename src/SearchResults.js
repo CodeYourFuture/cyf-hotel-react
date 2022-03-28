@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
+import "./App.css";
 
 const SearchResult = (props) => {
+  const [highlight, setHighlight] = useState("false");
+
+  const selected = () => {
+    setHighlight(!highlight);
+  };
+
   const dataArray = props.data;
   return (
-    <table className="table table-striped">
+    <table className="table">
       <thead className="thead-dark">
         <tr>
           <th scope="col">ID</th>
@@ -20,7 +27,11 @@ const SearchResult = (props) => {
       </thead>
       <tbody>
         {dataArray.map((item) => (
-          <tr>
+          <tr
+            key={item.id}
+            className={highlight ? "" : "highlight"}
+            onClick={selected}
+          >
             <th scope="row">{item.id}</th>
             <th scope="row">{item.title}</th>
             <th scope="row">{item.firstName}</th>

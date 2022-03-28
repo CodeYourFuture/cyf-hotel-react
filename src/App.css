@@ -77,3 +77,11 @@ tr {
 .card-img-top {
   height: 160px;
 }
+.restaurant-orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.highlight {
+  background-color: #b1f584;
+}
