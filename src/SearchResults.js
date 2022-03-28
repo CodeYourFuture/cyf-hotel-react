@@ -4,7 +4,7 @@ import TableBody from "./TableBody";
 
 const SearchResults = props => {
   return (
-    <div className="table-responsive-md">
+    <div className="table-responsive">
       <table className="table">
         <TableHeading />
         <tbody>
