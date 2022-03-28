@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TableHeading from "./TableHeading";
 import TableBody from "./TableBody";
 
@@ -7,7 +7,11 @@ const SearchResults = props => {
     <div className="table-responsive-md">
       <table className="table">
         <TableHeading />
-        <TableBody data={props} />
+        <tbody>
+          {props.results.map(person => {
+            return <TableBody data={person} />;
+          })}
+        </tbody>
       </table>
     </div>
   );
