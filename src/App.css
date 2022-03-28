@@ -122,3 +122,7 @@ tr {
   list-style-type: none;
   text-align: center;
 }
+
+.highlighted {
+  background-color: #e8c00e;
+}

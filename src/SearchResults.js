@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import TableHeading from "./TableHeading";
 import TableBody from "./TableBody";
 
 const SearchResults = props => {
   return (
     <div className="table-responsive-md">
-      <table className="table table-hover">
+      <table className="table">
         <TableHeading />
         <TableBody data={props} />
       </table>

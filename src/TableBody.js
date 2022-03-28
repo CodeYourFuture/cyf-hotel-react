@@ -1,5 +1,5 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
 // const TableBody = (props) => {
 //   const people = props.data.results;
@@ -16,13 +16,23 @@ import React from "react";
 
 const TableBody = props => {
   const people = props.data.results;
+
   return (
     <tbody>
       {people.map((person, index) => {
+        const [rowColor, setRowColor] = useState(false);
+        function highlightRow() {
+          setRowColor(!rowColor);
+        }
+
         const checkIn = moment(person.checkInDate);
         const checkOut = moment(person.checkOutDate);
         return (
-          <tr key={index}>
+          <tr
+            key={index}
+            className={rowColor ? "highlighted" : null}
+            onClick={highlightRow}
+          >
             <th scope="row">{person.id}</th>
             <td>{person.title}</td>
             <td>{person.firstName}</td>
