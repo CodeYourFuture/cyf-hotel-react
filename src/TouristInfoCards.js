@@ -27,7 +27,7 @@ const TouristInfoCards = () => {
       {places.map(placeObject => {
         return (
           <div className="card">
-            <img src={`${placeObject.image}`} className="card-img-top" />
+            <img src={`${placeObject.image}`} className="card-img-top" alt="" />
             <div className="card-body">
               <a
                 href={`https://www.${placeObject.link}`}

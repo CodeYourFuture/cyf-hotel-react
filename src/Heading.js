@@ -4,7 +4,7 @@ import hotel from "./hotel.png";
 const Heading = () => {
   return (
     <header className="App-header">
-      <img src={hotel} />
+      <img src={hotel} alt="" />
       CYF Hotel
     </header>
   );
