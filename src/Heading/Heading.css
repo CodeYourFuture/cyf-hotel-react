@@ -1,0 +1,10 @@
+.heading-image,
+.heading-text {
+  display: inline;
+}
+
+.heading-image {
+  width: 5vw;
+  height: 5vh;
+  margin-right: 2em;
+}
