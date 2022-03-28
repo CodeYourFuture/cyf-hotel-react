@@ -1,11 +1,12 @@
 import React from "react";
-import moment from "moment";
+
+import TableCell from "./TableCell";
 
 import "./SearchResults.css";
 
 const SearchResults = props => {
   return (
-    <table className="table">
+    <table className="table table-hover">
       <thead>
         <tr>
           <th>Title</th>
@@ -32,16 +33,16 @@ const SearchResults = props => {
           } = booking;
 
           return (
-            <tr key={id}>
-              <td>{title}</td>
-              <td>{firstName}</td>
-              <td>{surname}</td>
-              <td>{email}</td>
-              <td>{roomId}</td>
-              <td>{checkInDate}</td>
-              <td>{checkOutDate}</td>
-              <td>{moment(checkOutDate).diff(moment(checkInDate), "days")}</td>
-            </tr>
+            <TableCell
+              key={id}
+              title={title}
+              firstName={firstName}
+              surname={surname}
+              email={email}
+              roomId={roomId}
+              checkInDate={checkInDate}
+              checkOutDate={checkOutDate}
+            />
           );
         })}
       </tbody>
