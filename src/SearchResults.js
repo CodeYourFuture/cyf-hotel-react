@@ -8,8 +8,8 @@ const SearchResults = props => {
       <table className="table">
         <TableHeading />
         <tbody>
-          {props.results.map(person => {
-            return <TableBody data={person} />;
+          {props.results.map((person, index) => {
+            return <TableBody key={index} data={person} />;
           })}
         </tbody>
       </table>
