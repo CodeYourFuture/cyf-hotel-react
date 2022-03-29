@@ -13,6 +13,7 @@ const Footer = ({ contact }) => {
 };
 
 const AppFooter = {
+  width: "100%",
   backgroundColor: "#222",
   height: "100px",
   padding: "20px",
