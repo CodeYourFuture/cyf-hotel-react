@@ -2,11 +2,6 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ list }) => {
-  const [selected, setSelected] = useState("highlight");
-  const highlightRow = event => {
-    setSelected(selected === "" ? "highlight" : "");
-    event.target.parentNode.className = selected;
-  };
   return (
     <div className="table-container">
       <table className="table table-sm">
@@ -25,8 +20,14 @@ const SearchResults = ({ list }) => {
         </thead>
         <tbody className="table-body">
           {list.map((obj, index) => {
+            const [selected, setSelected] = useState(false);
+            const highlightRow = () => setSelected(!selected);
             return (
-              <tr key={index} onClick={highlightRow}>
+              <tr
+                key={index}
+                className={selected ? "highlight" : ""}
+                onClick={highlightRow}
+              >
                 <td>{obj.id}</td>
                 <td>{obj.title}</td>
                 <td>{obj.firstName}</td>
