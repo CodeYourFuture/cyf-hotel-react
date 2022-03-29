@@ -6,8 +6,6 @@ import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 import "./App.css";
 
-import FakeBookings from "./data/fakeBookings.json";
-
 const App = () => {
   return (
     <div className="App">
