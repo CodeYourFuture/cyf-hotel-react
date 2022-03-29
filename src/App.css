@@ -58,3 +58,12 @@ tr {
 .card {
   width: 18rem;
 }
+
+.table-container {
+  overflow: hidden;
+  width: 96%;
+}
+
+.highlight {
+  background: rgb(236, 237, 250);
+}
