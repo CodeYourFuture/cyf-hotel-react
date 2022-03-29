@@ -1,0 +1,5 @@
+.tourist-info-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2.5em;
+}
