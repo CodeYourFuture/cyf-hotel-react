@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const [selected, setSelected] = useState(0);
-
 const SearchResults = ({ list }) => {
+  const [selected, setSelected] = useState("highlight");
   const highlightRow = event => {
-    setSelected((event.target.parentNode.className = "highlight"));
+    setSelected(selected === "" ? "highlight" : "");
+    event.target.parentNode.className = selected;
   };
   return (
     <div className="table-container">
