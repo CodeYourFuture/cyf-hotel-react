@@ -22,7 +22,7 @@ const TouristInfoCards = () => {
     }
   ];
   return (
-    <div class="cardcontainer">
+    <div className="cardcontainer">
       {cities.map(cities => {
         return (
           <div className="card">

@@ -15,7 +15,7 @@ const headers = [
 
 function SearchResults(props) {
   return (
-    <table class="styled-table">
+    <table className="styled-table">
       <thead>
         <tr>
           {headers.map(heading => {
