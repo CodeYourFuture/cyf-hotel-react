@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
+
 const CalculateNumberOfNights = (inDate, outDate) => {
   let a = moment(inDate);
   let b = moment(outDate);
   return b.diff(a, "days");
 };
 
-const SearchResults = props => {
+const TableRow = ({
+  title,
+  firstName,
+  surname,
+  email,
+  roomId,
+  checkInDate,
+  checkOutDate
+}) => {
+  const [selected, setSelected] = useState(false);
+  const selectRow = () => setSelected(!selected);
+  return (
+    <tr onClick={selectRow} className={selected ? "selected" : ""}>
+      <td>{title}</td>
+      <td>{firstName}</td>
+      <td>{surname}</td>
+      <td>{email}</td>
+      <td>{roomId}</td>
+      <td>{checkInDate}</td>
+      <td>{checkOutDate}</td>
+      <td>{CalculateNumberOfNights(checkInDate, checkOutDate)}</td>
+    </tr>
+  );
+};
+
+const SearchResults = ({ results }) => {
   return (
     <table className="table container">
       <thead>
@@ -22,25 +48,31 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map(result => {
-          return (
-            <tr key={result.id}>
-              <td>{result.title}</td>
-              <td>{result.firstName}</td>
-              <td>{result.surname}</td>
-              <td>{result.email}</td>
-              <td>{result.roomId}</td>
-              <td>{result.checkInDate}</td>
-              <td>{result.checkOutDate}</td>
-              <td>
-                {CalculateNumberOfNights(
-                  result.checkInDate,
-                  result.checkOutDate
-                )}
-              </td>
-            </tr>
-          );
-        })}
+        {results.map(
+          ({
+            id,
+            title,
+            firstName,
+            surname,
+            email,
+            roomId,
+            checkInDate,
+            checkOutDate
+          }) => {
+            return (
+              <TableRow
+                key={id}
+                title={title}
+                firstName={firstName}
+                surname={surname}
+                email={email}
+                roomId={roomId}
+                checkInDate={checkInDate}
+                checkOutDate={checkOutDate}
+              />
+            );
+          }
+        )}
       </tbody>
     </table>
   );
