@@ -19,8 +19,7 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map(booking => {
-          let {
+        {props.results.map(({
             id,
             title,
             firstName,
@@ -29,7 +28,7 @@ const SearchResults = props => {
             roomId,
             checkInDate,
             checkOutDate
-          } = booking;
+          }) => {
 
           return (
             <tr key={id}>
