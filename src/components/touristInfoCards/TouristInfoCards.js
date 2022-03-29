@@ -1,4 +1,5 @@
 import React from "react";
+import "./touristInfCards.css";
 
 const TouristInfoCards = () => {
   const places = [
@@ -29,7 +30,7 @@ const TouristInfoCards = () => {
   ];
 
   return (
-    <ul style={listStyle}>
+    <ul className="listStyle">
       {places.map((place, i) => {
         return (
           <li key={i} className="card">
@@ -51,16 +52,6 @@ const TouristInfoCards = () => {
       })}
     </ul>
   );
-};
-
-const listStyle = {
-  marginTop: "20px",
-  display: "flex",
-  flexDirection: "row",
-  flexWrap: "wrap",
-  justifyContent: "space-around",
-  listStyleType: "none",
-  alignItems: "stretch"
 };
 
 export default TouristInfoCards;

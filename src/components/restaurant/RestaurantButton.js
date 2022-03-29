@@ -1,4 +1,5 @@
 import React from "react";
+import "./order.css";
 
 const RestaurantButton = ({ handleClick }) => {
   return (
