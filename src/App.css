@@ -28,12 +28,6 @@ body {
   margin-top: 1rem;
 }
 
-.small-profile {
-  height: 150px;
-  border-radius: 50%;
-  border: 10px solid var(--golden);
-}
-
 .App-title {
   font-size: 1.5em;
 }
@@ -50,6 +44,12 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.small-profile {
+  height: 9.375rem; /* 150px; */
+  border-radius: 50%;
+  border: solid var(--golden) 0.625rem; /* 10px */
 }
 
 .flex-container {
@@ -72,6 +72,7 @@ body {
 .nobullets {
   list-style-type: none;
   margin-left: 3rem;
+  border-top: ridge;
 }
 
 .search {
@@ -87,11 +88,15 @@ tr {
 }
 
 .results {
-  padding-top: 15px;
+  padding-top: 0.938rem; /* 15px; */
 }
 
+tr,
+th {
+  text-align: left;
+}
 .footer {
-  padding-top: 20px;
+  padding-top: 1.25rem; /* 20px; */
   text-align: center;
 }
 

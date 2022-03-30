@@ -4,6 +4,7 @@ import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
+import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 
 const App = () => {
@@ -12,7 +13,14 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <Footer footerText={["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]}/>
+      <Restaurant />
+      <Footer
+        footerText={[
+          "123 Fake Street, London, E1 4UD",
+          "hello@fakehotel.com",
+          "0123 456789",
+        ]}
+      />
     </div>
   );
 };
