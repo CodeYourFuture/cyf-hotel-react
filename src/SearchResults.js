@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResult = props => {
@@ -18,23 +18,37 @@ const SearchResult = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map((item, key) => (
-          <tr key={key}>
-            <th scope="row">{item.id}</th>
-            <td>{item.title}</td>
-            <td>{item.firstName}</td>
-            <td>{item.surname}</td>
-            <td>{item.email}</td>
-            <td>{item.roomId}</td>
-            <td>{item.checkInDate}</td>
-            <td>{item.checkOutDate}</td>
-            <td>
-              {moment(item.checkOutDate).diff(moment(item.checkInDate), "days")}
-            </td>
-          </tr>
+        {props.results.map((item, index) => (
+          <TableRow item={item} index={index} />
         ))}
       </tbody>
     </table>
+  );
+};
+
+const TableRow = props => {
+  const [selected, setSelected] = useState(false);
+
+  const clickHandler = () => {
+    selected === false ? setSelected(true) : setSelected(false);
+  };
+  return (
+    <tr onClick={clickHandler} className={selected ? "selected" : null}>
+      <th scope="row">{props.item.id}</th>
+      <td>{props.item.title}</td>
+      <td>{props.item.firstName}</td>
+      <td>{props.item.surname}</td>
+      <td>{props.item.email}</td>
+      <td>{props.item.roomId}</td>
+      <td>{props.item.checkInDate}</td>
+      <td>{props.item.checkOutDate}</td>
+      <td>
+        {moment(props.item.checkOutDate).diff(
+          moment(props.item.checkInDate),
+          "days"
+        )}
+      </td>
+    </tr>
   );
 };
 

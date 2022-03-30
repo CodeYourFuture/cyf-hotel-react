@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = props => {
   return (
-    <ul>
-      {props.contact.map((item, key) => (
-        <li key={key}>{item}</li>
+    <ul className="footer">
+      {props.contact.map((item, index) => (
+        <li key={index}>{item}</li>
       ))}
     </ul>
   );
