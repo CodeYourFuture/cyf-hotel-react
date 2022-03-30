@@ -8,8 +8,10 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(27, 151, 173);
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -54,4 +56,23 @@ tr {
 
 .card {
   width: 18rem;
+}
+.card-body {
+  display: flex;
+  justify-content: center;
+}
+
+.hotel-logo {
+  height: 100px;
+  margin: 10px;
+}
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5%;
+}
+
+ul {
+  text-align: center;
+  list-style: none;
 }
