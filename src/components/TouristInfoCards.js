@@ -13,7 +13,13 @@ const TouristInfoCards = () => {
           alt="London"
         />
         <h3> London </h3>
-        <p>some gorgeous text about some fav place</p>
+        <p>
+          Welcome to London! Discover the best of London with Visit London, the
+          official guide to England’s exciting capital. Find things to do in
+          London, from iconic sightseeing spots and fun-filled days out to top
+          restaurants, theatre and unmissable London events. If you’re not able
+          to visit just yet, plan ahead to make the most.
+        </p>
 
         <button className="Btn">
           {" "}
@@ -31,7 +37,13 @@ const TouristInfoCards = () => {
           //   Merchant City Glasgow Photograph by John Farnan  https://pixels.com/featured/merchant-city-glasgow-john-farnan.html
         />
         <h3>Glasgow </h3>
-        <p>some gorgeous text about some fav place</p>
+        <p>
+          Get a warm welcome to Glasgow by joining a city walking tour guided by
+          friendly locals. Learn about street art, Charles Rennie Mackintosh and
+          the highlights of the city centre with Walking Tours in Glasgow, or
+          all about the city’s legendary music scene with Glasgow Music City
+          Tours. Visit our tours page to find out more.
+        </p>
 
         <button className="Btn">
           {" "}
@@ -49,7 +61,13 @@ const TouristInfoCards = () => {
           // Manchester, UK  by Perry M Anderson https://www.perryanderson.global/event/learn-to-acquire-a-business-without-using-any-of-your-own-capital-manchester-september
         />
         <h3>Manchester </h3>
-        <p>some gorgeous text about some fav place</p>
+        <p>
+          Welcome to the official tourism site of Greater Manchester where you
+          can search for things to do in Manchester and find out what's on, as
+          well as getting inspiration for your visit to this fantastic city
+          region. Youthful, diverse, energetic and bursting with character;
+          Manchester is one of the most exciting places to visit in the UK.
+        </p>
 
         <button className="Btn">
           {" "}

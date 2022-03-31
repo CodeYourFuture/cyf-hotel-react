@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Bookings from "./components/Bookings";
 import TouristInfoCards from "./components/TouristInfoCards";
 // import SearchResults from "./components/SearchResults";
+import Restaurant from "./components/Restaurant";
 
 import "./App.css";
 
@@ -24,6 +25,7 @@ const App = () => {
       {/* <SearchResults /> */}
       <Bookings />
       {/* <SearchButton /> */}
+      <Restaurant />
       <Footer contacts={contact} />
     </div>
   );

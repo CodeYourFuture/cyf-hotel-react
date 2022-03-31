@@ -32,24 +32,9 @@ body {
 h1 {
   text-align: center;
   padding: 40px 10px 10px 10px;
-  font-size: 22px;
+  font-size: 38px;
   font-family: inherit;
   color: var(--accent);
-}
-
-/* h4 {
-  /* text-align: center; */
-/* padding: 40px 10px 10px 10px; */
-/* font-size: 22px; */
-/* font-family: inherit; */
-/* color: var(--accent); 
-} */
-
-p {
-  font-size: 1.2rem;
-  line-height: 21px;
-  color: var(--secondary);
-  padding: 10px 10px 10px 10px;
 }
 
 h5 {
@@ -91,14 +76,27 @@ h5 {
 
 .card {
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
-  width: 350px;
+  width: 420px;
   border-radius: 4px;
   background-color: var(--light);
   margin: 40px 10px 20px 10px;
   border-radius: 3px;
+
   /* word-wrap: break-word; */
 }
 
+h3 {
+  font-weight: 600;
+  font-size: 28px;
+  margin: 10px;
+}
+
+p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 10px;
+}
 img {
   background-size: contain;
   width: 100%;
@@ -107,7 +105,8 @@ img {
 
 /* SEARCH AREA -----------------------------------------*/
 
-.text-left {
+.text-left,
+h4 {
   font-size: 22px;
   line-height: 30px;
   margin: 20px 60px;
@@ -151,6 +150,7 @@ select {
   font-size: 14px;
   font-weight: bold;
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
+  margin: 0px 10px 0px 10px;
 }
 /* button hover */
 button:hover {
@@ -165,6 +165,7 @@ button:hover {
   margin: 20px 0px;
   border-radius: 4px;
   border-radius: 3px;
+  /* background-color: yellowgreen; */
 }
 
 .table {
@@ -173,6 +174,8 @@ button:hover {
   border-collapse: separate;
   text-indent: initial;
   border-spacing: 8px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 /* CARD BUTTON ------------------------------------------ */
@@ -197,6 +200,51 @@ a {
 }
 /* button hover */
 button:hover {
+  background-color: var(--d-accent);
+  color: var(--accent);
+}
+
+/* RESTAURANT ----------------------------------------- */
+
+.orderContainer {
+  /* background-color: pink; */
+  padding: 5px 10px 40px 10px;
+}
+
+.orderList {
+  list-style: none;
+  padding: 20px 10px 20px 10px;
+}
+
+.orderFood {
+  /* background-color: rgb(1, 226, 114); */
+  margin: 10px;
+  padding: 16px 10px 16px 10px;
+}
+
+/* RESTAURANT BUTTON -------------------------------------- */
+
+a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.Btn-2 {
+  width: 100px;
+  height: 30px;
+  background-color: var(--secondary);
+  border-radius: 3px;
+  border: none;
+  transition: 0.6s;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 10px 10px 10px;
+}
+/* button-2 hover */
+button-2:hover {
   background-color: var(--d-accent);
   color: var(--accent);
 }
@@ -235,17 +283,27 @@ button:hover {
   }
 }
 
-/* table */
+/* TABLE  ---------------------------------- */
 @media screen and (max-width: 800px) {
   tr {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0.5em 0;
+    border-radius: 8px;
     border: 1px solid var(--d-accent);
+    padding: 10px;
   }
+
   td,
   th {
     flex: 1 1 150px;
+  }
+
+  /* RESTAURANT FOOD ORDER ---------------------------------- */
+  .orderFood {
+    margin: 0.5em 0;
+    border-radius: 8px;
+    border: 1px solid var(--d-accent);
   }
 }
