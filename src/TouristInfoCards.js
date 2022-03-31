@@ -33,11 +33,20 @@ const TouristInfoCards = () => {
         {cities.map(data => {
           return (
             <div className="card">
-              <img src={data.image} className="card-img-top" />
+              <img
+                src={data.image}
+                className="card-img-top"
+                alt="cities image"
+              />
               <div className="card-body">
                 <h5 className="card-title">{data.name}</h5>
                 <p className="card-text">{data.description}</p>
-                <a href={data.link} target="_blank" className="btn btn-primary">
+                <a
+                  href={data.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
                   Go somewhere
                 </a>
               </div>

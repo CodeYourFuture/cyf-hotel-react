@@ -8,15 +8,16 @@ import BookingData from "./data/fakeBookings.json";
 
 import "./App.css";
 import SearchResults from "./SearchResults";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
     <div className="App">
       <Header />
-
       <Bookings />
       <TouristInfoCards />
       <SearchResults bookings={BookingData} />
+      <Restaurant />
       <Footer
         info={[
           "123 Fake Street, London, E1 4UD",
