@@ -1,0 +1,11 @@
+.hotel-image {
+  height: 14vh;
+  width: 80px;
+  margin-top: -1%;
+}
+.heading-text {
+  display: inline;
+  padding-left: 1%;
+  font-size: 30px;
+  font-family: Georgia, serif;
+}
