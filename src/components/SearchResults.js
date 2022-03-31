@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 const moment = require("moment");
 
 const numberOfNights = (dayIn, dayOut) => {
@@ -9,6 +9,7 @@ const numberOfNights = (dayIn, dayOut) => {
 };
 
 const SearchResults = prop => {
+  const [selected, setSelected] = useState({});
   return (
     <table className="table">
       <thead>
@@ -39,8 +40,18 @@ const SearchResults = prop => {
             },
             i
           ) => {
+            if (!selected[i]) setSelected({ ...selected, [i]: "white" });
+
             return (
-              <tr key={i}>
+              <tr
+                key={i}
+                className={selected[i]}
+                onClick={() =>
+                  selected[i] === "white"
+                    ? setSelected({ ...selected, [i]: "red" })
+                    : setSelected({ ...selected, [i]: "white" })
+                }
+              >
                 <th scope="row">{id}</th>
                 <th>{title}</th>
                 <th>{firstName}</th>
