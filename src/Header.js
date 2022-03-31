@@ -12,7 +12,7 @@ const Header = () => {
       <header className="App-header">
         <img
           className="App-logo"
-          src="https://cdn-icons.flaticon.com/png/512/3009/premium/3009710.png?token=exp=1648132886~hmac=fbdb330835e40e249bb3ffa27cf96da6" //not working
+          src="https://cdn-icons.flaticon.com/png/512/3073/premium/3073755.png?token=exp=1648737821~hmac=3171f6f70d2b3822b7dd8c01acc3d1e8" //not working
           alt="CYF Hotel"
         />
       </header>

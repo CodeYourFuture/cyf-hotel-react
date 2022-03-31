@@ -1,4 +1,11 @@
 import React from "react";
+import moment from "moment";
+
+// let numbersOfNights = (checkIn, checkOut) => {
+//   let checkInDays = moment(checkIn);
+//   let checkOutDays = moment(checkOut);
+//   return checkOutDays.diff(checkInDays, "days");
+// }
 
 let headers = [
   "Id",
@@ -7,8 +14,8 @@ let headers = [
   "Last Name",
   "Email",
   "Room Id",
-  "Check In Date",
-  "Check Out Date",
+  "Check In ",
+  "Check Out ",
   "# Nights"
 ];
 
@@ -31,36 +38,23 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.bookings.map(
-          (
-            {
-              id,
-              title,
-              firstName,
-              lastName,
-              email,
-              roomId,
-              checkIn,
-              checkOut,
-              nights
-            },
-            index
-          ) => {
-            return (
-              <tr key={index}>
-                <td>{id}</td>
-                <td>{title}</td>
-                <td>{firstName}</td>
-                <td>{lastName}</td>
-                <td>{email}</td>
-                <td>{roomId}</td>
-                <td>{checkIn}</td>
-                <td>{checkOut}</td>
-                <td>{nights}</td>
-              </tr>
-            );
-          }
-        )}
+        {props.bookings.map((booking, index) => {
+          let inDays = moment(booking.checkInDate);
+          let outDays = moment(booking.checkOutDate);
+          return (
+            <tr key={index}>
+              <td>{booking.id}</td>
+              <td>{booking.title}</td>
+              <td>{booking.firstName}</td>
+              <td>{booking.lastName}</td>
+              <td>{booking.email}</td>
+              <td>{booking.roomId}</td>
+              <td>{booking.checkInDate}</td>
+              <td>{booking.checkOutDate}</td>
+              <td>{outDays.diff(inDays, "days")}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );

@@ -3,21 +3,39 @@
 }
 
 .App-logo {
-  /* animation: App-logo-spin infinite 20s linear;
-  height: 80px; */
-  width: 15px;
-  height: 15px;
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+  width: 25px;
+  height: 25px;
+  margin-left: 140px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  /* background-color: cyan; */
+  height: 60px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  background: url("https://tse1.mm.bing.net/th?id=OIP.kG0gRjefpg-EJwx6P0aBrgHaBi&pid=Api&P=0&w=466&h=97");
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  vertical-align: top;
+  transform-origin: center top;
+  /* transform: 
+    translateZ(-#{$scroll-factor * 2}px)
+    scale(1 + $scroll-factor * 2);); */
+  background-size: cover;
+  /* background-position: center center; */
+  position: relative;
+  vertical-align: top;
+  transform-origin: center top;
+  /* transform: 
+    translateZ(-#{$scroll-factor * 2}px)
+    scale(1 + $scroll-factor * 2); */
 }
 
 .App-title {
@@ -49,11 +67,19 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
+.footer > ul {
   padding-top: 20px;
   text-align: center;
+  list-style-type: none;
 }
 
 .card {
   width: 18rem;
+}
+
+.table {
+  width: 78%;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
