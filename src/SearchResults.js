@@ -26,7 +26,7 @@ const SearchResults = props => {
       <tbody>
         {props.bookings.map(booking => {
           return (
-            <tr>
+            <tr onClick={null}>
               <th scope="row">{booking.id}</th>
               {headings.map(heading => {
                 if (heading === "id") {

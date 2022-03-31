@@ -51,6 +51,7 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style: none;
 }
 
 .card {
@@ -65,4 +66,8 @@ tr {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+ul {
+  list-style: none;
 }

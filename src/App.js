@@ -1,9 +1,11 @@
 import React from "react";
+
+import Bookings from "./Bookings";
+import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
-import Bookings from "./Bookings";
 import Footer from "./Footer";
-import "./App.css";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   const contactDetails = [
@@ -17,6 +19,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer contact={contactDetails} />
     </div>
   );
