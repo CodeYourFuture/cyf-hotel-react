@@ -1,0 +1,19 @@
+.card-img-top {
+  height: 40%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+.card {
+  height: 130vh;
+}
+.card-title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 45px;
+  margin-left: 7%;
+}
+
+.card-text {
+  font-size: 20px;
+  margin-top: 10%;
+}
