@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 //The Effect Hook lets you perform side effects in function components: -Side could change what the function returns a call to an API
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import fakeBookings from "./data/fakeBookings.json";
+// import fakeBookings from "./data/fakeBookings.json";
 
 // check the shape of the data
 
