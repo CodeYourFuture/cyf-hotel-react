@@ -33,9 +33,9 @@ function TouristInfoCards() {
 
   return (
     <div className="cards">
-      {places.map(placeObject => {
+      {places.map((placeObject, index) => {
         return (
-          <div className="card">
+          <div key={index} className="card">
             <img
               src={placeObject.image}
               className="card-img-top"
