@@ -62,3 +62,7 @@ styled-table tbody tr {
 .styled-table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
 }
+
+.highlighttrue {
+  background-color: magenta;
+}

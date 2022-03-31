@@ -1,5 +1,5 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
 const headers = [
   "id",
@@ -14,6 +14,8 @@ const headers = [
 ];
 
 function SearchResults(props) {
+  const [highlight, setHighlight] = useState(false);
+
   return (
     <table className="styled-table">
       <thead>
@@ -26,7 +28,10 @@ function SearchResults(props) {
       <tbody>
         {props.bookings.map(booked => {
           return (
-            <tr>
+            <tr
+              className={`highlight${highlight}`}
+              onClick={() => setHighlight(!highlight)}
+            >
               <th scope="row">{booked.id}</th>
               {headers.map(heading => {
                 if (heading === "id") {
