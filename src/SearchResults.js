@@ -41,7 +41,7 @@ const SearchResults = (props) => {
               <td>{roomId}</td>
               <td>{checkInDate}</td>
               <td>{checkOutDate}</td>
-              <td>{moment(checkOutDate).diff(moment(checkInDate), "days")}</td>
+          
             </tr>
           );
         })}
