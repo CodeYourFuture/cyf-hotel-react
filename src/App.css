@@ -47,9 +47,12 @@ tr {
 .card {
   width: 18rem;
 }
+
 .card-body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hotel-logo {
@@ -79,4 +82,13 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: larger;
+}
+
+a {
+  width: 60%;
 }
