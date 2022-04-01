@@ -1,7 +1,8 @@
 .App {
   text-align: left;
   display: grid;
-  grid-auto-rows: auto;
+  grid-template-columns: 1fr;
+  grid-auto-flow: auto;
   font-family: "Rubik", sans-serif;
 }
 .logo {
@@ -78,7 +79,6 @@
 .App-title {
   font-size: 1.5em;
 }
-
 .App-content {
   padding-top: 20px;
   font-size: large;
@@ -132,6 +132,10 @@ tr {
   );
 }
 @media only screen and (max-width: 980px) {
+  .App {
+    display: grid;
+    grid-template-columns: 100%;
+  }
   .city {
     display: flex;
     flex-direction: row;
