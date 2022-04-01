@@ -13,8 +13,8 @@ function Footer(props) {
       <div className="border-top p-2 d-flex">
         <p>
           {" "}
-          Created with Love by
-          <span className="text-danger h5"> &copy;</span> Mohammad Alamin{" "}
+          <span className="text-danger h5"> &copy;</span>Created with Love by
+          Mohammad Alamin{" "}
         </p>
         <p>
           {" "}
