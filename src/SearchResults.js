@@ -1,8 +1,14 @@
 //creating a table
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [row, setRow] = useState(0);
+
+  function whenRowIsClicked() {
+    setRow(!row);
+  }
+
   return (
     <div>
       <table class="table table-bordered table-dark">
@@ -24,8 +30,12 @@ const SearchResults = props => {
             let daysStay = checkOutDate.diff(checkInDate, "days");
             return (
               <>
-                <tr>
-                  <th scope="row">{booking.id}</th>
+                <tr
+                  //changing entire table, look at this again figure out how to chang just row
+                  onClick={whenRowIsClicked}
+                  style={{ backgroundColor: row ? "red" : "" }}
+                >
+                  <td>{booking.id}</td>
                   <td>{booking.title}</td>
                   <td>{booking.firstName}</td>
                   <td>{booking.surname}</td>

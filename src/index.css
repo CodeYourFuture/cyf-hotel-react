@@ -25,6 +25,10 @@ body {
   margin-right: 10px;
 }
 
+.display-button-inline {
+  display: flex;
+}
+
 .footer {
   text-align: center;
   background-color: rgb(0, 0, 0);
