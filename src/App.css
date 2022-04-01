@@ -83,3 +83,7 @@ tr {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
+
+.order {
+  list-style-type: none;
+}

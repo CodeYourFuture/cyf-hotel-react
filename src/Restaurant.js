@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
+import Order from "./Order";
 
-const Restaurant = () => {
-  // const pizzas = 0;
-  let [orders, setOrders] = useState(0); // state meaning react varibale setOrder is callback funtion
-  function incrementOrder() {
-    setOrders(orders + 1);
-  }
+const Restaurant = props => {
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        <li>
-          Pizzas: {orders}
-          {/* {`Pizzas: ${orders}`} */}
-          <RestaurantButton ordering={incrementOrder} />
-        </li>
+        <Order orderType="pizza" />
+        <Order orderType="salads" />
+        <Order orderType="chocolate cakes" />
       </ul>
     </div>
   );

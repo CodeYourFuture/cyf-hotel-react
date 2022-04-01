@@ -9,6 +9,7 @@ import BookingData from "./data/fakeBookings.json";
 import "./App.css";
 import SearchResults from "./SearchResults";
 import Restaurant from "./Restaurant";
+// import Order from "./Order";
 
 const App = () => {
   return (
