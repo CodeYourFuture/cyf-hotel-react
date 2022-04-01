@@ -103,3 +103,11 @@ th {
 .card {
   width: 18rem;
 }
+
+.row-highlighted {
+  background-color: lightgrey;
+}
+
+.row-not-highlighted {
+  background-color: none;
+}
