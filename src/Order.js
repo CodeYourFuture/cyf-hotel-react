@@ -5,14 +5,15 @@ const Order = props => {
   const [oders, setOders] = useState(0);
 
   function orderOne() {
-    setOders(oders + 1);
+    setOders((order) => {
+      return oreder + 1
+    });
   }
 
   return (
     <div>
       <RestaurantButton handleClick={orderOne} />
-      pizzas: {oders}
-      {props.orderType}
+    <span>  pizzas:   {oders}   {props.orderType} </span>
     </div>
   );
 };
