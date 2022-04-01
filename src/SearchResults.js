@@ -1,7 +1,7 @@
 import React from "react";
-import moment from "moment";
+import TableRow from "./TableBodyRow";
 
-const SearchResults = props => {
+const SearchResults = ({ reservations }) => {
   return (
     <div className="table-wrapper">
       <table className="table table-bordered">
@@ -19,25 +19,9 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.reservations.map((reservation, ind) => {
-            let dayIn = moment(reservation.checkInDate);
-            let dayOut = moment(reservation.checkOutDate);
-            let daysDiff = dayOut.diff(dayIn, "days");
-
-            return (
-              <tr key={ind}>
-                <th scope="row">{reservation.id}</th>
-                <td>{reservation.title}</td>
-                <td>{reservation.firstName}</td>
-                <td>{reservation.surname}</td>
-                <td>{reservation.email}</td>
-                <td>{reservation.roomId}</td>
-                <td>{reservation.checkInDate}</td>
-                <td>{reservation.checkOutDate}</td>
-                <td>{daysDiff}</td>
-              </tr>
-            );
-          })}
+          {reservations.map((reservation, ind) => (
+            <TableRow key={ind} reservation={reservation} />
+          ))}
         </tbody>
       </table>
     </div>

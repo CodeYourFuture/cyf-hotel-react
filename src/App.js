@@ -1,12 +1,11 @@
 import React from "react";
 
-import SearchResults from "./SearchResults";
 import Footer from "./Footer";
 import TouristInfoCards from "./TouristInfoCards";
 import Heading from "./Heading";
 import Bookings from "./Bookings";
 import "./App.css";
-import BookingData from "./data/fakeBookings.json";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -14,7 +13,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <SearchResults reservations={BookingData} />
+      <Restaurant />
       <Footer
         addressInfo={[
           "123 Fake Street, London, E1 4UD",

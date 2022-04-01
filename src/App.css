@@ -103,3 +103,23 @@ tr {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
+
+.isSelected {
+  background-color: #007bff;
+  color: white;
+}
+
+.order-box-wrapper {
+  padding: 1rem;
+  width: 60rem;
+  margin: auto;
+  background-color: #f6f6f6;
+  margin-bottom: 5rem;
+}
+
+.order-box-wrapper > ul > li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
