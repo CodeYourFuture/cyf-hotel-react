@@ -5,6 +5,7 @@ import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 // import SearchResults from "./SearchResults";
 // import SearchButton from "./SearchButton";
 
@@ -20,6 +21,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       {/* <SearchResults /> */}
       {/* <SearchButton /> */}
       <Footer contact={contactDetails} />

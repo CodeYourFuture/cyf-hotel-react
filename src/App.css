@@ -24,6 +24,11 @@
   display: flex;
   justify-content: space-around;
 }
+th {
+  background-color: rgb(212, 245, 221);
+  text-align: center;
+  padding: 5px;
+}
 .logo {
   width: 70px;
   height: fit-content;

@@ -19,8 +19,7 @@ const headings = [
 function SearchResults(props) {
   return (
     <table>
-      {" "}
-      SearchResults
+      {/* <caption>SearchResults</caption> */}
       <thead>
         <tr>
           {headings.map(heading => {
