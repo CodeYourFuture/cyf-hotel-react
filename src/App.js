@@ -1,8 +1,9 @@
 import React from "react";
-import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
+import Bookings from "./Bookings";
+import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 
 const App = () => {
@@ -11,6 +12,8 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
+      {/* //orders={orders} handleClick={incrementCount} */}
       <Footer
         details={[
           "123 Fake Street, London, E1 4UD",
