@@ -1,11 +1,3 @@
-:root {
-  --golden: #d4af37;
-}
-
-body {
-  margin: 4rem;
-}
-
 .App {
   text-align: left;
 }
