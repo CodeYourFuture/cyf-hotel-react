@@ -1,15 +1,13 @@
 import React from "react";
 
-const Footer = props => {
+export default function Footer(props) {
   return (
     <div className="footer">
       <ul>
-        {props.contact.map(string => {
-          return <li>{string}</li>;
+        {props.contact.map((string, index) => {
+          return <li key={index}>{string}</li>;
         })}
       </ul>
     </div>
   );
-};
-
-export default Footer;
+}

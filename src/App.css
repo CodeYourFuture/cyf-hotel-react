@@ -51,9 +51,21 @@
 .search {
   padding: 5px 0 20px 0;
 }
+.container {
+  padding-block: 40px;
+}
 
 tr {
   color: #5b5757;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  border: red;
+  padding: 10px;
+  font-size: 1.2rem;
 }
 
 .results {

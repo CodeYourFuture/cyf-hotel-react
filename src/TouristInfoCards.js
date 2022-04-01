@@ -1,6 +1,6 @@
 import React from "react";
 
-const TouristInfoCards = () => {
+export default function TouristInfoCards() {
   return (
     <div className="card-wrapper">
       {/* _________________________Glasgow_________________ */}
@@ -32,7 +32,7 @@ const TouristInfoCards = () => {
         <p className="card-text">
           Manchester is a major city in the northwest of England with a rich
           industrial heritage. The Castlefield conservation areas 18th-century
-          canal system recalls the citys days as a textile powerhouse, and
+          canal system recalls the cites days as a textile powerhouse, and
           visitors can trace this history at the interactive Museum of Science
           Industry.
         </p>
@@ -64,6 +64,4 @@ const TouristInfoCards = () => {
       </div>
     </div>
   );
-};
-
-export default TouristInfoCards;
+}
