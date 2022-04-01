@@ -3,10 +3,23 @@ import FakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
 
 function SearchResults() {
+  const headings = [
+    `id`,
+    `title`,
+    `first name`,
+    `surname`,
+    `email`,
+    `room id`,
+    `check in date`,
+    `check out date`,
+    `number of nights`
+  ];
   const DisplayData = FakeBookings.map(info => {
     return (
       <tr>
-        <td>{info.id}</td>
+        <th scope="row">
+          <td>{info.id}</td>
+        </th>
         <td>{info.title}</td>
         <td>{info.firstName}</td>
         <td>{info.surname}</td>
@@ -26,15 +39,9 @@ function SearchResults() {
       <table className="table table-striped">
         <thead>
           <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Title</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Surname</th>
-            <th scope="col">Email</th>
-            <th scope="col">Room Id</th>
-            <th scope="col">Check In Date</th>
-            <th scope="col">Check Out Date</th>
-            <th scope="col">No of Nights</th>
+            {headings.map(heading => {
+              return <th scope="col">{heading}</th>;
+            })}
           </tr>
         </thead>
         <tbody>{DisplayData}</tbody>
