@@ -1,20 +1,77 @@
 .App {
   text-align: left;
+  display: grid;
+  grid-auto-rows: auto;
+  font-family: "Rubik", sans-serif;
+}
+.logo {
+  width: 6rem;
+  height: auto;
+  margin: 1% 0;
+  object-fit: contain;
+  box-shadow: -7px 0 7px rgb(54, 183, 252);
+  border-radius: 100%;
+}
+.city {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card {
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgb(148, 7, 5) 10%,
+    rgb(243, 53, 53),
+    rgb(148, 7, 5)
+  );
+  border: 1px solid rgb(136, 0, 0);
+  color: whitesmoke;
+  box-shadow: 4px 7px 5px rgb(92, 39, 39);
+}
+.card-img-top {
+  height: 11rem;
+  width: 100%;
+  object-fit: cover;
+}
+.cardInfo {
+  padding: 1.5rem;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.footer-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #009870;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 4rem 0 0 0;
+}
+.footer-div ul {
+  list-style: none;
+  color: rgb(255, 255, 255);
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-
+.heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(11, 10, 10);
+  padding: 0 2rem;
+  gap: 2%;
+  margin-bottom: 2%;
+}
 .App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
   color: white;
-  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
@@ -25,6 +82,17 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+.table-div {
+  overflow-x: auto;
+}
+.restaurent-div {
+  margin: 2%;
+  padding: 1%;
+}
+.orderAndButton {
+  display: flex;
+  align-items: center;
 }
 
 @keyframes App-logo-spin {
@@ -37,6 +105,7 @@
 }
 .search {
   padding: 5px 0 20px 0;
+  width: 80%;
 }
 
 tr {
@@ -51,7 +120,25 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
-
 .card {
-  width: 18rem;
+  width: 15rem;
+}
+.border {
+  background: linear-gradient(
+    15deg,
+    rgb(62, 2, 97) 10%,
+    rgb(179, 3, 162),
+    rgb(62, 2, 97)
+  );
+}
+@media only screen and (max-width: 980px) {
+  .city {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 2%;
+    margin-right: 2%;
+    gap: 1em;
+    margin-top: 1em;
+  }
 }
