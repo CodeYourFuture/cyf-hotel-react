@@ -78,6 +78,7 @@ function SearchResults(props) {
                   <div>
                     {" "}
                     <button
+                      key={index}
                       onClick={() => setHighlight(result.id)}
                       name="firstButton"
                     >

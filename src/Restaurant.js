@@ -7,7 +7,7 @@ function Restaurant(props) {
       {" "}
       <h3>Restaurant Orders</h3>
       <ul className="list-group">
-        <Order />
+        <Order orderType={"vegan"} />
         <Order orderType={"salade"} />
         <Order orderType={"chocolate cake"} />
       </ul>
