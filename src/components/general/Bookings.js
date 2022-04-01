@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "./Search.js";
 import "../../css/booking.css";
 import FakeBookings from "../../data/fakeBookings.json";
@@ -6,7 +6,8 @@ import SearchResults from "./SearchResults.jsx";
 import "../../css/searchresults.css";
 
 const Bookings = () => {
-  const allData = FakeBookings;
+  const [bookings, setBookings] = useState(FakeBookings);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
@@ -18,7 +19,7 @@ const Bookings = () => {
           <Search search={search} />
         </div>
       </div>
-      <SearchResults result={allData} />
+      <SearchResults result={bookings} />
     </>
   );
 };
