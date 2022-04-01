@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const headings = [
   `id`,
@@ -8,16 +9,21 @@ const headings = [
   `email`,
   `roomId`,
   `checkInDate`,
-  `checkOutDate`
+  `checkOutDate`,
+  `numberOfNights`
 ];
 
 function SearchResults(props) {
   return (
-    <table width="100%">
-      <thead>
+    <table className="table">
+      <thead className="thead-dark">
         <tr>
-          {headings.map(heading => {
-            return <th scope="col">{heading}</th>;
+          {headings.map((heading, index) => {
+            return (
+              <th key={index} scope="col">
+                {heading}
+              </th>
+            );
           })}
         </tr>
       </thead>

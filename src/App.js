@@ -1,5 +1,4 @@
 import React from "react";
-
 import Bookings from "./Bookings";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";

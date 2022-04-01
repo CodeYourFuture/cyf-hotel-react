@@ -1,24 +1,17 @@
 import React from "react";
+import cityCard from "./data/cityCard.json";
 
 function TouristInfoCards() {
-  const places = [
-    { name: "Glasgow", link: "peoplemakeglasgow.com" },
-    { name: "Manchester", link: "visitmanchester.com" },
-    { name: "London", link: "visitlondon.com" }
-  ];
-
   return (
     <div>
-      {places.map(placeObject => {
+      {cityCard.map(placeObject => {
         return (
           <div className="card">
-            <img src={`...`} className="card-img-top" />
-            <div className="card-body">
-              <a
-                href={`http://www.${placeObject.link}`}
-                className="btn btn-primary"
-              >
-                Go somewhere like {placeObject.name}
+            <img src={placeObject.img} className="card-img-top" />
+            <p class="cardInfo">{placeObject.info}</p>
+            <div className="card-body" align="center">
+              <a href={`${placeObject.link}`} className="btn btn-primary">
+                {placeObject.city}
               </a>
             </div>
           </div>
