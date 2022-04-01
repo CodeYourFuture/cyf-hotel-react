@@ -15,7 +15,7 @@ const SearchResults = (props) => {
           <th>Room Id</th>
           <th>Check in Date</th>
           <th>Check out Date</th>
-          <th>Nights In</th>
+         
         </tr>
       </thead>
       <tbody>
