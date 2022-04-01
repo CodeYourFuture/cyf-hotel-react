@@ -6,7 +6,7 @@ const Order = props => {
 
   function orderOne() {
     setOders((order) => {
-      return oreder + 1
+      return oreder + 1;
     });
   }
 
