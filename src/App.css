@@ -16,6 +16,8 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .App-title {
@@ -35,8 +37,42 @@
     transform: rotate(360deg);
   }
 }
+
+.small-profile {
+  height: 9.375rem; /* 150px; */
+  border-radius: 50%;
+  border: solid var(--golden) 0.625rem; /* 10px */
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.infocard-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  padding: 0.6rem;
+}
+
+.card-body {
+  margin: auto;
+}
+
+.nobullets {
+  list-style-type: none;
+  margin-left: 3rem;
+  border-top: ridge;
+}
+
 .search {
   padding: 5px 0 20px 0;
+}
+
+.centre {
+  text-align: center;
 }
 
 tr {
@@ -44,14 +80,26 @@ tr {
 }
 
 .results {
-  padding-top: 15px;
+  padding-top: 0.938rem; /* 15px; */
 }
 
+tr,
+th {
+  text-align: left;
+}
 .footer {
-  padding-top: 20px;
+  padding-top: 1.25rem; /* 20px; */
   text-align: center;
 }
 
 .card {
   width: 18rem;
+}
+
+.row-highlighted {
+  background-color: lightgrey;
+}
+
+.row-not-highlighted {
+  background-color: none;
 }
