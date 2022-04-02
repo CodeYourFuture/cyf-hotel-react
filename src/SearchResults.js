@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const caculateNightsSpent = (start, end) => {
@@ -7,8 +7,17 @@ const caculateNightsSpent = (start, end) => {
   return endDate.diff(startDate, "days");
 };
 const SearchResults = ({ results }) => {
+  const [rowIndexClicked, setRowIndexClicked] = useState(null);
+  const handlerRowClicked = rowIndex => {
+    if (rowIndexClicked !== rowIndex) {
+      // handle if user clicks again the same row
+      setRowIndexClicked(rowIndex);
+    } else {
+      setRowIndexClicked(null); // set clicked row to null if same row is selected
+    }
+  };
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">id</th>
@@ -35,7 +44,12 @@ const SearchResults = ({ results }) => {
             checkOutDate
           }) => {
             return (
-              <tr key={id}>
+              <tr
+                id={id}
+                className={rowIndexClicked === id ? "highlighted" : ""}
+                onClick={() => handlerRowClicked(id)}
+                key={id}
+              >
                 <th scope="row">{id}</th>
                 <td>{title}</td>
                 <td>{firstName}</td>

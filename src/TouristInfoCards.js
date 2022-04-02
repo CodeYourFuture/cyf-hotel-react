@@ -3,10 +3,10 @@ import React from "react";
 const TouristInfoCards = ({ cardData }) => {
   return (
     <div className="container">
-      <div className="card-deck">
+      <div className="card-deck mt-5">
         {cardData.map(data => {
           return (
-            <div className="card">
+            <div key={data.id} className="card">
               <img
                 src={data.imgUrl}
                 alt="card image"
@@ -20,7 +20,7 @@ const TouristInfoCards = ({ cardData }) => {
                   target="_blank"
                   className="btn btn-primary"
                 >
-                  Go somewhere
+                  Go {data.title}
                 </a>
               </div>
             </div>

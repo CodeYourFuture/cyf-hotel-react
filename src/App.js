@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Bookings from "./Bookings";
 import "./App.css";
 import TouristInfoCards from "./TouristInfoCards";
+import Restaurant from "./Restaurant";
 
 const cardData = [
   {
@@ -41,8 +42,9 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <Bookings />
       <TouristInfoCards cardData={cardData} />
+      <Bookings />
+      <Restaurant />
       <Footer footerData={footerData} />
     </div>
   );
