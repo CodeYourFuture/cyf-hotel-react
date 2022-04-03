@@ -4,11 +4,7 @@ import "../../css/searchresults.css";
 const SearchResults = ({ result }) => {
   const [selected, setSelected] = useState({});
   const highlight = objId => {
-    if (selected[objId]) {
-      setSelected(prev => ({ ...prev, [objId]: false }));
-    } else {
-      setSelected(prev => ({ ...prev, [objId]: true }));
-    }
+    setSelected(prev => ({ ...prev, [objId]: !selected[objId] }));
   };
   return (
     <article className="results_table">
