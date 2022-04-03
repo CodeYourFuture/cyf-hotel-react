@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./TouristInfoCard.css";
-
 const TouristInfoCard = props => {
   return (
     <div className="card">

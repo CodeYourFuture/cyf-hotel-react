@@ -1,24 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults/SearchResults";
-import FakeBookings from "../data/fakeBookings.json";
+// import FakeBookings from "../data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings);
+  const [bookings, setBookings] = useState([]);
 
-  // This function is declared to handle the setBookings warning, which fails to deploy on netlify. Even the onClick on the Search Component is fake.
-  const handleBooking = () => {
-    setBookings();
-  };
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
+      .then(res => res.json())
+      .then(data => setBookings(data));
+  }, []);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    console.log(bookings);
+    setBookings(
+      bookings.filter(guest => {
+        return guest.firstName === searchVal || guest.surname === searchVal;
+      })
+    );
   };
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} onClick={handleBooking} />
+        <Search search={search} />
         <SearchResults results={bookings} />
       </div>
     </div>

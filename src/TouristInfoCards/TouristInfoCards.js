@@ -1,6 +1,6 @@
 import React from "react";
 
-import TouristInfoCard from "./TouristInfoCard/TouristInfoCard";
+import TouristInfoCard from "./TouristInfoCard";
 
 import Cities from "../data/Cities";
 
