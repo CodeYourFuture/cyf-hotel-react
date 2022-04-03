@@ -5,7 +5,7 @@ const Heading = () => {
   return (
     <div>
       <header className="App-header">
-        <i class="fa fa-h-square" aria-hidden="true" alt="Hotel Logo"></i>
+        <i className="fa fa-h-square" aria-hidden="true" alt="Hotel Logo"></i>
         <h1> CYF Hotel</h1>
 
         {/* <img

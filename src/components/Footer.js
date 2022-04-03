@@ -1,6 +1,6 @@
 import React from "react";
 
-//background of props
+//working in the background of props
 // const props = {
 //   contacts: [
 //     "123 Fake Street, London, E1 4UD",

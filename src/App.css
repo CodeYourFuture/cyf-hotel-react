@@ -10,16 +10,19 @@
 }
 
 :root {
-  --primary: #fecacc; /* pink :) */
-  --secondary: #373737; /* dark grey */
-  --light-1: #ededee; /* light grey  */
-  --light: #f0efef; /* mid grey  */
-  --accent: #ffff; /* white */
-  --d-accent: #808080; /*grey */
+  --primary: #fecacc; 
+  --secondary: #2f3640;  
+  --light-1: #ededee;
+  --light: #f0efef; 
+  --accent: #ffff; 
+  --d-accent: #808080; 
   --m-button: #0000ffe8;
 
   /* font */
   --font-primary: "Roboto", sans-serif;
+
+  --box-shadow-1: 0 12px 12px rgba(0, 0, 0, 0.2); 
+  
 }
 
 html,
@@ -63,8 +66,7 @@ h5 {
   padding: 4px 4px 0px 4px;
   bottom: 0px;
   border-radius: 8px;
-
-  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow-1)
 }
 
 /* TOURIST CARD  ------------------------------------- */
@@ -75,14 +77,19 @@ h5 {
 }
 
 .card {
-  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
+  
   width: 420px;
   border-radius: 4px;
   background-color: var(--light);
-  margin: 40px 10px 20px 10px;
+  margin: 40px 30px 20px 10px;
   border-radius: 3px;
+  box-shadow: var(--box-shadow-1)
+}
 
-  /* word-wrap: break-word; */
+.card:hover {
+  transform: scale(1.03);
+  transition: 0.6s;
+  box-shadow: var(--box-shadow-1)
 }
 
 h3 {
@@ -100,7 +107,9 @@ p {
 img {
   background-size: contain;
   width: 100%;
-  height: 350px;
+  height: 350px;  
+  border-radius: 5px;
+  box-shadow: var(--box-shadow-1);  
 }
 
 /* SEARCH AREA -----------------------------------------*/
@@ -123,8 +132,10 @@ label {
 label {
   margin: 0px;
   justify-content: center;
-  /* margin-top: 2rem; */
+  padding: 10px 10px 40px 10px;
+  /* border-bottom: 2px solid pink; */
 }
+
 input[type="text"],
 select {
   width: 180px;
@@ -159,23 +170,27 @@ button:hover {
 }
 
 /* BOOKING TABLE   ----------------------------------- */
-.table-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0px;
-  border-radius: 4px;
-  border-radius: 3px;
-  /* background-color: yellowgreen; */
-}
 
 .table {
   width: 80%;
-  margin: 40px 0px 10px 0px;
-  border-collapse: separate;
-  text-indent: initial;
-  border-spacing: 8px;
+  margin: 30px  auto 10px auto;
+  border-spacing: 10px;
   font-size: 20px;
   font-weight: 500;
+}
+
+/* to do  */
+.table-highlight {
+  background: var(--d-accent);
+}
+
+/* customer search  */
+.profile, ul{
+  font-size: 22px;
+  display: list-item;
+  text-align: -webkit-match-parent;
+  margin: 10px 0px 10px 0px;
+  /* text-decoration: none !important; */
 }
 
 /* CARD BUTTON ------------------------------------------ */
@@ -187,7 +202,7 @@ a {
 
 .Btn {
   width: 100%;
-  height: 30px;
+  height: 40px;
   background-color: var(--secondary);
   border-radius: 3px;
   border: none;
@@ -218,6 +233,7 @@ button:hover {
 
 .orderFood {
   /* background-color: rgb(1, 226, 114); */
+  font-size: 22px;
   margin: 10px;
   padding: 16px 10px 16px 10px;
 }
@@ -294,10 +310,18 @@ button-2:hover {
     border: 1px solid var(--d-accent);
     padding: 10px;
   }
+  .table {
+    width: 80%;
+    margin: 30px  auto 10px auto;
+    border-spacing: 10px;
+    font-size: 20px;
+    font-weight: 500;
+  }
 
   td,
   th {
     flex: 1 1 150px;
+
   }
 
   /* RESTAURANT FOOD ORDER ---------------------------------- */

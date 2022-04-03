@@ -1,37 +1,68 @@
-import React from "react";
-import moment from "moment";
+/*
+To do 
 
-const CalculateNumberOfNights = (inDate, outDate) => {
-  let a = moment(inDate);
-  let b = moment(outDate);
-  return b.diff(a, "days");
-};
+We could continue from task 22 - 23 to implement the search function. https://github.com/CodeYourFuture/cyf-hotel-react#stretch-goals
+
+It would be good to have a heads-up on how to highlight table rows for task 15; I found this reference code, useful from line 35
+https://codesandbox.io/s/react-data-table-row-select-color-example-forked-w4zou6?file=/src/index.js:0-144
+
+*/
 
 // check the shape of the data against the fakedata
 
-// add https://cyf-react.glitch.me/
+import React from "react";
+import { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = (props) => {
+  const [selectedRowColor, setSelectedRowColor] = useState([]);
+  const [profileId, setProfileId] = useState(null);
+
+  const HighLight = (id) => {
+    let selectedRow = [...selectedRowColor];
+
+    if (selectedRow.includes(id)) {
+      const index = selectedRow.indexOf(id);
+      selectedRow.splice(index, 1);
+
+      setSelectedRowColor(selectedRow);
+    } else {
+      selectedRow.push(id);
+      setSelectedRowColor(selectedRow);
+    }
+  };
+
   return (
-    <table className="table-container">
-      <table className="table">
+    <div>
+      <table className="table ">
         <thead>
           <tr>
+            <th scope="col">Id</th>
             <th scope="col">Title</th>
             <th scope="col">First Name</th>
-            <th scope="col">Family Name</th>
+            <th scope="col">Surname</th>
             <th scope="col">Email</th>
             <th scope="col">Room ID</th>
-            <th scope="col">Check In </th>
-            <th scope="col">Check Out </th>
-            <th scope="col">Nights Stay</th>
+            <th scope="col">Check In Date</th>
+            <th scope="col">Check Out Date</th>
+            <th scope="col">Number Of Nights</th>
           </tr>
         </thead>
-
         <tbody>
           {props.results.map((result) => {
             return (
-              <tr key={result.id}>
+              <tr
+                key={result.id}
+                onClick={(e) => {
+                  HighLight(result.id);
+                }}
+                className={
+                  selectedRowColor.includes(result.id)
+                    ? "lightBlueBackground"
+                    : ""
+                }
+              >
+                <td>{result.id}</td>
                 <td>{result.title}</td>
                 <td>{result.firstName}</td>
                 <td>{result.surname}</td>
@@ -40,18 +71,38 @@ const SearchResults = (props) => {
                 <td>{result.checkInDate}</td>
                 <td>{result.checkOutDate}</td>
                 <td>
-                  {CalculateNumberOfNights(
-                    result.checkInDate,
-                    result.checkOutDate
-                  )}
+                  {findTheNumberOfDays(result.checkInDate, result.checkOutDate)}
+                </td>
+                <td>
+                  <button
+                    className="btn btn-primary"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setProfileId(result.id);
+                    }}
+                  >
+                    Show profile
+                  </button>
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-    </table>
+      <CustomerProfile id={profileId} />
+    </div>
   );
 };
+
+// Function to find the number of nights a person stayed
+
+function findTheNumberOfDays(checkInDate, checkOutDate) {
+  const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+  const checkIn = new Date(checkInDate);
+  const checkOut = new Date(checkOutDate);
+
+  const daysStayed = Math.round(Math.abs((checkIn - checkOut) / oneDay));
+  return daysStayed;
+}
 
 export default SearchResults;
