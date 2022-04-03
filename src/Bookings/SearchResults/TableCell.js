@@ -8,6 +8,10 @@ const Table = props => {
     setClicked(!clicked);
   };
 
+  const handleButton = () => {
+    props.changeId(props.clickId);
+  };
+
   return (
     <tr onClick={handleClick} className={clicked ? "table-primary" : ""}>
       <td>{props.title}</td>
@@ -19,6 +23,9 @@ const Table = props => {
       <td>{props.checkOutDate}</td>
       <td>
         {moment(props.checkOutDate).diff(moment(props.checkInDate), "days")}
+      </td>
+      <td>
+        <button onClick={handleButton}>Show profile</button>
       </td>
     </tr>
   );
