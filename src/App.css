@@ -65,3 +65,6 @@ tr {
   width: 25vw;
   height: auto;
 }
+.highlight {
+  background: red;
+}

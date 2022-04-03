@@ -33,8 +33,7 @@ export default function TouristInfoCards() {
           <img
             className="card-img-top"
             src="https://static.amazon.jobs/locations/118/thumbnails/Manchester_-_Thumbnail.jpg?1456767226"
-            alt=""
-            srcset=""
+            alt="manchester"
           />
           <h1>Manchester</h1>
           <p>
@@ -54,7 +53,6 @@ export default function TouristInfoCards() {
             className="card-img-top"
             src="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg"
             alt="london"
-            srcset=""
           />
           <h1>London</h1>
           <p>

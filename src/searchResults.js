@@ -1,43 +1,41 @@
-import React from "react";
-import moment from "moment";
+import React, { useState } from "react";
+import SearchResultRow from "./SearchResultRow";
+import FakeBookings from "./data/fakeBookings.json";
 
-export default function searchResults({ results }) {
+function SearchResults() {
   return (
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Title</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room Id</th>
-          <th scope="col">Check in date</th>
-          <th scope="col">Check out date</th>
-          <th scope="col">Number of nights</th>
-        </tr>
-      </thead>
-      <tbody>
-        {" "}
-        {results.map(detail => {
-          var admission = moment(detail.checkInDate, "YYYY-MM-DD");
-          var discharge = moment(detail.checkOutDate, "YYYY-MM-DD");
-
-          return (
-            <tr>
-              <th scope="row">{detail.id}</th>
-              <td>{detail.title}</td>
-              <td>{detail.firstName}</td>
-              <td>{detail.surname}</td>
-              <td>{detail.email}</td>
-              <td>{detail.roomId}</td>
-              <td>{detail.checkInDate}</td>
-              <td>{detail.checkOutDate}</td>
-              <td>{discharge.diff(admission, "days")}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Room Id</th>
+            <th scope="col">Check in date</th>
+            <th scope="col">Check out date</th>
+            <th scope="col">Number of nights</th>
+          </tr>
+        </thead>
+        <tbody>
+          {FakeBookings.map(detail => {
+            return (
+              <SearchResultRow
+                id={detail.id}
+                title={detail.firstName}
+                surname={detail.surname}
+                email={detail.email}
+                roomId={detail.roomId}
+                checkInDate={detail.checkInDate}
+                checkOutDate={detail.checkOutDate}
+              />
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }
+export default SearchResults;
