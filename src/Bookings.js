@@ -1,19 +1,22 @@
-import React from "react";
-import Search from "./Search.js";
-// import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import React, { useState, useEffect } from "react";
+import SearchResults from "./SearchResults.js";
+const Bookings = props => {
+  const [booking, setBooking] = useState([]);
+  const [bookOreder, setBookOreder] = useState(false);
 
-const Bookings = () => {
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
-  };
-
+  useEffect(() => {
+    setBookOreder(true);
+    fetch("https://cyf-react.glitch.me/delayed")
+      .then(res => res.json())
+      .then(json => setBooking(json));
+    setBookOreder(false);
+  }, []);
+  if (bookOreder) {
+    return <p>success loading</p>;
+  }
   return (
     <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
-      </div>
+      <SearchResults results={booking} />
     </div>
   );
 };

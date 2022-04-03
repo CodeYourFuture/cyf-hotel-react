@@ -1,17 +1,17 @@
 import React from "react";
-
-const Restaurant = () => {
-  const pizzas = 0;
+import Order from "./Order";
+// add more order and select dy number incresment
+function Restaurant(props) {
   return (
-    <div>
+    <div className="restuarant">
+      {" "}
       <h3>Restaurant Orders</h3>
-      <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+      <ul className="list-group">
+        <Order />
+        <Order orderType={"salade"} />
+        <Order orderType={"chocolate cake"} />
       </ul>
     </div>
   );
-};
-
+}
 export default Restaurant;
