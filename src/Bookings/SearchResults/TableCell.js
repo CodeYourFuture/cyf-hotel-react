@@ -25,7 +25,9 @@ const Table = props => {
         {moment(props.checkOutDate).diff(moment(props.checkInDate), "days")}
       </td>
       <td>
-        <button onClick={handleButton}>Show profile</button>
+        <button className="btn btn-primary" onClick={handleButton}>
+          Show profile
+        </button>
       </td>
     </tr>
   );

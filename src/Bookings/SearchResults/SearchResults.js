@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 import TableCell from "./TableCell";
-
-import "./SearchResults.css";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {

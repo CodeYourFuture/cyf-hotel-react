@@ -55,3 +55,12 @@ tr {
 .card {
   width: 25rem;
 }
+
+.table {
+  margin-bottom: 2em;
+}
+
+.loading,
+.error {
+  text-align: center;
+}

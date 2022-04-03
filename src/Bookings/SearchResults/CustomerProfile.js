@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 
 const CustomerProfile = props => {
   const [customerData, setCustomerData] = useState({});
+
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
-      .then(res => res.json())
-      .then(data => setCustomerData(data));
+    props.id && // A condition so that the fetch runs only when the props.id has a value
+      fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+        .then(res => res.json())
+        .then(data => setCustomerData(data));
   }, [props.id]);
 
   return props.id ? (
