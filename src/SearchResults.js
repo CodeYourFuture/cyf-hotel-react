@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import moment from "moment";
+import React from "react";
 import "./App.css";
+import TableRow from "./TableRow";
 
 const SearchResult = (props) => {
-  const [highlight, setHighlight] = useState("false");
+  //const [highlight, setHighlight] = useState("false");
 
-  const selected = () => {
-    setHighlight(!highlight);
-  };
+  // const selected = () => {
+  //   setHighlight(!highlight);
+  // };
 
   const dataArray = props.data;
   return (
@@ -26,25 +26,9 @@ const SearchResult = (props) => {
         </tr>
       </thead>
       <tbody>
-        {dataArray.map((item) => (
-          <tr
-            key={item.id}
-            className={highlight ? "" : "highlight"}
-            onClick={selected}
-          >
-            <th scope="row">{item.id}</th>
-            <th scope="row">{item.title}</th>
-            <th scope="row">{item.firstName}</th>
-            <th scope="row">{item.surname}</th>
-            <th scope="row">{item.email}</th>
-            <th scope="row">{item.roomId}</th>
-            <th scope="row">{item.checkInDate}</th>
-            <th scope="row">{item.checkOutDate}</th>
-            <th scope="row">
-              {moment(item.checkOutDate).diff(item.checkInDate, "day")}
-            </th>
-          </tr>
-        ))}
+        {dataArray.map((item) => {
+          return <TableRow key={item.id} item={item} />;
+        })}
       </tbody>
     </table>
   );
