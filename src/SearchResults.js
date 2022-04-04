@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
@@ -30,9 +30,15 @@ const SearchResults = props => {
 
       <tbody>
         {props.bookings.map((booking, index) => {
+          const [selected, setSelected] = useState(false);
+          const highlightRow = () => setSelected(!selected);
           return (
-            <tr key={index}>
-              <th scope="row">{booking.id}</th>
+            <tr
+              key={index}
+              onClick={highlightRow}
+              className={selected ? "highlightRow" : ""}
+            >
+              <td>{booking.id}</td>
               <td>{booking.title}</td>
               <td>{booking.firstName}</td>
               <td>{booking.surname}</td>
