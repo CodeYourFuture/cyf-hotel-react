@@ -20,7 +20,8 @@
 
   /* font */
   --font-primary: "Roboto", sans-serif;
-
+  
+  /* styling */
   --box-shadow-1: 0 12px 12px rgba(0, 0, 0, 0.2); 
   
 }
