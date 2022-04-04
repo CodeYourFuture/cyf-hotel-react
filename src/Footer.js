@@ -4,9 +4,9 @@ const Footer = props => {
   return (
     <div>
       <ul className="footer">
-        {props.footers.map(string => {
-          return <li>{string}</li>;
-        })}
+        {props.footers.map((string, index) => (
+          <li key={index}>{string}</li>
+        ))}
       </ul>
     </div>
   );
