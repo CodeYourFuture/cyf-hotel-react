@@ -4,10 +4,9 @@ import Order from "./Order.js";
 const Restaurant = () => {
   return (
     <div>
-      <h3>Restaurant Orders</h3>
-      <ul>
+      <h3 class="Orders">Restaurant Orders</h3>
+      <ul class="orderList">
         <Order orderType={"Pizzas"} />
-
         <Order orderType={"Salads"} />
         <Order orderType={"Chocolate cake"} />
       </ul>
