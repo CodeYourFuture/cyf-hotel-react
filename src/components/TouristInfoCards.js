@@ -5,7 +5,7 @@ import React from "react";
 const TouristInfoCards = () => {
   return (
     // wrapper for the cards
-    <div className="Tourist-Cards p-5">
+    <div className="Tourist-Cards">
       {/* card 1 */}
       <div className="card">
         <img
