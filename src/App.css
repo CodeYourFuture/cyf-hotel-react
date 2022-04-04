@@ -1,15 +1,14 @@
 .App {
+  width: 70%;
+  margin: auto;
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
-  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(27, 151, 173);
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -27,14 +26,6 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
 }
@@ -48,10 +39,56 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  margin: auto;
+  padding-top: 50px;
   text-align: center;
 }
 
 .card {
   width: 18rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hotel-logo {
+  height: 100px;
+  margin: 10px;
+}
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5%;
+}
+
+ul {
+  list-style: none;
+  text-align: right;
+}
+
+li {
+  margin: 8px;
+}
+
+.selected {
+  border: 5px solid rgb(235, 26, 26);
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: larger;
+}
+
+a {
+  width: 60%;
 }
