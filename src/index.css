@@ -11,11 +11,12 @@ body {
 }
 .card-img {
   object-fit: cover;
-  width: 335px;
+  width: 360px;
   height: 217px;
 }
 
 .all-cards-wrapper {
+  margin: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
@@ -46,4 +47,7 @@ body {
 }
 li {
   gap: 20px;
+}
+h3 {
+  margin: 50px;
 }

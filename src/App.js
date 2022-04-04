@@ -1,10 +1,10 @@
-import React from "react";
-
+import React, { useState } from "react";
 import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   const footerData = [
@@ -18,6 +18,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer details={footerData} />
     </div>
   );

@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 120px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -54,4 +54,9 @@ tr {
 
 .card {
   width: 18rem;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
