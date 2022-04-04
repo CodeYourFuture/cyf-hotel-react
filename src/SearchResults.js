@@ -30,7 +30,7 @@ const TableRow = props => {
   const [selected, setSelected] = useState(false);
 
   const clickHandler = () => {
-    selected === false ? setSelected(true) : setSelected(false);
+    setSelected(!selected);
   };
   return (
     <tr onClick={clickHandler} className={selected ? "selected" : null}>
