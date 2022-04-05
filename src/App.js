@@ -17,7 +17,6 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-
       <Footer contact={contactDetails} />
     </div>
   );

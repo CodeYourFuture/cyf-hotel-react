@@ -1,17 +1,5 @@
 import React from "react";
-
-const fakeData = [
-  {
-    id: 1,
-    title: "Mr",
-    firstName: "John",
-    surname: "Doe",
-    email: "johndoe@doe.com",
-    roomId: 2,
-    checkInDate: "2017-11-21",
-    checkOutDate: "2017-11-23"
-  }
-];
+import moment from "moment";
 const headings = [
   `id`,
   `title`,
@@ -20,28 +8,38 @@ const headings = [
   `email`,
   `roomId`,
   `checkInDate`,
-  `checkOutDate`
+  `checkOutDate`,
+  `numberOfNights`
 ];
-function SearchResults(probs) {
+function SearchResults(props) {
   return (
     <table>
       <thead>
         <tr>
-          {headings.map(heading => {
-            return <th scope="col">{heading}</th>;
+          {headings.map((heading, index) => {
+            return (
+              <th scope="col" key={index}>
+                {heading}
+              </th>
+            );
           })}
         </tr>
       </thead>
       <tbody>
-        {fakeData.map(booking => {
+        {props.booking.map((booking, index) => {
           return (
-            <tr>
+            <tr key={index}>
               <th scope="row">{booking.id}</th>
-              {headings.map(heading => {
+              {headings.map((heading, index) => {
                 if (heading === "id") {
                   return null;
+                } else if (heading === "numberOfNights") {
+                  const checkIn = moment(booking.checkInDate);
+                  const checkOut = moment(booking.checkOutDate);
+                  const difference = checkOut.diff(checkIn, "days");
+                  return <td key={index}>{difference}</td>;
                 } else {
-                  return <td>{booking[heading]}</td>;
+                  return <td key={index}>{booking[heading]}</td>;
                 }
               })}
             </tr>
