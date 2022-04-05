@@ -45,6 +45,7 @@ h1 {
   top: 16rem;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index:1;
 }
 
 
@@ -71,7 +72,8 @@ h5 {
 .Header-background-image {
   border-radius: 0rem;
   min-height: 30vh;
-  
+  filter: brightness(50%) grayscale(80%);
+  z-index:0;
 }
 
 
@@ -85,6 +87,7 @@ h5 {
   top: 8rem;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index:1;
 }
 
 /* TOURIST CARD  ------------------------------------- */
@@ -119,6 +122,9 @@ img {
   height: 350px;  
   border-radius: 5px;
   border-radius: 2rem 2rem 0rem 0rem; 
+  filter: grayscale(80%);
+  /* filter: sepia(20%); */
+  filter:  grayscale(80%) brightness(120%);  
 }
 
 h3 {

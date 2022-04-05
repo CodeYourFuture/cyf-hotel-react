@@ -76,6 +76,31 @@ const TouristInfoCards = () => {
           </a>
         </button>
       </div>
+
+      {/* card 4 */}
+      <div className="card">
+        <img
+          src="https://jamaicahotelreview.com/wp-content/uploads/2017/04/blue-lagoon-beauty-1.jpg"
+          alt="Blue Lagoon"
+        />
+        <h3>Jamaica </h3>
+        <p>
+          The Blue Lagoon is a place to appreciate the greatness of Mother
+          Nature while relaxing in a calm and refreshing atmosphere. Imagine
+          floating on a bamboo raft atop a shimmering glass of intense azure
+          waters, or drifting along on a leisurely boat ride, or even taking a
+          swim in an inviting, natural water wonderland.
+        </p>
+
+        <button className="Btn">
+          {" "}
+          <a href="https://www.visitmanchester.com/" target="window">
+            More Info{" "}
+          </a>
+        </button>
+      </div>
+
+      {/* end */}
     </div>
   );
 };

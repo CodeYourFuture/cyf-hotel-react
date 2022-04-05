@@ -12,8 +12,8 @@ const CustomerProfile = ({ id }) => {
       });
   }, [id]);
 
-  if (!id) {
-    return null;
+  if (id) {
+    return " ";
   }
 
   return (
@@ -26,7 +26,6 @@ const CustomerProfile = ({ id }) => {
         </li>
         <li>Customer Email: {profile.email}</li>
         {profile.vip && <li>VIP</li>}
-
         <li>Phone: {profile.phoneNumber}</li>
       </ul>
     </div>

@@ -9,6 +9,9 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const search = (searchVal) => {
+    console.info("TO DO!", searchVal);
+  };
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/")
@@ -21,9 +24,8 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={Search} />
+        <Search search={search} />
         {/* //using the results method to for the table */}
-
         <SearchResults results={bookings} />
       </div>
     </div>
