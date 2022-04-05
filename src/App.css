@@ -9,15 +9,19 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
+.image-header {
+  height: 60px;
+  margin-top: 0;
+  padding-right: 2rem;
+}
 .App-title {
   font-size: 1.5em;
 }
@@ -50,8 +54,31 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style: none;
+  background-color: #222;
+  color: white;
+  margin-bottom: 0rem;
 }
 
 .card {
   width: 18rem;
+}
+
+.tourist-card {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+.highlightRow {
+  background: rgb(226, 225, 223);
+}
+
+.orderList {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Orders {
+  padding: 30px 0px 15px 80px;
 }
