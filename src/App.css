@@ -114,3 +114,11 @@ ul li {
   margin-right: 2rem;
   padding: 1.5rem 0;
 }
+
+.selectedRow {
+  background-color: primar;
+}
+
+table {
+  cursor: pointer;
+}

@@ -3,7 +3,7 @@ import SearchButton from "./SearchButton.js";
 
 const Search = () => {
   return (
-    <div className="search">
+    <div className="search pt-5">
       <div className="page-header">
         <h4 className="text-left">Search Bookings</h4>
       </div>

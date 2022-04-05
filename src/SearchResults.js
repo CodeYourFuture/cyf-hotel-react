@@ -19,7 +19,7 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map((booking, id) => (
-          <Booking key={id} booking={booking} id={id} />
+          <Booking key={id} booking={booking} />
         ))}
       </tbody>
     </table>
