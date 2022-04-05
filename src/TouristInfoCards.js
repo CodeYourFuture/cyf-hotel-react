@@ -15,6 +15,7 @@ const TouristInfoCards = () => {
               alt={city.name}
             />
             <div className="card-body">
+              <h2>{city.name}</h2>
               <p>{city.description}</p>
               <a href={city.url} className="btn btn-primary">
                 More Information
