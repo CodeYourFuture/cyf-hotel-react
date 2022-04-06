@@ -20,7 +20,7 @@ const TouristInfoCards = () => {
             Palace or take a ride on the London Eye and see all the view from
             the top.
           </p>
-          <a href="visitlondon.com" className="btn btn-info btn-lg mt-5">
+          <a href="visitlondon.com" className="btn btn-outline-light btn-info btn-lg mt-5">
             Visit London
           </a>
         </div>
@@ -42,7 +42,7 @@ const TouristInfoCards = () => {
             Manchester and enjoy a pint in one of the old school english pubs
             after a long day!
           </p>
-          <a href="visitmanchester.com" className="btn btn-info btn-lg mt-5">
+          <a href="visitmanchester.com" className="btn btn-outline-light btn-info btn-lg mt-5">
             Visit Manchester
           </a>
         </div>
@@ -64,7 +64,7 @@ const TouristInfoCards = () => {
             or Lorne Sausage and feel the goodness of Glasgow delicacies! Best
             time ever guaranteed!
           </p>
-          <a href="peoplemakeglasgow.com" className="btn btn-info btn-lg mt-4">
+          <a href="peoplemakeglasgow.com" className="btn btn-outline-light btn-info btn-lg mt-4">
             Visit Glasgow
           </a>
         </div>
