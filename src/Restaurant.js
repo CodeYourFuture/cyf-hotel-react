@@ -1,5 +1,5 @@
 import React from "react";
-//import RestaurantButton from "./RestaurantButton";
+import "./Restaurant.css";
 import Order from "./Order";
 
 const Restaurant = () => {
