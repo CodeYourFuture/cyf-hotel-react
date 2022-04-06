@@ -7,8 +7,10 @@ const Restaurant = () => {
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        <Order orderType="Pizzas" />
-        <Order orderType="Salads" />
+       <div id="buttons">
+          <Order orderType="Pizzas" />
+          <Order orderType="Salads" />
+        </div>
         <Order orderType="Chocolate Cake" />
       </ul>
     </div>
