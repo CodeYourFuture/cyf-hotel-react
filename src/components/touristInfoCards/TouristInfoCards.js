@@ -13,7 +13,7 @@ const TouristInfoCards = () => {
     },
     {
       name: "Manchester",
-      link: "www.visitmanchester.com",
+      link: "visitmanchester.com",
       imgLink:
         "https://images.unsplash.com/photo-1638637869635-f1a90c8f7edd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1033&q=80",
       summary:

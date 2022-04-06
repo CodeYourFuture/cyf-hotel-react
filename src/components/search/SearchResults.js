@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import "./HighlightRow.css";
 
 const SearchResults = props => {
   const headings = [
@@ -27,9 +28,6 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.bookings.map((booking, i) => {
-          const checkIn = moment(booking.checkInDate);
-          const checkOut = moment(booking.checkOutDate);
-          const totalNumberOfNights = checkOut.diff(checkIn, "days");
           return (
             <tr key={i}>
               <th scope="row">{booking.id}</th>
@@ -40,7 +38,12 @@ const SearchResults = props => {
               <td>{booking.roomId}</td>
               <td>{booking.checkInDate}</td>
               <td>{booking.checkOutDate}</td>
-              <td>{(booking[`Number Of Nights`] = totalNumberOfNights)}</td>
+              <td>
+                {moment(booking.checkOutDate).diff(
+                  moment(booking.checkInDate),
+                  "days"
+                )}
+              </td>
             </tr>
           );
         })}

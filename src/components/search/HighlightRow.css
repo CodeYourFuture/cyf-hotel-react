@@ -1,0 +1,7 @@
+.row-highlighted {
+  background-color: lightgrey;
+}
+
+.row-not-highlighted {
+  background-color: none;
+}
