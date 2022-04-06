@@ -1,6 +1,7 @@
 
 import React from "react";
 import "./SearchResults.css";
+import Highlighter from "./Highlighter";
 
 const SearchResults = (props) => {
   return (
@@ -31,18 +32,17 @@ const SearchResults = (props) => {
             checkOutDate,
           } = result;
 
-          return (
-            <tr>
-              <td>{id}</td>
-              <td>{title}</td>
-              <td>{firstName}</td>
-              <td>{surname}</td>
-              <td>{email}</td>
-              <td>{roomId}</td>
-              <td>{checkInDate}</td>
-              <td>{checkOutDate}</td>
-          
-            </tr>
+        return (
+            <Highlighter
+              id={id}
+              title={title}
+              firstName={firstName}
+              surname={surname}
+              email={email}
+              roomId={roomId}
+              checkInDate={checkInDate}
+              checkOutDate={checkOutDate}
+            />
           );
         })}
       </tbody>
