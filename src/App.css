@@ -92,3 +92,13 @@ p {
 a {
   width: 60%;
 }
+
+.loading {
+  color: red;
+  text-align: center;
+}
+
+.customer-profile {
+  border: 1px solid black;
+  padding: 15px;
+}

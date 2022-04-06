@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 const CustomerProfile = props => {
   const [customer, setCustomer] = useState({});
 
-  console.log(`https://cyf-react.glitch.me/customers/${props.id}`);
-
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
       .then(res => res.json())
@@ -14,13 +12,13 @@ const CustomerProfile = props => {
       });
   }, [props.id]);
 
-  return (
-    <div>
-      <p>{customer.id}</p>
-      <p>{customer.email}</p>
-      {customer.vip ? <p>{customer.phoneNumber}</p> : null}
+  return props.id ? (
+    <div className="customer-profile">
+      <p>Customer id...........: {customer.id}</p>
+      <p>Customer email....: {customer.email}</p>
+      {customer.vip ? <p>Customer phone..: {customer.phoneNumber}</p> : null}
     </div>
-  );
+  ) : null;
 };
 
 export default CustomerProfile;
