@@ -14,7 +14,7 @@ const headers = [
 ];
 
 function SearchResults(props) {
-  const [highlight, setHighlight] = useState(false);
+  // const [highlight, setHighlight] = useState(false);
 
   return (
     <table className="styled-table">
@@ -26,29 +26,37 @@ function SearchResults(props) {
         </tr>
       </thead>
       <tbody>
-        {props.bookings.map(booked => {
-          return (
-            <tr
-              className={`highlight${highlight}`}
-              onClick={() => setHighlight(!highlight)}
-            >
-              <th scope="row">{booked.id}</th>
-              {headers.map(heading => {
-                if (heading === "id") {
-                  return null;
-                } else if (heading === "#Nights") {
-                  const inDate = moment(booked.checkOutDate);
-                  const outDate = moment(booked.checkInDate);
-                  return <td>{inDate.diff(outDate, "days")} </td>;
-                } else {
-                  return <td>{booked[heading]}</td>;
-                }
-              })}
-            </tr>
-          );
+        {props.bookings.map(booking => {
+          return <OurCustomrow booking={booking} />;
         })}
       </tbody>
     </table>
+  );
+}
+
+function OurCustomrow({ booking }) {
+  const [isClicked, setIsClicked] = useState(false);
+
+  return (
+    <tr
+      onClick={() => {
+        setIsClicked(!isClicked);
+      }}
+      className={isClicked ? "highlighttrue" : ""}
+    >
+      <th scope="row">{booking.id}</th>
+      {headers.map(heading => {
+        if (heading === "id") {
+          return null;
+        } else if (heading === "#Nights") {
+          const inDate = moment(booking.checkOutDate);
+          const outDate = moment(booking.checkInDate);
+          return <td>{inDate.diff(outDate, "days")} </td>;
+        } else {
+          return <td>{booking[heading]}</td>;
+        }
+      })}
+    </tr>
   );
 }
 
