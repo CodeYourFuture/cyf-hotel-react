@@ -10,8 +10,9 @@ const Search = props => {
   };
 
   const handleSubmit = event => {
-    props.search = searchInput;
+    //const lowerSearchInput = searchInput.toLowerCase();
     event.preventDefault();
+    props.search(searchInput);
   };
   return (
     <div className="search">

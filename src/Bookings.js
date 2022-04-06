@@ -5,9 +5,18 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    const filteredBooking = bookings.filter(
+      booking =>
+        booking.firstName.toLowerCase() === searchVal ||
+        booking.surname.toLowerCase() === searchVal
+    );
+
+    setBookings(filteredBooking);
   };
+
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
       .then(res => res.json())

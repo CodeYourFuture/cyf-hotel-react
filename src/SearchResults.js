@@ -1,28 +1,38 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResult = props => {
+  const [selectedId, setSelectedId] = useState();
+
+  const setSelected = id => {
+    setSelectedId(id);
+  };
+
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Title</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room Id</th>
-          <th scope="col">Check In Date</th>
-          <th scope="col">Check Out Date</th>
-          <th scope="col">Nights</th>
-        </tr>
-      </thead>
-      <tbody>
-        {props.results.map((item, index) => (
-          <TableRow item={item} index={index} />
-        ))}
-      </tbody>
-    </table>
+    <div>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Room Id</th>
+            <th scope="col">Check In Date</th>
+            <th scope="col">Check Out Date</th>
+            <th scope="col">Nights</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.results.map((item, index) => (
+            <TableRow item={item} index={index} setSelected2={setSelected} />
+          ))}
+        </tbody>
+      </table>
+      <CustomerProfile id={selectedId} />
+    </div>
   );
 };
 
@@ -32,6 +42,11 @@ const TableRow = props => {
   const clickHandler = () => {
     setSelected(!selected);
   };
+
+  const handleCustomerId = id => {
+    props.setSelected2(id);
+  };
+
   return (
     <tr onClick={clickHandler} className={selected ? "selected" : null}>
       <th scope="row">{props.item.id}</th>
@@ -47,6 +62,16 @@ const TableRow = props => {
           moment(props.item.checkInDate),
           "days"
         )}
+      </td>
+      <td>
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            handleCustomerId(props.item.id);
+          }}
+        >
+          Show Profile
+        </button>
       </td>
     </tr>
   );
