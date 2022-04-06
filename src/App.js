@@ -1,5 +1,5 @@
 import React from "react";
-
+import Restaurant from "./Restaurant";
 import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
