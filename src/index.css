@@ -27,7 +27,7 @@ body {
 
 .selected-row {
   cursor: pointer;
-  background-color: aquamarine;
+  background-color: rgb(171, 218, 250);
 }
 
 .default-row {

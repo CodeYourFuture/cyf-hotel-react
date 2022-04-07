@@ -68,11 +68,6 @@ img {
   padding-bottom: 1em;
 }
 
-.card-img-top {
-  width: 31rem;
-  height: auto;
-}
-
 .description {
   padding: 31px 20px 0 20px;
   text-align: center;
@@ -89,6 +84,35 @@ img {
 
 tr {
   color: #5b5757;
+}
+
+/* RESTAURANT */
+.restaurant-container {
+  border-top: 2px solid #a09f9f;
+  margin-top: 65px;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurant-container-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 25px;
+}
+
+.order {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+}
+
+.btn-order {
+  margin-left: 32px;
 }
 
 /* FOOTER */
@@ -111,4 +135,17 @@ tr {
   padding: 0.5em;
   color: #003e71;
   font-weight: 600;
+}
+
+/* MEDIA */
+@media only screen and (max-width: 1200px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    margin-bottom: 34px;
+  }
 }
