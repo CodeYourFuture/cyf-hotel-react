@@ -8,9 +8,10 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: rgb(82, 164, 189);
+  height: 100px;
   padding: 20px;
+  margin-bottom: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -50,8 +51,23 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style: none;
 }
 
 .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
   width: 18rem;
+}
+
+.cards-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
 }
