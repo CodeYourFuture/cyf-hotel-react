@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
+  const [isSelected, setSelected] = useState(false);
+  const highlightRow = () => {
+    setSelected(isSelected => !isSelected);
+  };
   return (
     <div>
       <table className="table">
@@ -19,9 +23,13 @@ const SearchResults = ({ results }) => {
           </tr>
         </thead>
         <tbody>
-          {results.map(row => {
+          {results.map((row, index) => {
             return (
-              <tr key={row.id}>
+              <tr
+                key={index}
+                className={isSelected ? "selected" : ""}
+                onClick={highlightRow}
+              >
                 <td>{row.id}</td>
                 <td>{row.title}</td>
                 <td>{row.firstName}</td>

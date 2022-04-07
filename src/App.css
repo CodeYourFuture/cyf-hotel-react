@@ -25,6 +25,9 @@
   font-size: 1em;
   font-weight: bold;
 }
+.selected {
+  background-color: lightblue;
+}
 
 .App-title {
   font-size: 1.5em;
