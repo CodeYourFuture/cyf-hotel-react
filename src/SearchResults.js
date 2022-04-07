@@ -38,13 +38,12 @@ function SearchResults(props) {
 
 function BookingItem(props) {
   const booking = props.booking;
-  const index = props.key;
   const [toggleSelected, setToggleSelected] = useState(false);
   const [bookingItemStyle, setBookingItemStyle] = useState("default-row");
 
   function changeColor() {
     setToggleSelected(!toggleSelected);
-    if (toggleSelected) {
+    if (!toggleSelected) {
       setBookingItemStyle("selected-row");
     } else {
       setBookingItemStyle("default-row");
@@ -52,7 +51,7 @@ function BookingItem(props) {
   }
 
   return (
-    <tr key={index} className={bookingItemStyle} onClick={changeColor}>
+    <tr className={bookingItemStyle} onClick={changeColor}>
       <th scope="row">{booking.id}</th>
 
       {headings.map((heading, index) => {
@@ -64,7 +63,6 @@ function BookingItem(props) {
 
 function HeadingItem(props) {
   const heading = props.heading;
-  const index = props.key;
   const booking = props.booking;
 
   if (heading === "id") {
@@ -74,9 +72,9 @@ function HeadingItem(props) {
     const checkOut = moment(booking.checkOutDate);
     const dateDifference = checkOut.diff(checkIn, "days");
 
-    return <td key={index}>{dateDifference}</td>;
+    return <td>{dateDifference}</td>;
   } else {
-    return <td key={index}>{booking[heading]}</td>;
+    return <td>{booking[heading]}</td>;
   }
 }
 

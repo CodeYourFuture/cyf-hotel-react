@@ -4,9 +4,9 @@ function Footer(props) {
   return (
     <div className="footer">
       <ul className="footer-info">
-        {props.contact.map(info => {
+        {props.contact.map((info, index) => {
           return (
-            <li className="info" key={info}>
+            <li key={index} className="info">
               {info}
             </li>
           );

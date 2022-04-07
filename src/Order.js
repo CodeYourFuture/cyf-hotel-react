@@ -5,11 +5,11 @@ function Order({ orderType }) {
   const [orders, setOrders] = useState(0);
 
   function orderOne() {
-    setOrders(currentCount => currentCount + 1);
+    setOrders(orders + 1);
   }
 
   return (
-    <li>
+    <li className="order">
       {orderType}: {orders} <RestaurantButton orderOne={orderOne} />
     </li>
   );
