@@ -55,3 +55,18 @@ tr {
 .card {
   width: 18rem;
 }
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+#imgLogo {
+  width: 35px;
+}
+
+.red {
+  background-color: rgb(236, 128, 128);
+}
+.white {
+  background-color: rgb(255, 255, 255);
+}
