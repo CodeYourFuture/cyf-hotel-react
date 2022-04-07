@@ -12,8 +12,13 @@ const Bookings = () => {
   }, []); // only run once after the first render (please)
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
-    // setBookings("TO DO!", searchVal);
+    const filteredBookings = bookings.filter(({ firstName, surname }) =>
+      firstName.toLowerCase() === searchVal ||
+      surname.toLowerCase() === searchVal
+        ? true
+        : false
+    );
+    setBookings(filteredBookings);
   };
 
   return (
