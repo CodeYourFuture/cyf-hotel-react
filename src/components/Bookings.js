@@ -7,7 +7,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState(FakeBookings);
 
   const search = searchVal => {
-    setBookings("TO DO!", searchVal);
+    console.info("TO DO!", searchVal);
   };
 
   return (
