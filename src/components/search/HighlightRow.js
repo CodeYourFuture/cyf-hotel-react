@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-function HighlightRow({ booking, i }) {
+function HighlightRow({ booking, i, handleButtonClick }) {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
@@ -22,6 +22,15 @@ function HighlightRow({ booking, i }) {
       <td>{booking.checkOutDate}</td>
       <td>
         {moment(booking.checkOutDate).diff(moment(booking.checkInDate), "days")}
+      </td>
+      <td>
+        <button
+          onClick={() => {
+            handleButtonClick(booking.id);
+          }}
+        >
+          Show profile
+        </button>
       </td>
     </tr>
   );

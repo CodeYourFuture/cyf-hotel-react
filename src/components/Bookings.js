@@ -13,10 +13,7 @@ const Bookings = () => {
 
   const search = searchVal => {
     const filteredBookings = bookings.filter(({ firstName, surname }) =>
-      firstName.toLowerCase() === searchVal ||
-      surname.toLowerCase() === searchVal
-        ? true
-        : false
+      firstName === searchVal || surname === searchVal ? true : false
     );
     setBookings(filteredBookings);
   };
