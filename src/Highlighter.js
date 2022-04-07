@@ -1,64 +1,36 @@
 import React, { useState } from "react";
-import "./SearchResults.css";
-import Highlighter from "./Highlighter";
-import CustomerProfile from "./CustomerProfile";
 
-const SearchResults = (props) => {
-  const [customerId, setCustomerId] = useState();
+const Highlighter = (props) => {
+  const [clicked, setClicked] = useState(false);
 
-  const changeCustomerId = (id) => {
-    setCustomerId(id);
+  const highlight = () => {
+    setClicked(!clicked);
+  };
+
+  const handleButton = () => {
+    props.changeId(props.clickId);
   };
 
   return (
-    <div>
-      <table className="table bg-light table-hover ">
-        <thead className="thead-dark">
-          <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>First Name</th>
-            <th>Surname</th>
-            <th>Email</th>
-            <th>Room Id</th>
-            <th>Check in Date</th>
-            <th>Check out Date</th>
-            <th>Show Profile</th>
-          </tr>
-        </thead>
-        <tbody>
-          {props.results.map((result) => {
-            let {
-              id,
-              title,
-              firstName,
-              surname,
-              email,
-              roomId,
-              checkInDate,
-              checkOutDate,
-            } = result;
-
-            return (
-              <Highlighter
-                id={id}
-                title={title}
-                firstName={firstName}
-                surname={surname}
-                email={email}
-                roomId={roomId}
-                checkInDate={checkInDate}
-                checkOutDate={checkOutDate}
-                changeId={changeCustomerId}
-                clickId={id}
-              />
-            );
-          })}
-        </tbody>
-      </table>
-      <CustomerProfile id={customerId} />
-    </div>
+    <tr onClick={highlight} className={clicked ? "table-info" : ""}>
+      <td>{props.id}</td>
+      <td>{props.title}</td>
+      <td>{props.firstName}</td>
+      <td>{props.surname}</td>
+      <td>{props.email}</td>
+      <td>{props.roomId}</td>
+      <td>{props.checkInDate}</td>
+      <td>{props.checkOutDate}</td>
+      <td>
+        <button
+          className="btn btn-info btn-outline-light"
+          onClick={handleButton}
+        >
+          Show
+        </button>
+      </td>
+    </tr>
   );
 };
 
-export default SearchResults;
+export default Highlighter;
