@@ -4,18 +4,18 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 30px;
+  height: 40px;
   filter: brightness(2);
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: #6f1e51;
+  height: 70px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
@@ -36,8 +36,16 @@
     transform: rotate(360deg);
   }
 }
-.search {
-  padding: 5px 0 20px 0;
+
+.btn {
+  background-color: white;
+  border: 1px solid #006266;
+  color: #006266;
+}
+
+.table-header {
+  color: rgb(46, 46, 46);
+  margin: 1em;
 }
 
 tr {
@@ -48,19 +56,15 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
-  align-items: flex-end;
-  display: inline;
-}
-
 ul {
   list-style: none;
 }
-
+/* Tourist info cards */
 .card {
-  width: 18rem;
+  width: 30rem;
+  border: none;
+  color: rgb(85, 85, 85);
+  margin-top: 1.5em;
 }
 
 .card-container {
@@ -68,7 +72,25 @@ ul {
   justify-content: space-evenly;
 }
 
-@media only screen and (max-width: 850px) {
+/* restaurant */
+
+.restaurant {
+  text-align: center;
+}
+.restaurant-button {
+  margin: 0.3em 1em;
+}
+
+.footer {
+  height: 120px;
+  padding: 20px;
+  background-color: #006266;
+  color: white;
+  padding-top: 20px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
   .card-container {
     display: flex;
     flex-direction: column;

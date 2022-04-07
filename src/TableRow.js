@@ -24,6 +24,14 @@ const TableRow = props => {
       <td>{booking.checkInDate}</td>
       <td>{booking.checkOutDate}</td>
       <td>
+        <button
+          className="btn btn-info"
+          onClick={() => props.handleClick(booking.id)}
+        >
+          profile
+        </button>
+      </td>
+      <td>
         {moment(booking.checkOutDate).diff(moment(booking.checkInDate), "days")}
       </td>
     </tr>

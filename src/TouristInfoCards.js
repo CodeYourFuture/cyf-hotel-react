@@ -10,9 +10,12 @@ function TouristInfoCards() {
           className="card-img-top"
         />
         <div className="card-body">
-          <h5 className="card-title">Glasgow</h5>
-          <a href="http://peoplemakeglasgow.com" className="btn btn-primary">
-            Go somewhere
+          <p>
+            The city is also rich in artists and creators which makes for a
+            thriving and exciting independent shopping scene.
+          </p>
+          <a href="http://peoplemakeglasgow.com" className="btn btn-info">
+            Glasgow
           </a>
         </div>
       </div>
@@ -24,9 +27,13 @@ function TouristInfoCards() {
           className="card-img-top"
         />
         <div className="card-body">
-          <h5 className="card-title">Manchester</h5>
-          <a href="http://visitmanchester.com" className="btn btn-primary">
-            Go somewhere
+          <p>
+            Known throughout the world as the birthplace of the industrial
+            revolution, Manchester has a proud history in science, politics,
+            music, arts and sport.
+          </p>
+          <a href="http://visitmanchester.com" className="btn btn-info">
+            Manchester
           </a>
         </div>
       </div>
@@ -38,9 +45,13 @@ function TouristInfoCards() {
           className="card-img-top"
         />
         <div className="card-body">
-          <h5 className="card-title">London</h5>
-          <a href="http://visitlondon.com" className="btn btn-primary">
-            Go somewhere
+          <p>
+            Welcome to London! Visit London, from iconic sightseeing spots and
+            fun-filled days out to top restaurants, theatre and unmissable
+            London events.
+          </p>
+          <a href="http://visitlondon.com" className="btn btn-info">
+            London
           </a>
         </div>
       </div>

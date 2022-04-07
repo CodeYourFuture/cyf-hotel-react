@@ -1,21 +1,27 @@
-import React from "react";
-const moment = require("moment");
+import React, { useState } from "react";
 import TableRow from "./TableRow";
+import CustomerProfile from "./CustomerProfile";
 
 const headings = [
-  "id",
-  "title",
-  "firstName",
-  "surname",
-  "email",
-  "roomId",
-  "checkInDate",
-  "checkOutDate",
-  "Duration"
+  "Id",
+  "Title",
+  "FirstName",
+  "Surname",
+  "Email",
+  "RoomId",
+  "CheckInDate",
+  "CheckOutDate",
+  "Duration",
+  "Buttons"
 ];
 
 function SearchResults(props) {
-  //console.log(props);
+  const [id, setId] = useState(null);
+
+  function handleButtonClick(clickedId) {
+    setId(clickedId);
+  }
+
   return (
     <>
       <table className="table">
@@ -23,8 +29,7 @@ function SearchResults(props) {
           <tr>
             {headings.map((heading, index) => {
               return (
-                <th key={index}>
-                  {/* scope="col" */}
+                <th className="table-active table-header" key={index}>
                   {heading}
                 </th>
               );
@@ -33,10 +38,17 @@ function SearchResults(props) {
         </thead>
         <tbody>
           {props.bookings.map(booking => {
-            return <TableRow key={booking.id} data={booking} />;
+            return (
+              <TableRow
+                key={booking.id}
+                data={booking}
+                handleClick={handleButtonClick}
+              />
+            );
           })}
         </tbody>
       </table>
+      {id && <CustomerProfile id={id} />}
       <hr />
     </>
   );
