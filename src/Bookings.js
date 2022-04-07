@@ -42,7 +42,7 @@ const Bookings = () => {
           <SearchResults results={bookings} />
         ) : !error ? (
           <p className="loadingMessage">
-            {" "}
+         
             Booking details are loading please wait...
           </p>
         ) : (
