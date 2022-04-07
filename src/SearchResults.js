@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 
 const headings = [
@@ -10,42 +10,81 @@ const headings = [
   `roomId`,
   `checkInDate`,
   `checkOutDate`,
-  `numberOfNights`
+  `numberOfNights`,
+  `profile`
 ];
 
 const SearchResults = props => {
+  const [id, setId] = useState(null);
+
+  function handleButtonClick(clickedId) {
+    setId(clickedId);
+  }
   return (
-    <table className="table">
-      <thead className="thead-dark">
-        <tr>
-          {headings.map(heading => {
-            return <th scope="col">{heading}</th>;
+    <div>
+      <table className="table">
+        <thead className="thead-dark">
+          <tr>
+            {headings.map(heading => {
+              return <th scope="col">{heading}</th>;
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {props.bookings.map(booking => {
+            return (
+              <OurCustomRow booking={booking} handleClick={handleButtonClick} />
+            );
           })}
-        </tr>
-      </thead>
-      <tbody>
-        {props.bookings.map(booking => {
-          return (
-            <tr onClick={null}>
-              <th scope="row">{booking.id}</th>
-              {headings.map(heading => {
-                if (heading === "id") {
-                  return null;
-                } else if (heading === "numberOfNights") {
-                  const checkIn = moment(booking.checkInDate);
-                  const checkOut = moment(booking.checkOutDate);
-                  const difference = checkOut.diff(checkIn, "days");
-                  return <td>{difference}</td>;
-                } else {
-                  return <td>{booking[heading]}</td>;
-                }
-              })}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+      {id && <CustomerProfile id={id} />}
+    </div>
   );
+};
+
+function OurCustomRow({ booking }) {
+  const [isClicked, setIsClicked] = useState(false);
+  return (
+    <tr
+      onClick={() => {
+        setIsClicked(!isClicked);
+      }}
+      style={isClicked ? { border: "2px solid blue" } : {}}
+    >
+      <th scope="row">{booking.id}</th>
+      {headings.map(heading => {
+        if (heading === "id") {
+          return null;
+        } else if (heading === "numberOfNights") {
+          const checkIn = moment(booking.checkInDate);
+          const checkOut = moment(booking.checkOutDate);
+          const difference = checkOut.diff(checkIn, "days");
+          return <td>{difference}</td>;
+        } else if (heading === "profile") {
+          return (
+            <button onClick={() => this.handleClick(booking.id)}>
+              Show profile
+            </button>
+          );
+        } else {
+          return <td>{booking[heading]}</td>;
+        }
+      })}
+    </tr>
+  );
+}
+
+const CustomerProfile = props => {
+  useEffect(
+    props => {
+      fetch(`https//cyf-react.glitch.me/customers/${props.id}`)
+        .then(res => res.json())
+        .then(data => console.log(data));
+    },
+    [props.id]
+  );
+  return `Customer ${props.id} Profile`;
 };
 
 export default SearchResults;
