@@ -8,6 +8,7 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    setBookings("TO DO!", searchVal);
   };
 
   return (
