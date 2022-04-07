@@ -3,9 +3,7 @@ import moment from "moment";
 
 const SearchResults = ({ results }) => {
   const [isSelected, setSelected] = useState(false);
-  const highlightRow = () => {
-    setSelected(isSelected => !isSelected);
-  };
+  const highlightRow = () => setSelected(!isSelected);
   return (
     <div>
       <table className="table">
