@@ -24,3 +24,13 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.selected-row {
+  cursor: pointer;
+  background-color: rgb(171, 218, 250);
+}
+
+.default-row {
+  background-color: white;
+  cursor: pointer;
+}

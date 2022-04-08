@@ -8,8 +8,8 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: #e9e9e9;
+  height: 134px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -35,23 +35,117 @@
     transform: rotate(360deg);
   }
 }
+
+/* SEARCH BTN */
 .search {
   padding: 5px 0 20px 0;
+}
+
+/* HEADER */
+img {
+  width: 115px;
+  height: auto;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #003e71;
+  border-color: #003e71;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 110px;
+  padding-bottom: 91px;
+}
+
+.card {
+  width: 31rem;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1em;
+}
+
+.description {
+  padding: 31px 20px 0 20px;
+  text-align: center;
+}
+
+.card-body {
+  padding: 1.3rem;
+}
+
+/* TABLE */
+.table {
+  margin: 0;
 }
 
 tr {
   color: #5b5757;
 }
 
-.results {
-  padding-top: 15px;
+/* RESTAURANT */
+.restaurant-container {
+  border-top: 2px solid #a09f9f;
+  margin-top: 65px;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.restaurant-container-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 25px;
+}
+
+.order {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+}
+
+.btn-order {
+  margin-left: 32px;
+}
+
+/* FOOTER */
 .footer {
-  padding-top: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 8em;
+  background-color: #e9e9e9;
 }
 
-.card {
-  width: 18rem;
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding-top: 2em;
+}
+
+.info {
+  padding: 0.5em;
+  color: #003e71;
+  font-weight: 600;
+}
+
+/* MEDIA */
+@media only screen and (max-width: 1200px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    margin-bottom: 34px;
+  }
 }
