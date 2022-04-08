@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 
 const CalculateNumberOfNights = (inDate, outDate) => {
@@ -7,75 +7,92 @@ const CalculateNumberOfNights = (inDate, outDate) => {
   return b.diff(a, "days");
 };
 
-const TableRow = ({
-  title,
-  firstName,
-  surname,
-  email,
-  roomId,
-  checkInDate,
-  checkOutDate
-}) => {
+const TableRow = ({ booking, handleClick }) => {
   const [selected, setSelected] = useState(false);
-  const selectRow = () => setSelected(!selected);
   return (
-    <tr onClick={selectRow} className={selected ? "selected" : ""}>
-      <td>{title}</td>
-      <td>{firstName}</td>
-      <td>{surname}</td>
-      <td>{email}</td>
-      <td>{roomId}</td>
-      <td>{checkInDate}</td>
-      <td>{checkOutDate}</td>
-      <td>{CalculateNumberOfNights(checkInDate, checkOutDate)}</td>
+    <tr
+      onClick={() => {
+        setSelected(!selected);
+      }}
+      className={selected ? "selected" : ""}
+    >
+      <td>{booking.title}</td>
+      <td>{booking.firstName}</td>
+      <td>{booking.surname}</td>
+      <td>{booking.email}</td>
+      <td>{booking.roomId}</td>
+      <td>{booking.checkInDate}</td>
+      <td>{booking.checkOutDate}</td>
+      <td>
+        {CalculateNumberOfNights(booking.checkInDate, booking.checkOutDate)}
+      </td>
+      <td>
+        <button
+          className="btn btn-primary"
+          onClick={e => {
+            e.stopPropagation();
+            handleClick(booking.id);
+          }}
+        >
+          Show profile
+        </button>
+      </td>
     </tr>
   );
 };
 
 const SearchResults = ({ results }) => {
+  const [customerId, setCustomerId] = useState(null);
+  const handleButtonClick = clickedId => {
+    setCustomerId(clickedId);
+  };
   return (
-    <table className="table container">
-      <thead>
-        <tr>
-          <th scope="col">Title</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room Id</th>
-          <th scope="col">Check In Date</th>
-          <th scope="col">Check-Out Date</th>
-          <th scope="col">Nights</th>
-        </tr>
-      </thead>
-      <tbody>
-        {results.map(
-          ({
-            id,
-            title,
-            firstName,
-            surname,
-            email,
-            roomId,
-            checkInDate,
-            checkOutDate
-          }) => {
+    <div>
+      <table className="table container">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Room Id</th>
+            <th scope="col">Check In Date</th>
+            <th scope="col">Check-Out Date</th>
+            <th scope="col">Nights</th>
+            <th scope="col">Profile</th>
+          </tr>
+        </thead>
+        <tbody>
+          {results.map(booking => {
             return (
               <TableRow
-                key={id}
-                title={title}
-                firstName={firstName}
-                surname={surname}
-                email={email}
-                roomId={roomId}
-                checkInDate={checkInDate}
-                checkOutDate={checkOutDate}
+                booking={booking}
+                handleClick={handleButtonClick}
+                key={booking.id}
               />
             );
-          }
-        )}
-      </tbody>
-    </table>
+          })}
+        </tbody>
+      </table>
+      {customerId && <CustomerProfile id={customerId} />}
+    </div>
   );
 };
 
+const CustomerProfile = ({ id }) => {
+  const [customerProfile, setCustomerProfile] = useState({});
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${id}`)
+      .then(res => res.json())
+      .then(data => setCustomerProfile(data));
+  }, [id]);
+  return (
+    <ul className="card">
+      <li>Customer ID: {id}</li>
+      <li>Email: {customerProfile.email}</li>
+      {customerProfile.vip && <li>Customer VIP</li>}
+      <li>Tel: {customerProfile.phoneNumber}</li>
+    </ul>
+  );
+};
 export default SearchResults;

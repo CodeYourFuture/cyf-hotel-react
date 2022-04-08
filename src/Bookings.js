@@ -1,22 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const handleBooking = () => {
-    setBookings();
-  };
+  const [bookings, setBookings] = useState([]);
+  const [initialData, setInitialData] = useState([]);
+  const [status, setStatus] = useState("fetching");
+  const [statusMessage, setStatusMessage] = useState("Loading please wait...");
+
+  useEffect(() => {
+    setStatus("fetching");
+    setStatusMessage("Loading please wait...");
+    fetch("https://cyf-react.glitch.me/error")
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) {
+          setStatus("failure");
+          setStatusMessage(data.error);
+        } else {
+          setStatus("success");
+          setBookings(data);
+          setInitialData(data);
+        }
+      });
+  }, []);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    setBookings(
+      initialData.filter(
+        ({ firstName, surname }) =>
+          firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+          surname.toLowerCase().includes(searchVal.toLowerCase())
+      )
+    );
   };
-  const [bookings, setBookings] = useState(FakeBookings);
+
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} onClick={handleBooking} />
-        <SearchResults results={bookings} />
+        {status === "fetching" && statusMessage}
+        {status === "success" && (
+          <>
+            <Search search={search} />
+            <SearchResults results={bookings} />
+          </>
+        )}
+        {status === "failure" && statusMessage}
       </div>
     </div>
   );
