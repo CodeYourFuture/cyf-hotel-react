@@ -6,9 +6,9 @@ export default function Restaurant() {
     <div className="container">
       <h3>Restaurant Orders</h3>
       <ul>
-        <Orders orderType={"Pizzas"} />
-        <Orders orderType={"Salads"} />
-        <Orders orderType={"Chocolate cake"} />
+        <Orders orderType="Pizzas" />
+        <Orders orderType="Salads" />
+        <Orders orderType="Chocolate cake" />
       </ul>
     </div>
   );

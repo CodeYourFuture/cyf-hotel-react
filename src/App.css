@@ -78,12 +78,17 @@ li {
   background-color: var(--main-color);
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin-top: 50px;
 }
 
 .footer ul {
   list-style-type: none;
+}
+
+.footer ul li {
+  padding: 0;
+  font-size: 1rem;
 }
 
 .card-wrapper {
