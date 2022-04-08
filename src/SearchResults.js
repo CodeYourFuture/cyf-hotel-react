@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 const headings = [
   `id`,
@@ -12,6 +12,9 @@ const headings = [
   `numberOfNights`
 ];
 function SearchResults(props) {
+  const [selected, setSelected] = useState(false);
+  //  const [id, setId] = useState("");
+  const rowClick = () => setSelected(!selected);
   return (
     <table>
       <thead>
@@ -26,27 +29,37 @@ function SearchResults(props) {
         </tr>
       </thead>
       <tbody>
-        {props.booking.map((booking, index) => {
-          return (
-            <tr key={index}>
-              <th scope="row">{booking.id}</th>
-              {headings.map((heading, index) => {
-                if (heading === "id") {
-                  return null;
-                } else if (heading === "numberOfNights") {
-                  const checkIn = moment(booking.checkInDate);
-                  const checkOut = moment(booking.checkOutDate);
-                  const difference = checkOut.diff(checkIn, "days");
-                  return <td key={index}>{difference}</td>;
-                } else {
-                  return <td key={index}>{booking[heading]}</td>;
-                }
-              })}
-            </tr>
-          );
+        {props.bookings.map(booking => {
+          return <OurCustomRow booking={booking} />;
         })}
       </tbody>
     </table>
+  );
+}
+
+function OurCustomRow({ booking }) {
+  const [isClicked, setIsClicked] = useState(false);
+  return (
+    <tr
+      onClick={() => {
+        setIsClicked(!isClicked);
+      }}
+      style={isClicked ? { border: "2px solid green" } : {}}
+    >
+      <th scope="row">{booking.id}</th>
+      {headings.map((heading, index) => {
+        if (heading === "id") {
+          return null;
+        } else if (heading === "numberOfNights") {
+          const checkIn = moment(booking.checkInDate);
+          const checkOut = moment(booking.checkOutDate);
+          const difference = checkOut.diff(checkIn, "days");
+          return <td key={index}>{difference}</td>;
+        } else {
+          return <td key={index}>{booking[heading]}</td>;
+        }
+      })}
+    </tr>
   );
 }
 

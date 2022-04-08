@@ -1,12 +1,13 @@
-import React, { eseState } from "react";
+import React, { useState } from "react";
 
 const Restaurant = props => {
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        {/* Pizzas: {pizzas} <button className="btn btn-primary">Add</button> */}
         <Order orderType={"Pizzas"} />
+        <Order orderType={"Salad"} />
+        <Order orderType={"Choclate Cake"} />
       </ul>
     </div>
   );
@@ -20,13 +21,17 @@ const Order = ({ orderType }) => {
   }
   return (
     <li>
-      {orderType}:{orders} <Restaurant handleClick={orderOne} />
+      {orderType}:{orders} <RestaurantButton handleClick={orderOne} />
     </li>
   );
 };
 
 const RestaurantButton = props => {
-  return <button onClick={(props.handleClick = "btn btn-primary")}>Add</button>;
+  return (
+    <button onClick={props.handleClick} className="btn btn-primary">
+      Add
+    </button>
+  );
 };
 
 export default Restaurant;
