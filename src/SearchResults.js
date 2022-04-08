@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 
 const headings = [
@@ -69,7 +69,6 @@ function BookingItem(props) {
   return (
     <tr className={bookingItemStyle} onClick={changeColor}>
       <th scope="row">{booking.id}</th>
-
       {headings.map((heading, index) => {
         return (
           <HeadingItem
@@ -98,9 +97,11 @@ function HeadingItem(props) {
     return <td>{dateDifference}</td>;
   } else if (heading === "profile") {
     return (
-      <button onClick={() => props.handleClick(booking.id)}>
-        Show profile
-      </button>
+      <td>
+        <button onClick={() => props.handleClick(booking.id)}>
+          Show profile
+        </button>
+      </td>
     );
   } else {
     return <td>{booking[heading]}</td>;
@@ -108,6 +109,12 @@ function HeadingItem(props) {
 }
 
 function CustomerProfile(props) {
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+      .then(res => res.json())
+      .then(data => console.log(data));
+  }, [props.id]);
+
   return `Customer ${props.id} Profile`;
 }
 

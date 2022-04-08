@@ -5,12 +5,25 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [status, setStatus] = useState("fetching");
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then(res => res.json())
-      .then(data => setBookings(data));
-  }, []);
+    fetch("https://cyf-react.glitch.me/error")
+      .then(status)
+      .then(res => {
+        if (res.ok) {
+          res.json();
+        }
+        throw new Error("Something went wrong");
+      })
+      .then(data => {
+        setBookings(data);
+        setStatus("success");
+      })
+      .catch(() => {
+        setStatus("failure");
+      });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
@@ -27,8 +40,14 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-        <SearchResults bookings={bookings} />
+        {status === "fetching" && "PLEASE WAIT..."}
+        {status === "success" && (
+          <>
+            <Search search={search} />
+            <SearchResults bookings={bookings} />
+          </>
+        )}
+        {status === "failure" && "SOMETHING WENT WRONG"}
       </div>
     </div>
   );
