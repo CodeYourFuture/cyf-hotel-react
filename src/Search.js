@@ -6,14 +6,13 @@ const Search = props => {
 
   const handleSearchInput = event => {
     setSearchInput(event.target.value);
-    //console.log(event.target.value)
   };
 
   const handleSubmit = event => {
-    //const lowerSearchInput = searchInput.toLowerCase();
     event.preventDefault();
     props.search(searchInput);
   };
+
   return (
     <div className="search">
       <div className="page-header">
