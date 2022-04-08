@@ -22,7 +22,7 @@ const TouristInfoCards = () => {
           </a>
         </div>
       </div>
-      <div class="cardDiv">
+      <div className="cardDiv">
         <div className="image-wrapper">
           <img src={london} className="card-img-top" alt="London " />
         </div>
@@ -37,7 +37,7 @@ const TouristInfoCards = () => {
           </a>
         </div>
       </div>
-      <div class="cardDiv">
+      <div className="cardDiv">
         <div className="image-wrapper">
           <img src={Manchester} className="card-img-top" alt=" Manchester " />
         </div>

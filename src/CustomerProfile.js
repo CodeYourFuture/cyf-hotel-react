@@ -14,11 +14,10 @@ const CustomerProfile = prop => {
   }, [prop.id]);
 
   if (!prop.id) return <></>;
-  // console.log(prop);
 
   return (
     <>
-      <p>Customer {prop.person.id} Profile</p>;
+      <p>Customer {prop.id} Profile</p>
       {profile ? (
         <ul>
           <li>Id:{profile.id}</li>

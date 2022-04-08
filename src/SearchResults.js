@@ -21,11 +21,15 @@ const SearchResults = props => {
   const rowClick = () => setSelected(!selected);
   return (
     <div>
-      <table class="table table-striped">
+      <table className="table table-striped">
         <thead>
           <tr>
-            {headings.map(heading => {
-              return <th scope="col">{heading}</th>;
+            {headings.map((heading, index) => {
+              return (
+                <th key={index} scope="col">
+                  {heading}
+                </th>
+              );
             })}
           </tr>
         </thead>
@@ -33,7 +37,6 @@ const SearchResults = props => {
           {props.results.map((person, index) => {
             var CheckIn = moment(person.checkInDate);
             var CheckOut = moment(person.checkOutDate);
-
             return (
               <tr
                 key={index}
