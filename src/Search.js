@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
-const Search = props => {
+const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
-  const { search } = props;
+
   const handleSearchInput = event => {
     setSearchInput(event.target.value);
   };
 
   const handleForm = event => {
     event.preventDefault();
-    props.search(searchInput);
+    search(searchInput);
   };
 
   return (
