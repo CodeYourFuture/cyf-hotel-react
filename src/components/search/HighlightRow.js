@@ -25,11 +25,12 @@ function HighlightRow({ booking, i, handleButtonClick }) {
       </td>
       <td>
         <button
+          className="btn btn-primary"
           onClick={() => {
             handleButtonClick(booking.id);
           }}
         >
-          Show profile
+          Profile ID
         </button>
       </td>
     </tr>

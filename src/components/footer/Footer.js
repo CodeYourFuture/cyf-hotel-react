@@ -3,11 +3,14 @@ import "./footer.css";
 
 const Footer = ({ contact }) => {
   return (
-    <ul className="appFooter">
-      {contact.map((data, index) => {
-        return <li key={index}>{data}</li>;
-      })}
-    </ul>
+    <div className="appFooter">
+      <ul className="listFooter">
+        {contact.map((data, index) => {
+          return <li key={index}>{data}</li>;
+        })}
+      </ul>
+      <span>&copy; CYF Hotel 2022</span>
+    </div>
   );
 };
 

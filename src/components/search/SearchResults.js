@@ -19,12 +19,12 @@ const SearchResults = props => {
     `Check In Date`,
     `Check Out Date`,
     `Number Of Nights`,
-    `Profile?`
+    `Profile`
   ];
 
   return (
-    <div>
-      <table className="table">
+    <div style={{ overflowX: "auto" }}>
+      <table>
         <thead>
           <tr>
             {headings.map((heading, i) => (

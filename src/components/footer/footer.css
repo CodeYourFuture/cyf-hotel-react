@@ -1,13 +1,13 @@
 .appFooter {
   width: 100%;
   background-color: #222;
-  height: 100px;
-  padding: 20px;
+  height: 122px;
   color: white;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
   font-weight: bold;
+}
+
+.listFooter {
   list-style-type: none;
-  margin-bottom: 0;
 }
