@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const SearchResults = ({ results }) => {
-  const [isSelected, setSelected] = useState(false);
-  const highlightRow = () => setSelected(!isSelected);
+const SearchResults = ({ ret }) => {
   return (
     <div>
       <table className="table">
@@ -21,33 +19,32 @@ const SearchResults = ({ results }) => {
           </tr>
         </thead>
         <tbody>
-          {results.map((row, index) => {
-            return (
-              <tr
-                key={index}
-                className={isSelected ? "selected" : ""}
-                onClick={highlightRow}
-              >
-                <td>{row.id}</td>
-                <td>{row.title}</td>
-                <td>{row.firstName}</td>
-                <td>{row.surname}</td>
-                <td>{row.email}</td>
-                <td>{row.roomId}</td>
-                <td>{row.checkInDate}</td>
-                <td>{row.checkOutDate}</td>
-                <td>
-                  {moment(row.checkOutDate).diff(
-                    moment(row.checkInDate),
-                    "day"
-                  )}
-                </td>
-              </tr>
-            );
+          {ret.FakeBookings.map(detail => {
+            return <SearchDetails details={detail} />;
           })}
         </tbody>
       </table>
     </div>
+  );
+};
+
+const SearchDetails = ({ details }) => {
+  const [isSelected, setSelected] = useState(false);
+  const highlightRow = () => setSelected(!isSelected);
+  return (
+    <tr className={isSelected ? "selected" : ""} onClick={highlightRow}>
+      <th scope="row">{details.id}</th>
+      <td>{details.title}</td>
+      <td>{details.firstName}</td>
+      <td>{details.surname}</td>
+      <td>{details.email}</td>
+      <td>{details.roomId}</td>
+      <td>{details.checkInDate}</td>
+      <td>{details.checkOutDate}</td>
+      <td>
+        {moment(details.checkOutDate).diff(moment(details.checkInDate), "day")}
+      </td>
+    </tr>
   );
 };
 

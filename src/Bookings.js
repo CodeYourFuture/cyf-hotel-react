@@ -13,7 +13,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        <SearchResults ret={bookings} />
       </div>
     </div>
   );
