@@ -14,12 +14,12 @@ const Restaurant = () => {
   );
 };
 
-const Order = props => {
+const Order = ({ orderType }) => {
   const [orders, setOrders] = useState(0);
   const orderOne = () => setOrders(orders + 1);
   return (
     <li className="list-group-item d-flex justify-content-between align-items-center">
-      {props.orderType}: {orders}{" "}
+      {orderType}: {orders}{" "}
       <button className="btn btn-primary m-1" onClick={orderOne}>
         Add
       </button>

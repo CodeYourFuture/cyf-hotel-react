@@ -6,8 +6,6 @@ import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 
-import FakeBookings from "./data/fakeBookings.json";
-
 import "./App.css";
 
 const App = () => {
@@ -16,7 +14,7 @@ const App = () => {
       <div className="App">
         <Heading />
         <TouristInfoCards />
-        <Bookings data={FakeBookings} />
+        <Bookings />
         <Restaurant />
       </div>
       <Footer />
