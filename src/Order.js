@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 const Order = props => {
+  // useState
   const [orders, setOrders] = useState(0);
   let orderOne = () => {
     return setOrders(add => add + 1);
   };
+
   return (
     <div className="orderAndButton">
       <li className="h5">

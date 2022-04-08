@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import moment from "moment";
-function SearchResults(props) {
+import React from "react";
+
+import TableRow from "./tableRow";
+
+function SearchResults(props, index) {
   return (
-    <div className="table-div">
+    <div className="table-div" key={index}>
       <table class="table table-hover">
         <thead className="border">
           <tr className="text-white">
@@ -15,32 +17,14 @@ function SearchResults(props) {
             <th scope="col">Check-in Date</th>
             <th scope="col">Check-out Date</th>
             <th scope="col">Number of Nights Stayed</th>
+            <th scope="col">Profile</th>
           </tr>
         </thead>
-        {props.results.map((e, index) => {
-          let inDate = moment(e.checkInDate);
-          let outDate = moment(e.checkOutDate);
-          const difference = outDate.diff(inDate, "days"); // takes 2 arguments, last one is for if we want output as days or hour or months
-          return (
-            <tbody>
-              <tr
-                className={props.colors}
-                key={index}
-                onClick={props.switchColor}
-              >
-                <th scope="row">{e.id}</th>
-                <td>{e.title}</td>
-                <td>{e.firstName}</td>
-                <td>{e.surname}</td>
-                <td>{e.email}</td>
-                <td>{e.roomId}</td>
-                <td>{e.checkInDate}</td>
-                <td>{e.checkOutDate}</td>
-                <td>{difference}</td>
-              </tr>
-            </tbody>
-          );
-        })}
+        <tbody>
+          {props.results.map(info => {
+            return <TableRow e={info} />;
+          })}
+        </tbody>
       </table>
     </div>
   );
