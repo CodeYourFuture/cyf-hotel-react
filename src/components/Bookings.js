@@ -3,13 +3,20 @@ import Search from "./search/Search";
 import SearchResults from "./search/SearchResults";
 
 const Bookings = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const [bookings, setBookings] = useState([]);
+  const [status, setStatus] = useState("fetching");
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
-      .then(data => setBookings(data), setIsLoading(false));
+      .then(data => {
+        if (data.error) {
+          setStatus("failure");
+        } else {
+          setBookings(data);
+          setStatus("success");
+        }
+      });
   }, []); // only run once after the first render (please)
 
   const search = searchVal => {
@@ -22,14 +29,14 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        {isLoading ? (
-          "Loading..."
-        ) : (
+        {status === "fetching" && "Loading... Please Wait..."}
+        {status === "success" && (
           <>
             <Search search={search} />
             <SearchResults bookings={bookings} />
           </>
         )}
+        {status === "failure" && "OOPS, SOMETHING WENT WRONG"}
       </div>
     </div>
   );
