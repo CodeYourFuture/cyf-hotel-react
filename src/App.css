@@ -85,3 +85,19 @@ tr {
 .highlight {
   background-color: #b1f584;
 }
+.customer-profile {
+  background-color: #efefef;
+  padding: 1rem;
+}
+.loading-data-p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0979fa;
+}
+.error-message {
+  font-size: 30px;
+  font-weight: 800;
+  color: #cf1d1d;
+  text-align: center;
+  margin-top: 6rem;
+}

@@ -8,7 +8,11 @@ const TableRow = (props) => {
   const selected = () => {
     setHighlight(!highlight);
   };
-
+   const customerID = () => {
+    props.setCustomerId(() => {
+      return item.id;
+    });
+  };
   return (
     <tr
       key={item.id}
@@ -25,6 +29,11 @@ const TableRow = (props) => {
       <th scope="row">{item.checkOutDate}</th>
       <th scope="row">
         {moment(item.checkOutDate).diff(item.checkInDate, "day")}
+      </th>
+      <th scope="row">
+        <button onClick={customerID} className="btn btn-primary">
+          Show profile
+        </button>
       </th>
     </tr>
   );

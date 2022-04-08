@@ -3,11 +3,6 @@ import "./App.css";
 import TableRow from "./TableRow";
 
 const SearchResult = (props) => {
-  //const [highlight, setHighlight] = useState("false");
-
-  // const selected = () => {
-  //   setHighlight(!highlight);
-  // };
 
   const dataArray = props.data;
   return (
@@ -23,11 +18,18 @@ const SearchResult = (props) => {
           <th scope="col">Check In Date</th>
           <th scope="col">Check Out Date</th>
           <th scope="col">Number of nights</th>
+          <th scope="col">Profile</th>
         </tr>
       </thead>
       <tbody>
         {dataArray.map((item) => {
-          return <TableRow key={item.id} item={item} />;
+          return (
+            <TableRow
+              setCustomerId={props.setCustomerId}
+              key={item.id}
+              item={item}
+            />
+          );
         })}
       </tbody>
     </table>
