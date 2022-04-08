@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
-const SearchResults = props => {
+const SearchResults = ({ bookings }) => {
   //const [id, setId] = useState(null);
+  const [selected, setSelected] = useState(false);
 
   const headings = [
     "Id",
@@ -26,51 +27,40 @@ const SearchResults = props => {
       <table className="table">
         <thead>
           <tr>
-            {headings.map((heading, index) => {
-              return (
-                <th scope="col" key={index}>
-                  {heading}
-                </th>
-              );
-            })}
+            {headings.map((heading, index) => (
+              <th scope="col" key={index}>
+                {heading}
+              </th>
+            ))}
           </tr>
         </thead>
 
         <tbody>
-          {props.bookings.map((booking, index) => {
-            const [selected, setSelected] = useState(false);
-            const highlightRow = () => setSelected(!selected);
-            return (
-              <tr
-                key={index}
-                onClick={highlightRow}
-                className={selected ? "highlightRow" : ""}
-              >
-                <td>{booking.id}</td>
-                <td>{booking.title}</td>
-                <td>{booking.firstName}</td>
-                <td>{booking.surname}</td>
-                <td>{booking.email}</td>
-                <td>{booking.roomId}</td>
-                <td>{booking.checkInDate}</td>
-                <td>{booking.checkOutDate}</td>
-                <td>
-                  {moment(booking.checkOutDate).diff(
-                    moment(booking.checkInDate),
-                    "days"
-                  )}
-                </td>
-                <td>
-                  {/*<button value={booking.id} onClick={showProfile}>
-                    View Profile
-                  </button>*/}
-                </td>
-              </tr>
-            );
-          })}
+          {bookings.map((booking, index) => (
+            <tr
+              key={index}
+              onClick={() => console.log("clicked")}
+              className={selected ? "highlightRow" : ""}
+            >
+              <td>{booking.id}</td>
+              <td>{booking.title}</td>
+              <td>{booking.firstName}</td>
+              <td>{booking.surname}</td>
+              <td>{booking.email}</td>
+              <td>{booking.roomId}</td>
+              <td>{booking.checkInDate}</td>
+              <td>{booking.checkOutDate}</td>
+              <td>
+                {moment(booking.checkOutDate).diff(
+                  moment(booking.checkInDate),
+                  "days"
+                )}
+              </td>
+              <td />
+            </tr>
+          ))}
         </tbody>
       </table>
-      {/*{id ? <CustomerProfile id={id} /> : null}*/}
     </div>
   );
 };

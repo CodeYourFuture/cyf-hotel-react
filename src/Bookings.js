@@ -4,12 +4,14 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [filterBookings, setFilterBookings] = useState([]);
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/`)
       .then(res => res.json())
       .then(data => {
         setBookings(data);
+        setFilterBookings(data);
       });
   }, []);
 
@@ -17,14 +19,20 @@ const Bookings = () => {
     const filteredBooking = bookings.filter(({ firstName, surname }) => {
       return firstName === searchVal || surname === searchVal;
     });
-    setBookings(filteredBooking);
+
+    if (!filteredBooking.length) {
+      setFilterBookings(bookings);
+      return;
+    }
+
+    setFilterBookings(filteredBooking);
   };
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults bookings={bookings} />
+        <SearchResults bookings={filterBookings} />
       </div>
     </div>
   );

@@ -4,8 +4,8 @@ import Order from "./Order.js";
 const Restaurant = () => {
   return (
     <div>
-      <h3 class="Orders">Restaurant Orders</h3>
-      <ul class="orderList">
+      <h3 className="Orders">Restaurant Orders</h3>
+      <ul className="orderList">
         <Order orderType={"Pizzas"} />
         <Order orderType={"Salads"} />
         <Order orderType={"Chocolate cake"} />
