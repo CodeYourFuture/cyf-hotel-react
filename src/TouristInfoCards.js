@@ -17,7 +17,7 @@ const TouristInfoCards = () => {
             a rich legacy of the city's 18th–20th-century prosperity due to
             trade and shipbuilding.
           </p>
-          <a href="https://peoplemakeglasgow.com" className="btn btn-primary">
+          <a href="https://peoplemakeglasgow.com" className="btn btn-success">
             More information...
           </a>
         </div>
@@ -32,7 +32,7 @@ const TouristInfoCards = () => {
             London, the capital of England and the United Kingdom, is a
             21st-century city with history stretching back to Roman times.
           </p>
-          <a href="https://visitlondon.com" className="btn btn-primary">
+          <a href="https://visitlondon.com" className="btn btn-success">
             More information...
           </a>
         </div>
@@ -47,7 +47,7 @@ const TouristInfoCards = () => {
             Manchester is a major city in the northwest of England with a rich
             industrial heritage.
           </p>
-          <a href="https://visitmanchester.com" className="btn btn-primary">
+          <a href="https://visitmanchester.com" className="btn btn-success">
             More information...
           </a>
         </div>

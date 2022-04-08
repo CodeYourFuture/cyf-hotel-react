@@ -17,6 +17,10 @@
   padding: 15px;
   gap: 15px;
 }
+
+.card-body {
+  background-color: rgb(183, 201, 193);
+}
 .card-body p {
   height: 150px;
 }
@@ -31,6 +35,7 @@
 }
 .cardDiv {
   height: fit-content;
+  box-shadow: 5px 5px 5px #5b5757;
 }
 
 .header {
@@ -58,13 +63,24 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.order-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 5px;
+  margin-left: 1rem;
+}
+
+.orders {
+  margin: 2rem 7rem;
+}
+.highlight {
+  background: brown;
+}
+
+h3 {
+  margin-left: 10rem;
+  margin-bottom: 2rem;
 }
 .search {
   padding: 5px 0 20px 0;
@@ -92,4 +108,15 @@ tr {
     rgb(103, 181, 212)
   );
   justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 70%;
+    font-size: 45%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 8px;
+    gap: 8px;
+    overflow: hidden;
+  }
 }
