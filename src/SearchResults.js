@@ -19,12 +19,8 @@ function SearchResults(props) {
     <table>
       <thead>
         <tr>
-          {headings.map((heading, index) => {
-            return (
-              <th scope="col" key={index}>
-                {heading}
-              </th>
-            );
+          {headings.map(heading => {
+            return <th scope="col">{heading}</th>;
           })}
         </tr>
       </thead>
@@ -45,6 +41,7 @@ function OurCustomRow({ booking }) {
         setIsClicked(!isClicked);
       }}
       style={isClicked ? { border: "2px solid green" } : {}}
+      className={isClicked ? "clickedClass" : ""}
     >
       <th scope="row">{booking.id}</th>
       {headings.map((heading, index) => {
