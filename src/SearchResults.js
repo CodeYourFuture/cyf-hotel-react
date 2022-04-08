@@ -54,7 +54,12 @@ const SearchDetails = ({ details, handleClick }) => {
         {moment(details.checkOutDate).diff(moment(details.checkInDate), "day")}
       </td>
       <td>
-        <button onClick={() => handleClick(details.id)}>Show profile</button>
+        <button
+          className="btn btn-success"
+          onClick={() => handleClick(details.id)}
+        >
+          Show profile
+        </button>
       </td>
     </tr>
   );
