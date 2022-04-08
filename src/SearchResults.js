@@ -4,6 +4,7 @@ import CustomerProfile from "./CustomerProfile.js";
 
 const SearchResults = props => {
   const [profile, setProfile] = useState();
+  const [profileLoaded, setProfileLoaded] = useState(false);
   return (
     <>
       <table className="table table-striped table-bordered table-sm">
@@ -23,11 +24,22 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {props.results.map((booking, id) => (
-            <Booking key={id} booking={booking} setProfile={setProfile} />
+            <Booking
+              key={id}
+              booking={booking}
+              setProfile={setProfile}
+              setProfileLoaded={setProfileLoaded}
+              profileLoaded={profileLoaded}
+            />
           ))}
         </tbody>
       </table>
-      <CustomerProfile id={profile} setProfile={setProfile} profile={profile} />
+      <CustomerProfile
+        id={profile}
+        setProfile={setProfile}
+        profile={profile}
+        profileLoaded={profileLoaded}
+      />
     </>
   );
 };
