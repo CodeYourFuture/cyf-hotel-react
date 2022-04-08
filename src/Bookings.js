@@ -5,9 +5,10 @@ import SearchResults from "./SearchResults.js";
 import fakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
+  const [allData, setAllData] = useState([]);
   const [bookings, setBookings] = useState([]);
-  // const [isListLoaded, setIsListLoaded] = useState(false)
   const [status, setStatus] = useState("starting");
+
   useEffect(() => {
     setStatus("fetching");
     fetch(`https://cyf-react.glitch.me`)
@@ -16,6 +17,7 @@ const Bookings = () => {
         if (data.error) {
           setStatus("failed");
         } else {
+          setAllData(data);
           setBookings(data);
           setStatus("loaded");
         }
@@ -23,19 +25,17 @@ const Bookings = () => {
   }, []);
 
   const search = searchVal => {
-    console.log(searchVal);
     const filteredData =
       searchVal.length > 0
-        ? bookings.filter(
+        ? allData.filter(
             booking =>
               booking.firstName
                 .toLowerCase()
                 .includes(searchVal.toLowerCase()) ||
               booking.surname.toLowerCase().includes(searchVal.toLowerCase())
           )
-        : booking;
+        : allData;
     setBookings(filteredData);
-    console.log(filteredData);
   };
 
   return (

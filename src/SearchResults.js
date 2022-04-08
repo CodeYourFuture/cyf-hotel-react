@@ -71,7 +71,8 @@ const SearchDetails = ({ bookings, handleClick }) => {
 };
 
 const Profile = props => {
-  const [detailData, setDetailData] = useState(null);
+  const [detailData, setDetailData] = useState({});
+
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
       .then(res => res.json())

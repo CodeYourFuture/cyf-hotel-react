@@ -7,17 +7,6 @@ const Search = props => {
   };
 
   const [searchField, setSearchField] = useState("");
-
-  // useEffect(() => {
-  //    const filteredData = data.list.filter(
-  //     (person) =>
-  //       person.firstName
-  //         .toLowerCase()
-  //         .includes(searchField.toLocaleLowerCase()) ||
-  //       person.surname.toLowerCase().includes(searchField.toLocaleLowerCase()) ||
-  //       person.email.toLowerCase().includes(searchField.toLocaleLowerCase()),
-  //   )
-  //    },[])
   return (
     <div className="search">
       <div className="page-header">
