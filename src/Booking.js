@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const Booking = ({ booking }) => {
+const Booking = ({ booking, setProfile }) => {
   const [selected, setSelected] = useState(false);
   const handleClick = event => {
     // SET STATE TO RERENDER
     setSelected(!selected);
+  };
+  const showProfile = event => {
+    event.preventDefault(); //it's not stopping the row from being selected...
+    setProfile(booking.id);
+    console.log("setProfile() in Booking: ", setProfile);
   };
   const START_DATE = moment(booking.checkInDate);
   const END_DATE = moment(booking.checkOutDate);
@@ -24,6 +29,11 @@ const Booking = ({ booking }) => {
       <td>{booking.checkInDate}</td>
       <td>{booking.checkOutDate}</td>
       <td>{nights}</td>
+      <td>
+        <button onClick={showProfile} className="btn btn-dark">
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };

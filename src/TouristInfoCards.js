@@ -2,7 +2,6 @@ import React from "react";
 import DESTINATIONS from "./data/destiantions";
 
 const TouristInfoCards = () => {
-  console.log(DESTINATIONS);
   return (
     <div className="TouristInfoCards">
       {DESTINATIONS.map((city, id) => {
