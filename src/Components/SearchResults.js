@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 import SearchResultRow from "./SearchResultRow";
 
-const SearchResults = ({ bookings }) => {
-  //const [id, setId] = useState(null);
+const SearchResults = props => {
+  const { bookings } = props;
+  const [guestId, setGuestId] = useState(null);
 
   const headings = [
     "Id",
@@ -14,13 +15,13 @@ const SearchResults = ({ bookings }) => {
     "room Id",
     "Check-In",
     "Check-Out",
-    "Night"
+    "Night",
+    "Profile"
   ];
 
-  //function showProfile(event) {
-  //setId(event.target.value);
-  // }
-
+  function handleButtonClick(clickedId) {
+    setGuestId(clickedId);
+  }
   return (
     <div>
       <table className="table">
@@ -47,11 +48,13 @@ const SearchResults = ({ bookings }) => {
                 roomId={booking.roomId}
                 checkInDate={booking.checkInDate}
                 checkOutDate={booking.checkOutDate}
+                handleButtonClick={handleButtonClick}
               />
             );
           })}
         </tbody>
       </table>
+      {guestId && <CustomerProfile id={guestId} />}
     </div>
   );
 };

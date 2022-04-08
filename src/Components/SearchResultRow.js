@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResultRow = props => {
-  const [selected, setSelected] = useState(false);
   const {
     index,
     id,
@@ -12,11 +11,13 @@ const SearchResultRow = props => {
     email,
     roomId,
     checkInDate,
-    checkOutDate
+    checkOutDate,
+    handleButtonClick
   } = props;
 
-  function handleClick(event) {
-    console.log(event.target.value);
+  const [selected, setSelected] = useState(false);
+
+  function handleClick() {
     setSelected(!selected);
   }
 
@@ -35,6 +36,15 @@ const SearchResultRow = props => {
       <td>{checkInDate}</td>
       <td>{checkOutDate}</td>
       <td>{moment(checkOutDate).diff(moment(checkInDate), "days")}</td>
+      <td>
+        <button
+          onClick={() => {
+            handleButtonClick(id);
+          }}
+        >
+          ViewProfile
+        </button>
+      </td>
       <td />
     </tr>
   );
