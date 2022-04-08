@@ -3,12 +3,13 @@ import Search from "./search/Search";
 import SearchResults from "./search/SearchResults";
 
 const Bookings = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
-      .then(data => setBookings(data));
+      .then(data => setBookings(data), setIsLoading(false));
   }, []); // only run once after the first render (please)
 
   const search = searchVal => {
@@ -21,8 +22,14 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-        <SearchResults bookings={bookings} />
+        {isLoading ? (
+          "Loading..."
+        ) : (
+          <>
+            <Search search={search} />
+            <SearchResults bookings={bookings} />
+          </>
+        )}
       </div>
     </div>
   );
