@@ -30,7 +30,7 @@ function HighlightRow({ booking, i, handleButtonClick }) {
             handleButtonClick(booking.id);
           }}
         >
-          Profile ID
+          Profile
         </button>
       </td>
     </tr>
