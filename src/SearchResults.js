@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
-
 const headings = [
   "id",
   "Title",
@@ -14,14 +13,13 @@ const headings = [
   "Number of nights",
   "Button"
 ];
-
 const SearchResults = props => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState({});
   const [id, setId] = useState("");
-  const rowClick = () => setSelected(!selected);
+
   return (
     <div>
-      <table className="table table-striped">
+      <table className="table">
         <thead>
           <tr>
             {headings.map((heading, index) => {
@@ -37,11 +35,19 @@ const SearchResults = props => {
           {props.results.map((person, index) => {
             var CheckIn = moment(person.checkInDate);
             var CheckOut = moment(person.checkOutDate);
+            //setting all values to no color
+            if (!selected[index])
+              setSelected({ ...selected, [index]: "noColor" });
+
             return (
               <tr
                 key={index}
-                className={selected ? "highlight" : ""}
-                onClick={rowClick}
+                className={selected[index]}
+                onClick={() =>
+                  selected[index] === "noColor"
+                    ? setSelected({ ...selected, [index]: "highlight" })
+                    : setSelected({ ...selected, [index]: "noColor" })
+                }
               >
                 <th scope="col">{person.id}</th>
                 <td>{person.title}</td>
@@ -60,7 +66,6 @@ const SearchResults = props => {
           })}
         </tbody>
       </table>
-
       <CustomerProfile id={id} />
     </div>
   );
