@@ -1,9 +1,9 @@
 import React from "react";
-import Heading from "./Heading.js";
-import TouristInfoCards from "./TouristInfoCards.js";
-import Bookings from "./Bookings.js";
-import Footer from "./Footer.js";
-import Restaurant from "./Restaurant.js";
+import Heading from "./Components/Heading.js";
+import TouristInfoCards from "./Components/TouristInfoCards.js";
+import Bookings from "./Components/Bookings.js";
+import Footer from "./Components/Footer.js";
+import Restaurant from "./Components/Restaurant.js";
 import "./App.css";
 
 const App = () => {
