@@ -11,7 +11,7 @@ const Bookings = () => {
   useEffect(() => {
     setStatus("fetching");
     setStatusMessage("Loading please wait...");
-    fetch("https://cyf-react.glitch.me/error")
+    fetch("https://cyf-react.glitch.me")
       .then(res => res.json())
       .then(data => {
         if (data.error) {
