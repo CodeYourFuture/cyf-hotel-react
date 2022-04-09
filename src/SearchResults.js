@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-// import Search from "./Search";
-// import fakeBookings from "./date/fakeBookings.json";
-// import Bookings from "./Bookings";
+
 const headings = [
   `id`,
   `title`,
