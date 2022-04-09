@@ -10,7 +10,8 @@ const TableHeading = () => {
     "Room id",
     "Check in date",
     "Check out date",
-    "Number of nights"
+    "Number of nights",
+    "Profile"
   ];
   return (
     <thead>

@@ -1,23 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
+import loadingGif from "./images/loading.gif";
+import error from "./images/error.gif";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings);
+  const [status, setStatus] = useState("fetching");
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me/")
+      .then(response => response.json())
+      .then(data => {
+        if (data.error) {
+          setStatus("failed");
+        } else {
+          setBookings(data);
+          setStatus("success");
+        }
+      });
+  }, []);
+  const [bookings, setBookings] = useState([]);
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    return setBookings(
+      bookings.filter(booking => {
+        return (
+          booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+          booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+        );
+      })
+    );
   };
-  //temp to get past no unused vars error
-  function newBookings() {
-    setBookings(bookings.concat("hi"));
-  }
-  oninvalid = { newBookings };
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
+        {status === "fetching" && (
+          <div>
+            <img src={loadingGif} className="loading" alt="loading gif" />{" "}
+            <p>Loading, Please Wait</p>
+          </div>
+        )}
+        {status === "success" && (
+          <>
+            <Search search={search} />
+            <SearchResults results={bookings} />
+          </>
+        )}
+        {status === "failed" && (
+          <div>
+            <img src={error} className="loading" alt="loading gif" />{" "}
+            <p>Sorry, something went wrong</p>
+          </div>
+        )}
       </div>
     </div>
   );

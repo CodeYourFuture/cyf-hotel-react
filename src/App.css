@@ -126,3 +126,7 @@ tr {
 .highlighted {
   background-color: #e8c00e;
 }
+
+.loading {
+  width: 90px;
+}
