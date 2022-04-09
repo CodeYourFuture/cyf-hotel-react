@@ -14,7 +14,7 @@ const CustomerProfile = ({ id, customer, setCustomer }) => {
           <b>Customer ID:</b> {customer.id}
         </p>
         <p>
-          <b>First Name:</b> {customer.firstName}
+          <b>Name:</b> {customer.firstName} {customer.surname}
         </p>
         <p>
           <b>Email:</b> {customer.email}
