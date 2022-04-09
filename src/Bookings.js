@@ -7,7 +7,6 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
     const filteredBookings = bookings.filter(({ firstName, surename }) => {
       if (firstName === searchVal || surename === searchVal) {
         return true;

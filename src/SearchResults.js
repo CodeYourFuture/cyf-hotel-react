@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 const headings = [
   `id`,
@@ -9,31 +9,39 @@ const headings = [
   `roomId`,
   `checkInDate`,
   `checkOutDate`,
-  `numberOfNights`
+  `numberOfNights`,
+  `profile`
 ];
 function SearchResults(props) {
-  const [selected, setSelected] = useState(false);
-  //  const [id, setId] = useState("");
-  const rowClick = () => setSelected(!selected);
+  const [id, setId] = useState(null);
+
+  function handleButtonClick(clickedId) {
+    setId(clickedId);
+  }
   return (
-    <table>
-      <thead>
-        <tr>
-          {headings.map(heading => {
-            return <th scope="col">{heading}</th>;
+    <div>
+      <table>
+        <thead>
+          <tr>
+            {headings.map(heading => {
+              return <th scope="col">{heading}</th>;
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {props.bookings.map(booking => {
+            return (
+              <OurCustomRow booking={booking} handleClick={handleButtonClick} />
+            );
           })}
-        </tr>
-      </thead>
-      <tbody>
-        {props.bookings.map(booking => {
-          return <OurCustomRow booking={booking} />;
-        })}
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+      {id && <CustomerProfile id={id} />}
+    </div>
   );
 }
 
-function OurCustomRow({ booking }) {
+function OurCustomRow({ booking, handleClick }) {
   const [isClicked, setIsClicked] = useState(false);
   return (
     <tr
@@ -52,12 +60,24 @@ function OurCustomRow({ booking }) {
           const checkOut = moment(booking.checkOutDate);
           const difference = checkOut.diff(checkIn, "days");
           return <td key={index}>{difference}</td>;
+        } else if (heading === "profile") {
+          return (
+            <button onClick={() => handleClick(booking.id)}>profile</button>
+          );
         } else {
           return <td key={index}>{booking[heading]}</td>;
         }
       })}
     </tr>
   );
+}
+function CustomerProfile(props) {
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+      .then(res => res.json())
+      .then(data => console.log(data));
+  }, []);
+  return `Customer ${props.id} Profile`;
 }
 
 export default SearchResults;
