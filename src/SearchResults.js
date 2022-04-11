@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchResultRows from "./SearchResultRows";
+import CustomerProfile from "./CustomerProfile";
 
 const headings = [
   "id",
@@ -10,25 +11,40 @@ const headings = [
   "roomId",
   "checkInDate",
   "checkOutDate",
-  "numberOfNights"
+  "numberOfNights",
+  "profile?"
 ];
 
 function SearchResults(props) {
+  const [id, setId] = useState(null);
+
+  function handleButtonClick(clickedId) {
+    setId(clickedId);
+  }
   return (
-    <table>
-      <thead>
-        <tr>
-          {headings.map(heading => {
-            return <th scope="col">{heading}</th>;
+    <div>
+      <table>
+        <thead>
+          <tr>
+            {headings.map(heading => {
+              return <th scope="col">{heading}</th>;
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {props.bookings.map(booking => {
+            return (
+              <SearchResultRows
+                booking={booking}
+                headings={headings}
+                handleClick={handleButtonClick}
+              />
+            );
           })}
-        </tr>
-      </thead>
-      <tbody>
-        {props.bookings.map(booking => {
-          return <SearchResultRows booking={booking} headings={headings} />;
-        })}
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+      {id && <CustomerProfile id={id} />}
+    </div>
   );
 }
 

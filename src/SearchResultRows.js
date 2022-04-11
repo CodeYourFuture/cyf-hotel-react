@@ -20,6 +20,17 @@ function SearchResultRows(props) {
           const checkOut = moment(props.booking.checkOutDate);
           const difference = checkOut.diff(checkIn, "days");
           return <td>{difference}</td>;
+        } else if (heading === "profile?") {
+          return (
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                props.handleClick(props.booking.id);
+              }}
+            >
+              Show profile
+            </button>
+          );
         } else {
           return <td>{props.booking[heading]}</td>;
         }
