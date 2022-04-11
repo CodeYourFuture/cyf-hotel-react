@@ -67,3 +67,10 @@ tr {
   text-align: center;
   justify-content: center;
 }
+.FooterList {
+  display: flex;
+}
+.FooterList li {
+  list-style-type: none;
+  display: inline;
+}
