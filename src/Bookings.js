@@ -13,6 +13,14 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    const filteredBookings = bookings.filter(({ firstName, surname }) => {
+      if (firstName === searchVal || surname === searchVal) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    setBookings(filteredBookings);
   };
 
   return (
