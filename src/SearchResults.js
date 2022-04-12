@@ -42,6 +42,7 @@ function OurCustomRow({ booking }) {
       onClick={() => {
         setIsClicked(!isClicked);
       }}
+      style={isClicked ? { border: "2px solid red" } : {}}
     >
       <th scope="row">
         <td>{booking.id}</td>
