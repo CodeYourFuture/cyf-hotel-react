@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 
-const orders = 0;
-
-function setOrders() {}
-
-function orderOne() {}
+// function orderOne() {}
 // function ClickLogger() {
 //   function logWhenClicked() {
 //     console.log("Button was clicked!");
@@ -13,17 +9,37 @@ function orderOne() {}
 //   return <button onClick={logWhenClicked}>Click me!</button>;
 // }
 
-const Restaurant = () => {
-  const pizzas = 0;
+const Restaurant = props => {
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+        <Order orderType={"Pizzas"} />
+        <Order orderType={"Salad"} />
+        <Order orderType={"Cake"} />
       </ul>
     </div>
+  );
+};
+
+const Order = ({ orderType }) => {
+  const [orders, setOrders] = useState(0);
+
+  function orderOne() {
+    return setOrders(currentCount => currentCount + 1);
+  }
+  return (
+    <li>
+      {orderType}: {orders} <RestaurantButton handleClick={orderOne} />
+    </li>
+  );
+};
+
+const RestaurantButton = props => {
+  return (
+    <button onClick={props.handleClick} className="btn btn-primary">
+      Add
+    </button>
   );
 };
 
