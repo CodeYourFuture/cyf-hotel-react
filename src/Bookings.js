@@ -8,14 +8,16 @@ const Bookings = () => {
   const [allData, setAllData] = useState([]);
   const [bookings, setBookings] = useState([]);
   const [status, setStatus] = useState("starting");
+  const [errorMsg, setErrorMsg] = useState(null);
 
   useEffect(() => {
     setStatus("fetching");
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://cyf-react.glitch.me/error`)
       .then(res => res.json())
       .then(data => {
         if (data.error) {
           setStatus("failed");
+          setErrorMsg(data.error);
         } else {
           setAllData(data);
           setBookings(data);
@@ -50,7 +52,7 @@ const Bookings = () => {
           </>
         )}
         {status === "fetching" && "Loading data..."}
-        {status === "failed" && "The data load process has failed."}
+        {status === "failed" && `The data load process has failed. ${errorMsg}`}
       </div>
     </div>
   );

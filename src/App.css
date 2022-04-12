@@ -56,14 +56,20 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 24rem;
 }
 
 .table-container {
   overflow: hidden;
   width: 96%;
+  display: block;
+  border-collapse: collapse;
 }
 
 .highlight {
   background: rgb(215, 217, 250);
+}
+
+.restaurant {
+  margin-top: 2em;
 }

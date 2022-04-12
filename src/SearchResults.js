@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
-  const [profileID, setProfileID] = useState(null);
+  const [profileID, setProfileID] = useState(5);
 
   function handleClickProfile(clickedId) {
     setProfileID(clickedId);
@@ -33,14 +33,16 @@ const SearchResults = props => {
         </tbody>
       </table>
       {profileID && <Profile id={profileID} />}
+      {addNew}
     </div>
   );
 };
 
 const SearchDetails = ({ bookings, handleClick }) => {
   const [selected, setSelected] = useState(false);
+
   const highlightRow = e => {
-    e.target.type != "submit" && setSelected(!selected);
+    e.target.nodeName !== "A" && setSelected(!selected);
   };
   return (
     <tr className={selected ? "highlight" : ""} onClick={highlightRow}>
@@ -59,12 +61,19 @@ const SearchDetails = ({ bookings, handleClick }) => {
         )}
       </td>
       <td>
-        <button
-          className="btn btn-success"
-          onClick={() => handleClick(bookings.id)}
+        <a
+          class="btn btn-primary"
+          data-toggle="collapse"
+          href="#collapseExample"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          onClick={() => {
+            handleClick(bookings.id);
+          }}
         >
-          Show profile
-        </button>
+          Show Profile
+        </a>
       </td>
     </tr>
   );
@@ -82,39 +91,67 @@ const Profile = props => {
   }, [props.id]);
   console.log(detailData);
   return (
-    <div className="card-deck p-3 mb-5">
-      <ul className="list-group">
-        <li className="list-group-item">
-          <strong>ID: </strong>
-          {detailData.id}
-        </li>
-        <li className="list-group-item">
-          <strong>Title: </strong>
-          {detailData.title}
-        </li>
-        <li className="list-group-item">
-          <strong>First Name: </strong>
-          {detailData.firstName}
-        </li>
-        <li className="list-group-item">
-          <strong>Surname: </strong>
-          {detailData.surname}
-        </li>
-        <li className="list-group-item">
-          <strong>Email: </strong>
-          {detailData.email}
-        </li>
-        <li className="list-group-item">
-          <strong>Phone Number: </strong>
-          {detailData.phoneNumber}
-        </li>
-        <li className="list-group-item">
-          <strong>Vip: </strong>
-          <input type="checkbox" checked={detailData.vip} />
-        </li>
-      </ul>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <ul className="list-group">
+          <li className="list-group-item">
+            <strong>ID: </strong>
+            {detailData.id}
+          </li>
+          <li className="list-group-item">
+            <strong>Title: </strong>
+            {detailData.title}
+          </li>
+          <li className="list-group-item">
+            <strong>First Name: </strong>
+            {detailData.firstName}
+          </li>
+          <li className="list-group-item">
+            <strong>Surname: </strong>
+            {detailData.surname}
+          </li>
+          <li className="list-group-item">
+            <strong>Email: </strong>
+            {detailData.email}
+          </li>
+          <li className="list-group-item">
+            <strong>Phone Number: </strong>
+            {detailData.phoneNumber}
+          </li>
+          <li className="list-group-item">
+            <strong>Vip: </strong>
+            <input type="checkbox" checked={detailData.vip} />
+          </li>
+        </ul>
+        <button
+          className="btn btn-success"
+          data-toggle="collapse"
+          href="#collapseExample"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          Hide profile
+        </button>
+      </div>
     </div>
   );
+};
+
+const addNew = () => {
+  <a
+    class="btn btn-primary"
+    data-toggle="collapse"
+    href="#collapseExample"
+    role="button"
+    aria-expanded="false"
+    aria-controls="collapseExample"
+    onClick={() => {
+      handleClick(bookings.id);
+    }}
+  >
+    Add
+  </a>;
 };
 
 export default SearchResults;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Restaurant = () => {
   return (
-    <div className="container">
+    <div className="container restaurant">
       <h3>Restaurant Orders</h3>
       <ul className="list-group">
         <Order orderType="Pizzas" />
