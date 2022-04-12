@@ -24,3 +24,44 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+img {
+  height: 50px;
+  padding: 5px;
+}
+
+header {
+  height: 200px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.card {
+  margin: 10px;
+}
+
+footer {
+  display: flex;
+}
+
+ul {
+  background-color: #222;
+  color: white;
+  margin-top: 60px;
+  padding: 10px;
+}
+
+li {
+  list-style-type: none;
+  padding: 0;
+}
+
+.red {
+  background-color: red;
+}
