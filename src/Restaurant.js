@@ -1,4 +1,3 @@
-import React from "react";
 import React, { useState } from "react";
 
 const orders = 0;
@@ -15,7 +14,7 @@ function orderOne() {}
 // }
 
 const Restaurant = () => {
-  // const pizzas = 0;
+  const pizzas = 0;
   return (
     <div>
       <h3>Restaurant Orders</h3>
