@@ -48,7 +48,7 @@
 .border {
   background: linear-gradient(
     15deg,
-    rgb(62, 2, 97) 10%,
+    rgb(62, 2, 97) 5%,
     rgb(179, 3, 162),
     rgb(62, 2, 97)
   );
