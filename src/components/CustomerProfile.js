@@ -19,6 +19,9 @@ const CustomerProfile = ({ id }) => {
   return (
     <div className="Profile-Container">
       <ul className="profile">
+        <li ClassName="CustomerProfile-Header">
+          <h5>Customer Profile </h5>
+        </li>
         <li>ID: {profile.id} </li>
         <li>
           Name: {profile.firstName}

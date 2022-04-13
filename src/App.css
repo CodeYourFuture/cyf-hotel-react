@@ -50,7 +50,8 @@ h1 {
 
 
 h5 {
-  font-size: 1rem;
+  font-size: 25px;
+  padding: 20px 0px 20px 0px;
 }
 
 .App {
@@ -159,6 +160,7 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
 }
 
 /* search button  ----------------- */
@@ -173,7 +175,7 @@ select {
   overflow: hidden;
   cursor: pointer;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
   margin: 0px 10px 0px 10px;
@@ -201,10 +203,18 @@ button:hover {
  border-radius: 8px;
 }
 
-.Table-header {
+.Table-header,.Customer-Profile-Header {
   color: var(--accent);
   background-color: var(--secondary);
 }
+
+.CustomerProfile-Header {
+  color: var(--accent);
+  background-color: pink;
+  font-weight: 900;
+}
+
+
 .Profile, li {
   line-height: 30px;
   font-size: 20px;  
@@ -245,7 +255,7 @@ a {
   overflow: hidden;
   cursor: pointer;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   
 }
@@ -291,7 +301,7 @@ a {
   overflow: hidden;
   cursor: pointer;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   margin: 10px 10px 10px 10px;
 }
