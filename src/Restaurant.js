@@ -1,19 +1,10 @@
 import React, { useState } from "react";
 
-// function orderOne() {}
-// function ClickLogger() {
-//   function logWhenClicked() {
-//     console.log("Button was clicked!");
-//   }
-
-//   return <button onClick={logWhenClicked}>Click me!</button>;
-// }
-
 const Restaurant = props => {
   return (
     <div>
       <h3>Restaurant Orders</h3>
-      <ul>
+      <ul className="orders">
         <Order orderType={"Pizzas"} />
         <Order orderType={"Salad"} />
         <Order orderType={"Cake"} />
@@ -29,7 +20,7 @@ const Order = ({ orderType }) => {
     return setOrders(currentCount => currentCount + 1);
   }
   return (
-    <li>
+    <li className="order">
       {orderType}: {orders} <RestaurantButton handleClick={orderOne} />
     </li>
   );

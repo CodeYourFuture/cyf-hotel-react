@@ -63,3 +63,14 @@ tr {
 .card {
   width: 18rem;
 }
+
+.orders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order {
+  list-style: none;
+  padding: 10px;
+}
