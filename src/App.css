@@ -57,16 +57,6 @@ h5 {
   text-align: center;
 }
 
-/* .App-header {
-  background-color: var(--secondary);
-  min-height: 8vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);  
-} */
-
 /* HEADER LOGO   ----------------------------- */
 
 .Header-background-image {
@@ -100,12 +90,9 @@ h5 {
 }
 
 .card {
-    width: 420px;
-  /* border-radius: 4px; */
-  border-radius: 3rem 3rem 1rem 1rem; 
+  width: 420px;
   background-color: var(--light);
   margin: 40px 30px 20px 10px;
-  /* border-radius: 3px; */
   border-radius: 2rem 2rem 2rem 2rem;
   box-shadow: var(--box-shadow-1);
   
@@ -198,29 +185,48 @@ button:hover {
   color: var(--accent);
 }
 
-/* BOOKING TABLE   ----------------------------------- */
+/* BOOKING TABLE   ------------------------------------------------------ */
 
-.table {
+.Table {
   width: 80%;
-  margin: 30px  auto 10px auto;
+  margin: 30px  auto 10px auto;  
   border-spacing: 10px;
+  border-collapse: collapse;
+  line-height: 50px;
+  
   font-size: 20px;
   font-weight: 500;
+  cursor: pointer;
+ /* border: 1px solid var(--secondary); */
+ border-radius: 8px;
 }
 
-/* to do  */
-.table-highlight {
-  background: var(--d-accent);
+.Table-header {
+  color: var(--accent);
+  background-color: var(--secondary);
+}
+.Profile, li {
+  line-height: 30px;
+  font-size: 20px;  
+  border-radius: 8px;
 }
 
-/* customer search  */
-.profile, ul{
-  font-size: 22px;
-  display: list-item;
-  text-align: -webkit-match-parent;
-  margin: 10px 0px 10px 0px;
-}
+.Table, .th {
+  border-spacing: 10px;
+  padding: 10px;
+  /* border: 1px solid var(--secondary); */
+  }
 
+  .Profile-Container {
+    width: 80%;
+    margin: 30px  auto 10px auto;
+    border-radius: 8px;
+    background-color: var(--secondary);
+    color:var(--accent);
+    padding: 10px;
+  }
+
+  
 /* CARD BUTTON ------------------------------------------ */
 
 a {
@@ -345,7 +351,7 @@ button-2:hover {
     margin: 30px  auto 10px auto;
     border-spacing: 10px;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 800;
   }
 
   td,
@@ -353,10 +359,20 @@ button-2:hover {
     flex: 1 1 150px;
 
   }
+ 
+  .Profile-Container {
+    width: 80%;
+    margin: 30px  auto 10px auto;
+    border-radius: 8px;
+    background-color: var(--secondary);
+    color:var(--accent);
+    padding: 10px;
+  }
 
   /* RESTAURANT FOOD ORDER ---------------------------------- */
-  .orderFood {
-    margin: 0.5em 0;
+  .orderFood  {
+    width: 80%;
+    margin: 30px  auto 10px auto;
     border-radius: 8px;
     border: 1px solid var(--d-accent);
   }

@@ -12,19 +12,19 @@ const CustomerProfile = ({ id }) => {
       });
   }, [id]);
 
-  if (id) {
-    return " ";
-  }
+  // if (id) {
+  //   return " ";
+  // }
 
   return (
-    <div>
+    <div className="Profile-Container">
       <ul className="profile">
-        <li>Customer Id: {profile.id}</li>
+        <li>ID: {profile.id} </li>
         <li>
-          {" "}
-          Customer Name: {profile.firstName} {profile.surname}
+          Name: {profile.firstName}
+          {profile.surname}
         </li>
-        <li>Customer Email: {profile.email}</li>
+        <li>Email: {profile.email}</li>
         {profile.vip && <li>VIP</li>}
         <li>Phone: {profile.phoneNumber}</li>
       </ul>

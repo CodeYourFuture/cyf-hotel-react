@@ -9,10 +9,8 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
-  };
 
+  //fetch data
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/")
       .then((response) => response.json())
@@ -20,6 +18,18 @@ const Bookings = () => {
         setBookings(bookings);
       });
   }, []);
+
+  //filter bookings
+  const search = (searchVal) => {
+    console.info("TO DO!", searchVal);
+    setBookings(
+      bookings.filter(
+        (booking) =>
+          booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+          booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+      )
+    );
+  };
 
   return (
     <div className="App-content">

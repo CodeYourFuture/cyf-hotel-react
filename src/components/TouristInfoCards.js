@@ -78,7 +78,7 @@ const TouristInfoCards = () => {
       </div>
 
       {/* card 4 */}
-      <div className="card">
+      {/* <div className="card">
         <img
           src="https://jamaicahotelreview.com/wp-content/uploads/2017/04/blue-lagoon-beauty-1.jpg"
           alt="Blue Lagoon"
@@ -98,7 +98,7 @@ const TouristInfoCards = () => {
             More Info{" "}
           </a>
         </button>
-      </div>
+      </div> */}
 
       {/* end */}
     </div>

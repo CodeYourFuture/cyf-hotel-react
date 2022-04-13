@@ -13,14 +13,17 @@ https://codesandbox.io/s/react-data-table-row-select-color-example-forked-w4zou6
 import React from "react";
 import { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
+import moment from "moment";
 
 const SearchResults = (props) => {
   const [selectedRowColor, setSelectedRowColor] = useState([]);
   const [profileId, setProfileId] = useState(null);
 
+  // highlight the table
   const HighLight = (id) => {
     let selectedRow = [...selectedRowColor];
 
+    //.map
     if (selectedRow.includes(id)) {
       const index = selectedRow.indexOf(id);
       selectedRow.splice(index, 1);
@@ -34,13 +37,14 @@ const SearchResults = (props) => {
 
   return (
     <div>
-      <table className="table ">
-        <thead>
+      <table className="Table ">
+        <thead className="Table-header">
+          {/* setting up the table */}
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Title</th>
             <th scope="col">First Name</th>
-            <th scope="col">Surname</th>
+            <th scope="col">Family Name</th>
             <th scope="col">Email</th>
             <th scope="col">Room ID</th>
             <th scope="col">Check In Date</th>
@@ -48,6 +52,7 @@ const SearchResults = (props) => {
             <th scope="col">Number Of Nights</th>
           </tr>
         </thead>
+
         <tbody>
           {props.results.map((result) => {
             return (
