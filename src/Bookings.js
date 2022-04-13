@@ -5,7 +5,8 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
+  const [status, setStatus] = useState("fetching"); //fetching, success, failed
 
   useEffect(() => {
     // console.log("something");
@@ -13,7 +14,11 @@ const Bookings = () => {
       .then(res => res.json())
       .then(data => {
         setBookings(data);
-        setIsLoading(false);
+        // setIsLoading(false);
+        setStatus("success");
+      })
+      .catch(() => {
+        setStatus("failure");
       });
   }, []);
   const search = searchVal => {
@@ -31,14 +36,14 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        {isLoading ? (
-          "LOADING, PLEASE WAIT..."
-        ) : (
+        {status === "fetching" && "LOADING, PLEASE WAIT..."}
+        {status === "success" && (
           <>
             <Search search={search} />
             <SearchResults bookings={bookings} />
           </>
         )}
+        {status === "failure" && "SOMETHING WENT WRONG"}
       </div>
     </div>
   );
