@@ -64,6 +64,7 @@ h5 {
   border-radius: 0rem;
   min-height: 20vh;
   filter: brightness(50%) grayscale(80%);
+  object-fit: cover;
   z-index:0;
 }
 
