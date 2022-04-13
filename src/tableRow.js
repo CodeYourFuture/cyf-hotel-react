@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import CustomerProfile from "./customerProfile";
-import { normalizeUnits } from "moment";
+// import { normalizeUnits } from "moment";
 
 const TableRow = ({ e }) => {
   // above {e}, instead of writing props, we are just defining the variable name directlty using array destructuring
