@@ -36,7 +36,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        {status === "fetching" && "LOADING, PLEASE WAIT..."}
+        {isLoading === "fetching" && "LOADING, PLEASE WAIT..."}
         {status === "success" && (
           <>
             <Search search={search} />
