@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import ourBookings from "./data/fakeBookings.json";
 import moment from "moment";
 
@@ -11,12 +11,18 @@ const headings = [
   `room id`,
   `check in date`,
   `check out date`,
-  `number of nights`
+  `number of nights`,
+  `profile`
 ];
 
 function SearchResults(props) {
+  const [id, setId] = useState(null);
+
+  function handleButtonClick(clickedId) {
+    setId(clickedId);
+  }
   const DisplayData = props.bookings.map(booking => {
-    return <OurCustomRow booking={booking} />;
+    return <OurCustomRow booking={booking} handleClick={handleButtonClick} />;
   });
 
   return (
@@ -31,11 +37,12 @@ function SearchResults(props) {
         </thead>
         <tbody>{DisplayData}</tbody>
       </table>
+      {id ? <CustomerProfile id={id} /> : null}
     </div>
   );
 }
 
-function OurCustomRow({ booking }) {
+function OurCustomRow({ booking, handleClick }) {
   const [isClicked, setIsClicked] = useState(false);
   return (
     <tr
@@ -57,8 +64,18 @@ function OurCustomRow({ booking }) {
       <td>
         {moment(booking.checkOutDate).diff(moment(booking.checkInDate), "day")}
       </td>
+      <td>{booking.profile}</td>
+      <button onClick={() => handleClick(booking.id)}>Show Profile</button>
     </tr>
   );
 }
 
+function CustomerProfile(props) {
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+      .then(res => res.json())
+      .then(data => console.log(data));
+  }, [props.id]);
+  return `Customer ${props.id} Profile`;
+}
 export default SearchResults;
