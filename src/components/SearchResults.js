@@ -13,7 +13,7 @@ https://codesandbox.io/s/react-data-table-row-select-color-example-forked-w4zou6
 import React from "react";
 import { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
-import moment from "moment";
+// import moment from "moment";
 
 const SearchResults = (props) => {
   const [selectedRowColor, setSelectedRowColor] = useState([]);
