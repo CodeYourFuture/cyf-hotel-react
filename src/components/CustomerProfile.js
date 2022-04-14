@@ -12,10 +12,6 @@ const CustomerProfile = ({ id }) => {
       });
   }, [id]);
 
-  // if (id) {
-  //   return " ";
-  // }
-
   return (
     <div className="Profile-Container">
       <ul className="profile">
@@ -24,8 +20,7 @@ const CustomerProfile = ({ id }) => {
         </li>
         <li>ID: {profile.id} </li>
         <li>
-          Name: {profile.firstName}
-          {profile.surname}
+          Name: {profile.firstName} {profile.surname}
         </li>
         <li>Email: {profile.email}</li>
         {profile.vip && <li>VIP</li>}

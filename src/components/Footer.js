@@ -16,8 +16,6 @@ const Footer = (props) => {
   return (
     <div className="footer">
       <ul>
-        {/* accessing the props here, using dot notation;  mapping over the array; calling the callback function,  = (contact) => (
-          <li>{contact}</li>)*/}
         {props.contacts.map((contact) => (
           <li>{contact}</li>
         ))}
