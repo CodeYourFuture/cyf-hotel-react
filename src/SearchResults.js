@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 import moment from "moment";
 
 const headings = [
@@ -55,7 +56,11 @@ function OurCustomRow({ booking, handleClick }) {
       onClick={() => {
         setIsClicked(!isClicked);
       }}
-      style={isClicked ? { border: "2px solid blue" } : {}}
+      style={
+        isClicked
+          ? { border: "2px solid blue", backgroundColor: "lightgreen" }
+          : {}
+      }
     >
       <th scope="row">{booking.id}</th>
       {headings.map(heading => {
@@ -78,13 +83,5 @@ function OurCustomRow({ booking, handleClick }) {
       })}
     </tr>
   );
-}
-function CustomerProfile(props) {
-  useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customer/${props.id}`)
-      .then(res => res.json())
-      .then(data => console.log(data));
-  }, [props.id]);
-  return `Customer ${props.id} Profile`;
 }
 export default SearchResults;
