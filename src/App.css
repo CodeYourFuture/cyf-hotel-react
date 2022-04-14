@@ -68,7 +68,7 @@ h1 {
 
 .Background-image {
  filter:  grayscale(80%) brightness(120%);  
-  z-index:1;
+  z-index:-2;
 } 
 
 .fa {
