@@ -12,7 +12,7 @@ const Bookings = () => {
 
   useEffect(() => {
     setStatus("fetching");
-    fetch(`https://cyf-react.glitch.me/error`)
+    fetch(`https://cyf-react.glitch.me`)
       .then(res => res.json())
       .then(data => {
         if (data.error) {
@@ -25,6 +25,11 @@ const Bookings = () => {
         }
       });
   }, []);
+
+  const setListHandler = data => {
+    console.log("handle booking");
+    setBookings(data);
+  };
 
   const search = searchVal => {
     const filteredData =
@@ -48,7 +53,7 @@ const Bookings = () => {
           <>
             {" "}
             <Search search={search} />
-            <SearchResults list={bookings} />
+            <SearchResults list={bookings} setList={setListHandler} />
           </>
         )}
         {status === "fetching" && "Loading data..."}

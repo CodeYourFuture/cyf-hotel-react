@@ -54,9 +54,14 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
-
 .card {
+  width: 18rem;
+}
+
+.detail {
   width: 24rem;
+  background-color: #96bc9f;
+  margin-bottom: 20px;
 }
 
 .table-container {
