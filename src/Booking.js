@@ -9,6 +9,7 @@ const Booking = ({ booking, setProfile, setProfileLoaded, profileLoaded }) => {
   };
   const showProfile = event => {
     event.preventDefault(); //it's not stopping the row from being selected...
+    event.stopPropagation(); //stop propagation worked
     setProfileLoaded(false);
 
     // FETCH ERROR MESSAGE TEST URL (https://cyf-react.glitch.me/error)
