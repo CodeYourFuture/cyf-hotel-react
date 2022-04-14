@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const Booking = ({ booking, setProfile }) => {
+const Booking = ({ booking, setProfile, setProfileLoaded, profileLoaded }) => {
   const [selected, setSelected] = useState(false);
   const handleClick = event => {
     // SET STATE TO RERENDER
@@ -9,8 +9,30 @@ const Booking = ({ booking, setProfile }) => {
   };
   const showProfile = event => {
     event.preventDefault(); //it's not stopping the row from being selected...
-    setProfile(booking.id);
-    console.log("setProfile() in Booking: ", setProfile);
+    setProfileLoaded(false);
+
+    // FETCH ERROR MESSAGE TEST URL (https://cyf-react.glitch.me/error)
+
+    // DELAYED FETCH LOADING TEST URL (https://cyf-react.glitch.me/delayed)
+
+    // PROPER FETCH URL (https://cyf-react.glitch.me/customers/${booking.id})
+
+    fetch(`https://cyf-react.glitch.me/customers/${booking.id}`)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Fetching data was unsuccessful!");
+        }
+      })
+      .then(profileData => {
+        console.log(profileData);
+        setProfile(profileData);
+        setProfileLoaded(true);
+      })
+      .catch(error => {
+        alert(`${error}`);
+      });
   };
   const START_DATE = moment(booking.checkInDate);
   const END_DATE = moment(booking.checkOutDate);

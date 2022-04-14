@@ -100,7 +100,8 @@ i {
   font-style: italic;
 }
 
-ul {
+ul,
+.prof {
   background-color: #222;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -109,10 +110,24 @@ ul {
   list-style-type: none;
 }
 
-ul li {
+ul li,
+.prof {
   display: inline-block;
   margin-right: 2rem;
   padding: 1.5rem 0;
+}
+
+.prof {
+  padding-left: 2rem;
+  width: 100%;
+}
+
+.prof h2 {
+  font-weight: 600;
+}
+
+.prof li {
+  display: block;
 }
 
 .selectedRow {
