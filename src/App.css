@@ -33,22 +33,6 @@ body {
   background-color: var(--light);
 }
 
-h1 {
-  text-align: center;
-  padding: 40px 10px 10px 10px;
-  font-size: 30px;
-  font-family: inherit;
-  font-weight: bold;
-  color: var(--accent);
-/* positioning */
-  position: absolute;
-  top: 16rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index:1;
-}
-
-
 h5 {
   font-size: 25px;
   padding: 20px 0px 20px 0px;
@@ -58,28 +42,44 @@ h5 {
   text-align: center;
 }
 
-/* HEADER LOGO   ----------------------------- */
+/* HEADER   ------------------------------------------ */
 
-.Header-background-image {
-  border-radius: 0rem;
-  min-height: 20vh;
-  filter: brightness(50%) grayscale(80%);
-  /* object-fit: cover; */
-  z-index:0;
+h1 {
+  text-align: center;
+  /* padding: 40px 10px 10px 10px; */
+  font-size: 40px;
+  font-family: inherit;
+  font-weight: bold;
+  color: var(--accent);
+/* positioning */
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:1;
 }
+
+.Background-image {
+/* height: 10%; */
+ filter:  grayscale(80%) brightness(120%);
+  z-index:-10;
+  /* width: 100%; */
+  height:10% ;
+  object-fit: cover;
+} 
 
 
 .fa {
-  font-size: 100px;
+  font-size: 60px;
   color: var(--light);
   box-shadow: var(--box-shadow-1);
   /* border-radius: 3rem 3rem 3rem 3rem; */
   /* positioning */
   position: absolute;
-  top: 8rem;
+  top: 5vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index:1;
+  z-index:2;
 }
 
 /* TOURIST CARD  ------------------------------------- */
@@ -87,8 +87,6 @@ h5 {
 .Tourist-Cards {
   align-items: center;
   justify-content: center;
-  /* border-radius: 3rem 3rem 3rem 3rem;  */
-   
 }
 
 .card {
@@ -105,14 +103,12 @@ h5 {
   box-shadow: var(--box-shadow-1);
 }
 
-img {
+.card-img {
   background-size: contain;
   width: 100%;
   height: 350px;  
-  border-radius: 5px;
   border-radius: 2rem 2rem 0rem 0rem; 
   filter: grayscale(80%);
-  /* filter: sepia(20%); */
   filter:  grayscale(80%) brightness(120%);  
 }
 
