@@ -13,7 +13,6 @@ https://codesandbox.io/s/react-data-table-row-select-color-example-forked-w4zou6
 import React from "react";
 import { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
-// import moment from "moment";
 
 const SearchResults = (props) => {
   const [selectedRowColor, setSelectedRowColor] = useState([]);
@@ -23,11 +22,9 @@ const SearchResults = (props) => {
   const HighLight = (id) => {
     let selectedRow = [...selectedRowColor];
 
-    //.map
     if (selectedRow.includes(id)) {
       const index = selectedRow.indexOf(id);
       selectedRow.splice(index, 1);
-
       setSelectedRowColor(selectedRow);
     } else {
       selectedRow.push(id);
@@ -59,13 +56,11 @@ const SearchResults = (props) => {
             return (
               <tr
                 key={result.id}
-                onClick={(e) => {
+                onClick={(event) => {
                   HighLight(result.id);
                 }}
                 className={
-                  selectedRowColor.includes(result.id)
-                    ? "lightBlueBackground"
-                    : ""
+                  selectedRowColor.includes(result.id) ? "HighlightRow" : ""
                 }
               >
                 <td>{result.id}</td>
@@ -77,13 +72,16 @@ const SearchResults = (props) => {
                 <td>{result.checkInDate}</td>
                 <td>{result.checkOutDate}</td>
                 <td>
-                  {findTheNumberOfDays(result.checkInDate, result.checkOutDate)}
+                  {findNumberOfDaysBooked(
+                    result.checkInDate,
+                    result.checkOutDate
+                  )}
                 </td>
                 <td>
                   <button
                     className="btn btn-primary"
-                    onClick={(e) => {
-                      e.stopPropagation();
+                    onClick={(event) => {
+                      event.stopPropagation();
                       setProfileId(result.id);
                     }}
                   >
@@ -100,15 +98,13 @@ const SearchResults = (props) => {
   );
 };
 
-// Function to find the number of nights a person stayed
-
-function findTheNumberOfDays(checkInDate, checkOutDate) {
-  const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+// Number of nights booked
+function findNumberOfDaysBooked(checkInDate, checkOutDate) {
+  const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
   const checkIn = new Date(checkInDate);
   const checkOut = new Date(checkOutDate);
 
   const daysStayed = Math.round(Math.abs((checkIn - checkOut) / oneDay));
   return daysStayed;
 }
-
 export default SearchResults;

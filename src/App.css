@@ -60,7 +60,7 @@ h1 {
   color: var(--accent);
 /* positioning */
   position: absolute;
-  top: 10vh;
+  top: 12vh;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index:1;
@@ -68,7 +68,7 @@ h1 {
 
 .Background-image {
  filter:  grayscale(80%) brightness(120%);  
-  z-index:-2;
+  z-index:5;
 } 
 
 .fa {
@@ -225,12 +225,16 @@ button:hover {
   .Profile-Container {
     width: 80%;
     margin: 30px  auto 10px auto;
-    border-radius: 8px;
+    /* border-radius: var(--border-radius-3); */
     background-color: var(--secondary);
     color:var(--accent);
     padding: 10px;
   }
 
+  .HighlightRow {
+    background-color: var(--d-accent);
+    color:var(--accent);
+  }
   
 /* CARD BUTTON ------------------------------------------ */
 
