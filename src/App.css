@@ -184,7 +184,7 @@ button:hover {
   color: var(--accent);
 }
 
-/* BOOKING TABLE   ------------------------------------------------------ */
+/* BOOKING TABLE   -------------------------------------------- */
 
 .Table {
   width: 80%;
@@ -210,33 +210,38 @@ button:hover {
   font-weight: 900;
 }
 
-
-.Profile, li {
-  line-height: 30px;
-  font-size: 20px;  
-  border-radius: 8px;
-}
-
-.Table, .th {
+.Table, .th  {
   border-spacing: 10px;
   padding: 10px;
   }
 
+  /* Customer profile ---------------------------------- */
+  
   .Profile-Container {
     width: 80%;
     margin: 30px  auto 10px auto;
-    /* border-radius: var(--border-radius-3); */
     background-color: var(--secondary);
     color:var(--accent);
     padding: 10px;
+    line-height: 30px;
+    font-size: 20px;  
   }
+
+  /* li {
+    line-height: 30px;
+    font-size: 20px;  
+    /* border-radius: 8px; */
+    /* text-align: none; 
+    text-decoration: none !important;
+  } */
+
 
   .HighlightRow {
     background-color: var(--d-accent);
     color:var(--accent);
   }
   
-/* CARD BUTTON ------------------------------------------ */
+/* CARD BUTTON --------------------------------------- */
 
 a {
   text-decoration: none;
@@ -263,7 +268,7 @@ button:hover {
   color: var(--accent);
 }
 
-/* RESTAURANT ----------------------------------------- */
+/* RESTAURANT --------------------------------------- */
 
 .orderContainer {
   padding: 5px 10px 40px 10px;
@@ -280,12 +285,7 @@ button:hover {
   padding: 16px 10px 16px 10px;
 }
 
-/* RESTAURANT BUTTON -------------------------------------- */
-
-a {
-  text-decoration: none;
-  color: var(--accent);
-}
+/* RESTAURANT BUTTON -------------------------------- */
 
 .Btn-2 {
   width: 100px;
@@ -307,7 +307,7 @@ button-2:hover {
   color: var(--accent);
 }
 
-/* FOOTER --------------------------------------------- */
+/* FOOTER ------------------------------------------ */
 
 .footer {
   color: var(--accent);
@@ -336,7 +336,7 @@ button-2:hover {
 }
 
 
-/* TABLE  ---------------------------------- */
+/* TABLE  ------------------------------------------- */
 @media screen and (max-width: 800px) {
   .Tourist-Cards {
     display: flex;
@@ -365,17 +365,8 @@ button-2:hover {
   th {
     flex: 1 1 150px;
   }
- 
-  .Profile-Container {
-    width: 80%;
-    margin: 30px  auto 10px auto;
-    border-radius: 8px;
-    background-color: var(--secondary);
-    color:var(--accent);
-    padding: 10px;
-  }
 
-  /* RESTAURANT FOOD ORDER ---------------------------------- */
+  /* RESTAURANT FOOD ORDER ------------------------------- */
   .orderFood  {
     width: 80%;
     margin: 30px  auto 10px auto;

@@ -19,6 +19,8 @@ const CustomerProfile = ({ id }) => {
           <h5>Customer Profile </h5>
         </li>
         <li>ID: {profile.id} </li>
+
+        {/* <td>ID: {profile.id} </td> */}
         <li>
           Name: {profile.firstName} {profile.surname}
         </li>
