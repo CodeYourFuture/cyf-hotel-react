@@ -16,6 +16,8 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .App-title {
@@ -54,4 +56,21 @@ tr {
 
 .card {
   width: 18rem;
+  margin: 2rem;
+}
+.CYFLogo {
+  width: 4rem;
+  margin: 1rem;
+}
+.TourCard {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.FooterList {
+  display: flex;
+}
+.FooterList li {
+  list-style-type: none;
+  display: inline;
 }
