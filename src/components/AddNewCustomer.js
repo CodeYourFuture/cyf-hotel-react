@@ -1,16 +1,48 @@
-import React from "react";
+import { doc } from "prettier";
+import React, { useState } from "react";
+import Bookings from "../Bookings";
 
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, "0");
-var mm = String(today.getMonth() + 1).padStart(2, "0");
-var yyyy = today.getFullYear();
+export default function AddNewCustomer({ newID, setBookings }) {
+  // const checkRequirements = () => {
+  //   // if(title.length>0)
+  //   //   document.getElementById("title").style.color = "Red";
+  //   return title.length>0
+  // }
 
-today = yyyy + "-" + mm + "-" + dd;
+  function useFormState(initial) {
+    const [value, setValue] = useState(initial);
+    function setEventValue(event) {
+      setValue(event.target.value);
+    }
+    return [value, setEventValue];
+  }
+  const [title, setTitle] = useFormState("");
+  const [firstName, setFirstName] = useFormState("");
+  const [surname, setSurname] = useFormState("");
+  const [email, setEmail] = useFormState("");
+  const [phone, setPhone] = useFormState("");
+  const [roomId, setRoomId] = useFormState("");
+  const [checkInDate, setCheckInDate] = useFormState("");
+  const [checkOutDate, setCheckOutDate] = useFormState("");
+  const [vip, setVip] = useFormState("");
 
-const AddNewCustomer = props => {
-  const inputChangeHandler = e => {
-    const value = e.target.value;
-  };
+  function handleSubmitEvent(submitEvent) {
+    submitEvent.preventDefault();
+    //!checkRequirements() && exit;
+    const newCustomer = {
+      id: newID,
+      title: title,
+      firstName: firstName,
+      surname: surname,
+      email: email,
+      phoneNumber: phone,
+      roomId: roomId,
+      checkInDate: checkInDate,
+      checkOutDate: checkOutDate,
+      vip: vip
+    };
+    setBookings(previous => previous.concat(newCustomer));
+  }
   return (
     <>
       <a
@@ -25,38 +57,8 @@ const AddNewCustomer = props => {
         Add new customer
       </a>
       <div className="collapse form-group" id="collapseAdd">
-        <form
-          className="card card-body"
-          onSubmit={event => {
-            const newData = {};
-            const nnewData = new FormData(event.target);
-            const value = Object.fromEntries(nnewData.entries());
-            newData["id"] = parseInt(value.id);
-            newData["title"] = value.title;
-            newData["firstName"] = value.firstName;
-            newData["surname"] = value.surname;
-            newData["email"] = value.email;
-            newData["roomId"] = value.roomId;
-            newData["checkOutDate"] = value.checkOutDate;
-            newData["checkInDate"] = value.checkInDate;
-
-            props.handleClick(newData);
-            event.preventDefault();
-          }}
-        >
+        <form onSubmit={handleSubmitEvent}>
           <div className="form-group">
-            <div className="form-group">
-              <label htmlFor="id">ID</label>
-              <input
-                type="text"
-                placeholder="ID"
-                id="id"
-                name="id"
-                className="form-control"
-                onChange={inputChangeHandler}
-                value="6"
-              />
-            </div>
             <div className="form-group">
               <label htmlFor="title">Title</label>
               <input
@@ -65,7 +67,7 @@ const AddNewCustomer = props => {
                 id="title"
                 name="title"
                 placeholder="Enter customer's title."
-                onChange={inputChangeHandler}
+                onChange={setTitle}
               />
             </div>
             <div className="form-group">
@@ -76,7 +78,7 @@ const AddNewCustomer = props => {
                 id="firstName"
                 name="firstName"
                 placeholder="Enter customer's first name."
-                onChange={inputChangeHandler}
+                onChange={setFirstName}
               />
             </div>
             <div className="form-group">
@@ -87,7 +89,7 @@ const AddNewCustomer = props => {
                 id="surname"
                 name="surname"
                 placeholder="Enter customer's surname."
-                onChange={inputChangeHandler}
+                onChange={setSurname}
               />
             </div>
             <div className="form-group">
@@ -98,7 +100,7 @@ const AddNewCustomer = props => {
                 id="email"
                 name="email"
                 placeholder="Enter customer's email address."
-                onChange={inputChangeHandler}
+                onChange={setEmail}
               />
             </div>
             <div className="form-group">
@@ -109,7 +111,7 @@ const AddNewCustomer = props => {
                 id="phoneNumber"
                 name="phoneNumber"
                 placeholder="Enter customer's phone number."
-                onChange={inputChangeHandler}
+                onChange={setPhone}
               />
             </div>
             <div className="form-group">
@@ -120,7 +122,7 @@ const AddNewCustomer = props => {
                 id="roomId"
                 name="roomId"
                 placeholder="Enter customer's room id."
-                onChange={inputChangeHandler}
+                onChange={setRoomId}
               />
             </div>
             <div className="form-group">
@@ -130,9 +132,8 @@ const AddNewCustomer = props => {
                 className="form-control"
                 id="checkInDate"
                 name="checkInDate"
-                defaultValue={today}
                 placeholder="Enter customer's check-in date."
-                onChange={inputChangeHandler}
+                onChange={setCheckInDate}
               />
             </div>
             <div className="form-group">
@@ -142,9 +143,8 @@ const AddNewCustomer = props => {
                 className="form-control"
                 id="checkOutDate"
                 name="checkOutDate"
-                defaultValue={today}
                 placeholder="Enter customer's check-out date."
-                onChange={inputChangeHandler}
+                onChange={setCheckOutDate}
               />
             </div>
             <div className="form-group">
@@ -154,7 +154,7 @@ const AddNewCustomer = props => {
                 id="vip"
                 name="vip"
                 defaultValue={undefined}
-                onChange={inputChangeHandler}
+                onChange={setVip}
               />
               <label className="form-check-label" htmlFor="vip">
                 {" "}
@@ -163,12 +163,12 @@ const AddNewCustomer = props => {
             </div>
           </div>
           <div>
-            <button className="btn btn-primary">Save</button>
+            <button type="submit" className="btn btn-primary">
+              Save
+            </button>
           </div>
         </form>
       </div>
     </>
   );
-};
-
-export default AddNewCustomer;
+}

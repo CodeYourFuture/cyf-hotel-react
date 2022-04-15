@@ -1,5 +1,5 @@
 import React from "react";
-import Cities from "./data/cities.json";
+import Cities from "../data/cities.json";
 
 const TouristInfoCards = () => (
   <div className="card-deck p-5">

@@ -1,22 +1,14 @@
 import React, { useState, useEffect } from "react";
-import AddNewCustomer from "./AddNewCustomer";
 import SearchDetails from "./SearchDetails";
 import Profile from "./Profile";
 
 const SearchResults = props => {
   const [profileID, setProfileID] = useState(5);
-  const [newCustomers, setNewCustomers] = useState(props.list);
+  // const [newCustomers, setNewCustomers] = useState(props.list);
   const [sortAscending, setSortAscending] = useState(true);
 
   function handleClickProfile(clickedId) {
     setProfileID(clickedId);
-  }
-
-  function handleClickAdd(customers) {
-    newCustomers.push(customers);
-    // setNewCustomers(newCustomers)
-    console.log("handle search result");
-    props.setList(newCustomers);
   }
 
   const columnSort = col => {
@@ -26,9 +18,9 @@ const SearchResults = props => {
     setSortAscending(!sortAscending);
   };
 
-  useEffect(() => {
-    setNewCustomers(newCustomers);
-  }, [sortAscending]);
+  // useEffect(() => {
+  //   setNewCustomers(newCustomers);
+  // }, [sortAscending]);
 
   return (
     <div className="table-container">
@@ -48,7 +40,7 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody className="table-body">
-          {newCustomers.map((obj, index) => {
+          {props.list.map((obj, index) => {
             return (
               <SearchDetails
                 key={index}
@@ -60,7 +52,6 @@ const SearchResults = props => {
         </tbody>
       </table>
       {profileID && <Profile id={profileID} />}
-      <AddNewCustomer handleClick={handleClickAdd} />
     </div>
   );
 };
