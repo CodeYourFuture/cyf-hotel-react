@@ -17,7 +17,12 @@ export default function TouristInfoCards() {
           Scottish Opera, Scottish Ballet and National Theatre of Scotland.
         </p>
         <div className="card-body">
-          <a href="https://peoplemakeglasgow.com/" className="btn btn-primary">
+          <a
+            href="https://peoplemakeglasgow.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
             Visit Glasgow
           </a>
         </div>
@@ -37,7 +42,12 @@ export default function TouristInfoCards() {
           Industry.
         </p>
         <div className="card-body">
-          <a href="https://visitmanchester.com/" className="btn btn-primary">
+          <a
+            href="https://visitmanchester.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
             Visit Manchester
           </a>
         </div>
@@ -57,7 +67,12 @@ export default function TouristInfoCards() {
           coronations.
         </p>
         <div className="card-body">
-          <a href="https://visitlondon.com" className="btn btn-primary">
+          <a
+            href="https://visitlondon.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
             Visit London
           </a>
         </div>

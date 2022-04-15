@@ -8,13 +8,13 @@ export default function Bookings() {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
       .then(data => setBookings(data));
   }, []);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    //console.info("TO DO!", searchVal);
     const filteredBookings = bookings.filter(({ firstName, surname }) => {
       if (firstName === searchVal || surname === searchVal) {
         return true;
