@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import ourBookings from "./data/fakeBookings.json";
 import moment from "moment";
+import "./style/SearchResults.css";
 
 const headings = [
   `id`,
@@ -51,9 +51,7 @@ function OurCustomRow({ booking, handleClick }) {
       }}
       style={isClicked ? { border: "2px solid red" } : {}}
     >
-      <th scope="row">
-        <td>{booking.id}</td>
-      </th>
+      <th scope="row">{booking.id}</th>
       <td>{booking.title}</td>
       <td>{booking.firstName}</td>
       <td>{booking.surname}</td>
@@ -65,7 +63,9 @@ function OurCustomRow({ booking, handleClick }) {
         {moment(booking.checkOutDate).diff(moment(booking.checkInDate), "day")}
       </td>
       <td>{booking.profile}</td>
-      <button onClick={() => handleClick(booking.id)}>Show Profile</button>
+      <td>
+        <button onClick={() => handleClick(booking.id)}>Show Profile</button>
+      </td>
     </tr>
   );
 }

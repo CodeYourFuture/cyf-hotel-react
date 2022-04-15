@@ -4,7 +4,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
 import Footer from "./Footer";
-import "./App.css";
+import "./style/App.css";
 
 const App = () => {
   const contactInfo = [
