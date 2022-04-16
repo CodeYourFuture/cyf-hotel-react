@@ -23,6 +23,7 @@
 }
 
 .App-content {
+  border: 2px solid blue;
   padding-top: 20px;
   font-size: large;
 }
@@ -54,4 +55,12 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.tableResult {
+  border: 2px solid red;
+}
+
+.selected {
+  background-color: yellow;
 }
