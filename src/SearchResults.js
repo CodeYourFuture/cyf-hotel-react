@@ -21,6 +21,7 @@ function SearchResults(props) {
             <th scope="col">Check In</th>
             <th scope="col">Check Out</th>
             <th scope="col">Total Nights</th>
+            <th scope="col">Profile</th>
           </tr>
         </thead>
         <tbody>
@@ -55,6 +56,11 @@ function TableRow(props) {
           props.data.checkInDate,
           props.data.checkOutDate
         )}
+      </td>
+      <td>
+        <button onClick={e => props.showCustomerIdFunction(props.data.id)}>
+          Show profile
+        </button>
       </td>
     </tr>
   );
