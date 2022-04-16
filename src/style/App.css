@@ -45,25 +45,6 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding: 20px 0;
-  text-align: center;
-  background-color: #5b5757;
-  color: #fff;
-}
-.footer ul {
-  list-style: none;
-}
-.cardContainer {
-  padding: 30px 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.card {
-  width: 18rem;
-}
-
 .orders {
   display: flex;
   justify-content: center;
