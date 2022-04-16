@@ -1,0 +1,57 @@
+@media only screen and (max-width: 600px) {
+  .cardContainer {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    margin: 20px 0;
+  }
+}
+
+.App {
+  text-align: left;
+}
+
+.App-header {
+  background-color: rgb(68, 182, 190);
+  height: 150px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-content {
+  padding-top: 20px;
+  font-size: large;
+}
+
+.search {
+  padding: 5px 0 20px 0;
+}
+
+tr {
+  color: #5b5757;
+}
+
+.results {
+  padding-top: 15px;
+}
+
+.orders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order {
+  list-style: none;
+  padding: 10px;
+}

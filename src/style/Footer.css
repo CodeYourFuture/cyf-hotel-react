@@ -1,0 +1,20 @@
+.footer {
+  padding: 20px 0;
+  text-align: center;
+  background-color: #1e2c41;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer ul {
+  margin: auto;
+}
+
+@media only screen and (min-width: 886px) {
+  footer ul {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
