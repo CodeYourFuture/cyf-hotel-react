@@ -1,8 +1,21 @@
 import React, { useState } from "react";
 import SearchResultRow from "./SearchResultRow";
-import FakeBookings from "./data/fakeBookings.json";
+import CustomerProfile from "./customerProfile";
 
-function SearchResults() {
+function SearchResults({ FakeBookings, searchVal }) {
+  let [profile, setProfile] = useState("");
+  const changeProfile = id => {
+    setProfile(id);
+    console.log(profile);
+  };
+
+  let filteredData = FakeBookings.filter(data => {
+    return (
+      data.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+      data.surname.toLowerCase().includes(searchVal.toLowerCase())
+    );
+  });
+
   return (
     <div>
       <table className="table">
@@ -17,24 +30,28 @@ function SearchResults() {
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
             <th scope="col">Number of nights</th>
+            <th scope="col">Profile</th>
           </tr>
         </thead>
         <tbody>
-          {FakeBookings.map(detail => {
+          {filteredData.map(detail => {
             return (
               <SearchResultRow
                 id={detail.id}
-                title={detail.firstName}
+                title={detail.title}
+                firstName={detail.firstName}
                 surname={detail.surname}
                 email={detail.email}
                 roomId={detail.roomId}
                 checkInDate={detail.checkInDate}
                 checkOutDate={detail.checkOutDate}
+                changeProfile={changeProfile}
               />
             );
           })}
         </tbody>
       </table>
+      <CustomerProfile profile={profile} />
     </div>
   );
 }

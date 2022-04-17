@@ -9,12 +9,13 @@ function SearchResultRow({
   email,
   roomId,
   checkInDate,
-  checkOutDate
+  checkOutDate,
+  changeProfile
 }) {
   var admission = moment(checkInDate, "YYYY-MM-DD");
   var discharge = moment(checkOutDate, "YYYY-MM-DD");
 
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(true);
   const [className, setClassName] = useState("");
 
   // when a row is clicked, it first changes the state 'selected'
@@ -28,6 +29,7 @@ function SearchResultRow({
       setClassName("");
     }
   }
+
   return (
     <tr onClick={changeClassName} className={className}>
       <td>{id}</td>
@@ -39,6 +41,17 @@ function SearchResultRow({
       <td>{checkInDate}</td>
       <td>{checkOutDate}</td>
       <td>{discharge.diff(admission, "days")}</td>
+      <td>
+        <td>
+          <button
+            onClick={() => {
+              changeProfile(id);
+            }}
+          >
+            Show Profile
+          </button>
+        </td>{" "}
+      </td>
     </tr>
   );
 }
