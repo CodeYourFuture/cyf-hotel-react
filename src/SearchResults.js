@@ -1,9 +1,10 @@
 import React from "react";
 
-const SearchResults = () => {
+const SearchResults = ({ results }) => {
+  console.log(results);
   return (
-    <div>
-      <table className="table">
+    <div className="table">
+      <table>
         <tr>
           <th>ID</th>
           <th>Title</th>
@@ -13,15 +14,19 @@ const SearchResults = () => {
           <th>Room ID</th>
           <th>Check-in Date</th>
         </tr>
-        <tr>
-          <td>1234</td>
-          <td>Mr</td>
-          <td>J</td>
-          <td>Digger</td>
-          <td>jd@g.co</td>
-          <td>567</td>
-          <td>17/04/2022</td>
-        </tr>
+        {results.map((info, key) => {
+          return (
+            <tr key={key}>
+              <td>{info.id}</td>
+              <td>{info.title}</td>
+              <td>{info.firstName}</td>
+              <td>{info.surname}</td>
+              <td>{info.email}</td>
+              <td>{info.roomId}</td>
+              <td>{info.checkInDate}</td>
+            </tr>
+          );
+        })}
       </table>
     </div>
   );

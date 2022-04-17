@@ -31,10 +31,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -79,4 +81,9 @@ ul {
 
 img {
   height: 200px;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
 }
