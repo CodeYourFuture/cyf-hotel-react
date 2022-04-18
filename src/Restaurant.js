@@ -1,15 +1,34 @@
 import React, { useState } from "react";
 
 const Restaurant = () => {
-  const [order, setOrder] = useState(0);
-  // const pizzas = 0;
+  return (
+    <div className="restaurant">
+      <h3>Restaurant Orders</h3>
+      <ul>
+        <Order />
+      </ul>
+    </div>
+  );
 
-  function orderOne() {
-    setOrder(current => {
-      return current + 1;
-    });
+  // Pizza Order Component
+  function Order() {
+    const [order, setOrder] = useState(0);
+
+    function orderOne() {
+      setOrder(current => {
+        return current + 1;
+      });
+    }
+
+    return (
+      <li className="pizzas">
+        Pizzas: {order}
+        <RestaurantButton handleClick={orderOne} />
+      </li>
+    );
   }
 
+  // Button Component
   function RestaurantButton(props) {
     return (
       <button className="btn btn-primary" onClick={props.handleClick}>
@@ -17,17 +36,6 @@ const Restaurant = () => {
       </button>
     );
   }
-
-  return (
-    <div className="restaurant">
-      <h3>Restaurant Orders</h3>
-      <ul>
-        <li className="pizzas">
-          Pizzas: {order} <RestaurantButton handleClick={orderOne} />
-        </li>
-      </ul>
-    </div>
-  );
 };
 
 export default Restaurant;
