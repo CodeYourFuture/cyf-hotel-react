@@ -10,15 +10,20 @@ const Restaurant = () => {
     });
   }
 
+  function RestaurantButton(props) {
+    return (
+      <button className="btn btn-primary" onClick={props.handleClick}>
+        Add
+      </button>
+    );
+  }
+
   return (
     <div className="restaurant">
       <h3>Restaurant Orders</h3>
       <ul>
         <li className="pizzas">
-          Pizzas: {order}
-          <button className="btn btn-primary" onClick={orderOne}>
-            Add
-          </button>
+          Pizzas: {order} <RestaurantButton handleClick={orderOne} />
         </li>
       </ul>
     </div>

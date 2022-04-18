@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 
 const SearchResults = ({ results }) => {
@@ -17,6 +18,10 @@ const SearchResults = ({ results }) => {
           <th># of Nights</th>
         </tr>
         {results.map((info, key) => {
+          let a = moment(info.checkInDate);
+          console.log(a);
+          let b = moment(info.checkOutDate);
+          console.log(b);
           return (
             <tr key={key}>
               <td>{info.id}</td>
@@ -27,7 +32,7 @@ const SearchResults = ({ results }) => {
               <td>{info.roomId}</td>
               <td>{info.checkInDate}</td>
               <td>{info.checkOutDate}</td>
-              {/* <td>{info.checkInDate.diff(info.checkOutDate, 'days')}</td> */}
+              <td>{b.diff(a, "days")}</td>
             </tr>
           );
         })}
