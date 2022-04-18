@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
-import fakeBookings from "./data/fakeBookings.json";
+// import ourBookings from "./data/fakeBookings.json";
 import SearchResults from "./SearchResults";
 
 const Bookings = () => {
@@ -8,13 +8,13 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
 
-  const [bookings, setBookings] = useState(fakeBookings);
+  const [bookings, setBookings] = useState([]);
 
-  // useEffect(() => {
-  //   fetch ("https://cyf-react.glitch.me")
-  //   .then(res) => res.json())
-  //   .then ((data) => console.group(data));
-  // }, []);
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
+      .then(res => res.json())
+      .then(data => setBookings(data));
+  }, []); // only run once, after the first render
 
   return (
     <div className="App-content">
