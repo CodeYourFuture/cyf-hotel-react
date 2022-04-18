@@ -1,12 +1,9 @@
-/* .App {
+.App {
   text-align: left;
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
-}
-.card {
-  width: 18rem;
 }
 
 .App-header {
@@ -56,17 +53,8 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
-} */
+}
 
-/* MEDIA */
-@media only screen and (max-width: 1200px) {
-  .card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .card {
-    margin-bottom: 34px;
-  }
+.card {
+  width: 18rem;
 }

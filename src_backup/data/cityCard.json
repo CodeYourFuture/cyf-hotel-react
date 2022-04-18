@@ -1,0 +1,21 @@
+[
+  {
+    "city": "London",
+    "info": "Discover the best of London with Visit London, the official guide to England’s exciting capital. Find things to do in London, from iconic sightseeing spots and fun-filled days out to top restaurants, theatre and unmissable London events. If you’re not able to visit just yet, plan ahead to make the most of your next visit.",
+    "img": "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+    "link": "https://visitlondon.com/"
+  },
+  {
+    "city": "Manchester",
+    "info": "Welcome to the official tourism site of Greater Manchester where you can search for things to do in Manchester and find out what's on, as well as getting inspiration for your visit to this fantastic city region.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/0/0a/The_Lowry.jpg",
+    "link": "https://www.visitmanchester.com/"
+  },
+  {
+    "city": "Glasgow",
+    "info": "From independent stores to high street retailers, Glasgow is the best shopping city. Glasgow's city centre is home to flagship stores, impressive shopping centres and designer favourites all within an easily walkable area.",
+
+    "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/1d/cd/18.jpg",
+    "link": "https://peoplemakeglasgow.com/"
+  }
+]

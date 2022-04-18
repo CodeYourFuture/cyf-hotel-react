@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const SearchResult = props => {
+const SearchResults = props => {
   return (
     <table className="table">
       <thead>
@@ -52,4 +52,4 @@ const TableRow = props => {
   );
 };
 
-export default SearchResult;
+export default SearchResults;
