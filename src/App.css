@@ -9,13 +9,14 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  /* height: 50px; */
+  /* padding: 20px; */
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  padding-left: 2.5rem;
 }
 
 .App-title {
@@ -50,8 +51,89 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 0;
+}
+
+.footer ul {
+  margin-bottom: inherit;
 }
 
 .card {
   width: 18rem;
+}
+
+i {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}
+
+.hotel-header-title {
+  font-size: 1.5rem;
+  line-height: 100%;
+  padding: 1rem 0.25rem 0.5rem 0.5rem;
+  display: inline-block;
+}
+
+.TouristInfoCards {
+  padding-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 18rem);
+  grid-gap: 1.5rem;
+  justify-content: space-around;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 18rem;
+}
+
+.card {
+  min-width: 18rem;
+  max-width: 25rem;
+}
+
+.card-body p {
+  font-style: italic;
+}
+
+ul,
+.prof {
+  background-color: #222;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+ul li,
+.prof {
+  display: inline-block;
+  margin-right: 2rem;
+  padding: 1.5rem 0;
+}
+
+.prof {
+  padding-left: 2rem;
+  width: 100%;
+}
+
+.prof h2 {
+  font-weight: 600;
+}
+
+.prof li {
+  display: block;
+}
+
+.selectedRow {
+  background-color: primar;
+}
+
+table {
+  cursor: pointer;
 }
