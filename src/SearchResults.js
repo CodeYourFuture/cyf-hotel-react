@@ -10,31 +10,41 @@ const headers = [
   "roomId",
   "checkInDate",
   "checkOutDate",
-  "#Nights"
+  "#Nights",
+  "profile?"
 ];
 
 function SearchResults(props) {
-  // const [highlight, setHighlight] = useState(false);
+  const [id, setId] = useState(null);
+
+  function handleButtonClick(clickedId) {
+    setId(clickedId);
+  }
 
   return (
-    <table className="styled-table">
-      <thead>
-        <tr>
-          {headers.map(heading => {
-            return <th scope="col">{heading} </th>;
+    <div>
+      <table className="styled-table">
+        <thead>
+          <tr>
+            {headers.map(heading => {
+              return <th scope="col">{heading} </th>;
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {props.bookings.map(booking => {
+            return (
+              <OurCustomrow booking={booking} handleClick={handleButtonClick} />
+            );
           })}
-        </tr>
-      </thead>
-      <tbody>
-        {props.bookings.map(booking => {
-          return <OurCustomrow booking={booking} />;
-        })}
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+      {id && <CustomerProfile id={id} />}
+    </div>
   );
 }
 
-function OurCustomrow({ booking }) {
+function OurCustomrow({ booking, handleClick }) {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
@@ -52,12 +62,22 @@ function OurCustomrow({ booking }) {
           const inDate = moment(booking.checkOutDate);
           const outDate = moment(booking.checkInDate);
           return <td>{inDate.diff(outDate, "days")} </td>;
+        } else if (heading === "profile?") {
+          return (
+            <button onClick={() => handleClick(booking.id)}>
+              Show Profile
+            </button>
+          );
         } else {
           return <td>{booking[heading]}</td>;
         }
       })}
     </tr>
   );
+}
+
+function CustomerProfile(props) {
+  return `Customer ${props.id} Profile`;
 }
 
 export default SearchResults;
