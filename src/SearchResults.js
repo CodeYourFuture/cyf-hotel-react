@@ -13,6 +13,8 @@ const SearchResults = ({ results }) => {
           <th>Email</th>
           <th>Room ID</th>
           <th>Check-in Date</th>
+          <th>Check-out Date</th>
+          <th># of Nights</th>
         </tr>
         {results.map((info, key) => {
           return (
@@ -24,6 +26,8 @@ const SearchResults = ({ results }) => {
               <td>{info.email}</td>
               <td>{info.roomId}</td>
               <td>{info.checkInDate}</td>
+              <td>{info.checkOutDate}</td>
+              {/* <td>{info.checkInDate.diff(info.checkOutDate, 'days')}</td> */}
             </tr>
           );
         })}

@@ -87,3 +87,14 @@ img {
   display: flex;
   justify-content: center;
 }
+
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pizzas {
+  display: flex;
+  flex-direction: column;
+}
