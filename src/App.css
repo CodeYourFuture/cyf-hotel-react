@@ -4,18 +4,20 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 100px;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.3em;
   font-weight: bold;
+  padding-left: 135px;
+  display: block;
+  position: relative;
 }
 
 .App-title {
@@ -24,7 +26,6 @@
 
 .App-content {
   padding-top: 20px;
-  font-size: large;
 }
 
 @keyframes App-logo-spin {
@@ -35,6 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -54,4 +56,59 @@ tr {
 
 .card {
   width: 18rem;
+  margin: 20px;
+}
+
+.card h2 {
+  color: #026c96;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 12px;
+}
+
+footer {
+  border-top: 1px solid #cacdd1;
+  background-color: #f3f4f4;
+  width: 100%;
+}
+
+footer ul {
+  margin: 15px;
+}
+
+footer ul li {
+  list-style-type: none;
+}
+.btn {
+  margin: 3px;
+}
+
+.order-container {
+  width: 400px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.logo1 {
+  position: absolute;
+  height: 95px;
+  width: 95px;
+  border-radius: 50px;
+  border: 5px solid white;
+  margin-left: 25px;
+  top: 20px;
+  background: #fff;
+  box-shadow: 0px 0px 4px #18181875;
 }
