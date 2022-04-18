@@ -5,10 +5,6 @@ import CustomerProfile from "./CustomerProfile";
 const SearchResult = props => {
   const [selectedId, setSelectedId] = useState();
 
-  const setSelected = id => {
-    setSelectedId(id);
-  };
-
   return (
     <div>
       <table className="table">
@@ -27,7 +23,7 @@ const SearchResult = props => {
         </thead>
         <tbody>
           {props.results.map((item, index) => (
-            <TableRow item={item} index={index} setSelected2={setSelected} />
+            <TableRow item={item} index={index} setSelectedId={setSelectedId} />
           ))}
         </tbody>
       </table>
@@ -41,10 +37,6 @@ const TableRow = props => {
 
   const clickHandler = () => {
     setSelected(!selected);
-  };
-
-  const handleCustomerId = id => {
-    props.setSelected2(id);
   };
 
   return (
@@ -67,7 +59,7 @@ const TableRow = props => {
         <button
           className="btn btn-primary"
           onClick={() => {
-            handleCustomerId(props.item.id);
+            props.setSelectedId(props.item.id);
           }}
         >
           Show Profile
