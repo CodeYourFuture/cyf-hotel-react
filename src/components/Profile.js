@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 
-const Profile = props => {
-  const [detailData, setDetailData] = useState({});
+const Profile = (props) => {
+  const [detailData, setDetailData] = useState({})
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
-      .then(res => res.json())
-      .then(data => {
-        setDetailData(data);
-      });
-  }, [props.id]);
+      .then((res) => res.json())
+      .then((data) => {
+        setDetailData(data)
+      })
+  }, [props.id])
   return (
     <div className="collapse" id="collapseShowDetail">
       <div className="detail card-body">
@@ -47,7 +47,6 @@ const Profile = props => {
           className="btn btn-success mt-3"
           data-toggle="collapse"
           href="#collapseShowDetail"
-          role="button"
           aria-expanded="false"
           aria-controls="collapseShowDetail"
         >
@@ -55,7 +54,7 @@ const Profile = props => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile
