@@ -111,3 +111,7 @@ number {
   border-color: rgb(0, 0, 0);
 }
 
+.sorted {
+  font-weight: bold;
+  color: blue;
+}
