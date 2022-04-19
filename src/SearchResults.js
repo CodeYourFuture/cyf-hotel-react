@@ -19,9 +19,9 @@ function SearchResults(props) {
     setId(clickedId);
   }
   return (
-    <div>
-      <table>
-        <thead>
+    <div className="container">
+      <table className="table">
+        <thead className="thead-dark">
           <tr>
             {headings.map(heading => {
               return <th scope="col">{heading}</th>;
@@ -62,7 +62,10 @@ function OurCustomRow({ booking, handleClick }) {
           return <td key={index}>{difference}</td>;
         } else if (heading === "profile") {
           return (
-            <button className="button" onClick={() => handleClick(booking.id)}>
+            <button
+              className="btn btn-secondary mt-2"
+              onClick={() => handleClick(booking.id)}
+            >
               profile
             </button>
           );

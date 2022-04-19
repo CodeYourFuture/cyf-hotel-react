@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 const Restaurant = props => {
   return (
-    <div className="restaurant">
+    <div className="restaurant container">
       <h3>Restaurant Orders</h3>
-      <ul>
+      <ul className="list-group w-50">
         <Order orderType={"Pizzas"} />
         <Order orderType={"Salad"} />
         <Order orderType={"Choclate Cake"} />
@@ -20,7 +20,7 @@ const Order = ({ orderType }) => {
     setOrders(currentCount => currentCount + 1);
   }
   return (
-    <li className="restaurant">
+    <li className="list-group-item d-flex justify-content-between align-items-center">
       {orderType}:{orders} <RestaurantButton handleClick={orderOne} />
     </li>
   );

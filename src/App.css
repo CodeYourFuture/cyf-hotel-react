@@ -60,11 +60,11 @@
 
 .Footer {
   display: block;
-
+  color: white;
+  font-size: large;
   text-align: center;
   padding: 1em;
-  background-color: #f1f1f1;
-  text-align: center;
+  background-color: #110e0b;
   padding: 10px;
 }
 
@@ -94,7 +94,9 @@
   background: #ddd;
   margin-top: 20px;
 }
-.button {
-  background: lightsalmon;
-  width: max-content;
+.btn-secondary {
+  background-color: rgb(156, 76, 45);
+}
+.tableDesign {
+  height: 50px;
 }
