@@ -3,8 +3,6 @@ import Search from "./components/Search.js";
 import SearchResults from "./components/SearchResults";
 import AddNewBooking from "./components/AddNewBooking";
 
-import fakeBookings from "./data/fakeBookings.json";
-
 const Bookings = () => {
   const [allData, setAllData] = useState([]);
   const [bookings, setBookings] = useState([]);

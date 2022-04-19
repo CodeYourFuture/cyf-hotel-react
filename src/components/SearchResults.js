@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import SearchDetails from './SearchDetails'
 import Profile from './Profile'
 
 const SearchResults = (props) => {
   const [profileID, setProfileID] = useState(5)
-  const [colSort, setColSort] = useState('id');
+  const [colSort, setColSort] = useState('id')
   const [sortAscending, setSortAscending] = useState(true)
 
   function handleClickProfile(clickedId) {
@@ -16,13 +16,10 @@ const SearchResults = (props) => {
     setSortAscending(!sortAscending)
   }
 
-  //  useEffect(() => {
-  //    setNewCustomers(newCustomers);
-  //  }, [sortAscending]);
   const sortedBookings = props.list.sort((a, z) => {
-    return sortAscending 
-    ? a[`${colSort}`] - z[`${colSort}`] 
-    : z[`${colSort}`] - a[`${colSort}`]
+    return sortAscending
+      ? a[{ colSort }] - z[{ colSort }]
+      : z[{ colSort }] - a[{ colSort }]
   })
   console.log(sortedBookings)
   return (
