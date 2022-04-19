@@ -62,7 +62,9 @@ function OurCustomRow({ booking, handleClick }) {
           return <td key={index}>{difference}</td>;
         } else if (heading === "profile") {
           return (
-            <button onClick={() => handleClick(booking.id)}>profile</button>
+            <button className="button" onClick={() => handleClick(booking.id)}>
+              profile
+            </button>
           );
         } else {
           return <td key={index}>{booking[heading]}</td>;

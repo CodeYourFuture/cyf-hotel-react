@@ -20,7 +20,7 @@ const Order = ({ orderType }) => {
     setOrders(currentCount => currentCount + 1);
   }
   return (
-    <li>
+    <li className="restaurant">
       {orderType}:{orders} <RestaurantButton handleClick={orderOne} />
     </li>
   );
