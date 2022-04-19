@@ -3,13 +3,14 @@ import Search from "./Search.js";
 import SearchResult from "./SearchResults.js";
 import CustomerProfile from "./CustomerProfile.js";
 import LoadingMessage from "./LoadingMessage.js";
+//import ErrorMessage from "./ErrorMessage.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loadingData, setLoadingData] = useState(false);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delay")
       .then((res) => res.json())
       .then((data) => {
         setLoadingData(true);
@@ -17,8 +18,6 @@ const Bookings = () => {
       })
       .catch((err) => {});
   }, []);
-
-  console.log(bookings);
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
     let filter = bookings.filter(

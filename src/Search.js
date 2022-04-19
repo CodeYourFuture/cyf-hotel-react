@@ -4,7 +4,6 @@ import SearchButton from "./SearchButton";
 const Search = (props) => {
   const [searchInput, setSearchInput] = useState("");
   const handleSearchInput = (event) => {
-    console.log(event.target.value);
     setSearchInput(event.target.value);
   };
   return (
