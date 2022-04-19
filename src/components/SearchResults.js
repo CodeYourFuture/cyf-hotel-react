@@ -16,7 +16,9 @@ import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = (props) => {
   const [selectedRowColor, setSelectedRowColor] = useState([]);
-  const [profileId, setProfileId] = useState(null);
+  const [profileId, setProfileId] = useState(0);
+
+  //if profile ID is = to num, then render nothing
 
   // highlight the table
   const HighLight = (id) => {
@@ -93,7 +95,8 @@ const SearchResults = (props) => {
           })}
         </tbody>
       </table>
-      <CustomerProfile id={profileId} />
+      {/* if profile ID is = to null, then render nothing */}
+      {profileId && <CustomerProfile id={profileId} />}
     </div>
   );
 };

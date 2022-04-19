@@ -21,7 +21,7 @@ const Bookings = () => {
 
   //filter bookings
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    console.info("Done!", searchVal);
     setBookings(
       bookings.filter(
         (booking) =>

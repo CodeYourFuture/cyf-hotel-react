@@ -12,24 +12,31 @@ const CustomerProfile = ({ id }) => {
       });
   }, [id]);
 
-  return (
-    <div className="Profile-Container">
-      <ul className="profile">
-        <li ClassName="CustomerProfile-Header">
-          <h5>Customer Profile </h5>
-        </li>
-        <li>ID: {profile.id} </li>
+  if (profile && CustomerProfile) {
+    console.log("customer Profile has loaded ");
 
-        {/* <td>ID: {profile.id} </td> */}
-        <li>
-          Name: {profile.firstName} {profile.surname}
-        </li>
-        <li>Email: {profile.email}</li>
-        {profile.vip && <li>VIP</li>}
-        <li>Phone: {profile.phoneNumber}</li>
-      </ul>
-    </div>
-  );
+    return (
+      <div className="Profile-Container">
+        <ul className="profile">
+          <li ClassName="CustomerProfile-Header">
+            <h5>Customer Profile </h5>
+          </li>
+          <li>ID: {profile.id}</li>
+          <li>
+            Name: {profile.firstName} {profile.surname}
+          </li>
+          <li>Email: {profile.email}</li>
+          {profile.vip && <li>VIP</li>}
+          <li>Phone: {profile.phoneNumber}</li>
+        </ul>
+      </div>
+    );
+  } else if (profile && !CustomerProfile) {
+    console.log("Customer Profile is loading...");
+    return <p>Customer Profile is loading...</p>;
+  } else {
+    return null;
+  }
 };
 
 export default CustomerProfile;
