@@ -13,7 +13,7 @@
   --primary: #fecacc; 
   --secondary: #2f3640;  
   --light-1: #ededee;
-  --light: #f0efef; 
+  --light: #f8f6f6; 
   --accent: #ffff; 
   --d-accent: #808080; 
   --m-button: #0000ffe8;
@@ -115,9 +115,11 @@ h1 {
 }
 
 h3 {
-  font-weight: 1600;
-  font-size: 28px;
-  margin: 10px;
+  font-weight: 700;
+  font-size: 24px;
+  /* margin: 10px; */
+  /* width: 100%;
+  z-index:2; */
 }
 
 p {
@@ -162,6 +164,7 @@ select {
 }
 
 /* search button  ----------------- */
+
 .btn-primary {
   width: 180px;
   height: 30px;
@@ -245,6 +248,7 @@ button:hover {
 /* CARD BUTTON --------------------------------------- */
 
 a {
+  width:100%;
   text-decoration: none;
   color: var(--accent);
 }
@@ -260,9 +264,9 @@ a {
   cursor: pointer;
   font-family: inherit;
   font-size: 20px;
-  font-weight: bold;
-  
+  font-weight: bold; 
 }
+
 /* button hover */
 button:hover {
   background-color: var(--d-accent);
