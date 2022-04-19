@@ -10,7 +10,7 @@ const TouristInfoCards = () => (
           <div className="card-body d-flex flex-column justify-content-between">
             <p className="card-text">{city.description}</p>
             <div className="align-self-end">
-              <a href={city.link} className="btn btn-secondary" target="window">
+              <a href={city.link} className="btn btn-primary" target="window">
                 More Information
               </a>
             </div>

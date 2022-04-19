@@ -1,30 +1,47 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
+
+let srcPath = ''
 
 const Restaurant = () => {
   return (
     <div className="container restaurant">
       <h3>Restaurant Orders</h3>
-      <ul className="list-group">
-        <Order orderType="Pizzas" />
-        <Order orderType="Burgers" />
-        <Order orderType="Salads" />
-        <Order orderType="Chocolate cake" />
-      </ul>
+      <div className="card-deck align-items-center">
+        <div className="card">
+          <Order orderType="Pizzas" />
+        </div>
+        <div className="card">
+          <Order orderType="Burgers" />
+        </div>
+        <div className="card">
+          <Order orderType="Hotdogs" />
+        </div>
+        <div className="card">
+          <Order orderType="Chips" />
+        </div>
+      </div>
     </div>
-  );
-};
+  )
+}
 
 const Order = ({ orderType }) => {
-  const [orders, setOrders] = useState(0);
-  const orderOne = () => setOrders(orders + 1);
+  const [orders, setOrders] = useState(0)
+  const orderOnePlus = () => setOrders(orders + 1)
+  const orderOneLess = () => orders > 0 && setOrders(orders - 1)
+  srcPath = `./assets/icons/${orderType}.svg`
   return (
-    <li className="list-group-item d-flex justify-content-between align-items-center">
-      {orderType}: {orders}{" "}
-      <button className="btn btn-primary m-1" onClick={orderOne}>
-        Add
-      </button>
-    </li>
-  );
-};
+    <>
+      <img className="card-img-top" src={srcPath} alt={orderType} />
+      <div className="card-body d-flex justify-content-center">
+        <number>{orders}</number>
+      </div>
+      <div className="d-flex justify-content-center w-100">
+        <img src="./assets/icons/plus.png" alt="plus" className="btn btn-primary m-1 w-25" onClick={orderOnePlus}/> 
+        
+        <img src="./assets/icons/subtract.png" alt="subtract" className="btn btn-primary m-1 w-25" onClick={orderOneLess}/>
+      </div>
+    </>
+  )
+}
 
-export default Restaurant;
+export default Restaurant

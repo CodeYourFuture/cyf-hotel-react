@@ -1,8 +1,6 @@
-import { doc } from "prettier";
-import React, { useState } from "react";
-import Bookings from "../Bookings";
+import React, { useState } from 'react'
 
-export default function AddNewCustomer({ newID, setBookings }) {
+export default function AddNewBooking({ newID, setBookings }) {
   // const checkRequirements = () => {
   //   // if(title.length>0)
   //   //   document.getElementById("title").style.color = "Red";
@@ -10,25 +8,24 @@ export default function AddNewCustomer({ newID, setBookings }) {
   // }
 
   function useFormState(initial) {
-    const [value, setValue] = useState(initial);
+    const [value, setValue] = useState(initial)
     function setEventValue(event) {
-      setValue(event.target.value);
+      setValue(event.target.value)
     }
-    return [value, setEventValue];
+    return [value, setEventValue]
   }
-  const [title, setTitle] = useFormState("");
-  const [firstName, setFirstName] = useFormState("");
-  const [surname, setSurname] = useFormState("");
-  const [email, setEmail] = useFormState("");
-  const [phone, setPhone] = useFormState("");
-  const [roomId, setRoomId] = useFormState("");
-  const [checkInDate, setCheckInDate] = useFormState("");
-  const [checkOutDate, setCheckOutDate] = useFormState("");
-  const [vip, setVip] = useFormState("");
+  const [title, setTitle] = useFormState('')
+  const [firstName, setFirstName] = useFormState('')
+  const [surname, setSurname] = useFormState('')
+  const [email, setEmail] = useFormState('')
+  const [phone, setPhone] = useFormState('')
+  const [roomId, setRoomId] = useFormState('')
+  const [checkInDate, setCheckInDate] = useFormState('')
+  const [checkOutDate, setCheckOutDate] = useFormState('')
+  const [vip, setVip] = useFormState('')
 
   function handleSubmitEvent(submitEvent) {
-    submitEvent.preventDefault();
-    //!checkRequirements() && exit;
+    submitEvent.preventDefault()
     const newCustomer = {
       id: newID,
       title: title,
@@ -39,14 +36,14 @@ export default function AddNewCustomer({ newID, setBookings }) {
       roomId: roomId,
       checkInDate: checkInDate,
       checkOutDate: checkOutDate,
-      vip: vip
-    };
-    setBookings(previous => previous.concat(newCustomer));
+      vip: vip,
+    }
+    setBookings((previous) => previous.concat(newCustomer))
   }
   return (
     <>
       <a
-        className="btn btn-success"
+        className="btn btn-success mb-4"
         data-toggle="collapse"
         href="#collapseAdd"
         id="collapseAddBtn"
@@ -54,7 +51,7 @@ export default function AddNewCustomer({ newID, setBookings }) {
         aria-expanded="false"
         aria-controls="collapseAdd"
       >
-        Add new customer
+        Add new booking
       </a>
       <div className="collapse form-group" id="collapseAdd">
         <form onSubmit={handleSubmitEvent}>
@@ -66,7 +63,6 @@ export default function AddNewCustomer({ newID, setBookings }) {
                 className="form-control"
                 id="title"
                 name="title"
-                placeholder="Enter customer's title."
                 onChange={setTitle}
               />
             </div>
@@ -77,7 +73,6 @@ export default function AddNewCustomer({ newID, setBookings }) {
                 className="form-control"
                 id="firstName"
                 name="firstName"
-                placeholder="Enter customer's first name."
                 onChange={setFirstName}
               />
             </div>
@@ -88,7 +83,6 @@ export default function AddNewCustomer({ newID, setBookings }) {
                 className="form-control"
                 id="surname"
                 name="surname"
-                placeholder="Enter customer's surname."
                 onChange={setSurname}
               />
             </div>
@@ -99,7 +93,6 @@ export default function AddNewCustomer({ newID, setBookings }) {
                 className="form-control"
                 id="email"
                 name="email"
-                placeholder="Enter customer's email address."
                 onChange={setEmail}
               />
             </div>
@@ -110,7 +103,6 @@ export default function AddNewCustomer({ newID, setBookings }) {
                 className="form-control"
                 id="phoneNumber"
                 name="phoneNumber"
-                placeholder="Enter customer's phone number."
                 onChange={setPhone}
               />
             </div>
@@ -121,7 +113,6 @@ export default function AddNewCustomer({ newID, setBookings }) {
                 className="form-control"
                 id="roomId"
                 name="roomId"
-                placeholder="Enter customer's room id."
                 onChange={setRoomId}
               />
             </div>
@@ -132,7 +123,6 @@ export default function AddNewCustomer({ newID, setBookings }) {
                 className="form-control"
                 id="checkInDate"
                 name="checkInDate"
-                placeholder="Enter customer's check-in date."
                 onChange={setCheckInDate}
               />
             </div>
@@ -143,32 +133,33 @@ export default function AddNewCustomer({ newID, setBookings }) {
                 className="form-control"
                 id="checkOutDate"
                 name="checkOutDate"
-                placeholder="Enter customer's check-out date."
                 onChange={setCheckOutDate}
               />
             </div>
             <div className="form-group">
               <input
-                className="form-check-input"
                 type="checkbox"
                 id="vip"
                 name="vip"
                 defaultValue={undefined}
                 onChange={setVip}
               />
-              <label className="form-check-label" htmlFor="vip">
-                {" "}
+              <label className="form-check-label ml-2" htmlFor="vip">
+                {' '}
                 Vip
               </label>
             </div>
           </div>
           <div>
-            <button type="submit" className="btn btn-primary">
+            <button
+              type="submit"
+              className="btn btn-primary"
+            >
               Save
             </button>
           </div>
         </form>
       </div>
     </>
-  );
+  )
 }

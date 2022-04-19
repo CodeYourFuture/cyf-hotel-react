@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #131432;
   height: 80px;
   padding: 20px;
   color: white;
@@ -51,11 +51,12 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding-top: 40px;
   text-align: center;
 }
 .card {
   width: 18rem;
+  padding: 10px;
 }
 
 .detail {
@@ -77,4 +78,36 @@ tr {
 
 .restaurant {
   margin-top: 2em;
+  background-color: #08a88b72;
+  padding: 20px;
 }
+
+.thumbnail {
+  width: 80px;
+}
+
+number {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #08a88a;
+  border-color: #222;
+}
+
+.btn-primary:hover {
+  background-color: #025344;
+  border-color: #222;
+}
+
+.btn-success {
+  background-color: #131432;
+  border-color: rgb(0, 0, 0);
+}
+
+.btn-success:hover {
+  background-color: #30326e;
+  border-color: rgb(0, 0, 0);
+}
+

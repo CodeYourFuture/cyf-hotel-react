@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./components/Search.js";
 import SearchResults from "./components/SearchResults";
-import AddNewCustomer from "./components/AddNewCustomer";
+import AddNewBooking from "./components/AddNewBooking";
 
 import fakeBookings from "./data/fakeBookings.json";
 
@@ -55,7 +55,7 @@ const Bookings = () => {
             {" "}
             <Search search={search} />
             <SearchResults list={bookings} setList={setListHandler} />
-            <AddNewCustomer
+            <AddNewBooking
               newID={bookings[bookings.length - 1].id + 1}
               setBookings={setBookings}
             />
