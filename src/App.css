@@ -19,12 +19,13 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
 }
 
 .App-content {
   padding-top: 20px;
   font-size: large;
+  background-color: bisque;
 }
 
 @keyframes App-logo-spin {
@@ -36,22 +37,56 @@
   }
 }
 .search {
-  padding: 5px 0 20px 0;
+  display: inline;
+  padding: 20px 20px 20px 30px;
+  color: rgb(6, 26, 26);
 }
 
-tr {
-  color: #5b5757;
+.tr {
+  color: #3a1616;
+  line-height: 10px;
 }
 
 .results {
-  padding-top: 15px;
+  padding-top: 25px;
+  float: left;
+  margin-top: 5px;
 }
 
-.footer {
-  padding-top: 20px;
+.Footer {
+  /* width: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center; */
+  padding: 1em;
+  background-color: #f1f1f1;
   text-align: center;
+  padding: 10px;
 }
 
 .card {
-  width: 18rem;
+  /* position: relative; */
+  /* width: 20%;
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: space-around; */
+  float: left;
+  width: 30%;
+  padding: 15px;
+  border-radius: 18px;
+  border: solid 1px navy;
+  box-shadow: 10px 5px 10px rgb(83, 66, 54);
+  border: 5px rgb(54, 3, 61);
+  padding: 5px;
+  margin: 10px;
+}
+.li {
+  /* display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-left: 24px; */
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
 }

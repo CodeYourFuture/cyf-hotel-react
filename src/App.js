@@ -19,7 +19,10 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <Footer contact={contactDetails} />
+
+      <div className="Footer">
+        <Footer contact={contactDetails} />
+      </div>
     </div>
   );
 };

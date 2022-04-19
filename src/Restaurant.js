@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Restaurant = props => {
   return (
-    <div>
+    <div className="restaurant">
       <h3>Restaurant Orders</h3>
       <ul>
         <Order orderType={"Pizzas"} />

@@ -20,7 +20,7 @@ function TouristInfoCards() {
       name: "London",
       link: "visitlondon.com",
       imgLink:
-        "https://cdn.contexttravel.com/image/upload/c_fill,q_60,w_2600/v1555943130/production/city/hero_image_11_1555943130.jpg",
+        "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/93/6a/89.jpg",
       alt: ""
     }
   ];
