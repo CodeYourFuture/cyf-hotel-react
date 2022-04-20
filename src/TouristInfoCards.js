@@ -4,9 +4,9 @@ const TouristInfoCards = ({ cardData }) => {
   return (
     <div className="container">
       <div className="card-deck mt-5">
-        {cardData.map(data => {
+        {cardData.map((data, i) => {
           return (
-            <div key={data.id} className="card">
+            <div key={i} className="card">
               <img
                 src={data.imgUrl}
                 alt="card image"
