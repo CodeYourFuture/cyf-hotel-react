@@ -44,6 +44,7 @@ function SearchResultRow({
       <td>
         <td>
           <button
+            className="search-btn"
             onClick={() => {
               changeProfile(id);
             }}

@@ -6,7 +6,6 @@ function SearchResults({ FakeBookings, searchVal }) {
   let [profile, setProfile] = useState("");
   const changeProfile = id => {
     setProfile(id);
-    console.log(profile);
   };
 
   let filteredData = FakeBookings.filter(data => {
@@ -18,7 +17,7 @@ function SearchResults({ FakeBookings, searchVal }) {
 
   return (
     <div>
-      <table className="table">
+      <table>
         <thead>
           <tr>
             <th scope="col">Id</th>

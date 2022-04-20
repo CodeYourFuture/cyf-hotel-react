@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./searchResults.js";
+import BookingForm from "./bookingForm.js";
 
 const Bookings = () => {
   let [bookingData, setBookingData] = useState([]);
@@ -12,8 +13,13 @@ const Bookings = () => {
     console.log(searchVal);
   };
 
+  const addUser = user => {
+    setBookingData([...bookingData, user]);
+    console.log(bookingData);
+  };
+
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed") //use url: https://cyf-react.glitch.me/error to check for error catching
+    fetch("https://cyf-react.glitch.me") //use url: https://cyf-react.glitch.me/error to check for error catching and 'https://cyf-react.glitch.me/delayed' for pending req
       .then(resp => {
         if (!resp.ok) {
           throw Error("Sorry! An error has occurred while getting data");
@@ -36,6 +42,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         <SearchResults FakeBookings={bookingData} searchVal={searchVal} />
+        {/* <BookingForm FakeBookings={bookingData} addUser={addUser}/> */}
       </div>
     </div>
   ) : (
