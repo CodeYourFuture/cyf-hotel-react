@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./searchResults.js";
-import BookingForm from "./bookingForm.js";
+// import BookingForm from "./bookingForm.js";
 
 const Bookings = () => {
   let [bookingData, setBookingData] = useState([]);
