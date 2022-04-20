@@ -1,5 +1,9 @@
 {
+<<<<<<< Updated upstream
   "name": "react-hotel",
+=======
+  "name": "cyf-hotel-react",
+>>>>>>> Stashed changes
   "version": "0.1.0",
   "private": true,
   "dependencies": {
