@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function BookingForm({ addUser }) {
+function BookingForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -52,7 +52,7 @@ function BookingForm({ addUser }) {
   }
 
   return (
-    <form onSubmit={addNewUser} className="register-form">
+    <form className="register-form">
       <h3 className="tc">Registration Form</h3>
       <input placeholder="enter your first name" onChange={handleFirstName} />
       <br />

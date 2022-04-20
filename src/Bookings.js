@@ -13,10 +13,10 @@ const Bookings = () => {
     console.log(searchVal);
   };
 
-  const addUser = user => {
-    setBookingData([...bookingData, user]);
-    console.log(bookingData);
-  };
+  // const addUser = user => {
+  //   setBookingData([...bookingData, user]);
+  //   console.log(bookingData);
+  // };
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me") //use url: https://cyf-react.glitch.me/error to check for error catching and 'https://cyf-react.glitch.me/delayed' for pending req
