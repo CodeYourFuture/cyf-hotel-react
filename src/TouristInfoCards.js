@@ -21,7 +21,7 @@ export default function TouristInfoCards() {
             href="https://peoplemakeglasgow.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary"
+            className="btn btn-secondary"
           >
             Visit Glasgow
           </a>
@@ -38,15 +38,14 @@ export default function TouristInfoCards() {
           Manchester is a major city in the northwest of England with a rich
           industrial heritage. The Castlefield conservation areas 18th-century
           canal system recalls the cites days as a textile powerhouse, and
-          visitors can trace this history at the interactive Museum of Science
-          Industry.
+          visitors can trace this history at the Museum of Science Industry.
         </p>
         <div className="card-body">
           <a
             href="https://visitmanchester.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary"
+            className="btn btn-secondary"
           >
             Visit Manchester
           </a>
@@ -71,7 +70,7 @@ export default function TouristInfoCards() {
             href="https://visitlondon.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary"
+            className="btn btn-secondary"
           >
             Visit London
           </a>

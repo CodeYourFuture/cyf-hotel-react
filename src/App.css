@@ -4,6 +4,10 @@
   --font-color: #5b5757;
 }
 
+body {
+  background-color: rgb(240, 240, 240);
+}
+
 .App {
   text-align: left;
 }
@@ -94,13 +98,15 @@ li {
 .card-wrapper {
   display: flex;
   width: 100%;
-  padding: 1.8rem;
+  padding: 1.8rem 4rem;
   margin-top: 35px;
+  align-content: space-around;
 }
 
 .card {
-  width: 28%;
+  width: 25%;
   margin: auto;
+  margin-bottom: 10px;
 }
 
 .card-img-top {
@@ -109,7 +115,7 @@ li {
 }
 
 .card-text {
-  padding: 0.8rem;
+  padding: 18px;
   margin: 0;
   color: var(--font-color);
   font-size: 0.95rem;
@@ -122,4 +128,9 @@ li {
 .btn-primary {
   background-color: var(--second-color);
   border-color: var(--second-color);
+}
+
+h3 {
+  text-align: center;
+  padding: 30px;
 }

@@ -11,7 +11,7 @@ export default function Orders(props) {
   }
 
   return (
-    <div>
+    <div className="card bg-light">
       <li>
         {props.orderType}: {orders}
         <RestaurantButton handleClick={orderOne} />

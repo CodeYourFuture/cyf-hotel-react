@@ -10,7 +10,7 @@ const Search = props => {
         <h4 className="text-left">Search Bookings</h4>
       </div>
       <div className="row search-wrapper">
-        <div className="col">
+        <div className="col-sm-8">
           <form
             className="form-group search-box"
             onSubmit={event => {
