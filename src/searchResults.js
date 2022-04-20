@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchResultRow from "./SearchResultRow";
-import CustomerProfile from "./customerProfile";
+import CustomerProfile from "./CustomerProfile";
 
 function SearchResults({ FakeBookings, searchVal }) {
   let [profile, setProfile] = useState("");
