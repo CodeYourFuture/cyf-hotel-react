@@ -10,7 +10,7 @@ const Order = props => {
     });
   };
   return (
-    <ul>
+    <ul className="btn-order">
       {props.orderType}: {orders}
       <RestaurantButton Quantity={orderOne} />
     </ul>
