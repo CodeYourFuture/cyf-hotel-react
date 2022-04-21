@@ -25,7 +25,16 @@ const AddBooking = props => {
             className="form-group search-box mt-5"
             onSubmit={event => {
               event.preventDefault();
-              props.addBooking(addName);
+              props.addBooking({
+                id: "",
+                title: addTitle,
+                firstName: addName,
+                surname: addSurname,
+                email: "",
+                roomId: addRoomId,
+                checkInDate: addCheckInDate,
+                checkOutDate: addCheckOutDate
+              });
             }}
           >
             <label htmlFor="addCustomerName">Customer title</label>

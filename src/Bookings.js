@@ -29,11 +29,34 @@ export default function Bookings() {
     setBookings(filteredBookings);
   };
 
+  const addBooking = ({
+    id,
+    title,
+    firstName,
+    surname,
+    email,
+    roomId,
+    checkInDate,
+    checkOutDate
+  }) => {
+    const concatBookings = bookings.concat({
+      id,
+      title,
+      firstName,
+      surname,
+      email,
+      roomId,
+      checkInDate,
+      checkOutDate
+    });
+    setBookings(concatBookings);
+  };
+
   return bookings ? (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <AddBooking />
+        <AddBooking addBooking={addBooking} />
         <SearchResults bookings={bookings} />
       </div>
     </div>

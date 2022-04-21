@@ -33,11 +33,11 @@ export default function SearchResults(props) {
 
         {/*_____________________table body________________________*/}
         <tbody>
-          {props.bookings.map(booking => (
+          {props.bookings.map((booking, index) => (
             <TableRow
               booking={booking}
               selectProfile={selectProfile}
-              key={booking.id}
+              key={index}
             />
           ))}
         </tbody>
