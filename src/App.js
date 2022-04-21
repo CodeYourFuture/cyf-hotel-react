@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
-import Footer from "./Footer";
+import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
+import Footer from "./Footer";
 
 const App = () => {
   const footerData = [

@@ -55,8 +55,10 @@ tr {
 .card {
   width: 18rem;
 }
-ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+.highlightOn {
+  background-color: lightcoral;
+}
+.highlightOff {
+  background-color: none;
 }

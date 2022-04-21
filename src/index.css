@@ -45,9 +45,6 @@ body {
 .address {
   list-style: none;
 }
-li {
-  gap: 20px;
-}
 h3 {
   margin: 50px;
 }
