@@ -3,7 +3,6 @@ import "./App.css";
 import TableRow from "./TableRow";
 
 const SearchResult = (props) => {
-
   const dataArray = props.data;
   return (
     <table className="table">
