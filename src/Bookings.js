@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   // For creating the booking table
@@ -10,7 +9,7 @@ const Bookings = () => {
   const [initialData, setInitialData] = useState([]);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/error")
       .then(response => response.json())
       .then(data => {
         setInitialData(data);
@@ -33,6 +32,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
+        {booking.error ? "something went wrong" : ""}
         <SearchResults results={booking} />
       </div>
     </div>

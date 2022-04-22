@@ -16,8 +16,8 @@ const headings = [
 const SearchResults = props => {
   const [selected, setSelected] = useState({});
   const [id, setId] = useState("");
-
-  return (
+  console.log(props);
+  return props.results.length > 0 ? (
     <div>
       <table className="table">
         <thead>
@@ -68,6 +68,8 @@ const SearchResults = props => {
       </table>
       <CustomerProfile id={id} />
     </div>
+  ) : (
+    "loading"
   );
 };
 export default SearchResults;
