@@ -3,8 +3,9 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
-  const URL = "https://cyf-react.glitch.me";
+  const URL = "https://cyf-react.glitch.me/delayed";
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const search = searchVal => {
     setBookings(
@@ -20,14 +21,21 @@ const Bookings = () => {
   useEffect(() => {
     fetch(URL)
       .then(res => res.json())
-      .then(data => setBookings(data));
+      .then(data => {
+        setBookings(data);
+        setLoading(false);
+      });
   }, []);
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults reservations={bookings} />
+        {!loading ? (
+          <SearchResults reservations={bookings} />
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
     </div>
   );
