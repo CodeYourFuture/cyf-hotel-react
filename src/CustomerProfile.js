@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 function CustomerProfile({ profile }) {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState("");
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/customers/${profile}`)
       .then(resp => resp.json())
       .then(data => {
         setUser(data);
-        console.log(user);
       });
   }, [profile]);
 
