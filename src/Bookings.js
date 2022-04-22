@@ -3,9 +3,10 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
-  const URL = "https://cyf-react.glitch.me/delayed";
+  const URL = "https://cyf-react.glitch.me/";
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(false);
 
   const search = searchVal => {
     setBookings(
@@ -20,11 +21,18 @@ const Bookings = () => {
 
   useEffect(() => {
     fetch(URL)
-      .then(res => res.json())
+      .then(res => {
+        if (res.status === 500) {
+          throw new Error(res.status);
+        } else {
+          return res.json();
+        }
+      })
       .then(data => {
         setBookings(data);
         setLoading(false);
-      });
+      })
+      .catch(errorMessage => setErrorMessage(true));
   }, []);
 
   return (
@@ -33,8 +41,10 @@ const Bookings = () => {
         <Search search={search} />
         {!loading ? (
           <SearchResults reservations={bookings} />
-        ) : (
+        ) : !errorMessage ? (
           <p>Loading...</p>
+        ) : (
+          <p>Content Not Found. Please try again.</p>
         )}
       </div>
     </div>
