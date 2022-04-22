@@ -93,12 +93,11 @@ tr {
 }
 .header-wrapper > img {
   margin-left: 2rem;
-  width: 63%;
+  width: 50%;
 }
 
 /* Table */
 .table-wrapper {
-  width: 78%;
   margin: auto;
   margin-top: 5rem;
   margin-bottom: 5rem;
