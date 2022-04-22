@@ -6,15 +6,18 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, SetBookings] = useState([]);
   const [filteredResult, setFilteredResult] = useState(bookings);
-  const [loading, setLoading] = useState(true);
+  const [status, setStatus] = useState("fetching");
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
       .then(data => {
         SetBookings(data);
-        setLoading(false);
+        setStatus("success");
         setFilteredResult(data);
+      })
+      .catch(() => {
+        setStatus("failure");
       });
   }, []);
 
@@ -35,14 +38,14 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        {loading ? (
-          "Loading..."
-        ) : (
+        {status === "fetching" && "Loading..."}
+        {status === "success" && (
           <>
             <Search search={search} />
             <SearchResults bookings={filteredResult} />
           </>
         )}
+        {status === "failure" && "Something went Wrong"}
       </div>
     </div>
   );
