@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import TableRow from "./TableBodyRow";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ reservations }) => {
+  let [customerId, setCustomerId] = useState(null);
+
+  const handleButtonClick = resId => {
+    setCustomerId(resId);
+  };
+
   return (
     <div className="table-wrapper">
       <table className="table table-bordered">
@@ -16,14 +23,20 @@ const SearchResults = ({ reservations }) => {
             <th scope="col">Check-In Date</th>
             <th scope="col">Check-Out Date</th>
             <th scope="col">Nights Staying</th>
+            <th scope="col">Guest Details</th>
           </tr>
         </thead>
         <tbody>
           {reservations.map((reservation, ind) => (
-            <TableRow key={ind} reservation={reservation} />
+            <TableRow
+              key={ind}
+              reservation={reservation}
+              handleButtonClick={handleButtonClick}
+            />
           ))}
         </tbody>
       </table>
+      {customerId && <CustomerProfile id={customerId} />}
     </div>
   );
 };

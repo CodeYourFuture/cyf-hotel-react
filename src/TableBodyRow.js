@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const TableRow = ({ reservation }) => {
+const TableRow = ({ reservation, handleButtonClick }) => {
   const [isSelected, setSelected] = useState(false);
 
   let dayIn = moment(reservation.checkInDate);
@@ -23,6 +23,14 @@ const TableRow = ({ reservation }) => {
       <td>{reservation.checkInDate}</td>
       <td>{reservation.checkOutDate}</td>
       <td>{daysDiff}</td>
+      <td>
+        <button
+          onClick={() => handleButtonClick(reservation.id)}
+          className="btn btn-primary"
+        >
+          Show profile
+        </button>
+      </td>
     </tr>
   );
 };
