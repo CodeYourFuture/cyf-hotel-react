@@ -9,8 +9,8 @@ const Footer = prop => {
   return (
     <div className="footer">
       <ul>
-        {prop.map(el => {
-          return <li>{`${el}`}</li>;
+        {prop.map((el, index) => {
+          return <li key={index}>{`${el}`}</li>;
         })}
       </ul>
     </div>
