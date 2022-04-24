@@ -39,18 +39,22 @@ export default function Bookings() {
     checkInDate,
     checkOutDate
   }) => {
-    const concatBookings = bookings.concat({
-      id,
-      title,
-      firstName,
-      surname,
-      email,
-      roomId,
-      checkInDate,
-      checkOutDate
-    });
-    setBookings(concatBookings);
+    setBookings(values => [
+      ...values,
+      {
+        id: values.length + 1,
+        title,
+        firstName,
+        surname,
+        email,
+        roomId,
+        checkInDate,
+        checkOutDate
+      }
+    ]);
   };
+
+  console.log("state", bookings);
 
   return bookings ? (
     <div className="App-content">

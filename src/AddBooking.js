@@ -26,7 +26,6 @@ const AddBooking = props => {
             onSubmit={event => {
               event.preventDefault();
               props.addBooking({
-                id: "",
                 title: addTitle,
                 firstName: addName,
                 surname: addSurname,

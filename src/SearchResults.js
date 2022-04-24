@@ -21,16 +21,24 @@ export default function SearchResults(props) {
   const [selectedId, setSelectedId] = useState(null);
 
   const selectProfile = event => {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     setSelectedId(event.target.value);
   };
+
+  /* 
+   const [ascending, setAscending] = useState(true);
+
+   const sortCol = [props.bookings].sort((a, z) => a.roomId - z.roomId);
+   console.log(sortCol);
+  
+  <button onClick={() => setAscending(!ascending)}>&#8595; &#8593;</button>;
+ */
 
   return (
     <div style={{ overflowX: "auto" }}>
       <table className="table table-bordered table-secondary table-sm">
         {/*_____________________table head________________________*/}
         <TableHeader headers={headings} />
-
         {/*_____________________table body________________________*/}
         <tbody>
           {props.bookings.map((booking, index) => (
