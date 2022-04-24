@@ -1,5 +1,5 @@
 import moment from "moment";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const headers = [
   "id",
@@ -77,7 +77,27 @@ function OurCustomrow({ booking, handleClick }) {
 }
 
 function CustomerProfile(props) {
-  return `Customer ${props.id} Profile`;
+  const [dataStore, setDataStore] = useState({});
+
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+      .then(res => res.json())
+      .then(data => {
+        setDataStore(data);
+      });
+  }, []);
+
+  return (
+    <ul>
+      <li>Customer {dataStore.id} Profile</li>
+      <li> {dataStore.firstName} </li>
+      <li> {dataStore.email} </li>
+      <li> VIP Status: {dataStore.vip} </li>
+      <li>{dataStore.phoneNumber} </li>
+    </ul>
+
+    //phoneNumber
+  );
 }
 
 export default SearchResults;
