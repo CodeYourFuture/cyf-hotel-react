@@ -77,4 +77,10 @@ tr {
 .resturant-container {
   text-align: center;
   margin: 2rem;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.order-list {
+  padding: 0.4rem;
+  text-align: center;
 }

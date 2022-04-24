@@ -1,9 +1,10 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 import Data from "./data/fakeBookings.json";
 
 function SearchResults() {
-  const DisplayData = Data.map(info => {
+  const [bookings, setBokking] = useState(Data);
+  const DisplayData = bookings.map(info => {
     return (
       <tr>
         <td>{info.id}</td>
