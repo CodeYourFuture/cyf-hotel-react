@@ -85,14 +85,14 @@ function CustomerProfile(props) {
       .then(data => {
         setDataStore(data);
       });
-  }, []);
+  }, [dataStore]);
 
   return (
     <ul>
       <li>Customer {dataStore.id} Profile</li>
       <li> {dataStore.firstName} </li>
       <li> {dataStore.email} </li>
-      <li> VIP Status: {dataStore.vip} </li>
+      <li> {dataStore.vip && "VIP"} </li>
       <li>{dataStore.phoneNumber} </li>
     </ul>
 

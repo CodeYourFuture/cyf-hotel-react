@@ -17,13 +17,21 @@ const Bookings = () => {
   };
 
   const [bookings, setBookings] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    setIsLoaded(true);
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
-      .then(data => setBookings(data));
+      .then(data => {
+        setBookings(data);
+        setIsLoaded(false);
+      });
   }, []); // only run once, after the first render
 
+  if (isLoaded) {
+    return <div className="loading">"Loading bookings.."</div>;
+  }
   return (
     <div className="App-content">
       <div className="container">
