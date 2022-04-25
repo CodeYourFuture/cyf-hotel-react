@@ -4,6 +4,9 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults";
 
 const Bookings = () => {
+  const [bookings, setBookings] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     const filteredBookings = bookings.filter(({ firstName, surname }) => {
@@ -15,9 +18,6 @@ const Bookings = () => {
     });
     setBookings(filteredBookings);
   };
-
-  const [bookings, setBookings] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);

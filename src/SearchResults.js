@@ -84,6 +84,7 @@ function CustomerProfile(props) {
       .then(res => res.json())
       .then(data => {
         setDataStore(data);
+        console.log(data);
       });
   }, [dataStore]);
 
@@ -92,7 +93,7 @@ function CustomerProfile(props) {
       <li>Customer {dataStore.id} Profile</li>
       <li> {dataStore.firstName} </li>
       <li> {dataStore.email} </li>
-      <li> {dataStore.vip && "VIP"} </li>
+      <li> {dataStore.vip ? dataStore.vip.toString() : ""} </li>
       <li>{dataStore.phoneNumber} </li>
     </ul>
 
