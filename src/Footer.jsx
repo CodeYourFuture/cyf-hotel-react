@@ -8,11 +8,10 @@ const information = [
 
 function Footer() {
   return (
-    <ul>
+    <ul className="fotter-li">
       {information.map((item, index) => {
         return <li key={index}> {item} </li>;
       })}
-      ;
     </ul>
   );
 }

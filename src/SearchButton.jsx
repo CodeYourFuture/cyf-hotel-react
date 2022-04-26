@@ -1,7 +1,11 @@
 import React from "react";
 
-function SearchButton() {
-  return <button className="btn btn-primary">Search</button>;
+function SearchButton(props) {
+  return (
+    <div className="button">
+      <button className="btn-primary">Search</button>
+    </div>
+  );
 }
 
 export default SearchButton;

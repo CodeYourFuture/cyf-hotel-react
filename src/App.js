@@ -14,7 +14,7 @@ const App = () => {
     <div className="App">
       <Header />
       <Bookings />
-      <SearchButton />
+      {/* <SearchButton /> */}
       <TouristInfoCards />
       <Restaurant />
       <Footer />

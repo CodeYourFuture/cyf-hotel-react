@@ -5,7 +5,7 @@ function BookingTable({ result }) {
   const [selected, setSelected] = useState(false);
   return (
     <tr
-      class={selected ? "table-primary" : " "}
+      className={selected ? "table-primary" : " "}
       onClick={() => {
         setSelected(!selected);
       }}

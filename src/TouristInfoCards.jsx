@@ -2,9 +2,10 @@ import React from "react";
 
 function TouristInfoCards() {
   return (
-    <div>
-      <section className="card">
+    <div className="card-container">
+      <section className="singl-card">
         <div>
+          <h1 className="city-name"> London </h1>
           <img
             src="https://voxcitywalks.com/wp-content/uploads/2020/10/london-2.jpg"
             className="card-img-top"
@@ -27,12 +28,13 @@ function TouristInfoCards() {
           </p>
           <a href="peoplemakeglasgow.com">
             {" "}
-            <button className="linkButton">See London </button>{" "}
+            <button className="btn-primary">See London </button>{" "}
           </a>
         </div>
       </section>
-      <section className="card">
+      <section className="singl-card">
         <div>
+          <h1 className="city-name"> Manchester</h1>
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHu5lonofGgjxatZbdw43PeFZooYqnVcNjpQ&usqp=CAU"
             className="card-img-top"
@@ -51,12 +53,13 @@ function TouristInfoCards() {
           </p>
           <a href="visitmanchester.com">
             {" "}
-            <button className="linkButton">See Manchester </button>{" "}
+            <button className="btn-primary">See Manchester </button>{" "}
           </a>
         </div>
       </section>
-      <section className="card">
+      <section className="singl-card">
         <div>
+          <h1 className="city-name"> Glasgow</h1>
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbFEW-vqJMsI8u8k__N06w0Lzk4SOqO2UuMA&usqp=CAU"
             className="card-img-top"
@@ -73,7 +76,7 @@ function TouristInfoCards() {
             visited city in the United Kingdom.[7]
           </p>
           <a href="visitlondon.com">
-            <button className="linkButton">See Glasgow </button>
+            <button className="btn-primary">See Glasgow </button>
           </a>
         </div>
       </section>
