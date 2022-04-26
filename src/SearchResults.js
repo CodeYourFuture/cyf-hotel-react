@@ -1,55 +1,44 @@
-//creating a table
-import React, { useState } from "react";
-import moment from "moment";
+import React, { useState, useEffect } from "react";
+import CustomRow from "./CustomRow";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
-  const [row, setRow] = useState(0);
+  const [id, setId] = useState(null);
 
-  function whenRowIsClicked() {
-    setRow(!row);
+  function handleShowProfileButton(event, clickedId) {
+    event.stopPropagation();
+    setId(clickedId);
   }
 
   return (
     <div>
-      <table class="table table-bordered table-dark">
+      <table className="table table-bordered table-dark">
         <thead>
-          <td scope="col">id</td>
-          <td scope="col">title</td>
-          <td scope="col">firstName</td>
-          <td scope="col">surname</td>
-          <td scope="col">email</td>
-          <td scope="col">roomId</td>
-          <td scope="col">checkInDate</td>
-          <td scope="col">checkOutDate</td>
-          <td scope="col">daysStay</td>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">title</th>
+            <th scope="col">firstName</th>
+            <th scope="col">surname</th>
+            <th scope="col">email</th>
+            <th scope="col">roomId</th>
+            <th scope="col">checkInDate</th>
+            <th scope="col">checkOutDate</th>
+            <th scope="col">daysStay</th>
+            <th scope="col">showProfile</th>
+          </tr>
         </thead>
         <tbody>
           {props.results.map(booking => {
-            let checkInDate = moment(booking.checkInDate);
-            let checkOutDate = moment(booking.checkOutDate);
-            let daysStay = checkOutDate.diff(checkInDate, "days");
             return (
-              <>
-                <tr
-                  //changing entire table, look at this again figure out how to chang just row
-                  onClick={whenRowIsClicked}
-                  style={{ backgroundColor: row ? "red" : "" }}
-                >
-                  <td>{booking.id}</td>
-                  <td>{booking.title}</td>
-                  <td>{booking.firstName}</td>
-                  <td>{booking.surname}</td>
-                  <td>{booking.email}</td>
-                  <td>{booking.roomId}</td>
-                  <td>{booking.checkInDate}</td>
-                  <td>{booking.checkOutDate}</td>
-                  <td>{(booking = daysStay)}</td>
-                </tr>
-              </>
+              <CustomRow
+                booking={booking}
+                handleClick={handleShowProfileButton}
+              />
             );
           })}
         </tbody>
       </table>
+      {id && <CustomerProfile id={id} />}
     </div>
   );
 };
