@@ -5,14 +5,14 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   useEffect(() => {
-    console.log("meow");
+    // console.log("meow");
 
     fetch("https://cyf-react.glitch.me")
       .then(response => {
         return response.json();
       })
       .then(data => {
-        console.log(data);
+        // console.log(data);
         setBookings(data);
       })
       .catch(err => console.log(err));
@@ -20,6 +20,14 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    // console.log(bookings)
+
+    const filteredSearch = bookings.filter(data => {
+      return (
+        data.firstName.includes(searchVal) || data.surname.includes(searchVal)
+      );
+    });
+    setBookings(filteredSearch);
   };
 
   const [bookings, setBookings] = useState([]);
