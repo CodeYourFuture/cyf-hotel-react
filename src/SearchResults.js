@@ -6,16 +6,16 @@ import TableRow from "./TableRow";
 
 export default function SearchResults(props) {
   const headings = [
-    "Id",
-    "Title",
-    "First name",
-    "Surname",
-    "Email",
-    "Room id",
-    "Check In Date",
-    "Check Out Date",
-    "Number Of Nights",
-    "Customer profile"
+    { title: "Id", target: "id" },
+    { title: "Title", target: "title" },
+    { title: "First name", target: "firstName" },
+    { title: "Surname", target: "surname" },
+    { title: "Email", target: "email" },
+    { title: "Room id", target: "roomId" },
+    { title: "Check In Date", target: "checkInDate" },
+    { title: "Check Out Date", target: "checkOutDate" },
+    { title: "Number Of Nights" },
+    { title: "Customer profile" }
   ];
 
   const [selectedId, setSelectedId] = useState(null);
@@ -25,23 +25,31 @@ export default function SearchResults(props) {
     setSelectedId(event.target.value);
   };
 
-  /* 
-   const [ascending, setAscending] = useState(true);
+  const [ascending, setAscending] = useState(true);
+  const [sortedBookings, setSortedBookings] = useState(null);
 
-   const sortCol = [props.bookings].sort((a, z) => a.roomId - z.roomId);
-   console.log(sortCol);
-  
-  <button onClick={() => setAscending(!ascending)}>&#8595; &#8593;</button>;
- */
+  function sortBookings(propToSortBy) {
+    const sortCol = [...props.bookings].sort((a, b) => {
+      let result = a[propToSortBy]
+        .toString()
+        .localeCompare(b[propToSortBy].toString(), {});
+      if (ascending === false) {
+        result = result * -1;
+      }
+      return result;
+    });
+    setAscending(!ascending);
+    setSortedBookings(sortCol);
+  }
 
   return (
     <div style={{ overflowX: "auto" }}>
       <table className="table table-bordered table-secondary table-sm">
         {/*_____________________table head________________________*/}
-        <TableHeader headers={headings} />
+        <TableHeader headers={headings} sortBookings={sortBookings} />
         {/*_____________________table body________________________*/}
         <tbody>
-          {props.bookings.map((booking, index) => (
+          {(sortedBookings || props.bookings).map((booking, index) => (
             <TableRow
               booking={booking}
               selectProfile={selectProfile}

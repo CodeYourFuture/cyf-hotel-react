@@ -8,7 +8,7 @@ export default function Bookings() {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed") // https://cyf-react.glitch.me/error
+    fetch("https://cyf-react.glitch.me") // /delayed, https://cyf-react.glitch.me/delayed, error   https://cyf-react.glitch.me/error
       .then(res => res.json())
       .then(data => {
         if (data.error) {
@@ -39,6 +39,8 @@ export default function Bookings() {
     checkInDate,
     checkOutDate
   }) => {
+    // let nextId = bookings.length;
+
     setBookings(values => [
       ...values,
       {
