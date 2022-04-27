@@ -8,12 +8,16 @@ const Bookings = () => {
   //return filtered search with data
   const [filteredResult, setFilteredResult] = useState(bookings);
 
+  //setting a 5 second delay before displaying the table
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
       .then(data => {
         setBookings(data);
         setFilteredResult(data);
+        setIsLoading(false);
       });
   }, []);
 
@@ -38,8 +42,13 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-
+        {isLoading ? (
+          "Loading...Please Wait!"
+        ) : (
+          <>
+            <Search search={search} />
+          </>
+        )}
         <SearchResults results={filteredResult} />
       </div>
     </div>
