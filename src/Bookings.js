@@ -4,23 +4,23 @@ import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  useEffect(() => {
-    // console.log("meow");
+  const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    fetch("https://cyf-react.glitch.me")
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/delayed`)
       .then(response => {
         return response.json();
       })
       .then(data => {
-        // console.log(data);
         setBookings(data);
+        setLoading(false);
       })
       .catch(err => console.log(err));
   }, []);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
-    // console.log(bookings)
+    // console.info("TO DO!", searchVal);
 
     const filteredSearch = bookings.filter(data => {
       return (
@@ -30,13 +30,17 @@ const Bookings = () => {
     setBookings(filteredSearch);
   };
 
-  const [bookings, setBookings] = useState([]);
-
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
+        {loading ? (
+          <p>Deatils will be loaded shortly...</p>
+        ) : (
+          <>
+            <Search search={search} />
+            <SearchResults results={bookings} />
+          </>
+        )}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import moment from "moment";
 import React, { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ results }) => {
   return (
@@ -16,6 +17,7 @@ const SearchResults = ({ results }) => {
             <th>Check-in Date</th>
             <th>Check-out Date</th>
             <th># of Nights</th>
+            <th>Profile</th>
           </tr>
 
           {/* Data to be passed into the table */}
@@ -31,6 +33,7 @@ const SearchResults = ({ results }) => {
 // Component used to render table rows
 function CustomRow({ info, index }) {
   const [highlight, setHighlight] = useState(false);
+  const [id, setId] = useState(false);
 
   // Variables declared to log number of nights booked
   let a = moment(info.checkInDate);
@@ -52,6 +55,14 @@ function CustomRow({ info, index }) {
       <td>{info.checkInDate}</td>
       <td>{info.checkOutDate}</td>
       <td>{b.diff(a, "days")}</td>
+      <td>
+        <button onClick={() => setId(!id)}>Show Profile</button>
+      </td>
+      {id ? (
+        <td>
+          <CustomerProfile id={info.id} />
+        </td>
+      ) : null}
     </tr>
   );
 }
