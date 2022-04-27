@@ -29,6 +29,10 @@ body {
   display: flex;
 }
 
+.customer-profile {
+  margin-top: 20px;
+}
+
 .footer {
   text-align: center;
   background-color: rgb(0, 0, 0);
