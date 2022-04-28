@@ -12,7 +12,7 @@ const headings = [
   "CheckInDate",
   "CheckOutDate",
   "Duration",
-  "Buttons"
+  "Profile"
 ];
 
 function SearchResults(props) {
