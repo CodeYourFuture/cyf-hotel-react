@@ -3,8 +3,8 @@ import React from "react";
 function TouristInfoCards() {
   return (
     <div className="card-container">
-      <section className="singl-card">
-        <div>
+      <section>
+        <div className="singl-card">
           <h1 className="city-name"> London </h1>
           <img
             src="https://voxcitywalks.com/wp-content/uploads/2020/10/london-2.jpg"
@@ -32,8 +32,8 @@ function TouristInfoCards() {
           </a>
         </div>
       </section>
-      <section className="singl-card">
-        <div>
+      <section>
+        <div className="singl-card">
           <h1 className="city-name"> Manchester</h1>
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHu5lonofGgjxatZbdw43PeFZooYqnVcNjpQ&usqp=CAU"
@@ -57,8 +57,8 @@ function TouristInfoCards() {
           </a>
         </div>
       </section>
-      <section className="singl-card">
-        <div>
+      <section>
+        <div className="singl-card">
           <h1 className="city-name"> Glasgow</h1>
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbFEW-vqJMsI8u8k__N06w0Lzk4SOqO2UuMA&usqp=CAU"

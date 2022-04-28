@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-function BookingTable({ result }) {
+function BookingTable({ result, setId }) {
   const [selected, setSelected] = useState(false);
+  function handlesetId() {
+    setId(result.id);
+  }
   return (
     <tr
       className={selected ? "table-primary" : " "}
@@ -20,6 +23,9 @@ function BookingTable({ result }) {
       <td>{result.checkOutDate}</td>
       <td>
         {moment(result.checkOutDate).diff(moment(result.checkInDate), "days")}
+      </td>
+      <td onClick={e => e.stopPropagation()}>
+        <button onClick={handlesetId}>Show profile</button>
       </td>
     </tr>
   );

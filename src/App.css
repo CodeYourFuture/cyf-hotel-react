@@ -100,6 +100,7 @@ header p {
   box-shadow: 10px 10px 5px lightblue;
   color: black;
   text-align: center;
+  height: 100%;
 }
 .city-name {
   text-shadow: 3px 3px 3px lightblue;
@@ -117,4 +118,7 @@ header p {
   height: 30vw;
   justify-self: center;
   margin: 15px;
+}
+.list-group {
+  color: rgb(65, 52, 245);
 }
