@@ -4,6 +4,9 @@ const moment = require("moment");
 const TableRow = props => {
   const booking = props.data;
 
+  const checkOutDate = moment(booking.checkOutDate);
+  const checkInDate = moment(booking.checkInDate);
+
   const [highlight, setHighlight] = useState(false);
 
   function handleClick() {
@@ -23,6 +26,7 @@ const TableRow = props => {
       <td>{booking.roomId}</td>
       <td>{booking.checkInDate}</td>
       <td>{booking.checkOutDate}</td>
+      <td>{checkOutDate.diff(checkInDate, "days")}</td>
       <td>
         <button
           className="btn btn-info"
@@ -30,9 +34,6 @@ const TableRow = props => {
         >
           profile
         </button>
-      </td>
-      <td>
-        {moment(booking.checkOutDate).diff(moment(booking.checkInDate), "days")}
       </td>
     </tr>
   );
