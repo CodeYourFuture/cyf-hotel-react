@@ -18,7 +18,7 @@ function Pizzas(params) {
             +
           </button>
           <button
-            className="btn btn-primary"
+            className="btn btn-primary  sebutton"
             onClick={() => setOrders(Orders - 1)}
           >
             {" "}

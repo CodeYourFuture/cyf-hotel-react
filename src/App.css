@@ -84,3 +84,7 @@ tr {
   padding: 0.4rem;
   text-align: center;
 }
+.sebutton {
+  background-color: rgb(161, 223, 231);
+  justify-content: space-around;
+}
