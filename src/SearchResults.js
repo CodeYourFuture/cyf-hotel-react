@@ -1,10 +1,19 @@
 import moment from "moment";
-import React, { useState } from "react";
-import Data from "./data/fakeBookings.json";
+import React, { useState, useEffect } from "react";
+// import Data from "./data/fakeBookings.json";
 
 function SearchResults() {
-  const [bookings, setBokking] = useState(Data);
-  const DisplayData = bookings.map(info => {
+  const [fetchedData, setFetchedData] = useState([]);
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
+      .then(res => res.json())
+      .then(result => {
+        setFetchedData(result);
+      });
+    console.log(fetchedData);
+  }, []);
+  // const [bookings, setBokking] = useState(Data);
+  const DisplayData = fetchedData.map(info => {
     return (
       <tr>
         <td>{info.id}</td>
