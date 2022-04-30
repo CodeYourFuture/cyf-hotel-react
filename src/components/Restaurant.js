@@ -3,7 +3,7 @@ import Order from "./Order";
 import "../style/restaurant.scss";
 
 const Restaurant = () => {
-  const randomPrice = () => Math.floor(Math.random() * 25);
+  const randomPrice = () => Math.floor(Math.random() * 15) + 1;
   return (
     <div className="order-content container" id="order">
       <h3>Order Form</h3>
@@ -44,7 +44,7 @@ const Restaurant = () => {
           randomPrice={randomPrice()}
         />
         <Order
-          orderType={"Cinnamon Rolls"}
+          orderType={"Napaleon Cake"}
           imgSrc={
             "https://letthebakingbegin.com/wp-content/uploads/2013/07/The-Best-Napoleon-Cake-is-made-with-thin-puff-pastry-layers-then-sandwiched-with-rich-and-buttery-custard.-This-Napoleon-dessert-is-one-of-my-familys-favorite-2-500x500.jpg"
           }

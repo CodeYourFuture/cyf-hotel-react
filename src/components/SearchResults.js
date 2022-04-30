@@ -53,9 +53,9 @@ const SearchResults = ({ searchResults }) => {
   const handleSortColumnClicked = e => {
     setSortQuery(e.target.id);
     setSortBookings(!sortBookings);
-    // console.log(sortBookings);
-    // console.log(sortQuery);
-    // console.log(sortedSearchResults);
+    console.log(sortBookings);
+    console.log(sortQuery);
+    console.log(sortedSearchResults);
   };
   useEffect(() => {
     const sort = () => {
@@ -64,9 +64,12 @@ const SearchResults = ({ searchResults }) => {
         return a;
       });
       setSortedSearchResults(sortedResults);
+      console.log(sortBookings);
+      console.log(sortQuery);
+      console.log(sortedSearchResults);
     };
     sort();
-  }, []);
+  }, [sortQuery, sortBookings]);
 
   return (
     <div className="table-content table-responsive" id="bookings">
