@@ -26,3 +26,4 @@ function TableHeader({ headers, sortBookings }) {
   );
 }
 export default TableHeader;
+// line 10 {heading?.title} ? if target in object is not specified do not display, prevent error

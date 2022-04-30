@@ -41,6 +41,8 @@ export default function SearchResults(props) {
     setAscending(!ascending);
     setSortedBookings(sortCol);
   }
+  /*  <button onClick={() => sortBookings("firstName")}>&#8595; &#8593;</button>
+      <button onClick={() => sortBookings("email")}>&#8595; &#8593;</button> */
 
   return (
     <div style={{ overflowX: "auto" }}>
