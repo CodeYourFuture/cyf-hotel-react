@@ -149,9 +149,9 @@ const SearchResults = ({ searchResults }) => {
                         data-target="#exampleModal"
                       >
                         <img
-                          src="https://cdn-icons.flaticon.com/png/512/1549/premium/1549770.png?token=exp=1651286105~hmac=45a142288099895188a176185fc11e50"
+                          src="https://cdn-icons-png.flaticon.com/512/747/747965.png"
                           alt="show icon"
-                          width={"40px"}
+                          width={"30px"}
                         />
                       </button>
                     </td>
