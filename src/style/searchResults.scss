@@ -1,0 +1,19 @@
+.table-content {
+  margin-bottom: 1.5rem;
+  table {
+    th {
+      font-size: 16px;
+    }
+    td {
+      font-size: 14px;
+    }
+    .table-header {
+      background-color: #3f3351;
+      color: #eeeeee;
+    }
+    .show-profile {
+      color: #eeeeee;
+      background-color: #3f3351;
+    }
+  }
+}

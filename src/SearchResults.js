@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
+import Modal from "react-modal";
+import "./style/searchResults.scss";
 
 const caculateNightsSpent = (start, end) => {
   let startDate = moment(start, "YYYY-M-D");
@@ -15,6 +17,28 @@ const SearchResults = ({ searchResults }) => {
   const [sortQuery, setSortQuery] = useState("");
   const [sortedSearchResults, setSortedSearchResults] = useState(searchResults);
 
+  const customStyles = {
+    overlay: {
+      zIndex: "999",
+      position: "fixed",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      opacity: 0.9,
+      background: "#1A132F"
+    },
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      padding: 0,
+      border: "none"
+    }
+  };
   const handlerRowClicked = rowIndex => {
     if (rowIndexClicked !== rowIndex) {
       // handle if user clicks again the same row
@@ -29,9 +53,9 @@ const SearchResults = ({ searchResults }) => {
   const handleSortColumnClicked = e => {
     setSortQuery(e.target.id);
     setSortBookings(!sortBookings);
-    console.log(sortBookings);
-    console.log(sortQuery);
-    console.log(sortedSearchResults);
+    // console.log(sortBookings);
+    // console.log(sortQuery);
+    // console.log(sortedSearchResults);
   };
   useEffect(() => {
     const sort = () => {
@@ -45,10 +69,10 @@ const SearchResults = ({ searchResults }) => {
   }, []);
 
   return (
-    <div>
+    <div className="table-content table-responsive" id="bookings">
       <table className="table">
         <thead>
-          <tr>
+          <tr className="table-header">
             <th id="id" onClick={handleSortColumnClicked} scope="col">
               Id
             </th>
@@ -78,7 +102,7 @@ const SearchResults = ({ searchResults }) => {
               Check_Out_Date
             </th>
             <th onClick={handleSortColumnClicked} scope="col">
-              Nights_Spent
+              Nights Spent
             </th>
             <th onClick={handleSortColumnClicked} scope="col">
               Show_profile
@@ -86,8 +110,8 @@ const SearchResults = ({ searchResults }) => {
           </tr>
         </thead>
         <tbody>
-          {sortedSearchResults &&
-            sortedSearchResults.map(
+          {searchResults &&
+            searchResults.map(
               ({
                 id,
                 title,
@@ -117,12 +141,18 @@ const SearchResults = ({ searchResults }) => {
                     <td>
                       <button
                         onClick={() => {
-                          handleOnShowProfile(id);
                           setShowProfile(true);
+                          handleOnShowProfile(id);
                         }}
-                        className="btn btn-secondary btn-sm"
+                        className="btn btn-sm "
+                        data-toggle="modal"
+                        data-target="#exampleModal"
                       >
-                        Show Profile
+                        <img
+                          src="https://cdn-icons.flaticon.com/png/512/1549/premium/1549770.png?token=exp=1651286105~hmac=45a142288099895188a176185fc11e50"
+                          alt="show icon"
+                          width={"40px"}
+                        />
                       </button>
                     </td>
                   </tr>
@@ -131,7 +161,13 @@ const SearchResults = ({ searchResults }) => {
             )}
         </tbody>
       </table>
-      <CustomerProfile customerID={customerID} showProfile={showProfile} />
+      <Modal
+        isOpen={showProfile}
+        onRequestClose={() => setShowProfile(false)}
+        style={customStyles}
+      >
+        <CustomerProfile customerID={customerID} showProfile={showProfile} />
+      </Modal>
     </div>
   );
 };

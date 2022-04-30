@@ -2,7 +2,10 @@ import React from "react";
 
 const RestaurantButton = ({ handleOrderONe }) => {
   return (
-    <button onClick={handleOrderONe} className="btn btn-primary ml-2">
+    <button
+      onClick={handleOrderONe}
+      className="btn btn-secondary ml-2 order-btn"
+    >
       Add
     </button>
   );

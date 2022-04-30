@@ -16,9 +16,10 @@ export default function CustomerProfile({ customerID, showProfile }) {
         <div className="card-body">
           <h4 className="title text-red">{customerData.vip ? "VIP" : ""}</h4>
           <h5 className="card-title">
-            {customerData.firstName} {customerData.surname}
+            {customerData.title} {customerData.firstName} {customerData.surname}
           </h5>
           <p className="card-text">{customerData.phoneNumber}</p>
+          <p className="card-text">{customerData.email}</p>
         </div>
       </div>
     )

@@ -38,25 +38,23 @@ const Bookings = () => {
     setBookings([...bookings, newBooking]);
   };
   return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        {loading ? (
-          <ThreeDots stroke="#FFE61B" />
-        ) : error ? (
-          <div>
-            {" "}
-            <img
-              src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png"
-              width={"50px"}
-            />{" "}
-            <p className="text-danger">Network response was not ok!</p>
-          </div>
-        ) : (
-          <SearchResults searchResults={bookings} />
-        )}
-        <AddBooking addNewBooking={addNewBooking} />
-      </div>
+    <div className="container App-content">
+      <Search search={search} />
+      {loading ? (
+        <ThreeDots stroke="#FFE61B" />
+      ) : error ? (
+        <div>
+          {" "}
+          <img
+            src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png"
+            width={"50px"}
+          />{" "}
+          <p className="text-danger">Network response was not ok!</p>
+        </div>
+      ) : (
+        <SearchResults searchResults={bookings} />
+      )}
+      <AddBooking addNewBooking={addNewBooking} />
     </div>
   );
 };

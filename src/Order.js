@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
-const Order = ({ orderType }) => {
+const Order = ({ orderType, imgSrc, randomPrice }) => {
   const [orders, setorders] = useState(0);
 
   const orderOne = () => {
@@ -10,9 +10,14 @@ const Order = ({ orderType }) => {
   };
 
   return (
-    <li className="list-item ">
-      {orderType}: {orders} <RestaurantButton handleOrderONe={orderOne} />{" "}
-    </li>
+    <div className="order-list">
+      <li className="list-item ">
+        {orderType}: {orders} <RestaurantButton handleOrderONe={orderOne} />{" "}
+        <p>Price : {randomPrice}</p>
+        <p>Total Price : {randomPrice * orders}</p>
+      </li>
+      <img src={imgSrc} alt="food-image" className="order-img" />
+    </div>
   );
 };
 
