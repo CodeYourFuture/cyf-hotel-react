@@ -1,6 +1,4 @@
 import React from "react";
-// import Image from "../Header.jpg";
-
 const Heading = () => {
   return (
     <>
@@ -8,7 +6,7 @@ const Heading = () => {
         <div className="Background-image">
           <i className="fa fa-h-square" aria-hidden="true" alt="Hotel Logo"></i>
           <h1> CYF Hotel</h1>
-          {/* <createImageBitmap source={require("./Header.JPG")} /> */}
+
           <img
             src="https://i.pinimg.com/originals/c8/fa/45/c8fa45c7cf32e04c991b390908efcb2e.jpg"
             width="100%"
