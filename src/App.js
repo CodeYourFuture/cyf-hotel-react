@@ -1,9 +1,9 @@
 import React from "react";
-import Footer from "./Footer";
-import Bookings from "./Bookings";
-import TouristInfoCards from "./TouristInfoCards";
-import Restaurant from "./Restaurant";
-import Home from "./Home";
+import Footer from "./components/Footer";
+import Bookings from "./components/Bookings";
+import TouristInfoCards from "./components/TouristInfoCards";
+import Restaurant from "./components/Restaurant";
+import Home from "./components/Home";
 import citiesInUK from "./data/citiesInUK.json";
 
 const footerData = [

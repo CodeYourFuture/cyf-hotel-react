@@ -1,6 +1,6 @@
 import React from "react";
 import Order from "./Order";
-import "./style/restaurant.scss";
+import "../style/restaurant.scss";
 
 const Restaurant = () => {
   const randomPrice = () => Math.floor(Math.random() * 25);

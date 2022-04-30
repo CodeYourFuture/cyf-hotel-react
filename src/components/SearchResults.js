@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 import Modal from "react-modal";
-import "./style/searchResults.scss";
+import "../style/searchResults.scss";
 
 const caculateNightsSpent = (start, end) => {
   let startDate = moment(start, "YYYY-M-D");

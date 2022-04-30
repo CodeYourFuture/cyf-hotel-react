@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
-import "./style/search.scss";
+import "../style/search.scss";
 
 const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");

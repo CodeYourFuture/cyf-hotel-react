@@ -1,7 +1,6 @@
 import React from "react";
-
 import Carousel from "react-elastic-carousel";
-import "./style/touristCards.scss";
+import "../style/touristCards.scss";
 
 const TouristInfoCards = ({ cardData }) => {
   const breakPoints = [
