@@ -21,7 +21,6 @@ export default function SearchResults(props) {
   const [selectedId, setSelectedId] = useState(null);
 
   const selectProfile = event => {
-    //console.log(event.target.value);
     setSelectedId(event.target.value);
   };
 
@@ -41,8 +40,6 @@ export default function SearchResults(props) {
     setAscending(!ascending);
     setSortedBookings(sortCol);
   }
-  /*  <button onClick={() => sortBookings("firstName")}>&#8595; &#8593;</button>
-      <button onClick={() => sortBookings("email")}>&#8595; &#8593;</button> */
 
   return (
     <div style={{ overflowX: "auto" }}>

@@ -39,8 +39,6 @@ export default function Bookings() {
     checkInDate,
     checkOutDate
   }) => {
-    // let nextId = bookings.length;
-
     setBookings(values => [
       ...values,
       {
