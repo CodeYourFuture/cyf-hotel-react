@@ -2,10 +2,10 @@ import React from "react";
 
 function Footer(props) {
   return (
-    <div>
+    <div className="footer">
       <ul>
         {props.contact.map(string => {
-          return <li>{string}</li>;
+          return <li className="unordered-list">{string}</li>;
         })}
       </ul>
     </div>

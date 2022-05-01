@@ -3,13 +3,16 @@ import React from "react";
 const Heading = () => {
   return (
     <div className="Header">
-      <header className="App-header">CYF Hotel</header>
-      <img
-        src={
-          "https://i2.wp.com/static.free-logo-design.net/uploads/2020/07/free-hotel-logo-design.jpg"
-        }
-        alt={"free hotel logo design"}
-      />
+      <header className="App-header">
+        CYF Hotel
+        <img
+          className="imgLogo"
+          src={
+            "https://image.similarpng.com/thumbnail/2021/09/Green-leaves-logo-isolated-on-transparent-background-PNG.png"
+          }
+          alt={"free hotel logo design"}
+        />
+      </header>
     </div>
   );
 };
