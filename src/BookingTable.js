@@ -25,7 +25,16 @@ function BookingTable({ result, setId }) {
         {moment(result.checkOutDate).diff(moment(result.checkInDate), "days")}
       </td>
       <td onClick={e => e.stopPropagation()}>
-        <button onClick={handlesetId}>Show profile</button>
+        <a href="#customerProfile">
+          {" "}
+          <button
+            href="#customerProfile"
+            className="app-btn"
+            onClick={handlesetId}
+          >
+            Show profile
+          </button>{" "}
+        </a>
       </td>
     </tr>
   );

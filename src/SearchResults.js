@@ -5,7 +5,7 @@ import BookingTable from "./BookingTable";
 function SearchResults(props) {
   const [id, setId] = useState("");
   return (
-    <div>
+    <div className="table-div">
       <table className="table">
         <thead>
           <tr>

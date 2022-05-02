@@ -1,44 +1,92 @@
+:root {
+  --black: #222629;
+  --lightgreen: #86c232;
+  --darkgreen: #61892f;
+  --darkgray: #474b4f;
+  --lightgray: #6b6e70;
+  --move: #8e8262;
+  --brown: #844d36;
+  --ashgray: #474853;
+  --sky: #4d6d9a;
+}
 .App {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ashgray);
+  color: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-body {
-  background-color: rgb(55, 55, 53);
-  color: white;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-/* label{
-  color:white;
-} */
 
 .App-header {
-  background-color: black;
-  height: 130px;
-  padding: 20px;
-  color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
   display: flex;
   flex-direction: column;
 }
-header p {
-  margin-left: 20px;
+.App-container {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background-color: var(--sky);
+  margin-bottom: 1rem;
+}
+.app-btn {
+  background-color: var(--sky);
+  color: white;
+  border-radius: 20px;
+  width: 12vw;
+  min-width: 8rem;
+  font-size: medium;
+}
+.app-btn:hover {
+  background-color: #495e7f;
+}
+.city-name {
+  text-shadow: 3px 3px 3px #495e7f;
+}
+.card-head img {
+  width: 400px;
+  height: 400px;
+}
+.card-container {
+  width: 100vw;
+}
+.singl-card {
+  display: flex;
+  margin: 2rem;
+  background-color: hsla(217, 51%, 65%, 0.042);
+  border: 1px solid #4d6d9a;
+  box-shadow: #f4f4fa;
+  border-radius: 5px;
+  width: 90%;
+}
+.card-body {
+  align-self: center;
+  margin: 1rem;
+  box-shadow: #495e7f;
+}
+.restaurantOrder {
+  display: flex;
+  margin: 1rem;
+}
+.order-items {
+  width: 8rem;
+  text-align: center;
 }
 
-.App-title {
-  font-size: 1.5em;
+.fotter-li {
+  display: flex;
+  justify-content: space-around;
+  background-color: #4d6d9a;
+  list-style-type: none;
+  height: 70px;
+  align-items: center;
 }
-
-.App-content {
-  padding-top: 20px;
-  font-size: large;
+li {
+  list-style-type: none;
 }
-
+.menue {
+  margin-left: 2rem;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -47,78 +95,33 @@ header p {
     transform: rotate(360deg);
   }
 }
-.search {
-  padding: 5px 0 20px 0;
-  text-align: center;
+.customerProfile {
+  color: #222629;
 }
-#label {
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+.singl-card:hover {
+  color: white;
+  background-color: #474b4f;
+}
+.card-link:hover {
   color: white;
 }
-/* .form-group search-box{
-  color:white
-} */
-.button {
-  text-align: center;
+.card-link {
+  width: 100%;
 }
-
-.results {
-  padding-top: 15px;
+.table-div {
+  overflow-x: auto;
 }
-
-.footer {
-  padding-top: 20px;
-  text-align: center;
-}
-
-.fotter-li {
-  display: flex;
-  justify-content: space-around;
-  background-color: black;
-  list-style-type: none;
-  height: 70px;
-  color: white;
-  align-items: center;
-}
-.table-primary {
-  color: black;
-}
-.card-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  /* background-color: rgb(244, 250, 250); */
-  padding: 15px;
-  margin: 15px;
-  /* border: 1px solid gray; */
-  /* width: 60vw; */
-  /* justify-self: center; */
-}
-.singl-card {
-  border: 1px solid gray;
-  margin: 5px;
-  background-color: #e8eff0;
-  box-shadow: 10px 10px 5px lightblue;
-  color: black;
-  text-align: center;
-  height: 100%;
-}
-.city-name {
-  text-shadow: 3px 3px 3px lightblue;
-}
-/* .btn-primary{
-  box-shadow: 3px 3px 3px lightblue;
-  margin: 5px 5px;
-  } */
-/* .table-primary{
-    background-color: rgb(17, 155, 45);
-  } */
-
-.card-img-top {
-  width: 25vw;
-  height: 30vw;
-  justify-self: center;
-  margin: 15px;
-}
-.list-group {
-  color: rgb(65, 52, 245);
+@media screen and (max-width: 700px) {
+  .singl-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-head img {
+    max-width: 300px;
+    min-width: 150;
+  }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function CustomerProfile({ id, setId }) {
-  const [person, setPerson] = useState("");
+  const [customer, setCustomer] = useState("");
   //  const [id, setId] = useState("");
   useEffect(() => {
     async function fetchData() {
@@ -9,21 +9,21 @@ export default function CustomerProfile({ id, setId }) {
         `https://cyf-react.glitch.me/customers/${id}`
       );
       const data = await response.json();
-      setPerson(data);
+      setCustomer(data);
     }
     fetchData();
   }, [id]);
   return (
-    <article className="customerProfile card">
+    <article className="customerProfile card" id="customerProfile">
       <ul className="list-group">
-        <li className="list-group-item">ID : {person.id}</li>
-        <li className="list-group-item">email : {person.email}</li>
-        <li className="list-group-item">Phone : {person.phoneNumber}</li>
-        {person.vip ? (
+        <li className="list-group-item">ID : {customer.id}</li>
+        <li className="list-group-item">email : {customer.email}</li>
+        <li className="list-group-item">Phone : {customer.phoneNumber}</li>
+        {customer.vip ? (
           <li className="list-group-item list-group-item-primary">VIP</li>
         ) : null}
         <li className="list-group-item">
-          <button className="btn btn-primary" onClick={() => setId("")}>
+          <button className="app-btn" onClick={() => setId("")}>
             Close
           </button>
         </li>
