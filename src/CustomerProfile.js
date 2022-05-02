@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 export default function CustomerProfile({ id, setId }) {
   const [customer, setCustomer] = useState("");
-  //  const [id, setId] = useState("");
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(

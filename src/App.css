@@ -40,6 +40,9 @@ header {
 .app-btn:hover {
   background-color: #495e7f;
 }
+.table-primary {
+  color: #222629;
+}
 .city-name {
   text-shadow: 3px 3px 3px #495e7f;
 }
@@ -68,9 +71,11 @@ header {
   display: flex;
   margin: 1rem;
 }
+
 .order-items {
   width: 8rem;
   text-align: center;
+  justify-content: flex-start;
 }
 
 .fotter-li {
@@ -84,9 +89,11 @@ header {
 li {
   list-style-type: none;
 }
-.menue {
-  margin-left: 2rem;
+
+#menue-p {
+  margin-left: 3rem;
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
