@@ -11,9 +11,10 @@ const App = () => {
     <div className="App">
       <Heading />
       <TouristInfoCards />
-      <Bookings />
+      <div className="wrapper">
+        <Bookings />
+      </div>
       <Restaurant />
-      {/* //orders={orders} handleClick={incrementCount} */}
       <Footer
         details={[
           "123 Fake Street, London, E1 4UD",

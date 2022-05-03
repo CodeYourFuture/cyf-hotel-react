@@ -72,6 +72,10 @@ ul {
   justify-content: space-evenly;
 }
 
+.wrapper {
+  overflow-x: auto;
+}
+
 /* restaurant */
 
 .restaurant {
@@ -91,10 +95,16 @@ ul {
 }
 
 @media only screen and (max-width: 1000px) {
-  .card-container {
+  /* .card-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  } */
+
+  .table {
+    max-width: 10px;
+    /* margin: 0 auto; */
+    /* overflow-x: hidden; */
   }
 }
