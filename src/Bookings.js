@@ -34,7 +34,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         {loading ? (
-          <p>Deatils will be loaded shortly...</p>
+          <p>Details will be loaded shortly...</p>
         ) : (
           <>
             <Search search={search} />
