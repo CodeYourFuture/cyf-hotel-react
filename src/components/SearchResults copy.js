@@ -14,7 +14,7 @@ const SearchResults = ({ searchResults }) => {
   const [customerID, setCustomerID] = useState(1);
   const [showProfile, setShowProfile] = useState(false);
   const [sortBookings, setSortBookings] = useState(false);
-  const [sortQuery, setSortQuery] = useState(null);
+  const [sortQuery, setSortQuery] = useState("");
   const [sortedSearchResults, setSortedSearchResults] = useState(searchResults);
 
   const customStyles = {
@@ -51,28 +51,25 @@ const SearchResults = ({ searchResults }) => {
     setCustomerID(id);
   };
   const handleSortColumnClicked = e => {
-    if (sortQuery !== e.target.id) {
-      // handle if user clicks again the same row
-      setSortQuery(e.target.id);
-    } else {
-      setSortQuery(null); // set clicked row to null if same row is selected
-    }
-    // setSortBookings(!sortBookings);
+    setSortQuery(e.target.id);
+    setSortBookings(!sortBookings);
   };
   useEffect(() => {
     const sort = () => {
-      let sortedResults = searchResults.sort((a, b) => {
+      if (!sortBookings) return;
+      let sortedResults = sortedSearchResults.sort((a, b) => {
+        console.log(sortQuery);
         if (a[sortQuery] < b[sortQuery]) return -1;
         return 0;
       });
-      if (sortQuery !== null) {
-        setSortedSearchResults(sortedResults);
-      }
+      setSortedSearchResults(sortedResults);
+      console.log(sortBookings);
       console.log(sortQuery);
       console.log(sortedSearchResults);
     };
     sort();
-  }, [sortQuery]);
+  }, [sortQuery, sortBookings]);
+
   return (
     <div className="table-content table-responsive" id="bookings">
       <table className="table">

@@ -40,13 +40,14 @@
       }
     }
   }
-  .book-btn {
+  .nav-menu {
     text-decoration: none;
     background-color: #fbf8f1;
     color: #1a1a40;
     margin-left: 10px;
     @media screen and (max-width: 625px) {
       font-size: 0.7rem;
+      margin-left: 6px;
     }
   }
 }

@@ -13,16 +13,16 @@ const Heading = () => {
         />
       </div>
       <div>
-        <a href="#home" className="btn book-btn">
+        <a href="#home" className="btn nav-menu">
           Home
         </a>
-        <a href="#about" className="btn book-btn">
+        <a href="#about" className="btn nav-menu">
           About Us
         </a>
-        <a href="#order" className="btn book-btn">
+        <a href="#order" className="btn nav-menu">
           Order
         </a>
-        <a href="#bookNow" className="btn book-btn">
+        <a href="#bookNow" className="btn nav-menu">
           Book Now
         </a>
       </div>
