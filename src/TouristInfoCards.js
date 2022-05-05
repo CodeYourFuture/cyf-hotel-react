@@ -1,24 +1,5 @@
 import React from "react";
 
-// const CardCreator = ({imageSource, city, hyperTextRef}) => {
-//  return (
-//     <div className="card">
-//         <img
-//           src="{imageSource}"
-//           alt=""
-//           className="card-img-top"
-//         />
-//         <div className="card-body">
-//           <p>{city}</p>
-//           <a href="{hyperTextRef}" className="btn btn-primary">
-//             Go somewhere
-//           </a>
-//         </div>
-//       </div>
-
-//  )
-// }
-
 const TouristInfoCards = () => {
   return (
     <div className="cardBox">
