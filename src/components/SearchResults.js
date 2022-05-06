@@ -13,7 +13,6 @@ const SearchResults = ({ searchResults }) => {
   const [rowIndexClicked, setRowIndexClicked] = useState(null);
   const [customerID, setCustomerID] = useState(1);
   const [showProfile, setShowProfile] = useState(false);
-  const [sortBookings, setSortBookings] = useState(false);
   const [sortQuery, setSortQuery] = useState(null);
   const [sortedSearchResults, setSortedSearchResults] = useState(searchResults);
 
