@@ -26,3 +26,13 @@
   background-color: turquoise;
   cursor: pointer;
 }
+@media screen and (min-width: 500px) {
+  .city_card_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .city_card {
+    width: 32%;
+  }
+}

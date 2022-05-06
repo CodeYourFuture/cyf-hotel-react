@@ -29,7 +29,7 @@ let cities = [
 
 const TouristInfoCards = () => {
   return (
-    <>
+    <article className="city_card_container">
       {cities.map((obj, index) => {
         return (
           <div key={index} className="city_card">
@@ -42,7 +42,7 @@ const TouristInfoCards = () => {
           </div>
         );
       })}
-    </>
+    </article>
   );
 };
 
