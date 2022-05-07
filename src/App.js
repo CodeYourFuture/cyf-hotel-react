@@ -1,12 +1,15 @@
 import React from "react";
-
 import Bookings from "./Bookings";
+import Heading from "./components/Heading";
+import TouristInfoCards from "./components/TouristInfoCards";
+import cities from "./cities.json";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">CYF Hotel</header>
+      <Heading />
+      <TouristInfoCards cities={cities} />
       <Bookings />
     </div>
   );
