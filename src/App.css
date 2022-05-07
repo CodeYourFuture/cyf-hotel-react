@@ -34,7 +34,9 @@ h1 {
   font-size: 1.5em;
   width: 90%;
 }
-
+.col {
+  max-width: 400px;
+}
 .App-content {
   padding-top: 20px;
   font-size: large;
@@ -76,16 +78,30 @@ tr {
   top: 120px;
   bottom: 60px;
   display: inline;
+  list-style: hidden;
 }
 
 .container {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: row;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  grid-gap: 40px;
+  width: 1050px;
   padding-top: 50px;
 }
-
+.container p {
+  padding: 0 0 0 50px;
+  line-height: 20px;
+}
+.row {
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.col {
+  border: 0.5px;
+  border-radius: 1rem;
+}
 a {
   text-align: center;
 }
@@ -100,17 +116,17 @@ a {
 .hidde {
   background-color: blue;
 }
-.list-group {
-  display: inline;
-  text-align: center;
-  display: grid;
-  grid-template: 100px;
-  grid-template-columns: auto auto auto;
-}
+
 .search-row-all {
   display: inline-flex;
   margin-left: 420px;
   margin-bottom: 0px;
+}
+.list-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 .customerId {
   margin-left: 300px;
@@ -127,16 +143,4 @@ a {
   gap: 10px;
   top: 40px;
   padding: 5px;
-}
-@media (max-width: 850px) {
-  .container {
-    flex-direction: column;
-    color: blueviolet;
-  }
-}
-@media (max-width: 450px) {
-  .container .clo {
-    flex-direction: column;
-    min-width: 400px;
-  }
 }
