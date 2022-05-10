@@ -1,5 +1,7 @@
 import React from "react";
 import "../../../css/infocards.css";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 let cities = [
   {
@@ -29,21 +31,22 @@ let cities = [
 
 const TouristInfoCards = () => {
   return (
-    <article className="city_card_container">
+    <Carousel>
       {cities.map((obj, index) => {
         return (
-          <div key={index} className="city_card">
-            <h1>{obj.cityName}</h1>
-            <img src={obj.src} alt="" className="img_card" />
-            <p>{obj.summary}</p>
-            <a href={obj.link} className="info_btn">
-              More Information
-            </a>
-          </div>
+          <article className="city_card_container">
+            <div key={index} className="city_card">
+              <h1>{obj.cityName}</h1>
+              <img src={obj.src} alt="" className="img_card" />
+              <p>{obj.summary}</p>
+              <a href={obj.link} className="info_btn">
+                More Information
+              </a>
+            </div>
+          </article>
         );
       })}
-    </article>
+    </Carousel>
   );
 };
-
 export default TouristInfoCards;
