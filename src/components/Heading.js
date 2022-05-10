@@ -1,6 +1,6 @@
 import React from "react";
 
-function Heading() {
+const Heading = () => {
   return (
     <>
       <header className="App-header">CYF Hotel</header>
@@ -10,6 +10,6 @@ function Heading() {
       />
     </>
   );
-}
+};
 
 export default Heading;
