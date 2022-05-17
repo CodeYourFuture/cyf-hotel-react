@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const CustomerProfile = ({ id, customer, setCustomer }) => {
+const CustomerProfile = ({ id, setId, customer, setCustomer }) => {
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/customers/${id}`)
       .then(response => response.json())
@@ -9,6 +9,7 @@ const CustomerProfile = ({ id, customer, setCustomer }) => {
   return (
     customer && (
       <div>
+        <button onClick={() => setId(null)}>x</button>
         <p>{`Customer ${id} Profile`}</p>
         <p>
           <b>Customer ID:</b> {customer.id}

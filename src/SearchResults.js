@@ -29,6 +29,7 @@ const SearchResults = ({ results }) => {
       </div>
       {id && (
         <CustomerProfile
+          setId={setId}
           id={id}
           customer={customer}
           setCustomer={setCustomer}

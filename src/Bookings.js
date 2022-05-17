@@ -4,10 +4,11 @@ import SearchResults from "./SearchResults.js";
 import loadingGif from "./images/loading.gif";
 import error from "./images/error.gif";
 
-const Bookings = () => {
+const Bookings = ({ bookings, setBookings }) => {
   const [status, setStatus] = useState("fetching");
+
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(response => response.json())
       .then(data => {
         if (data.error) {
@@ -18,7 +19,7 @@ const Bookings = () => {
         }
       });
   }, []);
-  const [bookings, setBookings] = useState([]);
+
   const search = searchVal => {
     return setBookings(
       bookings.filter(booking => {
