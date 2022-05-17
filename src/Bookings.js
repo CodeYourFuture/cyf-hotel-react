@@ -18,7 +18,7 @@ const Bookings = ({ bookings, setBookings }) => {
           setStatus("success");
         }
       });
-  }, []);
+  }, [setBookings]);
 
   const search = searchVal => {
     return setBookings(

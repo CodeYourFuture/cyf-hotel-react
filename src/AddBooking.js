@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import FormInputField from "./FormInputField";
 
 const AddBooking = ({ bookings, setBookings }) => {
