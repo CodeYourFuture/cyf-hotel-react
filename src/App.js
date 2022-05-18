@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import FakeBookings from "./data/fakeBookings.json";
 import cities from "./cities.json";
 import "./App.css";
+import Restaurant from "./components/Restaurant";
+import Bookings from "./components/Bookings.jsx";
 
 const footerData = [
   "123 Fake Street, London, E1 4UD",
@@ -18,7 +20,8 @@ const App = () => {
     <div className="App">
       <Heading />
       <TouristInfoCards cities={cities} />
-      <SearchResults result={FakeBookings} />
+      <Bookings />
+      <Restaurant />
       <Footer footerData={footerData} />
     </div>
   );
