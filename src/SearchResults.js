@@ -25,6 +25,7 @@ const SearchResults = (props) => {
             <th>Check in Date</th>
             <th>Check out Date</th>
             <th>Show Profile</th>
+            <th>Nights</th>
           </tr>
         </thead>
         <tbody>
