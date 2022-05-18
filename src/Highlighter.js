@@ -29,6 +29,9 @@ const Highlighter = (props) => {
           Show
         </button>
       </td>
+      <td>
+        {moment(props.checkOutDate).diff(moment(props.checkInDate), "days")}
+      </td>
     </tr>
   );
 };
