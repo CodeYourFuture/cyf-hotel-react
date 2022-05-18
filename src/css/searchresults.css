@@ -1,0 +1,23 @@
+.booking_table {
+  width: 100%;
+  text-align: center;
+  font-size: 0.5rem;
+}
+.results_table {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.table_header {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+tr {
+  padding: 0.3em 0;
+}
+
+.is_selected {
+  background-color: rgba(73, 75, 74, 0.514);
+  color: white;
+}
