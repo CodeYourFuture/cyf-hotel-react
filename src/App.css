@@ -55,3 +55,7 @@ tr {
 .card {
   width: 18rem;
 }
+.highlighted {
+  background-color: #5b5757;
+  color: white;
+}
