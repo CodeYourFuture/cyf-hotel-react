@@ -1,6 +1,7 @@
+import React, { useState } from "react";
 import { format } from "date-fns";
 import moment from "moment";
-import React from "react";
+import Row from "./Row";
 
 const SearchResults = props => {
   return (
@@ -23,19 +24,7 @@ const SearchResults = props => {
           const date1 = moment(data.checkInDate);
           const date2 = moment(data.checkOutDate);
           const diff = date2.diff(date1, "days");
-          return (
-            <tr>
-              <td scope="row">{data.id}</td>
-              <td>{data.title}</td>
-              <td>{data.firstName}</td>
-              <td>{data.surname}</td>
-              <td>{data.email}</td>
-              <td>{data.roomId}</td>
-              <td>{data.checkInDate}</td>
-              <td>{data.checkOutDate}</td>
-              <td>{diff}</td>
-            </tr>
-          );
+          return <Row data={data} />;
         })}
       </tbody>
     </table>
