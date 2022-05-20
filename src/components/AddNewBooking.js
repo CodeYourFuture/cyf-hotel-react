@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 
 export default function AddNewBooking({ newID, setBookings }) {
-  // const checkRequirements = () => {
-  //   // if(title.length>0)
-  //   //   document.getElementById("title").style.color = "Red";
-  //   return title.length>0
-  // }
-
   function useFormState(initial) {
     const [value, setValue] = useState(initial)
     function setEventValue(event) {

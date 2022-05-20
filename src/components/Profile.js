@@ -4,7 +4,7 @@ const Profile = (props) => {
   const [detailData, setDetailData] = useState({})
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+    fetch(`https://davood-hotel-server.glitch.me/bookings/${props.id}`)
       .then((res) => res.json())
       .then((data) => {
         setDetailData(data)

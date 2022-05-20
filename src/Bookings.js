@@ -11,7 +11,7 @@ const Bookings = () => {
 
   useEffect(() => {
     setStatus("fetching");
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://davood-hotel-server.glitch.me/bookings`)
       .then(res => res.json())
       .then(data => {
         if (data.error) {
