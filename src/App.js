@@ -19,10 +19,10 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <TouristInfoCards cities={cities} />
+      {/* <TouristInfoCards cities={cities} /> */}
       <Bookings />
-      <Restaurant />
-      <Footer footerData={footerData} />
+      {/* <Restaurant /> */}
+      {/* <Footer footerData={footerData} /> */}
     </div>
   );
 };

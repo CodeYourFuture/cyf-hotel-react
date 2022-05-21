@@ -1,13 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "../Search.js";
 import SearchResults from "./SearchResults.jsx";
-import FakeBookings from "../data/fakeBookings.json";
 
 const Bookings = () => {
+  const [bookings, setBookings] = useState([]);
+  const [initialBookings, setInitialBookings] = useState([]);
+  const API_URL = "https://cyf-react.glitch.me";
+
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    if (searchVal.length === 0) {
+      setBookings(initialBookings);
+      return;
+    }
+    const filteredBookings = bookings.filter(
+      booking =>
+        booking.firstName.toLowerCase.includes(searchVal.toLowerCase()) ||
+        booking.surname.toLowerCase.includes(searchVal.toLowerCase())
+    );
+    setBookings(filteredBookings);
   };
-  const [bookings, setBookings] = useState(FakeBookings);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then(data => data.json())
+      .then(json => {
+        setBookings(json);
+        setInitialBookings(json);
+      });
+  }, []);
+
+  console.log(bookings);
 
   return (
     <div className="App-content">

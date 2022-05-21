@@ -24,7 +24,7 @@ const SearchResults = props => {
           const date1 = moment(data.checkInDate);
           const date2 = moment(data.checkOutDate);
           const diff = date2.diff(date1, "days");
-          return <Row data={data} />;
+          return <Row data={data} diff={diff} />;
         })}
       </tbody>
     </table>
