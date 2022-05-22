@@ -15,6 +15,7 @@ const Row = props => {
       <td>{props.data.roomId}</td>
       <td>{props.data.checkInDate}</td>
       <td>{props.data.checkOutDate}</td>
+      <td>{props.diff}</td>
     </tr>
   );
 };
