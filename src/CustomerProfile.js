@@ -3,12 +3,10 @@ import React, { useState, useEffect } from "react";
 const CustomerProfile = (props) => {
   const [customerData, setCustomerData] = useState("");
 
-  console.log(props.id);
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+    fetch(`https://timeareich-hotel-server.glitch.me/bookings/${props.id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCustomerData(data);
       })
       .catch((error) => {

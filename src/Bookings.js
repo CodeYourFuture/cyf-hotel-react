@@ -9,7 +9,7 @@ const Bookings = (props) => {
   const [loadingData, setLoadingData] = useState(false);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://timeareich-hotel-server.glitch.me/bookings")
       .then((res) => res.json())
       .then((data) => {
         if (data.error) {
