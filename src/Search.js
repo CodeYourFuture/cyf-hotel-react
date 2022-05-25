@@ -1,6 +1,21 @@
 import React from "react";
 
 const Search = () => {
+  /*
+
+const Search = ({ search }) => {
+  const [searchInput, setSearchInput] = useState("");
+
+  function handleSearchInput(event) {
+    setSearchInput(event.target.value);
+    console.log(event.target.value);
+  }
+
+  const searchBooking = event => {
+    event.preventDefault();
+    search(searchInput);
+  };
+  */
   return (
     <div className="search">
       <div className="page-header">
