@@ -1,11 +1,12 @@
 import React from "react";
 import Header from "./Header";
 import Bookings from "./Bookings";
+import Restaurant from "./Restaurant";
 import InfoCards from "./InfoCards";
 import Footer from "./Footer";
 import "./App.css";
 
-const cards = [
+const cardsInfo = [
   {
     city: "London",
     link: "http://visitlondon.com",
@@ -41,7 +42,8 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <InfoCards cards={cards} />
+      <InfoCards cardsInfo={cardsInfo} />
+      <Restaurant className="restaurant" />
       <Bookings />
       <Footer address={address} />
     </div>

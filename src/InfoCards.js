@@ -1,11 +1,12 @@
 import React from "react";
 
 function InfoCards(props) {
+  console.log(props);
   return (
     <section className="cardSection">
-      {props.cards.map((item, index) => (
+      {props.cardsInfo.map((item, index) => (
         <div className="card" key={index}>
-          <img src={item.img} alt={item.city} className="card-img-top" />
+          <img className="card-img-top" src={item.img} alt={item.city} />
           <p> {item.paragraph} </p>
           <div className="card-body">
             <a

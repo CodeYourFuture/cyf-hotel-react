@@ -1,90 +1,81 @@
 import React, { useState } from "react";
-import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
+const moment = require("moment");
 
-function TableHead() {
-  return (
-    <thead className="thead-dark">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Title</th>
-        <th scope="col">First-Name</th>
-        <th scope="col">Sur-Name</th>
-        <th scope="col">Email-Id</th>
-        <th scope="col">Room#</th>
-        <th scope="col">Check In Date</th>
-        <th scope="col">Check Out Date</th>
-        <th scope="col">Nights Stay</th>
-      </tr>
-    </thead>
-  );
-}
+const numberOfNights = (dayIn, dayOut) => {
+  const dayInToMoment = moment(dayIn);
+  const dayOutToMoment = moment(dayOut);
+  return dayOutToMoment.diff(dayInToMoment, "days");
+};
 
-function TableRow(props) {
-  const [selected, setSelected] = useState("nothighlited");
-  function changeColor() {
-    setSelected(selected => {
-      if (selected === "nothighlighted") {
-        return "highlighted";
-      } else {
-        return "nothighlighted";
+const SearchResult = props => {
+  const [selected, setSelected] = useState([]);
+  const [Id, setId] = useState("");
+  const toggleSelected = bookingId => {
+    let tempSelected = [...selected];
+    if (tempSelected.includes(bookingId)) {
+      for (let i = 0; i < tempSelected.length; i++) {
+        if (tempSelected[i] === bookingId) {
+          tempSelected.splice(i, 1);
+        }
       }
-    });
-  }
-
-  return (
-    <tr className={selected} onClick={changeColor}>
-      <th scope="row">{props.booking.id}</th>
-      <td>{props.booking.title}</td>
-      <td>{props.booking.firstName}</td>
-      <td>{props.booking.surname}</td>
-      <td>{props.booking.email}</td>
-      <td>{props.booking.roomId}</td>
-      <td>{props.booking.checkInDate}</td>
-      <td>{props.booking.checkOutDate}</td>
-      <td>
-        {moment(props.booking.checkOutDate).diff(
-          moment(props.booking.checkInDate),
-          "Days"
-        )}
-      </td>
-    </tr>
-  );
-}
-
-function TableBody(props) {
-  return (
-    <tbody>
-      {props.bookings.map((booking, index) => (
-        <TableRow
-          booking={booking}
-          key={index}
-          handleClick={props.handleClick}
-        />
-      ))}
-    </tbody>
-  );
-}
-
-function SearchResults(props) {
-  const [displayControlHandler] = useState(false);
-  const [setCustomerId] = useState(null);
-  function handleClick(e, id) {
-    fetch(`https://cyf-react.glitch.me/customers/${id}`)
-      .then(response => response.json())
-      .then(data => {
-        setCustomerId(data);
-        console.log(data);
-        displayControlHandler(true);
-      });
-  }
-  return (
-    <div>
+    } else {
+      tempSelected.push(bookingId);
+    }
+    setSelected(tempSelected);
+  };
+  console.log(props.results);
+  return props.results.length > 0 ? (
+    <div className="search-container">
       <table className="table">
-        <TableHead />
-        <TableBody bookings={props.results} handleClick={handleClick} />
-      </table>
-    </div>
-  );
-}
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Room Id</th>
+            <th scope="col">Check in Date</th>
+            <th scope="col">Check out Date</th>
+            <th scope="col">Number of Nights</th>
+          </tr>
+        </thead>
 
-export default SearchResults;
+        {props.results.map((booking, i) => (
+          <tbody key={i}>
+            <tr
+              onClick={() => toggleSelected(i)}
+              className={selected.includes(i) ? "selected" : ""}
+              key={i}
+            >
+              <th scope="row">{i + 1}</th>
+              <td>{booking.title} </td>
+              <td>{booking.firstName} </td>
+              <td>{booking.surname}</td>
+              <td>{booking.email}</td>
+              <td>{booking.roomId}</td>
+              <td>{booking.checkInDate}</td>
+              <td> {booking.checkOutDate}</td>
+              <td>
+                {numberOfNights(booking.checkInDate, booking.checkOutDate)}
+              </td>
+              <td>
+                <button
+                  onClick={() => setId(booking.id)}
+                  className="btn btn-primary"
+                >
+                  Show Customer Profile
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        ))}
+      </table>
+      <CustomerProfile i={Id} />
+    </div>
+  ) : (
+    "loading the data"
+  );
+};
+export default SearchResult;
