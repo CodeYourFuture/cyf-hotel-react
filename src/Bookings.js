@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
-// import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import SearchResult from "./SearchResults.js";
+import CustomerProfile from "./CustomerProfile.js";
+import LoadingMessage from "./LoadingMessage.js";
 
-const Bookings = () => {
-  const search = searchVal => {
+const Bookings = (props) => {
+  const [bookings, setBookings] = useState([]);
+  const [loadingData, setLoadingData] = useState(false);
+
+  useEffect(() => {
+    fetch("https://timeareich-hotel-server.glitch.me/bookings")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          props.setError(true);
+        } else {
+          setLoadingData(true);
+          setBookings(data);
+        }
+      });
+  }, []);
+  const search = (searchVal) => {
     console.info("TO DO!", searchVal);
+    let filter = bookings.filter(
+      (item) =>
+        item.firstName.toUpperCase().includes(searchVal.toUpperCase()) ||
+        item.surname.toUpperCase().includes(searchVal.toUpperCase())
+    );
+    return setBookings(filter);
   };
+  const [customerId, setCustomerId] = useState(null);
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
+        <SearchResult setCustomerId={setCustomerId} data={bookings} />
+        <LoadingMessage state={loadingData} />
+        {customerId !== null ? <CustomerProfile id={customerId} /> : ""}
       </div>
+      )
     </div>
   );
 };

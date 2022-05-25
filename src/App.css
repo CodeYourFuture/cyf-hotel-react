@@ -9,13 +9,20 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Header-img {
+  height: 80px;
+  margin-left: 10px;
 }
 
 .App-title {
@@ -48,10 +55,49 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding: 1.5rem;
+  margin-top: 2rem;
   text-align: center;
+  color: #fff;
+  background-color: rgb(53, 53, 53);
 }
-
+.footer-list {
+  list-style-type: none;
+}
+.card-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
 .card {
+  margin: 0 2rem;
   width: 18rem;
+}
+.card-img-top {
+  height: 160px;
+}
+.restaurant-orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.highlight {
+  background-color: #b1f584;
+}
+.customer-profile {
+  background-color: #efefef;
+  padding: 1rem;
+}
+.loading-data-p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0979fa;
+}
+.error-message {
+  font-size: 30px;
+  font-weight: 800;
+  color: #cf1d1d;
+  text-align: center;
+  margin-top: 6rem;
 }
