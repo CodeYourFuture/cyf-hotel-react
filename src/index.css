@@ -2,17 +2,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-image: url(images/hideous-wallpaper-in.jpg);
 }
 
 .search-wrapper {
   border-top: 1px solid #e9ecef;
+  background-color: sandybrown;
 }
 
 .search-box label {
   font-weight: bold;
   padding: 0.75rem;
   margin-bottom: 0;
-  color: #5b5757;
+  color: #070402;
+  background-color: peru;
 }
 
 .search-row {
@@ -23,4 +26,9 @@ body {
 
 .search-row input {
   margin-right: 10px;
+}
+.text-left {
+  font-size: xx-large;
+  font-weight: bolder;
+  background-color: slategrey;
 }
