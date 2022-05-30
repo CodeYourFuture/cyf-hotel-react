@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const CustomerProfile = ({ id, setId, customer, setCustomer }) => {
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${id}`)
+    fetch(`https://matildaako-hotel-server.glitch.me/bookings/${id}`)
       .then(response => response.json())
       .then(data => setCustomer(data));
   }, [id, setCustomer]);

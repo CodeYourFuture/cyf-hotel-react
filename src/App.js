@@ -10,12 +10,21 @@ import "./App.css";
 
 const App = () => {
   const [bookings, setBookings] = useState([]);
+  const urlToFetch = "https://matildaako-hotel-server.glitch.me";
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards />
-      <Bookings bookings={bookings} setBookings={setBookings} />
-      <AddBooking bookings={bookings} setBookings={setBookings} />
+      <Bookings
+        bookings={bookings}
+        setBookings={setBookings}
+        urlToFetch={urlToFetch}
+      />
+      <AddBooking
+        bookings={bookings}
+        setBookings={setBookings}
+        urlToFetch={urlToFetch}
+      />
       <Restaurant />
       <Footer
         contact={[

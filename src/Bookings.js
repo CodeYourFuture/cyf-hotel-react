@@ -4,11 +4,11 @@ import SearchResults from "./SearchResults.js";
 import loadingGif from "./images/loading.gif";
 import error from "./images/error.gif";
 
-const Bookings = ({ bookings, setBookings }) => {
+const Bookings = ({ bookings, setBookings, urlToFetch }) => {
   const [status, setStatus] = useState("fetching");
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch(`${urlToFetch}/bookings`)
       .then(response => response.json())
       .then(data => {
         if (data.error) {

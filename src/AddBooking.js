@@ -1,8 +1,9 @@
 import React from "react";
 import FormInputField from "./FormInputField";
 
-const AddBooking = ({ bookings, setBookings }) => {
-  const submit = e => {
+const AddBooking = ({ bookings, setBookings, urlToFetch }) => {
+  const submit = async e => {
+    // console.log()
     e.preventDefault();
     const formElements = e.target.elements;
     const bookingsElements = {};
@@ -14,7 +15,14 @@ const AddBooking = ({ bookings, setBookings }) => {
         bookingsElements[elementsName] = elementsValue;
       }
     }
-    setBookings(() => bookings.concat(bookingsElements));
+    const res = await fetch(`${urlToFetch}/bookings`, {
+      method: "POST",
+      mode: "cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(bookingsElements)
+    });
+    const data = await res.json();
+    console.log(data);
   };
   return (
     <form onSubmit={submit}>
