@@ -10,7 +10,7 @@ const TableRow = props => {
   const [highlight, setHighlight] = useState(false);
 
   function handleClick() {
-    setHighlight(!highlight);
+    onMouseOver = setHighlight(!highlight);
   }
 
   return (

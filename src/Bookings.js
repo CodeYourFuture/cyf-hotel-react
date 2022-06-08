@@ -20,7 +20,7 @@ const Bookings = () => {
     return initialData;
   };
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://teniolao-cyf-hotel-server.glitch.me/bookings`)
       .then(res => res.json())
       .then(data => {
         if (data.error) {

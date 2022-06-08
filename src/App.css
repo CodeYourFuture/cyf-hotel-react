@@ -43,6 +43,10 @@
   margin: 1em;
 }
 
+tr:hover {
+  background-color: red;
+}
+
 tr {
   color: #5b5757;
 }
