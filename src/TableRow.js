@@ -7,16 +7,17 @@ const TableRow = props => {
   const checkOutDate = moment(booking.checkOutDate);
   const checkInDate = moment(booking.checkInDate);
 
-  const [highlight, setHighlight] = useState(false);
+  const [highlight, setHighlight] = useState(true);
 
   function handleClick() {
-    onMouseOver = setHighlight(!highlight);
+    setHighlight(false);
   }
 
   return (
     <tr
-      style={{ backgroundColor: highlight ? "lightgrey" : "white" }}
-      onClick={handleClick}
+      style={{ backgroundColor: highlight ? "white" : "lightgrey" }}
+      onMouseOver={handleClick}
+      onMouseOut={() => setHighlight(true)}
     >
       <th scope="row">{booking.id}</th>
       <td>{booking.title}</td>
