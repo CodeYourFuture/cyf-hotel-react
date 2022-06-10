@@ -10,7 +10,7 @@ import "./App.css";
 
 const App = () => {
   const [bookings, setBookings] = useState([]);
-  const urlToFetch = "http://localhost:7555";
+  const urlToFetch = "https://matildaako-hotel-server.glitch.me";
   const [status, setStatus] = useState("fetching");
 
   const getBookings = () => {
