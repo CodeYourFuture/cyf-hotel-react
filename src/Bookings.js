@@ -4,21 +4,16 @@ import SearchResults from "./SearchResults.js";
 import loadingGif from "./images/loading.gif";
 import error from "./images/error.gif";
 
-const Bookings = ({ bookings, setBookings, urlToFetch }) => {
-  const [status, setStatus] = useState("fetching");
-
+const Bookings = ({
+  bookings,
+  setBookings,
+  status,
+  getBookings,
+  urlToFetch
+}) => {
   useEffect(() => {
-    fetch(`${urlToFetch}/bookings`)
-      .then(response => response.json())
-      .then(data => {
-        if (data.error) {
-          setStatus("failed");
-        } else {
-          setBookings(data);
-          setStatus("success");
-        }
-      });
-  }, [setBookings]);
+    getBookings();
+  }, []);
 
   const search = searchVal => {
     return setBookings(
@@ -42,7 +37,7 @@ const Bookings = ({ bookings, setBookings, urlToFetch }) => {
         {status === "success" && (
           <>
             <Search search={search} />
-            <SearchResults results={bookings} />
+            <SearchResults results={bookings} urlToFetch={urlToFetch} />
           </>
         )}
         {status === "failed" && (

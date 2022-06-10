@@ -1,7 +1,7 @@
 import React from "react";
 import FormInputField from "./FormInputField";
 
-const AddBooking = ({ bookings, setBookings, urlToFetch }) => {
+const AddBooking = ({ bookings, getBookings, urlToFetch }) => {
   const submit = async e => {
     // console.log()
     e.preventDefault();
@@ -23,6 +23,7 @@ const AddBooking = ({ bookings, setBookings, urlToFetch }) => {
     });
     const data = await res.json();
     console.log(data);
+    getBookings();
   };
   return (
     <form onSubmit={submit}>

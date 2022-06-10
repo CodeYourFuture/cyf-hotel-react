@@ -10,7 +10,21 @@ import "./App.css";
 
 const App = () => {
   const [bookings, setBookings] = useState([]);
-  const urlToFetch = "https://matildaako-hotel-server.glitch.me";
+  const urlToFetch = "http://localhost:7555";
+  const [status, setStatus] = useState("fetching");
+
+  const getBookings = () => {
+    fetch(`${urlToFetch}/bookings`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.error) {
+          setStatus("failed");
+        } else {
+          setBookings(data);
+          setStatus("success");
+        }
+      });
+  };
   return (
     <div className="App">
       <Heading />
@@ -19,11 +33,14 @@ const App = () => {
         bookings={bookings}
         setBookings={setBookings}
         urlToFetch={urlToFetch}
+        status={status}
+        getBookings={getBookings}
       />
       <AddBooking
         bookings={bookings}
         setBookings={setBookings}
         urlToFetch={urlToFetch}
+        getBookings={getBookings}
       />
       <Restaurant />
       <Footer

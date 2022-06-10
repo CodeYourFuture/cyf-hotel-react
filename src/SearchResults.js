@@ -3,7 +3,7 @@ import TableHeading from "./TableHeading";
 import TableBody from "./TableBody";
 import CustomerProfile from "./CustomerProfile";
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ results, urlToFetch }) => {
   const [id, setId] = useState(null);
   const [customer, setCustomer] = useState(null);
   function handleButtonClicked(clickedId) {
@@ -33,6 +33,7 @@ const SearchResults = ({ results }) => {
           id={id}
           customer={customer}
           setCustomer={setCustomer}
+          urlToFetch={urlToFetch}
         />
       )}
     </div>

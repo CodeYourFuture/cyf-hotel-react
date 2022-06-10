@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 
-const CustomerProfile = ({ id, setId, customer, setCustomer }) => {
+const CustomerProfile = ({ id, setId, customer, setCustomer, urlToFetch }) => {
   useEffect(() => {
-    fetch(`https://matildaako-hotel-server.glitch.me/bookings/${id}`)
+    fetch(`${urlToFetch}/bookings/${id}`)
       .then(response => response.json())
-      .then(data => setCustomer(data));
+      .then(data => {
+        setCustomer(data);
+      });
   }, [id, setCustomer]);
   return (
     customer && (
@@ -20,9 +22,9 @@ const CustomerProfile = ({ id, setId, customer, setCustomer }) => {
         <p>
           <b>Email:</b> {customer.email}
         </p>
-        <p>
+        {/* <p>
           <b>VIP:</b> {customer.vip ? `Yes` : `No`}
-        </p>
+        </p> */}
         <p>
           <b>Phone Number:</b> {customer.phoneNumber}
         </p>
