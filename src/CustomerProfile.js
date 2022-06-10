@@ -7,7 +7,7 @@ const CustomerProfile = ({ id, setId, customer, setCustomer, urlToFetch }) => {
       .then(data => {
         setCustomer(data);
       });
-  }, [id, setCustomer]);
+  }, [id, setCustomer, urlToFetch]);
   return (
     customer && (
       <div>
