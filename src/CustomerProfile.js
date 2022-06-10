@@ -5,6 +5,7 @@ const CustomerProfile = ({ id, setId, customer, setCustomer, urlToFetch }) => {
     fetch(`${urlToFetch}/bookings/${id}`)
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         setCustomer(data);
       });
   }, [id, setCustomer, urlToFetch]);
@@ -21,12 +22,6 @@ const CustomerProfile = ({ id, setId, customer, setCustomer, urlToFetch }) => {
         </p>
         <p>
           <b>Email:</b> {customer.email}
-        </p>
-        {/* <p>
-          <b>VIP:</b> {customer.vip ? `Yes` : `No`}
-        </p> */}
-        <p>
-          <b>Phone Number:</b> {customer.phoneNumber}
         </p>
       </div>
     )
