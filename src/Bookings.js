@@ -2,15 +2,22 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
+import GuestForm from "./GuestForm.js";
 
 const Bookings = () => {
   //useState
   const [bookings, setBookings] = useState([]);
   const [status, setStatus] = useState("fetching");
 
+  // add guest function
+  function addBooking(e, newBooking) {
+    e.preventDefault();
+    setBookings([...bookings, newBooking]);
+  }
+
   //useEffect
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me/")
       .then(res => res.json())
       .then(data => {
         if (data.error) {
@@ -45,6 +52,7 @@ const Bookings = () => {
           <>
             <Search search={search} />
             <SearchResults results={bookings} />
+            <GuestForm onSubmit={addBooking} />
           </>
         )}
         {status === "failure" && "OOPS, SOMETHING WENT WRONG"}
