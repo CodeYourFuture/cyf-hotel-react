@@ -5,7 +5,7 @@
 ## Completed project
 
 ## Detail
-![alt text](./src/Image/Hotel__completed-03.png "mobile")
+![alt text](./src/Image/Hotel__completed-03.PNG "mobile")
 
 ### Responsive mobile
 ![alt text](./src/Image/Hotel__completed-01.png "mobile")
