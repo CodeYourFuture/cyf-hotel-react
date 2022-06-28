@@ -27,7 +27,9 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 3. Create and use a new component to show info cards
 
-**Instructions:** In `src/App.js`, above the `<Bookings />` component add a new component called `TouristInfoCards` which shows 3 _cards_. A card is a common user interface pattern with an image at the top and some related text underneath. The cards must link to `peoplemakeglasgow.com`, `visitmanchester.com` and `visitlondon.com`. The cards should contain the name of the city and an image of the city.
+**Instructions:** In `src/App.js`, above the `<Bookings />` component add a new component called `TouristInfoCards` which shows 3 _cards_. A card is a common user interface pattern with an image at the top and some related text underneath. The cards must link to `peoplemakeglasgow.com`, `visitmanchester.com` and `visitlondon.com`. The cards should contain the name of the city and an image of the city. Here is an example of what an info card should look like:
+
+![Info Card](InfoCard.png)
 
 **Hint:** Use the same className as the example below to benefit from [Bootstrap](https://getbootstrap.com/docs/4.2/components/card) library which is already imported for you in the project. Use the JSX code below as an example of one card (note that in JSX, you'll need to use `className` instead of `class`):
 
@@ -122,7 +124,17 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** Check that the bookings are still rendered correctly in the page.
 
-#### 15. Load bookings remotely
+#### 15. Highlight booking row when clicked
+
+**Instructions:** Within the `<SearchResults />` component or its child components, add an `onClick` handler to each row in the table (hint: on the `<tr>` element). When clicked, the row is "selected" and highlighted with a different colour. When clicked again, the row is unselected and the coloured highlighting is removed.
+
+**Hint:** Use a new state variable for each row to record if the row is selected or not, and use this value to set a class to the `className` prop of the row.
+
+**Test:** Verify that each row of your table can be highlighted (on and off) independently when being clicked.
+
+## Lesson 3
+
+#### 16. Load bookings remotely
 
 **Instructions:** Instead of getting the existing bookings from the file `data/fakeBookings.json`, we will get and load the bookings from a remote API. In the `<Bookings />` component, use the React function `useEffect` to `console.log()` some text only when the page first renders on the screen. Verify that when you refresh the page, the text appears once in the console. Then, in the `useEffect` function, use the `fetch()` function to get data from `https://cyf-react.glitch.me`.
 
@@ -133,16 +145,6 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 - When the response comes back, use `setBookings` to update the results
 
 **Test:** Verify the customers data are still displayed correctly in the table.
-
-#### 16. Highlight booking row when clicked
-
-**Instructions:** Within the `<SearchResults />` component or its child components, add an `onClick` handler to each row in the table (hint: on the `<tr>` element). When clicked, the row is "selected" and highlighted with a different colour. When clicked again, the row is unselected and the coloured highlighting is removed.
-
-**Hint:** Use a new state variable for each row to record if the row is selected or not, and use this value to set a class to the `className` prop of the row.
-
-**Test:** Verify that each row of your table can be highlighted (on and off) independently when being clicked.
-
-## Lesson 3
 
 #### 17. Storing the search input in a state
 
