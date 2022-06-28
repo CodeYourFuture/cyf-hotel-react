@@ -9,14 +9,14 @@ const TableRow = props => {
 
   const [highlight, setHighlight] = useState(true);
 
-  function handleClick() {
+  function handleMouseOver() {
     setHighlight(false);
   }
 
   return (
     <tr
       style={{ backgroundColor: highlight ? "white" : "lightgrey" }}
-      onMouseOver={handleClick}
+      onMouseOver={handleMouseOver}
       onMouseOut={() => setHighlight(true)}
     >
       <th scope="row">{booking.id}</th>
