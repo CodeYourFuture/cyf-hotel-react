@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./CustomerProfile.css";
 
 function CustomerProfile(props) {
   const [profile, setProfile] = useState();

@@ -1,0 +1,17 @@
+.card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow: auto;
+  margin-top: 30px;
+  margin: 50px;
+}
+.card-img-top {
+  height: 200px;
+  width: 300px;
+  border-radius: 9px;
+  width: 100%;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}

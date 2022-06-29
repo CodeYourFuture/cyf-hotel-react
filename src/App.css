@@ -1,35 +1,5 @@
-.App {
-  text-align: left;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40px;
-  filter: brightness(2);
-}
-
-.App-header {
-  background-color: #6f1e51;
-  height: 70px;
-  padding: 20px;
-  color: #fae588;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-}
-
 .App-content {
   padding-top: 20px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .btn {
@@ -49,47 +19,6 @@ tr {
 
 .results {
   padding-top: 15px;
-}
-
-ul {
-  list-style: none;
-}
-/* Tourist info cards */
-
-.card-container {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 20px;
-  overflow: auto;
-  margin-top: 30px;
-  margin: 50px;
-}
-.card-img-top {
-  height: 200px;
-  width: 300px;
-  border-radius: 9px;
-  width: 100%;
-  image-rendering: auto;
-  image-rendering: crisp-edges;
-  image-rendering: pixelated;
-}
-
-/* restaurant */
-
-.restaurant {
-  text-align: center;
-}
-.restaurant-button {
-  margin: 0.3em 1em;
-}
-
-.footer {
-  height: 120px;
-  padding: 20px;
-  background-color: #006266;
-  color: white;
-  padding-top: 20px;
-  text-align: center;
 }
 
 @media only screen and (max-width: 1500px) {
