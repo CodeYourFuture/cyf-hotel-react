@@ -1,6 +1,6 @@
 import React from "react";
 
-function Heading() {
+function Navbar() {
   return (
     <header className="App-header">
       CYF Hotel
@@ -13,4 +13,4 @@ function Heading() {
   );
 }
 
-export default Heading;
+export default Navbar;
