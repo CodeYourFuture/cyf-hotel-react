@@ -11,6 +11,7 @@ import {
   FaYoutube
 } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { Link as Links } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -29,12 +30,12 @@ function Navbar() {
         </h2>
       </div>
       <ul className="nav-menu">
-        <Link to="/" smooth={true} duration={500}>
+        <Links to="/" smooth={true} duration={500}>
           <li>Admin</li>
-        </Link>
-        <Link to="home" smooth={true} duration={500}>
+        </Links>
+        <Links to="/home" smooth={true} duration={500}>
           <li>Home</li>
-        </Link>
+        </Links>
         <Link to="destinations" smooth={true} duration={500}>
           <li>Destinations</li>
         </Link>
@@ -62,9 +63,12 @@ function Navbar() {
 
       <div className={nav ? "mobile-menu active" : "mobile-menu"}>
         <ul className="mobile-nav">
-          <Link to="home" smooth={true} duration={500}>
+          <Links to="/" smooth={true} duration={500}>
+            <li>Admin</li>
+          </Links>
+          <Links to="/home" smooth={true} duration={500}>
             <li>Home</li>
-          </Link>
+          </Links>
           <Link to="destinations" smooth={true} duration={500}>
             <li>Destinations</li>
           </Link>

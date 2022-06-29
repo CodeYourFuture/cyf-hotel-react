@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
 import Admin from "./components/Admin";
+import Home from "./components/Home";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -13,15 +14,6 @@ const App = () => {
     "0123 456789"
   ];
 
-  const Test = () => {
-    return (
-      <div>
-        hsdbjhvvbdfsbjbf vbhsbfhjvhavdbjwbd vjjkbdafvbyfeq bvbshfchdvfhbcqb
-        hdvvqnavchjba
-      </div>
-    );
-  };
-
   return (
     <BrowserRouter>
       <div>
@@ -29,7 +21,7 @@ const App = () => {
         <Hero />
         <Routes>
           <Route path="/" element={<Admin />} />
-          <Route path="/test" element={<Test />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
         <Footer details={details} />
       </div>
