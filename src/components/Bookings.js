@@ -33,16 +33,18 @@ const Bookings = () => {
   }, []);
 
   return (
-    <div className="App-content">
-      <div className="container">
-        {status === "fetching" && "Loading Please wait..."}
-        {status === "success" && (
-          <>
-            <Search search={search} />
-            <SearchResults bookings={bookings} />
-          </>
-        )}
-        {status === "failure" && "SORRY Something went wrong"}
+    <div className="wrapper">
+      <div className="App-content">
+        <div className="container">
+          {status === "fetching" && "Loading Please wait..."}
+          {status === "success" && (
+            <>
+              <Search search={search} />
+              <SearchResults bookings={bookings} />
+            </>
+          )}
+          {status === "failure" && "SORRY Something went wrong"}
+        </div>
       </div>
     </div>
   );
