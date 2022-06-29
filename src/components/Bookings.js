@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Search from "./Search.js";
-import SearchResults, { TableHeader } from "./SearchResults.js";
+import Search from "./search/Search.js";
+import SearchResults, { TableHeader } from "./search/SearchResults.js";
 
 const Bookings = () => {
   const [bookings, SetBooking] = useState([]);

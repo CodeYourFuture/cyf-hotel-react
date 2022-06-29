@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import TableRow from "./TableRow";
-import CustomerProfile from "./CustomerProfile";
+import TableRow from "../TableRow";
+import CustomerProfile from "../customerProfile/CustomerProfile";
 
 const headings = [
   "Id",
