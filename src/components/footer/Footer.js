@@ -13,7 +13,7 @@ function Footer(props) {
     <div className="footer">
       <div className="container">
         <div className="top">
-          <h3>BEACHES.</h3>
+          <h3>CYF HOTEL</h3>
           <div className="social">
             <FaFacebook className="icon" />
             <FaInstagram className="icon" />
