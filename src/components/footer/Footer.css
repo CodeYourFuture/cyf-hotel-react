@@ -1,13 +1,8 @@
 .footer {
-  /* height: 120px;
-  padding: 20px; */
   background-color: #006266;
-  /* color: white;
-  padding-top: 20px; */
   text-align: center;
-
   width: 100%;
-  padding: 2rem 0;
+  padding: 1rem 0;
   background-color: #006266;
   color: #fff;
 }
@@ -49,7 +44,7 @@
 }
 
 .footer li {
-  padding: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 @media screen and (max-width: 1140px) {

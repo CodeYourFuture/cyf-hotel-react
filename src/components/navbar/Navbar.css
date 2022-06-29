@@ -23,6 +23,10 @@
   display: flex;
 }
 
+.nav-admin {
+  color: #8739b8;
+}
+
 li {
   padding: 0 1rem;
 }

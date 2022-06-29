@@ -31,20 +31,23 @@ function Navbar() {
       </div>
       <ul className="nav-menu">
         <Links to="/" smooth={true} duration={500}>
-          <li>Admin</li>
+          <li className="nav-admin">Admin</li>
         </Links>
+
         <Links to="/home" smooth={true} duration={500}>
           <li>Home</li>
         </Links>
+
         <Link to="destinations" smooth={true} duration={500}>
           <li>Destinations</li>
+        </Link>
+        <Link to="search-section" smooth={true} duration={500}>
+          <li>Book</li>
         </Link>
         <Link to="carousel" smooth={true} duration={500}>
           <li>Travel</li>
         </Link>
-        <Link to="search" smooth={true} duration={500}>
-          <li>Book</li>
-        </Link>
+
         <Link to="views" smooth={true} duration={500}>
           <li>Views</li>
         </Link>
@@ -64,28 +67,30 @@ function Navbar() {
       <div className={nav ? "mobile-menu active" : "mobile-menu"}>
         <ul className="mobile-nav">
           <Links to="/" smooth={true} duration={500}>
-            <li>Admin</li>
+            <li className="nav-admin">Admin</li>
           </Links>
           <Links to="/home" smooth={true} duration={500}>
             <li>Home</li>
           </Links>
+
           <Link to="destinations" smooth={true} duration={500}>
             <li>Destinations</li>
+          </Link>
+          <Link to="search-section" smooth={true} duration={500}>
+            <li>Book</li>
           </Link>
           <Link to="carousel" smooth={true} duration={500}>
             <li>Travel</li>
           </Link>
-          <Link to="search" smooth={true} duration={500}>
-            <li>Book</li>
-          </Link>
+
           <Link to="views" smooth={true} duration={500}>
             <li>Views</li>
           </Link>
         </ul>
         <div className="mobile-menu-bottom">
           <div className="menu-icons">
-            <button>Search</button>
-            <button>Account</button>
+            <button className="button">Search</button>
+            <button className="button">Account</button>
           </div>
           <div className="social-icons">
             <FaFacebook className="icon" />
