@@ -13,7 +13,7 @@ function ImgCarousel() {
       <Carousel
         className="carousel"
         showArrows={true}
-        autoPlay={false}
+        autoPlay={true}
         infiniteLoop={true}
       >
         <div>
