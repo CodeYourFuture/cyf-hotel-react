@@ -16,6 +16,7 @@ import "./Navbar.css";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
+  const [displayNav, setDisplayNav] = useState(false);
   const handleNav = () => setNav(!nav);
   return (
     <div name="home" className={nav ? "navbar navbar-bg" : "navbar"}>
@@ -30,27 +31,45 @@ function Navbar() {
         </h2>
       </div>
       <ul className="nav-menu">
-        <Links to="/" smooth={true} duration={500}>
-          <li className="nav-admin">Admin</li>
-        </Links>
+        {displayNav ? (
+          <>
+            <Links to="/" smooth={true} duration={500}>
+              <li className="nav-admin" onClick={() => setDisplayNav(false)}>
+                Admin
+              </li>
+            </Links>
 
-        <Links to="/home" smooth={true} duration={500}>
-          <li>Home</li>
-        </Links>
+            <Links className="nav-home" to="/home" smooth={true} duration={500}>
+              <li className="nav-home">Home</li>
+            </Links>
 
-        <Link to="destinations" smooth={true} duration={500}>
-          <li>Destinations</li>
-        </Link>
-        <Link to="search-section" smooth={true} duration={500}>
-          <li>Book</li>
-        </Link>
-        <Link to="carousel" smooth={true} duration={500}>
-          <li>Travel</li>
-        </Link>
+            <Link to="destinations" smooth={true} duration={500}>
+              <li>Destinations</li>
+            </Link>
+            <Link to="search-section" smooth={true} duration={500}>
+              <li>Book</li>
+            </Link>
+            <Link to="carousel" smooth={true} duration={500}>
+              <li>Travel</li>
+            </Link>
 
-        <Link to="views" smooth={true} duration={500}>
-          <li>Views</li>
-        </Link>
+            <Link to="views" smooth={true} duration={500}>
+              <li>Views</li>
+            </Link>
+          </>
+        ) : (
+          <>
+            <Links to="/" smooth={true} duration={500}>
+              <li className="nav-admin">Admin</li>
+            </Links>
+
+            <Links to="/home" smooth={true} duration={500}>
+              <li className="nav-home" onClick={() => setDisplayNav(true)}>
+                Home
+              </li>
+            </Links>
+          </>
+        )}
       </ul>
       <div className="nav-icons">
         <BiSearch className="icon" style={{ marginRight: "1rem" }} />
@@ -70,7 +89,7 @@ function Navbar() {
             <li className="nav-admin">Admin</li>
           </Links>
           <Links to="/home" smooth={true} duration={500}>
-            <li>Home</li>
+            <li className="nav-home">Home</li>
           </Links>
 
           <Link to="destinations" smooth={true} duration={500}>
