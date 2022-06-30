@@ -24,7 +24,7 @@ function Navbar() {
         <h2>
           CYF HOTEL
           <img
-            className={nav ? "darken" : "nav-logo"}
+            className={nav ? "nav-logo darken" : "nav-logo"}
             src="https://natasha-skin.com/wp-content/uploads/2020/03/Logo_.png"
             alt="smile face"
           />
