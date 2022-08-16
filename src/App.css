@@ -182,15 +182,17 @@
 
 .restaurant-list-item {
   display: flex;
+  align-items: center;
   gap: 1rem;
+  font-size: 0.8rem;
 }
 
 .restaurant-list-item-button {
   padding: 0.3rem 0.6rem;
   border-radius: 0.2rem;
   background-color: #00b2f7;
-  font-size: 0.8rem;
   color: white;
+  font-size: 0.8rem;
   text-shadow: 0px 0px 2px black;
 }
 
