@@ -1,57 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .App {
-  text-align: left;
+  border: 1px solid black;
+  background-color: lightgrey;
+  max-width: 900px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
+.heading-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
   color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+  background-color: #222;
+  border: 2px solid #00f4fe;
 }
 
-.App-title {
-  font-size: 1.5em;
+.heading-image {
+  display: block;
+  width: 48px;
+  height: 48px;
 }
 
-.App-content {
-  padding-top: 20px;
-  font-size: large;
+.heading-title {
+  font-family: "Fredoka One", sans-serif;
+  text-shadow: 3px 3px 2px #009af3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tourist-info-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid #00f4fe;
 }
+
+.tourist-info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.tourist-info-card-image {
+  max-width: 100%;
+  border-radius: 0.2rem;
+}
+
+.tourist-info-card-title {
+  font-size: 1.6rem;
+  font-family: "Fredoka One", sans-serif;
+  text-shadow: 2px 2px 1px #009af3;
+}
+
+.tourist-info-card-description {
+  font-size: 0.8rem;
+  font-style: italic;
+  /* text-shadow: 0px 0px 1px black; */
+}
+
+.tourist-info-card-link {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.2rem;
+  background-color: #00b2f7;
+  font-size: 0.8rem;
+  color: white;
+  text-shadow: 0px 0px 2px black;
+}
+
+.tourist-info-card-link:hover {
+  background-color: #00d1f0;
+  color: white;
+  text-decoration: none;
+}
+
+.bookings-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #00f4fe;
+}
+
+.search-results-table {
+  font-size: 0.8rem;
+  border: 2px solid purple;
+}
+
+.search-results-table-head {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-results-table-head-row {
+  padding: 0.5rem;
+}
+
+.search-results-table-head-row > th {
+  padding: 0.5rem;
+}
+
+.search-results-table-body-row {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.search-results-table-body-row > th {
+  padding: 0.5rem;
+}
+
+.search-results-table-body-row > td {
+  padding: 0.5rem;
+}
+
+.footer-container {
+  border: 2px solid #00f4fe;
+  padding: 0.5rem;
+}
+
+.footer-contact {
+  text-align: right;
+  font-size: 0.7rem;
+  list-style: none;
+  margin: 0;
+}
+
+/* 
+
 .search {
   padding: 5px 0 20px 0;
 }
 
-tr {
+.search-wrapper {
+  border-top: 1px solid #e9ecef;
+}
+
+.search-box label {
+  font-weight: bold;
+  padding: 0.75rem;
+  margin-bottom: 0;
   color: #5b5757;
 }
 
-.results {
+.search-row {
+  display: flex;
+  border-top: 2px solid #e9ecef;
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
+.search-row input {
+  margin-right: 10px;
 }
 
-.card {
-  width: 18rem;
-}
+*/
