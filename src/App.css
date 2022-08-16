@@ -98,6 +98,31 @@
   padding: 0.5rem;
 }
 
+.search-title {
+  font-size: 1.6rem;
+  font-family: "Fredoka One", sans-serif;
+  text-shadow: 2px 2px 1px #009af3;
+}
+
+.search-form > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-form-input {
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+}
+
+.search-form-button {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.2rem;
+  background-color: #00b2f7;
+  font-size: 0.8rem;
+  color: white;
+  text-shadow: 0px 0px 2px black;
+}
+
 /* 
 
 .search-wrapper {

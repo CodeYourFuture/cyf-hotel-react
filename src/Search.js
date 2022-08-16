@@ -4,25 +4,21 @@ import SearchButton from "./SearchButton";
 const Search = () => {
   return (
     <div className="search-container">
-      <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
-      </div>
-      <div className="row search-wrapper">
-        <div className="col">
-          <form className="form-group search-box">
-            <label htmlFor="customerName">Customer name</label>
-            <div className="search-row">
-              <input
-                type="text"
-                id="customerName"
-                className="form-control"
-                placeholder="Customer name"
-              />
-              <SearchButton />
-            </div>
-          </form>
+      <h3 className="search-title">Search Bookings</h3>
+      <form className="search-form">
+        <label className="search-form-label" htmlFor="customerName">
+          Customer name
+        </label>
+        <div>
+          <input
+            type="text"
+            id="customerName"
+            className="search-form-input"
+            placeholder="Customer name"
+          />
+          <SearchButton />
         </div>
-      </div>
+      </form>
     </div>
   );
 };
