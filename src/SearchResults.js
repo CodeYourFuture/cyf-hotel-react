@@ -1,7 +1,8 @@
 import React from "react";
+import SearchResultSingular from "./SearchResultSingular";
 
 const SearchResults = props => {
-  console.log(`SearchResults props: ${props}`);
+  // console.log(`SearchResults props: ${props}`);
 
   return (
     // no bootstrap classes used, all hand-written custom css
@@ -22,22 +23,17 @@ const SearchResults = props => {
       <tbody className="search-results-table-body">
         {props.results.map(element => {
           return (
-            <tr key={element.id} className="search-results-table-body-row">
-              <th scope="row">{element.id}</th>
-              <td>{element.title}</td>
-              <td>{element.firstName}</td>
-              <td>{element.surname}</td>
-              <td>{element.email}</td>
-              <td>{element.roomId}</td>
-              <td>{element.checkInDate}</td>
-              <td>{element.checkOutDate}</td>
-              <td>
-                {// no need for momentjs.. create two new date objects, subtract them from each other, divide by milliseconds per day
-                (new Date(`${element.checkOutDate}T00:00:01Z`) -
-                  new Date(`${element.checkInDate}T00:00:01Z`)) /
-                  86400000}
-              </td>
-            </tr>
+            <SearchResultSingular
+              key={element.id}
+              id={element.id}
+              title={element.title}
+              firstName={element.firstName}
+              surname={element.surname}
+              email={element.email}
+              roomId={element.roomId}
+              checkInDate={element.checkInDate}
+              checkOutDate={element.checkOutDate}
+            />
           );
         })}
       </tbody>

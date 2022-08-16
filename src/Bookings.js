@@ -4,6 +4,8 @@ import SearchResults from "./SearchResults";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
+  const [bookings, setBookings] = React.useState(FakeBookings);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
@@ -11,7 +13,7 @@ const Bookings = () => {
   return (
     <div className="bookings-container">
       <Search search={search} />
-      <SearchResults results={FakeBookings} />
+      <SearchResults results={bookings} />
     </div>
   );
 };

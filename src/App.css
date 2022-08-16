@@ -134,6 +134,9 @@
   margin: 0;
 }
 
+.highlighted {
+  background-color: #00f4fe;
+}
 /* 
 
 .search {
