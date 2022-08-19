@@ -6,6 +6,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(50, 50, 50);
   padding: 1rem;
+  background-color: rgb(50, 50, 50);
+  background-image: url("../public/images/background.jpg");
+  background-size: cover;
+  background-position: center;
 }
