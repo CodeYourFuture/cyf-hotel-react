@@ -9,7 +9,7 @@
 
 .App {
   border: 1px solid black;
-  background-color: lightgrey;
+  background-color: #ece4ec;
   max-width: 900px;
 }
 
@@ -19,7 +19,7 @@
   gap: 0.75rem;
   padding: 0.5rem;
   color: white;
-  background-color: #222;
+  background: linear-gradient(180deg, #020024 40%, #8548d4 100%);
   border: 2px solid #00f4fe;
 }
 
@@ -48,10 +48,11 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
   padding: 0.5rem;
+  text-align: center;
+  /* border: 1px solid rgba(0, 0, 0, 0.15); */
+  border-radius: 0.25rem;
+  box-shadow: 0 0 4px 2px #d999fa;
 }
 
 .tourist-info-card-image {
@@ -62,6 +63,7 @@
 .tourist-info-card-title {
   font-size: 1.6rem;
   font-family: "Fredoka One", sans-serif;
+  color: #1b235d;
   text-shadow: 2px 2px 1px #009af3;
 }
 
@@ -73,7 +75,9 @@
 
 .tourist-info-card-link {
   padding: 0.3rem 0.6rem;
-  border-radius: 0.2rem;
+  /* border: 0.1rem solid #da99fa; */
+  border-radius: 0.25rem;
+  box-shadow: 0 0 4px 2px #7deffc;
   background-color: #00b2f7;
   font-size: 0.8rem;
   color: white;
@@ -94,14 +98,16 @@
 }
 
 .search-container {
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  /* border: 1px solid rgba(0, 0, 0, 0.15); */
   border-radius: 0.25rem;
   padding: 0.5rem;
+  box-shadow: 0 0 4px 2px #d999fa;
 }
 
 .search-title {
   font-size: 1.6rem;
   font-family: "Fredoka One", sans-serif;
+  color: #1b235d;
   text-shadow: 2px 2px 1px #009af3;
 }
 
@@ -122,6 +128,8 @@
 
 .search-form-button {
   padding: 0.3rem 0.6rem;
+  /* border: 0.1rem solid #da99fa; */
+  box-shadow: 0 0 4px 2px #7deffc;
   border-radius: 0.2rem;
   background-color: #00b2f7;
   font-size: 0.8rem;
@@ -137,6 +145,7 @@
 }
 
 .search-results-table {
+  margin-top: 1rem;
   font-size: 0.8rem;
 }
 
@@ -176,13 +185,15 @@
 
 .restaurant-sub-container {
   padding: 0.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  /* border: 1px solid rgba(0, 0, 0, 0.15); */
+  box-shadow: 0 0 4px 2px #d999fa;
   border-radius: 0.25rem;
 }
 
 .restaurant-title {
   font-size: 1.6rem;
   font-family: "Fredoka One", sans-serif;
+  color: #1b235d;
   text-shadow: 2px 2px 1px #009af3;
 }
 
@@ -202,8 +213,10 @@
 
 .restaurant-list-item-button {
   padding: 0.3rem 0.6rem;
+  /* border: 0.1rem solid #da99fa; */
   border-radius: 0.2rem;
   background-color: #00b2f7;
+  box-shadow: 0 0 6px 2px #7deffc;
   color: white;
   font-size: 0.8rem;
   text-shadow: 0px 0px 2px black;
