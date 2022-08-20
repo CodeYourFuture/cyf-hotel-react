@@ -1,3 +1,6 @@
+body {
+  background-color: #186c7241;
+}
 .App {
   text-align: left;
 }
@@ -9,7 +12,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 14vh;
   padding: 20px;
   color: white;
   text-align: left;
