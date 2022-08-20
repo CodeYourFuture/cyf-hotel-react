@@ -13,6 +13,7 @@ const SearchResultSingular = props => {
 
   const showCustomerProfile = event => {
     event.stopPropagation();
+    // to stop it highlighting the row when the Show Profile button is clicked
     props.setCustomerId(() => {
       return props.id;
     });
