@@ -29,7 +29,7 @@ const Search = props => {
             value={searchInput}
             onChange={handleSearchInput}
             className="search-form-input"
-            placeholder="Customer name"
+            placeholder="Search for a customer..."
           />
           <SearchButton />
         </div>

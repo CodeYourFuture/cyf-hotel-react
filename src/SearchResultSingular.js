@@ -1,4 +1,5 @@
 import React from "react";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResultSingular = props => {
   // console.log(`SearchResultSingular props: ${props}`);
@@ -8,6 +9,14 @@ const SearchResultSingular = props => {
   const customClassToggle = () => {
     setCustomClass(prevCustomClass => (prevCustomClass ? "" : "highlighted"));
     // console.log(customClass)
+  };
+
+  const showCustomerProfile = event => {
+    event.stopPropagation();
+    props.setCustomerId(() => {
+      return props.id;
+    });
+    // ^ this is the set state function from 2 levels above in Bookings.js
   };
 
   return (
@@ -28,6 +37,15 @@ const SearchResultSingular = props => {
         (new Date(`${props.checkOutDate}T00:00:01Z`) -
           new Date(`${props.checkInDate}T00:00:01Z`)) /
           86400000}
+      </td>
+      <td>
+        <button
+          className="search-result-button-show-profile"
+          onClick={showCustomerProfile}
+          id={props.id}
+        >
+          Show Profile
+        </button>
       </td>
     </tr>
   );

@@ -1,10 +1,14 @@
 import React from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults";
+import CustomerProfile from "./CustomerProfile.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = React.useState([]);
+
+  const [customerId, setCustomerId] = React.useState(null);
+  // ^create state here so that SearchResultSingular button can use it... 2 levels deeper
 
   React.useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
@@ -24,12 +28,13 @@ const Bookings = () => {
     setBookings(filterBookings);
   };
 
-  console.log(bookings);
+  // console.log(bookings);
 
   return (
     <div className="bookings-container">
       <Search search={search} />
-      <SearchResults results={bookings} />
+      <SearchResults results={bookings} setCustomerId={setCustomerId} />
+      {customerId && <CustomerProfile id={customerId} />}
     </div>
   );
 };

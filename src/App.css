@@ -8,11 +8,12 @@
 }
 
 .App {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   background-color: #ece4ec;
   max-width: 900px;
 }
 
+/* Heading.js */
 .heading-container {
   display: flex;
   align-items: center;
@@ -20,20 +21,21 @@
   padding: 0.5rem;
   color: white;
   background: linear-gradient(180deg, #020024 40%, #8548d4 100%);
-  border: 2px solid #00f4fe;
+  border: 4px solid #00f4fe;
 }
 
 .heading-image {
   display: block;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: auto;
 }
 
 .heading-title {
   font-family: "Fredoka One", sans-serif;
-  text-shadow: 3px 3px 2px #009af3;
+  text-shadow: 3px 3px 2px #00f4fe;
 }
 
+/* TouristInfoCards.js */
 .tourist-info-cards-container {
   display: flex;
   justify-content: center;
@@ -64,7 +66,7 @@
   font-size: 1.6rem;
   font-family: "Fredoka One", sans-serif;
   color: #1b235d;
-  text-shadow: 2px 2px 1px #009af3;
+  text-shadow: 2px 2px 1px #00f4fe;
 }
 
 .tourist-info-card-description {
@@ -93,8 +95,9 @@
 .bookings-container {
   display: flex;
   flex-direction: column;
-  border: 2px solid #00f4fe;
+  gap: 1rem;
   padding: 1rem;
+  border: 2px solid #00f4fe;
 }
 
 .search-container {
@@ -108,7 +111,7 @@
   font-size: 1.6rem;
   font-family: "Fredoka One", sans-serif;
   color: #1b235d;
-  text-shadow: 2px 2px 1px #009af3;
+  text-shadow: 2px 2px 1px #00f4fe;
 }
 
 .search-form-label {
@@ -124,6 +127,7 @@
   border-radius: 0.25rem;
   padding-left: 0.5rem;
   font-size: 0.8rem;
+  width: 200px;
 }
 
 .search-form-button {
@@ -145,13 +149,13 @@
 }
 
 .search-results-table {
-  margin-top: 1rem;
   font-size: 0.8rem;
 }
 
 .search-results-table-head {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: rgba(0, 0, 0, 0.1);
+  /* border: 1px solid rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 0 2px 1px #d999fa;
+  background-color: rgba(128, 80, 189, 0.2);
 }
 
 .search-results-table-head-row {
@@ -163,7 +167,8 @@
 }
 
 .search-results-table-body-row {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* border: 1px solid rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 0 2px 1px #d999fa;
 }
 
 .search-results-table-body-row > th {
@@ -174,8 +179,43 @@
   padding: 0.5rem;
 }
 
+.search-result-button-show-profile {
+  /* border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem; */
+  /* border: 0.1rem solid #da99fa; */
+  padding: 1px;
+  box-shadow: 0 0 4px 2px #7deffc;
+  border-radius: 0.2rem;
+  background-color: #00b2f7;
+  font-size: 0.8rem;
+  color: white;
+  text-shadow: 0px 0px 2px black;
+  cursor: pointer;
+}
+
+.search-result-button-show-profile:hover {
+  background-color: #00d1f0;
+  color: white;
+}
+
 .highlighted {
   background-color: #00f4fe;
+}
+
+.customer-profile-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 4px 2px #d999fa;
+  font-size: 0.8rem;
+}
+
+.customer-profile-title {
+  font-size: 1.6rem;
+  font-family: "Fredoka One", sans-serif;
+  color: #1b235d;
+  text-shadow: 2px 2px 1px #00f4fe;
 }
 
 .restaurant-container {
@@ -194,7 +234,7 @@
   font-size: 1.6rem;
   font-family: "Fredoka One", sans-serif;
   color: #1b235d;
-  text-shadow: 2px 2px 1px #009af3;
+  text-shadow: 2px 2px 1px #00f4fe;
 }
 
 .restaurant-list {

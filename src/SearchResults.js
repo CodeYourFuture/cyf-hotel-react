@@ -5,7 +5,7 @@ const SearchResults = props => {
   // console.log(`SearchResults props: ${props}`);
 
   return (
-    // no bootstrap classes used, all hand-written custom css
+    // no bootstrap classes used, all hand-written css
     <table className="search-results-table">
       <thead className="search-results-table-head">
         <tr className="search-results-table-head-row">
@@ -18,6 +18,7 @@ const SearchResults = props => {
           <th scope="col">Check In Date</th>
           <th scope="col">Check Out Date</th>
           <th scope="col">Total Nights</th>
+          <th scope="col">Profile</th>
         </tr>
       </thead>
       <tbody className="search-results-table-body">
@@ -33,6 +34,8 @@ const SearchResults = props => {
               roomId={element.roomId}
               checkInDate={element.checkInDate}
               checkOutDate={element.checkOutDate}
+              setCustomerId={props.setCustomerId}
+              // ^pass down the set State function from Bookings.js to SearchResultSingular.js
             />
           );
         })}
