@@ -60,6 +60,8 @@
 .tourist-info-card-image {
   max-width: 100%;
   border-radius: 0.2rem;
+  /* filter: grayscale(100%) brightness(75%) sepia(100%) hue-rotate(-125deg) saturate(250%) contrast(1); */
+  filter: saturate(150%);
 }
 
 .tourist-info-card-title {
@@ -148,6 +150,46 @@
   text-decoration: none;
 }
 
+.search-results-loading-container {
+  display: flex;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 4px 2px #d999fa;
+}
+
+.search-results-loading-text {
+  color: #654bc9;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.search-results-loading-image {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.search-results-error-container {
+  display: flex;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 4px 2px #d999fa;
+}
+
+.search-results-error-text {
+  color: red;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.search-results-error-image {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
 .search-results-table {
   font-size: 0.8rem;
 }
@@ -156,6 +198,7 @@
   /* border: 1px solid rgba(0, 0, 0, 0.2); */
   box-shadow: 0 0 2px 1px #d999fa;
   background-color: rgba(128, 80, 189, 0.2);
+  border-radius: 0.25rem;
 }
 
 .search-results-table-head-row {
@@ -169,6 +212,7 @@
 .search-results-table-body-row {
   /* border: 1px solid rgba(0, 0, 0, 0.2); */
   box-shadow: 0 0 2px 1px #d999fa;
+  border-radius: 0.25rem;
 }
 
 .search-results-table-body-row > th {
@@ -199,7 +243,7 @@
 }
 
 .highlighted {
-  background-color: #00f4fe;
+  background-color: #00d1f0;
 }
 
 .customer-profile-container {
