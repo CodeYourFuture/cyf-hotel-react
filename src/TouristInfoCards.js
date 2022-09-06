@@ -10,7 +10,7 @@ function TouristInfoCards() {
       alt: ""
     },
     {
-      name: "Glasgo",
+      name: "Glasgow",
       link: "peoplemakeglasgow.com",
       imgLink:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2mhkWHbQFIbcf7Hy2jplOWHTrwjQ7pe2Ykw&usqp=CAU",
