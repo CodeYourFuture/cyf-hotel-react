@@ -8,7 +8,7 @@ function Footer(probs) {
           return <li key={index}>{string.toString()}</li>;
         })}
       
-    </div>
+          </div>
   );
 }
 
