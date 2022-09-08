@@ -28,9 +28,9 @@ const App = () => {
     }
   ];
   const footer = [
-    "123 Fake Street, London, E1 4UD",
-    "hello@fakehotel.com",
-    "0123 456789"
+    "Address : 123 Fake Street, London, E1 4UD",
+    "Email : hello@fakehotel.com",
+    "Tel : 0123 456789"
   ];
   return (
     <div className="App">
