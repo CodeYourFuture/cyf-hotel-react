@@ -3,13 +3,19 @@ import Order from "./Order";
 
 const Restaurant = () => {
   return (
-    <div>
+    <div className="restairant">
       <h3>Restaurant Orders</h3>
-      <ul>
-        <Order orderType="Pizzas" />
-        <Order orderType="Salads" />
-        <Order orderType="Chocolate cake" />
-      </ul>
+      <div className="order">
+        <div>
+          <Order orderType="Pizzas" />
+        </div>
+        <div>
+          <Order orderType="Salads" />
+        </div>
+        <div>
+          <Order orderType="Chocolate cake" />
+        </div>
+      </div>
     </div>
   );
 };

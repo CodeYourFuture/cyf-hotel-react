@@ -11,18 +11,21 @@ function CustomerProfile(props) {
   }, [props.id]);
 
   return (
-    <div class="border">
-      <ul>
-        <li>Customer {props.id} profile</li>
-        <li>ID {props.id}</li>
-        <li>Email {profile.email}</li>
-        <li>VIP {profile.vip ? "Yes" : "No"}</li>
-        <li>Phone number {profile.phoneNumber}</li>
-      </ul>
-      {/* A customer profile should show the customer
+    <div class="customer-profile border">
+      <button className="hidden-btn" onClick={props.onClose}>
+        x
+      </button>
+      <div>
+        <p>Customer Profile</p>
+        <ul>
+          <li>ID : {props.id}</li>
+          <li>Email : {profile.email}</li>
+          <li>VIP : {profile.vip ? "Yes" : "No"}</li>
+          <li>Phone number : {profile.phoneNumber}</li>
+        </ul>
+        {/* A customer profile should show the customer
       ID, their email, if they are VIP and their phone number in a list. */}
-
-      <button onClick={props.onClose}>x</button>
+      </div>
     </div>
   );
 }

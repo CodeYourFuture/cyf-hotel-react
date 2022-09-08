@@ -1,6 +1,6 @@
 import React from "react";
 
 function SearchButton() {
-  return <button className="btn btn-primary">Search</button>;
+  return <button className="card-btn btn">Search</button>;
 }
 export default SearchButton;

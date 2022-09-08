@@ -2,14 +2,14 @@ import React from "react";
 
 function TouristInfoCards(props) {
   return (
-    <div className="d-flex justify-content-center">
+    <div className="tourist-card d-flex justify-content-around">
       {props.cards.map((card, i) => (
         <div className="card" key={i}>
-          <img src={card.img} alt={card.alt} className="card-img-top" />
-          <div className="card-body">
-            {card.city}
-            <a href={card.link} className="btn btn-primary">
-              Go somewhere
+          <img src={card.img} alt={card.alt} className="card-img" />
+          <div className="card-body text-center">
+            <div className="card-city">{card.city}</div>
+            <a href={card.link} className="card-btn btn mt-3">
+              Visit Website
             </a>
           </div>
         </div>
