@@ -1,0 +1,21 @@
+.SearchResults-table {
+  margin-bottom: 3rem;
+}
+
+.SearchResults-tr {
+  color: #5b5757;
+}
+
+.SearchResults-tr:hover {
+  cursor: pointer;
+}
+
+.SearchResults-profile-button {
+  width: 5rem;
+}
+
+.SearchResults-vertical-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

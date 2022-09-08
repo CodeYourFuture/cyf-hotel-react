@@ -1,15 +1,18 @@
 import React from "react";
+import Order from "./Order";
 
+// Renders restaurant orders, called by `App.js`.
 const Restaurant = () => {
-  const pizzas = 0;
   return (
-    <div>
-      <h3>Restaurant Orders</h3>
-      <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
-      </ul>
+    <div className="d-flex justify-content-center">
+      <div>
+        <h2>Restaurant Orders</h2>
+        <ul className="list-group">
+          <Order orderType="Pizzas" />
+          <Order orderType="Salads" />
+          <Order orderType="Chocolate cake" />
+        </ul>
+      </div>
     </div>
   );
 };
