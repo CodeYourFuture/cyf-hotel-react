@@ -8,7 +8,12 @@ function TouristInfoCards(props) {
           <img src={card.img} alt={card.alt} className="card-img" />
           <div className="card-body text-center">
             <div className="card-city">{card.city}</div>
-            <a href={card.link} className="card-btn btn mt-3">
+            <a
+              href={card.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-btn btn mt-3"
+            >
               Visit Website
             </a>
           </div>

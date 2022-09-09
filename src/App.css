@@ -40,12 +40,12 @@
 }
 
 .card-btn {
-  background: linear-gradient(45deg, #060af8, #033bf3b9);
+  background: linear-gradient(45deg, #060af8, #092dccb9);
   color: white;
 }
 
 .card-btn:hover {
-  background: linear-gradient(45deg, #05e6d3, #04a5f0b9);
+  background: linear-gradient(45deg, #05e6d3, #04f0f0b9);
   color: #0407a0;
 }
 
