@@ -2,24 +2,51 @@
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
+.logo {
   height: 50px;
-  padding: 20px;
-  color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+  margin: 0 0 1.5rem 1rem;
+}
+.App-header {
+  background: linear-gradient(45deg, #3b3ee3, #0b7ba7b9, #9d52e4);
+  /* margin-bottom: 5rem; */
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3rem;
+  margin: 2rem;
+  font-family: Arial;
+  color: white;
+}
+
+.tourist-card {
+  background-color: #f5eed6;
+  padding: 3rem;
+}
+
+.card {
+  background-color: rgb(252, 250, 253);
+  border: #7a7777;
+  box-shadow: 5px 6px #b4b3b3;
+}
+
+.card-city {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.card-img {
+  width: 100%;
+}
+
+.card-btn {
+  background: linear-gradient(45deg, #060af8, #092dccb9);
+  color: white;
+}
+
+.card-btn:hover {
+  background: linear-gradient(45deg, #05e6d3, #04f0f0b9);
+  color: #0407a0;
 }
 
 .App-content {
@@ -36,22 +63,78 @@
   }
 }
 .search {
-  padding: 5px 0 20px 0;
+  margin: 3rem 0 2rem 0;
 }
 
-tr {
-  color: #5b5757;
+.table {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.customer-profile {
+  padding: 2rem;
+  background-color: #f5eed6;
+  box-shadow: 2px 3px #b4b3b3;
+  position: relative;
+}
+
+.hidden-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .results {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
+.restairant {
+  margin: 3rem 10rem;
+  padding: 2rem;
+  /* background-color: #05e6d3; */
+  border: 1px solid rgb(0, 110, 255);
 }
 
-.card {
-  width: 18rem;
+h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.order {
+  display: flex;
+  justify-content: space-around;
+}
+
+.food-btn {
+  background: linear-gradient(45deg, #060af8, #033bf3b9);
+  color: white;
+  margin-left: 1rem;
+}
+
+.food-btn:hover {
+  background: linear-gradient(45deg, #05e6d3, #04a5f0b9);
+  color: #0407a0;
+}
+
+.footer {
+  background: linear-gradient(30deg, #1b1b1b, #030303b9);
+  color: white;
+  padding: 3rem 0 5rem 5rem;
+  text-align: left;
+}
+
+.footer-info {
+  margin: 1rem;
+}
+
+.dark {
+  background-color: grey;
+}
+
+.selected {
+  background-color: #daccf5b9;
+}
+
+h2 {
+  margin-left: 1rem;
 }
