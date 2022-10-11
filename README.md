@@ -37,7 +37,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 <div className="card">
 	<img src="..." className="card-img-top" />
 	<div className="card-body">
-		<a href="#" className="btn btn-primary">Go somewhere</a>
+		<a href="#" className="btn btn_primary">Go somewhere</a>
 	</div>
 </div>
 ```
