@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchResults = () => {
+const SearchResults = props => {
   return (
     <table className="table ">
       <thead>
@@ -16,36 +16,33 @@ const SearchResults = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mr</td>
-          <td>Riyaaz</td>
-          <td>Singh</td>
-          <td>riyaaz@gmail.com</td>
-          <td>0422</td>
-          <td>date in</td>
-          <td>date out</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Mr</td>
-          <td>John</td>
-          <td>Doe</td>
-          <td>johndoe@gmail.com</td>
-          <td>0423</td>
-          <td>date in</td>
-          <td>date out</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Mrs</td>
-          <td>Jane</td>
-          <td>Doe</td>
-          <td>janedoe@gmail.com</td>
-          <td>0424</td>
-          <td>date in</td>
-          <td>date out</td>
-        </tr>
+        {props.results.map(
+          ({
+            id,
+            title,
+            firstName,
+            surname,
+            email,
+            roomId,
+            checkInDate,
+            checkOut
+          }) => {
+            return (
+              <tr>
+                <th key={id} scope="row">
+                  {id}
+                </th>
+                <td key={id}>{title}</td>
+                <td key={id}>{firstName}</td>
+                <td key={id}>{surname}</td>
+                <td key={id}>{email}</td>
+                <td key={id}>{roomId}</td>
+                <td key={id}>{checkInDate}</td>
+                <td key={id}>{checkOut}</td>
+              </tr>
+            );
+          }
+        )}
       </tbody>
     </table>
   );

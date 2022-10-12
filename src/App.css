@@ -69,8 +69,8 @@ tr {
 }
 
 .card a {
-  border: 1px solid grey;
-  background-color: #26734d;
+  border: 1px solid #007bff;
+  background-color: #007bff;
   color: whitesmoke;
   font-size: 0.8rem;
 }
@@ -78,6 +78,7 @@ tr {
 .cardsContainer {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   gap: 5%;
   text-align: center;
 }
