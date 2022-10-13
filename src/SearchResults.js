@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const tableHead = [
   "id",
@@ -8,7 +9,8 @@ const tableHead = [
   "email",
   "room id",
   "check in date",
-  "check out date"
+  "check out date",
+  "nigths"
 ];
 
 const SearchResults = props => {
@@ -33,6 +35,9 @@ const SearchResults = props => {
               <td>{data.roomId}</td>
               <td>{data.checkInDate}</td>
               <td>{data.checkOutDate}</td>
+              <td>
+                {moment(data.checkOutDate).diff(data.checkInDate, "days")}
+              </td>
             </tr>
           ))}
         </tbody>
