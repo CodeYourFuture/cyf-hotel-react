@@ -52,8 +52,12 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding: 20px 0;
   text-align: center;
+}
+.footer li {
+  list-style: none;
+  color: #fff;
 }
 
 .card {
