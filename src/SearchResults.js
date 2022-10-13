@@ -11,7 +11,7 @@ const tableHead = [
   "check out date"
 ];
 
-const SearchResults = () => {
+const SearchResults = props => {
   return (
     <div>
       <table className="table">
@@ -23,16 +23,18 @@ const SearchResults = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mr</td>
-            <td>Anthony</td>
-            <td>Mog</td>
-            <td>123@lalo.com</td>
-            <td>523</td>
-            <td>13/10/2022</td>
-            <td>15/10/2022</td>
-          </tr>
+          {props.results.map(data => (
+            <tr>
+              <td>{data.id}</td>
+              <td>{data.title}</td>
+              <td>{data.firstName}</td>
+              <td>{data.surname}</td>
+              <td>{data.email}</td>
+              <td>{data.roomId}</td>
+              <td>{data.checkInDate}</td>
+              <td>{data.checkOutDate}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
