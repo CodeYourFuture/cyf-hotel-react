@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -24,17 +24,19 @@
 
 .App-content {
   padding-top: 20px;
-  font-size: large;
+  font-size: medium;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -47,11 +49,40 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
+footer {
   padding-top: 20px;
   text-align: center;
+  background-color: black;
+  color: white;
+}
+
+footer ul {
+  list-style-type: none;
 }
 
 .card {
-  width: 18rem;
+  background-color: #e9ecef;
+  text-align: center;
+  width: 22rem;
+  height: 450px;
+  border: 3px solid;
+  font-size: 0.7rem;
+}
+
+.card img {
+  width: auto;
+  height: 200px;
+}
+
+.wrap-card {
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 3rem;
+}
+
+.App-header img {
+  width: 4rem;
+  height: 4rem;
 }
