@@ -12,7 +12,7 @@ const loop = addresses.map(address => {
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <ul>{loop}</ul>
     </footer>
   );

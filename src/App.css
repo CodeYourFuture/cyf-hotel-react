@@ -48,11 +48,18 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
+.footer ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
 }
-
+.footer ul li {
+  margin: 0 20px;
+  font-weight: 600;
+}
 .card {
   width: 18rem;
+  margin: 20px;
 }
