@@ -1,17 +1,18 @@
 import React from "react";
-import Bookings from "./Bookings";
-import Header from "./Header";
-import TouristInfoCards from "./TouristInfoCards";
-import cityInfo from "./CityInfo";
+import Bookings from "./components/Bookings";
+import Restaurant from "./components/Restaurant";
+import Header from "./components/Header";
+import TouristInfoCards from "./components/TouristInfoCards";
+import cityInfo from "./components/CityInfo";
 import "./App.css";
-import Footer from "./Footer";
-import Search from "./Search";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <div className="App">
       <Header />
       <Bookings />
+      <Restaurant />
       <div className="d-flex justify-content-center">
         <TouristInfoCards
           img={cityInfo[0].img}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "./data/fakeBookings.json";
+import data from "../data/fakeBookings.json";
 const Table = () => {
   const [bookings] = useState(data);
   return (
@@ -7,6 +7,7 @@ const Table = () => {
       <thead>
         <tr>
           <th scope="col">#</th>
+          <th scope="col">Title</th>
           <th scope="col">First Name</th>
           <th scope="col">Surname</th>
           <th scope="col">Email</th>
