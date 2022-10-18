@@ -1,57 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --primary: #fecacc; 
+  --secondary: #2f3640;  
+  --light-1: #ededee;
+  --light: #f8f6f6; 
+  --accent: #ffff; 
+  --d-accent: #808080; 
+  --m-button: #0000ffe8;
+
+  /* font */
+  --font-primary: "Roboto", sans-serif;
+  
+  /* styling */
+  --box-shadow-1: 0 12px 12px rgba(0, 0, 0, 0.2); 
+  
+   /* card  */
+   --border-radius-3: 1rem 1rem 1rem 1rem;
+
+  /* card image  */
+  --border-radius-1: 1rem 1rem 0rem 0rem;
+  
+  /* button */
+  --border-radius-2: 0rem 0rem 1rem 1rem;  
+}
+
+html,
+body {
+  margin: auto;
+  font-family: var(--font-primary);
+  background-color: var(--light);
+}
+
+h5 {
+  font-size: 25px;
+  padding: 20px 0px 20px 0px;
+}
+
 .App {
-  text-align: left;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.search {
-  padding: 5px 0 20px 0;
-}
-
-tr {
-  color: #5b5757;
-}
-
-.results {
-  padding-top: 15px;
-}
-
-.footer {
-  padding-top: 20px;
   text-align: center;
 }
 
+/* HEADER   ------------------------------------------ */
+
+h1 {
+  text-align: center;
+  /* padding: 40px 10px 10px 10px; */
+  font-size: 40px;
+  font-family: inherit;
+  font-weight: bold;
+  color: var(--accent);
+/* positioning */
+  position: absolute;
+  top: 12vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:1;
+}
+
+.Background-image {
+ filter:  grayscale(80%) brightness(120%);  
+  z-index:5;
+} 
+
+.fa {
+  font-size: 60px;
+  color: var(--light);
+  box-shadow: var(--box-shadow-1);
+  border-radius: var(--border-radius-1);
+  /* positioning */
+  position: absolute;
+  top: 5vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:2;
+}
+
+/* TOURIST CARD  ------------------------------------- */
+
+.Tourist-Cards {
+  align-items: center;
+  justify-content: center;
+}
+
 .card {
-  width: 18rem;
+  width: 420px;
+  margin: 40px 10px 20px 10px;
+  border-radius: var(--border-radius-3);
+  box-shadow: var(--box-shadow-1);
+  
+}
+.card:hover {
+  transition: all .6s ease-in-out;
+  transform: scale(1.030);
+  box-shadow: var(--box-shadow-1);
+}
+
+.card-img {
+  background-size: contain;
+  width: 100%;
+  height: 350px;  
+  border-radius: var(--border-radius-1);
+  filter: grayscale(80%);
+  filter:  grayscale(80%) brightness(120%);  
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 24px;
+  /* margin: 10px; */
+  /* width: 100%;
+  z-index:2; */
+}
+
+p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 10px;
+} 
+
+/* SEARCH AREA -----------------------------------------*/
+
+.text-left,
+h4 {
+  font-size: 22px;
+  line-height: 30px;
+  margin: 20px 60px;
+  border-top: 2px solid var(--d-accent);
+}
+
+label {
+  font-size: 22px;
+  line-height: 30px;
+  margin: 10px 55px;
+}
+
+.search-row,
+label {
+  margin: 0px;
+  justify-content: center;
+  padding: 10px 10px 40px 10px;
+}
+
+input[type="text"],
+select {
+  width: 180px;
+  padding: 5px 10px;
+  border: var(--d-accent);
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: var(--box-shadow-1);
+  font-size: 18px;
+}
+
+/* search button  ----------------- */
+
+.btn-primary {
+  width: 180px;
+  height: 30px;
+  color: var(--accent);
+  background-color: var(--secondary);
+  border-radius: 3px;
+  border: none;
+  transition: 0.6s;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: var(--box-shadow-1);
+  margin: 0px 10px 0px 10px;
+}
+/* button hover */
+button:hover {
+  transform: translateY(2px);
+  background-color: var(--d-accent);
+  color: var(--accent);
+}
+
+/* BOOKING TABLE   -------------------------------------------- */
+
+.Table {
+  width: 80%;
+  margin: 30px  auto 10px auto;  
+  border-spacing: 10px;
+  border-collapse: collapse;
+  line-height: 50px;
+  
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.Table-header,.Customer-Profile-Header {
+  color: var(--accent);
+  background-color: var(--secondary);
+}
+
+.CustomerProfile-Header {
+  color: var(--accent);
+  background-color: pink;
+  font-weight: 900;
+}
+
+.Table, .th  {
+  border-spacing: 10px;
+  padding: 10px;
+  }
+
+  /* Customer profile ---------------------------------- */
+  
+  .Profile-Container {
+    width: 80%;
+    margin: 30px  auto 10px auto;
+    background-color: var(--secondary);
+    color:var(--accent);
+    padding: 10px;
+    line-height: 30px;
+    font-size: 20px;  
+  }
+
+  /* li {
+    line-height: 30px;
+    font-size: 20px;  
+    /* border-radius: 8px; */
+    /* text-align: none; 
+    text-decoration: none !important;
+  } */
+
+
+  .HighlightRow {
+    background-color: var(--d-accent);
+    color:var(--accent);
+  }
+  
+/* CARD BUTTON --------------------------------------- */
+
+a {
+  width:100%;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.Btn {
+  width: 100%;
+  height: 40px;
+  background-color: var(--secondary);
+  border-radius: var(--border-radius-2);
+  border: none;
+  transition: 0.6s;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold; 
+}
+
+/* button hover */
+button:hover {
+  background-color: var(--d-accent);
+  color: var(--accent);
+}
+
+/* RESTAURANT --------------------------------------- */
+
+.orderContainer {
+  padding: 5px 10px 40px 10px;
+}
+
+.orderList {
+  list-style: none;
+  padding: 20px 10px 20px 10px;
+}
+
+.orderFood {
+  font-size: 22px;
+  margin: 10px;
+  padding: 16px 10px 16px 10px;
+}
+
+/* RESTAURANT BUTTON -------------------------------- */
+
+.Btn-2 {
+  width: 100px;
+  height: 30px;
+  background-color: var(--secondary);
+  border-radius: 3px;
+  border: none;
+  transition: 0.6s;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 10px 10px 10px;
+}
+/* button-2 hover */
+button-2:hover {
+  background-color: var(--d-accent);
+  color: var(--accent);
+}
+
+/* FOOTER ------------------------------------------ */
+
+.footer {
+  color: var(--accent);
+  font-size: 16px;
+  outline: none;
+  text-decoration: none;
+  transition: 0.8s;
+  padding: 10px 0px;
+  background-color: var(--secondary);
+  line-height: 30px;
+  bottom: 0px;
+}
+
+/* MEDIA  -------------------------------------------- */
+
+/* Cards */
+@media screen and (min-width: 40em) {
+  .Tourist-Cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .Tourist-Cards {
+    flex: 0 1 calc(40% - 1em);
+  }
+}
+
+
+/* TABLE  ------------------------------------------- */
+@media screen and (max-width: 800px) {
+  .Tourist-Cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5em 0;
+    border-radius: 8px;
+    border: 1px solid var(--d-accent);
+    padding: 10px;
+  }
+  .table {
+    width: 80%;
+    margin: 30px  auto 10px auto;
+    border-spacing: 10px;
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  td,
+  th {
+    flex: 1 1 150px;
+  }
+
+  /* RESTAURANT FOOD ORDER ------------------------------- */
+  .orderFood  {
+    width: 80%;
+    margin: 30px  auto 10px auto;
+    border-radius: 8px;
+    border: 1px solid var(--d-accent);
+  }
 }

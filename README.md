@@ -1,3 +1,22 @@
+# Hotel
+
+# Challenge: "Responsive hotel bookings page (React)"
+
+## Completed project
+
+## Detail
+![alt text](./src/Image/Hotel__completed-03.PNG "mobile")
+
+### Responsive mobile
+![alt text](./src/Image/Hotel__completed-01.png "mobile")
+
+### Tablet and desktop 
+![alt text](./src/Image/Hotel__completed-02.png "tablet and desktop")
+
+_________________________
+
+## Instructions 
+
 A hotel booking application in React. Homework for the [CodeYourFuture React module](https://codeyourfuture.github.io/syllabus-master/react/)
 
 ![Bookings Search page](Bookings.png)

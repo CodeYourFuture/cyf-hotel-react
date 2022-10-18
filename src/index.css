@@ -1,3 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --primary: #fecacc; 
+  --secondary: #2f3640; 
+  --light-1: #ededee;
+  --light: #f0efef; 
+  --accent: #ffff; 
+  --d-accent: #808080; 
+  --m-button: #0000ffe8;
+
+  /* font */
+  --font-primary: "Roboto", sans-serif;
+}
 body {
   margin: 0;
   padding: 0;
