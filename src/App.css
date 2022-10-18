@@ -31,10 +31,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -52,6 +54,47 @@ tr {
   text-align: center;
 }
 
+.cardBox {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+p {
+  font-family: "Smokum", cursive;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .card {
   width: 18rem;
+}
+
+.footer {
+  display: inline;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  height: 200px;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+}
+
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pizzas {
+  display: flex;
+  flex-direction: column;
 }
