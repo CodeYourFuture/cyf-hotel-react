@@ -9,12 +9,13 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  height: 75px;
+  padding: 13px;
+  padding-left: 2rem;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
 }
 
@@ -47,11 +48,77 @@ tr {
   padding-top: 15px;
 }
 
+/* Footer component */
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: #222;
+}
+
+.footer > ul {
+  padding: 2rem;
+  list-style-type: none;
+}
+
+/* card component */
+
+.card-wrapper {
+  display: flex;
+  width: 78%;
+  margin: auto;
+}
+
+.card > img {
+  height: -webkit-fill-available;
 }
 
 .card {
-  width: 18rem;
+  width: 50%;
+  margin: auto;
+  border: #eef2f6 solid 3px;
+  margin: 0.3rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+.card-body {
+  text-align: center;
+}
+
+/* header component*/
+.header-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  grid-gap: 10px;
+  width: 100%;
+}
+.header-wrapper > img {
+  margin-left: 2rem;
+  width: 50%;
+}
+
+/* Table */
+.table-wrapper {
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.isSelected {
+  background-color: #007bff;
+  color: white;
+}
+
+.order-box-wrapper {
+  padding: 1rem;
+  width: 60rem;
+  margin: auto;
+  background-color: #f6f6f6;
+  margin-bottom: 5rem;
+}
+
+.order-box-wrapper > ul > li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
 }
