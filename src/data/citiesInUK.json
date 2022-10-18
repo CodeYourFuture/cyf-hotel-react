@@ -1,0 +1,32 @@
+[
+  {
+    "title": "London",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate arcu sem, et sagittis diam condimentum vel. Proin mattis egestas dolor, eu tincidunt turpis vestibulum lacinia. Cras vestibulum convallis tortor, pharetra gravida nisl. Curabitur id dolor tincidunt, efficitur orci in, dignissim nulla.",
+    "imgUrl": "https://a.cdn-hotels.com/gdcs/production27/d274/43014cca-c88c-4061-ace8-58edc24531ee.jpg",
+    "webLink": "https://www.visitlondon.com/"
+  },
+  {
+    "title": "Manchester",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate arcu sem, et sagittis diam condimentum vel. Proin mattis egestas dolor, eu tincidunt turpis vestibulum lacinia. Cras vestibulum convallis tortor, pharetra gravida nisl. Curabitur id dolor tincidunt, efficitur orci in, dignissim nulla.",
+    "imgUrl": "https://blog.radissonblu.com/wp-content/uploads/2016/03/Manchester-city-England.jpg",
+    "webLink": "https://www.visitmanchester.com/"
+  },
+  {
+    "title": "Glasgow",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate arcu sem, et sagittis diam condimentum vel. Proin mattis egestas dolor, eu tincidunt turpis vestibulum lacinia. Cras vestibulum convallis tortor, pharetra gravida nisl. Curabitur id dolor tincidunt, efficitur orci in, dignissim nulla.",
+    "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKsTJeZ6ctrZ2kFyUCMeGo1TmtC_t0WADX0A&usqp=CAU",
+    "webLink": "https://peoplemakeglasgow.com/"
+  },
+  {
+    "title": "Birmingham",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate arcu sem, et sagittis diam condimentum vel. Proin mattis egestas dolor, eu tincidunt turpis vestibulum lacinia. Cras vestibulum convallis tortor, pharetra gravida nisl. Curabitur id dolor tincidunt, efficitur orci in, dignissim nulla.",
+    "imgUrl": "https://cw-gbl-gws-prod.azureedge.net/-/media/cw/emea/united-kingdom/offices/hero-image-emea-offices-birmingham-small-750x480.jpeg?rev=3ae1dfc56bfa4649b74b50d732d60d95",
+    "webLink": "https://www.visitbritain.com/gb/en/business/england/birmingham"
+  },
+  {
+    "title": "Cambridge",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate arcu sem, et sagittis diam condimentum vel. Proin mattis egestas dolor, eu tincidunt turpis vestibulum lacinia. Cras vestibulum convallis tortor, pharetra gravida nisl. Curabitur id dolor tincidunt, efficitur orci in, dignissim nulla.",
+    "imgUrl": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcT4ROGX8naROWnE4bpB0HENwE1_H7SeW2EzNt2pt_tzpbNZOldaI6DJlVDdLBIf",
+    "webLink": "https://www.visitcambridge.org/"
+  }
+]

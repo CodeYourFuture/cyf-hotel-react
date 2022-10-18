@@ -1,0 +1,29 @@
+.search-content {
+  margin-top: 3rem;
+  padding: 5px 0 20px 0;
+  .search-wrapper {
+    border-top: 1px solid #e9ecef;
+
+    .search-box label {
+      font-weight: bold;
+      padding: 0.75rem;
+      margin-bottom: 0;
+      color: #5b5757;
+    }
+
+    .search-row {
+      display: flex;
+      padding-top: 15px;
+    }
+
+    .search-row input {
+      margin-right: 10px;
+    }
+    .search-button {
+      background-color: #4c3f91;
+      color: #eeeeee;
+    }
+  }
+}
+@media screen and (min-width: 625px) {
+}
