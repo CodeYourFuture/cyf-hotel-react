@@ -1,5 +1,10 @@
 .App {
-  text-align: left;
+  text-align: auto;
+}
+
+.image {
+  display: grid;
+  grid-template-rows: 33.3% 33.3% 33.3%;
 }
 
 .App-logo {
@@ -54,4 +59,6 @@ tr {
 
 .card {
   width: 18rem;
+  display: grid;
+  grid-template-rows: 33.3% 33.3% 33.3%;
 }
