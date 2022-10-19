@@ -5,6 +5,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import "./App.css";
 import { places } from "./places";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
       </div>
 
       <Bookings />
+      <Restaurant />
       <Footer />
     </div>
   );
