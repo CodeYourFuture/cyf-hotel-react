@@ -82,3 +82,10 @@ tr {
   gap: 5%;
   text-align: center;
 }
+
+.backgroundOn {
+  background: #007bff;
+}
+
+.backgroundOff {
+}

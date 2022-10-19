@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [isActive, setActive] = useState("false");
+  function handleToggle() {
+    setActive(!isActive);
+  }
   return (
     <table className="table ">
       <thead>
@@ -19,19 +23,26 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map(
-          ({
-            id,
-            title,
-            firstName,
-            surname,
-            email,
-            roomId,
-            checkInDate,
-            checkOutDate
-          }) => {
+          (
+            {
+              id,
+              title,
+              firstName,
+              surname,
+              email,
+              roomId,
+              checkInDate,
+              checkOutDate
+            },
+            i
+          ) => {
             return (
+              /* onClick={handleToggle}
+                  className={
+                    isActive ? "backgroundOff" : "backgroundOn"
+                  } */
               <tr key={id}>
-                <th scope="row">{id}</th>
+                <th>{id}</th>
                 <td>{title}</td>
                 <td>{firstName}</td>
                 <td>{surname}</td>
