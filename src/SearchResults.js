@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const SearchResults = ({ results }) => {
   return (
@@ -23,6 +24,9 @@ const SearchResults = ({ results }) => {
               {Object.values(el).map((item, inx) => (
                 <td key={inx}> {item}</td>
               ))}
+              <td key={Object.keys(el).length - 1}>
+                {moment(el.checkOutDate).diff(moment(el.checkInDate), "days")}
+              </td>
             </tr>
           ))}
         </tbody>
