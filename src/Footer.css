@@ -1,0 +1,10 @@
+footer {
+  background-color: rgb(122, 121, 126);
+  padding: 20px 15px;
+  margin-top: 20px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+}
