@@ -6,6 +6,7 @@ const Heading = () => {
       <img
         src="https://img.icons8.com/ios/452/4-star-hotel--v1.png"
         className="appLogo"
+        alt="logo of hotel"
       />
       <header>CYF Hotel</header>
     </div>
