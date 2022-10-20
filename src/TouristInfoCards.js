@@ -6,6 +6,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           src="https://i2-prod.glasgowlive.co.uk/incoming/article20126807.ece/ALTERNATES/s1200b/3_Grand-Central-Glasgow-Hotel-Photography-London-Photographer-Simon-Callaghan-Photography-1505-2.jpg"
+          alt="Glasgow Hotel"
           className="card-img-top"
         />
         <div className="card-body">
@@ -23,6 +24,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           src="https://digital.ihg.com/is/image/ihg/hotel-indigo-manchester-5797205766-4x3"
+          alt="Manchester Hotel"
           className="card-img-top"
         />
         <div className="card-body">
@@ -43,6 +45,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           src="https://www.readersdigest.ca/wp-content/uploads/2020/08/london-attractions-tower-bridge.jpg?fit=700,525"
+          alt="London City"
           className="card-img-top"
         />
         <div className="card-body">

@@ -1,36 +1,12 @@
 import React from "react";
-// import FakeBookings from "./FakeBookings";
-import FakeBookings from "./data/fakeBookings.json";
+import moment from "moment";
 
-const SearchResults = props => {
-  //   let [
-  //     id,
-  //     title,
-  //     firstName,
-  //     surname,
-  //     email,
-  //     roomId,
-  //     checkInDate,
-  //     checkOutDate,
-  //   ] = FakeBookings;
-
+const SearchResults = ({ results }) => {
   return (
-    // <ul>
-    //   {props.results.map((el, index) => (
-    //     <li key={index}>{el}</li>
-    //   ))}
-    //   <ul>
-    <table class="table">
-      <thead class="thead-dark">
+    <table className="table">
+      <thead className="thead-dark">
         <tr>
-          {/* {props[key].map((el, index) => (
-            <th key={index} scope="col">
-              {el.id}
-            </th>
-            <th key={index} scope="col">
-              {el.title}
-            </th>
-          ))} */}
+          <th scope="col">ID</th>
           <th scope="col">Title</th>
           <th scope="col">First name</th>
           <th scope="col">Surname</th>
@@ -38,16 +14,20 @@ const SearchResults = props => {
           <th scope="col">Room id</th>
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
+          <th scope="col">No. of nights</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          {/* {props.values.map((el, index) => (
-            <td key={index} scope="row">
-              {el}
+        {results.map(el => (
+          <tr key={el.id}>
+            {Object.values(el).map((item, index) => (
+              <td key={index}>{item}</td>
+            ))}
+            <td key={Object.keys(el).length - 1}>
+              {moment(el.checkOutDate).diff(moment(el.checkInDate), "days")}
             </td>
-          ))} */}
-        </tr>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
