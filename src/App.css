@@ -86,3 +86,22 @@ footer ul {
   width: 4rem;
   height: 4rem;
 }
+
+.wrap-order {
+  padding: 1rem;
+  text-align: center;
+  background-color: gainsboro;
+}
+
+.wrap-order ul {
+  list-style-type: none;
+  padding: 1rem;
+}
+
+.wrap-order ul li {
+  margin-top: 1rem;
+}
+
+.color {
+  background-color: coral;
+}

@@ -1,12 +1,13 @@
 import React from "react";
+import TableRow from "./TableRow";
 
-const SearchResults = props => {
+const SearchResults = ({ results }) => {
   return (
     <div className="table-container">
       <p className="results">
         Results:<span> </span>
       </p>
-      <table class="table table-hover">
+      <table class="table table">
         <thead>
           <tr>
             <th scope="col">Title</th>
@@ -16,32 +17,13 @@ const SearchResults = props => {
             <th scope="col">Room id</th>
             <th scope="col">Check-in date</th>
             <th scope="col">Check-out date</th>
+            <th scope="col">Nr. of nights</th>
           </tr>
         </thead>
         <tbody>
-          {props.results.map(result => {
-            let {
-              title,
-              firstName,
-              surname,
-              email,
-              roomId,
-              checkInDate,
-              checkOutDate
-            } = result;
-
-            return (
-              <tr>
-                <td>{title}</td>
-                <td>{firstName}</td>
-                <td>{surname}</td>
-                <td>{email}</td>
-                <td>{roomId}</td>
-                <td>{checkInDate}</td>
-                <td>{checkOutDate}</td>
-              </tr>
-            );
-          })}
+          {results.map(data => (
+            <TableRow data={data} key={data.id} />
+          ))}
         </tbody>
       </table>
     </div>
