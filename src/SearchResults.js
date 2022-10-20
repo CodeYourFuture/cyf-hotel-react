@@ -34,18 +34,20 @@ const SearchResults = props => {
                 <th key={id} scope="row">
                   {id}
                 </th>
-                <td>{title}</td>
-                <td>{firstName}</td>
-                <td>{surname}</td>
-                <td>{email}</td>
-                <td>{roomId}</td>
-                <td>{checkInDate}</td>
-                <td>{checkOutDate}</td>
-                <td>{moment(checkOutDate).diff(checkInDate, "days")}</td>
+                <td key={id}>{title}</td>
+                <td key={id}>{firstName}</td>
+                <td key={id}>{surname}</td>
+                <td key={id}>{email}</td>
+                <td key={id}>{roomId}</td>
+                <td key={id}>{checkInDate}</td>
+                <td key={id}>{checkOutDate}</td>
+                <td key={id}>
+                  {moment(checkOutDate).diff(checkInDate, "days")}
+                </td>
               </tr>
             );
           }
-        )}{" "}
+        )}
       </tbody>
     </table>
   );
