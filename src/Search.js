@@ -1,4 +1,6 @@
 import React from "react";
+import SearchButton from "./SearchButton";
+import Footer from "./Footer";
 
 const Search = () => {
   return (
@@ -17,11 +19,12 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <button className="btn btn-primary">Search</button>
+              <SearchButton />
             </div>
           </form>
         </div>
       </div>
+      <Footer array={["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]} />
     </div>
   );
 };
