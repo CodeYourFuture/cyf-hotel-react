@@ -10,8 +10,8 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
     const filteredSearch = bookings.filter(booking => {
       return (
-        booking.firstName.includes(searchVal) ||
-        booking.surname.includes(searchVal) ||
+        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        booking.surname.toLowerCase().includes(searchVal.toLowerCase()) ||
         searchVal.includes(booking.id)
       );
     });

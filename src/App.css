@@ -76,8 +76,8 @@
 
 .table {
   border-style: solid;
-  width: 90vw;
-  margin-left: -7em;
+  width: 100%;
+  margin: auto;
 }
 
 .table-header {
