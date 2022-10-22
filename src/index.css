@@ -4,6 +4,24 @@ body {
   font-family: sans-serif;
 }
 
+.logo {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+.card-img {
+  object-fit: cover;
+  width: 360px;
+  height: 217px;
+}
+
+.all-cards-wrapper {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
 .search-wrapper {
   border-top: 1px solid #e9ecef;
 }
@@ -23,4 +41,10 @@ body {
 
 .search-row input {
   margin-right: 10px;
+}
+.address {
+  list-style: none;
+}
+h3 {
+  margin: 50px;
 }
