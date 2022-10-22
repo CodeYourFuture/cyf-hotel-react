@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const tableHead = [
@@ -26,23 +26,37 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {props.results.map(data => (
-            <tr>
-              <td>{data.id}</td>
-              <td>{data.title}</td>
-              <td>{data.firstName}</td>
-              <td>{data.surname}</td>
-              <td>{data.email}</td>
-              <td>{data.roomId}</td>
-              <td>{data.checkInDate}</td>
-              <td>{data.checkOutDate}</td>
-              <td>
-                {moment(data.checkOutDate).diff(data.checkInDate, "days")}
-              </td>
-            </tr>
+            <TableRow key={data.id} bookingDetail={data} />
           ))}
         </tbody>
       </table>
     </div>
+  );
+};
+
+const TableRow = props => {
+  const [rowHighlight, setRowHighlight] = useState(false);
+  const [rowStyle, setRowStyle] = useState("bg-success");
+
+  const highlight = () => setRowHighlight(!rowHighlight);
+
+  return (
+    <tr onClick={highlight} className={rowHighlight ? rowStyle : "bg-row"}>
+      <td>{props.bookingDetail.id}</td>
+      <td>{props.bookingDetail.title}</td>
+      <td>{props.bookingDetail.firstName}</td>
+      <td>{props.bookingDetail.surname}</td>
+      <td>{props.bookingDetail.email}</td>
+      <td>{props.bookingDetail.roomId}</td>
+      <td>{props.bookingDetail.checkInDate}</td>
+      <td>{props.bookingDetail.checkOutDate}</td>
+      <td>
+        {moment(props.bookingDetail.checkOutDate).diff(
+          props.bookingDetail.checkInDate,
+          "days"
+        )}
+      </td>
+    </tr>
   );
 };
 

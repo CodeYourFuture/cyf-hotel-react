@@ -63,3 +63,13 @@ tr {
 .card {
   width: 18rem;
 }
+
+/* row colours */
+.bg-row {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.bg-row:hover {
+  background-color: aliceblue;
+}
