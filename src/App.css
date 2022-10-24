@@ -113,3 +113,13 @@ tr {
   box-shadow: 0 2px #666;
   transform: translateY(4px);
 }
+.footer-btn {
+  margin: auto;
+  width: 100px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff !important;
+  background-color: #2874a6;
+  border-radius: 8px;
+}
