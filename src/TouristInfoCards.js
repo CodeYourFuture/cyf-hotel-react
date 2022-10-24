@@ -1,10 +1,13 @@
 import React from 'react'
+import design from './design.jpg'
+import Ecocity from './Ecocity.jpg'
+import Citycentre from './Citycentre.jpg'
 
 const TouristInfoCards = () => {
   return (
     <div>
       <div className="card">
-        <img src="..." className="card-img-top" />
+        <img src={design} className="card-img-top" />
         <div className="card-body">
           <h1>Glasgow</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis esse nobis possimus unde odio assumenda.</p>
@@ -14,7 +17,7 @@ const TouristInfoCards = () => {
 
 
       <div className="card">
-        <img src="/home/mrmaroga/Videos/CODEyourFUTURE/React/cyf-hotel/cyf-hotel-react/src/imgs/cape-town.jpg" className="card-img-top" />
+        <img src={Ecocity} className="card-img-top" />
         <div className="card-body">
           <h1>Manchester</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, necessitatibus.</p>
@@ -23,7 +26,7 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img src="..." className="card-img-top" />
+        <img src={Citycentre} className="card-img-top" />
         <div className="card-body">
           <h1>London</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto deserunt sed sapiente inventore ea in eligendi, perferendis magni nemo nulla quidem maxime nesciunt incidunt.</p>
