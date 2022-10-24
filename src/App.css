@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #aed6f1;
   height: 50px;
   padding: 20px;
   color: white;
@@ -54,6 +54,8 @@ tr {
 
 .card {
   width: auto;
+  margin-left: 50px;
+  padding-bottom: 30px;
 }
 
 .hotel-logo {
@@ -75,7 +77,7 @@ tr {
   display: flex;
   justify-content: center;
   padding-top: 14px;
-  background-color: #3a800d;
+  padding: 0px 1px;
 }
 
 .card:hover {
@@ -88,25 +90,26 @@ tr {
 
 .btn {
   display: inline-block;
-  padding: 5px 20px;
+  padding: 2px 20px;
+  margin-top: 15px;
   font-size: 15px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #4caf50;
+  background-color: #2874a6;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 9px #5dade2;
 }
 
 .btn:hover {
-  background-color: #3e8e41;
+  background-color: #aed6f1;
 }
 
 .btn:active {
-  background-color: #3e8e41;
+  background-color: #aed6f1;
   box-shadow: 0 2px #666;
   transform: translateY(4px);
 }
