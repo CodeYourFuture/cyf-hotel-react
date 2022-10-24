@@ -53,10 +53,60 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: auto;
 }
 
 .hotel-logo {
   width: 300px;
   height: auto;
+}
+
+.card-image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.image1 {
+  width: 200px;
+  margin-left: 1px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+  background-color: #3a800d;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 9px #999;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+}
+
+.btn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
 }
