@@ -3,9 +3,8 @@ import moment from "moment";
 
 const SearchResults = props => {
   const [isActive, setActive] = useState("false");
-  function handleToggle() {
-    setActive(!isActive);
-  }
+
+  function handleToggle(id) {}
   return (
     <table className="table ">
       <thead>
@@ -41,7 +40,11 @@ const SearchResults = props => {
                   className={
                     isActive ? "backgroundOff" : "backgroundOn"
                   } */
-              <tr key={id}>
+              <tr
+                key={id}
+                onClick={e => console.log(e)}
+                className={isActive ? "backgroundOff" : "backgroundOn"}
+              >
                 <th>{id}</th>
                 <td>{title}</td>
                 <td>{firstName}</td>
