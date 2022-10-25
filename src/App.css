@@ -1,42 +1,14 @@
-.App {
-  text-align: left;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+.btn {
+  background-color: white;
+  border: 1px solid #006266;
+  color: #006266;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.search {
-  padding: 5px 0 20px 0;
+.table-header {
+  color: rgb(46, 46, 46);
+  margin: 1em;
 }
 
 tr {
@@ -47,11 +19,86 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
+/* home starts */
+
+:root {
+  --primary-dark: #5651e5;
+  --primary-light: #709dff;
 }
 
-.card {
-  width: 18rem;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.container {
+  max-width: 1240px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.button {
+  background-image: linear-gradient(
+    45deg,
+    var(--primary-dark) 0%,
+    var(--primary-light) 100%
+  );
+  border: 1px solid var(--primary-dark);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+@media screen and (max-width: 940px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* home ends */
+
+@media only screen and (max-width: 1500px) {
+  .card {
+    width: 280px;
+    flex: 0 0 auto;
+  }
+
+  .wrapper {
+    overflow-x: auto;
+  }
+  .card-img-top {
+    height: 180px;
+    width: 280px;
+  }
 }
