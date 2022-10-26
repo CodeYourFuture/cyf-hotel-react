@@ -10,7 +10,7 @@ const App = () => {
     <div className="App">
       <Heading />
       <Bookings />
-      <TouristInfoCards />
+      <TouristInfoCards bg-color="red" />
       <Footer />
     </div>
   );

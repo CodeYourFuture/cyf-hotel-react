@@ -2,6 +2,13 @@ import React from "react";
 import SearchButton from "./SearchButton";
 import Footer from "./Footer";
 
+
+// <Footer
+//   names={[
+//     "123 Fake Street, London, E1 4UD",
+//     "hello@fakehotel.com",
+//     "0123 456789"
+//   ]}/>
 const Search = () => {
   return (
     <div className="search">
@@ -24,7 +31,7 @@ const Search = () => {
           </form>
         </div>
       </div>
-      <Footer array={["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]} />
+      <Footer />
     </div>
   );
 };
