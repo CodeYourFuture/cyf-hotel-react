@@ -21,6 +21,7 @@ function SearchResults({ results }) {
             <th scope="col">room id</th>
             <th scope="col">check in date</th>
             <th scope="col">check out date</th>
+            <th scope="col">Nights/Stay</th>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +36,7 @@ function SearchResults({ results }) {
                 <td>{val["roomId"]}</td>
                 <td>{val["checkInDate"]}</td>
                 <td>{val["checkOutDate"]}</td>
+                <td>{moment(val["checkOutDate"]).diff(moment(val["checkInDate"]), "days")}</td>
               </tr>
             )
           })}
