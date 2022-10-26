@@ -7,7 +7,7 @@ const Restaurant = props => {
       <ul className="list-group w-50">
         <Order orderType={"Pizzas"} />
         <Order orderType={"Salad"} />
-        <Order orderType={"Chocolate Cake"} />
+        <Order orderType={"Choclate Cake"} />
       </ul>
     </div>
   );
