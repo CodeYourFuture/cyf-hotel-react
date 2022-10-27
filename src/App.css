@@ -1,57 +1,145 @@
-.App {
-  text-align: left;
-}
+/* @import url("https://fonts.googleapis.com/css?family=Quicksand:300,500"); */
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  height: 3rem;
   color: white;
-  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
+  display: flex;
+  margin-bottom: 3rem;
 }
 
-.App-title {
-  font-size: 1.5em;
+.logo {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
-.App-content {
-  padding-top: 20px;
-  font-size: large;
+.app-title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* border: 1px solid hotpink; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-title {
+  margin: 0 auto;
+  padding-right: 3rem;
 }
+
+.page-header {
+  margin-top: 1.5rem;
+}
+
+h1 {
+  margin-top: 2rem;
+  text-align: center;
+  font-family: "Pacifico", cursive;
+  font-size: 3em;
+  color: rgb(1, 107, 217);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  box-shadow: darkorchid 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.table-caption {
+  text-align: center;
+}
+
+.table-row:hover {
+  background-color: rgb(207, 217, 250);
+  cursor: pointer;
+}
+
+.highlight-row {
+  background-color: rgb(207, 217, 250);
+}
+
+.transparent-row {
+  background-color: transparent;
+}
+
+.cards-wrapper {
+  margin: 1rem;
+  padding-top: 1rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 4rem;
+  /* border: 2px solid hotpink; */
+}
+
+.cards {
+  box-shadow: darkorchid 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.cards:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: all 1s ease;
+}
+
+.btn {
+  border: 3px solid rgb(155, 193, 250);
+  border-radius: 100px;
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
+}
+
 .search {
   padding: 5px 0 20px 0;
-}
-
-tr {
-  color: #5b5757;
 }
 
 .results {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
+.card {
+  width: 22rem;
 }
 
-.card {
-  width: 18rem;
+.restaurant-wrapper {
+  width: 80%;
+  margin: 4rem auto;
+}
+
+.restaurant-title {
+  /* border: 2px solid red; */
+  text-align: center;
+  font-weight: bolder;
+}
+
+ul {
+  /* border: 1px solid green; */
+  margin-top: 1rem;
+}
+
+.restaurant-li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  box-shadow: 0px 0px 3px 1px grey;
+}
+
+.footer {
+  padding: 0.4rem;
+  text-align: center;
+  font-family: "Archivo Black", sans-serif;
+  background-color: #222;
+  color: white;
+  margin-top: 1.5rem;
 }
