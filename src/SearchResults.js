@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
+  const [select, setSelect] = useState("unSelect");
+
   return (
     <table className="table">
       <thead className="thead-dark">
@@ -19,7 +21,15 @@ const SearchResults = ({ results }) => {
       </thead>
       <tbody>
         {results.map(el => (
-          <tr key={el.id}>
+          <tr
+            key={el.id}
+            onClick={() => {
+              select === "unSelect"
+                ? setSelect("select")
+                : setSelect("unSelect");
+            }}
+            className={select}
+          >
             {Object.values(el).map((item, index) => (
               <td key={index}>{item}</td>
             ))}
