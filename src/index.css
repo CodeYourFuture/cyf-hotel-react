@@ -19,7 +19,7 @@ body {
 .search-row {
   display: flex;
   border-top: 2px solid #e9ecef;
-  padding-top: 25px;
+  padding-top: 28px;
 }
 
 .search-row input {
