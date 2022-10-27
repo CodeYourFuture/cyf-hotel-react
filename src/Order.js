@@ -9,7 +9,7 @@ const Order = props => {
   }
 
   return (
-    <li>
+    <li className="list-group-item d-flex justify-content-between">
       {props.orderType}: {order}
       <RestaurantButton func={orderOne} />
     </li>
