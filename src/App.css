@@ -1,30 +1,48 @@
-.App {
-  text-align: left;
+body {
+  text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
+  background-color: black;
+  padding: 0px;
   color: white;
-  text-align: left;
+  margin: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
+  height: 100px;
 }
-
+.App-header > img {
+  width: 100px;
+  height: 70px;
+  margin-top: 20px;
+  margin-right: 500px;
+}
+h1 {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1:hover {
+  opacity: 2.2;
+  width: 70px;
+}
+h1 {
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 .App-title {
   font-size: 1.5em;
+  width: 90%;
 }
-
+.col {
+  max-width: 400px;
+}
 .App-content {
   padding-top: 20px;
   font-size: large;
+  width: 90%;
+  display: inline-block;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
@@ -38,20 +56,91 @@
 .search {
   padding: 5px 0 20px 0;
 }
-
 tr {
-  color: #5b5757;
+  color: white;
+}
+.restuarant {
+  position: relative;
+  top: 80px;
 }
 
 .results {
   padding-top: 15px;
 }
+.inputResult {
+  position: relative;
+  margin-top: 150px;
+}
 
-.footer {
-  padding-top: 20px;
+.idFooter {
+  text-align: center;
+  position: relative;
+  top: 120px;
+  bottom: 60px;
+  display: inline;
+  list-style: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  grid-gap: 40px;
+  width: 1050px;
+  padding-top: 50px;
+}
+.container p {
+  padding: 0 0 0 50px;
+  line-height: 20px;
+}
+.row {
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.col {
+  border: 0.5px;
+  border-radius: 1rem;
+}
+a {
   text-align: center;
 }
 
-.card {
-  width: 18rem;
+.show {
+  background-color: silver;
+}
+.showId {
+  display: flex;
+  justify-content: flex-start;
+}
+.hidde {
+  background-color: blue;
+}
+
+.search-row-all {
+  display: inline-flex;
+  margin-left: 420px;
+  margin-bottom: 0px;
+}
+.list-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.customerId {
+  margin-left: 300px;
+}
+#search-row {
+  position: relative;
+  top: 80px;
+}
+.first1Button {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 100px;
+  margin: 10px;
+  gap: 10px;
+  top: 40px;
+  padding: 5px;
 }
