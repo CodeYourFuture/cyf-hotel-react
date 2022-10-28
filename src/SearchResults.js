@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
-  const [select, setSelect] = useState("unSelect");
+  const [selectedRows, setSelectedRows] = useState([]);
+
+  const highlighted = id => {
+    selectedRows.includes(id)
+      ? setSelectedRows(selectedRows.filter(el => el !== id))
+      : setSelectedRows(selectedRows.concat(id));
+  };
 
   return (
     <table className="table">
@@ -24,11 +30,9 @@ const SearchResults = ({ results }) => {
           <tr
             key={el.id}
             onClick={() => {
-              select === "unSelect"
-                ? setSelect("select")
-                : setSelect("unSelect");
+              highlighted(el.id);
             }}
-            className={select}
+            className={selectedRows.includes(el.id) ? "select" : "unSelect"}
           >
             {Object.values(el).map((item, index) => (
               <td key={index}>{item}</td>
