@@ -123,3 +123,32 @@ tr {
   background-color: #2874a6;
   border-radius: 8px;
 }
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #aed6f1;
+  padding: 8px;
+  width: 100%;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #aed6f1;
+}
+
+#customers tr:hover {
+  background-color: #aed6f1;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2874a6;
+  color: white;
+}

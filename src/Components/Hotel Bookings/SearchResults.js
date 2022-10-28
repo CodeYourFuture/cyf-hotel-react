@@ -10,6 +10,7 @@ const guestList = Array => {
         id={Array.id}
         title={Array.title}
         name={Array["first name"]}
+        surname={Array.surname}
         email={Array.email}
         room={Array["room id"]}
         checkIn={Array["check in date"]}
@@ -20,7 +21,24 @@ const guestList = Array => {
 };
 
 const SearchResults = () => {
-  return <div>{Array.map(guestList)};</div>;
+  return (
+    <div id="customers">
+      <table>
+        <tr>
+          <th>School name</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>First Name</th>
+          <th>Surname</th>
+          <th>Email</th>
+          <th>Room ID</th>
+          <th>Check in date</th>
+          <th>Check out date</th>
+        </tr>
+      </table>
+      {Array.map(guestList)};
+    </div>
+  );
 };
 
 export default SearchResults;
