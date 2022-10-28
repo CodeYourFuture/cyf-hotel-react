@@ -1,6 +1,6 @@
 import Table from "react-bootstrap/Table";
 
-function BasicExample() {
+const SearchResults = () => {
   return (
     <Table striped bordered hover>
       <thead>
@@ -32,6 +32,6 @@ function BasicExample() {
       </tbody>
     </Table>
   );
-}
+};
 
-export default BasicExample;
+export default SearchResults;
