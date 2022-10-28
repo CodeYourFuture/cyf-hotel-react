@@ -1,4 +1,4 @@
-import { SearchButton } from "./SearchButton";
+import { SearchButton } from "./Components/SearchButton";
 import React from "react";
 
 const Search = () => {
