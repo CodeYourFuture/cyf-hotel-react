@@ -3,10 +3,22 @@ import Tableprops from "./Tableprops";
 import Array from "./Array";
 
 const guestList = Array => {
+  const date1 = new Date(Array["check in date"]);
+  const date2 = new Date(Array["check out date"]);
+
+  // To calculate the time difference of two dates
+  const Difference_In_Time = date2.getTime() - date1.getTime();
+
+  // To calculate the no. of days between two dates
+  function updateTime() {
+    const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+    return Difference_In_Days;
+  }
+
   return (
     <div>
       <Tableprops
-        school={Array["school name"]}
+        nights={updateTime}
         id={Array.id}
         title={Array.title}
         name={Array["first name"]}
@@ -25,7 +37,7 @@ const SearchResults = () => {
     <div id="customers">
       <table>
         <tr>
-          <th>School name</th>
+          <th>Number of nights</th>
           <th>ID</th>
           <th>Title</th>
           <th>First Name</th>

@@ -5,7 +5,7 @@ const Tableprops = props => {
     <div>
       <table id="customers">
         <tr>
-          <td>{props.school}</td>
+          <td>{props.nights}</td>
           <td>{props.id}</td>
           <td>{props.title}</td>
           <td>{props.name}</td>
