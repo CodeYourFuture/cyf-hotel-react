@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
+  const [selectedRows, setSelectedRows] = useState([]);
+
+  const handleColourChange = rowId => {
+    selectedRows.includes(rowId)
+      ? setSelectedRows(selectedRows.filter(el => el !== rowId))
+      : setSelectedRows(selectedRows.concat(rowId));
+  };
+
   return (
     <div>
       <table className="table">
@@ -20,7 +28,15 @@ const SearchResults = ({ results }) => {
         </thead>
         <tbody>
           {results.map(el => (
-            <tr key={el.id}>
+            <tr
+              key={el.id}
+              className={
+                selectedRows.includes(el.id) ? "selected" : "unselected"
+              }
+              onClick={() => {
+                handleColourChange(el.id);
+              }}
+            >
               {Object.values(el).map((item, inx) => (
                 <td key={inx}> {item}</td>
               ))}

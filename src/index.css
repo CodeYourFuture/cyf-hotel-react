@@ -24,3 +24,19 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+li {
+  list-style: none;
+}
+
+button {
+  margin: 0 15px;
+}
+
+.selected {
+  background-color: #aaaaaa;
+}
+
+.unselected {
+  background-color: none;
+}
