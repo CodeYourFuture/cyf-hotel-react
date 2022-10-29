@@ -1,6 +1,6 @@
 import React from "react";
 
-import Bookings from "./Bookings";
+import Bookings from "./components/Bookings";
 import "./App.css";
 
 const App = () => {
