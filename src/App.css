@@ -70,6 +70,10 @@ a {
   margin-bottom: 2rem;
 }
 
+.ButtonInfoCard {
+  font-size: 13px;
+}
+
 /* -----------------------footer---------------------- */
 footer {
   background-color: #324672;
@@ -95,6 +99,11 @@ table {
   text-align: center;
 }
 
+.HighLighted {
+  background: black;
+  color: white;
+}
+
 th {
   border: 1px solid black;
   padding: 2rem;
@@ -105,7 +114,7 @@ td {
   padding: 1.5rem;
 }
 
-caption {
+.caption {
   caption-side: top;
   color: white;
   font-size: 3rem;
@@ -117,4 +126,26 @@ caption {
 /* -----------------Search ------------ */
 .search {
   padding: 0.5rem 0 2rem 0;
+}
+
+/* ----------------------Restaurant Orders------------ */
+.orders {
+  background-color: white;
+  width: 50%;
+  margin: 30px auto 30px auto;
+}
+
+.OrderList {
+  margin: 10px 0px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.ButtonRestaurant {
+  font-size: 13px;
+  margin-left: 20px;
+}
+
+span {
+  color: #324672;
 }
