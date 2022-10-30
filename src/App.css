@@ -1,30 +1,28 @@
-.App {
-  text-align: left;
+html {
+  font-size: 10px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.text-left {
+  color: #fff;
+  padding: 0 1rem;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+label {
+  color: #fff;
 }
 
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
-  text-align: left;
+body {
+  background-color: rgba(7, 7, 7, 0.986);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-content {
-  padding-top: 20px;
-  font-size: large;
+/* -----------------------header-------------- */
+.App-logo {
+  height: 6rem;
+  margin-right: 2rem;
+  animation: App-logo-spin infinite 20s linear;
+  height: 40px;
 }
 
 @keyframes App-logo-spin {
@@ -35,23 +33,88 @@
     transform: rotate(360deg);
   }
 }
-.search {
-  padding: 5px 0 20px 0;
+
+.App-header {
+  display: flex;
+  align-items: center;
+  background-color: #324672;
+  padding: 2rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-tr {
-  color: #5b5757;
+/* -------------------Cities' Cards------------------ */
+.card {
+  width: 70%;
+  display: flex;
+  margin: 5rem auto;
+  align-items: center;
+  box-shadow: 0.5rem 0.5rem 0.5rem grey;
+  color: black;
 }
 
-.results {
-  padding-top: 15px;
+.cardHeading {
+  margin: 4rem 0;
+  font-size: 3rem;
+  text-shadow: 0.2rem 0.2rem 0.3rem black;
 }
 
-.footer {
-  padding-top: 20px;
+.cityDescription {
+  padding: 0 5rem;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+a {
+  margin-bottom: 2rem;
+}
+
+/* -----------------------footer---------------------- */
+footer {
+  background-color: #324672;
+  color: white;
+  padding: 2rem 0;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------------------------------Bookings' Table----------------- */
+table {
+  background-color: white;
+  font-size: 1.5rem;
+  margin: 2rem auto 5rem auto;
+  border: 1px solid black;
   text-align: center;
 }
 
-.card {
-  width: 18rem;
+th {
+  border: 1px solid black;
+  padding: 2rem;
+}
+
+td {
+  border: 1px solid black;
+  padding: 1.5rem;
+}
+
+caption {
+  caption-side: top;
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 0.2rem 0.2rem 0.3rem white;
+}
+
+/* -----------------Search ------------ */
+.search {
+  padding: 0.5rem 0 2rem 0;
 }
