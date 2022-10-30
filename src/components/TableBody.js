@@ -10,6 +10,7 @@ const TableBody = props => {
       <td>{props.roomId}</td>
       <td>{props.checkIn}</td>
       <td>{props.checkOut}</td>
+      <td>{props.days}</td>
     </tr>
   );
 };

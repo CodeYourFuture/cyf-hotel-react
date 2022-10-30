@@ -19,6 +19,10 @@ const createTableBody = tbody => {
       roomId={tbody.roomId}
       checkIn={tbody.checkInDate}
       checkOut={tbody.checkOutDate}
+      days={Math.ceil(
+        Math.abs(new Date(tbody.checkInDate) - new Date(tbody.checkOutDate)) /
+          (1000 * 60 * 60 * 24)
+      )}
     />
   );
 };

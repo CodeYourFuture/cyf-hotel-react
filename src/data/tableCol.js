@@ -5,7 +5,8 @@ const tableCol = [
   "Email",
   "Room Id",
   "Check in date",
-  "Check out date"
+  "Check out date",
+  "Total Days"
 ];
 
 export default tableCol;
