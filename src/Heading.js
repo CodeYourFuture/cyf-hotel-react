@@ -4,7 +4,7 @@ const Heading = props => {
   return (
     <header className="App-header">
       <img
-        className="App-logo"
+        className="Logo"
         src="https://cdn-icons-png.flaticon.com/512/594/594106.png"
         alt="CYF Hotel Logo"
       />
