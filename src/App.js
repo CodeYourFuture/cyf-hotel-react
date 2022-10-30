@@ -5,6 +5,7 @@ import "./App.css";
 import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
 import touristInfo from "./components/touristInfo";
+import Footer from "./components/Footer";
 
 //Created Tourist Card
 
@@ -18,6 +19,7 @@ const App = () => {
       <Heading />
       <Bookings />
       {touristInfo.map(CreateTouristCard)}
+      <Footer />
     </div>
   );
 };
