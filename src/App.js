@@ -6,11 +6,11 @@ import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
 import touristInfo from "./components/touristInfo";
 import Footer from "./components/Footer";
+import SearchResults from "./components/SearchResults";
 
 //Created Tourist Card
-
 const CreateTouristCard = city => {
-  return <TouristInfoCards image={city.image} link={city.url} />;
+  return <TouristInfoCards Key={city.id} image={city.image} link={city.url} />;
 };
 
 const App = () => {
@@ -18,6 +18,7 @@ const App = () => {
     <div className="App">
       <Heading />
       <Bookings />
+      <SearchResults />
       {touristInfo.map(CreateTouristCard)}
       <Footer />
     </div>
@@ -25,3 +26,5 @@ const App = () => {
 };
 
 export default App;
+
+console.log();
