@@ -7,6 +7,7 @@ import TouristInfoCards from "./components/TouristInfoCards";
 import touristInfo from "./components/touristInfo";
 import Footer from "./components/Footer";
 import SearchResults from "./components/SearchResults";
+import Restaurant from "./components/Restaurant";
 
 //Created Tourist Card
 const CreateTouristCard = city => {
@@ -18,6 +19,7 @@ const App = () => {
     <div className="App">
       <Heading />
       <Bookings />
+      <Restaurant />
       <SearchResults />
       {touristInfo.map(CreateTouristCard)}
       <Footer />
