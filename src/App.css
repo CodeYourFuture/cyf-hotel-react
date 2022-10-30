@@ -1,16 +1,12 @@
 html {
   font-size: 10px;
 }
-
-/* .text-left {
+.text-left {
   color: #fff;
   padding: 0 1rem;
   font-size: 3rem;
   margin-bottom: 3rem;
 }
-label {
-  color: #fff;
-} */
 
 body {
   background-color: rgba(7, 7, 7, 0.986);
@@ -114,7 +110,7 @@ td {
   padding: 1.5rem;
 }
 
-.caption {
+.Caption {
   caption-side: top;
   color: white;
   font-size: 3rem;

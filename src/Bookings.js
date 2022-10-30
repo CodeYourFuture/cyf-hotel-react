@@ -49,7 +49,7 @@ const Bookings = props => {
             Encountered something unexpected, data couldn't be fetched.
           </p>
         ) : bookings.length === 0 ? (
-          <p className="SpanDelayedData">Please wait the page is loading..</p>
+          <p className="SpanDelayedData">Please wait the page is loading...</p>
         ) : (
           <SearchResults results={bookings} />
         )}
@@ -58,4 +58,5 @@ const Bookings = props => {
     </div>
   );
 };
+
 export default Bookings;

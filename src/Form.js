@@ -34,11 +34,11 @@ const Form = props => {
     e.preventDefault();
 
     const newBooking = {
-      id: "",
+      id: "{}",
       title: title,
       firstName: firstName,
       surname: surname,
-      email: "",
+      email: "{}",
       roomId: roomId,
       checkInDate: checkInDate,
       checkOutDate: checkOutDate
