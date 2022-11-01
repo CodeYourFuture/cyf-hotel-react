@@ -12,7 +12,7 @@ const SearchResults = ({ bookings }) => {
       <p className="results">
         Results:<span> </span>
       </p>
-      <table class="table table">
+      <table className="table table">
         <thead>
           <tr>
             <th scope="col">ID</th>

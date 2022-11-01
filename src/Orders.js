@@ -11,10 +11,12 @@ function Orders(props) {
 
   return (
     <div>
-      <li>
-        {props.orderType}: {orders}
-        <RestaurantButton handleClick={orderOne} />
-      </li>
+      <ul>
+        <li>
+          {props.orderType}: {orders}
+          <RestaurantButton handleClick={orderOne} />
+        </li>
+      </ul>
     </div>
   );
 }

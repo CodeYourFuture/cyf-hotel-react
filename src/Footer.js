@@ -8,10 +8,9 @@ const Footer = props => {
       "0123 456789"
     ]
   } = props;
-  console.log(props);
-  const result = contacts.map((contact, index) => (
-    <li key={contact.idex}>{contact}</li>
-  ));
+
+  const result = contacts.map((contact, key) => <li key={key}>{contact}</li>);
+
   return (
     <footer>
       <ul className="list">{result}</ul>
