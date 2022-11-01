@@ -9,6 +9,7 @@ const TouristInfoCards = () => {
           className="card-img-top"
           width={300}
           height={300}
+          alt="Glasgow"
         />
         <div className="card-body">
           <h2>Glasgow</h2>
@@ -29,6 +30,7 @@ const TouristInfoCards = () => {
           className="card-img-top"
           width={300}
           height={300}
+          alt="Manchester"
         />
         <div className="card-body">
           <h2>Manchester</h2>
@@ -50,6 +52,7 @@ const TouristInfoCards = () => {
           className="card-img-top"
           width={300}
           height={300}
+          alt="London"
         />
         <div className="card-body">
           <h2>London</h2>
