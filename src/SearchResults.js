@@ -1,7 +1,12 @@
 import React from "react";
+import CustomerProfile from "./CustomerProfile";
 import TableRow from "./TableRow";
+import { useState } from "react";
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ bookings }) => {
+  let [profileId, setProfileId] = useState(null);
+  let getProfileId = id => setProfileId(id);
+
   return (
     <div className="table-container">
       <p className="results">
@@ -10,6 +15,7 @@ const SearchResults = ({ results }) => {
       <table class="table table">
         <thead>
           <tr>
+            <th scope="col">ID</th>
             <th scope="col">Title</th>
             <th scope="col">First name</th>
             <th scope="col">Surname</th>
@@ -21,11 +27,16 @@ const SearchResults = ({ results }) => {
           </tr>
         </thead>
         <tbody>
-          {results.map(data => (
-            <TableRow data={data} key={data.id} />
+          {bookings.map(booking => (
+            <TableRow
+              booking={booking}
+              key={booking.id}
+              getProfileId={getProfileId}
+            />
           ))}
         </tbody>
       </table>
+      {profileId ? <CustomerProfile id={profileId} /> : null}
     </div>
   );
 };

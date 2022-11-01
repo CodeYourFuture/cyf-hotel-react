@@ -2,11 +2,12 @@ import React from "react";
 import SearchButton from "./SearchButton";
 import { useState } from "react";
 
-const Search = props => {
+function Search({ search }) {
   const [searchInputName, setSearchInputName] = useState("");
+
   function handleSubmitName(event) {
     event.preventDefault();
-    props.search(searchInputName);
+    search(searchInputName);
   }
 
   function handleSearchInputName(event) {
@@ -39,6 +40,6 @@ const Search = props => {
       </div>
     </div>
   );
-};
+}
 
 export default Search;

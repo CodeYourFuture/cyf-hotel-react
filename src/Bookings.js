@@ -9,6 +9,7 @@ const Bookings = () => {
   const [status, setStatus] = useState("fetching");
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
+      // fetch(`https://cyf-react.glitch.me/error`)
       .then(res => res.json())
       .then(data => {
         // console.log(data)
@@ -16,6 +17,7 @@ const Bookings = () => {
           setStatus("loading failed");
         }
         setBookings(data);
+        console.log(data);
         setStatus("success");
       });
   }, []);
@@ -38,7 +40,7 @@ const Bookings = () => {
         {status === "success" && (
           <>
             <Search search={search} />
-            <SearchResults results={bookings} />
+            <SearchResults bookings={bookings} />
           </>
         )}
         {status === "loading failed" && "Sorry, failed loading!"}
