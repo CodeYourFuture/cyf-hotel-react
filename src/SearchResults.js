@@ -1,96 +1,65 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
-const headers = [
-  "id",
-  "title",
-  "firstName",
-  "surname",
-  "email",
-  "roomId",
-  "checkInDate",
-  "checkOutDate",
-  "Number of nights",
-  "button"
-];
-
-const SearchResults = props => {
+const SearchResults = ({ results }) => {
   const [id, setId] = useState(null);
-
-  function handleButtonClick(clickedId) {
-    setId(clickedId);
-  }
+  const handleSetId = c_id => {
+    setId(c_id);
+  };
   return (
     <div>
-      <table className="table table-hover">
-        <thead>
+      <table className="table">
+        <thead className="thead-dark">
           <tr>
-            {headers.map(header => {
-              return (
-                <th scope="col" className="headings">
-                  {header}
-                </th>
-              );
-            })}
+            <th>ID</th>
+            <th>Title</th>
+            <th>FirstName</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>RoomID</th>
+            <th>CheckInDate</th>
+            <th>CheckOutDate</th>
+            <th>NumberOfNights</th>
+            <th>Profile</th>
           </tr>
         </thead>
-
         <tbody>
-          {props.results.map(booking => {
-            return (
-              <BookingRow booking={booking} handleClick={handleButtonClick} />
-            );
+          {results.map(detail => {
+            return <SearchDetails info={detail} handleClick={handleSetId} />;
           })}
         </tbody>
       </table>
-      {id && <CustomerProfile id={id} />}
+      {id && <CustomerProfile customerId={id} />}
     </div>
   );
 };
 
-function BookingRow({ booking, handleClick }) {
-  const [selectedRow, setSelectedRow] = useState(false);
-  const clickedRow = () => setSelectedRow(!selectedRow);
+const SearchDetails = ({ info, handleClick }) => {
+  const [isSelected, setSelected] = useState(false);
+  const highlightRow = () => setSelected(!isSelected);
 
   return (
-    <tr
-      //className={selectedRow ? "selectRow" : ""} if there is a class name
-      style={selectedRow ? { backgroundColor: "#89d7ee" } : {}}
-      onClick={clickedRow}
-    >
-      <th scope="row">{booking.id}</th>
-      {headers.map(header => {
-        if (header === "id") {
-          return null;
-        } else if (header === "Number of nights") {
-          const checkInDay = moment(booking.checkInDate);
-          const checkOutDay = moment(booking.checkOutDate);
-          const lengthOfStay = checkOutDay.diff(checkInDay, "days");
-          return lengthOfStay;
-        } else if (header === "button") {
-          return (
-            <button
-              className="profile-button"
-              onClick={() => handleClick(booking.id)}
-            >
-              Show Profile
-            </button>
-          );
-        } else {
-          return <td>{booking[header]}</td>;
-        }
-      })}
+    <tr className={isSelected ? "selected" : ""} onClick={highlightRow}>
+      <th scope="row">{info.id}</th>
+      <td>{info.title}</td>
+      <td>{info.firstName}</td>
+      <td>{info.surname}</td>
+      <td>{info.email}</td>
+      <td>{info.roomId}</td>
+      <td>{info.checkInDate}</td>
+      <td>{info.checkOutDate}</td>
+      <td>{moment(info.checkOutDate).diff(moment(info.checkInDate), "day")}</td>
+      <td>
+        <button
+          className="btn btn-success"
+          onClick={() => handleClick(info.id)}
+        >
+          Show profile
+        </button>
+      </td>
     </tr>
   );
-}
-
-function CustomerProfile(props) {
-  useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
-      .then(response => response.json())
-      .then(data => console.log(data));
-  }, [props.id]);
-  return `Customer ${props.id} Profile`;
-}
+};
 
 export default SearchResults;
