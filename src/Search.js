@@ -9,7 +9,7 @@ const Search = props => {
   return (
     <div className="search">
       <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
+        <h4 className="text">Search Bookings</h4>
       </div>
       <div className="row search-wrapper">
         <div className="col">
@@ -20,14 +20,13 @@ const Search = props => {
             }}
             className="form-group search-box"
           >
-            <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
                 value={searchInput}
                 type="text"
                 id="customerName"
                 className="form-control"
-                placeholder="Customer name"
+                placeholder="CustomerName"
                 onChange={setChange}
               />
               <SearchButton />

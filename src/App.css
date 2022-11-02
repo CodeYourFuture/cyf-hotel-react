@@ -42,6 +42,10 @@ tr {
   text-align: center;
 }
 
+.footer > ul {
+  list-style: none;
+}
+
 .card {
   width: 18rem;
   padding: 10px;
@@ -62,6 +66,44 @@ tr {
 
 .btn-primary {
   justify-content: baseline;
+}
+
+.text {
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.search {
+  justify-content: center;
+  margin: 20px;
+}
+
+.table {
+  justify-content: center;
+}
+
+.orderDiv {
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+}
+.orderUl {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.addButt {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  border-color: rgb(66, 172, 85);
+  height: 20px;
+  text-align: center;
+  color: white;
+  background-color: rgb(66, 172, 85);
 }
 
 .imageLogo {
