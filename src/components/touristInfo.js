@@ -2,7 +2,7 @@ const touristInfo = [
   {
     id: 1,
     image:
-      "https://peoplemakeglasgow.com/imager/general/86786/Kelvingrove-Art-Gallery-and-Museum_8dc3bdbc8660ad389ec95cdf9b15d797.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/3d/31/60/manchester-town-hall.jpg?w=700&h=-1&s=1",
 
     url: "https://peoplemakeglasgow.com/"
   },
