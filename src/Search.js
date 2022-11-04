@@ -1,23 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import SearchButton from "./SearchButton";
 
-const Search = () => {
+const Search = props => {
+  const [searchInput, setInput] = useState("");
+  const setChange = e => {
+    setInput(e.target.value);
+  };
   return (
     <div className="search">
       <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
+        <h4 className="text">Search Bookings</h4>
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
-            <label htmlFor="customerName">Customer name</label>
+          <form
+            onSubmit={e => {
+              props.search(searchInput);
+              e.preventDefault();
+            }}
+            className="form-group search-box"
+          >
             <div className="search-row">
               <input
+                value={searchInput}
                 type="text"
                 id="customerName"
                 className="form-control"
-                placeholder="Customer name"
+                placeholder="CustomerName"
+                onChange={setChange}
               />
-              <button className="btn btn-primary">Search</button>
+              <SearchButton />
             </div>
           </form>
         </div>
