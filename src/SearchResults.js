@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ results }) => {
   const [selectedRows, setSelectedRows] = useState([]);
+  const [ids, setIds] = useState([]);
 
   const highlighted = id => {
     selectedRows.includes(id)
       ? setSelectedRows(selectedRows.filter(el => el !== id))
       : setSelectedRows(selectedRows.concat(id));
+  };
+
+  const handleId = id => {
+    ids.includes(id)
+      ? setIds(ids.filter(el => el !== id))
+      : setIds(ids.concat(id));
   };
 
   return (
@@ -23,6 +31,8 @@ const SearchResults = ({ results }) => {
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
           <th scope="col">No. of nights</th>
+          <th scope="col" />
+          <th scope="col" />
         </tr>
       </thead>
       <tbody>
@@ -39,6 +49,19 @@ const SearchResults = ({ results }) => {
             ))}
             <td key={Object.keys(el).length - 1}>
               {moment(el.checkOutDate).diff(moment(el.checkInDate), "days")}
+            </td>
+            <td>
+              <button
+                className="btn btn-primary"
+                onClick={() => {
+                  handleId(el.id);
+                }}
+              >
+                Show profile
+              </button>
+            </td>
+            <td>
+              {ids.includes(el.id) ? <CustomerProfile ids={el.id} /> : null}
             </td>
           </tr>
         ))}
