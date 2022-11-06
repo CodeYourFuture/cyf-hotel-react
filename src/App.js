@@ -3,6 +3,7 @@ import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Footer from "./Footer";
+import Restaurant from './Restaurant.js'
 import "./App.css";
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
     <div className="App">
       <Heading />
       <Bookings />
+      <Restaurant />
       <TouristInfoCards bg-color="red" />
       <Footer />
     </div>

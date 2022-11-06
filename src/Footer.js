@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css'
 
 const Footer = () => {
   let names = [
@@ -8,7 +9,7 @@ const Footer = () => {
     "0123 456789"
   ];
   return (
-    <div>
+    <div className="navbar">
       <ul>
         {names.map(name => (
           <li key={name}>{name}</li>
