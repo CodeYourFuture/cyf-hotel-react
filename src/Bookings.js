@@ -17,8 +17,16 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then(res => res.json())
+    fetch(/*"https://cyf-react.glitch.me"*/ "https://cyf-react.glitch.me/error")
+      .then(res => {
+        if (res.status >= 200 && res.status <= 299) {
+          return res.json();
+        } else {
+          throw new Error(
+            `Encountered something unexpected: ${res.status} ${res.statusText}`
+          );
+        }
+      })
       .then(data => setbookings(data));
   }, []);
 
