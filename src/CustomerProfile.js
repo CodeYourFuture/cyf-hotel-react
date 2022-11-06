@@ -1,8 +1,8 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./CustomerProfile.css";
 const CustomerProfile = ({ url }) => {
   const [customerData, setCustomerData] = useState([]);
-  const { id, email, phoneNumber, vip } = customerData;
+
   useEffect(() => {
     fetch(url)
       .then(response => response.json())

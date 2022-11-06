@@ -32,7 +32,11 @@ const Bookings = () => {
       </div>
     );
   } else {
-    return null;
+    return (
+      <h2 className="bookings-table-loadScr">
+        Please wait while we load the bookings...
+      </h2>
+    );
   }
 };
 

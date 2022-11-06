@@ -88,3 +88,10 @@ tr {
   font-size: small;
   padding: 0.2rem;
 }
+
+.bookings-table-loadScr {
+  text-align: center;
+  color: #007bff;
+  font-size: 2.5em;
+  margin: 100px auto;
+}

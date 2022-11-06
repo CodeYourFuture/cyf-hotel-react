@@ -5,7 +5,7 @@ import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ results }) => {
   const [selectedRows, setSelectedRows] = useState([]);
-  const [idFromProfileBtn, setIdForProfileBtn] = useState([]);
+
   const [url, setUrl] = useState("");
 
   const clickHandler = id => {
@@ -16,7 +16,6 @@ const SearchResults = ({ results }) => {
     }
   };
   const profileBtnClickHandler = id => {
-    setIdForProfileBtn(id);
     setUrl(`https://cyf-react.glitch.me/customers/${id}/`);
   };
   return (
