@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const SearchResults = props => {
-  const [isActive, setActive] = useState("false");
-
-  function handleToggle(id) {}
+const SearchResults = ({ results }) => {
+  const [selectedRows, setSelectedRows] = useState([]);
+  const clickHandler = id => {
+    if (selectedRows.includes(id)) {
+      setSelectedRows(selectedRows.filter(e => e !== id));
+    } else {
+      setSelectedRows(selectedRows.concat(id));
+    }
+  };
   return (
     <table className="table ">
       <thead>
@@ -21,7 +26,7 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map(
+        {results.map(
           (
             {
               id,
@@ -41,9 +46,14 @@ const SearchResults = props => {
                     isActive ? "backgroundOff" : "backgroundOn"
                   } */
               <tr
+                id={id}
                 key={id}
-                onClick={e => console.log(e)}
-                className={isActive ? "backgroundOff" : "backgroundOn"}
+                onClick={() => clickHandler(id)}
+                style={
+                  selectedRows.includes(id)
+                    ? { background: "#007bff", color: "white" }
+                    : { background: "white" }
+                }
               >
                 <th>{id}</th>
                 <td>{title}</td>

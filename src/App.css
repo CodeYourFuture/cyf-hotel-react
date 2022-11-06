@@ -77,15 +77,9 @@ tr {
 
 .cardsContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
   gap: 5%;
   text-align: center;
-}
-
-.backgroundOn {
-  background: #007bff;
-}
-
-.backgroundOff {
 }
