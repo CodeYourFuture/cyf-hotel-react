@@ -17,7 +17,7 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch(/*"https://cyf-react.glitch.me"*/ "https://cyf-react.glitch.me/error")
+    fetch("https://cyf-react.glitch.me")
       .then(res => {
         if (res.status >= 200 && res.status <= 299) {
           return res.json();

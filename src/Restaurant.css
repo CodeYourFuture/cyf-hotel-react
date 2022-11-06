@@ -1,0 +1,19 @@
+.orders-container {
+  margin: 50px auto;
+}
+
+h3 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.order-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.order-list li {
+  margin: 10px 20px;
+  text-align: center;
+}

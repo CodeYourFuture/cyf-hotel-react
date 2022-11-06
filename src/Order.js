@@ -10,7 +10,8 @@ function Order({ ordertype }) {
   return (
     <div>
       <li>
-        {ordertype}: {orders} <RestaurantButton placeOrder={orderOne} />
+        {ordertype}: {orders ? orders : null}{" "}
+        <RestaurantButton placeOrder={orderOne} />
       </li>
     </div>
   );
