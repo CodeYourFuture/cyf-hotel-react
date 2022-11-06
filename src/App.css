@@ -83,3 +83,9 @@ tr {
   gap: 5%;
   text-align: center;
 }
+
+.searchResultBtn {
+  margin-top: 25px;
+  font-size: small;
+  padding: 0.25rem;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
+import "./App.css";
 
 const SearchResults = ({ results }) => {
   const [selectedRows, setSelectedRows] = useState([]);
@@ -23,6 +24,7 @@ const SearchResults = ({ results }) => {
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
           <th scope="col">Nights staying over</th>
+          <th scope="col">Button</th>
         </tr>
       </thead>
       <tbody>
@@ -64,6 +66,9 @@ const SearchResults = ({ results }) => {
                 <td>{checkInDate}</td>
                 <td>{checkOutDate}</td>
                 <td>{moment(checkOutDate).diff(checkInDate, "days")}</td>
+                <button className="btn btn-primary searchResultBtn">
+                  Show profile
+                </button>
               </tr>
             );
           }
