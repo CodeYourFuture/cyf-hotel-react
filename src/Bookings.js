@@ -4,9 +4,16 @@ import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setbookings] = useState([]);
+  const [bookings, setbookings] = useState("");
+
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    setbookings(
+      bookings.filter(
+        ({ firstName, surname }) =>
+          firstName.toLowerCase().includes(searchVal) ||
+          surname.toLowerCase().includes(searchVal)
+      )
+    );
   };
 
   useEffect(() => {
