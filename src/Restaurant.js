@@ -1,13 +1,19 @@
 import React from "react";
+import Order from "./Order";
 
 const Restaurant = () => {
-  const pizzas = 0;
   return (
-    <div>
-      <h3>Restaurant Orders</h3>
+    <div className="orders-container">
+      <h3 className="resturant-heading">Restaurant Orders</h3>
       <ul>
         <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
+          <Order orderType={"Pizzas"} />
+        </li>
+        <li>
+          <Order orderType={"Salads"} />
+        </li>
+        <li>
+          <Order orderType={"Chocolate cake"} />
         </li>
       </ul>
     </div>
