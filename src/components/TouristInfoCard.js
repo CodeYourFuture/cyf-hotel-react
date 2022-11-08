@@ -6,7 +6,7 @@ const TouristInfoCard = () => {
       <div className="card">
         <img
           className="card-image-top"
-          src="https://webunwto.s3.eu-west-1.amazonaws.com/2022-03/the-glasgow-declaration-on-climate-action-in-tourism.jpg?VersionId=cf2W6IKXPBG11m3fcYlWSNQup_CTupWC"
+          src="https://a.cdn-hotels.com/gdcs/production95/d16/cc514640-8f0f-11e8-9bad-0242ac110002.jpg"
           alt="glasgow"
         />
         <div className="card-body">
@@ -23,7 +23,7 @@ const TouristInfoCard = () => {
       <div className="card">
         <img
           className="card-image-top"
-          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/3d/31/60/manchester-town-hall.jpg?w=700&h=-1&s=1"
+          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/a1/ee/e8/the-famous-manchester.jpg?w=1200&h=-1&s=1"
           alt="Manchester"
         />
         <div className="card-body">
@@ -40,7 +40,7 @@ const TouristInfoCard = () => {
       <div className="card">
         <img
           className="card-image-top"
-          src="https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/coca-cola-london-eye/the-london-eye-2-640x360.jpg?mw=640&hash=F7D574072DAD523443450DF57E3B91530064E4EE"
+          src="https://i2-prod.manchestereveningnews.co.uk/incoming/article24338807.ece/ALTERNATES/s615/0_Manchester-City-Centre-GVs.jpg"
           alt="london"
         />
         <div className="card-body">
