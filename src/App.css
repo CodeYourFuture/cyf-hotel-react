@@ -10,11 +10,15 @@
 .App-header {
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 0 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
+  font-weight: bold;
+}
+
+.App-brand {
   font-weight: bold;
 }
 
@@ -48,10 +52,24 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding: 20px 0;
   text-align: center;
+}
+.footer li {
+  list-style: none;
+  color: #fff;
 }
 
 .card {
   width: 18rem;
+}
+
+/* row colours */
+.bg-row {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.bg-row:hover {
+  background-color: aliceblue;
 }
