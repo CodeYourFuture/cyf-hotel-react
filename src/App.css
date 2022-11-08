@@ -1,5 +1,13 @@
+body {
+  background-color: #eef0ee;
+}
+
 .App {
   text-align: left;
+}
+img.logo {
+  width: 45px;
+  object-fit: cover;
 }
 
 .App-logo {
