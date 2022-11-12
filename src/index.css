@@ -24,3 +24,42 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.profile-container {
+  border: 2px solid #007bff;
+  text-align: center;
+  background: lightgray;
+  height: 160px;
+}
+
+.profile-container h2 {
+  background-color: #007bff;
+}
+.profile-container p {
+  border: 2px solid #007bff;
+  width: 50%;
+  margin: 5px auto;
+  background: whitesmoke;
+}
+
+.orders-container {
+  margin: 50px auto;
+  display: flex;
+  margin: 2rem;
+}
+
+h3 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.order-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.order-list li {
+  margin: 10px 20px;
+  text-align: center;
+}

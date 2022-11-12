@@ -4,18 +4,26 @@ import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ results }) => {
   const [selectedRows, setSelectedRows] = useState([]);
-  const [ids, setIds] = useState([]);
+  // const [ids, setIds] = useState([]);
+  const [url, setUrl] = useState("");
 
-  const highlighted = id => {
+  // const highlighted = (id) => {
+  //   selectedRows.includes(id)
+  //     ? setSelectedRows(selectedRows.filter((el) => el !== id))
+  //     : setSelectedRows(selectedRows.concat(id));
+  // };
+
+  const handleId = id => {
+    // id.includes(id)
+    //   ? setIds(ids.filter((el) => el !== id))
+    //   : setIds(ids.concat(id));
     selectedRows.includes(id)
       ? setSelectedRows(selectedRows.filter(el => el !== id))
       : setSelectedRows(selectedRows.concat(id));
   };
 
-  const handleId = id => {
-    ids.includes(id)
-      ? setIds(ids.filter(el => el !== id))
-      : setIds(ids.concat(id));
+  const profileHandler = id => {
+    setUrl(`https://cyf-react.glitch.me/customers/${id}/`);
   };
 
   return (
@@ -40,9 +48,15 @@ const SearchResults = ({ results }) => {
           <tr
             key={el.id}
             onClick={() => {
-              highlighted(el.id);
+              // highlighted(el.id);
+              handleId(el.id);
             }}
             className={selectedRows.includes(el.id) ? "select" : "unSelect"}
+            style={
+              selectedRows.includes(el.id)
+                ? { background: "#007bff", color: "white" }
+                : { background: "white" }
+            }
           >
             {Object.values(el).map((item, index) => (
               <td key={index}>{item}</td>
@@ -54,14 +68,14 @@ const SearchResults = ({ results }) => {
               <button
                 className="btn btn-primary"
                 onClick={() => {
-                  handleId(el.id);
+                  profileHandler(el.id);
                 }}
               >
                 Show profile
               </button>
             </td>
             <td>
-              {ids.includes(el.id) ? <CustomerProfile ids={el.id} /> : null}
+              <CustomerProfile url={url} />
             </td>
           </tr>
         ))}

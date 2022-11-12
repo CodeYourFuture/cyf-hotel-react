@@ -16,7 +16,6 @@ const Bookings = () => {
           setStatus("loading failed");
         }
         setBookings(data);
-        console.log(data);
         setStatus("success");
       });
   }, []);
