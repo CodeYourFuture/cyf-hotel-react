@@ -54,9 +54,10 @@ tr {
 
 .card {
   width: 18rem;
+  align-items: center;
 }
 
-img {
+.hotelLogo {
   width: 100px;
   height: 30px;
   padding: 0 10px;
@@ -66,4 +67,24 @@ img {
   display: flex;
   /* justify-content: center; */
   align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  padding: 5px;
+  font-size: 1em;
+  text-align: justify;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.card-body {
 }

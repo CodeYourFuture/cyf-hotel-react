@@ -5,7 +5,7 @@ import "./index.css";
 const Heading = () => {
   return (
     <header className="App-header">
-      <img src={hotelLogo} alt="Logo CYF" />
+      <img className="hotelLogo" src={hotelLogo} alt="Logo CYF" />
       Claridge's Hotel
     </header>
   );
