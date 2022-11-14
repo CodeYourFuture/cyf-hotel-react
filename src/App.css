@@ -47,11 +47,17 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
+footer {
   padding-top: 20px;
   text-align: center;
 }
 
+footer li
+{
+  list-style-type: none;
+}
+
 .card {
   width: 18rem;
+  margin: auto;
 }
