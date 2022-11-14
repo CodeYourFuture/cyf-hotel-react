@@ -4,7 +4,7 @@ import "./index.css";
 
 const Heading = () => {
   return (
-    <header className="App-header">
+    <header className="App-header bg-dark text-warning">
       <img className="hotelLogo" src={hotelLogo} alt="Logo CYF" />
       Claridge's Hotel
     </header>
