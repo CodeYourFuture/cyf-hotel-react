@@ -1,6 +1,6 @@
 import React from "react";
 import hotelLogo from "./images/logo.png";
-import "./index.css";
+import "./App.css";
 
 const Heading = () => {
   return (
