@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  background-image: linear-gradient(blue, pink);
 }
 
 .App-logo {
@@ -58,8 +59,43 @@ tr {
 
 .TouristInfoCards {
   display: flex;
+  justify-content: space-evenly;
+  padding: 5em 0;
+  margin: 2em 1em 0 1em;
+  text-align: center;
 }
 
 .Card {
+  height: 30rem;
   width: 18rem;
+  border: 3px solid black;
+  background-image: linear-gradient(blue, pink);
+}
+
+.CardImage:hover {
+  border-bottom: 3px solid black;
+}
+
+.Card:hover {
+  background-image: linear-gradient(red, yellow);
+  color: #000000;
+}
+
+.Card:hover h1 {
+  text-decoration: underline;
+}
+
+.CardButton {
+  color: #660033;
+  text-decoration: underline;
+  text-decoration-color: #fafa1e;
+  text-decoration-thickness: 3px;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.Card:hover .CardButton {
+  color: #000000;
+  border: solid #660033;
+  text-decoration: none;
 }
