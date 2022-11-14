@@ -1,4 +1,6 @@
 import React from "react";
+import moment from "moment";
+
 // import FakeBookings from "./data/fakeBookings.json";
 const SearchResults = props => {
   const colTable = [
@@ -12,6 +14,7 @@ const SearchResults = props => {
     "Check out Date",
     "number of nights"
   ];
+  const moment = require("moment");
   const rowNum = props.FakeBookings.length;
   return (
     <table class="table table-striped">
@@ -34,8 +37,11 @@ const SearchResults = props => {
             <td>{individualBookingInfo.checkInDate}</td>
             <td>{individualBookingInfo.checkOutDate}</td>
             <td>
-              {individualBookingInfo.checkOutDate}.diff(
-              {individualBookingInfo.checkInDate})
+              {Math.floor(
+                (moment(individualBookingInfo.checkOutDate) -
+                  moment(individualBookingInfo.checkInDate)) /
+                  (1000 * 60 * 60 * 24)
+              )}
             </td>
           </tr>
         ))}
