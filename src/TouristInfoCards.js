@@ -40,4 +40,4 @@ const TouristInfoCards = () =>
     )
 }
   
-  export default TouristInfoCards;
+export default TouristInfoCards;
