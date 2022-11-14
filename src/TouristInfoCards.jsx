@@ -9,6 +9,7 @@ const TouristInfoCards = () => {
           alt="photo of Glasgow"
           src="https://i0.wp.com/www.stephaniefox.co.uk/wp-content/uploads/2020/09/4FE78B9D-C5C3-4F31-A87F-423C71EB984B.jpeg?fit=800%2C706&ssl=1"
           width="250"
+          height="250"
         />
         <div className="CardBody">
           <h1>Glasgow</h1>
@@ -19,10 +20,33 @@ const TouristInfoCards = () => {
           </p>
           <a
             href="https://peoplemakeglasgow.com/"
-            className="Glasgow"
+            className="GlasgowButton"
             target="_blank"
           >
             Visit Glasgow
+          </a>
+        </div>
+      </div>
+      <div className="Card">
+        <img
+          className="CardImage"
+          alt="photo of Glasgow"
+          src="http://jenikya.com/blog/manchester-streetart2019-12.jpg"
+          width="250"
+          height="250"
+        />
+        <div className="CardBody">
+          <h1>Manchester</h1>
+          <p>
+            Manchester is the nucleus of the largest metropolitan area in the
+            north of England, and it remains an important regional city.
+          </p>
+          <a
+            href="https://www.visitmanchester.com/"
+            className="ManchesterButton"
+            target="_blank"
+          >
+            Visit Manchester
           </a>
         </div>
       </div>
