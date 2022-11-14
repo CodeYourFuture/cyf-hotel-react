@@ -19,7 +19,6 @@
 }
 
 .Logo {
-  /* border: 2px dashed hotpink; */
   background-color: white;
 }
 
@@ -57,6 +56,10 @@ tr {
   text-align: center;
 }
 
-.card {
+.TouristInfoCards {
+  display: flex;
+}
+
+.Card {
   width: 18rem;
 }
