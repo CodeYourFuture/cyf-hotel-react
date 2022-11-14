@@ -9,7 +9,8 @@ const SearchResults = props => {
     "Surname",
     "Room Id",
     "Check in Date",
-    "Check out Date"
+    "Check out Date",
+    "number of nights"
   ];
   const rowNum = props.FakeBookings.length;
   return (
@@ -32,6 +33,10 @@ const SearchResults = props => {
             <td>{individualBookingInfo.roomId}</td>
             <td>{individualBookingInfo.checkInDate}</td>
             <td>{individualBookingInfo.checkOutDate}</td>
+            <td>
+              {individualBookingInfo.checkOutDate}.diff(
+              {individualBookingInfo.checkInDate})
+            </td>
           </tr>
         ))}
       </tbody>
