@@ -95,7 +95,18 @@ tr {
   text-decoration: none;
 }
 
-.footer {
+.Footer {
+  background-color: #222;
+  height: 90px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* footer {
   padding-top: 20px;
   text-align: center;
-}
+} */

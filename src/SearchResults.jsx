@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchResults = () => {
+const SearchResults = props => {
   return (
     <div>
       <table class="table">
@@ -18,14 +18,17 @@ const SearchResults = () => {
         </thead>
         <tbody>
           <tr>
-            <td scope="row">#1534</td>
-            <td scope="row">Ms.</td>
-            <td scope="row">Tilda</td>
-            <td scope="row">Swinton</td>
-            <td scope="row">tilda.swinton@thespian.com</td>
-            <td scope="row">10</td>
-            <td scope="row">15.11.22</td>
-            <td scope="row">16.11.22</td>
+            <th scope="row">#1534</th>
+            <th scope="row">Ms.</th>
+            <th scope="row">Tilda</th>
+            <th scope="row">Swinton</th>
+            <th scope="row">tilda.swinton@thespian.com</th>
+            <th scope="row">10</th>
+            <th scope="row">15.11.22</th>
+            <th scope="row">16.11.22</th>
+            {/* {props.fakeBookings.map((booking) => (
+               <td scope="row">{booking}</td> 
+            ))}; */}
           </tr>
         </tbody>
       </table>
