@@ -31,10 +31,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -54,4 +56,23 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+/* --------------------------------------------------------------- */
+.btn {
+  width: 185px;
+}
+
+#result {
+  margin: 30px;
+}
+
+#customer-data {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 30px 10px;
 }
