@@ -1,0 +1,24 @@
+.cardContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  width: 350px;
+}
+.card:hover {
+  box-shadow: none;
+  border: 1px solid black;
+  transition: 0.7s;
+}
+
+.card-title {
+  text-align: center;
+}
+.btn {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin: 0 45px;
+}
