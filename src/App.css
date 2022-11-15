@@ -52,11 +52,6 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
-}
-
 .TouristInfoCards {
   display: flex;
   justify-content: space-evenly;
@@ -98,4 +93,9 @@ tr {
   color: #000000;
   border: solid #660033;
   text-decoration: none;
+}
+
+.footer {
+  padding-top: 20px;
+  text-align: center;
 }
