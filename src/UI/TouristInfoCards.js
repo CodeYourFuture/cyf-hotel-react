@@ -7,6 +7,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           src="https://media.nomadicmatt.com/glasgowguide.jpg"
+          alt=""
           className="card-img-top"
         />
         <div className="card-body">
@@ -28,6 +29,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           src="https://eu-assets.simpleview-europe.com/manchester2016/imageresizer/?image=%2Fdbimgs%2FManOne-03%284%29.jpg&action=Background_Overlay"
+          alt=""
           className="card-img-top"
         />
         <div className="card-body">
@@ -52,6 +54,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img
           src="https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/tower-bridge/tower-bridge-shutterstock-1920x582.jpg?mw=1920&hash=078DDB24AC457E2D8F231FC3E0F7EC55A00C88E3"
+          alt=""
           className="card-img-top"
         />
         <div className="card-body">
