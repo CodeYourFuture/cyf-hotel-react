@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  background-color: lightcyan;
 }
 
 .App-logo {
@@ -83,8 +84,4 @@ footer ul {
   display: flex;
   justify-content: space-around;
   list-style: none;
-}
-
-.card {
-  width: 18rem;
 }
