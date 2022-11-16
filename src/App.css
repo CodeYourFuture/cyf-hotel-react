@@ -55,3 +55,17 @@ tr {
 .card {
   width: 18rem;
 }
+
+.Logo {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.Tourist-Info-Cards {
+  display: flex;
+  justify-content: space-between;
+}
+.Hotel-Info {
+  list-style-type: none;
+}

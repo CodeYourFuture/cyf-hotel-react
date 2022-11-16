@@ -19,11 +19,11 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** The search button should still render on the page. -->
 
-#### 2. Extract the header in its own component
+<!-- #### 2. Extract the header in its own component
 
 **Instructions:** Extract the `<header>` from the `src/App.js` file to be its own separate component called `Heading`. Make sure that you import and render the `<Heading />` component within `src/App.js`. In the `Heading` component, render the hotel's logo in an `<img>` (you can use `https://image.flaticon.com/icons/svg/139/139899.svg` or find your own image URL). You can adjust the CSS by editing `src/App.css` to make your Heading looks better if necessary.
 
-**Test:** The header should be displayed with a logo on the page.
+**Test:** The header should be displayed with a logo on the page. -->
 
 #### 3. Create and use a new component to show info cards
 
@@ -44,13 +44,13 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** 3 info cards should be displayed on the page for each city (Glasgow, Manchester, London). Each card should link to the correct website.
 
-#### 4. Create a Footer component
+<!-- #### 4. Create a Footer component
 
 **Instructions:** Create a `<Footer />` component which should be rendered at the bottom of the page. Pass the following array as a prop to this component: `["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]`. Inside the component, use the data you passed as a prop to render a `<ul>` list with each item of the array displayed as a `<li>`.
 
 **Hint:** The `.map()` method will by useful.
 
-**Test:** The footer should render at the bottom of the page with each address property displayed as a list item.
+**Test:** The footer should render at the bottom of the page with each address property displayed as a list item. -->
 
 #### 5. Create a table to show hotel bookings
 
