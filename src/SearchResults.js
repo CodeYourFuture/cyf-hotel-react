@@ -1,6 +1,9 @@
 import React from "react";
+import moment from "moment";
 
 const CustomerList = customers => {
+  console.log();
+
   return (
     <div className="table-responsive">
       <caption id="result">Results ({customers.results.length} found)</caption>
@@ -13,6 +16,7 @@ const CustomerList = customers => {
           <th>Room ID</th>
           <th>Check In</th>
           <th>Check Out</th>
+          <th>Duration of Stay</th>
         </tr>
         {customers.results.map((x, i) => {
           return (
@@ -24,6 +28,11 @@ const CustomerList = customers => {
               <td key={i}>{x.roomId}</td>
               <td key={i}>{x.checkInDate}</td>
               <td key={i}>{x.checkOutDate}</td>
+              <td>
+                {~~moment
+                  .duration(moment(x.checkOutDate).diff(moment(x.checkInDate)))
+                  .asDays() + " nights"}
+              </td>
             </tr>
           );
         })}
