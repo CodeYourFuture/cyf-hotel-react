@@ -5,7 +5,7 @@ function Heading() {
     <div>
       <header className="App-header">CYF Hotel</header>
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9TlnMzjBc2fVKB68tbpwgHcNVWjFECEU2Yw&usqp=CAU"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKfTLw8RVJQCsTg0LZkdbAGTPLahCmJIbM7A&usqp=CAU"
         alt="Logo"
       />
     </div>
