@@ -7,6 +7,7 @@ const Heading = () => {
       <div className="heading-logo">
         <img
           src={require("./image/christmas_2012_new_6458.jpg")}
+          alt="logo"
           width="70px"
           height="70px"
         />
