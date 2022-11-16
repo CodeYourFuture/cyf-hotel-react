@@ -10,11 +10,7 @@ const TouristInfoCards = props => {
             <div className="card-body">
               <h5 className="card-title">{hotel.title}</h5>
               <p className="card-text">{hotel.cityInfo}</p>
-              <a
-                href={hotel.touristInfo}
-                target="_blank"
-                className="btn btn-primary"
-              >
+              <a href={hotel.touristInfo} className="btn btn-primary">
                 More Information
               </a>
             </div>
