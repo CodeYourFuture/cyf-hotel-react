@@ -6,7 +6,7 @@ const TouristInfoCards = props => {
       <div className="d-flex justify-content-center flex-row">
         {props.hotelsProp.map((hotel, index) => (
           <div className="card shadow m-2 mt-5">
-            <img src={hotel.img} className="card-img-top" alt="" />
+            <img src={hotel.img} className="card-img-top" alt="hotel" />
             <div className="card-body">
               <h5 className="card-title">{hotel.title}</h5>
               <p className="card-text">{hotel.cityInfo}</p>
