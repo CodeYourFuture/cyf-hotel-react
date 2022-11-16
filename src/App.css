@@ -18,6 +18,17 @@
   font-weight: bold;
 }
 
+.InfoCards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Card-Title,
+.Card-Summary {
+  padding: 1.2em;
+  align-items: center;
+}
+
 .App-title {
   font-size: 1.5em;
 }
@@ -25,6 +36,9 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+.searchButton {
+  display: inline;
 }
 
 @keyframes App-logo-spin {
@@ -51,7 +65,13 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
+.listItem {
+  list-style: none;
+}
 
 .card {
-  width: 18rem;
+  width: 20rem;
+  border-style: double;
+  border-width: 5px;
+  margin-top: 1em;
 }
