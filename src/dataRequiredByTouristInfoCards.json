@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Glasgow",
+    "touristInfo": "https://peoplemakeglasgow.com",
+    "cityInfo": "The city is famous for its architectural styles, with the Glasgow School of Art being the most notable example. Glasgow is a vibrant city with a cosmopolitan vibe. The city is tourist-friendly and offers a great selection of free museums, international restaurants, wonderful architecture and affordable accommodation options..",
+    "img": "https://peoplemakeglasgow.com/imager/general/517672/Winter_Ashton-Lane_Header_961ee30b631a75b37d23eb0e09df30ea.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Manchester",
+    "touristInfo": "https://visitmanchester.com",
+    "cityInfo": "It's easily one of the most fun cities to visit in England. It's one of those cities that has a little something for everyone.",
+    "img": "https://www.visitmanchester.com/imageresizer/?image=%2Fdbimgs%2Fcorrie.jpg&action=BlogDetailContent"
+  },
+  {
+    "id": 3,
+    "title": "London",
+    "touristInfo": "https://visitlondon.com",
+    "cityInfo": "The most popular tourist places in London include the cultural heart of the city, Soho, the green suburbs of Hampstead and the Royal Parks like Richmond Park.",
+    "img": "https://cdn.londonandpartners.com/-/media/images/london/visit/london-organisations/coca-cola-london-eye/coca-cola-london-eye-640.jpg"
+  }
+]
