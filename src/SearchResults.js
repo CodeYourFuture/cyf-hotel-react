@@ -1,7 +1,15 @@
 import React from "react";
 import "./Heading.css";
+import moment from "moment";
 
 const SearchResults = props => {
+  const noOfNights = (checkInDate, checkOutDate) => {
+    const m_checkInDate = moment(checkInDate);
+    const m_checkOutDate = moment(checkOutDate);
+    const days = m_checkOutDate.diff(m_checkInDate, "days");
+    return days;
+  };
+
   return (
     <>
       <div className="">
@@ -16,6 +24,7 @@ const SearchResults = props => {
               <th scope="col">Room ID</th>
               <th scope="col">Check In Date</th>
               <th scope="col">Check Out Date</th>
+              <th scope="col">Number OF Nights</th>
             </tr>
           </thead>
           <tbody>
@@ -29,6 +38,7 @@ const SearchResults = props => {
                 <td>{result.roomId}</td>
                 <td>{result.checkInDate}</td>
                 <td>{result.checkOutDate}</td>
+                <td>{noOfNights(result.checkInDate, result.checkOutDate)}</td>
               </tr>
             ))}
           </tbody>
