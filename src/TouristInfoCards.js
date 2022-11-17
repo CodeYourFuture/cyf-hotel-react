@@ -65,7 +65,7 @@ const TouristInfoCards = () => {
             thriving music scene
           </p>
           <a href="peoplemakeglasgow.com" className="btn btn-primary">
-            Go somewhere
+            More Information
           </a>
         </div>
       </div>
