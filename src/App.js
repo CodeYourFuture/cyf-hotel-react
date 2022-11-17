@@ -10,8 +10,8 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Bookings />
       <TouristInfoCards />
+      <Bookings />
       <Footer
         info={[
           "123 Fake Street, London, E1 4UD",

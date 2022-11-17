@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment/moment";
 
 const SearchResults = props => (
   <div>
@@ -13,14 +14,16 @@ const SearchResults = props => (
           <th>Room ID</th>
           <th>Check In Date</th>
           <th>Check Out Date</th>
+          <th>Number of Nights</th>
           <th />
         </tr>
       </thead>
       <tbody>
         {props.results.map(info => (
           <tr>
-            let a = info[checkInDate]; let b = info.checkOutDate;
-            console.log(a.diff(b))
+            {console.log(
+              moment(info.checkOutDate).diff(moment(info.checkInDate), "days")
+            )}
             <td>{info.id}</td>
             <td>{info.title}</td>
             <td>{info.firstName}</td>
@@ -29,6 +32,9 @@ const SearchResults = props => (
             <td>{info.roomId}</td>
             <td>{info.checkInDate}</td>
             <td>{info.checkOutDate}</td>
+            <td>
+              {moment(info.checkOutDate).diff(moment(info.checkInDate), "days")}
+            </td>
           </tr>
         ))}
       </tbody>

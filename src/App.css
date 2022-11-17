@@ -53,7 +53,7 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 25rem;
 }
 
 .Logo {
@@ -64,8 +64,11 @@ tr {
 
 .Tourist-Info-Cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .Hotel-Info {
   list-style-type: none;
+}
+.card-img {
+  min-height: 320px;
 }
