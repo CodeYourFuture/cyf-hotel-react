@@ -1,3 +1,15 @@
+/* Variables */
+:root {
+  --dark-grey: #2b2d42;
+  --light-grey: #d3def0;
+  --lighter-grey: #feffff;
+  --dark-red: #d90429;
+  --light-red: #ef233c;
+  --white: #fff;
+  --black: #000;
+  --font: "Roboto", sans-serif;
+}
+
 .App {
   text-align: left;
 }
@@ -27,14 +39,38 @@
   font-size: large;
 }
 
+/* Tourist info cards */
+.cards-container {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1em;
+  background-color: var(--lighter-grey);
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+}
+
+.card__img {
+  height: 220px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -52,6 +88,5 @@ tr {
   text-align: center;
 }
 
-.card {
-  width: 18rem;
+@media screen and (min-width: 600px) {
 }
