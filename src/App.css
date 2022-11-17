@@ -1,29 +1,28 @@
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
 /* Variables */
 :root {
-  --dark-grey: #2b2d42;
-  --light-grey: #d3def0;
-  --lighter-grey: #feffff;
+  --dark-grey: #5b5757;
+  --light-grey: #feffff;
   --dark-red: #d90429;
   --light-red: #ef233c;
   --white: #fff;
-  --black: #000;
+  --black: #222;
   --font: "Roboto", sans-serif;
 }
 
 .App {
   text-align: left;
+  font-family: var(--font);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
+/* Header */
 .App-header {
-  background-color: #222;
+  background-color: var(--black);
   height: 60px;
   padding: 20px;
-  color: white;
+  color: var(--white);
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
@@ -32,6 +31,21 @@
 
 .App-title {
   font-size: 1.5em;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .App-content {
@@ -52,7 +66,7 @@
   flex-direction: column;
   padding: 1rem;
   gap: 1em;
-  background-color: var(--lighter-grey);
+  background-color: var(--light-grey);
   border-radius: 5px;
   box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
 }
@@ -61,33 +75,16 @@
   height: 220px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .search {
   padding: 5px 0 20px 0;
 }
 
-tr {
-  color: #5b5757;
-}
-
-.results {
-  padding-top: 15px;
-}
-
+/* Footer */
 .footer {
   padding-top: 20px;
   text-align: center;
-  background-color: #222;
-  color: white;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .footer__text {
