@@ -43,7 +43,7 @@
 .cards-container {
   display: grid;
   gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 1.5rem;
 }
 
@@ -89,4 +89,7 @@ tr {
 }
 
 @media screen and (min-width: 600px) {
+  .cards-container {
+    margin: 1.5rem 6rem;
+  }
 }
