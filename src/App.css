@@ -16,7 +16,7 @@
   text-align: left;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
   justify-content: space-between;
 }
@@ -48,6 +48,7 @@
 .LogoImage {
   height: 50px;
   width: 50px;
+  border-radius: 50%;
 }
 
 @keyframes App-logo-spin {
