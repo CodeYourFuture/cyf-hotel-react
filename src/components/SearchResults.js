@@ -18,7 +18,7 @@ const SearchResults = props => {
       {props.results.map((booking, index) => {
         let inDate = moment(booking.checkInDate);
         let outDate = moment(booking.checkOutDate);
-        let numOfNights = outDate.diff(inDate, "days"); // 1
+        let numOfNights = outDate.diff(inDate, "days");
         return (
           <tr key={index}>
             <td>{booking.id}</td>
