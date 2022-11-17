@@ -18,7 +18,7 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://biruk-hotel-server.herokuapp.com/bookings")
+    fetch("https://hotel-cyf-server.onrender.com/bookings")
       .then(res => res.json())
       .then(data => {
         setLoading(true);
