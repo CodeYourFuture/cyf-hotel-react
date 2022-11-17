@@ -2,19 +2,14 @@
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: #f1a726;
+  height: 70px;
   padding: 20px;
-  color: rgb(248, 160, 160);
+  color: rgb(241, 237, 237);
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.25em;
   font-weight: bold;
 }
 
@@ -28,10 +23,10 @@
 }
 
 .logo {
-  min-width: 100px;
-  max-width: 100px;
-  min-height: 100px;
-  max-width: 100px;
+  min-width: 50px;
+  max-width: 50px;
+  min-height: 75px;
+  max-width: 75px;
 }
 .cardsHolder {
   display: flex;
@@ -40,7 +35,7 @@
   margin: 1.5rem;
 }
 .Footer {
-  background-color: rgb(176, 70, 247);
+  background-color: #f63e8b;
   display: flex;
   justify-content: center;
   align-items: center;
