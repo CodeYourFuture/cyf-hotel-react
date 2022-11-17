@@ -16,6 +16,8 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
 }
 
 .App-title {
@@ -25,6 +27,12 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+
+.LogoImage {
+  height: 50px;
+  width: 50px;
+  margin-top: -20px;
 }
 
 @keyframes App-logo-spin {
@@ -53,5 +61,13 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 25rem;
+  justify-items: center;
+  height: 250px;
+}
+
+.TouristInfoCards {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
 }
