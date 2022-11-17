@@ -9,15 +9,6 @@
   margin-left: 2.5rem;
 }
 
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 .card-container {
   display: flex;
   flex-direction: row;
