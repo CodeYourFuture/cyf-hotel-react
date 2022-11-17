@@ -1,42 +1,24 @@
 import React from "react";
-import LondonImage from "./LondonImage";
 
-function TouristInfoCards() {
+function TouristInfoCards(props) {
   return (
     <div className="TouristInfoCards">
-      <div className="card">
-        <img src="..." className="card-img-top" />
-        <div className="card-body">
-          <h4>Glasgow</h4>
-          <p>BLAH BLAh blah blah blah</p>
-          <a href="https://peoplemakeglasgow.com" className="btn btn-primary">
-            Find out more
-          </a>
+      {props.cities.map((item, index) => (
+        <div key={index} className="card">
+          <img src={item.imageURL} alt={item.city} className="card-img-top" />
+          <div className="card-body">
+            <h4>{item.city}</h4>
+            <p>Blah Blah Blah Blah</p>
+            <a
+              href={item.link}
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              Read more here
+            </a>
+          </div>
         </div>
-      </div>
-      <div className="card">
-        <LondonImage className="card-img-top" />
-        <div className="card-body">
-          <h4>Manchester</h4>
-          <p>BLAH BLAh blah blah blah</p>
-          <a
-            href="https://www.visitmanchester.com/"
-            className="btn btn-primary"
-          >
-            Find out more
-          </a>
-        </div>
-      </div>
-      <div className="card">
-        <img src="./london.jpeg" className="card-img-top" />
-        <div className="card-body">
-          <h4>London</h4>
-          <p>BLAH BLAh blah blah blah</p>
-          <a href="https://www.visitlondon.com/#" className="btn btn-primary">
-            Find out more
-          </a>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
