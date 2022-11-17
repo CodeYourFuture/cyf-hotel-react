@@ -7,11 +7,13 @@ const TouristInfoCards = () => {
       {cities.map((city, index) => {
         return (
           <div className="card" key={index}>
-            <div className="card__title">{city.name}</div>
-            <img className="card__img" src={city.image} alt={city.name} />
-            <div className="card__text">{city.description}</div>
-            <div className="card__footer">
-              <a className="card__link" href={city.link}>
+            <div className="card-header">
+              <h5 className="card-title">{city.name}</h5>
+            </div>
+            <div className="card-body">
+              <img className="card-img-top" src={city.image} alt={city.name} />
+              <p className="card-text">{city.description}</p>
+              <a className="btn btn-primary" href={city.link}>
                 More information
               </a>
             </div>

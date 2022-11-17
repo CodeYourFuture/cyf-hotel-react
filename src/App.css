@@ -61,20 +61,6 @@
   margin: 1.5rem;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  gap: 1em;
-  background-color: var(--light-grey);
-  border-radius: 5px;
-  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
-}
-
-.card__img {
-  height: 220px;
-}
-
 .search {
   padding: 5px 0 20px 0;
 }
