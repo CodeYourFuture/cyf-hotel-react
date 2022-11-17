@@ -21,10 +21,12 @@ const GuestsDetails = props => {
         const numberOfNights = checkOut.diff(checkIn, "days");
         return (
           <tr key={guest.id} onClick={rowHighlighter} className={highlight}>
-            <th className="t-body" scope="row">
+            {/* <th className="t-body" scope="row">
               {guest.id}
+            </th> */}
+            <th className="t-body" scope="row">
+              {guest.title}
             </th>
-            <td className="t-body">{guest.title}</td>
             <td className="t-body">{guest.firstName}</td>
             <td className="t-body">{guest.surname}</td>
             <td className="t-body">{guest.email}</td>

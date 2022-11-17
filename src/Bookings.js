@@ -7,7 +7,6 @@ const Bookings = () => {
   const [loading, setLoading] = useState(false);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
     const filteredSearch = bookings.filter(booking => {
       return (
         booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
@@ -30,21 +29,21 @@ const Bookings = () => {
   return (
     <div className="App-content">
       {loading ? (
-        <div className="container">
+        <div className="container mw-100">
           <Search search={search} />
           <SearchResults
             results={bookings}
             tableHeaders={[
-              "id",
-              "title",
-              "first name",
-              "surname",
-              "email",
-              "room id",
-              "check in date",
-              "check out date",
-              "staying for",
-              "profile"
+              // "id",
+              "Title",
+              "First name",
+              "Surname",
+              "Email",
+              "Room id",
+              "Check in date",
+              "Check out date",
+              "Staying for",
+              "Profile"
             ]}
           />
         </div>

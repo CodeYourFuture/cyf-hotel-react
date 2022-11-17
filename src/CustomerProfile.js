@@ -1,22 +1,15 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const CustomerProfile = props => {
   const [details, setDetails] = useState({});
   const [controller, setController] = useState(false);
   const [show, setShow] = useState(true);
 
-  const profileSearch = e => {
+  const handleProfile = e => {
     e.preventDefault();
-    console.log(e.target.nextSibling);
     if (details !== props.id) {
       setDetails({ id: props.id });
-      if (show) {
-        setShow(false);
-        e.target.nextSibling.className = "d-block";
-      } else {
-        setShow(true);
-        e.target.nextSibling.className = "d-none";
-      }
+      show ? setShow(false) : setShow(true);
     }
   };
 
@@ -36,10 +29,10 @@ const CustomerProfile = props => {
 
   return (
     <>
-      <button onClick={profileSearch} className="btn btn-primary">
+      <button onClick={handleProfile} className="btn btn-primary">
         {show ? "Show Profile" : "Hide Profile"}
       </button>
-      <ul className={details.id ? "d-block" : "d-none"}>
+      <ul className={show ? "d-none" : "d-block"}>
         <li>id: {details.id}</li>
         <li>title: {details.title}</li>
         <li>first name: {details.firstName}</li>
