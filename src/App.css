@@ -27,6 +27,31 @@
   font-size: large;
 }
 
+.logo {
+  min-width: 50px;
+  max-width: 50px;
+  min-height: 50px;
+  max-width: 50px;
+}
+.cardsHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1.5rem;
+}
+.Footer {
+  background-color: rgb(61, 122, 143);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+}
+.Footer ul {
+  margin: 0;
+  color: white;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
