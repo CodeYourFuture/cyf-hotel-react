@@ -1,4 +1,5 @@
 import React from "react";
+import LondonImage from "./LondonImage";
 
 function TouristInfoCards() {
   return (
@@ -6,27 +7,33 @@ function TouristInfoCards() {
       <div className="card">
         <img src="..." className="card-img-top" />
         <div className="card-body">
+          <h4>Glasgow</h4>
+          <p>BLAH BLAh blah blah blah</p>
           <a href="https://peoplemakeglasgow.com" className="btn btn-primary">
-            Glasgow
+            Find out more
           </a>
         </div>
       </div>
       <div className="card">
-        <img src="..." className="card-img-top" />
+        <LondonImage className="card-img-top" />
         <div className="card-body">
+          <h4>Manchester</h4>
+          <p>BLAH BLAh blah blah blah</p>
           <a
             href="https://www.visitmanchester.com/"
             className="btn btn-primary"
           >
-            Manchester
+            Find out more
           </a>
         </div>
       </div>
       <div className="card">
-        <img src="..." className="card-img-top" />
+        <img src="./london.jpeg" className="card-img-top" />
         <div className="card-body">
+          <h4>London</h4>
+          <p>BLAH BLAh blah blah blah</p>
           <a href="https://www.visitlondon.com/#" className="btn btn-primary">
-            London
+            Find out more
           </a>
         </div>
       </div>

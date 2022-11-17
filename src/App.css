@@ -62,12 +62,33 @@ tr {
 
 .card {
   width: 25rem;
-  justify-items: center;
-  height: 250px;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  margin: auto;
+  padding: 30px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-justify: center;
+  margin: auto;
+}
+
+.card-body h4 {
+  margin: auto;
 }
 
 .TouristInfoCards {
   display: flex;
   padding: 20px;
   justify-content: space-between;
+}
+
+.card-img-top {
+  margin: auto;
+  height: 100px;
+  width: 100px;
 }
