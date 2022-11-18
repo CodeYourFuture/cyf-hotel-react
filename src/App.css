@@ -22,7 +22,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgba(117, 190, 218, 0.5);
   height: 50px;
   padding: 20px;
   color: white;
@@ -39,6 +39,19 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+.Footer {
+  background-color: rgba(117, 190, 218, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.Footer ul {
+  margin: 0;
+  color: black;
 }
 
 @keyframes App-logo-spin {
