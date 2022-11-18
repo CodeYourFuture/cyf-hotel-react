@@ -1,8 +1,9 @@
 import React from "react";
-import TouristInfoCards from "./components/TouristInfoCards";
+
 import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./components/Heading";
+import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -13,8 +14,8 @@ const App = () => {
       <Bookings />
       <Footer
         array={[
-          "123 Fake Street, London, E1 4UD",
-          "hello@fakehotel.com",
+          "221B Baker Street, London, E1 4UD",
+          "sherlock.holmes@fake.com",
           "0123 456789"
         ]}
       />
