@@ -14,18 +14,21 @@ const App = () => {
         img="https://media.istockphoto.com/id/1290738665/photo/glasgows-prestigious-park-district-aerial-view.jpg?s=612x612&w=0&k=20&c=jSEmsMNf0cro0Hkj7lpFULRwOnLt2XTcllDBkxaD33g="
         cityName="Glasgow"
         link="peoplemakeglasgow.com"
+        alt="Glasgow"
       />
 
       <TouristInfoCards
         img="https://media.istockphoto.com/id/1356455312/photo/view-of-an-illuminated-footbridge-in-salford-quays-during-night-in-manchester-england.jpg?s=612x612&w=0&k=20&c=4wnRS1j6C9NOImzYWDkHNu3vc4WWt600kY5eKtkTftg="
         cityName="Manchester"
         link="visitmanchester.com"
+        alt="Manchester"
       />
 
       <TouristInfoCards
         img="https://media.istockphoto.com/id/506329726/photo/street-view-of-trafalgar-square.jpg?s=612x612&w=0&k=20&c=K1BSuyf4PLL-gk0x-G9HxtnEhc2mKzhCT1ztmqU37h4="
         cityName="London"
         link="visitlondon.com"
+        alt="London"
       />
       <Bookings />
       <Footer />

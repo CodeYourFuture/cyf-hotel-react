@@ -19,9 +19,9 @@ function SearchResults(prop) {
       </thead>
 
       <tbody>
-        {prop.results.map(data => {
+        {prop.results.map((data, index) => {
           return (
-            <tr>
+            <tr key={index}>
               <td>{data.id}</td>
               <td>{data.title}</td>
               <td>{data.firstName}</td>
