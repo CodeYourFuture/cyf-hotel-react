@@ -3,12 +3,8 @@ import React from "react";
 const Heading = () => {
   return (
     <header className="App-header">
-      <p className="LogoText">CYF Hotel</p>
-      <img
-        src="https://image.flaticon.com/icons/svg/139/139899.svg"
-        alt="logo"
-        className="logo"
-      />
+      <p class="LogoText">CYF Hotel</p>
+      <img src="https://tinyurl.com/59tf8hza" alt="logo" className="logo" />
     </header>
   );
 };

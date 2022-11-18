@@ -2,19 +2,41 @@
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.logo {
+  min-width: 70px;
+  max-width: 70px;
+  min-height: 70px;
+  max-height: 70px;
+}
+
+.LogoText {
+  margin: 15px;
+  color: rgb(6, 6, 47);
+}
+
+.top-img {
+  width: 300px;
+  height: 300px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1.5rem;
+  margin-top: 7rem;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  display: flex;
+  background-color: rgb(61, 122, 143);
+  margin-bottom: 1.5rem;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
@@ -25,6 +47,21 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+
+.Footer {
+  background-color: rgb(61, 122, 143);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  list-style-type: none;
+}
+
+.Footer ul {
+  margin: 0;
+  color: white;
 }
 
 @keyframes App-logo-spin {
