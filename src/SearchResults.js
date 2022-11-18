@@ -1,4 +1,4 @@
-import moment from "./moment";
+import moment from "moment";
 import React from "react";
 
 const SearchResults = ({ results }) => {
@@ -10,10 +10,10 @@ const SearchResults = ({ results }) => {
           <th>Firstname</th>
           <th>Surname</th>
           <th>Email</th>
-          <th>Room Id</th>
+          <th>Room ID</th>
           <th>Check in</th>
           <th>Check out</th>
-          <th>Staying Nights</th>
+          <th>Staying nights</th>
         </tr>
       </thead>
       <tbody>
@@ -37,4 +37,5 @@ const SearchResults = ({ results }) => {
     </table>
   );
 };
+
 export default SearchResults;
