@@ -3,11 +3,16 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
+  const [bookings, setBookings] = useState([]);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    setBookings(
+      bookings.filter(
+        el => el.firstName === searchVal || el.surname === searchVal
+      )
+    );
   };
-
-  const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
     console.log("Fetching data...");
