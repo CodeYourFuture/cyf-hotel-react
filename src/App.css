@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -53,5 +53,26 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 15rem;
+  margin: 2rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+}
+
+#logo {
+  width: 25px;
+  height: 25px;
+  margin: 6px;
+}
+
+.address {
+  display: grid;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
 }
