@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const SearchResult = props => {
   return (
@@ -18,6 +19,9 @@ const SearchResult = props => {
       </thead>
       <tbody>
         {props.results.map((data, index) => {
+          let a = moment(data.checkInDate);
+          let b = moment(data.checkOutDate);
+          let numOfNights = b.diff(a, "days");
           return (
             <tr>
               <th scope="row" key={index}>
@@ -30,6 +34,7 @@ const SearchResult = props => {
               <td key={index}>{data.roomId}</td>
               <td key={index}>{data.checkInDate}</td>
               <td key={index}>{data.checkOutDate}</td>
+              <td key={index}>{numOfNights}</td>
             </tr>
           );
         })}
