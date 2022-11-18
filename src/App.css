@@ -7,15 +7,25 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
+.Logo-icon {
+  position: relative;
+  bottom: 1.5rem;
   height: 50px;
+  color: whitesmoke;
+  margin: 1rem;
+}
+
+.App-header {
+  display: flex;
+  background-color: #3a506b;
+  height: 80px;
   padding: 20px;
-  color: white;
+  color: whitesmoke;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 .App-title {
@@ -43,6 +53,10 @@ tr {
   color: #5b5757;
 }
 
+th {
+  font-weight: 500;
+}
+
 .results {
   padding-top: 15px;
 }
@@ -54,4 +68,34 @@ tr {
 
 .card {
   width: 18rem;
+  margin: 1rem;
+}
+
+.cards-info {
+  display: flex;
+  justify-content: center;
+}
+
+.Footer-block {
+  background-color: #3a506b;
+  height: 70px;
+  /* padding: 20px; */
+}
+
+.UnorderedList {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+li {
+  list-style: none;
+  padding: 1rem;
+}
+
+.select {
+  background-color: aqua;
+}
+
+.unSelect {
+  background-color: none;
 }

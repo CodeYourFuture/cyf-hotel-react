@@ -24,3 +24,43 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+h2 {
+  font-size: 1rem;
+}
+
+.profile-container {
+  text-align: center;
+  background: lightgray;
+}
+
+.profile-container h2 {
+  background-color: whitesmoke;
+}
+.profile-container p {
+  width: 50%;
+  margin: 5px auto;
+  background: whitesmoke;
+}
+
+.orders-container {
+  margin: 50px auto;
+  display: flex;
+  margin: 2rem;
+}
+
+h3 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.order-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.order-list li {
+  margin: 10px 20px;
+  text-align: center;
+}
