@@ -3,7 +3,7 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.jsx";
 import FakeBookings from "./data/fakeBookings.json";
 
-const Bookings = ({ FakeBookings }) => {
+const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };

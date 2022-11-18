@@ -67,7 +67,7 @@ tr {
   background-image: linear-gradient(blue, pink);
 }
 
-.CardImage:hover {
+.CardImage {
   border-bottom: 3px solid black;
 }
 
@@ -93,6 +93,7 @@ tr {
   color: #000000;
   border: solid #660033;
   text-decoration: none;
+  background-color: white;
 }
 
 .Footer {
