@@ -25,18 +25,19 @@ body {
   margin-right: 10px;
 }
 
+h2 {
+  font-size: 1rem;
+}
+
 .profile-container {
-  border: 2px solid #007bff;
   text-align: center;
   background: lightgray;
-  height: 160px;
 }
 
 .profile-container h2 {
-  background-color: #007bff;
+  background-color: whitesmoke;
 }
 .profile-container p {
-  border: 2px solid #007bff;
   width: 50%;
   margin: 5px auto;
   background: whitesmoke;

@@ -4,19 +4,30 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [status, setStatus] = useState("fetching");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     console.log("Fetching data from Bookings");
-
-    fetch(`https://cyf-react.glitch.me`)
-      .then(res => res.json())
-      .then(data => {
-        if (data.error) {
-          setStatus("loading failed");
+    fetch(` https://cyf-react.glitch.me`)
+      .then(response => {
+        if (response.status >= 200 && response.status <= 299) {
+          return response.json();
+        } else {
+          throw new Error(
+            `Encountered something unexpected: ${response.status} ${
+              response.statusText
+            }`
+          );
         }
+      })
+      .then(data => {
+        // data.error ? setStatus("loading failed") :
         setBookings(data);
-        setStatus("success");
+        setLoading(true);
+      })
+      .catch(error => {
+        // Handle the error
+        console.log(error);
       });
   }, []);
 
@@ -35,14 +46,14 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        {status === "fetching" && "Loading Please wait..."}
-        {status === "success" && (
+        {loading === "fetching" && "Loading Please wait..."}
+        {loading === true && (
           <>
             <Search search={search} />
             <SearchResults results={bookings} />
           </>
         )}
-        {status === "loading failed" && "Sorry, failed loading!"}
+        {loading === false && "Sorry, loading failed!"}
       </div>
     </div>
   );

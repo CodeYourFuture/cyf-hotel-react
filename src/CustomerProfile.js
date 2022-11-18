@@ -1,33 +1,28 @@
 import React, { useState, useEffect } from "react";
 // import React from "react";
 
-const CustomerProfile = ({ url }) => {
+const CustomerProfile = ({ ids }) => {
   const [customer, setCustomer] = useState([]);
 
   useEffect(() => {
     console.log("Fetching data from Customers");
 
-    fetch(url)
+    fetch(`https://cyf-react.glitch.me/customers/${ids}`)
       .then(res => res.json())
       .then(data => {
-        setCustomer([data]);
+        setCustomer(data);
       });
-  }, [url]);
+  }, [ids]);
 
-  if (customer) {
-    return customer.map(({ id, email, vip }) => {
-      return (
-        <div className="profile-container" key={id}>
-          <h2>Customer {id} Profile</h2>
-          <ul>
-            <li>Customer ID : {id}</li>
-            <li>Email : {email}</li>
-            <li>VIP Status : {vip ? "Yes" : "No"}</li>
-          </ul>
-        </div>
-      );
-    });
-  }
+  return (
+    <div key={ids}>
+      <h2>Customer {ids} Profile</h2>
+      <p>Customer ID : {customer.id}</p>
+      <p>Email : {customer.email}</p>
+      <p>Phone Number : {customer.phoneNumber}</p>
+      <p>VIP Status : {String(customer.vip)}</p>
+    </div>
+  );
 };
 
 export default CustomerProfile;
