@@ -11,6 +11,14 @@
   max-width: 50px;
   min-height: 75px;
   max-width: 75px;
+  padding: 4px;
+}
+.cardsHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 12px;
+  padding: 1px;
 }
 
 .App-header {
