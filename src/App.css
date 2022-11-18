@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #f1a726;
+  background-color: #f5aa28;
   height: 70px;
   padding: 20px;
   color: rgb(241, 237, 237);
@@ -28,6 +28,7 @@
   min-height: 75px;
   max-width: 75px;
 }
+
 .cardsHolder {
   display: flex;
   flex-direction: row;
@@ -35,7 +36,7 @@
   margin: 1.5rem;
 }
 .Footer {
-  background-color: #f63e8b;
+  background-color: #707883;
   display: flex;
   justify-content: center;
   align-items: center;
