@@ -8,7 +8,7 @@ function Footer() {
   ];
 
   return (
-    <div>
+    <div className="footer">
       <p>Contact Us</p>
       <ul>
         {contact.map(item => {

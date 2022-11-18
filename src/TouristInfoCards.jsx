@@ -19,14 +19,7 @@ function TouristInfoCards() {
             University of Glasgow campus in the west end are beautiful to
             explore. Visit the University of Glasgow website to take a
             self-guided tour and discover Glasgow’s very own Hogwarts! House for
-            an Art Lover: explore the beauty and architectural details of the
-            Charles Rennie Mackintosh-designed House for an Art Lover at your
-            own pace with your very own audio headset guide. Find out more at
-            houseforanartlover.co.uk. Mackintosh at the Willow: taking place
-            every day at 10am and 11am, enjoy a guided tour of the beautifully
-            restored Mackintosh at the Willow tearooms – another Charles Rennie
-            Mackintosh gem in the city. And why not stay for a tasty treat
-            afterwards? Visit mackintoshatthewillow.com to book.
+            an Art Lover
           </p>
           <a
             href="peoplemakeglasgow.com"
@@ -51,13 +44,8 @@ function TouristInfoCards() {
             city, make sure to drop by our Visitor Information Centre. Here you
             can get tourist information on how to best shape your visit, as well
             as maps, merchandise and discounted tickets to some of the most
-            popular attractions and tourist spots. You can also view maps
-            online, as well as viewing travel information, weather, and useful
-            apps and downloads. Free Wi-Fi is available throughout the city, and
-            information about the Green Tourism scheme can be found here. If you
-            are planning individual or group travel programmes, please contact
-            us directly for free, professional and practical advice. We have a
-            dedicated team who can provide information and assistance.
+            popular attractions and tourist spots. We have a team who can
+            provide information.
           </p>
           <a href="visitmanchester.com" className="btn btn-primary visit-city">
             See more about London
@@ -67,25 +55,20 @@ function TouristInfoCards() {
 
       <div className="card">
         <img
-          src="https://www.business.london/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/coca-cola-london-eye/the-london-eye-2-640x360.jpg?mw=640&hash=F7D574072DAD523443450DF57E3B91530064E4EE"
+          src="https://www.thestar.com/content/dam/thestar/life/travel/2022/07/08/an-insiders-guide-to-london-england-where-to-find-inspiring-art-cool-shops-and-classic-sunday-roast/london_england_credit_tomas_marek_istock.jpg"
           className="card-img-top"
           alt=""
         />
         <div className="card-body">
           <h1>London</h1>
           <p>
-            Whatever brings you to Manchester, Visit Manchester is here to make
-            sure that you get the most out of your trip. When you’re in the
-            city, make sure to drop by our Visitor Information Centre. Here you
-            can get tourist information on how to best shape your visit, as well
-            as maps, merchandise and discounted tickets to some of the most
-            popular attractions and tourist spots. You can also view maps
-            online, as well as viewing travel information, weather, and useful
-            apps and downloads. Free Wi-Fi is available throughout the city, and
-            information about the Green Tourism scheme can be found here. If you
-            are planning individual or group travel programmes, please contact
-            us directly for free, professional and practical advice. We have a
-            dedicated team who can provide information and assistance.
+            London, the capital of England and the United Kingdom, is a
+            21st-century city with history stretching back to Roman times. At
+            its centre stand the imposing Houses of Parliament, the iconic ‘Big
+            Ben’ clock tower and Westminster Abbey, site of British monarch
+            coronations. Across the Thames River, the London Eye observation
+            wheel provides panoramic views of the South Bank cultural complex,
+            and the entire city.
           </p>
           <a href="visitlondon.com" className="btn btn-primary visit-city">
             See more about Manchester
