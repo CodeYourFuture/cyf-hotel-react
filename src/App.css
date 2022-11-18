@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  background-color: antiquewhite;
 }
 
 .App-logo {
@@ -25,6 +26,20 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+.card-container {
+  display: flex;
+  justify-content: space-between;
+}
+.hotel-logo {
+  width: 70px;
+  height: 40px;
+}
+.header {
+  display: flex;
+  background-color: #222;
+  width: 100%;
+  align-items: center;
 }
 
 @keyframes App-logo-spin {
