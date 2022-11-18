@@ -12,5 +12,4 @@ function Heading() {
     </div>
   );
 }
-
 export default Heading;
