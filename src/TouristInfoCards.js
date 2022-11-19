@@ -1,5 +1,4 @@
 import React from "react";
-
 function TouristInfoCards() {
   return (
     <div className="card-container">
@@ -10,13 +9,13 @@ function TouristInfoCards() {
           className="card-img-top"
         />
         <div className="card-body">
+          <h5 className="card-title">Test</h5>
           <h5 className="card-title">Glasgow</h5>
           <a href="http://peoplemakeglasgow.com" className="btn btn-primary">
             Go somewhere
           </a>
         </div>
       </div>
-
       <div className="card text-center">
         <img
           src="https://media.timeout.com/images/105798074/750/422/image.jpg"
@@ -30,7 +29,6 @@ function TouristInfoCards() {
           </a>
         </div>
       </div>
-
       <div className="card text-center">
         <img
           src="https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/United%20Kingdom/London/london-aerial-thames-guide-xlarge.jpg?imwidth=700"
@@ -47,5 +45,4 @@ function TouristInfoCards() {
     </div>
   );
 }
-
 export default TouristInfoCards;
