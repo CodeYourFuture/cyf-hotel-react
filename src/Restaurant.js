@@ -11,14 +11,14 @@ const Restaurant = () => {
       </button>
     );
   };
-  const Order = () => {
+  const Order = props => {
     const [pizzas, setPizzas] = useState(0);
     const orderOne = () => {
       setPizzas(pizzas + 1);
     };
     return (
       <li>
-        Pizzas: {pizzas}
+        {props.orderType}: {pizzas}
         <RestaurantButton pizzaFun={orderOne} />
       </li>
     );
@@ -28,7 +28,9 @@ const Restaurant = () => {
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        <Order />
+        <Order orderType={"Pizzas"} />
+        <Order orderType={"Salad"} />
+        <Order orderType={"Chocolate cake"} />
       </ul>
     </div>
   );
