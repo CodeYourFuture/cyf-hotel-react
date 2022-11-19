@@ -3,12 +3,21 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  animation: App-logo-spin 1 20s linear;
+  height: 3em;
+  z-index: 500;
+  padding: 0 15px 25px 0;
+}
+
+.appLogo {
+  height: 3em;
+  padding: 0 15px 25px 0;
 }
 
 .App-header {
-  background-color: #222;
+  display: flex;
+  /* background-color: #222; */
+  background-color: rgb(122, 121, 126);
   height: 50px;
   padding: 20px;
   color: white;
