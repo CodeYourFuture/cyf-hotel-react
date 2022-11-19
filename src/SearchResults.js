@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+
 const SearchResults = props => {
+  // const handleClick = () => {
+  //   // setIsActive((current) => !current);
+  // };
+
   return (
     <div className="table-container">
       <p className="results"> Results</p>
@@ -29,9 +34,17 @@ const SearchResults = props => {
               checkInDate,
               checkOutDate
             } = result;
-
+            const [selected, setselected] = useState(false);
             return (
-              <tr key={id}>
+              <tr
+                style={{
+                  backgroundColor: selected ? "#FFCCFF" : "#FFFF99"
+                }}
+                onClick={() => {
+                  setselected(!selected);
+                }}
+                key={id}
+              >
                 <td>{id}</td>
                 <td>{title}</td>
                 <td>{firstName}</td>
