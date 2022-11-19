@@ -3,6 +3,7 @@ import Heading from "./Heading.js";
 import TouristInfoCards from "./TouristInfoCards.js";
 import Bookings from "./Bookings";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant.js";
 import "./App.css";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer infoArray={infoArray} />
     </div>
   );
