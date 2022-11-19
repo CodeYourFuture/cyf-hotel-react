@@ -4,8 +4,15 @@ import { useState } from "react";
 const Restaurant = () => {
   // const pizzas = 0;
   const [pizzas, setPizzas] = useState(0);
-  const addPizzas = () => {
+  const orderOne = () => {
     setPizzas(pizzas + 1);
+  };
+  const RestaurantButton = props => {
+    return (
+      <button className="btn btn-primary" onClick={props.pizzaFun}>
+        Add
+      </button>
+    );
   };
   return (
     <div>
@@ -13,9 +20,7 @@ const Restaurant = () => {
       <ul>
         <li>
           Pizzas: {pizzas}
-          <button className="btn btn-primary" onClick={addPizzas}>
-            Add
-          </button>
+          <RestaurantButton pizzaFun={orderOne} />
         </li>
       </ul>
     </div>
