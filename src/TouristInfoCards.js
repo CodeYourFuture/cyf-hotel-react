@@ -4,7 +4,7 @@ import "./App.css";
 function City(props) {
   return (
     <div className="card">
-      <img src={props.imgLink} className="card-img-top" />
+      <img src={props.imgLink} className="card-img-top" alt="" />
       <h2 className="Card-Title">{props.name}</h2>
       <p className="Card-Summary">{props.desc}</p>
       <div className="card-body">
