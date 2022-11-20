@@ -1,68 +1,52 @@
 import React from "react";
-import "./TouristInfoCards.css";
+import design from "./design.jpg";
+import manchester from "./manchester.jpeg";
+import london from "./london.jpeg";
 
 const TouristInfoCards = () => {
   return (
-    <div className="touristCardsBar">
-      <div className="card">
-        <img
-          src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcQsLkgnpO7TQnLYH3SvohTmj_1QnWt1MSJwHtDorwWtgjnwUdZoA_uejreL1I1R5wEJ"
-          className="card-img-top"
-          alt="Pic of Glasgow"
-        />
-        <div className="card-body">
-          <h3>Glasgow</h3>
-          <p>
-            {" "}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-          </p>
-          <a href="https://peoplemakeglasgow.com/" className="btn btn-primary">
-            More Information
-          </a>
+    <div>
+      <div className="card-group">
+
+        <div className="card">
+          <img src={design} className="card-img-top" alt="..." />
+          <div className="card-body">
+            <h5 className="card-title">Glasgow</h5>
+            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <a href="peoplemakeglasgow.com" className="btn btn-primary">
+              More Information
+            </a>
+          </div>
         </div>
-      </div>
-      <div className="card">
-        <img
-          src="http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSVBJjj5IPMptDI-uErNK_2_fZmS1CyAXlx1x66y1WegvU1_-BQDwA7yfkFb-f3TPmF"
-          className="card-img-top"
-          alt="Pic of Manchester"
-        />
-        <div className="card-body">
-          <h3>Manchester</h3>
-          <p>
-            {" "}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <a
-            href="https://www.visitmanchester.com/"
-            className="btn btn-primary"
-          >
-            More Information
-          </a>
+
+
+        <div className="card">
+          <img src={manchester} className="card-img-top" alt="..." />
+          <div className="card-body">
+            <h5 className="card-title">Manchester</h5>
+            <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <a href="visitmanchester.com" className="btn btn-primary">
+              More Information
+            </a>
+          </div>
         </div>
-      </div>
-      <div className="card">
-        <img
-          src="http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcTF9OtLxnbxSpLFzyhzXERKiAbnHlG25WfRzxRTNcRiTk0lHvsOXNKH9KNAOvTWi_sS"
-          className="card-img-top"
-          alt="Pic of London"
-        />
-        <div className="card-body">
-          <h3>London</h3>
-          <p>
-            {" "}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <a href="https://visitlondon.com/" className="btn btn-primary">
-            More Information
-          </a>
+
+
+        <div className="card">
+          <img src={london} className="card-img-top" alt="..." />
+          <div className="card-body">
+            <h5 className="card-title">London</h5>
+            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <a href="visitlondon.com" className="btn btn-primary">
+              More Information
+            </a>
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
+
 
 export default TouristInfoCards;

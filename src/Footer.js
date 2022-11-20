@@ -1,15 +1,21 @@
 import React from "react";
-import "./Footer.css";
+import './App.css'
 
-const Footer = ({ addressArr }) => {
+const Footer = () => {
+  let names = [
+    "123 Fake Street",
+    "London, E1 4UD",
+    "hello@fakehotel.com",
+    "0123 456789"
+  ];
   return (
-    <footer>
+    <div className="navbar">
       <ul>
-        {addressArr.map((el, index) => (
-          <li key={index}>{el}</li>
+        {names.map(name => (
+          <li key={name}>{name}</li>
         ))}
       </ul>
-    </footer>
+    </div>
   );
 };
 

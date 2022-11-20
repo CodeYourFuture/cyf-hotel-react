@@ -3,21 +3,12 @@
 }
 
 .App-logo {
-  animation: App-logo-spin 1 20s linear;
-  height: 3em;
-  z-index: 500;
-  padding: 0 15px 25px 0;
-}
-
-.appLogo {
-  height: 3em;
-  padding: 0 15px 25px 0;
+  animation: App-logo-spin infinite 20s linear;
+  height: 20px;
 }
 
 .App-header {
-  display: flex;
-  /* background-color: #222; */
-  background-color: rgb(122, 121, 126);
+  background-color: #222;
   height: 50px;
   padding: 20px;
   color: white;
@@ -63,4 +54,27 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+
+.navbar {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background: white;
+      border-radius: 5px;
+      overflow: auto;
+    }
+.navbar ul {
+  list-style: none;
+}
+.navbar li {
+  float: left;
+  padding: 15px 7px;
+}
+
+
+.navbar li:hover {
+  background-color: blue;
+  color: #f4f4f4;
 }

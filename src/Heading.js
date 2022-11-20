@@ -1,16 +1,18 @@
 import React from "react";
+import hotel from './hotel.png'
 
 const Heading = () => {
   return (
-    <div className="App-header">
-      <img
-        src="https://img.icons8.com/ios/452/4-star-hotel--v1.png"
-        className="appLogo"
-        alt="logo of hotel"
-      />
-      <header>CYF Hotel</header>
+    <div>
+      <header className="App-header">
+        <h1>Mr Maroga</h1>
+        <p></p>
+      </header>
     </div>
   );
 };
-
+// <img
+//   src={hotel}
+//   alt="SVG as an image"
+// />
 export default Heading;
