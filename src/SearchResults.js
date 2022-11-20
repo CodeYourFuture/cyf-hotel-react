@@ -8,7 +8,7 @@ const SearchResults = ({ results }) => {
         <tr>
           <th>title</th>
           <th>firstName</th>
-          <th>Surname</th>
+          <th>surname</th>
           <th>email</th>
           <th>roomId</th>
           <th>checkInDate</th>
@@ -22,7 +22,7 @@ const SearchResults = ({ results }) => {
             <tr>
               <td>{record.title}</td>
               <td>{record.firstName}</td>
-              <td>{record.Surname}</td>
+              <td>{record.surname}</td>
               <td>{record.email}</td>
               <td>{record.roomId}</td>
               <td>{record.checkInDate}</td>

@@ -40,7 +40,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #2b2828;
 }
 
 .results {
@@ -53,6 +53,6 @@ tr {
 }
 
 .card {
-  width: 80rem;
+  width: 84rem;
   height: max-content;
 }
