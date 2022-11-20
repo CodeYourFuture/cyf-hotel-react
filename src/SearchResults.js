@@ -10,7 +10,7 @@ const SearchResult = props => {
           <th scope="col">First name</th>
           <th scope="col">Last name</th>
           <th scope="col">Email</th>
-          <th scope="col" />
+          {/* <th scope="col" /> */}
           <th scope="col">Room id</th>
           <th scope="col">Check-in date</th>
           <th scope="col">Check-out date</th>
@@ -23,18 +23,18 @@ const SearchResult = props => {
           let b = moment(data.checkOutDate);
           let numOfNights = b.diff(a, "days");
           return (
-            <tr>
+            <tr key={index}>
               <th scope="row" key={index}>
                 {data.title}
               </th>
-              <td key={index}>{data.firstName}</td>
-              <td key={index}>{data.surname}</td>
-              <td key={index}>{data.email}</td>
-              <td />
-              <td key={index}>{data.roomId}</td>
-              <td key={index}>{data.checkInDate}</td>
-              <td key={index}>{data.checkOutDate}</td>
-              <td key={index}>{numOfNights}</td>
+              <td>{data.firstName}</td>
+              <td>{data.surname}</td>
+              <td>{data.email}</td>
+              {/* <td /> */}
+              <td>{data.roomId}</td>
+              <td>{data.checkInDate}</td>
+              <td>{data.checkOutDate}</td>
+              <td>{numOfNights}</td>
             </tr>
           );
         })}
