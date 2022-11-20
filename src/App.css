@@ -84,3 +84,13 @@ tr {
 .card {
   width: 18rem;
 }
+.rowStart {
+  cursor: pointer;
+}
+.rowStart:hover {
+  background-color: #dcd8d8;
+}
+.rowColoured {
+  background-color: rgb(173, 209, 222);
+  cursor: pointer;
+}

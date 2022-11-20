@@ -1,9 +1,15 @@
-import moment from "moment";
 import React from "react";
+import { useState } from "react";
+import ResultRow from "./ResultRow";
 
 const SearchResults = ({ results }) => {
+  const [active, setActive] = useState();
+
+  const setActiveRow = id => {
+    setActive(id);
+  };
   return (
-    <table className="table table-striped">
+    <table className="table">
       <thead>
         <tr>
           <th>title</th>
@@ -19,18 +25,13 @@ const SearchResults = ({ results }) => {
       <tbody>
         {results.map(record => {
           return (
-            <tr>
-              <td>{record.title}</td>
-              <td>{record.firstName}</td>
-              <td>{record.surname}</td>
-              <td>{record.email}</td>
-              <td>{record.roomId}</td>
-              <td>{record.checkInDate}</td>
-              <td>{record.checkOutDate}</td>
-              <td>
-                {moment(record.checkOutDate).diff(record.checkInDate, "days")}
-              </td>
-            </tr>
+            <ResultRow
+              record={record}
+              active={active === record.id}
+              onClick={() => {
+                setActiveRow(record.id);
+              }}
+            />
           );
         })}
       </tbody>
