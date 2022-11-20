@@ -69,3 +69,13 @@ tr {
 .card-img-top {
   max-height: 200px;
 }
+.blueVioletBackground {
+  background-color: blueviolet;
+}
+.restaurantOrders {
+  gap: 1rem;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
