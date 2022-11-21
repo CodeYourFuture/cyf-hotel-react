@@ -1,4 +1,5 @@
 import React from "react";
+import React, { useState } from "react";
 
 const Restaurant = () => {
   const pizzas = 0;
@@ -13,5 +14,20 @@ const Restaurant = () => {
     </div>
   );
 };
+
+function Orders() {
+  const [orders, setCount] = useState(0);
+
+  function incrementOrder() {
+    setCount(1);
+  }
+
+  return (
+    <div>
+      <button onClick={incrementOrder}>Click me</button>
+      <p>You clicked {orders} times</p>
+    </div>
+  );
+}
 
 export default Restaurant;
