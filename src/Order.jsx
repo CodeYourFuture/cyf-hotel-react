@@ -1,7 +1,7 @@
 import RestaurantButton from "./RestaurantButton";
 import { useState } from "react";
 
-function Order() {
+function Order(props) {
   const [orders, setOrders] = useState(0);
   function orderOne() {
     setOrders(orders + 1);
@@ -9,7 +9,7 @@ function Order() {
   return (
     <div>
       <li>
-        Pizzas: {orders}
+        {props.orderType}: {orders}
         <RestaurantButton orderOne={orderOne} />
       </li>
     </div>
