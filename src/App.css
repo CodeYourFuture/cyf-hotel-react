@@ -42,7 +42,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #000000;
 }
 
 .results {
@@ -55,14 +55,16 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 400px;
   margin: 2em;
   padding: 1em;
-  height: 40em;
+  height: 50em;
 }
 
 .card-img-top {
   padding-right: 2em;
+  width: 350px;
+  height: 300px;
 }
 
 .wrap-card {
@@ -74,4 +76,17 @@ tr {
 
 img {
   margin: 1em;
+}
+
+th {
+  background-color: rgb(0, 123, 254);
+}
+
+th p {
+  color: white;
+}
+
+.list {
+  list-style-type: none;
+  text-align: center;
 }

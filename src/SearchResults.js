@@ -1,10 +1,7 @@
 import React, { useState } from "react";
+import moment from "moment";
 
 const SearchResults = props => {
-  // const handleClick = () => {
-  //   // setIsActive((current) => !current);
-  // };
-
   return (
     <div className="table-container">
       <p className="results"> Results</p>
@@ -53,7 +50,9 @@ const SearchResults = props => {
                 <td>{roomId}</td>
                 <td>{checkInDate}</td>
                 <td>{checkOutDate}</td>
-                {/* <td></td> */}
+                <td>
+                  {moment(checkOutDate).diff(moment(checkInDate), "days")}
+                </td>
               </tr>
             );
           })}
