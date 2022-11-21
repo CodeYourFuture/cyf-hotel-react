@@ -4,6 +4,7 @@ import Heading from "./Heading";
 import Bookings from "./Bookings";
 import "./App.css";
 import TouristInfoCards from "./TouristInfoCards";
+import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         alt="London"
       />
       <Bookings />
+      <Restaurant />
       <Footer />
     </div>
   );

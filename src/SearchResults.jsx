@@ -1,7 +1,14 @@
 import moment from "moment";
 import React from "react";
+import { useState } from "react";
 
 function SearchResults(prop) {
+  const [selectedIndex, setSelectedIndex] = useState();
+
+  function rowClick(index) {
+    if (selectedIndex === index) setSelectedIndex(null);
+    else setSelectedIndex(index);
+  }
   return (
     <table className="table">
       <thead>
@@ -21,7 +28,11 @@ function SearchResults(prop) {
       <tbody>
         {prop.results.map((data, index) => {
           return (
-            <tr key={index}>
+            <tr
+              key={index}
+              onClick={() => rowClick(index)}
+              className={selectedIndex === index ? "red" : "white"}
+            >
               <td>{data.id}</td>
               <td>{data.title}</td>
               <td>{data.firstName}</td>
