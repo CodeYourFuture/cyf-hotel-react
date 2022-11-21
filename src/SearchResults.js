@@ -1,6 +1,7 @@
 import React from "react";
 import "./Heading.css";
 import moment from "moment";
+import BookingRow from "./BookingRow";
 
 const SearchResults = props => {
   const noOfNights = (checkInDate, checkOutDate) => {
@@ -13,7 +14,7 @@ const SearchResults = props => {
   return (
     <>
       <div className="">
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">ID</th>
@@ -29,17 +30,24 @@ const SearchResults = props => {
           </thead>
           <tbody>
             {props.results.map((result, index) => (
-              <tr>
-                <td>{result.id}</td>
-                <td>{result.title}</td>
-                <td>{result.firstName}</td>
-                <td>{result.surname}</td>
-                <td>{result.email}</td>
-                <td>{result.roomId}</td>
-                <td>{result.checkInDate}</td>
-                <td>{result.checkOutDate}</td>
-                <td>{noOfNights(result.checkInDate, result.checkOutDate)}</td>
-              </tr>
+              <BookingRow key={index} result={result} />
+              // <tr>
+              //   <td>{result.id}</td>
+              //   <td>{result.title}</td>
+              //   <td>{result.firstName}</td>
+              //   <td>{result.surname}</td>
+              //   <td>{result.email}</td>
+              //   <td>{result.roomId}</td>
+              //   <td>{result.checkInDate}</td>
+              //   <td>{result.checkOutDate}</td>
+              //       <td>
+              //   {moment(result.checkOutDate).diff(
+              //     moment(result.checkInDate),
+              //     "days"
+              //   )}
+              // </td>
+              //   {/* <td>{noOfNights(result.checkInDate, result.checkOutDate)}</td> */}
+              // </tr>
             ))}
           </tbody>
         </table>

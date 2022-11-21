@@ -5,6 +5,7 @@ import Bookings from "./Bookings";
 import "./App.css";
 import arrayOfHotels from "./dataRequiredByTouristInfoCards.json";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   const myFooter = [
@@ -23,6 +24,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards hotelsProp={arrayOfHotels} />
       <Bookings />
+      <Restaurant />
       <Footer appFooter={myFooter} />
     </div>
   );
