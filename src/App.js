@@ -2,9 +2,9 @@ import React from "react";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
-
 import Bookings from "./Bookings";
 import "./App.css";
+import Restaurant from "./Restaurant";
 
 let cities = [
   {
@@ -32,6 +32,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards cities={cities} />
       <Bookings />
+      <Restaurant />
       <Footer />
     </div>
   );
