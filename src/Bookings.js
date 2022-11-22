@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.jsx";
 import FakeBookings from "./data/fakeBookings.json";
@@ -8,11 +9,13 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
 
+  const [bookings, setBookings] = useState(FakeBookings);
+
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={FakeBookings} />
+        <SearchResults results={bookings} />
       </div>
     </div>
   );
