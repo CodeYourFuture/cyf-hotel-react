@@ -44,7 +44,7 @@ function SearchResults({ Bookings }) {
                   <td>{val["roomId"]}</td>
                   <td>{val["checkInDate"]}</td>
                   <td>{val["checkOutDate"]}</td>
-                  //<td >{moment(val["checkOutDate"]).diff(moment(val["checkInDate"]), "days")}</td>
+                  
                 </tr>
               )
             })
@@ -58,14 +58,10 @@ function SearchResults({ Bookings }) {
 
 }
 
-// checkInDate: "2017-11-21"
-// checkOutDate: "2017-11-23"
-// email: "johndoe@doe.com"
-// firstName: "John"
-// id: 1
-// roomId: 2
-// surname: "Doe"
 // title: "Mr"
+
+
+//<td >{moment(val["checkOutDate"]).diff(moment(val["checkInDate"]), "days")}</td>
 
 export default SearchResults;
 // <table className="table">
