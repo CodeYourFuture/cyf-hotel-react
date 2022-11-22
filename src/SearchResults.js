@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import Highlighter from "./Highlighter";
 
 const SearchResults = ({ results }) => {
   return (
@@ -32,7 +33,7 @@ const SearchResults = ({ results }) => {
                   )}
                 </td>
                 <td>{booking.checkInDate}</td>
-                <td>{booking.checkOutDate}</td>
+                <td>{booking.checkOutDate}</td>Forename
                 <td>{booking.roomId}</td>
               </tr>
             );
