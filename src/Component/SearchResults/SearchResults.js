@@ -4,8 +4,8 @@ import moment from "moment";
 const SearchResults = props => {
   return (
     <div>
-      <table class="table">
-        <thead class="thead-dark">
+      <table className="table">
+        <thead className="thead-dark">
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Title</th>
@@ -20,7 +20,7 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {props.results.map(result => (
-            <tr>
+            <tr key={result.id}>
               <th scope="row">{result.id}</th>
               <td>{result.title}</td>
               <td>{result.firstName}</td>

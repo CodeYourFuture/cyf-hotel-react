@@ -11,8 +11,8 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
-          <h3 class="card-title">Glasgow</h3>
-          <p class="card-text">
+          <h3 className="card-title">Glasgow</h3>
+          <p className="card-text">
             Glasgow is a port city on the River Clyde in Scotland's western
             Lowlands. It's famed for its Victorian and art nouveau architecture,
             a rich legacy of the city's 18th–20th-century prosperity due to
@@ -33,8 +33,8 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
-          <h3 class="card-title">Manchester</h3>
-          <p class="card-text">
+          <h3 className="card-title">Manchester</h3>
+          <p className="card-text">
             Manchester is a major city in the northwest of England with a rich
             industrial heritage. The Castlefield conservation area’s
             18th-century canal system recalls the city’s days as a textile
@@ -58,8 +58,8 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
-          <h3 class="card-title">London</h3>
-          <p class="card-text">
+          <h3 className="card-title">London</h3>
+          <p className="card-text">
             London, the capital of England and the United Kingdom, is a
             21st-century city with history stretching back to Roman times. At
             its centre stand the imposing Houses of Parliament, the iconic ‘Big
