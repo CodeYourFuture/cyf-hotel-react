@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import Highlighter from "./Highlighter";
 
 const SearchResults = ({ results }) => {
   return (
