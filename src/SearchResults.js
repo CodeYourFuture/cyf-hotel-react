@@ -33,7 +33,7 @@ const SearchResults = ({ results }) => {
                   )}
                 </td>
                 <td>{booking.checkInDate}</td>
-                <td>{booking.checkOutDate}</td>Forename
+                <td>{booking.checkOutDate}</td>
                 <td>{booking.roomId}</td>
               </tr>
             );
