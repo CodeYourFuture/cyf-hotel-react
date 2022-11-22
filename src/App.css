@@ -21,6 +21,27 @@
   justify-content: space-between;
 }
 
+.orders {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  margin: auto;
+}
+
+.orderList {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+}
+
+.ordersList {
+  margin: auto;
+  padding-inline-start: 0;
+}
+
 .Footer {
   background-color: #222;
   height: auto;
