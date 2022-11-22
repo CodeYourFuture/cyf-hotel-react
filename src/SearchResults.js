@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import moment from "moment";
 
+
 const SearchResult = ({results}) =>
-{
+{    
     return(
         <table>
             <thead>
@@ -22,21 +23,45 @@ const SearchResult = ({results}) =>
             <tbody>
                 {results.map(element => 
                 (
-                    <tr>
-                        <th>{element.id}</th>
-                        <th>{element.title}</th>
-                        <th>{element.firstName}</th>
-                        <th>{element.surname}</th>
-                        <th>{element.email}</th>
-                        <th>{element.roomId}</th>
-                        <th>{element.checkInDate}</th>
-                        <th>{element.checkOutDate}</th>
-                        <th>{moment(element.checkOutDate).diff(moment(element.checkInDate), "days")}</th>
-                    </tr>
+                    <ResultRow element = {element}/>
                 ))}
             </tbody>
         </table>
     )
 }
+
+const ResultRow = (props) =>
+{
+    const element = props.element;
+    const [isBackgroundHightlighted, setBackground] = useState("white");
+
+    const setColor = () =>
+    {        
+        if(isBackgroundHightlighted === "white")
+        {
+            setBackground("grey");
+        }
+        
+        else if(isBackgroundHightlighted === "grey")
+        {
+            setBackground("white");
+        }
+    }
+
+    return(
+    <tr onClick={() => setColor(isBackgroundHightlighted)} style={{backgroundColor: isBackgroundHightlighted}}>
+        <th>{element.id}</th>
+        <th>{element.title}</th>
+        <th>{element.firstName}</th>
+        <th>{element.surname}</th>
+        <th>{element.email}</th>
+        <th>{element.roomId}</th>
+        <th>{element.checkInDate}</th>
+        <th>{element.checkOutDate}</th>
+        <th>{moment(element.checkOutDate).diff(moment(element.checkInDate), "days")}</th>
+    </tr>  
+    )  
+}
+
 
 export default SearchResult;
