@@ -5,7 +5,7 @@ const SearchResults = ({ results }) => {
   return (
     <table className="table">
       <thead className="thead-dark">
-        <tr>
+        <tr onClick={}>
           <th scope="col">Title</th>
           <th scope="col">First Name</th>
           <th scope="col">Surname</th>
