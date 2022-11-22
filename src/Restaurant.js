@@ -7,10 +7,10 @@ const Restaurant = () => {
 //   function orderOne() {
 //     setOrders(orders + 1)
 //   }
+//   <Orders orderType={["Pizzas", "Salads", "Chocolate cake"]} />
   return (
     <div>
       <h3>Restaurant Orders</h3>
-      <Orders orderType={["Pizzas", "Salads", "Chocolate cake"]} />
     </div>
   );
 };
