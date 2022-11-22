@@ -1,7 +1,7 @@
 // import { check } from "prettier";
 import React, { useState } from "react";
 import FakeBookings from "./data/fakeBookings.json";
-import moment from "moment";
+//import moment from "moment";
 
 
 function SearchResults({ Bookings }) {
@@ -44,7 +44,7 @@ function SearchResults({ Bookings }) {
                   <td>{val["roomId"]}</td>
                   <td>{val["checkInDate"]}</td>
                   <td>{val["checkOutDate"]}</td>
-                  <td >{moment(val["checkOutDate"]).diff(moment(val["checkInDate"]), "days")}</td>
+                  //<td >{moment(val["checkOutDate"]).diff(moment(val["checkInDate"]), "days")}</td>
                 </tr>
               )
             })
