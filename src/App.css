@@ -90,3 +90,12 @@ p {
 
 .card-body {
 }
+
+.orderType {
+  /* border: 10px solid red; */
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  justify-content: space-between;
+  margin: 10px;
+}
