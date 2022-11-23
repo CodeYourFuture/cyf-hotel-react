@@ -9,13 +9,49 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Card info */
+.cards-container {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  border: 3px solid black;
+}
+.card-header {
+  margin-top: 1em;
+  padding-top: 1em;
+  background-color: #eb856c;
+  border-bottom: 3px solid #ec4a22;
+  border-top: 3px solid #ec4a22;
+  text-align: center;
+}
+
+.card-img-top {
+  border: 1px solid black;
+  height: 10em;
+}
+
+.card-text {
+  margin-top: 1em;
+  height: 15em;
+}
+
+.more-btn {
+  background-color: #ec4a22;
 }
 
 .App-title {
@@ -25,6 +61,40 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+/* table */
+
+table th,
+table td {
+  padding: 1em;
+  text-align: center;
+}
+.table-container {
+  width: 100%;
+  padding: 5em;
+}
+.table-bordered {
+  margin: 0;
+  width: 100%;
+  border: 2px solid black;
+}
+
+th {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+td {
+  font-weight: 700;
+  text-align: center;
+}
+
+/* footer */
+
+.footer-list {
+  border-top: 2px solid black;
+  padding-top: 1em;
+  list-style: none;
 }
 
 @keyframes App-logo-spin {
