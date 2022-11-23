@@ -10,7 +10,6 @@ const SearchResult = props => {
           <th scope="col">First name</th>
           <th scope="col">Last name</th>
           <th scope="col">Email</th>
-          {/* <th scope="col" /> */}
           <th scope="col">Room id</th>
           <th scope="col">Check-in date</th>
           <th scope="col">Check-out date</th>
