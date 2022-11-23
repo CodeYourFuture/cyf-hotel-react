@@ -1,7 +1,8 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
 const SearchResults = ({ results }) => {
+  const [isClicked, setIsClicked] = useState(false);
   return (
     <table className="table table-striped">
       <thead>
@@ -19,7 +20,12 @@ const SearchResults = ({ results }) => {
       <tbody>
         {results.map(record => {
           return (
-            <tr>
+            <tr
+              onClick={() => {
+                setIsClicked(!isClicked);
+              }}
+              style={isClicked ? { border: "2px solid red" } : {}}
+            >
               <td>{record.title}</td>
               <td>{record.firstName}</td>
               <td>{record.surname}</td>

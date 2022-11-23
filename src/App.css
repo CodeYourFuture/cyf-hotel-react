@@ -56,12 +56,17 @@
   align-items: center;
   padding: 1.5rem;
   font-size: 1.2rem;
-  list-style-type: none;
+}
+
+.btn-add {
+  color: blue;
+  font-weight: bold;
 }
 
 .Footer ul {
   margin: 0;
   color: white;
+  list-style-type: none;
 }
 
 @keyframes App-logo-spin {
