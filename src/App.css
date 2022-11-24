@@ -43,6 +43,15 @@ tr {
   color: #5b5757;
 }
 
+.clicked {
+  background-color: rgb(49, 82, 249);
+  color: azure;
+}
+
+.unclicked {
+  background-color: #fff;
+}
+
 .results {
   padding-top: 15px;
 }
