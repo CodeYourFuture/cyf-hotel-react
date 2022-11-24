@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResult = props => {
+  const [isActive, setIsActive] = useState(false);
+  const handleClick = () => {
+    setIsActive(current => !current);
+  };
+
   return (
     <div>
       <table className="table">
@@ -24,7 +29,14 @@ const SearchResult = props => {
             let dateOut = moment(booking.checkOutDate);
             let numberOfNights = dateOut.diff(dateIn, "days");
             return (
-              <tr key={index}>
+              <tr
+                key={index}
+                style={{
+                  backgroundColor: isActive ? "blue" : "",
+                  color: isActive ? "yellow" : ""
+                }}
+                onClick={handleClick}
+              >
                 <th>{booking.id}</th>
                 <td>{booking.title}</td>
                 <td>{booking.firstName}</td>
