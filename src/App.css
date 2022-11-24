@@ -107,6 +107,36 @@ tr {
   font-weight: bold;
 }
 
+.highlightTHead {
+  background-color: #000000;
+  color: gold;
+}
+
+.highlightRow1 {
+  background-color: red;
+  color: white;
+}
+
+.highlightRow2 {
+  background-color: black;
+  color: gold;
+}
+
+.highlightRow3 {
+  background-color: red;
+  color: white;
+}
+
+.highlightRow4 {
+  background-color: black;
+  color: gold;
+}
+
+.highlightRow5 {
+  background-color: red;
+  color: white;
+}
+
 /* footer {
   padding-top: 20px;
   text-align: center;
