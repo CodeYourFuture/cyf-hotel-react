@@ -61,6 +61,7 @@ tr {
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+  background-color: rgb(75, 72, 72);
 }
 .card-img-top {
   border-radius: 5px;
@@ -70,10 +71,37 @@ tr {
   text-align: center;
   width: 65%;
 }
+
+.order-wrapper {
+  background-color: rgb(95, 92, 92);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: #ffff;
+  display: flex;
+  flex-direction: column;
+}
+.order-wrapper ul {
+  text-align: center;
+  list-style: none;
+}
+
+.rest-btn {
+  margin: 1rem;
+  font-weight: bold;
+}
+h3 {
+  font-size: 2rem;
+  text-align: center;
+}
 footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #222;
+  padding: 1rem;
 }
 footer li {
+  letter-spacing: 1px;
   color: #ffff;
   list-style: none;
   font-weight: 800;
