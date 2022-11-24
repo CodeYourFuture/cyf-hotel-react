@@ -43,8 +43,25 @@
   display: flex;
   justify-content: space-around;
 }
+.pink {
+  background-color: rgb(201, 193, 197);
+}
 
-@keyframes App-logo-spin {
+.App-order {
+  margin-top: 4rem;
+  margin-left: 5rem;
+  font-size: 1.4em;
+  text-align: left;
+}
+.App-order li {
+  margin-top: 2rem;
+}
+
+.App-order button {
+  margin-left: 2rem;
+}
+
+@k @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
