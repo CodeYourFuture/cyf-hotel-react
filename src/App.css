@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  background-image: linear-gradient(blue, pink);
 }
 
 .App-logo {
@@ -9,13 +10,17 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 90px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+}
+
+.Logo {
+  background-color: white;
 }
 
 .App-title {
@@ -47,11 +52,92 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
+.TouristInfoCards {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5em 0;
+  margin: 2em 1em 0 1em;
   text-align: center;
 }
 
-.card {
+.Card {
+  height: 30rem;
   width: 18rem;
+  border: 3px solid black;
+  background-image: linear-gradient(blue, pink);
 }
+
+.CardImage {
+  border-bottom: 3px solid black;
+}
+
+.Card:hover {
+  background-image: linear-gradient(red, yellow);
+  color: #000000;
+}
+
+.Card:hover h1 {
+  text-decoration: underline;
+}
+
+.CardButton {
+  color: #660033;
+  text-decoration: underline;
+  text-decoration-color: #fafa1e;
+  text-decoration-thickness: 3px;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.Card:hover .CardButton {
+  color: #000000;
+  border: solid #660033;
+  text-decoration: none;
+  background-color: white;
+}
+
+.Footer {
+  background-color: #222;
+  height: 90px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.highlightTHead {
+  background-color: #000000;
+  color: gold;
+}
+
+.highlightRow1 {
+  background-color: red;
+  color: white;
+}
+
+.highlightRow2 {
+  background-color: black;
+  color: gold;
+}
+
+.highlightRow3 {
+  background-color: red;
+  color: white;
+}
+
+.highlightRow4 {
+  background-color: black;
+  color: gold;
+}
+
+.highlightRow5 {
+  background-color: red;
+  color: white;
+}
+
+/* footer {
+  padding-top: 20px;
+  text-align: center;
+} */
