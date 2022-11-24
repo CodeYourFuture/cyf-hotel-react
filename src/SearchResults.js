@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
+import "./App.css";
 
-const SearchResults = props => {
+const SearchResults = ({ results }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  // const handleClick = () => {
+  //   setIsActive((current) => !current);
+  // };
+
   return (
     <table className="table">
       <thead>
@@ -18,8 +25,13 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map((order, index) => (
-          <tr key={index}>
+        {results.map((order, index) => (
+          <tr
+            key={index}
+            className={isActive ? "highlighted" : ""}
+            // onClick={handleClick}
+            onClick={() => setIsActive(!isActive)}
+          >
             <th scope="row">{order.id}</th>
             <td>{order.title}</td>
             <td>{order.firstName}</td>
