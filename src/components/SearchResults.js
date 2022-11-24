@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import SearchResultsRow from "./SearchResultsRow";
 
 const SearchResults = props => {
   return (
@@ -23,17 +24,11 @@ const SearchResults = props => {
           let outDate = moment(booking.checkOutDate);
           let numOfNights = outDate.diff(inDate, "days");
           return (
-            <tr key={index}>
-              <td>{booking.id}</td>
-              <td>{booking.title}</td>
-              <td>{booking.firstName}</td>
-              <td>{booking.surname}</td>
-              <td>{booking.email}</td>
-              <td>{booking.roomId}</td>
-              <td>{booking.checkInDate}</td>
-              <td>{booking.checkOutDate}</td>
-              <td>{numOfNights}</td>
-            </tr>
+            <SearchResultsRow
+              booking={booking}
+              key={index}
+              numOfNights={numOfNights}
+            />
           );
         })}
       </tbody>
