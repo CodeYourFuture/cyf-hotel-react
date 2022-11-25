@@ -3,10 +3,10 @@
 }
 
 .App-header {
-  background-color: #f5aa28;
+  background-color: #7207d6;
   height: 70px;
   padding: 20px;
-  color: rgb(241, 237, 237);
+  color: rgb(238, 119, 9);
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.25em;
@@ -36,7 +36,7 @@
   margin: 1.5rem;
 }
 .Footer {
-  background-color: #707883;
+  background-color: #c424ec;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@
 }
 .Footer ul {
   margin: 0;
-  color: rgb(243, 239, 239);
+  color: rgb(10, 230, 200);
 }
 
 @keyframes App-logo-spin {
@@ -61,7 +61,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #df1742;
 }
 
 .results {
