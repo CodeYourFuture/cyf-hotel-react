@@ -5,9 +5,7 @@ import "./App.css";
 const SearchResults = ({ results }) => {
   const [isActive, setIsActive] = useState(false);
 
-  // const handleClick = () => {
-  //   setIsActive((current) => !current);
-  // };
+  const handleClick = () => setIsActive(!isActive);
 
   return (
     <table className="table">
@@ -25,29 +23,34 @@ const SearchResults = ({ results }) => {
         </tr>
       </thead>
       <tbody>
-        {results.map((order, index) => (
-          <tr
-            key={index}
-            className={isActive ? "highlighted" : ""}
-            // onClick={handleClick}
-            onClick={() => setIsActive(!isActive)}
-          >
-            <th scope="row">{order.id}</th>
-            <td>{order.title}</td>
-            <td>{order.firstName}</td>
-            <td>{order.surname}</td>
-            <td>{order.email}</td>
-            <td>{order.roomId}</td>
-            <td>{order.checkInDate}</td>
-            <td>{order.checkOutDate}</td>
-            <td>
-              {moment(order.checkOutDate).diff(
-                moment(order.checkInDate),
-                "days"
-              )}
-            </td>
-          </tr>
-        ))}
+        {results.map((order, index) => {
+          // const [isActive, setIsActive] = useState(false);
+          // const handleClick = () => setIsActive(!isActive);
+
+          return (
+            <tr
+              key={index}
+              className={isActive ? "highlighted" : ""}
+              onClick={handleClick}
+              // onClick={() => setIsActive(!isActive)}
+            >
+              <th scope="row">{order.id}</th>
+              <td>{order.title}</td>
+              <td>{order.firstName}</td>
+              <td>{order.surname}</td>
+              <td>{order.email}</td>
+              <td>{order.roomId}</td>
+              <td>{order.checkInDate}</td>
+              <td>{order.checkOutDate}</td>
+              <td>
+                {moment(order.checkOutDate).diff(
+                  moment(order.checkInDate),
+                  "days"
+                )}
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
