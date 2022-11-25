@@ -56,5 +56,7 @@ tr {
   width: 84rem;
   height: max-content;
   display: flex;
-  justify-content: center;
+}
+ul {
+  list-style-type: none;
 }
