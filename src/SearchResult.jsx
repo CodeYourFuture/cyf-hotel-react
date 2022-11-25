@@ -1,7 +1,8 @@
 import React from "react";
-import moment from "moment";
 
-const SearchResults = ({ bookings }) => {
+import SearchRow from "./SearchRow.jsx";
+
+const SearchResults = ({ results }) => {
   return (
     <div>
       <table className="table">
@@ -18,20 +19,9 @@ const SearchResults = ({ bookings }) => {
           </tr>
         </thead>
         <tbody>
-          {bookings.map((data, index) => (
-            <tr key={index}>
-              <th scope="row">{data.title}</th>
-              <td>{data.firstName}</td>
-              <td>{data.surname}</td>
-              <td>{data.email}</td>
-              <td>{data.roomId}</td>
-              <td>{data.checkInDate}</td>
-              <td>{data.checkOutDate}</td>
-              <td>
-                {moment(data.checkOutDate).diff(data.checkInDate, "days")}
-              </td>
-            </tr>
-          ))}
+          {results.map((booking, index) => {
+            return <SearchRow key={index} info={booking} />;
+          })}
         </tbody>
       </table>
     </div>
