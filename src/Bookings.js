@@ -7,9 +7,8 @@ const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
-
+  // eslint-disable-next-line
   const [bookings, setBookings] = useState(FakeBookings);
-
   return (
     <div className="App-content">
       <div className="container">
