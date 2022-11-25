@@ -1,25 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
+  const [Clicked, setClicked] = useState(false);
   return (
     <table className="table main">
-      <thead>
-        <tr>
-          <th>title</th>
-          <th>firstName</th>
-          <th>surname</th>
-          <th>email</th>
-          <th>roomId</th>
-          <th>checkInDate</th>
-          <th>checkOutDate</th>
-          <th>NightStayed</th>
-        </tr>
-      </thead>
+      <tr>
+        <th>title</th>
+        <th>firstName</th>
+        <th>surname</th>
+        <th>email</th>
+        <th>roomId</th>
+        <th>checkInDate</th>
+        <th>checkOutDate</th>
+        <th>NightStayed</th>
+      </tr>
       <tbody>
         {results.map(record => {
           return (
-            <tr>
+            <tr
+              onClick={() => setClicked(!Clicked)}
+              style={Clicked ? { backgroundColor: "red" } : {}}
+            >
               <td>{record.title}</td>
               <td>{record.firstName}</td>
               <td>{record.surname}</td>

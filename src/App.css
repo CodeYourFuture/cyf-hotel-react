@@ -55,4 +55,8 @@ tr {
 .card {
   width: 84rem;
   height: max-content;
+  display: flex;
+  justify-content: center;
+}
+ul {
 }
