@@ -66,9 +66,11 @@ tr {
   flex-direction: row;
   justify-content: center;
 }
+
 .card-container a {
   color: black;
 }
+
 .card-container a:hover {
   text-decoration: none;
 }
@@ -76,19 +78,23 @@ tr {
 .btn {
   width: 185px;
 }
+
 caption {
   width: 200px;
 }
+
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 30px;
 }
+
 ul {
   list-style: none;
   padding: 0;
 }
+
 ul li {
   display: inline;
   margin: 30px;
@@ -102,3 +108,32 @@ ul li {
   display: flex;
   justify-content: center;
 } */
+
+.order {
+  display: flex;
+
+  align-items: flex-end;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.order li {
+  margin: 5px;
+}
+
+.btn-add {
+  width: 40px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.orders {
+  padding: 20px;
+  border: 3px solid wheat;
+  width: 30%;
+  margin: 0 30px;
+}
+
+.orders:hover {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}

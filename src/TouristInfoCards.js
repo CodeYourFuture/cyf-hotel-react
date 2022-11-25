@@ -28,15 +28,19 @@ const cardInfo = [
 
 const TouristInfoCards = () => {
   return (
-    <div class="card-container">
-      {cardInfo.map(x => {
+    <div className="card-container">
+      {cardInfo.map((x, i) => {
         return (
-          <a href={x.link} target="blank">
-            <div class="card shadow-lg mb-5 bg-white">
-              <img class="card-img-top" src={x.image} alt="CYF Hotel Logo" />
-              <div class="card-body">
-                <h5 class="card-title">{x.title}</h5>
-                <p class="card-text">{x.info}</p>
+          <a key={i} href={x.link} target="blank">
+            <div className="card shadow-lg mb-5 bg-white">
+              <img
+                className="card-img-top"
+                src={x.image}
+                alt="CYF Hotel Logo"
+              />
+              <div className="card-body">
+                <h5 className="card-title">{x.title}</h5>
+                <p className="card-text">{x.info}</p>
               </div>
             </div>
           </a>
