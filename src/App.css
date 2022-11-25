@@ -112,27 +112,7 @@ tr {
   color: gold;
 }
 
-.highlightRow1 {
-  background-color: red;
-  color: white;
-}
-
-.highlightRow2 {
-  background-color: black;
-  color: gold;
-}
-
-.highlightRow3 {
-  background-color: red;
-  color: white;
-}
-
-.highlightRow4 {
-  background-color: black;
-  color: gold;
-}
-
-.highlightRow5 {
+.highlightRow {
   background-color: red;
   color: white;
 }
