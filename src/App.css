@@ -82,3 +82,16 @@ tr {
 footer ul {
   list-style: none;
 }
+.grey {
+  background-color: grey;
+}
+.orderList {
+  margin-left: 50px;
+}
+.orderList ul li {
+  display: flex;
+  margin-top: 20px;
+}
+.orderList ul li div {
+  margin-left: 40px;
+}

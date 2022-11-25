@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [activeRow, setActiveRow] = useState();
+
+  const handleClick = index => {
+    return activeRow === index ? setActiveRow(null) : setActiveRow(index);
+  };
+  const toggleClassName = index => {
+    return activeRow === index ? "grey" : "";
+  };
   return (
     <div>
       <table className="table">
@@ -19,7 +27,13 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {props.results.map((data, index) => (
-            <tr key={index}>
+            <tr
+              onClick={() => {
+                handleClick(index);
+              }}
+              className={toggleClassName(index)}
+              key={index}
+            >
               <th scope="row">{data.title}</th>
               <td>{data.firstName}</td>
               <td>{data.surname}</td>
