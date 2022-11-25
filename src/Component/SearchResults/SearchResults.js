@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const rowNum = props.results.length;
+  let classRows = [];
+  for (let i = 0; i < rowNum; i++) {
+    classRows.push("unselectedColor");
+  }
+  const [colorRow, setColorRow] = useState(classRows);
+  const updateClassName = index => {
+    // const index = 2;
+    const newClassArray = [...colorRow];
+    if (colorRow[index] != "unselectedColor") {
+      newClassArray[index] = "unselectedColor";
+    } else {
+      newClassArray[index] = "selectedColor";
+    }
+    setColorRow(newClassArray);
+  };
+  // const [selectedIndex, setSelectedIndex] = useState();
+
+  // const rowClick = (index) => {
+  //   if (selectedIndex === index) setSelectedIndex(null);
+  //   else setSelectedIndex(index);
+  // };
+
   return (
     <div>
       <table className="table">
@@ -19,8 +42,17 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map(result => (
-            <tr key={result.id}>
+          {props.results.map((result, index) => (
+            <tr
+              key={result.id}
+              className={colorRow[index]}
+              onClick={updateClassName.bind(this, index)}
+              // key={index}
+              // onClick={() => rowClick(index)}
+              // className={selectedIndex === index ? "red" : "white"}
+            >
+              {/* {Object.values(result).map(info => <td>{info}</td>)} */}
+
               <th scope="row">{result.id}</th>
               <td>{result.title}</td>
               <td>{result.firstName}</td>

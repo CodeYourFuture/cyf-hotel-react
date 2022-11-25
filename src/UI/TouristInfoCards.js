@@ -5,13 +5,15 @@ const TouristInfoCards = () => {
   return (
     <div className="cardContainer">
       <div className="card">
+        <h3 className="card-title">Glasgow</h3>
+
         <img
           src="https://media.nomadicmatt.com/glasgowguide.jpg"
           alt=""
           className="card-img-top"
         />
         <div className="card-body">
-          <h3 className="card-title">Glasgow</h3>
+          {/* <h3 className="card-title">Glasgow</h3> */}
           <p className="card-text">
             Glasgow is a port city on the River Clyde in Scotland's western
             Lowlands. It's famed for its Victorian and art nouveau architecture,
@@ -27,13 +29,15 @@ const TouristInfoCards = () => {
         </div>
       </div>
       <div className="card">
+        <h3 className="card-title">Manchester</h3>
+
         <img
           src="https://eu-assets.simpleview-europe.com/manchester2016/imageresizer/?image=%2Fdbimgs%2FManOne-03%284%29.jpg&action=Background_Overlay"
           alt=""
           className="card-img-top"
         />
         <div className="card-body">
-          <h3 className="card-title">Manchester</h3>
+          {/* <h3 className="card-title">Manchester</h3> */}
           <p className="card-text">
             Manchester is a major city in the northwest of England with a rich
             industrial heritage. The Castlefield conservation area’s
@@ -52,13 +56,15 @@ const TouristInfoCards = () => {
         </div>
       </div>
       <div className="card">
+        <h3 className="card-title">London</h3>
+
         <img
           src="https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/tower-bridge/tower-bridge-shutterstock-1920x582.jpg?mw=1920&hash=078DDB24AC457E2D8F231FC3E0F7EC55A00C88E3"
           alt=""
           className="card-img-top"
         />
         <div className="card-body">
-          <h3 className="card-title">London</h3>
+          {/* <h3 className="card-title">London</h3> */}
           <p className="card-text">
             London, the capital of England and the United Kingdom, is a
             21st-century city with history stretching back to Roman times. At
