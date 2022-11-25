@@ -80,10 +80,10 @@ tr {
 }
 
 .order-list {
-  display: flex;
-  gap: 20px;
+  display: inline-flexbox;
+
   list-style: none;
-  padding: 23px;
+  padding: 30px;
   margin-left: 0.5rem;
 }
 
@@ -91,7 +91,7 @@ tr {
   display: inline-block;
   border: none;
   padding: 1rem 2rem;
-  margin: 0;
+  margin: 10px;
   text-decoration: none;
   background: #0069ed;
   color: #ffffff;
