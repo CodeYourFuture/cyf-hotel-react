@@ -1,6 +1,6 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
-//import SearchResultRow from "./SearchResultRow.jsx";
+import SearchResultsRow from "./SearchResultsRow.jsx";
 
 function SearchResults(props) {
   return (

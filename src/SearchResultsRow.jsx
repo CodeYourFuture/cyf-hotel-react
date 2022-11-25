@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-function SearchResultRow(props) {
+function SearchResultsRow(props) {
   return (
     <tr>
       <td>{props.dt.id}</td>
@@ -19,4 +19,4 @@ function SearchResultRow(props) {
   );
 }
 
-export default SearchResultRow;
+export default SearchResultsRow;
