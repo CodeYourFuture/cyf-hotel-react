@@ -10,8 +10,8 @@ const SearchResults = props => {
   const [colorRow, setColorRow] = useState(classRows);
   const updateClassName = index => {
     // const index = 2;
-    const newClassArray = [...colorRow];
-    if (colorRow[index] != "unselectedColor") {
+    const newClassArray = [...colorRow]; //!=14
+    if (colorRow[index] !== "unselectedColor") {
       newClassArray[index] = "unselectedColor";
     } else {
       newClassArray[index] = "selectedColor";

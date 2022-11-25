@@ -7,7 +7,8 @@ import fakeBookings from "./data/fakeBookings.json";
 const Bookings = () => {
   const [bookings, setBookings] = useState(fakeBookings);
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    setBookings("TO DO!", searchVal);
+    // console.info("TO DO!", searchVal);
   };
 
   return (
