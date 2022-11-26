@@ -7,6 +7,7 @@ function Heading() {
         src="https://thumbs.dreamstime.com/b/modern-black-line-art-mountain-hotel-logo-design-template-modern-black-line-art-mountain-hotel-logo-design-164322233.jpg"
         alt="logo"
         width="100"
+        height="80"
       />
     </div>
   );

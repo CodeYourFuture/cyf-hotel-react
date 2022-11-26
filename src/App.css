@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  background-color: rgb(211, 235, 235);
 }
 
 .App-logo {
@@ -55,6 +56,8 @@ tr {
 .card {
   width: 25rem;
   text-align: center;
+  border-color: #98bdc2;
+  border-width: thick;
 }
 
 .card-container {
@@ -70,4 +73,13 @@ h1 {
 .footer {
   justify-content: center;
   background-color: rgb(191, 199, 199);
+}
+
+.restaurant {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+ul {
+  list-style-type: none;
 }
