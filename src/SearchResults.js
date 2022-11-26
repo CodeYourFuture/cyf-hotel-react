@@ -12,7 +12,7 @@ const CustomerTable = ({ customerObject }) => {
 
     return (
       <tr
-        className={isSelect ? "table-primary" : ""}
+        className={isSelect ? "bg-warning" : null}
         onClick={selectRow}
         key={x.id}
       >
