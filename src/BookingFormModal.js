@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core//MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
+import validator from "validator";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -22,7 +23,22 @@ const useStyles = makeStyles(theme => ({
 
 const BookingFormModal = ({ bookings, setBookings }) => {
   const [show, setShow] = useState(false);
+  const [other, setOther] = useState(false);
   const classes = useStyles();
+  const titles = [
+    "Mr",
+    "Mrs",
+    "Miss",
+    "Ms",
+    "Sir",
+    "Dame",
+    "Dr",
+    "Lady",
+    "Lord",
+    "Prince",
+    "King",
+    "Other"
+  ];
   const [guestDetails, setGuestDetails] = useState({
     id: "",
     title: "",
@@ -34,28 +50,47 @@ const BookingFormModal = ({ bookings, setBookings }) => {
     checkOutDate: ""
   });
 
+  const roomIds = Array.from({ length: 12 }, (_, i) => i + 1);
+  const occupiedRoomsIds = bookings.map(booking => booking.roomId);
+  const availableRoomsIds = roomIds.filter(
+    id => occupiedRoomsIds.indexOf(id) === -1
+  );
+  console.log(roomIds);
+  console.log(availableRoomsIds);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleChange = e => {
+    const bookingIds = bookings.map(booking => booking.id);
+    const newBookingId = Math.max(...bookingIds) + 1;
     let updatedGuest = {
       ...guestDetails,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      id: newBookingId
     };
     console.log(updatedGuest);
+    if (e.target.value === "Other") {
+      setOther(true);
+    }
     setGuestDetails(updatedGuest);
   };
   const handleSubmit = () => {
-    let newArr = [...bookings, guestDetails];
-    fetch("https://hotel-cyf-server.onrender.com/bookings", {
-      method: "POST",
-      body: JSON.stringify(guestDetails),
-      headers: { "Content-Type": "application/json" }
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(err => console.error(err));
-    setBookings(newArr);
-    setShow(false);
+    if (validator.isEmail(guestDetails.email)) {
+      alert("Thank you");
+      let newArr = [...bookings, guestDetails];
+      fetch("https://hotel-cyf-server.onrender.com/bookings", {
+        method: "POST",
+        body: JSON.stringify(guestDetails),
+        headers: { "Content-Type": "application/json" }
+      })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err));
+      setBookings(newArr);
+      setShow(false);
+    } else {
+      alert("Please, enter valid Email!");
+    }
   };
 
   return (
@@ -70,27 +105,28 @@ const BookingFormModal = ({ bookings, setBookings }) => {
         </Modal.Header>
         <Modal.Body>
           <TextField
-            className="modal-content modal-text"
+            className={!other ? "modal-content modal-text" : "d-none"}
             variant="outlined"
             margin="dense"
             autoComplete="off"
             select
-            id="id"
-            name="id"
-            label="Id"
-            type="number"
+            id="title"
+            name="title"
+            label="Title"
+            type="text"
             required
             fullWidth
             onChange={handleChange}
-            value={guestDetails.id}
+            value="Mr"
           >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            {titles.map((title, index) => (
+              <MenuItem key={index} value={title}>
+                {title}
+              </MenuItem>
+            ))}
           </TextField>
-
           <TextField
-            className="modal-content modal-text"
+            className={other ? "modal-content modal-text" : "d-none"}
             variant="outlined"
             margin="dense"
             autoComplete="off"
@@ -150,6 +186,7 @@ const BookingFormModal = ({ bookings, setBookings }) => {
             variant="outlined"
             margin="dense"
             autoComplete="off"
+            select
             id="roomId"
             name="roomId"
             label="Room Id"
@@ -158,7 +195,13 @@ const BookingFormModal = ({ bookings, setBookings }) => {
             fullWidth
             onChange={handleChange}
             value={guestDetails.roomId}
-          />
+          >
+            {availableRoomsIds.map((id, index) => (
+              <MenuItem key={index} value={id}>
+                {id}
+              </MenuItem>
+            ))}
+          </TextField>
           <div className={classes.checkInOut}>
             <TextField
               className="modal-content modal-text"
