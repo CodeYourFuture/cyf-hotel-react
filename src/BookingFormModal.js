@@ -2,9 +2,27 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import TextField from "@material-ui/core/TextField";
+import MenuItem from "@material-ui/core//MenuItem";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles(theme => ({
+  container: {
+    display: "flex",
+    flexWrap: "wrap"
+  },
+  textField: {
+    width: "100%",
+    cursor: "pointer"
+  },
+  checkInOut: {
+    display: "flex",
+    gap: "1rem"
+  }
+}));
 
 const BookingFormModal = ({ bookings, setBookings }) => {
   const [show, setShow] = useState(false);
+  const classes = useStyles();
   const [guestDetails, setGuestDetails] = useState({
     id: "",
     title: "",
@@ -23,6 +41,7 @@ const BookingFormModal = ({ bookings, setBookings }) => {
       ...guestDetails,
       [e.target.name]: e.target.value
     };
+    console.log(updatedGuest);
     setGuestDetails(updatedGuest);
   };
   const handleSubmit = () => {
@@ -45,7 +64,7 @@ const BookingFormModal = ({ bookings, setBookings }) => {
         New Booking
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className={classes.container}>
         <Modal.Header closeButton>
           <Modal.Title>Registration Form</Modal.Title>
         </Modal.Header>
@@ -55,15 +74,21 @@ const BookingFormModal = ({ bookings, setBookings }) => {
             variant="outlined"
             margin="dense"
             autoComplete="off"
+            select
             id="id"
             name="id"
             label="Id"
-            type="text"
+            type="number"
             required
             fullWidth
             onChange={handleChange}
             value={guestDetails.id}
-          />
+          >
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </TextField>
+
           <TextField
             className="modal-content modal-text"
             variant="outlined"
@@ -134,34 +159,42 @@ const BookingFormModal = ({ bookings, setBookings }) => {
             onChange={handleChange}
             value={guestDetails.roomId}
           />
-          <TextField
-            className="modal-content modal-text"
-            variant="outlined"
-            margin="dense"
-            autoComplete="off"
-            id="checkInDate"
-            name="checkInDate"
-            label="Check in date"
-            type="text"
-            required
-            fullWidth
-            onChange={handleChange}
-            value={guestDetails.checkInDate}
-          />
-          <TextField
-            className="modal-content modal-text"
-            variant="outlined"
-            margin="dense"
-            autoComplete="off"
-            id="checkOutDate"
-            name="checkOutDate"
-            label="Check out date"
-            type="text"
-            required
-            fullWidth
-            onChange={handleChange}
-            value={guestDetails.checkOutDate}
-          />
+          <div className={classes.checkInOut}>
+            <TextField
+              className="modal-content modal-text"
+              variant="outlined"
+              margin="dense"
+              autoComplete="off"
+              id="checkInDate"
+              name="checkInDate"
+              label="Check in date"
+              type="date"
+              required
+              fullWidth
+              onChange={handleChange}
+              value={guestDetails.checkInDate}
+              InputLabelProps={{
+                shrink: true
+              }}
+            />
+            <TextField
+              className="modal-content modal-text"
+              variant="outlined"
+              margin="dense"
+              autoComplete="off"
+              id="checkOutDate"
+              name="checkOutDate"
+              label="Check out date"
+              type="date"
+              required
+              fullWidth
+              onChange={handleChange}
+              value={guestDetails.checkOutDate}
+              InputLabelProps={{
+                shrink: true
+              }}
+            />
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
