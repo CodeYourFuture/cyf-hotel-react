@@ -4,7 +4,7 @@ const TouristInfoCards = props => {
   console.log(props);
   return (
     <div className="card">
-      {props.infoCard.map((card, index) => (
+      {props.HotelsInfo.map((card, index) => (
         <div key={index} className="infoCard">
           <img src={card.imgUrl} className="card-img-top" alt="" />
           <h2>{card.cityName}</h2>

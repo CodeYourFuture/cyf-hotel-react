@@ -80,15 +80,15 @@ tr {
 }
 
 .order-list {
-  display: inline-flexbox;
+  display: flex;
 
+  justify-content: left;
   list-style: none;
-  padding: 30px;
-  margin-left: 0.5rem;
+  padding: 5px;
+  max-width: 25rem;
 }
 
 .btn {
-  display: inline-block;
   border: none;
   padding: 1rem 2rem;
   margin: 10px;
@@ -107,8 +107,10 @@ tr {
 }
 
 h3 {
-  margin-left: 10rem;
+  margin-left: 4rem;
   margin-bottom: 2rem;
+
+  max-width: 20rem;
 }
 
 .footer {
