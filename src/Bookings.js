@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import BookingFormModal from "./BookingFormModal";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -28,9 +29,14 @@ const Bookings = () => {
 
   return (
     <div className="App-content">
+      <div className="search-bookings-container">
+        <Search search={search} />
+        <div className="booking-modal-button">
+          <BookingFormModal bookings={bookings} setBookings={setBookings} />
+        </div>
+      </div>
       {loading ? (
         <div className="container mw-100">
-          <Search search={search} />
           <SearchResults
             results={bookings}
             tableHeaders={[

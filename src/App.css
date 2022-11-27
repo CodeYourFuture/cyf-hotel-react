@@ -103,6 +103,14 @@
   font-size: 1.5em;
   background-color: aliceblue;
 }
+.search-bookings-container {
+  width: 90%;
+  margin: auto;
+}
+.booking-modal-button {
+  float: right;
+  margin: -2rem 0 1.5rem auto;
+}
 
 .restaurant-orders {
   margin-bottom: 1em;
@@ -161,6 +169,21 @@ tr {
 
 .results {
   padding-top: 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: auto;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 0;
+  /* align-items: center; */
 }
 
 .footer {
