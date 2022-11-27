@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResult = props => {
+  const [color, setColor] = useState("red");
+  function Highlighter() {
+    setColor("purple");
+  }
   return (
     <table className="table">
       <thead>
@@ -29,7 +33,6 @@ const SearchResult = props => {
               <td>{data.firstName}</td>
               <td>{data.surname}</td>
               <td>{data.email}</td>
-              {/* <td /> */}
               <td>{data.roomId}</td>
               <td>{data.checkInDate}</td>
               <td>{data.checkOutDate}</td>
