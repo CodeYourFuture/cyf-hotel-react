@@ -21,6 +21,7 @@
 .InfoCards {
   display: flex;
   justify-content: space-around;
+  background-color: #5b5757;
 }
 
 .Card-Title,
@@ -73,5 +74,5 @@ tr {
   width: 20rem;
   border-style: double;
   border-width: 5px;
-  margin-top: 1em;
+  margin: 2em 0;
 }

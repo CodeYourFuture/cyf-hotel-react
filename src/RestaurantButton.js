@@ -3,7 +3,7 @@ import React from "react";
 function RestaurantButton(props) {
   return (
     <button onClick={props.handleClick} className="btn btn-primary">
-      Add
+      <spam>&#10003;</spam>
     </button>
   );
 }
