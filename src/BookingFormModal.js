@@ -55,8 +55,6 @@ const BookingFormModal = ({ bookings, setBookings }) => {
   const availableRoomsIds = roomIds.filter(
     id => occupiedRoomsIds.indexOf(id) === -1
   );
-  console.log(roomIds);
-  console.log(availableRoomsIds);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -76,7 +74,6 @@ const BookingFormModal = ({ bookings, setBookings }) => {
   };
   const handleSubmit = () => {
     if (validator.isEmail(guestDetails.email)) {
-      alert("Thank you");
       let newArr = [...bookings, guestDetails];
       fetch("https://hotel-cyf-server.onrender.com/bookings", {
         method: "POST",
