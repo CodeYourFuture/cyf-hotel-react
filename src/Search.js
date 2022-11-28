@@ -12,13 +12,7 @@ const Search = props => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form
-            className="form-group search-box"
-            onSubmit={e => {
-              e.preventDefault();
-              props.search(searchInput);
-            }}
-          >
+          <form className="form-group search-box">
             <label htmlFor="customerName">Customer id</label>
             <div className="search-row">
               <input
@@ -26,15 +20,19 @@ const Search = props => {
                 id="customerId"
                 className="form-control"
                 placeholder="Customer id"
-                value={searchInput}
-                onChange={handleSearchInput}
               />
               <button className="btn btn-primary">Search IDs</button>
             </div>
           </form>
         </div>
         <div className="col">
-          <form className="form-group search-box">
+          <form
+            className="form-group search-box"
+            onSubmit={e => {
+              e.preventDefault();
+              props.search(searchInput);
+            }}
+          >
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
@@ -42,6 +40,8 @@ const Search = props => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
+                value={searchInput}
+                onChange={handleSearchInput}
               />
               <button className="btn btn-primary">Search Names</button>
             </div>

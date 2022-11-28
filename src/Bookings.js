@@ -11,7 +11,13 @@ const Bookings = () => {
       .then(data => setBookings(data));
   }, []);
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    let filteredList = customerList.filter(x => {
+      return parseInt(searchVal)
+        ? x.id === parseInt(searchVal)
+        : x.firstName.toLowerCase() === searchVal.toLowerCase() ||
+            x.surname.toLowerCase() === searchVal.toLowerCase();
+    });
+    setBookings(filteredList);
   };
 
   return (

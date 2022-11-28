@@ -48,8 +48,8 @@ const CustomerTable = ({ customerObject }) => {
           </tr>
         </thead>
         <tbody>
-          {customerObject.map(info => {
-            return <Row x={info} />;
+          {customerObject.map((info, key) => {
+            return <Row key={key} x={info} />;
           })}
         </tbody>
       </table>
