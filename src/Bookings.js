@@ -4,10 +4,24 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () =>
 {
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
-  };
+  const search = searchVal =>
+  {
+    let searchedBookings = bookings.filter(booking =>
+    {
+      if(booking.firstName.toLowerCase() === searchVal.toLowerCase() || booking.surname.toLowerCase() === searchVal.toLowerCase())
+      {
+        return true;
+      }
 
+      else
+      {
+        return false;
+      }
+    });
+
+    return setBookings(searchedBookings);
+  }
+  
   const [bookings, setBookings] = useState([]);
 
   useEffect(() =>
