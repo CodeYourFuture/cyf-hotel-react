@@ -94,3 +94,9 @@ tr {
   background-color: rgb(173, 209, 222);
   cursor: pointer;
 }
+.vip {
+  color: rgb(54, 133, 54);
+}
+.notVip {
+  color: rgb(171, 74, 74);
+}

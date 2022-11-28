@@ -1,7 +1,7 @@
 import moment from "moment";
 import React from "react";
 
-const ResultRow = ({ record, active, onClick }) => {
+const ResultRow = ({ record, active, onClick, buttonClicked }) => {
   return (
     <tr onClick={onClick} className={`${active ? "rowColoured" : "rowStart"}`}>
       <td>{record.title}</td>
@@ -12,6 +12,11 @@ const ResultRow = ({ record, active, onClick }) => {
       <td>{record.checkInDate}</td>
       <td>{record.checkOutDate}</td>
       <td>{moment(record.checkOutDate).diff(record.checkInDate, "days")}</td>
+      <td>
+        <button onClick={buttonClicked} value={record.id}>
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };

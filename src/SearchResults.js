@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import ResultRow from "./ResultRow";
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ results, buttonClicked }) => {
   const [active, setActive] = useState();
 
   const setActiveRow = id => {
@@ -20,6 +20,7 @@ const SearchResults = ({ results }) => {
           <th>Check in</th>
           <th>Check out</th>
           <th>Staying nights</th>
+          <th>Show profile</th>
         </tr>
       </thead>
       <tbody>
@@ -31,6 +32,7 @@ const SearchResults = ({ results }) => {
               onClick={() => {
                 setActiveRow(record.id);
               }}
+              buttonClicked={buttonClicked}
             />
           );
         })}
