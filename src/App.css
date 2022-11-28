@@ -155,6 +155,11 @@
 .restaurant-orders {
   margin-bottom: 1em;
   color: rgb(1, 49, 90);
+  background-color: rgb(193, 217, 238);
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  text-align: center;
   font-weight: 800;
 }
 
@@ -165,8 +170,7 @@
   align-items: center;
   width: 90%;
   margin: 2rem auto;
-  padding: 1rem 0;
-  background-color: rgb(193, 217, 238);
+  background-color: aliceblue;
 }
 
 .orders-list {
