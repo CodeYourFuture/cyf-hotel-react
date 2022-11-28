@@ -92,10 +92,11 @@ p {
 }
 
 .orderType {
-  /* border: 10px solid red; */
-  display: flex;
-  flex-direction: row;
-  width: 200px;
+  /* border: 10px solid red;  */
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  column-gap: 2em;
+  width: 400px;
   justify-content: space-between;
   margin: 10px;
 }

@@ -5,10 +5,18 @@ import "./App.css";
 const Restaurant = () => {
   // const pizzas = 0;
 
-  const RestaurantButton = props => {
+  const RestaurantButtonAdd = props => {
     return (
       <button className="btn btn-primary" onClick={props.pizzaFun}>
         Add
+      </button>
+    );
+  };
+
+  const RestaurantButtonRemove = props => {
+    return (
+      <button className="btn btn-primary" onClick={props.pizzaFun}>
+        Remove
       </button>
     );
   };
@@ -17,10 +25,14 @@ const Restaurant = () => {
     const orderOne = () => {
       setPizzas(pizzas + 1);
     };
+    const removeOne = () => {
+      if (pizzas > 0) setPizzas(pizzas - 1);
+    };
     return (
       <li className="orderType">
         {props.orderType}: {pizzas}
-        <RestaurantButton pizzaFun={orderOne} />
+        <RestaurantButtonAdd pizzaFun={orderOne} />
+        <RestaurantButtonRemove pizzaFun={removeOne} />
       </li>
     );
   };
