@@ -92,7 +92,7 @@ const BookingFormModal = ({ bookings, setBookings }) => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        New Booking
+        Book Now
       </Button>
 
       <Modal show={show} onHide={handleClose} className={classes.container}>

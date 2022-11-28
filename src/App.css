@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: left;
-}
+} */
 
 .header {
   display: flex;
@@ -60,9 +60,52 @@
 }
 
 .search-bookings {
-  padding: 00.5em;
+  padding: 0.5rem;
   color: rgb(1, 49, 90);
   font-weight: 800;
+}
+.search-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.search-row .id-input,
+.search-row .name-input {
+  width: 100%;
+}
+.search-bookings-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+  margin-bottom: 2rem;
+  background-color: rgb(193, 217, 238);
+}
+.search-wrapper {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  background-color: aliceblue;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.search-ids-btn,
+.search-names-btn {
+  width: max-content;
+}
+.booking-modal-button {
+  display: block;
+  width: fit-content;
 }
 
 .table {
@@ -107,18 +150,6 @@
   text-align: center;
   font-size: 1.5em;
   background-color: rgb(193, 217, 238);
-}
-.search-bookings-container {
-  width: 90%;
-  margin: auto;
-  padding: 0 1rem;
-  background-color: rgb(193, 217, 238);
-}
-.booking-modal-button {
-  display: block;
-  width: fit-content;
-  margin: -2rem 0 2rem auto;
-  padding-bottom: 1rem;
 }
 
 .restaurant-orders {
@@ -174,24 +205,18 @@ li {
 }
 
 .search {
-  padding: 5px 0 20px 0;
-  /* width: 100%; */
-  margin-bottom: 2em;
-}
-.search-ids {
-  width: 8em;
-}
-.search-names {
-  width: 11em;
+  /* padding: 5px 0 20px 0; */
+  width: 100%;
+  /* margin-bottom: 2em; */
 }
 
 tr {
   color: #5b5757;
 }
 
-.results {
+/* .results {
   padding-top: 15px;
-}
+} */
 
 .form {
   display: flex;
