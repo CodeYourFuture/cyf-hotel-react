@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
+  //   function handleProfile(CustomerProfile){
+  // return "Customer Profile"
+  //   }
   return (
     <div className="table-container">
       <p className="results"> Results</p>
@@ -17,6 +21,7 @@ const SearchResults = props => {
             <th scope="col">Check-in date</th>
             <th scope="col">Check-out date</th>
             <th scope="col">Number of nights</th>
+            <th scope="col">Button</th>
           </tr>
         </thead>
         <tbody>
@@ -52,6 +57,13 @@ const SearchResults = props => {
                 <td>{checkOutDate}</td>
                 <td>
                   {moment(checkOutDate).diff(moment(checkInDate), "days")}
+                </td>
+                <td>
+                  <button
+                  // onClick={handleProfile}
+                  >
+                    Show profile:
+                  </button>
                 </td>
               </tr>
             );

@@ -11,9 +11,9 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
+      <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <TouristInfoCards />
       <Footer />
     </div>
   );
