@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
   const [activeRow, setActiveRow] = useState();
@@ -7,9 +8,17 @@ const SearchResults = props => {
   const handleClick = index => {
     return activeRow === index ? setActiveRow(null) : setActiveRow(index);
   };
+
   const toggleClassName = index => {
     return activeRow === index ? "grey" : "";
   };
+
+  const [id, setId] = useState("");
+
+  const handleProfileClick = index => {
+    setId(index + 1);
+  };
+
   return (
     <div>
       <table className="table">
@@ -23,6 +32,7 @@ const SearchResults = props => {
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
             <th scope="col">Number of nights</th>
+            <th scope="col">Profiles</th>
           </tr>
         </thead>
         <tbody>
@@ -44,10 +54,21 @@ const SearchResults = props => {
               <td>
                 {moment(data.checkOutDate).diff(data.checkInDate, "days")}
               </td>
+              <td>
+                <button
+                  onClick={() => {
+                    handleProfileClick(index);
+                  }}
+                  className="btn btn-primary"
+                >
+                  Show profile
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+      {id ? <CustomerProfile id={id} /> : null}
     </div>
   );
 };

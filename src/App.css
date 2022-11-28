@@ -87,6 +87,11 @@ footer ul {
 }
 .orderList {
   margin-left: 50px;
+  margin-top: 30px;
+}
+.orderList h3 {
+  margin-left: 40px;
+  text-decoration: underline;
 }
 .orderList ul li {
   display: flex;
@@ -94,4 +99,21 @@ footer ul {
 }
 .orderList ul li div {
   margin-left: 40px;
+}
+.customer-profile {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #888888;
+  border-radius: 5px;
+  padding: 30px;
+}
+.customer-profile h3 {
+  text-decoration: underline;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.container span {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 800;
 }
