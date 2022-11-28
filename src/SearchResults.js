@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const CustomerTable = ({ customerObject }) => {
-  const Row = ({ customerInfo }) => {
-    console.log(customerInfo);
-    let x = customerInfo;
+  const Row = ({ x }) => {
     const [isSelect, setSelected] = useState(false);
     const selectRow = () => {
       setSelected(!isSelect);
@@ -50,11 +48,9 @@ const CustomerTable = ({ customerObject }) => {
           </tr>
         </thead>
         <tbody>
-          <Row customerInfo={customerObject[0]} />
-          <Row customerInfo={customerObject[1]} />
-          <Row customerInfo={customerObject[2]} />
-          <Row customerInfo={customerObject[3]} />
-          <Row customerInfo={customerObject[4]} />
+          {customerObject.map(info => {
+            return <Row x={info} />;
+          })}
         </tbody>
       </table>
     </div>

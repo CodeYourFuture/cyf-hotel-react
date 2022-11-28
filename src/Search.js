@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Search = () => {
+const Search = props => {
+  let [searchInput, setSearchInput] = useState("");
+  const handleSearchInput = e => {
+    e.preventDefault();
+  };
   return (
     <div className="search">
       <div className="page-header">
@@ -16,8 +20,12 @@ const Search = () => {
                 id="customerId"
                 className="form-control"
                 placeholder="Customer id"
+                value={searchInput}
+                onChange={handleSearchInput}
               />
-              <button className="btn btn-primary">Search IDs</button>
+              <button className="btn btn-primary" onClick={handleSearchInput}>
+                Search IDs
+              </button>
             </div>
           </form>
         </div>
