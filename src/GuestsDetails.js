@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 
 const GuestsDetails = props => {

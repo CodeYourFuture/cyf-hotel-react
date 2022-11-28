@@ -102,6 +102,8 @@
 
 .loading-span {
   display: block;
+  width: 90%;
+  margin: auto;
   text-align: center;
   font-size: 1.5em;
   background-color: rgb(193, 217, 238);

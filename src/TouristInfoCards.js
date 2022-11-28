@@ -4,11 +4,7 @@ const TouristInfoCards = () => {
   return (
     <div className="card-container">
       <div className="card">
-        <img
-          className="card-img-top"
-          src="https://images-na.ssl-images-amazon.com/images/I/91uAXURQq4L._SX500_.jpg"
-          alt="Glasgow"
-        />
+        <img className="card-img-top" src="/images/glasgow.jpg" alt="Glasgow" />
         <div className="card-body">
           <a className="btn btn-primary" href="https://peoplemakeglasgow.com">
             Glasgow
@@ -17,11 +13,7 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img
-          className="card-img-top"
-          src="https://static.amazon.jobs/locations/118/thumbnails/Manchester_-_Thumbnail.jpg?1456767226"
-          alt=""
-        />
+        <img className="card-img-top" src="/images/manchester.jpg" alt="" />
         <div className="card-body">
           <a className="btn btn-primary" href="https://visitmanchester.com">
             Manchester
@@ -30,11 +22,7 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img
-          className="card-img-top"
-          src="https://live.staticflickr.com/3653/3499471010_a80f94ae33_b.jpg"
-          alt=""
-        />
+        <img className="card-img-top" src="/images/london.jpg" alt="" />
         <div className="card-body">
           <a className="btn btn-primary" href="https://visitlondon.com">
             London
