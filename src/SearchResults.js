@@ -1,8 +1,9 @@
-import moment from "moment";
-import React, { useState } from "react";
+//import moment from "moment";
+import React from "react";
+import TableRow from "./TableRow";
 
 const SearchResults = ({ results }) => {
-  const [isClicked, setIsClicked] = useState(false);
+  //const [isClicked, setIsClicked] = useState(false);
   return (
     <table className="table table-striped">
       <thead>
@@ -18,26 +19,8 @@ const SearchResults = ({ results }) => {
         </tr>
       </thead>
       <tbody>
-        {results.map(record => {
-          return (
-            <tr
-              onClick={() => {
-                setIsClicked(!isClicked);
-              }}
-              style={isClicked ? { border: "2px solid red" } : {}}
-            >
-              <td>{record.title}</td>
-              <td>{record.firstName}</td>
-              <td>{record.surname}</td>
-              <td>{record.email}</td>
-              <td>{record.roomId}</td>
-              <td>{record.checkInDate}</td>
-              <td>{record.checkOutDate}</td>
-              <td>
-                {moment(record.checkOutDate).diff(record.checkInDate, "days")}
-              </td>
-            </tr>
-          );
+        {results.map((booking, index) => {
+          return <TableRow key={index} booking={booking} />;
         })}
       </tbody>
     </table>

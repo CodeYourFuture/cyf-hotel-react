@@ -21,10 +21,13 @@
 
 .cards {
   display: flex;
+
   flex-direction: row;
-  justify-content: space-between;
   margin: 1.5rem;
   margin-top: 7rem;
+
+  margin: 5rem, auto;
+  justify-content: space-evenly;
 }
 
 .App-header {
