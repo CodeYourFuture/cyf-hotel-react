@@ -15,39 +15,46 @@ const SearchResults = props => {
     "number of nights"
   ];
   const moment = require("moment");
-  const rowNum = props.FakeBookings.length;
-  let classRows = [];
-  for (let i = 0; i < rowNum; i++) {
-    classRows.push("unselectedColor");
-  }
-  const [colorRow, setColorRow] = useState(classRows);
+  const rowNum = props.bookingData.length;
+
+  const rowsClasses = [
+    "unSelectedColor",
+    "unSelectedColor",
+    "unSelectedColor",
+    "unSelectedColor",
+    "unSelectedColor"
+  ];
+  const [rowColor, setRowColor] = useState(rowsClasses);
+
   const updateClassName = index => {
-    // const index = 2;
-    const newClassArray = [...colorRow];
-    if (colorRow[index] != "unselectedColor") {
-      newClassArray[index] = "unselectedColor";
+    if (rowColor[index] != "unSelectedColor") {
+      rowColor[index] = "unSelectedColor";
     } else {
-      newClassArray[index] = "selectedColor";
+      rowColor[index] = "selectedColor";
     }
-    setColorRow(newClassArray);
+    setRowColor([...rowColor]);
   };
+
   return (
     <table className="table ">
       <thead>
         <tr>
-          {colTable.map(titleComponent => (
-            <th scope="col">{titleComponent}</th>
+          {colTable.map((titleComponent, index) => (
+            <th scope="col" key={index}>
+              {titleComponent}
+            </th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {props.FakeBookings.map((individualBookingInfo, index) => (
+        {props.bookingData.map((individualBookingInfo, index) => (
           <tr
-            className={colorRow[index]}
+            className={rowColor[index]}
+            key={index}
             onClick={updateClassName.bind(this, index)}
           >
-            {Object.values(individualBookingInfo).map(rowEntry => (
-              <td>{rowEntry}</td>
+            {Object.values(individualBookingInfo).map((rowEntry, index) => (
+              <td key={index}>{rowEntry}</td>
             ))}
             {/* <td>{individualBookingInfo.id}</td>
             <td>{individualBookingInfo.title}</td>

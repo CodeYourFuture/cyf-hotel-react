@@ -98,9 +98,8 @@ p {
   justify-content: space-between;
   margin: 10px;
 }
-
-.unselectedColor {
-  background-color: rgb(200, 200, 200);
+.unSelectedColor {
+  background-color: rgb(186, 186, 186);
 }
 .selectedColor {
   background-color: #ffff00;

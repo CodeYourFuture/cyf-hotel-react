@@ -5,8 +5,8 @@ const Footer = props => {
     <footer className="bg-dark text-center text-lg-start  text-warning">
       <hr />
       <ul>
-        {props.infoArray.map(infoElm => (
-          <li>{infoElm}</li>
+        {props.infoArray.map((infoElm, index) => (
+          <li key={index}>{infoElm}</li>
         ))}
       </ul>
     </footer>
