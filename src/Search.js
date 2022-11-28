@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Search = props => {
   let [searchInput, setSearchInput] = useState("");
   const handleSearchInput = e => {
-    e.preventDefault();
+    setSearchInput(e.target.value);
   };
   return (
     <div className="search">
@@ -12,7 +12,13 @@ const Search = props => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form
+            className="form-group search-box"
+            onSubmit={e => {
+              e.preventDefault();
+              props.search(searchInput);
+            }}
+          >
             <label htmlFor="customerName">Customer id</label>
             <div className="search-row">
               <input
@@ -23,9 +29,7 @@ const Search = props => {
                 value={searchInput}
                 onChange={handleSearchInput}
               />
-              <button className="btn btn-primary" onClick={handleSearchInput}>
-                Search IDs
-              </button>
+              <button className="btn btn-primary">Search IDs</button>
             </div>
           </form>
         </div>
