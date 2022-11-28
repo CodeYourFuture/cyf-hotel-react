@@ -100,3 +100,10 @@ tr {
 .notVip {
   color: rgb(171, 74, 74);
 }
+#lodingMsg {
+  min-height: 4rem;
+  min-width: 4rem;
+  background-color: rgb(195, 219, 241);
+  color: rgb(35, 33, 33);
+  font-size: 3rem;
+}

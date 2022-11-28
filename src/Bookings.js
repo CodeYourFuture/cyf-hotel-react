@@ -37,7 +37,12 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} buttonClicked={buttonClicked} />
+        {bookings.length === 0 ? (
+          <span id="lodingMsg">Please Wait until the bookings are loaded</span>
+        ) : (
+          <SearchResults results={bookings} buttonClicked={buttonClicked} />
+        )}
+
         <CustomerProfile
           selectedProfileId={selectedProfileId}
           customerProfile={customerProfile}
