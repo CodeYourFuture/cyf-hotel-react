@@ -61,7 +61,6 @@
 
 .search-bookings {
   padding: 00.5em;
-  background-color: rgb(139, 157, 173);
   color: rgb(1, 49, 90);
   font-weight: 800;
 }
@@ -81,6 +80,10 @@
 .table-body {
   display: table-row-group;
   border-style: solid;
+  background-color: rgb(193, 217, 238);
+}
+
+.highlight {
   background-color: aliceblue;
 }
 
@@ -101,15 +104,19 @@
   display: block;
   text-align: center;
   font-size: 1.5em;
-  background-color: aliceblue;
+  background-color: rgb(193, 217, 238);
 }
 .search-bookings-container {
   width: 90%;
   margin: auto;
+  padding: 0 1rem;
+  background-color: rgb(193, 217, 238);
 }
 .booking-modal-button {
-  float: right;
-  margin: -2rem 0 1.5rem auto;
+  display: block;
+  width: fit-content;
+  margin: -2rem 0 2rem auto;
+  padding-bottom: 1rem;
 }
 
 .restaurant-orders {

@@ -31,7 +31,6 @@ const BookingFormModal = ({ bookings, setBookings }) => {
     "Miss",
     "Ms",
     "Sir",
-    "Dame",
     "Dr",
     "Lady",
     "Lord",
@@ -114,7 +113,7 @@ const BookingFormModal = ({ bookings, setBookings }) => {
             required
             fullWidth
             onChange={handleChange}
-            value="Mr"
+            value={guestDetails.title}
           >
             {titles.map((title, index) => (
               <MenuItem key={index} value={title}>
@@ -127,6 +126,7 @@ const BookingFormModal = ({ bookings, setBookings }) => {
             variant="outlined"
             margin="dense"
             autoComplete="off"
+            autoFocus
             id="title"
             name="title"
             label="Title"

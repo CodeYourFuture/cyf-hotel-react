@@ -2,14 +2,8 @@ import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 
 const GuestsDetails = props => {
-  const [highlight, setHighlight] = useState(null);
-
   const rowHighlighter = e => {
-    if (e.target.parentElement.style.backgroundColor !== "rgb(139, 157, 173)") {
-      setHighlight(
-        (e.target.parentElement.style.backgroundColor = "rgb(139, 157, 173)")
-      );
-    } else return (e.target.parentElement.style.backgroundColor = "aliceblue");
+    e.currentTarget.classList.toggle("highlight");
   };
 
   return (
@@ -20,10 +14,7 @@ const GuestsDetails = props => {
         const checkOut = moment(guest.checkOutDate);
         const numberOfNights = checkOut.diff(checkIn, "days");
         return (
-          <tr key={guest.id} onClick={rowHighlighter} className={highlight}>
-            {/* <th className="t-body" scope="row">
-              {guest.id}
-            </th> */}
+          <tr key={guest.id} onClick={rowHighlighter}>
             <th className="t-body" scope="row">
               {guest.title}
             </th>

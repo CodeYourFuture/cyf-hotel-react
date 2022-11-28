@@ -40,7 +40,6 @@ const Bookings = () => {
           <SearchResults
             results={bookings}
             tableHeaders={[
-              // "id",
               "Title",
               "First name",
               "Surname",
