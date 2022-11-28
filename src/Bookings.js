@@ -4,14 +4,15 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [bookingsData, setBookingsData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const search = searchVal => {
-    const filteredSearch = bookings.filter(booking => {
+    const filteredSearch = bookingsData.filter(booking => {
       return (
         booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
         booking.surname.toLowerCase().includes(searchVal.toLowerCase()) ||
-        searchVal.includes(booking.id)
+        (searchVal > 0 && searchVal.includes(booking.id))
       );
     });
     setBookings(filteredSearch);
@@ -23,6 +24,7 @@ const Bookings = () => {
       .then(data => {
         setLoading(true);
         setBookings(data);
+        setBookingsData(data);
       });
   }, []);
 
