@@ -7,6 +7,12 @@ import FakeBookings from "./data/fakeBookings.json";
 const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    const booingFilter = bookings.filter(
+      dataCustomer =>
+        dataCustomer["firstName"].toLowerCase() == searchVal.toLowerCase() ||
+        dataCustomer["surname"].toLowerCase() == searchVal.toLowerCase()
+    );
+    setBookings([...booingFilter]);
   };
 
   const [bookings, setBookings] = useState([]);
@@ -23,6 +29,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
+
         {/* <SearchResults results={FakeBookings} /> */}
         <SearchResults bookingData={bookings} />
       </div>
