@@ -11,8 +11,8 @@ const CustomerProfile = props => {
   return (
     <>
       {customer.vip ? (
-        <div>
-          <h1>Customer {props.id} Profile</h1>
+        <div className="col-sm-3">
+          <h3>Customer {props.id} Profile</h3>
           <ul>
             <li>{customer.email}</li>
             <li>{customer.phoneNumber}</li>

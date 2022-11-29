@@ -6,8 +6,8 @@ const TouristInfoCards = () => {
     <div className="row d-flex justify-content-center m-2">
       {cities.map((city, index) => {
         return (
-          <div class="col-sm-3 d-flex ">
-            <div className="card" key={index}>
+          <div className="col-sm-3 d-flex " key={"card-" + index}>
+            <div className="card">
               <div className="card-header">
                 <h5 className="card-title">{city.name}</h5>
               </div>
@@ -22,6 +22,7 @@ const TouristInfoCards = () => {
                   className="btn btn-warning btn-sm justify-self-end"
                   href={city.link}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   More information
                 </a>
