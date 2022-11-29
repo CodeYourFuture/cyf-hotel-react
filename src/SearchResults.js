@@ -21,14 +21,14 @@ const SearchResults = props => {
   const rowNum = props.bookingData.length;
   // const [rowsClasses, setRowsClasses] = useState('');
   // setRowsClasses([...new Array(rowNum)].map((elm) => elm="unSelectedColor"));
-  const rowsClasses = [
-    "unSelectedColor",
-    "unSelectedColor",
-    "unSelectedColor",
-    "unSelectedColor",
-    "unSelectedColor"
-  ];
-  // const rowsClasses = [...new Array(rowNum)].map(() => "unSelectedColor");
+  // const rowsClasses = [
+  //   "unSelectedColor",
+  //   "unSelectedColor",
+  //   "unSelectedColor",
+  //   "unSelectedColor",
+  //   "unSelectedColor"
+  // ];
+  const rowsClasses = [...new Array(rowNum)].map(() => "unSelectedColor");
 
   // console.log(rowsClasses);
   const [rowColor, setRowColor] = useState(rowsClasses);
