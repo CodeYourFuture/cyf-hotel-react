@@ -5,6 +5,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+
   function updateSetBookings(event) {
     setBookings(event.target.value);
   }
@@ -12,7 +13,6 @@ const Bookings = () => {
     fetch(`https://cyf-react.glitch.me/`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         setBookings(data);
       })
       .catch(error => {
@@ -20,15 +20,19 @@ const Bookings = () => {
       });
   }, []);
 
-  const search = searchVal => {
+  const search = ({ searchVal }) => {
     console.info("TO DO!", searchVal);
-    // let filteredBookings = bookings.filter(booking=> {
-    //   return (
-    //     booking.firstName.toLowerCase() === searchVal.toLowerCase() ||
-    //     booking.surname.toLowerCase() === searchVal.toLowerCase()
-    //   )
-    // })
-    // setBookings(filteredBookings)
+    if (searchVal !== "") {
+      let filteredBookings = bookings.filter(booking => {
+        return (
+          booking.firstName.toLowercase() === searchVal ||
+          booking.surname.toLowercase() === searchVal
+        );
+      });
+      setBookings(filteredBookings);
+    } else {
+      setBookings(bookings);
+    }
   };
 
   return (

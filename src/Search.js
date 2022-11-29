@@ -5,11 +5,12 @@ const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
 
   function handleSearchInput(event) {
-    setSearchInput(searchInput);
+    setSearchInput(event.target.value);
+    console.log(event.target.value);
   }
   function handleSubmit(event) {
-    setSearchInput(event.target.value);
     event.preventDefault();
+    search(searchInput);
   }
   return (
     <div className="search">

@@ -3,9 +3,8 @@ import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
-  //   function handleProfile(CustomerProfile){
-  // return "Customer Profile"
-  //   }
+  function handleProfile(CustomerProfile) {}
+
   return (
     <div className="table-container">
       <p className="results"> Results</p>
@@ -21,7 +20,8 @@ const SearchResults = props => {
             <th scope="col">Check-in date</th>
             <th scope="col">Check-out date</th>
             <th scope="col">Number of nights</th>
-            <th scope="col">Button</th>
+            <th scope="col">Customer profile 1</th>
+            {/* <th>Customer profile 2</th> */}
           </tr>
         </thead>
         <tbody>
@@ -59,12 +59,11 @@ const SearchResults = props => {
                   {moment(checkOutDate).diff(moment(checkInDate), "days")}
                 </td>
                 <td>
-                  <button
-                  // onClick={handleProfile}
-                  >
-                    Show profile:
-                  </button>
+                  <button onClick={handleProfile}>Show profile:</button>
                 </td>
+                {/* <td>
+                    <CustomerProfile />
+                  </td>  */}
               </tr>
             );
           })}

@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-function CustomerProfile({ id }) {
+function CustomerProfile() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/customers/${id}")
+    fetch(`https://cyf-react.glitch.me/customer/${id}`)
       .then(res => res.json())
+      .then(data => {
+        setIsLoaded(data);
+        console.log(data);
+      })
       .then(
         result => {
           setIsLoaded(true);
@@ -17,7 +21,7 @@ function CustomerProfile({ id }) {
           setError(error);
         }
       );
-  }, []);
+  }, [id]);
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
@@ -25,8 +29,8 @@ function CustomerProfile({ id }) {
   } else {
     return (
       <div>
-        <h2>Customer id :</h2>
-        <p>Email:</p>
+        <h2>Customer id :{items.id}</h2>
+        <p>Email:{items.email}</p>
         <p>Vip Status:</p>
         <p>Phone Number:</p>
       </div>
@@ -35,19 +39,3 @@ function CustomerProfile({ id }) {
 }
 
 export default CustomerProfile;
-
-// const [profile, setProfile] = useState("");
-// useEffect(() => {
-//   fetch(`https://cyf-react.glitch.me/customers/${id}`)
-//     .then((res) => res.json())
-//     .then((data) => setProfile(data));
-//   console.log(data);
-// }, [id]);
-// return (
-//   <div>
-//     <h2>Customer id :</h2>
-//     <p>Email:</p>
-//     <p>Vip Status:</p>
-//     <p>Phone Number:</p>
-//   </div>
-// );
