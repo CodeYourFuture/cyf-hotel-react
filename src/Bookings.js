@@ -4,6 +4,10 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
+  const handleBooking = () => {
+    setBookings();
+  };
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
@@ -13,7 +17,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
+        <Search search={search} onClick={handleBooking} />
         <SearchResults results={bookings} />
       </div>
     </div>

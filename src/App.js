@@ -10,6 +10,7 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
+      {/* <div className="cards-wrapper"> */}
       <TouristInfoCards
         img="https://media.istockphoto.com/id/1205363274/photo/wide-angle-aerial-view-of-the-river-clyde-and-landmarks-glasgow-scotland-uk.jpg?b=1&s=612x612&w=0&k=20&c=tNJwoax0ZtLmexUN7PS0kTGfU7Ni2RF6gRLiu-Gfwp8="
         city="Glasgow"
@@ -28,6 +29,7 @@ const App = () => {
         content="About city"
         link="https://visitlondon.com"
       />
+      {/* </div> */}
       <Bookings />
       <Restaurant />
       <Footer
