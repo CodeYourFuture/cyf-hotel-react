@@ -1,5 +1,5 @@
 import React from "react";
-import SearchButton from "./SearchButton";
+import Button from "./Button";
 
 const Search = props => {
   return (
@@ -20,7 +20,7 @@ const Search = props => {
                 value={props.value}
                 onChange={props.handleSearchInput}
               />
-              <SearchButton />
+              <Button text="Search" />
             </div>
           </form>
         </div>

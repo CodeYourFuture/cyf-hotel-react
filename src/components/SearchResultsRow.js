@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import Button from "./Button";
 
 const SearchResultsRow = props => {
   const [selected, setSelected] = useState(true);
   const [highlighted, setHighlighted] = useState("");
+
   function selectRow() {
     if (selected) {
       setHighlighted("highlight");
@@ -24,6 +26,13 @@ const SearchResultsRow = props => {
       <td>{props.booking.checkInDate}</td>
       <td>{props.booking.checkOutDate}</td>
       <td>{props.numOfNights}</td>
+      <td>
+        <Button
+          text="Show profile"
+          onclick={props.handleClick}
+          value={props.booking.id}
+        />
+      </td>
     </tr>
   );
 };
