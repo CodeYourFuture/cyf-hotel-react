@@ -17,11 +17,10 @@ export default function CustomerProfile(props) {
       <p>
         {Object.entries(customerDetails).map(elm => (
           <li>
-            {elm[0]}: {elm[1]}
+            {elm[0].charAt(0).toUpperCase() + elm[0].slice(1)}: {String(elm[1])}
           </li>
         ))}
       </p>
-      >
     </div>
   );
 }
