@@ -44,9 +44,6 @@ const SearchResults = props => {
     setRowColor([...rowColor]);
   };
 
-  // const getCustomerId = (x) => {
-  //   return x;
-  // };
   return (
     <div>
       <table className="table ">

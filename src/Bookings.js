@@ -15,22 +15,24 @@ const Bookings = () => {
     setBookings([...booingFilter]);
   };
 
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState(null);
+  // const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/`)
       .then(res => res.json())
       .then(data => {
-        //  console.log(data);
+        console.log(data);
         setBookings(data);
       });
-  }, []); // Always remember to put an empty array here!
-
+  }, []);
+  //  bookings.length === [] ? setLoading(true) : setLoading(false);
+  console.log(bookings);
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
 
-        {/* <SearchResults results={FakeBookings} /> */}
         <SearchResults bookingData={bookings} />
       </div>
     </div>
