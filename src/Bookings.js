@@ -15,25 +15,57 @@ const Bookings = () => {
     setBookings([...booingFilter]);
   };
 
-  const [bookings, setBookings] = useState(null);
-  // const [loading, setLoading] = useState(false);
+  const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/`)
-      .then(res => res.json())
+    // fetch(`https://cyf-react.glitch.me/delayed/`)
+    fetch(`https://cyf-react.glitch.me/delayed/`)
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error("Something went wrong");
+          setLoading(true);
+        }
+      })
       .then(data => {
-        console.log(data);
+        // console.log(data);
         setBookings(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        //  console.log(error);
+        setLoading(true);
+        setError(`${error}`);
       });
   }, []);
   //  bookings.length === [] ? setLoading(true) : setLoading(false);
-  console.log(bookings);
+
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-
-        <SearchResults bookingData={bookings} />
+        {loading ? (
+          error != "" ? (
+            <div>
+              <p> {error} </p>
+            </div>
+          ) : (
+            <div className="d-flex align-items-center">
+              <strong>Loading...</strong>
+              <div
+                className="spinner-border ml-auto"
+                role="status"
+                aria-hidden="true"
+              ></div>
+            </div>
+          )
+        ) : (
+          // <SearchResults bookingData={bookings} />
+          <SearchResults bookingData={bookings} />
+        )}
       </div>
     </div>
   );
