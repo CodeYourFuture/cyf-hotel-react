@@ -47,14 +47,11 @@
   }
 }
 
-.App-content {
-  padding-top: 20px;
-}
-
 /* Tourist info cards */
 .search {
   padding: 5px 0 20px 0;
 }
+
 .highlight {
   background-color: var(--dark-grey);
 }

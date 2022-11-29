@@ -42,15 +42,13 @@ const Bookings = () => {
   }, []);
 
   return (
-    <div className="App-content">
-      <div className="container">
-        <Search
-          search={e => search(e, searchInput)}
-          value={searchInput}
-          handleSearchInput={handleSearchInput}
-        />
-        {loading ? <SearchResults results={bookings} /> : <p>{message}</p>}
-      </div>
+    <div className="container">
+      <Search
+        search={e => search(e, searchInput)}
+        value={searchInput}
+        handleSearchInput={handleSearchInput}
+      />
+      {loading ? <SearchResults results={bookings} /> : <p>{message}</p>}
     </div>
   );
 };

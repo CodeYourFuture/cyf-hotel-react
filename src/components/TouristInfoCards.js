@@ -3,21 +3,22 @@ import cities from "../data/cities.json";
 
 const TouristInfoCards = () => {
   return (
-    <div className="row d-flex justify-content-center m-2">
+    <div className="row d-flex justify-content-evenly ms-5 me-5 ps-5 pe-5 mb-5">
       {cities.map((city, index) => {
         return (
-          <div className="col-sm-3 d-flex " key={"card-" + index}>
+          <div className="col-sm-4 d-flex " key={"card-" + index}>
             <div className="card">
-              <div className="card-header">
-                <h5 className="card-title">{city.name}</h5>
-              </div>
+              <img
+                className="card-img-top"
+                style={{ height: "15rem" }}
+                src={city.image}
+                alt={city.name}
+              />
               <div className="card-body d-flex flex-column">
-                <img
-                  className="card-img-top"
-                  src={city.image}
-                  alt={city.name}
-                />
-                <p className="card-text pt-4">{city.description}</p>
+                <h5 className="card-title">{city.name}</h5>
+                <p className="card-text pt-4" style={{ height: "12rem" }}>
+                  {city.description}
+                </p>
                 <a
                   className="btn btn-warning btn-sm justify-self-end"
                   href={city.link}
