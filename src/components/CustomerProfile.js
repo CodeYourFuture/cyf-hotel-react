@@ -7,7 +7,7 @@ const CustomerProfile = props => {
       .then(res => res.json())
       .then(data => setCustomer(data));
   }, [props.id]);
-  console.log(customer);
+
   return (
     <>
       {customer.vip ? (

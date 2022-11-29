@@ -6,6 +6,7 @@ import SearchResults from "./SearchResults";
 const Bookings = () => {
   const [searchInput, setSearchInput] = useState("");
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   function handleSearchInput(e) {
     setSearchInput(e.target.value);
@@ -25,7 +26,10 @@ const Bookings = () => {
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
       .then(res => res.json())
-      .then(data => setBookings(data));
+      .then(data => {
+        setBookings(data);
+        setLoading(true);
+      });
   }, []);
 
   return (
@@ -36,7 +40,11 @@ const Bookings = () => {
           value={searchInput}
           handleSearchInput={handleSearchInput}
         />
-        <SearchResults results={bookings} />
+        {loading ? (
+          <SearchResults results={bookings} />
+        ) : (
+          <p>Please wait the page is loading</p>
+        )}
       </div>
     </div>
   );
