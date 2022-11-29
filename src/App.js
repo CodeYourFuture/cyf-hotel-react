@@ -3,7 +3,7 @@ import React from "react";
 import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
-// import Restaurant from "./Restaurant";
+import Restaurant from "./Restaurant";
 import TouristInFoCards from "./TouristInFoCards";
 import Footer from "./Footer";
 
@@ -12,6 +12,7 @@ const App = () => {
     <div className="App">
       <Heading />
       <Bookings />
+      <Restaurant />
       <TouristInFoCards />
       <Footer />
     </div>

@@ -41,6 +41,27 @@
   width: 100%;
   align-items: center;
 }
+.restaurant-order {
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  width: 60%;
+  margin: auto;
+}
+
+.restaurant-order h3 {
+  text-align: center;
+}
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 150px;
+  margin-top: -30px;
+}
+.selectedColor {
+  background-color: #ffff00;
+  font-weight: bold;
+}
 
 @keyframes App-logo-spin {
   from {

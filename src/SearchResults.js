@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
+// const SearchResults = (props) => {
+//   const [click, setClick] = useState();
+//   function ButtonClick() {
+//     setClick(click);
+//   }
 const SearchResults = props => {
+  const rowNum = props.results.length;
+  let classRows = [];
+  for (let i = 0; i < rowNum; i++) {
+    classRows.push("unselectedColor");
+  }
+  const [colorRow, setColorRow] = useState(classRows);
+  const updateClassName = index => {
+    // const index = 2;
+    const newClassArray = [...colorRow];
+    if (colorRow[index] !== "unselectedColor") {
+      newClassArray[index] = "unselectedColor";
+    } else {
+      newClassArray[index] = "selectedColor";
+    }
+    setColorRow(newClassArray);
+  };
+
   return (
     <div>
       <table class="table">
@@ -19,8 +41,14 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map(result => (
-            <tr>
+          {props.results.map((result, index) => (
+            <tr
+              key={result.id}
+              className={colorRow[index]}
+              selected
+              color
+              onClick={updateClassName.bind(this, index)}
+            >
               <th scope="row">{result.id}</th>
               <td>{result.title}</td>
               <td>{result.firstName}</td>
