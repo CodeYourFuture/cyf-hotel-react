@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from "react";
-export default function NewBooking(props) {
-  const occupiedRoomId = props.bookingData.map(elm => elm["roomId"]);
-  const [availableRoomId, setAvailableRoomId] = useState([]);
-  const [id, setId] = useState(0);
+export default function NewBooking() {
+  // const occupiedRoomId = props.bookingData.map(elm => elm["roomId"]);
+  // const [availableRoomId, setAvailableRoomId] = useState([]);
+  // const [id, setId] = useState(0);
   //   for (let i = 1; i < 10; i++) {
   //     var tempArray = [];
   //     if (!occupiedRoomId.includes(i)) {

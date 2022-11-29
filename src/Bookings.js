@@ -54,7 +54,7 @@ const Bookings = () => {
         <button className="btn btn-primary" onClick={() => setNewRow(true)}>
           New Booking
         </button>
-        {newRow ? <NewBooking bookingData={bookings} /> : null}
+        {newRow ? <NewBooking /> : null}
         {loading ? (
           error != "" ? (
             <div>
