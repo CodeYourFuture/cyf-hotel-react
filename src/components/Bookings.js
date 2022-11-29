@@ -7,7 +7,7 @@ const Bookings = () => {
   const [searchInput, setSearchInput] = useState("");
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const [message, setMessage] = useState("Please wait the page is loading");
   function handleSearchInput(e) {
     setSearchInput(e.target.value);
   }
@@ -25,10 +25,19 @@ const Bookings = () => {
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error("Something went wrong");
+      })
       .then(data => {
         setBookings(data);
         setLoading(true);
+      })
+      .catch(error => {
+        console.log(error);
+        setMessage("Something went wrong");
       });
   }, []);
 
@@ -40,11 +49,7 @@ const Bookings = () => {
           value={searchInput}
           handleSearchInput={handleSearchInput}
         />
-        {loading ? (
-          <SearchResults results={bookings} />
-        ) : (
-          <p>Please wait the page is loading</p>
-        )}
+        {loading ? <SearchResults results={bookings} /> : <p>{message}</p>}
       </div>
     </div>
   );
