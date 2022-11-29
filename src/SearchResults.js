@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 import { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
+import NewBooking from "./NewBooking";
 
 // import FakeBookings from "./data/fakeBookings.json";
 const SearchResults = props => {

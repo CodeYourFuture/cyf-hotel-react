@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import NewBooking from "./NewBooking.js";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 // import SearchResults from "./SearchResults.js";
@@ -18,10 +19,13 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [newRow, setNewRow] = useState(false);
 
   useEffect(() => {
-    // fetch(`https://cyf-react.glitch.me/delayed/`)
-    fetch(`https://cyf-react.glitch.me/delayed/`)
+    // fetch(`https://cyf-react.glitch.me/delayed/`) for delyaed data
+    // fetch(`https://cyf-react.glitch.me/errors/`) wrong HTTP
+
+    fetch(`https://cyf-react.glitch.me/`)
       .then(res => {
         if (res.ok) {
           return res.json();
@@ -47,6 +51,10 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
+        <button className="btn btn-primary" onClick={() => setNewRow(true)}>
+          New Booking
+        </button>
+        {newRow ? <NewBooking bookingData={bookings} /> : null}
         {loading ? (
           error != "" ? (
             <div>
