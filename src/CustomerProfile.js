@@ -10,7 +10,7 @@ export default function CustomerProfile(props) {
         setCustomerDetails(data);
       });
   }, [props.id]); // Always remember to put an empty array here!
-  console.log(customerDetails);
+  // console.log(customerDetails);
   return (
     <div>
       <p>Customer {props.id} Profiles </p>

@@ -33,6 +33,9 @@ const SearchResults = props => {
   const [rowColor, setRowColor] = useState(rowsClasses);
   const [getCustomerId, setGetCustomerId] = useState("");
   const updateClassName = index => {
+    rowColor.map((classEachRow, indexTemp) => {
+      if (indexTemp !== index) rowColor[indexTemp] = "unSelectedColor";
+    });
     if (rowColor[index] != "unSelectedColor") {
       rowColor[index] = "unSelectedColor";
     } else {
