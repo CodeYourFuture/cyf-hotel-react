@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
   const rowNum = props.results.length;
@@ -39,6 +40,7 @@ const SearchResults = props => {
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
             <th scope="col">No. of nights</th>
+            <th scope="col">Show profile</th>
           </tr>
         </thead>
         <tbody>
@@ -46,6 +48,8 @@ const SearchResults = props => {
             <tr
               key={result.id}
               className={colorRow[index]}
+              selected
+              color
               onClick={updateClassName.bind(this, index)}
               // key={index}
               // onClick={() => rowClick(index)}
@@ -63,6 +67,10 @@ const SearchResults = props => {
               <td>{result.checkOutDate}</td>
               <td>
                 {moment(result.checkOutDate).diff(result.checkInDate, "days")}
+              </td>
+
+              <td>
+                <CustomerProfile id={result.id} />
               </td>
             </tr>
           ))}

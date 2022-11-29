@@ -93,10 +93,20 @@ tr {
   width: 18rem;
 }
 
-.unselectedColor {
+/* .unselectedColor {
   background-color: rgb(200, 200, 200);
-}
+} */
 .selectedColor {
   background-color: #ffff00;
   font-weight: bold;
+  /* width: 100%; */
+}
+
+.customer-profile {
+  /* background-color: gray; */
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  width: 250px;
+  /* margin-left: -35rem; */
 }
