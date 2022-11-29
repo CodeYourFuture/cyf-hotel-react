@@ -28,6 +28,7 @@ const SearchResultsRow = props => {
       <td>{props.numOfNights}</td>
       <td>
         <Button
+          class="dark btn-sm"
           text="Show profile"
           onclick={props.handleClick}
           value={props.booking.id}

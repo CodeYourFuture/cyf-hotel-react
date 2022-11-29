@@ -20,7 +20,7 @@ const Search = props => {
                 value={props.value}
                 onChange={props.handleSearchInput}
               />
-              <Button text="Search" />
+              <Button class="danger" text="Search" />
             </div>
           </form>
         </div>
