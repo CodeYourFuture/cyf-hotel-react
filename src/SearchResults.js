@@ -20,7 +20,7 @@ const SearchResults = ({ results }) => {
           return (
             <tr
               onClick={() => setClicked(!Clicked)}
-              style={Clicked ? { color: "red" } : {}}
+              style={Clicked ? { border: " 2px solid gold " } : {}}
             >
               <td>{record.title}</td>
               <td>{record.firstName}</td>
