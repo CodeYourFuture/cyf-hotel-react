@@ -1,10 +1,17 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
+  
+const SearchResults = ({ results }) =>
+{
+    const [customerID, setCustomerID] = useState();
+    const checkClick = (selectedID) =>
+    {
+        setCustomerID(selectedID);
+    }
 
-
-const SearchResult = ({results}) =>
-{    
-    return(
+    return (
+    <div>
         <table>
             <thead>
                 <tr>
@@ -17,22 +24,25 @@ const SearchResult = ({results}) =>
                     <th>Check in date</th>
                     <th>Check out date</th>
                     <th>Number of nights</th>
+                    <th></th>
                 </tr>
             </thead>
-            
             <tbody>
-                {results.map(element => 
-                (
-                    <ResultRow element = {element}/>
-                ))}
+                {results.map(element =>
+                {
+                    return (
+                        <ResultRow element = {element} checkClick = {checkClick}/>
+                    );
+                })}
             </tbody>
         </table>
-    )
+        {customerID && <CustomerProfile id={customerID}/>}
+    </div>
+    );
 }
 
-const ResultRow = (props) =>
+const ResultRow = ({ element, checkClick }) =>
 {
-    const element = props.element;
     const [isBackgroundHightlighted, setBackground] = useState("white");
 
     const setColor = () =>
@@ -47,21 +57,21 @@ const ResultRow = (props) =>
             setBackground("white");
         }
     }
-
-    return(
-    <tr onClick={() => setColor(isBackgroundHightlighted)} style={{backgroundColor: isBackgroundHightlighted}}>
-        <th>{element.id}</th>
-        <th>{element.title}</th>
-        <th>{element.firstName}</th>
-        <th>{element.surname}</th>
-        <th>{element.email}</th>
-        <th>{element.roomId}</th>
-        <th>{element.checkInDate}</th>
-        <th>{element.checkOutDate}</th>
-        <th>{moment(element.checkOutDate).diff(moment(element.checkInDate), "days")}</th>
-    </tr>  
-    )  
+    
+    return (
+    <tr onClick={() => {setColor(isBackgroundHightlighted)}} style={{backgroundColor: isBackgroundHightlighted}}>
+        <td>{element.id}</td>
+        <td>{element.title}</td>
+        <td>{element.firstName}</td>
+        <td>{element.surname}</td>
+        <td>{element.email}</td>
+        <td>{element.roomId}</td>
+        <td>{element.checkInDate}</td>
+        <td>{element.checkOutDate}</td>
+        <td>{moment(element.checkOutDate).diff(moment(element.checkInDate), "days")}</td>
+        <td><button onClick={() => checkClick(element.id)}>Show profile</button></td>
+    </tr>
+    );
 }
 
-
-export default SearchResult;
+export default SearchResults;
