@@ -24,10 +24,7 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
     if (searchVal !== "") {
       let filteredBookings = bookings.filter(booking => {
-        return (
-          booking.firstName.toLowercase() === searchVal ||
-          booking.surname.toLowercase() === searchVal
-        );
+        return booking.firstName === searchVal || booking.surname === searchVal;
       });
       setBookings(filteredBookings);
     } else {

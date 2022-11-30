@@ -61,9 +61,7 @@ const SearchResults = props => {
                 <td>
                   <button onClick={handleProfile}>Show profile:</button>
                 </td>
-                {/* <td>
-                    <CustomerProfile />
-                  </td>  */}
+                {/* <td><CustomerProfile/></td> */}
               </tr>
             );
           })}
