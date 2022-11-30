@@ -10,8 +10,8 @@ function Footer() {
     <div>
       <p>Contact us</p>
       <ul>
-        {contact.map(item => {
-          return <li>{item}</li>;
+        {contact.map((item, index) => {
+          return <li key={index}>{item}</li>;
         })}
       </ul>
     </div>
