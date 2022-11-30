@@ -113,8 +113,8 @@ tr {
 }
 
 .highlightRow {
-  background-color: red;
-  color: white;
+  background-color: #000000;
+  color: gold;
 }
 
 /* footer {
