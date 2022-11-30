@@ -3,10 +3,14 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.jsx";
 import FakeBookings from "./data/fakeBookings.json";
 
+// https://cyf-react.glitch.m
+
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
-    setBookings(FakeBookings);
+    fetch("https://cyf-react.glitch.me")
+      .then(res => res.json())
+      .then(data => setBookings(data));
   }, []);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
