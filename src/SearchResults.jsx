@@ -31,7 +31,7 @@ const SearchResults = props => {
       <table className="table">
         <thead>
           <tr className={tHead ? "" : "highlightTHead"} onClick={handleClick0}>
-            <th scope="col">IDEEs</th>
+            <th scope="col">I.D.</th>
             <th scope="col">Titles</th>
             <th scope="col">First Name</th>
             <th scope="col">Surname</th>
