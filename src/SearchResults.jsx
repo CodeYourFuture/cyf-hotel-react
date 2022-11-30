@@ -16,7 +16,7 @@ const SearchResults = props => {
         <thead>
           <tr className={tHead ? "" : "highlightTHead"} onClick={handleClick0}>
             <th scope="col">I.D.</th>
-            <th scope="col">Title</th>
+            <th scope="col">Titles</th>
             <th scope="col">First Name</th>
             <th scope="col">Surname</th>
             <th scope="col">Email</th>
