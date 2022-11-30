@@ -21,21 +21,43 @@ const Bookings = () =>
 
     return setBookings(searchedBookings);
   }
-  
+  const [status, setStatus] = useState("Loading");
+
   const [bookings, setBookings] = useState([]);
 
   useEffect(() =>
   {
     fetch("https://cyf-react.glitch.me")
       .then(response => response.json())
-      .then(data => setBookings(data))
+      .then(data =>
+        {
+          if (data.error)
+          {
+            setStatus("Failed");
+            console.log("Loading Failed")
+            //setErrorMsg(data.error);
+          }
+          else
+          {
+            setBookings(data);
+            setStatus("Finished");
+            console.log("Loading Finished")
+          }
+        })
   }, []);
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search}/>
-        <SearchResults results={bookings}/>
+        {status === "Finished" && 
+        (
+          <>
+            <Search search={search}/>
+            <SearchResults results={bookings} status ={status}/>
+          </>
+        )}
+        {status === "Loading" && "Loading"}
+        {status === "Failed" && "Failed To Load"}
       </div>
     </div>
   );
