@@ -55,3 +55,19 @@ tr {
 .card {
   width: 18rem;
 }
+
+.hotelImage {
+  width: 250px;
+  padding: 20px 20px;
+}
+
+.card-wrapper {
+  display: flex;
+  align-items: baseline;
+  /* justify-content: center;
+  flex-direction: column; */
+  gap: 1rem;
+}
+.card-img-top {
+  border-radius: 5px;
+}
