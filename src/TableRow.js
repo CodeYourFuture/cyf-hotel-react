@@ -1,34 +1,22 @@
 import moment from "moment";
-import React, { useState } from "react";
+import React from "react";
 
-const TableRow = props => {
-  let checkIn = moment(props.booking.checkInDate);
-  let checkOut = moment(props.booking.checkOutDate);
-
-  const [selected, setSelected] = useState(null);
-
-  const highlightRow = () => {
-    if (selected === props.booking.id) {
-      setSelected(null);
-    } else {
-      setSelected(props.booking.id);
-    }
-  };
-
+const TableRow = ({ record, active, onClick, buttonClicked }) => {
   return (
-    <tr
-      onClick={highlightRow}
-      className={selected === props.booking.id ? "Highlighted" : ""}
-    >
-      <td>{props.booking.id}</td>
-      <td>{props.booking.title}</td>
-      <td>{props.booking.firstName}</td>
-      <td>{props.booking.surname}</td>
-      <td>{props.booking.email}</td>
-      <td>{props.booking.roomId}</td>
-      <td>{props.booking.checkInDate}</td>
-      <td>{props.booking.checkOutDate}</td>
-      <td>{checkOut.diff(checkIn, "days")}</td>
+    <tr onClick={onClick} className={`${active ? "rowColoured" : "rowStart"}`}>
+      <td>{record.title}</td>
+      <td>{record.firstName}</td>
+      <td>{record.surname}</td>
+      <td>{record.email}</td>
+      <td>{record.roomId}</td>
+      <td>{record.checkInDate}</td>
+      <td>{record.checkOutDate}</td>
+      <td>{moment(record.checkOutDate).diff(record.checkInDate, "days")}</td>
+      <td>
+        <button onClick={buttonClicked} value={record.id}>
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };

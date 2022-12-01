@@ -1,9 +1,12 @@
 //import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 import TableRow from "./TableRow";
 
-const SearchResults = ({ results }) => {
-  //const [isClicked, setIsClicked] = useState(false);
+const SearchResults = ({ results, buttonClicked }) => {
+  const [isClicked, setIsClicked] = useState();
+  const setIsClickedRow = id => {
+    setIsClicked(id);
+  };
   return (
     <table className="table table-striped">
       <thead>
@@ -19,8 +22,17 @@ const SearchResults = ({ results }) => {
         </tr>
       </thead>
       <tbody>
-        {results.map((booking, index) => {
-          return <TableRow key={index} booking={booking} />;
+        {results.map(record => {
+          return (
+            <TableRow
+              record={record}
+              isClicked={isClicked === record.id}
+              onClick={() => {
+                setIsClickedRow(record.id);
+              }}
+              buttonClicked={buttonClicked}
+            />
+          );
         })}
       </tbody>
     </table>

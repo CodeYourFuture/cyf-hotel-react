@@ -21,13 +21,16 @@
 
 .cards {
   display: flex;
-
   flex-direction: row;
   margin: 1.5rem;
   margin-top: 7rem;
-
   margin: 5rem, auto;
   justify-content: space-evenly;
+}
+
+.wrap-card {
+  text-align: center;
+  align-items: center;
 }
 
 .App-header {
