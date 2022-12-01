@@ -1,8 +1,14 @@
-import React from "react";
-
+import React, { useState } from "react";
 import SearchRow from "./SearchRow.jsx";
-
+import CustomerProfile from "./CustomerProfile.jsx";
 const SearchResults = ({ results }) => {
+  const [customerId, setCustomerId] = useState("");
+
+  function handleClick(e) {
+    e.preventDefault();
+    setCustomerId(e.target.value);
+  }
+
   return (
     <div>
       <table className="table">
@@ -20,10 +26,13 @@ const SearchResults = ({ results }) => {
         </thead>
         <tbody>
           {results.map((booking, index) => {
-            return <SearchRow key={index} info={booking} />;
+            return (
+              <SearchRow key={index} info={booking} handleClick={handleClick} />
+            );
           })}
         </tbody>
       </table>
+      <CustomerProfile id={customerId} />
     </div>
   );
 };

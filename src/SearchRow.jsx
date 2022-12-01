@@ -25,6 +25,15 @@ const SearchRow = props => {
       <td>
         {moment(props.info.checkOutDate).diff(props.info.checkInDate, "days")}
       </td>
+      <td>
+        <button
+          className="btn btn-primary"
+          onClick={props.handleClick}
+          value={props.info.id}
+        >
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };

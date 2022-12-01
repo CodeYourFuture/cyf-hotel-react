@@ -53,16 +53,6 @@
   padding-top: 20px;
 }
 
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 .search {
   padding: 5px 0 20px 0;
 }
@@ -77,6 +67,15 @@ tr {
 
 .results {
   padding-top: 15px;
+}
+.loading {
+  background-color: red;
+  font-size: 40px;
+  padding: 10px;
+
+  border-radius: 1em;
+  margin-left: 200px;
+  width: max-content;
 }
 
 .order-list {
@@ -105,14 +104,28 @@ tr {
   outline: 1px solid #fff;
   outline-offset: -4px;
 }
+.btn-primary {
+  background-color: blue;
+  font-size: 1rem;
+  padding: 10px;
+}
 
 h3 {
   margin-left: 4rem;
   margin-bottom: 2rem;
-
   max-width: 20rem;
 }
-
+.customer-profile {
+  border-radius: 10px;
+  background-color: #91979f;
+  text-align: left;
+  margin-bottom: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.customer-id {
+  margin-top: 70px;
+  background-color: red;
+}
 .footer {
   background-color: rgb(61, 152, 105);
   color: white;

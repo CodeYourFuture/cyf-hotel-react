@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton.jsx";
 
 const Order = props => {
-  console.log(props);
   const [orders, setOrders] = useState(0);
 
   function orderOne() {
