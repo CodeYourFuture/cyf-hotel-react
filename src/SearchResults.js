@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Heading.css";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
+import BookingRow from "./BookingRow";
 
 const SearchResults = props => {
   const [customerID, setCustomerID] = useState(0);
