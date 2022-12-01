@@ -1,10 +1,6 @@
 import React from "react";
+import SearchButton from "./SearchButton";
 
-const SearchButton = () => {
-return (
-  <button className="btn btn-primary">Search</button>
-)
-}
 
 const Search = () => {
   return (
