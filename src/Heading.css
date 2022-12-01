@@ -1,0 +1,38 @@
+.heading {
+  display: flex;
+  width: 100%;
+}
+body {
+  margin: 0;
+  background: rgb(243, 243, 243);
+}
+
+main {
+  margin: 16px;
+}
+
+.heading-logo {
+  display: flex;
+  align-items: center;
+  background: white;
+  color: black;
+  font-weight: 400;
+  width: 100%;
+}
+.navbar {
+  display: flex;
+  float: right;
+  margin-right: 50px;
+}
+
+.navbar__title {
+  margin-right: auto;
+  font-size: 150%;
+  padding: 12px 16px;
+}
+
+.navbar__item {
+  padding: 16px 16px;
+  cursor: pointer;
+  vertical-align: middle;
+}

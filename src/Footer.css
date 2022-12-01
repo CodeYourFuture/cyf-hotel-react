@@ -1,0 +1,10 @@
+li {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+p {
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+}
