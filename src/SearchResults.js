@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Heading.css";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
+  const [customerID, setCustomerID] = useState(0);
+
+  function onHandleClick(id) {
+    setCustomerID(id);
+  }
+
   const noOfNights = (checkInDate, checkOutDate) => {
     const m_checkInDate = moment(checkInDate);
     const m_checkOutDate = moment(checkOutDate);
@@ -13,7 +20,7 @@ const SearchResults = props => {
   return (
     <>
       <div className="">
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">ID</th>
@@ -25,11 +32,12 @@ const SearchResults = props => {
               <th scope="col">Check In Date</th>
               <th scope="col">Check Out Date</th>
               <th scope="col">Number OF Nights</th>
+              <th />
             </tr>
           </thead>
           <tbody>
             {props.results.map((result, index) => (
-              <tr>
+              <tr key={index}>
                 <td>{result.id}</td>
                 <td>{result.title}</td>
                 <td>{result.firstName}</td>
@@ -38,11 +46,31 @@ const SearchResults = props => {
                 <td>{result.roomId}</td>
                 <td>{result.checkInDate}</td>
                 <td>{result.checkOutDate}</td>
-                <td>{noOfNights(result.checkInDate, result.checkOutDate)}</td>
+                <td>
+                  {" "}
+                  {noOfNights(result.checkInDate, result.checkOutDate)}
+                  {/* {moment(result.checkOutDate).diff(
+                  moment(result.checkInDate),
+                  "days"
+                )} */}
+                </td>
+                <td>
+                  <button
+                    onClick={() => onHandleClick(result.id)}
+                    className="btn btn-primary"
+                  >
+                    Show profile
+                  </button>
+                </td>
+
+                {/* <td>{noOfNights(result.checkInDate, result.checkOutDate)}</td> */}
               </tr>
             ))}
           </tbody>
         </table>
+        <div>
+          <CustomerProfile id={customerID} />
+        </div>
       </div>
     </>
   );
