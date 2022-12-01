@@ -13,7 +13,7 @@ const Bookings = () => {
       .then(data => setBookings(data));
   }, []);
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    console.info(searchVal);
   };
 
   return (
