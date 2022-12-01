@@ -22,7 +22,6 @@ const SearchResults = ({ results }) => {
             <th scope="col">Check-out date</th>
             <th scope="col">Number of nights</th>
             <th scope="col">Customer profile 1</th>
-            {/* <th>Customer profile 2</th> */}
           </tr>
         </thead>
         <tbody>
@@ -43,30 +42,3 @@ const SearchResults = ({ results }) => {
 };
 
 export default SearchResults;
-
-//  const [selected, setselected] = useState(false);
-//  return (
-//    <tr
-//      style={{
-//        backgroundColor: selected ? "#FFCCFF" : "#FFFF99",
-//      }}
-//      onClick={() => {
-//        setselected(!selected);
-//      }}
-//      key={id}
-//    >
-//      <td>{id}</td>
-//      <td>{title}</td>
-//      <td>{firstName}</td>
-//      <td>{surname}</td>
-//      <td>{email}</td>
-//      <td>{roomId}</td>
-//      <td>{checkInDate}</td>
-//      <td>{checkOutDate}</td>
-//      <td>{moment(checkOutDate).diff(moment(checkInDate), "days")}</td>
-//      <td>
-//        <button onClick={handleProfile}>Show profile:</button>
-//      </td>
-//      {/* <td><CustomerProfile/></td> */}
-//    </tr>
-//  );
