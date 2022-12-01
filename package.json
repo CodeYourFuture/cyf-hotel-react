@@ -8,7 +8,7 @@
     "react-scripts": "^3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
@@ -16,7 +16,9 @@
   "devDependencies": {
     "husky": "^2.3.0",
     "prettier": "^1.17.0",
-    "pretty-quick": "^1.10.0"
+    "pretty-quick": "^1.10.0",
+    "babel-jest": "^24.9.0",
+    "jest": "24.9.0"
   },
   "husky": {
     "hooks": {
