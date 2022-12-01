@@ -5,11 +5,23 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
-      .then(data => data.json())
-      .then(bookings => setBookings(bookings));
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error("Something went wrong");
+          // setLoading(true);
+        }
+      })
+      // .then((data) => data.json())
+      .then(bookings => setBookings(bookings))
+      .catch(error => {
+        console.log("Error getting fake data: " + error);
+      });
   }, []);
 
   const search = searchVal => {
