@@ -55,3 +55,7 @@ tr {
 .card {
   width: 18rem;
 }
+ul {
+  list-style-type: none;
+  margin-top: 20px;
+}
