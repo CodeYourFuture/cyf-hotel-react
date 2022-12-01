@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -54,4 +54,9 @@ tr {
 
 .card {
   width: 18rem;
+}
+img {
+  width: 70px;
+  height: 70px;
+  margin-right: 0.7em;
 }
