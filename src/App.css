@@ -40,7 +40,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #2b2828;
 }
 
 .results {
@@ -53,5 +53,10 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 84rem;
+  height: max-content;
+  display: flex;
+}
+ul {
+  list-style-type: none;
 }
