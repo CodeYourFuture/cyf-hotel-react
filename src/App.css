@@ -43,6 +43,15 @@ tr {
   color: #5b5757;
 }
 
+.clicked {
+  background-color: rgb(49, 82, 249);
+  color: azure;
+}
+
+.unclicked {
+  background-color: #fff;
+}
+
 .results {
   padding-top: 15px;
 }
@@ -51,7 +60,27 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
-
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
 .card {
   width: 18rem;
+}
+.card img {
+  height: 15rem;
+}
+.card-body h3,
+#desc {
+  text-align: center;
+}
+
+.card-body p {
+  text-align: justify;
+}
+
+.visit-city {
+  margin-left: 3.5rem;
 }
