@@ -6,37 +6,26 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
-  function updateSetBookings(event) {
-    setBookings(event.target.value);
-  }
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/`)
-      .then(res => res.json())
-      .then(data => {
-        setBookings(data);
-      })
-      .catch(error => {
-        console.log("Error getting fake data: " + error);
-      });
+    fetch(`https://cyf-react.glitch.me`)
+      .then(data => data.json())
+      .then(bookings => setBookings(bookings));
   }, []);
 
-  const search = ({ searchVal }) => {
+  const search = searchVal => {
     console.info("TO DO!", searchVal);
-    if (searchVal !== "") {
-      let filteredBookings = bookings.filter(booking => {
-        return booking.firstName === searchVal || booking.surname === searchVal;
-      });
-      setBookings(filteredBookings);
-    } else {
-      setBookings(bookings);
-    }
+    let filteredBookings = bookings.filter(
+      booking =>
+        booking.firstName.toLowerCase().includes(searchVal) ||
+        booking.surname.toLowerCase().includes(searchVal)
+    );
+    setBookings(filteredBookings);
   };
-
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} onClick={updateSetBookings} />
+        <SearchResults results={bookings} />
       </div>
     </div>
   );

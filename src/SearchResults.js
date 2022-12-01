@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
-
-const SearchResults = props => {
-  function handleProfile(CustomerProfile) {}
+import TableRow from "./TableRow";
+const SearchResults = ({ results }) => {
+  const [customerId, setCustomerId] = useState(0);
+  const [showProfile, setShowProfile] = useState(false);
 
   return (
     <div className="table-container">
@@ -25,50 +26,47 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map(result => {
-            let {
-              id,
-              title,
-              firstName,
-              surname,
-              email,
-              roomId,
-              checkInDate,
-              checkOutDate
-            } = result;
-            const [selected, setselected] = useState(false);
+          {results.map(booking => {
             return (
-              <tr
-                style={{
-                  backgroundColor: selected ? "#FFCCFF" : "#FFFF99"
-                }}
-                onClick={() => {
-                  setselected(!selected);
-                }}
-                key={id}
-              >
-                <td>{id}</td>
-                <td>{title}</td>
-                <td>{firstName}</td>
-                <td>{surname}</td>
-                <td>{email}</td>
-                <td>{roomId}</td>
-                <td>{checkInDate}</td>
-                <td>{checkOutDate}</td>
-                <td>
-                  {moment(checkOutDate).diff(moment(checkInDate), "days")}
-                </td>
-                <td>
-                  <button onClick={handleProfile}>Show profile:</button>
-                </td>
-                {/* <td><CustomerProfile/></td> */}
-              </tr>
+              <TableRow
+                booking={booking}
+                setCustomerId={setCustomerId}
+                setShowProfile={setShowProfile}
+              />
             );
           })}
         </tbody>
       </table>
+      {showProfile ? <CustomerProfile id={customerId} /> : null}
     </div>
   );
 };
 
 export default SearchResults;
+
+//  const [selected, setselected] = useState(false);
+//  return (
+//    <tr
+//      style={{
+//        backgroundColor: selected ? "#FFCCFF" : "#FFFF99",
+//      }}
+//      onClick={() => {
+//        setselected(!selected);
+//      }}
+//      key={id}
+//    >
+//      <td>{id}</td>
+//      <td>{title}</td>
+//      <td>{firstName}</td>
+//      <td>{surname}</td>
+//      <td>{email}</td>
+//      <td>{roomId}</td>
+//      <td>{checkInDate}</td>
+//      <td>{checkOutDate}</td>
+//      <td>{moment(checkOutDate).diff(moment(checkInDate), "days")}</td>
+//      <td>
+//        <button onClick={handleProfile}>Show profile:</button>
+//      </td>
+//      {/* <td><CustomerProfile/></td> */}
+//    </tr>
+//  );
