@@ -9,7 +9,7 @@ const CustomerProfile = ({ selectedProfileId, customerProfile }) => {
           }`}</span>
           <span>{customerProfile.email}</span>
           <span className={customerProfile.vip ? "vip" : "notVip"}>
-            {customerProfile.vip ? "Customer is VIP" : "Not a VIP customer"}
+            {customerProfile.vip ? "Customer is VIP" : "Not a VIP Customer"}
           </span>
           <span>{customerProfile.phoneNumber}</span>
         </div>
