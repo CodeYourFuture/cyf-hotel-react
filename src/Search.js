@@ -1,5 +1,11 @@
 import React from "react";
 
+const SearchButton = () => {
+return (
+  <button className="btn btn-primary">Search</button>
+)
+}
+
 const Search = () => {
   return (
     <div className="search">
@@ -17,7 +23,7 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <button className="btn btn-primary">Search</button>
+              <SearchButton />
             </div>
           </form>
         </div>
