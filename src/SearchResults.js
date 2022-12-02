@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
-const CustomerTable = ({ customerObject, error }) => {
+const CustomerTable = ({ customerObject, error, handleSort }) => {
   const [bookingID, setBookingID] = useState(null);
 
   const Row = ({ x }) => {
@@ -33,7 +33,7 @@ const CustomerTable = ({ customerObject, error }) => {
             .asDays() + " nights"}
         </td>
         <td>
-          <button className="button" value={x.id}>
+          <button className="btn btn-primary" value={x.id}>
             Show Profile
           </button>
         </td>
@@ -49,13 +49,13 @@ const CustomerTable = ({ customerObject, error }) => {
         <table className="table">
           <thead>
             <tr>
-              <th>Title</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Room ID</th>
-              <th>Check In</th>
-              <th>Check Out</th>
+              <th onClick={handleSort}>Title</th>
+              <th onClick={handleSort}>First Name</th>
+              <th onClick={handleSort}>Last Name</th>
+              <th onClick={handleSort}>Email</th>
+              <th onClick={handleSort}>Room ID</th>
+              <th onClick={handleSort}>Check In</th>
+              <th onClick={handleSort}>Check Out</th>
               <th>Duration of Stay</th>
             </tr>
           </thead>
