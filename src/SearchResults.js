@@ -21,22 +21,30 @@ const SearchResults = () => {
           <td>Mr</td>
           <td>Mark</td>
           <td>Otto</td>
-          <td>@mdo</td>
+          <td>motto@cyfhotel.com</td>
           <td>2000</td>
           <td>20221201</td>
           <td>20221215</td>
         </tr>
         <tr>
           <th scope="row">2</th>
+          <td>Mr</td>
           <td>Jacob</td>
           <td>Thornton</td>
-          <td>@fat</td>
+          <td>jthornton@cyfhotel.com</td>
+          <td>2008</td>
+          <td>20221207</td>
+          <td>20221222</td>
         </tr>
         <tr>
           <th scope="row">3</th>
+          <td>Mr</td>
           <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
+          <td>Bird</td>
+          <td>lbird@cyfhotel.com</td>
+          <td>2022</td>
+          <td>20221210</td>
+          <td>20221227</td>
         </tr>
       </tbody>
     </table>
