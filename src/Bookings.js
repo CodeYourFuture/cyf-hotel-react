@@ -12,7 +12,7 @@ const Bookings = () => {
   const [sort, setSort] = useState(false);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/`)
+    fetch(`https://cyf-react.glitch.me/delayed`)
       .then(res => {
         if (!res.ok) throw Error("An error occurred, couldn't fetch the data.");
         return res.json();
