@@ -3,16 +3,22 @@ import SearchButton from "./SearchButton";
 
 const Search = props => {
   const [searchInput, setSearchInput] = useState("");
-
-  function handleSearchInput(event) {
+  const handleSearchInput = event => {
     setSearchInput(event.target.value);
-    console.log(event.target.value);
-  }
+  };
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    props.search(searchInput);
-  }
+  const handleSubmit = e => {
+    e.preventDefault();
+    props.data(
+      props.search.filter(item =>
+        item.firstName.toLowerCase().includes(searchInput.toLowerCase())
+      )
+    );
+    if (searchInput === "") {
+      window.location.reload();
+    }
+  };
+
   return (
     <div className="search">
       <div className="page-header">
@@ -24,14 +30,14 @@ const Search = props => {
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
+                value={searchInput}
+                onChange={handleSearchInput}
                 type="text"
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
-                value={searchInput}
-                onChange={handleSearchInput}
               />
-              <SearchButton />
+              <SearchButton submit={handleSubmit} />
             </div>
           </form>
         </div>

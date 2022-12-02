@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.jsx";
-import FakeBookings from "./data/fakeBookings.json";
-
-// https://cyf-react.glitch.m
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
       .then(res => res.json())
-      .then(data => setBookings(data));
+      .then(data => {
+        setBookings(data);
+        setFiltered(data);
+      });
   }, []);
-  const search = searchVal => {
-    console.info(searchVal);
-  };
 
+  console.log(bookings);
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
+        <Search search={filtered} data={setFiltered} />
+        <SearchResults results={filtered} />
       </div>
     </div>
   );
