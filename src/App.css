@@ -1,3 +1,7 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
 .App {
   text-align: left;
 }
@@ -8,7 +12,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(221, 227, 242);
   height: 50px;
   padding: 20px;
   color: white;
@@ -16,6 +20,21 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+}
+#hederHotel {
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+  border: 2px solid rgb(215, 215, 248);
+  height: 80px;
+}
+#hotel-logo {
+  border: 2px solid rgb(0, 0, 0);
+  width: 100px;
+  height: 50px;
+}
+#header-name {
+  color: black;
 }
 
 .App-title {
@@ -53,5 +72,17 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  align-items: center;
+  width: 13rem;
+}
+#allCard {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 20px;
+  margin-top: 50px;
+}
+#london {
+  height: 172.22px;
+  width: 129.16px;
 }
