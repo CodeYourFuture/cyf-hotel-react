@@ -7,6 +7,7 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     let filtered = bookings.filter(
@@ -18,16 +19,23 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(response => response.json())
-      .then(data => setBookings(data));
+      .then(data => {
+        setBookings(data);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} change />
+        {isLoading ? (
+          <p>CUSTOMER DATA IS LOADING!</p>
+        ) : (
+          <SearchResults results={bookings} change />
+        )}
       </div>
     </div>
   );
