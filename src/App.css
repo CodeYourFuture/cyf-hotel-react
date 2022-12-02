@@ -38,8 +38,7 @@
 .search {
   padding: 5px 0 20px 0;
 }
-
-tr {
+.btn btn-primary tr {
   color: #5b5757;
 }
 
@@ -50,6 +49,13 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+}
+
+.flex-container {
+  display: grid;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: red;
 }
 
 .card {
