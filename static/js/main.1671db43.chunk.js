@@ -302,7 +302,7 @@
             j = O[1];
           Object(n.useEffect)(
             function() {
-              fetch("https://cyf-react.glitch.me/")
+              fetch("https://cyf-react.glitch.me/delayed")
                 .then(function(e) {
                   if (!e.ok)
                     throw Error("An error occurred, couldn't fetch the data.");
@@ -513,4 +513,4 @@
   },
   [[6, 1, 2]]
 ]);
-//# sourceMappingURL=main.161f5cff.chunk.js.map
+//# sourceMappingURL=main.1671db43.chunk.js.map
