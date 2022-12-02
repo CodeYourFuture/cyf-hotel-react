@@ -93,6 +93,7 @@ footer {
 ul {
   list-style: none;
   padding: 0;
+  margin: 40px 0;
 }
 
 ul li {
@@ -136,4 +137,16 @@ ul li {
 
 .orders:hover {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+#customerInfo li {
+  display: block;
+  margin: 0;
+}
+td {
+  text-align: center;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
 }

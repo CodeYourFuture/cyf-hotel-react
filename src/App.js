@@ -32,6 +32,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <hr />
       <Restaurant />
       <Footer contact={contactDetails} />
     </div>
