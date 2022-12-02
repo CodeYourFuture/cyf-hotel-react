@@ -2,19 +2,23 @@
   text-align: left;
 }
 
+.Nav-bar {
+  display: flex;
+  background-color: #222;
+}
+
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
-  text-align: left;
+  /* text-align: center; */
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
@@ -53,5 +57,63 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  /* width: 18rem; */
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.infoCard {
+  padding: 20px 10px;
+  text-align: center;
+  border-right: lightgrey solid 1px;
+}
+.infoCard img {
+  width: 400px;
+  height: 250px;
+}
+.infoCard h2 {
+  padding-top: 20px;
+}
+.footer {
+  background-color: #222;
+  color: white;
+}
+footer ul {
+  list-style: none;
+}
+.grey {
+  background-color: grey;
+}
+.orderList {
+  margin-left: 50px;
+  margin-top: 30px;
+}
+.orderList h3 {
+  margin-left: 40px;
+  text-decoration: underline;
+}
+.orderList ul li {
+  display: flex;
+  margin-top: 20px;
+}
+.orderList ul li div {
+  margin-left: 40px;
+}
+.customer-profile {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #888888;
+  border-radius: 5px;
+  padding: 30px;
+}
+.customer-profile h3 {
+  text-decoration: underline;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.container span {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 800;
 }
