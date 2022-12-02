@@ -12,6 +12,7 @@ const App = () => {
       <Heading />
       <ToursInfoCard />
       <Bookings />
+      <SearchButton />
     </div>
   );
 };
