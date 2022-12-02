@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Search = () => {
+import SearchButton from "./SearchButton";
+
+const Search = props => {
+  const [searchInput, setSearchInput] = useState("");
   return (
     <div className="search">
       <div className="page-header">
@@ -8,7 +11,13 @@ const Search = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form
+            className="form-group search-box"
+            onSubmit={e => {
+              e.preventDefault();
+              props.search(searchInput);
+            }}
+          >
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
@@ -16,8 +25,12 @@ const Search = () => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
+                value={searchInput}
+                onChange={e => {
+                  setSearchInput(e.target.value);
+                }}
               />
-              <button className="btn btn-primary">Search</button>
+              <SearchButton />
             </div>
           </form>
         </div>
