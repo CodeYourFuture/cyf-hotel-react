@@ -24,6 +24,7 @@ const SearchResults = props => {
       <table className="table">
         <thead>
           <tr>
+            <th scope="col">Id</th>
             <th scope="col">Title</th>
             <th scope="col">First Name</th>
             <th scope="col">Surname</th>
@@ -44,7 +45,8 @@ const SearchResults = props => {
               className={toggleClassName(index)}
               key={index}
             >
-              <th scope="row">{data.title}</th>
+              <th scope="row">{data.id}</th>
+              <td>{data.title}</td>
               <td>{data.firstName}</td>
               <td>{data.surname}</td>
               <td>{data.email}</td>
