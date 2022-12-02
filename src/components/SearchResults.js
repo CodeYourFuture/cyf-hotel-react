@@ -1,7 +1,7 @@
 import React from "react";
-import Moment from "react-moment";
+import SearchResult from "./SearchResult";
 
-export default function SearchResults({ results }) {
+export default function SearchResults({ bookings }) {
   return (
     <div>
       <table className="table">
@@ -20,27 +20,8 @@ export default function SearchResults({ results }) {
           </tr>
         </thead>
         <tbody>
-          {results.map((booking, i) => (
-            <tr key={i}>
-              <th scope="row">{i + 1}</th>
-              <td>{booking.id}</td>
-              <td>{booking.title}</td>
-              <td>{booking.firstName}</td>
-              <td>{booking.surname}</td>
-              <td>{booking.email}</td>
-              <td>{booking.roomId}</td>
-              <td>
-                <Moment format="DD-MM-YYYY">{booking.checkInDate}</Moment>
-              </td>
-              <td>
-                <Moment format="DD-MM-YYYY">{booking.checkOutDate}</Moment>
-              </td>
-              <td>
-                <Moment diff={booking.checkInDate} unit="days">
-                  {booking.checkOutDate}
-                </Moment>
-              </td>
-            </tr>
+          {bookings.map((booking, i) => (
+            <SearchResult i={i} booking={booking} />
           ))}
         </tbody>
       </table>

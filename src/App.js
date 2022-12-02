@@ -5,6 +5,7 @@ import "./App.css";
 import Header from "./components/Header";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/Footer";
+import Restaurant from "./components/Restaurant";
 
 const App = () => {
   const contactDetails = [
@@ -18,6 +19,7 @@ const App = () => {
       <Header />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer contactDetails={contactDetails} />
     </div>
   );

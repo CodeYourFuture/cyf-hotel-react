@@ -72,6 +72,22 @@ ul {
   list-style-type: none;
 }
 
+.cont-res {
+  width: 30%;
+  text-align: center;
+  margin: 40px auto 40px auto;
+}
+
+.order-list > li {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.selected {
+  background-color: #ecf0f1;
+}
+
 footer {
   background-color: #ecf0f1;
   padding: 20px;
