@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Moment from "react-moment";
 
-export default function SearchResult({ i, booking }) {
+export default function SearchResult({ i, booking, showProfile }) {
   const [selected, setSelected] = useState("");
 
   return (
     <tr
-      key={i}
       className={selected}
       onClick={() => {
         setSelected(selected ? "" : "selected");
@@ -29,6 +28,14 @@ export default function SearchResult({ i, booking }) {
         <Moment diff={booking.checkInDate} unit="days">
           {booking.checkOutDate}
         </Moment>
+      </td>
+      <td>
+        <button
+          className="btn btn-info"
+          onClick={() => showProfile(booking.id)}
+        >
+          Show Profile
+        </button>
       </td>
     </tr>
   );

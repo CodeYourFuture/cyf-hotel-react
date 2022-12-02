@@ -70,6 +70,8 @@ tr {
 
 ul {
   list-style-type: none;
+  padding: 0px;
+  margin: 0px;
 }
 
 .cont-res {
@@ -86,6 +88,20 @@ ul {
 
 .selected {
   background-color: #ecf0f1;
+}
+
+.cont-search-results {
+  width: 100%;
+  display: flex;
+}
+
+.cont-rows {
+  width: 80%;
+}
+
+.cont-profile {
+  text-align: center;
+  width: 20%;
 }
 
 footer {

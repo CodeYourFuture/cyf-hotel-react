@@ -1,9 +1,9 @@
 import React from "react";
 import SearchResult from "./SearchResult";
 
-export default function SearchResults({ bookings }) {
+export default function SearchResults({ bookings, showProfile }) {
   return (
-    <div>
+    <div className="cont-rows">
       <table className="table">
         <thead>
           <tr>
@@ -17,11 +17,17 @@ export default function SearchResults({ bookings }) {
             <th scope="col">Check In Date</th>
             <th scope="col">Check Out Date</th>
             <th scope="col">Nights</th>
+            <th scope="col">Customer Profile</th>
           </tr>
         </thead>
         <tbody>
           {bookings.map((booking, i) => (
-            <SearchResult i={i} booking={booking} />
+            <SearchResult
+              key={i}
+              i={i}
+              booking={booking}
+              showProfile={showProfile}
+            />
           ))}
         </tbody>
       </table>
