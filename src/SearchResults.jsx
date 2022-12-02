@@ -1,8 +1,15 @@
 import moment from "moment";
-import React from "react";
-import Highlight from "./Highlight";
+import React, { useState } from "react";
+// import Highlight from "./Highlight";
 
 export default function SearchResults({ results }) {
+  const [selectedIndex, setSelectedIndex] = useState();
+
+  const handleClick = checkIndex => {
+    return selectedIndex === checkIndex
+      ? setSelectedIndex(null)
+      : setSelectedIndex(checkIndex);
+  };
   return (
     <div>
       <table class="table">
@@ -22,10 +29,12 @@ export default function SearchResults({ results }) {
         <tbody>
           {results.map((person, index) => {
             return (
-              <tr>
-                <th scope="row" key={index}>
-                  {person.id}
-                </th>
+              <tr
+                key={index}
+                onCLick={() => handleClick(index)}
+                className={selectedIndex === index ? "clicked" : "unclicked"}
+              >
+                <th scope="row">{person.id}</th>
                 <td>{person.title}</td>
                 <td>{person.firstName}</td>
                 <td>{person.surname}</td>

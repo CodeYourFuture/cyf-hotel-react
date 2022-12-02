@@ -83,3 +83,12 @@ h1 {
 ul {
   list-style-type: none;
 }
+
+.clidked {
+  background-color: aqua;
+}
+
+.unclicked {
+  background-color: rgb(89, 127, 134);
+  color: white;
+}
