@@ -38,7 +38,7 @@ function TouristInfoCards() {
               <h3 className="card-title">{card.cityName}</h3>
               <p className="card-text">{card.text}</p>
               <a href={card.link} className="btn btn-primary">
-                Go somewhere
+                {`Go to ${card.cityName}`}
               </a>
             </div>
           </div>
