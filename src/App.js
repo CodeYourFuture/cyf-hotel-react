@@ -1,4 +1,7 @@
 import React from "react";
+import SearchButton from "./SearchButton.js";
+import Heading from "./Heading";
+import ToursInfoCard from "./ToursInfoCard";
 
 import Bookings from "./Bookings";
 import "./App.css";
@@ -6,8 +9,10 @@ import "./App.css";
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">CYF Hotel</header>
+      <Heading />
+      <ToursInfoCard />
       <Bookings />
+      <SearchButton />
     </div>
   );
 };
