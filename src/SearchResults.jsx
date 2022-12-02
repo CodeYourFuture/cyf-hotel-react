@@ -1,10 +1,12 @@
 import moment from "moment";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 
 function SearchResults(prop) {
   const [selectedIndex, setSelectedIndex] = useState();
+
+  const [profileData, setProfileData] = useState({});
 
   const [id, setId] = useState(null);
 
@@ -16,6 +18,14 @@ function SearchResults(prop) {
   function getId(index) {
     setId(prop.results[index].id);
   }
+
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${id}`)
+      .then(response => response.json())
+      .then(data => setProfileData(data));
+  }, [id]);
+
+  const { email, vip } = profileData;
   return (
     <div>
       <table className="table">
@@ -63,7 +73,7 @@ function SearchResults(prop) {
           })}
         </tbody>
       </table>
-      {id ? <CustomerProfile id={id} /> : null}
+      {id ? <CustomerProfile id={id} email={email} vip={vip} /> : null}
     </div>
   );
 }
