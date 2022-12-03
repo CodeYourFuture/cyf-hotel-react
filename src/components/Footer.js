@@ -4,8 +4,8 @@ function Footer(props) {
   return (
     <footer>
       <ul className="footer">
-        {props.items.map(item => (
-          <li>{item}</li>
+        {props.items.map((item, i) => (
+          <li key={i}>{item}</li>
         ))}
       </ul>
     </footer>

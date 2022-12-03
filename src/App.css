@@ -55,4 +55,15 @@ tr {
 
 .card {
   width: 18rem;
+  margin-left: 20px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.cont-tourist-cards {
+  display: flex;
+  justify-content: center;
 }

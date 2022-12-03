@@ -10,7 +10,7 @@ export default function TouristInfoCards() {
     { image: GlassgowImg, cityName: "Go Glassgow" }
   ];
   return (
-    <div className="row">
+    <div className="cont-tourist-cards">
       {cities.map(item => (
         <CardItem
           key={item.cityName}
