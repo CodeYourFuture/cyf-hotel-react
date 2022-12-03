@@ -55,3 +55,9 @@ tr {
 .card {
   width: 18rem;
 }
+
+.div img {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
