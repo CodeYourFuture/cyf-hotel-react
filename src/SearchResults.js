@@ -1,38 +1,42 @@
 import React from "react";
+import FakeBooking from "./data/fakeBookings.json"
 
-const SearchResults = ({result}) => {
-return (
-    <div>
-    <table class="table">
-    <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Room id</th>
-      <th scope="col">Check in date</th>
-      <th scope="col">Check out date</th>
-    </tr>
-  </thead>
-  <SearchTable />
-    </table>
-    </div>
-)  
+const SearchResults = ({ result }) => {
+    return (
+        <div>
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Room id</th>
+                        <th scope="col">Check in date</th>
+                        <th scope="col">Check out date</th>
+                    </tr>
+                </thead>
+                <SearchTable results = {FakeBooking}  />
+            </table>
+        </div>
+    )
 }
 
-const SearchTable = () => {
+const SearchTable = ({results}) => {
     return (
         <tbody>
-        <tr>
-          <th scope="row">Mr</th>
-          <td>Mark</td>
-          <td>Mehrabi</td>
-          <td>Mikemehrabi@gmail.com</td>
-          <td>1</td>
-          <td>22-12-2022</td>
-          <td>28-12-2022</td>
-        </tr>
+            {results.map((item, index) => (
+                <tr key = {index}>
+                    <td>{item.title}</td>
+                    <td>{item.firstName}</td>
+                    <td>{item.surname}</td>
+                    <td>{item.email}</td>
+                    <td>{item.id}</td>
+                    <td>{item.checkInDate}</td>
+                    <td>{item.checkOutDate}</td>
+                </tr>
+            ))}
+
         </tbody>
     )
 }
