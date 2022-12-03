@@ -24,3 +24,15 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+.card-container {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 20%;
+  border: 1px solid black;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
