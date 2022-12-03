@@ -3,7 +3,7 @@ import React from "react";
 const data = [
   {
     id: 1,
-    img: "images/london.jpg",
+    img: "",
     desc:
       "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times.",
     link: "http://visitlondon.com"

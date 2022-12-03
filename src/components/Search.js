@@ -1,5 +1,5 @@
 import React from "react";
-import SearchButton from "./searchButton";
+import SearchButton from "../components/searchButton";
 
 const Search = () => {
   return (

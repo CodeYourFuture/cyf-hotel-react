@@ -1,7 +1,7 @@
 import React from "react";
-import Heading from "./heading";
-import Bookings from "./Bookings";
-import TouristInfoCards from "./TouristInfoCards";
+import Heading from "./components/heading";
+import Bookings from "./components/Bookings";
+import TouristInfoCards from "./components/TouristInfoCards";
 import "./App.css";
 
 const App = () => {
