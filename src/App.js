@@ -14,6 +14,7 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
+
       <Footer
         array={[
           "123 Fake Street, London, E1 4UD",
