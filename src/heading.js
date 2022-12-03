@@ -5,7 +5,7 @@ const heading = () => {
   return (
     <div>
       <header className="header">
-        <img src={Logo} alt="logo" />
+        <img className="hotel-logo" src={Logo} alt="logo" />
         <span>CYF HOTEL</span>
       </header>
     </div>
