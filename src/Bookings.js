@@ -35,7 +35,6 @@ const Bookings = () =>
           {
             setStatus("Failed");
             console.log("Loading Failed")
-            //setErrorMsg(data.error);
           }
           else
           {
