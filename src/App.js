@@ -8,7 +8,7 @@ import Footer from "./Footer";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App-content">
       <Header />
       <Bookings />
       <TouristInfoCards />

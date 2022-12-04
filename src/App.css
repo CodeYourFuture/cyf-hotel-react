@@ -3,13 +3,14 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 5s linear;
   height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  display: flex;
+  background-color: rgb(73, 65, 161);
+  height: fit-content;
   padding: 20px;
   color: white;
   text-align: left;
@@ -29,10 +30,10 @@
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotateY(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotateY(360deg);
   }
 }
 .search {
@@ -40,7 +41,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #344977;
 }
 
 .results {
@@ -50,8 +51,17 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: rgb(73, 65, 161);
+  color: white;
 }
 
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
 .card {
+  display: flex;
   width: 18rem;
+  box-shadow: 2px 5px 10px 2px gray;
+  align-items: center;
 }
