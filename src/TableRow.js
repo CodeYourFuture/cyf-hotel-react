@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-// moment().format();
+import { useState } from "react";
 
 function TableRow({
   title,
@@ -11,10 +11,15 @@ function TableRow({
   checkInDate,
   checkOutDate
 }) {
+  const [isSelected, setIsSelected] = useState(false);
+
   const checkIn = moment(checkInDate);
   const checkOut = moment(checkOutDate);
   return (
-    <tr>
+    <tr
+      style={{ backgroundColor: `${isSelected ? "wheat" : "white"}` }}
+      onClick={() => setIsSelected(!isSelected)}
+    >
       <th scope="row">{title}</th>
       <td>{firstName}</td>
       <td>{surname}</td>
