@@ -74,6 +74,23 @@ header img {
   text-align: center;
 }
 
+.restaurant h3 {
+  text-align: center;
+}
+
+.restaurant ul {
+  margin: 40px auto;
+  max-width: 400px;
+  list-style: none;
+}
+
+.restaurant ul li {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .footer {
   background-color: #231f20;
   color: beige;
