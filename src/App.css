@@ -4,18 +4,30 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 60px;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
+}
+
+.InfoCards {
+  display: flex;
+  justify-content: space-around;
+  background-color: #5b5757;
+}
+
+.Card-Title,
+.Card-Summary {
+  padding: 1.2em;
+  align-items: center;
 }
 
 .App-title {
@@ -25,6 +37,9 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+.searchButton {
+  display: inline;
 }
 
 @keyframes App-logo-spin {
@@ -51,7 +66,13 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
+.listItem {
+  list-style: none;
+}
 
 .card {
-  width: 18rem;
+  width: 20rem;
+  border-style: double;
+  border-width: 5px;
+  margin: 2em 0;
 }
