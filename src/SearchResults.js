@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResult = props => {
-  const [color, setColor] = useState("red");
-  function Highlighter() {
-    setColor("purple");
-  }
   return (
     <table className="table">
       <thead>
@@ -22,27 +19,43 @@ const SearchResult = props => {
       </thead>
       <tbody>
         {props.results.map((data, index) => {
-          let a = moment(data.checkInDate);
-          let b = moment(data.checkOutDate);
-          let numOfNights = b.diff(a, "days");
-          return (
-            <tr key={index}>
-              <th scope="row" key={index}>
-                {data.title}
-              </th>
-              <td>{data.firstName}</td>
-              <td>{data.surname}</td>
-              <td>{data.email}</td>
-              <td>{data.roomId}</td>
-              <td>{data.checkInDate}</td>
-              <td>{data.checkOutDate}</td>
-              <td>{numOfNights}</td>
-            </tr>
-          );
+          return <ResultRow data={data} />;
         })}
       </tbody>
     </table>
   );
 };
+
+function ResultRow({ data }) {
+  const [highlighted, setHighlighted] = useState("white");
+  function Highlighter() {
+    if (highlighted === "white") {
+      setHighlighted("grey");
+    } else {
+      setHighlighted("white");
+    }
+  }
+  let a = moment(data.checkInDate);
+  let b = moment(data.checkOutDate);
+  let numOfNights = b.diff(a, "days");
+  return (
+    <tr
+      onClick={() => {
+        Highlighter(highlighted);
+      }}
+      style={{ backgroundColor: highlighted }}
+    >
+      <td>{data.title}</td>
+      <td>{data.firstName}</td>
+      <td>{data.surname}</td>
+      <td>{data.email}</td>
+      <td>{data.roomId}</td>
+      <td>{data.checkInDate}</td>
+      <td>{data.checkOutDate}</td>
+      <td>{numOfNights}</td>
+      <CustomerProfile />
+    </tr>
+  );
+}
 
 export default SearchResult;
