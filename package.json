@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "moment": "^2.29.4",
     "react": "^16.8.6",
+    "react-data-table-component": "^7.5.3",
     "react-dom": "^16.8.6",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "styled-components": "^5.3.6"
   },
   "scripts": {
     "start": "react-scripts start",
