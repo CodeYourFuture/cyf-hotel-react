@@ -37,7 +37,7 @@ const Card = props => {
   return (
     <section>
       <div className="card">
-        <img src={props.image} alt="city image" className="card-image" />
+        <img src={props.image} alt="" className="card-image" />
         <div className="card-detail">
           <h4>{props.name}</h4>
           <p>{props.text}</p>
