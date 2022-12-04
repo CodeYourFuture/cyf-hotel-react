@@ -52,12 +52,13 @@
 }
 
 .flex-container {
-  display: grid;
+  display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  background-color: red;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: grey;
 }
 
 .card {
-  width: 18rem;
+  width: 20rem;
 }

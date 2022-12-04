@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
-import SearchButton from "./SearchButton";
+// import SearchButton from "./SearchButton";
 import SearchResults from "./SearchResults";
 import FakeBookings from "./data/fakeBookings.json";
 import Footer from "./Footer";
@@ -14,7 +14,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <SearchButton />
+
       <SearchResults results={FakeBookings} />
       <Footer
         contact={[

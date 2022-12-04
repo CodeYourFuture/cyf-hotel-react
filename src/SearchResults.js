@@ -1,4 +1,13 @@
+import moment from "moment";
 import React from "react";
+
+function numOfNights(start, end) {
+  const day1 = moment(start);
+  const day2 = moment(end);
+
+  const result = day2.diff(day1, "days");
+  return result;
+}
 
 const SearchResults = props => {
   return (
@@ -14,6 +23,7 @@ const SearchResults = props => {
             <th scope="col">Room Id</th>
             <th scope="col">Check In Date</th>
             <th scope="col">Check Out Date</th>
+            <th scope="col">Number of Nights</th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +37,7 @@ const SearchResults = props => {
               <td>{data.roomId}</td>
               <td>{data.checkInDate}</td>
               <td>{data.checkOutDate}</td>
+              <td>{numOfNights(data.checkInDate, data.checkOutDate)}</td>
             </tr>
           ))}
         </tbody>
