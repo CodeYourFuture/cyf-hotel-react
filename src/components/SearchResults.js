@@ -27,7 +27,7 @@ const SearchResult = ({ results }) => {
               <td>{element.email}</td>
               <td>{element.checkInDate}</td>
               <td>{element.checkOutDate}</td>
-              <td>{checckDiff(element.checkInDate, element.checkOutDate)}</td>
+              <td>{checkDiff(element.checkInDate, element.checkOutDate)}</td>
             </tr>
           );
         })}
@@ -36,7 +36,7 @@ const SearchResult = ({ results }) => {
   );
 };
 
-let checckDiff = (InDate, OutDate) => {
+let checkDiff = (InDate, OutDate) => {
   const checkInDate = Moment(InDate, "YYYY-MM-DD");
   const checkOutDate = Moment(OutDate, "YYYY-MM-DD");
   const diff = checkOutDate.diff(checkInDate, "days");
