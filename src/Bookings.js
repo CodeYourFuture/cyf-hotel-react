@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
+// import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -12,10 +12,21 @@ const Bookings = () => {
       .then(data => {
         setBookings(data);
       });
-  });
+  }, []);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    let searchedBookings = bookings.filter(booking => {
+      if (
+        booking.firstName.toLowerCase() === searchVal.toLowerCase() ||
+        booking.surname.toLowerCase() === searchVal.toLowerCase()
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    return setBookings(searchedBookings);
+    // console.info("TO DO!", searchVal);
   };
 
   return (
