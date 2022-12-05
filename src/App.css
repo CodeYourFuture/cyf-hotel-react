@@ -61,7 +61,16 @@ tr {
 }
 .card {
   display: flex;
+  justify-content: space-between;
   width: 18rem;
-  box-shadow: 2px 5px 10px 2px gray;
+  box-shadow: 10px -5px 10px 1px gray;
   align-items: center;
+  border-radius: 5px solid;
+  margin: 15px;
+  padding: 15px;
+}
+.card:hover {
+  scale: 1.1;
+  border: 6px double;
+  border-radius: 20px;
 }
