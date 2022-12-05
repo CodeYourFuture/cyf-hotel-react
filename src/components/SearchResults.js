@@ -25,6 +25,7 @@ const SearchResult = ({ results }) => {
               <td>{element.firstName}</td>
               <td>{element.surname}</td>
               <td>{element.email}</td>
+              <td>{element.roomId}</td>
               <td>{element.checkInDate}</td>
               <td>{element.checkOutDate}</td>
               <td>{checkDiff(element.checkInDate, element.checkOutDate)}</td>
