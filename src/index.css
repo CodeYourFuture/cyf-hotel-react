@@ -80,7 +80,7 @@ header img {
 
 .restaurant ul {
   margin: 40px auto;
-  max-width: 400px;
+  max-width: 500px;
   list-style: none;
 }
 
@@ -89,6 +89,27 @@ header img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.btn-container button {
+  width: 40px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.restaurant ul li span {
+  background-color: rgb(41, 109, 255);
+  border-radius: 40%;
+  padding: 6px 8px;
+  color: white;
+}
+
+.restaurant ul li:last-child span {
+  margin-left: -74px;
+}
+
+.table-row {
+  margin: 77px;
 }
 
 .footer {

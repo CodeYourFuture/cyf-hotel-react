@@ -1,8 +1,13 @@
-function RestaurantButton({ orderOne }) {
+function RestaurantButton({ orderOne, removeOrderOne }) {
   return (
-    <button className="btn btn-primary" onClick={orderOne}>
-      Add
-    </button>
+    <div className="btn-container">
+      <button className="btn btn-danger" onClick={removeOrderOne}>
+        -
+      </button>
+      <button className="btn btn-success" onClick={orderOne}>
+        +
+      </button>
+    </div>
   );
 }
 export default RestaurantButton;

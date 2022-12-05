@@ -3,13 +3,15 @@ import moment from "moment";
 import { useState } from "react";
 
 function TableRow({
+  id,
   title,
   firstName,
   surname,
   email,
   roomId,
   checkInDate,
-  checkOutDate
+  checkOutDate,
+  showCustomerProfile
 }) {
   const [isSelected, setIsSelected] = useState(false);
 
@@ -17,10 +19,12 @@ function TableRow({
   const checkOut = moment(checkOutDate);
   return (
     <tr
-      style={{ backgroundColor: `${isSelected ? "wheat" : "white"}` }}
+      className="table-row"
+      style={{ backgroundColor: `${isSelected ? " #f0f0f0" : "white"}` }}
       onClick={() => setIsSelected(!isSelected)}
     >
-      <th scope="row">{title}</th>
+      <th scope="row">{id}</th>
+      <td>{title}</td>
       <td>{firstName}</td>
       <td>{surname}</td>
       <td>{email}</td>
@@ -28,6 +32,16 @@ function TableRow({
       <td>{checkInDate}</td>
       <td>{checkOutDate}</td>
       <td>{checkOut.diff(checkIn, "days")}</td>
+      <td>
+        <button
+          className="btn btn-outline-success"
+          data-toggle="modal"
+          data-target="#exampleModal"
+          onClick={() => showCustomerProfile(id)}
+        >
+          Show profile
+        </button>
+      </td>
     </tr>
   );
 }

@@ -7,10 +7,15 @@ function Order({ orderType }) {
   const orderOne = () => {
     setOrders(orders + 1);
   };
+  const removeOrderOne = () => {
+    if (orders >= 1) {
+      setOrders(orders - 1);
+    }
+  };
   return (
     <li>
-      {orderType}: {orders}
-      <RestaurantButton orderOne={orderOne} />
+      {orderType}: <span>{orders}</span>
+      <RestaurantButton orderOne={orderOne} removeOrderOne={removeOrderOne} />
     </li>
   );
 }
