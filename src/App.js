@@ -1,7 +1,6 @@
 import React from "react";
 import Heading from "./components/Heading";
 import Bookings from "./components/Bookings";
-
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/Footer";
 
@@ -12,7 +11,6 @@ const App = () => {
     <div>
       <Heading />
       <Bookings />
-
       <TouristInfoCards />
       <Footer />
     </div>
