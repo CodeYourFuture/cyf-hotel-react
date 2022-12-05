@@ -1,29 +1,29 @@
 import React from "react";
 
-export default function SearchResults() {
-  let bookings = [
-    {
-      id: 1,
-      title: "Mr",
-      firstName: "John",
-      surname: "Doe",
-      email: "johndoe@doe.com",
-      roomId: 2,
-      checkInDate: "2017-11-21",
-      checkOutDate: "2017-11-23"
-    },
-    {
-      id: 2,
-      title: "Doctor",
-      firstName: "Sadia",
-      surname: "Begum",
-      email: "begum_sadia@sadia.org",
-      roomId: 1,
-      checkInDate: "2018-02-15",
-      checkOutDate: "2018-02-28"
-    }
-  ];
-
+export default function SearchResults(props) {
+  // let bookings = [
+  //   {
+  //     id: 1,
+  //     title: "Mr",
+  //     firstName: "John",
+  //     surname: "Doe",
+  //     email: "johndoe@doe.com",
+  //     roomId: 2,
+  //     checkInDate: "2017-11-21",
+  //     checkOutDate: "2017-11-23"
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Doctor",
+  //     firstName: "Sadia",
+  //     surname: "Begum",
+  //     email: "begum_sadia@sadia.org",
+  //     roomId: 1,
+  //     checkInDate: "2018-02-15",
+  //     checkOutDate: "2018-02-28"
+  //   }
+  // ];
+  let bookings = props.results;
   return (
     <div>
       <table class="table">
