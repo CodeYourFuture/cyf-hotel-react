@@ -1,10 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&family=Courgette&family=Fira+Sans+Condensed:ital,wght@1,300&family=Martel:wght@200&display=swap");
 .App {
   text-align: left;
 }
-
+body {
+  background-color: rgb(242, 244, 246);
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+}
+.App-header-section {
+  display: flex;
 }
 
 .App-header {
@@ -16,6 +22,13 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  width: 100%;
+}
+/* logo hotel */
+.App-header-logo {
+  width: 5%;
+  background-color: #222;
+  padding-left: 1em;
 }
 
 .App-title {
@@ -48,10 +61,35 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
+  list-style: none;
+  font-family: "Martel", serif;
 }
 
 .card {
   width: 18rem;
+  border-radius: 25px;
+  transition: 0.5 ease;
+  cursor: pointer;
+  margin-top: 1em;
+  box-shadow: 5px 5px 10px rgb(84, 82, 78);
+}
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgb(43, 42, 40);
+}
+/* //picture  total section(parent) */
+.card-section {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  border-radius: 25px;
+}
+h3 {
+  font-family: "DM Serif Display", serif;
+  text-align: center;
+}
+p {
+  margin: 0 1.5em;
 }
