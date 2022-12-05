@@ -1,11 +1,14 @@
 import React from "react";
+import Heading from "./Heading";
+
+const SearchButton = () => {
+  return <button className="btn btn-primary">Search</button>;
+};
 
 const Search = () => {
   return (
     <div className="search">
-      <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
-      </div>
+      <Heading />
       <div className="row search-wrapper">
         <div className="col">
           <form className="form-group search-box">
@@ -17,7 +20,7 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <button className="btn btn-primary">Search</button>
+              <SearchButton />
             </div>
           </form>
         </div>
