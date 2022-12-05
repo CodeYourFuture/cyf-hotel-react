@@ -43,7 +43,7 @@ export default function SearchResults(props) {
         <tbody>
           {bookings.map(booking => (
             <tr>
-              <td scope="row">{booking.title}</td>
+              <td>{booking.title}</td>
               <td>{booking.firstName}</td>
               <td>{booking.surname}</td>
               <td>{booking.email}</td>

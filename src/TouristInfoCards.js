@@ -7,7 +7,7 @@ export default function TouristInfoCards() {
     <div className="d-flex justify-content-center">
       {cardInfo.map((element, index) => (
         <span key={index} className="card">
-          <img src={element.image} className="card-img-top" />
+          <img src={element.image} alt="" className="card-img-top" />
           <div className="card-body">
             <p>{element.cityName}</p>
             <p>{element.text}</p>
