@@ -24,3 +24,9 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+img {
+  width: 40px;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-right: 10px;
+}
