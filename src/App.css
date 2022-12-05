@@ -86,3 +86,8 @@ tr {
   height: 172.22px;
   width: 129.16px;
 }
+#restautant {
+  text-align: center;
+  font-family: sans-serif;
+  border: 2px solid rgb(211, 211, 212);
+}

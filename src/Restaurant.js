@@ -5,7 +5,7 @@ const Restaurant = () => {
   // let orders = useState(0);
   const pizzas = 0;
   return (
-    <div>
+    <div id="restautant">
       <h3>Restaurant Orders</h3>
       <ul>
         <li>

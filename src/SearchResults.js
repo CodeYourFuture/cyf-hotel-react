@@ -1,10 +1,8 @@
 import React from "react";
 import Moment from "react-moment";
-// moment().format();
-// import Moment from "moment";
 function SearchResults({ results }) {
   return (
-    <div>
+    <div id="searchResults">
       <table class="table table-dark">
         <thead>
           <tr>
