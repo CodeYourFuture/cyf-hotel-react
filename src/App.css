@@ -1,5 +1,6 @@
 .App {
-  text-align: left;
+  text-align: center;
+  background-color: #f2f7f5;
 }
 
 .App-logo {
@@ -7,11 +8,11 @@
   height: 80px;
 }
 .logo {
-  width: 250px;
+  width: 100px;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #00473e;
   height: 50px;
   padding: 20px;
   color: white;
@@ -22,7 +23,8 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
+  color: #475d5b;
 }
 
 .App-content {
@@ -43,7 +45,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #faae2b;
 }
 
 .results {
@@ -56,5 +58,24 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 25rem;
+  display: inline-flex;
+  color: #475d5b;
+  text-align: center;
+  justify-content: space-around;
+  padding: 5px;
+  font-family: "Times New Roman", Times, serif;
+  box-shadow: 20px;
+  padding: 20px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+}
+
+.card-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
