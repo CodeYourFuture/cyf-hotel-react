@@ -52,6 +52,10 @@ header img {
   margin-top: 40px;
 }
 
+.cities h2 {
+  padding: 10px 26px 0;
+}
+
 .cities div {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -75,6 +79,8 @@ header img {
 }
 
 .restaurant h3 {
+  padding-top: 20px;
+  border-top: 1px solid rgb(213, 213, 213);
   text-align: center;
 }
 
@@ -110,6 +116,11 @@ header img {
 
 .table-row {
   margin: 77px;
+}
+
+.add-btn {
+  display: block;
+  margin: 10px auto 40px;
 }
 
 .footer {

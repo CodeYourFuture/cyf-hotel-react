@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 import TableRow from "./TableRow";
 
-function SearchResults({ results }) {
+function SearchResults({ results, sortBookings }) {
   const [currentCustomer, setCurrentCustomer] = useState("");
 
   const fetchData = async id => {
     const res = await fetch(`https://cyf-react.glitch.me/customers/${id}`);
     const data = await res.json();
     setCurrentCustomer(data);
+    console.log(currentCustomer);
   };
 
   const showCustomerProfile = id => {
@@ -22,7 +23,9 @@ function SearchResults({ results }) {
           <tr>
             <th scope="col">#</th>
             <th scope="col">Title</th>
-            <th scope="col">First name</th>
+            <th scope="col" onClick={sortBookings}>
+              First name
+            </th>
             <th scope="col">Surename</th>
             <th scope="col">Email</th>
             <th scope="col">Room id</th>

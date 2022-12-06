@@ -2,7 +2,7 @@ function CustomerProfile({ id, email, phoneNumber, vip }) {
   return (
     <div
       class="modal fade"
-      id="exampleModal"
+      id="customer-profile"
       tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalLabel"

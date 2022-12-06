@@ -36,7 +36,7 @@ function TableRow({
         <button
           className="btn btn-outline-success"
           data-toggle="modal"
-          data-target="#exampleModal"
+          data-target="#customer-profile"
           onClick={() => showCustomerProfile(id)}
         >
           Show profile
