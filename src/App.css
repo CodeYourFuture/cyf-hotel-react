@@ -29,9 +29,9 @@
   height: 80px;
 }
 #hotel-logo {
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgba(55, 88, 253, 0.646);
+  border-radius: 50px;
   width: 100px;
-  height: 50px;
 }
 #header-name {
   color: black;
