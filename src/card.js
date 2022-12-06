@@ -17,7 +17,7 @@ function TouristInfoCards() {
             href="https://www.cityoflondon.gov.uk/things-to-do"
             className="btn btn-primary"
           >
-            Mor Information
+            More Information
           </a>
         </div>
       </div>
@@ -30,7 +30,7 @@ function TouristInfoCards() {
             such as
           </p>
           <a href="https://www.glasgow.gov.uk/" className="btn btn-primary">
-            Mor Information
+            More Information
           </a>
         </div>
       </div>
@@ -43,7 +43,7 @@ function TouristInfoCards() {
             such as
           </p>
           <a href="https://www.manchester.gov.uk/" className="btn btn-primary">
-            Mor Information
+            More Information
           </a>
         </div>
       </div>
