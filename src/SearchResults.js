@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import Moment from "moment";
 
 function SearchResults(props) {
   console.log(props);
@@ -35,8 +35,8 @@ function SearchResults(props) {
                 <td>
                   {" "}
                   {Math.abs(
-                    moment(profile.checkOutDate).diff(
-                      moment(profile.checkInDate),
+                    Moment(profile.checkOutDate).diff(
+                      Moment(profile.checkInDate),
                       "days"
                     )
                   )}
