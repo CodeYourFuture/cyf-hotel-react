@@ -7,7 +7,7 @@ const TouristInfoCards = () => {
   return (
     <div id="container">
       <div className="card">
-        <img src={Glasgow} className="card-img-top" />
+        <img src={Glasgow} className="card-img-top" alt="Glasgow" />
         <h3>Glasgow</h3>
         <div className="card-body">
           <p>
@@ -21,7 +21,7 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img src={London} className="card-img-top" />
+        <img src={London} className="card-img-top" alt="London" />
         <h3>London</h3>
         <div className="card-body">
           <p>
@@ -35,7 +35,7 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img src={Manchester} className="card-img-top" />
+        <img src={Manchester} className="card-img-top" alt="Manchester" />
         <h3>Manchester</h3>
         <div className="card-body">
           <p>
