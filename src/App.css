@@ -90,9 +90,29 @@ td {
 }
 
 .highlight {
-  background-color: blue;
+  color: white;
+  background-color: #ec4a22;
 }
 
+.order-sec {
+  width: 53%;
+  margin: auto;
+  padding: 2em;
+  border: 2px solid black;
+}
+
+.order-list {
+  width: 17em;
+  margin: 1em;
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.order-btn {
+  background-color: #ec4a22;
+}
 /* footer */
 
 .footer-list {

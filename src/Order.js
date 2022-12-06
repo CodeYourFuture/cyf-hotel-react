@@ -9,7 +9,7 @@ export default function Order(props) {
   };
 
   return (
-    <li>
+    <li className="order-list">
       {props.orderType}: {orders} <RestaurantButton handleClick={orderOne} />
     </li>
   );

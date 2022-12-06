@@ -1,7 +1,13 @@
 import React from "react";
 import SearchButton from "./SearchButton";
 
-const Search = () => {
+const Search = props => {
+  const [searchInput, setSearchInput] = React.useState("");
+  function handleSearchInput(event) {
+    setSearchInput(event.target.value);
+  }
+  console.log(searchInput);
+
   return (
     <div className="search">
       <div className="page-header">
@@ -9,10 +15,12 @@ const Search = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form className="form-group search-box" onSubmit={props.Search}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
+                value={searchInput}
+                onChange={handleSearchInput}
                 type="text"
                 id="customerName"
                 className="form-control"
