@@ -24,3 +24,13 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 40px;
+}
+
+.footer li {
+  list-style: none;
+}
