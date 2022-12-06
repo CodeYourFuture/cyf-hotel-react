@@ -1,5 +1,5 @@
 import React from "react";
-
+import SearchBtn from "./SearchBtn";
 const Search = () => {
   return (
     <div className="search">
@@ -8,7 +8,8 @@ const Search = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <SearchBtn />
+          {/* <form className="form-group search-box">
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
@@ -19,7 +20,7 @@ const Search = () => {
               />
               <button className="btn btn-primary">Search</button>
             </div>
-          </form>
+          </form> */}
         </div>
       </div>
     </div>
