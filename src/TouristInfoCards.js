@@ -10,7 +10,7 @@ const TouristInfoCards = () => {
           src={ManchesterImg}
           className="card-img-top img-fluid"
           style={{ height: "200px" }}
-          alt="Manchester Image"
+          alt="Manchester"
         />
         <div className="card-body">
           <a href="http://visitmanchester.com" className="btn btn-primary">
@@ -23,7 +23,7 @@ const TouristInfoCards = () => {
           src={GlascowImg}
           className="card-img-top img-fluid"
           style={{ height: "200px" }}
-          alt="Glascow Image"
+          alt="Glascow"
         />
         <div className="card-body">
           <a href="http://peoplemakeglasgow.com" className="btn btn-primary">
@@ -36,7 +36,7 @@ const TouristInfoCards = () => {
           src={LondonImg}
           className="card-img-top img-fluid"
           style={{ height: "200px" }}
-          alt="London Image"
+          alt="London"
         />
 
         <div className="card-body">
