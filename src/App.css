@@ -9,7 +9,6 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -54,4 +53,16 @@ tr {
 
 .card {
   width: 18rem;
+  margin: auto;
+}
+
+.logo {
+  width: 40px;
+}
+
+.cardsEl {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
 }
