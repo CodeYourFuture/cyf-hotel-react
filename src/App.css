@@ -33,6 +33,17 @@
   border-radius: 50px;
   width: 100px;
 }
+#nav_bar {
+  background-color: #007bff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navbar {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+}
 #header-name {
   color: black;
 }

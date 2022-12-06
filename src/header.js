@@ -1,7 +1,8 @@
 import hotel from "./logo.jpg";
 function Header() {
   return (
-    <div>
+    <div id="nav_bar">
+      <img id="hotel-logo" src={hotel} alt="hotel-Logo" />
       <nav class="navbar navbar-dark bg-primary">
         <div class="container-md">
           <a class="navbar-brand" href="#">
@@ -14,7 +15,6 @@ function Header() {
             About
           </a>
         </div>
-        <img id="hotel-logo" src={hotel} alt="hotel-Logo" />
       </nav>
     </div>
   );
