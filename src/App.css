@@ -7,6 +7,10 @@
   height: 80px;
 }
 
+.Logo-img {
+  width: 100px;
+}
+
 .App-header {
   background-color: #222;
   height: 50px;
@@ -54,4 +58,12 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.red {
+  background-color: red;
+}
+
+.white {
+  background-color: white;
 }
