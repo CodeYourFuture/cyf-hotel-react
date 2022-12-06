@@ -4,6 +4,7 @@ const Heading = () => {
   return (
     <div className="App-header-section">
       <img
+        className="img-hotel"
         src="https://cdn-icons-png.flaticon.com/128/1475/1475996.png"
         alt=""
       />
