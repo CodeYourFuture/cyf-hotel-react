@@ -1,7 +1,7 @@
 import React from "react";
 import Moment from "react-moment";
 
-function CreateRowTableSaleh({ customer }) {
+function CreateRowTable({ customer }) {
   return (
     <tr>
       <th scope="row">{customer.id}</th>
@@ -43,7 +43,7 @@ function SearchResults({ results }) {
       </thead>
       <tbody>
         {results.map(customer => (
-          <CreateRowTableSaleh customer={customer} />
+          <CreateRowTable customer={customer} />
         ))}
         {/* { results.map(CreateRowTable)} */}
       </tbody>
