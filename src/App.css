@@ -17,7 +17,7 @@
   font-size: 1em;
   font-weight: bold;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .App-title {
