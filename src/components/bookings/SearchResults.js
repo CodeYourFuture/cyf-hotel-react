@@ -9,7 +9,6 @@ function SearchResults({ results, sortBookings }) {
     const res = await fetch(`https://cyf-react.glitch.me/customers/${id}`);
     const data = await res.json();
     setCurrentCustomer(data);
-    console.log(currentCustomer);
   };
 
   const showCustomerProfile = id => {
@@ -18,7 +17,7 @@ function SearchResults({ results, sortBookings }) {
 
   return (
     <div>
-      <table class="customer-table table">
+      <table className="customer-table table">
         <thead className="thead-dark">
           <tr>
             <th scope="col">#</th>

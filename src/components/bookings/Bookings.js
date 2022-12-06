@@ -46,7 +46,6 @@ const Bookings = () => {
   };
 
   const addNewCustomer = customerInfo => {
-    console.log(bookings);
     setBookings([...bookings, customerInfo]);
   };
 

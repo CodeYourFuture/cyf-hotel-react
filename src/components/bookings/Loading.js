@@ -1,8 +1,12 @@
 function Loading() {
   return (
-    <div class="d-flex align-items-center ">
+    <div className="d-flex align-items-center ">
       <strong>Loading...</strong>
-      <div class="spinner-border ml-auto" role="status" aria-hidden="true" />
+      <div
+        className="spinner-border ml-auto"
+        role="status"
+        aria-hidden="true"
+      />
     </div>
   );
 }

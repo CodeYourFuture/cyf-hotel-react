@@ -34,7 +34,7 @@ function AddBookingModal({ addNewCustomer }) {
     <div>
       <button
         type="button"
-        class="add-btn btn btn-success"
+        className="add-btn btn btn-success"
         data-toggle="modal"
         data-target="#exampleModal"
       >
@@ -42,34 +42,34 @@ function AddBookingModal({ addNewCustomer }) {
       </button>
 
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
         tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
                 Modal title
               </h5>
               <button
                 type="button"
-                class="close"
+                className="close"
                 data-dismiss="modal"
                 aria-label="Close"
               >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body p-4">
-              <form class="form-group" onSubmit={handleSubmit}>
-                <div class="form-group">
+            <div className="modal-body p-4">
+              <form className="form-group" onSubmit={handleSubmit}>
+                <div className="form-group">
                   <label htmlFor="title">Titel:</label>
                   <select
-                    class="form-control"
+                    className="form-control"
                     required
                     id="title"
                     onChange={e => changeState(e.target.id, e.target.value)}
@@ -84,7 +84,7 @@ function AddBookingModal({ addNewCustomer }) {
                     <option value="Madam">Madam</option>
                   </select>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <label htmlFor="firstName">First Name:</label>
                   <input
                     type="text"
@@ -98,7 +98,7 @@ function AddBookingModal({ addNewCustomer }) {
                   />
                 </div>
 
-                <div class="form-group">
+                <div className="form-group">
                   <label htmlFor="surname">Last Name :</label>
                   <input
                     type="text"
@@ -112,7 +112,7 @@ function AddBookingModal({ addNewCustomer }) {
                   />
                 </div>
 
-                <div class="form-group">
+                <div className="form-group">
                   <label htmlFor="email">Email address:</label>
                   <input
                     type="email"
@@ -126,7 +126,7 @@ function AddBookingModal({ addNewCustomer }) {
                   />
                 </div>
 
-                <div class="form-group">
+                <div className="form-group">
                   <label htmlFor="checkInDate">Check in:</label>
                   <input
                     type="date"
@@ -140,7 +140,7 @@ function AddBookingModal({ addNewCustomer }) {
                   />
                 </div>
 
-                <div class="form-group">
+                <div className="form-group">
                   <label htmlFor="checkOutDate">Check out:</label>
                   <input
                     type="date"
@@ -154,7 +154,7 @@ function AddBookingModal({ addNewCustomer }) {
                   />
                 </div>
 
-                <button class="btn btn-primary btn-block" type="submit">
+                <button className="btn btn-primary btn-block" type="submit">
                   Add Booking
                 </button>
               </form>
