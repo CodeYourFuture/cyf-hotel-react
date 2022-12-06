@@ -1,20 +1,23 @@
 .App {
   text-align: left;
+  background-color: lightcyan;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 400px;
+  width: 1600px;
+  object-fit: cover;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: gainsboro;
   height: 50px;
-  padding: 20px;
-  color: white;
+  padding: 50px;
+  color: black;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
@@ -24,17 +27,32 @@
 
 .App-content {
   padding-top: 20px;
-  font-size: large;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  margin-left: 100px;
+  margin-right: 50px;
+  display: flex;
+
+  flex-direction: row;
 }
+
+.infoCard {
+  padding: 20px 10px;
+  text-align: center;
+  border-right: lightgrey solid 1px;
+}
+
+.infoCard img {
+  width: 400px;
+  height: 250px;
+}
+
+.infoCard h2 {
+  padding-top: 20px;
+}
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -43,15 +61,78 @@ tr {
   color: #5b5757;
 }
 
+.highlight {
+  background: lightcoral;
+}
+
 .results {
   padding-top: 15px;
 }
+.loading {
+  background-color: red;
+  font-size: 40px;
+  padding: 10px;
 
-.footer {
-  padding-top: 20px;
+  border-radius: 1em;
+  margin-left: 200px;
+  width: max-content;
+}
+
+.order-list {
+  display: flex;
+
+  justify-content: left;
+  list-style: none;
+  padding: 5px;
+  max-width: 25rem;
+}
+
+.btn {
+  border: none;
+  padding: 1rem 2rem;
+  margin: 10px;
+  text-decoration: none;
+  background: #0069ed;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
   text-align: center;
 }
 
-.card {
-  width: 18rem;
+.btn:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+.btn-primary {
+  background-color: blue;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+h3 {
+  margin-left: 4rem;
+  margin-bottom: 2rem;
+  max-width: 20rem;
+}
+.customer-profile {
+  border-radius: 10px;
+  background-color: #91979f;
+  text-align: left;
+  margin-bottom: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.customer-id {
+  margin-top: 70px;
+  background-color: red;
+}
+.footer {
+  background-color: rgb(61, 152, 105);
+  color: white;
+}
+
+footer ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
 }
