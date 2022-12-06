@@ -7,7 +7,7 @@ const Header = () => {
       class="navbar navbar-expand-lg navbar-dark bg-dark"
       style={{ height: "80px" }}
     >
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/#">
         <img src={Logo} style={{ width: "80px" }} />
       </a>
       <button
