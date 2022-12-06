@@ -5,7 +5,7 @@ function Footer() {
     "0123 456789"
   ];
   return (
-    <div>
+    <div id="footer">
       <ul>
         {details.map((element, i) => {
           return <li key={i}>{element}</li>;

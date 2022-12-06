@@ -74,6 +74,10 @@ tr {
 .card {
   align-items: center;
   width: 13rem;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 1em;
+  box-shadow: 5px 5px 10px rgb(80, 79, 78);
 }
 #allCard {
   display: flex;
@@ -83,11 +87,25 @@ tr {
   margin-top: 50px;
 }
 #london {
+  margin-top: 40px;
   height: 172.22px;
   width: 129.16px;
+}
+#glasgow {
+  margin-top: 40px;
+  width: 200px;
+}
+#manchester {
+  margin-top: 40px;
+  width: 200px;
 }
 #restautant {
   text-align: center;
   font-family: sans-serif;
   border: 2px solid rgb(211, 211, 212);
+}
+#footer {
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: solid;
 }

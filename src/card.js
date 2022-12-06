@@ -18,7 +18,7 @@ function TouristInfoCards() {
         </div>
       </div>
       <div className="card">
-        <img src={Glasgow} className="card-img-top" />
+        <img src={Glasgow} className="card-img-top" id="glasgow" />
         <div className="card-body">
           <p>
             Glasgow is the best city in the world , you can do anything there
@@ -30,7 +30,7 @@ function TouristInfoCards() {
         </div>
       </div>
       <div className="card">
-        <img src={manchester1} className="card-img-top" />
+        <img src={manchester1} className="card-img-top" id="manchester" />
         <div className="card-body">
           <p>
             Manchester is the best city in the world , you can do anything there
