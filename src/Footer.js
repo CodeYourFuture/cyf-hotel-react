@@ -8,7 +8,7 @@ const Footer = props => {
     ]
   } = props;
   const result = contacts.map((contact, index) => (
-    <li key={contact.index}>{contact}</li>
+    <li key={index}>{contact}</li>
   ));
   return (
     <footer>

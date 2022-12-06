@@ -5,7 +5,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
@@ -19,6 +19,7 @@ const Bookings = () => {
       })
       // .then((data) => data.json())
       .then(bookings => setBookings(bookings))
+      .then(data => setLoading(false))
       .catch(error => {
         console.log("Error getting fake data: " + error);
       });
@@ -37,7 +38,11 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {loading === true ? (
+          <p>loading...</p>
+        ) : (
+          <SearchResults results={bookings} />
+        )}
       </div>
     </div>
   );
