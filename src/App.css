@@ -55,3 +55,7 @@ tr {
 .card {
   width: 18rem;
 }
+.headerImg {
+  display: flex;
+  justify-content: space-around;
+}
