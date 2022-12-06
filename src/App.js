@@ -1,5 +1,4 @@
 import React from "react";
-import Search from "./Search";
 import Bookings from "./Bookings";
 import "./App.css";
 import InfoCard from "./TouristInfoCards";
