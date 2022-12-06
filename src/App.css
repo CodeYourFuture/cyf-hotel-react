@@ -61,3 +61,18 @@ tr {
   height: 100px;
   margin: 10px;
 }
+
+.card {
+  width: 18rem;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 1em;
+  box-shadow: 5px 5px 10px rgb(80, 79, 78);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
+}

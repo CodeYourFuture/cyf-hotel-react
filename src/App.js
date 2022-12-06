@@ -1,6 +1,6 @@
 import React from "react";
 import Heading from "./Heading";
-
+import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import "./App.css";
 
@@ -9,6 +9,7 @@ const App = () => {
     <div className="App">
       {/* <header className="App-header">CYF Hotel</header> */}
       <Heading />
+      <TouristInfoCards />
       <Bookings />
     </div>
   );
