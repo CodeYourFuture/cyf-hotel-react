@@ -1,54 +1,36 @@
 import React from "react";
 
-function SearchResults() {
+function SearchResults(props) {
   return (
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">Number</th>
+          <th scope="col">Title</th>
           <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Check-in Date</th>
-          <th scope="col">Check-out Date</th>
+          <th scope="col">Surname</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Room Id</th>
+          <th scope="col">Check in Date</th>
+          <th scope="col">Check out Date</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>01.12.2022</td>
-          <td>08.12.2022</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>05.12.2022</td>
-          <td>19.12.2022</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>Maiden</td>
-          <td>07.12.2022</td>
-          <td>05.01.2023</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Lory</td>
-          <td>Grimes</td>
-          <td>18.12.2022</td>
-          <td>29.12.2022</td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>Fatih</td>
-          <td>Celebi</td>
-          <td>22.12.2022</td>
-          <td>02.01.2023</td>
-        </tr>
-      </tbody>
+      {props.results.map(item => {
+        return (
+          <tbody>
+            <tr>
+              <td>{item.id}</td>
+              <td>{item.title}</td>
+              <td>{item.firstName}</td>
+              <td>{item.surname}</td>
+              <td>{item.email}</td>
+              <td>{item.roomId}</td>
+              <td>{item.checkInDate}</td>
+              <td>{item.checkOutDate}</td>
+            </tr>
+          </tbody>
+        );
+      })}
     </table>
   );
 }
