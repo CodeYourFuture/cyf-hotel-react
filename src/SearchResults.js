@@ -3,7 +3,7 @@ import Moment from "react-moment";
 function SearchResults({ results }) {
   return (
     <div id="searchResults">
-      <table class="table table-dark">
+      <table class="table table">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -11,10 +11,10 @@ function SearchResults({ results }) {
             <th scope="col">First Name</th>
             <th scope="col">Surname</th>
             <th scope="col">Email</th>
-            <th scope="col">Room id</th>
-            <th scope="col">Check in Date</th>
-            <th scope="col">Check in Out</th>
-            <th scope="col">Number of Nights</th>
+            <th scope="col">Room Id</th>
+            <th scope="col">Check In Date</th>
+            <th scope="col">Check In Out</th>
+            <th scope="col">Number OF Nights</th>
           </tr>
         </thead>
         <tbody>
