@@ -89,6 +89,10 @@ td {
   text-align: center;
 }
 
+.highlight {
+  background-color: blue;
+}
+
 /* footer */
 
 .footer-list {

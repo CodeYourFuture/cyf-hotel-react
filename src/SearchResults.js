@@ -2,6 +2,14 @@ import React from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [selected, setSelected] = React.useState(true);
+  const [highlight, setHighlight] = React.useState("");
+
+  function selectTheRow() {
+    setSelected(prevState => !prevState);
+    selected ? setHighlight("highlight") : setHighlight("");
+  }
+
   return (
     <div className="table-container">
       <table className="table table-bordered">
@@ -24,7 +32,7 @@ const SearchResults = props => {
             let outDate = moment(booking.checkOutDate);
             let numOfNights = outDate.diff(inDate, "days");
             return (
-              <tr key={index}>
+              <tr key={index} className={highlight} onClick={selectTheRow}>
                 <td>{booking.id}</td>
                 <td>{booking.title}</td>
                 <td>{booking.firstName}</td>

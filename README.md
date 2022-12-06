@@ -120,7 +120,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** In the `<Bookings />` component, declare a new state `bookings` with the corresponding setter function `setBookings` to hold the `FakeBookings` data. Instead of passing `FakeBookings` directly to the `<SearchResults />` component, pass the new `bookings` state variable.
 
-**Hint:** The new `bookings` state should be initialised with the `FakeBookings` variable.
+**Hint:** The new `bookings` state should be initialized with the `FakeBookings` variable.
 
 **Test:** Check that the bookings are still rendered correctly in the page.
 
