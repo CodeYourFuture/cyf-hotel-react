@@ -1,37 +1,46 @@
 import React from "react";
 
-const data = [
+const cardData = [
   {
     id: 1,
-    img: "",
+    title: "Glasgow",
+    img:
+      "https://images.unsplash.com/photo-1621519604512-85ea63c15ca2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z2xhc2dvd3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     desc:
-      "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times.",
-    link: "http://visitlondon.com"
+      "Glasgow is the largest city in Scotland, and third largest in the United Kingdom.",
+    link: "https://peoplemakeglasgow.com/"
   },
+
   {
     id: 2,
-    img: "images/manchester.jpg",
+    title: "Manchester",
+    img:
+      "https://images.unsplash.com/photo-1597740049284-388659a41286?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuY2hlc3RlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     desc:
-      "Manchester is a major city in the northwest of England with a rich industrial heritage.",
-    link: "http://visitmanchester.com"
+      "Manchester is a city and metropolitan borough in Greater Manchester, England, with a population of 530,300 as of 2019.",
+    link: "https://visitmanchester.com/"
   },
+
   {
     id: 3,
-    img: "images/glasgow.jpg",
+    title: "London",
+    img:
+      "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bG9uZG9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     desc:
-      "Glasgow is a port city on the River Clyde in Scotland's western. It's famed for its Victorian and architecture.",
-    link: "http://peoplemakeglasgow.com"
+      "London is the capital and largest city of England and the United Kingdom.",
+    link: "https://visitlondon.com/"
   }
 ];
 
 function TouristInfoCards() {
   return (
     <div className="cities">
-      {data.map(city => {
-        const { id, img, desc, link } = city;
+      {cardData.map(city => {
+        const { id, title, img, desc, link } = city;
         return (
           <div key={id} className="card">
             <img src={img} className="card-img-top" />
+            <h2 className="title">{title}</h2>
             <div className="card-body card-para">
               <p>{desc}</p>
               <a href={link} target="_blank" className="btn btn-primary">
