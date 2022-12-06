@@ -20,12 +20,12 @@ const App = () => {
 function Heading() {
   return (
     <header className="App-header">
-      CYF Hotel
       <img
         className=".App-logo "
         src="https://image.flaticon.com/icons/svg/139/139899.svg"
         alt="hotel's logo"
       />
+      CYF Hotel
     </header>
   );
 }
@@ -69,7 +69,7 @@ function TouristInfoCards() {
             <img src={city.image} className="card-img-top" alt={city.name} />
 
             <div className="card-body">
-              <h5 className="card_title bold">{city.name} </h5>
+              <h5 className="card-title fw-bolder">{city.name} </h5>
               <p class="card-text"> {city.description}</p>
               <a href={city.link} className="btn btn-primary">
                 Go somewhere
@@ -89,7 +89,7 @@ const address = [
 ];
 
 const Footer = props => (
-  <ul className="footer-list">
+  <ul className="footer footer-list">
     <li> Address</li>
     {props.address.map((info, index) => (
       <li key={index}> {info} </li>
