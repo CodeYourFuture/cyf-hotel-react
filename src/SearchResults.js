@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "react-moment";
 
 const SearchResults = props => {
   return (
@@ -13,6 +14,7 @@ const SearchResults = props => {
           <th scope="col">Room Id</th>
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
+          <th scope="col">Number Of Night</th>
         </tr>
       </thead>
       {props.results.map(element => {
@@ -25,8 +27,17 @@ const SearchResults = props => {
               <td>{element.surname}</td>
               <td>{element.email}</td>
               <td>{element.roomId}</td>
-              <td>{element.checkInDate}</td>
-              <td>{element.checkOutDate}</td>
+              <td>
+                <Moment format="DD-MM-YYYY">{element.checkInDate}</Moment>
+              </td>
+              <td>
+                <Moment format="DD-MM-YYYY">{element.checkOutDate}</Moment>
+              </td>
+              <td>
+                <Moment diff={element.checkInDate} unit="days">
+                  {element.checkOutDate}
+                </Moment>
+              </td>
             </tr>
           </tbody>
         );
