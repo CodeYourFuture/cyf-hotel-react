@@ -34,3 +34,53 @@ body {
 .footer li {
   list-style: none;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #bacdd8;
+  padding: 8px;
+  border-radius: 12px;
+  margin-right: 15px;
+  height: 350px;
+}
+
+.card-image {
+  width: 100%;
+  border-radius: 12px;
+  height: 214px;
+  object-fit: cover;
+}
+
+h4 {
+  margin-top: 10px;
+}
+
+.card-detail > p {
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.card-button button {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  color: #0077ff;
+  background-color: #e0efff;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+}
+
+.card-container {
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 10vh;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
