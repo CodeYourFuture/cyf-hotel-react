@@ -31,7 +31,7 @@ const infoCarts = [
 function Cart({ city }) {
   return (
     <div className="card">
-      <img src={city.src} className="card-img-top" />
+      <img src={city.src} className="card-img-top" alt="" />
       <h3>{city.name}</h3>
       <p>{city.description}</p>
       <div className="card-body">
