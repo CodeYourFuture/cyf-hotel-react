@@ -6,6 +6,7 @@ function TouristInfoCards() {
   return (
     <div id="allCard">
       <div className="card">
+        <h3>London</h3>
         <img src={london} className="card-img-top" id="london" />
         <div className="card-body">
           <p>
@@ -21,6 +22,7 @@ function TouristInfoCards() {
         </div>
       </div>
       <div className="card">
+        <h3>Glasgow</h3>
         <img src={Glasgow} className="card-img-top" id="glasgow" />
         <div className="card-body">
           <p>
@@ -33,6 +35,7 @@ function TouristInfoCards() {
         </div>
       </div>
       <div className="card">
+        <h3>Manchester</h3>
         <img src={manchester1} className="card-img-top" id="manchester" />
         <div className="card-body">
           <p>
