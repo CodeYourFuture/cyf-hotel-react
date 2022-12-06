@@ -10,7 +10,7 @@
 .App-header {
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 40px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -50,8 +50,25 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style: none;
+  margin-top: 15px;
 }
 
+.main-card {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
 .card {
-  width: 18rem;
+  padding-top: 0px;
+  width: 30em;
+}
+.hotel-logo {
+  /* background-color: rgba(114, 101, 101, 0.79); */
+  width: 8%;
+  padding-left: 1em;
+}
+.footer-style li {
+  text-align: center;
+  list-style: none;
 }
