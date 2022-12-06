@@ -1,11 +1,21 @@
-import hotel from "./belfry-hotel-logo.png";
+import hotel from "./logo.jpg";
 function Header() {
   return (
     <div>
-      <header className="App-header" id="hederHotel">
+      <nav class="navbar navbar-dark bg-primary">
+        <div class="container-md">
+          <a class="navbar-brand" href="#">
+            Home
+          </a>
+          <a class="navbar-brand" href="#">
+            Profile
+          </a>
+          <a class="navbar-brand" href="#">
+            About
+          </a>
+        </div>
         <img id="hotel-logo" src={hotel} alt="hotel-Logo" />
-        <p id="header-name">CYF Hotel</p>
-      </header>
+      </nav>
     </div>
   );
 }
