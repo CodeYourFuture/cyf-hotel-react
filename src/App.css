@@ -68,11 +68,20 @@ tr {
   cursor: pointer;
   margin-top: 1em;
   box-shadow: 5px 5px 10px rgb(80, 79, 78);
+  margin: auto;
 }
 
-.container {
+#container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: row;
   border-radius: 35px;
+}
+
+#footer {
+  text-align: center;
+}
+
+ul {
+  display: inline;
 }
