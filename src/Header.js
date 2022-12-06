@@ -8,7 +8,7 @@ const Header = () => {
       style={{ height: "80px" }}
     >
       <a class="navbar-brand" href="/#">
-        <img src={Logo} style={{ width: "80px" }} />
+        <img src={Logo} style={{ width: "80px" }} alt="Hotel Logo" />
       </a>
       <button
         class="navbar-toggler"
