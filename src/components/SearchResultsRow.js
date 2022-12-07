@@ -4,7 +4,9 @@ import Button from "./Button";
 const SearchResultsRow = props => {
   const [selected, setSelected] = useState(true);
   const [highlighted, setHighlighted] = useState("");
-
+  let inDate = moment(props.booking.checkInDate);
+  let outDate = moment(props.booking.checkOutDate);
+  let numOfNights = outDate.diff(inDate, "days");
   function selectRow() {
     if (selected) {
       setHighlighted("highlight");
@@ -25,7 +27,7 @@ const SearchResultsRow = props => {
       <td>{props.booking.roomId}</td>
       <td>{props.booking.checkInDate}</td>
       <td>{props.booking.checkOutDate}</td>
-      <td>{props.numOfNights}</td>
+      <td>{numOfNights}</td>
       <td>
         <Button
           class="dark btn-sm"

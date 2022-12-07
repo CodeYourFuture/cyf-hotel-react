@@ -31,14 +31,10 @@ const SearchResults = props => {
           </thead>
           <tbody className="table-group-divider">
             {props.results.map((booking, index) => {
-              let inDate = moment(booking.checkInDate);
-              let outDate = moment(booking.checkOutDate);
-              let numOfNights = outDate.diff(inDate, "days");
               return (
                 <SearchResultsRow
                   booking={booking}
                   key={index}
-                  numOfNights={numOfNights}
                   handleClick={handleClick}
                 />
               );
