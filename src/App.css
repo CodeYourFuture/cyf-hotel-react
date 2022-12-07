@@ -52,8 +52,10 @@ tr {
 }
 
 .card {
-  width: 18rem;
-  border: 1px solid red;
+  width: 350px;
+  height: 480px;
+  /* border: 1px solid red */
+  border-radius: 20px;
 }
 
 .touristCard {
@@ -61,6 +63,11 @@ tr {
   align-items: center;
   justify-content: space-evenly;
   margin-top: 20px;
+}
+
+p {
+  text-align: justify;
+  font-size: medium;
 }
 
 .headerlogo {
