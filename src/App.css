@@ -8,14 +8,18 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: #171a23;
+  height: 70px;
   padding: 20px;
-  color: white;
+  color: #171a23;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* border: 10px solid red; */
 }
 
 .App-title {
@@ -54,4 +58,54 @@ tr {
 
 .card {
   width: 18rem;
+  align-items: center;
 }
+
+.hotelLogo {
+  width: 100px;
+  /*height: 30px; */
+  margin: 0 20px;
+  /* -webkit-filter: drop-shadow(5px 5px 5px rgb(45, 255, 255));
+  filter: drop-shadow(5px 5px 5px rgb(30, 243, 239)); */
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  padding: 5px;
+  font-size: 1em;
+  text-align: justify;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.card-body {
+}
+
+.orderType {
+  /* border: 10px solid red;  */
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  column-gap: 2em;
+  width: 400px;
+  justify-content: space-between;
+  margin: 10px;
+}
+.unSelectedColor {
+  background-color: rgb(186, 186, 186);
+}
+.selectedColor {
+  background-color: #ffff00;
+  font-weight: bold;
+}
+
+/* .table {
+  width: 100%;
+} */
