@@ -4,12 +4,11 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
 }
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 77px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -54,4 +53,16 @@ tr {
 
 .card {
   width: 18rem;
+  border: 1px solid red;
+}
+
+.touristCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.headerlogo {
+  width: 50px;
 }
