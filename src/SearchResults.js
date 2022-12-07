@@ -19,9 +19,10 @@ const SearchResults = ({ results }) => {
         </tr>
       </thead>
       <tbody>
-        {results.map(booking => {
+        {results.map((booking, index) => {
           return (
             <tr
+              key={index}
               onClick={() => setClicked(!clicked)}
               style={clicked ? { backgroundColor: "yellow" } : {}}
             >
