@@ -99,6 +99,7 @@ td {
   font-size: 0.8rem;
   font-weight: bold;
   color: white;
+  border: 1px solid #353131;
   background-color: #ec4a22;
 }
 .highlight {
