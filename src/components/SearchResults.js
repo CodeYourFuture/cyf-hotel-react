@@ -1,14 +1,31 @@
 import React, { useState } from "react";
-import moment from "moment";
 import SearchResultsRow from "./SearchResultsRow";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
   const [customerId, setCustomerId] = useState("");
+  const [results, setResults] = useState(props.results);
+  const [order, setOrder] = useState(true);
 
   function handleClick(e) {
     e.preventDefault();
     setCustomerId(e.target.value);
+  }
+
+  function orderColumn() {
+    if (order) {
+      results.sort((a, b) => {
+        return b.id - a.id;
+      });
+      setResults(results);
+      setOrder(false);
+    } else {
+      results.sort((a, b) => {
+        return a.id - b.id;
+      });
+      setResults(results);
+      setOrder(true);
+    }
   }
 
   return (
@@ -17,7 +34,9 @@ const SearchResults = props => {
         <table className="table table-sm table-bordered border-primary">
           <thead>
             <tr className="table-primary">
-              <th scope="col">Id</th>
+              <th scope="col" onClick={orderColumn}>
+                Id
+              </th>
               <th scope="col">Title</th>
               <th scope="col">First name</th>
               <th scope="col">Surname</th>
@@ -30,7 +49,7 @@ const SearchResults = props => {
             </tr>
           </thead>
           <tbody className="table-group-divider">
-            {props.results.map((booking, index) => {
+            {results.map((booking, index) => {
               return (
                 <SearchResultsRow
                   booking={booking}
