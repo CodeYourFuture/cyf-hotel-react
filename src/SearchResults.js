@@ -16,6 +16,7 @@ const SearchResults = ({ results }) => {
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
           <th scope="col">nights</th>
+          <th scope="col"> profile</th>
         </tr>
       </thead>
       <tbody>
@@ -35,6 +36,9 @@ const SearchResults = ({ results }) => {
               <td>{booking.checkOutDate}</td>
               <td>
                 {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
+              </td>
+              <td>
+                <button>Show Profile</button>
               </td>
             </tr>
           );
