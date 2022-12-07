@@ -6,7 +6,12 @@ const Search = props => {
   function handleSearchInput(event) {
     setSearchInput(event.target.value);
   }
-  console.log(searchInput);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    console.log("Sending data to server");
+    props.search(searchInput);
+  };
 
   return (
     <div className="search">
@@ -15,7 +20,7 @@ const Search = props => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box" onSubmit={props.Search}>
+          <form className="form-group search-box" onSubmit={handleSubmit}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input

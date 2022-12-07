@@ -12,8 +12,8 @@ const SearchResults = props => {
 
   return (
     <div className="table-container">
-      <table className="table table-bordered">
-        <thead>
+      <table className="table-set table-bordered">
+        <thead className="table-head">
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Title</th>
@@ -24,6 +24,7 @@ const SearchResults = props => {
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
             <th scope="col">Number of nights</th>
+            <th scope="col">Profile</th>
           </tr>
         </thead>
         <tbody>
@@ -42,6 +43,7 @@ const SearchResults = props => {
                 <td>{booking.checkInDate}</td>
                 <td>{booking.checkOutDate}</td>
                 <td>{numOfNights}</td>
+                <button className="btn show-profile">Show Profile</button>
               </tr>
             );
           })}

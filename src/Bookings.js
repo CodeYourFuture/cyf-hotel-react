@@ -4,8 +4,16 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    setBookings(
+      bookings.filter(
+        customer =>
+          customer.surname.toLowerCase().includes(searchVal) ||
+          customer.firstName.toLowerCase().includes(searchVal)
+      )
+    );
   };
 
   useEffect(() => {
