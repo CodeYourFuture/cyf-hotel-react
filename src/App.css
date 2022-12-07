@@ -65,6 +65,8 @@
 /* table */
 
 .table-container {
+  display: flex;
+  justify-content: space-around;
   text-align: center;
 }
 .table-head {
@@ -128,6 +130,9 @@ td {
 }
 .search-btn:hover {
   background-color: #ec4a22;
+}
+.id-sec {
+  margin: 1em;
 }
 /* footer */
 

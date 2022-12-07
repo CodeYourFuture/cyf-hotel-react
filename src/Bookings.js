@@ -3,6 +3,8 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("Please wait the page is loading");
   const [bookings, setBookings] = useState([]);
 
   const search = searchVal => {
@@ -24,15 +26,21 @@ const Bookings = () => {
         }
         return res.json();
       })
-      .then(data => setBookings(data))
-      .catch(error => console.log(error));
+      .then(data => {
+        setLoading(true);
+        setBookings(data);
+      })
+      .catch(error => {
+        console.log(error);
+        setMessage("Something went wrong");
+      });
   }, []);
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {loading ? <SearchResults results={bookings} /> : <p>{message}</p>}
       </div>
     </div>
   );

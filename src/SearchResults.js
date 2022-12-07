@@ -3,6 +3,8 @@ import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
+  const [customerId, setCustomerId] = React.useState("");
+
   const [selected, setSelected] = React.useState(true);
   const [highlight, setHighlight] = React.useState("");
 
@@ -28,6 +30,7 @@ const SearchResults = props => {
             <th scope="col">Profile</th>
           </tr>
         </thead>
+
         <tbody>
           {props.results.map((booking, index) => {
             let inDate = moment(booking.checkInDate);
@@ -44,13 +47,18 @@ const SearchResults = props => {
                 <td>{booking.checkInDate}</td>
                 <td>{booking.checkOutDate}</td>
                 <td>{numOfNights}</td>
-                <button className="btn show-profile">Show Profile</button>
+                <button
+                  className="btn show-profile"
+                  onClick={() => setCustomerId(booking.id)}
+                >
+                  Show Profile
+                </button>
               </tr>
             );
           })}
         </tbody>
       </table>
-      <CustomerProfile />
+      {customerId ? <CustomerProfile id={customerId} /> : null}
     </div>
   );
 };
