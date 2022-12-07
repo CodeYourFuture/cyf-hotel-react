@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function CustomerProfile(props) {
-  return <div />;
+  return <div>"Customer {props.id} Profile"</div>;
 }

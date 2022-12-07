@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
   const [selected, setSelected] = React.useState(true);
@@ -49,6 +50,7 @@ const SearchResults = props => {
           })}
         </tbody>
       </table>
+      <CustomerProfile />
     </div>
   );
 };
