@@ -6,9 +6,23 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
+.logo {
+  min-width: 50px;
+  max-width: 50px;
+  min-height: 75px;
+  max-width: 75px;
+  padding: 4px;
+}
+.cardsHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 12px;
+  padding: 1px;
+}
 
 .App-header {
-  background-color: #222;
+  background-color: rgba(117, 190, 218, 0.5);
   height: 50px;
   padding: 20px;
   color: white;
@@ -25,6 +39,19 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+.Footer {
+  background-color: rgba(117, 190, 218, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.Footer ul {
+  margin: 0;
+  color: black;
 }
 
 @keyframes App-logo-spin {
