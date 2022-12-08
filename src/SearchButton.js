@@ -1,7 +1,13 @@
 import React from "react";
 
-function SearchButton() {
-  return <button className="btn btn-primary">Search</button>;
+function RestaurantButton(props) {
+  return (
+    <>
+      <button onClick={props.handleClick} className="btn btn-primary">
+        Add
+      </button>
+    </>
+  );
 }
 
-export default SearchButton;
+export default RestaurantButton;
