@@ -1,47 +1,74 @@
-import moment from "moment";
 import React, { useState } from "react";
+import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ results }) => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [customerID, setCustomerID] = useState();
+  const checkClick = selectedID => {
+    setCustomerID(selectedID);
+  };
 
   return (
-    <table className="table">
-      <thead className="thead-dark">
-        <tr>
-          <th scope="col">id</th>
-          <th scope="col">Title</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room id</th>
-          <th scope="col">Check in date</th>
-          <th scope="col">Check out date</th>
-          <th scope="col">nights</th>
-        </tr>
-      </thead>
-      <tbody>
-        {results.map(booking => {
-          return (
-            <tr
-              onClick={() => setIsClicked(!isClicked)}
-              style={isClicked ? { backgroundColor: "red" } : {}}
-            >
-              <td>{booking.id}</td>
-              <td>{booking.title}</td>
-              <td>{booking.firstName}</td>
-              <td>{booking.surname}</td>
-              <td>{booking.email}</td>
-              <td>{booking.roomId}</td>
-              <td>{booking.checkInDate}</td>
-              <td>{booking.checkOutDate}</td>
-              <td>
-                {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>First name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Room id</th>
+            <th>Check in date</th>
+            <th>Check out date</th>
+            <th>Number of nights</th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          {results.map(element => {
+            return <ResultRow element={element} checkClick={checkClick} />;
+          })}
+        </tbody>
+      </table>
+      {customerID && <CustomerProfile id={customerID} />}
+    </div>
+  );
+};
+
+const ResultRow = ({ element, checkClick }) => {
+  const [isBackgroundHightlighted, setBackground] = useState("white");
+
+  const setColor = () => {
+    if (isBackgroundHightlighted === "white") {
+      setBackground("grey");
+    } else if (isBackgroundHightlighted === "grey") {
+      setBackground("white");
+    }
+  };
+
+  return (
+    <tr
+      onClick={() => {
+        setColor(isBackgroundHightlighted);
+      }}
+      style={{ backgroundColor: isBackgroundHightlighted }}
+    >
+      <td>{element.id}</td>
+      <td>{element.title}</td>
+      <td>{element.firstName}</td>
+      <td>{element.surname}</td>
+      <td>{element.email}</td>
+      <td>{element.roomId}</td>
+      <td>{element.checkInDate}</td>
+      <td>{element.checkOutDate}</td>
+      <td>
+        {moment(element.checkOutDate).diff(moment(element.checkInDate), "days")}
+      </td>
+      <td>
+        <button onClick={() => checkClick(element.id)}>Show profile</button>
+      </td>
+    </tr>
   );
 };
 
