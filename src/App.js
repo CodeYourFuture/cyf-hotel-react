@@ -26,6 +26,7 @@ const App = () => {
   });
   const [searchInput, setSearchInput] = useState("");
   const [bookings, setBookings] = useState([]);
+  const [filteredBookings, setFilteredBookings] = useState([]);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("Please wait the page is loading");
 
@@ -41,7 +42,7 @@ const App = () => {
         booking.surname.toLowerCase().includes(searchVal.toLowerCase())
       );
     });
-    setBookings(filteredBookings);
+    setFilteredBookings(filteredBookings);
   }
 
   useEffect(() => {
@@ -87,6 +88,7 @@ const App = () => {
         searchInput={searchInput}
         handleSearchInput={handleSearchInput}
         bookings={bookings}
+        filteredBookings={filteredBookings}
         loading={loading}
         message={message}
       />
