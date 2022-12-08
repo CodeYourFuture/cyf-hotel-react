@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Moment from "react-moment";
 
 // let checkDiff = (InDate, OutDate) => {
@@ -9,6 +9,17 @@ import Moment from "react-moment";
 // };
 
 const SearchResults = props => {
+  // console.log(props);
+  const [highlight, setHighlight] = useState([]);
+  console.log(highlight);
+  function Selecter(id) {
+    console.log(id);
+    if (highlight.includes(id)) {
+      setHighlight(highlight.filter(el => el !== id));
+    } else {
+      setHighlight(highlight.concat(id));
+    }
+  }
   return (
     <table className="table">
       <thead>
@@ -27,7 +38,15 @@ const SearchResults = props => {
       <tbody>
         {/* props.results => fakeBooking.json */}
         {props.results.map((result, i) => (
-          <tr key={i}>
+          <tr
+            key={i}
+            style={
+              highlight.includes(result.id)
+                ? { backgroundColor: "#f1f2f6" }
+                : { backgroundColor: "#fff" }
+            }
+            onClick={() => Selecter(result.id)}
+          >
             <td>{result.id}</td>
             <td>{result.title}</td>
             <td>{result.firstName}</td>
