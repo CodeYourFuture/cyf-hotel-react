@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Moment from "moment";
 // import fakebookings from "../data/fakeBookings.json";
 
@@ -26,9 +26,13 @@ let checckDiff = (InDate, OutDate) => {
 };
 
 function SearchResults({ results }) {
+  // const [click,setClick]=useState(false)
+  // function changecolor(){
+  //   setClick(true)
+  // }
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">id</th>
@@ -44,8 +48,20 @@ function SearchResults({ results }) {
         </thead>
         <tbody>
           {results.map((item, index) => {
+            const [click, setClick] = useState(false);
+            function changecolor() {
+              setClick(true);
+            }
+            function backcolor() {
+              setClick(false);
+            }
             return (
-              <tr key={index}>
+              <tr
+                key={index}
+                style={{ backgroundColor: click ? "orange" : "white" }}
+                onClick={changecolor}
+                onDoubleClick={backcolor}
+              >
                 <th scope="row">{item.id}</th>
                 <td>{item.title}</td>
                 <td>{item.firstName}</td>

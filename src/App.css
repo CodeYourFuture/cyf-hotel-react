@@ -66,6 +66,8 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style: none;
+  background-color: aquamarine;
 }
 
 .card {
