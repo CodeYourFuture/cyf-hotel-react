@@ -5,47 +5,48 @@ import CustomerProfile from "./CustomerProfile";
 const SearchResults = props => {
   const [customerId, setCustomerId] = useState("");
   const [results, setResults] = useState(props.results);
-  const [order, setOrder] = useState(true);
+  const [numbersOrder, setNumbersOrder] = useState(true);
+  const [namesOrder, setNamesOrder] = useState(true);
 
   function handleClick(e) {
-    e.preventDefault();
     setCustomerId(e.target.value);
   }
 
-  function orderNumber(e) {
+  function orderNumbers(e) {
+    e.stopPropagation();
     let att = e.target.abbr;
 
-    if (order) {
+    if (numbersOrder) {
       results.sort((a, b) => {
         return b[att] - a[att];
       });
       setResults(results);
-      setOrder(false);
+      setNumbersOrder(false);
     } else {
       results.sort((a, b) => {
         return a[att] - b[att];
       });
       setResults(results);
-      setOrder(true);
+      setNumbersOrder(true);
     }
   }
 
-  function orderName(e) {
+  function orderNames(e) {
     e.stopPropagation();
     let att = e.target.abbr;
 
-    if (order) {
+    if (namesOrder) {
       results.sort((a, b) => {
         let nA = a[att].toLowerCase();
         let nB = b[att].toLowerCase();
         return nA < nB ? -1 : nA > nB ? 1 : 0;
       });
       setResults(results);
-      setOrder(false);
+      setNamesOrder(false);
     } else {
       results.reverse();
       setResults(results);
-      setOrder(true);
+      setNamesOrder(true);
     }
   }
   return (
@@ -54,19 +55,23 @@ const SearchResults = props => {
         <table className="table table-sm table-bordered border-primary">
           <thead>
             <tr className="table-primary">
-              <th scope="col" abbr="id" onClick={orderNumber}>
+              <th scope="col" abbr="id" onClick={orderNumbers}>
                 Id
+                {numbersOrder ? <span>&#8593;</span> : <span>&#8595;</span>}
               </th>
               <th scope="col">Title</th>
-              <th scope="col" abbr="firstName" onClick={orderName}>
-                First name
+              <th scope="col" abbr="firstName" onClick={orderNames}>
+                First name{" "}
+                {namesOrder ? <span>&#8593;</span> : <span>&#8595;</span>}
               </th>
-              <th scope="col" abbr="surname" onClick={orderName}>
-                Surname
+              <th scope="col" abbr="surname" onClick={orderNames}>
+                Surname{" "}
+                {namesOrder ? <span>&#8593;</span> : <span>&#8595;</span>}
               </th>
               <th scope="col">Email Address</th>
-              <th scope="col" abbr="roomId" onClick={orderNumber}>
-                Room id
+              <th scope="col" abbr="roomId" onClick={orderNumbers}>
+                Room id{" "}
+                {numbersOrder ? <span>&#8593;</span> : <span>&#8595;</span>}
               </th>
               <th scope="col">Check in date</th>
               <th scope="col">Check out date</th>
