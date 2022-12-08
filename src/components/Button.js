@@ -5,6 +5,7 @@ const Button = props => {
     <button
       className={"btn btn-" + props.class}
       onClick={props.onclick}
+      type={props.type}
       value={props.value}
     >
       {props.text}

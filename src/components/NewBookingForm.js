@@ -1,6 +1,7 @@
 import React from "react";
+import Button from "./Button";
 
-const NewBookingForm = ({ handleChange }) => {
+const NewBookingForm = ({ handleChange, handleSubmit }) => {
   return (
     <form className="m-5 p-5">
       <h3>New Booking Form</h3>
@@ -61,7 +62,7 @@ const NewBookingForm = ({ handleChange }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group col">
+        <div className="form-group col mb-2">
           <label htmlFor="check-out">Check out date</label>
           <input
             type="date"
@@ -72,6 +73,12 @@ const NewBookingForm = ({ handleChange }) => {
           />
         </div>
       </div>
+      <Button
+        type="submit"
+        class="danger"
+        text="Add customer"
+        onclick={handleSubmit}
+      />
     </form>
   );
 };
