@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import SearchResultsRow from "./SearchResultsRow";
 import CustomerProfile from "./CustomerProfile";
 
-const SearchResults = props => {
+const SearchResults = ({ results }) => {
   const [customerId, setCustomerId] = useState("");
-  const [results, setResults] = useState(props.results);
   const [numbersOrder, setNumbersOrder] = useState(true);
   const [namesOrder, setNamesOrder] = useState(true);
 
@@ -20,13 +19,11 @@ const SearchResults = props => {
       results.sort((a, b) => {
         return b[att] - a[att];
       });
-      setResults(results);
       setNumbersOrder(false);
     } else {
       results.sort((a, b) => {
         return a[att] - b[att];
       });
-      setResults(results);
       setNumbersOrder(true);
     }
   }
@@ -41,11 +38,9 @@ const SearchResults = props => {
         let nB = b[att].toLowerCase();
         return nA < nB ? -1 : nA > nB ? 1 : 0;
       });
-      setResults(results);
       setNamesOrder(false);
     } else {
       results.reverse();
-      setResults(results);
       setNamesOrder(true);
     }
   }
