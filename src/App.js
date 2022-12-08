@@ -1,9 +1,11 @@
 import React from "react";
 
+import Restaurant from "./Restaurant";
 import Bookings from "./Bookings";
 import Heading from "./myComponents/Heading";
 import TouristInfoCards from "./myComponents/TouristInfoCards";
 import Footer from "./myComponents/Footer";
+
 import "./App.css";
 
 const footer = [
@@ -19,6 +21,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer footer={footer} />
     </div>
   );

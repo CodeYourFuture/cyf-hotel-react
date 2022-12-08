@@ -5,6 +5,23 @@ import Moment from "moment";
 
 export default function SearchResults({ results }) {
   const [result, setResults] = useState([]);
+  const [color, setColor] = useState(""); // changeColor();
+  const [show, setShow] = useState(false);
+  const handleClick = () => {
+    setShow(prev => !prev);
+  };
+  function get_random_color() {
+    var letters = "0123456789ABCDEF".split("");
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.round(Math.random() * 15)];
+    }
+    return color;
+  }
+
+  function changeColor() {
+    setColor(get_random_color());
+  }
 
   useEffect(() => {
     setResults(results);
@@ -36,7 +53,30 @@ export default function SearchResults({ results }) {
         <tbody>
           {result.map((item, index) => {
             return (
-              <tr key={index}>
+              <tr
+                key={index}
+                onClick={e => {
+                  if (!show) {
+                    // changeColor();
+                    // e.target.style.backgroundColor = color;
+                    e.target.parentNode.className = "selected";
+                    if (e.target.parentNode.className === "selected") {
+                      changeColor();
+                      e.target.parentNode.style.backgroundColor = color;
+                    }
+
+                    handleClick();
+                    console.log(e.target.parentNode);
+                  } else {
+                    e.target.parentNode.className = "";
+                    handleClick();
+                    setColor("");
+                    e.target.parentNode.style.backgroundColor = color;
+                    // e.target.style.backgroundColor = color;
+                  }
+                }}
+                style={{ cursor: "pointer" }}
+              >
                 <th scope="row">{item.id}</th>
                 <td>{item.title}</td>
                 <td>{item.firstName}</td>
