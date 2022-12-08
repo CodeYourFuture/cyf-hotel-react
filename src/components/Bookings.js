@@ -7,6 +7,7 @@ const Bookings = ({
   searchInput,
   handleSearchInput,
   loading,
+  filteredBookings,
   bookings,
   message
 }) => {
@@ -17,7 +18,11 @@ const Bookings = ({
         value={searchInput}
         handleSearchInput={handleSearchInput}
       />
-      {loading ? <SearchResults results={bookings} /> : <p>{message}</p>}
+      {loading ? (
+        <SearchResults results={searchInput ? filteredBookings : bookings} />
+      ) : (
+        <p>{message}</p>
+      )}
     </div>
   );
 };
