@@ -3,8 +3,8 @@ import Button from "./Button";
 
 const NewBookingForm = ({ handleChange, handleSubmit }) => {
   return (
-    <form className="m-5 p-5">
-      <h3>New Booking Form</h3>
+    <form className="m-5 p-5 mb-2">
+      <h3 className="mb-4">New Booking Form</h3>
       <div className="row mb-2">
         <div className="form-group col-sm-2 mb-2">
           <label htmlFor="title">Title</label>
@@ -62,7 +62,7 @@ const NewBookingForm = ({ handleChange, handleSubmit }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group col mb-2">
+        <div className="form-group col mb-4">
           <label htmlFor="check-out">Check out date</label>
           <input
             type="date"
