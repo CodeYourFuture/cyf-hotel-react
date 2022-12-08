@@ -103,3 +103,13 @@ header img {
   justify-content: space-between;
   gap: 30px;
 }
+
+.footer {
+  background-color: #231f20;
+  color: beige;
+  padding: 40px;
+}
+
+.footer li {
+  list-style: none;
+}
