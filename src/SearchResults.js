@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
-import Highlighter from "./Highlighter";
 
 const SearchResults = ({ results }) => {
+  const [isActive, setIsActive] = useState(false);
+  const handleClick = () => {
+    setIsActive(current => !current);
+  };
   return (
     <div className="table-responsive-lg">
       <table className="table table-dark">
@@ -19,9 +22,13 @@ const SearchResults = ({ results }) => {
           </tr>
         </thead>
         <tbody>
-          {results.map(booking => {
+          {results.map((booking, index) => {
             return (
-              <tr>
+              <tr
+                key={index}
+                style={{ color: isActive ? "red" : "" }}
+                onClick={handleClick}
+              >
                 <td>{booking.email}</td>
                 <td>{booking.title}</td>
                 <td>{booking.firstName}</td>

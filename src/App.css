@@ -42,6 +42,10 @@
   padding-inline-start: 0;
 }
 
+.tableSelected {
+  background-color: #5b5757;
+}
+
 .Footer {
   background-color: #222;
   height: auto;
