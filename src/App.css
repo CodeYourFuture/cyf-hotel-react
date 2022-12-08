@@ -71,11 +71,11 @@ li {
   min-width: 100vw;
   height: 5rem;
   color: #fff;
-  background-color: #222;
+  /* background-color: #222; */
 }
-.footerContaner li {
-  color: #fff;
-}
+/* .footerContaner li {
+  color: #000;
+} */
 .buttonCardContainer {
   margin-top: 2rem;
 }
@@ -83,5 +83,5 @@ li {
   margin: 2rem 0 3rem 0;
 }
 .table {
-  margin-bottom: 15rem;
+  margin-bottom: 3rem;
 }

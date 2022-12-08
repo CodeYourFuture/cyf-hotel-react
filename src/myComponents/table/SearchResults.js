@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import ThemeContext from "../ThemeContext";
 
 import "../../App.css";
 import Moment from "moment";
 
 export default function SearchResults({ results }) {
+  const theme = useContext(ThemeContext);
   const [result, setResults] = useState([]);
   const [color, setColor] = useState(""); // changeColor(); // commit  Lesson 2
   const [show, setShow] = useState(false);
@@ -35,7 +37,7 @@ export default function SearchResults({ results }) {
   };
 
   return (
-    <div>
+    <div style={{ ...theme }}>
       <table className="table">
         <thead>
           <tr>

@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Search from "./Search.js";
 import SearchResults from "./myComponents/table/SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
+import ThemeContext from "./myComponents/ThemeContext";
 
 const Bookings = () => {
+  const theme = useContext(ThemeContext);
   const [bookings, setBookings] = useState(FakeBookings);
 
   // useEffect(() => {
