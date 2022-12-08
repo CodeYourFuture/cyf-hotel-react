@@ -15,7 +15,7 @@ const contactInfo = [
 
 const App = () => {
   const [newBooking, setNewBooking] = useState({
-    id: 7,
+    id: 0,
     firstName: "",
     surname: "",
     title: "",
@@ -76,8 +76,6 @@ const App = () => {
     e.preventDefault();
     setBookings(bookings.concat(newBooking));
   }
-
-  console.log(bookings);
 
   return (
     <div className="App">
