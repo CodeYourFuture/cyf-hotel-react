@@ -1,31 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 
 const NewBookingForm = () => {
-  //   const [customerData, setCustomerData] = useState({
-  //     firstName: "",
-  //     surname: "",
-  //     title: "",
-  //     roomId: "",
-  //   });
+  const [customerData, setCustomerData] = useState({
+    id: "",
+    firstName: "",
+    surname: "",
+    title: "",
+    email: "",
+    roomId: "",
+    checkInDate: "",
+    checkOutDate: ""
+  });
+
+  function handleChange(e) {
+    const updatedCustomerData = {
+      ...customerData,
+      [e.target.name]: e.target.value
+    };
+
+    setCustomerData(updatedCustomerData);
+  }
+  console.log(customerData);
   return (
     <form className="m-5 p-5">
       <h3>New Booking Form</h3>
       <div className="row mb-2">
         <div className="form-group col-sm-2 mb-2">
           <label htmlFor="title">Title</label>
-          <input type="text" className="form-control" id="title" />
+          <input
+            type="text"
+            className="form-control"
+            id="title"
+            name="title"
+            onChange={handleChange}
+          />
         </div>
         <div className="form-group col-sm-3 mb-2">
           <label htmlFor="first-name">First Name</label>
-          <input type="text" className="form-control" id="first-name" />
+          <input
+            type="text"
+            className="form-control"
+            id="first-name"
+            name="firstName"
+            onChange={handleChange}
+          />
         </div>
         <div className="form-group col-sm-3 mb-2">
           <label htmlFor="surname">Surname</label>
-          <input type="text" className="form-control" id="surname" />
+          <input
+            type="text"
+            className="form-control"
+            id="surname"
+            name="surname"
+            onChange={handleChange}
+          />
         </div>
         <div className="form-group col mb-2">
           <label htmlFor="email">Email</label>
-          <input type="email" className="form-control" id="email" />
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            name="email"
+            onChange={handleChange}
+          />
         </div>
       </div>
       <div className="row">
@@ -39,8 +77,8 @@ const NewBookingForm = () => {
             type="date"
             className="form-control"
             id="check-in"
-            value={new Date()}
-            min={new Date()}
+            name="checkInDate"
+            onChange={handleChange}
           />
         </div>
         <div className="form-group col">
@@ -49,8 +87,8 @@ const NewBookingForm = () => {
             type="date"
             className="form-control"
             id="check-out"
-            value={new Date()}
-            min={new Date()}
+            name="checkOutDate"
+            onChange={handleChange}
           />
         </div>
       </div>
