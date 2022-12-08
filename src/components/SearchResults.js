@@ -61,16 +61,16 @@ const SearchResults = props => {
               </th>
               <th scope="col">Title</th>
               <th scope="col" abbr="firstName" onClick={orderNames}>
-                First name{" "}
+                First name
                 {namesOrder ? <span>&#8593;</span> : <span>&#8595;</span>}
               </th>
               <th scope="col" abbr="surname" onClick={orderNames}>
-                Surname{" "}
+                Surname
                 {namesOrder ? <span>&#8593;</span> : <span>&#8595;</span>}
               </th>
               <th scope="col">Email Address</th>
               <th scope="col" abbr="roomId" onClick={orderNumbers}>
-                Room id{" "}
+                Room id
                 {numbersOrder ? <span>&#8593;</span> : <span>&#8595;</span>}
               </th>
               <th scope="col">Check in date</th>

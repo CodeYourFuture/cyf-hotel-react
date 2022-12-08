@@ -5,7 +5,7 @@ const Search = props => {
   return (
     <div className="search">
       <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
+        <h3 className="text-left">Search Bookings</h3>
       </div>
       <div className="row search-wrapper">
         <div className="col">
