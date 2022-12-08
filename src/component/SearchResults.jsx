@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Moment from "react-moment";
 
 function CreateRowTable({ customer }) {
+  const [select, setselect] = useState(false);
+  function changeColour() {
+    setselect(true);
+  }
+  function backColor() {
+    setselect(false);
+  }
   return (
-    <tr>
+    <tr
+      style={{ backgroundColor: select ? "blue" : "white" }}
+      onClick={changeColour}
+      onDoubleClick={backColor}
+    >
       <th scope="row">{customer.id}</th>
       <td>{customer.title}</td>
       <td>{customer.firstName}</td>
@@ -42,8 +53,8 @@ function SearchResults({ results }) {
         </tr>
       </thead>
       <tbody>
-        {results.map(customer => (
-          <CreateRowTable customer={customer} />
+        {results.map((customer, index) => (
+          <CreateRowTable key={index} customer={customer} />
         ))}
         {/* { results.map(CreateRowTable)} */}
       </tbody>
