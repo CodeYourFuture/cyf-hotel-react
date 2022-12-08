@@ -1,20 +1,42 @@
-import React, { useState } from "react";
-import Search from "./Search.js";
-import SearchResults, { TableHeader } from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
+import React from "react";
+const moment = require("moment");
+import TableRow from "./TableRow";
 
-const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings);
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
-  };
+const headings = [
+  "id",
+  "title",
+  "firstName",
+  "surname",
+  "email",
+  "roomId",
+  "checkInDate",
+  "checkOutDate",
+  "Duration"
+];
+function SearchResults(props) {
   return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults bookings={bookings} />
-      </div>
-    </div>
+    <>
+      <table className="table">
+        <thead>
+          <tr>
+            {headings.map((heading, index) => {
+              return (
+                <th key={index}>
+                  {/* scope="col" */}
+                  {heading}
+                </th>
+              );
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {props.bookings.map(booking => {
+            return <TableRow key={booking.id} data={booking} />;
+          })}
+        </tbody>
+      </table>
+      <hr />
+    </>
   );
-};
-export default Bookings;
+}
+export default SearchResults;
