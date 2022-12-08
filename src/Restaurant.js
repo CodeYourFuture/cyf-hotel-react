@@ -1,25 +1,25 @@
 import React from "react";
 import { useState } from "react";
+import RestaurantButton from "./RestaurantButton";
 const Restaurant = () => {
   const [orders, setOrders] = useState(0);
-  // let orders = useState(0);
-  const pizzas = 0;
+  function incressOrder() {
+    setOrders(orders + 1);
+  }
+
   return (
     <div id="restautant">
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
-          Pizzas: {orders}{" "}
-          <button
-            className="btn btn-primary"
-            onClick={() => setOrders(orders + 1)}
-          >
+          Pizzas: {orders}
+          <RestaurantButton handleClick={incressOrder} />
+          {/* <button className="btn btn-primary" onClick={incressOrder}>
             Add
-          </button>
+          </button> */}
         </li>
       </ul>
     </div>
   );
 };
-function orderOne() {}
 export default Restaurant;
