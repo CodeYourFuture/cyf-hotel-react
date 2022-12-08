@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Bookings from "./components/Bookings";
 import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
@@ -14,8 +14,8 @@ const contactInfo = [
 ];
 
 const App = () => {
-  const [customerData, setCustomerData] = useState({
-    id: "",
+  const [newBooking, setNewBooking] = useState({
+    id: 7,
     firstName: "",
     surname: "",
     title: "",
@@ -24,21 +24,72 @@ const App = () => {
     checkInDate: "",
     checkOutDate: ""
   });
+  const [searchInput, setSearchInput] = useState("");
+  const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("Please wait the page is loading");
+
+  function handleSearchInput(e) {
+    setSearchInput(e.target.value);
+  }
+
+  function search(e, searchVal) {
+    e.preventDefault();
+    let filteredBookings = bookings.filter(booking => {
+      return (
+        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+      );
+    });
+    setBookings(filteredBookings);
+  }
+
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error("Something went wrong");
+      })
+      .then(data => {
+        setBookings(data);
+        setLoading(true);
+      })
+      .catch(error => {
+        console.log(error);
+        setMessage("Something went wrong");
+      });
+  }, []);
 
   function handleChange(e) {
-    const updatedCustomerData = {
-      ...customerData,
+    const updatedBooking = {
+      ...newBooking,
       [e.target.name]: e.target.value
     };
 
-    setCustomerData(updatedCustomerData);
+    setNewBooking(updatedBooking);
   }
-  console.log(customerData);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setBookings(bookings.concat(newBooking));
+  }
+
+  console.log(bookings);
+
   return (
     <div className="App">
       <Heading />
-      <NewBookingForm handleChange={handleChange} />
-      <Bookings />
+      <NewBookingForm handleChange={handleChange} handleSubmit={handleSubmit} />
+      <Bookings
+        search={e => search(e, searchInput)}
+        searchInput={searchInput}
+        handleSearchInput={handleSearchInput}
+        bookings={bookings}
+        loading={loading}
+        message={message}
+      />
       <Restaurant />
       <TouristInfoCards />
       <Footer contactInfo={contactInfo} />
