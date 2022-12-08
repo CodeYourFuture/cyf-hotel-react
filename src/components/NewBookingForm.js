@@ -1,26 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const NewBookingForm = () => {
-  const [customerData, setCustomerData] = useState({
-    id: "",
-    firstName: "",
-    surname: "",
-    title: "",
-    email: "",
-    roomId: "",
-    checkInDate: "",
-    checkOutDate: ""
-  });
-
-  function handleChange(e) {
-    const updatedCustomerData = {
-      ...customerData,
-      [e.target.name]: e.target.value
-    };
-
-    setCustomerData(updatedCustomerData);
-  }
-  console.log(customerData);
+const NewBookingForm = ({ handleChange }) => {
   return (
     <form className="m-5 p-5">
       <h3>New Booking Form</h3>

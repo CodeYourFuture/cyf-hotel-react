@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Bookings from "./components/Bookings";
 import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
@@ -14,10 +14,30 @@ const contactInfo = [
 ];
 
 const App = () => {
+  const [customerData, setCustomerData] = useState({
+    id: "",
+    firstName: "",
+    surname: "",
+    title: "",
+    email: "",
+    roomId: "",
+    checkInDate: "",
+    checkOutDate: ""
+  });
+
+  function handleChange(e) {
+    const updatedCustomerData = {
+      ...customerData,
+      [e.target.name]: e.target.value
+    };
+
+    setCustomerData(updatedCustomerData);
+  }
+  console.log(customerData);
   return (
     <div className="App">
       <Heading />
-      <NewBookingForm />
+      <NewBookingForm handleChange={handleChange} />
       <Bookings />
       <Restaurant />
       <TouristInfoCards />
