@@ -5,7 +5,7 @@ import Moment from "moment";
 
 export default function SearchResults({ results }) {
   const [result, setResults] = useState([]);
-  const [color, setColor] = useState(""); // changeColor();
+  const [color, setColor] = useState(""); // changeColor(); // commit  Lesson 2
   const [show, setShow] = useState(false);
   const handleClick = () => {
     setShow(prev => !prev);
