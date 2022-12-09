@@ -11,7 +11,7 @@ export default function SearchResults({ results }) {
   };
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">Id</th>

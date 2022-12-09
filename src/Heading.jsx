@@ -1,10 +1,10 @@
 import React from "react";
-
+import InfoCards from "./TouristInfoCards";
 function Heading() {
   return (
     <div>
       <img
-        src="https://img.freepik.com/premium-vector/hotel-logo-simple-illustration_434503-736.jpg?w=2000"
+        src="https://img.freepik.com/premium-vector/beach-house-logo-design-template-beach-resort-villa-beach-hotel-logo_98702-711.jpg?w=1380"
         alt="logo"
         width="100"
       />

@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: rgba(0, 102, 255, 0.692);
+  background-color: #222;
   height: 50px;
   padding: 20px;
   color: white;
@@ -41,6 +41,15 @@
 
 tr {
   color: #5b5757;
+}
+
+.clicked {
+  background-color: rgb(49, 82, 249);
+  color: azure;
+}
+
+.unclicked {
+  background-color: #fff;
 }
 
 .results {

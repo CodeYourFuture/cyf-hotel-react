@@ -5,7 +5,7 @@ function InfoCards() {
     <div className="card-container">
       <div className="card">
         <img
-          src="https://media.timeout.com/images/105400989/750/422/image.jpg"
+          src="https://www.glasgowworld.com/jpim-static/image/2022/08/11/10/Elfingrove%20skater.jpg?width=640&quality=65&smart"
           className="card-img-top"
           alt=""
         />
@@ -37,7 +37,7 @@ function InfoCards() {
 
       <div className="card">
         <img
-          src="https://cdn.britannica.com/42/116342-050-5AC41785/Manchester-Eng.jpg"
+          src="https://cdn.citybaseapartments.com/blog/cba-media/2016-10/shutterstock_1072210547.jpg"
           className="card-img-top"
           alt=""
         />
@@ -69,7 +69,7 @@ function InfoCards() {
 
       <div className="card">
         <img
-          src="https://cdn.londonandpartners.com/-/media/images/london/visit/campaigns/international-recovery-campaign/lets-do-london-related-international-640.jpeg?mw=640&hash=477E6FF9F31F292EE017E5BA63027C7054EB39A0"
+          src="https://cdn.vox-cdn.com/thumbor/TLFsavhPKwYFbHXliBwlR3IzyFw=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22742798/1253246468.jpg"
           className="card-img-top"
           alt=""
         />
