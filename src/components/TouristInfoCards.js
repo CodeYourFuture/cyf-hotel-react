@@ -16,11 +16,9 @@ const TouristInfoCards = () => {
               />
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{city.name}</h5>
-                <p className="card-text pt-4" style={{ height: "12rem" }}>
-                  {city.description}
-                </p>
+                <p className="card-text pt-2 pb-2">{city.description}</p>
                 <a
-                  className="btn btn-warning btn-sm justify-self-end"
+                  className="btn btn-warning btn-sm"
                   href={city.link}
                   target="_blank"
                   rel="noopener noreferrer"

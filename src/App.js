@@ -64,6 +64,7 @@ const App = () => {
   }, []);
 
   function handleChange(e) {
+    // get the name and the value properties from the e.target obj
     const { name, value } = e.target;
     const updatedBooking = { ...newBooking, [name]: value };
 
@@ -72,6 +73,7 @@ const App = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // get the property directly with destructuring instead of bookings.map((booking) => booking.id)
     let arrOfIds = bookings.map(({ id }) => id);
     let latestId = Math.max(...arrOfIds) + 1;
     let addedBooking = { ...newBooking, id: latestId };
