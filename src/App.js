@@ -2,6 +2,7 @@ import React from "react";
 
 import Bookings from "./Bookings";
 import "./App.css";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -11,6 +12,8 @@ const App = () => {
       {/* task 3, */}
       <TouristInfoCards />
       <Bookings />
+      {/* task -08 */}
+      <Restaurant />
       {/* task 4 */}
       <Footer address={address} />
     </div>

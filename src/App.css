@@ -78,3 +78,15 @@ thead {
 .footer-list {
   list-style: none;
 }
+.table-border {
+  border: 3px solid gray;
+}
+.table-border2 {
+  border: 3px solid green;
+}
+.row-bg {
+  background-color: grey;
+}
+.row-bg2 {
+  background-color: green;
+}
