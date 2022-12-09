@@ -9,13 +9,21 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 60px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  gap: 2rem;
+}
+
+.theLogo {
+  height: 35px;
+  width: 70px;
+  /* margin-bottom: 1px; */
 }
 
 .App-title {
