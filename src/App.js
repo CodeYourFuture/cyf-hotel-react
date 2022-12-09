@@ -6,6 +6,7 @@ import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 // import SearchResults from "./SearchResults.JS";
+import Restaurant from "./Restaurant";
 
 const data = [
   "123 Fake Street, London, E1 4UD",
@@ -19,6 +20,7 @@ const App = () => {
       {/* <header className="App-header">CYF Hotel</header> */}
       <Heading />
       <Bookings />
+      <Restaurant />
       <TouristInfoCards />
       <Footer data={data} />
     </div>
