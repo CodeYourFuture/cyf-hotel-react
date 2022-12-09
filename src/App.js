@@ -17,10 +17,10 @@ const App = () => {
   const [searchInput, setSearchInput] = useState("");
   const [bookings, setBookings] = useState([]);
   const [filteredBookings, setFilteredBookings] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("Please wait the page is loading");
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [message, setMessage] = useState("Please wait the page is isLoaded");
   const [newBooking, setNewBooking] = useState({
-    id: 6,
+    id: 0,
     firstName: "",
     surname: "",
     title: "",
@@ -55,7 +55,7 @@ const App = () => {
       })
       .then(data => {
         setBookings(data);
-        setLoading(true);
+        setIsLoaded(true);
       })
       .catch(error => {
         console.log(error);
@@ -64,30 +64,38 @@ const App = () => {
   }, []);
 
   function handleChange(e) {
-    const updatedBooking = {
-      ...newBooking,
-      [e.target.name]: e.target.value
-    };
+    const { name, value } = e.target;
+    const updatedBooking = { ...newBooking, [name]: value };
 
     setNewBooking(updatedBooking);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    setBookings(bookings.concat(newBooking));
+    let arrOfIds = bookings.map(({ id }) => id);
+    let latestId = Math.max(...arrOfIds) + 1;
+    let addedBooking = { ...newBooking, id: latestId };
+    setBookings(bookings.concat(addedBooking));
   }
 
   return (
     <div className="App">
       <Heading />
-      <NewBookingForm handleChange={handleChange} handleSubmit={handleSubmit} />
+      {isLoaded ? (
+        <NewBookingForm
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
+      ) : (
+        ""
+      )}
       <Bookings
         search={e => search(e, searchInput)}
         searchInput={searchInput}
         handleSearchInput={handleSearchInput}
         bookings={bookings}
         filteredBookings={filteredBookings}
-        loading={loading}
+        isLoaded={isLoaded}
         message={message}
       />
       <Restaurant />
