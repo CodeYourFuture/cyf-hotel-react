@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Heading from "./components/Heading";
+import Heading from "./components/Navbar";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Bookings from "./components/Bookings";
 import Restaurant from "./components/Restaurant";
