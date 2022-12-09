@@ -10,6 +10,7 @@
 .App-header {
   background-color: #222;
   height: 60px;
+  align-items: center;
   padding: 20px;
   color: white;
   text-align: left;
@@ -24,6 +25,13 @@
   height: 35px;
   width: 70px;
   /* margin-bottom: 1px; */
+}
+
+.container {
+  display: flex;
+  /* gap: 2rem; */
+  justify-content: space-around;
+  margin-top: 3rem;
 }
 
 .App-title {
