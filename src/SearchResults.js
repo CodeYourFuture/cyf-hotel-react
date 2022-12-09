@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
-// const SearchResults = (props) => {
-//   const [click, setClick] = useState();
-//   function ButtonClick() {
-//     setClick(click);
-//   }
 const SearchResults = props => {
   const rowNum = props.results.length;
   let classRows = [];
@@ -38,6 +34,7 @@ const SearchResults = props => {
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
             <th scope="col">No. of nights</th>
+            <th scope="col">Show Profile</th>
           </tr>
         </thead>
         <tbody>
@@ -59,6 +56,9 @@ const SearchResults = props => {
               <td>{result.checkOutDate}</td>
               <td>
                 {moment(result.checkOutDate).diff(result.checkInDate, "days")}
+              </td>
+              <td>
+                <CustomerProfile id={result.id} />
               </td>
             </tr>
           ))}
