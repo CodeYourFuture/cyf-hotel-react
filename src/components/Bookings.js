@@ -12,7 +12,7 @@ const Bookings = ({
   message
 }) => {
   return (
-    <div className="container">
+    <div className="ms-5 me-5 ps-5 pe-5">
       <Search
         search={search}
         value={searchInput}
