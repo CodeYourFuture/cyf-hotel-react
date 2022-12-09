@@ -1,15 +1,16 @@
 import React from "react";
 import "./App.css";
-import Heading from "./components/Navbar";
-import TouristInfoCards from "./components/TouristInfoCards";
+import Navbar from "./components/navbar/Navbar";
+import TouristInfoCards from "./components/touristInfocards/TouristInfoCards";
 import Bookings from "./components/Bookings";
 import Restaurant from "./components/Restaurant";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
   return (
     <div className="App">
-      <Heading />
+      <Navbar />
+      <Hero/>
       <TouristInfoCards />
       <div className="wrapper">
         <Bookings />
