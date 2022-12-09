@@ -6,7 +6,7 @@ const Bookings = ({
   search,
   searchInput,
   handleSearchInput,
-  loading,
+  isLoaded,
   filteredBookings,
   bookings,
   message
@@ -18,7 +18,7 @@ const Bookings = ({
         value={searchInput}
         handleSearchInput={handleSearchInput}
       />
-      {loading ? (
+      {isLoaded ? (
         <SearchResults results={searchInput ? filteredBookings : bookings} />
       ) : (
         <p>{message}</p>
