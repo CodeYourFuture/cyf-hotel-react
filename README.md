@@ -42,7 +42,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 </div>
 ```
 
-**Test:** 3 info cards should be displayed on the page for each city (Glasgow, Manchester, London). Each card should link to the correct website.
+**Test:** 3 info cards should be displayed on the page for each city (Glasgow, Manchester, London). Each card should link to the correct website. //done
 
 #### 4. Create a Footer component
 
