@@ -28,6 +28,9 @@ function Navbar() {
         </h2>
       </div>
       <ul className="nav-menu">
+        <Link to="/" smooth={true} duration={500}>
+          <li>Admin</li>
+        </Link>
         <Link to="home" smooth={true} duration={500}>
           <li>Home</li>
         </Link>
