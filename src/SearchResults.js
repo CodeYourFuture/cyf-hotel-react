@@ -1,13 +1,12 @@
-import moment from "moment";
 import React from "react";
+import Moment from "react-moment";
 
-function numOfNights(start, end) {
-  const day1 = moment(start);
-  const day2 = moment(end);
-
-  const result = day2.diff(day1, "days");
-  return result;
-}
+// function numOfNights(start, end) {
+//   const day1 = moment(start);
+//   const day2 = moment(end);
+//   const result = day2.diff(day1, "days");
+//   return result;
+// }
 
 const SearchResults = props => {
   return (
@@ -35,9 +34,19 @@ const SearchResults = props => {
               <td>{data.surname}</td>
               <td>{data.email}</td>
               <td>{data.roomId}</td>
-              <td>{data.checkInDate}</td>
-              <td>{data.checkOutDate}</td>
-              <td>{numOfNights(data.checkInDate, data.checkOutDate)}</td>
+              <td>
+                <Moment format="DD-MM-YYYY">{data.checkInDate}</Moment>
+              </td>
+              <td>
+                <Moment format="DD-MM-YYYY">{data.checkOutDate}</Moment>
+              </td>
+              <td>
+                <Moment diff={data.checkInDate} unit="days">
+                  {data.checkOutDate}
+                </Moment>
+              </td>
+
+              {/* <td>{numOfNights(data.checkInDate, data.checkOutDate)}</td> */}
             </tr>
           ))}
         </tbody>
