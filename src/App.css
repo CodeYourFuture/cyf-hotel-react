@@ -39,6 +39,9 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.select {
+  background-color: #007bff;
+}
 .navbar {
   display: flex;
   width: 30%;
