@@ -16,14 +16,10 @@ const SearchResults = ({ results }) => {
     let att = e.target.abbr;
 
     if (numbersOrder) {
-      results.sort((a, b) => {
-        return b[att] - a[att];
-      });
+      results.sort((a, b) => b[att] - a[att]);
       setNumbersOrder(false);
     } else {
-      results.sort((a, b) => {
-        return a[att] - b[att];
-      });
+      results.reverse();
       setNumbersOrder(true);
     }
   }

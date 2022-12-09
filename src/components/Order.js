@@ -4,9 +4,7 @@ import Button from "./Button";
 const Order = props => {
   const [orders, setOrders] = useState(0);
   function orderOne() {
-    setOrders(() => {
-      return orders + 1;
-    });
+    setOrders(() => orders + 1);
   }
 
   return (

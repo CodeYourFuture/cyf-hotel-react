@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import moment from "moment";
 import Button from "./Button";
 
-const SearchResultsRow = props => {
+const SearchResultsRow = ({ booking, handleClick }) => {
   const [selected, setSelected] = useState(true);
   const [highlighted, setHighlighted] = useState("");
 
-  let inDate = moment(props.booking.checkInDate);
-  let outDate = moment(props.booking.checkOutDate);
+  let inDate = moment(booking.checkInDate);
+  let outDate = moment(booking.checkOutDate);
   let numOfNights = outDate.diff(inDate, "days");
 
   function selectRow() {
@@ -22,21 +22,21 @@ const SearchResultsRow = props => {
 
   return (
     <tr onClick={selectRow} className={highlighted}>
-      <td>{props.booking.id}</td>
-      <td>{props.booking.title}</td>
-      <td>{props.booking.firstName}</td>
-      <td>{props.booking.surname}</td>
-      <td>{props.booking.email}</td>
-      <td>{props.booking.roomId}</td>
-      <td>{props.booking.checkInDate}</td>
-      <td>{props.booking.checkOutDate}</td>
+      <td>{booking.id}</td>
+      <td>{booking.title}</td>
+      <td>{booking.firstName}</td>
+      <td>{booking.surname}</td>
+      <td>{booking.email}</td>
+      <td>{booking.roomId}</td>
+      <td>{booking.checkInDate}</td>
+      <td>{booking.checkOutDate}</td>
       <td>{numOfNights}</td>
       <td>
         <Button
           class="dark btn-sm"
           text="Show profile"
-          onclick={props.handleClick}
-          value={props.booking.id}
+          onclick={handleClick}
+          value={booking.id}
         />
       </td>
     </tr>
