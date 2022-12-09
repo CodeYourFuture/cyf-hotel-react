@@ -26,8 +26,8 @@ const SearchResults = ({ results }) => {
             return (
               <tr
                 key={index}
-                style={{ color: isActive ? "red" : "" }}
                 onClick={handleClick}
+                style={{ color: isActive ? "red" : "" }}
               >
                 <td>{booking.email}</td>
                 <td>{booking.title}</td>
