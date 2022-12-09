@@ -4,8 +4,8 @@ import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Restaurant from "./components/Restaurant";
 import Footer from "./components/Footer";
-import "./App.css";
 import NewBookingForm from "./components/NewBookingForm";
+import "./App.css";
 
 const contactInfo = [
   "123 Fake Street, London, E1 4UD",
@@ -14,8 +14,13 @@ const contactInfo = [
 ];
 
 const App = () => {
+  const [searchInput, setSearchInput] = useState("");
+  const [bookings, setBookings] = useState([]);
+  const [filteredBookings, setFilteredBookings] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("Please wait the page is loading");
   const [newBooking, setNewBooking] = useState({
-    id: 0,
+    id: 6,
     firstName: "",
     surname: "",
     title: "",
@@ -24,11 +29,6 @@ const App = () => {
     checkInDate: "",
     checkOutDate: ""
   });
-  const [searchInput, setSearchInput] = useState("");
-  const [bookings, setBookings] = useState([]);
-  const [filteredBookings, setFilteredBookings] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("Please wait the page is loading");
 
   function handleSearchInput(e) {
     setSearchInput(e.target.value);
