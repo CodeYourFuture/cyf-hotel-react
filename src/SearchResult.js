@@ -1,12 +1,13 @@
 import Moment from "react-moment";
 import { useState } from "react";
-function SearchResult({ item }) {
+function SearchResult({ i, item }) {
   const [select, setSelect] = useState(true);
   const toggleSelecter = () => {
     setSelect(select => !select);
   };
   return (
     <tr
+      key={i}
       onClick={toggleSelecter}
       style={{
         backgroundColor: select ? "white" : "blue",
