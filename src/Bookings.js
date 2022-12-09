@@ -21,7 +21,7 @@ const Bookings = () => {
 
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/")
+    fetch("https://cyf-react.glitch.me")
       .then(response => response.json())
       .then(data => {
         if (data.error) {
