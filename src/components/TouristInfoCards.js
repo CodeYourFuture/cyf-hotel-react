@@ -43,8 +43,8 @@ function TouristInfoCards() {
             <h2 className="title">{title}</h2>
             <div className="card-body card-para">
               <p>{desc}</p>
-              <a href={link} target="_blank" className="btn btn-primary">
-                More Info
+              <a href={link} target="_blank" className="btn btn-info">
+                Read More
               </a>
             </div>
           </div>

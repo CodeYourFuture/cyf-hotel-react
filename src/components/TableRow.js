@@ -34,7 +34,7 @@ function TableRow({
       <td>{checkOut.diff(checkIn, "days")}</td>
       <td>
         <button
-          className="btn btn-outline-success"
+          className="btn btn-outline-info"
           data-toggle="modal"
           data-target="#customer-profile"
           onClick={() => showCustomerProfile(id)}

@@ -104,6 +104,16 @@ header img {
   gap: 30px;
 }
 
+.customer-table {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.add-btn {
+  display: block;
+  margin: 10px auto 40px;
+}
+
 .footer {
   background-color: #231f20;
   color: beige;
