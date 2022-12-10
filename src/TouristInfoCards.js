@@ -5,11 +5,11 @@ const TouristInfoCards = () => {
     <div className="main-card">
       <div className="card">
         <img
-          src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/40000/40504-Albert-Square.jpg"
+          src="https://a.cdn-hotels.com/gdcs/production189/d348/c9901744-aad6-4f5b-bf84-1da600b390d7.jpg"
           className="card-img-top"
         />
         <div className="card-body">
-          <a href="#" className="btn btn-primary">
+          <a href="#" className="btn-btn-primary">
             Go Manchester
           </a>
         </div>
@@ -20,7 +20,7 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
-          <a href="#" className="btn btn-primary">
+          <a href="#" className="btn-btn-primary">
             Go Glasgow
           </a>
         </div>
@@ -31,7 +31,7 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
-          <a href="#" className="btn btn-primary">
+          <a href="#" className="btn-btn-primary">
             Go London
           </a>
         </div>

@@ -6,8 +6,8 @@ function Footer() {
     "0123 456789"
   ];
   return (
-    <div>
-      <ul>
+    <div className="footer">
+      <ul className="footerlist">
         {footArray.map(el => (
           <li>{el}</li>
         ))}

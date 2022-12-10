@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Moment from "moment";
 function searchResults({ results }) {
   return (
@@ -6,8 +6,7 @@ function searchResults({ results }) {
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">id</th>
-            <th scope="col">title</th>
+            <th scope="col">id</th>8<th scope="col">title</th>
             <th scope="col">first name</th>
             <th scope="col">surname</th>
             <th scope="col">email</th>
@@ -19,8 +18,16 @@ function searchResults({ results }) {
         </thead>
         <tbody>
           {results.map(item => {
+            const [color, setColor] = useState(false);
+            function changeColor() {
+              setColor(!color);
+            }
+
             return (
-              <tr>
+              <tr
+                style={{ backgroundColor: color ? "red" : "white" }}
+                onClick={changeColor}
+              >
                 <th scope="row">{item.id}</th>
                 <td>{item.title}</td>
                 <td>{item.firstName}</td>
