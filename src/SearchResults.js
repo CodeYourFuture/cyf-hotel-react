@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Moment from "moment";
+import "./App.css";
 
 export default function SearchResults(props) {
   // let bookings = [
@@ -25,6 +26,22 @@ export default function SearchResults(props) {
   //   }
   // ];
   let bookings = props.results;
+
+  const [bookingColor, setbookingColor] = useState({});
+
+  const changeColor = bookingId => {
+    return setbookingColor(bookingColor => {
+      if (bookingColor[bookingId] === "yellow") {
+        let updated = { ...bookingColor };
+        updated[bookingId] = "white";
+        return updated;
+      } else {
+        let updated = { ...bookingColor };
+        updated[bookingId] = "yellow";
+        return updated;
+      }
+    });
+  };
   return (
     <div>
       <table class="table">
@@ -42,7 +59,10 @@ export default function SearchResults(props) {
         </thead>
         <tbody>
           {bookings.map(booking => (
-            <tr>
+            <tr
+              className={bookingColor[booking.id]}
+              onClick={e => changeColor(booking.id)}
+            >
               <td>{booking.title}</td>
               <td>{booking.firstName}</td>
               <td>{booking.surname}</td>

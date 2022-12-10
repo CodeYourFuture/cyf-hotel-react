@@ -64,3 +64,11 @@ tr {
 ul {
   list-style: none;
 }
+
+.white {
+  background-color: white;
+}
+
+.yellow {
+  background-color: yellow;
+}
