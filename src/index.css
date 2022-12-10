@@ -38,16 +38,16 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: gray;
   border: 1px solid #bacdd8;
   padding: 8px;
-  border-radius: 12px;
-  margin-right: 15px;
-  height: 350px;
+  border-radius: 1px;
+  margin-right: 70px;
+  height: 380px;
 }
 
 .card-image {
-  width: 100%;
+  width: 100;
   border-radius: 12px;
   height: 214px;
   object-fit: cover;
@@ -64,8 +64,8 @@ h4 {
 
 .card-button button {
   border: none;
-  padding: 12px 24px;
-  border-radius: 50px;
+  /* padding: 12px 24px; */
+  border-radius: 30px;
   font-weight: 600;
   color: #0077ff;
   background-color: #e0efff;
@@ -76,11 +76,11 @@ h4 {
 
 .card-container {
   max-width: 300px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   margin-top: 10vh;
   text-align: center;
   justify-content: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
