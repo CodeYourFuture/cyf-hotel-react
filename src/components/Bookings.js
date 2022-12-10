@@ -7,15 +7,16 @@ const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
-  const [bookings, setBookings] = useState();
-  const bookingData = () => {
-    setBookings(FakeBookings);
-  };
+  const [bookings, setBookings] = useState(FakeBookings);
+  // const bookingData = () => {
+  //   setBookings(FakeBookings);
+  // };
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={FakeBookings} />
+
+        <SearchResults results={bookings} />
       </div>
     </div>
   );
