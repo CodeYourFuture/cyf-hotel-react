@@ -1,11 +1,8 @@
 import React from "react";
 import Heading from "./Heading";
 import Bookings from "./Bookings";
-// import "./App.css";
-// import SearchButton from "./SearchButton";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
-// import SearchResults from "./SearchResults.JS";
 import Restaurant from "./Restaurant";
 
 const data = [
@@ -17,7 +14,6 @@ const data = [
 const App = () => {
   return (
     <div className="App">
-      {/* <header className="App-header">CYF Hotel</header> */}
       <Heading />
       <Bookings />
       <Restaurant />
