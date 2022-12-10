@@ -2,11 +2,6 @@ import React, { useState } from "react";
 import Moment from "moment";
 
 function SearchResults(props) {
-  // console.log(props);
-  const [colour, setColor] = useState(true);
-  function handleClick() {
-    setColor(oldColour => !oldColour);
-  }
   return (
     <div class="table-responsive">
       <table class="table table-bordered align-top">
@@ -25,11 +20,16 @@ function SearchResults(props) {
         </thead>
         <tbody>
           {props.results.map((profile, index) => {
+            const [colour, setColor] = useState(false);
+            function handleClick() {
+              setColor(oldColour => !oldColour);
+            }
             return (
               <tr
                 key={index}
+                // task-15
                 onClick={handleClick}
-                className={`${colour === true ? "row-bg" : "row-bg2"}`}
+                style={{ backgroundColor: colour ? "yellow" : "white" }}
               >
                 <td> {profile.id}</td>
                 <td> {profile.title}</td>
