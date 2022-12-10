@@ -33,8 +33,8 @@ const TouristInfoCards = () => {
   ];
   return (
     <div className="card-container">
-      {cities.map(element => (
-        <div className="card">
+      {cities.map((element, i) => (
+        <div key={i} className="card">
           <img src={element.img} className="card-img-top" />
           <h2>{element.TonwName}</h2>
           <p>{element.info}</p>
