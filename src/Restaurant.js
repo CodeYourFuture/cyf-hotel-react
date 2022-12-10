@@ -17,7 +17,9 @@ const Restaurant = () => {
           </button> */}
         {/* <RestaurantButton handleClick={orderOne} />
         </li> */}
-        <Order />
+        <Order orderType="Pizzas" />
+        <Order orderType="Salads" />
+        <Order orderType="Chocolate cake" />
       </ul>
     </div>
   );
