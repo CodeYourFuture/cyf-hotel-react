@@ -1,7 +1,14 @@
-import React from "react";
 import moment from "moment";
+import React, { useState } from "react";
 
 function SearchResult(props) {
+  const [selectedIndex, setSelectedIndex] = useState();
+
+  const handleClick = checkIndex => {
+    return selectedIndex === checkIndex
+      ? setSelectedIndex(null)
+      : setSelectedIndex(checkIndex);
+  };
   return (
     <div>
       <table class="table">
@@ -24,7 +31,11 @@ function SearchResult(props) {
             var b = moment(item.checkInDate);
             a.diff(b, "days");
             return (
-              <tr>
+              <tr
+                key={item}
+                onClick={() => handleClick(item)}
+                className={selectedIndex === item ? "clicked" : "unclicked"}
+              >
                 <th scope="row">{item.id}</th>
                 <td>{item.title}</td>
                 <td>{item.firstName}</td>
