@@ -6,7 +6,7 @@ console.log(footerInfo)
 return (
     <ul className="d-flex justify-content-around">
     {footerInfo.map((info) => {
-    return <li key = {info}>{info}</li>;
+    return <li key={info}>{info}</li>;
       })}
     </ul>
 )
