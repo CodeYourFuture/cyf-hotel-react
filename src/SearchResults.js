@@ -2,7 +2,7 @@ import React from "react";
 import FakeBooking from "./data/fakeBookings.json";
 import Moment from "react-moment";
 
-const SearchResults = ({ result }) => {
+const SearchResults = ({ searchResultBookings }) => {
   return (
     <div>
       <table className="table">
@@ -18,16 +18,16 @@ const SearchResults = ({ result }) => {
             <th scope="col">Nights</th>
           </tr>
         </thead>
-        <SearchTable results={FakeBooking} />
+        <SearchTable searchTableBooking={searchResultBookings} />
       </table>
     </div>
   );
 };
 
-const SearchTable = ({ results }) => {
+const SearchTable = ({ searchTableBooking }) => {
   return (
     <tbody>
-      {results.map((item, index) => (
+      {searchTableBooking.map((item, index) => (
         <tr key={index}>
           <td>{item.title}</td>
           <td>{item.firstName}</td>
