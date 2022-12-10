@@ -1,14 +1,9 @@
 import React from "react";
 import Moment from "react-moment";
-
-// function numOfNights(start, end) {
-//   const day1 = moment(start);
-//   const day2 = moment(end);
-//   const result = day2.diff(day1, "days");
-//   return result;
-// }
+import TableRow from "./TableRow";
 
 const SearchResults = props => {
+  console.log(props);
   return (
     <div>
       <table className="table table-striped">
@@ -26,29 +21,9 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map(data => (
-            <tr>
-              <th scope="row">{data.id}</th>
-              <td>{data.title}</td>
-              <td>{data.firstName}</td>
-              <td>{data.surname}</td>
-              <td>{data.email}</td>
-              <td>{data.roomId}</td>
-              <td>
-                <Moment format="DD-MM-YYYY">{data.checkInDate}</Moment>
-              </td>
-              <td>
-                <Moment format="DD-MM-YYYY">{data.checkOutDate}</Moment>
-              </td>
-              <td>
-                <Moment diff={data.checkInDate} unit="days">
-                  {data.checkOutDate}
-                </Moment>
-              </td>
-
-              {/* <td>{numOfNights(data.checkInDate, data.checkOutDate)}</td> */}
-            </tr>
-          ))}
+          {props.results.map((row, index) => {
+            return <TableRow key={index} {...row} />;
+          })}
         </tbody>
       </table>
     </div>
