@@ -7,7 +7,7 @@ const Order = () => {
   }
   return (
     <li>
-      Pizzas: {order} <RestaurantButton onClickHandler={orderOne} />
+      Pizzas: {order} <RestaurantButton handleClick={orderOne} />
     </li>
   );
 };
