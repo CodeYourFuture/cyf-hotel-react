@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
-const Order = () => {
+const Order = ({ orderType }) => {
   const [order, setOrder] = useState(0);
   function orderOne() {
     setOrder(order + 1);
   }
   return (
     <li>
-      Pizzas: {order} <RestaurantButton handleClick={orderOne} />
+      {orderType}: {order} <RestaurantButton handleClick={orderOne} />
     </li>
   );
 };

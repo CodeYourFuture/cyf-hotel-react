@@ -5,8 +5,10 @@ const Restaurant = () => {
   return (
     <div>
       <h3>Restaurant Orders</h3>
-      <ul>
-        <Order />
+      <ul className="d-flex justify-content-around">
+        <Order orderType={"Pizzas"} />
+        <Order orderType={"Salads"} />
+        <Order orderType={"Chocolate cake"} />
       </ul>
     </div>
   );
