@@ -62,3 +62,6 @@ ul {
   list-style-type: none;
   margin-top: 20px;
 }
+.activeRow {
+  background-color: yellow;
+}
