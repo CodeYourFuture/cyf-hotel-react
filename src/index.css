@@ -4,7 +4,8 @@ body {
   font-family: sans-serif;
 }
 
-.search-wrapper {
+.search-wrapper,
+.restaurant-order {
   border-top: 1px solid #e9ecef;
 }
 
@@ -24,6 +25,12 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+.restaurant-order {
+  margin-left: 8em;
+  display: flex;
+  flex-direction: column;
+}
+
 .card-container {
   max-width: 300px;
   margin: 0 auto;

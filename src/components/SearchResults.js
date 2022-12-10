@@ -10,6 +10,7 @@ const SearchResult = ({ results }) => {
           <th scope="col">title</th>
           <th scope="col">firstname</th>
           <th scope="col">surname</th>
+          <th scope="col">email</th>
           <th scope="col">room Id</th>
           <th scope="col">checkin date</th>
           <th scope="col">check out date</th>
@@ -18,6 +19,24 @@ const SearchResult = ({ results }) => {
       </thead>
       <tbody>
         {results.map((element, index) => {
+          // getTrProps={(state, rowInfo) => {
+          //   if (rowInfo && rowInfo.row) {
+          //     return {
+          //       onClick: (e) => {
+          //         this.setState({
+          //           selected: rowInfo.index
+          //         })
+          //       },
+          //       style: {
+          //         background: rowInfo.index === this.state.selected ? '#00afec' : 'white',
+          //         color: rowInfo.index === this.state.selected ? 'white' : 'black'
+          //       }
+          //     }
+          //   }else{
+          //     return {}
+          //   }
+          // }
+
           return (
             <tr key={index}>
               <th scope="row">{element.id}</th>
