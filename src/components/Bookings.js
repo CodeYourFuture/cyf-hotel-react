@@ -3,7 +3,7 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import FakeBookings from "../data/fakeBookings.json";
 import Loading from "./Loading.js";
-import AddBookingModal from "./AddBookingModal.js";
+import AddBookingForm from "./AddBookingForm.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -79,7 +79,7 @@ const Bookings = () => {
           <SearchResults results={bookings} sortBookings={sortBookings} />
         )}
       </div>
-      <AddBookingModal addNewCustomer={addNewCustomer} />
+      <AddBookingForm addNewCustomer={addNewCustomer} />
     </div>
   );
 };

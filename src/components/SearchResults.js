@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CustomerProfile from "./CustomerProfile";
-import TableRow from "./TableRow";
+import CustomerInfo from "./CustomerInfo";
+import Table from "./Table";
 
 function SearchResults({ results, sortBookings }) {
   const [currentCustomer, setCurrentCustomer] = useState("");
@@ -11,7 +11,7 @@ function SearchResults({ results, sortBookings }) {
     setCurrentCustomer(data);
   };
 
-  const showCustomerProfile = id => {
+  const showCustomerInfo = id => {
     fetchData(id);
   };
 
@@ -37,16 +37,16 @@ function SearchResults({ results, sortBookings }) {
         <tbody>
           {results.map(room => {
             return (
-              <TableRow
+              <Table
                 key={room.id}
                 {...room}
-                showCustomerProfile={showCustomerProfile}
+                showCustomerInfo={showCustomerInfo}
               />
             );
           })}
         </tbody>
       </table>
-      <CustomerProfile {...currentCustomer} />
+      <CustomerInfo {...currentCustomer} />
     </div>
   );
 }

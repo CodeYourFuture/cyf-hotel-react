@@ -1,4 +1,4 @@
-function CustomerProfile({ id, email, phoneNumber, vip }) {
+function CustomerInfo({ id, email, phoneNumber, vip }) {
   return (
     <div
       className="modal fade"
@@ -43,4 +43,4 @@ function CustomerProfile({ id, email, phoneNumber, vip }) {
     </div>
   );
 }
-export default CustomerProfile;
+export default CustomerInfo;
