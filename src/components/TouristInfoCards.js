@@ -25,11 +25,6 @@ const TouristInfoCards = () => {
       />
     </div>
   );
-  //   <Card info={{
-  //         link: '',
-  //         image: '',
-  //     }}
-  //   />;
 };
 
 // define a props for a card

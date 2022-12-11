@@ -36,7 +36,7 @@ const TableRow = ({ element }) => {
   return (
     <tr
       onClick={toggleSelecter}
-      style={{ backgroundColor: select ? "" : "grey" }}
+      style={{ backgroundColor: select ? "" : "lightGrey" }}
     >
       <th scope="row">{element.id}</th>
       <td>{element.title}</td>
