@@ -51,6 +51,10 @@
   text-align: center;
 }
 
+.footer ul {
+  list-style: none;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
