@@ -55,3 +55,23 @@ tr {
 .card {
   width: 18rem;
 }
+
+#hotel-logo {
+  width: 100px;
+  height: 100px;
+  margin-left: 100px;
+}
+
+.all-cards {
+  display: flex;
+}
+
+.card {
+  flex: 1;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.card-img-top {
+  width: 100px;
+}
