@@ -3,7 +3,7 @@ import Moment from "react-moment";
 
 function SearchResults(props) {
   return (
-    <table class="table table-striped">
+    <table className="table table-striped">
       <thead>
         <tr>
           <th scope="col">Number</th>
@@ -17,9 +17,9 @@ function SearchResults(props) {
           <th scope="col">Number Of Days</th>
         </tr>
       </thead>
-      {props.results.map(item => {
+      {props.results.map((item, i) => {
         return (
-          <tbody>
+          <tbody key={i}>
             <tr>
               <td>{item.id}</td>
               <td>{item.title}</td>
