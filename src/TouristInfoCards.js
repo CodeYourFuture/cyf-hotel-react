@@ -4,11 +4,7 @@ const TouristInfoCards = () => {
   return (
     <div className="all-cards">
       <div className="card">
-        <img
-          src="public/images/glasgow-hotel.jpg"
-          className="card-img-top"
-          alt="glasgow-infocard"
-        />
+        <img src="" className="card-img-top" alt="glasgow-infocard" />
         <div className="card-body">
           <h1>Glasgow</h1>
           <p>
