@@ -1,6 +1,6 @@
 import React from "react";
 import Order from "./Order";
-import RestaurantButton from "./RestaurantButton";
+// import RestaurantButton from "./RestaurantButton";
 const Restaurant = () => {
   // const pizzas = 0;
   // const [orders,setOrders] = useState (0)

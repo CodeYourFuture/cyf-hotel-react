@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
-function test() {
-  console.log();
-}
+// function test() {
+//   console.log();
+// }
 
 const Order = ({ orderType }) => {
   const [orders, setOrders] = useState(0);
