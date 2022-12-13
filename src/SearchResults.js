@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import Moment from "moment";
-function SearchResult({ results }) {
+import SearchResult from "./SearchResult";
+
+function SearchResults({ results }) {
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">id</th>
@@ -18,20 +20,8 @@ function SearchResult({ results }) {
           </tr>
         </thead>
         <tbody>
-          {results.map(item => {
-            return (
-              <tr>
-                <th scope="row">{item.id}</th>
-                <td>{item.title}</td>
-                <td>{item.firstName}</td>
-                <td>{item.sureName}</td>
-                <td>{item.email}</td>
-                <td>{item.roomId}</td>
-                <td>{item.checkInDate}</td>
-                <td>{item.checkOutDate}</td>
-                <td>{checkDiff(item.checkInDate, item.checkOutDate)}</td>
-              </tr>
-            );
+          {results.map((item, i) => {
+            return <SearchResult key={i} item={item} checkDiff={checkDiff} />;
           })}
         </tbody>
       </table>
@@ -44,4 +34,4 @@ let checkDiff = (InDate, OutDate) => {
   const diff = checkOutDate.diff(checkInDate, "days");
   return diff;
 };
-export default SearchResult;
+export default SearchResults;
