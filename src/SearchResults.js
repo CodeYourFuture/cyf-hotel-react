@@ -1,49 +1,60 @@
-import React from "react";
-import Moment from "react-moment";
+import React, { useState } from "react";
+import Moment from "moment";
 
-const SearchResults = props => {
+const SearchResult = props => {
   return (
-    <table className="table table-hover">
+    <table class="table">
       <thead>
         <tr>
-          <th scope="col">Nu</th>
-          <th scope="col">Title</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room Id</th>
-          <th scope="col">Check in date</th>
-          <th scope="col">Check out date</th>
-          <th scope="col">Number Of Night</th>
+          <th scope="col">id</th>
+          <th scope="col">title</th>
+          <th scope="col">firstname</th>
+          <th scope="col">surname</th>
+          <th scope="col">email</th>
+          <th scope="col">room Id</th>
+          <th scope="col">checkin date</th>
+          <th scope="col">check out date</th>
+          <th scope="col">number of night</th>
         </tr>
       </thead>
-      {props.results.map(element => {
-        return (
-          <tbody>
-            <tr>
-              <th scope="row">{element.id}</th>
-              <td>{element.title}</td>
-              <td>{element.firstName}</td>
-              <td>{element.surname}</td>
-              <td>{element.email}</td>
-              <td>{element.roomId}</td>
-              <td>
-                <Moment format="DD-MM-YYYY">{element.checkInDate}</Moment>
-              </td>
-              <td>
-                <Moment format="DD-MM-YYYY">{element.checkOutDate}</Moment>
-              </td>
-              <td>
-                <Moment diff={element.checkInDate} unit="days">
-                  {element.checkOutDate}
-                </Moment>
-              </td>
-            </tr>
-          </tbody>
-        );
-      })}
+      <tbody>
+        {props.results.map((element, index) => {
+          return <TableRow key={index} element={element} />;
+        })}
+      </tbody>
     </table>
   );
 };
 
-export default SearchResults;
+const TableRow = ({ element }) => {
+  const [select, setSelect] = useState(true);
+
+  function toggleSelector() {
+    setSelect(select => !select);
+  }
+
+  return (
+    <tr
+      onClick={toggleSelector}
+      style={{ backgroundColor: select ? "" : "lightGrey" }}
+    >
+      <th scope="row">{element.id}</th>
+      <td>{element.title}</td>
+      <td>{element.firstName}</td>
+      <td>{element.surname}</td>
+      <td>{element.email}</td>
+      <td>{element.roomId}</td>
+      <td>{element.checkInDate}</td>
+      <td>{element.checkOutDate}</td>
+      <td>{checkDiff(element.checkInDate, element.checkOutDate)}</td>
+    </tr>
+  );
+};
+let checkDiff = (InDate, OutDate) => {
+  const checkInDate = Moment(InDate, "YYYY-MM-DD");
+  const checkOutDate = Moment(OutDate, "YYYY-MM-DD");
+  const diff = checkOutDate.diff(checkInDate, "days");
+  return diff;
+};
+
+export default SearchResult;
