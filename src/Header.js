@@ -4,14 +4,14 @@ const Header = () => {
   //   return <header className="App-header">CYF Hotel</header>;
   return (
     <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark"
+      className="navbar navbar-expand-lg navbar-dark bg-dark"
       style={{ height: "80px" }}
     >
-      <a class="navbar-brand" href="/#">
+      <a className="navbar-brand" href="/#">
         <img src={Logo} style={{ width: "80px" }} alt="Hotel Logo" />
       </a>
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -19,14 +19,14 @@ const Header = () => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon" />
+        <span className="navbar-toggler-icon" />
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/#">
-              Home <span class="sr-only">(current)</span>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item active">
+            <a className="nav-link" href="/#">
+              Home <span className="sr-only">(current)</span>
             </a>
           </li>
         </ul>

@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
-  //   let moment = require("moment");
-  //   moment().format();
+  const [isActive, setIsActive] = useState();
+  const changeRowColor = event => {
+    // event.preventDefault();
+    console.log(event.target, "target.id");
+    setIsActive(!isActive);
+  };
 
-  console.log(props.bookings, "<-- Booking");
   return (
     <table className="table table-sm table-hover small">
-      <thead class="thead-dark">
+      <thead className="thead-dark">
         <tr>
           <th>ID</th>
           <th>Title</th>
@@ -22,9 +25,14 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.bookings.map(booking => (
-          <tr>
-            <td>{booking.id}</td>
+        {props.bookings.map((booking, i) => (
+          <tr
+            id={i}
+            key={i}
+            className={isActive ? "bg-primary" : ""}
+            onClick={changeRowColor}
+          >
+            <td>{booking.id} </td>
             <td>{booking.title}</td>
             <td>{booking.firstName}</td>
             <td>{booking.surname}</td>
