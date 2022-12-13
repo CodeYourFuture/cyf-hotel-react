@@ -5,9 +5,9 @@ function InfoCards() {
     <div className="card-container">
       <div className="card">
         <img
-          src="https://www.glasgowworld.com/jpim-static/image/2022/08/11/10/Elfingrove%20skater.jpg?width=640&quality=65&smart"
+          src="https://media.timeout.com/images/105400989/750/422/image.jpg"
           className="card-img-top"
-          alt=""
+          alt="Glasgow"
         />
         <div className="card-body">
           <h3> Glasgow</h3>
@@ -37,9 +37,9 @@ function InfoCards() {
 
       <div className="card">
         <img
-          src="https://cdn.citybaseapartments.com/blog/cba-media/2016-10/shutterstock_1072210547.jpg"
+          src="https://eu-assets.simpleview-europe.com/manchester2016/imageresizer/?image=%2Fdbimgs%2FManOne-03%284%29.jpg&action=Background_Overlay"
           className="card-img-top"
-          alt=""
+          alt="Manchester"
         />
         <div className="card-body">
           <h3> Manchester</h3>
@@ -69,9 +69,9 @@ function InfoCards() {
 
       <div className="card">
         <img
-          src="https://cdn.vox-cdn.com/thumbor/TLFsavhPKwYFbHXliBwlR3IzyFw=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22742798/1253246468.jpg"
+          src="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTYyNDg1MjE3MTI1Mjc5Mzk4/topic-london-gettyimages-760251843-promo.jpg"
           className="card-img-top"
-          alt=""
+          alt="London"
         />
         <div className="card-body">
           <h3> London</h3>
