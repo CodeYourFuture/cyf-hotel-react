@@ -11,7 +11,7 @@ export default function Footer() {
     <div className="footer">
       <ul>
         {address.map((item, index) => {
-          return <li>{item}</li>;
+          return <li key={index}>{item}</li>;
         })}
       </ul>
     </div>

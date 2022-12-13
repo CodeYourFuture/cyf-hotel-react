@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Moment from "moment";
 
 let checkDiff = (InDate, OutDate) => {
@@ -26,9 +26,17 @@ export default function SearchResult({ results }) {
           </tr>
         </thead>
         <tbody>
-          {results.map(item => {
+          {results.map((item, index) => {
+            const [color, setColor] = useState(false);
+            function changeColor() {
+              setColor(!color);
+            }
             return (
-              <tr>
+              <tr
+                key={index}
+                style={{ backgroundColor: color ? "yellow" : "white" }}
+                onClick={changeColor}
+              >
                 <th scope="row">{item.id}</th>
                 <td>{item.title}</td>
                 <td>{item.firstName}</td>
