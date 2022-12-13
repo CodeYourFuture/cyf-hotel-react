@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Moment from "moment";
 
 function SearchResult({ results }) {
@@ -20,8 +20,17 @@ function SearchResult({ results }) {
         </thead>
         <tbody>
           {results.map(item => {
+            const [select, setSelect] = useState(true);
+
+            function truneTrue() {
+              setSelect(select => !select);
+            }
+
             return (
-              <tr>
+              <tr
+                onClick={truneTrue}
+                style={{ backgroundColor: select ? "" : "lightGrey" }}
+              >
                 <th scope="row">{item.id}</th>
                 <td>{item.title}</td>
                 <td>{item.firstName}</td>

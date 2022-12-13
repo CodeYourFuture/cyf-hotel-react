@@ -8,7 +8,7 @@ const Restaurant = () => {
   // const pizzas = 0;
   return (
     <div>
-      <h3>Restaurant Orders</h3>
+      <h3 className="main-text">Restaurant Orders</h3>
       <ul>
         <Order orderType="pizzas" />
         <Order orderType="Salads" />
