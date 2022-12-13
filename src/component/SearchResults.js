@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Moment from "moment/moment";
 function SearchResult({ results }) {
   return (
@@ -19,8 +19,16 @@ function SearchResult({ results }) {
         </thead>
         <tbody>
           {results.map(item => {
+            const [select, setSelect] = useState(true);
+            function highLight() {
+              setSelect(select => !select);
+            }
+
             return (
-              <tr>
+              <tr
+                onClick={highLight}
+                style={{ backgroundColor: select ? "" : "lightGrey" }}
+              >
                 <th scope="row">{item.id}</th>
                 <td>{item.title}</td>
                 <td>{item.firstName}</td>
