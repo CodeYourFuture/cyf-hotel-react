@@ -15,7 +15,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 1. Extract the search button in its own component
 
-**Instructions:** Extract the search `<button>` from the `src/Search.js` file to be its own separate component. You can name it `SearchButton`. Import and use this new component in `src/Search.js`.
+**Instructions:** Extract the nsearch `<button>` from the `src/Search.js` file to be its own separate component. You can ame it `SearchButton`. Import and use this new component in `src/Search.js`.
 
 **Test:** The search button should still render on the page.
 
