@@ -3,6 +3,7 @@ import Bookings from "./Bookings";
 import "./App.css";
 import InfoCard from "./TouristInfoCards";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -31,7 +32,7 @@ As one of the most vibrant and cosmopolitan cities in the UK, there’s always s
       </div>
 
       <Bookings />
-
+      <Restaurant />
       <Footer />
     </div>
   );
