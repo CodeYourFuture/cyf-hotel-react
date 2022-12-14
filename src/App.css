@@ -29,7 +29,6 @@
 
 .container {
   display: flex;
-  /* gap: 2rem; */
   justify-content: space-around;
   margin-top: 3rem;
 }
