@@ -1,4 +1,5 @@
 import React from "react";
+
 function RestaurantButton(props) {
   return (
     <>
@@ -11,4 +12,5 @@ function RestaurantButton(props) {
     </>
   );
 }
+
 export default RestaurantButton;

@@ -35,7 +35,7 @@ function FormDetails() {
               <div>
                 <h3>NO ONE INCLUDES MORE</h3>
                 <p>ALL-INCLUSIVE COMPANY FOR 20 YEARS IN-A-ROW</p>
-                <button>View Packages</button>
+                <button className="button">View Packages</button>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ function FormDetails() {
                 <input type="date" />
               </div>
             </div>
-            <button>Rates & Availabilities </button>
+            <button className="button">Rates & Availabilities </button>
           </form>
         </div>
       </div>

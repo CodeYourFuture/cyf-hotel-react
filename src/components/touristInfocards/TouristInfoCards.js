@@ -1,8 +1,9 @@
 import React from "react";
+import "./TouristInfoCards.css";
 
 function TouristInfoCards() {
   return (
-    <div className="card-container">
+    <div className="card-container text-center">
       <div className="card text-center">
         <img
           src="https://www.itpr.co.uk/hubfs/Manchester-skyline-.jpg"
@@ -33,9 +34,6 @@ function TouristInfoCards() {
             fun-filled days out to top restaurants, theatre and unmissable
             London events.
           </p>
-          <a href="http://visitmanchester.com" className="btn btn-info">
-            Manchester
-          </a>
           <a href="http://visitlondon.com" className="btn btn-info">
             London
           </a>
@@ -45,8 +43,7 @@ function TouristInfoCards() {
       <div className="card text-center">
         <div>
           <img
-            src="https://cdn.getyourguide.com/img/location/5d0a6b6c59a42.jpeg/88.jpg
-          "
+            src="https://cdn.getyourguide.com/img/location/5d0a6b6c59a42.jpeg/88.jpg"
             alt=""
             className="card-img-top"
           />
@@ -90,8 +87,8 @@ function TouristInfoCards() {
 
       <div className="card text-center">
         <img
-          src="https://eus-www.sway-cdn.com/s/RXKsAGElo0fpKh08/images/n4zFwrC5o12bqN?quality=1920&allowAnimation=true"
-          alt=""
+          src="https://www.dwh.co.uk/-/media/group/location-pages/kent.ashx?w=420&hash=1DFD9457C48F11399F6935CFEEBD5FBA"
+          alt="Wolverhampton"
           className="card-img-top"
         />
         <div className="card-body">
@@ -129,4 +126,5 @@ function TouristInfoCards() {
     </div>
   );
 }
+
 export default TouristInfoCards;

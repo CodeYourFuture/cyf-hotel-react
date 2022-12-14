@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Search from "./search/Search.js";
 import SearchResults, { TableHeader } from "./search/SearchResults.js";
+
 const Bookings = () => {
   const [bookings, SetBooking] = useState([]);
   const [initialData, SetInitialData] = useState([]);
+
   const [status, setStatus] = useState("fetching");
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     SetBooking(
@@ -30,7 +33,7 @@ const Bookings = () => {
   }, []);
 
   return (
-      <div className="wrapper">
+    <div className="wrapper">
       <div className="App-content">
         <div className="container">
           {status === "fetching" && "Loading Please wait..."}
@@ -46,4 +49,5 @@ const Bookings = () => {
     </div>
   );
 };
+
 export default Bookings;

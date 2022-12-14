@@ -7,6 +7,7 @@ import {
   FaTwitter,
   FaYoutube
 } from "react-icons/fa";
+
 function Footer(props) {
   return (
     <div className="footer">
@@ -43,6 +44,7 @@ function Footer(props) {
           </div>
         </div>
       </div>
+
       <div className="address">
         <ul>
           {props.details.map((text, index) => (
@@ -53,4 +55,5 @@ function Footer(props) {
     </div>
   );
 }
+
 export default Footer;

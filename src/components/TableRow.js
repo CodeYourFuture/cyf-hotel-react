@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import moment from 'moment-react'
+const moment = require("moment");
 
 const TableRow = props => {
   const booking = props.data;
+
   const checkOutDate = moment(booking.checkOutDate);
   const checkInDate = moment(booking.checkInDate);
+
   const [highlight, setHighlight] = useState(true);
 
-  function handleClick() {
+  function handleMouseOver() {
     setHighlight(false);
   }
+
   return (
     <tr
       style={{ backgroundColor: highlight ? "white" : "lightgrey" }}
-      onMouseOver={handleClick}
+      onMouseOver={handleMouseOver}
       onMouseOut={() => setHighlight(true)}
     >
       <th scope="row">{booking.id}</th>
@@ -36,4 +39,5 @@ const TableRow = props => {
     </tr>
   );
 };
+
 export default TableRow;

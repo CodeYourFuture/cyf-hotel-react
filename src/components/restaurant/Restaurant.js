@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import Order from "./Order";
+import Order from "../Order";
+import "./Restaurant.css";
+
 const Restaurant = () => {
   return (
     <div className="restaurant">
-      <h3>Restaurant Orders</h3>
       <h4>Restaurant Orders</h4>
       <ul>
         <Order orderType={"Pizzas"} />
@@ -13,4 +14,5 @@ const Restaurant = () => {
     </div>
   );
 };
+
 export default Restaurant;
