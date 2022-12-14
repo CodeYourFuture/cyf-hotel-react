@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "./hotel.jpg";
+import logo from "../Hotel Images/hotel.jpg";
 
-function myHeading() {
+function Heading() {
   return (
     <header className="App-header">
       <img className="logo" src={logo} alt="" />
@@ -10,4 +10,4 @@ function myHeading() {
   );
 }
 
-export default myHeading;
+export default Heading;
