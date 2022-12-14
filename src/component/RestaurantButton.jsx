@@ -1,8 +1,8 @@
 import React from "react";
 
-function RestaurantButton({ onClick }) {
+function RestaurantButton({ orderOneProps }) {
   return (
-    <button onClick={onClick} className="btn btn-primary">
+    <button onClick={orderOneProps} className="btn btn-primary">
       Add
     </button>
   );

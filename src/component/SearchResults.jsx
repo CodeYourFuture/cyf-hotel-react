@@ -3,17 +3,15 @@ import Moment from "react-moment";
 
 function CreateRowTable({ customer }) {
   const [select, setselect] = useState(false);
+
   function changeColour() {
-    setselect(true);
-  }
-  function backColor() {
-    setselect(false);
+    setselect(!select);
   }
   return (
     <tr
-      style={{ backgroundColor: select ? "blue" : "white" }}
+      style={{ backgroundColor: select ? "yellow" : "white" }}
       onClick={changeColour}
-      onDoubleClick={backColor}
+      // onDoubleClick={backColor}
     >
       <th scope="row">{customer.id}</th>
       <td>{customer.title}</td>

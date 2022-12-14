@@ -3,7 +3,9 @@ import React from "react";
 function SearchButton() {
   return (
     <div>
-      <button className="btn btn-primary">Search</button>
+      <button type="submit" className="btn btn-primary">
+        Search
+      </button>
     </div>
   );
 }
