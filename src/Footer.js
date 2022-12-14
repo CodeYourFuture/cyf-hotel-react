@@ -1,11 +1,10 @@
 import React from "react";
 
 const Footer = ({ footerInformation }) => {
-  console.log(footerInformation);
   return (
     <ul className="footer">
-      {footerInformation.map((info, index) => {
-        return <li key={index}>{info}</li>;
+      {footerInformation.map((info, number) => {
+        return <li key={number}>{info}</li>;
       })}
     </ul>
   );

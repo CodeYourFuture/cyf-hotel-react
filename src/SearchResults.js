@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 {
   /*import Moment from "moment";*/
@@ -12,11 +12,25 @@ import React from "react";
 }*/
 }
 
+const [colour, setColour] = useState(false);
+
+function handleRowColourChange() {
+  return (
+    <tr>
+      onClick=
+      {() => {
+        setColour(() => !colour);
+      }}
+      ; style={{ backgroundColor: `${colour ? "pink" : "white"}` }}
+    </tr>
+  );
+}
+
 function SearchResults(props) {
   return (
-    <table class="table table-striped">
+    <table className="table table-striped">
       <thead>
-        <tr>
+        <tr onClick={handleRowColourChange}>
           <th scope="col">Number</th>
           <th scope="col">Title</th>
           <th scope="col">First Name</th>
@@ -28,9 +42,9 @@ function SearchResults(props) {
           <th scope="col">Number Of Days</th>
         </tr>
       </thead>
-      {props.fakeBookings.map(booking => {
+      {props.bookings.map(booking => {
         return (
-          <tbody>
+          <tbody key={booking.id}>
             <tr>
               <td>{booking.id}</td>
               <td>{booking.title}</td>
