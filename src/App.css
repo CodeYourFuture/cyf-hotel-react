@@ -24,7 +24,6 @@
 .theLogo {
   height: 35px;
   width: 70px;
-  /* margin-bottom: 1px; */
 }
 
 .container {
@@ -70,3 +69,7 @@ tr {
 .card {
   width: 18rem;
 }
+
+/* .hotel-info {
+  display:inline-table;
+} */
