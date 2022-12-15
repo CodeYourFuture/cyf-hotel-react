@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function CustomerProfile(props) {
-  return props.id ? (
+  const [profile, setProfile] = useState("");
+
+  useEffect(() => {
+    if (props.id) {
+      fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+        .then(data => data.json())
+        .then(data => setProfile(data))
+        .catch(error => console.log(error));
+    }
+  }, [props.id]);
+
+  return profile ? (
     <div>
       <h2>Customer Profile</h2>
-      <p>{props.id}</p>
-      <p>dd</p>
-      <p>ff</p>
-      <p>gg</p>
+      <span>{profile.id}</span>
+      <span>{profile.title}</span>
+      <span>{profile.firstName}</span>
+      <span>{profile.surname}</span>
+      <span>{profile.email}</span>
+      <span>{profile.vip}</span>
+      <span>{profile.phoneNumber}</span>
     </div>
   ) : (
     ""

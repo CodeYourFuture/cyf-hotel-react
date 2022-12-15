@@ -6,11 +6,15 @@ import SearchResults from "./components/SearchResults.js";
 const Bookings = () => {
   // const [bookings, setBookings] = useState(FakeBookings);
   const [bookings, setBookings] = useState([]);
+  const [booksStatus, setBooksStatus] = useState(false);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(data => data.json())
-      .then(data => setBookings(data))
+      .then(data => {
+        setBooksStatus(true);
+        setBookings(data);
+      })
       .catch(error => console.log(error));
   }, []);
 
@@ -28,7 +32,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         {/* <SearchResults results={FakeBookings} /> */}
-        <SearchResults results={bookings} />
+        {booksStatus ? <SearchResults results={bookings} /> : "Loading"}
       </div>
     </div>
   );
