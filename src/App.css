@@ -24,12 +24,10 @@
 .theLogo {
   height: 35px;
   width: 70px;
-  /* margin-bottom: 1px; */
 }
 
 .container {
   display: flex;
-  /* gap: 2rem; */
   justify-content: space-around;
   margin-top: 3rem;
 }
@@ -71,3 +69,7 @@ tr {
 .card {
   width: 18rem;
 }
+
+/* .hotel-info {
+  display:inline-table;
+} */

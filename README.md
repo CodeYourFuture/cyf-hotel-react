@@ -46,9 +46,9 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 4. Create a Footer component
 
-**Instructions:** Create a `<Footer />` component which should be rendered at the bottom of the page. Pass the following array as a prop to this component: `["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]`. Inside the component, use the data you passed as a prop to render a `<ul>` list with each item of the array displayed as a `<li>`.
+**Instructions:** Create a `<Footer />` component which should be rendered at the bottom of the page. Pass the following array as a prop to this component: `["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]`. Inside the component, use the data you passed as a prop to render a `<ul>` list with each item of the array displayed as a `<li>`. // done
 
-**Hint:** The `.map()` method will by useful.
+**Hint:** The `.map()` method will by useful. //done
 
 **Test:** The footer should render at the bottom of the page with each address property displayed as a list item.
 
