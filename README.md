@@ -204,7 +204,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 24. Create a new booking
 
-**Instructions:** Add a form with `<input>`s for each of the booking fields (first name, surname, title, room id, check in date, check out date) to the bottom of the page. Submitting the form adds the booking to the result table. Note that the new booking won't persist if you refresh the page.
+**Instructions:** Add a form with `<input>`s for each of the booking fields (first name, surname, email, title, room id, check in date, check out date) and a 'Submit' `<button>` element to the bottom of the page. Submitting the form adds the booking to the result table. Note that the new booking won't persist if you refresh the page.
 
 **Test:** When adding a new booking in the form, it should be displayed in the table.
 
@@ -215,3 +215,25 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 **Hint:** Try using the `.sort()` method with a callback to do custom sorting.
 
 **Test:** Each column in the table should be clickable to sort results in ascending or descending order.
+
+#### 26. Validate new booking 
+
+**Instructions:** Add validation to some fields from exercise 24: the first name and last name must not be empty, the email must contain exactly 1 `@` symbol, and at least one `.` symbol after the `@`; the room ID must be a number between 0 and 100. If the fields do not contain correct information when the 'Submit' button is pressed, display a red error message at the top of the page, but do not clear the text already in the field.
+
+**Test:** An invalid input displays an error message after the 'Submit' button is pressed (e.g. an email like `react@com` is invalid). A valid input shows the correct values at the bottom of the page.
+
+#### 27. Faster validation
+
+**Instructions:** Improve the validation from the last exercise to check for correct values after each input changes, without the 'Submit' button being pressed. Show an 'X' with an explanation next to the field if it has invalid input (e.g. `X first name must not be empty`), and show 'OK' after it has valid input.
+
+**Hint:** Try using the `onChange` function on the `<input>` element
+
+**Test:** The 'Submit' button is initially not clickable, and becomes clickable once every field has the correct input.
+
+#### 28. Date picker
+
+**Instructions:** Add the [js-datepicker](https://www.npmjs.com/package/js-datepicker) package to your project using `npm install`, and import it at the top of the file. Add different IDs to your 'check in date' and 'check out date' `<input>` elements, then create two date pickers using `const checkInPicker = datepicker(YOUR_ID)` (where `YOUR_ID` is the ID you assigned to your check in/check out date elements). 
+
+**Hint:** Read the [js-datepicker usage guide](https://www.npmjs.com/package/js-datepicker#basic-usage)
+
+**Test:** The date picker appears when you click on the 'check in date' input element.
