@@ -17,11 +17,19 @@ function SearchResults({ results }) {
             <th scope="col">checkInDate</th>
             <th scope="col">checkOutDate</th>
             <th scope="col">numberOfNight</th>
+            <th scope="col">profile</th>
           </tr>
         </thead>
         <tbody>
           {results.map((item, i) => {
-            return <SearchResult key={i} item={item} checkDiff={checkDiff} />;
+            return (
+              <SearchResult
+                key={i}
+                item={item}
+                checkDiff={checkDiff}
+                showProfile={showProfile}
+              />
+            );
           })}
         </tbody>
       </table>
