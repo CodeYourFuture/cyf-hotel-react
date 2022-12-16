@@ -19,8 +19,6 @@ const App = () => {
   const [theme, setTheme] = useState(themes.light);
   return (
     <div className="App">
-      {/* <header className="App-header">CYF Hotel</header> */}
-
       <ThemeContext.Provider value={theme}>
         <Heading />
         {theme === themes.light ? (

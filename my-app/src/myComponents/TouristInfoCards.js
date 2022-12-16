@@ -14,6 +14,9 @@ export default function Parent() {
       >
         {showCard ? "hide card" : "show card"}
       </button>
+      {/* <button onClick={() => setShowCard(!showCard)}>
+        {showCard ? "hide card" : "show card"}
+      </button> */}
       {showCard && <TouristInfoCards />}
     </div>
   );
@@ -44,3 +47,39 @@ function TouristInfoCards() {
     </div>
   );
 }
+
+// export default function TouristInfoCards() {
+//   return (
+//     <div>
+//       <div className="card">
+//         <img src={glsgow} className="card-img-top img" />
+//         {/* <img src="../img/paris.jpeg" className="img" /> */}
+
+//         <div className="card-body">
+//           <a
+//             href="https://www.visitmanchester.com/"
+//             className="btn btn-primary"
+//           >
+//             Go somewhere
+//           </a>
+//         </div>
+//       </div>
+//       <div className="card">
+//         <img src={manchester} className="card-img-top img" />
+//         <div className="card-body">
+//           <a href="https://peoplemakeglasgow.com/" className="btn btn-primary">
+//             Go somewhere
+//           </a>
+//         </div>
+//       </div>
+//       <div className="card">
+//         <img src={london} className="card-img-top img" />
+//         <div className="card-body">
+//           <a href="https://www.visitlondon.com/" className="btn btn-primary">
+//             Go somewhere
+//           </a>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }

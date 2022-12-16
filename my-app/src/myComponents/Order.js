@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 
 import RestaurantButton from "./RestaurantButton";
 
@@ -12,6 +12,7 @@ export default function Order({ orderType }) {
     <>
       <li style={{ margin: "20px" }}>
         {orderType}: {orders}
+        {/* {pizzas}: {orders} */}
         <RestaurantButton orderOneProp={orderOne} />
       </li>
     </>

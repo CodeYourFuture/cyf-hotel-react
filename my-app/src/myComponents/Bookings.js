@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Search from "./Search.js";
 import SearchResults from "./myComponents/table/SearchResults.js";
+// import FakeBookings from "./data/fakeBookings.json";
 import ThemeContext from "./myComponents/ThemeContext";
 import CustomerProfile from "./myComponents/CustomerProfile";
 
@@ -10,6 +11,20 @@ const Bookings = () => {
   const [customerProfile, setCustomerProfile] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  // useEffect(() => {
+  //   fetch("https://cyf-react.glitch.me/delayed")
+  //     // fetch("https://cyf-react.glitch.me/error")
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setBookings(data);
+  //       setLoading(false);
+  //     })
+  //     .catch(err => {
+  //       console.error(err);
+  //       setLoading(false);
+  //       setError(true);
+  //     });
+  // }, []);
 
   useEffect(() => {
     const getBookings = async () => {
@@ -25,7 +40,7 @@ const Bookings = () => {
       } else {
         setLoading(false);
         setError(true);
-        console.log(data);
+        // console.log(data);
       }
     };
     getBookings();
@@ -54,6 +69,7 @@ const Bookings = () => {
       setCustomerProfile(data);
     }
   };
+  // console.log(bookings);
   return (
     <div className="App-content">
       <div className="container">

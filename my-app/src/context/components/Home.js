@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import Card from "../data/CardData";
-import "../App.css";
+import Card from "../../data/CardData";
+import "../../App.css";
 
 export default function Parent() {
   const [showCard, setShowCard] = useState(false);
@@ -14,6 +14,9 @@ export default function Parent() {
       >
         {showCard ? "hide card" : "show card"}
       </button>
+      {/* <button onClick={() => setShowCard(!showCard)}>
+        {showCard ? "hide card" : "show card"}
+      </button> */}
       {showCard && <TouristInfoCards />}
     </div>
   );

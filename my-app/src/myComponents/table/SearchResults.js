@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ThemeContext from "../ThemeContext";
 
 import "../../App.css";
@@ -6,7 +6,8 @@ import Moment from "moment";
 
 export default function SearchResults({ results, showProfile }) {
   const theme = useContext(ThemeContext);
-  const [color, setColor] = useState("");
+  // const [result, setResults] = useState([]);
+  const [color, setColor] = useState(""); // changeColor(); // commit  Lesson 2
   const [show, setShow] = useState(false);
   const handleClick = () => {
     setShow(prev => !prev);
@@ -23,6 +24,10 @@ export default function SearchResults({ results, showProfile }) {
   function changeColor() {
     setColor(get_random_color());
   }
+
+  // useEffect(() => {
+  //   setResults(results);
+  // }, []);
 
   let checckDiff = (InDate, OutDate) => {
     const checkInDate = Moment(InDate, "YYYY-MM-DD");
@@ -55,6 +60,11 @@ export default function SearchResults({ results, showProfile }) {
                 key={index}
                 onClick={e => {
                   if (!show) {
+                    // e.target.parentNode.className = "selected";
+                    // if (e.target.parentNode.className === "selected") {
+                    //   changeColor();
+                    //   e.target.parentNode.style.backgroundColor = color;
+                    // }
                     e.target.parentNode.style.backgroundColor = color;
                     changeColor();
                     handleClick();

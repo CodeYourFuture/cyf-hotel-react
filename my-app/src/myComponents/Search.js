@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-import SearchButton from "./myComponents/SearchButton";
+// import SearchButton from "./myComponents/SearchButton";
+import SearchButton from "./SearchButton";
 
 const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
@@ -11,8 +12,10 @@ const Search = ({ search }) => {
 
   function submitHandler(event) {
     event.preventDefault();
+    // console.log(searchInput);
     search(searchInput);
   }
+  // console.log(searchInput);
   return (
     <div className="search">
       <div className="page-header">
@@ -31,6 +34,7 @@ const Search = ({ search }) => {
                 onChange={handleSearchInput}
                 placeholder="Customer name"
               />
+              {/* <button className="btn btn-primary">Search</button> */}
               <SearchButton />
             </div>
           </form>
