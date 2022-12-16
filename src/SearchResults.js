@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import Moment from "moment";
+import React from "react";
 
-function SearchResults(props) {
+// import CustomerProfile from "./CustomerProfile";
+import CreateTableRow from "./Tablerow";
+
+function SearchResults({ results, showProfile }) {
   return (
-    <div class="table-responsive">
-      <table class="table table-bordered align-top">
-        <thead class="table-dark">
+    <div className="table-responsive">
+      <table className="table table-bordered align-top">
+        <thead className="table-dark">
           <tr>
             <th scope="col">id</th>
             <th scope="col">Title</th>
@@ -16,41 +18,17 @@ function SearchResults(props) {
             <th scope="col">check in date</th>
             <th scope="col">check out date</th>
             <th scope="col"> Number of Nights </th>
+            <th scope="col"> Profile </th>
           </tr>
         </thead>
         <tbody>
-          {props.results.map((profile, index) => {
-            const [colour, setColor] = useState(false);
-            function handleClick() {
-              setColor(oldColour => !oldColour);
-            }
-            return (
-              <tr
-                key={index}
-                // task-15
-                onClick={handleClick}
-                style={{ backgroundColor: colour ? "yellow" : "white" }}
-              >
-                <td> {profile.id}</td>
-                <td> {profile.title}</td>
-                <td> {profile.firstName}</td>
-                <td> {profile.surname}</td>
-                <td> {profile.email}</td>
-                <td> {profile.roomId}</td>
-                <td> {profile.checkInDate}</td>
-                <td> {profile.checkOutDate}</td>
-                <td>
-                  {" "}
-                  {Math.abs(
-                    Moment(profile.checkOutDate).diff(
-                      Moment(profile.checkInDate),
-                      "days"
-                    )
-                  )}
-                </td>
-              </tr>
-            );
-          })}
+          {results.map((profile, index) => (
+            <CreateTableRow
+              profile={profile}
+              key={index}
+              showProfile={showProfile}
+            />
+          ))}
         </tbody>
       </table>
     </div>

@@ -73,7 +73,7 @@ function TouristInfoCards() {
 
             <div className="card-body">
               <h5 className="card-title fw-bolder">{city.name} </h5>
-              <p class="card-text"> {city.description}</p>
+              <p className="card-text"> {city.description}</p>
               <a href={city.link} className="btn btn-primary">
                 Go somewhere
               </a>
