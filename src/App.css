@@ -70,6 +70,8 @@ tr {
   width: 18rem;
 }
 
-/* .hotel-info {
-  display:inline-table;
+/* .btnContainer {
+  display: flex;
+  flex-direction: column;
+
 } */
