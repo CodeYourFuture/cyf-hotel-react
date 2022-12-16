@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import FakeBooking from "./data/fakeBookings.json";
 import Moment from "react-moment";
 
 const SearchResults = ({ searchResultBookings }) => {

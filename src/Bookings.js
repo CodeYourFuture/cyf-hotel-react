@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
-import FakeBooking from "./data/fakeBookings.json";
 import SearchResults from "./SearchResults";
 const Bookings = () => {
+  const [bookings, setBookings] = useState([]);
+
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
+      .then(res => res.json())
+      .then(data => setBookings(data));
+  }, []);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
-
-  const [bookings, setBooking] = useState(FakeBooking);
 
   return (
     <div className="App-content">
