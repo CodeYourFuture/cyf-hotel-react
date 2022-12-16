@@ -1,6 +1,7 @@
 import React from "react";
+import SearchResults from "./SearchResults";
 
-const TouristInfoCards = () => {
+const TouristInfoCards = props => {
   const cities = [
     {
       id: 1,
@@ -30,10 +31,11 @@ const TouristInfoCards = () => {
       link: "https://www.visitlondon.com/"
     }
   ];
+  const keys = 0;
   return (
     <div className="card-container">
       {cities.map(element => (
-        <div className="card">
+        <div key={element.name} className="card">
           <img src={element.img} className="card-img-top" />
           <h2>{element.name}</h2>
           <p>{element.info}</p>

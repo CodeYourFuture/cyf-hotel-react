@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <ul className="footer">
       {contacts.map(item => (
-        <li>{item}</li>
+        <li key={item}>{item}</li>
       ))}
     </ul>
   );
