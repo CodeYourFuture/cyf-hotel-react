@@ -82,7 +82,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** Within the `src/App.js` file, render the `<Restaurant />` component (that is provided for you in `src/Restaurant.js`) underneath the `<Bookings />` component.
 
-**Test:** The restaurant orders should render on the page.
+**Test:** The restaurant orders should render on the page.// done
 
 #### 9. Preparing to add more pizzas
 
@@ -90,13 +90,13 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Hint:** You need to use the React function `useState` to create a state variable. Remember to import the function at the top with `import React, {useState} from "react";`.
 
-**Test:** Verify the number of ordered pizzas it still **0** on the screen.
+**Test:** Verify the number of ordered pizzas it still **0** on the screen. // done
 
 #### 10. Add more pizzas
 
 **Instructions:** In the `<Restaurant />` component, create a new function named `orderOne`. The `orderOne` function doesn't take any parameters and should use the `setOrders` function to increment the `orders` state variable by 1. Then, add a `onClick` handler to the Add `<button>` that calls the `orderOne` function when it's being clicked.
 
-**Test:** Try to click on the Add button a few times and verify that the number of pizzas increases accordingly.
+**Test:** Try to click on the Add button a few times and verify that the number of pizzas increases accordingly. //done
 
 #### 11. Extract the Add button to its own component
 
