@@ -4,9 +4,9 @@ import ThemeContext from "../ThemeContext";
 import "../../App.css";
 import Moment from "moment";
 
-export default function SearchResults({ results }) {
+export default function SearchResults({ results, showProfile }) {
   const theme = useContext(ThemeContext);
-  const [result, setResults] = useState([]);
+  // const [result, setResults] = useState([]);
   const [color, setColor] = useState(""); // changeColor(); // commit  Lesson 2
   const [show, setShow] = useState(false);
   const handleClick = () => {
@@ -25,9 +25,9 @@ export default function SearchResults({ results }) {
     setColor(get_random_color());
   }
 
-  useEffect(() => {
-    setResults(results);
-  }, []);
+  // useEffect(() => {
+  //   setResults(results);
+  // }, []);
 
   let checckDiff = (InDate, OutDate) => {
     const checkInDate = Moment(InDate, "YYYY-MM-DD");
@@ -49,32 +49,30 @@ export default function SearchResults({ results }) {
             <th scope="col">roomId</th>
             <th scope="col">checkInDate</th>
             <th scope="col">checkOutDate</th>
-            <th scope="col">numberOfNight</th>
+            <th scope="col">Night</th>
+            <th scope="col">Show profile</th>
           </tr>
         </thead>
         <tbody>
-          {result.map((item, index) => {
+          {results.map((item, index) => {
             return (
               <tr
                 key={index}
                 onClick={e => {
                   if (!show) {
-                    // changeColor();
-                    // e.target.style.backgroundColor = color;
-                    e.target.parentNode.className = "selected";
-                    if (e.target.parentNode.className === "selected") {
-                      changeColor();
-                      e.target.parentNode.style.backgroundColor = color;
-                    }
-
+                    // e.target.parentNode.className = "selected";
+                    // if (e.target.parentNode.className === "selected") {
+                    //   changeColor();
+                    //   e.target.parentNode.style.backgroundColor = color;
+                    // }
+                    e.target.parentNode.style.backgroundColor = color;
+                    changeColor();
                     handleClick();
-                    console.log(e.target.parentNode);
                   } else {
                     e.target.parentNode.className = "";
                     handleClick();
                     setColor("");
                     e.target.parentNode.style.backgroundColor = color;
-                    // e.target.style.backgroundColor = color;
                   }
                 }}
                 style={{ cursor: "pointer" }}
@@ -88,6 +86,14 @@ export default function SearchResults({ results }) {
                 <td>{item.checkInDate}</td>
                 <td>{item.checkOutDate}</td>
                 <td>{checckDiff(item.checkInDate, item.checkOutDate)}</td>
+                <td>
+                  <button
+                    className="btn btn-info"
+                    onClick={() => showProfile(item.id)}
+                  >
+                    Show Profile
+                  </button>
+                </td>
               </tr>
             );
           })}

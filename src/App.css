@@ -85,3 +85,14 @@ li {
 .table {
   margin-bottom: 3rem;
 }
+.header {
+  height: 3em;
+  margin-top: 20px;
+  display: flex;
+  justify-items: center;
+  font-size: 20px;
+}
+.headerRap {
+  display: flex;
+  justify-content: center;
+}

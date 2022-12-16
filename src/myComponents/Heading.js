@@ -10,12 +10,14 @@
 //   }
 // }
 
-import React from "react";
+import React, { useContext } from "react";
+import ThemeContext from "./ThemeContext";
 
 export default function Heading() {
+  const theme = useContext(ThemeContext);
   return (
-    <div>
-      <header className="App-header">CYF Hotel</header>
+    <div className="headerRap" style={{ ...theme }}>
+      <header className="header">CYF Hotel</header>
     </div>
   );
 }
