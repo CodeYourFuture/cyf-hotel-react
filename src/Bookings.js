@@ -24,7 +24,8 @@ const Bookings = () => {
 
   useEffect(() => {
     console.log("use effect...");
-    fetch("https://cyf-react.glitch.me/delayed")
+    // fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me/error")
       .then(res => res.json())
       .then(data => setBookings(data));
   }, []);

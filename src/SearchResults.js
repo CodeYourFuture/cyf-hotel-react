@@ -44,7 +44,9 @@ export default function SearchResults({ results, handleProfile }) {
   };
   return (
     <div>
-      {results ? (
+      {results && "error" in results ? (
+        <h1>{results.error}</h1>
+      ) : results ? (
         <table class="table">
           <thead>
             <tr>
