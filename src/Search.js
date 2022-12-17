@@ -5,7 +5,6 @@ const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
   const handleSearchInput = event => {
     setSearchInput(event.target.value);
-    console.log(event.target.value);
   };
   return (
     <div className="search">
