@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Moment from "moment";
 import "./App.css";
 
-export default function SearchResults(props) {
+export default function SearchResults({ results, handleProfile }) {
   // let bookings = [
   //   {
   //     id: 1,
@@ -25,7 +25,7 @@ export default function SearchResults(props) {
   //     checkOutDate: "2018-02-28"
   //   }
   // ];
-  let bookings = props.results;
+  let bookings = results;
 
   const [bookingColor, setbookingColor] = useState({});
 
@@ -55,6 +55,7 @@ export default function SearchResults(props) {
             <th scope="col">Check-in Date</th>
             <th scope="col">Check-out Date</th>
             <th scope="col">Number of nights</th>
+            <th scope="col">Buttons</th>
           </tr>
         </thead>
         <tbody>
@@ -75,6 +76,15 @@ export default function SearchResults(props) {
                   Moment(booking.checkInDate),
                   "days"
                 )}
+              </td>
+              <td>
+                <button
+                  onClick={() => {
+                    handleProfile(booking.id);
+                  }}
+                >
+                  Show profile
+                </button>
               </td>
             </tr>
           ))}
