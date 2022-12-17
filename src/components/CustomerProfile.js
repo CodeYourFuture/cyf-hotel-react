@@ -11,17 +11,13 @@ function CustomerProfile(props) {
         .catch(error => console.log(error));
     }
   }, [props.id]);
-
   return profile ? (
     <div>
       <h2>Customer Profile</h2>
-      <span>{profile.id}</span>
-      <span>{profile.title}</span>
-      <span>{profile.firstName}</span>
-      <span>{profile.surname}</span>
-      <span>{profile.email}</span>
-      <span>{profile.vip}</span>
-      <span>{profile.phoneNumber}</span>
+      <p>Id : {profile.id}</p>
+      <p>Email: {profile.email}</p>
+      <p> Vip: {profile.vip ? "yes" : "no"}</p>
+      <p>Phone Number: {profile.phoneNumber}</p>
     </div>
   ) : (
     ""
