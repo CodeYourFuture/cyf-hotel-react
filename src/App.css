@@ -55,3 +55,20 @@ tr {
 .card {
   width: 18rem;
 }
+
+#logo {
+  width: 30px;
+  height: 30px;
+}
+
+ul {
+  list-style: none;
+}
+
+.white {
+  background-color: white;
+}
+
+.yellow {
+  background-color: yellow;
+}
