@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Moment from "react-moment";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ searchResultBookings }) => {
+  const [selectedId, setSelectedId] = useState(null);
   return (
     <div>
       <table className="table">
@@ -17,23 +19,27 @@ const SearchResults = ({ searchResultBookings }) => {
             <th scope="col">Nights</th>
           </tr>
         </thead>
-        <SearchTable searchTableBooking={searchResultBookings} />
+        <SearchTable
+          searchTableBooking={searchResultBookings}
+          setSelectedId={setSelectedId}
+        />
       </table>
+      {selectedId && <CustomerProfile id={selectedId} />}
     </div>
   );
 };
 
-const SearchTable = ({ searchTableBooking }) => {
+const SearchTable = ({ searchTableBooking, setSelectedId }) => {
   return (
     <tbody>
       {searchTableBooking.map((item, index) => (
-        <BookingRow key={index} item={item} />
+        <BookingRow key={index} item={item} setSelectedId={setSelectedId} />
       ))}
     </tbody>
   );
 };
 
-const BookingRow = ({ item, index }) => {
+const BookingRow = ({ item, index, setSelectedId }) => {
   const [active, setActive] = useState(false);
   function makeItActive() {
     setActive(!active);
@@ -59,6 +65,9 @@ const BookingRow = ({ item, index }) => {
         <Moment diff={item.checkInDate} unit="days">
           {item.checkOutDate}
         </Moment>
+      </td>
+      <td>
+        <button onClick={() => setSelectedId(item.id)}>Show profile</button>
       </td>
     </tr>
   );
