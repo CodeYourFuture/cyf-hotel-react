@@ -23,6 +23,7 @@ export default function SearchResult({ results }) {
             <th scope="col">checkInDate</th>
             <th scope="col">checkOutDate</th>
             <th scope="col">number of nights</th>
+            <th scope="col">profile</th>
           </tr>
         </thead>
         <tbody>
@@ -46,6 +47,9 @@ export default function SearchResult({ results }) {
                 <td>{item.checkInDate}</td>
                 <td>{item.checkOutDate}</td>
                 <td>{checkDiff(item.checkInDate, item.checkOutDate)}</td>
+                <td>
+                  <button>show profile</button>
+                </td>
               </tr>
             );
           })}
