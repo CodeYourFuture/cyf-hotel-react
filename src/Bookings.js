@@ -6,6 +6,16 @@ import FakeBookings from "./data/fakeBookings.json";
 const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    let filteredBookings = [];
+    bookings.forEach(booking => {
+      if (
+        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+      ) {
+        filteredBookings.push(booking);
+      }
+    });
+    setBookings(filteredBookings);
   };
 
   const [bookings, setBookings] = useState([]);

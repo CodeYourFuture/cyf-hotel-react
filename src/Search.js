@@ -6,7 +6,7 @@ const Search = ({ search }) => {
 
   function handleSearchInput(e) {
     setsearchInput(e.target.value);
-    console.log(e.target.value);
+    //console.log(e.target.value);
   }
 
   return (
@@ -31,7 +31,10 @@ const Search = ({ search }) => {
                 className="form-control"
                 placeholder="Customer name"
                 value={searchInput}
-                onChange={handleSearchInput}
+                onChange={e => {
+                  handleSearchInput(e);
+                  search(e.target.value);
+                }}
               />
               {/* <button className="btn btn-primary">Search</button> */}
               <SearchButton />
