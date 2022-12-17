@@ -3,10 +3,11 @@ import Moment from "moment";
 function searchResults({ results }) {
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
-            <th scope="col">id</th>8<th scope="col">title</th>
+            <th scope="col">id</th>
+            <th scope="col">title</th>
             <th scope="col">first name</th>
             <th scope="col">surname</th>
             <th scope="col">email</th>

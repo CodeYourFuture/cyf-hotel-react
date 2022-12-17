@@ -9,7 +9,7 @@ function Footer() {
     <div className="footer">
       <ul className="footerlist">
         {footArray.map(el => (
-          <li>{el}</li>
+          <li key={el}>{el}</li>
         ))}
       </ul>
     </div>
