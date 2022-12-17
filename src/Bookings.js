@@ -8,11 +8,16 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   // const [booksStatus, setBooksStatus] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/delayed")
-      .then(data => data.json())
+      .then(response => {
+        if (response.status >= 200 && response.status < 200) {
+          throw new Error("this site is not avaliable for now");
+        }
+        return Response.json();
+      })
       .then(data => {
         setBookings(data);
         setLoading(false);
