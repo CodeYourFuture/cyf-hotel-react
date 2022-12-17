@@ -9,8 +9,8 @@ function Footer() {
   return (
     <div id="footer">
       <ul>
-        {info.map((el, i) => {
-          return <li key={i}>{el}</li>;
+        {info.map((info, i) => {
+          return <li key={i}>{info}</li>;
         })}
       </ul>
     </div>

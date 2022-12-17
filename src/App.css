@@ -52,10 +52,6 @@ tr {
   text-align: center;
 }
 
-.card {
-  width: 18rem;
-}
-
 .div img {
   width: 100px;
   height: 100px;
@@ -64,11 +60,17 @@ tr {
 
 .card {
   width: 18rem;
+  height: 650px;
   border-radius: 25px;
   cursor: pointer;
   margin-top: 1em;
   box-shadow: 5px 5px 10px rgb(80, 79, 78);
   margin: auto;
+}
+
+.card-img-top {
+  height: 500px;
+  border-radius: 8%;
 }
 
 #container {
@@ -84,4 +86,12 @@ tr {
 
 ul {
   display: inline;
+}
+
+.btn-primary {
+  margin: 10px;
+}
+
+div {
+  padding: 4px;
 }
