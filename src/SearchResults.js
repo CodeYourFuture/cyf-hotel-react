@@ -44,52 +44,56 @@ export default function SearchResults({ results, handleProfile }) {
   };
   return (
     <div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">First name</th>
-            <th scope="col">Surname</th>
-            <th scope="col">Email</th>
-            <th scope="col">Room ID</th>
-            <th scope="col">Check-in Date</th>
-            <th scope="col">Check-out Date</th>
-            <th scope="col">Number of nights</th>
-            <th scope="col">Buttons</th>
-          </tr>
-        </thead>
-        <tbody>
-          {bookings.map(booking => (
-            <tr
-              className={bookingColor[booking.id]}
-              onClick={e => changeColor(booking.id)}
-            >
-              <td>{booking.title}</td>
-              <td>{booking.firstName}</td>
-              <td>{booking.surname}</td>
-              <td>{booking.email}</td>
-              <td>{booking.roomId}</td>
-              <td>{booking.checkInDate}</td>
-              <td>{booking.checkOutDate}</td>
-              <td>
-                {Moment(booking.checkOutDate).diff(
-                  Moment(booking.checkInDate),
-                  "days"
-                )}
-              </td>
-              <td>
-                <button
-                  onClick={() => {
-                    handleProfile(booking.id);
-                  }}
-                >
-                  Show profile
-                </button>
-              </td>
+      {results ? (
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">First name</th>
+              <th scope="col">Surname</th>
+              <th scope="col">Email</th>
+              <th scope="col">Room ID</th>
+              <th scope="col">Check-in Date</th>
+              <th scope="col">Check-out Date</th>
+              <th scope="col">Number of nights</th>
+              <th scope="col">Buttons</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {bookings.map(booking => (
+              <tr
+                className={bookingColor[booking.id]}
+                onClick={e => changeColor(booking.id)}
+              >
+                <td>{booking.title}</td>
+                <td>{booking.firstName}</td>
+                <td>{booking.surname}</td>
+                <td>{booking.email}</td>
+                <td>{booking.roomId}</td>
+                <td>{booking.checkInDate}</td>
+                <td>{booking.checkOutDate}</td>
+                <td>
+                  {Moment(booking.checkOutDate).diff(
+                    Moment(booking.checkInDate),
+                    "days"
+                  )}
+                </td>
+                <td>
+                  <button
+                    onClick={() => {
+                      handleProfile(booking.id);
+                    }}
+                  >
+                    Show profile
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <h1>Please wait. The booking data are loading...</h1>
+      )}
     </div>
   );
 }

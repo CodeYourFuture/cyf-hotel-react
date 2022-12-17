@@ -19,12 +19,12 @@ const Bookings = () => {
     setBookings(filteredBookings);
   };
 
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState(0);
   const [profile, setProfile] = useState(0);
 
   useEffect(() => {
     console.log("use effect...");
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
       .then(data => setBookings(data));
   }, []);
