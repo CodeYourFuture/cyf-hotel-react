@@ -7,6 +7,11 @@
   height: 80px;
 }
 
+.hotel-logo {
+  background-color: #eb5e28;
+  height: 100px;
+}
+
 .App-header {
   background-color: #222;
   height: 50px;
@@ -38,6 +43,7 @@
 .search {
   padding: 5px 0 20px 0;
 }
+
 .btn btn-primary tr {
   color: #5b5757;
 }
@@ -65,4 +71,17 @@
 
 .card {
   width: 20rem;
+}
+
+.profile-info {
+  background-color: #5b5757;
+  color: whitesmoke;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.order-card {
+  background-color: #8e9aaf;
+  padding: 20px;
+  text-align: center;
 }

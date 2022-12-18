@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react";
 
 const Order = ({ orderType }) => {
-  //   const orderType = props.orderType;
   const [orders, setOrders] = useState(0);
+
   function orderOne() {
     setOrders(orders + 1);
   }

@@ -14,7 +14,6 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <SearchResults results={FakeBookings} />
       <Restaurant />
       <Footer
         contact={[

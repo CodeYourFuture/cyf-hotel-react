@@ -10,9 +10,18 @@ const TableRow = ({
   email,
   roomId,
   checkInDate,
-  checkOutDate
+  checkOutDate,
+  showProfile
 }) => {
   const [color, setColor] = useState(false);
+
+  function getProfile() {
+    fetch(`https://cyf-react.glitch.me/customers/${id}`)
+      .then(res => res.json())
+      .then(data => {
+        showProfile(data);
+      });
+  }
 
   return (
     <tr
@@ -35,6 +44,9 @@ const TableRow = ({
         <Moment diff={checkInDate} unit="days">
           {checkOutDate}
         </Moment>
+      </td>
+      <td>
+        <button onClick={getProfile}>Show Profile</button>
       </td>
     </tr>
   );

@@ -3,7 +3,6 @@ import React from "react";
 const TouristInfoCards = () => {
   return (
     <div className="flex-container">
-      {/* About Glasgow */}
       <div className="card">
         <img
           src="https://media.istockphoto.com/id/469974825/photo/squinty-bridge-glasgow.jpg?s=612x612&w=0&k=20&c=or3NNSPV7Q-t1lZ5Z6UITQZ5Q3KoF35Je5wq9-fSrvg="
@@ -22,12 +21,11 @@ const TouristInfoCards = () => {
             thriving music scene.
           </p>
           <a href="https://peoplemakeglasgow.com/" className="btn btn-primary">
-            Go somewhere
+            Visit More
           </a>
         </div>
       </div>
 
-      {/* About Manchester */}
       <div className="card">
         <img
           src="https://i0.wp.com/streetphotographyberlin.com/wp-content/uploads/2016/09/Fotolia_90654616_S.jpg?resize=720%2C480"
@@ -49,12 +47,11 @@ const TouristInfoCards = () => {
             href="https://www.visitmanchester.com/"
             className="btn btn-primary"
           >
-            Go somewhere
+            Visit More
           </a>
         </div>
       </div>
 
-      {/* About London */}
       <div className="card">
         <img
           src="https://i0.wp.com/www.montcalmroyallondoncity.co.uk/blog/wp-content/uploads/2017/07/shutterstock_107597459.jpg?fit=1000%2C667&ssl=1"
@@ -73,7 +70,7 @@ const TouristInfoCards = () => {
             and the entire city.
           </p>
           <a href="https://www.visitlondon.com/" className="btn btn-primary">
-            Go somewhere
+            Visit More
           </a>
         </div>
       </div>

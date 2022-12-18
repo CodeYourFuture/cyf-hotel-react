@@ -3,7 +3,6 @@ import Moment from "react-moment";
 import TableRow from "./TableRow";
 
 const SearchResults = props => {
-  console.log(props);
   return (
     <div>
       <table className="table table-striped">
@@ -22,7 +21,9 @@ const SearchResults = props => {
         </thead>
         <tbody>
           {props.results.map((row, index) => {
-            return <TableRow key={index} {...row} />;
+            return (
+              <TableRow key={index} {...row} showProfile={props.showProfile} />
+            );
           })}
         </tbody>
       </table>
