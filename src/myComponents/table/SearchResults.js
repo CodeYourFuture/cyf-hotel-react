@@ -1,28 +1,29 @@
 import React, { useState, useContext } from "react";
 import ThemeContext from "../ThemeContext";
+// import SearchResultBody from "./SearchResultBody";
 
 import "../../App.css";
 import Moment from "moment";
 
 export default function SearchResults({ results, showProfile }) {
   const theme = useContext(ThemeContext);
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("#f8d7da");
   const [show, setShow] = useState(false);
-  const handleClick = () => {
-    setShow(prev => !prev);
-  };
-  function get_random_color() {
-    var letters = "0123456789ABCDEF".split("");
-    var color = "#";
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.round(Math.random() * 15)];
-    }
-    return color;
-  }
+  // const handleClick = () => {
+  //   setShow(prev => !prev);
+  // };
+  // function get_random_color() {
+  //   var letters = "0123456789ABCDEF".split("");
+  //   var color = "#";
+  //   for (var i = 0; i < 6; i++) {
+  //     color += letters[Math.round(Math.random() * 15)];
+  //   }
+  //   return color;
+  // }
 
-  function changeColor() {
-    setColor(get_random_color());
-  }
+  // function changeColor() {
+  //   // setColor(get_random_color());
+  // }
 
   let checckDiff = (InDate, OutDate) => {
     const checkInDate = Moment(InDate, "YYYY-MM-DD");
@@ -49,6 +50,7 @@ export default function SearchResults({ results, showProfile }) {
           </tr>
         </thead>
         <tbody>
+          {/* <SearchResultBody results={results} showProfile={showProfile} /> */}
           {results.map((item, index) => {
             return (
               <tr
@@ -56,13 +58,13 @@ export default function SearchResults({ results, showProfile }) {
                 onClick={e => {
                   if (!show) {
                     e.target.parentNode.style.backgroundColor = color;
-                    changeColor();
-                    handleClick();
+                    setColor("#f8d7da");
+                    setShow(prev => !prev);
                   } else {
-                    e.target.parentNode.className = "";
-                    handleClick();
                     setColor("");
                     e.target.parentNode.style.backgroundColor = color;
+
+                    setShow(prev => !prev);
                   }
                 }}
                 style={{ cursor: "pointer" }}
