@@ -10,7 +10,10 @@ function Footer() {
     <div>
       <ul>
         {props.map(prop => (
-          <li className="footer"> {prop}</li>
+          <li key={prop} className="footer">
+            {" "}
+            {prop}
+          </li>
         ))}
       </ul>
     </div>
