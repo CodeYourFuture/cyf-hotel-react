@@ -46,8 +46,8 @@ function Cart({ city }) {
 function TouristInfoCards() {
   return (
     <div className="card-section">
-      {infoCarts.map(city => (
-        <Cart city={city} />
+      {infoCarts.map((city, index) => (
+        <Cart key={index} city={city} />
       ))}
     </div>
   );

@@ -1,40 +1,18 @@
 import React, { useState } from "react";
-import Moment from "react-moment";
+import CustomerProfile from "./CustomerProfile";
+import CreateRowTable from "./CreateRowTable";
 
-function CreateRowTable({ customer }) {
-  const [select, setselect] = useState(false);
-
-  function changeColour() {
-    setselect(!select);
+function SearchResults({ results, showProfile }) {
+  const [datails, setDetails] = useState("");
+  const fetchData = async id => {
+    const res = await fetch(`https://cyf-react.glitch.me/customers/${id}`);
+    const data = await res.json();
+    setDetails(data);
+  };
+  function showProfile(id) {
+    fetchData(id);
   }
-  return (
-    <tr
-      style={{ backgroundColor: select ? "yellow" : "white" }}
-      onClick={changeColour}
-      // onDoubleClick={backColor}
-    >
-      <th scope="row">{customer.id}</th>
-      <td>{customer.title}</td>
-      <td>{customer.firstName}</td>
-      <td>{customer.surname}</td>
-      <td>{customer.email}</td>
-      <td>{customer.roomId}</td>
-      <td>
-        <Moment format="DD-MM-YYYY">{customer.checkInDate}</Moment>
-      </td>
-      <td>
-        <Moment format="DD-MM-YYYY">{customer.checkOutDate}</Moment>
-      </td>
-      <td>
-        <Moment diff={customer.checkInDate} unit="days">
-          {customer.checkOutDate}
-        </Moment>
-      </td>
-    </tr>
-  );
-}
 
-function SearchResults({ results }) {
   return (
     <table className="table table-striped">
       <thead>
@@ -48,14 +26,20 @@ function SearchResults({ results }) {
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
           <th scope="col">Nights of stay</th>
+          <th scope="col">Profile</th>
         </tr>
       </thead>
       <tbody>
-        {results.map((customer, index) => (
-          <CreateRowTable key={index} customer={customer} />
-        ))}
-        {/* { results.map(CreateRowTable)} */}
+        {results &&
+          results.map((customer, index) => (
+            <CreateRowTable
+              key={index}
+              customer={customer}
+              showProfile={showProfile}
+            />
+          ))}
       </tbody>
+      <CustomerProfile customerProfile={datails} />
     </table>
   );
 }
