@@ -7,7 +7,7 @@ const TouristInfoCards = () => {
         link="https://peoplemakeglasgow.com"
         image="https://media.cntraveler.com/photos/5ad4ece4379a3a44feb968b6/master/w_3604,h_2574,c_limit/Colosseum-GettyImages-537714366.jpg"
         name="Glasgow"
-        text="Glasgow is the most populous city in Scotland and the fourth-most populous city in the United Kingdom, as well as being the 27th largest city by population in Europe."
+        text="Glasgow is the most populous city in Scotland and the fourth-most populous city in the United Kingdom, as well as being the 27th largest city by population in Europe.Glasgow has the largest economy."
       />
 
       <Card
