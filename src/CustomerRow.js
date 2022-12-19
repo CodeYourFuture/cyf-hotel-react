@@ -20,7 +20,7 @@ const CustomerRow = ({ showProfile, customer }) => {
     <tr
       key={customer.id}
       style={{
-        backgroundColor: `${color ? "blue" : "lightgreen"}`
+        backgroundColor: `${color ? "#e5e0d1" : "#eeeeee"}`
       }}
       onClick={() => setColor(() => !color)}
     >
