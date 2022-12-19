@@ -7,14 +7,29 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [bookingData, setBookingData] = useState([]);
   const [isLoad, setIsLoad] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
-      .then(res => res.json())
+    fetch("https://cyf-react.glitch.me/error")
+      .then(res => {
+        if (!res.ok) {
+          setIsLoad(false);
+          setIsError(true);
+          throw Error(
+            `Could not fetch the data for that resource "Error: ${res.status}"`
+          );
+        }
+        return res.json();
+      })
       .then(data => {
         setBookings(data);
         setBookingData(data);
         setIsLoad(false);
+        setIsError(null);
+      })
+      .catch(err => {
+        setIsLoad(false);
+        setIsError(err.message);
       });
   }, []);
 
@@ -40,6 +55,7 @@ const Bookings = () => {
             <span className="visually-hidden">Loading...</span>
           </button>
         )}
+        {isError && <div>{isError}</div>}
       </div>
     </div>
   );
