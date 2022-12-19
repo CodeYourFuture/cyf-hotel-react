@@ -7,11 +7,15 @@ import CustomerProfile from "./component/CustomerProfile.jsx";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [profile, setprofile] = useState([]);
+  const [isLoading, setisLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then(res => res.json())
-      .then(data => setBookings(data));
+      .then(data => {
+        setisLoading(false);
+        setBookings(data);
+      });
   }, []);
 
   const search = searchVal => {
@@ -37,6 +41,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
+        {isLoading ? <div>Is Loading...</div> : <></>}
         <Search search={search} />
         <SearchResults results={bookings} showProfile={showProfile} />
         <CustomerProfile customerProfile={profile} />
