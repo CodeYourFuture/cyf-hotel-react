@@ -9,7 +9,7 @@ const lightgreen = { backgroundColor: "lightgreen" };
 const rows = document.getElementsByTagName("tr");
 const table = document.getElementsByTagName("table");
 
-const SearchResults = prop => {
+const SearchResults = props => {
   //setSelect(oldIsSelected => !oldIsSelected)// this will change the value forth and back from now and before
 
   return (
@@ -25,11 +25,17 @@ const SearchResults = prop => {
           <th>Check-In Date</th>
           <th>Check-Out Date</th>
           <th>Staying</th>
+          <th>Show profile</th>
         </tr>
       </thead>
       <tbody>
-        {prop.bookings.map(customer => (
-          <CustomerRow key={customer.id} customer={customer} />
+        {props.bookings.map(customer => (
+          <CustomerRow
+            showProfile={props.showProfile}
+            // toggleProfile={props.toggleProfile}
+            key={customer.id}
+            customer={customer}
+          />
         ))}
       </tbody>
     </table>
