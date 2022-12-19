@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
-import SearchResult from "./SearchResult.js";
+import SearchResult from "./component/SearchResult.js";
 // import FakeBookings from "./data/fakeBookings.json";
 import CustomerProfile from "./CustomerProfile.js";
 const Bookings = () => {
