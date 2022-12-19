@@ -15,8 +15,8 @@ export default function SearchResultBody({ showProfile, item, theme }) {
     <tr
       style={{
         backgroundColor: `${selected ? "#f8d7da" : "rgb(238, 238, 238)"}`,
-        cursor: "pointer",
-        ...theme
+        cursor: "pointer"
+        // ...theme,
       }}
       onClick={() => {
         setSelected(prev => !prev);
