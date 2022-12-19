@@ -8,12 +8,14 @@ const Order = props => {
   }
 
   return (
-    <>
-      <li>
-        {props.orderType} : {orders}
-      </li>
+    <div>
+      <ul className="order-type">
+        <li>
+          {props.orderType} : {orders}
+        </li>
+      </ul>
       <RestaurantButton orderOne={orderOne} />
-    </>
+    </div>
   );
 };
 

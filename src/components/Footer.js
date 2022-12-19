@@ -17,8 +17,8 @@ const Footer = () => {
 function FooterDetail(props) {
   const footerDetail = (
     <ul>
-      {props.details.map(detail => (
-        <li>{detail}</li>
+      {props.details.map((detail, index) => (
+        <li key={index}>{detail}</li>
       ))}
     </ul>
   );
