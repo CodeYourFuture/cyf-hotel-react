@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Moment from "moment";
 
-function SearchResult({ results }) {
+function SearchResult({ results, showProfile }) {
   return (
     <div>
       <table class="table">
@@ -16,9 +16,10 @@ function SearchResult({ results }) {
             <th scope="col">checkInDate</th>
             <th scope="col">checkOutDate</th>
             <th scope="col">numberOfNight</th>
+            <th scope="col">userProfile</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody showProfile={showProfile}>
           {results.map(item => {
             const [select, setSelect] = useState(true);
 
@@ -40,6 +41,12 @@ function SearchResult({ results }) {
                 <td>{item.checkInDate}</td>
                 <td>{item.checkOutDate}</td>
                 <td>{checkDiff(item.checkInDate, item.checkOutDate)}</td>
+                <td>
+                  <button onClick={() => showProfile(item.id)}>
+                    {" "}
+                    Show Profile{" "}
+                  </button>
+                </td>
               </tr>
             );
           })}
