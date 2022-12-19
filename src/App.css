@@ -4,7 +4,7 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 10px;
 }
 
 .App-header {
@@ -16,6 +16,8 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .App-title {
@@ -36,11 +38,10 @@
   }
 }
 .search {
-  padding: 5px 0 20px 0;
+  padding: 2%;
 }
-
-tr {
-  color: #5b5757;
+thead {
+  color: whitesmoke;
 }
 
 .results {
@@ -50,8 +51,42 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  font-weight: bold;
 }
 
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  /* border: 2px solid green; */
+  margin: 0.5%;
+  padding: 0.5%;
+}
 .card {
-  width: 18rem;
+  width: 33.33%;
+  margin: 10px;
+}
+.card-img-top {
+  width: 100%;
+  height: 25rem;
+}
+.card-title {
+  font-weight: bold;
+}
+.card-text {
+  padding: 10px 0 0 0;
+}
+.footer-list {
+  list-style: none;
+}
+.table-border {
+  border: 3px solid gray;
+}
+.table-border2 {
+  border: 3px solid green;
+}
+.row-bg {
+  background-color: grey;
+}
+.row-bg2 {
+  background-color: green;
 }
