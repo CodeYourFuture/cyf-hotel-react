@@ -24,3 +24,52 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+img {
+  width: 40px;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-right: 10px;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}
+.footerlist {
+  list-style-type: none;
+}
+.restaurant {
+  display: flex;
+  justify-content: center;
+}
+.restaurant1 {
+  border: 1px solid black;
+  border-radius: 25px;
+  background-color: rgba(180, 200, 198, 0.596);
+}
+.restaurant-list {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.btn-btn-primary {
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 25px;
+  background-color: #271eddfe;
+  color: #e9ecef;
+}
+.btn-primary:hover {
+  background-color: rgb(82, 204, 88);
+}
+
+a:hover {
+  background-color: rgb(82, 204, 88);
+}
+.card {
+  display: flex;
+  border-style: solid rgb(5, 3, 3);
+}
