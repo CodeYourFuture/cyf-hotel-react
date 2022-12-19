@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Moment from "moment";
 
-export default function SearchResultBody({ showProfile, item }) {
+export default function SearchResultBody({ showProfile, item, theme }) {
   const [selected, setSelected] = useState(false);
   let checckDiff = (InDate, OutDate) => {
     const checkInDate = Moment(InDate, "YYYY-MM-DD");
@@ -15,7 +15,8 @@ export default function SearchResultBody({ showProfile, item }) {
     <tr
       style={{
         backgroundColor: `${selected ? "#f8d7da" : "rgb(238, 238, 238)"}`,
-        cursor: "pointer"
+        cursor: "pointer",
+        ...theme
       }}
       onClick={() => {
         setSelected(prev => !prev);

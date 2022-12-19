@@ -40,6 +40,7 @@ export default function SearchResults({ results, showProfile }) {
                 results={results}
                 showProfile={showProfile}
                 item={item}
+                theme={theme}
               />
             );
           })}
