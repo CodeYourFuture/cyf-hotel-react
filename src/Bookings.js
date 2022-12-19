@@ -1,6 +1,7 @@
 import React from "react";
 import Search from "./Search.js";
 // import SearchResults from "./SearchResults.js";
+import Moment from "react-moment";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {

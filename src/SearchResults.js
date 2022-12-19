@@ -1,12 +1,13 @@
 import React from "react";
+import FakeBooking from "./data/fakeBookings.json";
 import Moment from "react-moment";
 
-const SearchResults = props => {
+const SearchResults = () => {
   return (
     <table className="table table-hover">
       <thead>
         <tr>
-          <th scope="col">Nu</th>
+          <th scope="col">id</th>
           <th scope="col">Title</th>
           <th scope="col">First Name</th>
           <th scope="col">Surname</th>
@@ -17,7 +18,7 @@ const SearchResults = props => {
           <th scope="col">Number Of Night</th>
         </tr>
       </thead>
-      {props.results.map(element => {
+      {FakeBooking.map(element => {
         return (
           <tbody>
             <tr>

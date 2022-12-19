@@ -4,7 +4,7 @@ import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
-// import SearchResults from "./SearchResults";
+import SearchResults from "./SearchResults";
 import Restaurant from "./Restaurant";
 
 const App = () => {
@@ -44,12 +44,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <Bookings />
       <Heading />
       <TouristInfoCards cardAttributes={cardAttributes} />
-      <Footer footerComponents={footerComponents} />
-      {/* <SearchResults /> */}
+      <Bookings />
+      <SearchResults />
       <Restaurant />
+      <Footer footerComponents={footerComponents} />
     </div>
   );
 };
