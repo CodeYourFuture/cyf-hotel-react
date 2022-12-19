@@ -8,13 +8,24 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [profile, setprofile] = useState([]);
   const [isLoading, setisLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me/delayed")
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          throw Error("Could not connect");
+        }
+        return res.json();
+      })
       .then(data => {
         setisLoading(false);
         setBookings(data);
+        setError(null);
+      })
+      .catch(error => {
+        setisLoading(false);
+        setError(error.message);
       });
   }, []);
 
@@ -42,6 +53,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         {isLoading ? <div>Is Loading...</div> : <></>}
+        {error ? <div>{error}</div> : <></>}
         <Search search={search} />
         <SearchResults results={bookings} showProfile={showProfile} />
         <CustomerProfile customerProfile={profile} />
