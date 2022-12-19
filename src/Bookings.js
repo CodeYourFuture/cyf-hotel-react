@@ -10,7 +10,7 @@ const Bookings = () => {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/error")
+    fetch("https://cyf-react.glitch.me")
       .then(res => {
         if (!res.ok) {
           setIsLoad(false);
