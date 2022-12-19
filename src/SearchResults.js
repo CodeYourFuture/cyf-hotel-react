@@ -1,6 +1,18 @@
 import React, { useState } from "react";
-import Moment from "moment";
+import TableRow from "./TableRow";
+import CustomerProfile from "./CustomerProfile";
 function searchResults({ results }) {
+  const [currentCustomer, setCurrentCustomer] = useState("");
+
+  const fetchData = async id => {
+    const res = await fetch(`https://cyf-react.glitch.me/customers/${id}`);
+    const data = await res.json();
+    setCurrentCustomer(data);
+  };
+
+  const showCustomerProfile = id => {
+    fetchData(id);
+  };
   return (
     <div>
       <table className="table">
@@ -19,37 +31,18 @@ function searchResults({ results }) {
         </thead>
         <tbody>
           {results.map(item => {
-            const [color, setColor] = useState(false);
-            function changeColor() {
-              setColor(!color);
-            }
-
             return (
-              <tr
-                style={{ backgroundColor: color ? "red" : "white" }}
-                onClick={changeColor}
-              >
-                <th scope="row">{item.id}</th>
-                <td>{item.title}</td>
-                <td>{item.firstName}</td>
-                <td>{item.surname}</td>
-                <td>{item.email}</td>
-                <td>{item.roomId}</td>
-                <td>{item.checkInDate}</td>
-                <td>{item.checkOutDate}</td>
-                <td>{checkDiff(item.checkInDate, item.checkOutDate)}</td>
-              </tr>
+              <TableRow
+                key={item.id}
+                item={item}
+                showCustomerProfile={showCustomerProfile}
+              />
             );
           })}
         </tbody>
       </table>
+      <CustomerProfile {...currentCustomer} />
     </div>
   );
 }
-let checkDiff = (InDate, OutDate) => {
-  const checkInDate = Moment(InDate, "YYYY-MM-DD");
-  const checkOutDate = Moment(OutDate, "YYYY-MM-DD");
-  const diff = checkOutDate.diff(checkInDate, "days");
-  return diff;
-};
 export default searchResults;
