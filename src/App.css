@@ -64,3 +64,8 @@ ul {
 .activeRow {
   background-color: yellow;
 }
+.customerProfile {
+  background-color: yellow;
+  border: #222 solid 2px;
+  padding: 10px;
+}
