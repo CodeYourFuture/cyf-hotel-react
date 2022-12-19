@@ -80,7 +80,10 @@ li {
   margin-top: 2rem;
 }
 .cardContainer {
-  margin: 2rem 0 3rem 0;
+  /* margin: 2rem  3rem 0; */
+  display: flex;
+  gap: 7rem;
+  margin-left: 7rem;
 }
 .table {
   margin-bottom: 3rem;
