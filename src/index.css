@@ -24,3 +24,8 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+.order-countiner {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
