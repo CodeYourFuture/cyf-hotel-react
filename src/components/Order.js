@@ -4,7 +4,7 @@ import RestaurantButton from "./RestaurantButton";
 const Order = props => {
   const [orders, setOrders] = useState(0);
   function orderOne() {
-    setOrders(order => orders + 1);
+    setOrders(order => order + 1);
   }
 
   return (
