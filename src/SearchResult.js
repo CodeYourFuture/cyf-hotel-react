@@ -1,6 +1,6 @@
 import Moment from "react-moment";
 import { useState } from "react";
-function SearchResult({ i, item }) {
+function SearchResult({ i, booking }) {
   const [select, setSelect] = useState(true);
   const toggleSelecter = () => {
     setSelect(select => !select);
@@ -14,21 +14,21 @@ function SearchResult({ i, item }) {
         color: select ? "black" : "white"
       }}
     >
-      <th scope="row">{item.id}</th>
-      <td>{item.title}</td>
-      <td>{item.firstName}</td>
-      <td>{item.surname}</td>
-      <td>{item.email}</td>
-      <td>{item.roomId}</td>
+      <th scope="row">{booking.id}</th>
+      <td>{booking.title}</td>
+      <td>{booking.firstName}</td>
+      <td>{booking.surname}</td>
+      <td>{booking.email}</td>
+      <td>{booking.roomId}</td>
       <td>
-        <Moment format="DD-MM-YYYY">{item.checkInDate}</Moment>
+        <Moment format="DD-MM-YYYY">{booking.checkInDate}</Moment>
       </td>
       <td>
-        <Moment format="DD-MM-YYYY">{item.checkOutDate}</Moment>
+        <Moment format="DD-MM-YYYY">{booking.checkOutDate}</Moment>
       </td>
       <td>
-        <Moment diff={item.checkInDate} unit="days">
-          {item.checkOutDate}
+        <Moment diff={booking.checkInDate} unit="days">
+          {booking.checkOutDate}
         </Moment>
       </td>
     </tr>

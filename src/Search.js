@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = () => {
+const Search = ({ setFirstName }) => {
   return (
     <div className="search">
       <div className="page-header">

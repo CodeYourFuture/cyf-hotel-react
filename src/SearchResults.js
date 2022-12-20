@@ -2,10 +2,10 @@ import React from "react";
 
 import SearchResult from "./SearchResult";
 
-function SearchResults({ results }) {
+function SearchResults({ bookings }) {
   return (
     <div id="searchResults">
-      <table class="table table">
+      <table className="table table">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -20,8 +20,8 @@ function SearchResults({ results }) {
           </tr>
         </thead>
         <tbody>
-          {results.map((item, i) => (
-            <SearchResult key={i} item={item} />
+          {bookings.map((booking, i) => (
+            <SearchResult key={i} booking={booking} />
           ))}
         </tbody>
       </table>
