@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(92, 92, 73);
   padding: 20px;
   color: white;
   text-align: left;
@@ -46,9 +46,11 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
+footer {
   padding-top: 20px;
   text-align: center;
+  background-color: rgb(92, 92, 73);
+  color: white;
 }
 
 .card {
