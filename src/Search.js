@@ -2,16 +2,16 @@ import React from "react";
 import { useState } from "react";
 import Bookings from "./Bookings";
 
-const Search = ({ setFirstName }) => {
+const Search = ({ search }) => {
   const [searchInput, setsearchInput] = useState("");
+
   function handleSearchInput(event) {
     setsearchInput(event.target.value);
     console.log(event.target.value);
   }
   function handleSubmitForm(event) {
     event.preventDefault();
-    console.log("this is submit >>", event.target.customerName.value);
-    <Bookings searchVal={event} />;
+    search(searchInput);
   }
   return (
     <div className="search">
