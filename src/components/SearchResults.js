@@ -64,7 +64,7 @@ const TableRow = ({ element, showProfile }) => {
     </tr>
   );
 };
-let checkDiff = (InDate, OutDate) => {
+const checkDiff = (InDate, OutDate) => {
   const checkInDate = Moment(InDate, "YYYY-MM-DD");
   const checkOutDate = Moment(OutDate, "YYYY-MM-DD");
   const diff = checkOutDate.diff(checkInDate, "days");
