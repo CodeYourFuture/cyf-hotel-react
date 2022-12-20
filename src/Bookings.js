@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-const Bookings = () => {
+const Bookings = ({ searchVal }) => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
