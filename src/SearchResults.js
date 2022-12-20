@@ -2,7 +2,7 @@ import React from "react";
 import Moment from "moment";
 import SearchResult from "./SearchResult";
 
-function SearchResults({ results }) {
+function SearchResults({ results, showProfile }) {
   return (
     <div>
       <table className="table">

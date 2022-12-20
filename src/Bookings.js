@@ -6,7 +6,10 @@ import CustomerProfile from "./CustomerProfile.js";
 
 const Bookings = () => {
   const [booking, setBooking] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [customerProfile, setCustomerProfile] = useState([]);
+
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
       .then(res => res.json())
@@ -35,8 +38,10 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={booking} showProfile={showProfile} />
-        <CustomerProfile customerProfile={customerProfile} />
+        <div>
+          <SearchResults results={booking} showProfile={showProfile} />
+          <CustomerProfile customerProfile={customerProfile} />
+        </div>
       </div>
     </div>
   );
