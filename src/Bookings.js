@@ -5,6 +5,8 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [booking, setBooking] = useState([]);
   const [customerProfile, setcustomerProfile] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [erorr, setErorr] = useState(false);
   const search = searchVal => {
     searchVal = searchVal.toLowerCase();
     setBooking(
@@ -20,10 +22,12 @@ const Bookings = () => {
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
-      .then(response => response.json())
+      .then(response => (response.status === 200 ? response.json() : <></>))
       .then(data => {
+        setLoading(false);
         setBooking(data);
-      });
+      })
+      .catch(erorr => console.log(erorr));
   }, []);
 
   const showProfile = async custmerId => {
@@ -39,8 +43,16 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults bookings={booking} showProfile={showProfile} />
-        <CustomerProfile customerProfile={customerProfile} />
+        {loading ? <h1>Loding...</h1> : <></>}
+        {!loading ? (
+          <>
+            {" "}
+            <SearchResults bookings={booking} showProfile={showProfile} />
+            <CustomerProfile customerProfile={customerProfile} />
+          </>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
