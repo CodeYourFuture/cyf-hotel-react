@@ -28,23 +28,23 @@ const TouristInfoCards = () => {
 };
 
 // define a props for a card
-const Card = props => {
+function Card({ image, name, text, link }) {
   return (
     <section>
       <div className="card">
-        <img src={props.image} alt="" className="card-image" />
+        <img src={image} alt="" className="card-image" />
         <div className="card-detail">
-          <h4>{props.name}</h4>
-          <p>{props.text}</p>
+          <h4>{name}</h4>
+          <p>{text}</p>
         </div>
         <div className="card-button">
-          <a href={props.link}>
+          <a href={link}>
             <button>more info</button>
           </a>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default TouristInfoCards;
