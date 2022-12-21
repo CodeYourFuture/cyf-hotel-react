@@ -24,3 +24,19 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.footer li {
+  list-style: none;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-primary {
+  margin-left: 78px;
+}
+
+.card-img-top {
+  border-radius: 15px;
+}
