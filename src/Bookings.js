@@ -12,22 +12,25 @@ const Bookings = () => {
   }, []);
   const search = searchVal => {
     // console.info("TO DO!", searchVal);
-    searchVal = searchVal.toLowerCase();
-    const filtered = bookings.filter(
-      item =>
-        item.firstName.toLowerCase() === searchVal ||
-        item.surname.toLowerCase() === searchVal
+    setBookings(
+      bookings.filter(item => {
+        if (
+          item.firstName.includes(searchVal) ||
+          item.surname.includes(searchVal)
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      })
     );
-    setBookings(filtered);
   };
-
-  const showProfile = async () => {};
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} showProfile={showProfile} />
+        <SearchResults results={bookings} />
       </div>
     </div>
   );

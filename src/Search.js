@@ -6,10 +6,9 @@ const Search = ({ search }) => {
   function handleSearchInput(event) {
     const newInput = event.target.value;
     setSearchInput(newInput);
-    console.log(event);
   }
 
-  function submitHandle(event) {
+  function submitHandler(event) {
     event.preventDefault();
     search(searchInput);
   }
@@ -20,7 +19,7 @@ const Search = ({ search }) => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box" onSubmit={submitHandle}>
+          <form className="form-group search-box" onSubmit={submitHandler}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input

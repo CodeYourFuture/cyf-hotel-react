@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 let checkDiff = (InDate, OutDate) => {
   const checkInDate = Moment(InDate, "YYYY-MM-DD");
@@ -9,6 +10,12 @@ let checkDiff = (InDate, OutDate) => {
 };
 
 export default function SearchResult({ results }) {
+  function showCustomerProfile(id) {
+    const url = `https://cyf-react.glitch.me/customers/${id}`;
+    fetch(url)
+      .then(response => response.json())
+      .then(data => console.log(data));
+  }
   return (
     <div>
       <table className="table">
@@ -48,13 +55,19 @@ export default function SearchResult({ results }) {
                 <td>{item.checkOutDate}</td>
                 <td>{checkDiff(item.checkInDate, item.checkOutDate)}</td>
                 <td>
-                  <button>show profile</button>
+                  <button
+                    className="btn btn-outline-success"
+                    onClick={() => showCustomerProfile(item.id)}
+                  >
+                    show profile
+                  </button>
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      <CustomerProfile />
     </div>
   );
 }
