@@ -1,6 +1,6 @@
 import Moment from "react-moment";
 import { useState } from "react";
-function SearchResult({ i, booking, custmerResult }) {
+function SearchResult({ i, booking, showProfile }) {
   const [select, setSelect] = useState(true);
   const toggleSelecter = () => {
     setSelect(select => !select);
@@ -32,7 +32,7 @@ function SearchResult({ i, booking, custmerResult }) {
         </Moment>
       </td>
       <td>
-        <button onClick={() => custmerResult(booking.id)}>Show profile</button>
+        <button onClick={() => showProfile(booking.id)}>Show profile</button>
       </td>
     </tr>
   );

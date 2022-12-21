@@ -26,12 +26,21 @@ const Bookings = () => {
       });
   }, []);
 
+  const showProfile = async custmerId => {
+    const res = await fetch(
+      `https://cyf-react.glitch.me/customers/${custmerId}`
+    );
+    if (res.status === 200) {
+      const data = await res.json();
+      setcustomerProfile(data);
+    }
+  };
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults bookings={booking} custmerResult={setcustomerProfile} />
-        <CustomerProfile custmerId={customerProfile} />
+        <SearchResults bookings={booking} showProfile={showProfile} />
+        <CustomerProfile customerProfile={customerProfile} />
       </div>
     </div>
   );
