@@ -22,6 +22,7 @@ const SearchResults = props => {
           <th>Check In</th>
           <th>Check Out</th>
           <th>Nights</th>
+          <th>Customer profile</th>
         </tr>
       </thead>
       <tbody>
@@ -45,6 +46,9 @@ const SearchResults = props => {
                 moment(booking.checkInDate),
                 "days"
               )}
+            </td>
+            <td>
+              <button>Show profile</button>
             </td>
           </tr>
         ))}
