@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FakeBooking from "./data/fakeBookings.json";
 import Moment from "react-moment";
+// import CostumerProfile from './CostumerProfile.js'
 
 const SearchResults = () => {
   const [clicked, setClicked] = useState(false);
@@ -17,10 +18,13 @@ const SearchResults = () => {
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
           <th scope="col">Number Of Night</th>
+          <th scope="col">
+            <th scope="col">Show profile</th>
+          </th>
         </tr>
       </thead>
       {FakeBooking.map((element, index) => {
-        // function to make a change
+        // function to show diiferent color when clicked
         const handlClick = () => {
           setClicked(!clicked);
         };
@@ -28,6 +32,7 @@ const SearchResults = () => {
           <tbody key={index}>
             <tr
               onClick={handlClick}
+              //
               className={`clicked ${clicked === true ? clicked : ""}`}
             >
               <th scope="row">{element.id}</th>
@@ -47,6 +52,7 @@ const SearchResults = () => {
                   {element.checkOutDate}
                 </Moment>
               </td>
+              {/* <td>{<CustomerProfile/>}</td> */}
             </tr>
           </tbody>
         );
