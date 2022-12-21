@@ -6,7 +6,7 @@ const Bookings = () => {
   const [booking, setBooking] = useState([]);
   const [customerProfile, setcustomerProfile] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [erorr, setErorr] = useState(false);
+  const [error, setError] = useState(false);
   const search = searchVal => {
     searchVal = searchVal.toLowerCase();
     setBooking(
@@ -16,18 +16,24 @@ const Bookings = () => {
           booking.surname.toLowerCase() === searchVal
       )
     );
-
-    console.info("TO DO!", searchVal);
   };
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
-      .then(response => (response.status === 200 ? response.json() : <></>))
+      .then(response => {
+        if (response.status === 200) {
+          return response.json();
+        } else {
+          setLoading(false);
+          setError(true);
+        }
+      })
       .then(data => {
         setLoading(false);
+        setError(false);
         setBooking(data);
       })
-      .catch(erorr => console.log(erorr));
+      .catch(erorr => setError(true));
   }, []);
 
   const showProfile = async custmerId => {
@@ -37,18 +43,27 @@ const Bookings = () => {
     if (res.status === 200) {
       const data = await res.json();
       setcustomerProfile(data);
+    } else {
+      setError(false);
     }
   };
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {loading ? <h1>Loding...</h1> : <></>}
-        {!loading ? (
+        {loading ? (
+          <h1>Loding...</h1>
+        ) : (
           <>
             {" "}
             <SearchResults bookings={booking} showProfile={showProfile} />
             <CustomerProfile customerProfile={customerProfile} />
+          </>
+        )}
+        {error ? (
+          <>
+            {" "}
+            <h1>Whoops something went wrong!</h1>
           </>
         ) : (
           <></>
