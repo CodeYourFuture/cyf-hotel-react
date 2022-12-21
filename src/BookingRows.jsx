@@ -32,7 +32,7 @@ function BookingRows({ item, index }) {
 
       <td>{checkDiff(item.checkInDate, item.checkOutDate)}</td>
       <td>
-        <button onClick={() => showProfile(item.id)}>Show Profile</button>
+        <button onClick={() => item.id}>Show Profile</button>
       </td>
     </tr>
   );
