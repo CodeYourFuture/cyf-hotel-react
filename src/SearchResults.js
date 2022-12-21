@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import FakeBooking from "./data/fakeBookings.json";
 import Moment from "react-moment";
 
 const SearchResults = () => {
+  const [clicked, setClicked] = useState(false);
   return (
     <table className="table table-hover">
       <thead>
@@ -18,10 +19,17 @@ const SearchResults = () => {
           <th scope="col">Number Of Night</th>
         </tr>
       </thead>
-      {FakeBooking.map(element => {
+      {FakeBooking.map((element, index) => {
+        // function to make a change
+        const handlClick = () => {
+          setClicked(!clicked);
+        };
         return (
-          <tbody>
-            <tr>
+          <tbody key={index}>
+            <tr
+              onClick={handlClick}
+              className={`clicked ${clicked === true ? clicked : ""}`}
+            >
               <th scope="row">{element.id}</th>
               <td>{element.title}</td>
               <td>{element.firstName}</td>

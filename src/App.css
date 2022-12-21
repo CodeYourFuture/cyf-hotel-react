@@ -82,3 +82,6 @@ tr {
 .card {
   width: 18rem;
 }
+.clicked {
+  background-color: wheat;
+}
