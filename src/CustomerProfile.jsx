@@ -12,7 +12,7 @@ export default function CustomerProfile({ customerProfile }) {
           <li>Phone no: {customerProfile.phoneNumber}</li>
         </ul>
       ) : (
-        <div />
+        <></>
       )}
     </div>
   );
