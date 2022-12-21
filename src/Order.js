@@ -6,7 +6,7 @@ function Orders({ orderType }) {
     setOrders(orders + 1);
   }
   return (
-    <li>
+    <li id="listOrder">
       {orderType} : {orders}
       <RestaurantButton handleClick={incressOrder} />
     </li>

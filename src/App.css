@@ -33,6 +33,13 @@
   border-radius: 50px;
   width: 100px;
 }
+#listOrder {
+  display: flex;
+  justify-content: space-evenly;
+}
+#buttonOfOrder {
+  padding: 5px;
+}
 #nav_bar {
   background-color: #007bff;
   display: flex;

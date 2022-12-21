@@ -1,6 +1,6 @@
 import Moment from "react-moment";
 import { useState } from "react";
-function SearchResult({ i, booking }) {
+function SearchResult({ i, booking, custmerResult }) {
   const [select, setSelect] = useState(true);
   const toggleSelecter = () => {
     setSelect(select => !select);
@@ -30,6 +30,9 @@ function SearchResult({ i, booking }) {
         <Moment diff={booking.checkInDate} unit="days">
           {booking.checkOutDate}
         </Moment>
+      </td>
+      <td>
+        <button onClick={() => custmerResult(booking.id)}>Show profile</button>
       </td>
     </tr>
   );
