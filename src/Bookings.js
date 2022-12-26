@@ -8,7 +8,7 @@ const Bookings = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://hotel-app-express-for-react.glitch.me/bookings`)
       .then(res => {
         if (res.ok) {
           return res.json();
