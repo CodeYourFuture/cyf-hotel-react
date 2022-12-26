@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  margin: 0;
 }
 
 .App-logo {
@@ -8,13 +9,13 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #007bff;
   height: 50px;
-  padding: 20px;
+  padding: 30px;
   color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  text-align: center;
+  font-family: initial;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -39,6 +40,31 @@
   padding: 5px 0 20px 0;
 }
 
+.tourist-cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 2rem;
+  margin-top: 3rem;
+}
+.card-text {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #5b5757;
+  padding: 1rem;
+}
+
+.footer-items {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+  background-color: rgb(0, 183, 255);
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
 tr {
   color: #5b5757;
 }
@@ -48,10 +74,14 @@ tr {
 }
 
 .footer {
+  background-color: aqua;
   padding-top: 20px;
   text-align: center;
 }
 
 .card {
   width: 18rem;
+}
+.clicked {
+  background-color: wheat;
 }
