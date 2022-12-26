@@ -1,6 +1,18 @@
 import React from "react";
+import { useState } from "react";
+import Bookings from "./Bookings";
 
-const Search = () => {
+const Search = ({ search }) => {
+  const [searchInput, setsearchInput] = useState("");
+
+  function handleSearchInput(event) {
+    setsearchInput(event.target.value);
+    console.log(event.target.value);
+  }
+  function handleSubmitForm(event) {
+    event.preventDefault();
+    search(searchInput);
+  }
   return (
     <div className="search">
       <div className="page-header">
@@ -8,16 +20,20 @@ const Search = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form className="form-group search-box" onSubmit={handleSubmitForm}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
+                value={searchInput}
                 type="text"
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
+                onChange={handleSearchInput}
               />
-              <button className="btn btn-primary">Search</button>
+              <button className="btn btn-primary" type="submit">
+                Search
+              </button>
             </div>
           </form>
         </div>
