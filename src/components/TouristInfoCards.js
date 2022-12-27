@@ -15,7 +15,7 @@ const buttonPositioning = {
   top: "90%"
 };
 
-const TouristInfoCards = () => {
+export const TouristInfoCards = () => {
   return (
     <div style={flex}>
       {/* 1 st card */}
@@ -111,4 +111,3 @@ const TouristInfoCards = () => {
     </div>
   );
 };
-export default TouristInfoCards;

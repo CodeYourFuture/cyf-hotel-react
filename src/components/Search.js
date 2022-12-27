@@ -1,6 +1,6 @@
 import React from "react";
-import SearchButton from "./data/SearchButton";
-const Search = () => {
+import SearchButton from "../data/SearchButton";
+export const Search = () => {
   return (
     <div className="search">
       <div className="page-header">
@@ -25,5 +25,3 @@ const Search = () => {
     </div>
   );
 };
-
-export default Search;

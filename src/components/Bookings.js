@@ -1,9 +1,9 @@
 import React from "react";
-import Search from "./Search.js";
+import { Search } from "./Search";
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
-const Bookings = () => {
+export const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
@@ -17,5 +17,3 @@ const Bookings = () => {
     </div>
   );
 };
-
-export default Bookings;

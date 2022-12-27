@@ -1,8 +1,10 @@
 import React from "react";
-import Header from "./Header";
-import Bookings from "./Bookings";
-import TouristInfoCards from "./TouristInfoCards";
-import Footer from "./Footer";
+// import Header from "./components/Header";
+// import Bookings from "./components/Bookings";
+// import TouristInfoCards from "./components/TouristInfoCards";
+// import Footer from "./components/Footer";
+import { Header, Bookings, TouristInfoCards, Footer } from "./components";
+
 import "./App.css";
 
 const footerArray = [
