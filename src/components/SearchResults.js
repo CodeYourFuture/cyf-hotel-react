@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Moment from "react-moment";
 function SearchResults({ results }) {
   return (
@@ -11,14 +11,22 @@ function SearchResults({ results }) {
             <th scope="col">FirstName</th>
             <th scope="col">Surname</th>
             <th scope="col">Room Id</th>
-            <th scope="col">`check in date</th>
-            <th scope="col">check out date</th>
+            <th scope="col">Check In Date</th>
+            <th scope="col">Check Out Date</th>
           </tr>
         </thead>
         <tbody>
           {results.map((person, index) => {
+            const [select, setSelect] = useState(true);
+            function handleClick() {
+              setSelect(select => !select);
+            }
             return (
-              <tr key={index}>
+              <tr
+                key={index}
+                onClick={handleClick}
+                style={{ backgroundColor: select ? "" : "green" }}
+              >
                 <th scope="row">{person.id}</th>
                 <td>{person.title}</td>
                 <td>{person.firstName}</td>
