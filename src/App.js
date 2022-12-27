@@ -2,7 +2,14 @@ import React from "react";
 import Header from "./Header";
 import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
+import Footer from "./Footer";
 import "./App.css";
+
+const footerArray = [
+  "123 Fake Street, London, E1 4UD",
+  "hello@fakehotel.com",
+  "0123 456789"
+];
 
 const App = () => {
   return (
@@ -10,6 +17,7 @@ const App = () => {
       <Header />
       <TouristInfoCards />
       <Bookings />
+      <Footer footArray={footerArray} />
     </div>
   );
 };
