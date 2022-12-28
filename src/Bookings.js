@@ -14,7 +14,6 @@ const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
-  // let bookings = FakeBookings;
   return (
     <div className="App-content">
       <div className="container">
