@@ -3,7 +3,13 @@ import React from "react";
 // import Bookings from "./components/Bookings";
 // import TouristInfoCards from "./components/TouristInfoCards";
 // import Footer from "./components/Footer";
-import { Header, Bookings, TouristInfoCards, Footer } from "./components";
+import {
+  Header,
+  Bookings,
+  TouristInfoCards,
+  Footer,
+  Restaurant
+} from "./components";
 
 import "./App.css";
 
@@ -19,6 +25,7 @@ const App = () => {
       <Header />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer footArray={footerArray} />
     </div>
   );

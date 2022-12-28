@@ -1,6 +1,6 @@
 import React from "react";
 
-const Restaurant = () => {
+export const Restaurant = () => {
   const pizzas = 0;
   return (
     <div>
@@ -13,5 +13,3 @@ const Restaurant = () => {
     </div>
   );
 };
-
-export default Restaurant;

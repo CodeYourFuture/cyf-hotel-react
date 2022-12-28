@@ -1,7 +1,9 @@
 import React from "react";
 import { Search } from "./Search";
 // import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import FakeBookings from "../data/fakeBookings.json";
+
+import { SearchResults } from "./SearchResults";
 
 export const Bookings = () => {
   const search = searchVal => {
@@ -13,6 +15,7 @@ export const Bookings = () => {
       <div className="container">
         <Search search={search} />
         {/* <SearchResults results={FakeBookings} /> */}
+        <SearchResults results={FakeBookings} />
       </div>
     </div>
   );
