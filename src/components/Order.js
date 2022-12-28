@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 import { RestaurantButton } from "./RestaurantButton";
 
-let count = 0;
-export const Order = () => {
-  const [orders, setOrders] = useState(count);
+export const Order = props => {
+  const [orders, setOrders] = useState(0);
   const orderOne = () => {
-    setOrders(count++);
+    setOrders(orders + 1);
   };
   return (
-    <div>
-      <ul>
-        <li>
-          Pizzas: {orders} <RestaurantButton button={orderOne} />
-        </li>
-      </ul>
-    </div>
+    <li>
+      {props.orderType}: {orders} <RestaurantButton button={orderOne} />
+    </li>
   );
 };

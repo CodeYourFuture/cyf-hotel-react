@@ -1,25 +1,33 @@
 import moment from "moment/moment";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FakeBookings from "../data/fakeBookings.json";
 
-let dateIn = FakeBookings.map(val => {
-  let elements = val["checkInDate"].split("-");
-  elements.map(el => Number(el));
-  return moment(elements);
-});
-let dateOut = FakeBookings.map(val => {
-  let elements = val["checkOutDate"].split("-");
-  elements.map(el => Number(el));
-  return moment(elements);
-});
-let values = [];
-for (let i = 0; i < dateIn.length; i++) {
-  let difference = dateIn[i].diff(dateOut[i], "days");
-  values.push(difference);
-}
-
-console.log(values);
 export const SearchResults = props => {
+  const [dateDiff, setDateDiff] = useState([]);
+
+  const calculation = () => {
+    let dateIn = FakeBookings.map(val => {
+      // let elements = val["checkInDate"].split("-");
+      // moment(str, 'YYYY-MM-DD')
+      return moment(val["checkInDate"]);
+    });
+    let dateOut = FakeBookings.map(val => {
+      // let elements = val["checkOutDate"].split("-"); bunu kullanmasanda olur !!
+      // moment(str, 'YYYY-MM-DD') bu moment metodunun default degeri, kendimiz degistiredebiliriz
+      return moment(val["checkOutDate"]);
+    });
+    let values = [];
+    for (let i = 0; i < dateIn.length; i++) {
+      let difference = dateIn[i].diff(dateOut[i], "days");
+      values.push(difference);
+    }
+    setDateDiff(values);
+  };
+
+  useEffect(() => {
+    calculation();
+  }, []);
+
   return (
     <div>
       <table className="table">
@@ -46,7 +54,7 @@ export const SearchResults = props => {
                 <td>{props.results[index]["roomId"]}</td>
                 <td>{props.results[index]["checkInDate"]}</td>
                 <td>{props.results[index]["checkOutDate"]}</td>
-                <td>{values[index] * -1}</td>
+                <td>{dateDiff[index] * -1}</td>
               </tr>
             );
           })}
