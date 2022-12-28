@@ -109,6 +109,42 @@ header img {
   text-align: center;
 }
 
+.restaurant h3 {
+  padding-top: 20px;
+  border-top: 1px solid rgb(213, 213, 213);
+  text-align: center;
+}
+
+.restaurant ul {
+  margin: 40px auto;
+  max-width: 500px;
+  list-style: none;
+}
+
+.restaurant ul li {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-container button {
+  width: 40px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.restaurant ul li span {
+  background-color: rgb(41, 109, 255);
+  border-radius: 40%;
+  padding: 6px 8px;
+  color: white;
+}
+
+.restaurant ul li:last-child span {
+  margin-left: -74px;
+}
+
 .add-btn {
   display: block;
   margin: 10px auto 40px;
