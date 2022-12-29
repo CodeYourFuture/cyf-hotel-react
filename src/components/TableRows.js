@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import moment from "moment/moment";
+import FakeBookings from "../data/fakeBookings.json";
 import "./RowBackground.css";
 
-export const TableRows = () => {
+export const TableRows = props => {
   const [dateDiff, setDateDiff] = useState([]);
-  const [rowSelection, setRowSelection] = useState(true);
+  const [rowSelection, setRowSelection] = useState(false);
 
   const rowSelected = () => {
     if (rowSelection === true) {
@@ -36,14 +38,14 @@ export const TableRows = () => {
 
   return (
     <tr onClick={rowSelected} className={rowSelection ? "changeBkg" : ""}>
-      <td>{props.results[index]["title"]}</td>
-      <td>{props.results[index]["firstName"]}</td>
-      <td>{props.results[index]["surname"]}</td>
-      <td>{props.results[index]["email"]}</td>
-      <td>{props.results[index]["roomId"]}</td>
-      <td>{props.results[index]["checkInDate"]}</td>
-      <td>{props.results[index]["checkOutDate"]}</td>
-      <td>{dateDiff[index] * -1}</td>
+      <td>{props.eachRow["title"]}</td>
+      <td>{props.eachRow["firstName"]}</td>
+      <td>{props.eachRow["surname"]}</td>
+      <td>{props.eachRow["email"]}</td>
+      <td>{props.eachRow["roomId"]}</td>
+      <td>{props.eachRow["checkInDate"]}</td>
+      <td>{props.eachRow["checkOutDate"]}</td>
+      <td>{dateDiff[props.index] * -1}</td>
     </tr>
   );
 };

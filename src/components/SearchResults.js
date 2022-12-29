@@ -1,7 +1,5 @@
-import moment from "moment/moment";
-import React, { useEffect, useState } from "react";
-import FakeBookings from "../data/fakeBookings.json";
-
+import React from "react";
+import "./RowBackground.css";
 import { TableRows } from "./TableRows";
 
 export const SearchResults = props => {
@@ -22,7 +20,7 @@ export const SearchResults = props => {
         </thead>
         <tbody>
           {props.results.map((val, index) => {
-            return <TableRows />;
+            return <TableRows index={index} eachRow={props.results[index]} />;
           })}
         </tbody>
       </table>
