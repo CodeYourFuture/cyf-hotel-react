@@ -11,6 +11,7 @@ export const Bookings = () => {
   };
 
   const [booking, setBookings] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
@@ -18,6 +19,7 @@ export const Bookings = () => {
       .then(data => {
         setBookings(data);
       });
+    return () => {};
   }, []);
 
   return (
