@@ -20,7 +20,13 @@ export const SearchResults = props => {
         </thead>
         <tbody>
           {props.results.map((val, index) => {
-            return <TableRows index={index} eachRow={props.results[index]} />;
+            return (
+              <TableRows
+                fakeBookings={props.results}
+                index={index}
+                eachRow={props.results[index]}
+              />
+            );
           })}
         </tbody>
       </table>

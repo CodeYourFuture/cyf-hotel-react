@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment/moment";
-import FakeBookings from "../data/fakeBookings.json";
 import "./RowBackground.css";
 
 export const TableRows = props => {
@@ -16,11 +15,11 @@ export const TableRows = props => {
   };
 
   const calculation = () => {
-    let dateIn = FakeBookings.map(val => {
+    let dateIn = props.fakeBookings.map(val => {
       // moment(str, 'YYYY-MM-DD')
       return moment(val["checkInDate"]);
     });
-    let dateOut = FakeBookings.map(val => {
+    let dateOut = props.fakeBookings.map(val => {
       // moment(str, 'YYYY-MM-DD') bu moment metodunun default degeri, kendimiz degistiredebiliriz
       return moment(val["checkOutDate"]);
     });
