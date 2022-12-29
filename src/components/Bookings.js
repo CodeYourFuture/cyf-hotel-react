@@ -6,12 +6,7 @@ import { Search } from "./Search";
 import { SearchResults } from "./SearchResults";
 
 export const Bookings = () => {
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
-  };
-
   const [booking, setBookings] = useState([]);
-  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`)
@@ -21,6 +16,14 @@ export const Bookings = () => {
       });
     return () => {};
   }, []);
+
+  const search = searchVal => {
+    console.info("TO DO!", searchVal);
+    let filteredBookings = booking.filter(val => {
+      return val["firstName"].includes(searchVal);
+    });
+    setBookings(filteredBookings);
+  };
 
   return (
     <div className="App-content">
