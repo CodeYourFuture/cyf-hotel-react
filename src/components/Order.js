@@ -7,7 +7,7 @@ export const Order = props => {
     setOrders(orders + 1);
   };
   return (
-    <li>
+    <li style={{ marginLeft: "30px" }}>
       {props.orderType}: {orders} <RestaurantButton button={orderOne} />
     </li>
   );

@@ -6,5 +6,5 @@ export * from "./TouristInfoCards";
 export * from "./Restaurant";
 export * from "./RestaurantButton";
 export * from "./Order";
-export * from "./TableRows";
+export * from "./TableRow";
 export * from "./CustomerProfile";

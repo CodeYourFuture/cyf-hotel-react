@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import moment from "moment/moment";
 import "./RowBackground.css";
 
-export const TableRows = props => {
+export const TableRow = props => {
   const [dateDiff, setDateDiff] = useState([]);
   const [rowSelection, setRowSelection] = useState(false);
 
@@ -15,20 +15,13 @@ export const TableRows = props => {
   };
 
   const calculation = () => {
-    let dateIn = props.fakeBookings.map(val => {
-      // moment(str, 'YYYY-MM-DD')
-      return moment(val["checkInDate"]);
-    });
-    let dateOut = props.fakeBookings.map(val => {
-      // moment(str, 'YYYY-MM-DD') bu moment metodunun default degeri, kendimiz degistiredebiliriz
-      return moment(val["checkOutDate"]);
-    });
-    let values = [];
-    for (let i = 0; i < dateIn.length; i++) {
-      let difference = dateIn[i].diff(dateOut[i], "days");
-      values.push(difference);
-    }
-    setDateDiff(values);
+    let dateIn = moment(props.eachRow["checkInDate"]);
+
+    let dateOut = moment(props.eachRow["checkOutDate"]);
+
+    let difference = dateOut.diff(dateIn, "days");
+
+    setDateDiff(difference);
   };
 
   useEffect(() => {
@@ -44,7 +37,7 @@ export const TableRows = props => {
       <td>{props.eachRow["roomId"]}</td>
       <td>{props.eachRow["checkInDate"]}</td>
       <td>{props.eachRow["checkOutDate"]}</td>
-      <td>{dateDiff[props.index] * -1}</td>
+      <td>{dateDiff}</td>
       <td>
         <button
           id={props.index}

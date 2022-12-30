@@ -2,25 +2,25 @@ import React, { useState } from "react";
 import { CustomerProfile } from "./CustomerProfile";
 import "./RowBackground.css";
 import "../App.css";
-import { TableRows } from "./TableRows";
+import { TableRow } from "./TableRow";
 
 export const SearchResults = props => {
-  const [id, setId] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [secondName, setSecondName] = useState("");
+  const [customerId, setCustomerId] = useState("");
   const [email, setEmail] = useState("");
-  const [night, setNight] = useState("");
+  const [vip, setVip] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const profileHandler = event => {
-    setId(event.target.id);
-    setFirstName(
-      event.target.parentElement.parentElement.children[1].innerText
-    );
-    setSecondName(
-      event.target.parentElement.parentElement.children[2].innerText
-    );
-    setEmail(event.target.parentElement.parentElement.children[3].innerText);
-    setNight(event.target.parentElement.parentElement.children[7].innerText);
+    fetch(`https://cyf-react.glitch.me/customers/${event.target.id}`)
+      .then(res => res.json())
+      .then(data => {
+        setCustomerId(data.id);
+        setEmail(data.email);
+        if (data.vip === true) {
+          setVip("YES");
+        } else setVip("NO");
+        setPhoneNumber(data.phoneNumber);
+      });
   };
 
   return (
@@ -40,24 +40,22 @@ export const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map((val, index) => {
+          {props.results.map(val => {
             return (
-              <TableRows
+              <TableRow
                 onProfileHandler={profileHandler}
-                fakeBookings={props.results}
-                index={index}
-                eachRow={props.results[index]}
+                index={val.id}
+                eachRow={val}
               />
             );
           })}
         </tbody>
       </table>
       <CustomerProfile
-        targetId={id}
-        targetFirstName={firstName}
-        targetSecondName={secondName}
+        targetId={customerId}
+        targetVip={vip}
         targetEmail={email}
-        targetNight={night}
+        targetPhoneNumber={phoneNumber}
       />
     </div>
   );

@@ -14,6 +14,8 @@ export const Bookings = () => {
       .then(res => res.json())
       .then(data => {
         setBookings(data);
+      })
+      .finally(() => {
         setLoading(false);
       });
     return () => {};
