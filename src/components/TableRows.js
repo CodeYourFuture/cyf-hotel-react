@@ -45,6 +45,15 @@ export const TableRows = props => {
       <td>{props.eachRow["checkInDate"]}</td>
       <td>{props.eachRow["checkOutDate"]}</td>
       <td>{dateDiff[props.index] * -1}</td>
+      <td>
+        <button
+          id={props.index}
+          className="btn btn-primary"
+          onClick={props.onProfileHandler}
+        >
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };

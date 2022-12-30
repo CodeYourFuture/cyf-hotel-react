@@ -55,3 +55,13 @@ tr {
 .card {
   width: 18rem;
 }
+
+.App {
+  padding: 0;
+}
+
+.override {
+  width: 80% !important;
+  margin-left: auto;
+  margin-right: auto;
+}

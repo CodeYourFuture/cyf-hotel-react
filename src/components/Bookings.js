@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Search } from "./Search";
+import "../App.css";
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "../data/fakeBookings.json";
 
@@ -20,18 +21,19 @@ export const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
     let filteredBookings = booking.filter(val => {
-      return val["firstName"].includes(searchVal);
+      return (
+        val["firstName"].includes(searchVal) ||
+        val["surname"].includes(searchVal)
+      );
     });
     setBookings(filteredBookings);
   };
 
   return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
-        <SearchResults results={booking} />
-      </div>
+    <div className="App-content override">
+      <Search search={search} />
+      {/* <SearchResults results={FakeBookings} /> */}
+      <SearchResults results={booking} />
     </div>
   );
 };
