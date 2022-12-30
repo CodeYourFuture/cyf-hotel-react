@@ -7,6 +7,11 @@
   height: 80px;
 }
 
+.hotel-logo {
+  background-color: #eb5e28;
+  height: 100px;
+}
+
 .App-header {
   background-color: #222;
   height: 50px;
@@ -39,7 +44,7 @@
   padding: 5px 0 20px 0;
 }
 
-tr {
+.btn btn-primary tr {
   color: #5b5757;
 }
 
@@ -52,6 +57,31 @@ tr {
   text-align: center;
 }
 
+.footer ul {
+  list-style: none;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: grey;
+}
+
 .card {
-  width: 18rem;
+  width: 20rem;
+}
+
+.profile-info {
+  background-color: #5b5757;
+  color: whitesmoke;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.order-card {
+  background-color: #8e9aaf;
+  padding: 20px;
+  text-align: center;
 }
