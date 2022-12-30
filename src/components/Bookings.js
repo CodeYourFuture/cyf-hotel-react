@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Search } from "./Search";
 import "../App.css";
-// import SearchResults from "./SearchResults.js";
-// import FakeBookings from "../data/fakeBookings.json";
+import { BeatLoader } from "react-spinners";
 
 import { SearchResults } from "./SearchResults";
 
 export const Bookings = () => {
   const [booking, setBookings] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://cyf-react.glitch.me/delayed`)
       .then(res => res.json())
       .then(data => {
         setBookings(data);
+        setLoading(false);
       });
     return () => {};
   }, []);
@@ -32,8 +33,19 @@ export const Bookings = () => {
   return (
     <div className="App-content override">
       <Search search={search} />
-      {/* <SearchResults results={FakeBookings} /> */}
-      <SearchResults results={booking} />
+      {loading ? (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+          }}
+        >
+          <BeatLoader color="maroon" />
+        </div>
+      ) : (
+        <SearchResults results={booking} />
+      )}
     </div>
   );
 };
