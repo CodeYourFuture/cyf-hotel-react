@@ -12,7 +12,6 @@ export const SearchResults = props => {
   const [night, setNight] = useState("");
 
   const profileHandler = event => {
-    console.log(event.target.id);
     setId(event.target.id);
     setFirstName(
       event.target.parentElement.parentElement.children[1].innerText

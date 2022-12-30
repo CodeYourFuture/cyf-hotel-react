@@ -51,7 +51,8 @@ export const TableRows = props => {
           className="btn btn-primary"
           onClick={props.onProfileHandler}
         >
-          Show Profile
+          {" "}
+          Show Profile{" "}
         </button>
       </td>
     </tr>
