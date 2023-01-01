@@ -1,18 +1,21 @@
 import React from "react";
-export default function CustomerProfile({ customerProfile }) {
+import RestaurantButton from "./Button";
+export default function CustomerProfile({ id, email, vip, phoneNumber }) {
   return (
     <div>
-      <h5 class="modal-title">Profile</h5>
-
-      {customerProfile.length !== 0 ? (
+      {email && (
         <ul>
-          <li>Id: {customerProfile.id}</li>
-          <li>Email: {customerProfile.email}</li>
-          <li>Vip: {customerProfile.vip ? "Yes" : "No"}</li>
-          <li>Phone no: {customerProfile.phoneNumber}</li>
+          <h5 class="modal-title">Profile</h5>
+          <li>Id: {id}</li>
+          <li>Email: {email}</li>
+          <li>Vip: {vip ? "Yes" : "No"}</li>
+          <li>Phone no: {phoneNumber}</li>
+          {/* <button onClick={()=> close(false)}> Close </button> */}
+          <li>
+            {" "}
+            <RestaurantButton close="close" />{" "}
+          </li>
         </ul>
-      ) : (
-        <></>
       )}
     </div>
   );

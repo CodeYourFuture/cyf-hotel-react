@@ -11,13 +11,13 @@
   background-color: #222;
   height: 50px;
   padding: 20px;
-  color: white;
+  color: black;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .App-title {
@@ -26,7 +26,7 @@
 
 .App-content {
   padding-top: 20px;
-  font-size: large;
+  font-size: 1rem;
 }
 
 @keyframes App-logo-spin {
@@ -37,12 +37,25 @@
     transform: rotate(360deg);
   }
 }
+
+.btn-primary {
+  font-size: 0.85rem;
+}
+.table-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.5%;
+  padding: 0.5%;
+  text-align: center;
+  /* border-bottom: 2px solid black; */
+}
 .search {
   padding: 2%;
 }
-thead {
-  color: whitesmoke;
-}
+/* thead {
+  color: white;
+} */
 
 .results {
   padding-top: 15px;
@@ -64,6 +77,10 @@ thead {
 .card {
   width: 33.33%;
   margin: 10px;
+  border-radius: 0.25rem;
+  transition: all 0.3s linear;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 .card-img-top {
   width: 100%;
@@ -78,15 +95,37 @@ thead {
 .footer-list {
   list-style: none;
 }
-.table-border {
+
+/* .table-border {
   border: 3px solid gray;
-}
-.table-border2 {
+} */
+/* .table-border2 {
   border: 3px solid green;
-}
+} */
 .row-bg {
   background-color: grey;
 }
 .row-bg2 {
   background-color: green;
+}
+.order-container {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  /* border: 2px solid green; */
+  margin: 0.5%;
+  padding: 0.5%;
+  border-top: 1px solid black;
+}
+.order-card {
+  box-shadow: 0 5px 15px rgb(0 0 0 / 35%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+  width: 20%;
+  /* border: 2px solid red; */
 }

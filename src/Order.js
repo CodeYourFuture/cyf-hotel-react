@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import RestaurantButton from "./Button";
 
 //  task -12
-function Order(props) {
+function Order(prop) {
   // task -09
   const [Orders, setOrders] = useState(0);
 
@@ -12,13 +12,11 @@ function Order(props) {
   }
 
   return (
-    <div>
-      <li>
-        {props.orderType}: {Orders}
-        {/* task - 11 */}
-        <RestaurantButton handleClick={orderOne} />
-      </li>
-    </div>
+    <li className="order-card">
+      {prop.orderType}: {Orders}
+      {/* task - 11 */}
+      <RestaurantButton handleClick={orderOne} add="Add" />
+    </li>
   );
 }
 

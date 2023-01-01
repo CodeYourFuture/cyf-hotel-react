@@ -1,9 +1,14 @@
 import React from "react";
 //  task-11
-function RestaurantButton(props) {
+function RestaurantButton(prop) {
   return (
-    <button className="btn btn-primary" onClick={props.handleClick}>
-      Add
+    <button
+      className="btn btn-primary"
+      type="button"
+      onClick={prop.handleClick}
+    >
+      {prop.add}
+      {prop.close}
     </button>
   );
 }

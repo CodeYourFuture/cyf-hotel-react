@@ -6,8 +6,8 @@ import CreateTableRow from "./Tablerow";
 function SearchResults({ results, showProfile }) {
   return (
     <div className="table-responsive">
-      <table className="table table-bordered align-top">
-        <thead className="table-dark">
+      <table className="table table-striped table-hover">
+        <thead className="table-light ">
           <tr>
             <th scope="col">id</th>
             <th scope="col">Title</th>

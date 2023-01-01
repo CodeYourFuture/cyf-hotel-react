@@ -11,7 +11,7 @@ function CreateTableRow({ profile, index, showProfile }) {
       key={index}
       // task-15
       onClick={handleClick}
-      style={{ backgroundColor: colour ? "yellow" : "white" }}
+      style={{ backgroundColor: colour ? "grey" : "white" }}
     >
       <td> {profile.id}</td>
       <td> {profile.title}</td>

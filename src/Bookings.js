@@ -28,7 +28,7 @@ const Bookings = () => {
     setBookings(newBookings);
   };
 
-  const [customerProfile, setCustomerProfile] = useState("");
+  const [customerProfile, setCustomerProfile] = useState(false);
   function showProfile(id) {
     fetch(`https://cyf-react.glitch.me/customers/${id}`)
       .then(res => res.json())
@@ -37,10 +37,10 @@ const Bookings = () => {
 
   return (
     <div className="App-content">
-      <div className="container">
+      <div className="table-container">
         <Search search={search} />
         <SearchResults results={bookings} showProfile={showProfile} />
-        <CustomerProfile customerProfile={customerProfile} />
+        <CustomerProfile {...customerProfile} />
       </div>
     </div>
   );
