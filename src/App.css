@@ -61,7 +61,7 @@ tr {
   display: flex;
   align-items: center;
   letter-spacing: 1.2px;
-  background-color: #1c241e;
+  background-color: #6f4c5b;
 }
 
 .header span {
@@ -74,6 +74,7 @@ header img {
   height: 70px;
   border-radius: 50%;
   width: 80px;
+  object-fit: contain;
 }
 
 .cities {
@@ -151,7 +152,7 @@ header img {
 }
 
 .footer {
-  background-color: #231f20;
+  background-color: #6f4c5b;
   color: beige;
   padding: 40px;
 }
