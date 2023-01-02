@@ -3,6 +3,7 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 import CustomerProfile from "./CustomerProfile.js";
+import CreateNewBookings from "./CreateNewBookings.js";
 
 const Bookings = () => {
   // task -14
@@ -37,10 +38,11 @@ const Bookings = () => {
 
   return (
     <div className="App-content">
-      <div className="table-container">
+      <div>
         <Search search={search} />
         <SearchResults results={bookings} showProfile={showProfile} />
         <CustomerProfile {...customerProfile} />
+        <CreateNewBookings setBookings={setBookings} />
       </div>
     </div>
   );
