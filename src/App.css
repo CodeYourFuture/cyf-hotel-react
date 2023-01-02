@@ -9,13 +9,49 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Card info */
+.cards-container {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  border: 3px solid black;
+}
+.card-header {
+  margin-top: 1em;
+  padding-top: 1em;
+  background-color: #eb856c;
+  border-bottom: 3px solid #ec4a22;
+  border-top: 3px solid #ec4a22;
+  text-align: center;
+}
+
+.card-img-top {
+  border: 1px solid black;
+  height: 10em;
+}
+
+.card-text {
+  margin-top: 1em;
+  height: 15em;
+}
+
+.more-btn {
+  background-color: #ec4a22;
 }
 
 .App-title {
@@ -25,6 +61,85 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+/* table */
+
+.table-container {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.table-head {
+  background-color: #eb856c;
+}
+
+.table-set th,
+.table-set td {
+  text-align: center;
+}
+
+.table-set {
+  margin: 3em auto;
+  width: 100%;
+  border: 2px solid black;
+}
+
+th {
+  font-size: 1rem;
+  text-align: center;
+}
+
+td {
+  padding: 1em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.show-profile {
+  border-radius: 5px;
+  margin: 1.5em;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  border: 1px solid #353131;
+  background-color: #ec4a22;
+}
+.highlight {
+  color: white;
+  background-color: #ec4a22;
+}
+
+.order-sec {
+  width: 60%;
+  margin: auto;
+  padding: 2em;
+  border: 2px solid black;
+}
+
+.order-list {
+  width: 17em;
+  margin: 1em;
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.order-btn {
+  background-color: #ec4a22;
+}
+.search-btn:hover {
+  background-color: #ec4a22;
+}
+.id-sec {
+  margin: 1em;
+}
+/* footer */
+
+.footer-list {
+  border-top: 2px solid black;
+  padding-top: 1em;
+  list-style: none;
 }
 
 @keyframes App-logo-spin {
