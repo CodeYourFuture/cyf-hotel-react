@@ -1,11 +1,7 @@
 import React from "react";
 
 const Footer = () => {
-  return (
-    <footer>
-      <a href="#">Christian Mfuke</a>
-    </footer>
-  );
+  return <footer>Christian Mfuke</footer>;
 };
 
 export default Footer;

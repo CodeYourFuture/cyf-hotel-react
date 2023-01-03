@@ -1,32 +1,18 @@
 import React from "react";
-
-import Bookings from "./components/Bookings";
-import "./App.css";
+import Table from "./components/Table";
 import Heading from "./components/Heading";
-import TouristInfoCards from "./components/TouristInfoCards";
-import touristInfo from "./components/touristInfo";
 import Footer from "./components/Footer";
-import SearchResults from "./components/SearchResults";
-import Restaurant from "./components/Restaurant";
-
-//Created Tourist Card
-const CreateTouristCard = city => {
-  return <TouristInfoCards Key={city.id} image={city.image} link={city.url} />;
-};
+import SearchContainer from "./components/SearchContainer";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="container">
       <Heading />
-      <Bookings />
-      <Restaurant />
-      <SearchResults />
-      {touristInfo.map(CreateTouristCard)}
+      <SearchContainer />
+      <Table />
       <Footer />
     </div>
   );
 };
 
 export default App;
-
-console.log();
