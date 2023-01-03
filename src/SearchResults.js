@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
-  const [isActive, setIsActive] = useState(false);
-  const handleClick = () => {
-    setIsActive(current => !current);
-  };
+  const [rowHighlight, setrowHighlight] = useState(false);
+  const [rowStyle, setrowStyle] = useState("bg-success");
+  const highlight = () => setrowHighlight(!rowHighlight);
   return (
     <div className="table-responsive-lg">
       <table className="table table-dark">
         <thead>
           <tr>
+            <th scope="col">Id</th>
             <th scope="col">Email</th>
             <th scope="col">Title</th>
             <th scope="col">Forename</th>
@@ -25,10 +25,11 @@ const SearchResults = ({ results }) => {
           {results.map((booking, index) => {
             return (
               <tr
-                key={index}
-                onClick={handleClick}
-                style={{ color: isActive ? "red" : "" }}
+                key={booking.id}
+                onClick={highlight}
+                className={rowHighlight ? rowStyle : "bg-row"}
               >
+                <td>{booking.id}</td>
                 <td>{booking.email}</td>
                 <td>{booking.title}</td>
                 <td>{booking.firstName}</td>
