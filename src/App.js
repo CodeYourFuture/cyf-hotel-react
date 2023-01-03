@@ -1,11 +1,11 @@
-import { Heading } from "./heading";
 import React from "react";
-
+import Heading from "./components/Heading";
+import TouristInfoCards from "./components/TouristInfoCards";
 import Bookings from "./Bookings";
 import "./App.css";
 
-import TouristInfoCards from "./TouristInfoCards";
-import Footer from "./Footer";
+import Footer from "./components/Footer";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Footer
-        contacts={[
+        info={[
           "123 Fake Street, London, E1 4UD",
           "hello@fakehotel.com",
           "0123 456789"
