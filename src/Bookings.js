@@ -39,9 +39,12 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div>
-        <Search search={search} />
+        <Search search={search} {...setBookings} />
         <SearchResults results={bookings} showProfile={showProfile} />
-        <CustomerProfile {...customerProfile} />
+        <CustomerProfile
+          {...customerProfile}
+          closeCustomerProfile={setCustomerProfile}
+        />
         <CreateNewBookings setBookings={setBookings} />
       </div>
     </div>

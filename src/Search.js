@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
-const Search = ({ search }) => {
+const Search = ({ search, setBookings }) => {
   const [searchInput, setSearchInput] = useState("");
   function handleSearchInput(e) {
     setSearchInput(e.target.value);
   }
+  console.log(searchInput);
+
   function onSubmit(e) {
     e.preventDefault();
     if (searchInput) {
