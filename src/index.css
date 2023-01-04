@@ -57,15 +57,12 @@ table {
   width: 100%;
 }
 
-td,
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+.table-row tr:first-child {
+  border-top: none;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+tr {
+  border-top: 1px solid black;
 }
 
 footer {
