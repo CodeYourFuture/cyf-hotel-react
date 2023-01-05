@@ -1,24 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const handleBooking = () => {
-    setBookings();
-  };
+  const [bookings, setBookings] = useState([]);
+  const [filteredBookings, setFilteredBookings] = useState(bookings);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    setBookings(
+      filteredBookings.filter(
+        ({ firstName, surname }) =>
+          firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+          surname.toLowerCase().includes(searchVal.toLowerCase())
+      )
+    );
   };
 
-  const [bookings, setBookings] = useState(FakeBookings);
+  useEffect(() => {
+    setLoading(true);
+    setError("");
+    fetch("https://cyf-react.glitch.me")
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) setError(data.error);
+        setLoading(false);
+        setBookings(data);
+        setFilteredBookings(data);
+      });
+  }, []);
+
+  if (error) return <h4 className="alert alert-warning">{error}</h4>;
 
   return (
     <div className="App-content">
-      <div className="container">
-        <Search search={search} onClick={handleBooking} />
-        <SearchResults results={bookings} />
+      <div>
+        {loading && (
+          <h4 className="alert alert-warning">Loading please wait...</h4>
+        )}
+        {!loading && (
+          <>
+            <Search search={search} />
+            <SearchResults results={bookings} />
+          </>
+        )}
       </div>
     </div>
   );

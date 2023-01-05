@@ -4,11 +4,11 @@ const Heading = () => {
   return (
     <header className="App-header">
       <img
-        src="https://www.freepnglogos.com/uploads/hotel-logo-png/hotel-sign-icon-png-24.png"
-        alt="CYF Hotel"
+        src="https:////yourdigilab.com/images/shares/upload/Hotel-logo/6349114aa0ef3.png"
         className="App-logo"
+        alt="CYF Hotel"
       />
-      CYF Hotel
+      CYF
     </header>
   );
 };
