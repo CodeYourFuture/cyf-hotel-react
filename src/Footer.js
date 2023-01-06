@@ -1,12 +1,11 @@
 import React from "react";
 
-const Footer = ({ address }) => {
-  console.log(address);
+const Footer = props => {
   return (
-    <div className="nav flex-column align-items-center bg-secondary text-white p-3">
+    <div className="nav flex-column align-items-center bg-dark text-white p-4">
       <h4>Contact Details</h4>
       <ul className="nav flex-column">
-        {adress.map((item, index) => {
+        {props.adress.map((item, index) => {
           return (
             <li className="nav-item" key={index}>
               {item}
