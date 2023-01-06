@@ -3,6 +3,7 @@
 .App {
   text-align: left;
   font-family: "Hind", sans-serif;
+  background-color: rgb(247, 202, 212);
 }
 
 .App-logo {
@@ -33,32 +34,60 @@
 .card {
   margin-top: 4rem;
   margin-bottom: 4rem;
+  font-size: 1.1rem;
   width: 18rem;
   text-align: center;
   padding: 15px;
-  background-color: rgb(235, 236, 237);
+  background-color: rgb(240, 143, 188);
 }
 
 .wrapper {
   display: flex;
   justify-content: space-around;
 }
+
 .pink {
-  background-color: rgb(201, 193, 197);
+  background-color: rgb(205, 118, 172);
 }
 
 .App-order {
   margin-top: 4rem;
-  margin-left: 5rem;
+  margin-left: 15rem;
+  margin-right: 15rem;
   font-size: 1.4em;
   text-align: left;
+  border: 2px solid rgb(180, 53, 108);
+  border-radius: 5px;
+  padding: 40px;
+  background-color: rgb(247, 183, 203);
 }
+
+.newP {
+  margin-top: 1rem;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  font-size: 1.3em;
+  text-align: left;
+  border: 2px solid rgb(180, 53, 108);
+  border-radius: 5px;
+  padding: 30px;
+  background-color: rgb(247, 183, 203);
+}
+
 .App-order li {
   margin-top: 2rem;
 }
 
 .App-order button {
-  margin-left: 2rem;
+  margin-left: 6rem;
+}
+.fetchMessages {
+  margin: 100px;
+  color: rgb(59, 59, 219);
+}
+.form-group {
+  margin: -10px 300px 70px 300px;
+  font-size: 1.2rem;
 }
 
 @k @keyframes App-logo-spin {
