@@ -1,17 +1,7 @@
-import React, { useState } from "react";
-import moment from "moment";
+import React from "react";
+import SearchTableRow from "./SearchTableRow";
 
 const SearchResults = props => {
-  const [select, setSelect] = useState("bg-info");
-  function handleClick(e) {
-    if (!e.target.parentElement.className) {
-      setSelect("bg-info");
-      e.target.parentElement.className = select;
-    } else {
-      e.target.parentElement.className = "";
-    }
-  }
-
   return (
     <table className="table">
       <thead>
@@ -28,20 +18,8 @@ const SearchResults = props => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map((p, index) => {
-          return (
-            <tr onClick={handleClick} key={index}>
-              <td>{p.id}</td>
-              <td>{p.title}</td>
-              <td>{p.firstName}</td>
-              <td>{p.surname}</td>
-              <td>{p.email}</td>
-              <td>{p.roomId}</td>
-              <td>{p.checkInDate}</td>
-              <td>{p.checkOutDate}</td>
-              <td>{moment(p.checkOutDate).diff(p.checkInDate, "days")}</td>
-            </tr>
-          );
+        {props.results.map((booking, index) => {
+          return <SearchTableRow booking={booking} key={index} />;
         })}
       </tbody>
     </table>

@@ -5,7 +5,7 @@ const Footer = props => {
     <div className="nav flex-column align-items-center bg-dark text-white p-4">
       <h4>Contact Details</h4>
       <ul className="nav flex-column">
-        {props.adress.map((item, index) => {
+        {props.address.map((item, index) => {
           return (
             <li className="nav-item" key={index}>
               {item}

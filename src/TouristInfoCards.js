@@ -1,8 +1,8 @@
 import React from "react";
-const TouristicInfoCards = props => {
+const TouristInfoCards = props => {
   return props.cardArr.map((card, index) => {
     return (
-      <div key={index} className="card">
+      <div key={index} className="card m-5" style={{ width: 18 + "rem" }}>
         <img src={card.img} alt="City views " className="card-img-top" />
         <div className="card-body">
           <p>{card.text}</p>
@@ -20,4 +20,4 @@ const TouristicInfoCards = props => {
   });
 };
 
-export default TouristicInfoCards;
+export default TouristInfoCards;

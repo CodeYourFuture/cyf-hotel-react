@@ -1,19 +1,18 @@
 import React from "react";
-
 import Bookings from "./Bookings";
 import Heading from "./Heading";
 import Restaurant from "./Restaurant";
 import "./App.css";
 import Footer from "./Footer";
-import TourisrticInfoCardsContainer from "./TourisrticInfoCardsContainer";
+import TouristInfoCardsContainer from "./TouristInfoCardsContainer";
 
 const App = () => {
   return (
     <div className="App">
       <Heading />
-      <TourisrticInfoCardsContainer />
+      <TouristInfoCardsContainer />
       <Bookings />
-      <Restaurants />
+      <Restaurant />
       <Footer
         address={[
           "123 Fake Street, London, E1 4UD",

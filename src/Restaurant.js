@@ -1,7 +1,6 @@
 import React from "react";
 import Orders from "./Order";
 const Restaurant = () => {
-  const pizzas = 0;
   return (
     <div className="nav flex-column align-items-center p-4 bg-light">
       <h3>Restaurant Orders</h3>
