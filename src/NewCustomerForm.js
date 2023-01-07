@@ -3,7 +3,6 @@ import React, { useState } from "react";
 function NewCustomerForm({ handleAddNewBooking }) {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
-  console.log(name);
 
   function handleSubmit(event) {
     event.preventDefault();
