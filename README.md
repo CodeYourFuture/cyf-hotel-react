@@ -37,7 +37,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 <div className="card">
 	<img src="..." className="card-img-top" />
 	<div className="card-body">
-		<a href="#" className="btn btn-primary">Go somewhere</a>
+		<a href="#" className="btn btrn-primary">Go somewhere</a>
 	</div>
 </div>
 ```
@@ -72,7 +72,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** Add another column to your `<SearchResults />` table which shows the number of nights a guest is staying.
 
-**Hint:** Try installing the [moment.js library](http://momentjs.com/) (you'll need to install it with `npm install moment --save`) and using the [`.diff()` method](http://momentjs.com/docs/#/displaying/difference/) to compare dates.
+**Hint:** Try installing the [moment.js library](http://momentjs.com/) (you'll need to install it with `) and using the [`.diff()` method](http://momentjs.com/docs/#/displaying/difference/) to compare dates.
 
 **Test:** Each booking in your table should show the number of nights in a separate column. For example, Mr John Doe has a booking for **2** nights.
 

@@ -50,8 +50,20 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style: none;
 }
 
 .card {
   width: 18rem;
+  margin-left: 20px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.cont-tourist-cards {
+  display: flex;
+  justify-content: center;
 }
