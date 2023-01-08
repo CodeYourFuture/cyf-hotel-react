@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 const SearchResults = props => {
+  const [colour, setColour] = useState(false);
+  const clickHandle = () => {
+    setColour(oldColour => !oldColour);
+  };
   return (
     <table class="table">
       <thead>
@@ -22,7 +26,13 @@ const SearchResults = props => {
           const checkOutDate = moment(profile.checkOutDate);
           console.log(checkingDate, checkOutDate);
           return (
-            <tr key={index}>
+            <tr
+              key={index}
+              onClick={clickHandle}
+              style={{
+                background: colour ? "skyblue" : "none"
+              }}
+            >
               <th scope="row">{profile.id}</th>
               <td>{profile.title}</td>
               <td>{profile.firstName}</td>
