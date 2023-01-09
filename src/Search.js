@@ -9,8 +9,8 @@ const Search = props => {
   }
 
   function handleSubmit(event) {
-    event.preventDefault();
     props.search(searchInput);
+    event.preventDefault();
   }
   return (
     <div className="search p-3 ">

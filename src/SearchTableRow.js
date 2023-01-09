@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const SearchTableRow = ({ booking }) => {
+const SearchTableRow = ({ booking, selectId }) => {
   const [isSelected, setIsSelected] = useState(false);
-
+  const handleProfile = id => {
+    selectId(id);
+  };
   const handleClick = () => {
     setIsSelected(!isSelected);
   };
@@ -19,6 +21,14 @@ const SearchTableRow = ({ booking }) => {
       <td id="checkOut">{booking.checkOutDate}</td>
       <td id="nights">
         {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
+      </td>
+      <td id="profile">
+        <button
+          onClick={() => handleProfile(booking.id)}
+          className="btn btn-dark btn-sm"
+        >
+          Show Profile
+        </button>
       </td>
     </tr>
   );
