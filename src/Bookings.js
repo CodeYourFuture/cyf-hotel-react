@@ -35,16 +35,35 @@ const Bookings = () => {
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
-      .then(response => response.json())
-      .then(data => setBookings(data));
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("An error occurred...");
+        }
+      })
+      .catch(error => setError(true))
+      .then(data => {
+        setBookings(data);
+        setLoading(false);
+      });
   }, []);
+
+  let bookingsSection;
+  if (loading) {
+    bookingsSection = <span id="bookingLoading">Bookings loading...</span>;
+  } else if (error) {
+    bookingsSection = <span id="bookingError">An error has occurred...</span>;
+  } else {
+    bookingsSection = <SearchResults bookings={bookings} />;
+  }
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
         <NewCustomerForm handleAddNewBooking={handleAddNewBooking} />
-        <SearchResults bookings={bookings} />
+        {bookingsSection}
       </div>
     </div>
   );
