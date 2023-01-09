@@ -18,7 +18,7 @@ const App = () => {
   const [bookings, setBookings] = useState([]);
   const [filteredBookings, setFilteredBookings] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [message, setMessage] = useState("Please wait the page is isLoaded");
+  const [message, setMessage] = useState("Please wait the page is loading");
   const [newBooking, setNewBooking] = useState({
     id: 0,
     firstName: "",
@@ -46,7 +46,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://saadiaelf-hotel-server.glitch.me/bookings")
       .then(res => {
         if (res.ok) {
           return res.json();
