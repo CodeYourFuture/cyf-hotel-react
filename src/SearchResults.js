@@ -25,7 +25,7 @@ const SearchResults = ({ results }) => {
           {results.map((booking, index) => {
             return (
               <tr
-                key={booking.id}
+                key={index}
                 onClick={highlight}
                 className={rowHighlight ? rowStyle : "bg-row"}
               >

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "moment": "^2.29.4",
+    "nodemon": "^2.0.20",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^5.0.1"
