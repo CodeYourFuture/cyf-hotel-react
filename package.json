@@ -15,7 +15,7 @@
     "build": "npm i && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "host": "node ./server/server.js",
+    "host": "node ./server/server.js && npm start",
     "dev": "nodemon ./server/server.js"
   },
   "proxy": "http://localhost:3001",
