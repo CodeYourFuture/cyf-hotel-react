@@ -136,8 +136,12 @@
   align-items: center;
   padding: 1rem;
   margin: 1rem;
-  width: 20%;
+  width: 40%;
   /* border: 2px solid red; */
+}
+.order-btn {
+  display: flex;
+  flex-direction: row;
 }
 
 .newCustomerSection,

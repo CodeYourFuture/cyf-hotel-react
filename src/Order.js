@@ -7,15 +7,22 @@ function Order(prop) {
   const [Orders, setOrders] = useState(0);
 
   // task-10
-  function orderOne() {
+  function add() {
     setOrders(count => count + 1);
   }
 
+  function deduct() {
+    setOrders(count => count - 1);
+  }
   return (
     <li className="order-card">
       {prop.orderType}: {Orders}
       {/* task - 11 */}
-      <RestaurantButton handleClick={orderOne} add="Add" />
+      <li>
+        <RestaurantButton handleClick={add} add="+" />
+
+        <RestaurantButton handleClick={deduct} add="-" />
+      </li>
     </li>
   );
 }
