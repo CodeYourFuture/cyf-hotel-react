@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 
 const Search = props => {
-  let [searchInput, setSearchInput] = useState("");
+  let [searchIDInput, setSearchIDInput] = useState("");
+  const [searchNameInput, setSearchNameInput] = useState("");
   const handleSearchInput = e => {
-    setSearchInput(e.target.value);
+    const searchValue = e.target.value;
+    if (e.target.id === "customerId") {
+      setSearchIDInput(searchValue);
+    } else setSearchNameInput(searchValue);
+    props.search(searchValue);
   };
   return (
     <div className="search">
@@ -16,7 +21,7 @@ const Search = props => {
             className="form-group search-box"
             onSubmit={e => {
               e.preventDefault();
-              props.search(searchInput);
+              //props.search(searchInput);
             }}
           >
             <label htmlFor="customerName">Customer id</label>
@@ -26,10 +31,12 @@ const Search = props => {
                 id="customerId"
                 className="form-control"
                 placeholder="Customer id"
-                value={searchInput}
+                value={searchIDInput}
                 onChange={handleSearchInput}
               />
-              <button className="btn btn-primary">Search IDs</button>
+              <button className="btn btn-primary" onClick={handleSearchInput}>
+                Search IDs
+              </button>
             </div>
           </form>
         </div>
@@ -38,7 +45,7 @@ const Search = props => {
             className="form-group search-box"
             onSubmit={e => {
               e.preventDefault();
-              props.search(searchInput);
+              //props.search(searchInput);
             }}
           >
             <label htmlFor="customerName">Customer name</label>
@@ -48,10 +55,12 @@ const Search = props => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
-                value={searchInput}
+                value={searchNameInput}
                 onChange={handleSearchInput}
               />
-              <button className="btn btn-primary">Search Names</button>
+              <button className="btn btn-primary" onClick={handleSearchInput}>
+                Search Names
+              </button>
             </div>
           </form>
         </div>

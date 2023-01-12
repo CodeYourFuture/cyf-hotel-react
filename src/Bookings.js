@@ -6,13 +6,14 @@ import DotLoader from "react-spinners/DotLoader";
 
 const Bookings = () => {
   const [customerList, setBookings] = useState([]);
+  const [customerBooking, setCustomerBooking] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [sortElement, setSortElement] = useState("Email");
   const [sort, setSort] = useState(false);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/delayed`)
+    fetch(`api/delayed`)
       .then(res => {
         if (!res.ok) throw Error("An error occurred, couldn't fetch the data.");
         return res.json();
@@ -29,17 +30,23 @@ const Bookings = () => {
             a[sortElement] < b[sortElement] ? 1 : -1
           );
         setBookings(sort);
+        setCustomerBooking(sort);
       })
       .catch(err => setError(err.message));
   }, [sortElement, sort]);
+
   const search = searchVal => {
+    setBookings(customerBooking);
     let filteredList = customerList.filter(x => {
-      return parseInt(searchVal)
-        ? x.id === parseInt(searchVal)
-        : x.firstName.toLowerCase() === searchVal.toLowerCase() ||
-            x.surname.toLowerCase() === searchVal.toLowerCase();
+      if (parseInt(searchVal)) return x.id === parseInt(searchVal);
+      else
+        return (
+          x.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+          x.surname.toLowerCase().includes(searchVal.toLowerCase())
+        );
     });
-    setBookings(filteredList);
+    if (searchVal) setBookings(filteredList);
+    else setBookings(customerBooking);
   };
 
   const handleSortData = e => {
@@ -52,7 +59,6 @@ const Bookings = () => {
     else if (keyName === "Title" || keyName === "Email")
       keyName = keyName.toLowerCase();
     setSort(!sort);
-    console.log(!sort);
     setSortElement(keyName);
   };
 

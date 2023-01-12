@@ -3,6 +3,7 @@ import Footer from "./footer";
 import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
 import "./App.css";
+import GuestsBooking from "./GuestsBooking";
 import Restaurant from "./Restaurant";
 
 const contactDetails = [
@@ -32,6 +33,8 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <hr />
+      <GuestsBooking />
       <hr />
       <Restaurant />
       <Footer contact={contactDetails} />

@@ -57,6 +57,7 @@ const CustomerTable = ({ customerObject, error, handleSort }) => {
               <th onClick={handleSort}>Check In</th>
               <th onClick={handleSort}>Check Out</th>
               <th>Duration of Stay</th>
+              <th>Guests Profile</th>
             </tr>
           </thead>
           <tbody>
