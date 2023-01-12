@@ -4,7 +4,7 @@ const GuestsBooking = () => {
   return (
     <div>
       <form method="POST" action="/guest">
-        <input type="text" />
+        <input type="text" name="userName" />
         <input type="submit" class="btn btn-primary" />
       </form>
     </div>
