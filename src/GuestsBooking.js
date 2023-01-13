@@ -18,10 +18,13 @@ const GuestsBooking = () => {
       <h1 className="lead">Guests Booking Form</h1>
       <form method="POST" action="/guest/registration">
         <select className="form-control" name="title">
-          <option>Mr.</option>
-          <option>Ms.</option>
-          <option>Mrs.</option>
-          <option>Dr.</option>
+          <option>Mr</option>
+          <option>Ms</option>
+          <option>Mrs</option>
+          <option>Doctor</option>
+          <option>Prince</option>
+          <option>Dame</option>
+          <option>Madam</option>
         </select>
         {/*action="/guest/registration">*/}
         <input

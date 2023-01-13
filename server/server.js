@@ -19,6 +19,25 @@ app.get("/api/delayed", async (req, res) => {
   res.json(bookings);
 });
 
+app.get("/bookings/search", (req, res) => {
+  const date = req.query.date;
+  const filteredData = bookings.filter(
+    e => e.checkInDate == date || e.checkOutDate == date
+  );
+  res.json(filteredData);
+});
+
+app.get("/bookings/search", (req, res) => {
+  const term = req.query.term.toLowerCase();
+  const filteredData = bookings.filter(
+    e =>
+      e.firstName.toLowerCase().includes(term) ||
+      e.surname.toLowerCase().includes(term) ||
+      e.email.toLowerCase().includes(term)
+  );
+  res.json(filteredData);
+});
+
 app.get("/bookings", (req, res) => {
   res.json(bookings);
 });
@@ -38,6 +57,8 @@ app.get("/bookings/:id", (req, res) => {
   if (searchByID.length > 0) res.status(200).json(searchByID);
   else res.status(404).send({ message: "Not Found" });
 });
+
+app.delete("/bookings/:id", (req, res) => {});
 
 app.post("/guest/registration", async (req, res) => {
   await sleep(1000);
