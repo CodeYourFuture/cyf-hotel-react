@@ -68,5 +68,15 @@
     "roomId": "89",
     "checkInDate": "2023-01-13",
     "checkOutDate": "2023-05-26"
+  },
+  {
+    "id": 8,
+    "title": "Ms.",
+    "firstName": "Ahamd",
+    "surname": "Shahid",
+    "email": "shahid.farooqi@gmail.com",
+    "roomId": "606",
+    "checkInDate": "2023-01-14",
+    "checkOutDate": "2023-01-21"
   }
 ]

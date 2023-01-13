@@ -28,6 +28,16 @@
   font-size: large;
 }
 
+.form-control {
+  margin: 20px 0;
+}
+
+.border {
+  width: 50%;
+  margin: 50px auto;
+  padding: 50px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -138,10 +148,12 @@ ul li {
 .orders:hover {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
+
 #customerInfo li {
   display: block;
   margin: 0;
 }
+
 td {
   text-align: center;
 }
