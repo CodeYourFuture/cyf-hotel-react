@@ -4,6 +4,7 @@ const path = require("path");
 const port = process.env.PORT || 3001;
 
 const fs = require("fs");
+const { resourceUsage } = require("process");
 
 let bookings = JSON.parse(
   fs.readFileSync(__dirname + "/booking.json", "utf-8")
@@ -47,6 +48,15 @@ app.post("/validation", (req, res) => {
   //const date = new Date().toLocaleDateString();
   console.log(req.body);
 });
+app.delete("/bookings/:id", (req, res) => {
+  if (!parseInt(req.params.id)) {
+    res.status(400).json({ message: "Bad Request" });
+    return;
+  }
+  bookings = bookings.filter(e => e.id != req.params.id);
+  save();
+  res.status(200).json({ message: "Booking Deleted Successfully" });
+});
 
 app.get("/bookings/:id", (req, res) => {
   if (!parseInt(req.params.id)) {
@@ -57,8 +67,6 @@ app.get("/bookings/:id", (req, res) => {
   if (searchByID.length > 0) res.status(200).json(searchByID);
   else res.status(404).send({ message: "Not Found" });
 });
-
-app.delete("/bookings/:id", (req, res) => {});
 
 app.post("/guest/registration", async (req, res) => {
   await sleep(1000);

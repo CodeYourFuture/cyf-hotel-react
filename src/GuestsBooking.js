@@ -25,6 +25,9 @@ const GuestsBooking = () => {
           <option>Prince</option>
           <option>Dame</option>
           <option>Madam</option>
+          <option>Queen</option>
+          <option>King</option>
+          <option>Princess</option>
         </select>
         {/*action="/guest/registration">*/}
         <input
