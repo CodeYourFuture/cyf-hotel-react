@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -50,8 +50,40 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style: none;
 }
 
 .card {
   width: 18rem;
+}
+.logo {
+  height: 50px;
+  float: right;
+  margin-bottom: 2px;
+  display: flex;
+}
+
+.card img {
+  display: flex;
+  height: 20rem;
+  width: 20rem;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+}
+.card .card-body {
+  border: 3px light rgb(231, 151, 151);
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 390px) {
+  .card img {
+    height: 5rem;
+    width: 5rem;
+  }
+  .card-title {
+    font-size: small;
+  }
 }
