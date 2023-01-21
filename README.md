@@ -222,6 +222,8 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** An invalid input displays an error message after the 'Submit' button is pressed (e.g. an email like `react@com` is invalid). A valid input shows the correct values at the bottom of the page.
 
+**Reflection:** Validating user input is an important part of any application - without it, you might see unexpected errors when working with the data later. What do you think would happen if you were asked to remove a booking for room number '81', but the room number was not validated and was input as 'eightyOne' or 'EIGHTY ONE'?
+
 #### 27. Faster validation
 
 **Instructions:** Improve the validation from the last exercise to check for correct values after each input changes, without the 'Submit' button being pressed. Show an 'X' with an explanation next to the field if it has invalid input (e.g. `X first name must not be empty`), and show 'OK' after it has valid input.
@@ -230,10 +232,14 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** The 'Submit' button is initially not clickable, and becomes clickable once every field has the correct input.
 
+**Reflection:** Checking for a valid value after each input changes, instead of once at the end of the page, is a much nicer user experience. If you were a real user of this booking system, would you prefer to fill out all of the fields and find out you made a mistake at the end (like in exercise 26), or would you prefer to be find out you made a mistake after each input?
+
 #### 28. Date picker
 
 **Instructions:** Add the [js-datepicker](https://www.npmjs.com/package/js-datepicker) package to your project using `npm install`, and import it at the top of the file. Add different IDs to your 'check in date' and 'check out date' `<input>` elements, then create two date pickers using `const checkInPicker = datepicker(YOUR_ID)` (where `YOUR_ID` is the ID you assigned to your check in/check out date elements). 
 
 **Hint:** Read the [js-datepicker usage guide](https://www.npmjs.com/package/js-datepicker#basic-usage)
 
-**Test:** The date picker appears when you click on the 'check in date' input element.
+**Test:** The date picker appears when you click on the 'check in date' and 'check out date' input elements.
+
+**Reflection:** Using `js-datepicker` in this exercise is a great way to practice installing and working with packages in JavaScript. While HTML has a [native datepicker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date), using a package will often give you more functions and properties to work with. Packages prevent wasting time 'reinventing the wheel', as someone has already written the code for you! Think about some of the code you have written in this lesson - are there any packages available that might have helped you to complete the exercises? (hint: search 'javascript package' + your idea on Google! e.g. 'javascript package validation')
