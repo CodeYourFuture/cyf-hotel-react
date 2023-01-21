@@ -237,8 +237,8 @@ What do you think would happen if you were asked to remove a booking for room nu
 **Reflection:** You have used native form validations in HTML. How have you improved this feature with React? 
 
 As a user of this booking system, would you prefer:
--  to find out you made a mistake when you submit the whole form?
--  to find out you made a mistake after each input?
+- To find out you made a mistake when you submit the whole form?
+- To find out you made a mistake after each input?
 
 #### 28. Date picker
 
@@ -248,4 +248,14 @@ As a user of this booking system, would you prefer:
 
 **Test:** The date picker appears when you click on the 'check in date' and 'check out date' input elements.
 
-**Reflection:** Using `js-datepicker` in this exercise is a great way to practice installing and working with packages in JavaScript. While HTML has a [native datepicker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date), using a package will often give you more functions and properties to work with. Packages prevent wasting time 'reinventing the wheel', as someone has already written the code for you! Think about some of the code you have written in this lesson - are there any packages available that might have helped you to complete the exercises? (hint: search 'javascript package' + your idea on Google! e.g. 'javascript package validation')
+**Reflection:** Using `js-datepicker` in this exercise allows you to practice installing and working with packages in JavaScript. 
+
+Packages contain new functions and properties to work with that may not be available in native JavaScript/HTML. Using packages can often save time instead of writing your own functions, as you are importing code that someone else has written. However, this can have downsides; not all packages are high quality, and some may have bugs or may reduce accessibility by recreating native elements (`js-datepicker` recreates HTML's native [datepicker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) element).
+
+Think about some of the code you have written in this lesson - are there any packages available that might have helped you to complete the exercises?
+
+For example, exercise 26 and 27 used validation. Searching npmjs.com for '[validate](https://www.npmjs.com/search?q=validate)' shows multiple packages, such as '[validator](https://www.npmjs.com/package/validator)' and '[Validate](https://www.npmjs.com/package/Validate)'. Open both of these packages in your browser, and consider the following questions:
+- Is it clear what this package does? Will it solve my specific problem better than writing my own code?
+- Do I trust that the code in this package is safe to run on my machine? Do other people trust this package? (Hint: look at weekly downloads, last update, dependents, and visit the repository)
+- Is this package accessible? Will it work on all browsers?
+- If I decide to use this package and it breaks, will I know how to fix it or replace it?
