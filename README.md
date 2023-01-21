@@ -222,7 +222,9 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** An invalid input displays an error message after the 'Submit' button is pressed (e.g. an email like `react@com` is invalid). A valid input shows the correct values at the bottom of the page.
 
-**Reflection:** Validating user input is an important part of any application - without it, you might see unexpected errors when working with the data later. What do you think would happen if you were asked to remove a booking for room number '81', but the room number was not validated and was input as 'eightyOne' or 'EIGHTY ONE'?
+**Reflection:** Validating user input is an important part of any application. Without checking the input, you might see unexpected errors when working with the data later. 
+
+What do you think would happen if you were asked to remove a booking for room number '81', but the user had typed 'eightyOne' or 'EIGHTY ONE'?
 
 #### 27. Faster validation
 
@@ -232,7 +234,11 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** The 'Submit' button is initially not clickable, and becomes clickable once every field has the correct input.
 
-**Reflection:** Checking for a valid value after each input changes, instead of once at the end of the page, is a much nicer user experience. If you were a real user of this booking system, would you prefer to fill out all of the fields and find out you made a mistake at the end (like in exercise 26), or would you prefer to be find out you made a mistake after each input?
+**Reflection:** You have used native form validations in HTML. How have you improved this feature with React? 
+
+As a user of this booking system, would you prefer:
+-  to find out you made a mistake when you submit the whole form?
+-  to find out you made a mistake after each input?
 
 #### 28. Date picker
 
