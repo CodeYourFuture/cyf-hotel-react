@@ -21,13 +21,13 @@ class Heading extends React.Component {
   render() {
     return (
       <header className="App-header">
+        {/* <h1>BLAH</h1> */}
         <img
           alt="header"
           src="https://cdn-icons-png.flaticon.com/512/5900/5900195.png"
           width="30"
           height="30"
         ></img>
-        <p>BLAH</p>
       </header>
     );
   }
