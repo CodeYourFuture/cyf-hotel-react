@@ -23,7 +23,7 @@ class Footer extends React.Component {
   render() {
     return (
       <ul className="footer">
-        {this.props.football.map((obj, index) => {
+        {this.props.footerArray.map((obj, index) => {
           return <li key={index}> {obj}</li>;
         })}
       </ul>

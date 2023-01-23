@@ -3,6 +3,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Heading from "./Heading";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 import "./App.css";
 
 const footerArray = [
@@ -17,7 +18,8 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <Footer football={footerArray} />
+      <Restaurant />
+      <Footer footerArray={footerArray} />
     </div>
   );
 };
