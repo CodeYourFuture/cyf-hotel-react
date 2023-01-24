@@ -6,10 +6,17 @@ import FakeBookings from "./data/fakeBookings.json";
 const Bookings = () => {
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    const filteredVal = FakeBookings.filter(booking => {
+      return (
+        booking.firstName.toLowerCase() == searchVal.toLowerCase ||
+        booking.surname.toLowerCase() == searchVal.toLowerCase()
+      );
+    });
+    setBookings(filteredVal);
   };
 
+  // NUMBER 16 >> Fetching stopped glitch from responding!
   // const [bookings, setBookings] = useState([]);
-
   // useEffect(() => {
   //   fetch("https://cyf-react.glitch.me")
   //     .then(res => res.json())
