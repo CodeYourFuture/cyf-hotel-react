@@ -4,8 +4,11 @@ import moment from "moment";
 class SearchResults extends React.Component {
   constructor(props) {
     super(props);
+
+    // this.toggle = { }
   }
   state = {};
+
   render() {
     return (
       <div>
