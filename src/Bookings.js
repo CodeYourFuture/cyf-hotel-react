@@ -8,16 +8,18 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
 
-  const [bookings, setBookings] = useState([]);
+  // const [bookings, setBookings] = useState([]);
 
-  useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then(res => res.json())
-      .then(data => {
-        // console.log(data);
-        setBookings(data);
-      });
-  });
+  // useEffect(() => {
+  //   fetch("https://cyf-react.glitch.me")
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       // console.log(data);
+  //       setBookings(data);
+  //     });
+  // });
+
+  const [bookings, setBookings] = useState(FakeBookings);
 
   return (
     <div className="App-content">
