@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.195e66ab.chunk.css",
+    "main.js": "/static/js/main.1671db43.chunk.js",
+    "main.js.map": "/static/js/main.1671db43.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.42aab16e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.42aab16e.js.map",
+    "static/js/2.0e0b0722.chunk.js": "/static/js/2.0e0b0722.chunk.js",
+    "static/js/2.0e0b0722.chunk.js.map": "/static/js/2.0e0b0722.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ba2cf939c9edd69ef49ba0419699785c.js": "/precache-manifest.ba2cf939c9edd69ef49ba0419699785c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.195e66ab.chunk.css.map": "/static/css/main.195e66ab.chunk.css.map",
+    "static/js/2.0e0b0722.chunk.js.LICENSE.txt": "/static/js/2.0e0b0722.chunk.js.LICENSE.txt",
+    "static/media/CYF_Hotel-logo.png": "/static/media/CYF_Hotel-logo.dfcb1d15.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.42aab16e.js",
+    "static/js/2.0e0b0722.chunk.js",
+    "static/css/main.195e66ab.chunk.css",
+    "static/js/main.1671db43.chunk.js"
+  ]
+}

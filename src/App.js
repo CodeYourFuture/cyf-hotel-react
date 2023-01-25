@@ -1,13 +1,43 @@
 import React from "react";
-
+import Footer from "./footer";
 import Bookings from "./Bookings";
+import TouristInfoCards from "./TouristInfoCards";
 import "./App.css";
+import GuestsBooking from "./GuestsBooking";
+import Restaurant from "./Restaurant";
+
+const contactDetails = [
+  "123 Fake Street, London, E1 4UD",
+  "hello@fakehotel.com",
+  "0123 456789"
+];
+
+const Heading = () => {
+  return (
+    <div>
+      <header className="App-header">
+        <img
+          className="App-logo"
+          src={require("./CYF_Hotel-logo.png")}
+          alt="CYF hotel logo"
+        />
+        CYF Hotel
+      </header>
+    </div>
+  );
+};
 
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">CYF Hotel</header>
+      <Heading />
+      <TouristInfoCards />
       <Bookings />
+      <hr />
+      <GuestsBooking />
+      <hr />
+      <Restaurant />
+      <Footer contact={contactDetails} />
     </div>
   );
 };
