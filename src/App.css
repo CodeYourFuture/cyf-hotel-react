@@ -52,6 +52,19 @@ tr {
   text-align: center;
 }
 
+.header {
+  display: flex;
+}
+
+#header-title {
+  height: 100px;
+  background-color: aqua;
+  text-align: center;
+  font-size: 40px;
+  width: 70%;
+  color: #180303;
+}
+
 .card {
   width: 18rem;
 }

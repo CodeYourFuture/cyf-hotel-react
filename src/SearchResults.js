@@ -20,9 +20,9 @@ const SearchResults = () => {
           </tr>
         </thead>
         <tbody>
-          {bookingList.map(booking => {
+          {bookingList.map((booking, key) => {
             return (
-              <tr>
+              <tr key={key}>
                 <th scope="row">{booking.id}</th>
                 <td>{booking.title}</td>
                 <td>{booking.firstName}</td>
