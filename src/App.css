@@ -1,17 +1,27 @@
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Variables */
+:root {
+  --dark-grey: #6183c25c;
+  --light-grey: #feffff;
+  --dark-red: #d90429;
+  --light-red: #ef233c;
+  --white: #fff;
+  --black: #222;
+  --font: "League Spartan", sans-serif !important;
+}
+
 .App {
-  text-align: left;
+  font-family: var(--font);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
+/* Header */
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: var(--black);
+  height: 60px;
   padding: 20px;
-  color: white;
+  color: var(--white);
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
@@ -22,36 +32,44 @@
   font-size: 1.5em;
 }
 
-.App-content {
-  padding-top: 20px;
-  font-size: large;
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
+/* Tourist info cards */
 .search {
   padding: 5px 0 20px 0;
 }
 
-tr {
-  color: #5b5757;
+.highlight {
+  background-color: var(--dark-grey);
 }
 
-.results {
-  padding-top: 15px;
-}
-
+/* Footer */
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: var(--black);
+  color: var(--white);
 }
 
-.card {
-  width: 18rem;
+.footer__text {
+  list-style-type: none;
+}
+
+@media screen and (min-width: 600px) {
+  .cards-container {
+    margin: 1.5rem 6rem;
+  }
 }
