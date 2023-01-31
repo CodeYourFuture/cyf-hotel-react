@@ -1,11 +1,14 @@
 import React from "react";
+import glasgow from "./images/glasgow-hotel.jpg";
+import manchester from "./images/manchester-hotel.jpg";
+import london from "./images/London-hotel.jpg";
 
 const TouristInfoCards = () => {
   return (
     <div className="all-cards">
       <div className="card">
-        <img src="" className="card-img-top" alt="glasgow-infocard" />
         <div className="card-body">
+          <img src={glasgow} className="card-img-top" alt="glasgow-infocard" />
           <h1>Glasgow</h1>
           <p>
             A heady mix of haunting ruins, awe-inspiring art and vibrant street
@@ -22,12 +25,12 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img
-          src="public/images/manchester-hotel.jpg"
-          className="card-img-top"
-          alt="manchester-infocard"
-        />
         <div className="card-body">
+          <img
+            src={manchester}
+            className="card-img-top"
+            alt="manchester-infocard"
+          />
           <h1>Manchester</h1>
           <p>
             The Midland Hotel in Manchester has been a much-loved part of this
@@ -42,12 +45,8 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img
-          src="public/images/london-hotel.jpg"
-          className="card-img-top"
-          alt="london-infocard"
-        />
         <div className="card-body">
+          <img src={london} className="card-img-top" alt="london-infocard" />
           <h1>London</h1>
           <p>
             Drawing on the legacy of the greats who stayed here in decades past

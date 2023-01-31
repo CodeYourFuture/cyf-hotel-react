@@ -65,9 +65,9 @@ tr {
   color: #180303;
 }
 
-.card {
-  width: 18rem;
-}
+/* .card {
+  width: 100px;
+} */
 
 #hotel-logo {
   width: 100px;
@@ -83,8 +83,9 @@ tr {
   flex: 1;
   justify-content: space-around;
   margin: 20px;
+  width: 100px;
 }
 
 .card-img-top {
-  width: 100px;
+  width: 500px;
 }
