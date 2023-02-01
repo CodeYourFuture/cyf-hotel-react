@@ -2,8 +2,9 @@ import React, { useState } from "react";
 // import React from "react";
 import moment from "moment";
 // import FakeBookings from "./data/fakeBookings.json";
-const SearchResults = () => {
-  let bookingList = require("./data/fakeBookings.json");
+const SearchResults = ({ results }) => {
+  // let bookingList = require("./data/fakeBookings.json");
+  let bookingList = results;
   const [rowISActive, setRowIsActive] = useState(false);
 
   function handleRowClick(id) {
