@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+// import React from "react";
 import moment from "moment";
 // import FakeBookings from "./data/fakeBookings.json";
 const SearchResults = () => {
   let bookingList = require("./data/fakeBookings.json");
+  const [rowISActive, setRowIsActive] = useState(false);
+
+  function handleRowClick(id) {
+    if (rowISActive) {
+      setRowIsActive(false);
+    } else {
+      setRowIsActive(id);
+    }
+    // console.log(`Row ${event.key} is clicked!`)
+    // setRowIsActive()
+  }
   return (
     <div>
       <table className="table">
@@ -22,7 +34,11 @@ const SearchResults = () => {
         <tbody>
           {bookingList.map((booking, key) => {
             return (
-              <tr key={key}>
+              <tr
+                key={key}
+                style={{ color: rowISActive === booking.id ? "red" : "" }}
+                onClick={() => handleRowClick(booking.id)}
+              >
                 <th scope="row">{booking.id}</th>
                 <td>{booking.title}</td>
                 <td>{booking.firstName}</td>
