@@ -58,9 +58,10 @@ tr {
 
 #header-title {
   height: 100px;
-  background-color: aqua;
+  background-color: rgb(177, 10, 163);
   text-align: center;
-  font-size: 40px;
+  font-size: 70px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   width: 70%;
   color: #180303;
 }

@@ -6,7 +6,6 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
-  console.log(`The length of bookings is ${bookings.length}`);
   const search = searchVal => {
     searchVal = searchVal.toLowerCase();
     console.info("TO DO!", searchVal);
