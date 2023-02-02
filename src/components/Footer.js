@@ -1,7 +1,7 @@
 import React from "react";
 
 function Footer() {
-  const HotelContact = [
+  const hotelContact = [
     "123 Fake Street, London, E1 4UD",
     "hello@fakehotel.com",
     "0123 456789"
@@ -10,7 +10,7 @@ function Footer() {
   return (
     <footer>
       <ul>
-        {HotelContact.map((adress, i) => (
+        {hotelContact.map((adress, i) => (
           <li key={i}>{adress}</li>
         ))}
         ;

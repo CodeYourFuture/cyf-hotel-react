@@ -25,7 +25,7 @@ function SearchResults({ results }) {
               <tr
                 key={index}
                 onClick={handleClick}
-                style={{ backgroundColor: select ? "" : "green" }}
+                style={{ backgroundColor: select ? "" : "yellow" }}
               >
                 <th scope="row">{person.id}</th>
                 <td>{person.title}</td>
