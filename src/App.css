@@ -1,15 +1,6 @@
-.App {
-  text-align: left;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: rgb(16, 83, 230);
+  height: 90px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -17,30 +8,12 @@
   font-size: 1em;
   font-weight: bold;
 }
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
 }
 
 tr {
-  color: #5b5757;
+  color: #000000;
 }
 
 .results {
@@ -53,5 +26,51 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 400px;
+  margin: 2em;
+  padding: 1em;
+  height: 50em;
+}
+
+.card-img-top {
+  padding-right: 2em;
+  width: 350px;
+  height: 300px;
+}
+
+.wrap-card {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+img {
+  margin: 1em;
+}
+
+th {
+  background-color: rgb(0, 123, 254);
+}
+
+th p {
+  color: white;
+}
+
+.list {
+  list-style-type: none;
+  text-align: center;
+}
+footer {
+  background-color: rgb(16, 83, 230);
+}
+footer li {
+  color: white;
+}
+h3 {
+  text-align: center;
+}
+ul {
+  text-align: center;
+  list-style-type: none;
 }
