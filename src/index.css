@@ -24,3 +24,42 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.header img {
+  max-width: 70px;
+  max-height: 70px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
+.wrapper-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer {
+  background-color: black;
+  justify-content: center;
+}
+
+.footer li {
+  list-style: none;
+  color: white;
+}
