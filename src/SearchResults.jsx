@@ -4,8 +4,6 @@ import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
   const [id, setId] = useState(1);
-  // const [vip, setVip] = useState("");
-  // const [email, setEmail] = useState("");
   const [datas, setDatas] = useState("");
 
   useEffect(() => {
