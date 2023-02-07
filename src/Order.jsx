@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
 const Order = ({ orderType }) => {

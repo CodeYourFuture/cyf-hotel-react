@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CustomerProfile from "./CustomerProfile.jsx";
 import Search from "./Search.jsx";
 import SearchResults from "./SearchResults.jsx";
 // import FakeBookings from "./data/fakeBookings.json";
@@ -10,12 +11,11 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
-    const filteredVal = bookings.filter(booking => {
-      return (
+    const filteredVal = bookings.filter(
+      booking =>
         booking.firstName.toLowerCase() === searchVal.toLowerCase ||
         booking.surname.toLowerCase() === searchVal.toLowerCase()
-      );
-    });
+    );
     setBookings(filteredVal);
   };
 

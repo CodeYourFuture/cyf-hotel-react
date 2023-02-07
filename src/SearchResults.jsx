@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
@@ -6,18 +6,15 @@ class SearchResults extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.toggle = { }
-
-    this.getId = this.getId.bind(this);
+    this.state = {
+      id: ""
+    };
   }
-  state = {};
-
-  getId(e) {}
 
   render() {
     return (
       <div>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">ID</th>
@@ -33,9 +30,9 @@ class SearchResults extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.results.map(result => {
+            {this.props.results.map((result, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <th>{result.id}</th>
                   <td>{result.title}</td>
                   <td>{result.firstName}</td>
@@ -52,7 +49,10 @@ class SearchResults extends React.Component {
                     )}
                   </td>
                   <td>
-                    <button className={"btn btn-primary"} onClick={this.getId}>
+                    <button
+                      className={"btn btn-primary"}
+                      onClick={() => this.setState({ id: result.id })}
+                    >
                       Show Profile
                     </button>
                   </td>
@@ -61,7 +61,7 @@ class SearchResults extends React.Component {
             })}
           </tbody>
         </table>
-        {/* <CustomerProfile id={ } /> */}
+        <CustomerProfile id={this.state.id} />
       </div>
     );
   }
