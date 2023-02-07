@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import CustomerProfile from "./CustomerProfile.jsx";
 import Search from "./Search.jsx";
 import SearchResults from "./SearchResults.jsx";
 // import FakeBookings from "./data/fakeBookings.json";

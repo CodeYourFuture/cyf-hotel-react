@@ -11,6 +11,15 @@ class SearchResults extends React.Component {
     };
   }
 
+  //   useEffect(() => {
+  //     fetch(`https://cyf-react.glitch.me/customers/${this.state.id}`)
+  //      .then(res => res.json())
+  //       .then(data => {
+  //         // console.log(data);
+  //         setId(data);
+  //       });
+  // }, []);
+
   render() {
     return (
       <div>
