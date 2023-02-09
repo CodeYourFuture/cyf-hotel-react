@@ -6,13 +6,11 @@ const Search = ({ search }) => {
 
   const handleSearchInput = event => {
     setSearchInput(event.target.value);
-    console.log(event.target.value);
   };
 
   const submitHandler = event => {
     event.preventDefault();
     search(searchInput);
-    console.log(searchInput + " submitted");
   };
 
   return (
