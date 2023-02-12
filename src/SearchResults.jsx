@@ -7,13 +7,18 @@ const SearchResults = props => {
   const [datas, setDatas] = useState("");
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${id}`)
-      .then(res => res.json())
-      .then(data => {
-        // LEAVE LOG IN, FOR FETCH RESULTS
-        // console.log(data);
-        setDatas(data);
-      });
+    try {
+      fetch(`https://cyf-react.glitch.me/customers/${id}`)
+        .then(res => res.json())
+        .then(data => {
+          // LEAVE LOG IN, FOR FETCH RESULTS
+          // console.log(data);
+          setDatas(data);
+        });
+    } catch (e) {
+      console.log(e);
+      throw e;
+    }
   }, [id]);
 
   return (

@@ -19,13 +19,18 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
-      .then(res => res.json())
-      .then(data => {
-        setLoading(true);
-        setError(true);
-        setBookings(data);
-      });
+    try {
+      fetch("https://cyf-react.glitch.me/delayed")
+        .then(res => res.json())
+        .then(data => {
+          setLoading(true);
+          setError(true);
+          setBookings(data);
+        });
+    } catch (e) {
+      console.log(e);
+      throw e;
+    }
   }, []);
 
   if (bookings.error) {
