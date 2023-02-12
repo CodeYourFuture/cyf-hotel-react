@@ -4,7 +4,7 @@ import Bookings from "./Bookings";
 import Heading from "./Heading";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant";
-import "./App.css";
+import "./css/App.css";
 
 const footerArray = [
   "123 Fake Street, London, E1 4UD",
