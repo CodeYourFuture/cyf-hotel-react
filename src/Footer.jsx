@@ -1,9 +1,9 @@
 import React from "react";
 
-const Footer = ({ footerArray }) => {
+const Footer = props => {
   return (
     <ul className="footer">
-      {footerArray.map((obj, index) => {
+      {props.footerArray.map((obj, index) => {
         return <li key={index}> {obj}</li>;
       })}
     </ul>
