@@ -9,7 +9,6 @@ const Bookings = () => {
   const [error, setError] = useState(false);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
     setBookings(
       bookings.filter(
         element =>

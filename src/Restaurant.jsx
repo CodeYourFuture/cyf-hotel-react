@@ -1,10 +1,7 @@
 import React from "react";
-// import RestaurantButton from "./RestaurantButton";
 import Order from "./Order";
 
 const Restaurant = () => {
-  // const orders = 0;
-
   return (
     <div>
       <h3>Restaurant Orders</h3>
