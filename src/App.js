@@ -4,6 +4,7 @@ import Heading from "./Heading.js";
 import TouristInfoCard from "./TouristInfoCards.js";
 import Footer from "./Footer.js";
 import Restaurant from "./Restaurant.js";
+
 // import SearchResults from "./SearchResults.js";
 
 import Bookings from "./Bookings.js";
@@ -23,6 +24,7 @@ const App = () => {
       <Bookings />
       {/* <SearchResults /> */}
       <Restaurant />
+
       <SearchButton />
       <Footer FakeDetails={FakeDetails} />
     </div>
