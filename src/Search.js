@@ -6,7 +6,7 @@ const Search = ({ search, setBookings }) => {
   function handleSearchInput(e) {
     setSearchInput(e.target.value);
   }
-  console.log(searchInput);
+  // console.log(searchInput);
 
   function onSubmit(e) {
     e.preventDefault();

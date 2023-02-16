@@ -1,5 +1,15 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: left;
+  background-color: rgb(205, 177, 231);
+  border: 2px solid black;
 }
 
 .App-logo {
@@ -14,7 +24,7 @@
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -69,16 +79,20 @@
 
 .cards-container {
   display: flex;
-  justify-content: space-around;
-  /* border: 2px solid green; */
-  margin: 0.5%;
-  padding: 0.5%;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  /* grid-gap: 1px; */
+  /* grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); */
+  border: 2px solid green;
+  margin: 2rem 0;
+  /* padding: 0.5%; */
 }
 .card {
-  width: 33.33%;
+  width: 30%;
   margin: 10px;
   border-radius: 0.25rem;
-  transition: all 0.3s linear;
+  /* transition: all 0.3s linear; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
@@ -100,7 +114,7 @@
   background: transparent;
   border-color: transparent;
   text-transform: capitalize;
-  color: blue;
+  color: rgb(107, 107, 224);
   font-size: 1rem;
   cursor: pointer;
   padding-left: 0.25rem;
@@ -142,8 +156,16 @@
 .order-btn {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: last baseline;
 }
 
+button {
+  margin: 1rem;
+}
+.btn-primary {
+  background-color: black;
+}
 .newCustomerSection,
 .customer-profile {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -151,7 +173,27 @@
   max-width: 800px;
   margin: 2rem auto;
   padding: 1rem;
+  font-weight: bold;
 }
 .customer-profile li {
   list-style: none;
+}
+.table {
+  border: 2px solid red;
+  margin: 1rem;
+
+  /* padding: 1rem; */
+  /* width: 98%; */
+}
+
+@media screen and (max-width: 900px) {
+  .cards-container {
+    width: auto;
+  }
+  .card {
+    width: auto;
+  }
+  .table {
+    width: auto;
+  }
 }
