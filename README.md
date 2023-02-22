@@ -21,7 +21,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 2. Extract the header in its own component
 
-**Instructions:** Extract the `<header>` from the `src/App.js` file to be its own separate component called `Heading`. Make sure that you import and render the `<Heading />` component within `src/App.js`. In the `Heading` component, render the hotel's logo in an `<img>` (you can use `https://image.flaticon.com/icons/svg/139/139899.svg` or find your own image URL). You can adjust the CSS by editing `src/App.css` to make your Heading looks better if necessary.
+**Instructions:** Extract the `<header>` from the `src/App.js` file to be its own separate component called `Heading`. Make sure that you import and render the `<Heading />` component within `src/App.js`. In the `Heading` component, render the hotel's logo in an `<img>` (you can use `https://image.flaticon.com/icons/svg/139/139899.svg` or find your own image URL). You can adjust the CSS by editing `src/App.css` to make your Heading looks better if necessary.//done
 
 **Test:** The header should be displayed with a logo on the page.
 
@@ -42,13 +42,13 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 </div>
 ```
 
-**Test:** 3 info cards should be displayed on the page for each city (Glasgow, Manchester, London). Each card should link to the correct website.
+**Test:** 3 info cards should be displayed on the page for each city (Glasgow, Manchester, London). Each card should link to the correct website. //done
 
 #### 4. Create a Footer component
 
-**Instructions:** Create a `<Footer />` component which should be rendered at the bottom of the page. Pass the following array as a prop to this component: `["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]`. Inside the component, use the data you passed as a prop to render a `<ul>` list with each item of the array displayed as a `<li>`.
+**Instructions:** Create a `<Footer />` component which should be rendered at the bottom of the page. Pass the following array as a prop to this component: `["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]`. Inside the component, use the data you passed as a prop to render a `<ul>` list with each item of the array displayed as a `<li>`. // done
 
-**Hint:** The `.map()` method will by useful.
+**Hint:** The `.map()` method will by useful. //done
 
 **Test:** The footer should render at the bottom of the page with each address property displayed as a list item.
 
@@ -82,7 +82,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** Within the `src/App.js` file, render the `<Restaurant />` component (that is provided for you in `src/Restaurant.js`) underneath the `<Bookings />` component.
 
-**Test:** The restaurant orders should render on the page.
+**Test:** The restaurant orders should render on the page.// done
 
 #### 9. Preparing to add more pizzas
 
@@ -90,13 +90,13 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Hint:** You need to use the React function `useState` to create a state variable. Remember to import the function at the top with `import React, {useState} from "react";`.
 
-**Test:** Verify the number of ordered pizzas it still **0** on the screen.
+**Test:** Verify the number of ordered pizzas it still **0** on the screen. // done
 
 #### 10. Add more pizzas
 
 **Instructions:** In the `<Restaurant />` component, create a new function named `orderOne`. The `orderOne` function doesn't take any parameters and should use the `setOrders` function to increment the `orders` state variable by 1. Then, add a `onClick` handler to the Add `<button>` that calls the `orderOne` function when it's being clicked.
 
-**Test:** Try to click on the Add button a few times and verify that the number of pizzas increases accordingly.
+**Test:** Try to click on the Add button a few times and verify that the number of pizzas increases accordingly. //done
 
 #### 11. Extract the Add button to its own component
 
