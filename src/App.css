@@ -1,57 +1,40 @@
-.App {
-  text-align: left;
+.clicked {
+  background-color: rgb(49, 82, 249);
+  color: azure;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.search {
-  padding: 5px 0 20px 0;
-}
-
-tr {
-  color: #5b5757;
+.unclicked {
+  background-color: #fff;
 }
 
 .results {
   padding-top: 15px;
 }
-
-.footer {
+tr {
   padding-top: 20px;
   text-align: center;
 }
-
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
 .card {
   width: 18rem;
+}
+.card img {
+  height: 15rem;
+}
+.card-body h3,
+#desc {
+  text-align: center;
+}
+
+.card-body p {
+  text-align: justify;
+}
+
+.visit-city {
+  margin-left: 3.5rem;
 }
