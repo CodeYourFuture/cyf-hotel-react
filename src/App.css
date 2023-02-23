@@ -1,15 +1,14 @@
 .App {
-  text-align: left;
+  text-align: center;
 }
 
-.App-logo {
+.App-LogoImg {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 10px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 50px;
+.header {
+  background-color: rgb(233, 231, 232);
   padding: 20px;
   color: white;
   text-align: left;
@@ -38,6 +37,12 @@
 .search {
   padding: 5px 0 20px 0;
 }
+.searchBtn {
+  background-color: rgb(201, 198, 203);
+  width: 120px;
+  height: 35px;
+  border-radius: 5px;
+}
 
 tr {
   color: #5b5757;
@@ -50,8 +55,20 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: rgb(233, 231, 232);
+  font-weight: 700;
+}
+.li {
+  list-style: none;
 }
 
 .card {
-  width: 18rem;
+  width: 25rem;
+  background-color: rgb(233, 231, 232);
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
 }

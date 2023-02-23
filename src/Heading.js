@@ -1,11 +1,10 @@
 import React from "react";
+import LogoImg from "./logo.png";
+
 const Heading = () => {
   return (
-    <header>
-      <img
-        src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png"
-        alt="logo"
-      />
+    <header className="header">
+      <img src={LogoImg} alt="LogoImg" />
     </header>
   );
 };

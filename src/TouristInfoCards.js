@@ -1,10 +1,13 @@
 import React from "react";
+import LondonImg from "./london.jpg";
+import ManchesterImg from "./manchester.jpg";
+import GlasgowImg from "./glasgow.jpeg";
 
 const TouristInfoCards = () => {
   return (
     <div className="card-container">
       <div className="card">
-        <img src="..." alt="london" />
+        <img src={LondonImg} alt="londonImg" />
         <div className="card-body">
           <h3>London</h3>
           <p>
@@ -22,7 +25,7 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img src="..." alt="manchester" />
+        <img src={ManchesterImg} alt="manchesterImg" />
         <div className="card-body">
           <h3>Manchester</h3>
           <p>
@@ -38,7 +41,7 @@ const TouristInfoCards = () => {
       </div>
 
       <div className="card">
-        <img src="..." alt="glasgow" />
+        <img src={GlasgowImg} alt="glasgowImg" />
         <div className="card-body">
           <h3>Glasgow</h3>
           <p>
