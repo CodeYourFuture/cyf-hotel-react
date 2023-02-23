@@ -13,7 +13,12 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    let filteredBookings = bookings.filter(val => {
+      return val["firstName"].includes(searchVal);
+    });
+    setBookings(filteredBookings);
   };
+
   return (
     <div className="App-content">
       <div className="container">
