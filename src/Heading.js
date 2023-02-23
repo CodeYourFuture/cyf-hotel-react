@@ -6,6 +6,7 @@ const Heading = () => {
       <img
         className="App-logo"
         src="https://syllabus.codeyourfuture.io/img/logo.png"
+        alt=""
       />
       CYF Hotel
     </header>
