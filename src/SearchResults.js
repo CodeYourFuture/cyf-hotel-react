@@ -39,25 +39,6 @@ const SearchResults = props => {
           );
         })}
       </tbody>
-
-      {/* <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>3</td>
-            <td>3</td>
-            <td>3</td>
-          </tr> */}
     </table>
   );
 };
