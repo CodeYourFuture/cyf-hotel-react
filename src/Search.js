@@ -1,5 +1,6 @@
 import React from "react";
 import SearchButton from "./Searchbutton";
+
 const Search = () => {
   return (
     <div className="search">
