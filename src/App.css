@@ -4,11 +4,21 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 60px;
+}
+.Tony {
+  display: flex;
+  background-color: #6f5656;
+}
+.CardsCities {
+  display: flex;
+  margin: 1rem;
+  justify-content: space-around;
+  text-align: center;
+  list-style-type: none;
 }
 
 .App-header {
-  background-color: #222;
   height: 50px;
   padding: 20px;
   color: white;
@@ -54,4 +64,14 @@ tr {
 
 .card {
   width: 18rem;
+  border: 1px solid darkblue;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px darkgray;
+}
+.Footer {
+  display: flex;
+  margin: 1rem;
+  justify-content: space-around;
+  text-align: center;
+  list-style-type: none;
 }
