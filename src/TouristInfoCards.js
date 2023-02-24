@@ -19,9 +19,11 @@ const TouristInfoCard = () => {
           National Theatre of Scotland, as well as acclaimed museums and a
           thriving music scene.
         </p>
-        <a href="http://peoplemakeglasgow.com/" target="_blank">
-          <button>More information</button>
-        </a>
+        <div className="card-btn-container">
+          <a href="http://peoplemakeglasgow.com/" target="_blank">
+            <button className="card-btn">More information</button>
+          </a>
+        </div>
       </div>
       <div className="card">
         <img
@@ -34,14 +36,16 @@ const TouristInfoCard = () => {
           Manchester is a major city in the northwest of England with a rich
           industrial heritage. The Castlefield conservation area’s 18th-century
           canal system recalls the city’s days as a textile powerhouse, and
-          visitors can trace this history at the interactive Museum of Science &
-          Industry. The revitalised Salford Quays dockyards now house the Daniel
+          visitors can trace this history at the interactive Museum of Science.
+          The revitalised Salford Quays dockyards now house the Daniel
           Libeskind-designed Imperial War Museum North and the Lowry cultural
-          centre.{" "}
+          centre.
         </p>
-        <a href="https://www.visitmanchester.com/" target="_blank">
-          <button>More information</button>
-        </a>
+        <div className="card-btn-container">
+          <a href="https://www.visitmanchester.com/" target="_blank">
+            <button className="card-btn">More information</button>
+          </a>
+        </div>
       </div>
       <div className="card">
         <img
@@ -56,15 +60,13 @@ const TouristInfoCard = () => {
           across the Thames. The most famous of these bridges is Tower Bridge.
           The machinery which draws up the bridge when a ship passes under it is
           hidden in the two towers. Near Tower Bridge, on the north bank of the
-          Thames there is the Tower Of London. It is a big castle, its oldest
-          part, White Tower, dates back to the times of William the Conqueror.
-          Back in history The Tower served as a prison - now it is one of
-          London's main tourist attractions. Tourists are guided by "Beefeaters"
-          in historic uniforms and the Crown Jewels are on display there.
+          Thames there is the Tower Of London.
         </p>
-        <a href="https://www.visitlondon.com/" target="_blank">
-          <button>More information</button>
-        </a>
+        <div className="card-btn-container">
+          <a href="https://www.visitlondon.com/" target="_blank">
+            <button className="card-btn">More information</button>
+          </a>
+        </div>
       </div>
     </div>
   );
