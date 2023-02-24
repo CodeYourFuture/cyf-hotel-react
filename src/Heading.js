@@ -3,7 +3,7 @@ import LogoImg from "./logo.png";
 
 const Heading = () => {
   return (
-    <header className="header">
+    <header className="Header">
       <img src={LogoImg} alt="LogoImg" />
     </header>
   );

@@ -5,7 +5,7 @@ import GlasgowImg from "./glasgow.jpeg";
 
 const TouristInfoCards = () => {
   return (
-    <div className="card-container">
+    <div className="Card-Container">
       <div className="card">
         <img src={LondonImg} alt="londonImg" />
         <div className="card-body">

@@ -3,7 +3,7 @@ import React from "react";
 const SearchButton = () => {
   return (
     <div>
-      <button className="searchBtn">Search</button>
+      <button className="SearchBtn">Search</button>
     </div>
   );
 };

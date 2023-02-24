@@ -7,7 +7,7 @@
   height: 10px;
 }
 
-.header {
+.Header {
   background-color: rgb(233, 231, 232);
   padding: 20px;
   color: white;
@@ -34,10 +34,10 @@
     transform: rotate(360deg);
   }
 }
-.search {
+.Search {
   padding: 5px 0 20px 0;
 }
-.searchBtn {
+.SearchBtn {
   background-color: rgb(201, 198, 203);
   width: 120px;
   height: 35px;
@@ -52,13 +52,13 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
+.Footer {
   padding-top: 20px;
   text-align: center;
   background-color: rgb(233, 231, 232);
   font-weight: 700;
 }
-.li {
+li {
   list-style: none;
 }
 
@@ -67,7 +67,7 @@ tr {
   background-color: rgb(233, 231, 232);
 }
 
-.card-container {
+.Card-Container {
   display: flex;
   justify-content: space-around;
   margin: 20px;
