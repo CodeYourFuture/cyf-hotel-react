@@ -3,6 +3,7 @@ import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
+import Footer from "./Footer ";
 
 const cities = [
   {
@@ -30,6 +31,14 @@ const cities = [
     link: "https://www.visitmanchester.com/"
   }
 ];
+{
+  /* Array for Footer*/
+}
+const footer = [
+  "123 Fake Street, London, E1 4UD",
+  "hello@fakehotel.com",
+  "0123 456789"
+];
 
 const App = () => {
   return (
@@ -37,6 +46,7 @@ const App = () => {
       <Heading />
       <Bookings />
       <TouristInfoCards cities={cities} />
+      <Footer footer={footer} />
     </div>
   );
 };
