@@ -52,6 +52,33 @@ tr {
   text-align: center;
 }
 
+
+/*for TouristInfoCards.js*/
 .card {
-  width: 18rem;
+  flex-basis: calc(33.33% - 10px);
+  margin-bottom: 20px;
 }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-basis: calc(50% - 10px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    flex-basis: 100%;
+  }
+}
+
+.card-img{
+  height: 20rem;
+  object-fit: cover;
+}
+
