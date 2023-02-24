@@ -9,7 +9,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 3. Launch the server using `npm start`
 4. It should automatically open `http://localhost:3000/` in your browser
 
-<!-- # Exercises -->
+# Exercises
 
 ## Lesson 1
 
