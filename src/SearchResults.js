@@ -1,18 +1,38 @@
 import React from "react";
+import moment from "moment";
 
 const SearchResults = ({ results }) => {
   return (
     <table className="results">
       <thead>
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Title</th>
-          <th scope="col">First name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room id</th>
-          <th scope="col">Check in date</th>
-          <th scope="col">Check out date</th>
+          <th scope="col" className="heading">
+            Id
+          </th>
+          <th scope="col" className="heading">
+            Title
+          </th>
+          <th scope="col" className="heading">
+            First name
+          </th>
+          <th scope="col" className="heading">
+            Surname
+          </th>
+          <th scope="col" className="heading">
+            Email
+          </th>
+          <th scope="col" className="heading">
+            Room id
+          </th>
+          <th scope="col" className="heading">
+            Check in date
+          </th>
+          <th scope="col" className="heading">
+            Check out date
+          </th>
+          <th scope="col" className="heading">
+            Number of nights
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -24,8 +44,14 @@ const SearchResults = ({ results }) => {
             <td>{result.surname}</td>
             <td>{result.email}</td>
             <td>{result.roomId}</td>
-            <td>{result.checkInDate}</td>
-            <td>{result.checkOutDate}</td>
+            <td>{moment(result.checkInDate).format("MM DD YYYY")}</td>
+            <td>{moment(result.checkOutDate).format("MM DD YYYY")}</td>
+            <td>
+              {moment(result.checkOutDate).diff(
+                moment(result.checkInDate),
+                "days"
+              )}
+            </td>
           </tr>
         ))}
       </tbody>
@@ -35,3 +61,8 @@ const SearchResults = ({ results }) => {
 
 export default SearchResults;
 
+// Hint: Try installing the moment.js library
+// (you'll need to install it with npm install moment --save) and using the .diff() method to compare dates.
+
+// Test: Each booking in your table should show the number of nights in a separate column.
+// For example, Mr John Doe has a booking for 2 nights.
