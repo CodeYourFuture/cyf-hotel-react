@@ -56,6 +56,7 @@ tr {
 
 .card {
   width: 18rem;
+  
 }
 
 .logo {
@@ -66,3 +67,24 @@ tr {
   align-items: center;
   align-self: center;
 }
+
+h1 {
+  font-size: 32px;
+}
+
+ .all-cards {
+  display: flex;
+  gap:15px;
+  justify-content: center;
+  margin-top: 15px;
+ }
+
+ .footer {
+  background-color: #a30505;
+  color: white;
+  font-size: 20px;
+  
+ }
+ .footer li {
+  list-style-type: none;
+ }
