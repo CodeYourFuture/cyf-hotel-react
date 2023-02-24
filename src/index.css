@@ -28,3 +28,23 @@ body {
 .heading {
   width: 10rem;
 }
+/*footer*/
+.contact-us-footer {
+  margin: 30px auto 10px auto;
+  text-align: center;
+}
+.container-contact-details {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-details {
+  display: flex;
+  list-style: none;
+  margin: 25px;
+  padding: 0;
+}
+
+.contact-details li {
+  margin: 0 15px;
+}

@@ -61,8 +61,4 @@ const SearchResults = ({ results }) => {
 
 export default SearchResults;
 
-// Hint: Try installing the moment.js library
-// (you'll need to install it with npm install moment --save) and using the .diff() method to compare dates.
 
-// Test: Each booking in your table should show the number of nights in a separate column.
-// For example, Mr John Doe has a booking for 2 nights.
