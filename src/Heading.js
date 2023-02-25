@@ -4,7 +4,7 @@ const Heading = () => {
     return (
     <header className="App-header"> 
         <p>CYF Hotel</p>
-    <img src="https://uploads.turbologo.com/uploads/design/hq_preview_image/789526/draw_svg20210507-22909-nk3awt.svg.png"/>
+    <img src="https://uploads.turbologo.com/uploads/design/hq_preview_image/789526/draw_svg20210507-22909-nk3awt.svg.png" className="App-logo"/>
     </header> 
     );
 }

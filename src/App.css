@@ -21,6 +21,7 @@
 .App-header img {
   width: 80px;
   height: 80px;
+  border-radius: 20%;
 }
 
 .App-title {
@@ -71,6 +72,7 @@ tr {
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
+  margin-bottom: 20px;
   width: 370px;
   height: 280px;
 }
@@ -87,4 +89,10 @@ tr {
 
 h1 {
   text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
