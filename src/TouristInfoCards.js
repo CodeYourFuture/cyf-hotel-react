@@ -50,7 +50,7 @@ const TouristInfoCards = () => {
         />
         <h1>London</h1>
         <div className="card-body">
-            <p>The capital of England and a global cultural hub, renowned for its iconic landmarks, diverse neighborhoods, world-class museums and galleries, and bustling streets</p>
+            <p>The capital of England and a global cultural hub, renowned for its iconic landmarks, diverse neighborhoods and museums.</p>
           <a href="https://visitlondon.com/" className="btn btn-primary">
             More information
           </a>

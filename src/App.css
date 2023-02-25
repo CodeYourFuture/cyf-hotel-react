@@ -42,6 +42,10 @@
     transform: rotate(360deg);
   }
 }
+
+.page-header {
+  text-align: center;
+}
 .search {
   padding: 5px 0 20px 0;
 }
@@ -88,12 +92,17 @@ tr {
   padding-right: 10px;
 }
 
-h1 {
+h1, h4 {
   text-align: center;
+
 }
 
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+p {
+  font-size:x-large;
 }

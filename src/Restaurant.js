@@ -4,7 +4,7 @@ const Restaurant = () => {
   const pizzas = 0;
   return (
     <div>
-      <h3>Restaurant Orders</h3>
+      <h4>Restaurant Orders</h4>
       <ul>
         <li>
           Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
