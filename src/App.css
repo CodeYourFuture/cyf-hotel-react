@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: left;
 }
@@ -71,7 +77,6 @@ tr {
   border: solid red 3px;
   justify-content: center;
   align-items: center;
-  width: 1500px;
 }
 
 /* footer container */
