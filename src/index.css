@@ -24,3 +24,9 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+/* CSS for the top image and actually any image */
+img {
+  width: 30px;
+  height: 30px;
+}
