@@ -57,10 +57,19 @@ tr {
 
 .card {
   width: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .image-header {
   width: 30px;
   height: 30px;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
