@@ -96,6 +96,9 @@ h1, h4 {
   text-align: center;
 
 }
+.text-left {
+  text-align: center;
+}
 
 ul {
   list-style: none;
