@@ -6,7 +6,7 @@ const Heading = () => {
         <div>
              <header className="App-header">
                 <h1>CYF Hotel</h1>
-                <img className ="logo" src = {logo} alt = "logo"  />
+                <img className ="App-logo" src = {logo} alt = "logo"  />
              </header>
         </div>
     );
