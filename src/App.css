@@ -5,6 +5,7 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  padding: 10px;
 }
 
 .App-header {
@@ -59,7 +60,7 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 16rem;
   border-radius: 5px;
   border-color: grey;
   border-width: 3px;
@@ -82,7 +83,7 @@ tr {
 }
 
 .card-deck {
-  padding-top: 60px;
+  padding-top: 70px;
   padding-left: 10px;
   padding-right: 10px;
 }
