@@ -7,6 +7,22 @@
   height: 80px;
 }
 
+.imgLogo {
+  height: 100px;
+}
+.cardWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.card {
+  margin: 2%;
+}
+.card img {
+  height: 35%;
+}
+
 .App-header {
   background-color: #222;
   height: 50px;
