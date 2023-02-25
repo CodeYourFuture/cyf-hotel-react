@@ -1,6 +1,7 @@
 import React from "react";
 
 const Footer = (props) => {
+  // console.log(props);
   return (
     <footer>
       <p className="contact-us-footer">Contact us:</p>

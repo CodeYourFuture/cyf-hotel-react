@@ -28,8 +28,3 @@ const App = () => {
 export default App;
 
 
-// 8. Render the Restaurant component
-// Instructions: Within the src/App.js file, render the <Restaurant /> component
-//  (that is provided for you in src/Restaurant.js) underneath the <Bookings /> component.
-
-// Test: The restaurant orders should render on the page.
