@@ -6,10 +6,11 @@ const TouristInfoCards = props => (
         <div className="card-body">
           <h1>{eachCard.name}</h1>
           <p>{eachCard.description}</p>
-          <a href={eachCard.information} className="btn btn-primary">
-            More Information
-          </a>
         </div>
+        <a href={eachCard.information} className="btn btn-primary">
+          {" "}
+          More Information
+        </a>
       </div>
     ))}
   </div>
