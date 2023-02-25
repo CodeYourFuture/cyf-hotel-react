@@ -5,6 +5,7 @@ import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCard from "./TouristInfoCards";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 
 
 const App = () => {
@@ -18,10 +19,17 @@ const App = () => {
       <Heading />
       <TouristInfoCard />
       <Bookings />
-     
+      <Restaurant />
       <Footer props={contactDetails} />
     </div>
   );
 };
 
 export default App;
+
+
+// 8. Render the Restaurant component
+// Instructions: Within the src/App.js file, render the <Restaurant /> component
+//  (that is provided for you in src/Restaurant.js) underneath the <Bookings /> component.
+
+// Test: The restaurant orders should render on the page.
