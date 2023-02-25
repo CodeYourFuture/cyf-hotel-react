@@ -18,8 +18,8 @@ const App = () => {
       <Heading />
       <Bookings />
       <div className="info-cards">
-        {Cities.map((city, index) => {
-          return <TouristInfoCards key={index} city={city} />;
+        {Cities.map((city) => {
+          return <TouristInfoCards key={city.id} city={city} />;
         })}
       </div>
       <Footer array={footerArray} />
