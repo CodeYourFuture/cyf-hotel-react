@@ -4,11 +4,14 @@ import Bookings from "./Bookings";
 import "./App.css";
 
 const App = () => {
+  const address = ["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"];
   return (
     <div className="App">
       <Heading/>
       <TouristInfoCards/>
-      <Bookings />
+      <Bookings/>
+      <SearchResults/>
+      <Footer address={address}/>
     </div>
   );
 };
@@ -52,6 +55,77 @@ const TouristInfoCards = () => {
 
     </div>
   );
+}
+
+const SearchResults = () => {
+  return (
+    <table class="booking-table-container">
+
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Room ID</th>
+          <th>Check in date</th>
+          <th>Check out date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>1234</td>
+          <td>london</td>
+          <td>zahraa</td>
+          <td>tayyar</td>
+          <td>zahraatayyar@hotmail.com</td>
+          <td>1234</td>
+          <td>01/01/2023</td>
+          <td>01/01/2023</td>
+        </tr>
+
+        <tr>
+          <th>2</th>
+          <td>1234</td>
+          <td>london</td>
+          <td>zahraa</td>
+          <td>tayyar</td>
+          <td>zahraatayyar@hotmail.com</td>
+          <td>1234</td>
+          <td>01/01/2023</td>
+          <td>01/01/2023</td>
+        </tr>
+
+        <tr>
+          <th>1</th>
+          <td>1234</td>
+          <td>london</td>
+          <td>zahraa</td>
+          <td>tayyar</td>
+          <td>zahraatayyar@hotmail.com</td>
+          <td>1234</td>
+          <td>01/01/2023</td>
+          <td>01/01/2023</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+  )
+}
+
+const Footer = (prop) => {
+  return (
+    <ul class="contact-container">
+      {prop.address.map((address) => {
+        return (<li>{address}</li>)
+      })}
+    </ul>
+  )
 }
 
 export default App;

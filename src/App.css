@@ -64,3 +64,24 @@ tr {
   width: 18rem;
   height: 300px;
 }
+
+.booking-table-container {
+  display: flex;
+  flex-direction: column;
+  border: solid red 3px;
+  justify-content: center;
+  align-items: center;
+  width: 1500px;
+}
+
+/* footer container */
+
+.contact-container {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+
