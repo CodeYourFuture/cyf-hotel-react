@@ -3,7 +3,7 @@ import React from "react";
 const SearchResults = (props) => {
   const booking = props.results.map((guest) => {
     return (
-      <tr>
+      <tr key={guest.roomId}>
         <th scope="row">{guest.id}</th>
         <td>{guest.title}</td>
         <td>{guest.firstName}</td>

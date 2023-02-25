@@ -5,6 +5,7 @@ import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import "./App.css";
+import Cities from "./data/cities.json";
 
 const App = () => {
   let footerArray = [
@@ -17,9 +18,9 @@ const App = () => {
       <Heading />
       <Bookings />
       <div className="info-cards">
-        <TouristInfoCards city="Glasgow" />
-        <TouristInfoCards city="Manchester" />
-        <TouristInfoCards city="London" />
+        {Cities.map((city, index) => {
+          return <TouristInfoCards key={index} city={city} />;
+        })}
       </div>
       <Footer array={footerArray} />
     </div>
