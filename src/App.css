@@ -1,4 +1,6 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: left;
 }
 
@@ -48,10 +50,31 @@ tr {
 }
 
 .footer {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
   padding-top: 20px;
   text-align: center;
+  list-style-type: none;
+  gap: 25px;
+}
+.card-container {
+  display: flex;
+  gap: 20px;
 }
 
 .card {
   width: 18rem;
+}
+
+.card-img-top {
+  max-height: 50%;
+}
+
+img {
+  width: 100px;
+}
+
+.logo-image {
+  margin: 10px;
 }
