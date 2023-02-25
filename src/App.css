@@ -92,10 +92,11 @@ tr {
   padding-right: 10px;
 }
 
-h1, h4 {
+h1, h4,li {
   text-align: center;
 
 }
+
 .text-left {
   text-align: center;
 }
