@@ -1,7 +1,8 @@
 import FakeBookings from "./data/fakeBookings.json";
+import moment from "moment";
 
 const SearchResults = props => (
-  <table class="table table-striped">
+  <table className="table table-striped">
     <CreateTableHeader />
     <CreateEachRow results={FakeBookings} />
   </table>
@@ -18,14 +19,15 @@ const CreateTableHeader = () => (
       <th scope="col">Room ID</th>
       <th scope="col">Check In Date</th>
       <th scope="col">Check Out Date</th>
+      <th scope="col">Number Of Nights</th>
     </tr>
   </thead>
 );
 
 const CreateEachRow = props => (
   <tbody>
-    {props.results.map(eachPerson => (
-      <tr>
+    {props.results.map((eachPerson, index) => (
+      <tr key={index}>
         <td scope="row">{eachPerson.id}</td>
         <td>{eachPerson.title}</td>
         <td>{eachPerson.firstName}</td>
@@ -34,6 +36,14 @@ const CreateEachRow = props => (
         <td>{eachPerson.roomId}</td>
         <td>{eachPerson.checkInDate}</td>
         <td>{eachPerson.checkOutDate}</td>
+        <td>
+          {moment(eachPerson.checkOutDate).diff(
+            moment(eachPerson.checkInDate),
+            "days"
+          )
+          // moment(eachPerson.checkOutDate.split("-")).diff(moment(eachPerson.checkInDate.split("-"))np, 'days')
+          }
+        </td>
       </tr>
     ))}
   </tbody>

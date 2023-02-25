@@ -1,7 +1,7 @@
 const Footer = props => (
   <ul className="footer">
     {props.arr.map((eachItem, index) => (
-      <li>{eachItem}</li>
+      <li key={index}>{eachItem}</li>
     ))}
   </ul>
 );
