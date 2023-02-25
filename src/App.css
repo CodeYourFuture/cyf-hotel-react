@@ -7,6 +7,11 @@
   height: 80px;
 }
 
+.Heading-logo {
+  width: 10%;
+  height: auto;
+  margin: 10px;
+}
 .App-header {
   background-color: #222;
   height: 50px;
