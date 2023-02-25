@@ -49,8 +49,8 @@ const App = () => {
     <div className="App">
       <Heading />
       <Bookings />
-      <TouristInfoCards cities = {cities}/>
-      <Footer footer = {footer}/>
+      <TouristInfoCards cities={cities}/>
+      <Footer footer={footer}/>
     </div>
   );
 };
