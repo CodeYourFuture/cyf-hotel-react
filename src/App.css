@@ -1,18 +1,24 @@
+/*color: https://coolors.co/ffd6ff-e7c6ff-c8b6ff-b8c0ff-bbd0ff*/
+
 .App {
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 60px;
+  height: 70px;
   padding: 15px;
+  border-radius: 40px;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #bbd0ff;
   height: 50px;
   padding: 40px;
-  color: white;
+  color: black;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
@@ -39,12 +45,34 @@
     transform: rotate(360deg);
   }
 }
+
+.form-group {
+  background-color: #b8c0ff;
+}
+
 .search {
   padding: 5px 0 20px 0;
 }
 
+.search-row {
+  padding: 15px;
+}
+
+.table {
+  background-color: #e7c6ff;
+  border: solid 3px #b8c0ff;
+}
+
 tr {
   color: #5b5757;
+}
+
+thead {
+  border: 3px solid #b8c0ff;
+}
+
+tbody {
+  border: 2px solid #b8c0ff;
 }
 
 .results {
@@ -54,6 +82,11 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: #bbd0ff;
+}
+
+.footer-list {
+  list-style: none;
 }
 
 .card-container {
@@ -64,4 +97,15 @@ tr {
 
 .card {
   width: 18rem;
+  border: 2px solid #b8c0ff;
+}
+
+.btn {
+  background-color: #e7c6ff;
+  color: #5b5757;
+  border: 2px solid #b8c0ff;
+}
+
+.card-img-top {
+  height: 50%;
 }

@@ -5,7 +5,9 @@ const Footer = props => {
     <div className="footer">
       <ul>
         {props.adress.map((item, key) => (
-          <li key={key}>{item}</li>
+          <li className="footer-list" key={key}>
+            {item}
+          </li>
         ))}
       </ul>
     </div>

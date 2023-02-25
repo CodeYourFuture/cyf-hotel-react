@@ -5,7 +5,7 @@ const Heading = () => {
     <header className="App-header">
       <img
         className="App-logo"
-        src="https://static.vecteezy.com/system/resources/previews/009/628/461/original/cyf-logo-cyf-letter-cyf-letter-logo-design-initials-cyf-logo-linked-with-circle-and-uppercase-monogram-logo-cyf-typography-for-technology-business-and-real-estate-brand-vector.jpg"
+        src="https://i1.wp.com/cyf.com/wp-content/uploads/2017/07/CYF_Thumb.png?fit=512%2C512&ssl=1"
         alt="logo"
       />
       CYF Hotel

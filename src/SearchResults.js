@@ -20,7 +20,7 @@ const SearchResults = props => {
       {props.results.map((item, key) => (
         <tbody key={key}>
           <tr>
-            <th scope="row">{item.id}</th>
+            <td>{item.id}</td>
             <td>{item.title}</td>
             <td>{item.firstName}</td>
             <td>{item.surname}</td>
