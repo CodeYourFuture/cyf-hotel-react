@@ -2,6 +2,7 @@ import React from "react";
 import Bookings from "./Bookings";
 import "./App.css";
 import TouristInfoCards from "./TouristInfoCards";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -9,6 +10,13 @@ const App = () => {
       <Heading />
       <TouristInfoCards cities={citiesAPI} />
       <Bookings />
+      <Footer
+        arr={[
+          "123 Fake Street, London, E1 4UD",
+          "hello@fakehotel.com",
+          "0123 456789"
+        ]}
+      />
     </div>
   );
 };

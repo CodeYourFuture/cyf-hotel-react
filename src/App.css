@@ -45,6 +45,18 @@ tr {
   color: #5b5757;
 }
 
+th {
+  background-color: rgb(52, 50, 50);
+  color: white;
+}
+
+td,
+th {
+  border: 2px inset;
+  padding: 5px 10px;
+  text-align: center;
+}
+
 .results {
   padding-top: 15px;
 }
@@ -52,6 +64,7 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style: none;
 }
 
 .card {
