@@ -4,6 +4,7 @@ import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer ";
+import SearchResults from "./SearchResults";
 
 const cities = [
   {
@@ -15,7 +16,7 @@ const cities = [
     link: "https://www.visitlondon.com/"
   },
   {
-    city: "glascow",
+    city: "Glascow",
     src:
       "https://media.istockphoto.com/id/471681577/photo/bridge-over-the-clyde.jpg?b=1&s=170667a&w=0&k=20&c=AVhp13Nkj1EzmnwEUYlLMLKm1eLwOaxd0S4ROLEADO8=",
     text:
@@ -31,9 +32,7 @@ const cities = [
     link: "https://www.visitmanchester.com/"
   }
 ];
-{
-  /* Array for Footer*/
-}
+
 const footer = [
   "123 Fake Street, London, E1 4UD",
   "hello@fakehotel.com",
@@ -46,6 +45,7 @@ const App = () => {
       <Heading />
       <Bookings />
       <TouristInfoCards cities={cities} />
+      <SearchResults />
       <Footer footer={footer} />
     </div>
   );

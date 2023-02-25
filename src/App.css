@@ -14,8 +14,10 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #424044;
+  height: 70px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -63,4 +65,26 @@ tr {
   width: 18rem;
   border: 2px solid green;
   text-align: center;
+}
+
+.footer-app {
+  background-color: #5b5757;
+  color: aliceblue;
+  text-align: center;
+}
+.footer-app li {
+  list-style-type: none;
+}
+
+.tbl {
+  width: 100%;
+  background-color: rgb(113, 224, 90);
+}
+.tbl-container {
+  width: 100%;
+  background-color: #424044;
+}
+
+.cell {
+  background-color: chartreuse;
 }
