@@ -1,7 +1,7 @@
 import React from "react";
-
 import Bookings from "./Bookings";
 import "./App.css";
+import Search from "./Search";
 
 const App = () => {
   return (
