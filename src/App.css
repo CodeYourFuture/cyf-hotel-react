@@ -60,3 +60,7 @@ tr {
 .card {
   width: 18rem;
 }
+.card-container {
+  display: flex;
+  flex-direction: row;
+}
