@@ -20,7 +20,7 @@ const Bookings = () => {
                 <th> id</th>
                 <th>title</th>
                 <th> first name</th>
-                <th> last name</th>
+                <th> surname</th>
                 <th> email </th>
                 <th> room id</th>
                 <th> check in date</th>
