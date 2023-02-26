@@ -2,9 +2,9 @@ import React from "react";
 
 function SearchResults(props) {
 
-    var a = moment([2007, 0, 29]);
-    var b = moment([2007, 0, 28]);
-    a.diff(b, 'days') // 1 
+    // var a = moment([2007, 0, 29]);
+    // var b = moment([2007, 0, 28]);
+    // a.diff(b, 'days') // 1 
 
     let tr = props.results.map((element)=>
     <tr className="tableRow">
