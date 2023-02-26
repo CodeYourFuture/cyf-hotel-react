@@ -4,13 +4,14 @@ function SearchResults(props) {
 
     let tr = props.results.map((element)=>
     <tr className="tableRow">
-    <td>{element.Id}</td>
-    <td>{element.First}</td>
-    <td>{element.Last}</td>
-    <td>{element.Email}</td>
-    <td>{element.RoomId}</td>
-    <td>{element.CheckIn}</td>
-    <td>{element.CheckOut}</td>
+    <td>{element.id}</td>
+    <td>{element.title}</td>
+    <td>{element.firstName}</td>
+    <td>{element.surname}</td>
+    <td>{element.email}</td>
+    <td>{element.roomId}</td>
+    <td>{element.checkInDate}</td>
+    <td>{element.checkOutDate}</td>
     </tr>
     )
 
@@ -19,6 +20,7 @@ function SearchResults(props) {
       <thead class="thead-dark">
         <tr>
           <th scope="col">Id</th>
+          <th scope="col">Title</th>
           <th scope="col">First</th>
           <th scope="col">Last</th>
           <th scope="col">Email</th>
