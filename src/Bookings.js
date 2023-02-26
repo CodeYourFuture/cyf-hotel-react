@@ -1,18 +1,47 @@
 import React from "react";
 import Search from "./Search.js";
-// import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import SearchResults from "./SearchResults.js";
+import data from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const search = searchVal => {
+  const search = (searchVal) => {
     console.info("TO DO!", searchVal);
   };
+  console.log(data);
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>first name</th>
+                <th>sure name</th>
+                <th>email</th>
+                <th>room id</th>
+                <th>check in date</th>
+                <th>check out date</th>
+              </tr>
+            </thead>
+            {data.map((item) => (
+              <SearchResults
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                firstName={item.firstName}
+                surName={item.surName}
+                email={item.email}
+                roomId={item.roomId}
+                checkInDate={item.checkInDate}
+                checkOutDate={item.checkOutDate}
+              />
+            ))}
+          </table>
+        </div>
       </div>
     </div>
   );
