@@ -50,6 +50,11 @@
 
 tr {
   color: #5b5757;
+  cursor: pointer;
+}
+
+.selected-row {
+  background-color: antiquewhite;
 }
 
 .results {
