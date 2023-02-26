@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Heading from "./Heading";
 import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
@@ -18,8 +18,8 @@ const App = () => {
         <TouristInfoCards
           image={LondonImage}
           name="London"
-          link="https://www.visitlondon.com/"
-        />
+          link="https://www.visitlondon.com/" />
+        
         <TouristInfoCards
           image={GlasgowImage}
           name="Glasgow"
