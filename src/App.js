@@ -6,6 +6,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import "./App.css";
 import Cities from "./data/cities.json";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   let footerArray = [
@@ -22,6 +23,7 @@ const App = () => {
           return <TouristInfoCards key={city.id} city={city} />;
         })}
       </div>
+      <Restaurant />
       <Footer array={footerArray} />
     </div>
   );
