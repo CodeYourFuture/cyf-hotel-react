@@ -3,8 +3,12 @@ import React from "react";
 function Heading() {
   return (
     <header className="App-header">
-      <h1>CYF Hotel</h1>
-      <img src="https://image.flaticon.com/icons/svg/139/139899.svg" />
+      <img
+        src="https://syllabus.codeyourfuture.io/img/logo.png"
+        alt=""
+        className="App-logo"
+      />
+      <h1 className="App-name">CYF Hotel</h1>
     </header>
   );
 }
