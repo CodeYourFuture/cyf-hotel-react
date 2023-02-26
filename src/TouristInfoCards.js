@@ -7,8 +7,8 @@ function TouristInfoCards(props) {
       <img src={props.image} className="card-img-top" />
       <div className="card-body">
         <p>
-          {props.name}: This is the body of my card, where I'll add some text and
-          info about the city...
+          {props.name}: A city in the United Kingdom that is worth visiting
+          for a great day out. Weather you are a tourist or just playing one for the day..!
         </p>
         <a href={props.link} className="btn btn-primary">
           Visit {props.name}

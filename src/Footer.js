@@ -9,7 +9,7 @@ function Footer(hotel) {
   ];
   const [Address, Email, PhoneNumber] = FooterArray;
   return (
-    <ul>
+    <ul className="footer">
       <li>{Address}</li>
       <li>{Email}</li>
       <li>{PhoneNumber}</li>

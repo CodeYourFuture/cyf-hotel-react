@@ -24,7 +24,7 @@
 
 .App-content {
   padding-top: 20px;
-  font-size: large;
+  font-size: medium;
 }
 
 @keyframes App-logo-spin {
@@ -50,8 +50,33 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style: none;
 }
 
 .card {
-  width: 18rem;
+  width: 20rem;
+  border: 3px solid rgb(158, 141, 92);
+ 
 }
+ .infocards{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 50px;
+  margin: 5rem;
+  
+ }
+
+ img{
+  height: 20rem;
+  
+ }
+
+ .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(177, 187, 142);
+  color: black;
+  font-size: large;
+ }
