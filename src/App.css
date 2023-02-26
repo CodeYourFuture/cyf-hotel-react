@@ -75,5 +75,11 @@ tr {
 
 .unorderList {
   list-style: none;
+  background-color: #222;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  align-items: center;
 }
 
