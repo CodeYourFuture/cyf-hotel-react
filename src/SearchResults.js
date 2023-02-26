@@ -2,6 +2,10 @@ import React from "react";
 
 function SearchResults(props) {
 
+    var a = moment([2007, 0, 29]);
+    var b = moment([2007, 0, 28]);
+    a.diff(b, 'days') // 1 
+
     let tr = props.results.map((element)=>
     <tr className="tableRow">
     <td>{element.id}</td>
@@ -27,6 +31,7 @@ function SearchResults(props) {
           <th scope="col">Room id</th>
           <th scope="col">Ckeck in</th>
           <th scope="col">Ckeck out</th>
+          <th scope="col">Nigths</th>
         </tr>
       </thead>
       <tbody>
