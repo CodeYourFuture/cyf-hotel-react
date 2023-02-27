@@ -5,7 +5,7 @@ const Order = props => {
   const [orders, setOrders] = useState(0);
 
   function orderOne() {
-    setOrders(orders + 1);
+    setOrders(preOrder => preOrder + 1);
   }
 
   return (
