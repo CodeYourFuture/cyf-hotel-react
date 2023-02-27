@@ -30,6 +30,7 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+  /* text-align: center; */
 }
 
 @keyframes App-logo-spin {
@@ -60,4 +61,9 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.highlight {
+  background-color: rgb(76, 141, 202);
+  color: white;
 }

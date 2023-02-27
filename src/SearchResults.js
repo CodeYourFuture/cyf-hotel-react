@@ -1,9 +1,11 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
 const SearchResults = props => {
+  const [selected, setSelected] = useState("-1");
+
   return (
-    <table className="table table-hover">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -20,7 +22,13 @@ const SearchResults = props => {
       <tbody>
         {props.results.map(book => {
           return (
-            <tr>
+            <tr
+              key={book.id}
+              onClick={() => {
+                selected !== book.id ? setSelected(book.id) : setSelected();
+              }}
+              className={"".concat(selected === book.id ? "highlight" : "")}
+            >
               <th scope="row">{book.id}</th>
               <td>{book.title}</td>
               <td>{book.firstName}</td>
