@@ -25,7 +25,7 @@ const SearchResults = props => {
             <tr
               key={book.id}
               onClick={() => {
-                selected !== book.id ? setSelected(book.id) : setSelected();
+                selected !== book.id ? setSelected(book.id) : setSelected("");
               }}
               className={"".concat(selected === book.id ? "highlight" : "")}
             >

@@ -5,7 +5,7 @@ import FakeBookings from "./data/fakeBookings.json";
 import { useState } from "react";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings);
+  const [bookings] = useState(FakeBookings);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
