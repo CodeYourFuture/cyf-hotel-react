@@ -1,8 +1,16 @@
 import React from "react";
 
 const CustomerProfile = (props) => {
-  console.log(props.id + "inside customer profile");
-  return props.id !== 0 && <p>Customer {props.id} Profile</p>;
+  return (
+    props.guest !== null && (
+      <div>
+        <p>Customer id: {props.guest.id}</p>
+        <p>Customer email: {props.guest.email}</p>
+        <p>Customer status: {props.guest.vip === true ? "VIP" : "Normal"}</p>
+        <p>Customer phone number: {props.guest.phoneNumber}</p>
+      </div>
+    )
+  );
 };
 
 export default CustomerProfile;

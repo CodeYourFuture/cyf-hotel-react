@@ -3,7 +3,7 @@ import BookingsRow from "./BookingsRow";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = (props) => {
-  let [profileId, setProfileId] = useState(0);
+  let [guestProfile, setGuestProfile] = useState(null);
   return (
     <div>
       <table className="table">
@@ -27,7 +27,7 @@ const SearchResults = (props) => {
               <BookingsRow
                 key={guest.roomId}
                 guest={guest}
-                changeId={setProfileId}
+                changeGuestProfile={setGuestProfile}
               />
             ))
           ) : (
@@ -46,7 +46,7 @@ const SearchResults = (props) => {
           )}
         </tbody>
       </table>
-      <CustomerProfile id={profileId} />
+      <CustomerProfile guest={guestProfile} />
     </div>
   );
 };

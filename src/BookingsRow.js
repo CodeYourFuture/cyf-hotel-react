@@ -1,8 +1,20 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import moment from "moment/moment";
 
-const BookingsRow = (props) => {
+const BookingsRow = ({ guest, changeGuestProfile }) => {
   const [isSelected, setIsSelected] = useState(false);
+  const [finalData, setFinalData] = useState(null);
+
+  useEffect(() => {
+    const fetchGuest = async () => {
+      const response = await fetch(
+        `https://cyf-react.glitch.me/customers/${guest.id}`
+      );
+      const data = await response.json();
+      setFinalData(data);
+    };
+    fetchGuest();
+  }, [guest.id]);
 
   const calculateNights = useCallback((firstDate, secondDate) => {
     let first = moment(firstDate, "YYYY-MM-DD");
@@ -11,31 +23,27 @@ const BookingsRow = (props) => {
   }, []);
 
   const handleTableRowClick = useCallback(() => {
-    setIsSelected((prevState) => !prevState);
+    setIsSelected((isSelected) => !isSelected);
   }, []);
 
   const showProfile = useCallback(() => {
-    const id = props.guest.id;
-    console.log(id);
-    props.changeId(id);
-  }, [props.changeId, props.guest.id]);
+    changeGuestProfile(finalData);
+  }, [changeGuestProfile, finalData]);
 
   return (
     <tr
       className={isSelected ? "selected-row" : ""}
       onClick={handleTableRowClick}
     >
-      <th scope="row">{props.guest.id}</th>
-      <td>{props.guest.title}</td>
-      <td>{props.guest.firstName}</td>
-      <td>{props.guest.surname}</td>
-      <td>{props.guest.email}</td>
-      <td>{props.guest.roomId}</td>
-      <td>{props.guest.checkInDate}</td>
-      <td>{props.guest.checkOutDate}</td>
-      <td>
-        {calculateNights(props.guest.checkInDate, props.guest.checkOutDate)}
-      </td>
+      <th scope="row">{guest.id}</th>
+      <td>{guest.title}</td>
+      <td>{guest.firstName}</td>
+      <td>{guest.surname}</td>
+      <td>{guest.email}</td>
+      <td>{guest.roomId}</td>
+      <td>{guest.checkInDate}</td>
+      <td>{guest.checkOutDate}</td>
+      <td>{calculateNights(guest.checkInDate, guest.checkOutDate)}</td>
       <td>
         <button onClick={showProfile}>Show profile</button>
       </td>
