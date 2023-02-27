@@ -4,14 +4,16 @@ import "./App.css";
 import Search from "./Search";
 import Heading from "./Heading";
 import TouristCardData from "./TouristCardData";
-import TouristInfoCards from "./TouristInfoCards";
+import cities from "./data/TouristInfoCards.json";
+
+
 
 
 const App = () => {
   return (
     <div className="App">
    <Heading />
-   <TouristInfoCards />
+   <TouristCardData cities={cities} />
    <Bookings />
     </div>
   );
