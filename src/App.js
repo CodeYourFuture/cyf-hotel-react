@@ -1,5 +1,6 @@
 import React from "react";
 import Bookings from "./Bookings";
+import Restaurant from "./Restaurant";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
@@ -12,9 +13,10 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <Bookings />
-      <TouristInfoCards cities={cities} />
       <SearchResults />
+      <TouristInfoCards cities={cities} />
+      <Bookings />
+      <Restaurant />
       <Footer footer={footer} />
     </div>
   );
