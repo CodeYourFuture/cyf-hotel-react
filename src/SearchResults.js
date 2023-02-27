@@ -18,9 +18,23 @@ const SearchResults = (props) => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map((guest) => (
-          <BookingsRow key={guest.roomId} guest={guest} />
-        ))}
+        {props.results !== [] ? (
+          props.results.map((guest) => (
+            <BookingsRow key={guest.roomId} guest={guest} />
+          ))
+        ) : (
+          <tr>
+            <th scope="row">Loading...</th>
+            <td>Loading...</td>
+            <td>Loading...</td>
+            <td>Loading...</td>
+            <td>Loading...</td>
+            <td>Loading...</td>
+            <td>Loading...</td>
+            <td>Loading...</td>
+            <td>Loading...</td>
+          </tr>
+        )}
       </tbody>
     </table>
   );
