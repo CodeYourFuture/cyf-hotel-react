@@ -11,6 +11,7 @@ const SearchResults = item => (
       <td>{item.roomId}</td>
       <td>{item.checkInDate}</td>
       <td>{item.checkOutDat}</td>
+      <td>{item.nights}</td>
     </tr>
   </tbody>
 );

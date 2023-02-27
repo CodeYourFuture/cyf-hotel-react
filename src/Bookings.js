@@ -2,6 +2,7 @@ import React from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import data from "./data/fakeBookings.json";
+import moment from "moment";
 
 const Bookings = () => {
   const search = searchVal => {
@@ -25,6 +26,7 @@ const Bookings = () => {
                 <th> room id</th>
                 <th> check in date</th>
                 <th>check out date </th>
+                <th>nights</th>
               </tr>
             </thead>
 
@@ -39,6 +41,10 @@ const Bookings = () => {
                 roomId={item.roomId}
                 checkInDate={item.checkInDate}
                 checkOutDat={item.checkOutDate}
+                nights={moment(item.checkOutDate).diff(
+                  moment(item.checkInDate),
+                  "days"
+                )}
               />
             ))}
           </table>
