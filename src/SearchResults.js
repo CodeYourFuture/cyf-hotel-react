@@ -1,5 +1,4 @@
 import React from "react";
-import moment from "moment";
 import Nights from "./Nights";
 const SearchResults = ({ bookings }) => {
   return bookings.map((booking) => {
