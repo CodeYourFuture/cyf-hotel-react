@@ -14,6 +14,12 @@ const BookingsRow = (props) => {
     setIsSelected((prevState) => !prevState);
   }, []);
 
+  const showProfile = useCallback(() => {
+    const id = props.guest.id;
+    console.log(id);
+    props.changeId(id);
+  }, [props.changeId, props.guest.id]);
+
   return (
     <tr
       className={isSelected ? "selected-row" : ""}
@@ -29,6 +35,9 @@ const BookingsRow = (props) => {
       <td>{props.guest.checkOutDate}</td>
       <td>
         {calculateNights(props.guest.checkInDate, props.guest.checkOutDate)}
+      </td>
+      <td>
+        <button onClick={showProfile}>Show profile</button>
       </td>
     </tr>
   );
