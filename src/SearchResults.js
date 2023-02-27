@@ -22,28 +22,15 @@ const SearchResults = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.results !== [] ? (
-            props.results.map((guest) => (
-              <BookingsRow
-                key={guest.roomId}
-                guest={guest}
-                changeGuestProfile={setGuestProfile}
-              />
-            ))
-          ) : (
-            <tr>
-              <th scope="row">Loading...</th>
-              <td>Loading...</td>
-              <td>Loading...</td>
-              <td>Loading...</td>
-              <td>Loading...</td>
-              <td>Loading...</td>
-              <td>Loading...</td>
-              <td>Loading...</td>
-              <td>Loading...</td>
-              <td>Loading...</td>
-            </tr>
-          )}
+          {props.results !== ""
+            ? props.results.map((guest) => (
+                <BookingsRow
+                  key={guest.roomId}
+                  guest={guest}
+                  changeGuestProfile={setGuestProfile}
+                />
+              ))
+            : null}
         </tbody>
       </table>
       <CustomerProfile guest={guestProfile} />

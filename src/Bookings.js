@@ -3,11 +3,12 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
-  let [bookings, setBookings] = useState([]);
+  let [bookings, setBookings] = useState("");
   let [isLoading, setIsLoading] = useState(false);
+  let [error, setError] = useState("");
 
   const search = (searchVal) => {
-    if (bookings === [] || searchVal === "") return;
+    if (bookings === "" || searchVal === "") return;
     const newGuestLists = bookings.filter((guest) => {
       if (
         guest.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
@@ -22,10 +23,20 @@ const Bookings = () => {
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
-      let response = await fetch("https://cyf-react.glitch.me/delayed");
-      let data = await response.json();
-      setBookings(data);
-      setIsLoading(false);
+      try {
+        let response = await fetch("https://cyf-react.glitch.me/error");
+
+        if (response.status >= 400 && response.status < 600) {
+          throw new Error("Bad response from server");
+        } else {
+          let data = await response.json();
+          setBookings(data);
+          setIsLoading(false);
+        }
+      } catch (error) {
+        setError(error);
+        setIsLoading(false);
+      }
     };
     fetchData();
   }, []);
@@ -36,6 +47,9 @@ const Bookings = () => {
         <Search search={search} />
         <SearchResults results={bookings} />
         {isLoading ? <p>Please wait for loading data...</p> : null}
+        {error !== "" ? (
+          <p>{`We cannot load the page because an error has occurred.  ${error}. Please fix the error and try one more time.`}</p>
+        ) : null}
       </div>
     </div>
   );
