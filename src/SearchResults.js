@@ -27,20 +27,20 @@ const CreateTableHeader = () => (
 
 const CreateEachRow = (props) => (
   <tbody>
-    {props.results.map((eachPerson, index) => (
+    {props.results.map((item, index) => (
       <tr key={index}>
-        <td scope="row">{eachPerson.id}</td>
-        <td>{eachPerson.title}</td>
-        <td>{eachPerson.firstName}</td>
-        <td>{eachPerson.surname}</td>
-        <td>{eachPerson.email}</td>
-        <td>{eachPerson.roomId}</td>
-        <td>{eachPerson.checkInDate}</td>
-        <td>{eachPerson.checkOutDate}</td>
+        <td scope="row">{item.id}</td>
+        <td>{item.title}</td>
+        <td>{item.firstName}</td>
+        <td>{item.surname}</td>
+        <td>{item.email}</td>
+        <td>{item.roomId}</td>
+        <td>{item.checkInDate}</td>
+        <td>{item.checkOutDate}</td>
         <td>
           {
-            moment(eachPerson.checkOutDate).diff(
-              moment(eachPerson.checkInDate),
+            moment(item.checkOutDate).diff(
+              moment(item.checkInDate),
               "days"
             )
             // moment(eachPerson.checkOutDate.split("-")).diff(moment(eachPerson.checkInDate.split("-"))np, 'days')
