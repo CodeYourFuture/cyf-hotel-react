@@ -1,24 +1,49 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import BookingsRow from "./BookingsRow";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = (props) => {
   let [guestProfile, setGuestProfile] = useState(null);
+
+  const sortColumnWithNumbers = useCallback((event) => {}, []);
+
+  const sortColumnWithText = useCallback(() => {}, []);
+
   return (
     <div>
       <table className="table">
         <thead className="thead-dark">
           <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Title</th>
-            <th scope="col">First name</th>
-            <th scope="col">Surname</th>
-            <th scope="col">EMAIL</th>
-            <th scope="col">Room id</th>
-            <th scope="col">Check in date</th>
-            <th scope="col">Check out date</th>
-            <th scope="col">Number of nights</th>
-            <th scope="col">Profile</th>
+            <th scope="col" onClick={sortColumnWithNumbers}>
+              Id
+            </th>
+            <th scope="col" onClick={sortColumnWithText}>
+              Title
+            </th>
+            <th scope="col" onClick={sortColumnWithText}>
+              First name
+            </th>
+            <th scope="col" onClick={sortColumnWithText}>
+              Surname
+            </th>
+            <th scope="col" onClick={sortColumnWithText}>
+              EMAIL
+            </th>
+            <th scope="col" onClick={sortColumnWithNumbers}>
+              Room id
+            </th>
+            <th scope="col" onClick={sortColumnWithNumbers}>
+              Check in date
+            </th>
+            <th scope="col" onClick={sortColumnWithNumbers}>
+              Check out date
+            </th>
+            <th scope="col" onClick={sortColumnWithNumbers}>
+              Number of nights
+            </th>
+            <th scope="col" onClick={sortColumnWithNumbers}>
+              Profile
+            </th>
           </tr>
         </thead>
         <tbody>
