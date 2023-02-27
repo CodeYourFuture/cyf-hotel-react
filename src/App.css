@@ -52,6 +52,20 @@ tr {
   text-align: center;
 }
 
+.info-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content:center
+  
+}
 .card {
   width: 18rem;
+  padding: 5px 5px 5px 5px;
+
+}
+
+.card img {
+  border-radius: 10px;
 }
