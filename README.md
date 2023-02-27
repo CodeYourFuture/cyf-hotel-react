@@ -58,6 +58,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Hint:** You will find some useful `<table>` examples in the [Bootstrap documentation for tables](https://getbootstrap.com/docs/4.2/content/tables/#examples).
 
+
 **Test:** A table should render with a column for each booking attribute. The table can show more than one booking. The bookings that are displayed can be made up and hardcoded for now.
 
 #### 6. Show more bookings in the table

@@ -1,10 +1,10 @@
 import React from "react";
 import Search from "./Search.js";
-// import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import SearchResults from "./SearchResults.js";
+import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const search = searchVal => {
+  const search = (searchVal) => {
     console.info("TO DO!", searchVal);
   };
 
@@ -12,7 +12,22 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Frist Name</th>
+              <th scope="col">Surname</th>
+              <th scope="col">Email</th>
+              <th scope="col">Room ID</th>
+              <th scope="col">Check in Date</th>
+              <th scope="col">Check out Date</th>
+              <th scope="col">Number of Nights</th>
+            </tr>
+          </thead>
+          <SearchResults bookings={FakeBookings} />
+        </table>
       </div>
     </div>
   );
