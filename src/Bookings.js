@@ -5,7 +5,16 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   let [bookings, setBookings] = useState([]);
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    if (bookings === [] || searchVal === "") return;
+    const newGuestLists = bookings.filter((guest) => {
+      if (
+        guest.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        guest.surname.toLowerCase().includes(searchVal.toLowerCase())
+      ) {
+        return guest;
+      }
+    });
+    setBookings(newGuestLists);
   };
 
   const render = () => {
