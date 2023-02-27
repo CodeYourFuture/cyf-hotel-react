@@ -1,6 +1,8 @@
 import React from "react";
 import TableRow from "./TableRow";
 
+
+
 const SearchResult = ({ result }) => {
   console.log(result);
 
@@ -17,6 +19,7 @@ const SearchResult = ({ result }) => {
             <th>roomId</th>
             <th>checkInDate</th>
             <th>checkOutDate</th>
+            <th>totalNights</th>
           </tr>
         </thead>
         <tbody>
@@ -31,6 +34,7 @@ const SearchResult = ({ result }) => {
               roomId={item.roomId}
               checkInDate={item.checkInDate}
               checkOutDate={item.checkOutDate}
+              
             />
           ))}
         </tbody>

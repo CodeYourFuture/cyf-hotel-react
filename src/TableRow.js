@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const TableRow = (props) => {
   return (
     <tr>
@@ -11,6 +12,7 @@ const TableRow = (props) => {
       <td>{props.roomId}</td>
       <td>{props.checkInDate}</td>
       <td>{props.checkOutDate}</td>
+    
     </tr>
   );
 };
