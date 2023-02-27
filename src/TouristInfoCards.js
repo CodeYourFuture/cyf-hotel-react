@@ -7,9 +7,14 @@ const TouristInfoCards = () => {
         <img
           src="https://peoplemakeglasgow.com/imager/general/548549/European-Sport-Capital_Header-Image-1_961ee30b631a75b37d23eb0e09df30ea.png"
           className="card-img-top"
+          target="_blank"
         />
         <div className="card-body">
-          <a href="https://peoplemakeglasgow.com" className="btn btn-primary">
+          <a
+            href="https://peoplemakeglasgow.com"
+            className="btn btn-primary"
+            target="_blank"
+          >
             Go somewhere
           </a>
         </div>
@@ -20,7 +25,11 @@ const TouristInfoCards = () => {
           className="card-img-top"
         />
         <div className="card-body">
-          <a href="https://peoplemakeglasgow.com" className="btn btn-primary">
+          <a
+            href="https://peoplemakeglasgow.com"
+            className="btn btn-primary"
+            target="_blank"
+          >
             Go somewhere
           </a>
         </div>
@@ -29,9 +38,14 @@ const TouristInfoCards = () => {
         <img
           src="https://peoplemakeglasgow.com/imager/general/548549/European-Sport-Capital_Header-Image-1_961ee30b631a75b37d23eb0e09df30ea.png"
           className="card-img-top"
+          target="_blank"
         />
         <div className="card-body">
-          <a href="https://peoplemakeglasgow.com" className="btn btn-primary">
+          <a
+            href="https://peoplemakeglasgow.com"
+            className="btn btn-primary"
+            target="_blank"
+          >
             Go somewhere
           </a>
         </div>
