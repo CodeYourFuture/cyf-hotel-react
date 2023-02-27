@@ -4,6 +4,8 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   let [bookings, setBookings] = useState([]);
+  let [isLoading, setIsLoading] = useState(false);
+
   const search = (searchVal) => {
     if (bookings === [] || searchVal === "") return;
     const newGuestLists = bookings.filter((guest) => {
@@ -17,22 +19,23 @@ const Bookings = () => {
     setBookings(newGuestLists);
   };
 
-  const render = () => {
-    useEffect(() => {
-      fetch("https://cyf-react.glitch.me")
-        .then((res) => res.json())
-        .then((data) => {
-          setBookings(data);
-        });
-    }, []);
-  };
-  render();
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      let response = await fetch("https://cyf-react.glitch.me/delayed");
+      let data = await response.json();
+      setBookings(data);
+      setIsLoading(false);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
         <SearchResults results={bookings} />
+        {isLoading ? <p>Please wait for loading data...</p> : null}
       </div>
     </div>
   );
