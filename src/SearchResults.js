@@ -25,7 +25,7 @@ const SearchResults = (props) => {
           {props.results !== ""
             ? props.results.map((guest) => (
                 <BookingsRow
-                  key={guest.roomId}
+                  key={guest.id}
                   guest={guest}
                   changeGuestProfile={setGuestProfile}
                 />
