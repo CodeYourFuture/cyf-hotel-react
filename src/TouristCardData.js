@@ -13,13 +13,12 @@ const TouristCardData = (props) => {
             <h2 className="place">{city.title}</h2>
             <p className="summary"> {city.description}</p>
             <a href={city.link} className="link" target="_blank" type="button">
-                More Information
+            More Information
             </a>
-        </div>     
+        </div> 
     </div>)}
             
         </div>
-    
     );
 };
 

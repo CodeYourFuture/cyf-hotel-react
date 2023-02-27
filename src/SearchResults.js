@@ -21,6 +21,8 @@ const SearchResults = props => {
     {props.results.map(booking => {
     //   let a = moment(booking.checkInDate, "YYYY-MM-DD")
     //   let b = moment(booking.checkOutDate, "YYYY-MM-DD")
+
+
       return(
           <tr key={booking.id}>
             <td>{booking.id}</td>
