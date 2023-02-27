@@ -6,7 +6,7 @@ import Heading from "./Heading";
 import TouristCardData from "./TouristCardData";
 import cities from "./data/TouristInfoCards.json";
 import Footer from "./Footer";
-
+import SearchResults from "./SearchResults";
 
 const address = ["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"];
 
@@ -17,6 +17,7 @@ const App = () => {
    <Bookings />
    <TouristCardData cities={cities} />
    <Footer footer={address} />
+
     </div>
   );
 };
