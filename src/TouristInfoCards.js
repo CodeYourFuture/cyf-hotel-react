@@ -11,7 +11,7 @@ function TouristInfoCards() {
         <h1>Glasgow</h1>
         <p>This is a description</p>
         <div className="card-body">
-          <a href="peoplemakeglasgow.com" className="btn btn-primary">
+          <a href="https://peoplemakeglasgow.com" className="btn btn-primary" target="_blank">
           More Information
           </a>
         </div>
@@ -24,7 +24,7 @@ function TouristInfoCards() {
         <h1>Manchester</h1>
         <p>This is a description</p>
         <div className="card-body">
-          <a href="visitmanchester.com" className="btn btn-primary">
+          <a href="https://visitmanchester.com" className="btn btn-primary" target="_blank">
           More Information
           </a>
         </div>
@@ -37,7 +37,7 @@ function TouristInfoCards() {
         <h1>London</h1>
         <p>This is a description</p>
         <div className="card-body">
-          <a href="visitlondon.com" className="btn btn-primary">
+          <a href="https://visitlondon.com" className="btn btn-primary" target="_blank">
             More Information
           </a>
         </div>

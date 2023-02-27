@@ -7,13 +7,13 @@ import Bookings from "./Bookings";
 import "./App.css";
 
 const App = () => {
-  const addressArray = ["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"];
+  const address = ["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"];
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <Footer address = {addressArray}/>
+      <Footer address = {address}/>
     </div>
   );
 };
