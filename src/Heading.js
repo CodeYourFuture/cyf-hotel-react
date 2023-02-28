@@ -1,10 +1,12 @@
 import react from "react";
 function Heading(){
     return (
-        <div>
-            <header className="App-header">CYF Hotel</header>
-            <img src="./img/man.png"></img> 
-        </div>
+        
+            <header className="App-header">
+                 <h2>CYF's Hotel</h2>
+                <img src ="../img/man.png" />
+            </header>
+            
     );
 }
 export default Heading
