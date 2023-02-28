@@ -1,50 +1,50 @@
 import React from "react";
 
-export default function SearchResults() {
-  const bookings = [
-    {
-      id: "1",
-      title: "Mrs",
-      firstName: "John",
-      surname: "Doe",
-      email: "johndoe@gmail.com",
-      roomId: "12A",
-      checkInDate: "20/02/2023",
-      checkOutDate: "22/02/2023",
-    },
-    {
-      id: "2",
-      title: "Mr",
-      firstName: "Ben",
-      surname: "Anderson",
-      email: "benanderson@gmail.com",
-      roomId: "13B",
-      checkInDate: "28/02/2023",
-      checkOutDate: "29/02/2023",
-    },
-    {
-      id: "3",
-      title: "Miss",
-      firstName: "Dana",
-      surname: "Smith",
-      email: "danasmith@gmail.com",
-      roomId: "2D",
-      checkInDate: "8/01/2023",
-      checkOutDate: "9/01/2023",
-    },
-    {
-      id: "4",
-      title: "Mr",
-      firstName: "George",
-      surname: "Mitea",
-      email: "georgemitea@gmail.com",
-      roomId: "1C",
-      checkInDate: "12/03/2023",
-      checkOutDate: "14/03/2023",
-    },
-  ];
+export default function SearchResults(props) {
+  //   const bookings = [
+  //     {
+  //       id: "1",
+  //       title: "Mrs",
+  //       firstName: "John",
+  //       surname: "Doe",
+  //       email: "johndoe@gmail.com",
+  //       roomId: "12A",
+  //       checkInDate: "20/02/2023",
+  //       checkOutDate: "22/02/2023",
+  //     },
+  //     {
+  //       id: "2",
+  //       title: "Mr",
+  //       firstName: "Ben",
+  //       surname: "Anderson",
+  //       email: "benanderson@gmail.com",
+  //       roomId: "13B",
+  //       checkInDate: "28/02/2023",
+  //       checkOutDate: "29/02/2023",
+  //     },
+  //     {
+  //       id: "3",
+  //       title: "Miss",
+  //       firstName: "Dana",
+  //       surname: "Smith",
+  //       email: "danasmith@gmail.com",
+  //       roomId: "2D",
+  //       checkInDate: "8/01/2023",
+  //       checkOutDate: "9/01/2023",
+  //     },
+  //     {
+  //       id: "4",
+  //       title: "Mr",
+  //       firstName: "George",
+  //       surname: "Mitea",
+  //       email: "georgemitea@gmail.com",
+  //       roomId: "1C",
+  //       checkInDate: "12/03/2023",
+  //       checkOutDate: "14/03/2023",
+  //     },
+  //   ];
 
-  const bookingList = bookings.map((element) => (
+  const bookingList = props.results.map((element) => (
     <tr>
       <td>{element.id}</td>
       <td>{element.title}</td>
