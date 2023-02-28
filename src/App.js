@@ -5,6 +5,7 @@ import Footer from "./Footer"
 
 import Bookings from "./Bookings";
 import "./App.css";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   const cardsInfo = [{image:"https://media.timeout.com/images/105400989/750/422/image.jpg", city : "Glasgow", description : 'This is a description about Glasgow', buttonLink : "https://peoplemakeglasgow.com"},
@@ -18,6 +19,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards cards = {cardsInfo}/>
       <Bookings />
+      <Restaurant />
       <Footer address = {address}/>
     </div>
   );

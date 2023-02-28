@@ -83,3 +83,7 @@ tr {
   align-items: center;
 }
 
+.restaurantOrders {
+  justify-content: center;
+  display: flex;
+}
