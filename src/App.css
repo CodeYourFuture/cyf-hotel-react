@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  /* height: 50px; */
   padding: 20px;
   color: white;
   text-align: left;
@@ -51,7 +51,27 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
+h2{
+  text-align: center;
+}
+.card-container{
+display: flex;
+justify-content: center;
+margin-top: 50px;
+gap: 100px;
+}
+.btn-primary{
+display: flex;
+  justify-content: center;
+}
 
 .card {
   width: 18rem;
+}
+
+.contact-container{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
 }
