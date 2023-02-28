@@ -47,11 +47,6 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
-}
-
 .card {
   width: 18rem;
   display: flex;
@@ -82,5 +77,22 @@ tr {
 
 .tableList {
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
+}
+
+
+/* -------------Footer style ----------- */
+
+.footer {
+  padding-top: 20px;
+  text-align: center;
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+  margin-top: 20px;
+  background-image: url("");
+}
+
+.footer li {
+  list-style: none;
 }

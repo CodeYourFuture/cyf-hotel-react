@@ -1,21 +1,26 @@
 import React from 'react'
 
 function SearchResults(props) {
-    console.log(props);
-  return (
 
-        <tbody className='tableList'>
-            
-            <tr>{props.id}</tr>
-            <tr>{props.title}</tr>
-            <tr>{props.firstName}</tr>
-            <tr>{props.surename}</tr>
-            <tr>{props.email}</tr>
-            <tr>{props.roomId}</tr>
-            <tr>{props.checkInDate}</tr>
-            <tr>{props.checkOutDate}</tr>
-        </tbody>
-   
+  return (
+<>
+      
+  <table class="table">
+  
+  <tbody>
+    <tr>
+      <td>{props.id}</td>
+      <td>{props.title}</td>
+      <td>{props.firstName}</td>
+      <td>{props.surname}</td>
+      <td>{props.email}</td>
+      <td>{props.roomId}</td>
+      <td>{props.checkInDate}</td>
+      <td>{props.checkOutDate}</td>
+    </tr>
+  </tbody>
+</table>
+</>
   )
 }
 
