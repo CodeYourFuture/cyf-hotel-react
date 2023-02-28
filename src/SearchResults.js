@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchResults = () => {
+const SearchResults = ({ results }) => {
   return (
     <table className="table table-striped">
       <thead>
@@ -16,26 +16,18 @@ const SearchResults = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mr</td>
-          <td>Sam</td>
-          <td>Pennington</td>
-          <td>Spennington@london.com</td>
-          <td>111</td>
-          <td>2023-02-25</td>
-          <td>2023-02-28</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Mrs</td>
-          <td>Eliza</td>
-          <td>Thomas</td>
-          <td>EThomas@london.com</td>
-          <td>222</td>
-          <td>2023-02-25</td>
-          <td>2023-02-28</td>
-        </tr>
+        {results.map((booking) => (
+          <tr key={booking.id}>
+            <td>{booking.id}</td>
+            <td>{booking.title}</td>
+            <td>{booking.firstName}</td>
+            <td>{booking.surname}</td>
+            <td>{booking.email}</td>
+            <td>{booking.roomId}</td>
+            <td>{booking.checkInDate}</td>
+            <td>{booking.checkOutDate}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
