@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import from "react";
+import RestaurantButton from "./RestaurantButton"
 
 const Restaurant = () => {
   let [order, setOrders] = useState(0);
@@ -19,9 +19,8 @@ const Restaurant = () => {
       <ul>
         <li>
           Pizzas: {order}
-          <button onClick={orderOne} className="btn btn-primary">
-            Add
-          </button>
+          <RestaurantButton prop = {orderOne}/>
+          
         </li>
       </ul>
     </div>
@@ -29,3 +28,5 @@ const Restaurant = () => {
 };
 
 export default Restaurant;
+
+
