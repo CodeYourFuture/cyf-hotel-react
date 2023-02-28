@@ -1,12 +1,8 @@
 import React from "react";
+import moment from 'moment';
 
 
 function SearchResults(props) {
-  let nigthDifference = 0
-  // let a = moment([2007, 0, 29])
-  // let b = moment([2007, 0, 28])
-  // let nigthDifference = a.diff(b, 'days') // 1
-
   let tr = props.results.map((element) => (
     <tr className="tableRow">
       <td>{element.id}</td>
@@ -17,7 +13,7 @@ function SearchResults(props) {
       <td>{element.roomId}</td>
       <td>{element.checkInDate}</td>
       <td>{element.checkOutDate}</td>
-      <td>{nigthDifference}</td>
+      <td>{moment(element.checkOutDate).diff(moment(element.checkInDate), 'days')}</td>
     </tr>
   ));
 
