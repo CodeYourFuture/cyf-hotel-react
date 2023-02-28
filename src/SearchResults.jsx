@@ -1,18 +1,16 @@
 import React from "react";
 import moment from "moment";
 
-const obj = {a: 1, b: 2}
+// const obj = {a: 1, b: 2}
 
-const {a, b } = obj
+// const {a, b } = obj
 
-const SearchResults = ({results,  list}) => {
-  // const ourObject = props.results; // or to put {results} into curly braces in the parameter instead of writing this line
+const SearchResults = (props) => {
+  const ourObject = props.results; // or to put {results} into curly braces in the parameter instead of writing this line
   return (
     <table className="table">
       <thead>
-        results
         <tr>
-          results
           <th scope="col">Id</th>
           <th scope="col">Title</th>
           <th scope="col">First name</th>
@@ -25,7 +23,7 @@ const SearchResults = ({results,  list}) => {
         </tr>
       </thead>
       <tbody>
-        {results.map((result) => (
+        {ourObject.map((result) => (
           <tr scope="row" key={result.id}>
             <td>{result.id}</td>
             <td>{result.title}</td>
