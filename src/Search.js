@@ -17,7 +17,7 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <button className="btn btn-primary">Search</button>
+              < SearchButton />
             </div>
           </form>
         </div>
@@ -25,5 +25,9 @@ const Search = () => {
     </div>
   );
 };
+const  SearchButton= ()=>{
+  return <button className="btn btn-primary">Search</button>;
+
+}
 
 export default Search;
