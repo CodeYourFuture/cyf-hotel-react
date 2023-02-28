@@ -1,0 +1,51 @@
+import "./App.css";
+import moment from "moment";
+
+const SearchResults = props => {
+  return (
+    <div>
+      <h4>Search Results</h4>
+      <table>
+        <thead>
+          <tr>
+            <th className="table-titles">Id</th>
+            <th className="table-titles">Title</th>
+            <th className="table-titles">First Name</th>
+            <th className="table-titles">Surname</th>
+            <th className="table-titles">Email</th>
+            <th className="table-titles">Room Id</th>
+            <th className="table-titles">Check in date</th>
+            <th className="table-titles">Check out date</th>
+            <th className="table-titles">Nights Stayed</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.results.map(obj => {
+            // let a = moment(obj.checkInDate, "YYYY-MM-DD");
+            // let b = moment(obj.checkOutDate, "YYYY-MM-DD");
+            const dateOne = new Date(obj.checkInDate);
+            const dateTwo = new Date(obj.checkOutDate);
+            const Difference_In_Time = dateTwo.getTime() - dateOne.getTime();
+            const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+            return (
+              <tr key={obj.id}>
+                <td>{obj.id}</td>
+                <td>{obj.title}</td>
+                <td>{obj.firstName}</td>
+                <td>{obj.surname}</td>
+                <td>{obj.email}</td>
+                <td>{obj.roomId}</td>
+                <td>{obj.checkInDate}</td>
+                <td>{obj.checkOutDate}</td>
+                <td>{Difference_In_Days}</td>
+                {/* <td>{moment(b).diff(a, "days")}</td> */}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default SearchResults;
