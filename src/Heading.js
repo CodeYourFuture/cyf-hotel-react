@@ -1,5 +1,5 @@
 import react from "react";
-// import man from './img/man.png'
+import man from './img/man.png'
 function Heading(){
     return (
         
