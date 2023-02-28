@@ -68,3 +68,7 @@ tr {
   justify-content: space-evenly;
   margin-top: 1em;
 }
+
+.SelectedRows {
+  background-color: pink;
+}

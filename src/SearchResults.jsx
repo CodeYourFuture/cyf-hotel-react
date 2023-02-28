@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 function SearchResults(info) {
-  console.log(info);
+  //   console.log(info);
   const allInfo = info.results;
-  console.log(allInfo);
-  //   const moment = require("moment");
+  //   console.log(allInfo);
+
+  const [selectRow, setSelectRow] = useState([]);
+
+  const rowClick = bookingDetails => {
+    const SelectedRows = [...selectRow];
+    if (SelectedRows.includes(bookingDetails)) {
+      setSelectRow(SelectedRows.filter(eachRow => eachRow !== bookingDetails));
+    } else {
+      SelectedRows.concat(bookingDetails);
+      setSelectRow(SelectedRows);
+    }
+  };
 
   return (
     <table className="table">
@@ -23,8 +34,12 @@ function SearchResults(info) {
         </tr>
       </thead>
       <tbody>
-        {allInfo.map(detail => (
-          <tr key={detail.id}>
+        {allInfo.map((detail, index) => (
+          <tr
+            key={detail.id}
+            onClick={() => rowClick(index)}
+            className={selectRow.includes(index) ? "SelectedRows" : ""}
+          >
             <td>{detail.id}</td>
             <td>{detail.title}</td>
             <td>{detail.firstName}</td>
