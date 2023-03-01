@@ -89,7 +89,7 @@ tr {
   border-radius: 5%;
   border: 3px solid black;
  }
- .selected{
+ .newSelectedRows{
   color: black;
   background-color: rgb(228, 185, 31);
   

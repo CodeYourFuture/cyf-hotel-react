@@ -3,7 +3,6 @@ import moment from "moment";
 
 function SearchResults(props) {
   const [selectedRows, setSelectedRows] = useState([]);
-
   const clickedRows = (bookingDetails) => {
     const newSelectedRows = [...selectedRows];
 
@@ -16,7 +15,6 @@ function SearchResults(props) {
       setSelectedRows(newSelectedRows);
     }
   };
-
   return (
     <table className="table">
       <thead>
@@ -37,7 +35,7 @@ function SearchResults(props) {
           <tr
             key={result.id}
             onClick={() => clickedRows(index)}
-            className={selectedRows.includes(index) ? "selected" : ""}
+            className={selectedRows.includes(index) ? "newSelectedRows" : ""}
           >
             <th scope="row">{result.id}</th>
             <td>{result.title}</td>
