@@ -1,15 +1,15 @@
 import React, {useState} from "react";
 import RestaurantButton from "./RestaurantButton";
 
-const Order = () => {
+const Order = (props) => {
     const [orders, setCount] = useState(0);
     const orderOne = () => {
       setCount(orders+1);
     }
     return (
-        <li>
-             Pizzas: {orders} <RestaurantButton orderOne = {orderOne}/>
-         </li>
+            <li className="order-wrapper">
+                 {props.orderType}: {orders} <RestaurantButton orderOne = {orderOne}/>
+            </li>
     )
 }
 

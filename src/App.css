@@ -87,3 +87,10 @@ tr {
   justify-content: center;
   display: flex;
 }
+
+.order-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
+  align-items: center;
+}
