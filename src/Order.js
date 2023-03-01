@@ -8,7 +8,7 @@ const Order = (props) => {
     }
     return (
             <li className="order-wrapper">
-                 {props.orderType}: {orders} <RestaurantButton orderOne = {orderOne}/>
+                 {props.orderType}: <div>{orders}</div> <RestaurantButton orderOne = {orderOne}/>
             </li>
     )
 }

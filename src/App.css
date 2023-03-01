@@ -87,10 +87,12 @@ tr {
   justify-content: center;
   display: flex;
 }
-
+.ul-wrapper {
+  width: 25%;
+}
 .order-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 3%;
   align-items: center;
 }
