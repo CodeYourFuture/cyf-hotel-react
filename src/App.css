@@ -88,11 +88,18 @@ tr {
   display: flex;
 }
 .ul-wrapper {
-  width: 25%;
+  width: 20%;
+}
+
+.order-button {
+  display: flex;
+  align-items: center;
+  gap: 15%;
 }
 .order-wrapper {
   display: flex;
-  justify-content: space-evenly;
+  flex: 2;
+  justify-content: space-between;
   margin-top: 3%;
   align-items: center;
 }
