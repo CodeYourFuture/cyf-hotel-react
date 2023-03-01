@@ -103,3 +103,11 @@ tr {
   margin-top: 3%;
   align-items: center;
 }
+
+.tableRow {
+  background-color: lightblue;
+}
+
+.newTrColor {
+  background-color: lightgreen;
+}

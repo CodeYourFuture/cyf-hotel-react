@@ -1,10 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import moment from 'moment';
 
 
 function SearchResults(props) {
+  
+  const [selected, SetColour] = useState()
+  
+  function SetColour () {
+    return className = 'newTrColor'
+  }
+
   let tr = props.results.map((element) => (
-    <tr className="tableRow">
+    <tr className="tableRow" onClick = {SetColour}>
       <td>{element.id}</td>
       <td>{element.title}</td>
       <td>{element.firstName}</td>
