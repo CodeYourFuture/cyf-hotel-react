@@ -81,7 +81,7 @@ h1 {
 
  .all-cards {
   display: flex;
-  gap:15px;
+  gap:100px;
   justify-content: center;
   margin-top: 15px;
  }
