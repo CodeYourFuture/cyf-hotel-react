@@ -6,7 +6,7 @@ function TouristInfoCards(cities) {
       <img src={cities.pic} className="card-img-top" />
       <section className="card-body">
         <h3>{cities.name}</h3>
-        {/* <p>{cities.description}</p> */}
+        <p>{cities.description}</p>
         <a href={cities.url} className="btn btn-primary">
           More about {cities.name}
         </a>
