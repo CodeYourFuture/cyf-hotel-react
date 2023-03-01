@@ -14,8 +14,8 @@ const Bookings = () => {
       
   }, []);
 
-  const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+  const search = (searchInput) => {
+    console.info(searchInput);
   };
 
   return (

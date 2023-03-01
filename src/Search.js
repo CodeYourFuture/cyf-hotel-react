@@ -4,13 +4,17 @@ import SearchButton from "./SearchButton";
 
 // const Search = () => {
 
-  function Search() {
+  function Search({search}) {
   const [searchInput, setSearchInput] = useState('');
 
   function handleSearchInput(event) {
     const value = event.target.value;
     setSearchInput(value);
-     console.log(value); 
+  }
+
+  function handleSubmitButton(event) {
+    event.preventDefault();
+    search(searchInput);
   }
 
   return (
@@ -20,11 +24,12 @@ import SearchButton from "./SearchButton";
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form className="form-group search-box"
+            onSubmit={handleSubmitButton}>
             {/* <label htmlFor="customerName">Customer name</label> */}
             <div className="search-row">
               <input
-              value={searchInput}
+                value={searchInput}
                 type="text"
                 id="customerName"
                 className="form-control"
