@@ -1,11 +1,11 @@
 import React from "react";
-import FakeBookings from "./data/fakeBookings.json";
+import fakeBookings from "./data/fakeBookings.json";
 import moment from "moment";
 
 const SearchResults = (props) => (
   <table className="table table-striped">
     <CreateTableHeader />
-    <CreateEachRow results={FakeBookings} />
+    <CreateEachRow results={fakeBookings} />
   </table>
 );
 
