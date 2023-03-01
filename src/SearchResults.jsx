@@ -2,13 +2,9 @@ import React, { useState } from "react";
 import moment from "moment";
 
 function SearchResults(info) {
-  //   console.log(info);
-  const allInfo = info.results;
-  //   console.log(allInfo);
-
   const [selectRow, setSelectRow] = useState([]);
 
-  const rowClick = bookingDetails => {
+  const handleRowClick = bookingDetails => {
     const SelectedRows = [...selectRow];
     if (SelectedRows.includes(bookingDetails)) {
       setSelectRow(SelectedRows.filter(eachRow => eachRow !== bookingDetails));
@@ -34,10 +30,10 @@ function SearchResults(info) {
         </tr>
       </thead>
       <tbody>
-        {allInfo.map((detail, index) => (
+        {info.results.map((detail, index) => (
           <tr
             key={detail.id}
-            onClick={() => rowClick(index)}
+            onClick={() => handleRowClick(index)}
             className={selectRow.includes(index) ? "SelectedRows" : ""}
           >
             <td>{detail.id}</td>
