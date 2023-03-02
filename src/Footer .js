@@ -8,6 +8,7 @@ const Footer = props => {
           <li key={i}>{element}</li>
         ))}
       </ul>
+      <a href="https://github.com/MariAzhdari">Marziyeh Azhdari</a>
     </div>
   );
 };
