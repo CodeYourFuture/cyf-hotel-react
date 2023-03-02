@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-function SearchResults(info) {
+function SearchResults(props) {
+  const searchResults = props.results.filter(value => {
+    return (
+      value.firstName.toLowerCase().includes(props.searchInput.toLowerCase()) ||
+      value.surname.toLowerCase().includes(props.searchInput.toLowerCase())
+    );
+  });
+  //   console.log(searchResults);
+
   const [selectRow, setSelectRow] = useState([]);
 
   const handleRowClick = bookingDetails => {
@@ -9,10 +17,15 @@ function SearchResults(info) {
     if (SelectedRows.includes(bookingDetails)) {
       setSelectRow(SelectedRows.filter(eachRow => eachRow !== bookingDetails));
     } else {
-      SelectedRows.concat(bookingDetails);
+      SelectedRows.push(bookingDetails);
       setSelectRow(SelectedRows);
     }
   };
+
+  function CustomerProfile(e, id) {
+    console.log(id);
+    console.log(props.results.find(result => result.id == id));
+  }
 
   return (
     <table className="table">
@@ -27,10 +40,11 @@ function SearchResults(info) {
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
           <th scope="col">Number of nights</th>
+          <th scope="col">Customer Profile</th>
         </tr>
       </thead>
       <tbody>
-        {info.results.map((detail, index) => (
+        {searchResults.map((detail, index) => (
           <tr
             key={detail.id}
             onClick={() => handleRowClick(index)}
@@ -46,6 +60,14 @@ function SearchResults(info) {
             <td>{detail.checkOutDate}</td>
             <td>
               {moment(detail.checkOutDate).diff(detail.checkInDate, "days")}
+            </td>
+            <td>
+              <button
+                className="btn btn-primary"
+                onClick={() => props.setCustomerProfile(detail.id)}
+              >
+                Show Profile
+              </button>
             </td>
           </tr>
         ))}
