@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import Order from "./Order"
 const Restaurant = () => {
   const pizzas = 0;
   return (

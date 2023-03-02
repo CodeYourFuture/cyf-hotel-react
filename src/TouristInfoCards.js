@@ -3,8 +3,8 @@ const TouristInfoCard = (props) => {
     
           <div className="card">
             <h1>{props.title}</h1>
-            <img src={props.image}/>
-            <h5>{props.description}</h5>
+            <img className="img-header" src={props.image}/>
+            <p>{props.description}</p>
             <a href= {props.link}></a>       
           </div>
     );        
