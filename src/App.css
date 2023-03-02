@@ -1,5 +1,5 @@
 .App {
-  text-align: left;
+  text-align: center;
 }
 
 .App-logo {
@@ -89,7 +89,14 @@ tr {
   width: 100%;
   height: 100%;
 }
-
+.order-type {
+  display: flex;
+  gap: 20px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
 footer ul {
   display: flex;
   justify-content: space-around;
@@ -100,4 +107,8 @@ table .thead-dark th {
   color: #fff;
   background-color: #212529;
   border-color: #32383e;
+}
+
+.selected-colour {
+  background-color: lightgray;
 }

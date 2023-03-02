@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
+  const [bookings, setBookings] = useState(FakeBookings);
+
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
   };
@@ -26,7 +28,7 @@ const Bookings = () => {
               <th scope="col">Nights</th>
             </tr>
           </thead>
-          <SearchResults bookings={FakeBookings} />
+          <SearchResults results={bookings} />
         </table>
       </div>
     </div>
