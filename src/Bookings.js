@@ -3,8 +3,18 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
-const Bookings = () => {
+function Bookings (){
   const [bookings, setBookings] = useState([]);
+
+  const search = (searchVal) => {
+    const customerSearch = bookings.filter((customerName) => {
+      return (
+        customerName.firstName.toLowerCase().includes(searchVal) ||
+        customerName.surname.toLowerCase().includes(searchVal)
+      );
+    })
+    setBookings(customerSearch, searchVal);
+  };
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
@@ -14,9 +24,9 @@ const Bookings = () => {
       
   }, []);
 
-  const search = (searchInput) => {
-    console.info(searchInput);
-  };
+  // function search (searchInput) {
+  //   console.info(searchInput);
+  // };
 
   return (
     <div className="App-content">
