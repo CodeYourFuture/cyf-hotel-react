@@ -1,35 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+import { numberOfNight } from "./Nights";
 
-const SearchResults = ({ bookings }) => {
+const SearchResults = ({ results }) => {
+  const [selectedRow, setSelectedRow] = useState(null);
+
+  const handleRowClick = (id) => {
+    if (id === selectedRow) {
+      setSelectedRow(null);
+    } else {
+      setSelectedRow(id);
+    }
+  };
+
   return (
-    <table className="table">
-      <thead className="thead-dark">
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Title</th>
-          <th scope="col">Firstname</th>
-          <th scope="col">Surename</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room ID</th>
-          <th scope="col">Check in Date</th>
-          <th scope="col">Check out Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        {bookings.map((bookings) => (
-          <tr key={bookings.id}>
-            <td>{bookings.id}</td>
-            <td>{bookings.title}</td>
-            <td>{bookings.firstName}</td>
-            <td>{bookings.surname}</td>
-            <td>{bookings.email}</td>
-            <td>{bookings.roomId}</td>
-            <td>{bookings.checkInDate}</td>
-            <td>{bookings.checkOutDate}</td>
+    <tbody>
+      {results.map((result) => {
+        return (
+          <tr
+            key={result.id}
+            className={result.id === selectedRow ? "selected-colour" : ""}
+            onClick={() => handleRowClick(result.id)}
+          >
+            <td>{result.id}</td>
+            <td>{result.title}</td>
+            <td>{result.firstName}</td>
+            <td>{result.surname}</td>
+            <td>{result.email}</td>
+            <td>{result.roomId}</td>
+            <td>{result.checkInDate}</td>
+            <td>{result.checkOutDate}</td>
+            <td>
+              {numberOfNight({
+                checkInDate: result.checkInDate,
+                checkOutDate: result.checkOutDate,
+              })}
+            </td>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        );
+      })}
+    </tbody>
   );
 };
 

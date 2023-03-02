@@ -5,7 +5,7 @@ const TouristInfoCards = () => {
     <div className="cardContainer">
       <div className="card">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Kingston_Bridge_in_Glasgow.jpg/800px-Kingston_Bridge_in_Glasgow.jpg"
+          src="https://peoplemakeglasgow.com/imager/general/109009/City-centre-George-Square-Content-Block_aa93d8ee9a3cc573b9a01b328410e8b2.jpg"
           className="card-img-top"
           alt="Glasgow on a budget"
         />
@@ -22,7 +22,7 @@ const TouristInfoCards = () => {
       </div>
       <div className="card">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Manchester_Cathedral.JPG"
+          src="https://eu-assets.simpleview-europe.com/manchester2016/imageresizer/?image=%2Fdbimgs%2FOlympic%20Parade%20nav.jpg&action=FeaturedItems3x2"
           className="card-img-top"
           alt="Glasgow on a budget"
         />
@@ -42,7 +42,7 @@ const TouristInfoCards = () => {
       </div>
       <div className="card">
         <img
-          src="https://thumbs.dreamstime.com/b/big-ben-london-autumn-leaves-32915756.jpg"
+          src="https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/tower-bridge/thames_copyright_visitlondon_antoinebuchet640x360.jpg?mw=640&hash=27AEBE2D1B7279A196CC1B4548638A9679BE107A"
           className="card-img-top"
           alt="Glasgow on a budget"
         />

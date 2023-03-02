@@ -1,26 +1,21 @@
 import React from "react";
+
 import Heading from "./Heading";
 import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
-import Restaurant from  "./Restaurant"
-import SearchResults from "./SearchResults";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
 import "./App.css";
-import Order from "./Order";
-
 const App = () => {
-
   return (
     <div className="App">
-      <header className="header">CYF Hotel</header>
+      <header className="App-header">CYF Hotel</header>
       <Heading />
-      <Bookings />
       <TouristInfoCards />
-      <Restaurant/>
-      <SearchResults />
-      <Order/>
+      <Bookings />
+      <Restaurant />
       <Footer />
     </div>
   );
 };
-export default App();
+export default App;

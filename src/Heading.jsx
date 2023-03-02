@@ -1,14 +1,16 @@
 import React from "react";
+
 const Heading = () => {
   return (
-    <header className="App-header">
+    <div className="App-header">
       <img
-        className="App-logo"
-        src="https://images.freeimages.com/images/previews/09e/moon-art-1641879.png"
-        alt=""
+        className="logo"
+        src="https://www.svgrepo.com/show/288092/hotel.svg"
+        alt="Hotel Logo"
       />
-      CYF Hotel
-    </header>
+      <header>CYF Hotel</header>
+    </div>
   );
 };
+
 export default Heading;
