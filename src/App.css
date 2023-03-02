@@ -12,6 +12,9 @@
   border: 4px solid rgb(113, 0, 128);
   box-shadow: 8px 6px 3px -2px rgb(202, 183, 205);
 }
+.change-color {
+  background-color: brown;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 10s linear;

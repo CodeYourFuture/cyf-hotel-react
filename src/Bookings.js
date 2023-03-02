@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import data from "./data/fakeBookings.json";
 import moment from "moment";
 
 const Bookings = () => {
+  const [bookings, setBookings] = useState(data);
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
   };
-  console.log(data);
 
   return (
     <div className="App-content">
@@ -30,7 +31,7 @@ const Bookings = () => {
               </tr>
             </thead>
 
-            {data.map(item => (
+            {bookings.map(item => (
               <SearchResults
                 key={item.id}
                 id={item.id}

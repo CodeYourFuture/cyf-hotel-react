@@ -7,6 +7,9 @@ const Order = ({ orderType }) => {
   const ClickHandeler = () => {
     setOrders(orders + 1);
   };
+  const removeItem = () => {
+    setOrders(prev => prev - 1);
+  };
 
   return (
     <div className="Order-container">
@@ -14,6 +17,9 @@ const Order = ({ orderType }) => {
         {orderType}: {orders}
         <RestaurantButton orderOne={ClickHandeler} />
       </li>
+      <button className="btn btn-primary" onClick={removeItem}>
+        Remove
+      </button>
     </div>
   );
 };
