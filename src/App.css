@@ -110,3 +110,7 @@ ul {
 p {
   font-size:x-large;
 }
+
+.selected {
+  background-color: goldenrod;
+}
