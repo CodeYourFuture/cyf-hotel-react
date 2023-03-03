@@ -1,4 +1,7 @@
 import React from "react";
-export const OrderOne = (props) => {
-    return Number;
+import Restaurant from "./Restaurant";
+const RestaurantBtn = (props) => {
+    return (<button onClick={props.func} className="btn btn-primary">Add</button>
+    );
 }
+export default RestaurantBtn;
