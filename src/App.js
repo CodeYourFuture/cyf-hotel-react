@@ -6,7 +6,6 @@ import TouristInfoCards from "./TouristInfoCards";
 import data from "./data/fakeBookings.json";
 import Footer from "./footer";
 import Restaurant from "./Restaurant";
-import SingleBooking from "./SingleBooking";
 
 const App = () => {
   return (
