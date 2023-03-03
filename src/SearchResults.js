@@ -10,7 +10,7 @@ const SearchResults = (props) => (
 );
 
 const CreateTableHeader = () => (
-  <thead>
+  <thead className="tableHead">
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Title</th>
@@ -26,7 +26,7 @@ const CreateTableHeader = () => (
 );
 
 const CreateEachRow = (props) => (
-  <tbody>
+  <tbody className="tableBody">
     {props.results.map((item, index) => (
       <tr key={index}>
         <td scope="row">{item.id}</td>
@@ -39,10 +39,7 @@ const CreateEachRow = (props) => (
         <td>{item.checkOutDate}</td>
         <td>
           {
-            moment(item.checkOutDate).diff(
-              moment(item.checkInDate),
-              "days"
-            )
+            moment(item.checkOutDate).diff(moment(item.checkInDate), "days")
             // moment(eachPerson.checkOutDate.split("-")).diff(moment(eachPerson.checkInDate.split("-"))np, 'days')
           }
         </td>
