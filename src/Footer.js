@@ -3,12 +3,14 @@
 const FooterChild = (props) => {
 
   return (
-    <footer>
+    <footer className="footer">
+    <div className="footer-list">
         <ul>
             {props.list.map( (el,index) => (
             <li key={index}>{el}</li>
             ))}
         </ul>
+      </div>
     </footer>
 
   );

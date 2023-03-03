@@ -5,7 +5,6 @@ import FakeBookings from "./data/fakeBookings.json";
 const SearchResults = () =>{
     return (
     <div>
-        <div>{Date()}</div>
         <div >
         <Table  results={FakeBookings}/>
         </div>

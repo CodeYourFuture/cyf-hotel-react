@@ -50,9 +50,17 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: #222;
+    height: auto;
+    padding: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .info-cards {
+  margin-top: 3rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -61,7 +69,7 @@ tr {
   
 }
 .card {
-  width: 18rem;
+  width: 30rem;
   padding: 5px 5px 5px 5px;
 
 }
@@ -73,4 +81,12 @@ tr {
 .table-content {
   width: 800px;
   text-align: center;
+}
+.footer-list ul{
+  list-style: none;
+}
+
+.btn-primary{
+  background-color: #222;
+  border-color: gold;
 }
