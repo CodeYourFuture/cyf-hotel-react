@@ -4,6 +4,8 @@ import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant";
+
 
 const App = () => {
   const contact = [
@@ -33,8 +35,9 @@ const App = () => {
         description="The capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations"
       />
       <Bookings />
+      <Restaurant />
 
-      <Footer contact ={contact} />
+      <Footer contact={contact} />
     </div>
   );
 };
