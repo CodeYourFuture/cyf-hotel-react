@@ -5,7 +5,6 @@ import "./App.css";
 import TouristInfoCardDetails from "./TouristInfoCardDetails";
 import Footer from "./Footer";
 import SearchResults from "./SearchResults";
-const footerArray = ["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"];
 
 const App = () => {
   return (
@@ -14,7 +13,7 @@ const App = () => {
       <TouristInfoCardDetails />
       <Bookings />
       <SearchResults />
-      <Footer list = {footerArray}/>
+      <Footer />
     </div>
   );
 };
