@@ -90,3 +90,7 @@ tr {
   background-color: #222;
   border-color: gold;
 }
+.btn-primary:hover {
+    background-color: gold;
+    color: #222;
+}
