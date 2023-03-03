@@ -1,14 +1,15 @@
-import { Table , TableHead} from "./Table";
+import Table from "./Table";
 import FakeBookings from "./data/fakeBookings.json";
 
 
 const SearchResults = () =>{
     return (
+    <div>
+        <div>{Date()}</div>
         <div >
-        <TableHead  />
-
         <Table  results={FakeBookings}/>
         </div>
+    </div>
     );
 }
 export default SearchResults;

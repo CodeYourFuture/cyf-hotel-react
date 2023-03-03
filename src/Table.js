@@ -1,6 +1,10 @@
-const TableHead =() => {
-    return (
-            <thead class="table ">
+import moment from "moment";
+
+const Table = (props) => {
+    return(
+        
+    <table class="table table-hover">
+     <thead >
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
@@ -10,17 +14,19 @@ const TableHead =() => {
                 <th scope="col">Room id</th>
                 <th scope="col">Check in date</th>
                 <th scope="col">Check out</th>
-                
-            </tr>
-          </thead>
-    );
-}
+                <th scope="col">Booked</th>
 
-const Table = (props) => {
-    return(
-    <table class="table table-hover">
-        <tbody>
+
+            </tr>
+    </thead>
+   
+    <tbody>
         {props.results.map( customer => {
+            const calculate = () => {
+            const dateA = moment(customer.checkInDate ,"YYYY-MM-DD");
+            const dateB = moment(customer.checkOutDate, "YYYY-MM-DD");
+            return   `${dateB.diff(dateA ,'days')} Nights` ;
+          }
             return (      
         <tr>
             <th scope="row">{customer.id}</th>
@@ -33,6 +39,7 @@ const Table = (props) => {
             <td>{customer.roomId}</td>
             <td>{customer.checkInDate}</td>
             <td>{customer.checkOutDate}</td>
+            <td>{ calculate() }</td>
         </tr>
 )})
 
@@ -41,4 +48,5 @@ const Table = (props) => {
     </table>
     );
 };
-export { TableHead ,Table }
+ 
+export default Table;
