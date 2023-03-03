@@ -1,41 +1,42 @@
-
 const TableHead =() => {
     return (
             <thead class="table ">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">title</th>
-                <th scope="col">first name</th>
-                <th scope="col">surname</th>
-                <th scope="col">email</th>
-                <th scope="col">room id</th>
-                <th scope="col">check in date</th>
-                <th scope="col">check out</th>
+                <th scope="col">Title</th>
+                <th scope="col">First name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Email</th>
+                <th scope="col">Room id</th>
+                <th scope="col">Check in date</th>
+                <th scope="col">Check out</th>
+                
             </tr>
           </thead>
     );
 }
 
-
-
 const Table = (props) => {
     return(
     <table class="table table-hover">
-        
         <tbody>
+        {props.results.map( customer => {
+            return (      
         <tr>
-            <th scope="row">{props.id}</th>
+            <th scope="row">{customer.id}</th>
             {/* <th scope="row">1</th> */}
 
-            <td>{props.title}</td>
-            <td>{props.firstName}</td>
-            <td>{props.sureName}</td>
-            <td>{props.email}</td>
-            <td>{props.roomId}</td>
-            <td>{props.checkIndate}</td>
-            <td>{props.checkOutDate}</td>
+            <td>{customer.title}</td>
+            <td>{customer.firstName}</td>
+            <td>{customer.sureName}</td>
+            <td>{customer.email}</td>
+            <td>{customer.roomId}</td>
+            <td>{customer.checkInDate}</td>
+            <td>{customer.checkOutDate}</td>
         </tr>
+)})
 
+}
         </tbody>
     </table>
     );
