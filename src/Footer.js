@@ -4,6 +4,8 @@ return (
     {props.contactDetails.map((element,index) => 
     (
        <li key={index}>{element}</li> 
+       
+    //  Or  <List array={footerElements} />
     ))}
     </ul>
 

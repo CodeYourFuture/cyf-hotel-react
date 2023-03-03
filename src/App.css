@@ -7,28 +7,40 @@
   height: 100px;
 }
 .img-logo{
-  width: 30px;
+  width: 47px;
+position: absolute;
+
+
 }
 .img-header{
   width: 100%;
-  border: 10px
+  border: 10px;
 }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+}
+
 .App-header {
   background-color: blueviolet;
   display: flex;
-  justify-content: center;
+  justify-content: 5 left;
+  /* display: inline-block; */
   align-items: center;
-  height: 50px;;
+  height: 75px;;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2.5em;
   font-weight: bold;
 }
 
 .App-title {
   font-size: 1.5em;
+  
 }
 
 .App-content {

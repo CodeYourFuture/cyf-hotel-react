@@ -1,6 +1,5 @@
 import React from "react";
 import Heading from "./Heading";
-//import Search from "./Search";
 import TouristInfoCard from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
