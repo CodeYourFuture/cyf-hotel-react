@@ -3,7 +3,7 @@ import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
-
+import Footer from "./Footer";
 
 const App = () => {
   const contact = [
@@ -34,23 +34,9 @@ const App = () => {
       />
       <Bookings />
 
-      <Footer contact={contact} />
+      <Footer contact ={contact} />
     </div>
   );
 };
-
-
-
-const Footer = (props) => {
-  return (
-    <ul className="contact-container">
-      {props.contact.map((list, index) => {
-        return <li key={index}>{list}</li>;
-      })}
-    </ul>
-  );
-};
-
-
 
 export default App;
