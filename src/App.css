@@ -69,3 +69,8 @@ tr {
 .card img {
   border-radius: 10px;
 }
+
+.table-content {
+  width: 800px;
+  text-align: center;
+}
