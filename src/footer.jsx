@@ -11,6 +11,7 @@ function Footer({ address }) {
           <li key={index}>{item}</li>
         ))}
       </ul>
+      Github accunt : <a href='https://github.com/hadipournigjeh'>Hadi A.P</a>
     </footer>
   );
 }

@@ -3,3 +3,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.footer a {
+    color: white;
+    font-family: cursive;
+    font-size: 1.5rem;
+}
