@@ -4,8 +4,9 @@ function Heading(){
     return (
         
             <header className="App-header">
-                 <h2>CYF's Hotel</h2>
-                <img src ={man} />
+                             <h2>CYF's Hotel</h2>
+
+                 <img src ={man} />
             </header>
             
     );
