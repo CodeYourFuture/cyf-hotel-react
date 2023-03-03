@@ -13,7 +13,6 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <SearchResults />
       <TouristInfoCards cities={cities} />
       <Bookings />
       <Restaurant />

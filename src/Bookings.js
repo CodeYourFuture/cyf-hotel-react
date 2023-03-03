@@ -5,7 +5,7 @@ import data from "./data/fakeBookings.json";
 import moment from "moment";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(data);
+  const [bookings] = useState(data);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
