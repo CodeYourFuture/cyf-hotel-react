@@ -4,11 +4,11 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const SearchResults = () =>{
     return (
-    <div>
-        <div >
+    
+        <div className="table-content">
         <Table  results={FakeBookings}/>
         </div>
-    </div>
+    
     );
 }
 export default SearchResults;

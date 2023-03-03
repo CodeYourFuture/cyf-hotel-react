@@ -33,7 +33,7 @@ const Table = (props) => {
             {/* <th scope="row">1</th> */}
             <td>{customer.title}</td>
             <td>{customer.firstName}</td>
-            <td>{customer.sureName}</td>
+            <td>{customer.surname}</td>
             <td>{customer.email}</td>
             <td>{customer.roomId}</td>
             <td>{customer.checkInDate}</td>

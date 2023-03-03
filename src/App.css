@@ -78,10 +78,6 @@ tr {
   border-radius: 10px;
 }
 
-.table-content {
-  width: 800px;
-  text-align: center;
-}
 .footer-list ul{
   list-style: none;
 }
@@ -93,4 +89,14 @@ tr {
 .btn-primary:hover {
     background-color: gold;
     color: #222;
+}
+
+.table-content {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+    margin: 3rem;
+    
 }
