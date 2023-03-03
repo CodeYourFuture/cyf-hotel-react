@@ -7,7 +7,6 @@ import TouristInfoCards from "./TouristInfoCards";
 import cities from "./CardCities";
 import Footer from "./Footer ";
 import footer from "./FooterArray";
-import SearchResults from "./SearchResults";
 
 const App = () => {
   return (
