@@ -1,5 +1,6 @@
 import SingleBooking from "./SingleBooking"
 import data from "./data/fakeBookings.json"
+import moment from "moment/moment"
 
 function SearchResults() {
   return <>
@@ -15,7 +16,7 @@ function SearchResults() {
             <th scope="col">Room</th>
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
-            <th scope="col">ٔNights</th>
+            <th scope="col">Total nights</th>
           </tr>
         </thead>
         <tbody>
@@ -30,7 +31,7 @@ function SearchResults() {
               roomId={item.roomId}
               checkInDate={item.checkInDate}
               checkOutDate={item.checkOutDate}
-              Nights={item.nights}
+              nights={moment(item.checkOutDate).diff(moment(item.checkInDate),"days")}
             />
           ))}
         </tbody>
