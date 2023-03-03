@@ -1,52 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 export default function SearchResults(props) {
-  //   const bookings = [
-  //     {
-  //       id: "1",
-  //       title: "Mrs",
-  //       firstName: "John",
-  //       surname: "Doe",
-  //       email: "johndoe@gmail.com",
-  //       roomId: "12A",
-  //       checkInDate: "20/02/2023",
-  //       checkOutDate: "22/02/2023",
-  //     },
-  //     {
-  //       id: "2",
-  //       title: "Mr",
-  //       firstName: "Ben",
-  //       surname: "Anderson",
-  //       email: "benanderson@gmail.com",
-  //       roomId: "13B",
-  //       checkInDate: "28/02/2023",
-  //       checkOutDate: "29/02/2023",
-  //     },
-  //     {
-  //       id: "3",
-  //       title: "Miss",
-  //       firstName: "Dana",
-  //       surname: "Smith",
-  //       email: "danasmith@gmail.com",
-  //       roomId: "2D",
-  //       checkInDate: "8/01/2023",
-  //       checkOutDate: "9/01/2023",
-  //     },
-  //     {
-  //       id: "4",
-  //       title: "Mr",
-  //       firstName: "George",
-  //       surname: "Mitea",
-  //       email: "georgemitea@gmail.com",
-  //       roomId: "1C",
-  //       checkInDate: "12/03/2023",
-  //       checkOutDate: "14/03/2023",
-  //     },
-  //   ];
+  const [selectedRow, setSelectedRow] = useState(false);
+
+  function selectRow() {
+    setSelectedRow((selectedRow) =>
+      selectedRow === false ? "table-primary" : true
+    );
+  }
 
   const bookingList = props.results.map((element) => (
-    <tr>
+    <tr className={`${selectedRow}`} onClick={selectRow}>
       <td>{element.id}</td>
       <td>{element.title}</td>
       <td>{element.firstName}</td>
@@ -60,8 +25,9 @@ export default function SearchResults(props) {
       </td>
     </tr>
   ));
+
   return (
-    <table class="table table-borderless table-hover">
+    <table class="table table-borderless ">
       <thead class="thead-light">
         <tr>
           <th scope="col">ID</th>
