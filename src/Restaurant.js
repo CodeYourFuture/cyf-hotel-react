@@ -1,4 +1,13 @@
 import React from "react";
+import React {useState} from "react";
+
+const orders = () => {
+  const [orders, setOrders] =useState(0);
+};
+const orderOne = () => {
+    setOrders(orders + 1);
+  };
+
 
 const Restaurant = () => {
   const pizzas = 0;

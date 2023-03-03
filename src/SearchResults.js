@@ -1,10 +1,11 @@
-
+import SearchResult from "./searchResult";
 import moment from "moment";
 
 
 const SearchResults = props => {
   return (
     <>
+    
       <table class="table">
         <thead class="thead-dark">
           <tr className="text-center">
@@ -19,7 +20,11 @@ const SearchResults = props => {
             <th scope="col">Total Nights</th>
           </tr>
         </thead>
-        <tbody>
-          
-
+      <tbody>
+        {
+          props.results.map((result)=><SearchResult key={result.id} id={result.id} title={result.title} firstName={result.firstName} surname={result.surname} email={result.email} roomId={result.roomId} checkInDate ={result.checkInDate} checkOutDate ={result.checkOutDate}/>)
+        }
+      </tbody>
+        </table>  
+</>)}
 export default SearchResults;
