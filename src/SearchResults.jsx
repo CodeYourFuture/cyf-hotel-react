@@ -1,27 +1,42 @@
-import React from 'react'
+import SingleBooking from "./SingleBooking"
+import data from "./data/fakeBookings.json"
 
-function SearchResults(props) {
-
-  return (
-<>
-      
-  <table class="table">
+function SearchResults() {
+  return <>
   
-  <tbody>
-    <tr>
-      <td>{props.id}</td>
-      <td>{props.title}</td>
-      <td>{props.firstName}</td>
-      <td>{props.surname}</td>
-      <td>{props.email}</td>
-      <td>{props.roomId}</td>
-      <td>{props.checkInDate}</td>
-      <td>{props.checkOutDate}</td>
-    </tr>
-  </tbody>
-</table>
-</>
-  )
+<table className="table">
+        <thead className="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Room</th>
+            <th scope="col">Check in date</th>
+            <th scope="col">Check out date</th>
+            <th scope="col">ٔNights</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item) => (
+            <SingleBooking
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              firstName={item.firstName}
+              surname={item.surname}
+              email={item.email}
+              roomId={item.roomId}
+              checkInDate={item.checkInDate}
+              checkOutDate={item.checkOutDate}
+              Nights={item.nights}
+            />
+          ))}
+        </tbody>
+      </table>
+  </>
 }
 
 export default SearchResults
+

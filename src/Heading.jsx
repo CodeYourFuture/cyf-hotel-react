@@ -1,12 +1,13 @@
 import React from "react";
 
+import "./headerLogo.css"
+
 function Heading() {
   return (
 
     <header className="App-header">
-        <h1>CFY hotel</h1>
-        <img src="https://image.flaticon.com/icons/svg/139/139899.svg" />
-        {/* <img className="crownImage" src="Bookings.png" alt="crown" /> */}
+        <h1>CYF hotel</h1>
+        <img className="crownImage" src="/images/crown1.png" alt="website-logo" />
     </header>
   )
 }
