@@ -31,7 +31,6 @@ const Table = (props) => {
         <tr>
             <th scope="row">{customer.id}</th>
             {/* <th scope="row">1</th> */}
-
             <td>{customer.title}</td>
             <td>{customer.firstName}</td>
             <td>{customer.sureName}</td>
