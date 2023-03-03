@@ -1,26 +1,21 @@
-import React, {useState} from "react";
 import moment from 'moment';
-
+import SearchRow from './SearchRow';
 
 function SearchResults(props) {
   
-  const [selected, SetColour] = useState("tableRow")
-  function NewColor () {
-    SetColour('newTrColor')
-  }
-
   let tr = props.results.map((element) => (
-    <tr className = {selected} onClick = {NewColor}>
-      <td>{element.id}</td>
-      <td>{element.title}</td>
-      <td>{element.firstName}</td>
-      <td>{element.surname}</td>
-      <td>{element.email}</td>
-      <td>{element.roomId}</td>
-      <td>{element.checkInDate}</td>
-      <td>{element.checkOutDate}</td>
-      <td>{moment(element.checkOutDate).diff(moment(element.checkInDate), 'days')}</td>
-    </tr>
+    <SearchRow
+       key = {element.id}
+       id = {element.id}
+       title = {element.title}
+       firstName = {element.firstName}
+       surname = {element.surname}
+       email = {element.email}
+       roomId = {element.roomId}
+       checkInDate = {element.checkInDate}
+       checkOutDate = {element.checkOutDate}
+       diff = {moment(element.checkOutDate).diff(moment(element.checkInDate), 'days')}
+    />
   ));
 
   return (
