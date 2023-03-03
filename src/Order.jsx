@@ -7,7 +7,7 @@ const Order = ({ orderType }) => {
   };
   return(
   <div>
-      <h3>Restaurant Orders</h3>
+      
       <ul>
         <li>
          {orderType}: {orders}{" "}
