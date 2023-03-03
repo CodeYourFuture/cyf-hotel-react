@@ -8,7 +8,9 @@ const Order = ({ orderType }) => {
     setOrders(orders + 1);
   };
   const removeItem = () => {
-    setOrders(prev => prev - 1);
+    if (orders > 0) {
+      setOrders(prev => prev - 1);
+    }
   };
 
   return (
