@@ -6,7 +6,7 @@ export default function SearchResults(props) {
 
   function selectRow() {
     setSelectedRow((selectedRow) =>
-      selectedRow === false ? "table-primary" : true
+      selectedRow === false ? "table-dark" : false
     );
   }
 
@@ -41,7 +41,7 @@ export default function SearchResults(props) {
           <th scope="col">No. of Nights</th>
         </tr>
       </thead>
-      <tbody>{bookingList}</tbody>
+      {bookingList}
     </table>
   );
 }
