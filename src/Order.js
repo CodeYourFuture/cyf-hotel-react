@@ -4,7 +4,7 @@ import RestaurantButton from "./RestaurantButton";
 const Order = ({ orderType }) => {
   const [orders, setOrders] = useState(0);
 
-  const ClickHandeler = () => {
+  const ClickHandler = () => {
     setOrders(orders + 1);
   };
   const removeItem = () => {
@@ -15,7 +15,7 @@ const Order = ({ orderType }) => {
     <div className="Order-container">
       <li>
         {orderType}: {orders}
-        <RestaurantButton orderOne={ClickHandeler} />
+        <RestaurantButton orderOne={ClickHandler} />
       </li>
       <button className="btn btn-primary" onClick={removeItem}>
         Remove
