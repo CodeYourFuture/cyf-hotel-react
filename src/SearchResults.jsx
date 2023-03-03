@@ -5,9 +5,7 @@ export default function SearchResults(props) {
   const [selectedRow, setSelectedRow] = useState(false);
 
   function selectRow() {
-    setSelectedRow((selectedRow) =>
-      selectedRow === false ? "table-primary" : true
-    );
+    setSelectedRow((selectedRow) => (selectedRow ? false : "table-dark"));
   }
 
   const bookingList = props.results.map((element) => (
