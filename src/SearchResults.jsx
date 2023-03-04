@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
-
+import ResultRow from "./ResultRow";
 // const obj = {a: 1, b: 2}
 
 // const {a, b } = obj
 
 const SearchResults = (props) => {
-  const ourObject = props.results; // or to put {results} into curly braces in the parameter instead of writing this line
+  const ourObject = props.results;
+  // or to put {results} into curly braces in the parameter instead of writing this line
+
   return (
     <table className="table">
       <thead>
@@ -24,24 +26,7 @@ const SearchResults = (props) => {
       </thead>
       <tbody>
         {ourObject.map((result) => (
-          <tr scope="row" key={result.id}>
-            <td>{result.id}</td>
-            <td>{result.title}</td>
-            <td>{result.firstName}</td>
-            <td>{result.surname}</td>
-            <td>{result.email}</td>
-            <td>{result.roomId}</td>
-            <td>{result.checkInDate}</td>
-            <td>{result.checkOutDate}</td>
-            {/* <td>{moment(result.checkInDate).format("MM DD YYYY")}</td>
-            <td>{moment(result.checkOutDate).format("MM DD YYYY")}</td>  */}
-            <td>
-              {moment(result.checkOutDate).diff(
-                moment(result.checkInDate),
-                "days"
-              )}
-            </td>
-          </tr>
+          <ResultRow key={result.id} result={result} />
         ))}
       </tbody>
     </table>
@@ -49,3 +34,14 @@ const SearchResults = (props) => {
 };
 
 export default SearchResults;
+
+// 15. Highlight booking row when clicked
+// Instructions: Within the <SearchResults /> component or its child components, add an
+// onClick handler to each row in the table (hint: on the <tr> element). When clicked, the row is "selected"
+// and highlighted with a different colour. When clicked again, the row is unselected and the coloured highlighting
+// is removed.
+
+// Hint: Use a new state variable for each row to record if the row is selected or not, and use this value to
+// set a class to the className prop of the row.
+
+// Test: Verify that each row of your table can be highlighted (on and off) independently when being clicked.
