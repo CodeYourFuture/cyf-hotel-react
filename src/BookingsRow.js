@@ -22,9 +22,7 @@ const BookingsRow = ({ guest, changeGuestProfile }) => {
     return second.diff(first, "days");
   }, []);
 
-  const handleTableRowClick = useCallback(() => {
-    setIsSelected((isSelected) => !isSelected);
-  }, []);
+  const handleTableRowClick = () => setIsSelected(!isSelected);
 
   const showProfile = useCallback(() => {
     changeGuestProfile(finalData);
