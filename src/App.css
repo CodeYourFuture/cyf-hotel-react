@@ -69,6 +69,10 @@ tr {
   margin-top: 1em;
 }
 
-.SelectedRows {
+/* .SelectedRows {
+  background-color: pink;
+} */
+
+.pink {
   background-color: pink;
 }

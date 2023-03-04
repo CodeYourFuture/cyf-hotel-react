@@ -3,25 +3,21 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.jsx";
 // import FakeBookings from "./data/fakeBookings.json";
 
-const Bookings = props => {
+const Bookings = () => {
   const [searchInput, setSearchInput] = useState("");
   const [bookings, setBookings] = useState([]);
   const [profile, setProfile] = useState(null);
 
   function setCustomerProfile(id) {
-    console.log(id);
     const currentProfile = bookings.find(result => result.id == id);
     setProfile(currentProfile);
   }
 
   function handleSearchInput(event) {
-    // console.log(event.target.value);
     setSearchInput(event.target.value);
-    // console.log(searchInput);
   }
 
   function handleSubmit(event) {
-    // console.log(searchInput);
     event.preventDefault();
     search(searchInput);
   }
@@ -46,6 +42,12 @@ const Bookings = props => {
       });
   }, []);
 
+  console.log("rendering component");
+  useEffect(() => {
+    console.log("EFFECT");
+  });
+
+  debugger;
   return (
     <div className="App-content">
       <div className="container">
@@ -56,10 +58,11 @@ const Bookings = props => {
         />
         <SearchResults
           results={bookings}
+          updateProfile={setProfile}
           searchInput={searchInput}
           setCustomerProfile={setCustomerProfile}
         />
-        {profile && <p>Customer {profile.id} Profile</p>}
+        {profile && <p>Customer {JSON.stringify(profile)}</p>}
       </div>
     </div>
   );
