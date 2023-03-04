@@ -18,17 +18,21 @@ const App = () => {
         <TouristInfoCards
           image={LondonImage}
           name="London"
-          link="https://www.visitlondon.com/" />
-        
+          link="https://www.visitlondon.com/"
+          description="mmmoo bhhff jmjhghjkk"
+        />
+
         <TouristInfoCards
           image={GlasgowImage}
           name="Glasgow"
           link="http://peoplemakeglasgow.com/"
+          description="fgggtdszzzcg bhhff jmjhghjkk"
         />
         <TouristInfoCards
           image={ManchesterImage}
           name="Manchester"
           link="https://www.visitmanchester.com/"
+          description="mmjjjooo hhjjikiiooioikijh bhhff jmjhghjkk"
         />
       </div>
       {/* <SearchResults/> */}
