@@ -16,6 +16,12 @@
   font-size: 1em;
   font-weight: bold;
 }
+.white {
+  background: white;
+}
+.red {
+  background: red;
+}
 
 .App-title {
   font-size: 1.5em;

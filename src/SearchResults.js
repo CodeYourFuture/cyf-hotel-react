@@ -1,7 +1,12 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
 const SearchResults = props => {
+  const [selectedRowId, setSelectedRowId] = useState(null);
+
+  const handlerRowClick = id => {
+    id === selectedRowId ? setSelectedRowId(null) : setSelectedRowId(id);
+  };
   const { bookings } = props;
   return (
     <table className="table table-striped">
@@ -20,7 +25,13 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {bookings.map(booking => (
-          <tr key={booking.id}>
+          <tr
+            key={booking.id}
+            onClick={() => handlerRowClick(booking.id)}
+            style={{
+              backgroundColor: selectedRowId === booking.id ? "red" : "white"
+            }}
+          >
             <td>{booking.id}</td>
             <td>{booking.title}</td>
             <td>{booking.firstName}</td>
