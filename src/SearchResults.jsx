@@ -2,9 +2,18 @@ import React, { useState } from "react";
 import moment from "moment";
 
 export default function SearchResults(props) {
+<<<<<<< HEAD
   const [selectedRow, setSelectedRow] = useState("");
   function selectRow(id) {
     id === selectedRow ? setSelectedRow("") : setSelectedRow(id);
+=======
+  const [selectedRow, setSelectedRow] = useState(false);
+
+  function selectRow() {
+    setSelectedRow((selectedRow) =>
+      selectedRow === false ? "table-dark" : false
+    );
+>>>>>>> 3195d35893606e0f7f232b97dc860b6992137607
   }
 
   const bookingList = props.results.map((element) => (
@@ -42,7 +51,7 @@ export default function SearchResults(props) {
           <th scope="col">No. of Nights</th>
         </tr>
       </thead>
-      <tbody>{bookingList}</tbody>
+      {bookingList}
     </table>
   );
 }
