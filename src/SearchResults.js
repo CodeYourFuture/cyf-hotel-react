@@ -29,7 +29,7 @@ const CreateEachRow = (props) => (
   <tbody className="tableBody">
     {props.results.map((item, index) => (
       <tr key={index}>
-        <td scope="row">{item.id}</td>
+        <td>{item.id}</td>
         <td>{item.title}</td>
         <td>{item.firstName}</td>
         <td>{item.surname}</td>
