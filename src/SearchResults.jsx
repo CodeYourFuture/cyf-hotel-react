@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import moment from "moment";
 
 export default function SearchResults(props) {
-  const [selectedRow, setSelectedRow] = useState(false);
-
-  function selectRow() {
-    setSelectedRow((selectedRow) => (selectedRow ? false : "table-dark"));
+  const [selectedRow, setSelectedRow] = useState("");
+  function selectRow(id) {
+    id === selectedRow ? setSelectedRow("") : setSelectedRow(id);
   }
 
   const bookingList = props.results.map((element) => (
-    <tr className={`${selectedRow}`} onClick={selectRow}>
+    <tr
+      key={element.id}
+      className={element.id === selectedRow ? "table-primary" : ""}
+      onClick={() => selectRow(element.id)}
+    >
       <td>{element.id}</td>
       <td>{element.title}</td>
       <td>{element.firstName}</td>
