@@ -3,7 +3,6 @@ import { numberOfNight } from "./Nights";
 
 const SearchResults = ({ results }) => {
   const [selectedRow, setSelectedRow] = useState(null);
-
   const handleRowClick = (id) => {
     if (id === selectedRow) {
       setSelectedRow(null);
@@ -15,6 +14,9 @@ const SearchResults = ({ results }) => {
   return (
     <tbody>
       {results.map((result) => {
+        // console.log(result.id);
+        // console.log(selectedRow);
+
         return (
           <tr
             key={result.id}
