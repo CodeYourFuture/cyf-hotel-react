@@ -1,8 +1,12 @@
+import React, { useState } from "react";
 import SingleBooking from "./SingleBooking"
 import data from "./data/fakeBookings.json"
 import moment from "moment/moment"
 
 function SearchResults() {
+
+  const [Bookings, setBookings] = useState(data);
+
   return <>
   
 <table className="table">
@@ -20,7 +24,7 @@ function SearchResults() {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
+          {Bookings.map((item) => (
             <SingleBooking
               key={item.id}
               id={item.id}

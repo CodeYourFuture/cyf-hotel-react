@@ -100,7 +100,7 @@ tr {
   color: white;
   padding: 20px 0;
   margin-top: 20px;
-  background-image: url("");
+  /* background-image: url(""); */
 }
 
 .footer li {
@@ -114,6 +114,3 @@ tr {
 }
 
 /* ---------- orders style -------------- */
-.orders {
- 
-}
