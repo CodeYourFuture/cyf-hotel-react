@@ -1,10 +1,8 @@
-import react from "react";
-
 const Footer = (prop) => {
   return (
-    <ul class="contact-container">
-      {prop.address.map((address) => {
-        return (<li>{address}</li>)
+    <ul className="contact-container">
+      {prop.address.map((address, index) => {
+        return (<li key={index}>{address}</li>)
       })}
     </ul>
   )

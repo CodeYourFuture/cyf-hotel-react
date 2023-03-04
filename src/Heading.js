@@ -1,10 +1,8 @@
-import React from "react";
-
 const Heading = () => {
   return (
     <header className="App-header">
+        <img className="header-logo" src="images/hotel.png"/>
         <h1>CYF Hotel</h1>
-        <img src="https://image.flaticon.com/icons/svg/139/139899.svg"/>
     </header>
   )
 }

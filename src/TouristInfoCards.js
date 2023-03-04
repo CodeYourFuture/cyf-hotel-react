@@ -1,8 +1,6 @@
-import React from "react";
-
 const TouristInfoCards = () => {
   return (
-    <div class="card-container">
+    <div className="card-container">
 
         <div className="card">
 	          <img src="https://www.glasgowlife.org.uk/media/pkdn34gs/glasgow-city-image-credit-glasgow-life.jpg?anchor=center&mode=crop&width=1800&height=700&rnd=132864696763600000" className="card-img-top" />
