@@ -32,22 +32,27 @@ const Bookings = () => {
     setBookings(filteredValue, searchVal);
   };
 
+  // async function fetchstuff(setter) {
+  //   const response = await fetch("https://cyf-react.glitch.me");
+  //   const data = await response.json();
+  //   setter(data);
+  // }
+
   useEffect(() => {
-    console.log("Fetching Booking information");
     fetch("https://cyf-react.glitch.me")
       .then(response => response.json())
       .then(data => setBookings(data))
-      .catch(error => {
-        console.log(error);
-      });
+      .catch(error => console.log(error));
   }, []);
 
-  console.log("rendering component");
-  useEffect(() => {
-    console.log("EFFECT");
-  });
+  // console.log("rendering component");
 
-  debugger;
+  // useEffect(() => {
+  //   window.addEventListener("scroll", (e) => {
+  //     console.log("scrolling:", e.target.scrollX);
+  //   });
+  // }, []);
+
   return (
     <div className="App-content">
       <div className="container">
@@ -62,7 +67,18 @@ const Bookings = () => {
           searchInput={searchInput}
           setCustomerProfile={setCustomerProfile}
         />
-        {profile && <p>Customer {JSON.stringify(profile)}</p>}
+        {profile && (
+          <ul>
+            <li key={profile.id}>Customer {profile.id} Profile</li>
+            <li key={profile.email}>Customer email: {profile.email}</li>
+            <li key={profile.vip}>
+              VIP customer: {profile.vip ? "VIP" : "Not VIP"}
+            </li>
+            <li key={profile.phoneNumber}>
+              Customer phone number: {profile.phoneNumber}
+            </li>
+          </ul>
+        )}
       </div>
     </div>
   );

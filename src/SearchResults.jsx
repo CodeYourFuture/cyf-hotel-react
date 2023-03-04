@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-// import moment from "moment";
+import React from "react";
 import SearchDetails from "./SearchDetails";
 
 function SearchResults(props) {

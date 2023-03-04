@@ -76,3 +76,9 @@ tr {
 .pink {
   background-color: pink;
 }
+
+.foodItems {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  list-style: none;
+}

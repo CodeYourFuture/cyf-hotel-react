@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchButton from "./SearchButton";
 
 const Search = ({ searchInput, handleSearchInput, handleSubmit }) => {
-  // console.log(handleSearchInput);
   return (
     <div className="search">
       <div className="page-header">
