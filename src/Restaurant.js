@@ -9,7 +9,8 @@ const Order = (props) => {
   }
   return (
     <li>
-      Pizzas: {orders} <RestaurantButton handleClick={orderOne} />
+      {props.orderType}: {orders}
+      <RestaurantButton handleClick={orderOne} />
     </li>
   );
 }
@@ -24,10 +25,9 @@ const Restaurant = () => {
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        {/* <li>
-          Pizzas: {orders} <RestaurantButton handleClick={orderOne} />
-        </li> */}
-        <Order />
+        <Order orderType="Pizzas" />
+        <Order orderType="Salads" />
+        <Order orderType="Chocolate" />
       </ul>
     </div>
   );
