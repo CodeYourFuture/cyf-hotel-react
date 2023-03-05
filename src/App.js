@@ -19,20 +19,20 @@ const App = () => {
           image={LondonImage}
           name="London"
           link="https://www.visitlondon.com/"
-          description="mmmoo bhhff jmjhghjkk"
+          description="The south-West bubbly 'Capital City' of England. Vibrant and diverse, London is a hotpot of melting cultures and personalities, with a rich cool vibe."
         />
 
         <TouristInfoCards
           image={GlasgowImage}
           name="Glasgow"
           link="http://peoplemakeglasgow.com/"
-          description="fgggtdszzzcg bhhff jmjhghjkk"
+          description="The Capital city of Scotland, Glasgow is rich in history and culture. A vibrant and welcoming city with a colourful atmosphere. Visit the cathedral for authenthic feel Glasgow."
         />
         <TouristInfoCards
           image={ManchesterImage}
           name="Manchester"
           link="https://www.visitmanchester.com/"
-          description="mmjjjooo hhjjikiiooioikijh bhhff jmjhghjkk"
+          description="A lovely vibrant city in the north part of England. It is rich in both traditional and futuristic cultures, with a medley of its old history seeping through."
         />
       </div>
       {/* <SearchResults/> */}

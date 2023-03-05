@@ -7,7 +7,7 @@ function TouristInfoCards(props) {
       <img src={props.image} className="card-img-top" />
       <div className="card-body">
         <p>
-          {props.name}:{props.description};
+          {props.name}: {props.description}
         </p>
         
         <a href={props.link} className="btn btn-primary">
