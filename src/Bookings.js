@@ -5,11 +5,18 @@ import NewBookingForm from "./NewBookingForm.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState("");
+  const [fullList, setFullList] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const showFullList = () => {
+    setBookings(fullList);
+  };
+
   const search = (searchVal) => {
-    if (searchVal === "") return;
+    if (searchVal === "") {
+      return;
+    }
     const newGuestLists = bookings.filter((guest) => {
       if (
         guest.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
@@ -32,6 +39,7 @@ const Bookings = () => {
         } else {
           let data = await response.json();
           setBookings(data);
+          setFullList(data);
           setIsLoading(false);
         }
       } catch (error) {
@@ -45,7 +53,12 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} guests={bookings} resetBooking={setBookings} />
+        <Search
+          search={search}
+          guests={bookings}
+          resetBooking={setBookings}
+          showFullList={showFullList}
+        />
         <SearchResults results={bookings} />
         {isLoading ? <p>Please wait for loading data...</p> : null}
         {error !== "" ? (

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
+import ShowFullListButton from "./ShowFullListButton";
 
 const Search = (props) => {
   let [searchInput, setSearchInput] = useState("");
 
   const handleSearchInput = (event) => {
     setSearchInput(event.target.value);
-    props.search(event.target.value);
   };
 
   const handleSubmit = (event) => {
@@ -38,6 +38,7 @@ const Search = (props) => {
                 placeholder="Customer name"
               />
               <SearchButton />
+              <ShowFullListButton showFullList={props.showFullList} />
             </div>
           </form>
         </div>
