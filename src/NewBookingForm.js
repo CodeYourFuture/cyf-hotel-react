@@ -91,6 +91,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
         name="first_name"
         placeholder="enter your first name"
         onChange={updateFirstName}
+        pattern="[A-Za-z0-9]{1,20}"
         required
       />
 
@@ -100,6 +101,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
         name="surname"
         placeholder="enter your surname"
         onChange={updateSurname}
+        pattern="[A-Za-z0-9]{1,20}"
         required
       />
 
@@ -110,6 +112,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
         placeholder="enter your email"
         onChange={updateEmail}
         required
+        pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
       />
 
       <label>Title:</label>
