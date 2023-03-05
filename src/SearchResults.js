@@ -3,18 +3,10 @@ import SearchRow from './SearchRow';
 
 function SearchResults(props) {
   
-  let tr = props.results.map((element) => (
+  const tr = props.results.map((element) => (
     <SearchRow
        key = {element.id}
-       id = {element.id}
-       title = {element.title}
-       firstName = {element.firstName}
-       surname = {element.surname}
-       email = {element.email}
-       roomId = {element.roomId}
-       checkInDate = {element.checkInDate}
-       checkOutDate = {element.checkOutDate}
-       diff = {moment(element.checkOutDate).diff(moment(element.checkInDate), 'days')}
+       guest = {element}
     />
   ));
 

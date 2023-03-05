@@ -1,23 +1,24 @@
 import React, {useState} from "react";
+import moment from 'moment';
 
 function SearchRow (props){
-    const [selected, SetColour] = useState("")
+    const [colour, setColour] = useState("")
 
     function NewColor () { 
-        SetColour(selected ? "" : 'newTrColor')
+        setColour(colour ? "" : 'newTrColor')
     }
     
     return (
-        <tr className = {selected} onClick = {NewColor}>
+        <tr className = {colour} onClick = {NewColor}>
           <td scope="row">{props.id}</td>
-          <td>{props.title}</td>
-          <td>{props.firstName}</td>
-          <td>{props.surname}</td>
-          <td>{props.email}</td>
-          <td>{props.roomId}</td>
-          <td>{props.checkInDate}</td>
-          <td>{props.checkOutDate}</td>
-          <td>{props.diff}</td>
+          <td>{props.guest.title}</td>
+          <td>{props.guest.firstName}</td>
+          <td>{props.guest.surname}</td>
+          <td>{props.guest.email}</td>
+          <td>{props.guest.roomId}</td>
+          <td>{props.guest.checkInDate}</td>
+          <td>{props.guest.checkOutDate}</td>
+          <td>{moment(props.guest.checkOutDate).diff(moment(props.guest.checkInDate), 'days')}</td>
         </tr>
       )
 }
