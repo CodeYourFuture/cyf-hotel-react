@@ -18,8 +18,8 @@ const SearchResults = (props) => {
         </thead>
         <tbody>
             {props.results.map (value => {
-                let a = moment(value.checkInDate, "YYYY-MM-DD")
-                let b = moment(value.checkOutDate, "YYYY-MM-DD")
+                let checkIn = moment(value.checkInDate, "YYYY-MM-DD")
+                let checkOut = moment(value.checkOutDate, "YYYY-MM-DD")
                 return (
                     <tr className="text-center">
                         <td>{value.id}</td>
@@ -30,7 +30,7 @@ const SearchResults = (props) => {
                         <td>{value.roomId}</td>
                         <td>{value.checkInDate}</td>
                         <td>{value.checkOutDate}</td>
-                        <td>{moment(b).diff(a, "days")}</td>
+                        <td>{moment(checkOut).diff(checkIn, "days")}</td>
                     </tr>
                    
                 )
