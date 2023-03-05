@@ -26,8 +26,15 @@ const SearchResults = (props) => {
     let newSortOrder;
     if (property === lastSortedColumn) {
       newSortOrder = lastSortOrder === "asc" ? "desc" : "asc";
+      setSortStates((prevStates) =>
+        prevStates.map((state, i) => (i === index ? !state : state))
+      );
     } else {
       newSortOrder = "asc";
+      setSortStates(Array(9).fill(false));
+      setSortStates((prevStates) =>
+        prevStates.map((state, i) => (i === index ? !state : state))
+      );
     }
     setLastSortedColumn(property);
     setLastSortOrder(newSortOrder);
@@ -48,9 +55,6 @@ const SearchResults = (props) => {
         }
       });
       setSortOrder(newSortOrder);
-      setSortStates((prevStates) =>
-        prevStates.map((state, i) => (i === index ? !state : state))
-      );
       return sortedData;
     });
   };
@@ -84,7 +88,9 @@ const SearchResults = (props) => {
           <tr>
             <th scope="col" onClick={() => sortBy("id", 0)}>
               Id
-              <span>{sortStates[0] ? "↑" : "↓"}</span>
+              <span>
+                {sortStates[0] ? (sortOrder === "asc" ? "↑" : "↓") : ""}
+              </span>
             </th>
             <th scope="col" onClick={() => sortBy("title", 1)}>
               Title
