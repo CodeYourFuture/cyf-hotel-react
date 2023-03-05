@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const NewBookingForm = ({ bookingsList, addNewBooking }) => {
   const [formInputs, setFormInputs] = useState({
@@ -6,23 +9,22 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
     firstName: "",
     surname: "",
     email: "",
-    checkInDate: "",
-    checkOutDate: "",
   });
   const [validationErrors, setValidationErrors] = useState({
     title: "",
     firstName: "",
     surname: "",
     email: "",
-    checkInDate: "",
-    checkOutDate: "",
   });
+
+  //creating stated for min max value in calendar
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date("2023/03/15"));
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     let errors = { ...validationErrors };
 
-    console.log(name + " : " + value);
     switch (name) {
       case "title":
         errors.name = !value.trim()
@@ -46,10 +48,10 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
           : "";
         break;
       case "email":
-        errors.email = !/^w+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$/.test(value)
-          ? "Email is invalid"
+        errors.email = /^w+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$/.test(value)
+          ? "X Email is invalid"
           : value.length < 6
-          ? "Email must be at least 6 characters"
+          ? "X Email must be at least 6 characters"
           : "";
         break;
       default:
@@ -62,6 +64,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     let obj = {};
     obj.id = generateRandomID();
     obj.title = formInputs.title;
@@ -69,8 +72,8 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
     obj.surname = formInputs.surname;
     obj.email = formInputs.email;
     obj.roomId = generateRandomRoomID();
-    obj.checkInDate = formInputs.checkInDate.toString();
-    obj.checkOutDate = formInputs.checkOutDate.toString();
+    obj.checkInDate = formatDate(startDate);
+    obj.checkOutDate = formatDate(endDate);
 
     addNewBooking([...bookingsList, obj]);
   };
@@ -99,7 +102,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
     return randId;
   };
 
-  //function for formatting date to set min date
+  //function for formatting date
   function formatDate(date) {
     let now = date;
     let year = now.getFullYear();
@@ -159,20 +162,28 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
       <p>{validationErrors.title}</p>
 
       <label>Check-in Date:</label>
-      <input
-        type="date"
-        name="checkInDate"
-        placeholder="enter the Check-in Date"
-        onChange={handleChange}
+      <DatePicker
+        showIcon
+        dateFormat="yyyy/MM/dd"
+        selected={startDate}
+        onChange={(date) => setStartDate(date)}
+        selectsStart
+        startDate={startDate}
+        endDate={endDate}
+        minDate={new Date()}
         required
       />
 
       <label>Check-out Date:</label>
-      <input
-        type="date"
-        name="checkOutDate"
-        placeholder="enter the Check-out Date"
-        onChange={handleChange}
+      <DatePicker
+        showIcon
+        dateFormat="yyyy/MM/dd"
+        selected={endDate}
+        onChange={(date) => setEndDate(date)}
+        selectsEnd
+        startDate={startDate}
+        endDate={endDate}
+        minDate={startDate}
         required
       />
 
