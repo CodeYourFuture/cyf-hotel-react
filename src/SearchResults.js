@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import BookingsRow from "./BookingsRow";
 import CustomerProfile from "./CustomerProfile";
-import moment, { duration } from "moment/moment";
+import moment from "moment/moment";
 
 const SearchResults = (props) => {
   let [guestProfile, setGuestProfile] = useState(null);
@@ -9,31 +9,50 @@ const SearchResults = (props) => {
   //these two states are created for sorting columns in table
   const [data, setData] = useState(props.results);
   const [sortOrder, setSortOrder] = useState("asc");
+  const [sortStates, setSortStates] = useState(Array(9).fill(false));
+
+  //to keep track  of the last sorted column and the last sort order
+  const [lastSortedColumn, setLastSortedColumn] = useState("");
+  const [lastSortOrder, setLastSortOrder] = useState("");
 
   //to update the state of data whenever props.results changes.
   useEffect(() => {
     setData(props.results);
-  }, [props.results]);
+    setSortStates(Array(9).fill(false));
+  }, [props.results, setData, setSortStates]);
 
   //sorting columns in the table
-  const sortBy = (property) => {
-    const sortedData = [...data].sort((a, b) => {
-      if (typeof a[property] === "number") {
-        if (sortOrder === "asc") {
-          return a[property] - b[property];
+  const sortBy = (property, index) => {
+    let newSortOrder;
+    if (property === lastSortedColumn) {
+      newSortOrder = lastSortOrder === "asc" ? "desc" : "asc";
+    } else {
+      newSortOrder = "asc";
+    }
+    setLastSortedColumn(property);
+    setLastSortOrder(newSortOrder);
+    setData((prevData) => {
+      const sortedData = [...prevData].sort((a, b) => {
+        if (typeof a[property] === "number") {
+          if (newSortOrder === "asc") {
+            return a[property] - b[property];
+          } else {
+            return b[property] - a[property];
+          }
         } else {
-          return b[property] - a[property];
+          if (newSortOrder === "asc") {
+            return a[property] < b[property] ? -1 : 1;
+          } else {
+            return a[property] < b[property] ? 1 : -1;
+          }
         }
-      } else {
-        if (sortOrder === "asc") {
-          return a[property] - b[property] ? 1 : -1;
-        } else {
-          return a[property] < b[property] ? 1 : -1;
-        }
-      }
+      });
+      setSortOrder(newSortOrder);
+      setSortStates((prevStates) =>
+        prevStates.map((state, i) => (i === index ? !state : state))
+      );
+      return sortedData;
     });
-    setData(sortedData);
-    setSortOrder(sortOrder === "asc" ? "desc" : "asc");
   };
 
   //calculating number of nights
@@ -46,12 +65,8 @@ const SearchResults = (props) => {
   //function for adding duration key and value to the array of guests
   const addDurationToGuest = (array) => {
     if (array.length > 0) {
-      array.map((guest) => {
-        let durationInfo = calculateNights(
-          guest.checkInDate,
-          guest.checkOutDate
-        );
-        guest["duration"] = durationInfo;
+      array.forEach((guest) => {
+        guest.duration = calculateNights(guest.checkInDate, guest.checkOutDate);
       });
     }
     return array;
@@ -67,32 +82,41 @@ const SearchResults = (props) => {
       <table className="table">
         <thead className="thead-dark">
           <tr>
-            <th scope="col" onClick={() => sortBy("id")}>
+            <th scope="col" onClick={() => sortBy("id", 0)}>
               Id
+              <span>{sortStates[0] ? "↑" : "↓"}</span>
             </th>
-            <th scope="col" onClick={() => sortBy("title")}>
+            <th scope="col" onClick={() => sortBy("title", 1)}>
               Title
+              <span>{sortStates[1] ? "↑" : "↓"}</span>
             </th>
-            <th scope="col" onClick={() => sortBy("firstName")}>
+            <th scope="col" onClick={() => sortBy("firstName", 2)}>
               First name
+              <span>{sortStates[2] ? "↑" : "↓"}</span>
             </th>
-            <th scope="col" onClick={() => sortBy("surname")}>
+            <th scope="col" onClick={() => sortBy("surname", 3)}>
               Surname
+              <span>{sortStates[3] ? "↑" : "↓"}</span>
             </th>
-            <th scope="col" onClick={() => sortBy("email")}>
+            <th scope="col" onClick={() => sortBy("email", 4)}>
               EMAIL
+              <span>{sortStates[4] ? "↑" : "↓"}</span>
             </th>
-            <th scope="col" onClick={() => sortBy("roomId")}>
+            <th scope="col" onClick={() => sortBy("roomId", 5)}>
               Room id
+              <span>{sortStates[5] ? "↑" : "↓"}</span>
             </th>
-            <th scope="col" onClick={() => sortBy("checkInDate")}>
+            <th scope="col" onClick={() => sortBy("checkInDate", 6)}>
               Check in date
+              <span>{sortStates[6] ? "↑" : "↓"}</span>
             </th>
-            <th scope="col" onClick={() => sortBy("checkOutDate")}>
+            <th scope="col" onClick={() => sortBy("checkOutDate", 7)}>
               Check out date
+              <span>{sortStates[7] ? "↑" : "↓"}</span>
             </th>
-            <th scope="col" onClick={() => sortBy("duration")}>
+            <th scope="col" onClick={() => sortBy("duration", 8)}>
               Number of nights
+              <span>{sortStates[8] ? "↑" : "↓"}</span>
             </th>
             <th scope="col">Profile</th>
           </tr>
