@@ -16,12 +16,6 @@ const BookingsRow = ({ guest, changeGuestProfile }) => {
     fetchGuest();
   }, [guest.id]);
 
-  const calculateNights = useCallback((firstDate, secondDate) => {
-    let first = moment(firstDate, "YYYY-MM-DD");
-    let second = moment(secondDate, "YYYY-MM-DD");
-    return second.diff(first, "days");
-  }, []);
-
   const handleTableRowClick = () => setIsSelected(!isSelected);
 
   const showProfile = useCallback(() => {
@@ -41,7 +35,7 @@ const BookingsRow = ({ guest, changeGuestProfile }) => {
       <td>{guest.roomId}</td>
       <td>{guest.checkInDate}</td>
       <td>{guest.checkOutDate}</td>
-      <td>{calculateNights(guest.checkInDate, guest.checkOutDate)}</td>
+      <td>{guest.duration}</td>
       <td>
         <button onClick={showProfile}>Show profile</button>
       </td>
