@@ -1,48 +1,81 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const NewBookingForm = ({ bookingsList, addNewBooking }) => {
-  const [firstName, setFirstName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
-  const [title, setTitle] = useState("");
-  const [checkInDate, setCheckInDate] = useState("");
-  const [checkOutDate, setCheckOutDate] = useState("");
-  const [minDate, setMinDate] = useState("");
+  const [formInputs, setFormInputs] = useState({
+    title: "",
+    firstName: "",
+    surname: "",
+    email: "",
+    checkInDate: "",
+    checkOutDate: "",
+  });
+  const [validationErrors, setValidationErrors] = useState({
+    title: "",
+    firstName: "",
+    surname: "",
+    email: "",
+    checkInDate: "",
+    checkOutDate: "",
+  });
 
-  const updateFirstName = (event) => {
-    setFirstName(event.target.value);
-  };
-  const updateSurname = (event) => {
-    setSurname(event.target.value);
-  };
-  const updateEmail = (event) => {
-    setEmail(event.target.value);
-  };
-  const updateTitle = (event) => {
-    setTitle(event.target.value);
-  };
-  const updateCheckInDate = (event) => {
-    setCheckInDate(event.target.value);
-  };
-  const updateCheckOutDate = (event) => {
-    setCheckOutDate(event.target.value);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    let errors = { ...validationErrors };
+
+    console.log(name + " : " + value);
+    switch (name) {
+      case "title":
+        errors.name = !value.trim()
+          ? "X Title is required"
+          : value.length < 3
+          ? "X Title must be at least 2 characters"
+          : "";
+        break;
+      case "firstName":
+        errors.firstName = !value.trim()
+          ? "X First name is required"
+          : value.length < 4
+          ? "X First name must be at least 3 characters"
+          : "";
+        break;
+      case "surname":
+        errors.surname = !value.trim()
+          ? "X Surname is required"
+          : value.length < 4
+          ? "X Surname must be at least 3 characters"
+          : "";
+        break;
+      case "email":
+        errors.email = !/^w+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$/.test(value)
+          ? "Email is invalid"
+          : value.length < 6
+          ? "Email must be at least 6 characters"
+          : "";
+        break;
+      default:
+        break;
+    }
+
+    setValidationErrors(errors);
+    setFormInputs({ ...formInputs, [name]: value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     let obj = {};
     obj.id = generateRandomID();
-    obj.title = title;
-    obj.firstName = firstName;
-    obj.surname = surname;
-    obj.email = email;
+    obj.title = formInputs.title;
+    obj.firstName = formInputs.firstName;
+    obj.surname = formInputs.surname;
+    obj.email = formInputs.email;
     obj.roomId = generateRandomRoomID();
-    obj.checkInDate = checkInDate.toString();
-    obj.checkOutDate = checkOutDate.toString();
+    obj.checkInDate = formInputs.checkInDate.toString();
+    obj.checkOutDate = formInputs.checkOutDate.toString();
 
     addNewBooking([...bookingsList, obj]);
   };
 
+  //creating random number for id
   const generateRandomID = () => {
     let randId = Math.trunc(Math.random() * 50) + 1;
 
@@ -54,6 +87,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
     return randId;
   };
 
+  //creating random number for room id
   const generateRandomRoomID = () => {
     let randId = Math.trunc(Math.random() * 50) + 1;
 
@@ -71,7 +105,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
     let year = now.getFullYear();
     let month = now.getMonth() + 1;
     let day = now.getDate();
-    //adding 0 to day if the number is less than 10
+    //adding 0 to day and month if the number is less than 10
     let newDay = ("0" + day).slice(-2);
     let newMonth = ("0" + month).slice(-2);
     let myDate = `${year}-${newMonth}-${newDay}`;
@@ -79,68 +113,66 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
     return myDate;
   }
 
-  useEffect(() => {
-    setMinDate(formatDate(new Date()));
-  }, []);
-
   return (
     <form onSubmit={handleSubmit}>
       <label>First Name:</label>
       <input
         type="text"
-        name="first_name"
+        name="firstName"
         placeholder="enter your first name"
-        onChange={updateFirstName}
+        onChange={handleChange}
         pattern="[A-Za-z0-9]{1,20}"
         required
       />
+      <p>{validationErrors.firstName}</p>
 
       <label>Surname:</label>
       <input
         type="text"
         name="surname"
         placeholder="enter your surname"
-        onChange={updateSurname}
+        onChange={handleChange}
         pattern="[A-Za-z0-9]{1,20}"
         required
       />
+      <p>{validationErrors.surname}</p>
 
       <label>Email:</label>
       <input
         type="email"
         name="email"
         placeholder="enter your email"
-        onChange={updateEmail}
+        onChange={handleChange}
         required
         pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
       />
+      <p>{validationErrors.email}</p>
 
       <label>Title:</label>
       <input
         type="text"
         name="title"
         placeholder="enter your title"
-        onChange={updateTitle}
+        onChange={handleChange}
         required
       />
+      <p>{validationErrors.title}</p>
 
       <label>Check-in Date:</label>
       <input
         type="date"
-        min={minDate}
-        name="check_in_date"
+        name="checkInDate"
         placeholder="enter the Check-in Date"
-        onChange={updateCheckInDate}
+        onChange={handleChange}
         required
       />
 
       <label>Check-out Date:</label>
       <input
         type="date"
-        min={minDate}
-        name="check_out_date"
+        name="checkOutDate"
         placeholder="enter the Check-out Date"
-        onChange={updateCheckOutDate}
+        onChange={handleChange}
         required
       />
 

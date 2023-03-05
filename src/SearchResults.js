@@ -8,7 +8,6 @@ const SearchResults = (props) => {
 
   //these two states are created for sorting columns in table
   const [data, setData] = useState(props.results);
-  const [sortOrder, setSortOrder] = useState("asc");
   const [sortStates, setSortStates] = useState(Array(9).fill(false));
 
   //to keep track  of the last sorted column and the last sort order
@@ -54,7 +53,7 @@ const SearchResults = (props) => {
           }
         }
       });
-      setSortOrder(newSortOrder);
+
       return sortedData;
     });
   };
@@ -89,7 +88,7 @@ const SearchResults = (props) => {
             <th scope="col" onClick={() => sortBy("id", 0)}>
               Id
               <span>
-                <span>{sortStates[1] ? "↑" : "↓"}</span>
+                <span>{sortStates[0] ? "↑" : "↓"}</span>
               </span>
             </th>
             <th scope="col" onClick={() => sortBy("title", 1)}>
