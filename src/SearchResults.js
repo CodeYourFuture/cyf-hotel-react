@@ -89,7 +89,7 @@ const SearchResults = (props) => {
             <th scope="col" onClick={() => sortBy("id", 0)}>
               Id
               <span>
-                {sortStates[0] ? (sortOrder === "asc" ? "↑" : "↓") : ""}
+                <span>{sortStates[1] ? "↑" : "↓"}</span>
               </span>
             </th>
             <th scope="col" onClick={() => sortBy("title", 1)}>
