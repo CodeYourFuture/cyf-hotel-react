@@ -6,11 +6,17 @@ const Search = (props) => {
 
   const handleSearchInput = (event) => {
     setSearchInput(event.target.value);
+    props.search(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     props.search(searchInput);
+    //removing value from the input field
+    if (searchInput !== "") {
+      setSearchInput("");
+      props.search("");
+    }
   };
 
   return (
