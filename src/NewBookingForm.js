@@ -19,7 +19,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
 
   //creating stated for min max value in calendar
   const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date("2023/03/15"));
+  const [endDate, setEndDate] = useState(addTenDaysToDate(new Date()));
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -75,7 +75,16 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
     obj.checkInDate = formatDate(startDate);
     obj.checkOutDate = formatDate(endDate);
 
+    //adding new guest to the main list
     addNewBooking([...bookingsList, obj]);
+
+    //clearing all input fields in form
+    setFormInputs({
+      title: "",
+      firstName: "",
+      surname: "",
+      email: "",
+    });
   };
 
   //creating random number for id
@@ -116,6 +125,11 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
     return myDate;
   }
 
+  function addTenDaysToDate(date) {
+    const newDate = date.setDate(date.getDate() + 10);
+    return newDate;
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <label>First Name:</label>
@@ -125,6 +139,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
         placeholder="enter your first name"
         onChange={handleChange}
         pattern="[A-Za-z0-9]{1,20}"
+        value={formInputs.firstName}
         required
       />
       <p>{validationErrors.firstName}</p>
@@ -136,6 +151,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
         placeholder="enter your surname"
         onChange={handleChange}
         pattern="[A-Za-z0-9]{1,20}"
+        value={formInputs.surname}
         required
       />
       <p>{validationErrors.surname}</p>
@@ -146,8 +162,9 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
         name="email"
         placeholder="enter your email"
         onChange={handleChange}
-        required
         pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        value={formInputs.email}
+        required
       />
       <p>{validationErrors.email}</p>
 
@@ -157,6 +174,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
         name="title"
         placeholder="enter your title"
         onChange={handleChange}
+        value={formInputs.title}
         required
       />
       <p>{validationErrors.title}</p>
