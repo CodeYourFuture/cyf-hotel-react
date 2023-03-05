@@ -8,12 +8,12 @@ import Restaurant from "./Restaurant"
 const App = () => {
   return (
     <div className="App">
-     
-      <Heading/>
-      <TouristInfoCards/>
-      <Bookings/>
-      <Restaurant/>
-      <Footer/>
+      <Heading />
+      
+      <Bookings />
+      <TouristInfoCards />
+      <Restaurant />
+      <Footer />
     </div>
   );
 };

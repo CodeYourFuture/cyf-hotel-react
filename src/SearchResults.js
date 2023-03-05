@@ -6,9 +6,9 @@ const SearchResults = props => {
   return (
     <>
     
-      <table class="table">
-        <thead class="thead-dark">
-          <tr className="text-center">
+      <table>
+        <thead>
+          <tr>
             <th scope="col">ID</th>
             <th scope="col">Title</th>
             <th scope="col">First Name</th>

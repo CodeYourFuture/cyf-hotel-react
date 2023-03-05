@@ -1,18 +1,18 @@
 import moment from "moment";
+import React, {useState} from "react";
 
 
+// const [rowISActive, setRowIsActive] = useState(false);
 
-const [rowISActive, setRowIsActive] = useState(false);
-
-  function handleRowClick(id) {
-    if (rowISActive) {
-      setRowIsActive(false);
-    } else {
-      setRowIsActive(id);
-    }
-    // console.log(`Row ${event.key} is clicked!`)
-    // setRowIsActive()
-  }
+//   function handleRowClick(id) {
+//     if (rowISActive) {
+//       setRowIsActive(false);
+//     } else {
+//       setRowIsActive(id);
+//     }
+//     // console.log(`Row ${event.key} is clicked!`)
+//     // setRowIsActive()
+//   }
 
   
 const SearchResult = props => {
@@ -20,7 +20,7 @@ const SearchResult = props => {
   
   let b = moment(props.checkOutDate)
   return (
-      <tr className="text-center">
+      <tr>
         <th scope="row">{props.id}</th>
         <td>{props.title}</td>
         <td>{props.firstName}</td>
