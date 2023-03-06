@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState }from "react";
 import moment from "moment";
 
 const SearchResults = () => {
@@ -55,6 +55,7 @@ const SearchResults = () => {
       checkOutDate: "2023-04-15",
     },
 ];
+
 
   return (
     <div className="table-responsive">
