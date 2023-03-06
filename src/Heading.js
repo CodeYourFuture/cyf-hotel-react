@@ -1,5 +1,6 @@
 import React from "react";
 import "./Heading.css";
+import logo from "./media/logo.png";
 
 const Heading = () => {
   return (
@@ -7,7 +8,7 @@ const Heading = () => {
       <nav className="navbar navbar-expand-sm navbar-light bg-transparent">
         <a className="navbar-brand" href="#">
           CheckInn
-          <img src="./media/logo.png" alt="logo" />
+          <img className="logo" src={logo} alt="logo" />
         </a>
         <button
           className="navbar-toggler"
