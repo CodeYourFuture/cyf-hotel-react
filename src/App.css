@@ -126,7 +126,7 @@ h1 {
 .hero-image {
   z-index: -1;
   position: absolute;
-  bottom: 150px;
+  bottom: 80px;
   left: 0;
   width: 100vw;
   height: 600px;
@@ -150,14 +150,6 @@ h1 {
   color: black;
 }
 
-/* .hero-btn {
- 
-  background-color: #9110a5;
-  color: white;
-  border: none;
-  border-radius: 2px;
-} */
-
 .search {
   padding: 5px 0 20px 0;
 }
@@ -178,7 +170,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, 335px);
   grid-gap: 35px;
-  padding: 30px 0px 30px 85px;
+  padding: 50px 0px 30px 85px;
   margin: 0 0 40px 0;
   /* border: 2px dotted red; */
 }
@@ -209,7 +201,6 @@ h1 {
   /* bottom: 0; */
   left: 0;
   padding: 5px 12px 5px 10px;
-  background-color: white;
   background-color: #f2def2;
 }
 
@@ -240,12 +231,32 @@ th {
 }
 
 td {
-  background-color: #f7f7f7;
   border-bottom: 1px solid #e5e2e6;
   padding: 10px 10px 10px 10px;
   font-weight: 400;
-  color: black;
   text-align: left;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 100px;
+  /* border: 2px dotted red; */
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.order-list-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0;
+  gap: 10px;
+  /* border: 2px dotted blue; */
 }
 
 .App-footer-logo {
