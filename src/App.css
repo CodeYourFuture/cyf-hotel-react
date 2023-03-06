@@ -53,6 +53,16 @@
 
 tr {
   color: #5b5757;
+  cursor: pointer;
+}
+
+:not(th) {
+  cursor: auto;
+}
+
+tr:hover {
+  color: black;
+  background-color: #5b5757;
 }
 
 .results {

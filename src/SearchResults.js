@@ -1,8 +1,16 @@
+import React, { useState } from "react";
+
 const SearchResults = (props) => {
-    console.log(props);
+    const [active, setActive] = useState(false);
+
+    function tableRowClick() {
+      setActive(!active);
+    };
   return (
       <tbody>
-        <tr>
+        <tr onClick={tableRowClick}
+          style={{ backgroundColor: active ? "#CBC3E3" : "white" }}>
+
           <th scope="row">{props.id}</th>
           <td>{props.title}</td>
           <td>{props.firstName}</td>

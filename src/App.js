@@ -17,11 +17,12 @@ const App = () => {
     "hello@fakehotel.com",
     "0123 456789",
   ];
+
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards />
-      <Bookings />
+      <Bookings/>
       <Restaurant addButton={RestaurantButton} />
 
       <table className="table">
