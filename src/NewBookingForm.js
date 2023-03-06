@@ -144,7 +144,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
             name="firstName"
             id="inputFirstName"
             className="form-control"
-            placeholder="enter your first name"
+            placeholder="Your first name"
             onChange={handleChange}
             pattern="[A-Za-z0-9]{1,20}"
             value={formInputs.firstName}
@@ -159,7 +159,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
             name="surname"
             id="inputSurname"
             className="form-control"
-            placeholder="enter your surname"
+            placeholder="Your surname"
             onChange={handleChange}
             pattern="[A-Za-z0-9]{1,20}"
             value={formInputs.surname}
@@ -177,7 +177,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
             name="email"
             id="inputEmail"
             className="form-control"
-            placeholder="enter your email"
+            placeholder="Your email"
             onChange={handleChange}
             pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
             value={formInputs.email}
@@ -192,7 +192,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
             name="title"
             id="inputTitle"
             className="form-control"
-            placeholder="enter your title"
+            placeholder="Your title"
             onChange={handleChange}
             value={formInputs.title}
             required
@@ -234,7 +234,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
         </div>
       </div>
 
-      <input type="submit" value="Submit" />
+      <input className="button" type="submit" value="Submit" />
     </form>
   );
 };
