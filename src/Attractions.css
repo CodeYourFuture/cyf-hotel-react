@@ -1,18 +1,24 @@
 .attractions {
-  background-color: var(--dark-blue);
+  background-image: linear-gradient(
+    269.87deg,
+    #0a2243 0.1%,
+    #203e72 48.95%,
+    #0a2243 99.87%
+  );
   padding: 5% 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+}
+
+.inside-attractions {
+  max-width: 1250px;
+  display: block;
+  margin: 0 auto;
 }
 
 .attractions h1 {
   color: var(--pink);
   -webkit-text-stroke: 2px white;
   font-size: 100px;
-  text-align: left;
+  margin-left: 60px;
 }
 
 .info-cards {
@@ -47,5 +53,10 @@
 @media (max-width: 768px) {
   .card {
     margin: 20px 20px;
+  }
+
+  .attractions h1 {
+    margin-left: 0;
+    text-align: center;
   }
 }
