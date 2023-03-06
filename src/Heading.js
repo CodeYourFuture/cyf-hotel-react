@@ -1,13 +1,43 @@
 import React from "react";
+import "./Heading.css";
 
 const Heading = () => {
   return (
     <div className="App-header-image">
-      <header className="App-header">CYF Hotel</header>
-      <img
-        src="https://static.vecteezy.com/system/resources/previews/003/543/093/original/eagle-head-logo-template-on-black-background-vector.jpg"
-        alt="logo"
-      />
+      <nav className="navbar navbar-expand-sm navbar-light bg-transparent">
+        <a className="navbar-brand" href="#">
+          CheckInn
+          <img src="./media/logo.png" alt="logo" />
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav ml-auto">
+            <a className="nav-item nav-link active" href="#">
+              Home
+            </a>
+
+            <a className="nav-item nav-link" href="#">
+              Attractions
+            </a>
+            <a className="nav-item nav-link active" href="#">
+              Food
+            </a>
+            <a className="nav-item nav-link active" href="#">
+              Guest list
+            </a>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 };

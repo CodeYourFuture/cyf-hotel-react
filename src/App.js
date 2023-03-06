@@ -21,10 +21,15 @@ const App = () => {
   ];
   return (
     <div className="App">
-      <Heading />
-      <div>
-        <NewBookingForm bookingsList={guestList} addNewBooking={setGuestList} />
-        <WelcomeInfo />
+      <div className="main-wrapper">
+        <Heading />
+        <div>
+          <NewBookingForm
+            bookingsList={guestList}
+            addNewBooking={setGuestList}
+          />
+          <WelcomeInfo />
+        </div>
       </div>
 
       <HotelImages />
