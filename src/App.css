@@ -59,9 +59,13 @@ tr {
   width: 15rem;
   margin: 2rem;
   display: flex;
+  
 
 }
+.card-container {
+  display: flex;
 
+}
  .headerLogo {
   background-color: white;
   margin-left: 1rem;

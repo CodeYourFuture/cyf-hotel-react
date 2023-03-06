@@ -1,11 +1,13 @@
-import React from "react";
+
 import moment from "moment";
+import React, { useState } from "react";
 
 const SearchResults = ({ results }) => {
+  const [isClicked, setIsClicked] = useState(false);
   return (
     <table className="table">
       <thead className="thead-dark">
-        <tr>
+        <tr >
           <th scope="col">id</th>
           <th scope="col">Title</th>
           <th scope="col">First Name</th>
@@ -20,7 +22,13 @@ const SearchResults = ({ results }) => {
       <tbody>
         {results.map(booking => {
           return (
-            <tr>
+          
+         <tr   onClick={() => {
+          setIsClicked(!isClicked);
+        }}
+        style={isClicked ? { border: "4px solid red" } : {}}
+         >
+            
               <td>{booking.id}</td>
               <td>{booking.title}</td>
               <td>{booking.firstName}</td>
