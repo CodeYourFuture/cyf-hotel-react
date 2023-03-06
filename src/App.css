@@ -8,13 +8,13 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: aqua;
+  height: 80px;
   padding: 20px;
-  color: white;
-  text-align: left;
+  color: black;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
