@@ -71,3 +71,7 @@ tr {
   list-style-type: none;
   gap: 25px;
 }
+
+.selected-color {
+  background: red;
+}

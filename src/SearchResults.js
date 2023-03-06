@@ -1,29 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import night from "./Nights";
 
-const SearchResults = ({ bookings }) => {
-  return bookings.map((booking) => {
-    return (
-      <tbody key={booking.id}>
-        <tr>
-          <td>{booking.id}</td>
-          <td>{booking.title}</td>
-          <td>{booking.firstName}</td>
-          <td>{booking.surname}</td>
-          <td>{booking.email}</td>
-          <td>{booking.roomId}</td>
-          <td>{booking.checkInDate}</td>
-          <td>{booking.checkOutDate}</td>
-          <td>
-            {night({
-              checkInDate: booking.checkInDate,
-              checkOutDate: booking.checkOutDate,
-            })}
-          </td>
-        </tr>
-      </tbody>
-    );
-  });
+const SearchResults = ({ results }) => {
+  const [selectedRow, setSelectedRow] = useState("");
+
+  const handleRowClick = (id) => {
+    if (id === selectedRow) {
+      setSelectedRow("");
+    } else {
+      setSelectedRow(id);
+    }
+  };
+
+  return (
+    <tbody>
+      {results.map((result) => {
+        return (
+          <tr
+            key={result.id}
+            className={result.id === selectedRow ? "selected-color" : ""}
+            onClick={() => handleRowClick(result.id)}
+          >
+            <td>{result.id}</td>
+            <td>{result.title}</td>
+            <td>{result.firstName}</td>
+            <td>{result.surname}</td>
+            <td>{result.email}</td>
+            <td>{result.roomId}</td>
+            <td>{result.checkInDate}</td>
+            <td>{result.checkOutDate}</td>
+            <td>
+              {night({
+                checkInDate: result.checkInDate,
+                checkOutDate: result.checkOutDate,
+              })}
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+  );
 };
 
 export default SearchResults;
