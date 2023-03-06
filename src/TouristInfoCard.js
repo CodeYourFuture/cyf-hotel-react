@@ -1,6 +1,6 @@
 import React from "react";
 
-const TouristInfoCards = (props) => {
+const TouristInfoCard = (props) => {
   return (
     <div className="card">
       <img src={props.city.image} className="card-img-top" />

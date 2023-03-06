@@ -3,8 +3,8 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import NewBookingForm from "./NewBookingForm.js";
 
-const Bookings = () => {
-  const [bookings, setBookings] = useState("");
+const Bookings = ({ bookings, setBookings }) => {
+  // const [bookings, setBookings] = useState("");
   const [fullList, setFullList] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -64,7 +64,6 @@ const Bookings = () => {
         {error !== "" ? (
           <p>{`We cannot load the page because an error has occurred.  ${error}. Please fix the error and try one more time.`}</p>
         ) : null}
-        <NewBookingForm bookingsList={bookings} addNewBooking={setBookings} />
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ const BookingsRow = ({ guest, changeGuestProfile }) => {
   const [isSelected, setIsSelected] = useState(false);
   const [finalData, setFinalData] = useState(null);
 
+  //getting profile info about guest from API
   useEffect(() => {
     const fetchGuest = async () => {
       const response = await fetch(
@@ -41,8 +42,12 @@ const BookingsRow = ({ guest, changeGuestProfile }) => {
       <td>{guest.checkOutDate}</td>
       <td>{guest.duration}</td>
       <td>
-        <button onClick={showProfile}>Show profile</button>
-        <button onClick={hideProfile}>Hide profile</button>
+        {finalData && finalData.hasOwnProperty("id") && (
+          <>
+            <button onClick={showProfile}>Show profile</button>
+            <button onClick={hideProfile}>Hide profile</button>
+          </>
+        )}
       </td>
     </tr>
   );

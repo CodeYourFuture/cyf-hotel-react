@@ -113,6 +113,9 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
 
   //function for formatting date
   function formatDate(date) {
+    console.log(date);
+    console.log(typeof date);
+
     let now = date;
     let year = now.getFullYear();
     let month = now.getMonth() + 1;
@@ -126,7 +129,8 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
   }
 
   function addTenDaysToDate(date) {
-    const newDate = date.setDate(date.getDate() + 10);
+    const newDate = new Date(date.getTime());
+    newDate.setDate(newDate.getDate() + 10);
     return newDate;
   }
 

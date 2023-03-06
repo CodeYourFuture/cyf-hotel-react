@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Bookings from "./Bookings";
 import Heading from "./Heading";
@@ -7,8 +7,13 @@ import Footer from "./Footer";
 import "./App.css";
 import Cities from "./data/cities.json";
 import Restaurant from "./Restaurant";
+import HotelImages from "./HotelImages";
+import NewBookingForm from "./NewBookingForm";
+import WelcomeInfo from "./WelcomeInfo";
 
 const App = () => {
+  const [guestList, setGuestList] = useState("");
+
   let footerArray = [
     "123 Fake Street, London, E1 4UD",
     "hello@fakehotel.com",
@@ -17,13 +22,19 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <Bookings />
-      <div className="info-cards">
+      <div>
+        <NewBookingForm bookingsList={guestList} addNewBooking={setGuestList} />
+        <WelcomeInfo />
+      </div>
+
+      <HotelImages />
+      <div className="attractions">
         {Cities.map((city) => {
           return <TouristInfoCard key={city.id} city={city} />;
         })}
       </div>
       <Restaurant />
+      <Bookings bookings={guestList} setBookings={setGuestList} />
       <Footer array={footerArray} />
     </div>
   );
