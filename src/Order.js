@@ -4,17 +4,15 @@ import RestaurantButton from "./RestaurantButton";
 const Order = ({orderType}) => {
 const [orders, setOrders] = useState(0);
 
-const orderOne =() =>{
+function orderOne(){
  setOrders(orders + 1);
 }
 return(
 <li>
     {orderType}: {orders} 
-    <span> </span>
-    <RestaurantButton order = {orderOne}/> 
+    <RestaurantButton orderOne = {orderOne}/> 
 </li>
 );
 }
-
 
 export default Order;

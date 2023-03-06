@@ -1,10 +1,15 @@
+import React, {useState} from "react";
 import moment from "moment"
 
+
 const SearchResults = props => {
+  const [selectedRow, setSelectedRow] = useState(0)
+  
    return (
- <table className="table">
+ <table className=" table table-hover table table-sm">
   <thead>
-    <tr>
+    <tr className="table-primary">
+      
       <th>ID</th>
           <th>Title</th>
           <th>First Name</th>
