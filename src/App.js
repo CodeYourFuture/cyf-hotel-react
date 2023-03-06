@@ -23,7 +23,7 @@ const App = () => {
     <div className="App">
       <div className="main-wrapper">
         <Heading />
-        <div>
+        <div className="main-page-wrapper">
           <NewBookingForm
             bookingsList={guestList}
             addNewBooking={setGuestList}

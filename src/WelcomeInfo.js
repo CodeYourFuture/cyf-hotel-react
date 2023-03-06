@@ -2,7 +2,7 @@ import React from "react";
 
 const WelcomeInfo = () => {
   return (
-    <div>
+    <div className="reservation-text">
       <h1>Make Reservation</h1>
       <p>
         Welcome to our collection of exceptional hotels! Whether you're

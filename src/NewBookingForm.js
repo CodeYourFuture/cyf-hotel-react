@@ -135,79 +135,104 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>First Name:</label>
-      <input
-        type="text"
-        name="firstName"
-        placeholder="enter your first name"
-        onChange={handleChange}
-        pattern="[A-Za-z0-9]{1,20}"
-        value={formInputs.firstName}
-        required
-      />
-      <p>{validationErrors.firstName}</p>
+    <form className="new-booking-form" onSubmit={handleSubmit}>
+      <div className="form-row">
+        <div className="form-group col-md-6">
+          <label htmlFor="inputFirstName">First Name:</label>
+          <input
+            type="text"
+            name="firstName"
+            id="inputFirstName"
+            className="form-control"
+            placeholder="enter your first name"
+            onChange={handleChange}
+            pattern="[A-Za-z0-9]{1,20}"
+            value={formInputs.firstName}
+            required
+          />
+          <p>{validationErrors.firstName}</p>
+        </div>
+        <div className="form-group col-md-6">
+          <label htmlFor="inputSurname">Surname:</label>
+          <input
+            type="text"
+            name="surname"
+            id="inputSurname"
+            className="form-control"
+            placeholder="enter your surname"
+            onChange={handleChange}
+            pattern="[A-Za-z0-9]{1,20}"
+            value={formInputs.surname}
+            required
+          />
+          <p>{validationErrors.surname}</p>
+        </div>
+      </div>
 
-      <label>Surname:</label>
-      <input
-        type="text"
-        name="surname"
-        placeholder="enter your surname"
-        onChange={handleChange}
-        pattern="[A-Za-z0-9]{1,20}"
-        value={formInputs.surname}
-        required
-      />
-      <p>{validationErrors.surname}</p>
+      <div className="form-row">
+        <div className="form-group col-md-6">
+          <label htmlFor="inputEmail">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="inputEmail"
+            className="form-control"
+            placeholder="enter your email"
+            onChange={handleChange}
+            pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+            value={formInputs.email}
+            required
+          />
+          <p>{validationErrors.email}</p>
+        </div>
+        <div className="form-group col-md-6">
+          <label htmlFor="inputTitle">Title:</label>
+          <input
+            type="text"
+            name="title"
+            id="inputTitle"
+            className="form-control"
+            placeholder="enter your title"
+            onChange={handleChange}
+            value={formInputs.title}
+            required
+          />
+          <p>{validationErrors.title}</p>
+        </div>
+      </div>
 
-      <label>Email:</label>
-      <input
-        type="email"
-        name="email"
-        placeholder="enter your email"
-        onChange={handleChange}
-        pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-        value={formInputs.email}
-        required
-      />
-      <p>{validationErrors.email}</p>
-
-      <label>Title:</label>
-      <input
-        type="text"
-        name="title"
-        placeholder="enter your title"
-        onChange={handleChange}
-        value={formInputs.title}
-        required
-      />
-      <p>{validationErrors.title}</p>
-
-      <label>Check-in Date:</label>
-      <DatePicker
-        showIcon
-        dateFormat="yyyy/MM/dd"
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-        selectsStart
-        startDate={startDate}
-        endDate={endDate}
-        minDate={new Date()}
-        required
-      />
-
-      <label>Check-out Date:</label>
-      <DatePicker
-        showIcon
-        dateFormat="yyyy/MM/dd"
-        selected={endDate}
-        onChange={(date) => setEndDate(date)}
-        selectsEnd
-        startDate={startDate}
-        endDate={endDate}
-        minDate={startDate}
-        required
-      />
+      <div className="form-row">
+        <div className="form-group col-md-6">
+          <label>Check-in Date:</label>
+          <DatePicker
+            showIcon
+            className="form-control"
+            dateFormat="yyyy/MM/dd"
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            selectsStart
+            startDate={startDate}
+            endDate={endDate}
+            minDate={new Date()}
+            required
+          />
+        </div>
+        <div className="form-group col-md-6">
+          <label>Check-out Date:</label>
+          <DatePicker
+            showIcon
+            className="form-control"
+            dateFormat="yyyy/MM/dd"
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+            selectsEnd
+            startDate={startDate}
+            endDate={endDate}
+            minDate={startDate}
+            required
+          />
+        </div>
+      </div>
 
       <input type="submit" value="Submit" />
     </form>
