@@ -118,8 +118,8 @@ h1 {
   text-align: center;
   list-style-type: none;
   padding: 8px;
-  display: grid;
-  grid-template-columns: 180px auto 90px;
+  /* display: grid;
+  grid-template-columns: 180px auto 90px; */
   
  }
  .head3{
