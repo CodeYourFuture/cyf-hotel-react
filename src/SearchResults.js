@@ -15,9 +15,9 @@ const SearchResults = (props) => {
         </tr>
       </thead>
       <tbody>
-        {props.results.map((value) => {
+        {props.results.map((value, index) => {
           return (
-            <tr>
+            <tr key={index}>
               <td>{value.id}</td>
               <td>{value.title}</td>
               <td>{value.firstName}</td>
