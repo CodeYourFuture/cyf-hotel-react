@@ -70,6 +70,7 @@ button:hover,
   margin: 20px 40px;
 }
 
+/* welcome text in main sector */
 .reservation-text {
   color: white;
   text-align: right;
@@ -81,6 +82,7 @@ button:hover,
   padding: 20px 0 20px 20px;
 }
 
+/* new booking form */
 .new-booking-form {
   grid-area: form;
   max-width: 80%;
