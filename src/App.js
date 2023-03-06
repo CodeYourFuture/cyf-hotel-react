@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TouristInfoCards from "./TouristInfoCards";
 import Heading from "./Heading";
 import Bookings from "./Bookings";
@@ -18,6 +18,8 @@ const App = () => {
     "0123 456789",
   ];
 
+  const [bookings, setBookings] = useState(data);
+
   return (
     <div className="App">
       <Heading />
@@ -29,7 +31,7 @@ const App = () => {
         <thead className="thead-dark">
           <TableHeading />
         </thead>
-        {data.map((client) => {
+        {bookings.map((client) => {
           let a = moment(client.checkInDate, "YYYY-MM-DD");
           let b = moment(client.checkOutDate, "YYYY-MM-DD");
           return (
