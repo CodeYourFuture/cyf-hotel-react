@@ -1,7 +1,7 @@
 import React from "react";
 function TouristInfoCards(){
     return(
-<>
+<div className="hero">
 <div className="card">
 	<img src="https://media.gettyimages.com/id/519375418/photo/a-riverside-view-of-a-city-at-night.jpg?s=612x612&w=gi&k=20&c=kjPapbNGRgXeamKKU6IGuUZvI16DeTwUB051WYFmFkg=" className="card-img-top" />
 	<div className="card-body">
@@ -20,7 +20,7 @@ function TouristInfoCards(){
 		<a href="https://visitlondon.com/" className="btn btn-primary">Go London</a>
 	</div>
 </div>
-</>
+</div>
     );
 }
 export default TouristInfoCards;

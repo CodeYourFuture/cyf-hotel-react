@@ -49,9 +49,21 @@ tr {
 
 .footer {
   padding-top: 20px;
+  display:block;
   text-align: center;
+   
 }
 
 .card {
+  padding: 20px 0 20px 0;
   width: 18rem;
+}
+
+.hero{
+  display: flex;
+  justify-content: center; 
+}
+
+.removemarker{
+  list-style-type: none;
 }
