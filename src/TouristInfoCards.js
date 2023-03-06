@@ -8,7 +8,7 @@ const TouristInfoCards = props => {
           <img src={city.src} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{city.cardTitle}</h5>
-            <p className="card-text" />
+            <p className="">{city.cardText}</p>
             <a href={city.href} className="btn btn-primary" target="blanket">
               Go somewhere
             </a>

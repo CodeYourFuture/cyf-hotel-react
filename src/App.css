@@ -4,6 +4,7 @@
   text-align: left;
   display: flex;
   flex-direction: column;
+  /*align-items: center;*/
   row-gap: 20px;
 }
 
@@ -90,13 +91,14 @@ tbody {
 }
 
 .card-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  column-gap: 5%;
+  justify-content: center;
+  padding: 5%;
 }
 
 .card {
-  width: 18rem;
   border: 2px solid #b8c0ff;
 }
 
@@ -108,4 +110,20 @@ tbody {
 
 .card-img-top {
   height: 50%;
+  width: 100%;
+}
+
+.restaurant-menue {
+  align-self: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.restaurant-list {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  list-style: none;
+  column-gap: 5px;
 }

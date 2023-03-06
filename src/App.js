@@ -1,6 +1,7 @@
 import React from "react";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
+import Restaurant from "./Restaurant";
 import Heading from "./Heading";
 import Footer from "./Footer";
 import "./App.css";
@@ -17,7 +18,8 @@ const Manchester = {
   src:
     "https://eu-assets.simpleview-europe.com/manchester2016/imageresizer/?image=%2Fdbimgs%2FManOne-03%284%29.jpg&action=Background_Overlay",
   cardTitle: "Manchester",
-  cardText: " sdgssg",
+  cardText:
+    " Manchester is the only UK city to feature in Lonely Planet's Best in Travel 2023 list and the only UK city in National Geographic's influential ‘Best of the World’ list which annually sets out 25 of the must-see places to visit around the globe.",
   href: "https://www.visitmanchester.com/"
 };
 
@@ -25,7 +27,8 @@ const London = {
   src:
     "https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/sightseeing/london-attractions/tower-bridge/tower-bridge-shutterstock-1920x582.jpg?mw=1920&hash=078DDB24AC457E2D8F231FC3E0F7EC55A00C88E3",
   cardTitle: "London",
-  cardText: " sdgssg",
+  cardText:
+    "Welcome to London! Discover the best of London with Visit London, the official guide to England’s exciting capital. Find things to do in London, from iconic sightseeing spots and fun-filled days out to top restaurants, theatre and unmissable London events. If you’re not able to visit just yet, plan ahead to make the most of your next visit.",
   href: "https://www.visitlondon.com/"
 };
 
@@ -43,6 +46,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards cities={cities} />
       <Bookings />
+      <Restaurant />
 
       <Footer adress={adress} />
     </div>
