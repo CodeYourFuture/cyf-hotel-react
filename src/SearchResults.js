@@ -40,7 +40,7 @@ const CreateEachRow = (props) => (
         <td>
           {
             moment(item.checkOutDate).diff(moment(item.checkInDate), "days")
-            // moment(eachPerson.checkOutDate.split("-")).diff(moment(eachPerson.checkInDate.split("-"))np, 'days')
+            
           }
         </td>
       </tr>
