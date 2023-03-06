@@ -5,7 +5,7 @@ import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant";
-
+import Order from "./Order";
 
 const App = () => {
   const contact = [
@@ -36,6 +36,7 @@ const App = () => {
       />
       <Bookings />
       <Restaurant />
+      {/* <Order /> */}
 
       <Footer contact={contact} />
     </div>
