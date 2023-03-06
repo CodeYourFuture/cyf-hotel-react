@@ -5,11 +5,11 @@ const Order = ({orderType}) => {
 
     const [order, setOrder] = useState(0);
 
-    const clickHandler = () => {
+    const addHandler = () => {
         setOrder(order + 1);
     }
 
-    const clickRemover = () => {
+    const removeHandler = () => {
       setOrder(order - 1);
     };
 
@@ -18,9 +18,9 @@ const Order = ({orderType}) => {
         <div className='restaurantOrders'>
             <li>
               {orderType}: {order} 
-              <RestaurantButtons orderOne = {clickHandler} />
+              <RestaurantButtons orderOne = {addHandler} />
             </li>
-            <button className='btn-primary' onClick={clickRemover}>remove</button>
+            <button className='btn-primary' onClick={removeHandler}>remove</button>
         </div>
     );
 };
