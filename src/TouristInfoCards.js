@@ -1,3 +1,5 @@
+import React from "react";
+
 const TouristInfoCard = (props) => {
     return (
     
@@ -5,7 +7,7 @@ const TouristInfoCard = (props) => {
             <h1>{props.title}</h1>
             <img className="img-header" src={props.image}/>
             <p>{props.description}</p>
-            <a href= {props.link}></a>       
+            <a href= {props.link}>Visit {props.name}</a>       
           </div>
     );        
   }
