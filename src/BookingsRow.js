@@ -22,6 +22,10 @@ const BookingsRow = ({ guest, changeGuestProfile }) => {
     changeGuestProfile(finalData);
   }, [changeGuestProfile, finalData]);
 
+  const hideProfile = () => {
+    changeGuestProfile(null);
+  };
+
   return (
     <tr
       className={isSelected ? "selected-row" : ""}
@@ -38,6 +42,7 @@ const BookingsRow = ({ guest, changeGuestProfile }) => {
       <td>{guest.duration}</td>
       <td>
         <button onClick={showProfile}>Show profile</button>
+        <button onClick={hideProfile}>Hide profile</button>
       </td>
     </tr>
   );

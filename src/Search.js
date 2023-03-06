@@ -3,7 +3,7 @@ import SearchButton from "./SearchButton";
 import ShowFullListButton from "./ShowFullListButton";
 
 const Search = (props) => {
-  let [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState("");
 
   const handleSearchInput = (event) => {
     setSearchInput(event.target.value);

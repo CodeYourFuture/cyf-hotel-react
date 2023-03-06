@@ -2,7 +2,7 @@ import React from "react";
 
 import Bookings from "./Bookings";
 import Heading from "./Heading";
-import TouristInfoCards from "./TouristInfoCards";
+import TouristInfoCard from "./TouristInfoCard";
 import Footer from "./Footer";
 import "./App.css";
 import Cities from "./data/cities.json";
@@ -20,7 +20,7 @@ const App = () => {
       <Bookings />
       <div className="info-cards">
         {Cities.map((city) => {
-          return <TouristInfoCards key={city.id} city={city} />;
+          return <TouristInfoCard key={city.id} city={city} />;
         })}
       </div>
       <Restaurant />

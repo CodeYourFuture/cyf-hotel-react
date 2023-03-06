@@ -4,7 +4,7 @@ import CustomerProfile from "./CustomerProfile";
 import moment from "moment/moment";
 
 const SearchResults = (props) => {
-  let [guestProfile, setGuestProfile] = useState(null);
+  const [guestProfile, setGuestProfile] = useState(null);
 
   //these two states are created for sorting columns in table
   const [data, setData] = useState(props.results);

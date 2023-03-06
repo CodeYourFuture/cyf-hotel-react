@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Order from "./Order";
 
 const Restaurant = () => {
-  let food = ["Pizzas", "Salads", "Chocolate cake"];
+  const food = ["BLT Sandwich", "Caesar Salad", "Tuna Melt"];
   return (
     <div>
       <h3>Restaurant Orders</h3>

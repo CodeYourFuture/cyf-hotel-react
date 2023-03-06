@@ -15,4 +15,4 @@ const TouristInfoCards = (props) => {
   );
 };
 
-export default TouristInfoCards;
+export default TouristInfoCard;

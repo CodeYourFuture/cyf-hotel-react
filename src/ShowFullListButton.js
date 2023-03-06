@@ -2,7 +2,6 @@ import React from "react";
 
 const ShowFullListButton = (props) => {
   const displayFullList = () => {
-    console.log("hello!");
     props.showFullList();
   };
 
