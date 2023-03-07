@@ -4,7 +4,7 @@ import logo from "./media/logo.png";
 
 const Heading = () => {
   return (
-    <div className="App-header-image">
+    <div className="App-header">
       <nav className="navbar navbar-expand-md navbar-light bg-transparent">
         <a className="navbar-brand" href="#">
           CheckInn

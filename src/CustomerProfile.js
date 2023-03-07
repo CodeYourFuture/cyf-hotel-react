@@ -3,7 +3,7 @@ import React from "react";
 const CustomerProfile = (props) => {
   return (
     props.guest !== null && (
-      <div>
+      <div className="customer-profile">
         <h3>Customer profile</h3>
         <p>Customer id: {props.guest.id}</p>
         <p>Customer email: {props.guest.email}</p>
