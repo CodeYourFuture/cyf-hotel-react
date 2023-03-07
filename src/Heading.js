@@ -6,7 +6,7 @@ const Heading = () => {
       <img
         src="https://housing.com/news/wp-content/uploads/2022/11/hotel-room-design-compressed-1.jpg"
         alt="Hotel room"
-        
+        className=""
       />
     </header>
   );
