@@ -81,10 +81,10 @@ const SearchResults = (props) => {
   }, [data]);
 
   return (
-    <div className="table-responsive">
-      <table className="table">
+    <div className="table-wrapper">
+      <table className="table table-responsive-xl ">
         <thead className="thead-dark">
-          <tr>
+          <tr className="pink-row">
             <th scope="col" onClick={() => sortBy("id", 0)}>
               Id
               <span>
