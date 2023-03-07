@@ -1,3 +1,6 @@
+li{
+  list-style: none;
+}
 .App {
   text-align: left;
 }
@@ -54,4 +57,8 @@ tr {
 
 .card {
   width: 18rem;
+}
+.card-group{
+  display: flex;
+  flex-direction: row;
 }
