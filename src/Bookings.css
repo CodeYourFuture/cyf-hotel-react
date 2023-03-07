@@ -97,6 +97,10 @@
   background-color: var(--pink) !important;
 }
 
+.pink-row th span {
+  margin-left: 4px;
+}
+
 tr {
   color: #5b5757;
   cursor: pointer;

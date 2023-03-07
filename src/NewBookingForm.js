@@ -27,7 +27,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
 
     switch (name) {
       case "title":
-        errors.name = !value.trim()
+        errors.title = !value.trim()
           ? "X Title is required"
           : value.length < 3
           ? "X Title must be at least 2 characters"
@@ -36,19 +36,19 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
       case "firstName":
         errors.firstName = !value.trim()
           ? "X First name is required"
-          : value.length < 4
+          : value.length < 3
           ? "X First name must be at least 3 characters"
           : "";
         break;
       case "surname":
         errors.surname = !value.trim()
           ? "X Surname is required"
-          : value.length < 4
+          : value.length < 3
           ? "X Surname must be at least 3 characters"
           : "";
         break;
       case "email":
-        errors.email = /^w+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$/.test(value)
+        errors.email = !/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(value)
           ? "X Email is invalid"
           : value.length < 6
           ? "X Email must be at least 6 characters"
