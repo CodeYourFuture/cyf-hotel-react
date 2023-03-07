@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import NewBookingForm from "./NewBookingForm.js";
+import "./Bookings.css";
 
 const Bookings = ({ bookings, setBookings }) => {
   // const [bookings, setBookings] = useState("");

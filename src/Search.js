@@ -22,7 +22,10 @@ const Search = (props) => {
   return (
     <div className="search">
       <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
+        <div className="search-header">
+          <h1 className="text-left">Guest list</h1>
+          <h3>- Search bookings</h3>{" "}
+        </div>
       </div>
       <div className="row search-wrapper">
         <div className="col">
@@ -37,8 +40,10 @@ const Search = (props) => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <SearchButton />
-              <ShowFullListButton showFullList={props.showFullList} />
+              <div className="search-buttons">
+                <SearchButton />
+                <ShowFullListButton showFullList={props.showFullList} />
+              </div>
             </div>
           </form>
         </div>
