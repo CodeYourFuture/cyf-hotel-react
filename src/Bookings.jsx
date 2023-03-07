@@ -16,30 +16,23 @@ const Bookings = () => {
 
   const [bookings, setBookings] = useState([]);
 
+  const [showFullList, setShowFullList] = useState(true);
+
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    const filterBookings = bookings.filter(
+      (booking) =>
+        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+    );
+    setBookings(filterBookings);
+    setShowFullList(searchVal.length === 0);
   };
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <table className="table">
-          <thead className="thead-dark">
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Title</th>
-              <th scope="co l">Firstname</th>
-              <th scope="col">Surename</th>
-              <th scope="col">Email</th>
-              <th scope="col">Room ID</th>
-              <th scope="col">Check in</th>
-              <th scope="col">Check out</th>
-              <th scope="col">Nights</th>
-            </tr>
-          </thead>
-          <SearchResults results={bookings} />
-        </table>
+        <SearchResults results={showFullList ? bookings : filterBookings} />
       </div>
     </div>
   );
