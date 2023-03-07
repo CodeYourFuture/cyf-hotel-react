@@ -9,7 +9,9 @@ const Restaurant = () => {
   const [key, setKey] = useState(0);
 
   const handleClick = () => {
-    setMessage("Order sent! Please wait 10 minutes for your order. Enjoy!");
+    setMessage(
+      "Your order has been sent! Please wait 10 minutes for your order. Enjoy!"
+    );
     setTimeout(() => {
       setMessage("");
     }, 5000);
@@ -18,14 +20,19 @@ const Restaurant = () => {
 
   return (
     <div className="restaurant">
-      <h1>Order some food</h1>
-      <ul className="food-list">
-        {food.map((x, index) => {
-          return <Order key={`${index}-${key}`} orderType={x} />;
-        })}
-      </ul>
-      <button onClick={handleClick}>Send order</button>
-      {message && <p>{message}</p>}
+      <div className="image-back"></div>
+      <div className="text-section">
+        <h1>Order some food</h1>
+        <ul className="food-list">
+          {food.map((x, index) => {
+            return <Order key={`${index}-${key}`} orderType={x} />;
+          })}
+        </ul>
+        <button className="send-order-button" onClick={handleClick}>
+          Send order
+        </button>
+        {message && <p className="order-message">{message}</p>}
+      </div>
     </div>
   );
 };

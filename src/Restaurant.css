@@ -1,0 +1,101 @@
+.restaurant {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-areas: "image text";
+  min-height: 60vh;
+  position: relative;
+}
+
+.image-back {
+  position: relative;
+  background-color: rgba(10, 34, 67, 0.5);
+  padding-bottom: 40px;
+  grid-area: image;
+}
+
+.image-back::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url(./media/food_2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text-section {
+  grid-area: text;
+  align-self: center;
+}
+
+.text-section h1 {
+  position: absolute;
+  top: 10%;
+  right: 40px;
+  color: var(--dark-blue);
+  -webkit-text-stroke: 2px white;
+  font-size: 110px;
+  margin-left: 60px;
+  width: 100%;
+  text-align: right;
+}
+
+.food-list {
+  margin-top: 120px;
+}
+
+.food-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  padding: 20px 0;
+}
+
+.food-list .add-order-button {
+  margin-right: 40px;
+}
+
+.send-order-button {
+  width: 80%;
+
+  display: block;
+  margin: 20px auto;
+  font-size: 26px;
+}
+
+.order-message {
+  font-size: 25px;
+  text-align: center;
+  margin: 10px 40px;
+}
+
+@media (max-width: 880px) {
+  .restaurant {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "image"
+      "text";
+  }
+
+  .food-list {
+    margin-top: 0;
+  }
+
+  .send-order-button {
+    width: 350px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 550px) {
+  .text-section h1 {
+    font-size: 80px;
+    line-height: 70px;
+  }
+}
