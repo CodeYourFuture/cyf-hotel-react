@@ -7,6 +7,15 @@ const SearchResult = props => {
     setCustomClass(customClass => (customClass ? "" : "table-primary"));
   };
 
+  const showCustomerProfile = event => {
+    event.stopPropagation();
+    // to stop it highlighting the row when the Show Profile button is clicked
+    props.setCustomerId(() => {
+      return props.id;
+    });
+    // ^ this is the set state function from 2 levels above in Bookings.js
+  };
+
   return (
     <>
       <tr className={`text-center ${customClass}`} onClick={classToggle}>
@@ -19,6 +28,15 @@ const SearchResult = props => {
         <td>{props.checkInDate}</td>
         <td>{props.checkOutDate}</td>
         <td>{props.diff}</td>
+        <td>
+          <button
+            className="btn-primary"
+            onClick={showCustomerProfile}
+            id={props.id}
+          >
+            Show Profile
+          </button>
+        </td>
       </tr>
     </>
   );
