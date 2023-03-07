@@ -7,7 +7,13 @@ import { useEffect } from "react";
 const Bookings = () => {
   //console.log(useEffect);
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    const filterBookings = bookings.filter((booking) => {
+      return (
+        booking.firstName.toLowerCase().includes(searchVal) ||
+        booking.surname.toLowerCase().includes(searchVal)
+      );
+    });
+    setBookings(filterBookings);
   };
   const [bookings, setBookings] = useState([]);
 
