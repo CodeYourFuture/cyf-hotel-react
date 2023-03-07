@@ -5,7 +5,7 @@ import "./Attractions.css";
 
 const Attractions = () => {
   return (
-    <div className="attractions">
+    <div id="attractions" className="attractions">
       <div className="inside-attractions">
         <h1>Attractions</h1>
         <div className="info-cards">

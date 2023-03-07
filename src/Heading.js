@@ -23,17 +23,17 @@ const Heading = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ml-auto">
-            <a className="nav-item nav-link active" href="#">
+            <a className="nav-item nav-link active" href="#main-home">
               Home
             </a>
 
-            <a className="nav-item nav-link" href="#">
+            <a className="nav-item nav-link" href="#attractions">
               Attractions
             </a>
-            <a className="nav-item nav-link active" href="#">
+            <a className="nav-item nav-link active" href="#food">
               Food
             </a>
-            <a className="nav-item nav-link active" href="#">
+            <a className="nav-item nav-link active" href="#guest-list">
               Guest list
             </a>
           </div>

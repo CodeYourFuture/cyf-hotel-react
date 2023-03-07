@@ -20,7 +20,7 @@ const App = () => {
   ];
   return (
     <div className="App">
-      <div className="main-wrapper">
+      <div id="main-home" className="main-wrapper">
         <Heading />
         <div className="main-page-wrapper">
           <NewBookingForm

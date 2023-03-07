@@ -51,7 +51,7 @@ const Bookings = ({ bookings, setBookings }) => {
   }, []);
 
   return (
-    <div className="App-content">
+    <div id="guest-list" className="App-content">
       <div className="container">
         <Search
           search={search}

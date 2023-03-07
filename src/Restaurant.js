@@ -19,7 +19,7 @@ const Restaurant = () => {
   };
 
   return (
-    <div className="restaurant">
+    <div id="food" className="restaurant">
       <div className="image-back"></div>
       <div className="text-section">
         <h1>Order some food</h1>
