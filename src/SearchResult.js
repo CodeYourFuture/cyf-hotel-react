@@ -9,11 +9,9 @@ const SearchResult = props => {
 
   const showCustomerProfile = event => {
     event.stopPropagation();
-    // to stop it highlighting the row when the Show Profile button is clicked
     props.setCustomerId(() => {
       return props.id;
     });
-    // ^ this is the set state function from 2 levels above in Bookings.js
   };
 
   return (

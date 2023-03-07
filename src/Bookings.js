@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import CustomerProfile from "./CostomerProfile.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [customerId, setCustomerId] = useState(null);
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
@@ -27,7 +29,8 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        <SearchResults results={bookings} setCustomerId={setCustomerId} />
+        {customerId && <CustomerProfile id={customerId} />}
       </div>
     </div>
   );

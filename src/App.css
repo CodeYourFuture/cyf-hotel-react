@@ -89,3 +89,10 @@ footer {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.customer-profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
