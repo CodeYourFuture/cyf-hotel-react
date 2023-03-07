@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const getDaysDifference = (date1, date2) => {
@@ -9,9 +9,13 @@ let b = moment(date2);
 }
 
 const SearchResults = (props) => {
+const [selectedId, setselectedId] = useState(undefined);
 
+const rowHighlight = (bookingId) => {
+    setselectedId(bookingId);
+}
   return (
-    <table className="table">
+    <table className="table" >
       <thead>
         <tr>
           <th>id</th>
@@ -28,7 +32,10 @@ const SearchResults = (props) => {
       <tbody>
         {props.results.map((booking) => {
           return (
-            <tr key={booking.id}>
+            <tr key = {booking.id}
+            onClick = {() => rowHighlight(booking.id)}
+            style={{backgroundColor: selectedId === booking.id  ? "purple" : ""}}
+        >
               <td>{booking.id}</td>
               <td>{booking.title}</td>
               <td>{booking.firstName}</td>
