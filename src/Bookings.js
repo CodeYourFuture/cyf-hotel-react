@@ -7,11 +7,35 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [customerId, setCustomerId] = useState(null);
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  const [errorOccurred, setErrorOccurred] = useState({
+    ok: true,
+    status: "",
+    statusText: ""
+  });
+
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then(res => res.json())
+    //https://cyf-react.glitch.me/error
+    fetch(`https://cyf-react.glitch.me/delayed`)
+      .then(res => {
+        if (!res.ok) {
+          setErrorOccurred({
+            ok: res.ok,
+            status: res.status,
+            statusText: res.statusText
+          });
+          throw new Error(res);
+        } else {
+          return res.json();
+        }
+      })
       .then(data => {
         setBookings(data);
+        setIsLoading(false);
+      })
+      .catch(error => {
+        console.log(error);
       });
   }, []);
 
@@ -29,7 +53,20 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} setCustomerId={setCustomerId} />
+        {errorOccurred.ok === false ? (
+          <div>
+            <span>
+              An Error occurred when fetching the Bookings Data :{" "}
+              {errorOccurred.status} {errorOccurred.statusText}
+            </span>
+          </div>
+        ) : isLoading === true ? (
+          <div>
+            <span>The Bookings data is loading, please wait...</span>
+          </div>
+        ) : (
+          <SearchResults results={bookings} setCustomerId={setCustomerId} />
+        )}
         {customerId && <CustomerProfile id={customerId} />}
       </div>
     </div>
