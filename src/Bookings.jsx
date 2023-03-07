@@ -1,36 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
-
-
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings);
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me")
+      .then((res) => res.json())
+      .then((data) => {
+        setBookings(data);
+      })
+      .catch((error) => {
+        console.log("error");
+      });
+  }, []);
+
+  const [bookings, setBookings] = useState([]);
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    const filterBookings = bookings.filter((booking) => {
+      return (
+        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+      );
+    });
+    setBookings(filterBookings);
   };
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Title</th>
-              <th scope="col">Frist Name</th>
-              <th scope="col">Surname</th>
-              <th scope="col">Email</th>
-              <th scope="col">Room ID</th>
-              <th scope="col">Check in Date</th>
-              <th scope="col">Check out Date</th>
-              <th scope="col">Number of Nights</th>
-            </tr>
-          </thead>
-          <SearchResults results={FakeBookings} />
-        </table>
+        <SearchResults results={bookings} />
       </div>
     </div>
   );
