@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 const WelcomeInfo = () => {
   return (
@@ -9,7 +10,16 @@ const WelcomeInfo = () => {
         traveling for business or pleasure, we have the perfect accommodations
         to suit your needs and exceed your expectations.
       </p>
-      <button>Check all guests</button>
+      <Link
+        to="guest-list"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={2000}
+        className="button"
+      >
+        Check all guests
+      </Link>
     </div>
   );
 };
