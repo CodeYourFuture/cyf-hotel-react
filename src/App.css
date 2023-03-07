@@ -12,7 +12,6 @@
 .App-header {
   background-color: #222;
   height: 50px;
-  /* padding: 20px; */
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
@@ -37,6 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -44,9 +44,6 @@
 tr {
   color: #5b5757;
   cursor: pointer;
-}
-tr:hover {
-  background-color: lightgray;
 }
 
 th {
@@ -92,7 +89,7 @@ th {
 }
 
 .gray {
-  background-color: gray;
+  background-color: lightgray;
 }
 
 .white {
@@ -100,15 +97,15 @@ th {
 }
 
 .restaurant {
-  background-color: rgb(215, 218, 221);
-  border: 5px solid gray;
+  background-color: rgb(182, 187, 192);
   text-align: center;
-  margin: 50px;
+  margin: 50px auto;
   padding: 20px;
 }
 
 .restaurant ul {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .restaurant li {
@@ -119,6 +116,10 @@ th {
 .restaurant button {
   margin: 10px;
   padding: 0 50px;
-  background-color: black;
-  color: white;
+}
+
+@media screen and (max-width: 400px) {
+  .restaurant ul {
+    flex-direction: column;
+  }
 }
