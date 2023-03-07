@@ -24,6 +24,7 @@
 
 .nav-item:hover {
   color: var(--pink) !important;
+  cursor: pointer;
 }
 
 .logo {

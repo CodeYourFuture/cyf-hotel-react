@@ -1,6 +1,7 @@
 import React from "react";
 import "./Heading.css";
 import logo from "./media/logo.png";
+import { Link } from "react-scroll";
 
 const Heading = () => {
   return (
@@ -23,19 +24,46 @@ const Heading = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ml-auto">
-            <a className="nav-item nav-link active" href="#main-home">
+            <Link
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              className="nav-item nav-link"
+            >
               Home
-            </a>
-
-            <a className="nav-item nav-link" href="#attractions">
+            </Link>
+            <Link
+              to="attractions"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={1000}
+              className="nav-item nav-link"
+            >
               Attractions
-            </a>
-            <a className="nav-item nav-link active" href="#food">
+            </Link>
+            <Link
+              to="food"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={1500}
+              className="nav-item nav-link"
+            >
               Food
-            </a>
-            <a className="nav-item nav-link active" href="#guest-list">
+            </Link>
+            <Link
+              to="guest-list"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={2000}
+              className="nav-item nav-link"
+            >
               Guest list
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
