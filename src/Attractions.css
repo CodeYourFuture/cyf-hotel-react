@@ -60,3 +60,16 @@
     text-align: center;
   }
 }
+
+@media (max-width: 620px) {
+  .attractions h1 {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 450px) {
+  .attractions h1 {
+    font-size: 50px;
+    -webkit-text-stroke: 1px white;
+  }
+}

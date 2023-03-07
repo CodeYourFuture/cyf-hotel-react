@@ -54,8 +54,9 @@ button,
   color: white;
   border: 1px solid #0a2243;
   border-radius: 50px;
-  padding: 0 20px;
+  padding: 5px 20px;
   font-size: 22px;
+  line-height: 24px;
 }
 
 button:hover,

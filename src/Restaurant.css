@@ -99,3 +99,9 @@
     line-height: 70px;
   }
 }
+
+@media (max-height: 1030px) {
+  .text-section h1 {
+    top: 0;
+  }
+}
