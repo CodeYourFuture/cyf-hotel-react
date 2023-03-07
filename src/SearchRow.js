@@ -10,7 +10,7 @@ function SearchRow (props){
     
     return (
         <tr className = {colour} onClick = {NewColor}>
-          <td scope="row">{props.id}</td>
+          <td scope="row">{props.guest.id}</td>
           <td>{props.guest.title}</td>
           <td>{props.guest.firstName}</td>
           <td>{props.guest.surname}</td>
