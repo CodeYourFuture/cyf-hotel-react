@@ -16,9 +16,10 @@ const CustomerProfile = props => {
     <div>
       <h2>Customer {props.b} Profile</h2>
       <ul>
-        <li>Customer ID:{profile.id}</li>
-        <li>Customer Email:{profile.email}</li>
-        <li>Customer Number:{profile.phoneNumber}</li>
+        <li>Customer ID : {profile.id}</li>
+        <li>Customer Email : {profile.email}</li>
+        <li>VIP : {profile.vip ? "Yes" : "No"}</li>
+        <li>Customer Number : {profile.phoneNumber}</li>
       </ul>
     </div>
   );
