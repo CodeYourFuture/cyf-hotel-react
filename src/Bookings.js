@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import CustomerProfile from "./CostomerProfile.js";
+import CustomerProfile from "./CustomerProfile.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [customerId, setCustomerId] = useState(null);
-
+  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const [errorOccurred, setErrorOccurred] = useState({
@@ -16,7 +16,6 @@ const Bookings = () => {
   });
 
   useEffect(() => {
-    //https://cyf-react.glitch.me/error
     fetch(`https://cyf-react.glitch.me/delayed`)
       .then(res => {
         if (!res.ok) {
@@ -32,6 +31,7 @@ const Bookings = () => {
       })
       .then(data => {
         setBookings(data);
+        setData(data);
         setIsLoading(false);
       })
       .catch(error => {
@@ -40,13 +40,17 @@ const Bookings = () => {
   }, []);
 
   const search = searchVal => {
-    const filterBookings = bookings.filter(element => {
-      return (
-        element.firstName.toLowerCase().startsWith(searchVal.toLowerCase()) ||
-        element.surname.toLowerCase().startsWith(searchVal.toLowerCase())
-      );
-    });
-    setBookings(filterBookings);
+    if (searchVal.trim() === "") {
+      setBookings(data);
+    } else {
+      const filterBookings = bookings.filter(element => {
+        return (
+          element.firstName.toLowerCase().startsWith(searchVal.toLowerCase()) ||
+          element.surname.toLowerCase().startsWith(searchVal.toLowerCase())
+        );
+      });
+      setBookings(filterBookings);
+    }
   };
 
   return (
