@@ -4,15 +4,16 @@ import SearchResults from "./SearchResults.js";
 import "./Bookings.css";
 
 const Bookings = ({ bookings, setBookings }) => {
-  // const [bookings, setBookings] = useState("");
   const [fullList, setFullList] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+  //function to show full list of guests
   const showFullList = () => {
     setBookings(fullList);
   };
 
+  //function to search for guest by name or surname
   const search = (searchVal) => {
     if (searchVal === "") {
       return;
@@ -28,6 +29,7 @@ const Bookings = ({ bookings, setBookings }) => {
     setBookings(newGuestLists);
   };
 
+  //getting data about guest from API
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {

@@ -17,12 +17,15 @@ const BookingsRow = ({ guest, changeGuestProfile }) => {
     fetchGuest();
   }, [guest.id]);
 
+  //function for highlighting row on a click
   const handleTableRowClick = () => setIsSelected(!isSelected);
 
+  //function for button Show Profile
   const showProfile = useCallback(() => {
     changeGuestProfile(finalData);
   }, [changeGuestProfile, finalData]);
 
+  //function for button Hide Profile
   const hideProfile = () => {
     changeGuestProfile(null);
   };

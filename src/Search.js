@@ -5,10 +5,12 @@ import ShowFullListButton from "./ShowFullListButton";
 const Search = (props) => {
   const [searchInput, setSearchInput] = useState("");
 
+  //on change saving the value from input field
   const handleSearchInput = (event) => {
     setSearchInput(event.target.value);
   };
 
+  //on submit displaying guest
   const handleSubmit = (event) => {
     event.preventDefault();
     props.search(searchInput);

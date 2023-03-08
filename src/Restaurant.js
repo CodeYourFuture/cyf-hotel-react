@@ -8,13 +8,14 @@ const Restaurant = () => {
   //created this state to force Restaurant component to re-render
   const [key, setKey] = useState(0);
 
+  //handling click of Send order button, show message for 6 seconds
   const handleClick = () => {
     setMessage(
       "Your order has been sent! Please wait 10 minutes for your order. Enjoy!"
     );
     setTimeout(() => {
       setMessage("");
-    }, 5000);
+    }, 6000);
     setKey(key + 1);
   };
 

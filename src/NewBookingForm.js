@@ -25,8 +25,11 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
   //created this state to force Restaurant component to re-render
   const [key, setKey] = useState(0);
 
+  //on every change of user inside any input field
   const handleChange = (event) => {
+    //inside state we have name of input and value
     const { name, value } = event.target;
+    //object for collecting errors
     let errors = { ...validationErrors };
 
     switch (name) {
@@ -66,9 +69,11 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
     setFormInputs({ ...formInputs, [name]: value });
   };
 
+  //handling submission of a form
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    //creating a new object
     let obj = {};
     obj.id = generateRandomID();
     obj.title = formInputs.title;
@@ -100,13 +105,13 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
       randId = Math.trunc(Math.random() * 50) + 1;
     }
 
-    //show message after button was clicked for 10 seconds
+    //show message after button was clicked for 6 seconds
     setMessage(
       "Your reservation has been accepted. You can check it in guest list."
     );
     setTimeout(() => {
       setMessage("");
-    }, 5000);
+    }, 6000);
     setKey(key + 1);
 
     return randId;
@@ -141,6 +146,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
     return myDate;
   }
 
+  //function which add ten days to any passed date
   function addTenDaysToDate(date) {
     const newDate = new Date(date.getTime());
     newDate.setDate(newDate.getDate() + 10);
