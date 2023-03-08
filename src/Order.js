@@ -11,7 +11,7 @@ import RestaurantButton from "./RestaurantButton";
       
    return(
     <li>
-      : {orders} <RestaurantButton pizza={orderOne} />
+      {props.orderType}: {orders} <RestaurantButton pizza={orderOne} />
     </li>
    )
    };

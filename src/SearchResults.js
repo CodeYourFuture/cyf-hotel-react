@@ -1,5 +1,6 @@
 import Table from "./Table";
 import FakeBookings from "./data/fakeBookings.json";
+import Bookings from "./Bookings";
 
 
 const SearchResults = () =>{
