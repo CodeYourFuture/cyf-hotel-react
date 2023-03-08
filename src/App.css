@@ -75,3 +75,7 @@ tr {
   text-align: center;
   list-style-type: none;
 }
+
+.blue {
+  background-color: lightcyan;
+}
