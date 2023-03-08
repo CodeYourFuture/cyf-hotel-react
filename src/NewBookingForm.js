@@ -29,7 +29,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
       case "title":
         errors.title = !value.trim()
           ? "X Title is required"
-          : value.length < 3
+          : value.length < 2
           ? "X Title must be at least 2 characters"
           : "";
         break;
