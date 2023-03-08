@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
@@ -7,6 +7,15 @@ export default function SearchResults(props) {
   function selectRow(id) {
     id === selectedRow ? setSelectedRow("") : setSelectedRow(id);
   }
+
+  const [customerProfile, setCustomerProfile] = useState([]);
+  useEffect(() => {
+    if (selectRow) {
+      fetch(`https://cyf-react.glitch.me/customers/${selectedRow}`)
+        .then((res) => res.json())
+        .then((data) => setCustomerProfile(data));
+    }
+  }, [selectedRow]);
 
   const bookingList = props.results.map((element) => (
     <tr
@@ -31,7 +40,7 @@ export default function SearchResults(props) {
   ));
 
   return (
-    <>
+    <div className="tableAndCustomerProfile">
       <table class="table table-borderless ">
         <thead class="thead-light">
           <tr>
@@ -49,7 +58,8 @@ export default function SearchResults(props) {
         </thead>
         {bookingList}
       </table>
-      <CustomerProfile id={selectedRow} />
-    </>
+      {/* <CustomerProfile id={selectedRow} /> */}
+      {customerProfile && <CustomerProfile profile={customerProfile} />}
+    </div>
   );
 }
