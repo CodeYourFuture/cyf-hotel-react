@@ -8,8 +8,10 @@ const Bookings = () => {
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
-    if (firstName.includes('searchVal')  || surname.includes('searchVal') )
-     {setBookings(firstName)}
+
+     setBookings(
+      bookings.filter(name => name.firstName.toLowerCase().includes(searchVal.toLowerCase()) || name.surname.toLowerCase().includes(searchVal.toLowerCase()) )
+    )
   };
 
   const [bookings, setBookings] = useState([])
@@ -24,10 +26,12 @@ const Bookings = () => {
       });
   }, []);
 
+  console.log({bookings})
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
+        
         <SearchResults results = {bookings} />
       </div>
     </div>

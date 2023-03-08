@@ -7,12 +7,10 @@ const Search = (props) => {
 
   function handleSearchInput (event){
     setsearchInput(event.target.value)
-    console.log(event.target.value)
   }
   
   function handleSubmit (e) {
     e.preventDefault()
-    console.log(e.currentTarget.elements.customerName.value)
     props.search(e.currentTarget.elements.customerName.value)
   }
 
