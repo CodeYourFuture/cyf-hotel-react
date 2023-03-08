@@ -29,8 +29,8 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <Bookings />
       <TouristInfoCards card={cards}/>
+      <Bookings />
       <Footer fInfo={info} />
     </div>
   );
