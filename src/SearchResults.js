@@ -11,12 +11,11 @@ const SearchResults = props => {
     id === selectedRowId ? setSelectedRowId(null) : setSelectedRowId(id);
   };
 
-  const [showProfile, setShowProfile] = useState(0);
+  const [showProfile, setShowProfile] = useState(null);
 
   const handlerShowProfileClick = id => {
     setShowProfile(id);
   };
-  console.log(selectedRowId);
 
   return (
     <div>
