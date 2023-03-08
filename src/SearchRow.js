@@ -9,7 +9,15 @@ function SearchRow (props){
         setColour(colour ? "" : 'newTrColor')
     }
     
+    const [profile, setProfile] = useState('')
+
+    function profileHandler () {
+      console.log("profileHandler")
+      setProfile(CustomerProfile)
+  }
+
     return (
+      <>
         <tr className = {colour} onClick = {NewColor}>
           <td scope="row">{props.guest.id}</td>
           <td>{props.guest.title}</td>
@@ -20,8 +28,10 @@ function SearchRow (props){
           <td>{props.guest.checkInDate}</td>
           <td>{props.guest.checkOutDate}</td>
           <td>{moment(props.guest.checkOutDate).diff(moment(props.guest.checkInDate), 'days')}</td>
-          <td><CustomerProfile id = {props.guest.id}/></td>
+          <td><button class = 'button-pointer' onClick = {profileHandler} >Show Profile</button></td>
         </tr>
+        <p>{profile}</p>
+      </>
       )
 }
 

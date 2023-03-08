@@ -1,5 +1,6 @@
 import moment from "moment";
 import SearchRow from "./SearchRow";
+import CustomerProfile from "./CustomerProfile";
 
 function SearchResults(props) {
   const tr = props.results.map((element) => (
@@ -25,15 +26,6 @@ function SearchResults(props) {
         </thead>
         <tbody>{tr}</tbody>
       </table>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Customer Profile</h5>
-          <p class="card-text"> Customer ID: </p>
-          <p class="card-text"> Customer Email: </p>
-          <p class="card-text"> Customer Status: </p>
-          <p class="card-text"> Customer Phone: </p>
-        </div>
-      </div>
     </>
   );
 }

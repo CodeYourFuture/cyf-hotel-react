@@ -107,3 +107,7 @@ tr {
 .newTrColor {
   background-color: lightgreen;
 }
+
+.button-pointer {
+  cursor: pointer;
+}
