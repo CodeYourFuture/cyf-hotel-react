@@ -91,3 +91,15 @@ tr {
   border: 5px dotted red;
 }
 
+button,
+select {
+  text-transform: none;
+  background-color: lightskyblue;
+}
+
+.h3 {
+  font-size: 1.75rem;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  margin-left: 4em;
+}

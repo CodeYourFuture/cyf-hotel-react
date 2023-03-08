@@ -1,10 +1,14 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import moment from "moment"
 
 
 const SearchResults = props => {
-  const [selectedRow, setSelectedRow] = useState(0)
   
+  const [selectedRow, setSelectedRow] = useState(null)
+  function handleClick(rowId){
+    setSelectedRow (rowId === selectedRow? null : rowId);
+
+  }  
    return (
  <table className=" table table-hover table table-sm">
   <thead>
@@ -19,6 +23,7 @@ const SearchResults = props => {
           <th>Check in Date</th>
           <th>Check out Date</th>
           <th>Night Stay</th>
+
     </tr>
   </thead>
   <tbody>
@@ -26,7 +31,8 @@ const SearchResults = props => {
       let a = moment(booking.checkInDate, "YYYY-MM-DD") 
       let b = moment(booking.checkOutDate, "YYYY-MM-DD")
       return(
-          <tr key={booking.id}>
+          <tr onClick={() => handleClick(booking.id)}
+          style={{backgroundColor: booking.id === selectedRow ? "#f2def2" : "#f7f7f7"}}>
             <td>{booking.id}</td>
             <td>{booking.title}</td>
             <td>{booking.firstName}</td>
