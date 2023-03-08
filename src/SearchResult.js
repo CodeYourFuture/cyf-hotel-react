@@ -28,7 +28,7 @@ const SearchResult = props => {
         <td>{props.diff}</td>
         <td>
           <button
-            className="btn-primary"
+            className="btn btn-primary"
             onClick={toggleCustomerProfile}
             id={props.id}
           >
