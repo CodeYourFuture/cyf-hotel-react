@@ -1,6 +1,16 @@
 import moment from "moment";
+import React,{useState} from "react";
 
 const SearchResults = (props) => {
+  const [customClass,setCustomClass]= useState("");
+  const [selectedRow,setSelectedRow]= useState(null);
+
+  function classHandler(rowId){
+  setSelectedRow(rowId)
+  setCustomClass(oldCustomClass=>(oldCustomClass ? "" : "table-primary")) 
+   
+  
+  }
     return (
       <table className= "table table-bordered table-hover table-responsive">
         <thead className="thead-dark">
@@ -17,11 +27,13 @@ const SearchResults = (props) => {
           </tr>
         </thead>
         <tbody>
-            {props.results.map (value => {
+            {props.results.map ((value)  => {
                 let checkIn = moment(value.checkInDate, "YYYY-MM-DD")
-                let checkOut = moment(value.checkOutDate, "YYYY-MM-DD")
+                let checkOut = moment(value.checkOutDate , "YYYY-MM-DD")
+                let rowClass = selectedRow === value.id ? customClass : "";
+
                 return (
-                    <tr className="text-center">
+                    <tr key ={value.id}className={`text-center ${rowClass}` } onClick={()=> classHandler(value.id)}>
                         <td>{value.id}</td>
                         <td>{value.title}</td>
                         <td>{value.firstName}</td>

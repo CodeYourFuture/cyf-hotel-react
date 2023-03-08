@@ -1,14 +1,14 @@
 import react, { useState } from "react";
 import Restaurant from "./Restaurant";
 import Orders from "./Order";
-const RestaurantButton = props =>{
+const RestaurantButton = props=>{
 
 
 
 
 return(
 <div> 
-<button onClick={props.func} className="btn btn-primary">Add</button>
+<button onClick={props.func} className="btn btn-primary">{props.button}</button>
 </div>
 ) 
 
