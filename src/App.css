@@ -8,6 +8,7 @@
 .App {
   text-align: left;
   font-family: var(--font-paragraph);
+  position: relative;
 }
 
 .App-title {
@@ -128,6 +129,16 @@ button:hover,
 
 .footer-list li {
   padding: 10px 0;
+}
+
+.arrow {
+  position: fixed;
+  right: 10px;
+  bottom: 30px;
+}
+
+.arrow:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

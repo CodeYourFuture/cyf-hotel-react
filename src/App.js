@@ -9,6 +9,7 @@ import HotelImages from "./HotelImages";
 import NewBookingForm from "./NewBookingForm";
 import WelcomeInfo from "./WelcomeInfo";
 import Attractions from "./Attractions";
+import Arrow from "./Arrow";
 
 const App = () => {
   const [guestList, setGuestList] = useState("");
@@ -37,6 +38,7 @@ const App = () => {
       <Restaurant />
       <Bookings bookings={guestList} setBookings={setGuestList} />
       <Footer array={footerArray} />
+      <Arrow />
     </div>
   );
 };
