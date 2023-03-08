@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import moment from 'moment';
+import CustomerProfile from "./CustomerProfile";
 
 function SearchRow (props){
     const [colour, setColour] = useState("")
@@ -19,6 +20,7 @@ function SearchRow (props){
           <td>{props.guest.checkInDate}</td>
           <td>{props.guest.checkOutDate}</td>
           <td>{moment(props.guest.checkOutDate).diff(moment(props.guest.checkInDate), 'days')}</td>
+          <td><CustomerProfile id = {props.guest.id}/></td>
         </tr>
       )
 }

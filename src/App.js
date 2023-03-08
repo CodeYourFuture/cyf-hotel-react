@@ -6,6 +6,7 @@ import Footer from "./Footer"
 import Bookings from "./Bookings";
 import "./App.css";
 import Restaurant from "./Restaurant";
+import CustomerProfile from "./CustomerProfile";
 
 const App = () => {
   const cardsInfo = [{image:"https://media.timeout.com/images/105400989/750/422/image.jpg", city : "Glasgow", description : 'This is a description about Glasgow', buttonLink : "https://peoplemakeglasgow.com"},
