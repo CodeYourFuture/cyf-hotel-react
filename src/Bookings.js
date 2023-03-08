@@ -5,9 +5,13 @@ import SearchResults from "./SearchResults.js";
 
 
 const Bookings = () => {
+
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    if (firstName.includes('searchVal')  || surname.includes('searchVal') )
+     {setBookings(firstName)}
   };
+
   const [bookings, setBookings] = useState([])
   
   useEffect(() => {
