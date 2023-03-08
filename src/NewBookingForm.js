@@ -20,6 +20,10 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
   //creating stated for min max value in calendar
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(addTenDaysToDate(new Date()));
+  //message will show up after submit button is clicked
+  const [message, setMessage] = useState("");
+  //created this state to force Restaurant component to re-render
+  const [key, setKey] = useState(0);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -95,6 +99,15 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
     while (bookingsList.some((guest) => guest.id === randId)) {
       randId = Math.trunc(Math.random() * 50) + 1;
     }
+
+    //show message after button was clicked for 10 seconds
+    setMessage(
+      "Your reservation has been accepted. You can check it in guest list."
+    );
+    setTimeout(() => {
+      setMessage("");
+    }, 5000);
+    setKey(key + 1);
 
     return randId;
   };
@@ -235,6 +248,7 @@ const NewBookingForm = ({ bookingsList, addNewBooking }) => {
       </div>
 
       <input className="button" type="submit" value="Submit" />
+      {message && <p className="order-message">{message}</p>}
     </form>
   );
 };
