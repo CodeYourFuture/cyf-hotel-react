@@ -25,7 +25,7 @@ const Heading = () => {
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ml-auto">
             <Link
-              to="home"
+              to="main-home"
               spy={true}
               smooth={true}
               offset={0}
