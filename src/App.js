@@ -2,6 +2,7 @@ import React from "react";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
+import Footer from "./Footer";
 import "./App.css";
 
 const App = () => {
@@ -22,12 +23,15 @@ const App = () => {
         description: "London is the capital and largest city of England and the United Kingdom, with a population of just under 9 million. It stands on the River Thames in south-east England at the head of a 50-mile estuary down to the North Sea, and has been a major settlement for two millennia",
         } 
       ];
-
+  const info = [ "123 Fake Street, London, E1 4UD",
+          "hello@fakehotel.com",
+          "0123 456789"];
   return (
     <div className="App">
       <Heading />
       <Bookings />
       <TouristInfoCards card={cards}/>
+      <Footer fInfo={info} />
     </div>
   );
 };
