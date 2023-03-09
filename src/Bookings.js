@@ -18,7 +18,7 @@ const Bookings = () => {
   
   useEffect(() => {
     fetch(
-      `https://cyf-react.glitch.me`
+      `https://cyf-react.glitch.me/delayed`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -26,12 +26,15 @@ const Bookings = () => {
       });
   }, []);
 
+  const [bookinMessage, setBooking] = useState(null)
+
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        
-        <SearchResults results = {bookings} />
+        <div>
+          {bookinMessage ? (<SearchResults results = {bookings} />) : ('wait should be displayed on the screen until bookings data can be rendered ')}
+        </div>
       </div>
     </div>
   );
