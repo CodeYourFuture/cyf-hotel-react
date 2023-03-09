@@ -8,15 +8,19 @@ function SearchResults(props) {
 
   useEffect(() => {
     fetch(
-      `https://cyf-react.glitch.me/customers/1`
+      `https://cyf-react.glitch.me/customers/${1}`
     )
       .then((res) => res.json())
       .then((data) => {setProfile(data);});
   }, []);
 
+      
+
+
   const tr = props.results.map((element) => (
     <>
       <SearchRow key={element.id} guest={element} />
+      
     </>
   ));
 
@@ -37,7 +41,10 @@ function SearchResults(props) {
             <th scope="col">Profile</th>
           </tr>
         </thead>
-        <tbody>{tr}</tbody>
+        <tbody>
+        {tr}
+        
+        </tbody>
       </table>
       {profile && <CustomerProfile profile = {profile}/>}
     </>
