@@ -16,6 +16,10 @@ const SearchResults = ({ results }) => {
       : setSelected(null);
   }
 
+  function handleClose() {
+    setSelect(null);
+  }
+
   return (
     <>
       <table className="table">
@@ -34,14 +38,14 @@ const SearchResults = ({ results }) => {
           </tr>
         </thead>
         <tbody>
-          {results.map(book => {
+          {results.map((book, index) => {
             return (
               <tr
                 key={book.id}
                 onClick={event => handleClick(event, book.id)}
                 className={"".concat(selected === book.id ? "highlight" : "")}
               >
-                <th scope="row">{book.id}</th>
+                <th scope="row">{index + 1}</th>
                 <td>{book.title}</td>
                 <td>{book.firstName}</td>
                 <td>{book.surname}</td>
@@ -68,7 +72,7 @@ const SearchResults = ({ results }) => {
           })}
         </tbody>
       </table>
-      {select && <CustomerProfile id={select} />}
+      {select && <CustomerProfile id={select} handleClose={handleClose} />}
     </>
   );
 };

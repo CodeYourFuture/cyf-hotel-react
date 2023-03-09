@@ -3,13 +3,13 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import { useState } from "react";
 
-const Bookings = () => {
+const Bookings = ({ newBookingData }) => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me")
       .then(res => {
         if (!res.ok) {
           throw Error("Some thing is wrong with the API");
@@ -18,14 +18,14 @@ const Bookings = () => {
       })
       .then(data => {
         setLoading(false);
-        setBookings(data);
+        setBookings(newBookingData ? [...data, ...newBookingData] : data);
       })
       .catch(error => {
         setLoading(false);
         setErrorMessage(error.message);
         setBookings([]);
       });
-  }, []);
+  }, [newBookingData]);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);

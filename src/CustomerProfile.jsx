@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function CustomerProfile({ id }) {
+function CustomerProfile({ id, handleClose }) {
   const [profile, setProfile] = useState("");
 
   useEffect(() => {
@@ -16,6 +16,7 @@ function CustomerProfile({ id }) {
     <table>
       <tbody>
         <th>Customer Profile</th>
+        <th onClick={handleClose}>X</th>
         <tr>ID: {profile.id}</tr>
         <tr>Email: {profile.email}</tr>
         <tr>VIP: {profile.email ? "YES" : "NO"}</tr>
