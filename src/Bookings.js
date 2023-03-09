@@ -19,30 +19,37 @@ const Bookings = () => {
 
   const [loading, setLoading] = useState(true);
 
+  const [error, setError] = useState(null);
   useEffect(() => {
     setLoading(true);
-    fetch("https://cyf-react.glitch.me")
-      .then((res) => res.json())
+    fetch("https://cyf-react.glitch.me/error")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`http error! Status code: ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => {
         setTimeout(() => {
           setBookings(data);
           setLoading(false);
-        }, 4000);
+        }, 1000);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        setError("Sorry for the error!");
+        setLoading(false);
       });
   }, []);
+
+  console.log(error);
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {loading ? (
-          <p>Loading data...</p>
-        ) : (
-          <SearchResults results={bookings} />
-        )}
+        {bookings ? <SearchResults results={bookings} /> : null}
+        {loading ? <p>Loading data...</p> : null}
+        {error ? <p>{error}</p> : null}
       </div>
     </div>
   );
