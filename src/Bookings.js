@@ -36,7 +36,7 @@ const Bookings = () => {
         }, 1000);
       })
       .catch((err) => {
-        setError("Sorry for the error!");
+        setError("Error!");
         setLoading(false);
       });
   }, []);
