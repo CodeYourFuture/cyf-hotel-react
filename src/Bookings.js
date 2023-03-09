@@ -23,17 +23,18 @@ const Bookings = () => {
       .then((res) => res.json())
       .then((data) => {
         setBookings(data);
+        setBookingMessage(false);
       });
   }, []);
 
-  const [bookinMessage, setBooking] = useState(null)
+  const [bookinMessage, setBookingMessage] = useState(true)
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
         <div>
-          {bookinMessage ? (<SearchResults results = {bookings} />) : ('wait should be displayed on the screen until bookings data can be rendered ')}
+          {bookinMessage ? (<span> Looading data ... </span>) : (<SearchResults results = {bookings} />) }
         </div>
       </div>
     </div>
