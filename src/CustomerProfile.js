@@ -11,15 +11,34 @@ const CustomerProfile = props => {
 
   return (
     <div className="customer-profile-container">
-      <h3>Customer Profile</h3>
-      <span>Customer ID: {customerProfileData.id}</span>
-      <span>
-        Customer Name: {customerProfileData.title}{" "}
-        {customerProfileData.firstName} {customerProfileData.surname}
-      </span>
-      <span>Customer Email: {customerProfileData.email}</span>
-      <span>Customer Phone Number: {customerProfileData.phoneNumber}</span>
-      <span>VIP : {customerProfileData.vip ? "Yes" : "No"}</span>
+      <h3 className="font-weight-bold">Customer Profile</h3>
+      <p className="font-weight-bold">
+        Customer ID:{" "}
+        <span className="font-weight-normal">{customerProfileData.id}</span>
+      </p>
+      <p className="font-weight-bold">
+        Customer Name:{" "}
+        <span className="font-weight-normal">
+          {customerProfileData.title} {customerProfileData.firstName}{" "}
+          {customerProfileData.surname}
+        </span>
+      </p>
+      <p className="font-weight-bold">
+        Customer Email:{" "}
+        <span className="font-weight-normal">{customerProfileData.email}</span>
+      </p>
+      <p className="font-weight-bold">
+        Customer Phone Number:{" "}
+        <span className="font-weight-normal">
+          {customerProfileData.phoneNumber}
+        </span>
+      </p>
+      <p className="font-weight-bold">
+        VIP :{" "}
+        <span className="font-weight-normal">
+          {customerProfileData.vip ? "Yes" : "No"}
+        </span>
+      </p>
     </div>
   );
 };
