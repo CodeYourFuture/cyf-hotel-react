@@ -5,16 +5,32 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
-      .then((res) => res.json())
-      .then((data) => {
-        setBookings(data);
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP ERROR!: ${res.status}`);
+        }
+        return res.json();
       })
-      .catch((error) => {
-        console.log(error);
+
+      .then((data) => {
+        setTimeout(() => {
+          setBookings(data);
+          setLoadingData(false);
+        }, 1000);
+      })
+      .catch((err) => {
+        setErrorMessage("This is ERROR");
+        setLoadingData(false);
       });
   }, []);
 
   const [bookings, setBookings] = useState([]);
+
+  const [loadingData, setLoadingData] = useState(true);
+
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  // const [error, setError] = useState(true);
 
   const search = (searchVal) => {
     const filterBookings = bookings.filter(
@@ -30,7 +46,10 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         <SearchResults results={bookings} />
+        {loadingData ? <p>Loading data...</p> : null}
+        {errorMessage ? <div> {errorMessage} </div> : null}
       </div>
+      <search search={search}></search>
     </div>
   );
 };
