@@ -3,19 +3,11 @@ import moment from 'moment';
 import CustomerProfile from "./CustomerProfile";
 
 function SearchRow (props){
-    const [colour, setColour] = useState("")
+    const [colour, setColour] = useState("originalColor")
 
     function NewColor () { 
         setColour(colour ? "" : 'newTrColor')
     }
-    
-    const [profile, setProfile] = useState('')
-
-    function profileHandler () {
-      console.log("profileHandler")
-      setProfile(CustomerProfile)
-  }
-
     return (
       <>
         <tr className = {colour} onClick = {NewColor}>
@@ -28,9 +20,8 @@ function SearchRow (props){
           <td>{props.guest.checkInDate}</td>
           <td>{props.guest.checkOutDate}</td>
           <td>{moment(props.guest.checkOutDate).diff(moment(props.guest.checkInDate), 'days')}</td>
-          <td><button class = 'button-pointer' onClick = {profileHandler} >Show Profile</button></td>
+          <button class ='button-pointer'>Show Profile</button>
         </tr>
-        <p>{profile}</p>
       </>
       )
 }

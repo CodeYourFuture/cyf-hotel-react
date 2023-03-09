@@ -1,10 +1,23 @@
 import moment from "moment";
 import SearchRow from "./SearchRow";
 import CustomerProfile from "./CustomerProfile";
+import React, {useState, useEffect} from "react";
 
 function SearchResults(props) {
+  const [profile, setProfile] = useState(null)
+
+  useEffect(() => {
+    fetch(
+      `https://cyf-react.glitch.me/customers/1`
+    )
+      .then((res) => res.json())
+      .then((data) => {setProfile(data);});
+  }, []);
+
   const tr = props.results.map((element) => (
-    <SearchRow key={element.id} guest={element} />
+    <>
+      <SearchRow key={element.id} guest={element} />
+    </>
   ));
 
   return (
@@ -26,6 +39,7 @@ function SearchResults(props) {
         </thead>
         <tbody>{tr}</tbody>
       </table>
+      {profile && <CustomerProfile profile = {profile}/>}
     </>
   );
 }

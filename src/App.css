@@ -108,6 +108,8 @@ tr {
   background-color: lightgreen;
 }
 
+
 .button-pointer {
+  margin-top: 5%;
   cursor: pointer;
 }
