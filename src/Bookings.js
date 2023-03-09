@@ -22,7 +22,7 @@ const Bookings = () => {
   const [error, setError] = useState(null);
   useEffect(() => {
     setLoading(true);
-    fetch("https://cyf-react.glitch.me/error")
+    fetch("https://cyf-react.glitch.me")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`http error! Status code: ${res.status}`);
