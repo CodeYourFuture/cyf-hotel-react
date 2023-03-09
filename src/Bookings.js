@@ -17,11 +17,17 @@ const Bookings = () => {
   };
   const [bookings, setBookings] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
+    setLoading(true);
     fetch("https://cyf-react.glitch.me")
       .then((res) => res.json())
       .then((data) => {
-        setBookings(data);
+        setTimeout(() => {
+          setBookings(data);
+          setLoading(false);
+        }, 4000);
       })
       .catch((error) => {
         console.log(error);
@@ -32,7 +38,11 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {loading ? (
+          <p>Loading data...</p>
+        ) : (
+          <SearchResults results={bookings} />
+        )}
       </div>
     </div>
   );
