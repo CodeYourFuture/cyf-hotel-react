@@ -2,18 +2,12 @@
   text-align: left;
   text-align: center;
 }
-
-.App-logo {
-  /* animation: App-logo-spin infinite 20s linear; */
-  height: 80px;
-  width: 80px;
-}
-
 .App-header {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+
   background-color: #222;
   height: 50px;
   padding: 20px;
@@ -24,72 +18,12 @@
   padding-top: 20px;
   text-align: center;
 }
-
-.App-title {
-  font-size: 1.5em;
-}
 .headerContainer {
   display: flex;
   align-items: center;
 }
 .logo {
-  fill: rgb(205, 213, 205);
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-  padding: 5px;
-  margin-left: 10px;
-  filter: invert(1);
-}
-
-.cardContainer {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.App-content {
-  padding-top: 20px;
-  font-size: bold;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-tr {
-  color: #3d3d3d;
-}
-
-.results {
-  padding-top: 15px;
-}
-
-.footer {
-  padding-top: 20px;
-  text-align: center;
-}
-
-.card {
-  width: 15rem;
-}
-
-
-.search {
-  padding: 25px 0 15px 20px;
-}
-.headerContainer {
-  display: flex;
-  align-items: center;
-}
-.logo {
-  fill: rgb(109, 114, 109);
+  fill: rgb(55, 59, 55);
   width: 50px;
   height: 50px;
   margin-right: 10px;
@@ -105,7 +39,7 @@ tr {
 }
 
 .card {
-  width: 15rem;
+  width: 18rem;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -119,11 +53,10 @@ tr {
 .order-type {
   display: flex;
   gap: 20px;
-  text-decoration: none;
-  justify-content: space-between;
   margin-top: 0;
   margin-bottom: 1rem;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 footer ul {
@@ -133,11 +66,12 @@ footer ul {
   padding: 20px 0 5px 0;
 }
 table .thead-dark th {
-  color: #fff;
+  color: #767171;
   background-color: #212529;
   border-color: #32383e;
+  margin-left: 15%;
 }
 
 .selected-colour {
-  background-color: rgb(92, 85, 85);
+  background-color: rgb(55, 53, 53);
 }

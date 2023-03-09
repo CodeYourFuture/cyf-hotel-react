@@ -8,10 +8,12 @@ const Order = ({ orderType }) => {
     setOrders(orders + 1);
   };
   return (
-    <li>
-      {orderType}: {orders}
-      <RestaurantButton onClick={orderOne} />
-    </li>
+    <ul>
+      <li>
+        {orderType}: {orders}
+        <RestaurantButton onClick={orderOne} />
+      </li>
+    </ul>
   );
 };
 
