@@ -3,8 +3,8 @@ import moment from "moment";
 
 const SearchResults = (props) => {
   return (
-    <>
-      <table class="table">
+    <div className="table-responsive">
+      <table class="table table-hover table-bordered">
         <thead class="thead-dark">
           <tr className="text-center">
             <th scope="col">ID</th>
@@ -39,7 +39,7 @@ const SearchResults = (props) => {
           })}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 

@@ -1,7 +1,14 @@
+import React, { useState } from "react";
+
 const SearchResult = (props) => {
+  const [customClass, setCustomClass] = useState("");
+
+  const classToggle = () => {
+    setCustomClass((customClass) => (customClass ? "" : "table-primary"));
+  };
   return (
     <>
-      <tr className="text-center">
+      <tr className={`text-center ${customClass}`} onClick={classToggle}>
         <th scope="row">{props.id}</th>
         <td>{props.title}</td>
         <td>{props.firstName}</td>
