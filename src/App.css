@@ -8,7 +8,6 @@
 
 .App-header {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 25px;
@@ -103,7 +102,6 @@ tr {
 .footer {
   display: flex;
   flex: 1;
-  flex-direction: row;
   padding-top: 20px;
   text-align: center;
   list-style-type: none;
