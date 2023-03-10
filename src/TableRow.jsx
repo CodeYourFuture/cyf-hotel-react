@@ -1,7 +1,7 @@
 import { useState } from "react";
 import moment from "moment";
 
-const Row = props => {
+const TableRow = props => {
   const [highlight, setHighlight] = useState("white");
 
   const selected = () => {
@@ -9,23 +9,20 @@ const Row = props => {
   };
 
   return (
-    <tr key={props.data.id} onClick={selected} className={highlight}>
-      <td>{props.data.id}</td>
-      <td>{props.data.title}</td>
-      <td>{props.data.firstName}</td>
-      <td>{props.data.surname}</td>
-      <td>{props.data.email}</td>
-      <td>{props.data.roomId}</td>
-      <td>{props.data.checkInDate}</td>
-      <td>{props.data.checkOutDate}</td>
+    <tr onClick={selected} className={highlight}>
+      <td>{props.id}</td>
+      <td>{props.title}</td>
+      <td>{props.firstName}</td>
+      <td>{props.surname}</td>
+      <td>{props.email}</td>
+      <td>{props.roomId}</td>
+      <td>{props.checkInDate}</td>
+      <td>{props.checkOutDate}</td>
       <td>
-        {moment(props.data.checkOutDate).diff(
-          moment(props.data.checkInDate),
-          "days"
-        )}
+        {moment(props.checkOutDate).diff(moment(props.checkInDate), "days")}
       </td>
     </tr>
   );
 };
 
-export default Row;
+export default TableRow;

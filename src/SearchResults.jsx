@@ -3,10 +3,10 @@ import TableRow from "./TableRow";
 
 const SearchResults = props => (
   <table className="table">
-    <TableHeader />
+    <TableHeader {...props.results} />
     <tbody>
       {props.results.map(eachPerson => (
-        <TableRow data={eachPerson} />
+        <TableRow key={eachPerson.id} {...eachPerson} />
       ))}
     </tbody>
   </table>
