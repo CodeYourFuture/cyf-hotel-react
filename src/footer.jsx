@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = props => {
   return (
-    <ul>
+    <ul className="ul5">
       {props.contacts.map((contact, index) => (
         <li key={index}>{contact}</li>
       ))}
