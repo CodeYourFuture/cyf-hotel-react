@@ -30,6 +30,7 @@ const App = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
+
     setBookingData(
       newBookingData.concat({
         id: nanoid(),
@@ -42,6 +43,8 @@ const App = () => {
         checkOutDate: addBooking.CheckOutDate
       })
     );
+
+    event.target.reset();
   }
 
   return (
