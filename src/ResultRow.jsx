@@ -3,6 +3,7 @@ import moment from "moment";
 
 const ResultRow = (props) => {
   const [active, setActive] = useState(false);
+  console.log(active);
   const result = props.result;
 
   function handleRowClick() {

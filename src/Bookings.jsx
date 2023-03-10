@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.jsx";
 import SearchResults from "./SearchResults.jsx";
-import FakeBookings from "./data/fakeBookings.json";
+
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings);
+  const [bookings, setBookings] = useState([]);
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me`)
+      .then((res) => res.json())
+      .then((data) => setBookings(data))
+      .catch((error) => {
+        console.log(error + "in file Bookings.jsx");
+      });
+  }, []);
 
   return (
     <div className="App-content">
@@ -17,3 +25,5 @@ const Bookings = () => {
 };
 
 export default Bookings;
+
+
