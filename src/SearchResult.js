@@ -34,7 +34,7 @@ export default function SearchResults({ results }) {
                 className={selectedIndex === index ? "clicked" : "unclicked"}
               >
                 <th scope="row">{person.id}</th>
-                <td>{person.title}</td>
+                <td>{person.title} </td>
                 <td>{person.firstName}</td>
                 <td>{person.surname}</td>
                 <td>{person.email}</td>

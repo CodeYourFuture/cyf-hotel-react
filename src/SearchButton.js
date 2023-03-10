@@ -1,9 +1,11 @@
 import React from "react";
 
-function SearchButton() {
+function SearchButton(props) {
   return (
     <div>
-      <button className="btn btn-primary">Search</button>
+      <button className="btn btn-primary" onClick={props.search}>
+        Search
+      </button>
     </div>
   );
 }

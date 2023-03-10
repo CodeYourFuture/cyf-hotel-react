@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Tilt Prism", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap");
+
 .clicked {
   background-color: rgb(49, 82, 249);
   color: azure;
@@ -37,4 +44,31 @@ tr {
 
 .visit-city {
   margin-left: 3.5rem;
+}
+
+.bg-row {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.bg-row:hover {
+  background-color: aliceblue;
+}
+
+.img-header {
+  width: 100%;
+  height: 700px;
+  background-image: url("https://i0.wp.com/theluxurytravelexpert.com/wp-content/uploads/2021/11/best-w-hotels-in-the-world.jpg?fit=1300%2C731&ssl=1");
+  text-align: center;
+  padding-top: 30%;
+  background-repeat: no-repeat;
+}
+
+.header-p {
+  background-color: rgba(33, 6, 6, 0.336);
+  width: 100%;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: "Tilt Prism";
+  color: white;
 }

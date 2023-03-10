@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
-const Search = ({ search }) => {
+const Search = props => {
   const [searchInput, setSearchInput] = useState("");
   const handleSearchInput = e => {
-    //  console.log(e.target.value);
+    e.target.value = e.target.value.toLowerCase();
+    console.log(e.target.value);
     setSearchInput(e.target.value);
-  };
-  const handleSubmit = e => {
     e.preventDefault();
-    search(searchInput);
   };
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   search(searchInput);
+  // };
   return (
     <div className="search">
       <div className="page-header">
@@ -18,7 +20,7 @@ const Search = ({ search }) => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box" onSubmit={handleSubmit}>
+          <form className="form-group search-box" onSubmit={handleSearchInput}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
@@ -29,7 +31,7 @@ const Search = ({ search }) => {
                 value={searchInput}
                 onChange={handleSearchInput}
               />
-              <SearchButton />
+              <SearchButton search={() => props.search(searchInput)} />
             </div>
           </form>
         </div>

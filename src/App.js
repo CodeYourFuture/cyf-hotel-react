@@ -9,7 +9,12 @@ import Footer from "./Footer";
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">CYF Hotel</header>
+      <header className="App-header">
+        {" "}
+        <div className="img-header">
+          <p className="header-p">cyf hotel</p>
+        </div>
+      </header>
       <Heading />
       <InfoCards />
       <Bookings />
