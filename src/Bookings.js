@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
+import BookingForm from "./BookingForm.js";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 //import FakeBookings from "./data/fakeBookings.json";
+//import BookingForm from "./BookingForm.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
   useEffect(() => {
-    fetch(`https://cyf-reactt.glitch.me/delayed`)
+    fetch(`https://cyf-react.glitch.me`)
       .then(res => res.json())
       .then(data => {
         setBookings(data);
@@ -41,7 +44,9 @@ const Bookings = () => {
         {isLoading ? (
           <h2>Loading...</h2>
         ) : (
-          <SearchResults bookings={bookings} />
+          <div>
+            <SearchResults bookings={bookings} />
+          </div>
         )}
       </div>
     </div>

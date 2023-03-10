@@ -1,43 +1,89 @@
 import moment from "moment";
 import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
+import BookingForm from "./BookingForm";
 
 const SearchResults = props => {
   const { bookings } = props;
 
   const [selectedRowId, setSelectedRowId] = useState(null);
-
   const handlerRowClick = id => {
     id === selectedRowId ? setSelectedRowId(null) : setSelectedRowId(id);
   };
 
   const [showProfile, setShowProfile] = useState(null);
-
   const handlerShowProfileClick = id => {
     setShowProfile(id);
   };
 
+  const [column, setColumn] = useState("");
+  const handelSort = col => {
+    setColumn(col);
+    setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+  };
+
+  const [bookingsArray, setBookingsArray] = useState(bookings);
+  const [sortDirection, setSortDirection] = useState("asc");
+
+  const sortedArray = bookingsArray.sort((a, b) => {
+    let chosenDirection = 0;
+    sortDirection === "asc" ? (chosenDirection = 1) : (chosenDirection = -1);
+    if (column === "id") {
+      return chosenDirection * (a.id - b.id);
+    } else if (column === "title") {
+      return chosenDirection * a.title.localeCompare(b.title);
+    } else if (column === "firstName") {
+      return chosenDirection * a.firstName.localeCompare(b.firstName);
+    } else if (column === "surname") {
+      return chosenDirection * a.surname.localeCompare(b.surname);
+    } else if (column === "email") {
+      return chosenDirection * a.email.localeCompare(b.email);
+    } else if (column === "roomId") {
+      return chosenDirection * (a.roomId - b.roomId);
+    } else if (column === "checkInDate") {
+      return chosenDirection(new Date(a.checkInDate) - new Date(b.checkInDate));
+    } else if (column === "checkOutDate") {
+      return (
+        chosenDirection * (new Date(a.checkOutDate) - new Date(b.checkOutDate))
+      );
+    } else if (column === "stay") {
+      return (
+        chosenDirection *
+        (new Date(a.checkOutDate) -
+          new Date(a.checkInDate) -
+          (new Date(b.checkOutDate) - new Date(b.checkInDate)))
+      );
+    } else {
+      return 0;
+    }
+  });
+  // sortDirection==="asc"?
+
+  const one = () => setBookingsArray(sortedArray);
+
   return (
     <div>
+      <BookingForm bookings={bookings} />
+
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>First Name</th>
-            <th>Surname</th>
-            <th>Email</th>
-            <th>Room ID</th>
-            <th>Check in Date</th>
-            <th>Check out Date</th>
-            <th>Nights of Stay</th>
+            <th onClick={() => handelSort("id")}>ID</th>
+            <th onClick={() => handelSort("title")}>Title</th>
+            <th onClick={() => handelSort("firstName")}>First Name</th>
+            <th onClick={() => handelSort("surname")}>Surname</th>
+            <th onClick={() => handelSort("email")}>Email</th>
+            <th onClick={() => handelSort("roomId")}>Room ID</th>
+            <th onClick={() => handelSort("checkInDate")}>Check in Date</th>
+            <th onClick={() => handelSort("checkOutDate")}>Check out Date</th>
+            <th onClick={() => handelSort("stay")}>Nights of Stay</th>
             <th>
               <button>Show profile</button>
             </th>
           </tr>
         </thead>
         <tbody>
-          {bookings.map(booking => (
+          {bookingsArray.map(booking => (
             <tr
               key={booking.id}
               onClick={() => handlerRowClick(booking.id)}
