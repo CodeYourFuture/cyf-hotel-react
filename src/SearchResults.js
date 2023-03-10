@@ -3,7 +3,7 @@ import moment from "moment"
 
 
 const SearchResults = props => {
-  
+  const [customerData, setCustomerData] = useState(null);
   const [selectedRow, setSelectedRow] = useState(null)
   function handleClick(rowId){
     setSelectedRow (rowId === selectedRow? null : rowId);
@@ -23,9 +23,10 @@ const SearchResults = props => {
           <th>Check in Date</th>
           <th>Check out Date</th>
           <th>Night Stay</th>
-
+          <th>Profile</th>
     </tr>
   </thead>
+
   <tbody>
     {props.results.map(booking => {
       let a = moment(booking.checkInDate, "YYYY-MM-DD") 
@@ -43,11 +44,15 @@ const SearchResults = props => {
             <td>{booking.checkOutDate}</td>
             <td>{moment(b).diff(a, "days")}
             </td>
+            <td><button onClick={() => handleClick(result.id)}>
+          Show profile</button></td>
             </tr>
-)})}
+);
+})}
   </tbody>
-  </table>
+   </table>
+//{customerData && <CustomerProfile customerData={customerData} />}
+    
    );
-};
-
+}
 export default SearchResults;
