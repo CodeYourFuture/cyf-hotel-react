@@ -114,3 +114,28 @@ tr {
 }
 
 /* ---------- orders style -------------- */
+.orders {
+  width: 72%;
+  background-image: linear-gradient(130deg, rgb(62, 62, 62), gray);
+  color: white;
+  /* background-color: rgb(62, 62, 62); */
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.orders h3 {
+  margin: 20px 0 20px 30px;
+  padding-top: 20px;
+  font-size: 2rem;
+}
+
+
+/* ------------ btn style order ---------- */
+.btnOrder button{
+  margin-left: 50px;
+}
+
+.btnOrder {
+  list-style: none;
+  padding-bottom: 10px;
+}

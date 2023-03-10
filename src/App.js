@@ -4,7 +4,7 @@ import Bookings from "./Bookings";
 import "./App.css";
 import TouristInfoCards from "./TouristInfoCards";
 import data from "./data/fakeBookings.json";
-import Footer from "./footer";
+import Footer from "./Footer";
 import Restaurant from "./Restaurant";
 
 const App = () => {
