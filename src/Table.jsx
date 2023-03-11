@@ -12,7 +12,8 @@ function Table() {
         console.log(data);
         setBookings(data);
     })
-  })
+  }, [])
+  
   return (
     <table className="table">
       <thead className="thead-dark">
