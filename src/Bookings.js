@@ -22,7 +22,7 @@ const Bookings = ({ newBookingData }) => {
       })
       .catch(error => {
         setLoading(false);
-        setErrorMessage(error.message);
+        setErrorMessage("There is an error, START PANICKING");
         setBookings([]);
       });
   }, [newBookingData]);
