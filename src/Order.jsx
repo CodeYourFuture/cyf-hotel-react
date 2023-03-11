@@ -9,6 +9,9 @@ const Order = ({orderType}) => {
   function orderOne() {
     setOrders(order + 1);
   }
+  // function deleteOne() {
+  //   setOrders(order - 1);
+  // }
 
   //same as the line above
   // const state = useState(0)

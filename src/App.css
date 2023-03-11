@@ -87,3 +87,23 @@ tr {
 .selectRow {
   background: red;
 }
+
+.restaurant {
+  text-align: center;
+  margin: 4rem 0;
+}
+.restaurant-orders {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: bisque;
+  padding: 2rem 0;
+}
+
+.booking-card{
+  background-color: #5b5757;
+  border: 1px solid whitesmoke;
+  color: antiquewhite;
+  padding: 1rem 1rem;
+  text-align: center;
+}

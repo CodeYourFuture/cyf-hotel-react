@@ -3,7 +3,6 @@ import moment from "moment";
 
 const ResultRow = (props) => {
   const [active, setActive] = useState(false);
-  // console.log(active);
   const result = props.result;
 
   function handleRowClick() {
@@ -27,7 +26,9 @@ const ResultRow = (props) => {
         {moment(result.checkOutDate).diff(moment(result.checkInDate), "days")}
       </td>
       <td>
-        <button onClick={changeId}>Show profile</button>
+        <button className="card-btn" onClick={changeId}>
+          Show profile
+        </button>
       </td>
     </tr>
   );

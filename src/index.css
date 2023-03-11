@@ -69,3 +69,7 @@ footer {
 .pink {
   background-color: pink;
 }
+
+.btn-margin{
+  margin: 2rem;
+}

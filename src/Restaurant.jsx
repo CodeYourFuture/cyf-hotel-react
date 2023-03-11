@@ -1,13 +1,11 @@
 import React from "react";
-import Order from "./Order"
-
+import Order from "./Order";
 
 const Restaurant = () => {
- 
   return (
-    <div>
+    <div className="restaurant">
       <h3>Restaurant Orders</h3>
-      <ul>
+      <ul className="restaurant-orders">
         <Order orderType="Pizzas" />
         <Order orderType="Salads" />
         <Order orderType="Chocolate cake" />
@@ -17,5 +15,3 @@ const Restaurant = () => {
 };
 
 export default Restaurant;
-
-
