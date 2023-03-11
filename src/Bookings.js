@@ -26,8 +26,17 @@ useEffect(() => {
 },[])
 
 
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
+  // const search = searchVal => {
+  //   console.info("TO DO!", searchVal);
+  // };
+
+  const search = (searchVal) => {
+    const filteredBookings = bookings.filter(
+      (booking) =>
+        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+    );
+    setBookings(filteredBookings);
   };
 
 
