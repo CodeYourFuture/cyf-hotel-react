@@ -6,11 +6,15 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
+.logo-image {
+  width: 7%;
+  border-radius: 3px;
+}
 
 .App-header {
   background-color: #222;
-  height: 50px;
-  padding: 20px;
+  height: auto;
+  padding: 12px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -40,7 +44,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #000000;
 }
 
 .results {
@@ -52,6 +56,37 @@ tr {
   text-align: center;
 }
 
+ul {
+  padding-top: 3rem;
+  list-style-type: none;
+  text-align: center;
+}
+
 .card {
   width: 18rem;
+}
+
+.card-img-top {
+  padding-top: 20px;
+}
+
+.card-body {
+  padding-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+th,
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
