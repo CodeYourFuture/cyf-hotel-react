@@ -12,7 +12,7 @@ export default function CustomerProfile(props) {
       </p>
       <p>
         <b>VIP: </b>
-        {props.profile.vip === true ? "Yes" : "No"}
+        {props.profile.vip ? "yes" : "no"}
       </p>
       <p>
         <b>Phone Number: </b>

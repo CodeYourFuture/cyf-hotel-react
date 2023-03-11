@@ -3,12 +3,14 @@ import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
 export default function SearchResults(props) {
-  const [selectedRow, setSelectedRow] = useState("");
+  const [selectedRow, setSelectedRow] = useState(null);
   function selectRow(id) {
-    id === selectedRow ? setSelectedRow("") : setSelectedRow(id);
+    id === selectedRow
+      ? setSelectedRow(null) && setCustomerProfile(null)
+      : setSelectedRow(id);
   }
 
-  const [customerProfile, setCustomerProfile] = useState([]);
+  const [customerProfile, setCustomerProfile] = useState(null);
   useEffect(() => {
     if (selectRow) {
       fetch(`https://cyf-react.glitch.me/customers/${selectedRow}`)

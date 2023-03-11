@@ -7,6 +7,7 @@ import "./App.css";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant.js";
 import SearchResults from "./SearchResults";
+import Hero from "./Hero";
 
 const App = () => {
   const cards = [
@@ -41,6 +42,7 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
+      <Hero />
       <TouristInfoCards card={cards} />
       <Bookings />
       <Restaurant />
