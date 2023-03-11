@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import moment from "moment";
 
 function SearchDetails({ detail, updateProfile, customerProfile }) {
-  const [active, setActive] = useState(false);
+  const [selected, setSelected] = useState(false);
 
-  function handleRowClick() {
-    setActive(!active);
+  function handleClick() {
+    setSelected(!selected);
   }
 
   function fetchProfileData() {
@@ -20,8 +20,8 @@ function SearchDetails({ detail, updateProfile, customerProfile }) {
   return (
     <tr
       key={detail.id}
-      onClick={handleRowClick}
-      className={active ? "pink" : ""}
+      onClick={handleClick}
+      style={{backgroundColor:selected? "lightblue":"white"}}
     >
       <td>{detail.id}</td>
       <td>{detail.title}</td>
