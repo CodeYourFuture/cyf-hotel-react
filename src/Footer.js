@@ -1,8 +1,6 @@
 import React from 'react'
 import { ImGithub } from 'react-icons/im';
-
 import "./footer.css"
-
 
 function Footer({ address }) {
   return (
@@ -14,7 +12,7 @@ function Footer({ address }) {
       </ul>
       <div className='footerGit'>
         <a href='https://github.com/hadipournigjeh' target="_blank">
-        <ImGithub className="imgGit"  size={28}/> 
+        <ImGithub className="imgGit" size={28}/> 
         </a>
         <a className="aTag" href='https://github.com/hadipournigjeh' target="_blank">:  Hadi A.P</a>
       </div>
@@ -22,4 +20,4 @@ function Footer({ address }) {
   );
 }
 
-export default Footer
+export default Footer;
