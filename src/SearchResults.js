@@ -16,6 +16,7 @@ const SearchResults = (props) => {
             <th scope="col">Check in Date</th>
             <th scope="col">Check out Date</th>
             <th scope="col">Total Nights</th>
+            <th scope="col">Profiles</th>
           </tr>
         </thead>
         <tbody>
@@ -34,6 +35,7 @@ const SearchResults = (props) => {
                 checkInDate={user.checkInDate}
                 checkOutDate={user.checkOutDate}
                 diff={b.diff(a, "days")}
+                setCustomerId={props.setCustomerId}
               />
             );
           })}
