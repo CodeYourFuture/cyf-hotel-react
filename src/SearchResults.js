@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
+  const [highlight, setHightlight] = useState(false);
+  function handleClick(rowId) {
+    setHightlight(rowId);
+  }
   return (
     <table className="table table-striped">
       <thead>
@@ -19,7 +23,13 @@ const SearchResults = ({ results }) => {
       </thead>
       <tbody>
         {results.map((booking) => (
-          <tr key={booking.id}>
+          <tr
+            key={booking.id}
+            style={{
+              backgroundColor: highlight === booking.id ? "lightgrey" : "white",
+            }}
+            onClick={() => handleClick(booking.id)}
+          >
             <td>{booking.id}</td>
             <td>{booking.title}</td>
             <td>{booking.firstName}</td>
@@ -37,7 +47,5 @@ const SearchResults = ({ results }) => {
     </table>
   );
 };
-
-
 
 export default SearchResults;
