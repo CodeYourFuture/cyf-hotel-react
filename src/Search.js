@@ -7,12 +7,11 @@ const Search = props => {
     e.target.value = e.target.value.toLowerCase();
     console.log(e.target.value);
     setSearchInput(e.target.value);
-    e.preventDefault();
   };
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   search(searchInput);
-  // };
+  const handleSubmit = e => {
+    e.preventDefault();
+    props.search(searchInput);
+  };
   return (
     <div className="search">
       <div className="page-header">
@@ -20,7 +19,7 @@ const Search = props => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box" onSubmit={handleSearchInput}>
+          <form className="form-group search-box" onSubmit={handleSubmit}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
@@ -31,7 +30,10 @@ const Search = props => {
                 value={searchInput}
                 onChange={handleSearchInput}
               />
-              <SearchButton search={() => props.search(searchInput)} />
+              <SearchButton
+                search={() => props.search(searchInput)}
+                onClick={() => props.search(searchInput)}
+              />
             </div>
           </form>
         </div>
