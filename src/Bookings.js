@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
+import AddBooking from "./AddBooking.js";
 
 
 const Bookings = () => {
@@ -30,6 +31,8 @@ const Bookings = () => {
   const [bookinMessage, setBookingMessage] = useState(true)
 
   return (
+    <>
+    <AddBooking bookings={bookings} setBookings = {setBookings}/>
     <div className="App-content">
       <div className="container">
         <Search search={search} />
@@ -38,6 +41,7 @@ const Bookings = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
