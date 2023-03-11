@@ -3,23 +3,23 @@ import React, { useEffect, useState } from "react";
 const CustomerProfile = (props) => {
   // console.log(props)
 
-  const[customer, setCustomer] = useState("");
+  const [customer, setCustomer] = useState("");
 
   let id = props.id;
   //   let myObject = {};
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/customers/${id}`)
       .then((response) => response.json())
-      .then((data) => 
-      setCustomer(data))
+      .then((data) => setCustomer(data))
       .catch((err) => console.log(err));
   }, [id]);
+  console.log(customer);
 
   return (
     <div>
       <p>Id: {customer.id}</p>
-      <p>First name: {customer.firstName}</p>
-      <p>Surname: {customer.surname}</p>
+      <p>Email: {customer.email}</p>
+      {customer.vip && <p>Phone number: {customer.phoneNumber}</p>}
     </div>
   );
 
