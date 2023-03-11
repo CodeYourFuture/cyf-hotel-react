@@ -42,7 +42,7 @@ return (
         </tr>
       </thead>
       <tbody>
-        {results.map(booking => (
+        {results.map((booking) => (
           <tr
             key={booking.id}
             className=
