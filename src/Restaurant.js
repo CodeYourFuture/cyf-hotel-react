@@ -1,29 +1,22 @@
-import React, { useState } from "react";
-import RestaurantButton from "./RestaurantButton";
+import React from "react";
+// import RestaurantButton from "./RestaurantButton";
+import Order from "./Order";
 
 const Restaurant = () => {
   // the following is a new line added on 09 March 2023
-  const [orders, setOrders] = useState(0);
+  // const [orders, setOrders] = useState(0);
   return (
     <div className="App-content">
       <div className="container">
         <h3>Restaurant Orders</h3>
         <ul>
-          <li>
-            {/* Check this: https://reactjs.org/docs/hooks-state.html */}
-            Pizzas: {orders} <RestaurantButton action={orderOne} />
-          </li>
+          <Order orderType="Pizzas" />
+          <Order orderType="Salads" />
+          <Order orderType="Chocolate cake" />
         </ul>
       </div>
     </div>
   );
-  function orderOne() {
-    setOrders(orders + 1);
-    console.log("Hi");
-  }
 };
 
 export default Restaurant;
-
-// Pass the orderOne function as a prop to the <RestaurantButton /> component and use this prop in the onClick handler.
-// Test: Clicking the button should still increment the number of pizzas.
