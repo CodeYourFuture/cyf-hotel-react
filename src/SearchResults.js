@@ -1,5 +1,8 @@
+
+
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ results }) => {
   
@@ -27,6 +30,7 @@ const SearchResults = ({ results }) => {
 // If not - it adds the id to the array using the spread operator and updates the selectedRows state.
   
 return (
+  <>
     <table className="table">
       <thead>
         <tr>
@@ -39,6 +43,7 @@ return (
           <th>Check-in Date</th>
           <th>Check-out Date</th>
           <th>Numb days</th>
+          <th>Profile</th>
         </tr>
       </thead>
       <tbody>
@@ -72,10 +77,13 @@ return (
                 "days"
               )}
             </td>
+            <td><button>Show profile</button></td>
           </tr>
         ))}
       </tbody>
     </table>
+    {selectedId && <CustomerProfile id={selectedId} />}
+    </>
   );
 };
 
