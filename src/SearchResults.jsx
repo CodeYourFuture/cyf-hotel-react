@@ -3,9 +3,9 @@ import SingleBooking from "./SingleBooking"
 import data from "./data/fakeBookings.json"
 import moment from "moment/moment"
 
-function SearchResults() {
+function SearchResults({bookings}) {
 
-  const [Bookings, setBookings] = useState(data);
+  
 
   return <>
   
@@ -24,7 +24,7 @@ function SearchResults() {
           </tr>
         </thead>
         <tbody>
-          {Bookings.map((item) => (
+          {bookings.map((item) => (
             <SingleBooking
               key={item.id}
               id={item.id}

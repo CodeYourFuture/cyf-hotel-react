@@ -8,19 +8,30 @@ const Bookings = () => {
   
 
   const [booking, setBookings] = useState([]);
+  const [displayData, setDisplayData] = useState([]);
 
   useEffect(() => {
-    console.log("Welcome in my hotel project");
+    // console.log("Welcome in my hotel project");
 
     fetch(`https://cyf-react.glitch.me`)
     .then(res => res.json())
-    .then(data => setBookings(data))
+    .then(data => {
+      setBookings(data)
+      setDisplayData(data)
+    })
     .catch(error => console.log(error));
-  })
+  },[])
 
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
-    setBookings(prev => prev.filter((item) => item.firstName.toLowerCase() === searchVal || item.surname.toLowerCase() === searchVal))
+    const newData = booking.filter((item) => {
+      if(!searchVal) {
+        return true
+      }else{
+        return item.firstName.toLowerCase() === searchVal || item.surname.toLowerCase() === searchVal
+      }} 
+      )
+    setDisplayData(newData)
   };
 
   return (
@@ -28,7 +39,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         {/* <SearchResults results={FakeBookings} /> */}
-        <SearchResults />
+        <SearchResults bookings={displayData} />
       </div>
     </div>
   );
