@@ -3,7 +3,6 @@ import BookingForm from "./BookingForm.js";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 //import FakeBookings from "./data/fakeBookings.json";
-//import BookingForm from "./BookingForm.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -45,7 +44,7 @@ const Bookings = () => {
           <h2>Loading...</h2>
         ) : (
           <div>
-            <SearchResults bookings={bookings} />
+            <BookingForm bookings={bookings} />
           </div>
         )}
       </div>

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import SearchResults from "./SearchResults";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 const BookingForm = props => {
+  const [id, setId] = useState("");
   const [title, setTitle] = useState("");
   const [firstName, setFirstName] = useState("");
   const [surname, setSurname] = useState("");
@@ -9,13 +12,36 @@ const BookingForm = props => {
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
   const [newBookings, setNewBookings] = useState(props.bookings);
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
+    let error = "";
 
-    console.log("Sending data to server");
+    // if (firstName.trim() === "" || surname.trim() === "") {
+    //   error = "Please enter your first name and last name.";
+    // } else if (
+    //   email.indexOf("@") < 1 ||
+    //   email.lastIndexOf(".") < email.indexOf("@") + 2 ||
+    //   email.lastIndexOf(".") + 2 >= email.length
+    // ) {
+    //   error = "Please enter a valid email address.";
+    // } else if (isNaN(id) || id < 0 || id > 100) {
+    //   error = "Please enter a room ID between 0 and 100.";
+    // }
+
+    // setErrorMessage(error);
+
+    // if (!error) {
+    //   console.log("Form submitted:", { firstName, surname, email, id });
+    //   setFirstName("");
+    //   setSurname("");
+    //   setEmail("");
+    //   setId("");
+    // }
 
     let newRow = {
+      id: id,
       title: title,
       firstName: firstName,
       surname: surname,
@@ -32,6 +58,13 @@ const BookingForm = props => {
     <div>
       <form onSubmit={handleSubmit}>
         <input
+          type="number"
+          name="id"
+          placeholder="id"
+          value={id}
+          onChange={event => setId(event.target.value)}
+        />
+        <input
           type="text"
           name="title"
           placeholder="Title"
@@ -46,6 +79,10 @@ const BookingForm = props => {
           value={firstName}
           onChange={event => setFirstName(event.target.value)}
         />
+        {!firstName.trim() && <span>X first name must not be empty</span>}
+        {firstName.trim() && (
+          <FontAwesomeIcon icon={faCheckCircle} style={{ color: "green" }} />
+        )}
         <input
           type="text"
           name="surname"
@@ -53,6 +90,10 @@ const BookingForm = props => {
           value={surname}
           onChange={event => setSurname(event.target.value)}
         />
+        {!surname.trim() && <span>X first name must not be empty</span>}
+        {surname.trim() && (
+          <FontAwesomeIcon icon={faCheckCircle} style={{ color: "green" }} />
+        )}
         <input
           type="text"
           name="email"
@@ -60,6 +101,14 @@ const BookingForm = props => {
           value={email}
           onChange={event => setEmail(event.target.value)}
         />
+        {email.indexOf("@") < 1 ||
+        email.lastIndexOf(".") < email.indexOf("@") + 2 ||
+        email.lastIndexOf(".") + 2 >= email.length ? (
+          <span>Please enter a valid email address.</span>
+        ) : (
+          <FontAwesomeIcon icon={faCheckCircle} style={{ color: "green" }} />
+        )}
+
         <input
           type="date"
           name="checkInDate"
@@ -76,7 +125,7 @@ const BookingForm = props => {
         />
         <button type="submit">Submit</button>
       </form>
-      <SearchResults booking={newBookings} />
+      <SearchResults bookings={newBookings} />
     </div>
   );
 };

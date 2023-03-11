@@ -1,10 +1,10 @@
 import moment from "moment";
 import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
-import BookingForm from "./BookingForm";
 
 const SearchResults = props => {
   const { bookings } = props;
+  console.log(bookings);
 
   const [selectedRowId, setSelectedRowId] = useState(null);
   const handlerRowClick = id => {
@@ -63,8 +63,6 @@ const SearchResults = props => {
 
   return (
     <div>
-      <BookingForm bookings={bookings} />
-
       <table className="table table-striped">
         <thead>
           <tr>
