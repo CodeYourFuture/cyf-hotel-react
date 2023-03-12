@@ -1,4 +1,4 @@
-function BookingForm({ handleSubmit, handleChange }) {
+function AddedBookingForm({ handleSubmit, handleChange }) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -7,7 +7,13 @@ function BookingForm({ handleSubmit, handleChange }) {
       </div>
       <div>
         <label htmlFor="FirstName">First name *</label>
-        <input id="F" type="text" name="FirstName" onChange={handleChange} />
+        <input
+          id="F"
+          type="text"
+          name="FirstName"
+          onChange={handleChange}
+          required
+        />
       </div>
       <div>
         <label htmlFor="Surname">Surname *</label>
@@ -16,12 +22,24 @@ function BookingForm({ handleSubmit, handleChange }) {
 
       <div>
         <label htmlFor="Email">Email *</label>
-        <input type="email" name="Email" onChange={handleChange} />
+        <input
+          type="email"
+          name="Email"
+          onChange={handleChange}
+          pattern=".+@.+\..+"
+          required
+        />
       </div>
 
       <div>
         <label htmlFor="RoomID">Room ID</label>
-        <input type="text" name="RoomID" onChange={handleChange} />
+        <input
+          type="number"
+          min={0}
+          max={100}
+          name="RoomID"
+          onChange={handleChange}
+        />
       </div>
       <div>
         <label htmlFor="CheckInDate">Check in date</label>
@@ -36,4 +54,4 @@ function BookingForm({ handleSubmit, handleChange }) {
   );
 }
 
-export default BookingForm;
+export default AddedBookingForm;

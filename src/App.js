@@ -6,7 +6,7 @@ import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant";
 import { nanoid } from "nanoid";
-import BookingForm from "./BookingForm";
+import AddedBookingForm from "./AddedBookingForm";
 
 const App = () => {
   const [newBookingData, setBookingData] = useState([]);
@@ -51,7 +51,10 @@ const App = () => {
     <div className="App">
       <Heading />
       <TouristInfoCards />
-      <BookingForm handleSubmit={handleSubmit} handleChange={handleChange} />
+      <AddedBookingForm
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+      />
       <Bookings newBookingData={newBookingData} />
       <Restaurant />
       <Footer

@@ -14,6 +14,12 @@ const Order = ({ orderType }) => {
   }
 
   return (
+    // <tr>
+    //   {orderType}: {orders}
+    //   <RestaurantButton handleClick={orderOne} text={"ADD"} />
+    //   <RestaurantButton handleClick={removeOneOrder} text={"REMOVE"} />
+    // </tr>
+
     <li>
       {orderType}: {orders}{" "}
       <RestaurantButton handleClick={orderOne} text={"ADD"} />{" "}

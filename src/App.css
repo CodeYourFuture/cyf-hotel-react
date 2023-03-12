@@ -31,6 +31,7 @@
   padding-top: 20px;
   font-size: large;
   /* text-align: center; */
+  margin: 30px auto;
 }
 
 @keyframes App-logo-spin {
@@ -66,4 +67,9 @@ tr {
 .highlight {
   background-color: #24a0ed;
   color: white;
+}
+
+li {
+  list-style-type: none;
+  margin: 4px;
 }

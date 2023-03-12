@@ -13,7 +13,7 @@ function CustomerProfile({ id, handleClose }) {
   }, [id]);
 
   return (
-    <table>
+    <table className="App-content">
       <tbody>
         <th>Customer Profile</th>
         <th onClick={handleClose}>X</th>

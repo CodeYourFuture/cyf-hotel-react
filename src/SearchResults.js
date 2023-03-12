@@ -10,12 +10,8 @@ const SearchResults = ({ results }) => {
 
   function handleClick(event, bookId) {
     event.target.name === "button"
-      ? select !== bookId
-        ? setSelect(bookId)
-        : setSelect(null)
-      : selected !== bookId
-      ? setSelected(bookId)
-      : setSelected(null);
+      ? setSelect(select === bookId ? null : bookId)
+      : setSelected(selected === bookId ? null : bookId);
   }
 
   function handleClose() {
@@ -71,10 +67,11 @@ const SearchResults = ({ results }) => {
           {results
             .map((book, index) => {
               book.order = index + 1;
-              book.nights = moment(book.checkOutDate).diff(
-                moment(book.checkInDate),
-                "days"
-              );
+              book.nights =
+                moment(book.checkOutDate).diff(
+                  moment(book.checkInDate),
+                  "days"
+                ) || "-";
               return book;
             })
             .sort((a, b) => {
@@ -91,7 +88,7 @@ const SearchResults = ({ results }) => {
                 <tr
                   key={book.id}
                   onClick={event => handleClick(event, book.id)}
-                  className={"".concat(selected === book.id ? "highlight" : "")}
+                  className={selected === book.id ? "highlight" : undefined}
                 >
                   <th scope="row">{book.order}</th>
                   <td>{book.title}</td>
@@ -99,8 +96,8 @@ const SearchResults = ({ results }) => {
                   <td>{book.surname}</td>
                   <td>{book.email}</td>
                   <td>{book.roomId}</td>
-                  <td>{book.checkInDate}</td>
-                  <td>{book.checkOutDate}</td>
+                  <td>{book.checkInDate || "-"}</td>
+                  <td>{book.checkOutDate || "-"}</td>
                   <td>{book.nights}</td>
                   <td>
                     <button
