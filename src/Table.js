@@ -2,7 +2,7 @@ import moment from "moment";
 
 const Table = (props) => {
   return (
-    <table class="table table-hover">
+    <table className="table table-hover">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -14,6 +14,7 @@ const Table = (props) => {
           <th scope="col">Check in date</th>
           <th scope="col">Check out</th>
           <th scope="col">Booked</th>
+          <th scope="col">Show Profile</th>
         </tr>
       </thead>
 
@@ -25,7 +26,7 @@ const Table = (props) => {
             return `${dateB.diff(dateA, "days")} Nights`;
           };
           return (
-            <tr>
+            <tr key={customer.id}>
               <th scope="row">{customer.id}</th>
               {/* <th scope="row">1</th> */}
               <td>{customer.title}</td>
@@ -36,6 +37,11 @@ const Table = (props) => {
               <td>{customer.checkInDate}</td>
               <td>{customer.checkOutDate}</td>
               <td>{calculate()}</td>
+              <td>
+                <button onClick={() => props.showProfile(customer.id)}>
+                  Show Profile
+                </button>
+              </td>
             </tr>
           );
         })}

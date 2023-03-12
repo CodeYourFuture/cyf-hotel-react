@@ -14,7 +14,6 @@ const App = () => {
       <TouristInfoCardDetails />
       <Bookings />
       <Restaurant />
-      <SearchResults />
       <Footer />
     </div>
   );
