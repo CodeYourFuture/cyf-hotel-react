@@ -5,6 +5,7 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  padding: 10px;
 }
 
 .App-header {
@@ -16,6 +17,12 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+}
+
+.App-header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 20%;
 }
 
 .App-title {
@@ -35,6 +42,10 @@
     transform: rotate(360deg);
   }
 }
+
+.page-header {
+  text-align: center;
+}
 .search {
   padding: 5px 0 20px 0;
 }
@@ -53,5 +64,53 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 16rem;
+  border-radius: 5px;
+  border-color: grey;
+  border-width: 3px;
+  margin-top: 20px;
+  margin-right: auto;
+}
+
+.card img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 370px;
+  height: 280px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-deck {
+  padding-top: 70px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h1, h4,li {
+  text-align: center;
+
+}
+
+.text-left {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size:x-large;
+}
+
+.selected {
+  background-color: goldenrod;
 }
