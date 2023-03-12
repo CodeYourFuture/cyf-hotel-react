@@ -1,5 +1,7 @@
 import moment from "moment";
 import React,{useState} from "react";
+import CustomerProfile from "./CustomerProfile";
+
 
 const SearchResults = (props) => {
   const [customClass,setCustomClass]= useState("");
@@ -24,6 +26,7 @@ const SearchResults = (props) => {
             <th scope="col">Check in</th>
             <th scope="col">Check out</th>
             <th scope="col">total nights</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -43,14 +46,18 @@ const SearchResults = (props) => {
                         <td>{value.checkInDate}</td>
                         <td>{value.checkOutDate}</td>
                         <td>{moment(checkOut).diff(checkIn, "days")}</td>
+                        <th><button>Show Profile</button></th>
                     </tr>
                    
                 )
             })}
-        
-        
+
+              
+
+
         </tbody>
       </table>
     );
+    <CustomerProfile />
   };
   export default SearchResults ;
