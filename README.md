@@ -1,4 +1,4 @@
-Live link https://tiritaki.github.io/cyf-hotel-react/
+Live link https://cyf-tiritaki-hotel-react.netlify.app/
 
 A hotel booking application in React. Homework for the [CodeYourFuture React module](https://codeyourfuture.github.io/syllabus-master/react/)
 
