@@ -19,44 +19,44 @@ const BookingForm = props => {
     event.preventDefault();
     let error = "";
 
-    // if (firstName.trim() === "" || surname.trim() === "") {
-    //   error = "Please enter your first name and last name.";
-    // } else if (
-    //   email.indexOf("@") < 1 ||
-    //   email.lastIndexOf(".") < email.indexOf("@") + 2 ||
-    //   email.lastIndexOf(".") + 2 >= email.length
-    // ) {
-    //   error = "Please enter a valid email address.";
-    // } else if (isNaN(id) || id < 0 || id > 100) {
-    //   error = "Please enter a room ID between 0 and 100.";
-    // }
-
-    // setErrorMessage(error);
-
-    // if (!error) {
-    //   console.log("Form submitted:", { firstName, surname, email, id });
-    //   setFirstName("");
-    //   setSurname("");
-    //   setEmail("");
-    //   setId("");
-    // }
-
-    let newRow = {
-      id: id,
-      title: title,
-      firstName: firstName,
-      surname: surname,
-      email: email,
-      checkInDate: checkInDate,
-      checkOutDate: checkOutDate
-    };
-    setNewBookings([...newBookings, newRow]);
+    if (firstName.trim() === "") {
+      error = "Please enter your first name .";
+      setErrorMessage(error);
+    } else if (surname.trim() === "") {
+      error = "Please enter your surname .";
+      setErrorMessage(error);
+    } else if (
+      email.indexOf("@") < 1 ||
+      email.lastIndexOf(".") < email.indexOf("@") + 2 ||
+      email.lastIndexOf(".") + 2 >= email.length
+    ) {
+      error = "Please enter a valid email address.";
+      setErrorMessage(error);
+    } else {
+      let newRow = {
+        id: id,
+        title: title,
+        firstName: firstName,
+        surname: surname,
+        email: email,
+        checkInDate: checkInDate,
+        checkOutDate: checkOutDate
+      };
+      setNewBookings([...newBookings, newRow]);
+      console.log(newBookings);
+      setFirstName("");
+      setSurname("");
+      setEmail("");
+      setId("");
+      setCheckInDate("");
+      setCheckOutDate("");
+    }
+    console.log(errorMessage);
     console.log(newBookings);
-    setFirstName("");
-    setSurname("");
-    setEmail("");
-    setId("");
   }
+
+  console.log(errorMessage);
+
   console.log(newBookings);
 
   return (
@@ -135,6 +135,7 @@ const BookingForm = props => {
         <button type="submit" className="submit">
           Submit
         </button>
+        {errorMessage && <div className="error">{errorMessage}</div>}
       </form>
       <SearchResults bookings={newBookings} />
     </div>

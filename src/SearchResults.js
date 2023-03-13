@@ -41,7 +41,9 @@ const SearchResults = props => {
     } else if (column === "roomId") {
       return chosenDirection * (a.roomId - b.roomId);
     } else if (column === "checkInDate") {
-      return chosenDirection(new Date(a.checkInDate) - new Date(b.checkInDate));
+      return (
+        chosenDirection * (new Date(a.checkInDate) - new Date(b.checkInDate))
+      );
     } else if (column === "checkOutDate") {
       return (
         chosenDirection * (new Date(a.checkOutDate) - new Date(b.checkOutDate))
