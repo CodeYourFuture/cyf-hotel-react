@@ -6,6 +6,7 @@ import moment from "moment";
 
 const Bookings = () => {
   const [bookings, setBooking] = useState([]);
+  const [filteredData, setFilteredData] = useState("");
 
   useEffect(() => {
     console.log("using API for Data");
@@ -18,8 +19,17 @@ const Bookings = () => {
   }, []);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    // console.info("TO DO!", searchVal);
+    setFilteredData(searchVal.toLowerCase());
   };
+
+  const filterTable = bookings.filter(
+    item =>
+      item.firstName.toLowerCase().includes(filteredData) ||
+      item.surname.toLowerCase().includes(filteredData)
+  );
+  console.log(filterTable);
+
   if (bookings) {
     return (
       <div className="App-content">
@@ -38,10 +48,11 @@ const Bookings = () => {
                   <th> check in date</th>
                   <th>check out date </th>
                   <th>nights</th>
+                  <th>Show profile</th>
                 </tr>
               </thead>
 
-              {bookings.map(item => (
+              {filterTable.map(item => (
                 <SearchResults
                   key={item.id}
                   id={item.id}
