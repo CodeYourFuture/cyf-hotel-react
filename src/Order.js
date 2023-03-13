@@ -7,10 +7,8 @@ const Order = ({orderType}) => {
   }
   return (
     <li key={orderType}>
-      {orderType}: {orders}
-      <button className="btn btn-primary" onClick={orderOne}>
-        Add
-      </button>
+      {orderType}:{orders}
+      <button className="btn btn-primary" onClick={orderOne}>Add</button>
     </li>
   );
 };
