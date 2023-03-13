@@ -14,7 +14,7 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <Footer props={info} />
+      <Footer info={info} name="Sana"/>
 
     </div>
   );
