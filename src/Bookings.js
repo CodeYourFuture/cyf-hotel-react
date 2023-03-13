@@ -21,7 +21,7 @@ const Bookings = () => {
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
     setSearchValue(searchVal);
-    const filteredBookings = [...bookings].filter(
+    const filteredBookings = bookings.filter(
       (booking) =>
         booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
         booking.surname.toLowerCase().includes(searchVal.toLowerCase())
@@ -53,6 +53,7 @@ const Bookings = () => {
                   {bookings.map((item) => (
                     <SearchResults
                       key={item.id}
+                      
                       id={item.id}
                       title={item.title}
                       firstName={item.firstName}
@@ -70,7 +71,7 @@ const Bookings = () => {
                   ))}
                 </tbody>
 
-                {/* <SearchResult result={Bookings} />  */}
+                {/* <SearchResults result={Bookings} />  */}
               </table>
             </div>
           </div>
