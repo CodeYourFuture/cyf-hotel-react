@@ -1,37 +1,37 @@
-import moment from "moment";
-import React, {useState} from "react";
+import { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 
+const SearchResult = (props) => {
+  const [customClass, setCustomClass] = useState("");
+  const [showCustomerProfile, setShowCustomerProfile] = useState(false);
 
-// const [rowISActive, setRowIsActive] = useState(false);
-
-//   function handleRowClick(id) {
-//     if (rowISActive) {
-//       setRowIsActive(false);
-//     } else {
-//       setRowIsActive(id);
-//     }
-//     // console.log(`Row ${event.key} is clicked!`)
-//     // setRowIsActive()
-//   }
-
-  
-const SearchResult = props => {
-  let a = moment(props.checkInDate)
-  
-  let b = moment(props.checkOutDate)
+  const classToggle = () => {
+    setCustomClass((customClass) => (customClass ? "" : "table-primary"));
+  };
+  const toggleCustomerProfile = (event) => {
+    event.stopPropagation();
+    setShowCustomerProfile((showCustomerProfile) => !showCustomerProfile);
+  };
   return (
-      <tr>
-        <th scope="row">{props.id}</th>
-        <td>{props.title}</td>
-        <td>{props.firstName}</td>
-        <td>{props.surname}</td>
-        <td>{props.email}</td>
-        <td>{props.roomId}</td>
+    <>
+      <tr className={`text-center ${customClass}`} onClick={classToggle}>
         <td>{props.checkInDate}</td>
         <td>{props.checkOutDate}</td>
-        <td>{b.diff(a,"days")}</td>
+        <td>{props.diff}</td>
+        <td>
+          <button
+            className="btn btn-primary"
+            onClick={toggleCustomerProfile}
+            id={props.id}
+          >
+            {showCustomerProfile ? "Hide Profile" : "Show Profile"}
+          </button>
+        </td>
       </tr>
-  );
-};
-
-export default SearchResult;
+      <tr>
+        <td colSpan={10}>
+          {showCustomerProfile && <CustomerProfile id={props.id} />}
+        </td>
+      </tr>
+    </>
+    );}
