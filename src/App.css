@@ -86,6 +86,7 @@ tr {
 .restaurantOrders {
   justify-content: center;
   display: flex;
+  gap: 25%
 }
 .ul-wrapper {
   width: 20%;
@@ -111,4 +112,8 @@ tr {
 
 .button-pointer {
   cursor: pointer;
+}
+
+.table {
+  border: solid black 2px;
 }
