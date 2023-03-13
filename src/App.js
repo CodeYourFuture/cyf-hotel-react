@@ -13,7 +13,7 @@ const App = () => {
     <div className="App">
       <Heading />
       <TouristInfoCards />
-      <Search></Search>
+      <Search search={Search} />
       <Bookings />
       <Restaurant />
 

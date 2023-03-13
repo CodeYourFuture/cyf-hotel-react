@@ -9,7 +9,8 @@ const Order = ({ orderType }) => {
   };
 
   const removeHandler = () => {
-    setOrder(order - 1);
+    if (order > 0){
+    setOrder(order - 1);}
   };
 
   return (
