@@ -9,7 +9,7 @@ function Footer({ address }) {
         ))}
       </ul>
       Github accunt :{" "}
-      <a href="https://github.com/SaharNaderi?tab=repositories">Hadi A.P</a>
+      <a href="https://github.com/SaharNaderi?tab=repositories">Sahar.Hotel</a>
     </footer>
   );
 }
