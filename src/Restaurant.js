@@ -1,9 +1,10 @@
 import React from "react";
 import Order from "./Order";
+import "./Restaurant.css";
 
 const Restaurant = () => {
   return (
-    <div>
+    <div className="Restaurant">
       <h3>Restaurant Orders</h3>
       <Order orderType={"Pizzas"} />
       <Order orderType={"Salad"} />

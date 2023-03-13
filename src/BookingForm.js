@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchResults from "./SearchResults";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import "./BookingForm.css";
 
 const BookingForm = props => {
   const [id, setId] = useState("");
@@ -51,6 +52,10 @@ const BookingForm = props => {
     };
     setNewBookings([...newBookings, newRow]);
     console.log(newBookings);
+    setFirstName("");
+    setSurname("");
+    setEmail("");
+    setId("");
   }
   console.log(newBookings);
 
@@ -71,44 +76,48 @@ const BookingForm = props => {
           value={title}
           onChange={event => setTitle(event.target.value)}
         />
-
-        <input
-          type="text"
-          name="firstName"
-          placeholder="FirstName"
-          value={firstName}
-          onChange={event => setFirstName(event.target.value)}
-        />
-        {!firstName.trim() && <span>X first name must not be empty</span>}
-        {firstName.trim() && (
-          <FontAwesomeIcon icon={faCheckCircle} style={{ color: "green" }} />
-        )}
-        <input
-          type="text"
-          name="surname"
-          placeholder="Surname"
-          value={surname}
-          onChange={event => setSurname(event.target.value)}
-        />
-        {!surname.trim() && <span>X first name must not be empty</span>}
-        {surname.trim() && (
-          <FontAwesomeIcon icon={faCheckCircle} style={{ color: "green" }} />
-        )}
-        <input
-          type="text"
-          name="email"
-          placeholder="Email"
-          value={email}
-          onChange={event => setEmail(event.target.value)}
-        />
-        {email.indexOf("@") < 1 ||
-        email.lastIndexOf(".") < email.indexOf("@") + 2 ||
-        email.lastIndexOf(".") + 2 >= email.length ? (
-          <span>Please enter a valid email address.</span>
-        ) : (
-          <FontAwesomeIcon icon={faCheckCircle} style={{ color: "green" }} />
-        )}
-
+        <div className="firstName">
+          <input
+            type="text"
+            name="firstName"
+            placeholder="FirstName"
+            value={firstName}
+            onChange={event => setFirstName(event.target.value)}
+          />
+          {!firstName.trim() && <span>X first name must not be empty</span>}
+          {firstName.trim() && (
+            <FontAwesomeIcon icon={faCheckCircle} style={{ color: "green" }} />
+          )}
+        </div>
+        <div className="surname">
+          <input
+            type="text"
+            name="surname"
+            placeholder="Surname"
+            value={surname}
+            onChange={event => setSurname(event.target.value)}
+          />
+          {!surname.trim() && <span>X first name must not be empty</span>}
+          {surname.trim() && (
+            <FontAwesomeIcon icon={faCheckCircle} style={{ color: "green" }} />
+          )}
+        </div>
+        <div className="email">
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            value={email}
+            onChange={event => setEmail(event.target.value)}
+          />
+          {email.indexOf("@") < 1 ||
+          email.lastIndexOf(".") < email.indexOf("@") + 2 ||
+          email.lastIndexOf(".") + 2 >= email.length ? (
+            <span>Please enter a valid email address.</span>
+          ) : (
+            <FontAwesomeIcon icon={faCheckCircle} style={{ color: "green" }} />
+          )}
+        </div>
         <input
           type="date"
           name="checkInDate"
@@ -123,7 +132,9 @@ const BookingForm = props => {
           value={checkOutDate}
           onChange={event => setCheckOutDate(event.target.value)}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit">
+          Submit
+        </button>
       </form>
       <SearchResults bookings={newBookings} />
     </div>
