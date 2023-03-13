@@ -69,6 +69,7 @@ tr {
 .card {
   width: 32%;
 }
+
 .form-control {
   height: 70px;
   border-radius: 10px;
@@ -88,7 +89,6 @@ h1 {
 
 .all-cards {
   display: flex;
-
   justify-content: space-evenly;
   margin-top: 15px;
 }
