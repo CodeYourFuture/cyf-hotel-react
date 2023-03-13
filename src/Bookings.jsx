@@ -1,10 +1,11 @@
-import React from "react";
-import Search from "./Search.js";
+import React, { useState } from "react";
+import Search from "./Search.jsx";
+import SearchResults from "./SearchResults";
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const search = searchVal => {
+  const search = (searchVal) => {
     console.info("TO DO!", searchVal);
   };
 
@@ -13,6 +14,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         {/* <SearchResults results={FakeBookings} /> */}
+        <SearchResults />
       </div>
     </div>
   );
