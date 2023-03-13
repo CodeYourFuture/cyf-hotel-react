@@ -1,43 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchDetails from "./SearchDetails";
+import CustomerProfile from "./CustomerProfile";
 
 function SearchResults(props) {
-  const customerProfile = props.setCustomerProfile;
+  const [profile, setProfile] = useState(null);
 
-  const searchResults = props.results.filter(value => {
-    return (
-      value.firstName.toLowerCase().includes(props.searchInput.toLowerCase()) ||
-      value.surname.toLowerCase().includes(props.searchInput.toLowerCase())
-    );
-  });
+  function setCustomerProfile(id) {
+    fetch(`https://cyf-react.glitch.me/customers/${id}`)
+      .then(response => response.json())
+      .then(data => setProfile(data))
+      .catch(error => console.log(error));
+  }
 
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th scope="col">Booking ID</th>
-          <th scope="col">Title</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room ID</th>
-          <th scope="col">Check in date</th>
-          <th scope="col">Check out date</th>
-          <th scope="col">Number of nights</th>
-          <th scope="col">Customer Profile</th>
-        </tr>
-      </thead>
-      <tbody>
-        {searchResults.map(detail => (
-          <SearchDetails
-            key={detail.id}
-            updateProfile={props.updateProfile}
-            detail={detail}
-            customerProfile={customerProfile}
-          />
-        ))}
-      </tbody>
-    </table>
+    <div>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">Booking ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Room ID</th>
+            <th scope="col">Check in date</th>
+            <th scope="col">Check out date</th>
+            <th scope="col">Number of nights</th>
+            <th scope="col">Customer Profile</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.results.map(detail => (
+            <SearchDetails
+              key={detail.id}
+              detail={detail}
+              setCustomerProfile={setCustomerProfile}
+            />
+          ))}
+        </tbody>
+      </table>
+      {profile && <CustomerProfile profile={profile} />}
+    </div>
   );
 }
 
