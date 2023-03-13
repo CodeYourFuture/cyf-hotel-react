@@ -12,7 +12,7 @@ const Bookings = () => {
     console.info("TO DO!", searchVal);
   };
 
-  const render = () => {
+  // const render = () => {
     useEffect(() => {
       fetch(`https://cyf-react.glitch.me`)
         .then((res) => res.json())
@@ -20,8 +20,8 @@ const Bookings = () => {
           setBookings(data);
         });
     }, []);
-  };
-  render();
+  // };
+  // render();
 
   return (
     <div className="App-content">
