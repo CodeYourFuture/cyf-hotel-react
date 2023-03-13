@@ -1,28 +1,17 @@
 import React, { useState } from "react";
 // import moment from "moment";
 import HighlightCustomerDetails from "./HighlightCustomerDetails";
+import CustomerProfile from "./CustomerProfile";
 
 function SearchResults(props) {
-  // const [selectedRows, setSelectedRows] = useState([]);
-  // const clickedRows = (bookingDetails) => {
-  //   const newSelectedRows = [...selectedRows];
-
-  //   if (newSelectedRows.includes(bookingDetails)) {
-  //     setSelectedRows(
-  //       newSelectedRows.filter((eachRow) => eachRow !== bookingDetails)
-  //     );
-  //   } else {
-  //     newSelectedRows.push(bookingDetails);
-  //     setSelectedRows(newSelectedRows);
-  //   }
-  // };
-
-  // function handleProfileButtonClick(id) {
-  //   return setSelectedRows(id);
-  // }
+  const [customerID, setCustomerID] = useState(null);
+ 
 
   console.log(props.bookingResults);
 
+  function handleShowProfile(id){
+  setCustomerID(id);
+  }
   return (
     <div>
       <table className="table">
@@ -42,22 +31,15 @@ function SearchResults(props) {
         </thead>
         <tbody>
           {props.bookingResults.map((result) => (
-            <HighlightCustomerDetails key={result.id} result={result} />
+            <HighlightCustomerDetails key={result.id} result={result} handleShowProfile={handleShowProfile} />
           ))}
         </tbody>
       </table>
-      {/* <CustomerProfile /> */}
+      {customerID && <CustomerProfile id={customerID}/>}
     </div>
   );
 }
 
-// function CustomerProfile(id) {
-//   console.log(id);
-//   return (
-//     <div>
-//       <p>Customer {} Profile</p>
-//     </div>
-//   );
-// }
+
 
 export default SearchResults;

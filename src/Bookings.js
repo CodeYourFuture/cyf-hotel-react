@@ -4,43 +4,60 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 function Bookings() {
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [bookings, setBookings] = useState([]);
+  const [typedSearchValues, setTypedSearchValues] = useState([]);
   let allBookings;
+
   const search = (searchVal) => {
-    console.log(searchVal);
-    if (searchVal === "") {
-      setBookings(allBookings);
-    } else {
-      const customerSearch = bookings.filter((customerName) => {
-        return (
-          customerName.firstName.toLowerCase().includes(searchVal) ||
-          customerName.surname.toLowerCase().includes(searchVal)
-        );
-      });
-      setBookings(customerSearch);
-    }
+    setTypedSearchValues(searchVal);
   };
 
-  useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then((response) => response.json())
-      .then((data) => {
-        allBookings=(data);
-        setBookings(allBookings);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  const filteredBookings = bookings.filter((customerName) => {
+    return (
+      customerName.firstName.toLowerCase().includes(typedSearchValues) ||
+      customerName.surname.toLowerCase().includes(typedSearchValues)
+    );
+  });
 
-  // function search (searchInput) {
-  //   console.info(searchInput);
-  // };
+  useEffect(() => {
+    fetch("https://cyf-react.glitch.me/delayed")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        if (data.error) {
+          setErrorMessage(data.error);
+        } else {
+          allBookings = data;
+          setBookings(allBookings);
+        }
+
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error)
+      });
+  }, []);
 
   return (
     <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults bookingResults={bookings} />
-      </div>
+      {loading ? (
+        <p>Please wait while we fetch the info requested</p>
+      ) : (
+        <div>
+          {errorMessage ? (
+            <p>{errorMessage}</p>
+          ) : (
+            <div className="container">
+              <Search search={search} />
+              <SearchResults bookingResults={filteredBookings} />
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
