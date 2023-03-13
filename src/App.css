@@ -98,7 +98,7 @@ td button{
   display: flex;
   flex-direction: column;
   gap: 2px;
-  background-color: #ffa323;
+  background-color:  #a2c11c;
   align-items: center;
   border:2px solid #222;
 }
@@ -124,5 +124,5 @@ td button{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: aquamarine;
+  background-color: #698474;
 }
