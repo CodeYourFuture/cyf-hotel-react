@@ -7,6 +7,7 @@ import moment from "moment";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     console.log("we will get and load the bookings from a remote API");
@@ -19,7 +20,8 @@ const Bookings = () => {
 
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
-    const filteredBookings = bookings.filter(
+    setSearchValue(searchVal);
+    const filteredBookings = [...bookings].filter(
       (booking) =>
         booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
         booking.surname.toLowerCase().includes(searchVal.toLowerCase())
@@ -63,9 +65,11 @@ const Bookings = () => {
                         moment(item.checkInDate),
                         "days"
                       )}
+                      searchValue={searchValue}
                     />
                   ))}
                 </tbody>
+
                 {/* <SearchResult result={Bookings} />  */}
               </table>
             </div>
