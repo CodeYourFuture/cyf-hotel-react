@@ -1,22 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
 .App {
   text-align: left;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
   width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
+  height: 70px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }
 
 .App-header {
   background-color: #a30505;
-  height: 100px;
-  padding: 20px;
+
+  padding: 1em;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
@@ -27,7 +33,7 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .App-content {
@@ -42,7 +48,6 @@
   to {
     transform: rotate(360deg);
   }
-  
 }
 .search {
   padding: 5px 0 20px 0;
@@ -62,79 +67,79 @@ tr {
 }
 
 .card {
-  width: 18rem;
-  
+  width: 32%;
 }
 .form-control {
   height: 70px;
   border-radius: 10px;
 }
 
-
 .logo {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  justify-content: center;
-  align-items: center;
+
   align-self: center;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 2rem;
 }
 
- .all-cards {
+.all-cards {
   display: flex;
-  gap:100px;
-  justify-content: center;
-  margin-top: 15px;
- }
 
- .footer {
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+
+.footer {
   background-color: #a30505;
   color: white;
   font-size: 20px;
-  
- }
- .footer li {
+}
+.footer li {
   list-style-type: none;
- }
- 
- .tableHead {
+}
+
+.tableHead {
   background-color: #a30505;
- }
-  
- .tableBody {
+  height: 50px;
+}
+
+.tableBody {
   background-color: #2d3163;
-  
- }
+}
 
-
-
- .restaurantOrders {
-  
+.restaurantOrders {
   justify-content: center;
   text-align: center;
   list-style-type: none;
   padding: 8px;
   /* display: grid;
   grid-template-columns: 180px auto 90px; */
-  
- }
- .head3{
+}
+.head3 {
   color: #a30505;
   text-align: center;
+}
+.tbl {
+  width: 100%;
+}
 
- }
- 
- 
- .btn-primary {
+.btn-primary {
   width: 80px;
   height: 50px;
   border-radius: 10px;
   background-color: #a30505;
   border: none;
   margin-top: 10px;
-  
-  }
+}
+.tbl-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 40vh;
+  border: 4px solid navy;
+}

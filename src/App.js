@@ -6,12 +6,14 @@ import Footer from "./Footer";
 import Restaurant from "./Restaurant";
 
 import "./App.css";
+import Search from "./Search";
 
 const App = () => {
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards />
+      <Search></Search>
       <Bookings />
       <Restaurant />
 

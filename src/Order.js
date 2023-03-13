@@ -1,28 +1,31 @@
-import React, {useState} from 'react';
-import RestaurantButtons from './RestaurantButtons';
+import React, { useState } from "react";
+import RestaurantButtons from "./RestaurantButtons";
 
-const Order = ({orderType}) => {
+const Order = ({ orderType }) => {
+  const [order, setOrder] = useState(0);
 
-    const [order, setOrder] = useState(0);
+  const addHandler = () => {
+    setOrder(order + 1);
+  };
 
-    const addHandler = () => {
-        setOrder(order + 1);
-    }
+  const removeHandler = () => {
+    setOrder(order - 1);
+  };
 
-    const removeHandler = () => {
-      setOrder(order - 1);
-    };
+  return (
+    <div className="restaurantOrders">
+      <li>
+        <h2>
+          {orderType}: {order}
+        </h2>
 
-
-    return (
-        <div className='restaurantOrders'>
-            <li>
-              {orderType}: {order} 
-              <RestaurantButtons orderOne = {addHandler} />
-            </li>
-            <button className='btn-primary' onClick={removeHandler}>remove</button>
-        </div>
-    );
+        <RestaurantButtons orderOne={addHandler} />
+        <button className="btn-primary" onClick={removeHandler}>
+          remove
+        </button>
+      </li>
+    </div>
+  );
 };
 
 export default Order;
