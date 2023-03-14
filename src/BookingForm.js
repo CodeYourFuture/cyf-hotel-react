@@ -32,7 +32,11 @@ const BookingForm = props => {
     ) {
       error = "Please enter a valid email address.";
       setErrorMessage(error);
-    } else {
+    } //else if (!checkInDate) {
+    //const today = new Date();
+    // setCheckInDate(today.toLocaleDateString("en-GB"));
+    //}
+    else {
       let newRow = {
         id: id,
         title: title,
@@ -44,6 +48,7 @@ const BookingForm = props => {
       };
       setNewBookings([...newBookings, newRow]);
       console.log(newBookings);
+      setTitle("");
       setFirstName("");
       setSurname("");
       setEmail("");
@@ -51,13 +56,7 @@ const BookingForm = props => {
       setCheckInDate("");
       setCheckOutDate("");
     }
-    console.log(errorMessage);
-    console.log(newBookings);
   }
-
-  console.log(errorMessage);
-
-  console.log(newBookings);
 
   return (
     <div>
@@ -132,12 +131,14 @@ const BookingForm = props => {
           value={checkOutDate}
           onChange={event => setCheckOutDate(event.target.value)}
         />
+
         <button type="submit" className="submit">
           Submit
         </button>
         {errorMessage && <div className="error">{errorMessage}</div>}
       </form>
-      <SearchResults bookings={newBookings} />
+
+      <SearchResults booking={newBookings} />
     </div>
   );
 };

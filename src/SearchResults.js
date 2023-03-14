@@ -1,11 +1,8 @@
 import moment from "moment";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = props => {
-  const { bookings } = props;
-  console.log(bookings);
-
   const [selectedRowId, setSelectedRowId] = useState(null);
   const handlerRowClick = id => {
     id === selectedRowId ? setSelectedRowId(null) : setSelectedRowId(id);
@@ -17,13 +14,18 @@ const SearchResults = props => {
   };
 
   const [column, setColumn] = useState("");
+  const [bookingsArray, setBookingsArray] = useState(props.booking);
+
+  const [sortDirection, setSortDirection] = useState("asc");
+
   const handelSort = col => {
     setColumn(col);
     setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+    setBookingsArray(sortedArray);
   };
-
-  const [bookingsArray, setBookingsArray] = useState(bookings);
-  const [sortDirection, setSortDirection] = useState("asc");
+  useEffect(() => {
+    setBookingsArray(props.booking);
+  }, [props.booking]);
 
   const sortedArray = bookingsArray.sort((a, b) => {
     let chosenDirection = 0;
@@ -59,9 +61,6 @@ const SearchResults = props => {
       return 0;
     }
   });
-  // sortDirection==="asc"?
-
-  const one = () => setBookingsArray(sortedArray);
 
   return (
     <div>
