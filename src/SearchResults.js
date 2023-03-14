@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile.js";
 
@@ -18,10 +17,12 @@ const SearchResults = (props) => {
   const [isSelected, setIsSelected] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [selectedCustomerId, setSelectedCustomerId] = useState(null);
+  const [selectedCustomerEmail, setSelectedCustomerEmail] = useState(null);
 
   const handleClick = () => {
     setSelectedCustomerId(id);
     setShowProfile(true);
+    setSelectedCustomerEmail(email);
   };
 
   return (
@@ -43,7 +44,9 @@ const SearchResults = (props) => {
       <td>{checkOutDat}</td>
       <td>{nights}</td>
       <td>
-        <button onClick={handleClick}>Show profile</button>
+        <button onClick={handleClick} className="showProfile-btn">
+          Show profile
+        </button>
       </td>
       {showProfile && <CustomerProfile id={selectedCustomerId} />}
     </tr>

@@ -47,13 +47,13 @@ const Bookings = () => {
                     <th> check in date</th>
                     <th>check out date </th>
                     <th>nights</th>
+                    <th>profile</th>
                   </tr>
                 </thead>
                 <tbody>
                   {bookings.map((item) => (
                     <SearchResults
                       key={item.id}
-                      
                       id={item.id}
                       title={item.title}
                       firstName={item.firstName}
