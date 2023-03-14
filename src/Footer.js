@@ -6,6 +6,7 @@ const Footer = (props) => {
            <ul>
             {props.address.map((address) => (<li key={address}>{address}</li>))}
            </ul> 
+           <p>Made with love by Elahe</p>
         </div>
     );
 };
