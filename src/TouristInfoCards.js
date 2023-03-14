@@ -17,7 +17,7 @@ const TouristInfoCards = () => {
               ‘Big Ben’ clock tower and Westminster Abbey, site of British
               monarch coronations.
             </p>
-            <a href="visitlondon.com" className="btn btn-primary">
+            <a href="visitlondon.com" className="btn btn-primary1">
               More Info
             </a>
           </div>
@@ -34,7 +34,7 @@ const TouristInfoCards = () => {
               prosperity due to trade and shipbuilding, prosperity due to trade
               and.
             </p>
-            <a href="peoplemakeglasgow.com" className="btn btn-primary">
+            <a href="peoplemakeglasgow.com" className="btn btn-primary1">
               More Info
             </a>
           </div>
@@ -51,7 +51,7 @@ const TouristInfoCards = () => {
               powerhouse, and visitors can trace this history at the interactive
               Museum of Science &.
             </p>
-            <a href="visitmanchester.com" className="btn btn-primary">
+            <a href="visitmanchester.com" className="btn btn-primary1">
               More Info
             </a>
           </div>
