@@ -11,12 +11,19 @@ const Bookings = () => {
       .then(res => res.json())
       .then(data => {
         setBooking(data);
-        console.log(data);
-      });
+        // console.log(data);
+      })
+      .catch(err => console.log(err));
   }, []);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
+    setBooking(
+      booking.filter(
+        eachPerson =>
+          eachPerson.firstName === searchVal || eachPerson.surname === searchVal
+      )
+    );
   };
 
   return (

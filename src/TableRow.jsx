@@ -8,6 +8,10 @@ const TableRow = props => {
     setHighlight(highlight === "white" ? "gray" : "white");
   };
 
+  const clickHandler = () => {
+    props.setId(props.id);
+  };
+
   return (
     <tr onClick={selected} className={highlight}>
       <td>{props.id}</td>
@@ -20,6 +24,9 @@ const TableRow = props => {
       <td>{props.checkOutDate}</td>
       <td>
         {moment(props.checkOutDate).diff(moment(props.checkInDate), "days")}
+      </td>
+      <td>
+        <button onClick={clickHandler}>Show profile</button>
       </td>
     </tr>
   );

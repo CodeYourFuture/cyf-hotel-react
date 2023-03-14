@@ -5,6 +5,7 @@ const TableHeader = props => (
         <th key={index}>{header}</th>
       ))}
       <th>Number Of Nights</th>
+      <th>Show profile</th>
     </tr>
   </thead>
 );
