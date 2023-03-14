@@ -78,7 +78,7 @@ function SearchDetails({ detail, setCustomerProfile }) {
     <tr
       key={detail.id}
       onClick={handleRowClick}
-      className={active ? "pink" : ""}
+      className={active ? "highlighted" : ""}
     >
       <td>{detail.id}</td>
       <td>{detail.title}</td>

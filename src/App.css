@@ -8,8 +8,9 @@
 }
 
 .App-header {
-  /* background-color: blue; */
-  height: 11em;
+  /* background-color: ; */
+  background-image: linear-gradient(#ffd747, #e7b1fb);
+  height: 17em;
   padding: 20px;
   color: #222;
   text-align: left;
@@ -17,6 +18,7 @@
   font-size: 1em;
   font-weight: bold;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -28,6 +30,8 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+
+  color: white;
 }
 
 .App-name {
@@ -50,6 +54,10 @@ tr {
   color: #5b5757;
 }
 
+thead {
+  background: #e7b1;
+}
+
 .results {
   padding-top: 15px;
 }
@@ -58,30 +66,69 @@ tr {
   padding-top: 20px;
   text-align: center;
   list-style: none;
+  background: #e7b1;
   /* display: flex;
   justify-content: space-evenly; */
 }
 
 .card {
   width: 18rem;
+  opacity: 0.8;
+}
+
+.card:hover {
+  opacity: 1;
 }
 
 .card-content {
   display: flex;
   justify-content: space-evenly;
   margin-top: 1em;
+  background-image: url(https://lumiere-a.akamaihd.net/v1/images/sa_pixar_virtualbg_coco_16x9_9ccd7110.jpeg);
+  background-size: contain;
 }
 
-/* .SelectedRows {
-  background-color: pink;
-} */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.pink {
-  background-color: pink;
+.highlighted {
+  background-image: linear-gradient(#ffd747, #e7b1fb);
 }
 
 .foodItems {
   display: grid;
   grid-template-columns: repeat(3, auto);
   list-style: none;
+}
+
+.btn,
+.btn-primary {
+  background-image: linear-gradient(#ffd747, #e7b1fb);
+  color: #222;
+  border: none;
+}
+
+.btn:hover,
+.btn-primary:hover {
+  font-size: 1em;
+  color: black;
+  font-weight: bold;
+  border: 2px solid black;
+}
+
+.restaurant {
+  text-align: center;
+}
+
+.foodlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order {
+  width: 5em;
 }

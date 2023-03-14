@@ -3,7 +3,7 @@ import Order from "./Order.js";
 
 const Restaurant = () => {
   return (
-    <div>
+    <div className="restaurant">
       <h3>Restaurant Orders</h3>
       <ul className="foodItems">
         <Order orderType="Pizzas" />

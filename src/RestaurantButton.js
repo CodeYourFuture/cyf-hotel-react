@@ -2,7 +2,7 @@ import React from "react";
 
 function RestaurantButton({ orderOne }) {
   return (
-    <button className="btn btn-primary" onClick={orderOne}>
+    <button className="btn btn-primary order" onClick={orderOne}>
       Add
     </button>
   );
