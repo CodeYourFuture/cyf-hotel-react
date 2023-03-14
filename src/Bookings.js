@@ -6,21 +6,26 @@ import moment from "moment";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    console.log("we will get and load the bookings from a remote API");
     setIsLoading(true);
+    setErrorMessage("");
+
     fetch("https://cyf-react.glitch.me/delayed")
       .then((response) => response.json())
       .then((data) => {
-        setBookings(data);
         setIsLoading(false);
+        setBookings(data);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        setErrorMessage("Error fetching data from server");
       });
   }, []);
 
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
     setSearchValue(searchVal);
     const filteredBookings = bookings.filter(
       (booking) =>
@@ -30,55 +35,56 @@ const Bookings = () => {
     setBookings(filteredBookings);
   };
 
+  if (isLoading) {
+    return <p>Loading bookings data...</p>;
+  }
+
+  if (errorMessage) {
+    return <p>{errorMessage}</p>;
+  }
+
   return (
     <div className="App-content">
       <div className="container">
-        {isLoading ? (
-          <p>Loading data...</p>
-        ) : (
-          <div className="App-content">
-            <div className="container">
-              <div className="tbl-container">
-                <table className="tbl">
-                  <thead className="tableHead">
-                    <tr>
-                      <th>id</th>
-                      <th>title</th>
-                      <th> first name</th>
-                      <th> surname</th>
-                      <th> email </th>
-                      <th> room id</th>
-                      <th> check in date</th>
-                      <th>check out date </th>
-                      <th>nights</th>
-                      <th>profile</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {bookings.map((item) => (
-                      <SearchResults
-                        key={item.id}
-                        id={item.id}
-                        title={item.title}
-                        firstName={item.firstName}
-                        surname={item.surname}
-                        email={item.email}
-                        roomId={item.roomId}
-                        checkInDate={item.checkInDate}
-                        checkOutDat={item.checkOutDate}
-                        nights={moment(item.checkOutDate).diff(
-                          moment(item.checkInDate),
-                          "days"
-                        )}
-                        searchValue={searchValue}
-                      />
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* <Search search={search} searchValue={searchValue} /> */}
+        <div className="tbl-container">
+          <table className="tbl">
+            <thead className="tableHead">
+              <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>first name</th>
+                <th>surname</th>
+                <th>email</th>
+                <th>room id</th>
+                <th>check in date</th>
+                <th>check out date</th>
+                <th>nights</th>
+                <th>profile</th>
+              </tr>
+            </thead>
+            <tbody>
+              {bookings.map((item) => (
+                <SearchResults
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  firstName={item.firstName}
+                  surname={item.surname}
+                  email={item.email}
+                  roomId={item.roomId}
+                  checkInDate={item.checkInDate}
+                  checkOutDate={item.checkOutDate}
+                  nights={moment(item.checkOutDate).diff(
+                    moment(item.checkInDate),
+                    "days"
+                  )}
+                  searchValue={searchValue}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

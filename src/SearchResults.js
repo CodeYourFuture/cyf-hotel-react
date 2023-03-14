@@ -10,7 +10,7 @@ const SearchResults = (props) => {
     email,
     roomId,
     checkInDate,
-    checkOutDat,
+    checkOutDate,
     nights,
   } = props;
 
@@ -41,7 +41,7 @@ const SearchResults = (props) => {
       <td>{email}</td>
       <td>{roomId}</td>
       <td>{checkInDate}</td>
-      <td>{checkOutDat}</td>
+      <td>{checkOutDate}</td>
       <td>{nights}</td>
       <td>
         <button onClick={handleClick} className="showProfile-btn">
