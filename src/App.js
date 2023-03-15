@@ -21,7 +21,6 @@ function App() {
       <TouristInfoCards />
       <Bookings/>
       <Restaurant addButton={RestaurantButton} />
-      <Table />
       <Footer address={address} />
     </div>
   );

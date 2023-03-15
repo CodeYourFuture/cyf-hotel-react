@@ -1,7 +1,7 @@
-const Footer = (prop) => {
+const Footer = (props) => {
   return (
     <ul className="contact-container">
-      {prop.address.map((address, index) => {
+      {props.address.map((address, index) => {
         return (<li key={index}>{address}</li>)
       })}
     </ul>

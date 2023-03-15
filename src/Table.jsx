@@ -2,18 +2,8 @@ import React, { useState, useEffect } from "react";
 import SearchResults from "./SearchResults";
 import moment from "moment";
 
-function Table() {
-  const [bookings, setBookings] = useState([]);
+function Table(props) {
 
-  useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
-    .then((res) => res.json())
-    .then((data) => {
-        console.log(data);
-        setBookings(data);
-    })
-  }, [])
-  
   return (
     <table className="table">
       <thead className="thead-dark">
@@ -27,9 +17,10 @@ function Table() {
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
           <th scope="col">Number of nights</th>
+          <th scope="col">Profiles</th>
         </tr>
       </thead>
-      {bookings.map((client) => {
+      {props.data.map((client) => {
         let a = moment(client.checkInDate, "YYYY-MM-DD");
         let b = moment(client.checkOutDate, "YYYY-MM-DD");
         return (
