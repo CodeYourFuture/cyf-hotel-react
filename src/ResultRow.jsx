@@ -2,18 +2,21 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const ResultRow = (props) => {
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
   const result = props.result;
+  const active = props.id === result.id;
 
-  function handleRowClick() {
-    setActive(!active);
-  }
+  // function handleRowClick() {
+  //   setActive(!active);
+  // }
 
   function changeId() {
-    props.setId(result.id);
+    props.setID(result.id);
   }
+  
+
   return (
-    <tr scope="row" className={active ? "pink" : ""} onClick={handleRowClick}>
+    <tr scope="row" className={active ? "pink" : ""} onClick={changeId}>
       <td>{result.id}</td>
       <td>{result.title}</td>
       <td>{result.firstName}</td>

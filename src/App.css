@@ -90,7 +90,8 @@ tr {
 
 .restaurant {
   text-align: center;
-  margin: 4rem 0;
+  margin: 4rem 15rem;
+ 
 }
 .restaurant-orders {
   display: flex;

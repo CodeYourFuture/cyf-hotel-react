@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.jsx";
 import SearchResults from "./SearchResults.jsx";
+import NewBooking from "./NewBooking";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
+  const [id, setID] = useState();
 
-  const search = (searchVal) => {
-    const result = bookings.filter(
-      (person) => person.firstName === searchVal || person.surname === searchVal
-    );
-    setBookings(result);
-  };
+
+
+  const filteredBookings = bookings.filter(
+    (person) =>
+      person.firstName.includes(searchInput) ||
+      person.surname.includes(searchInput)
+  );
 
   // https://raw.githubusercontent.com/CodeYourFuture/cyf-hotel-react/master/src/data/fakeBookings.json - previous api link
   //https://cyf-react.glitch.me/error - error link
@@ -37,7 +41,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
+        <Search setSearchInput={setSearchInput} searchInput={searchInput}/>
         {isLoading === false && error === null ? (
           <p>Data is loading...</p>
         ) : (
@@ -51,11 +55,11 @@ const Bookings = () => {
         ) : (
           <p></p>
         )}
-        <SearchResults results={bookings} list={bookings} />
+        <SearchResults results={filteredBookings} id={id} setID={setID}/>
       </div>
+      <NewBooking />
     </div>
   );
 };
 
 export default Bookings;
-

@@ -8,8 +8,28 @@ import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = (props) => {
   const ourObject = props.results;
-  // or to put {results} into curly braces in the parameter instead of writing this line
-  const [id, setId] = useState("");
+
+
+// // stretching
+//   const [bookingData, setBookingData] = useState(result); //stretching
+//   const tableRows = bookingData.map((info) => {
+//     return (
+//       <tr>
+//         <td>{info.id}</td>
+//         <td>{info.name}</td>
+//       </tr>
+//     );
+//   });
+
+//   const addRows = (data) => {
+//     const totalStudents = bookingData.length;
+//     data.id = totalStudents + 1;
+//     const updatedStudentData = [...bookingData];
+//     updatedStudentData.push(data);
+//     setBookingData(updatedStudentData);
+//   };
+
+
   return (
     <div>
       <table className="table">
@@ -28,15 +48,22 @@ const SearchResults = (props) => {
         </thead>
         <tbody>
           {ourObject.map((result) => (
-            <ResultRow key={result.id} result={result} setId={setId} />
+            <ResultRow
+              key={result.id}
+              result={result}
+              id={props.id}
+              setID={props.setID}
+            />
           ))}
         </tbody>
       </table>
-      <CustomerProfile id={id} />
+      {ourObject.some((profile) => profile.id === props.id) ? (
+        <CustomerProfile id={props.id} />
+      ) : (
+        null
+      )}
     </div>
   );
 };
 
 export default SearchResults;
-
-
