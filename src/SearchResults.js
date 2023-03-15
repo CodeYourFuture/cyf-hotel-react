@@ -33,6 +33,7 @@ function SearchResults(props) {
           {props.bookingResults.map((result) => (
             <HighlightCustomerDetails key={result.id} result={result} handleShowProfile={handleShowProfile} />
           ))}
+          
         </tbody>
       </table>
       {customerID && <CustomerProfile id={customerID}/>}

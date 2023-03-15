@@ -8,6 +8,7 @@ import LondonImage from "./images-folder/london-tourist-image.jpeg";
 import ManchesterImage from "./images-folder/manchester.jpeg";
 import GlasgowImage from "./images-folder/visit-glasgow.jpeg";
 import Restaurant from "./Restaurant";
+
 import "./App.css";
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
         />
       </div>
       {/* <SearchResults/> */}
+      
       <Bookings />
       <Restaurant />
       <Footer />

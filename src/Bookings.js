@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import NewBookingForm from "./NewBookingForm.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 function Bookings() {
@@ -8,11 +9,14 @@ function Bookings() {
   const [loading, setLoading] = useState(true);
   const [bookings, setBookings] = useState([]);
   const [typedSearchValues, setTypedSearchValues] = useState([]);
-  let allBookings;
-
+  
   const search = (searchVal) => {
     setTypedSearchValues(searchVal);
   };
+
+  function addNewBooking(newBooking){
+    setBookings([...bookings, newBooking])
+  }
 
   const filteredBookings = bookings.filter((customerName) => {
     return (
@@ -22,7 +26,7 @@ function Bookings() {
   });
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me")
       .then((response) => {
         return response.json();
       })
@@ -31,8 +35,7 @@ function Bookings() {
         if (data.error) {
           setErrorMessage(data.error);
         } else {
-          allBookings = data;
-          setBookings(allBookings);
+          setBookings(data);
         }
 
         setLoading(false);
@@ -52,6 +55,7 @@ function Bookings() {
             <p>{errorMessage}</p>
           ) : (
             <div className="container">
+              <NewBookingForm addNewBooking={addNewBooking} />
               <Search search={search} />
               <SearchResults bookingResults={filteredBookings} />
             </div>

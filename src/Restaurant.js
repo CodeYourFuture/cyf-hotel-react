@@ -4,14 +4,28 @@ import Order from "./Order.js";
 
 const Restaurant = () => {
   return (
-    <div>
-      <h3>Restaurant Orders</h3>
+    <div className="Restaurant-orders">
+      <h3>Restaurant Menu</h3>
       <ul>
-        <Order orderType="Pizzas" />
-        <Order orderType="Salads" />
-        <Order orderType="Chocolate Cake" />
+        <Order orderType="Coffee" />
+        <br></br>
+        <Order orderType="Cream Tea" />
+        <br></br>
         <Order orderType="Banana pie" />
-        <Order orderType="Sugarcane" />
+        <br></br>
+        <Order orderType="Hot Chocolate" />
+        <br></br>
+        <Order orderType="Bechemel Pizza" />
+        <br></br>
+        <Order orderType="Nicoise Salads" />
+        <br></br>
+        <Order orderType="Chocolate Cake" />
+        <br></br>
+        <Order orderType="Salmon gravalax" />
+        <br></br>
+        <Order orderType="Poached eggs & spinach" />
+        <br></br>
+        <Order orderType="Tuna with Carrots & Blackpepper" />
       </ul>
     </div>
   );
