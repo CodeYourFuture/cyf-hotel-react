@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: left;
 }
@@ -9,13 +15,19 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  /* height: 50px; */
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  gap: 2rem;
+}
+
+.header-logo {
+  max-height: 50px;
 }
 
 .App-title {
@@ -41,6 +53,16 @@
 
 tr {
   color: #5b5757;
+  cursor: pointer;
+}
+
+:not(th) {
+  cursor: auto;
+}
+
+tr:hover {
+  color: black;
+  background-color: #5b5757;
 }
 
 .results {
@@ -52,6 +74,36 @@ tr {
   text-align: center;
 }
 
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
 .card {
   width: 18rem;
+  height: 300px;
 }
+
+.booking-table-container {
+  display: flex;
+  flex-direction: column;
+  border: solid red 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* footer container */
+
+.contact-container {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+
