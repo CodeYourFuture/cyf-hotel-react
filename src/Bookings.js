@@ -10,7 +10,7 @@ const Bookings = () => {
   useEffect(() => {
     console.log("Fetching data from FakeBookings");
 
-    fetch("https://cyf-react.glitch.me.")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then((res) => res.json())
       .then((data) => {
         setBookings(data);
@@ -33,7 +33,10 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results ={bookings} />
+        {bookings.length === 0 ? 
+        <p>Loading ...</p>
+        :
+        <SearchResults results ={bookings} />}
       </div>
     </div>
   );
