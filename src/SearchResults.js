@@ -3,19 +3,19 @@ import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ results }) => {
-  const [selected, setSelected] = useState(null);
-  const [select, setSelect] = useState(null);
+  const [selectedRow, setSelectedRow] = useState(null);
+  const [selectButton, setSelectButton] = useState(null);
   const [sort, setSort] = useState(1);
   const [sortColumn, setSortColumn] = useState("order");
 
   function handleClick(event, bookId) {
     event.target.name === "button"
-      ? setSelect(select === bookId ? null : bookId)
-      : setSelected(selected === bookId ? null : bookId);
+      ? setSelectButton(selectButton === bookId ? null : bookId)
+      : setSelectedRow(selectedRow === bookId ? null : bookId);
   }
 
   function handleClose() {
-    setSelect(null);
+    setSelectButton(null);
   }
   const [sortDirection, setSortDirection] = useState("⇓");
   function handleSorting(event) {
@@ -88,7 +88,7 @@ const SearchResults = ({ results }) => {
                 <tr
                   key={book.id}
                   onClick={event => handleClick(event, book.id)}
-                  className={selected === book.id ? "highlight" : undefined}
+                  className={selectedRow === book.id ? "highlight" : undefined}
                 >
                   <th scope="row">{book.order}</th>
                   <td>{book.title}</td>
@@ -112,7 +112,9 @@ const SearchResults = ({ results }) => {
             })}
         </tbody>
       </table>
-      {select && <CustomerProfile id={select} handleClose={handleClose} />}
+      {selectButton && (
+        <CustomerProfile id={selectButton} handleClose={handleClose} />
+      )}
     </>
   );
 };

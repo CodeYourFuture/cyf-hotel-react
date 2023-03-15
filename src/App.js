@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Bookings from "./Bookings";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
@@ -10,7 +10,7 @@ import AddedBookingForm from "./AddedBookingForm";
 
 const App = () => {
   const [newBookingData, setBookingData] = useState([]);
-  const [addBooking, setAddBooking] = useState({
+  const [addedBooking, setAddedBooking] = useState({
     Title: "",
     FirstName: "",
     Surname: "",
@@ -20,13 +20,61 @@ const App = () => {
     CheckOutDate: ""
   });
 
+  const [errors, setErrors] = useState({});
+  const [field, setField] = useState(null);
   function handleChange(event) {
-    const formFiled = event.target.getAttribute("name");
-    const fieldData = event.target.value;
-    const newAddBooking = { ...addBooking };
-    newAddBooking[formFiled] = fieldData;
-    setAddBooking(newAddBooking);
+    const { name, value } = event.target;
+    setAddedBooking(addedBooking => ({
+      ...addedBooking,
+      [name]: value
+    }));
+    setField(name);
   }
+
+  useEffect(() => {
+    const newErrors = { ...errors };
+    if (field === "Title") {
+      if (addedBooking.Title.length === 0) {
+        newErrors.Title = "X Title must not be empty";
+      } else {
+        newErrors.Title = "OK";
+      }
+    }
+
+    if (field === "FirstName") {
+      if (addedBooking.FirstName.length === 0) {
+        newErrors.FirstName = "X FirstName must not be empty";
+      } else {
+        newErrors.FirstName = "OK";
+      }
+    }
+
+    if (field === "Surname") {
+      if (addedBooking.Surname.length === 0) {
+        newErrors.Surname = "X Surname must not be empty";
+      } else {
+        newErrors.Surname = "OK";
+      }
+    }
+
+    if (field === "Email") {
+      if (!/.+@.+\..+/.test(addedBooking.Email)) {
+        newErrors.Email = "Email is invalid";
+      } else {
+        newErrors.Email = "OK";
+      }
+    }
+
+    if (field === "RoomID") {
+      if (!(addedBooking.RoomID > 0 && addedBooking.RoomID < 100)) {
+        newErrors.RoomID = "RoomID must must be a number between 0 and 100";
+      } else {
+        newErrors.RoomID = "OK";
+      }
+    }
+
+    setErrors(newErrors);
+  }, [addedBooking]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -34,13 +82,13 @@ const App = () => {
     setBookingData(
       newBookingData.concat({
         id: nanoid(),
-        title: addBooking.Title,
-        firstName: addBooking.FirstName,
-        surname: addBooking.Surname,
-        email: addBooking.Email,
-        roomId: addBooking.RoomID,
-        checkInDate: addBooking.CheckInDate,
-        checkOutDate: addBooking.CheckOutDate
+        title: addedBooking.Title,
+        firstName: addedBooking.FirstName,
+        surname: addedBooking.Surname,
+        email: addedBooking.Email,
+        roomId: addedBooking.RoomID,
+        checkInDate: addedBooking.CheckInDate,
+        checkOutDate: addedBooking.CheckOutDate
       })
     );
 
@@ -54,6 +102,7 @@ const App = () => {
       <AddedBookingForm
         handleSubmit={handleSubmit}
         handleChange={handleChange}
+        errors={errors}
       />
       <Bookings newBookingData={newBookingData} />
       <Restaurant />
