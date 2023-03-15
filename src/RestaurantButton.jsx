@@ -9,5 +9,3 @@ function RestaurantButton(props) {
 }
 
 export default RestaurantButton;
-
-export default RestaurantButton;

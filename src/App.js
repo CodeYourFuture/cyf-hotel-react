@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import TouristInfoCards from "./TouristInfoCards";
-import Heading from "./Heading";
+import React from "react";
+
 import Bookings from "./Bookings";
-import Footer from "./Footer";
 import "./App.css";
 import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";

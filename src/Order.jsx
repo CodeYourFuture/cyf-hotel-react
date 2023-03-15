@@ -16,5 +16,3 @@ function Order(props) {
 }
 
 export default Order;
-
-export default Order;
