@@ -1,13 +1,12 @@
-import React, { useState }from "react";
+import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 
-
 const SearchResults = (props) => {
-const [selectedRow, setSelectedRow]= useState(null);
+  const [selectedRow, setSelectedRow] = useState(null);
 
-function handleClick(rowId) {
-  setSelectedRow(rowId === selectedRow ? null:rowId);
-}
+  function handleClick(rowId) {
+    setSelectedRow(rowId === selectedRow ? null : rowId);
+  }
   return (
     <div>
       <table className="table table-hover">
@@ -31,7 +30,8 @@ function handleClick(rowId) {
                 key={index}
                 onClick={() => handleClick(value.id)}
                 style={{
-                  backgroundColor: value.id === selectedRow ? "gray" : "white",
+                  backgroundColor:
+                    value.id === selectedRow ? "#aeccc6" : "white",
                 }}
               >
                 <td>{value.id}</td>
@@ -43,16 +43,17 @@ function handleClick(rowId) {
                 <td>{value.checkInDate}</td>
                 <td>{value.checkOutDate}</td>
                 <td>
-                  <button onClick={()=>handleClick(value.id)}>Show profile</button>
+                  <button onClick={() => handleClick(value.id)}>
+                    Show profile
+                  </button>
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-      <CustomerProfile id={selectedRow} />
+      {selectedRow !== null ? <CustomerProfile id={selectedRow} /> : null}
     </div>
   );
- 
 };
 export default SearchResults;
