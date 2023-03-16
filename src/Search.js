@@ -15,12 +15,14 @@ const Search = props => {
   return (
     <div className="search">
       <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
+        <h4 className="text-center book-heading">Search Bookings</h4>
       </div>
       <div className="row search-wrapper">
         <div className="col">
           <form className="form-group search-box" onSubmit={handleSubmit}>
-            <label htmlFor="customerName">Customer name</label>
+            <label htmlFor="customerName" className="customer-name">
+              Customer name
+            </label>
             <div className="search-row">
               <input
                 type="text"

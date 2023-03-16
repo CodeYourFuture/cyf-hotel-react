@@ -5,7 +5,7 @@ function InfoCards() {
     <div className="card-container">
       <div className="card">
         <img
-          src="https://img.freepik.com/premium-photo/beautiful-architecture-kelvingrove-museum-shade-old-tree-foliage-glasgow-scotland_294132-2695.jpg?w=1380"
+          src="https://a.cdn-hotels.com/gdcs/production95/d16/cc514640-8f0f-11e8-9bad-0242ac110002.jpg"
           className="card-img-top"
         />
 
@@ -19,7 +19,8 @@ function InfoCards() {
             people. Despite often being overshadowed by Edinburgh, Scotland's
             capital city, Glasgow is the cultural capital of Scotland.
           </p>
-
+          <br />
+          <br />
           <a
             href="http://peoplemakeglasgow.com/"
             target="_blank"
@@ -73,7 +74,9 @@ function InfoCards() {
             smallest city. London is a cultural hub, with over 300 languages
             being spoken in the city.
           </p>
-
+          <br />
+          <br />
+          <br />
           <a
             href="https://www.visitlondon.com/"
             target="_blank"

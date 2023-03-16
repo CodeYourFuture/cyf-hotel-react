@@ -12,7 +12,7 @@ const App = () => {
       <header className="App-header">
         {" "}
         <div className="img-header">
-          <p className="header-p">cyf hotel</p>
+          <p className="header-p">welcom to cyf hotel</p>
         </div>
       </header>
       <Heading />

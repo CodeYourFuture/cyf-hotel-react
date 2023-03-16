@@ -7,7 +7,7 @@ function Footer() {
     "0123 456789"
   ];
   return (
-    <div>
+    <div className="footer1">
       <p>Contact Us</p>
       <ul>
         {contact.map((item, index) => {

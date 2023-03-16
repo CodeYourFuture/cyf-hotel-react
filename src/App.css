@@ -1,10 +1,12 @@
 @font-face {
+  font-family: "Satisfy", cursive;
   font-family: "Tilt Prism", cursive;
-  src: url("https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap");
+  src: url("https://fonts.googleapis.com/css2?family=Satisfy&family=Tilt+Prism&display=swap");
+  /* src: url("https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap"); */
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap");
-
+/* @import url("https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&family=Tilt+Prism&display=swap");
 .clicked {
   background-color: rgb(49, 82, 249);
   color: azure;
@@ -26,9 +28,15 @@ tr {
   justify-content: center;
   gap: 4rem;
   margin-bottom: 2rem;
+  /* background-color:rgb(86, 65, 65) ; */
 }
 .card {
+  color: rgb(87, 83, 83);
+  font-family: "Satisfy", cursive;
   width: 18rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .card img {
   height: 15rem;
@@ -69,6 +77,55 @@ tr {
   width: 100%;
   font-size: 40px;
   font-weight: 900;
-  font-family: "Tilt Prism";
+  font-family: "Satisfy";
   color: white;
+}
+
+.div1 {
+  background-color: #f8f6f5;
+  text-align: center;
+}
+
+.footer1 {
+  background-color: black;
+  text-align: center;
+  height: 120px;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+}
+
+.App-content {
+  margin-top: 150px;
+}
+
+.book-heading {
+  margin-bottom: 50px;
+  font-size: 35px;
+  font-weight: 800;
+  font-family: "Satisfy", cursive;
+  color: grey;
+}
+.customer-name {
+  font-family: "Satisfy", cursive;
+}
+.search-btn {
+  font-family: "Satisfy", cursive;
+  background-color: black;
+  width: 150px;
+}
+.row1 {
+  margin-top: 150px;
+}
+.row-h3 {
+  font-family: "Satisfy", cursive;
+  margin-bottom: 50px;
+}
+.list-group {
+  font-family: "Satisfy", cursive;
+}
+.btn {
+  background-color: black;
 }
