@@ -30,12 +30,13 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
-
-  color: white;
 }
 
 .App-name {
   padding-top: 0.5em;
+  /* text-decoration: overline;
+  text-decoration-style: double;
+  text-decoration-color: #ffd747; */
 }
 
 @keyframes App-logo-spin {
@@ -67,8 +68,6 @@ thead {
   text-align: center;
   list-style: none;
   background: #e7b1;
-  /* display: flex;
-  justify-content: space-evenly; */
 }
 
 .card {
@@ -84,7 +83,8 @@ thead {
   display: flex;
   justify-content: space-evenly;
   margin-top: 1em;
-  background-image: url(https://lumiere-a.akamaihd.net/v1/images/sa_pixar_virtualbg_coco_16x9_9ccd7110.jpeg);
+  /* background-image: url(https://lumiere-a.akamaihd.net/v1/images/sa_pixar_virtualbg_coco_16x9_9ccd7110.jpeg); */
+  background-image: url(https://www.beautifulworld.com/wp-content/uploads/2016/09/Aurora-borealis-1.jpg);
   background-size: contain;
 }
 
@@ -95,7 +95,8 @@ thead {
 }
 
 .highlighted {
-  background-image: linear-gradient(#ffd747, #e7b1fb);
+  /* background-image: linear-gradient(#ffd747, #e7b1fb); */
+  background: #ffebf2;
 }
 
 .foodItems {
