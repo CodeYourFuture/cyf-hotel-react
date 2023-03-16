@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
 const Search = ({ searchInput, handleSearchInput, handleSubmit }) => {
