@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.jsx";
-import FakeBookings from "./data/fakeBookings.json";
+// import NewBookings from "./NewBookings.jsx";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
