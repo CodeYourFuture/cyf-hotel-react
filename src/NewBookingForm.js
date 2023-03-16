@@ -41,63 +41,76 @@ function NewBookingForm(props) {
         id:0
     };
     props.addNewBooking(newBooking);
+
+    setTitle("");
+    setFirstname("");
+    setSurname("");
+    setEmail("");
+    setRoomID("");
+    setCheckInDate("");
+    setCheckOutDate("");
+    setRoomID("");
   }
 
   return (
-    <div className="input-area">
-      <input
-        type="text"
-        name="title"
-        placeholder="title"
-        onChange={handleBookingForm}
-        value={title}
-      />
-      <input
-        type="text"
-        name="firstName"
-        placeholder="firstName"
-        onChange={handleBookingForm}
-        value={firstName}
-      />
-      <input
-        type="text"
-        name="surname"
-        placeholder="surname"
-        onChange={handleBookingForm}
-        value={surname}
-      />
-      <input
-        type="text"
-        name="email"
-        placeholder="email"
-        onChange={handleBookingForm}
-        value={email}
-      />
-      <input
-        type="text"
-        name="roomId"
-        placeholder="roomId"
-        onChange={handleBookingForm}
-        value={roomId}
-      />
-      <input
-        type="text"
-        name="checkInDate"
-        placeholder="checkInDate"
-        onChange={handleBookingForm}
-        value={checkInDate}
-      />
+    <div className="registration-form">
+        <p>Book-In Here</p>
+      <div className="input-area">
+        <input
+          type="text"
+          name="title"
+          placeholder="title"
+          onChange={handleBookingForm}
+          value={title}
+        />
+        <input
+          type="text"
+          name="firstName"
+          placeholder="firstName"
+          onChange={handleBookingForm}
+          value={firstName}
+        />
+        <input
+          type="text"
+          name="surname"
+          placeholder="surname"
+          onChange={handleBookingForm}
+          value={surname}
+        />
+        <input
+          type="text"
+          name="email"
+          placeholder="email"
+          onChange={handleBookingForm}
+          value={email}
+        />
+        <input
+          type="text"
+          name="roomId"
+          placeholder="roomId"
+          onChange={handleBookingForm}
+          value={roomId}
+        />
+        <input
+          type="text"
+          name="checkInDate"
+          placeholder="checkInDate"
+          onChange={handleBookingForm}
+          value={checkInDate}
+        />
 
-      <input
-        type="text"
-        name="checkOutDate"
-        placeholder="checkOutDate"
-        onChange={handleBookingForm}
-        value={checkOutDate}
-      />
+        <input
+          type="text"
+          name="checkOutDate"
+          placeholder="checkOutDate"
+          onChange={handleBookingForm}
+          value={checkOutDate}
+        />
 
-      <button onClick={handleSubmitButton}>Submit New Booking</button>
-      <div></div>
+        <button className="btn btn-primary" onClick={handleSubmitButton}>
+          Submit Your Booking
+        </button>
+      </div>
     </div>
   );
 }

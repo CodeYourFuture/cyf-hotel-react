@@ -9,10 +9,12 @@ function Order({ orderType }) {
   }
 
   return (
+    <ul>
     <li>
       <RestaurantButton orderOne={orderOne} />
        {orderType}: {orders}
     </li>
+    </ul>
   );
 }
 export default Order;
