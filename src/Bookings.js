@@ -22,8 +22,8 @@ const Bookings = () => {
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
     const filteredBooking = bookings.filter((name) =>
-      name.firstName.toLowerCase() === searchVal.toLowerCase() ||
-      name.surname.toLowerCase() === searchVal.toLowerCase() ||
+      // name.firstName.toLowerCase() === searchVal.toLowerCase() ||
+      // name.surname.toLowerCase() === searchVal.toLowerCase() ||
       name.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
       name.surname.toLowerCase().includes(searchVal.toLowerCase())
         ? setBookings([name])
