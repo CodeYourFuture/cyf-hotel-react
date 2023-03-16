@@ -6,9 +6,11 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
+  
 
   useEffect(() => {
     console.log("Fetching data from FakeBookings");
+    setBookings([name]);
 
     fetch("https://cyf-react.glitch.me/delayed")
       .then((res) => res.json())
@@ -26,7 +28,7 @@ const Bookings = () => {
       // name.surname.toLowerCase() === searchVal.toLowerCase() ||
       name.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
       name.surname.toLowerCase().includes(searchVal.toLowerCase())
-        ? setBookings([name])
+        ? setBookings()
         : -1
     );
     console.log(filteredBooking);
