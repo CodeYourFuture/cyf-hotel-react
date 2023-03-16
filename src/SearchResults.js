@@ -5,13 +5,16 @@ import CustomerProfile from "./CustomerProfile";
 
 function SearchResults(props) {
   const [customerID, setCustomerID] = useState(null);
- 
 
   console.log(props.bookingResults);
 
-  function handleShowProfile(id){
-  setCustomerID(id);
+  function handleShowProfile(id) {
+    setCustomerID(id);
   }
+  function searchResultList() {
+    const resultInOrder = babyNames.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
   return (
     <div>
       <table className="table">
@@ -31,16 +34,17 @@ function SearchResults(props) {
         </thead>
         <tbody>
           {props.bookingResults.map((result) => (
-            <HighlightCustomerDetails key={result.id} result={result} handleShowProfile={handleShowProfile} />
+            <HighlightCustomerDetails
+              key={result.id}
+              result={result}
+              handleShowProfile={handleShowProfile}
+            />
           ))}
-          
         </tbody>
       </table>
-      {customerID && <CustomerProfile id={customerID}/>}
+      {customerID && <CustomerProfile id={customerID} />}
     </div>
   );
 }
-
-
 
 export default SearchResults;
