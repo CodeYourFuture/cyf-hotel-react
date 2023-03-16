@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.jsx";
+import NewBookings from "./NewBookings";
+
 // import NewBookings from "./NewBookings.jsx";
 
 const Bookings = () => {
@@ -8,6 +10,11 @@ const Bookings = () => {
   const [searchData, setSearchData] = useState("");
   const [loading, setLoading] = useState(true);
   const [errorOccurred, setErrorOccurred] = useState(false);
+
+  function addBooking(newBooking){
+    const newData = bookings.concat(newBooking)
+    setBookings(newData)
+  }
 
   const search = (searchVal) => {
     setSearchData(searchVal.toLowerCase());
@@ -41,6 +48,7 @@ const Bookings = () => {
 
         <Search search={search} />
         <SearchResults results={filteredSearch} />
+        <NewBookings addBooking={addBooking} />
       </div>
     </div>
   );
