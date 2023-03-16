@@ -21,13 +21,14 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      // fetch(`https://cyf-react.glitch.me/delayed`)
-      // fetch("https://cyf-react.glitch.me/error")
+    // fetch("https://cyf-react.glitch.me")
+    // fetch(`https://cyf-react.glitch.me/delayed`)
+    fetch("https://cyf-react.glitch.me/error")
       .then(response => {
         // console.log(response);
         // console.log(response.json());
         if (!response.ok) {
+          console.log(response.statusText);
           throw new Error(response.statusText);
         }
         return response.json();
@@ -37,12 +38,12 @@ const Bookings = () => {
         setBookings(data);
       })
       .catch(error => {
-        console.log(error);
-        // setErrorMessage(`Error ${response.status}`);
+        // console.log(error);
+        setErrorMessage(`error ${error}`);
       })
       .finally(() => setLoading(false));
   }, []);
-  console.log(errorMessage);
+  // console.log(errorMessage);
   return (
     // <div className="App-content">
     //   <div className="container">
