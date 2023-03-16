@@ -26,24 +26,23 @@ const Bookings = () => {
     fetch("https://cyf-react.glitch.me/error")
       .then(response => {
         // console.log(response);
-        // console.log(response.json());
         if (!response.ok) {
-          console.log(response.statusText);
-          throw new Error(response.statusText);
+          // throw new Error(response.statusText);
+          setLoading(false);
         }
         return response.json();
       })
       .then(data => {
-        // console.log(data);
+        console.log(data);
+        setErrorMessage(data.error);
         setBookings(data);
       })
       .catch(error => {
-        // console.log(error);
-        setErrorMessage(`error ${error}`);
+        setErrorMessage(error);
       })
       .finally(() => setLoading(false));
   }, []);
-  // console.log(errorMessage);
+
   return (
     // <div className="App-content">
     //   <div className="container">
