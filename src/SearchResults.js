@@ -1,10 +1,18 @@
 
 import moment from "moment";
 import React, { useState } from "react";
+import CustomerProfile from "./CustomerProfile";
 
-const SearchResults = ({ results }) => {
-  const [isClicked, setIsClicked] = useState(false);
+
+
+
+const SearchResults = props => {
+  function handleButtonClick(booking) {
+    console.log(booking.title);
+  }
+  
   return (
+    <div>
     <table className="table">
       <thead className="thead-dark">
         <tr >
@@ -17,18 +25,23 @@ const SearchResults = ({ results }) => {
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
           <th scope="col">nights</th>
+          <th scope="col">Profiles</th>
+          <th>
+      
+          </th>
         </tr>
       </thead>
       <tbody>
-        {results.map(booking => {
+      
+        
+        {props.results.map(booking => {
+          
+              
           return (
           
-         <tr   onClick={() => {
-          setIsClicked(!isClicked);
-        }}
-        style={isClicked ? { border: "4px solid red" } : {}}
-         >
-            
+         <tr  >
+         
+          
               <td>{booking.id}</td>
               <td>{booking.title}</td>
               <td>{booking.firstName}</td>
@@ -38,14 +51,35 @@ const SearchResults = ({ results }) => {
               <td>{booking.checkInDate}</td>
               <td>{booking.checkOutDate}</td>
               <td>
-                {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
+              
+              {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
+              <td>
+                <button onClick={() => handleButtonClick(booking)}>
+                  Show Profile 
+                </button>
               </td>
-            </tr>
-          );
+             
+
+
+              
+              </td>
+              
+        <td>
+         
+        </td>
+      </tr>
+    );
         })}
       </tbody>
     </table>
+ 
+ 
+     </div>
+    
+   
+    
   );
 };
+
 
 export default SearchResults;

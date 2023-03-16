@@ -11,6 +11,7 @@ function TouristInfoCards (props){
             <div className="card-body">
             <p>{props.info}</p>
             <a href={props.link} className="btn btn-primary">{props.town}</a>
+           
            </div>
            </div>
            
