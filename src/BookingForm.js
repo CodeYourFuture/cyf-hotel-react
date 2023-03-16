@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import SearchResults from "./SearchResults";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import "./BookingForm.css";
-import Search from "./Search";
 
 const BookingForm = props => {
   const [id, setId] = useState("");
@@ -13,7 +12,6 @@ const BookingForm = props => {
   const [email, setEmail] = useState("");
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
-  const [newBookings, setNewBookings] = useState(props.bookings);
   const [errorMessage, setErrorMessage] = useState("");
 
   function handleSubmit(event) {
@@ -47,7 +45,8 @@ const BookingForm = props => {
         checkInDate: checkInDate,
         checkOutDate: checkOutDate
       };
-      setNewBookings([...newBookings, newRow]);
+      //setNewBookings([...newBookings, newRow]);
+      props.onAddBooking(newRow);
 
       setTitle("");
       setFirstName("");
@@ -57,18 +56,17 @@ const BookingForm = props => {
       setCheckInDate("");
       setCheckOutDate("");
     }
-    console.log(newBookings);
   }
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
-    setNewBookings(
-      newBookings.filter(
-        booking =>
-          booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
-          booking.surname.toLowerCase().includes(searchVal.toLowerCase())
-      )
-    );
-  };
+  // const search = (searchVal) => {
+  //   console.info("TO DO!", searchVal);
+  //   setNewBookings(
+  //     newBookings.filter(
+  //       (booking) =>
+  //         booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+  //         booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+  //     )
+  //   );
+  // };
 
   return (
     <div>
@@ -149,9 +147,6 @@ const BookingForm = props => {
         </button>
         {errorMessage && <div className="error">{errorMessage}</div>}
       </form>
-
-      <SearchResults booking={newBookings} />
-      <Search search={search} />
     </div>
   );
 };
