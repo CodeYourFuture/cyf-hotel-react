@@ -67,7 +67,9 @@
 tr {
   color: #5b5757;
 }
-
+.hiligth-row {
+  background-color: #bbd0ff;
+}
 thead {
   border: 3px solid #b8c0ff;
 }
