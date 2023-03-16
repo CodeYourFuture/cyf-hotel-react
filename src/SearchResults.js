@@ -1,17 +1,20 @@
 import "./App.css";
 import moment from "moment";
 import { useState } from "react";
+import { CustomerProfile } from "./CustomerProfile";
 
-const SearchResults = props => {
-  let [rowColor, setRowColor] = useState("#f7f7f7");
+const SearchResults = ({ results }) => {
+  // let [rowColor, setRowColor] = useState("#f7f7f7");
   let [activeRow, setActiveRow] = useState(null);
+  let [selectedCustomerId, setSelectedCustomerId] = useState(null);
 
   function handleClick(rowId) {
-    console.log("Hello", rowId);
+    // console.log("Hello", rowId);
     // return setRowColor(rowColor === "#f7f7f7" ? "red" : "#f7f7f7");
     setActiveRow(rowId === activeRow ? null : rowId);
   }
-  console.log(activeRow);
+
+  // console.log(activeRow);
   return (
     <div>
       <h4>Search Results</h4>
@@ -27,10 +30,11 @@ const SearchResults = props => {
             <th className="table-titles">Check in date</th>
             <th className="table-titles">Check out date</th>
             <th className="table-titles">Nights Stayed</th>
+            <th className="table-titles">Customer Profile</th>
           </tr>
         </thead>
         <tbody>
-          {props.results.map(obj => {
+          {results.map(obj => {
             // let a = moment(obj.checkInDate, "YYYY-MM-DD");
             // let b = moment(obj.checkOutDate, "YYYY-MM-DD");
             const dateOne = new Date(obj.checkInDate);
@@ -54,12 +58,31 @@ const SearchResults = props => {
                 <td>{obj.checkInDate}</td>
                 <td>{obj.checkOutDate}</td>
                 <td>{Difference_In_Days}</td>
+                <td>
+                  <button
+                    onClick={() => {
+                      console.log(obj.id);
+                      setSelectedCustomerId(obj.id);
+
+                      console.log(selectedCustomerId);
+                    }}
+                    className="btn btn-primary"
+                  >
+                    Show profile
+                  </button>
+                </td>
                 {/* <td>{moment(b).diff(a, "days")}</td> */}
               </tr>
             );
           })}
         </tbody>
       </table>
+      {console.log(selectedCustomerId)}
+      {selectedCustomerId === null ? (
+        <></>
+      ) : (
+        <CustomerProfile id={selectedCustomerId} />
+      )}
     </div>
   );
 };
