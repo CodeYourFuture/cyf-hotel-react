@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import BookingForm from "./BookingForm.js";
-import Search from "./Search.js";
+//import Search from "./Search.js";
 //import SearchResults from "./SearchResults.js";
 //import FakeBookings from "./data/fakeBookings.json";
 
@@ -25,21 +25,22 @@ const Bookings = () => {
     return <h1>Error:{error.message}</h1>;
   }
 
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
-    setBookings(
-      bookings.filter(
-        booking =>
-          booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
-          booking.surname.toLowerCase().includes(searchVal.toLowerCase())
-      )
-    );
-  };
+  // const search = (searchVal) => {
+  //   console.info("TO DO!", searchVal);
+  //   setBookings(
+  //     bookings.filter(
+  //       (booking) =>
+  //         booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+  //         booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+  //     )
+  //   );
+  // };
+  // console.log(bookings);
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
+        {/* <Search search={search} /> */}
         {isLoading ? (
           <h2>Loading...</h2>
         ) : (

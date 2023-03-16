@@ -3,6 +3,7 @@ import SearchResults from "./SearchResults";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import "./BookingForm.css";
+import Search from "./Search";
 
 const BookingForm = props => {
   const [id, setId] = useState("");
@@ -47,7 +48,7 @@ const BookingForm = props => {
         checkOutDate: checkOutDate
       };
       setNewBookings([...newBookings, newRow]);
-      console.log(newBookings);
+
       setTitle("");
       setFirstName("");
       setSurname("");
@@ -56,7 +57,18 @@ const BookingForm = props => {
       setCheckInDate("");
       setCheckOutDate("");
     }
+    console.log(newBookings);
   }
+  const search = searchVal => {
+    console.info("TO DO!", searchVal);
+    setNewBookings(
+      newBookings.filter(
+        booking =>
+          booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+          booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+      )
+    );
+  };
 
   return (
     <div>
@@ -139,6 +151,7 @@ const BookingForm = props => {
       </form>
 
       <SearchResults booking={newBookings} />
+      <Search search={search} />
     </div>
   );
 };
