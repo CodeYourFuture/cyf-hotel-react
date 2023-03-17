@@ -2,10 +2,16 @@ import React, { useState } from "react";
 import SingleBooking from "./SingleBooking"
 import data from "./data/fakeBookings.json"
 import moment from "moment/moment"
+import CustomerProfile from './CustomerProfile';
 
 function SearchResults({bookings}) {
 
-  
+  const [selectedCustomer, setSelectedCustomer] = React.useState(null);
+
+  function handleButtonClick (id) {
+    setSelectedCustomer (id);
+    console.log(id);
+  }
 
   return <>
   
@@ -21,6 +27,7 @@ function SearchResults({bookings}) {
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
             <th scope="col">Total nights</th>
+            <th scope="col">New column</th>
           </tr>
         </thead>
         <tbody>
@@ -36,10 +43,12 @@ function SearchResults({bookings}) {
               checkInDate={item.checkInDate}
               checkOutDate={item.checkOutDate}
               nights={moment(item.checkOutDate).diff(moment(item.checkInDate),"days")}
+              clickHandle={ () => handleButtonClick(item.id)} 
             />
           ))}
         </tbody>
       </table>
+      {selectedCustomer && <CustomerProfile id={selectedCustomer} />}
   </>
 }
 

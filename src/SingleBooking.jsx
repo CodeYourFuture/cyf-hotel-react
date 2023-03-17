@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
+import CustomerProfile from './CustomerProfile';
 
 function SingleBooking(props) {
+
+   
+
+  
 
   const [selected, setSelected] = useState(false);
   const handleClick = () => {
@@ -18,7 +23,9 @@ function SingleBooking(props) {
       <td>{props.checkInDate}</td>
       <td>{props.checkOutDate}</td>
       <td>{props.nights}</td>
+      <button onClick={props.clickHandle}>Show profile</button>
     </tr>
+    
 </>
   )
 }

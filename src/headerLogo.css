@@ -1,5 +1,27 @@
-.crownImage{
-    width: 400px;
-    margin: 0 auto;
-    
+.crownImage {
+    width: 100px;
+    height: 100px;
+    margin-left: 0;    
+}
+
+.App-header {
+    display: flex;
+}
+
+.App-header h1 {
+    width: 1px;
+    height: 1px;
+    font-size: 1px;
+    display: none;
+}
+
+
+@media screen and (min-width:500px) {
+
+}
+@media screen and (min-width:800px) {
+
+}
+@media screen and (min-width:1024px) {
+
 }
