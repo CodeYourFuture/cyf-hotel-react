@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
   text-align: left;
 }
@@ -67,10 +72,20 @@ tr {
  .infocards{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   column-gap: 50px;
-  margin: 5rem;
-  
+  row-gap: 50px;
+  margin: 3rem;
+ }
+
+ .info-image{
+background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/japan-arashiyama-bamboo-forest-kyoto.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  padding: 1rem;
  }
 
  img{
@@ -79,15 +94,35 @@ tr {
  }
 
  .btn {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: center;
   background-color: rgb(235, 173, 29);
   color: black;
   font-size: large;
   border-radius: 5%;
+  border: 3px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  cursor: pointer;
   border: 3px solid black;
+  background-color: rgb(235, 173, 29);
+  border-radius: 15px;
+  font-size: large;
+  /* width: 5em;
+  height: 3em; */
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
  }
+
+ .btn:hover {
+   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+   background-color: rgb(10, 184, 68);
+   color: rgb(65, 4, 58);
+   border: 3px solid rgb(65, 4, 58);
+ }
+
  .newSelectedRows{
   color: black;
   background-color: rgb(228, 185, 31);
@@ -99,6 +134,90 @@ tr {
  }
 
  .restaurant-orders{
-  
+  padding: 2rem;
  }
+
+.menu{
+  width: 100%;
+  height: auto;
+  background-image: url("https://about.kaiserpermanente.org/content/dam/kp/mykp/images/photos/things/cauliflower-florets.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  padding: 1rem;
+}
+
+.mylist{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+.item{
+  margin: 1rem;
+  width: 15rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.item-name{
+  margin-top: 1rem;
+  width: 10rem;
+  font-size: large;
+  font-weight: 700;
+  color: rgb(105, 4, 69);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.orderType{
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+}
+
+.btn1{
+  cursor: pointer;
+  border: 3px solid rgb(236, 152, 17);
+  background-color:rgb(65, 4, 58);
+  border-radius: 10px;
+  width: 7em;
+  height: 3em;
+  color: orange;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.btn1:hover{
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  background-color: orange;
+  color: rgb(65, 4, 58);
+  border: 3px solid rgb(65, 4, 58);
+}
+
+.input-area{
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+justify-content: center;
+align-items: center;
+}
+input{
+  width: 40%;
+  height: 3rem;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding-left: 20px;
+  font-size: 1.3rem;
+}
+
+input:focus{
+  outline: none;
+  border: 4px solid orange;
+}
+ 
 

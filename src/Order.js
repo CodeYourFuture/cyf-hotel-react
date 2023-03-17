@@ -9,12 +9,12 @@ function Order({ orderType }) {
   }
 
   return (
-    <ul>
-    <li>
+    <>
       <RestaurantButton orderOne={orderOne} />
-       {orderType}: {orders}
-    </li>
-    </ul>
+      <p className="item-name">
+        {orderType}: {orders}
+      </p>
+    </>
   );
 }
 export default Order;

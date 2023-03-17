@@ -9,6 +9,7 @@ function NewBookingForm(props) {
   const [roomId, setRoomID] = useState("");
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
+  const [totalnumOfNights,setTotalnumOfNights] = useState("")
 
   function handleBookingForm(event) {
       if (event.target.name === "title") {
@@ -38,7 +39,7 @@ function NewBookingForm(props) {
         roomId:roomId,
         checkInDate: checkInDate,
         checkOutDate:checkOutDate,
-        id:0
+        id:6
     };
     props.addNewBooking(newBooking);
 
@@ -54,7 +55,7 @@ function NewBookingForm(props) {
 
   return (
     <div className="registration-form">
-        <p>Book-In Here</p>
+      <p>Book-In Here</p>
       <div className="input-area">
         <input
           type="text"
@@ -105,6 +106,14 @@ function NewBookingForm(props) {
           placeholder="checkOutDate"
           onChange={handleBookingForm}
           value={checkOutDate}
+        />
+
+        <input
+          type="text"
+          name="totalNumOfNights"
+          placeholder="totalNumOfNights"
+          onChange={handleBookingForm}
+          value={totalnumOfNights}
         />
 
         <button className="btn btn-primary" onClick={handleSubmitButton}>

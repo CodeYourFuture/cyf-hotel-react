@@ -11,13 +11,13 @@ function SearchResults(props) {
   function handleShowProfile(id) {
     setCustomerID(id);
   }
-  function searchResultList() {
-    const resultInOrder = babyNames.sort((a, b) => a.name.localeCompare(b.name));
-  }
+  // function searchResultList() {
+  //   const resultInOrder = babyNames.sort((a, b) => a.name.localeCompare(b.name));
+  // }
 
   return (
     <div>
-      <table className="table">
+      <table className="table table-responsive">
         <thead>
           <tr>
             <th scope="col">id</th>
