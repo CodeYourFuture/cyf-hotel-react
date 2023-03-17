@@ -10,21 +10,35 @@ const Bookings = () => {
   const [booking, setBookings] = useState([]);
   const [displayData, setDisplayData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
 
     fetch(`https://cyf-react.glitch.me/delayed`)
-    .then(res => res.json())
+    .then((res) => {
+      if (!res.ok) {
+          throw Error("Failed to fetch bookings");
+    }
+    return res.json()
+  })
     .then(data => {
       setBookings(data)
       setDisplayData(data)
       setIsLoading(false);
+      setErrorMessage(null);
     })
-    .catch(error => console.log(error));
+    .catch((error) => {
+      setErrorMessage(error.message);
+        setIsLoading(false);
+    })
   },[])
 
   if (isLoading) {
     return <p className="loadingParagraph">Loading...</p>;
+  }
+
+  if (errorMessage) {
+    return <p>{errorMessage}</p>;
   }
 
   const search = (searchVal) => {
