@@ -58,12 +58,6 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
-  text-align: center;
-  list-style: none;
-}
-
 .card {
   width: 20rem;
   border: 3px solid rgb(158, 141, 92);
@@ -94,14 +88,7 @@ background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/
  }
 
  .btn {
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: rgb(235, 173, 29);
-  color: black;
-  font-size: large;
-  border-radius: 5%;
-  border: 3px solid black; */
+  
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -137,10 +124,21 @@ background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/
   padding: 2rem;
  }
 
+ h3{
+  display: flex;
+  justify-content: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 10px;
+  font-weight: 800;
+  color: rgb(67, 5, 67);
+  font-size: 2rem;
+  
+ }
+
 .menu{
   width: 100%;
   height: auto;
-  background-image: url("https://about.kaiserpermanente.org/content/dam/kp/mykp/images/photos/things/cauliflower-florets.jpg");
+  background-image: url("https://www.imbarex.com/wp-content/uploads/2023/01/whitecake-650x434-1.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -170,8 +168,8 @@ background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/
   margin-top: 1rem;
   width: 10rem;
   font-size: large;
-  font-weight: 700;
-  color: rgb(105, 4, 69);
+  font-weight: 900;
+  color: rgb(66, 2, 64);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -179,6 +177,7 @@ background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/
   background-color: #f2f2f2;
   padding: 10px;
   text-align: center;
+  
 }
 
 .btn1{
@@ -190,6 +189,7 @@ background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/
   height: 3em;
   color: orange;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  
 }
 
 .btn1:hover{
@@ -203,9 +203,12 @@ background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/
 display: flex;
 flex-wrap: wrap;
 gap: 1rem;
+padding: 2rem;
 justify-content: center;
 align-items: center;
+background-color: rgb(66, 2, 50);
 }
+
 input{
   width: 40%;
   height: 3rem;
@@ -219,5 +222,20 @@ input:focus{
   outline: none;
   border: 4px solid orange;
 }
- 
+
+.footer {
+  padding-top: 20px;
+  text-align: center;
+  list-style: none;
+  font-style: italic;
+  font-weight: 800;
+  color: rgb(90, 3, 90);
+  font-size: 1.2rem;
+}
+ .registration-form p {
+font-size: 1.7rem;
+display: flex;
+justify-items: center;
+align-items: center;
+ }
 
