@@ -1,9 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchDetails from "./SearchDetails";
 import CustomerProfile from "./CustomerProfile";
 
 function SearchResults(props) {
   const [profile, setProfile] = useState(null);
+  const [sort, setSort] = useState("DEFAULT");
+  const [sortedResults, setSortedResults] = useState(props.results);
+
+  useEffect(() => {
+    console.log(sort);
+    let updatedResults = [...props.results].sort((a, b) => {
+      if (sort === "ASC") {
+        if (a.firstName > b.firstName) {
+          return -1;
+        } else if (a.firstName < b.firstName) {
+          return 1;
+        }
+      } else if (sort === "DESC") {
+        if (a.firstName > b.firstName) {
+          return 1;
+        } else if (a.firstName < b.firstName) {
+          return -1;
+        }
+      } else {
+        return 0;
+      }
+    });
+    console.log(updatedResults);
+    setSortedResults(updatedResults);
+  }, [props.results, sort]);
 
   function setCustomerProfile(id) {
     fetch(`https://cyf-react.glitch.me/customers/${id}`)
@@ -12,9 +37,36 @@ function SearchResults(props) {
       .catch(error => console.log(error));
   }
 
+  function handleSortChange() {
+    if (sort === "ASC") {
+      setSort("DESC");
+    } else {
+      setSort("ASC");
+    }
+  }
+
+  // function handleAscendingSort() {
+  //   let names = props.results.map((detail) => detail);
+  //   console.log(names);
+  //   let sortedNames = names.sort((a, b) =>
+  //     a.firstName.localeCompare(b.firstName)
+  //   );
+  //   // console.log(sortedNames.reverse());
+  //   setSortName(sortedNames);
+  // }
+
+  // function handleDescendingSort() {
+  //   let names = props.results.map((detail) => detail);
+  //   console.log(names);
+  //   let sortedNames = names.sort((a, b) =>
+  //     b.firstName.localeCompare(a.firstName)
+  //   );
+  //   console.log(sortedNames);
+  // }
+
   return (
     <div>
-      <table className="table">
+      <table className="table" onClick={handleSortChange}>
         <thead>
           <tr>
             <th scope="col">Booking ID</th>
@@ -30,7 +82,7 @@ function SearchResults(props) {
           </tr>
         </thead>
         <tbody>
-          {props.results.map(detail => (
+          {sortedResults.map(detail => (
             <SearchDetails
               key={detail.id}
               detail={detail}

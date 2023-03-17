@@ -12,6 +12,7 @@ const Bookings = props => {
   function handleAddPerson(newBooking) {
     setBookings([...bookings, newBooking]);
   }
+
   // console.log(bookings);
 
   const search = searchVal => {
@@ -54,7 +55,10 @@ const Bookings = props => {
             <p>{handleError}</p>
           ) : (
             <div className="container">
-              <BookingForm handleAddPerson={handleAddPerson} />
+              <BookingForm
+                handleAddPerson={handleAddPerson}
+                results={bookings}
+              />
               <Search search={search} />
               <SearchResults results={bookings} />
             </div>

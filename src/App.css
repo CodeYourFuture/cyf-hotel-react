@@ -66,8 +66,12 @@ thead {
 .footer {
   padding-top: 20px;
   text-align: center;
-  list-style: none;
+
   background: #e7b1;
+}
+
+.footer ul {
+  list-style: none;
 }
 
 .card {
@@ -83,7 +87,6 @@ thead {
   display: flex;
   justify-content: space-evenly;
   margin-top: 1em;
-  /* background-image: url(https://lumiere-a.akamaihd.net/v1/images/sa_pixar_virtualbg_coco_16x9_9ccd7110.jpeg); */
   background-image: url(https://www.beautifulworld.com/wp-content/uploads/2016/09/Aurora-borealis-1.jpg);
   background-size: contain;
 }
@@ -95,7 +98,6 @@ thead {
 }
 
 .highlighted {
-  /* background-image: linear-gradient(#ffd747, #e7b1fb); */
   background: #ffebf2;
 }
 
@@ -132,4 +134,19 @@ thead {
 
 .order {
   width: 5em;
+}
+
+.booking-form {
+  background: #e7b1;
+  display: grid;
+  grid-template-columns: repeat(3, 15em);
+  gap: 1em;
+  justify-content: center;
+  padding: 2em;
+  border-radius: 0.25rem;
+}
+
+#submit-form {
+  display: flex;
+  margin: 1em auto;
 }
