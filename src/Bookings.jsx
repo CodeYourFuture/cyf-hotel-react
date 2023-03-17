@@ -11,12 +11,16 @@ const Bookings = () => {
   const [id, setID] = useState();
 
 
-
   const filteredBookings = bookings.filter(
     (person) =>
       person.firstName.includes(searchInput) ||
       person.surname.includes(searchInput)
   );
+
+  function addBooking(newBooking) {
+    const newData = bookings.concat(newBooking);
+    setBookings(newData);
+  }
 
   // https://raw.githubusercontent.com/CodeYourFuture/cyf-hotel-react/master/src/data/fakeBookings.json - previous api link
   //https://cyf-react.glitch.me/error - error link
@@ -41,7 +45,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search setSearchInput={setSearchInput} searchInput={searchInput}/>
+        <Search setSearchInput={setSearchInput} searchInput={searchInput} />
         {isLoading === false && error === null ? (
           <p>Data is loading...</p>
         ) : (
@@ -55,9 +59,9 @@ const Bookings = () => {
         ) : (
           <p></p>
         )}
-        <SearchResults results={filteredBookings} id={id} setID={setID}/>
+        <SearchResults results={filteredBookings} id={id} setID={setID} />
       </div>
-      <NewBooking />
+      <NewBooking addBooking={addBooking} />
     </div>
   );
 };

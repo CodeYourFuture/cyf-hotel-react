@@ -1,68 +1,93 @@
 import React, {useState} from "react";
 
-const NewBooking = () => {
+const NewBooking = ({addBooking}) => {
 
-const [name, setName] = useState("");
-// const [surname, setName] = useState("");
-// const [email, setName] = useState("");
-// const [title, setName] = useState("");
-// const [roomId, setName] = useState("");
-// const [checkInDate, setName] = useState("");
-// const [checkOutDate, setName] = useState("");
-const changeName = (event) => {
-  setName(event.target.value);
+const [formValues, setFormValues] = useState({});
+
+const changeFormValue = (event) => {
+  const inputValue = event.target.value;
+      const inputName = event.target.getAttribute("name");
+      const newFormData = {...formValues, [inputName]: inputValue}
+      setFormValues(newFormData)
 };
-   const transferValue = (event) => {
-     event.preventDefault();
-     const val = {
-       name,
-     };
-     props.func(val);
-     clearState();
-   };
-
-   const clearState = () => {
-     setName("");
-   };
-
+function submitBooking(e){
+    const formDataKeys = Object.keys(formValues)
+    if(formDataKeys.length === 7){
+      addBooking(formValues)
+      setFormValues({})
+    } else {
+      alert("you have not added all form values")
+    }
+  }
   return (
     <div>
       <form>
         <label>
           Enter your name:
-          <input type="text" name="name" value={name} onChange={changeName}  />
+          <input
+            type="text"
+            name="name"
+            value={formValues["name"] || ""}
+            onChange={changeFormValue}
+          />
         </label>
         <label>
           Enter your surname:
-          <input type="text" name="surname" />
-          {/* value={surname} */}
+          <input
+            type="text"
+            name="surname"
+            value={formValues["surname"] || ""}
+            onChange={changeFormValue}
+          />
         </label>
         <label>
           Enter your email:
-          <input type="text" name="email" />
-          {/* value={email} */}
+          <input
+            type="text"
+            name="email"
+            value={formValues["email"] || ""}
+            onChange={changeFormValue}
+          />
         </label>
         <label>
           Enter your title:
-          <input type="text" name="title" />
-          {/* value={title} */}
+          <input
+            type="text"
+            name="title"
+            value={formValues["title"] || ""}
+            onChange={changeFormValue}
+          />
         </label>
         <label>
           your room id:
-          <input type="text" name="roomId" />
-          {/* value={roomId} */}
+          <input
+            type="text"
+            name="roomId"
+            value={formValues["roomId"] || ""}
+            onChange={changeFormValue}
+          />
         </label>
         <label>
           Check in date:
-          <input type="text" name="check-in-date" />
-          {/* value={checkInDate} */}
+          <input
+            type="text"
+            name="check-in-date"
+            value={formValues["check-in-date"] || ""}
+            onChange={changeFormValue}
+          />
         </label>
         <label>
           Check out date:
-          <input type="text" name="check-out-date" />
-          {/* value={checkOutDate} */}
+          <input
+            type="text"
+            name="check-out-date"
+            value={formValues["check-out-date"] || ""}
+            onChange={changeFormValue}
+          />
         </label>
-        <button onClick={transferValue}>Add new booking</button>
+        <button type="button" onClick={submitBooking}>
+          Add new booking
+        </button>
       </form>
     </div>
   );
