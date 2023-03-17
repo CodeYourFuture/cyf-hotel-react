@@ -19,7 +19,7 @@ function SingleBooking(props) {
       <td>{props.checkInDate}</td>
       <td>{props.checkOutDate}</td>
       <td>{props.nights}</td>
-      <button onClick={props.clickHandle}>Show profile</button>
+      <button class="btn btn-primary" onClick={props.clickHandle}>Show profile</button>
     </tr>
     
 </>

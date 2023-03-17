@@ -9,18 +9,23 @@ const Bookings = () => {
 
   const [booking, setBookings] = useState([]);
   const [displayData, setDisplayData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // console.log("Welcome in my hotel project");
 
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://cyf-react.glitch.me/delayed`)
     .then(res => res.json())
     .then(data => {
       setBookings(data)
       setDisplayData(data)
+      setIsLoading(false);
     })
     .catch(error => console.log(error));
   },[])
+
+  if (isLoading) {
+    return <p className="loadingParagraph">Loading...</p>;
+  }
 
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
