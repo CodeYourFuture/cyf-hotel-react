@@ -146,7 +146,7 @@ tr {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #222;
+  background: rgb(62, 62, 62);
   color: white;
   width: 150px;
   height: 150px;
