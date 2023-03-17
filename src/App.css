@@ -139,3 +139,19 @@ tr {
   list-style: none;
   padding-bottom: 10px;
 }
+
+/* -------------  Bookings component Loading... --------------- */
+
+.loadingParagraph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  color: white;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
