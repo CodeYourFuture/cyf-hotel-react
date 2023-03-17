@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
+import BookingForm from "./BookingForm.js";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.jsx";
 // import FakeBookings from "./data/fakeBookings.json";
 
-const Bookings = () => {
+const Bookings = props => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [handleError, setHandleError] = useState(null);
+
+  function handleAddPerson(newBooking) {
+    setBookings([...bookings, newBooking]);
+  }
+  // console.log(bookings);
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
@@ -48,6 +54,7 @@ const Bookings = () => {
             <p>{handleError}</p>
           ) : (
             <div className="container">
+              <BookingForm handleAddPerson={handleAddPerson} />
               <Search search={search} />
               <SearchResults results={bookings} />
             </div>
