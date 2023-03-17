@@ -7,15 +7,30 @@
   height: 80px;
 }
 
-.App-header {
+.imgLogo {
+  height: 100px;
+}
+.cardWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.card {
+  margin: 2%;
+}
+.card img {
+  height: 35%;
+}
+
+.footerAddress {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   background-color: #222;
-  height: 50px;
-  padding: 20px;
   color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 2%;
 }
 
 .App-title {
@@ -37,6 +52,7 @@
 }
 .search {
   padding: 5px 0 20px 0;
+  border-top: 2px solid #e9ecef;
 }
 
 tr {
@@ -47,7 +63,7 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
+footer {
   padding-top: 20px;
   text-align: center;
 }
@@ -55,3 +71,76 @@ tr {
 .card {
   width: 18rem;
 }
+
+.customerProfile {
+  width: 250px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #b8daff;
+  color: white;
+  padding: 2%;
+}
+
+.tableAndCustomerProfile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.App-header {
+  background-color: #222;
+  box-shadow: 2px 15px 20px -12px rgba(105, 96, 96, 0.75);
+  -webkit-box-shadow: 2px 15px 20px -12px rgba(105, 96, 96, 0.75);
+  -moz-box-shadow: 2px 15px 20px -12px rgba(105, 96, 96, 0.75);
+  height: 50px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 5%;
+
+  position: sticky;
+  width: 100%;
+  top: 0px;
+  z-index: 1;
+}
+
+.App-header img {
+  width: 7%;
+  box-shadow: -10px -1px 79px -12px rgba(105, 96, 96, 0.75);
+  -webkit-box-shadow: -10px -1px 79px -12px rgba(105, 96, 96, 0.75);
+  -moz-box-shadow: -10px -1px 79px -12px rgba(105, 96, 96, 0.75);
+}
+
+.hero {
+  width: 100%;
+  height: auto;
+  padding: 200px;
+  background-image: url("https://images.pexels.com/photos/3009672/pexels-photo-3009672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: fit;
+  background-position: center center;
+  color: white;
+  /* background-repeat: no-repeat; */
+}
+
+.hero h1 {
+  color: white;
+  text-align: center;
+}
+
+.textHeroContainer {
+  background-color: rgba(247, 242, 242, 0.4);
+  /* border-radius: 10px; */
+}
+.hero hr {
+  background-color: white;
+}
+/* .textHeroContainer h1,
+p {
+  background-color: rgba(105, 96, 96, 0.2);
+  border-radius: 10px;
+} */
