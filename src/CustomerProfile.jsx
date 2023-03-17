@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const CustomerProfile = (props) => {
+    const [customerData, setCustomerData] = useState(null);
+
+    useEffect(() => {
+        fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+        .then((res) => res.json())
+        .then((data) => {
+            setCustomerData(data)
+        })
+    }, [props.id])
+
     return (
         <div>
-            Customer {props.id} profile
+            {customerData ? (
+        <ul>
+          <li>Customer ID: {customerData.id}</li>
+          <li>Email: {customerData.email}</li>
+          <li>VIP: {customerData.vip ? 'Yes' : 'No'}</li>
+          <li>Phone number: {customerData.phoneNumber}</li>
+        </ul>
+      ) : null}
         </div>
     )
 }

@@ -3,10 +3,6 @@ import CustomerProfile from './CustomerProfile';
 
 function SingleBooking(props) {
 
-   
-
-  
-
   const [selected, setSelected] = useState(false);
   const handleClick = () => {
     setSelected(!selected)
