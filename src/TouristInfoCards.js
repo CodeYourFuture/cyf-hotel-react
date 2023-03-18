@@ -1,8 +1,8 @@
 import React from "react";
 
 function TouristInfoCards(props) {
-  let newCards=props.card.map((el) => (
-    <div>
+  let newCards=props.card.map((el,index) => (
+    <div key={index}>
         <div className="card">
             <img src = {el.image} alt="city" className="card-img-top"/>
             <p> {el.name}</p>
