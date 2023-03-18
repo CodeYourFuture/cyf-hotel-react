@@ -5,15 +5,21 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch(`https://cyf-react.glitch.me`)
-    .then((res) => res.json())
-    .then((data) => {
-      setBookings(data)
-    });
-  }, [])
+      .then((res) => res.json())
+      .then((data) => {
+        setBookings(data);
+        setLoading(false);
+      });
+  }, []);
 
+  if (loading) {
+    return <div>loading...</div>;
+  }
 
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
