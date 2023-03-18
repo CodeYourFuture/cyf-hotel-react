@@ -1,21 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const CustomerProfile = ({customerData}) => {
-    console.log(customerData);
-return (
+const CustomerProfile = ({ customerId }) => {
+  const [profile, setProfile] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me/customers/${customerId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProfile(data);
+      });
+  }, [customerId]);
+
+  return (
     <div>
-      <h2>Customer {customerData.id} profile</h2>
-      <ul>
-        <li>Title: {customerData.title}</li>
-        <li>First Name: {customerData.firstName}</li>
-        <li>Surname: {customerData.surname}</li>
-        <li>Email: {customerData.email}</li>
-        <li>VIP: {customerData.vip ? "Yes" : "No"}</li>
-        <li>Phone: {customerData.phoneNumber}</li>
-      </ul>
+      {profile && (
+        <div>
+          <h2>Customer {profile.id} profile</h2>
+          <ul>
+            <li>Title: {profile.title}</li>
+            <li>First Name: {profile.firstName}</li>
+            <li>Surname: {profile.surname}</li>
+            <li>Email: {profile.email}</li>
+            <li>VIP: {profile.vip ? "Yes" : "No"}</li>
+            <li>Phone: {profile.phoneNumber}</li>
+          </ul>
+        </div>
+      )}
     </div>
-);
-
+  );
 };
 
 export default CustomerProfile;

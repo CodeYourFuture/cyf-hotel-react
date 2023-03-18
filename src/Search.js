@@ -11,6 +11,7 @@ setSearch(event.target.value);
 
 const handleSearch = (event) => {
   event.preventDefault()
+  search(searchInput)
 };
 
 return (

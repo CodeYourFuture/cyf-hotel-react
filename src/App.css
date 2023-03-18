@@ -24,6 +24,13 @@ p {
   margin-left: 3rem;
 }
 
+.restaurant-container{
+      display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 5em;
+}
+
 .App-header {
   background-color: blueviolet;
   display: flex;
