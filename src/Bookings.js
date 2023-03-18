@@ -10,7 +10,6 @@ const Bookings = () => {
     fetch(`https://cyf-react.glitch.me`)
     .then((res) => res.json())
     .then((data) => {
-      console.log("Hi!")
       setBookings(data)
     });
   }, [])
@@ -18,6 +17,13 @@ const Bookings = () => {
 
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
+    setBookings((prev) =>
+      prev.filter(
+        (item) =>
+          item.firstName.toLowerCase() === searchVal ||
+          item.surname.toLowerCase() === searchVal
+      )
+    );
   };
 
   return (
