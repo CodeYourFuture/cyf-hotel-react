@@ -12,7 +12,7 @@ const SearchResults = (props) => {
   };
   return (
     <div className="table-content">
-      <Table results={FakeBookings} showProfile={showProfile} />
+      <Table results={props.results} showProfile={showProfile} />
       <CustomerProfile id={selectProfile} />
     </div>
   );

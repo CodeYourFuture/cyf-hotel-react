@@ -100,3 +100,6 @@ tr {
     margin: 3rem;
     
 }
+.loading{
+  border:solid 1px;
+}

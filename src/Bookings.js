@@ -5,13 +5,18 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     console.log("this is a test");
-    const url = "https://cyf-react.glitch.me";
+    const url = "https://cyf-react.glitch.me/delayed";
+    setLoading(true);
     fetch(url)
       .then((response) => response.json())
-      .then((data) => setBookings(data))
+      .then((data) => {
+        setLoading(false);
+        return setBookings(data);
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -34,7 +39,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {loading ? (  <h2 className="loading"> Loading ..... </h2>) : (<SearchResults results={bookings} /> )}
       </div>
     </div>
   );
