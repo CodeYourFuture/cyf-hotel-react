@@ -1,4 +1,42 @@
+import datepicker from "js-datepicker";
+import { useEffect } from "react";
+
 function AddedBookingForm({ handleSubmit, handleChange, errors }) {
+  useEffect(() => {
+    const checkInPicker = datepicker(".start", {
+      id: 1,
+      onSelect: (instance, date) => {
+        const event = {
+          target: {
+            name: "CheckInDate",
+            value: date
+              .toLocaleDateString()
+              .split("/")
+              .reverse()
+              .join("-")
+          }
+        };
+        handleChange(event);
+      }
+    });
+    const checkOutPicker = datepicker(".end", {
+      id: 1,
+      onSelect: (instance, date) => {
+        const event = {
+          target: {
+            name: "CheckOutDate",
+            value: date
+              .toLocaleDateString()
+              .split("/")
+              .reverse()
+              .join("-")
+          }
+        };
+        handleChange(event);
+      }
+    });
+  }, []);
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -48,15 +86,21 @@ function AddedBookingForm({ handleSubmit, handleChange, errors }) {
       </div>
       <div>
         <label htmlFor="CheckInDate">Check in date</label>
-        <input type="date" name="CheckInDate" onChange={handleChange} />
+        <input className="start" id="1" type="text" name="CheckInDate" />
         <p>{errors.CheckInDate}</p>
       </div>
       <div>
         <label htmlFor="CheckOutDate">Check out date</label>
-        <input type="date" name="CheckOutDate" onChange={handleChange} />
+        <input
+          className="end"
+          id="1"
+          type="text"
+          name="CheckOutDate"
+          onChange={handleChange}
+        />
         <p>{errors.CheckOutDate}</p>
       </div>
-      <button>Submit</button>
+      <button className="pointer">Submit</button>
     </form>
   );
 }

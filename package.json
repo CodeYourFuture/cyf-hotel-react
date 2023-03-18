@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "js-datepicker": "^5.18.2",
     "moment": "^2.29.4",
     "react": "^16.8.6",
+    "react-datepicker": "^4.10.0",
+    "react-dates": "^21.8.0",
     "react-dom": "^16.8.6",
     "react-scripts": "^5.0.1"
   },

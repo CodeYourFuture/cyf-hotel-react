@@ -12,7 +12,7 @@ const Bookings = ({ newBookingData }) => {
     fetch("https://cyf-react.glitch.me")
       .then(res => {
         if (!res.ok) {
-          throw Error("Some thing is wrong with the API");
+          throw Error;
         }
         return res.json();
       })

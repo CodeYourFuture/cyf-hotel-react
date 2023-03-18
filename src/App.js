@@ -22,12 +22,14 @@ const App = () => {
 
   const [errors, setErrors] = useState({});
   const [field, setField] = useState(null);
+
   function handleChange(event) {
     const { name, value } = event.target;
     setAddedBooking(addedBooking => ({
       ...addedBooking,
       [name]: value
     }));
+    console.log(addedBooking);
     setField(name);
   }
 

@@ -24,6 +24,8 @@ const SearchResults = ({ results }) => {
     setSortDirection(sortDirection === "⇓" ? "⇑" : "⇓");
   }
 
+  // console.log(results)
+
   return (
     <>
       <table className="table">
@@ -103,6 +105,7 @@ const SearchResults = ({ results }) => {
                     <button
                       name="button"
                       onClick={event => handleClick(event, book.id)}
+                      className="pointer"
                     >
                       Show Profile
                     </button>

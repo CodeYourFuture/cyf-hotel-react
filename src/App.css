@@ -1,5 +1,15 @@
+@import "~js-datepicker/dist/datepicker.min.css";
+
 .App {
   text-align: left;
+}
+
+.left {
+  text-align: right;
+}
+
+.profile-width {
+  width: 500px;
 }
 
 .App-logo {
@@ -64,6 +74,13 @@ tr {
   width: 18rem;
 }
 
+.cards-container {
+  display: flex;
+  margin: 8rem auto;
+  justify-content: center;
+  gap: 3rem;
+}
+
 .highlight {
   background-color: #24a0ed;
   color: white;
@@ -72,4 +89,8 @@ tr {
 li {
   list-style-type: none;
   margin: 4px;
+}
+
+.pointer {
+  cursor: pointer;
 }
