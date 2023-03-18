@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import moment from "moment";
+
+import SingleBooking from "./SingleBooking";
 
 const SearchResults = ({ results }) => {
-  const [highlight, setHightlight] = useState(false);
-  function handleClick(rowId) {
-    setHightlight(rowId);
-  }
+  
   return (
     <table className="table table-striped">
       <thead>
@@ -23,25 +21,7 @@ const SearchResults = ({ results }) => {
       </thead>
       <tbody>
         {results.map((booking) => (
-          <tr
-            key={booking.id}
-            style={{
-              backgroundColor: highlight === booking.id ? "lightgrey" : "white",
-            }}
-            onClick={() => handleClick(booking.id)}
-          >
-            <td>{booking.id}</td>
-            <td>{booking.title}</td>
-            <td>{booking.firstName}</td>
-            <td>{booking.surname}</td>
-            <td>{booking.email}</td>
-            <td>{booking.roomId}</td>
-            <td>{booking.checkInDate}</td>
-            <td>{booking.checkOutDate}</td>
-            <td>
-              {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
-            </td>
-          </tr>
+          <SingleBooking key={booking.id} booking={booking} />
         ))}
       </tbody>
     </table>
