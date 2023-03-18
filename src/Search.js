@@ -29,7 +29,7 @@ const Search = ({search}) => {
                 value={searchInput}
                 onChange={handleSearchInput}
               />
-              <button className="btn btn-primary">Search</button>
+              {/* <button className="btn btn-primary">Search</button> */}
               <SearchButton />
             </div>
           </form>
