@@ -174,7 +174,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Hint:** You need to record the selected customer id after clicking on a "Show profile" button. In which component do you think this state should be defined?
 
-**Test:** When first showing the page, no customer profile is displayed. When clicking the first "Show profile" button of the table, the text "Customer 1 profile" appears. When clickong the second "Show profile" button of the table, the text "Customer 2 profile" appears instead.
+**Test:** When first showing the page, no customer profile is displayed. When clicking the first "Show profile" button of the table, the text "Customer 1 profile" appears. When clicking the second "Show profile" button of the table, the text "Customer 2 profile" appears instead.
 
 #### 21. Display a customer profile - step 2
 
