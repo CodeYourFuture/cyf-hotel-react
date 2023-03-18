@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 function SearchResults(props) {
+  const [active, setActive] = useState("");
+
+  function tableRowClick(id) {
+    console.log(id);
+    if (id === active) {
+      setActive("");
+    } else {
+      setActive(id);
+    }
+  }
+
   return (
     <table className="table">
       <thead className="thead-dark">
@@ -21,19 +32,24 @@ function SearchResults(props) {
         {props.results.map((row) => {
           let a = moment(row.checkInDate, "YYYY-MM-DD");
           let b = moment(row.checkOutDate, "YYYY-MM-DD");
-            return (
-                <tr>
-                    <td>{row.id}</td>
-                    <td>{row.title}</td>
-                    <td>{row.firstName}</td>
-                    <td>{row.surname}</td>
-                    <td>{row.email}</td>
-                    <td>{row.roomId}</td>
-                    <td>{row.checkInDate}</td>
-                    <td>{row.checkOutDate}</td>
-                    <td>{b.diff(a, "days")}</td>
-                </tr>
-            )
+          return (
+            <tr
+              onClick={() => tableRowClick(row.id)}
+              style={{
+                backgroundColor: active === row.id ? "#CBC3E3" : "white",
+              }}
+            >
+              <td>{row.id}</td>
+              <td>{row.title}</td>
+              <td>{row.firstName}</td>
+              <td>{row.surname}</td>
+              <td>{row.email}</td>
+              <td>{row.roomId}</td>
+              <td>{row.checkInDate}</td>
+              <td>{row.checkOutDate}</td>
+              <td>{b.diff(a, "days")}</td>
+            </tr>
+          );
         })}
       </tbody>
     </table>
