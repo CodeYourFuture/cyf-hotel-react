@@ -9,8 +9,8 @@
 
 .App-header {
   /* background-color: #222; */
-  height: 750px;
-  background: url('./footer.jpg');
+  height: 70vh;
+  background: url("./footer.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 20px;
@@ -22,11 +22,10 @@
   font-weight: bold;
   margin-bottom: 120px;
 }
-
+/* 
 .App-header h1{
   font-size: 5.5rem;
-}
-
+} */
 
 .App-title {
   font-size: 2em;
@@ -58,17 +57,17 @@ tr {
 }
 
 .card {
-  width: 18rem;
-  display: flex;
-
+  width: 100%;
 }
 
 .cards {
+  width: 90%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3.5rem;
-  margin-top: 30px;
+  gap: 1rem;
+  margin: 0 auto;
 }
 
 .images {
@@ -77,11 +76,11 @@ tr {
 }
 /* --------------Hotel Logo--------------- */
 
-.crownImage {
+/* .crownImage {
   display: flex;
   justify-content: center;
   margin-top: 0px;
-}
+} */
 
 /* --------------Table css----------- */
 
@@ -90,6 +89,30 @@ tr {
   justify-content: left;
 }
 
+.table-div {
+  width: 95%;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+.table-div::-webkit-scrollbar {
+  background: linear-gradient(
+    90deg,
+    white,
+    rgb(255, 166, 181),
+    rgb(237, 55, 55),
+    rgb(255, 98, 0),
+    rgb(61, 255, 61),
+    rgb(73, 222, 255),
+    white
+  );
+}
+.table-div::-webkit-scrollbar-button {
+  border-radius: 10px;
+  background-color: black;
+}
+.table-div::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.525);
+}
 
 /* -------------Footer style ----------- */
 
@@ -107,7 +130,6 @@ tr {
   list-style: none;
 }
 
-
 .card-body {
   background-color: rgb(62, 62, 62);
   color: aliceblue;
@@ -115,7 +137,7 @@ tr {
 
 /* ---------- orders style -------------- */
 .orders {
-  width: 72%;
+  width: 95%;
   background-image: linear-gradient(130deg, rgb(62, 62, 62), gray);
   color: white;
   /* background-color: rgb(62, 62, 62); */
@@ -124,14 +146,31 @@ tr {
 }
 
 .orders h3 {
-  margin: 20px 0 20px 30px;
-  padding-top: 20px;
-  font-size: 2rem;
+  text-align: center;
+  padding: 0.5em;
 }
 
+.orders-summery {
+  text-align: center;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.orders-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 1em;
+  flex-direction: column;
+}
 
 /* ------------ btn style order ---------- */
-.btnOrder button{
+.btnOrder button {
   margin-left: 50px;
 }
 
@@ -154,4 +193,19 @@ tr {
   margin-top: 20px;
   border-radius: 50%;
   font-size: 1.5rem;
+}
+
+/* -------------- */
+
+.btn-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #007bff;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  cursor: pointer;
 }

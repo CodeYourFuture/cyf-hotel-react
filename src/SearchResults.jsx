@@ -14,8 +14,9 @@ function SearchResults({bookings}) {
   }
 
   return <>
-  
-<table className="table">
+
+  <div className="table-div">
+    <table className="table">
         <thead className="thead-dark">
           <tr>
             <th scope="col">#</th>
@@ -48,6 +49,7 @@ function SearchResults({bookings}) {
           ))}
         </tbody>
       </table>
+  </div>
       {selectedCustomer && <CustomerProfile id={selectedCustomer} />}
   </>
 }
