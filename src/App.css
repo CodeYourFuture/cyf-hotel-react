@@ -9,10 +9,10 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: auto;
   padding: 20px;
   color: white;
-  text-align: left;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
@@ -50,8 +50,59 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: #222;
+    height: auto;
+    padding: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
 }
 
+.info-cards {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content:center
+  
+}
 .card {
-  width: 18rem;
+  width: 30rem;
+  padding: 5px 5px 5px 5px;
+
+}
+
+.card img {
+  border-radius: 10px;
+}
+
+.footer-list ul{
+  list-style: none;
+}
+
+.btn-primary{
+  background-color: #222;
+  border-color: gold;
+}
+.btn-primary:hover {
+    background-color: gold;
+    color: #222;
+}
+
+.table-content {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+    margin: 3rem;
+    
+}
+.loading{
+  border:solid 1px;
+}
+.error{
+  color:red;
 }
