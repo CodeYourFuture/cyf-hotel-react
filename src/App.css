@@ -103,3 +103,6 @@ tr {
 .loading{
   border:solid 1px;
 }
+.error{
+  color:red;
+}

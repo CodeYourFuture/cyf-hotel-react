@@ -10,6 +10,7 @@ const SearchResults = (props) => {
     setSelectProfile(id);
     console.log(id);
   };
+  console.log(props.results)
   return (
     <div className="table-content">
       <Table results={props.results} showProfile={showProfile} />
