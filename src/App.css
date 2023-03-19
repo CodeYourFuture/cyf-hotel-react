@@ -8,14 +8,18 @@
 }
 
 .App-header {
-  background-color: aqua;
-  height: 80px;
+  background-color: rgba(42, 49, 11, 0.908);
+  height: 150px;
   padding: 20px;
-  color: black;
+  color: white;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
+  /* custom styles */
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .App-title {
@@ -48,10 +52,80 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  /* padding-top: 20px; */
   text-align: center;
+  /* custom styles */
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: #222;
+  color: white;
 }
 
+.footer-contact {
+  list-style: none;
+}
+
+/* custom styles */
+
+
 .card {
-  width: 18rem;
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-header {
+  width: 40px;
+  height: 40px;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.unorder-List {
+  list-style: none;
+  background-color: rgba(42, 49, 11, 0.908);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  align-items: center;
+}
+
+.restaurantOrders {
+  justify-content: center;
+  display: flex;
+}
+.ul-wrapper {
+  width: 20%;
+}
+
+.order-button {
+  display: flex;
+  align-items: center;
+  gap: 15%;
+}
+.order-wrapper {
+  display: flex;
+  flex: 2;
+  justify-content: space-between;
+  margin-top: 3%;
+  align-items: center;
+}
+
+.newTrColor {
+  background-color: lightgreen;
+}
+
+
+.button-pointer {
+  cursor: pointer;
+  background: aqua;
+  border-radius: 20%;
+  border:3px solid brown;
 }

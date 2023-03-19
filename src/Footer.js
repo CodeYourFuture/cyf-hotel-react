@@ -1,17 +1,13 @@
 import React from "react";
 
-
-const Footer = (props) => {
+const FooterInfo = (props) => {
    return (
-        <ul style={{marginLeft:"430px", color:"purple",fontSize:"15px"}}>
-        {
-            props.footerInfo.map((element) => {
-             return <li key={element}>{element}</li> 
-            })
-        }
-    </ul>
-   )
-}
-    
+      <ul className="unorder-List">
+        {props.footerMes.map((item,index)=>
+          (<li key={index}>{item}</li>)
+          )}
+      </ul>
+     );
+};
 
-export default Footer;
+export default FooterInfo;

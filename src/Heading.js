@@ -1,16 +1,20 @@
-import React from "react";
+// import React from "react";
+import { FcVip } from "react-icons/fc";
 
-const imgStyle={marginLeft: "467px"}
-const Heading = ()=>{
-  return (
-    <>
-      <header className="App-header">CYF Hotel</header>
-       <img style={imgStyle}
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS40skdZ9V-nsN3t3X0niBbBqmHkcubEKSeNg&usqp=CAU"
-        alt="Hotel"
-      ></img> 
-    </>
-  );
+const Heading = () => {
+    return (
+      <header className="App-header">
+        <FcVip></FcVip><br></br>
+          <img
+            className="image-header"
+            src="../images/hotel-logo.svg"
+            alt="logo"
+          />
+        
+        <h1> Tower Hotel 高 塔 酒 店</h1>
+        
+      </header>
+    );
 };
 
 export default Heading;
