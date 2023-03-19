@@ -24,3 +24,9 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+.container{
+  display: flex;
+  flex-direction: row;
+  
+
+}
