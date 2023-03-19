@@ -38,9 +38,6 @@ const App = () => {
           />
         </div>
       </section>
-
-      {/* <SearchResults/> */}
-
       <Bookings />
       <Restaurant />
       <Footer />
