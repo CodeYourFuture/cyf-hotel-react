@@ -41,7 +41,7 @@ function Bookings() {
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error)
+        console.log("The requested infomation is not currently available!")
       });
   }, []);
 
@@ -55,7 +55,7 @@ function Bookings() {
             <p>{errorMessage}</p>
           ) : (
             <div className="container">
-              <NewBookingForm addNewBooking={addNewBooking} />
+              <NewBookingForm addNewBooking={addNewBooking}bookings={bookings}/>
               <Search search={search} />
               <SearchResults bookingResults={filteredBookings} />
             </div>

@@ -12,7 +12,6 @@
   height: 65px;
   width: 65px;
   border-radius: 50%;
- 
 }
 
 .App-header {
@@ -61,8 +60,8 @@ tr {
 .card {
   width: 20rem;
   border: 3px solid rgb(158, 141, 92);
- 
 }
+
  .infocards{
   display: flex;
   flex-direction: row;
@@ -75,6 +74,7 @@ tr {
 
  .info-image{
 background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/japan-arashiyama-bamboo-forest-kyoto.jpg");
+background-image: "./ima";
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -84,11 +84,9 @@ background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/
 
  img{
   height: 25rem;
-  
  }
 
  .btn {
-  
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -97,8 +95,6 @@ background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/
   background-color: rgb(235, 173, 29);
   border-radius: 15px;
   font-size: large;
-  /* width: 5em;
-  height: 3em; */
   color: black;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
  }
@@ -113,7 +109,6 @@ background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/
  .newSelectedRows{
   color: black;
   background-color: rgb(228, 185, 31);
-  
  }
 
  .yellow {
@@ -224,14 +219,15 @@ input:focus{
 }
 
 .footer {
-  padding-top: 20px;
-  text-align: center;
-  list-style: none;
-  font-style: italic;
-  font-weight: 800;
-  color: rgb(90, 3, 90);
-  font-size: 1.2rem;
+padding-top: 20px;
+text-align: center;
+list-style: none;
+font-style: italic;
+font-weight: 800;
+color: rgb(90, 3, 90);
+font-size: 1.2rem;
 }
+
  .registration-form p {
 font-size: 1.7rem;
 display: flex;

@@ -39,7 +39,7 @@ function NewBookingForm(props) {
         roomId:roomId,
         checkInDate: checkInDate,
         checkOutDate:checkOutDate,
-        id:6
+        id: bookings.length +1
     };
     props.addNewBooking(newBooking);
 

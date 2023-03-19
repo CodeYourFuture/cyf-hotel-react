@@ -3,7 +3,7 @@ import logo from "./images-folder/black-cyf-logo.jpeg"
 
 
 function Heading() {
-  const logoimage = logo;
+  
   return (
     <header className="App-header">
       <h1> CYF</h1>
