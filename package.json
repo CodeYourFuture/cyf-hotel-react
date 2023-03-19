@@ -2,6 +2,7 @@
   "name": "react-hotel",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3000/",
   "dependencies": {
     "moment": "^2.29.4",
     "react": "^18.2.0",
