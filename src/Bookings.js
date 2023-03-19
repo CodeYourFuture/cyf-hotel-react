@@ -41,7 +41,7 @@ function Bookings() {
         setLoading(false);
       })
       .catch((error) => {
-        console.log("The requested infomation is not currently available!")
+        console.log("Your requested infomation is not currently available!")
       });
   }, []);
 
