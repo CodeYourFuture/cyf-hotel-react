@@ -47,6 +47,7 @@ const Bookings = () => {
       .catch(err => {
         console.log(err.message);
         setError(true);
+        setDataLoading(false)
       });
   }, []);
 
@@ -68,7 +69,9 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         {/* <SearchResults results={FakeBookings} /> */}
-        <SearchResults results={bookings} />
+        <div>{dataLoading&&<span>Loading..</span>}</div>
+        <div>{error&&<span>there is an Error..</span>}</div>
+        <SearchResults  results={bookings} />
       
         
 
