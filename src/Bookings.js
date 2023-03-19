@@ -34,10 +34,12 @@ const Bookings = () => {
 
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch(`https://cyf-react.glitch.me`, {
+    mode: 'no-cors'
+  })
       .then(response => response.json())
       .then(data => setBookings(data))
-      .catch(error => console.log(error));
+      .catch(error => console.log( "found error ", error ));
   }, []);
 
   return (
