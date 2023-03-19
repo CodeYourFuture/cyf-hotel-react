@@ -9,14 +9,29 @@ function SearchDetails({ detail, updateProfile, customerProfile }) {
   }
 
   function fetchProfileData() {
-    fetch(`https://cyf-react.glitch.me/customers/${detail.id}`, {
-    mode: 'no-cors'
-  })
-      .then(response => response.json())
-      .then(data => updateProfile(data))
-      .catch(error => {
-        console.log( "found error ", error );
-      });
+  //   fetch(`https://cyf-react.glitch.me/customers/${detail.id}`, {
+  //   mode: 'no-cors'
+  // })
+  //     .then(response => response.json())
+  //     .then(data => updateProfile(data))
+  //     .catch(error => {
+  //       console.log( "found error ", error );
+  //     });
+
+  fetch(`https://cyf-react.glitch.me/customers/${detail.id}`, {
+      mode: 'no-cors'
+    })
+    .then((response) => {
+        console.log("json: ", response.json())
+        return response.json();                
+    })
+    .then(data => {
+        updateProfile(data)
+        console.log("data: ", data);
+      
+    }).catch(error => {
+        console.log("found error: ", error);
+    });
   }
 
   return (

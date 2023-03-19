@@ -33,14 +33,31 @@ const Bookings = () => {
   };
 
 
+  // useEffect(() => {
+  //   fetch(`https://cyf-react.glitch.me`, {
+  //   mode: 'no-cors'
+  // })
+  //     .then(response => response.json())
+  //     .then(data => setBookings(data))
+  //     .catch(error => console.log( "found error ", error ));
+  // }, 
+  // []);
+
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me`, {
-    mode: 'no-cors'
-  })
-      .then(response => response.json())
-      .then(data => setBookings(data))
-      .catch(error => console.log( "found error ", error ));
-  }, []);
+      mode: 'no-cors'
+    })
+    .then((response) => {
+        console.log("json: ", response.json())
+        return response.json();                
+    })
+    .then(data => {
+        console.log("data: ", data);
+      
+    }).catch(error => {
+        console.log("found error: ", error);
+    });
+  }, [])
 
   return (
     <div className="App-content">
