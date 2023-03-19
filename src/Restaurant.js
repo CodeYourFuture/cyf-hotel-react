@@ -1,6 +1,6 @@
 import React,{useState} from "react";
-import RestaurantBtn from "./resturantBtn";
-import Order from "./order";
+import RestaurantBtn from "./RestaurantButton";
+import Order from "./Order";
 
 const Restaurant = () => {
   return (

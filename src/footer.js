@@ -1,4 +1,5 @@
 import React from "react";
+
 function Footer() {
   const contact = [
     "123 Fake Street, London, E1 4UD",
@@ -6,7 +7,7 @@ function Footer() {
     "0123 456789"
   ];
   return (
-    <div>
+    <div className="footer1">
       <p>Contact Us</p>
       <ul>
         {contact.map((item, index) => {
@@ -16,4 +17,5 @@ function Footer() {
     </div>
   );
 }
+
 export default Footer;
