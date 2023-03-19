@@ -3,7 +3,7 @@ import HotelImage from "./images-folder/hotel.jpeg";
 
 function TouristInfoCards(props) {
   return (
-    <div className="card">
+    <div className="cards">
       <img src={props.image} className="card-img-top" />
       <div className="card-body">
         <p>
