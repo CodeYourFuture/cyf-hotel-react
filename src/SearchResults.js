@@ -35,28 +35,26 @@ const SearchResults = props => {
             let a = person.checkOutDate;
             let b = person.checkInDate;
             return (
-              <>
-                <tr
-                  key={person.id}
-                  onClick={() => rowHighlight(person.id)}
-                  className={selectedId === person.id ? "hiligth-row" : ""}
-                >
-                  <td>{person.id}</td>
-                  <td>{person.title}</td>
-                  <td>{person.firstName}</td>
-                  <td>{person.surname}</td>
-                  <td>{person.email}</td>
-                  <td>{person.roomId}</td>
-                  <td>{person.checkInDate}</td>
-                  <td>{person.checkOutDate}</td>
-                  <td>{moment(a).diff(moment(b), "days")}</td>
-                  <td>
-                    <button onClick={() => profilehandler(person.id)}>
-                      Show profile
-                    </button>
-                  </td>
-                </tr>
-              </>
+              <tr
+                key={person.id}
+                onClick={() => rowHighlight(person.id)}
+                className={selectedId === person.id ? "hiligth-row" : ""}
+              >
+                <td>{person.id}</td>
+                <td>{person.title}</td>
+                <td>{person.firstName}</td>
+                <td>{person.surname}</td>
+                <td>{person.email}</td>
+                <td>{person.roomId}</td>
+                <td>{person.checkInDate}</td>
+                <td>{person.checkOutDate}</td>
+                <td>{moment(a).diff(moment(b), "days")}</td>
+                <td>
+                  <button onClick={() => profilehandler(person.id)}>
+                    Show profile
+                  </button>
+                </td>
+              </tr>
             );
           })}
         </tbody>

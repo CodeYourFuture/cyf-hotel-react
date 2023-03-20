@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-// import Form from "./Form.js";
+import Form from "./Form.js";
 
 const Bookings = () => {
   const [data, setData] = useState([]);
@@ -13,7 +13,7 @@ const Bookings = () => {
   //   setBookings(bookings.concat(FakeBookings));
   // }
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/delayed`).then(res => {
+    fetch(`https://temporary-cyf-react.onrender.com`).then(res => {
       if (res.ok) {
         return res.json().then(data => {
           setData(data);
@@ -30,6 +30,12 @@ const Bookings = () => {
     setSearchVal(searchVal.toLowerCase());
   };
 
+  const addCustomer = input => {
+    // setData([...data,input])
+    console.log(data);
+    console.log(input);
+  };
+
   const filterData = data.filter(booking =>
     `${booking.firstName} ${booking.surname}`.toLowerCase().includes(searchVal)
   );
@@ -41,7 +47,7 @@ const Bookings = () => {
         {loading && <span>loading...</span>}
         <Search search={search} />
         <SearchResults data={filterData} />
-        {/* <Form /> */}
+        <Form addCustomer={addCustomer} data={data} />
       </div>
     </div>
   );

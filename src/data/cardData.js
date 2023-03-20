@@ -1,17 +1,9 @@
-import React from "react";
-import TouristInfoCards from "./TouristInfoCards";
-import Bookings from "./Bookings";
-import Restaurant from "./Restaurant";
-import Heading from "./Heading";
-import Footer from "./Footer";
-import "./App.css";
-
 const Glasgow = {
   src:
     "https://peoplemakeglasgow.com/assets/general/_1200x600_crop_center-center_none/Eco-City-Break-Queens-Park-Viewpoint-Header-Block.jpg",
   cardTitle: "Glasgow",
   cardText:
-    "Glasgow is a port city on the River Clyde in Scotland's western Lowlands. It's famed for its Victorian and art nouveau architecture, a rich legacy of the city's 18th–20th-century prosperity due to trade and shipbuilding. Today it's a national cultural hub, hg the Scottish Opera, Scottish Ballet and National Theatre of Scotland, as well as acclaimed museums and a thriving music scene. ",
+    "Glasgow is a port city on the River Clyde in Scotland's western Lowlands. It's famed for its Victorian and art nouveau architecture, a rich legacy of the city's 18th–20th-century prosperity due to trade and shipbuilding. ",
   href: "https://peoplemakeglasgow.com/"
 };
 
@@ -40,18 +32,3 @@ const adress = [
   "hello@fakehotel.com",
   "0123 456789"
 ];
-
-const App = () => {
-  return (
-    <div className="App">
-      <Heading />
-      <TouristInfoCards cities={cities} />
-      <Bookings />
-      <Restaurant />
-
-      <Footer adress={adress} />
-    </div>
-  );
-};
-
-export default App;
