@@ -9,23 +9,31 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 65px;
-  width: 65px;
+  height: 110px;
+  width: 110px;
   border-radius: 50%;
 }
 
 .App-header {
-  background-color: var(--yellow);
-  height: 100px;
-  padding: 20px;
+  background-color:goldenrod;
+  height: 130px;
+  padding: 15px;
   color: var(--gray-dark);
   text-align: left;
   font-family: Georgia;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: bolder;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 1rem;
+}
+
+h1{
+      font-size: 3.5em;
+        align-items: center;
+        margin-top: 25px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .App-title {
@@ -73,7 +81,7 @@ tr {
  }
 
  .info-image{
-background-image: url("https://expatexplore.com/blog/wp-content/uploads/2019/08/japan-arashiyama-bamboo-forest-kyoto.jpg");
+background-image: url("https://cdn.audleytravel.com/3611/2579/79/15975659-lake-bled-slovenia.jpg");
 background-image: "./ima";
   background-position: center;
   background-size: cover;
