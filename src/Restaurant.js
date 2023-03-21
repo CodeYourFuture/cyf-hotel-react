@@ -41,9 +41,9 @@ const Restaurant = () => {
           <li className="item">
             <Order orderType="Blackpepper Tuna" />
           </li>
-          <li className="item">
+          {/* <li className="item">
             <Order orderType="Noodle Soup" />
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>
