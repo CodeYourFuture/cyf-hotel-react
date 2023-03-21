@@ -18,7 +18,7 @@ function SearchDetails({ detail, updateProfile, customerProfile }) {
   //       console.log( "found error ", error );
   //     });
 
-  fetch(`https://cyf-react.glitch.me/customers/${detail.id}`, {mode: 'no-cors'})
+  fetch(`https://temporary-cyf-react.onrender.com/${detail.id}`)
     .then((response) => {
         // console.log("json: ", response.json());
         return response.json();                

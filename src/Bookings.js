@@ -34,7 +34,7 @@ const Bookings = () => {
 
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`, {mode: 'no-cors'})
+    fetch(`https://temporary-cyf-react.onrender.com/`)
       .then(response => response.json())
       .then(data => setBookings(data))
       .catch(error => console.log( "found error ", error ));
