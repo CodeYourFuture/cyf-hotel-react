@@ -19,7 +19,7 @@ const Bookings = () => {
     console.log("using API for data");
     setLoading(true);
 
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://temporary-cyf-react.onrender.com/")
       .then((res) => res.json())
       .then((data) => {
         if (data.error) {

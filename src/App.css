@@ -100,9 +100,10 @@ tr {
 }
 
 button,
-select {
+select,submit {
   text-transform: none;
   background-color: lightskyblue;
+  text-align: center;
 }
 
 .h3 {
@@ -110,4 +111,22 @@ select {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   margin-left: 4em;
+}
+
+ form{
+  grid-area: form;
+  max-width: 100%;
+  background-color: rgb(210, 131, 131);
+  padding: 40px 30px;
+  border: 1px solid #0a2243;
+  border-radius: 20px;
+  font-size: 22px;
+}  
+form button {
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+}
+button-submit{
+  text-align: center;
 }

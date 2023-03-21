@@ -2,10 +2,11 @@ import React from "react";
 import Restaurant from "./Restaurant";
 
 const RestaurantButton = ({ orderOne }) => {
-    return (
+  return (
     <button className="btn btn-primary" onClick={orderOne}>
-        Add</button>
-    );
-    }
+      Add
+    </button>
+  );
+};
 
-    export default RestaurantButton;
+export default RestaurantButton;
