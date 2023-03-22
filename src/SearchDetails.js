@@ -6,6 +6,7 @@ function SearchDetails({ detail, updateProfile, customerProfile }) {
 
   function handleClick() {
     setSelected(!selected);
+    
   }
 
   function fetchProfileData() {
