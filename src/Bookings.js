@@ -13,15 +13,22 @@ const Bookings = () => {
       true
     )
     console.log("Fetching information ...");
-    fetch(`https://temporary-cyf-react.onrender.com/delayed`)
+    fetch(`https://temporary-cyf-react.onrender.com/`)
+      //fetch(` https://temporary-cyf-react.onrender.com/error`) //checking 500 HTTP error
       .then((res) => res.json())
-      .then((data) => { setBookings(data)
-        setIsLoadingData(
-      false
-    )
-  })
+      .then((data) => {
+        console.log(data);
+        //checking fetching error
+        if (data.error) {
+          setErrorMsg(true);
+        } else {
+          setBookings(data);
+        }
+        setIsLoadingData(false);
+      })
       .catch((er) => {
         console.log(er);
+        setErrorMsg(true);
       });
   }, []);
   // };
@@ -30,7 +37,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [showFullList, setShowFullList] = useState(true);
   const [isLoadingData, setIsLoadingData] = useState(false);
-
+  const [errorMsg, setErrorMsg] = useState(false);
 
 
   const search = (searchVal) => {
@@ -57,6 +64,13 @@ const Bookings = () => {
           <SearchResults results={showFullList ? bookings : filterBookings} />
         </div>
       )}
+      {errorMsg ?
+      (
+        <div>
+          <p>Error</p>
+          </div>
+      ): null
+      }
     </div>
   );
 };
