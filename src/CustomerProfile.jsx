@@ -5,19 +5,17 @@ function CustomerProfile(props) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
       .then((res) => res.json())
       .then((data) => {
         setCustomerData(data);
-        setLoading(false)
+        setLoading(false);
       });
   }, [props.id]);
 
   if (loading) {
-    return (
-        <div>loading...</div>
-    )
+    return <div>loading...</div>;
   }
 
   if (!customerData) {

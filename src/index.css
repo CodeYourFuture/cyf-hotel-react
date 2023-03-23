@@ -1,7 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #4d4d76;
+  color: #010127
 }
 
 .search-wrapper {
@@ -12,15 +20,121 @@ body {
   font-weight: bold;
   padding: 0.75rem;
   margin-bottom: 0;
-  color: #5b5757;
+  color: #010127;
 }
 
 .search-row {
   display: flex;
-  border-top: 2px solid #e9ecef;
+  border-top: 2px solid #010127;
   padding-top: 15px;
 }
 
 .search-row input {
   margin-right: 10px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100px; */
+  background-color: #010127;
+  padding: 2rem 2rem 2rem 2rem;
+  width: 100vw;
+}
+
+.heading img {
+  width: 75px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  /* height: 400px; */
+  max-width: 20rem;
+  margin: 2rem;
+  display: flex;
+  box-shadow: 15px 15px 30px #010127;
+}
+
+.card-body {
+  /* border: solid red 3px; */
+  padding: 2rem;
+  background-color: #010127;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.card-body p {
+  border-top: solid #4d4d76 1px;
+  border-bottom: solid #4d4d76 1px;
+  padding: 1rem 0 1rem 0;
+}
+
+.table {
+  border-radius: 20px;
+  margin-bottom: 3rem;
+}
+
+th {
+  background-color: #010127;
+}
+
+td {
+  background-color: #a7a7d4;
+  color: #010127;
+}
+
+.orders-container {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.orders-container h3 {
+  border-bottom: white solid 1px;
+}
+
+.orders-container ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.orders-container li {
+  display: flex;
+  /* justify-content: center; */
+  /* text-align: center; */
+  gap: 1rem;
+  list-style: none;
+  border: #010127 solid 1px;
+  background-color: #a7a7d4;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.footer-contact {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #010127;
+  padding: 2rem 2rem 2rem 2rem;
+  margin-bottom: 0;
 }

@@ -10,7 +10,7 @@ const Bookings = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://temporary-cyf-react.onrender.com/`)
       .then((res) => {
         if (res.status === 200) {
           console.log("Status we get back", res.status);

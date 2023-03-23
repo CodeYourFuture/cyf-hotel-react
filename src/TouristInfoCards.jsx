@@ -10,6 +10,9 @@ function TouristInfoCards() {
         />
         <div className="card-body">
           <h3>Glasgow</h3>
+          <p>
+            From independent stores to high street retailers, Glasgow is the best shopping city. Glasgow's city centre is home to flagship stores, impressive shopping centres and designer favourites.
+          </p>
           <a href="http://peoplemakeglasgow.com/" className="btn btn-primary">
             Click for more information
           </a>
@@ -23,6 +26,11 @@ function TouristInfoCards() {
         />
         <div className="card-body">
           <h3>Manchester</h3>
+          <p>
+            Youthful, diverse, energetic and bursting with character; Manchester
+            is one of the most exciting places to visit in the UK right now
+            where everybody and anybody is very warmly welcomed.
+          </p>
           <a
             href="https://www.visitmanchester.com/"
             className="btn btn-primary"
@@ -39,6 +47,12 @@ function TouristInfoCards() {
         />
         <div className="card-body">
           <h3>London</h3>
+          <p>
+            Discover the best of London with Visit London, the official guide to
+            England's exciting capital. Find things to do in London, from iconic
+            sightseeing spots and fun-filled days out to top restaurants,
+            theatre and unmissable London events.
+          </p>
           <a href="https://www.visitlondon.com/" className="btn btn-primary">
             Click for more information
           </a>

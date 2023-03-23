@@ -1,6 +1,6 @@
 function Footer(props) {
   return (
-    <ul>
+    <ul className="footer-contact">
       {props.address.map((e, index) => (
         <li key={index}>{e}</li>
       ))}
