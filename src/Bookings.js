@@ -19,7 +19,7 @@ const Bookings = () => {
   
   useEffect(() => {
     fetch(
-      `https://cyf-react.glitch.me/delayed`
+      `https://temporary-cyf-react.onrender.com/`
     )
       .then((res) => res.json())
       .then((data) => {
