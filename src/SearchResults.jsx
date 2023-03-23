@@ -38,6 +38,7 @@ function SearchResults(props) {
             let b = moment(row.checkOutDate, "YYYY-MM-DD");
             return (
               <tr
+                key={row.id}
                 onClick={() => tableRowClick(row.id)}
                 style={{
                   backgroundColor: active === row.id ? "#CBC3E3" : "white",
