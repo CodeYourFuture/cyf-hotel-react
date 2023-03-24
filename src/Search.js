@@ -9,6 +9,7 @@ import SearchButton from "./SearchButton";
 
   function handleSearchInput(event) {
     const value = event.target.value;
+    console.log(target);
     setSearchInput(value);
   }
 

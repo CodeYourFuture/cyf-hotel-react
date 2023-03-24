@@ -26,7 +26,7 @@ function Bookings() {
   });
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://temporary-cyf-react.onrender.com")
       .then((response) => {
         return response.json();
       })
@@ -41,7 +41,7 @@ function Bookings() {
         setLoading(false);
       })
       .catch((error) => {
-        console.log("Your requested infomation is not currently available!")
+        console.log("Your requested infomation is not currently available!");
       });
   }, []);
 

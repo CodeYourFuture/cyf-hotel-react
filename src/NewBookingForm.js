@@ -39,7 +39,7 @@ function NewBookingForm(props) {
         roomId:roomId,
         checkInDate: checkInDate,
         checkOutDate:checkOutDate,
-        id: bookings.length +1
+        id: props.bookings.length +1
     };
     props.addNewBooking(newBooking);
 
@@ -50,7 +50,6 @@ function NewBookingForm(props) {
     setRoomID("");
     setCheckInDate("");
     setCheckOutDate("");
-    setRoomID("");
   }
 
   return (
@@ -93,7 +92,7 @@ function NewBookingForm(props) {
           value={roomId}
         />
         <input
-          type="text"
+          type="date"
           name="checkInDate"
           placeholder="checkInDate"
           onChange={handleBookingForm}
@@ -101,7 +100,7 @@ function NewBookingForm(props) {
         />
 
         <input
-          type="text"
+          type="date"
           name="checkOutDate"
           placeholder="checkOutDate"
           onChange={handleBookingForm}
@@ -117,7 +116,7 @@ function NewBookingForm(props) {
         />
 
         <button className="btn btn-primary" onClick={handleSubmitButton}>
-          Submit Your Booking
+          Click to Submit Form
         </button>
       </div>
     </div>

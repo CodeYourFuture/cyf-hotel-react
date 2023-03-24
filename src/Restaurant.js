@@ -14,7 +14,7 @@ const Restaurant = () => {
           <li className="item">
             <Order orderType="Cream Tea" />
           </li>
-          <li className="item">git ad
+          <li className="item">
             <Order orderType="Hot Chocolate" />
           </li>
           <li className="item">

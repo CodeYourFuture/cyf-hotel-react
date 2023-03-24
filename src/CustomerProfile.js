@@ -4,7 +4,7 @@ function CustomerProfile(props) {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+    fetch(`https://temporary-cyf-react.onrender.com/customers/${props.id}`)
       .then((response) => response.json())
       .then((data) => {
         setProfile(data);
