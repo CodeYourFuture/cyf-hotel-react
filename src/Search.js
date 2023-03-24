@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
-
-// const Search = () => {
-
   function Search({search}) {
   const [searchInput, setSearchInput] = useState('');
 
@@ -27,7 +24,6 @@ import SearchButton from "./SearchButton";
         <div className="col">
           <form className="form-group search-box"
             onSubmit={handleSubmitButton}>
-            {/* <label htmlFor="customerName">Customer name</label> */}
             <div className="search-row">
               <input
                 value={searchInput}
