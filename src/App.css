@@ -60,7 +60,7 @@ tr {
   width: 100%;
 }
 
-.cards {
+/* .cards {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -68,7 +68,7 @@ tr {
   align-items: center;
   gap: 1rem;
   margin: 0 auto;
-}
+} */
 
 .images {
   width: 100%;

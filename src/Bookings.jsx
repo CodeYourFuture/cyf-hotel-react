@@ -15,7 +15,7 @@ const Bookings = () => {
 
   useEffect(() => {
 
-    fetch(`https://cyf-react.glitch.me/delayed`)
+    fetch(`https://temporary-cyf-react.up.railway.app/`)
     .then((res) => {
       if (!res.ok) {
           throw Error("Failed to fetch bookings");
