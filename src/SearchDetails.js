@@ -56,7 +56,7 @@ function SearchDetails({ detail, updateProfile, customerProfile }) {
             fetchProfileData();
           }}
         >
-          Show Profile
+          Show Profile !
         </button>
       </td>
     </tr>
