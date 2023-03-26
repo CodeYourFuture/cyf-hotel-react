@@ -10,7 +10,7 @@ const TouristInfoCards = () => {
         />
         <div className="card-body">
           <a href="HTTPS://peoplemakeglasgow.com" className="btn btn-primary">
-            Glasgow
+            Visit Glasgow
           </a>
         </div>
       </div>
@@ -24,7 +24,7 @@ const TouristInfoCards = () => {
             href="https://www.visitmanchester.com/"
             className="btn btn-primary"
           >
-            Manchester
+            Visit Manchester
           </a>
         </div>
       </div>
@@ -35,12 +35,12 @@ const TouristInfoCards = () => {
         />
         <div className="card-body">
           <a href="https://www.visitlondon.com/" className="btn btn-primary">
-           london
+            Visit london
           </a>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default TouristInfoCards;

@@ -5,15 +5,17 @@ import "./App.css";
 import Heading from "./Heading";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant";
-
+import Hero from "./Hero";
 
 const App = () => {
   return (
     <div className="App">
       <Heading />
-      <Bookings />
-      < Restaurant />
+      <Hero />
       <TouristInfoCards />
+      <Bookings />
+      <Restaurant />
+
       <Footer />
     </div>
   );

@@ -8,14 +8,22 @@
 }
 
 .App-header {
-  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
   height: 50px;
-  padding: 20px;
-  color: white;
+  padding: 30px;
+  color: hwb(0 0% 100%);
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  width: 100%;
 }
 
 .App-title {
@@ -25,6 +33,20 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+
+  background-image: url(https://hospitality-on.com/sites/default/files/2023-02/aron-van-de-pol-tZDtyUrYrFU-unsplash.jpg);
+  background-size: cover;
+  height: 30em;
+  color: #ffffff;
 }
 
 @keyframes App-logo-spin {
@@ -51,18 +73,25 @@ tr {
   padding-top: 20px;
   text-align: center;
   list-style-type: none;
-
 }
-.card-container{
+.card-container {
   display: flex;
+  justify-content: center;
   gap: 20px;
+  padding-top: 20px;
 }
 .card {
   width: 18rem;
 }
 
-img {
-  width: 80px;
+.card img {
+  height: 200px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.logo-img {
+  width: 40px;
 }
 
 .selected-color {
