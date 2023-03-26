@@ -4,7 +4,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://temporary-cyf-react.onrender.com")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP ERROR!: ${res.status}`);
@@ -19,7 +19,7 @@ const Bookings = () => {
         }, 1000);
       })
       .catch((err) => {
-        setErrorMessage("This is ERROR");
+        setErrorMessage(err.message);
         setLoadingData(false);
       });
   }, []);
