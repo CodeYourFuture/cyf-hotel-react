@@ -34,7 +34,7 @@ const Bookings = ({ bookings, setBookings }) => {
     setIsLoading(true);
     const fetchData = async () => {
       try {
-        let response = await fetch("https://cyf-react.glitch.me/");
+        let response = await fetch("https://temporary-cyf-react.onrender.com/");
 
         if (response.status >= 400 && response.status < 600) {
           throw new Error("Bad response from server");

@@ -9,7 +9,7 @@ const BookingsRow = ({ guest, changeGuestProfile }) => {
   useEffect(() => {
     const fetchGuest = async () => {
       const response = await fetch(
-        `https://cyf-react.glitch.me/customers/${guest.id}`
+        `https://temporary-cyf-react.onrender.com/customers/${guest.id}`
       );
       const data = await response.json();
       setFinalData(data);
