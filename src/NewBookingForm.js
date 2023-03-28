@@ -32,14 +32,14 @@ function NewBookingForm(props) {
   function handleSubmitButton(event) {
     event.preventDefault();
     const newBooking = {
-        title:title,
-        firstName:firstName,
-        surname:surname,
-        email:email,
-        roomId:roomId,
-        checkInDate: checkInDate,
-        checkOutDate:checkOutDate,
-        id: props.bookings.length +1
+      title: title,
+      firstName: firstName,
+      surname: surname,
+      email: email,
+      roomId: Math.floor(Math.random() * 100),
+      checkInDate: checkInDate,
+      checkOutDate: checkOutDate,
+      id: props.bookings.length + 1,
     };
     props.addNewBooking(newBooking);
 

@@ -6,7 +6,6 @@ import SearchButton from "./SearchButton";
 
   function handleSearchInput(event) {
     const value = event.target.value;
-    console.log(target);
     setSearchInput(value);
   }
 
@@ -22,8 +21,7 @@ import SearchButton from "./SearchButton";
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box"
-            onSubmit={handleSubmitButton}>
+          <form className="form-group search-box" onSubmit={handleSubmitButton}>
             <div className="search-row">
               <input
                 value={searchInput}

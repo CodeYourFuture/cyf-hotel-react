@@ -7,7 +7,7 @@ function SearchResults(props) {
   const [customerID, setCustomerID] = useState(null);
 
   console.log(props.bookingResults);
-
+console.log(customerID);
   function handleShowProfile(id) {
     setCustomerID(id);
   }
