@@ -4,22 +4,31 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /* height: 80px; */
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  /* background-color: #222; */
+  height: 70vh;
+  background: url("./footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 20px;
-  color: white;
-  text-align: left;
+  color: rgb(206, 186, 136);
+  text-align: center;
+  padding-top: 130px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  /* font-size: 3rem !important; */
   font-weight: bold;
+  margin-bottom: 120px;
 }
+/* 
+.App-header h1{
+  font-size: 5.5rem;
+} */
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .App-content {
@@ -47,11 +56,156 @@ tr {
   padding-top: 15px;
 }
 
+.card {
+  width: 100%;
+}
+
+/* .cards {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+} */
+
+.images {
+  width: 100%;
+  height: 200px;
+}
+/* --------------Hotel Logo--------------- */
+
+/* .crownImage {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+} */
+
+/* --------------Table css----------- */
+
+.tableList {
+  display: flex;
+  justify-content: left;
+}
+
+.table-div {
+  width: 95%;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+.table-div::-webkit-scrollbar {
+  background: linear-gradient(
+    90deg,
+    white,
+    rgb(255, 166, 181),
+    rgb(237, 55, 55),
+    rgb(255, 98, 0),
+    rgb(61, 255, 61),
+    rgb(73, 222, 255),
+    white
+  );
+}
+.table-div::-webkit-scrollbar-button {
+  border-radius: 10px;
+  background-color: black;
+}
+.table-div::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.525);
+}
+
+/* -------------Footer style ----------- */
+
 .footer {
   padding-top: 20px;
   text-align: center;
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+  margin-top: 20px;
+  /* background-image: url(""); */
 }
 
-.card {
-  width: 18rem;
+.footer li {
+  list-style: none;
+}
+
+.card-body {
+  background-color: rgb(62, 62, 62);
+  color: aliceblue;
+}
+
+/* ---------- orders style -------------- */
+.orders {
+  width: 95%;
+  background-image: linear-gradient(130deg, rgb(62, 62, 62), gray);
+  color: white;
+  /* background-color: rgb(62, 62, 62); */
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.orders h3 {
+  text-align: center;
+  padding: 0.5em;
+}
+
+.orders-summery {
+  text-align: center;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.orders-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 1em;
+  flex-direction: column;
+}
+
+/* ------------ btn style order ---------- */
+.btnOrder button {
+  margin-left: 50px;
+}
+
+.btnOrder {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+/* -------------  Bookings component Loading... --------------- */
+
+.loadingParagraph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(62, 62, 62);
+  color: white;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+/* -------------- */
+
+.btn-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #007bff;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  cursor: pointer;
 }

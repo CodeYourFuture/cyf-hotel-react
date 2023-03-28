@@ -1,0 +1,64 @@
+.contain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.orderFood{
+    left: 0;
+}
+
+.buttonOrder {
+    margin-right: 80px;
+}
+
+.resetBtn {
+    background-color: gray;
+    border: gray;
+    justify-content: center;
+    align-items: center;
+    opacity: .5;
+}
+
+.resetBtn:hover {
+    background-color: gray;
+    border: gray;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    box-shadow: 1px 1px 10px rgb(57, 57, 57);
+}
+
+.removeBtn {
+    background-color: red;
+    border: red;
+    justify-content: center;
+    align-items: center;
+    opacity: .5;
+}
+
+.removeBtn:hover {
+    background-color: red;
+    border: red;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    box-shadow: 1px 1px 10px rgb(255, 32, 32);
+}
+
+.addBtn {
+    background-color: rgb(0, 102, 255);
+    border: rgb(0, 102, 255);
+    justify-content: center;
+    align-items: center;
+    opacity: .8;
+}
+
+.addBtn:hover {
+    background-color: rgb(0, 102, 255);
+    border: rgb(0, 102, 255);
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    box-shadow: 1px 1px 10px rgb(0, 17, 255);
+}

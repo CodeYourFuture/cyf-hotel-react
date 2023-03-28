@@ -1,0 +1,53 @@
+.App-header h1 {
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+.crownImage {
+        display: block;
+        width: 250px;
+        height: 250px;
+        margin: auto auto;
+    }
+
+
+@media screen and (min-width:500px) {
+    
+}
+@media screen and (min-width:800px) {
+    .crownImage {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+    
+        .App-header {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+    
+        .App-header h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        
+}
+@media screen and (min-width:1024px) {
+    .cards {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 0 auto;
+      }
+}
