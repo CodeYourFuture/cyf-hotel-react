@@ -13,9 +13,9 @@ function CustomerProfile(props) {
   }, [props.id]);
 
   return (
-    <div>
+    <div className="profile-card">
       {profile && (
-        <div>
+        <div className="profile-details">
           <p>Customer {props.id} Profile</p>
           <p>
             Name: {profile.firstName} {profile.surname} ({profile.title})

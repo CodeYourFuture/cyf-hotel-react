@@ -66,7 +66,7 @@ tr {
 }
 
 .card {
-  width: 20rem;
+  width: 25rem;
   border: 3px solid rgb(158, 141, 92);
 }
 
@@ -81,7 +81,7 @@ tr {
  }
 
  .info-image{
-background-image: url("https://cdn.audleytravel.com/3611/2579/79/15975659-lake-bled-slovenia.jpg");
+background-image: url("https://i.pinimg.com/1200x/fb/79/bf/fb79bf862de1e1586fc6aac0aad1e4c1.jpg");
 background-image: "./ima";
   background-position: center;
   background-size: cover;
@@ -93,6 +93,21 @@ background-image: "./ima";
  img{
   height: 25rem;
  }
+
+ .forms-container{
+  background-color: rgb(245, 245, 239);
+  background-image: url(https://wallpapercosmos.com/w/full/f/5/2/1218236-2560x1440-desktop-hd-gold-leaf-background-image.jpg);
+ }
+
+ .registration-form p{
+  font-size: 2em;
+  color: aliceblue;
+  margin-top: 20px;
+ }
+
+ .input-area{
+      border: 10px solid rgb(180, 141, 43);
+      }
 
  .btn {
   display: flex;
@@ -115,7 +130,7 @@ background-image: "./ima";
  }
 
  .newSelectedRows{
-  color: black;
+  color: rgb(176, 5, 5);
   background-color: rgb(228, 185, 31);
  }
 
@@ -127,6 +142,17 @@ background-image: "./ima";
   padding: 2rem;
  }
 
+ .profile-card{
+  background-color: rgb(94, 213, 67);
+  text-align: center;
+  background-image: url("https://ucarecdn.com/352b3a54-3b22-440d-8124-00f3a39c9e0c/");
+  color: rgb(106, 3, 3);
+  font-weight: 900;
+  background-repeat: repeat-x;
+  border: 3px solid rgb(81, 2, 41);
+  height: 20em;
+ }
+
  h3{
   display: flex;
   justify-content: center;
@@ -135,7 +161,6 @@ background-image: "./ima";
   font-weight: 800;
   color: rgb(67, 5, 67);
   font-size: 2rem;
-  
  }
 
 .menu{
@@ -232,8 +257,9 @@ text-align: center;
 list-style: none;
 font-style: italic;
 font-weight: 800;
-color: rgb(90, 3, 90);
+color: rgb(27, 1, 27);
 font-size: 1.2rem;
+background-color: goldenrod;
 }
 
  .registration-form p {
@@ -242,4 +268,20 @@ display: flex;
 justify-items: center;
 align-items: center;
  }
+
+ .text-center{
+  color: aliceblue;
+  margin: 50px 0px 30px 0px;
+  font-size: 2em;
+  font-style: italic;
+ }
+
+ .search-wrapper{
+  border: 3px solid darkgoldenrod;
+    margin-bottom: 50px;
+  }
+ 
+  .table.table.table-responsive{
+    color: aliceblue;
+  }
 

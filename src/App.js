@@ -4,9 +4,9 @@ import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
 // import SearchResults from "./SearchResults";
 import Footer from "./Footer";
-import LondonImage from "./images-folder/london-tourists.jpeg";
-import ManchesterImage from "./images-folder/manchester-pic.jpeg";
-import GlasgowImage from "./images-folder/visit-glasgow.jpeg";
+import LondonImage from "./images-folder/london-skyline.jpeg";
+import ManchesterImage from "./images-folder/manchester-ski.jpeg";
+import GlasgowImage from "./images-folder/glasgow-skyline.jpeg";
 import Restaurant from "./Restaurant";
 
 import "./App.css";

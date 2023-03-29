@@ -50,7 +50,7 @@ function Bookings() {
       {loading ? (
         <p>Please wait while we fetch the info requested</p>
       ) : (
-        <div>
+        <div className="forms-container">
           {errorMessage ? (
             <p>{errorMessage}</p>
           ) : (

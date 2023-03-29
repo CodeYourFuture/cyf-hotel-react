@@ -84,13 +84,13 @@ function NewBookingForm(props) {
           onChange={handleBookingForm}
           value={email}
         />
-        <input
+        {/* <input
           type="text"
           name="roomId"
           placeholder="roomId"
           onChange={handleBookingForm}
           value={roomId}
-        />
+        /> */}
         <input
           type="date"
           name="checkInDate"
@@ -106,14 +106,14 @@ function NewBookingForm(props) {
           onChange={handleBookingForm}
           value={checkOutDate}
         />
-
+{/* 
         <input
           type="text"
           name="totalNumOfNights"
           placeholder="totalNumOfNights"
           onChange={handleBookingForm}
           value={totalnumOfNights}
-        />
+        /> */}
 
         <button className="btn btn-primary" onClick={handleSubmitButton}>
           Click to Submit Form
