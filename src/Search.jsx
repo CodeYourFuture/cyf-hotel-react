@@ -22,7 +22,7 @@ const Search = ({ search }) => {
       <div className="row search-wrapper">
         <div className="col">
           <form className="form-group search-box" onSubmit={handleSearch}>
-            <label htmlFor="customerName">Customer name</label>
+            {/* <label htmlFor="customerName">Customer name</label> */}
             <div className="search-row">
               <input
                 type="text"

@@ -1,5 +1,5 @@
 const CustomerProfile = ({ customerData }) => {
-  console.log(customerData);
+  // console.log(customerData);
 
   return (
     <div>

@@ -1,3 +1,7 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -12,15 +16,17 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-
-  background-color: #222;
+  background-color: #ffffff;
   height: 50px;
   padding-left: 10px;
-  color: white;
+  color: rgb(46, 46, 46);
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  position: sticky;
+  z-index: 1;
+  top: 0;
 }
 
 .App-title {
@@ -42,6 +48,7 @@
 }
 .search {
   padding: 5px 0 20px 0;
+  border-top: 2px solid #e9ecef;
 }
 
 tr {
@@ -56,6 +63,19 @@ tr {
   padding-top: 20px;
   text-align: center;
 }
+
+/* .........................................................Hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(https://images.pexels.com/photos/302831/pexels-photo-302831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-position: center right;
+  background-repeat: no-repeat;
+  height: 30rem;
+  color: #fff;
+}
 /* .........................................................Custom CSS */
 
 .headerContainer {
@@ -69,7 +89,6 @@ tr {
   margin-right: 10px;
   padding: 5px;
   margin-left: 10px;
-  filter: invert(1);
 }
 
 .cardContainer {
