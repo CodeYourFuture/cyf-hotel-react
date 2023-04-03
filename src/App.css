@@ -18,6 +18,10 @@
   font-weight: bold;
 }
 
+.App-header img {
+  width: 2rem;
+}
+
 .App-title {
   font-size: 1.5em;
 }
@@ -54,4 +58,17 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.row-highlighted {
+  background-color: rebeccapurple;
+  color: #fff;
+}
+
+.tableProfileContainer {
+  display: flex;
+}
+
+.customerProfile {
+  margin: 2rem 0 0 3rem;
 }
