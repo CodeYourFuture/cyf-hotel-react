@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
+import NewBookingForm from "./NewBookingForm.js";
 
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
@@ -71,6 +72,9 @@ const Bookings = () => {
           </div>
       ): null
       }
+      <NewBookingForm 
+      bookingsList= {bookings}
+      addNewBooking={setBookings} />
     </div>
   );
 };
