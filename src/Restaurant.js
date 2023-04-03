@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import RestaurantButton from "./RestaurantButton";
+
+const Order = (props) => {
+  const [orders, setOrders] = useState(0);
+  
+  function orderOne() {
+    setOrders(orders + 1);
+  }
+  return (
+    <li>
+      {props.orderType}: {orders}
+      <RestaurantButton handleClick={orderOne} />
+    </li>
+  );
+}
+
 
 const Restaurant = () => {
-  const pizzas = 0;
+  // const [orders, setOrders] = useState(0);
+  // const orderOne = () => {
+  //   setOrders(orders + 1);
+  // };
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+        <Order orderType="Pizzas" />
+        <Order orderType="Salads" />
+        <Order orderType="Chocolate" />
       </ul>
     </div>
   );

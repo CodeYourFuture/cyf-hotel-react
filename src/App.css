@@ -54,4 +54,48 @@ tr {
 
 .card {
   width: 18rem;
+  margin-top: 20px;
+  margin-right: auto;
+}
+
+.card img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 430px;
+  height: 320px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-deck {
+  padding-top: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h5 {
+  text-align: center;
+}
+
+.App-header img {
+  width: 80px;
+  height: 80px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer {
+  background: #000;
+  color: white;
+    width: 100vw;
+    padding: 20px;
+    padding-bottom: 40px;
+    text-align: center;
 }

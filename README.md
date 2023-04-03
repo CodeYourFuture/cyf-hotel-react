@@ -1,3 +1,7 @@
+Link to Netlify https://cyf-olenareukova-hotel-react.netlify.app/
+
+_____________
+
 A hotel booking application in React. Homework for the [CodeYourFuture React module](https://codeyourfuture.github.io/syllabus-master/react/)
 
 ![Bookings Search page](Bookings.png)
@@ -216,13 +220,13 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** Each column in the table should be clickable to sort results in ascending or descending order.
 
-#### 26. Validate new booking 
+#### 26. Validate new booking
 
 **Instructions:** Add validation to some fields from exercise 24: the first name and last name must not be empty, the email must contain exactly 1 `@` symbol, and at least one `.` symbol after the `@`; the room ID must be a number between 0 and 100. If the fields do not contain correct information when the 'Submit' button is pressed, display a red error message at the top of the page, but do not clear the text already in the field.
 
 **Test:** An invalid input displays an error message after the 'Submit' button is pressed (e.g. an email like `react@com` is invalid). A valid input shows the correct values at the bottom of the page.
 
-**Reflection:** Validating user input is an important part of any application. Without checking the input, you might see unexpected errors when working with the data later. 
+**Reflection:** Validating user input is an important part of any application. Without checking the input, you might see unexpected errors when working with the data later.
 
 What do you think would happen if you were asked to remove a booking for room number '81', but the user had typed 'eightyOne' or 'EIGHTY ONE'?
 
@@ -234,27 +238,29 @@ What do you think would happen if you were asked to remove a booking for room nu
 
 **Test:** The 'Submit' button is initially not clickable, and becomes clickable once every field has the correct input.
 
-**Reflection:** You have used native form validations in HTML. How have you improved this feature with React? 
+**Reflection:** You have used native form validations in HTML. How have you improved this feature with React?
 
 As a user of this booking system, would you prefer:
+
 - To find out you made a mistake when you submit the whole form?
 - To find out you made a mistake after each input?
 
 #### 28. Date picker
 
-**Instructions:** Add the [js-datepicker](https://www.npmjs.com/package/js-datepicker) package to your project using `npm install`, and import it at the top of the file. Add different IDs to your 'check in date' and 'check out date' `<input>` elements, then create two date pickers using `const checkInPicker = datepicker(YOUR_ID)` (where `YOUR_ID` is the ID you assigned to your check in/check out date elements). 
+**Instructions:** Add the [js-datepicker](https://www.npmjs.com/package/js-datepicker) package to your project using `npm install`, and import it at the top of the file. Add different IDs to your 'check in date' and 'check out date' `<input>` elements, then create two date pickers using `const checkInPicker = datepicker(YOUR_ID)` (where `YOUR_ID` is the ID you assigned to your check in/check out date elements).
 
 **Hint:** Read the [js-datepicker usage guide](https://www.npmjs.com/package/js-datepicker#basic-usage)
 
 **Test:** The date picker appears when you click on the 'check in date' and 'check out date' input elements.
 
-**Reflection:** Using `js-datepicker` in this exercise allows you to practice installing and working with packages in JavaScript. 
+**Reflection:** Using `js-datepicker` in this exercise allows you to practice installing and working with packages in JavaScript.
 
 Packages contain new functions and properties to work with that may not be available in native JavaScript/HTML. Using packages can often save time instead of writing your own functions, as you are importing code that someone else has written. However, this can have downsides; not all packages are high quality, and some may have bugs or may reduce accessibility by recreating native elements (`js-datepicker` recreates HTML's native [datepicker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) element).
 
 Think about some of the code you have written in this lesson - are there any packages available that might have helped you to complete the exercises?
 
 For example, exercise 26 and 27 used validation. Searching npmjs.com for '[validate](https://www.npmjs.com/search?q=validate)' shows multiple packages, such as '[validator](https://www.npmjs.com/package/validator)' and '[Validate](https://www.npmjs.com/package/Validate)'. Open both of these packages in your browser, and consider the following questions:
+
 - Is it clear what this package does? Will it solve my specific problem better than writing my own code?
 - Do I trust that the code in this package is safe to run on my machine? Do other people trust this package? (Hint: look at weekly downloads, last update, dependents, and visit the repository)
 - Is this package accessible? Will it work on all browsers?
