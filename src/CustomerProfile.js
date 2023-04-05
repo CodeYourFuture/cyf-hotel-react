@@ -22,7 +22,7 @@ function CustomerProfile(props) {
           </p>
           <p>Email: {profile.email}</p>
           <p>Phone: {profile.phoneNumber}</p>
-          <p>Status: {profile.vip ? "V.I.P Customer." : "NOT V.I.P"} </p>
+          <p>Status: {(profile.vip) ? "VIP Customer" : "NOT VIP"} </p>
         </div>
       )}
     </div>
