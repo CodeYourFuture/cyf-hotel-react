@@ -3,6 +3,7 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import { useState, useEffect } from "react";
 import { LoadingSpinner } from "./LoadingSpinner.js";
+import { NewBookingForm } from "./NewBookingForm.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -10,7 +11,6 @@ const Bookings = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const search = searchVal => {
-    console.log(`TO DO!", ${searchVal}`);
     const filteredBookings = bookings.filter(item => {
       return (
         item.firstName.toLowerCase().includes(searchVal) ||
@@ -21,19 +21,16 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    // fetch("https://cyf-react.glitch.me")
-    // fetch(`https://cyf-react.glitch.me/delayed`)
-    fetch("https://cyf-react.glitch.me/error")
+    fetch("https://cyf-react.glitch.me")
+      // fetch(`https://cyf-react.glitch.me/delayed`)
+      // fetch("https://cyf-react.glitch.me/error")
       .then(response => {
-        // console.log(response);
         if (!response.ok) {
-          // throw new Error(response.statusText);
           setLoading(false);
         }
         return response.json();
       })
       .then(data => {
-        console.log(data);
         setErrorMessage(data.error);
         setBookings(data);
       })
@@ -43,22 +40,19 @@ const Bookings = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  return (
-    // <div className="App-content">
-    //   <div className="container">
-    loading === true ? (
-      <LoadingSpinner />
-    ) : !!errorMessage ? (
-      <div>{errorMessage}</div>
-    ) : (
+  return loading === true ? (
+    <LoadingSpinner />
+  ) : !!errorMessage ? (
+    <div>{errorMessage}</div>
+  ) : (
+    <div>
+      <NewBookingForm />
       <div>
-        <div>
-          <Search findingCustomersInfo={search} />
-          <SearchResults results={bookings} />
-        </div>
+        <Search findingCustomersInfo={search} />
+        <SearchResults results={bookings} />
       </div>
-      // )
-    )
+    </div>
+    // )
   );
 };
 

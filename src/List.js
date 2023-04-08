@@ -1,8 +1,8 @@
-export const List = ({ array }) => {
+export const List = ({ item }) => {
   return (
-    <ul className="footer-ul">
-      {array.map(item => {
-        return <li key={item}>{item}</li>;
+    <ul className="list">
+      {item.map(listItem => {
+        return <li key={listItem}>{listItem}</li>;
       })}
     </ul>
   );

@@ -6,18 +6,15 @@ const Search = ({ findingCustomersInfo }) => {
   let [searchInput, setSearchInput] = useState("");
 
   function handleSearchInput(event) {
-    // console.log(event.target.value);
     setSearchInput(event.target.value);
   }
 
   function handleSubmit(event) {
-    console.log(searchInput);
     event.preventDefault();
     findingCustomersInfo(searchInput);
   }
 
   return (
-    // <div className="search">
     <div>
       <div className="page-header">
         <h4 className="text-left">Search Bookings</h4>

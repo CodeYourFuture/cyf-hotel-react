@@ -1,11 +1,5 @@
 import ClipLoader from "react-spinners/ClipLoader";
 
-// const override = css`
-//   display: block;
-//   margin: 0 auto;
-//   border-color: red;
-// `;
-
 export const LoadingSpinner = () => {
   return (
     <div className="loading-container">

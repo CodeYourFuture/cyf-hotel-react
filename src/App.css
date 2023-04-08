@@ -16,12 +16,10 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
-  /* border-bottom: 1px solid rgb(237, 229, 230); */
 }
 
 .header-logo-name {
   grid-area: heading;
-
   display: flex;
   flex-direction: row;
   gap: 2px;
@@ -33,7 +31,6 @@
 }
 
 .hotel-name {
-  /* border: 2px dotted white; */
   text-shadow: 2px 2px #8a8585;
   font-size: 1.3em;
   align-self: center;
@@ -97,7 +94,6 @@ a:hover {
 }
 
 .hero-wrapper {
-  /* border: 2px dotted red; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -105,11 +101,9 @@ a:hover {
   align-items: center;
   text-align: center;
   height: 400px;
-  /* border: 6px solid lime; */
 }
 
 .hero-section {
-  /* background-color: rgb(231, 226, 226); */
   opacity: 6;
   padding: 20px;
   border-radius: 20px;
@@ -131,7 +125,6 @@ h1 {
   left: 0;
   width: 100vw;
   height: 600px;
-  /* border: 6px solid blue; */
 }
 
 .hero-text {
@@ -140,14 +133,11 @@ h1 {
 }
 
 .hero-p {
-  /* border-top: 6px solid #7c0694; */
-  /* border-top: 6px solid white; */
   text-shadow: 2px 2px #b8b2b2;
   display: inline-block;
   font-weight: bold;
   padding: 0 30px 10px 30px;
   font-size: 26px;
-  /* color: #9110a5; */
   color: black;
 }
 
@@ -173,14 +163,12 @@ h1 {
   grid-gap: 35px;
   padding: 50px 0px 30px 85px;
   margin: 50px 0 40px 0;
-  /* border: 2px dotted red; */
 }
 
 .card {
   box-shadow: 0px 15px 10px -15px rgb(103, 101, 101);
   text-align: left;
   border: none;
-  /* border-radius: 20px; */
 }
 
 .card-body {
@@ -199,7 +187,6 @@ h1 {
   position: absolute;
   z-index: 500;
   top: 166px;
-  /* bottom: 0; */
   left: 0;
   padding: 5px 12px 5px 10px;
   background-color: #f2def2;
@@ -211,7 +198,6 @@ h1 {
 }
 
 .main-content {
-  /* border: 2px solid blue; */
   padding: 20px 100px;
 }
 
@@ -248,7 +234,6 @@ td {
   flex-direction: row;
   justify-content: flex-start;
   gap: 100px;
-  /* border: 2px dotted red; */
   padding-left: 0;
 }
 
@@ -262,7 +247,6 @@ li {
   align-items: center;
   padding: 20px 0;
   gap: 10px;
-  /* border: 2px dotted blue; */
 }
 
 .App-footer-logo {
@@ -293,7 +277,7 @@ tr {
   text-align: center;
 }
 
-.footer-ul {
+.list {
   list-style: none;
   background-color: #2d012d;
   background-color: #4f024f;
@@ -304,12 +288,9 @@ tr {
 
 .customer-profile {
   padding: 0;
-  /* margin: 0;
-  border: 2px dotted red; */
 }
 
 .App-content {
-  /* border: 2px dotted red; */
   padding: 0;
   margin: 0;
 }
@@ -330,5 +311,4 @@ tr {
 
 .loading-container {
   text-align: center;
-  /* border: 2px solid red; */
 }

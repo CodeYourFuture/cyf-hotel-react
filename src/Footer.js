@@ -1,11 +1,12 @@
 import { List } from "./List";
 
+const footerElements = [
+  "123 Fake Street, London, E1 4UD",
+  "hello@fakehotel.com",
+  "0123 456789"
+];
+
 const Footer = () => {
-  const footerElements = [
-    "123 Fake Street, London, E1 4UD",
-    "hello@fakehotel.com",
-    "0123 456789"
-  ];
   return (
     <div>
       <div className="App-footer-logo">
@@ -15,12 +16,7 @@ const Footer = () => {
         />
         <p className="hotel-name">CYF Hotel</p>
       </div>
-      <List array={footerElements} />
-      {/* <ul className="footer-ul">
-        {footerElements.map((item) => {
-          return <li key={item}>{item}</li>;
-        })}
-      </ul> */}
+      <List item={footerElements} />
     </div>
   );
 };
