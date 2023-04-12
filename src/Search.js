@@ -1,23 +1,41 @@
-import React from "react";
+import { useState } from "react";
+import SearchButton from "./SearchButton";
 
-const Search = () => {
+const Search = props => {
+  const [searchInput, setSearchInput] = useState("");
+  const handleSearchInput = event => {
+    console.log(!event.target.value ? 1 : 2);
+    setSearchInput(event.target.value);
+    console.log(searchInput);
+  };
+  const onSubmitHandler = event => {
+    event.preventDefault();
+    props.search(searchInput);
+    console.log(event.target);
+    console.log(searchInput);
+    console.log(props);
+    setSearchInput("");
+  };
   return (
-    <div className="search">
-      <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
+    <div className="">
+      <div className="">
+        <h4 className="">Search Bookings</h4>
+        <p>type "ALL" in search for all customers</p>
       </div>
-      <div className="row search-wrapper">
-        <div className="col">
-          <form className="form-group search-box">
+      <div className=" search-wrapper">
+        <div className="">
+          <form className="search-box" onSubmit={onSubmitHandler}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
                 type="text"
                 id="customerName"
-                className="form-control"
-                placeholder="Customer name"
+                className=""
+                placeholder="Customers first/second name"
+                value={searchInput}
+                onChange={handleSearchInput}
               />
-              <button className="btn btn-primary">Search</button>
+              <SearchButton />
             </div>
           </form>
         </div>
