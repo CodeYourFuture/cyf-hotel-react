@@ -1,0 +1,57 @@
+.image-slider {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 34, 67, 0.3);
+}
+
+.image-slider .frame {
+  width: 100%;
+  height: 550px;
+}
+
+.image-slider .boxes {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.image-slider .box {
+  position: relative;
+  flex: 1 1 auto;
+  width: 20%;
+  background: grey;
+  transition: all 0.8s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.image-slider .box:hover {
+  width: 100%;
+}
+
+.image-slider .box-1 {
+  background-image: url("./media/HotelImage_1.jpg");
+}
+.image-slider .box-2 {
+  background-image: url("./media/HotelImage_2.jpg");
+}
+.image-slider .box-3 {
+  background-image: url("./media/HotelImage_3.webp");
+}
+.image-slider .box-4 {
+  background-image: url("./media/HotelImage_4.webp");
+}

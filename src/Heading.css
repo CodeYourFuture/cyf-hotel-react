@@ -1,0 +1,27 @@
+.navbar {
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-size: 28px;
+  font-family: var(--font-header);
+}
+
+.nav-item {
+  color: white !important;
+  font-size: 25px;
+  padding: 0 20px !important;
+}
+
+.nav-item:hover {
+  color: var(--pink) !important;
+  cursor: pointer;
+}
+
+.logo {
+  padding-left: 20px;
+  height: 70px;
+  width: auto;
+}

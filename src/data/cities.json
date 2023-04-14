@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "London",
+    "description": "It is the largest metropolis in the United Kingdom, and it is also the country's economic, transportation, and cultural centre. It is the largest metropolis in the United Kingdom, and it is also the country's economic, transportation, and cultural centre. ",
+    "image": "https://i.natgeofe.com/n/93231b5d-3b4f-4bd6-bcf4-4172ebda2011/parliment-square-london-england_3x2.jpg",
+    "link": "https://www.visitlondon.com/"
+  },
+  {
+    "id": 2,
+    "name": "Glasgow",
+    "description": "Glasgow is a port city on the River Clyde in Scotland's western Lowlands. ",
+    "image": "https://www.greatbritishbucketlist.com/wp-content/uploads/2021/04/glasgow-4-1024x682.jpg",
+    "link": "http://peoplemakeglasgow.com/"
+  },
+  {
+    "id": 3,
+    "name": "Manchester",
+    "description": "Manchester is a major city in the northwest of England with a rich industrial heritage.",
+    "image": "https://eu-assets.simpleview-europe.com/manchester2016/imageresizer/?image=%2Fdbimgs%2Folympic-parade%20%281%29-min.jpg&action=BlogDetailContent",
+    "link": "https://www.visitmanchester.com/"
+  }
+]
