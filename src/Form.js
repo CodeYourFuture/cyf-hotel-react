@@ -6,26 +6,24 @@ const Form = ({ addCustomer, data }) => {
 
   useEffect(() => {
     setFormInput({
-      id: data.length,
+      id: "",
       firstName: "",
-      surename: "",
+      surname: "",
       email: "",
       title: "",
       roomId: 10,
-      checkIndate: Date.now(),
-      checkOutDate: Date.now
+      checkInDate: "",
+      checkOutDate: ""
     });
   }, []);
-  console.log(data.length);
-  console.log(formInput);
+
+  const submitHandler = event => {
+    event.preventDefault();
+    addCustomer(formInput);
+  };
 
   return (
-    <form
-      onSubmit={event => {
-        event.preventDefault();
-        addCustomer(formInput);
-      }}
-    >
+    <form className="form-container" onSubmit={submitHandler}>
       <label for="firstName">FirstName</label>
       <input
         type="text"
@@ -43,17 +41,7 @@ const Form = ({ addCustomer, data }) => {
         className="form-input"
         placeholder="Surename"
         onChange={event =>
-          setFormInput({ ...formInput, surename: event.target.value })
-        }
-      />
-      <label for="email">Email</label>
-      <input
-        type="text"
-        id="email"
-        className="form-input"
-        placeholder="Email"
-        onChange={event =>
-          setFormInput({ ...formInput, email: event.target.value })
+          setFormInput({ ...formInput, surname: event.target.value })
         }
       />
       <label for="title">Title</label>
@@ -66,7 +54,35 @@ const Form = ({ addCustomer, data }) => {
           setFormInput({ ...formInput, title: event.target.value })
         }
       />
-      <button>Submit</button>
+      <label for="email">Email</label>
+      <input
+        type="text"
+        id="email"
+        className="form-input"
+        placeholder="Email"
+        onChange={event =>
+          setFormInput({ ...formInput, email: event.target.value })
+        }
+      />
+      <label for="checkInDate">checkInDate</label>
+      <input
+        type="date"
+        id="checkInDate"
+        className="form-input"
+        onChange={event =>
+          setFormInput({ ...formInput, checkInDate: event.target.value })
+        }
+      />
+      <label for="checkOutDate">checkOutDate</label>
+      <input
+        type="date"
+        id="checkOutDate"
+        className="form-input"
+        onChange={event =>
+          setFormInput({ ...formInput, checkOutDate: event.target.value })
+        }
+      />
+      <button className="form-button">Submit</button>
     </form>
   );
 };

@@ -14,6 +14,16 @@ const SearchResults = props => {
     setCustomerProfile(bookingId);
   };
 
+  const deleteHandler = bookingId => {
+    console.log(bookingId);
+    fetch(`https://hotel-server-boshram.glitch.me/bookings/${bookingId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+  };
+
   return (
     <>
       <table className="table">
@@ -52,6 +62,9 @@ const SearchResults = props => {
                 <td>
                   <button onClick={() => profilehandler(person.id)}>
                     Show profile
+                  </button>
+                  <button onClick={() => deleteHandler(person.id)}>
+                    Delete profile
                   </button>
                 </td>
               </tr>

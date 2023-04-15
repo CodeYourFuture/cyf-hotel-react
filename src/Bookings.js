@@ -13,10 +13,10 @@ const Bookings = () => {
   //   setBookings(bookings.concat(FakeBookings));
   // }
   useEffect(() => {
-    fetch(`https://temporary-cyf-react.onrender.com`).then(res => {
+    fetch(`https://hotel-server-boshram.glitch.me/bookings`).then(res => {
       if (res.ok) {
         return res.json().then(data => {
-          setData(data);
+          setData(data.data);
           setLoading(false);
         });
       } else {
@@ -31,9 +31,14 @@ const Bookings = () => {
   };
 
   const addCustomer = input => {
-    // setData([...data,input])
-    console.log(data);
     console.log(input);
+    fetch("https://hotel-server-boshram.glitch.me/bookings", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(input)
+    });
   };
 
   const filterData = data.filter(booking =>

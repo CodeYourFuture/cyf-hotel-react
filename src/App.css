@@ -15,6 +15,15 @@
   border-radius: 40px;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 720px;
+  row-gap: 30px;
+}
+
 .App-header {
   background-color: #bbd0ff;
   height: 50px;
@@ -53,6 +62,7 @@
 
 .search {
   padding: 5px 0 20px 0;
+  width: 100%;
 }
 
 .search-row {
@@ -104,28 +114,52 @@ tbody {
   border: 2px solid #b8c0ff;
 }
 
-.btn {
-  background-color: #e7c6ff;
-  color: #5b5757;
-  border: 2px solid #b8c0ff;
-}
-
 .card-img-top {
-  height: 50%;
+  height: 150px;
   width: 100%;
-}
-
-.restaurant-menue {
-  align-self: center;
 }
 
 h3 {
   text-align: center;
 }
+.customer-profile-container {
+  border: 2px solid #e7c6ff;
+  background-color: #b8c0ff;
+}
 
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20px;
+  border: 3px solid #e7c6ff;
+  background-color: #bbd0ff;
+}
+
+.form-button {
+  grid-column: 1/3;
+  width: 150px;
+  justify-self: center;
+  background-color: #e7c6ff;
+}
+
+.restaurant-menue {
+  align-self: center;
+  border: 2px solid #bbd0ff;
+  background-color: #e7c6ff;
+}
 .restaurant-list {
   display: grid;
   grid-template-columns: 1fr auto auto;
   list-style: none;
   column-gap: 5px;
+}
+
+.restaurant-button {
+  background-color: #b8c0ff;
+  color: #5b5757;
+  border: 2px solid #e7c6ff;
+}
+
+ul {
+  padding: 0;
 }

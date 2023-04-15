@@ -4,18 +4,16 @@ const CostomerProfile = ({ customerProfile }) => {
   const [profile, setProfile] = useState("");
 
   useEffect(() => {
-    fetch(
-      `https://temporary-cyf-react.onrender.com/delayed/customers/${customerProfile}`
-    )
+    fetch(`https://hotel-server-boshram.glitch.me/bookings/${customerProfile}`)
       .then(res => res.json())
       .then(data => {
-        setProfile(data);
+        setProfile(data.data);
       });
   }, [customerProfile]);
 
   return (
     customerProfile && (
-      <div>
+      <div className="customer-profile-container">
         <p>Customer Id: {profile.id}</p>
         <p>Customer Email: {profile.email}</p>
         <p>VIP: {profile.vip ? "yes" : "no"}</p>
