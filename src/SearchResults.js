@@ -1,25 +1,36 @@
 import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile.js";
 
-const SearchResults = (props) => {
-  const {
-    id,
-    title,
-    firstName,
-    surname,
-    email,
-    roomId,
-    checkInDate,
-    checkOutDate,
-    nights,
-  } = props;
+const SearchResults = ({
+  id, title,
+  firstName,
+  surname,
+  email,
+  roomId,
+  checkInDate,
+  checkOutDate,
+  nights,
+}) => {
+  // console.log(props);
+  // const {
+  //   id,
+  //   title,
+  //   firstName,
+  //   surname,
+  //   email,
+  //   roomId,
+  //   checkInDate,
+  //   checkOutDate,
+  //   nights,
+  // } = props;
 
   const [isSelected, setIsSelected] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [selectedCustomerId, setSelectedCustomerId] = useState(null);
   const [selectedCustomerEmail, setSelectedCustomerEmail] = useState(null);
 
-  const handleClick = () => {
+  const handleClick = (event) => {
+    console.log(event,id)
     setSelectedCustomerId(id);
     setShowProfile(true);
     setSelectedCustomerEmail(email);
@@ -44,11 +55,16 @@ const SearchResults = (props) => {
       <td>{checkOutDate}</td>
       <td>{nights}</td>
       <td>
-        <button onClick={handleClick} className="showProfile-btn">
+        <button onClick={(event) =>handleClick(event)} className="showProfile-btn">
           Show profile
         </button>
       </td>
-      {showProfile && <CustomerProfile id={selectedCustomerId} />}
+      {showProfile && (
+        <CustomerProfile
+          id={selectedCustomerId}
+          email={selectedCustomerEmail}
+        />
+      )}
     </tr>
   );
 };

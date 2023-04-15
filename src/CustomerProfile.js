@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 
-const CustomerProfile = ({ customerId }) => {
-  const [customerData, setCustomerData] = useState(null);
+const CustomerProfile = ({ id, customeremail }) => {
+  const [customerData, setCustomerData] = useState();
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${customerId}`)
+    fetch(`https://cyf-react.glitch.me/customers/${id}`)
       .then((response) => response.json())
       .then((data) => setCustomerData(data))
       .catch((error) => console.log(error));
-  }, [customerId]);
+  }, [id]);
+  console.log("c data: ", customerData);
 
   if (!customerData) {
     return <p>Loading customer data...</p>;

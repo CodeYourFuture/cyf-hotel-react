@@ -13,7 +13,7 @@ const Bookings = () => {
     setIsLoading(true);
     setErrorMessage("");
 
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://hotel-server-elahe.glitch.me/bookings")
       .then((response) => response.json())
       .then((data) => {
         setIsLoading(false);
@@ -26,7 +26,6 @@ const Bookings = () => {
   }, []);
 
   const search = (searchVal) => {
-    setSearchValue(searchVal);
     const filteredBookings = bookings.filter(
       (booking) =>
         booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
@@ -46,7 +45,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        {/* <Search search={search} searchValue={searchValue} /> */}
+        <Search search={search} />
         <div className="tbl-container">
           <table className="tbl">
             <thead className="tableHead">
