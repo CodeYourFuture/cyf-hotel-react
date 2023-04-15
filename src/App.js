@@ -1,8 +1,8 @@
 import React from "react";
 import Bookings from "./Bookings";
+import Restaurant from "./Restaurant";
 import TouristInfoCards from "./TouristInfoCards";
 import Heading from "./Heading";
-import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 import "./App.css";
 
