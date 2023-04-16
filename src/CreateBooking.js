@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+//creating booking inputs so customer can enter his/her information:
 const CreateBooking = () => {
   const [title, setTitle] = useState("");
   const [firstName, setFirstName] = useState("");
