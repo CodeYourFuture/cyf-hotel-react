@@ -28,9 +28,11 @@ const Bookings = () => {
         value.firstName.toLowerCase().includes(searchVal) ||
         value.surname.toLowerCase().includes(searchVal)
       );
+      
     });
     setBookings(filteredValue, searchVal);
   };
+
 
 
   useEffect(() => {

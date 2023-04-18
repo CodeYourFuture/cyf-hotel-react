@@ -8,7 +8,7 @@
 }
 
 .Heading-logo {
-  width: 10%;
+  width: 5%;
   height: auto;
   margin: 10px;
 }
@@ -59,11 +59,16 @@ tr {
 }
 
 .card {
-  width: 18rem;
-  height: 36rem;
+  width: 20rem;
+  height: 38rem;
+  margin: 30px;
+  padding: 10px;
 }
 .card-container {
-
   display: flex;
   flex-direction: row;
+  /* align-items: center; */
+  justify-content:center;
+  margin: 10px;
+  padding: 10px;
 }
