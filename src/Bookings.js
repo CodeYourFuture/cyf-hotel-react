@@ -7,6 +7,8 @@ const Bookings = () => {
   const [searchInput, setSearchInput] = useState("");
   const [bookings, setBookings] = useState([]);
   const [profile, setProfile] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [handleError, setHandleError] = useState(null);
 
   function setCustomerProfile(id) {
     const currentProfile = bookings.find(result => result.id === id);
@@ -33,29 +35,26 @@ const Bookings = () => {
     setBookings(filteredValue, searchVal);
   };
 
-
-
   useEffect(() => {
     fetch(`https://temporary-cyf-react.onrender.com/`)
-      .then(response => response.json())
-      .then(data => setBookings(data))
-      .catch(error => console.log( "found error ", error ));
-  }, 
-  []);
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        if (data.error) {
+          throw new Error ("Bad response from server")
+        } else {
+          setBookings(data);
+        }
+        setLoading(false);
+      })
+      .catch(error => {
+        setHandleError(error)
+        console.log( "found error ", error );
+      });
+  }, []);
 
-  // useEffect(() => {
-  //   fetch(`https://cyf-react.glitch.me`, {mode: 'no-cors'})
-  //   .then((response) => {
-  //       // console.log("json: ", response.json());
-  //       return response.json();                
-  //   })
-  //   .then(data => {
-  //       console.log("data: ", data);
-      
-  //   }).catch(error => {
-  //       console.log("found error: ", error);
-  //   });
-  // }, [])
+  
 
   return (
     <div className="App-content">
@@ -71,6 +70,10 @@ const Bookings = () => {
           searchInput={searchInput}
           setCustomerProfile={setCustomerProfile}
         />
+        {loading ? <p>Please wait for loading data...</p> : null}
+        {handleError !== "" ? (
+          <p>{`We cannot load the page because an error has occurred.${handleError}`}</p>
+        ) : null}
         {profile && (
           <ul>
             <li key={profile.id}>Customer {profile.id} Profile</li>
