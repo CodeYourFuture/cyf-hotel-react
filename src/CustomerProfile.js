@@ -4,7 +4,7 @@ const CostomerProfile = ({ customerProfile }) => {
   const [profile, setProfile] = useState("");
 
   useEffect(() => {
-    fetch(`https://hotel-server-boshram.glitch.me/bookings/${customerProfile}`)
+    fetch(`https://hotel-server-api.onrender.com/bookings/${customerProfile}`)
       .then(res => res.json())
       .then(data => {
         setProfile(data.data);

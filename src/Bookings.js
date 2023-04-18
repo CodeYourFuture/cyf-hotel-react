@@ -9,36 +9,65 @@ const Bookings = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  // let booking = () =>{
-  //   setBookings(bookings.concat(FakeBookings));
-  // }
   useEffect(() => {
-    fetch(`https://hotel-server-boshram.glitch.me/bookings`).then(res => {
-      if (res.ok) {
-        return res.json().then(data => {
-          setData(data.data);
-          setLoading(false);
-        });
-      } else {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          "https://hotel-server-boshram.glitch.me/bookings"
+        );
+        const data = await response.json();
+        setData(data.data);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
         setError(true);
         setLoading(false);
       }
-    });
+    }
+
+    fetchData();
   }, []);
 
   const search = searchVal => {
     setSearchVal(searchVal.toLowerCase());
   };
 
-  const addCustomer = input => {
-    console.log(input);
-    fetch("https://hotel-server-boshram.glitch.me/bookings", {
-      method: "POST",
+  /////////POST REQUEST/////
+  const addCustomer = async input => {
+    try {
+      const response = await fetch(
+        "https://hotel-server-boshram.glitch.me/bookings",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(input)
+        }
+      );
+
+      const data = await response.json();
+      if (data.success) {
+        setData(data.data);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    }
+  };
+
+  ///////DELETE REQUEST/////
+  const deleteHandler = bookingId => {
+    console.log(bookingId);
+    fetch(`https://hotel-server-boshram.glitch.me/bookings/${bookingId}`, {
+      method: "DELETE",
       headers: {
         "Content-Type": "application/json"
-      },
-      body: JSON.stringify(input)
-    });
+      }
+    })
+      .then(res => res.json())
+      .then(data => setData(data.data));
   };
 
   const filterData = data.filter(booking =>
@@ -48,10 +77,10 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        {error && <span>error</span>}
+        {error && <span>Something Went WRONG</span>}
         {loading && <span>loading...</span>}
         <Search search={search} />
-        <SearchResults data={filterData} />
+        <SearchResults deleteHandler={deleteHandler} data={filterData} />
         <Form addCustomer={addCustomer} data={data} />
       </div>
     </div>

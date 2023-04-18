@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 //first name, surname, email, title, room id, check in date, check out date
 
 const Form = ({ addCustomer, data }) => {
   const [formInput, setFormInput] = useState();
 
-  useEffect(() => {
+  const submitHandler = event => {
     setFormInput({
       id: "",
       firstName: "",
@@ -15,16 +15,13 @@ const Form = ({ addCustomer, data }) => {
       checkInDate: "",
       checkOutDate: ""
     });
-  }, []);
-
-  const submitHandler = event => {
     event.preventDefault();
     addCustomer(formInput);
   };
 
   return (
     <form className="form-container" onSubmit={submitHandler}>
-      <label for="firstName">FirstName</label>
+      <label htmlFor="firstName">FirstName</label>
       <input
         type="text"
         id="firstName"
@@ -34,7 +31,7 @@ const Form = ({ addCustomer, data }) => {
           setFormInput({ ...formInput, firstName: event.target.value })
         }
       />
-      <label for="surename">Surename</label>
+      <label htmlFor="surename">Surename</label>
       <input
         type="text"
         id="sureName"
@@ -44,7 +41,7 @@ const Form = ({ addCustomer, data }) => {
           setFormInput({ ...formInput, surname: event.target.value })
         }
       />
-      <label for="title">Title</label>
+      <label htmlFor="title">Title</label>
       <input
         type="text"
         id="title"
@@ -54,7 +51,7 @@ const Form = ({ addCustomer, data }) => {
           setFormInput({ ...formInput, title: event.target.value })
         }
       />
-      <label for="email">Email</label>
+      <label htmlFor="email">Email</label>
       <input
         type="text"
         id="email"
@@ -64,7 +61,7 @@ const Form = ({ addCustomer, data }) => {
           setFormInput({ ...formInput, email: event.target.value })
         }
       />
-      <label for="checkInDate">checkInDate</label>
+      <label htmlFor="checkInDate">checkInDate</label>
       <input
         type="date"
         id="checkInDate"
@@ -73,7 +70,7 @@ const Form = ({ addCustomer, data }) => {
           setFormInput({ ...formInput, checkInDate: event.target.value })
         }
       />
-      <label for="checkOutDate">checkOutDate</label>
+      <label htmlFor="checkOutDate">checkOutDate</label>
       <input
         type="date"
         id="checkOutDate"
