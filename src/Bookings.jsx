@@ -24,8 +24,11 @@ const Bookings = () => {
 
   // https://raw.githubusercontent.com/CodeYourFuture/cyf-hotel-react/master/src/data/fakeBookings.json - previous api link
   //https://cyf-react.glitch.me/error - error link
+  `https://temporary-cyf-react.onrender.com/delayed`;
   useEffect(() => {
-    fetch(`https://temporary-cyf-react.onrender.com/delayed`)
+    fetch(
+      "https://raw.githubusercontent.com/CodeYourFuture/cyf-hotel-react/master/src/data/fakeBookings.json"
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("HTTP error, status = " + response.status);
