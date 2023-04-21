@@ -1,10 +1,15 @@
 import React from "react";
 
-const RestaurantButton = ({prop}) => {
+const RestaurantButton = ({orderOne, deleteOne}) => {
   return (
-    <button onClick={prop} className="btn btn-primary btn-margin">
-      Add
-    </button>
+    <div>
+      <button onClick={orderOne} className="btn btn-primary btn-margin">
+        Add
+      </button>
+      <button onClick={deleteOne} className="btn btn-primary btn-margin">
+        Delete
+      </button>
+    </div>
   );
 };
 

@@ -89,8 +89,15 @@ tr {
 }
 
 .restaurant {
-  text-align: center;
-  margin: 4rem 15rem;
+   max-width: 60%;
+  margin: 25px auto;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+
+ background: linear-gradient(to bottom, rgba(173, 216, 230, 0.5), rgba(173, 216, 230, 0.5)), #FFFFFF;
+  border: 1px solid #DDD;
+  padding: 20px;
  
 }
 .restaurant-orders {
@@ -107,4 +114,10 @@ tr {
   color: antiquewhite;
   padding: 1rem 1rem;
   text-align: center;
+}
+
+
+.form-width {
+  max-width: 60%;
+  margin: 25px auto;
 }

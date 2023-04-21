@@ -6,7 +6,7 @@ import Heading from "./Heading";
 import TouristInfoCard from "./TouristInfoCards";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant";
-
+import "bootstrap/dist/css/bootstrap.css";
 
 const App = () => {
   const contactDetails = [

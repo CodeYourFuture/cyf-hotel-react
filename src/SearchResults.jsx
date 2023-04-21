@@ -1,38 +1,14 @@
 import React, { useState } from "react";
-import moment from "moment";
 import ResultRow from "./ResultRow";
 import CustomerProfile from "./CustomerProfile";
-// const obj = {a: 1, b: 2}
 
-// const {a, b } = obj
 
 const SearchResults = (props) => {
   const ourObject = props.results;
 
-
-// // stretching
-//   const [bookingData, setBookingData] = useState(result); //stretching
-//   const tableRows = bookingData.map((info) => {
-//     return (
-//       <tr>
-//         <td>{info.id}</td>
-//         <td>{info.name}</td>
-//       </tr>
-//     );
-//   });
-
-//   const addRows = (data) => {
-//     const totalStudents = bookingData.length;
-//     data.id = totalStudents + 1;
-//     const updatedStudentData = [...bookingData];
-//     updatedStudentData.push(data);
-//     setBookingData(updatedStudentData);
-//   };
-
-
   return (
     <div>
-      <table className="table">
+      <table className="table table-sm">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -46,7 +22,7 @@ const SearchResults = (props) => {
             <th scope="col">Number of nights</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           {ourObject.map((result) => (
             <ResultRow
               key={result.id}

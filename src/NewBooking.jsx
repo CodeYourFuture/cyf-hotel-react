@@ -21,71 +21,99 @@ function submitBooking(e){
   }
   return (
     <div>
-      <form>
-        <label>
-          Enter your name:
+      <form class="form-width">
+        <div class="mb-3">
+          <label for="name" class="form-label">
+            Enter your name:
+          </label>
           <input
             type="text"
+            class="form-control"
+            id="name"
             name="name"
             value={formValues["name"] || ""}
             onChange={changeFormValue}
           />
-        </label>
-        <label>
-          Enter your surname:
+        </div>
+        <div class="mb-3">
+          <label for="surname" class="form-label">
+            Enter your surname:
+          </label>
           <input
             type="text"
+            class="form-control"
+            id="surname"
             name="surname"
             value={formValues["surname"] || ""}
             onChange={changeFormValue}
           />
-        </label>
-        <label>
-          Enter your email:
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">
+            Enter your email:
+          </label>
           <input
             type="text"
+            class="form-control"
+            id="email"
             name="email"
             value={formValues["email"] || ""}
             onChange={changeFormValue}
           />
-        </label>
-        <label>
-          Enter your title:
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">
+            Enter your title:
+          </label>
           <input
             type="text"
+            class="form-control"
+            id="title"
             name="title"
             value={formValues["title"] || ""}
             onChange={changeFormValue}
           />
-        </label>
-        <label>
-          your room id:
+        </div>
+        <div class="mb-3">
+          <label for="roomId" class="form-label">
+            Your room id:
+          </label>
           <input
             type="text"
+            class="form-control"
+            id="roomId"
             name="roomId"
             value={formValues["roomId"] || ""}
             onChange={changeFormValue}
           />
-        </label>
-        <label>
-          Check in date:
+        </div>
+        <div class="mb-3">
+          <label for="check-in-date" class="form-label">
+            Check in date:
+          </label>
           <input
             type="text"
+            class="form-control"
+            id="check-in-date"
             name="check-in-date"
             value={formValues["check-in-date"] || ""}
             onChange={changeFormValue}
           />
-        </label>
-        <label>
-          Check out date:
+        </div>
+        <div class="mb-3">
+          <label for="check-out-date" class="form-label">
+            Check out date:
+          </label>
           <input
             type="text"
+            class="form-control"
+            id="check-out-date"
             name="check-out-date"
             value={formValues["check-out-date"] || ""}
             onChange={changeFormValue}
           />
-        </label>
-        <button type="button" onClick={submitBooking}>
+        </div>
+        <button type="button" class="btn btn-primary" onClick={submitBooking}>
           Add new booking
         </button>
       </form>

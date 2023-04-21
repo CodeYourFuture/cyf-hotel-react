@@ -1,31 +1,26 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
-// import Restaurant from "./Restaurant";
 
-
-const Order = ({orderType}) => {
+const Order = ({ orderType }) => {
   let [order, setOrders] = useState(0);
 
   function orderOne() {
     setOrders(order + 1);
   }
-  // function deleteOne() {
-  //   setOrders(order - 1);
-  // }
 
-  //same as the line above
-  // const state = useState(0)
-  // const order = state[0];
-  // const setOrder = state[1];
+  function deleteOne() {
+    if (order !== 0) {
+      setOrders(order - 1);
+    }
+  }
 
   const pizzas = 0;
   return (
-    <li>
+    <li className="list-group-item d-flex justify-content-between align-items-center">
       {orderType}: {order}
-      <RestaurantButton prop={orderOne} />
+      <RestaurantButton orderOne={orderOne} deleteOne={deleteOne} />
     </li>
   );
 };
 
 export default Order;
-

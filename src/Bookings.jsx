@@ -9,12 +9,12 @@ const Bookings = () => {
   const [error, setError] = useState(null);
   const [searchInput, setSearchInput] = useState("");
   const [id, setID] = useState();
-
+  console.log(bookings);
 
   const filteredBookings = bookings.filter(
     (person) =>
-      person.firstName.includes(searchInput) ||
-      person.surname.includes(searchInput)
+      person?.firstName?.includes(searchInput) ||
+      person?.surname?.includes(searchInput)
   );
 
   function addBooking(newBooking) {
@@ -25,7 +25,7 @@ const Bookings = () => {
   // https://raw.githubusercontent.com/CodeYourFuture/cyf-hotel-react/master/src/data/fakeBookings.json - previous api link
   //https://cyf-react.glitch.me/error - error link
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/delayed`)
+    fetch(`https://temporary-cyf-react.onrender.com/delayed`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("HTTP error, status = " + response.status);
