@@ -26,9 +26,7 @@ const Bookings = () => {
   //https://cyf-react.glitch.me/error - error link
   `https://temporary-cyf-react.onrender.com/delayed`;
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/CodeYourFuture/cyf-hotel-react/master/src/data/fakeBookings.json"
-    )
+    fetch("https://nataliiazab-hotel-app.onrender.com/bookings")
       .then((response) => {
         if (!response.ok) {
           throw new Error("HTTP error, status = " + response.status);
@@ -36,7 +34,7 @@ const Bookings = () => {
         return response.json();
       })
       .then((data) => {
-        setBookings(data);
+        setBookings(data.bookings);
         setIsLoading(true);
       })
       .catch((error) => {
