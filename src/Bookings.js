@@ -15,6 +15,8 @@ const Bookings = () => {
     setProfile(currentProfile);
   }
 
+  console.log({bookings})
+
   function handleSearchInput(event) {
     setSearchInput(event.target.value);
   }
@@ -36,7 +38,7 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch(`https://temporary-cyf-react.onrender.com/`)
+    fetch(`http://localhost:3000/`)
       .then(response => {
         return response.json();
       })
@@ -44,7 +46,8 @@ const Bookings = () => {
         if (data.error) {
           throw new Error ("Bad response from server")
         } else {
-          setBookings(data);
+          console.log(data)
+          setBookings(data.bookings);
         }
         setLoading(false);
       })

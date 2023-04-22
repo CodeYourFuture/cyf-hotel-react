@@ -10,6 +10,12 @@ const Search = () => {
     setSearchInput(event.target.value);
   }
 
+  function handleSearchButton(event) {
+    event.preventDefault();
+    console.log("i have clicked the button");
+    
+  }
+
   return (
     <div className="search">
       <div className="page-header">
@@ -17,7 +23,7 @@ const Search = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form className="form-group search-box" >
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
@@ -28,7 +34,7 @@ const Search = () => {
                 value={searchInput}
                 onChange={handleSearchInput}
               />
-              <SearchButton />
+              <SearchButton onClick={handleSearchButton} />
             </div>
           </form>
         </div>
