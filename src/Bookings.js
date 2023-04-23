@@ -8,12 +8,17 @@ const Bookings = props => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [handleError, setHandleError] = useState(null);
+  const [refresh, setRefresh] = useState(true);
 
-  function handleAddPerson(newBooking) {
-    setBookings([...bookings, newBooking]);
-  }
+  // function handleAddPerson(newBooking) {
+  //   setBookings([...bookings, newBooking]);
+  // }
 
   // console.log(bookings);
+
+  function refreshingList(state) {
+    setRefresh(state);
+  }
 
   const search = searchVal => {
     console.info("TO DO!", searchVal);
@@ -26,8 +31,8 @@ const Bookings = props => {
     setBookings(filteredValue, searchVal);
   };
 
-  useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+  function getAllBookings() {
+    fetch("http://localhost:3003/bookings")
       .then(response => {
         return response.json();
       })
@@ -36,6 +41,7 @@ const Bookings = props => {
         if (data.error) {
           setHandleError(data.error);
         } else {
+          setRefresh(false);
           setBookings(data);
         }
         setLoading(false);
@@ -43,6 +49,12 @@ const Bookings = props => {
       .catch(error => {
         console.log(error);
       });
+  }
+
+  useEffect(() => {
+    if (refresh) {
+      getAllBookings();
+    }
   }, []);
 
   return (
@@ -56,8 +68,9 @@ const Bookings = props => {
           ) : (
             <div className="container">
               <BookingForm
-                handleAddPerson={handleAddPerson}
+                // handleAddPerson={handleAddPerson}
                 results={bookings}
+                refreshingList={refreshingList}
               />
               <Search search={search} />
               <SearchResults results={bookings} />

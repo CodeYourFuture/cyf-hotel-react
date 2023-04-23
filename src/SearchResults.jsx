@@ -26,12 +26,12 @@ function SearchResults(props) {
         return 0;
       }
     });
-    console.log(updatedResults);
+    // console.log(updatedResults);
     setSortedResults(updatedResults);
   }, [props.results, sort]);
 
   function setCustomerProfile(id) {
-    fetch(`https://cyf-react.glitch.me/customers/${id}`)
+    fetch(`http://localhost:3003/bookings/${id}`)
       .then(response => response.json())
       .then(data => setProfile(data))
       .catch(error => console.log(error));
