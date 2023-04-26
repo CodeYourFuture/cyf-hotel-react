@@ -1,37 +1,37 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-const NewBooking = ({addBooking}) => {
+const NewBooking = ({ addBooking }) => {
+  const [formValues, setFormValues] = useState({});
 
-const [formValues, setFormValues] = useState({});
+  const changeFormValue = (event) => {
+    const inputValue = event.target.value;
+    const inputName = event.target.getAttribute("name");
+    const newFormData = { ...formValues, [inputName]: inputValue };
+    setFormValues(newFormData);
+  };
+  function submitBooking(e) {
+    const formDataKeys = Object.keys(formValues);
 
-const changeFormValue = (event) => {
-  const inputValue = event.target.value;
-      const inputName = event.target.getAttribute("name");
-      const newFormData = {...formValues, [inputName]: inputValue}
-      setFormValues(newFormData)
-};
-function submitBooking(e){
-    const formDataKeys = Object.keys(formValues)
-    if(formDataKeys.length === 7){
-      addBooking(formValues)
-      setFormValues({})
+    if (formDataKeys.length === 7) {
+      addBooking(formValues);
+      setFormValues({});
     } else {
-      alert("you have not added all form values")
+      alert("you have not added all form values");
     }
   }
   return (
     <div>
       <form class="form-width">
         <div class="mb-3">
-          <label for="name" class="form-label">
+          <label for="firstName" class="form-label">
             Enter your name:
           </label>
           <input
             type="text"
             class="form-control"
-            id="name"
-            name="name"
-            value={formValues["name"] || ""}
+            id="firstName"
+            name="firstName"
+            value={formValues["firstName"] || ""}
             onChange={changeFormValue}
           />
         </div>
@@ -88,28 +88,28 @@ function submitBooking(e){
           />
         </div>
         <div class="mb-3">
-          <label for="check-in-date" class="form-label">
+          <label for="checkInDate" class="form-label">
             Check in date:
           </label>
           <input
             type="text"
             class="form-control"
-            id="check-in-date"
-            name="check-in-date"
-            value={formValues["check-in-date"] || ""}
+            id="checkInDate"
+            name="checkInDate"
+            value={formValues["checkInDate"] || ""}
             onChange={changeFormValue}
           />
         </div>
         <div class="mb-3">
-          <label for="check-out-date" class="form-label">
+          <label for="checkOutDate" class="form-label">
             Check out date:
           </label>
           <input
             type="text"
             class="form-control"
-            id="check-out-date"
-            name="check-out-date"
-            value={formValues["check-out-date"] || ""}
+            id="checkOutDate"
+            name="checkOutDate"
+            value={formValues["checkOutDate"] || ""}
             onChange={changeFormValue}
           />
         </div>
@@ -122,4 +122,3 @@ function submitBooking(e){
 };
 
 export default NewBooking;
-

@@ -17,14 +17,45 @@ const Bookings = () => {
       person?.surname?.includes(searchInput)
   );
 
-  function addBooking(newBooking) {
+  let updatedBookingsResponse = [];
+
+  async function addBooking(newBooking) {
     const newData = bookings.concat(newBooking);
     setBookings(newData);
+    // console.log(newBooking);
+
+    const response = await fetch("http://localhost:3001/bookings", {
+      method: "POST",
+      body: JSON.stringify(newBooking),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    updatedBookingsResponse = (await fetch("http://localhost:3001/bookings"))
+      .body;
+
+    // fetch("http://localhost:3001/bookings")
+    //   .then((response) => {
+    //     if (!response.ok) {
+    //       throw new Error("HTTP error, status = " + response.status);
+    //     }
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //     // setBookings(data.bookings);
+    //     // setIsLoading(true);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error + "in file Bookings.jsx");
+    //     // setError(error);
+    //   });
+
+    // setBookings(updatedBookingsResponse.body.bookings);
+
+    return response.json(); // parses JSON response into native JavaScript objects
   }
 
-  // https://raw.githubusercontent.com/CodeYourFuture/cyf-hotel-react/master/src/data/fakeBookings.json - previous api link
-  //https://cyf-react.glitch.me/error - error link
-  `https://temporary-cyf-react.onrender.com/delayed`;
   useEffect(() => {
     fetch("https://nataliiazab-hotel-app.onrender.com/bookings")
       .then((response) => {
@@ -60,7 +91,12 @@ const Bookings = () => {
         ) : (
           <p></p>
         )}
-        <SearchResults results={filteredBookings} id={id} setID={setID} />
+        <SearchResults
+          results={filteredBookings}
+          id={id}
+          setID={setID}
+          bookings={bookings}
+        />
       </div>
       <NewBooking addBooking={addBooking} />
     </div>

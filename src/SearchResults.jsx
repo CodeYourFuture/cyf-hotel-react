@@ -5,7 +5,7 @@ import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = (props) => {
   const ourObject = props.results;
-
+const myBookings = props.bookings;
   return (
     <div>
       <table className="table table-sm">
@@ -22,8 +22,8 @@ const SearchResults = (props) => {
             <th scope="col">Number of nights</th>
           </tr>
         </thead>
-        <tbody >
-          {ourObject.map((result) => (
+        <tbody>
+          {myBookings.map((result) => (
             <ResultRow
               key={result.id}
               result={result}
@@ -33,11 +33,9 @@ const SearchResults = (props) => {
           ))}
         </tbody>
       </table>
-      {ourObject.some((profile) => profile.id === props.id) ? (
+      {/* {ourObject.some((profile) => profile.id === props.id) ? (
         <CustomerProfile id={props.id} />
-      ) : (
-        null
-      )}
+      ) : null} */}
     </div>
   );
 };
