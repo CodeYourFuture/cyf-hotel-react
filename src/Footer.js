@@ -1,7 +1,6 @@
 import React from "react";
 
 const Footer = ({ newProp }) => {
-  console.log(newProp);
   return (
     <footer>
       <ul>
