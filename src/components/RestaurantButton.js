@@ -6,9 +6,9 @@ function RestaurantButton(props) {
       <button
         name="secondButton"
         onClick={props.handleClick}
-        className="btn btn-primary"
+        className="btn btn-danger"
       >
-        Add
+        Buy
       </button>
     </div>
   );

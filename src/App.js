@@ -1,19 +1,23 @@
 import React from "react";
-import Heading from "./Heading";
-import TouristInfoCards from "./TouristInfoCards";
-import Bookings from "./Bookings";
-import Restaurant from "./Restaurant";
-import Footer from "./Footer";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home.js";
+import Booking from "./pages/Booking.js";
+import Offers from "./pages/Offers.js";
+import About from "./pages/About.js";
+
 import "./App.css";
 
 const App = props => {
   return (
     <div className="App">
-      <Heading />
-      <TouristInfoCards />
-      <Bookings />
-      <Restaurant />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/booking" element={<Booking />} />
+
+        <Route path="/offers" element={<Offers />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 };

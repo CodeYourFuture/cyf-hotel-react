@@ -1,118 +1,673 @@
 body {
-  text-align: center;
-}
-.App-header {
-  background-color: black;
-  padding: 0px;
-  color: white;
-  margin: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 2em;
-  font-weight: bold;
-  height: 100px;
-}
-.App-header > img {
-  width: 100px;
-  height: 70px;
-  margin-top: 20px;
-  margin-right: 500px;
-}
-h1 {
-  position: absolute;
-  top: 50px;
-  left: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-h1:hover {
-  opacity: 2.2;
-  width: 70px;
-}
-h1 {
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.App-title {
-  font-size: 1.5em;
-  width: 90%;
-}
-.col {
-  max-width: 400px;
-}
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-  width: 90%;
-  display: inline-block;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  font-size: 20px;
+  line-height: 1.5;
+  background-image: linear-gradient(purple, blue, purple, blue, purple);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.about {
+  background-color: hsl(230, 12%, 45%);
+  color: #fff;
 }
-.search {
-  padding: 5px 0 20px 0;
+
+.main-nav {
+  width: 90%;
+  height: 7rem;
+  display: flex;
+  background-image: linear-gradient(blue, purple);
+  border-bottom: 3px solid white;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
 }
-tr {
-  color: white;
+
+.logo {
+  color: #fff;
 }
-.restuarant {
+
+.menu-links {
+  width: 50%;
+  text-align: end;
+}
+
+.menu-links ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu-links ul li {
+  font-size: 1.4rem;
+  list-style: none;
+}
+
+.menu-links ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu-links ul li a:hover {
+  transition: 0.6s;
+  text-decoration: underline;
+  text-decoration-color: yellowgreen;
+}
+
+.span1,
+.span2,
+.span3 {
+  width: 30px;
+  height: 40px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: bolder;
+  text-shadow: lime;
+}
+
+.span-4 {
+  width: 50px;
+  font-size: 0.4em;
+  font-weight: bolder;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.ham-burger {
+  visibility: hidden;
+}
+
+/* container tourist card  compoenet styling  */
+.container {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px auto;
+  gap: 20px;
+}
+
+article {
   position: relative;
   top: 80px;
+  bottom: 170px;
+  width: 400px;
+  border-radius: 1rem;
+  background-color: rgba(245, 238, 220, 0.753);
 }
 
-.results {
-  padding-top: 15px;
-}
-.inputResult {
-  position: relative;
-  margin-top: 150px;
-}
-
-.idFooter {
-  text-align: center;
-  position: relative;
-  top: 120px;
-  bottom: 60px;
-  display: inline;
-  list-style: hidden;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
-  grid-gap: 40px;
-  width: 1050px;
-  padding-top: 50px;
-}
 .container p {
-  padding: 0 0 0 50px;
-  line-height: 20px;
+  position: relative;
+  margin: 15px;
+  background-color: rgba(255, 127, 161, 0.082);
+  text-align: start;
+  overflow: hidden;
 }
-.row {
-  background-color: aqua;
+
+.container img {
+  width: 380px;
+  border-radius: 1rem;
+  height: 250px;
+  padding: 8px;
+  transition: 0.4s;
+}
+
+.container img:hover {
+  box-shadow: 0 12px 17px 0 #1f1602bd;
+  cursor: pointer;
+}
+
+.container a {
+  width: 220px;
+  text-align: center;
+}
+
+/* booking component styling*/
+.booking {
+  width: 80%;
+  height: 10%;
+  background: url(./images/wave.svg);
+  background-repeat: no-repeat;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.carousel {
+  position: relative;
+  z-index: 1;
+}
+
+.item img {
+  width: 60vw;
+  height: 50vh;
+}
+
+.item {
+  z-index: 1;
+  width: 80%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.book-choice {
+  position: relative;
+  margin: 0 auto;
+  font-size: 1.8em;
+  width: 100%;
+  display: flex;
+}
+
+.form-select {
+  background-color: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 450px;
+  height: 250px;
+  padding: 7px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.book-form {
+  width: 90%;
+  height: 300px;
+  position: relative;
+  margin: 0px auto;
+  display: flex;
+  /*  component offers styling css*/
+}
+
+.offers {
+  width: 90%;
+  height: 90vh;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.span {
+  border-radius: 50%;
+  width: 130px;
+  height: 120px;
+  color: white;
+  background-color: blue;
+  border-top: 3px solid black;
+  border-bottom: 2px solid black;
+}
+
+.span strong {
+  width: 50%;
+  padding: 0.5px;
+  font-size: 1em;
+  background-color: blue;
+  top: 8px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.city {
+  background-color: black;
+  width: 29%;
+  height: 500px;
+  border-radius: 1em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.offer-card {
+  width: 98%;
+  height: 60vh;
+  margin: 10px auto;
+  gap: 10px;
+  object-fit: cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*   component about  styling css*/
+.about {
+  background-color: hsl(230, 12%, 45%);
+  width: 90%;
+  margin: 15px auto;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+
+  gap: 20px;
+}
+
+.who {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: flex-start;
+  background-color: rgb(1, 13, 1);
+  color: whitesmoke;
+  padding: 10px;
+  position: relative;
+  width: 350px;
+  height: 230px;
+  margin: 30px 0;
+}
+
+.why {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(1, 13, 1);
+  color: whitesmoke;
+  position: relative;
+  width: 350px;
+  height: 230px;
+  margin: 30px 0;
+  align-self: center;
+  padding: 10px;
+}
+
+.what {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: flex-end;
+  background-color: rgb(1, 13, 1);
+  color: whitesmoke;
+  padding: 10px;
+  position: relative;
+  width: 350px;
+  height: 230px;
+  margin: 30px 0;
+}
+
+/*  component welcome styling css*/
+.welcome {
+  width: 49%;
+  margin: 40px auto;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h2 {
+  position: relative;
+  font-size: 3vw;
+  -webkit-text-stroke: 0.2vw #fff;
+  text-transform: uppercase;
+}
+
+/* slides     component styling  */
+.carousel {
+  width: 400px;
+  height: 300px;
+  margin: 30px 10px;
+  object-fit: cover;
+  border-radius: 1em;
+}
+
+.carousel img {
+  width: 320px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 1em;
+}
+
+.caption {
+  color: black;
+  font-size: 1.9em;
+  opacity: 2;
+}
+
+/*  restaurant   component styling css*/
+.restaurant {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.restaurant h3 {
+  font-size: 1.7em;
+  width: 500px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.list-group {
+  width: 100%;
+  height: 100vh;
+}
+
+/*  order component styling css*/
+.btn-order {
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
 }
-.col {
-  border: 0.5px;
-  border-radius: 1rem;
+
+.btn-orders {
+  width: 60%;
 }
-a {
+
+.holder {
+  width: 30%;
+}
+
+.orders {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+/*  component holder order css styling */
+.holder-order {
+  width: 100%;
+  height: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.form-order {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  margin: 5px;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.span-order {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 50px;
+}
+
+.allHolders {
+  width: 50%;
+  height: 50vh;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 0%);
+}
+
+.holder1 {
+  width: 70%;
+  background-color: rgba(91, 76, 76, 0.34);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px;
+  justify-content: space-around;
+  margin: 0px;
+  color: #fff;
+}
+
+.holder2 {
+  width: 70%;
+  background-color: rgba(91, 76, 76, 0.34);
+
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 4px;
+  margin: px;
+}
+
+.holder3 {
+  width: 70%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 4px;
+  margin: 0px;
+  color: #fff;
+  background-color: rgba(91, 76, 76, 0.34);
+}
+
+/* component delivery styling  css*/
+.delivery-img {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.order-img {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.order1 {
+  width: 50%;
+  height: 20%;
+}
+
+.span-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.span-img img {
+  width: 300px;
+  height: 230px;
+  padding: 8px;
+  margin: 0px auto;
+  object-fit: cover;
+}
+
+.span-img button {
+  width: 180px;
+}
+
+/*  bookingNight  components  styling */
+
+.form-submit {
+  width: 500px;
+  height: 47vh;
+  margin: 10px 30px 0px 47px;
+  padding: 5px;
+  border-radius: 0.2em;
+  background-color: gray;
   text-align: center;
+}
+
+.form {
+  color: white;
+  padding: 10px;
+  font-size: 0.5em;
+}
+
+.btn-toolbar {
+  position: relative;
+  width: 70%;
+  margin: 15px auto;
+}
+
+/* component input searchResult css styling  */
+
+/* .inputResult {
+  margin: 200px auto;
+  display: flex;
+  flex-direction: column;
+} */
+
+/* .input-profile {
+  display: flex;
+  width: 98%;
+  height: 80px;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  background-color: black;
+  margin: 0 auto;
+} */
+
+/* .first1Button input {
+  height: 60px;
+  border-radius: 1.1em;
+  margin: 10px;
+  padding: 5px;
+  background-color: beige;
+}
+
+.search {
+  padding: 5px 0 20px 0;
+} */
+
+tr {
+  color: white;
+}
+
+/* .results {
+  padding-top: 15px;
+}
+
+.table {
+  background-color: black;
+  color: wheat;
+} */
+
+/*  component coustomer profile css styling   */
+.profile {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 40px;
+  width: 400px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: black;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+.show-profile {
+  position: relative;
+
+  width: 80%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.profile .div-1 {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  background-color: black;
+}
+
+/* footer component  styling */
+.idFooter {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 70px;
+  height: 200px;
+  border-top: 3px solid white;
+  background-image: linear-gradient(blue, purple);
+}
+
+.footer {
+  text-align: center;
+  position: relative;
+  width: 30%;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  list-style: hidden;
+  color: #fff;
+  border-left: 2px solid white;
+  padding: 20px;
+}
+
+.social-media {
+  width: 23%;
+  height: 160px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.social-media ul {
+  width: 60%;
+  height: 180px;
+
+  color: #fff;
+  border-left: 2px solid white;
+  text-align: start;
+}
+
+.social-media ul li {
+  width: 60%;
+  height: 40px;
+  text-align: start;
+  list-style: none;
+  text-align: none;
+  text-decoration: none;
+}
+
+.social-media ul li a {
+  color: white;
 }
 
 .show {
   background-color: silver;
 }
-.showId {
-  display: flex;
-  justify-content: flex-start;
-}
+
 .hidde {
   background-color: blue;
 }
@@ -122,25 +677,217 @@ a {
   margin-left: 420px;
   margin-bottom: 0px;
 }
-.list-group {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
+
 .customerId {
   margin-left: 300px;
 }
+
 #search-row {
   position: relative;
   top: 80px;
 }
-.first1Button {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 100px;
-  margin: 10px;
-  gap: 10px;
-  top: 40px;
-  padding: 5px;
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .menu-links {
+    width: 30%;
+    visibility: hidden;
+    text-align: end;
+  }
+
+  .menu-links ul {
+    width: 100%;
+    height: 18vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: black;
+  }
+
+  .ham-burger {
+    visibility: visible;
+    position: absolute;
+    top: 2.2rem;
+    right: 3em;
+  }
+
+  .ham-burger a {
+    color: #fff;
+  }
+
+  .footer {
+    text-align: start;
+    width: 350px;
+    height: 154px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .offers {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .city {
+    width: 300px;
+  }
+
+  .city .offer-card {
+    width: 300px;
+    height: 410px;
+    margin: 10px;
+  }
+
+  .about {
+    background-color: rgb(96, 74, 120);
+    display: block;
+    height: auto;
+    text-align: center;
+  }
+
+  .book-form {
+    position: relative;
+    width: 100%;
+    height: 360px;
+  }
+
+  .form-submit {
+    position: absolute;
+    height: 290px;
+    left: 2%;
+    top: 0;
+  }
+
+  .restaurant {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+  }
+  .list-group {
+    height: auto;
+  }
+
+  .btn-order {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-orders {
+    position: relative;
+  }
+
+  .holder-order {
+    background-color: green;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+  }
+
+  .allHolders {
+    width: 220px;
+    height: 300px;
+    position: relative;
+    align-self: flex-end;
+  }
+
+  .allHolders div {
+    width: 250px;
+  }
+
+  .form-order {
+    position: relative;
+    display: grid;
+    width: 60%;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: aquamarine;
+  }
+  .holder {
+    width: 100%;
+  }
+  .span-order {
+    position: relative;
+    width: 100%;
+    background-color: black;
+  }
+
+  .delivery-img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: hidden;
+  }
+
+  .delivery-img .span-img {
+    width: 50%;
+    height: 300px;
+    height: auto;
+    background-color: black;
+    margin: 10px auto;
+  }
+
+  .span-img img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .span-img button {
+    width: 90%;
+  }
+  .inputResult {
+    background-color: green;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .table {
+    width: 100%;
+    position: relative;
+  }
+  table thead {
+    width: 90%;
+    background-color: beige;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .book-form {
+    position: relative;
+    width: 100%;
+    height: 380px;
+  }
+
+  .form-submit {
+    position: absolute;
+    width: 370px;
+    height: 290px;
+  }
+  .delivery-img {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
+  .delivery-img .span-img {
+    width: 100%;
+  }
+  .span-img img {
+    width: 100%;
+  }
 }
