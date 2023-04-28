@@ -24,3 +24,9 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+header > img {
+  height: 80%;
+  background-color: #e9ecef;
+  margin: 1rem;
+}
