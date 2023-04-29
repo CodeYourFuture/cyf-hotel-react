@@ -9,7 +9,7 @@ const TouristInfoCard = () => {
           <div key={index} className="card">
             <img src={require(`${src}`)} alt={alt} className="card-img-top" />
             <div className="card-body">
-              <a href={href} className="btn btn-primary">
+              <a href={href} className="btn btn-secondary">
                 Visit
               </a>
             </div>

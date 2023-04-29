@@ -58,9 +58,11 @@ tr {
   padding-top: 15px;
 }
 
-.footer {
-  padding-top: 20px;
+footer {
+  padding: 20px;
   text-align: center;
+  background-color: #1c1e21;
+  color: #fff;
 }
 
 footer > ul {

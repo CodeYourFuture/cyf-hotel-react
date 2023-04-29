@@ -30,3 +30,7 @@ header > img {
   background-color: #e9ecef;
   margin: 1rem;
 }
+
+ul {
+  margin: 0;
+}
