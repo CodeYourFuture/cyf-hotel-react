@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
+  const [selected, setSelected] = useState(null);
+  const highlightRow = (id) => {
+    setSelected(id === selected ? null : id);
+  };
   return (
     <table className="table">
       <thead>
@@ -31,9 +35,14 @@ const SearchResults = ({ results }) => {
             const checkInMoment = moment(checkInDate, "YYYY-MM-DD");
             const checkOutMoment = moment(checkOutDate, "YYYY-MM-DD");
             const nightCount = checkOutMoment.diff(checkInMoment, "days");
+            const isSelected = selected === id;
 
             return (
-              <tr key={id}>
+              <tr
+                className={isSelected ? "highlight" : ""}
+                onClick={() => highlightRow(id)}
+                key={id}
+              >
                 <td>{title}</td>
                 <td>{firstName}</td>
                 <td>{surname}</td>

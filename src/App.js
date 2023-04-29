@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Heading from "./Heading";
 import Bookings from "./Bookings";
 import TouristInfoCard from "./TouristInfoCard";
@@ -15,7 +15,9 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <TouristInfoCard />
+      <Suspense fallback={<div>Loading...</div>}>
+        <TouristInfoCard />
+      </Suspense>
       <Bookings />
       <Restaurant />
       <Footer newProp={address} />

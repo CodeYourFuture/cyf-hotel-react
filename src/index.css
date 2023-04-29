@@ -34,3 +34,20 @@ header > img {
 ul {
   margin: 0;
 }
+
+.restaurant {
+  margin-bottom: 2rem;
+}
+
+.restaurant ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.restaurant h3 {
+  text-align: center;
+}
+
+.highlight {
+  background-color: #e9ecef;
+}
