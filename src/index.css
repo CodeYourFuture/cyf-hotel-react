@@ -61,6 +61,7 @@ ul {
 .form__wrapper {
   display: grid;
   grid-template-columns: 50% 50%;
+  margin-top: 2rem;
 }
 
 .form__photo {

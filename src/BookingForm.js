@@ -97,6 +97,7 @@ const BookingForm = ({ addBooking }) => {
           type="date"
           name="checkInDate"
           value={formData.checkInDate}
+          min="2023-05-01"
           onChange={handleChange}
           className="form-field"
           required
@@ -108,6 +109,7 @@ const BookingForm = ({ addBooking }) => {
           type="date"
           name="checkOutDate"
           value={formData.checkOutDate}
+          min="2023-05-01"
           onChange={handleChange}
           className="form-field"
           required
