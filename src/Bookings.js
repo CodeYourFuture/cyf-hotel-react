@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { BarLoader } from "react-spinners";
+import { css } from "@emotion/react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
-import { BarLoader } from "react-spinners";
-import { css } from "@emotion/react";
 import CustomerProfile from "./CustomerProfile.js";
+import BookingForm from "./BookingForm.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [customerId, setCustomerId] = useState(null);
   const [loaded, setLoaded] = useState(false);
+
+  const addBooking = (booking) => {
+    setBookings([...bookings, booking]);
+  };
 
   const search = (searchVal) => {
     const convertedVal = searchVal.toLowerCase().trim();
@@ -48,6 +53,10 @@ const Bookings = () => {
           </div>
         )}
         <CustomerProfile id={customerId} />
+      </div>
+      <div className="form__wrapper">
+        <BookingForm addBooking={addBooking} />
+        <div className="form__photo"></div>
       </div>
     </div>
   );

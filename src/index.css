@@ -37,6 +37,7 @@ ul {
 
 .restaurant {
   margin-bottom: 2rem;
+  margin-top: 4rem;
 }
 
 .restaurant ul {
@@ -55,4 +56,73 @@ ul {
 .fallback-ui {
   display: flex;
   justify-content: center;
+}
+
+.form__wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.form__photo {
+  background: url("./assets/form-photo.jpg") no-repeat center;
+  background-size: cover;
+}
+.booking-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.booking-form h2 {
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  transition: all 0.2s ease-in-out;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  outline: none;
+  border-bottom-color: #36d7b7;
+}
+
+.booking-form label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+  color: #444;
+}
+
+.booking-form button[type="submit"] {
+  background-color: #36d7b7;
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 30px;
+}
+
+.booking-form button[type="submit"]:hover {
+  background-color: #2bb6a8;
 }
