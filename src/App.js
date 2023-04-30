@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Heading from "./Heading";
 import Bookings from "./Bookings";
 import TouristInfoCard from "./TouristInfoCard";
@@ -12,12 +12,11 @@ const App = () => {
     "hello@fakehotel.com",
     "0123 456789",
   ];
+
   return (
     <div className="App">
       <Heading />
-      <Suspense fallback={<div>Loading...</div>}>
-        <TouristInfoCard />
-      </Suspense>
+      <TouristInfoCard />
       <Bookings />
       <Restaurant />
       <Footer newProp={address} />

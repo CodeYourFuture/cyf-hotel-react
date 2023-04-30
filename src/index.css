@@ -51,3 +51,8 @@ ul {
 .highlight {
   background-color: #e9ecef;
 }
+
+.fallback-ui {
+  display: flex;
+  justify-content: center;
+}

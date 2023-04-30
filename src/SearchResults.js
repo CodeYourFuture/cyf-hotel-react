@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ results, setCustomerId }) => {
   const [selected, setSelected] = useState(null);
   const highlightRow = (id) => {
     setSelected(id === selected ? null : id);
   };
+
   return (
     <table className="table">
       <thead>
@@ -18,6 +19,7 @@ const SearchResults = ({ results }) => {
           <th scope="col">Check in date</th>
           <th scope="col">Check out date</th>
           <th scope="col">Nights</th>
+          <th scope="col">Profile</th>
         </tr>
       </thead>
       <tbody>
@@ -51,6 +53,16 @@ const SearchResults = ({ results }) => {
                 <td>{checkInDate}</td>
                 <td>{checkOutDate}</td>
                 <td>{nightCount}</td>
+                <td>
+                  <button
+                    className="btn btn-secondary"
+                    onClick={() => {
+                      setCustomerId(id);
+                    }}
+                  >
+                    Show Profile
+                  </button>
+                </td>
               </tr>
             );
           }
