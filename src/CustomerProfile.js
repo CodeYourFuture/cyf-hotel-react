@@ -13,7 +13,7 @@ const CustomerProfile = ({ customerId, isProfileOn, setProfileOn }) => {
   return (
     <div className="customer-profile">
       <div className="profile-section">
-        <h1>{`${title} ${firstName} ${surname}`}</h1>
+        <h2>{`${title} ${firstName} ${surname}`}</h2>
         <button
           onClick={() => {
             setProfileOn(false);

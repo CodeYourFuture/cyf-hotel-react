@@ -178,3 +178,7 @@ ul {
 .x-button:active {
   background-color: black;
 }
+
+.table td {
+  padding: 0.45rem;
+}

@@ -3,27 +3,89 @@ import moment from "moment";
 
 const SearchResults = ({ results, setCustomerId, setProfileOn }) => {
   const [selected, setSelected] = useState(null);
+  const [sortColumn, setSortColumn] = useState(null);
+  const [sortOrder, setSortOrder] = useState("asc");
+
+  const handleSort = (column) => {
+    if (column === sortColumn) {
+      setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+    } else {
+      setSortColumn(column);
+      setSortOrder("asc");
+    }
+  };
+
   const highlightRow = (id) => {
     setSelected(id === selected ? null : id);
   };
+
+  const sortedBookings = results.slice().sort((a, b) => {
+    if (sortColumn === null) {
+      return 0;
+    }
+
+    const aVal = a[sortColumn];
+    const bVal = b[sortColumn];
+
+    if (aVal < bVal) {
+      return sortOrder === "asc" ? -1 : 1;
+    } else if (aVal > bVal) {
+      return sortOrder === "asc" ? 1 : -1;
+    } else {
+      return 0;
+    }
+  });
 
   return (
     <table className="table">
       <thead>
         <tr>
-          <th scope="col">Title</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room id</th>
-          <th scope="col">Check in date</th>
-          <th scope="col">Check out date</th>
-          <th scope="col">Nights</th>
-          <th scope="col">Profile</th>
+          <th onClick={() => handleSort("title")}>
+            Title{" "}
+            {sortColumn === "title" && (
+              <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
+            )}
+          </th>
+          <th onClick={() => handleSort("firstName")}>
+            First Name{" "}
+            {sortColumn === "firstName" && (
+              <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
+            )}
+          </th>
+          <th onClick={() => handleSort("surname")}>
+            Surname{" "}
+            {sortColumn === "surname" && (
+              <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
+            )}
+          </th>
+          <th onClick={() => handleSort("email")}>
+            Email{" "}
+            {sortColumn === "email" && (
+              <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
+            )}
+          </th>
+          <th onClick={() => handleSort("roomId")}>
+            Room ID{" "}
+            {sortColumn === "roomId" && (
+              <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
+            )}
+          </th>
+          <th onClick={() => handleSort("checkInDate")}>
+            Check-In Date{" "}
+            {sortColumn === "checkInDate" && (
+              <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
+            )}
+          </th>
+          <th onClick={() => handleSort("checkOutDate")}>
+            Check-Out Date{" "}
+            {sortColumn === "checkOutDate" && (
+              <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
+            )}
+          </th>
         </tr>
       </thead>
       <tbody>
-        {results.map(
+        {sortedBookings.map(
           ({
             id,
             title,
