@@ -11,6 +11,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [customerId, setCustomerId] = useState(null);
   const [loaded, setLoaded] = useState(false);
+  const [profileOn, setProfileOn] = useState(false);
 
   const addBooking = (booking) => {
     setBookings([...bookings, booking]);
@@ -40,19 +41,24 @@ const Bookings = () => {
       setLoaded(true);
     }, 3000);
   }, []);
-  console.log(customerId);
+
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
         {loaded ? (
-          <SearchResults results={bookings} setCustomerId={setCustomerId} />
+          <SearchResults
+            results={bookings}
+            setCustomerId={setCustomerId}
+            isProfileOn={profileOn}
+            setProfileOn={setProfileOn}
+          />
         ) : (
           <div className="fallback-ui">
             <BarLoader css={override} color={"#36D7B7"} />
           </div>
         )}
-        <CustomerProfile id={customerId} />
+        <CustomerProfile customerId={customerId} isProfileOn={profileOn} />
       </div>
       <div className="form__wrapper">
         <BookingForm addBooking={addBooking} />

@@ -5,7 +5,6 @@
     "firstName": "John",
     "surname": "Doe",
     "email": "johndoe@doe.com",
-    "roomId": 2,
     "tel": "07700 900453",
     "vip": true
   },
