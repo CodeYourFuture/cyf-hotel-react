@@ -2,11 +2,6 @@
   text-align: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
   display: flex;
   align-items: center;
@@ -44,20 +39,16 @@ section {
   justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
 }
 
 tr {
   color: #5b5757;
+}
+
+.table td {
+  padding: 0.45rem;
 }
 
 .results {

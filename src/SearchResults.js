@@ -82,6 +82,8 @@ const SearchResults = ({ results, setCustomerId, setProfileOn }) => {
               <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
             )}
           </th>
+          <th scope="col">Nights</th>
+          <th scope="col">Profiles</th>
         </tr>
       </thead>
       <tbody>

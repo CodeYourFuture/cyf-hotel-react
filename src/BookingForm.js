@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import validator from "validator";
 
 const BookingForm = ({ addBooking }) => {
   const [formData, setFormData] = useState({
@@ -10,27 +11,60 @@ const BookingForm = ({ addBooking }) => {
     checkInDate: "",
     checkOutDate: "",
   });
+  const [validInput, setValidInput] = useState(true);
+  const [currentInput, setCurrentInput] = useState(null);
+  const [formValid, setFormValid] = useState(false);
 
-  const handleChange = (event) => {
+  const handleChange = ({ target }) => {
+    const trimmedVal = target.value.trim();
+    console.log(trimmedVal);
+    setCurrentInput(target.name);
+    switch (target.name) {
+      case "firstName":
+      case "surname":
+        setValidInput(validator.isAlpha(trimmedVal));
+        break;
+      case "email":
+        setValidInput(validator.isEmail(trimmedVal));
+        break;
+      case "roomId":
+        if (
+          trimmedVal > 0 &&
+          trimmedVal <= 100 &&
+          validator.isNumeric(trimmedVal)
+        ) {
+          setValidInput(true);
+        } else setValidInput(false);
+        break;
+    }
+
     setFormData({
       ...formData,
-      [event.target.name]: event.target.value,
+      [target.name]: target.value,
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addBooking(formData);
-    setFormData({
-      firstName: "",
-      surname: "",
-      email: "",
-      title: "",
-      roomId: "",
-      checkInDate: "",
-      checkOutDate: "",
-    });
+    if (formValid) {
+      addBooking(formData);
+      setFormData({
+        firstName: "",
+        surname: "",
+        email: "",
+        title: "",
+        roomId: "",
+        checkInDate: "",
+        checkOutDate: "",
+      });
+      setFormValid(false);
+    }
   };
+
+  useEffect(() => {
+    const isFormValid = Object.values(validInput).every((val) => val === true);
+    setFormValid(isFormValid);
+  }, [validInput]);
 
   return (
     <form name="Booking Form" className="booking-form" onSubmit={handleSubmit}>
@@ -60,6 +94,11 @@ const BookingForm = ({ addBooking }) => {
           onChange={handleChange}
           className="form-field"
         />
+        <p>
+          {!validInput && currentInput === "firstName" && (
+            <>Only letters allowed</>
+          )}
+        </p>
       </label>
       <label>
         Surname:
@@ -70,6 +109,11 @@ const BookingForm = ({ addBooking }) => {
           onChange={handleChange}
           className="form-field"
         />
+        <p>
+          {!validInput && currentInput === "surname" && (
+            <>Only letters allowed</>
+          )}
+        </p>
       </label>
       <label>
         Email:
@@ -80,6 +124,11 @@ const BookingForm = ({ addBooking }) => {
           onChange={handleChange}
           className="form-field"
         />
+        <p>
+          {!validInput && currentInput === "email" && (
+            <>Please enter a valid email</>
+          )}
+        </p>
       </label>
       <label>
         Room ID:
@@ -90,6 +139,11 @@ const BookingForm = ({ addBooking }) => {
           onChange={handleChange}
           className="form-field"
         />
+        <p>
+          {!validInput && currentInput === "roomId" && (
+            <>Please enter a number between 0 and 100</>
+          )}
+        </p>
       </label>
       <label>
         Check-In Date:

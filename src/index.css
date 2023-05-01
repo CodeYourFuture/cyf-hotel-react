@@ -1,9 +1,11 @@
+/* Global styles */
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 
+/* Search bar styles */
 .search-wrapper {
   border-top: 1px solid #e9ecef;
 }
@@ -25,12 +27,14 @@ body {
   margin-right: 10px;
 }
 
+/* Header styles */
 header > img {
   height: 80%;
   background-color: #e9ecef;
   margin: 1rem;
 }
 
+/* Restaurant list styles */
 ul {
   margin: 0;
 }
@@ -53,6 +57,7 @@ ul {
   background-color: #e9ecef;
 }
 
+/* Form styles */
 .fallback-ui {
   display: flex;
   justify-content: center;
@@ -64,10 +69,18 @@ ul {
   margin-top: 2rem;
 }
 
+form p {
+  color: red;
+  text-align: center;
+  margin: 0;
+  height: 20px;
+}
+
 .form__photo {
   background: url("./assets/form-photo.jpg") no-repeat center;
   background-size: cover;
 }
+
 .booking-form {
   background-color: #fff;
   padding: 30px;
@@ -90,7 +103,7 @@ ul {
   border: none;
   border-bottom: 2px solid #ccc;
   padding: 10px 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 16px;
   font-weight: 500;
   color: #444;
@@ -128,6 +141,7 @@ ul {
   background-color: #2bb6a8;
 }
 
+/* Customer profile styles */
 .customer-profile {
   position: fixed;
   top: 50%;
@@ -157,10 +171,12 @@ ul {
 .customer-profile li strong {
   margin-right: 10px;
 }
+
 .profile-section {
   display: flex;
   align-items: flex-start;
 }
+
 .x-button {
   background-color: grey;
   color: white;
@@ -177,8 +193,4 @@ ul {
 
 .x-button:active {
   background-color: black;
-}
-
-.table td {
-  padding: 0.45rem;
 }
