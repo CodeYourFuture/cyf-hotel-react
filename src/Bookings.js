@@ -22,7 +22,7 @@ const Bookings = () => {
     const matched = FakeBookings.filter(({ firstName, surname }) => {
       return (
         firstName.toLowerCase().includes(convertedVal) ||
-        surname.toLocaleLowerCase().includes(convertedVal)
+        surname.toLowerCase().includes(convertedVal)
       );
     });
     setBookings(matched);
@@ -58,7 +58,9 @@ const Bookings = () => {
             <BarLoader css={override} color={"#36D7B7"} />
           </div>
         )}
-        <CustomerProfile customerId={customerId} isProfileOn={profileOn} />
+        {customerId && (
+          <CustomerProfile customerId={customerId} isProfileOn={profileOn} /> // Only show when customerId is truthy
+        )}
       </div>
       <div className="form__wrapper">
         <BookingForm addBooking={addBooking} />
