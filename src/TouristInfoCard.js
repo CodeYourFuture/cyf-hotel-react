@@ -11,7 +11,7 @@ const TouristInfoCard = () => {
             <div className="card-body">
               <p>{text}</p>
               <a href={href} className="btn btn-secondary">
-                Visit
+                More info
               </a>
             </div>
           </div>
