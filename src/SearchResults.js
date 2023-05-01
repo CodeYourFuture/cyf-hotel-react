@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-const SearchResults = ({
-  results,
-  setCustomerId,
-  isProfileOn,
-  setProfileOn,
-}) => {
+const SearchResults = ({ results, setCustomerId, setProfileOn }) => {
   const [selected, setSelected] = useState(null);
   const highlightRow = (id) => {
     setSelected(id === selected ? null : id);
@@ -63,7 +58,7 @@ const SearchResults = ({
                     className="btn btn-secondary"
                     onClick={() => {
                       setCustomerId(id);
-                      isProfileOn ? setProfileOn(false) : setProfileOn(true);
+                      setProfileOn(true);
                     }}
                   >
                     Show Profile

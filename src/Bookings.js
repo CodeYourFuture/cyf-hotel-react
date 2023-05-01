@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { BarLoader } from "react-spinners";
 import { css } from "@emotion/react";
 import Search from "./Search.js";
@@ -42,6 +42,17 @@ const Bookings = () => {
     }, 3000);
   }, []);
 
+  const memoizedCustomerProfile = useMemo(
+    () => (
+      <CustomerProfile
+        customerId={customerId}
+        isProfileOn={profileOn}
+        setProfileOn={setProfileOn}
+      />
+    ),
+    [customerId, profileOn]
+  );
+
   return (
     <div className="App-content">
       <div className="container">
@@ -50,7 +61,6 @@ const Bookings = () => {
           <SearchResults
             results={bookings}
             setCustomerId={setCustomerId}
-            isProfileOn={profileOn}
             setProfileOn={setProfileOn}
           />
         ) : (
@@ -58,9 +68,7 @@ const Bookings = () => {
             <BarLoader css={override} color={"#36D7B7"} />
           </div>
         )}
-        {customerId && (
-          <CustomerProfile customerId={customerId} isProfileOn={profileOn} /> // Only show when customerId is truthy
-        )}
+        {customerId && memoizedCustomerProfile}
       </div>
       <div className="form__wrapper">
         <BookingForm addBooking={addBooking} />

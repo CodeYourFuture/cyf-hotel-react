@@ -1,7 +1,7 @@
 import React from "react";
 import Customers from "./data/customers.json";
 
-const CustomerProfile = ({ customerId, isProfileOn }) => {
+const CustomerProfile = ({ customerId, isProfileOn, setProfileOn }) => {
   if (!isProfileOn) {
     return null;
   }
@@ -12,7 +12,17 @@ const CustomerProfile = ({ customerId, isProfileOn }) => {
 
   return (
     <div className="customer-profile">
-      <h1>{`${title} ${firstName} ${surname}`}</h1>
+      <div className="profile-section">
+        <h1>{`${title} ${firstName} ${surname}`}</h1>
+        <button
+          onClick={() => {
+            setProfileOn(false);
+          }}
+          className="x-button"
+        >
+          X
+        </button>
+      </div>
       <ul>
         <li>
           <strong>Phone Number:</strong>
