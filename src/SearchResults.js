@@ -71,13 +71,13 @@ const SearchResults = ({ results, setCustomerId, setProfileOn }) => {
             )}
           </th>
           <th onClick={() => handleSort("checkInDate")}>
-            Check-In Date{" "}
+            Check-In{" "}
             {sortColumn === "checkInDate" && (
               <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
             )}
           </th>
           <th onClick={() => handleSort("checkOutDate")}>
-            Check-Out Date{" "}
+            Check-Out{" "}
             {sortColumn === "checkOutDate" && (
               <span>{sortOrder === "asc" ? "▲" : "▼"}</span>
             )}

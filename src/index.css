@@ -3,6 +3,38 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #f8f2ed;
+}
+
+h1,
+h2,
+h3,
+h4,
+header,
+th,
+label {
+  font-family: "Poppins", sans-serif;
+}
+
+p,
+td,
+input,
+button,
+li {
+  font-family: "Quicksand", sans-serif;
+}
+main {
+  background: url("./assets/hotel-wall.jpg") no-repeat center;
+  background-size: cover;
+  max-height: 600px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main h1 {
+  color: #fff;
 }
 
 /* Search bar styles */
@@ -30,7 +62,6 @@ body {
 /* Header styles */
 header > img {
   height: 80%;
-  background-color: #e9ecef;
   margin: 1rem;
 }
 
@@ -193,4 +224,17 @@ form p {
 
 .x-button:active {
   background-color: black;
+}
+
+/* Table styles */
+th {
+  white-space: nowrap;
+  position: relative;
+}
+
+th span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -5px;
 }
