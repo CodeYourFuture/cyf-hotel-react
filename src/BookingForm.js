@@ -11,13 +11,12 @@ const BookingForm = ({ addBooking }) => {
     checkInDate: "",
     checkOutDate: "",
   });
-  const [validInput, setValidInput] = useState(true);
+  const [validInput, setValidInput] = useState(false);
   const [currentInput, setCurrentInput] = useState(null);
   const [formValid, setFormValid] = useState(false);
 
   const handleChange = ({ target }) => {
     const trimmedVal = target.value.trim();
-    console.log(trimmedVal);
     setCurrentInput(target.name);
     switch (target.name) {
       case "firstName":
@@ -62,8 +61,7 @@ const BookingForm = ({ addBooking }) => {
   };
 
   useEffect(() => {
-    const isFormValid = Object.values(validInput).every((val) => val === true);
-    setFormValid(isFormValid);
+    validInput ? setFormValid(true) : setFormValid(false);
   }, [validInput]);
 
   return (
