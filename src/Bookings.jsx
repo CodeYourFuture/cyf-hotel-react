@@ -8,8 +8,8 @@ const Bookings = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchInput, setSearchInput] = useState("");
-  const [id, setID] = useState();
-  console.log(bookings);
+  const [newBooking, setNewBooking] = useState(null);
+  const [latestId, setLatestId] = useState(null);
 
   const filteredBookings = bookings.filter(
     (person) =>
@@ -17,46 +17,35 @@ const Bookings = () => {
       person?.surname?.includes(searchInput)
   );
 
-  let updatedBookingsResponse = [];
-
+  // https://nataliiazab-hotel-app.onrender.com/bookings
   async function addBooking(newBooking) {
-    const newData = bookings.concat(newBooking);
-    setBookings(newData);
-    // console.log(newBooking);
+    try {
+      const response = await fetch(
+        "https://nataliiazab-hotel-app.onrender.com/bookings",
+        {
+          method: "POST",
+          body: JSON.stringify({ ...newBooking, id: latestId }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-    const response = await fetch("http://localhost:3001/bookings", {
-      method: "POST",
-      body: JSON.stringify(newBooking),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+      const responseJson = await response.json();
+      const newBookingWithId = { ...newBooking, id: responseJson.id };
+      // Update latest ID
+      setLatestId(responseJson.id);
 
-    updatedBookingsResponse = (await fetch("http://localhost:3001/bookings"))
-      .body;
+      const newData = [...bookings, newBookingWithId];
 
-    // fetch("http://localhost:3001/bookings")
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       throw new Error("HTTP error, status = " + response.status);
-    //     }
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //     // setBookings(data.bookings);
-    //     // setIsLoading(true);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error + "in file Bookings.jsx");
-    //     // setError(error);
-    //   });
-
-    // setBookings(updatedBookingsResponse.body.bookings);
-
-    return response.json(); // parses JSON response into native JavaScript objects
+      setBookings(newData);
+    } catch (error) {
+      console.log("Error adding new booking:", error);
+    }
   }
 
   useEffect(() => {
+    setIsLoading(true);
     fetch("https://nataliiazab-hotel-app.onrender.com/bookings")
       .then((response) => {
         if (!response.ok) {
@@ -66,37 +55,33 @@ const Bookings = () => {
       })
       .then((data) => {
         setBookings(data.bookings);
-        setIsLoading(true);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error + "in file Bookings.jsx");
         setError(error);
       });
-  }, []);
+  }, [latestId]);
+
+  useEffect(() => {
+    if (newBooking !== null) {
+      setBookings([...bookings, newBooking]);
+      setNewBooking(null);
+    }
+  }, [newBooking, bookings]);
 
   return (
     <div className="App-content">
       <div className="container">
         <Search setSearchInput={setSearchInput} searchInput={searchInput} />
-        {isLoading === false && error === null ? (
-          <p>Data is loading...</p>
-        ) : (
-          <p></p>
-        )}
-        {error !== null ? (
+        {isLoading && <p>Data is loading...</p>}
+        {error && (
           <p>
             We are sorry, it is not possible to download data right now. Please
             try again later{" "}
           </p>
-        ) : (
-          <p></p>
         )}
-        <SearchResults
-          results={filteredBookings}
-          id={id}
-          setID={setID}
-          bookings={bookings}
-        />
+        <SearchResults results={filteredBookings} bookings={bookings} />
       </div>
       <NewBooking addBooking={addBooking} />
     </div>

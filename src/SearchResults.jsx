@@ -25,7 +25,7 @@ const myBookings = props.bookings;
         <tbody>
           {myBookings.map((result) => (
             <ResultRow
-              key={result.id}
+              key={props.id}
               result={result}
               id={props.id}
               setID={props.setID}
