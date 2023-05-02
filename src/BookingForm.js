@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import validator from "validator";
 
-const BookingForm = ({ addBooking }) => {
+const BookingForm = ({ addBooking, index }) => {
   const [formData, setFormData] = useState({
+    id: "",
+    title: "",
     firstName: "",
     surname: "",
     email: "",
-    title: "",
     roomId: "",
     checkInDate: "",
     checkOutDate: "",
@@ -40,6 +41,7 @@ const BookingForm = ({ addBooking }) => {
     setFormData({
       ...formData,
       [target.name]: target.value,
+      id: index,
     });
   };
 
@@ -48,10 +50,11 @@ const BookingForm = ({ addBooking }) => {
     if (formValid) {
       addBooking(formData);
       setFormData({
+        id: "",
+        title: "",
         firstName: "",
         surname: "",
         email: "",
-        title: "",
         roomId: "",
         checkInDate: "",
         checkOutDate: "",

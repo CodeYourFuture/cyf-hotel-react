@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import { BarLoader } from "react-spinners";
 import { css } from "@emotion/react";
 import Search from "./Search.js";
@@ -12,9 +13,11 @@ const Bookings = () => {
   const [customerId, setCustomerId] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [profileOn, setProfileOn] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   const addBooking = (booking) => {
-    setBookings([...bookings, booking]);
+    FakeBookings.push(booking);
+    setBookings([...FakeBookings]);
   };
 
   const search = (searchVal) => {
@@ -40,17 +43,33 @@ const Bookings = () => {
       setBookings(FakeBookings);
       setLoaded(true);
     }, 3000);
-  }, []);
+  }, [FakeBookings]);
+
+  const FallbackUI = ({ error, resetErrorBoundary }) => (
+    <div style={{ backgroundColor: "red", color: "white", padding: "1rem" }}>
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Close</button>
+    </div>
+  );
 
   const memoizedCustomerProfile = useMemo(
     () => (
-      <CustomerProfile
-        customerId={customerId}
-        isProfileOn={profileOn}
-        setProfileOn={setProfileOn}
-      />
+      <ErrorBoundary
+        FallbackComponent={FallbackUI}
+        onReset={() => {
+          setHasError(false);
+          setCustomerId(null);
+        }}
+      >
+        <CustomerProfile
+          customerId={customerId}
+          isProfileOn={profileOn}
+          setProfileOn={setProfileOn}
+        />
+      </ErrorBoundary>
     ),
-    [customerId, profileOn]
+    [customerId, profileOn, hasError]
   );
 
   return (
@@ -71,7 +90,7 @@ const Bookings = () => {
         {customerId && memoizedCustomerProfile}
       </div>
       <div className="form__wrapper">
-        <BookingForm addBooking={addBooking} />
+        <BookingForm addBooking={addBooking} index={FakeBookings.length + 1} />
         <div className="form__photo"></div>
       </div>
     </div>

@@ -9,7 +9,6 @@ const CustomerProfile = ({ customerId, isProfileOn, setProfileOn }) => {
   const { title, firstName, surname, email, tel, vip } = Customers.find(
     (customer) => customer.id === customerId
   );
-
   return (
     <div className="customer-profile">
       <div className="profile-section">
