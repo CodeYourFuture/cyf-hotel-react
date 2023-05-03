@@ -268,3 +268,10 @@ th span {
     text-align: center;
   }
 }
+
+@media (max-width: 468px) {
+  footer ul {
+    padding: 0;
+    flex-direction: column;
+  }
+}
