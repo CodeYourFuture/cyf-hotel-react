@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
+//import FakeBookings from "./data/fakeBookings.json";
 import NewBookingForm from "./NewBookingForm.js";
 
 const Bookings = () => {
@@ -16,10 +16,10 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    console.log("using API for data");
+   console.log("using API for data");
     setLoading(true);
 
-    fetch("https://temporary-cyf-react.onrender.com/")
+    fetch("http://localhost:5000/bookings")
       .then((res) => res.json())
       .then((data) => {
         if (data.error) {
@@ -36,7 +36,19 @@ const Bookings = () => {
   }, [setBookings]);
 
   const onCreateNewBooking = (booking) => {
-    setBookings([...bookings, { ...booking, id: bookings.length + 1 }]);
+
+    try {
+      fetch('http://localhost:5000/booking', {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      },
+      body: JSON.stringify(booking)
+    })
+    } catch(error) {
+      console.log(error)
+    }
+    
   };
 
   const filterBookings = bookings.filter(

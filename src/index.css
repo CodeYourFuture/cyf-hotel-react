@@ -13,16 +13,19 @@ body {
   padding: 0.75rem;
   margin-bottom: 0;
   color: #5b5757;
+
 }
 
 .search-row {
   display: flex;
+  flex-direction: column;
   border-top: 2px solid #e9ecef;
   padding-top: 15px;
 }
 
 .search-row input {
   margin-right: 10px;
+
 }
  
 

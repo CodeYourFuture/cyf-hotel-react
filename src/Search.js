@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
 const Search = ({search, setSearch}) => { 
-
 const [searchInput, setSearchInput] = useState("")
- const handleSearchInput =(event) =>{
+
+const handleSearchInput =(event) =>{
 console.log("it is working");
 setSearch(event.target.value);
  };
@@ -29,7 +29,7 @@ return (
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
-                value={search}
+                value={searchInput}
                 onChange={handleSearchInput}
               />
               <SearchButton />

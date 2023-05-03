@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-// Import js-datepicker
-import datepicker from "js-datepicker";
+import React, { useState } from "react"
+
 
 const NewBookingForm = ({ onSubmit }) => {
-  const [id, setId] = useState("");
   const [title, setTitle] = useState("");
   const [firstName, setFirstName] = useState("");
   const [surname, setSurname] = useState("");
@@ -58,17 +56,7 @@ const NewBookingForm = ({ onSubmit }) => {
   };
   return (
     <form>
-      <label for="id">ID:</label>
-      <input
-        value={id}
-        onChange={(event) => setId(event.target.value)}
-        type="text"
-        id="id"
-        name="id"
-      />
-      <br />
-      {error}
-      <label for="title">Title:</label>
+      <label htmlFor="title">Title:</label>
       <input
         value={title}
         onChange={(event) => setTitle(event.target.value)}
@@ -78,7 +66,7 @@ const NewBookingForm = ({ onSubmit }) => {
       />
       <br />
       {error}
-      <label for="first-name">First name:</label>
+      <label htmlFor="first-name">First name:</label>
       <input
         value={firstName}
         onChange={(event) => setFirstName(event.target.value)}
@@ -88,7 +76,7 @@ const NewBookingForm = ({ onSubmit }) => {
       ></input>
       <br />
       {error}
-      <label for="surname">Surname:</label>
+      <label htmlFor="surname">Surname:</label>
       <input
         value={surname}
         onChange={(event) => setSurname(event.target.value)}
@@ -98,7 +86,7 @@ const NewBookingForm = ({ onSubmit }) => {
       ></input>
       <br />
       {error}
-      <label for="email">Email:</label>
+      <label htmlFor="email">Email:</label>
       <input
         value={email}
         onChange={(event) => setEmail(event.target.value)}
@@ -107,7 +95,7 @@ const NewBookingForm = ({ onSubmit }) => {
         name="email"
       ></input>
       <br />
-      <label for="room-id">Room ID:</label>
+      <label htmlFor="room-id">Room ID:</label>
       <input
         value={roomId}
         onChange={(event) => setRoomId(event.target.value)}
@@ -116,7 +104,7 @@ const NewBookingForm = ({ onSubmit }) => {
         name="room-id"
       ></input>
       <br />
-      <label for="check-in-date">check In Date:</label>
+      <label htmlFor="check-in-date">check In Date:</label>
       <input
         value={checkInDate}
         onChange={(event) => setCheckInDate(event.target.value)}
@@ -125,7 +113,7 @@ const NewBookingForm = ({ onSubmit }) => {
         name="check-in-date"
       ></input>
       <br />
-      <label for="check-out-date">check Out Date:</label>
+      <label htmlFor="check-out-date">check Out Date:</label>
       <input
         value={checkOutDate}
         onChange={(event) => setCheckOutDate(event.target.value)}
@@ -134,7 +122,7 @@ const NewBookingForm = ({ onSubmit }) => {
         name="check-out-date"
       ></input>
       <br />
-      <label for="nightStay">Night Stay:</label>
+      <label htmlFor="nightStay">Night Stay:</label>
       <input
         value={nightStay}
         onChange={(event) => setNightStay(event.target.value)}

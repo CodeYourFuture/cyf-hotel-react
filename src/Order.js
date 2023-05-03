@@ -8,7 +8,7 @@ function orderOne(){
  setOrders(orders + 1);
 }
 return(
-<li style={{padding: "10px"}}>
+<li style={{padding: "10px", display: "flex", flexDirection: "column" }}>
     {orderType}: {orders} 
     <RestaurantButton orderOne = {orderOne}/> 
 </li>
