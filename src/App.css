@@ -14,7 +14,7 @@ position: absolute;
 }
 .img-header{
   width: 100%;
-  height: 80%;
+  height: 320px;
   border: 10px;
 }
 
@@ -86,7 +86,7 @@ tr {
   text-align: center;
 }
 .cards-container{
-  border: 5px dotted blue;
+  border: 5px;
   display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -96,13 +96,13 @@ tr {
 .card {
   width: 50%;
   padding: 10px; 
-  border: 5px dotted red;
+  border: 5px;
 }
 
 button,
 select,submit {
   text-transform: none;
-  background-color: lightskyblue;
+  background-color: rgb(250, 191, 135);
   text-align: center;
 }
 
@@ -115,12 +115,16 @@ select,submit {
 
  form{
   grid-area: form;
+  display: flex;
+  flex-direction: column;
   max-width: 100%;
-  background-color: rgb(210, 131, 131);
-  padding: 40px 30px;
+  background-color: rgb(32, 125, 159);
+  border-radius: 0px 50px 50px 0px;
+  padding: 40px 20px;
   border: 1px solid #0a2243;
   border-radius: 20px;
   font-size: 22px;
+  
 }  
 form button {
   cursor: pointer;
@@ -129,4 +133,30 @@ form button {
 }
 button-submit{
   text-align: center;
+}
+
+.new-booking-form {
+  grid-area: form;
+  max-width: 80%;
+  background-color: white;
+  padding: 20px 30px;
+  border: 1px solid #0a2243;
+  border-radius: 20px;
+  font-size: 22px;
+}
+
+.footer-list {
+  background-image: linear-gradient(
+    269.87deg,
+    #0a2243 0.1%,
+    #203e72 48.95%,
+    #0a2243 99.87%
+  );
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 25px;
+  padding: 50px 0;
+  color: white;
 }
