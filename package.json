@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.8",
+    "js-datepicker": "^5.18.2",
     "moment": "^2.29.4",
     "react": "^18.2.0",
+    "react-datepicker": "^4.11.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.4",
     "react-scripts": "^5.0.1",

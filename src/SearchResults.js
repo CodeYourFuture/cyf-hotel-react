@@ -98,8 +98,9 @@ const SearchResults = ({ results, setCustomerId, setProfileOn }) => {
             checkInDate,
             checkOutDate,
           }) => {
-            const checkInMoment = moment(checkInDate, "YYYY-MM-DD");
-            const checkOutMoment = moment(checkOutDate, "YYYY-MM-DD");
+            const checkInMoment = moment(checkInDate);
+            const checkOutMoment = moment(checkOutDate);
+            console.log(checkInMoment);
             const nightCount = checkOutMoment.diff(checkInMoment, "days");
             const isSelected = selected === id;
 
@@ -114,8 +115,8 @@ const SearchResults = ({ results, setCustomerId, setProfileOn }) => {
                 <td>{surname}</td>
                 <td>{email}</td>
                 <td>{roomId}</td>
-                <td>{checkInDate}</td>
-                <td>{checkOutDate}</td>
+                <td>{checkInMoment.format("YYYY-MM-DD")}</td>
+                <td>{checkOutMoment.format("YYYY-MM-DD")}</td>
                 <td>{nightCount}</td>
                 <td>
                   <button

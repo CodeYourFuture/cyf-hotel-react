@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import validator from "validator";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const BookingForm = ({ addBooking, index }) => {
   const [formData, setFormData] = useState({
@@ -43,6 +45,16 @@ const BookingForm = ({ addBooking, index }) => {
       [target.name]: target.value,
       id: index,
     });
+  };
+
+  const handleDateChange = (date, name) => {
+    setCurrentInput(name);
+    setFormData({
+      ...formData,
+      [name]: date,
+      id: index,
+    });
+    console.log(formData);
   };
 
   const handleSubmit = (event) => {
@@ -148,24 +160,22 @@ const BookingForm = ({ addBooking, index }) => {
       </label>
       <label>
         Check-In Date:
-        <input
-          type="date"
+        <DatePicker
           name="checkInDate"
-          value={formData.checkInDate}
-          min="2023-05-01"
-          onChange={handleChange}
+          selected={formData.checkInDate}
+          minDate={new Date()}
+          onChange={(date) => handleDateChange(date, "checkInDate")}
           className="form-field"
           required
         />
       </label>
       <label>
         Check-Out Date:
-        <input
-          type="date"
+        <DatePicker
           name="checkOutDate"
-          value={formData.checkOutDate}
-          min="2023-05-01"
-          onChange={handleChange}
+          selected={formData.checkOutDate}
+          minDate={formData.checkInDate}
+          onChange={(date) => handleDateChange(date, "checkOutDate")}
           className="form-field"
           required
         />
