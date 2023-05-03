@@ -243,3 +243,28 @@ th span {
   transform: translateY(-50%);
   right: -5px;
 }
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+@media (max-width: 890px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .form__wrapper {
+    grid-template-columns: none;
+  }
+
+  .restaurant ul {
+    padding: 0;
+  }
+
+  main h1 {
+    text-align: center;
+  }
+}

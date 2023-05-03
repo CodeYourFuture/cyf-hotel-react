@@ -159,7 +159,7 @@ const BookingForm = ({ addBooking, index }) => {
         </p>
       </label>
       <label>
-        Check-In Date:
+        Check-In:
         <DatePicker
           name="checkInDate"
           selected={formData.checkInDate}
@@ -170,7 +170,7 @@ const BookingForm = ({ addBooking, index }) => {
         />
       </label>
       <label>
-        Check-Out Date:
+        Check-Out:
         <DatePicker
           name="checkOutDate"
           selected={formData.checkOutDate}
