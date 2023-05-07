@@ -6,7 +6,7 @@ body {
 }
 
 .search-wrapper {
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid #3d5975;
 }
 
 .search-box label {
@@ -18,7 +18,7 @@ body {
 
 .search-row {
   display: flex;
-  border-top: 2px solid #e9ecef;
+  border-top: 2px solid #43709c;
   padding-top: 15px;
 }
 
