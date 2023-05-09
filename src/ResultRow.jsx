@@ -6,14 +6,14 @@ const ResultRow = (props) => {
   const result = props.result;
   const active = props.id === result.id;
 
- 
   function changeId() {
     props.setID(result.id);
   }
-  
-// console.log(result);
+
+
+
+ 
   return (
-    
     <tr scope="row" className={active ? "pink" : ""} onClick={changeId}>
       <td>{result.id}</td>
       <td>{result.title}</td>
@@ -23,10 +23,14 @@ const ResultRow = (props) => {
       <td>{result.roomId}</td>
       <td>{result.checkInDate}</td>
       <td>{result.checkOutDate}</td>
+
       <td>
         {moment(result.checkOutDate).diff(moment(result.checkInDate), "days")}
       </td>
       <td>
+        <button className="card-btn" onClick={() => props.removeBooking(result.id)}>
+          Remove
+        </button>
         {/* <button className="card-btn" onClick={changeId}>
           Show profile
         </button> */}

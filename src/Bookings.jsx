@@ -8,7 +8,6 @@ const Bookings = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchInput, setSearchInput] = useState("");
-  const [newBooking, setNewBooking] = useState(null);
   const [latestId, setLatestId] = useState(null);
 
   const filteredBookings = bookings.filter(
@@ -44,6 +43,16 @@ const Bookings = () => {
     }
   }
 
+  /*add try catch*/
+  async function removeBooking(id) {
+    await fetch(`https://nataliiazab-hotel-app.onrender.com/bookings/${id}`, {
+      method: "DELETE",
+    });
+    const newData = bookings.filter((booking) => booking.id !== id);
+    setBookings(newData);
+  }
+
+
   useEffect(() => {
     setIsLoading(true);
     fetch("https://nataliiazab-hotel-app.onrender.com/bookings")
@@ -63,13 +72,6 @@ const Bookings = () => {
       });
   }, [latestId]);
 
-  useEffect(() => {
-    if (newBooking !== null) {
-      setBookings([...bookings, newBooking]);
-      setNewBooking(null);
-    }
-  }, [newBooking, bookings]);
-
   return (
     <div className="App-content">
       <div className="container">
@@ -81,7 +83,11 @@ const Bookings = () => {
             try again later{" "}
           </p>
         )}
-        <SearchResults results={filteredBookings} bookings={bookings} />
+        <SearchResults
+          results={filteredBookings}
+          bookings={bookings}
+          removeBooking={removeBooking}
+        />
       </div>
       <NewBooking addBooking={addBooking} />
     </div>

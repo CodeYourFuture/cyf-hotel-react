@@ -6,6 +6,7 @@ import CustomerProfile from "./CustomerProfile";
 const SearchResults = (props) => {
   const ourObject = props.results;
 const myBookings = props.bookings;
+
   return (
     <div>
       <table className="table table-sm">
@@ -20,6 +21,7 @@ const myBookings = props.bookings;
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
             <th scope="col">Number of nights</th>
+            <th scope="col">Remove booking</th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +31,7 @@ const myBookings = props.bookings;
               result={result}
               id={props.id}
               setID={props.setID}
+              removeBooking={props.removeBooking}
             />
           ))}
         </tbody>

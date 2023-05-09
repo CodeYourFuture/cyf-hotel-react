@@ -65,39 +65,58 @@ const NewBooking = ({ addBooking }) => {
           <label for="title" class="form-label">
             Enter your title:
           </label>
-          <input
-            type="text"
-            class="form-control"
+          <select
+            class="form-select"
             id="title"
             name="title"
             value={formValues["title"] || ""}
             onChange={changeFormValue}
-          />
+          >
+            <option value="">Select your title</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Ms.">Ms.</option>
+            <option value="Miss">Miss</option>
+            <option value="Mr.">Mr.</option>
+            <option value="Dr.">Dr.</option>
+            <option value="Prof. ">Prof. </option>
+          </select>
         </div>
         <div class="mb-3">
           <label for="roomId" class="form-label">
             Your room id:
           </label>
-          <input
-            type="text"
-            class="form-control"
+          <select
+            class="form-select"
             id="roomId"
             name="roomId"
             value={formValues["roomId"] || ""}
             onChange={changeFormValue}
-          />
+          >
+            <option value="">Select a room ID</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
         </div>
         <div class="mb-3">
           <label for="checkInDate" class="form-label">
             Check in date:
           </label>
           <input
-            type="text"
+            type="date"
             class="form-control"
             id="checkInDate"
             name="checkInDate"
             value={formValues["checkInDate"] || ""}
             onChange={changeFormValue}
+            min={new Date().toISOString().split("T")[0]}
           />
         </div>
         <div class="mb-3">
@@ -105,12 +124,16 @@ const NewBooking = ({ addBooking }) => {
             Check out date:
           </label>
           <input
-            type="text"
+            type="date"
             class="form-control"
             id="checkOutDate"
             name="checkOutDate"
             value={formValues["checkOutDate"] || ""}
             onChange={changeFormValue}
+            min={
+              formValues["checkInDate"] ||
+              new Date().toISOString().split("T")[0]
+            }
           />
         </div>
         <button type="button" class="btn btn-primary" onClick={submitBooking}>
