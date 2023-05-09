@@ -25,7 +25,7 @@ const myBookings = props.bookings;
         <tbody>
           {myBookings.map((result) => (
             <ResultRow
-              key={props.id}
+              key={result.id}
               result={result}
               id={props.id}
               setID={props.setID}
@@ -33,9 +33,9 @@ const myBookings = props.bookings;
           ))}
         </tbody>
       </table>
-      {/* {ourObject.some((profile) => profile.id === props.id) ? (
+      {ourObject.some((profile) => profile.id === props.id) ? (
         <CustomerProfile id={props.id} />
-      ) : null} */}
+      ) : null}
     </div>
   );
 };
