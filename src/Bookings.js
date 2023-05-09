@@ -26,7 +26,7 @@ function Bookings() {
   });
 
   useEffect(() => {
-    fetch("https://temporary-cyf-react.onrender.com")
+    fetch("https://cyf-hotel-node-app.onrender.com/bookings")
       .then((response) => {
         return response.json();
       })
