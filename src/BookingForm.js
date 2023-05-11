@@ -42,7 +42,7 @@ function BookingForm(props) {
 
   const handleSubmit = (event, props) => {
     event.preventDefault();
-    fetch("http://localhost:3003/bookings", {
+    fetch("https://andriana-hotel-server.onrender.com/bookings", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -82,6 +82,9 @@ thead {
 .card:hover {
   opacity: 1;
 }
+/* .card-content {
+  background-image: url(https://www.beautifulworld.com/wp-content/uploads/2016/09/Aurora-borealis-1.jpg);
+} */
 
 .card-content {
   display: flex;

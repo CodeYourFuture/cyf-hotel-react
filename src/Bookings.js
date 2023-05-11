@@ -32,7 +32,7 @@ const Bookings = props => {
   };
 
   function getAllBookings() {
-    fetch("http://localhost:3003/bookings")
+    fetch("https://andriana-hotel-server.onrender.com/bookings")
       .then(response => {
         return response.json();
       })
