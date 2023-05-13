@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchButton from "./SearchButton";
-const Search = () => {
+
+const Search = (props) => {
+  const handleSearchInput = (event) => {
+    props.setSearchInput(event.target.value);
+    // console.log(event.target.value);
+  };
   return (
     <div className="search">
       <div className="page-header">
