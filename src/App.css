@@ -7,6 +7,11 @@
   height: 80px;
 }
 
+.Heading-logo {
+  width: 5%;
+  height: auto;
+  margin: 10px;
+}
 .App-header {
   background-color: #222;
   height: 50px;
@@ -50,8 +55,20 @@ tr {
 .footer {
   padding-top: 20px;
   text-align: center;
+  list-style: none;
 }
 
 .card {
-  width: 18rem;
+  width: 20rem;
+  height: 38rem;
+  margin: 30px;
+  padding: 10px;
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content:center;
+  margin: 10px;
+  padding: 10px;
 }
