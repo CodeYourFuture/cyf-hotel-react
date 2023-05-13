@@ -13,3 +13,30 @@
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
+ 
+  
+  
+  
+ 
+
+  
+// Sort the filtered array in ascending order
+function solution(A) {
+  // Filter out all negative and zero values from A
+  const filteredArr = A.filter(num => num > 0);
+  
+  // Sort the filtered array in ascending order
+  const sortedArr = filteredArr.sort((a, b) => a - b);
+  
+  // Find the smallest positive integer that doesn't occur in A
+  let smallestInt = 1;
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i] === smallestInt) {
+      smallestInt++;
+    } else if (sortedArr[i] > smallestInt) {
+      return smallestInt;
+    }
+  }
+  
+  return smallestInt;
+}
