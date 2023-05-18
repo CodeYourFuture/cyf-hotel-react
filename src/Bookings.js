@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-// import data from "./data/fakeBookings.json";
+// import data from "./data/fakeBookings.json"
 import moment from "moment";
 
 const Bookings = () => {

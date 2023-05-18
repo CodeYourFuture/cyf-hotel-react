@@ -36,7 +36,7 @@ const SearchResults = item => {
           </td>
         </tr>
       </tbody>
-      <CustomerProfile id={clickIdProfile} />
+      {clickIdProfile && <CustomerProfile id={clickIdProfile} />}
     </>
   );
 };
