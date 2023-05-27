@@ -8,6 +8,8 @@ const Bookings = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
+// http://localhost:4000
+
   useEffect(() => {
     setLoading(true);
     fetch(`https://temporary-cyf-react.onrender.com/`)
