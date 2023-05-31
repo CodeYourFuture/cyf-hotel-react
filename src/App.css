@@ -4,18 +4,23 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 110px;
 }
-
 .App-header {
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 5px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
+}
+.App-header img{
+  height:30px;
+  width:30px;
+  margin-right: 10px;
+  margin-top: -10px;;
 }
 
 .App-title {
@@ -53,5 +58,15 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 28rem;
+  display: grid;
+  align-items: center;
+  border-color: green;
+  border: 3px solid green;
+  margin-left: 400px;
+  margin-top: 20px;
+}
+.card-body{
+  align-items: center;
+  text-align: center;
 }
