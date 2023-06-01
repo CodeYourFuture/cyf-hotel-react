@@ -28,13 +28,13 @@ const App = () => {
             image={GlasgowImage}
             name="Glasgow"
             link="http://peoplemakeglasgow.com/"
-            description="Capital city of Scotland, Glasgow is rich in history and culture. A vibrant city with a colourful atmosphere. Visit the cathedral for authenthic feel Glasgow."
+            description="Capital city of Scotland, rich in history and culture. A vibrant city with a colourful atmosphere. Visit the cathedral for an authenthic Glasgow feeling."
           />
           <TouristInfoCards
             image={ManchesterImage}
             name="Manchester"
             link="https://www.visitmanchester.com/"
-            description="A lovely vibrant city in the north part of England. It is rich in both traditional and futuristic cultures, with a medley of its old history seeping through."
+            description="A beautiful bubbly city in the north part of England. It is rich in both traditional and futuristic cultures, with a medley of its old history seeping through."
           />
         </div>
       </section>

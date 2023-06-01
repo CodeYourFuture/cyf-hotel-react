@@ -106,14 +106,6 @@ function NewBookingForm(props) {
           onChange={handleBookingForm}
           value={checkOutDate}
         />
-{/* 
-        <input
-          type="text"
-          name="totalNumOfNights"
-          placeholder="totalNumOfNights"
-          onChange={handleBookingForm}
-          value={totalnumOfNights}
-        /> */}
 
         <button className="btn btn-primary" onClick={handleSubmitButton}>
           Click to Submit Form
