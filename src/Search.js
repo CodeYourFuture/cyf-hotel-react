@@ -1,5 +1,5 @@
 import React from "react";
-
+// some changes
 const Search = () => {
   return (
     <div className="search">
