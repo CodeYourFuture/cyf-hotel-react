@@ -2,9 +2,9 @@ import React from "react";
 import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import Bookings from "./Bookings";
+import SearchResults from "./SearchResults";
 import "./App.css";
 import Heading from "./Heading";
-
 
 const App = () => {
   return (
@@ -13,6 +13,7 @@ const App = () => {
       <Heading />
 
       <Bookings />
+
       <TouristInfoCards />
       <Footer
         addressDetail={[
