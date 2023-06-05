@@ -1,5 +1,4 @@
 import React from "react";
-import "./SearchResults.css";
 import TableHeading from "./TableHeading";
 import TableBody from "./TableBody";
 
