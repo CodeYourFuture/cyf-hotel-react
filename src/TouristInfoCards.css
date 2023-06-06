@@ -4,7 +4,7 @@
   align-items: stretch;
   gap: 20px;
   height: 100%;
-  margin: 1rem;
+  margin: 3rem;
 }
 
 .card {
@@ -13,4 +13,8 @@
   grid-template-rows: auto 1fr auto;
   border: 3px green solid;
   text-align: center;
+}
+.card-img-top {
+  object-fit: cover;
+  height: 100%;
 }
