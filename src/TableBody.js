@@ -1,5 +1,5 @@
 import React from "react";
-
+import NightsCount from "./NightsCount";
 const TableBody = (props) => {
   return (
     <tbody>
@@ -14,6 +14,12 @@ const TableBody = (props) => {
             <td> {aBooking.roomId} </td>
             <td> {aBooking.checkInDate} </td>
             <td> {aBooking.checkOutDate} </td>
+            <td>
+              <NightsCount
+                checkInDate={aBooking.checkInDate}
+                checkOutDate={aBooking.checkOutDate}
+              />
+            </td>
           </tr>
         );
       })}
