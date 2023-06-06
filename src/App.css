@@ -55,3 +55,11 @@ tr {
 .card {
   width: 18rem;
 }
+
+.imgHeading{
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
