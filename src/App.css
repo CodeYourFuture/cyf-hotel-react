@@ -52,6 +52,15 @@ tr {
   text-align: center;
 }
 
+.card-container {
+  display: flex;
+}
+
 .card {
-  width: 18rem;
+  width: 30rem;
+  text-align: center;
+  border: solid green 3px;
+  margin: 2rem;
+  align-items: center;
+  justify-content: space-around;
 }
