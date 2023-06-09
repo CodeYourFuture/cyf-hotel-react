@@ -24,3 +24,13 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+@media (max-width: 768px) {
+  .search-row {
+    flex-direction: column;
+  }
+
+  .search-row input {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}

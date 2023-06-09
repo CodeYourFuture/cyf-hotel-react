@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "./Heading.css";
 const HotelIcon = () => (
   <svg
     className="hotel-icon"
