@@ -26,3 +26,7 @@ const touristCardData = [
     url: "https://www.visitlondon.com/",
   },
 ];
+
+function TouristInfoCards() {}
+
+export default TouristInfoCards;
