@@ -1,0 +1,13 @@
+.footer {
+  padding: 5rem 0 2rem 0;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-details li {
+  list-style: none;
+  padding: 0 2rem;
+}
