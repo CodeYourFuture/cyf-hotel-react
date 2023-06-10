@@ -30,7 +30,7 @@ function TouristInfoCards() {
 
   // I've made 3 cards but I need to put them in a div
   return touristCardData.map((element) => (
-    <div className="card">
+    <div className="card" key={element.city}>
       <div className="card-body">
         <img src={element.image} className="card-img-top" />
         <h2 className="card-title">{element.city}</h2>
