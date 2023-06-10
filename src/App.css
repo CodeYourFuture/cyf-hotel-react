@@ -48,6 +48,11 @@
   margin-top: 15px;
 }
 
+.tourist-card-container {
+  display: flex;
+  justify-content: center;
+}
+
 .card {
   width: 100%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);

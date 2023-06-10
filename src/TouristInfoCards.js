@@ -28,6 +28,7 @@ function TouristInfoCards() {
     },
   ];
 
+  // I've made 3 cards but I need to put them in a div
   return touristCardData.map((element) => (
     <div className="card">
       <div className="card-body">
