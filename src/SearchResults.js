@@ -1,34 +1,41 @@
 import React from "react";
+import moment from "moment";
 
-const SearchResults = ({ results }) => (
-  <table className="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>First Name</th>
-        <th>Surname</th>
-        <th>Email</th>
-        <th>Room ID</th>
-        <th>Check In Date</th>
-        <th>Check Out Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      {results.map((booking) => (
-        <tr key={booking.id}>
-          <td>{booking.id}</td>
-          <td>{booking.title}</td>
-          <td>{booking.firstName}</td>
-          <td>{booking.surname}</td>
-          <td>{booking.email}</td>
-          <td>{booking.roomId}</td>
-          <td>{booking.checkInDate}</td>
-          <td>{booking.checkOutDate}</td>
+const SearchResults = (props) => {
+  return (
+    <table className="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">First name</th>
+          <th scope="col">Surname</th>
+          <th scope="col">Email</th>
+          <th scope="col">Room ID</th>
+          <th scope="col">Check in date</th>
+          <th scope="col">Check out date</th>
+          <th scope="col">Nights</th>
         </tr>
-      ))}
-    </tbody>
-  </table>
-);
+      </thead>
+      <tbody>
+        {props.results.map((booking) => (
+          <tr key={booking.id}>
+            <th scope="row">{booking.id}</th>
+            <td>{booking.title}</td>
+            <td>{booking.firstName}</td>
+            <td>{booking.surname}</td>
+            <td>{booking.email}</td>
+            <td>{booking.roomId}</td>
+            <td>{booking.checkInDate}</td>
+            <td>{booking.checkOutDate}</td>
+            <td>
+              {moment(booking.checkOutDate).diff(booking.checkInDate, "days")}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
 
 export default SearchResults;
