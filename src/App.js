@@ -13,7 +13,11 @@ const App = () => {
         <TouristInfoCards />
       </div>
       <Bookings />
-      <Footer />
+      <Footer
+        address="123 Fake Street, London, E1 4UD"
+        email="hello@fakehotel.com"
+        telephone="0123 456789"
+      />
     </div>
   );
 };

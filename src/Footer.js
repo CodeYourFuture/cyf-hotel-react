@@ -1,9 +1,13 @@
 import React from "react";
 
-function Footer() {
+function Footer(props) {
   return (
     <footer>
-      <p>hello world</p>
+      <ul>
+        <li key={props.address}>{props.address}</li>
+        <li key={props.email}>{props.email}</li>
+        <li key={props.telephone}>{props.telephone}</li>
+      </ul>
     </footer>
   );
 }
