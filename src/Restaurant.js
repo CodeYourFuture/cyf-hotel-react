@@ -11,11 +11,18 @@ const Restaurant = () => {
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
-          Pizzas: {orders} <button className="btn btn-primary">Add</button>
+          Pizzas: {orders}{" "}
+          <button onClick={OrderOne} className="btn btn-primary">
+            Add
+          </button>
         </li>
       </ul>
     </div>
   );
+
+  function OrderOne() {
+    setOrders(orders + 1);
+  }
 };
 
 export default Restaurant;
