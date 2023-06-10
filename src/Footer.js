@@ -1,12 +1,13 @@
 import React from "react";
 
-function Footer(props) {
+// destructuring props
+function Footer({ address, email, telephone }) {
   return (
     <footer>
       <ul>
-        <li key={props.address}>{props.address}</li>
-        <li key={props.email}>{props.email}</li>
-        <li key={props.telephone}>{props.telephone}</li>
+        <li key={address}>{address}</li>
+        <li key={email}>{email}</li>
+        <li key={telephone}>{telephone}</li>
       </ul>
     </footer>
   );
