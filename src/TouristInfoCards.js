@@ -34,7 +34,7 @@ function TouristInfoCards() {
         <img src={element.image} className="card-img-top" />
         <h2 className="card-title">{element.city}</h2>
         <p className="card-description">{element.description}</p>
-        <a href="#" className="btn btn-primary">
+        <a href={element.url} className="btn btn-primary">
           Learn More
         </a>
       </div>
