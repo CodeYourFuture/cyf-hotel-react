@@ -7,8 +7,10 @@ const Restaurant = () => {
   // 0 is the initial value
   const [orders, setOrders] = useState(0);
 
-  function OrderOne() {
-    setOrders(orders + 1);
+  function orderOne() {
+    setOrders((orders) => {
+      return orders + 1;
+    });
   }
 
   return (
@@ -16,7 +18,7 @@ const Restaurant = () => {
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
-          Pizzas: {orders} <RestaurantButton OrderOne={OrderOne} />
+          Pizzas: {orders} <RestaurantButton orderOne={orderOne} />
         </li>
       </ul>
     </div>

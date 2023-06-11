@@ -1,10 +1,8 @@
 import React from "react";
 
-// I *think* the function got passed down as props from the parent "Restaurant.js"
-// check with Douglas...!
-function RestaurantButton({ OrderOne }) {
+function RestaurantButton({ orderOne }) {
   return (
-    <button onClick={OrderOne} className="btn btn-primary">
+    <button onClick={orderOne} className="btn btn-primary">
       Add
     </button>
   );
