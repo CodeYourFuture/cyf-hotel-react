@@ -17,10 +17,12 @@ textAlign: "center"}}
 >{props.header} </h5>
 
 <p style={{marginTop:0 ,marginBottom:10}}>{props.text}</p>
-<a href={props.a} className="btn btn-primary" 
+<div style={{ display: "flex", justifyContent: "center", marginTop: "auto" }}>
+<a href={props.a} className="btn btn-primary " 
 style={{backgroundColor:"gray" ,
 border:"none", paddingLeft: '2rem', 
 paddingRight: '2rem' }} > Learn More</a>
+</div>
 </div>
 </div>
 }
