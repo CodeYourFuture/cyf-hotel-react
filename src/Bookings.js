@@ -4,7 +4,7 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings); // add this line
+  const [bookings, setBookings] = useState(FakeBookings); // Edited
 
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
@@ -14,7 +14,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />{" "}
+        <SearchResults results={bookings} />  // Edited
       </div>
     </div>
   );
