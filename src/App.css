@@ -18,7 +18,7 @@
   font-weight: bold;
 }
 .card-img-top {
-  height: 200px;
+  height: 180px;
 }
 .App-title {
   font-size: 1.5em;
@@ -62,5 +62,4 @@ tr {
 
 .card {
   width: 18rem;
-  
 }

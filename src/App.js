@@ -21,14 +21,12 @@ const App = () => {
       <TuristInfoCards 
       image={london} 
       header={"London"}
-
       text={"An unmissable destination for travellers, London is a melting pot of history, culture, green spaces and an international crowd that spills into every delicious corner of its cuisine. "} 
       a={"https://visitlondon.com"} 
       />
       <TuristInfoCards 
       image={manchester} 
       header={"Manchester"}
-
       text={"Home to world-famous football, renowned art galleries and a music scene that brought Oasis to centre stage – there’s lots to love about Manchester. There’s a wealth of treasures waiting to be discovered."} 
       a={"https://visitmanchester.com"}  />
       </div>
