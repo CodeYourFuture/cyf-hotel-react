@@ -5,11 +5,11 @@ const Restaurant = () => {
   // array destructuring
   // setOrders is a function that allows me to modify the value of the orders variable
   // 0 is the initial value
-  const [orders, setOrders] = useState(0);
+  const [orderCount, setOrderCount] = useState(0);
 
   function orderOne() {
-    setOrders((orders) => {
-      return orders + 1;
+    setOrderCount((orderCount) => {
+      return orderCount + 1;
     });
   }
 
@@ -18,7 +18,7 @@ const Restaurant = () => {
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
-          Pizzas: {orders} <RestaurantButton orderOne={orderOne} />
+          Pizzas: {orderCount} <RestaurantButton orderOne={orderOne} />
         </li>
       </ul>
     </div>
