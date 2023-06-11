@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import RestaurantButton from "./RestaurantButton";
 
 const Restaurant = () => {
   // array destructuring
@@ -6,23 +7,20 @@ const Restaurant = () => {
   // 0 is the initial value
   const [orders, setOrders] = useState(0);
 
+  function OrderOne() {
+    setOrders(orders + 1);
+  }
+
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
-          Pizzas: {orders}{" "}
-          <button onClick={OrderOne} className="btn btn-primary">
-            Add
-          </button>
+          Pizzas: {orders} <RestaurantButton OrderOne={OrderOne} />
         </li>
       </ul>
     </div>
   );
-
-  function OrderOne() {
-    setOrders(orders + 1);
-  }
 };
 
 export default Restaurant;
