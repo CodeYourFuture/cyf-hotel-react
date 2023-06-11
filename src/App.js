@@ -6,8 +6,11 @@ import "./App.css";
 import london from  "./images/london.jpeg"
 import manchester from "./images/Manchester.webp"
 import glasgow from "./images/glasgow.jpeg"
+import Footer from "./Footer";
 
 const App = () => {
+  const contacts = ["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]; //declaring the data inside app for easy access
+
   return (
     <div className="App">
       <Heading/>
@@ -31,6 +34,8 @@ const App = () => {
       a={"https://visitmanchester.com"}  />
       </div>
       <Bookings />
+      <Footer props={contacts} /> 
+
     </div>
   );
 };
