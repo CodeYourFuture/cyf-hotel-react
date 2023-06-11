@@ -1,4 +1,4 @@
-import hotel from  "./images/hotel.png"
+import hotel from  "./images/hotel1.jpg"
 
 const Heading = () => {
 return <header className="App-header">
