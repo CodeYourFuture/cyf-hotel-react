@@ -1,0 +1,35 @@
+.Restaurant {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 80px auto;
+  padding: 20px;
+  width: 40%;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.Restaurant h3 {
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.Restaurant ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Restaurant ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.Restaurant ul li:first-child {
+  padding-top: 0;
+}
+
+.Restaurant ul li:last-child {
+  border-bottom: none;
+}
