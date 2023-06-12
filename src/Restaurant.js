@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import RestaurantButton from "./RestaurantButton";
 const Restaurant = () => {
   // const pizzas = 0;
   const [orders, setOrders] = useState(0);
@@ -12,9 +12,8 @@ const Restaurant = () => {
       <ul>
         <li>
           Pizzas: {orders}
-          <button className="btn btn-primary" onClick={orderOne}>
-            Add
-          </button>
+          <RestaurantButton handleClick = {orderOne}  /> 
+         
         </li>
       </ul>
     </div>
