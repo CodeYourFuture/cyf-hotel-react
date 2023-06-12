@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
-
+import "./Restaurant.css";
 const Restaurant = () => {
   // array destructuring
   // setOrders is a function that allows me to modify the value of the orders variable
@@ -14,7 +14,7 @@ const Restaurant = () => {
   }
 
   return (
-    <div>
+    <div className="Restaurant">
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
