@@ -4,6 +4,7 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
   };
