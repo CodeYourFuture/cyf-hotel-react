@@ -3,7 +3,7 @@ import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState(FakeBookings);
 
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
