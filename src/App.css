@@ -34,6 +34,11 @@
   font-size: large;
 }
 
+.InfoCards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -61,4 +66,13 @@ tr {
 
 .card {
   width: 18rem;
+  margin: 15px;
+  padding: 5px;
+  text-align: justify;
+}
+
+h3 {
+  font-weight: 800;
+  text-align: center;
+  margin: 5px;
 }
