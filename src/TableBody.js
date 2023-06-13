@@ -1,3 +1,5 @@
+import moment from "moment";
+
 const TableBody = (props) => {
   return (
     <tbody>
@@ -12,6 +14,9 @@ const TableBody = (props) => {
             <td>{result.roomId}</td>
             <td>{result.checkInDate}</td>
             <td>{result.checkOutDate}</td>
+            <td>
+              {moment(result.checkOutDate).diff(result.checkInDate, "days")}
+            </td>
           </tr>
         );
       })}
