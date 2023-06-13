@@ -9,13 +9,27 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display:flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+}
+.hotel-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.hotel-logo {
+  width: 40px;
+  height: 40px;
 }
 
 .App-title {
@@ -54,4 +68,11 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
 }
