@@ -6,7 +6,7 @@ import glassgowImg from "./images/glasgow.jpeg";
 
 const TouristInfoCards = (props) => {
   return (
-    <div className="d-flex justify-content-around">
+    <div className="d-flex justify-content-around mt-4">
       <InfoCard
         img={glassgowImg}
         cityTitle="Glasgow"
