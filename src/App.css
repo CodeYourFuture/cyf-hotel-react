@@ -41,6 +41,10 @@
 
 tr {
   color: #5b5757;
+   border-bottom: 1px solid #ddd
+}
+td,tr {
+  padding: 1rem;
 }
 
 .results {
