@@ -27,8 +27,6 @@ const TouristInfoCards = (props) => (
       <a
         href={props.url}
         className="btn btn-primary"
-        target="_blank"
-        rel="noreferrer"
       >
         More information
       </a>
