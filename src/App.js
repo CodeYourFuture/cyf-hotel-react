@@ -12,25 +12,28 @@ const Heading = () => (
 );
 
 const TouristInfoCards = (props) => (
-   (
-    <div className="card">
-      <img src={props.image} className="card-img-top" />
-      <h3>{props.name}</h3>
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Ut congue volutpat erat. Suspendisse nec
-        vestibulum risus, at sollicitudin lectus. Sed rhoncus odio ac magna
-        ultrices, in consectetur tortor convallis. Sed sed dui ante. Etiam
-        efficitur lacus velit, eget placerat massa rutrum ut. Integer posuere
-        elit eget imperdiet molestie.
-      </p>
-      <div className="card-body">
-        <a href={props.url} className="btn btn-primary" target="_blank">
-          More information
-        </a>
-      </div>
+  <div className="card">
+    <img src={props.image} className="card-img-top" />
+    <h3>{props.name}</h3>
+    <p>
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+      ac turpis egestas. Ut congue volutpat erat. Suspendisse nec vestibulum
+      risus, at sollicitudin lectus. Sed rhoncus odio ac magna ultrices, in
+      consectetur tortor convallis. Sed sed dui ante. Etiam efficitur lacus
+      velit, eget placerat massa rutrum ut. Integer posuere elit eget imperdiet
+      molestie.
+    </p>
+    <div className="card-body">
+      <a
+        href={props.url}
+        className="btn btn-primary"
+        target="_blank"
+        rel="noreferrer"
+      >
+        More information
+      </a>
     </div>
-  )
+  </div>
 );
 
 const Footer = (props) => (
