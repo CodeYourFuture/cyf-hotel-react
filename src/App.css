@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  background-color: #c7c7c7;
 }
 
 .App-logo {
@@ -18,6 +19,19 @@
   font-weight: bold;
 }
 
+
+
+.AllCards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card-img-top {
+  padding: 0.3rem;
+}
+
 .App-title {
   font-size: 1.5em;
 }
@@ -31,10 +45,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -52,6 +68,26 @@ tr {
   text-align: center;
 }
 
+.footer li {
+  list-style: none;
+}
+
 .card {
   width: 18rem;
+  border: #b7b7b7 solid 0.08rem;
+}
+
+.btn-primary {
+  background-color: #222;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #cddb96;
+  color: #222;
+  border: #222 solid 0.08rem;
+}
+
+h2 {
+  color: #a1a1a1;
 }
