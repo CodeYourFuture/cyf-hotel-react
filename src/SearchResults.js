@@ -1,12 +1,15 @@
 import moment from "moment"
+import React, { useState } from "react"
 
 
 const SearchResults = (props) => {
     let allData = props.results
     return (
         <table class="table table-striped">
+
             <thead>
-                <tr>
+
+                <tr className="title-table">
                     <th scope="col">ID</th>
                     <th scope="col">Title</th>
                     <th scope="col">First Name</th>
@@ -24,9 +27,12 @@ const SearchResults = (props) => {
                     allData.map(client => {
                         let a = moment((client.checkOutDate).split("-"))
                         let b = moment((client.checkInDate).split("-"))
-
+                        const [active, setActive] = useState(false)
+                        const handleClick = () => {
+                            setActive(!active)
+                        }
                         return (
-                            <tr>
+                            <tr onClick={handleClick} style={{ backgroundColor: active ? "#607042" : "#797979" }}>
                                 <th scope="row">{client.id}</th>
                                 <td>{client.title}</td>
                                 <td>{client.firstName}</td>

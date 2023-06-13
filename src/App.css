@@ -56,7 +56,11 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #ffffff;
+}
+
+.title-table {
+  color: #222;
 }
 
 .results {
@@ -83,9 +87,8 @@ tr {
 }
 
 .btn-primary:hover {
-  background-color: #cddb96;
-  color: #222;
-  border: #222 solid 0.08rem;
+  background-color: #607042;
+  color: #ffffff;
 }
 
 h2 {
