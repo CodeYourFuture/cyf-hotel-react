@@ -3,7 +3,7 @@ import React from "react";
 const TouristInfoCard = () =>{
     return <div class = "welcome">
     <img src = "https://cache.marriott.com/content/dam/marriott-renditions/LONCH/lonch-suite-0167-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=572px:*" class = "welcome-img" alt="hotel-img"></img>
-    <p class = "welcome-text">Explore World With Us!!!</p>
+    <p class = "welcome-text">Explore The World With Us!!!</p>
     <div class="card">
       <div>
   <img src="https://peoplemakeglasgow.com/imager/general/45177/East-End-Glasgow-Cathedral-Image-Block_8dc3bdbc8660ad389ec95cdf9b15d797.jpg" class="card-img-top" alt="glasgow-pic"></img>
