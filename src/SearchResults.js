@@ -58,7 +58,7 @@ const SearchResults = () => {
     const [myData, setMyData] = useState(data)
     return(
         <div>
-            <Row data = {myData} />;
+            <Row data = {myData} />
         </div>
     )
 };
