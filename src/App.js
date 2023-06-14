@@ -5,6 +5,7 @@ import Bookings from "./Bookings";
 import SearchResults from "./SearchResults";
 import "./App.css";
 import Heading from "./Heading";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Heading />
 
       <Bookings />
+      <Restaurant />
 
       <TouristInfoCards />
       <Footer
