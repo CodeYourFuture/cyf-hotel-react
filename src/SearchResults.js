@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 function SearchResults(props) {
     return (
@@ -13,23 +14,28 @@ function SearchResults(props) {
               <th scope="col">room id</th>
               <th scope="col">check in date</th>
               <th scope="col">check out date</th>
+              <th scope="col">stay nights</th>
             </tr>
           </thead>
           <tbody>
             {props.results.map((result, index) => {
               return (
-                
-                  <tr key={index}>
-                    <th scope="row">{result.id}</th>
-                    <td>{result.title}</td>
-                    <td>{result.firstName}</td>
-                    <td>{result.surname}</td>
-                    <td>{result.email}</td>
-                    <td>{result.roomId}</td>
-                    <td>{result.checkInDate}</td>
-                    <td>{result.checkOutDate}</td>
-                  </tr>
-            
+                <tr key={index}>
+                  <th scope="row">{result.id}</th>
+                  <td>{result.title}</td>
+                  <td>{result.firstName}</td>
+                  <td>{result.surname}</td>
+                  <td>{result.email}</td>
+                  <td>{result.roomId}</td>
+                  <td>{result.checkInDate}</td>
+                  <td>{result.checkOutDate}</td>
+                  <td>
+                    {moment(result.checkOutDate).diff(
+                      moment(result.checkInDate),
+                      "days"
+                    )}
+                  </td>
+                </tr>
               );
             })}
           </tbody>
