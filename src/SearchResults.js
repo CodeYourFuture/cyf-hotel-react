@@ -25,8 +25,8 @@ const SearchResults = (props) => {
                 {
 
                     allData.map(client => {
-                        let a = moment((client.checkOutDate).split("-"))
-                        let b = moment((client.checkInDate).split("-"))
+                        let a = moment(client.checkOutDate)
+                        let b = moment(client.checkInDate)
                         const [active, setActive] = useState(false)
                         const handleClick = () => {
                             setActive(!active)
@@ -52,3 +52,5 @@ const SearchResults = (props) => {
 }
 
 export default SearchResults;
+
+
