@@ -24,3 +24,8 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.imageOfRome {
+  width: 400px;
+  height: auto;
+}
