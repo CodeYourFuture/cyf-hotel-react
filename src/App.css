@@ -103,7 +103,7 @@ font-size: 2rem;
     flex-direction: column;
   }
   .welcome-img{
-  margin: auto;
+  margin: 0;
  
  
 }
