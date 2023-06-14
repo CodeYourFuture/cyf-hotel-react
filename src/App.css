@@ -2,7 +2,7 @@ body {
   background-color:aliceblue;
 }
 .App-header {
-  background-color: brown;
+  background-color: black;
   height: 40px;
   color: white;
   text-align: left;
@@ -51,9 +51,9 @@ header {
 
 h2 {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px;
   text-align: flex-start;
-  color: black;
+  color: plum;
 }
 .card-img-top {
   height: 20rem;
@@ -84,8 +84,11 @@ font-size: 2rem;
 .welcome-img{
   display: flex;
   min-width: auto;
-  margin-bottom: 1rem;
-  height: 30rem;
+  height: 25rem;
+  border: 2px solid brown;
+  margin: 0rem 4rem 1rem 4rem;
+ 
+ 
 }
 
 .welcome-text{
@@ -99,4 +102,10 @@ font-size: 2rem;
   .card {
     flex-direction: column;
   }
+  .welcome-img{
+  margin: auto;
+ 
+ 
+}
+
 }
