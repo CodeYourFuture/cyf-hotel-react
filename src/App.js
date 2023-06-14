@@ -1,9 +1,10 @@
+import "./App.css";
 import React from "react";
 
 import Header from "./Header";
 import Bookings from "./Bookings";
 import TouristInfoCards from "./TouristInfoCards";
-import "./App.css";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Header />
         <Bookings />
         <TouristInfoCards />
+        <Footer />
       </>
     </div>
   );
