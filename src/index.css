@@ -1,3 +1,6 @@
+* {
+  list-style-type: none;
+}
 body {
   margin: 0;
   padding: 0;
@@ -23,4 +26,28 @@ body {
 
 .search-row input {
   margin-right: 10px;
+}
+
+/* <div className="card">
+      <img src={props.image} className="card-img-top"></img>
+      <div className="card-body">
+        <h1 className="card-title">{props.nameOfCity}</h1>
+        <p className="card-text">{props.paragraf}</p>
+        <button className="btn btn-primary">More info</button>
+      </div>
+    </div> */
+.cards-conrainer {
+  display: flex;
+  justify-content: space-around;
+}
+.image-container,
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  color: #e9ecef;
+  background-color: #3d3b3b;
 }

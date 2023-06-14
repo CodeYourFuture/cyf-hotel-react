@@ -4,7 +4,7 @@ import Search from "./Search.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const search = searchVal => {
+  const search = (searchVal) => {
     console.info("TO DO!", searchVal);
   };
 
