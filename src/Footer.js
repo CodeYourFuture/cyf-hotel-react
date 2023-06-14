@@ -1,10 +1,9 @@
 import React from "react";
 debugger;
 function Footer(props) {
-    console.log(props);
    return(
     
-    <div>
+    <div className="divFooter">
          <ul>
           {
             props.address.map((data, index)=>{

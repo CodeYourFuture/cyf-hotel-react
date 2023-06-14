@@ -22,13 +22,13 @@ const datas = [
 ];
 const TouristInfoCards = () => {
   return (
-    <div>
+    <div className="cardMainDiv">
       {datas.map((data, index) => {
         return (
           <div className="card" key={index}>
-            <img src={data.src} className="card-img-top" alt="" />
+            <img src={data.src} className="card-img-top" alt="" style={{height:"300px"}}/>
             <h1>{data.cardName}</h1>
-            <p style={{backgroundColor: "#f0f8fa"}}>{data.text}</p>
+            <p  className="pElementCard">{data.text}</p>
             <div className="card-body">
               <a href={data.href} className="btn btn-primary">
                 More information
