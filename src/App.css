@@ -1,21 +1,18 @@
-body{
+body {
   background-color: azure;
 }
 .App-header {
-  background-color:bisque;
-  height: 30px;
+  background-color: brown;
+  height: 40px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 10px;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .App-title {
   font-size: 10px;
 }
-
 
 .search {
   padding: 5px 0 20px 0;
@@ -35,50 +32,71 @@ tr {
 }
 
 .card {
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-background-color:azure;
-
+  display: flex;
+  flex-direction: row;
+  row-gap: 50px;
+  justify-content: space-around;
+  background-color: azure;
 }
 
-.logo{
-  height: 40px;
-  width: 60px;
+.logo {
+  height: 50px;
+  width: 90px;
 }
 
- header {
+header {
   display: flex;
   flex-direction: row;
 }
 
 h2 {
-  font-size: 30px;
+  font-weight: bold;
+  font-size: 20px;
   text-align: flex-start;
-  color: blue;
+  color: black;
 }
- .card-img-top {
+.card-img-top {
   height: 20rem;
-  width:25rem;
- }
+  width: 25rem;
+}
 
- .card-text{
+.card-text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-size: 1rem;
   background-color: beige;
- }
- .card-body{
-  width:18rem;
- }
-
- @media only screen and (max-width: 600px) {
-  .card {
-display: flex;
-flex-direction: column;;
-justify-content: space-around;
-background-color:plum;
-
 }
+.card-body {
+  width: 18rem;
+}
+
+.btn-primary {
+  background-color: brown;
+}
+
+.welcome{
+display: flex;
+flex-direction: column;
+font-size: 2rem;
+}
+
+.welcome-img{
+  display: flex;
+  min-width: auto;
+  margin-bottom: 2rem;
+  height: 30rem;
+}
+
+.welcome-text{
+  text-align: center;
+  color: blueviolet;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .card {
+    flex-direction: column;
+  }
 }
