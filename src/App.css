@@ -1,15 +1,15 @@
 body{
-  background-color: purple;
+  background-color: azure;
 }
 .App-header {
-  background-color: antiquewhite;
+  background-color: black;
   height: 70px;
   color: white;
-  text-align: left;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2em;
   font-weight: bold;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .App-title {
@@ -40,14 +40,14 @@ tr {
  flex-direction: row;
  justify-content: space-evenly;
   column-gap: 40px;
-  background-color:purple;
+  background-color:azure
 }
 
 .logo{
   height: 70px;
   width:100px;
   display: flex;
-align-items: flex-end;
+justify-content: center;
  }
 
  header {
