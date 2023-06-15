@@ -1,11 +1,18 @@
 import React from "react";
 
-const props = ["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]
+const Footer = () => {
 
-const Footer = () => (
+const myProps = ["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"];
+return(
     <div className="footer">
-        <h3></h3>
+        <ul>
+        {myProps.map((footer, index) => {
+          <li key={index}>{footer}</li>
+        })}
+        </ul>
     </div>
 )
 
+
+}
 export default Footer;
