@@ -16,7 +16,6 @@ const App = () => {
     <div className="App">
       <header className="App-header">CYF Hotel</header>
       <TouristInfoCards/>
-      <Bookings />
       <div>
       <h1>Hotel Management System</h1>
       <Bookings />
