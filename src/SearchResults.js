@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import data from "./data/fakeBookings.json";
+import moment from "moment";
 
-const Column = (props) =>{
+const getNumbersOfNights = (checkInDate, checkOutDate) => {
+  const date1 = moment(checkInDate);
+  const date2 = moment(checkOutDate);
+  return date2.diff(date1, 'days');
+}
+
+const Row = (props) =>{
     const{id, title, firstName, surname, email, roomId, checkInDate, checkOutDate} = props
+    const night = getNumbersOfNights(checkInDate, checkOutDate);
     return (
       <tr>
         <th >{id}</th>
@@ -13,11 +21,12 @@ const Column = (props) =>{
         <th >{roomId}</th>
         <th >{checkInDate}</th>
         <th >{checkOutDate}</th>
+        <th>{night}</th>
       </tr>
     );
 }
 
-const Row = (props) => {
+const Table = (props) => {
     const {data} = props;
     return (
       <table className="table table-striped">
@@ -31,12 +40,13 @@ const Row = (props) => {
             <th scope="col">Room id</th>
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
+            <th scope="col">Night</th>
           </tr>
         </thead>
         <tbody>
           {data.map((column, index) => {
             return (
-              <Column
+              <Row
                 key={index}
                 id={column.id}
                 title={column.title}
@@ -58,44 +68,9 @@ const SearchResults = () => {
     const [myData, setMyData] = useState(data)
     return(
         <div>
-            <Row data = {myData} />
+            <Table data = {myData} />
         </div>
     )
 };
 
 export default SearchResults;
-
-
-
-//  <div>
-//    <table className="table table-striped">
-//      <thead>
-//        <tr>
-//          <th scope="col">id</th>
-//          <th scope="col">Title</th>
-//          <th scope="col">First name</th>
-//          <th scope="col">Surname</th>
-//          <th scope="col">Email</th>
-//          <th scope="col">Room id</th>
-//          <th scope="col">Check in date</th>
-//          <th scope="col">Check out date</th>
-//        </tr>
-//      </thead>
-//      <tbody>
-//        {myData.map((props) => (
-//          <tr>
-//            <th scope="row" id={props.id}>
-//              {props.id}
-//            </th>
-//            <tb>{props.title}</tb>
-//            <tb>{props.firstName}</tb>
-//            <tb>{props.surname}</tb>
-//            <tb>{props.email}</tb>
-//            <tb>{props.roomId}</tb>
-//            <tb>{props.checkInDate}</tb>
-//            <tb>{props.checkOutDate}</tb>
-//          </tr>
-//        ))}
-//      </tbody>
-//    </table>
-//  </div>;
