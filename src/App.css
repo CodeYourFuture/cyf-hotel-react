@@ -102,7 +102,18 @@ font-size: 2rem;
   color: blueviolet;
 }
 
+.table {
+  background-color: black;
+ 
+}
 
+th{
+  color: brown;
+}
+
+td{
+  color: beige;
+}
 
 @media only screen and (max-width: 600px) {
   .card {
@@ -111,7 +122,10 @@ font-size: 2rem;
   .welcome-img{
   margin: 0;
  
- 
-}
+ }
+ .table {
+  width: 40%;
+  font-size: 10px;;
+ }
 
 }
