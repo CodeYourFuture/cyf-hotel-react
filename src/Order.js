@@ -1,7 +1,7 @@
 import react, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
-function Order() {
+function Order({ orderType }) {
   // array destructuring
   // setOrders is a function that allows me to modify the value of the orders variable
   // 0 is the initial value
@@ -15,7 +15,7 @@ function Order() {
 
   return (
     <li>
-      Pizzas: {orderCount} <RestaurantButton orderOne={orderOne} />
+      {orderType}: {orderCount} <RestaurantButton orderOne={orderOne} />
     </li>
   );
 }
