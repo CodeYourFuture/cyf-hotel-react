@@ -36,7 +36,7 @@ return = (
 
 </section>
 );
-);
+// );
 
 
 export default TouristInfoCards;
