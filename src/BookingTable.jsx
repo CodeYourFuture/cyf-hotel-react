@@ -5,9 +5,9 @@ const BookingTable = () => {
     {
       id: 1,
       title: 'Mr',
-      firstName: 'John',
-      surname: 'Doe',
-      email: 'john@example.com',
+      firstName: 'Keanu',
+      surname: 'Hunter',
+      email: 'keanu@example.com',
       roomId: 101,
       checkInDate: '2023-06-16',
       checkOutDate: '2023-06-20',
@@ -16,13 +16,12 @@ const BookingTable = () => {
       id: 2,
       title: 'Mrs',
       firstName: 'Jane',
-      surname: 'Smith',
+      surname: 'Sane',
       email: 'jane@example.com',
-      roomId: 202,
+      roomId: 102,
       checkInDate: '2023-06-18',
       checkOutDate: '2023-06-23',
     },
-    // Add more bookings here...
   ];
 
   return (
