@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 const BookingTable = ({bookings}) => {
     return (
@@ -13,12 +14,16 @@ const BookingTable = ({bookings}) => {
         <th>Room ID</th>
         <th>Check In Date</th>
         <th>Check Out Date</th>
+        <th>Nights</th>
       </tr>
     </thead>
-       {/* Table body */}
+  
     <tbody>
-      {bookings.map((booking) => (
-        <tr key={booking.id}>
+      {bookings.map((booking) => {
+        const checkInDate = moment(booking.checkInDate);
+        const checkOutDate = moment(booking.checkOutDate);
+        const nights = checkOutDate.diff(checkInDate, 'days');
+        return ( <tr key={booking.id}>
           <td>{booking.id}</td>
           <td>{booking.title}</td>
           <td>{booking.firstName}</td>
@@ -27,8 +32,10 @@ const BookingTable = ({bookings}) => {
           <td>{booking.roomId}</td>
           <td>{booking.checkInDate}</td>
           <td>{booking.checkOutDate}</td>
+          <td>{nights}</td>
         </tr>
-      ))}
+      );
+})};
     </tbody>
   </table>
  );
