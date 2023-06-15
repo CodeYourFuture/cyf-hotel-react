@@ -8,7 +8,7 @@
   /* margin-left: 80px;
   display: grid;
   grid-template-columns: repeat(3, 1fr); */
-  margin-top: 5px;
+  margin-top: 75px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

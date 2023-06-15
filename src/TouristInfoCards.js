@@ -9,7 +9,7 @@ const TouristInfoCards = () => {
   const lancasterCastle =
     "Steeped in almost 1000 years of history including the trials of the Pendle Witches and the Birmingham Six, Lancaster Castle is one of the most important historic monuments in the North West. Come and visit the old cells, Shire Hall and Crown Court.";
   const londonEye =
-    "Enjoy amazing 360-degree views over London from the lastminute.com London Eye - the world’s tallest cantilevered observation wheel. The special engineering achievement has become a symbol of the modern capital and a world-famous icon of architecture. While riding the London Eye, you’ll be able to spot some of the capital's most iconic landmarks and top attractions, including Big Ben, the Houses of Parliament and Buckingham Palace.";
+    "Enjoy amazing 360-degree views over London from the lastminute.com London Eye - the world’s tallest cantilevered observation wheel. The special engineering achievement has become a symbol of the modern capital and a world-famous icon of architecture.";
 
   return (
     <div className="tourist-cards">
