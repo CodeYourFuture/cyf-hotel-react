@@ -68,3 +68,17 @@ tr {
 .card {
   width: 18rem;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: #222;
+}
+
+.footer, h1 {
+  color:white;
+}
