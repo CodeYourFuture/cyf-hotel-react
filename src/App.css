@@ -58,3 +58,22 @@ tr {
 .card {
   width: 18rem;
 }
+
+/* my changes */
+#TouristInfoCards{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 160px;
+  margin-top: 30px;
+}
+
+.TouristInfoCards{
+    width: 350px;
+  height: 300px;
+}
+
+.TouristInfoCards img{
+  width: 340px;
+  height: 290px;
+  margin-bottom: 20px;
+}
