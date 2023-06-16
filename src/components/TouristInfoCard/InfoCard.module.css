@@ -1,0 +1,4 @@
+.cardContainer {
+  flex-basis: 33%;
+  max-width: 300px; /* Adjust the maximum width as needed */
+}

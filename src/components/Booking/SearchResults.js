@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CustomerProfile from "./CustomerProfile";
+import classes from "./SearchResult.module.css";
 import moment from "moment";
 
 const SearchResults = (props) => {
@@ -27,7 +28,7 @@ const SearchResults = (props) => {
 
   return (
     <React.Fragment>
-      <table className="tabel">
+      <table className="table">
         <thead>
           <tr>
             <th>ID</th>
@@ -51,7 +52,9 @@ const SearchResults = (props) => {
               <tr
                 key={person.id}
                 onClick={() => clickHandler(person.id)}
-                className={selectedRows.includes(person.id) ? "selected" : ""}
+                className={
+                  selectedRows.includes(person.id) ? classes.selected : ""
+                }
               >
                 <td>{person.id}</td>
                 <td>{person.title}</td>
@@ -63,7 +66,10 @@ const SearchResults = (props) => {
                 <td>{person.checkOutDate}</td>
                 <td>{Math.round(daysDifference)}</td>
                 <td>
-                  <button onClick={() => userIDHandler(person.id)}>
+                  <button
+                    className="btn btn-primary btn-sm"
+                    onClick={() => userIDHandler(person.id)}
+                  >
                     Show profile
                   </button>
                 </td>

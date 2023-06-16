@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./Heading";
-import Bookings from "./Bookings";
-import Footer from "./Footer";
-import TouristInfoCards from "./TouristInfoCards";
-import Restaurant from "./Restaurant";
-import "./App.css";
+import Header from "./components/Header/Heading";
+import Bookings from "./components/Booking/Bookings";
+import Footer from "./components/Footer/Footer";
+import TouristInfoCards from "./components/TouristInfoCard/TouristInfoCards";
+import Restaurant from "./components/Resturant/Restaurant";
+import classes from "./App.module.css";
 
 const App = () => {
   const footerContents = [
@@ -13,8 +13,8 @@ const App = () => {
     "0123 456789",
   ];
   return (
-    <div className="App container">
-      <Header className="App-header" />
+    <div className={classes.App}>
+      <Header />
       <TouristInfoCards />
       <Bookings />
       <Restaurant />

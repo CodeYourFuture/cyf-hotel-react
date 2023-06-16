@@ -7,9 +7,11 @@ const Order = (props) => {
     setOrders((prevOrder) => prevOrder + 1);
   };
   return (
-    <li>
-      {`${props.orderType} : `} {orders}
-      <RestaurantButton className="btn btn-primary" onClick={orderOne} />
+    <li className="font-weight-bold mt-2">
+      <span className="mx-2">
+        {`${props.orderType} : `} {orders}
+      </span>
+      <RestaurantButton className="btn btn-primary btn-lg" onClick={orderOne} />
     </li>
   );
 };

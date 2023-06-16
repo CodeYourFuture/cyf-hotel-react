@@ -1,10 +1,11 @@
 import React from "react";
-import Card from "./Card";
+import Card from "../UI/Card";
+import classes from "./InfoCard.module.css";
 
 const InfoCard = (props) => {
   return (
-    <Card className="card">
-      <img src={props.img} className="card-img-top" />
+    <Card className={`card ${classes.cardContainer}`}>
+      <img src={props.img} className="card-img-top" style={{ height: 200 }} />
       <div className="card-body text-center">
         <h2>{props.cityTitle}</h2>
         <p className="text-start">{props.cityDescription}</p>

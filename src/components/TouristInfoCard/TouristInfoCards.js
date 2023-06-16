@@ -1,12 +1,12 @@
 import React from "react";
 import InfoCard from "./InfoCard";
-import manchesterImg from "./images/manchester.webp";
-import londonImg from "./images/london.jpeg";
-import glassgowImg from "./images/glasgow.jpeg";
+import manchesterImg from "../../images/manchester.webp";
+import londonImg from "../../images/london.jpeg";
+import glassgowImg from "../../images/glasgow.jpeg";
 
 const TouristInfoCards = (props) => {
   return (
-    <div className="d-flex justify-content-around mt-4">
+    <div className="d-flex justify-content-around align-items-center mt-4 mx-3">
       <InfoCard
         img={glassgowImg}
         cityTitle="Glasgow"
