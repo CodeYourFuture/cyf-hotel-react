@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "./Search.js";
-// import SearchResults from "./SearchResults.js";
+import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
@@ -12,7 +12,30 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
+        <SearchResults const bookings = {[
+    {
+      id: 1,
+      title: 'Mr',
+      firstName: 'John',
+      surname: 'Doe',
+      email: 'johndoe@example.com',
+      roomId: 101,
+      checkInDate: '2023-06-20',
+      checkOutDate: '2023-06-25'
+    },
+    {
+      id: 2,
+      title: 'Mrs',
+      firstName: 'Jane',
+      surname: 'Smith',
+      email: 'janesmith@example.com',
+      roomId: 202,
+      checkInDate: '2023-07-10',
+      checkOutDate: '2023-07-15'
+    },
+    // Add more bookings if needed
+  ]}
+ />
       </div>
     </div>
   );
