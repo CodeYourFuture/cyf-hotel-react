@@ -1,12 +1,11 @@
 import React from "react";
 
-const TouristInfoCards = (props) => {
+const TouristInfoCards = () => {
   return (
     <div className="cards">
 
       <div className="TouristInfoCards">
-      <img className="card-img-top" src="https://media.istockphoto.com/id/1370151479/photo/fountain-of-the-four-rivers-by-the-church-of-santagnese-by-bernini-in-piazza-navona-rome-italy.jpg?s=612x612&w=0&k=20&c=UU9LVGxzX_QXBjdEV6ar4-IamosxA2MLUY0FEzn5ejU=" alt=""
-       />
+      <img className="card-img-top" src="https://media.istockphoto.com/id/1370151479/photo/fountain-of-the-four-rivers-by-the-church-of-santagnese-by-bernini-in-piazza-navona-rome-italy.jpg?s=612x612&w=0&k=20&c=UU9LVGxzX_QXBjdEV6ar4-IamosxA2MLUY0FEzn5ejU=" alt=""  />
       <h1 className="h1">Glasgow</h1>
       <p className="p">Glasgow is a port city on the River Clyde in Scotland's western Lowlands. It's famed for its Victorian and art nouveau architecture, a rich legacy of the city's 18th–20th-century prosperity due to trade and shipbuilding. Today it's a national cultural hub, home to institutions including the Scottish Opera, Scottish Ballet and National Theatre of Scotland, as well as acclaimed museums and a thriving music scene.</p>
       <div className="card-body">
@@ -16,7 +15,7 @@ const TouristInfoCards = (props) => {
     </div>
 
     <div className="TouristInfoCards">
-      <img className="card-img-top" src="https://media.istockphoto.com/id/1067367850/photo/manchester-skyline.jpg?s=612x612&w=0&k=20&c=BHkzQL_EfDqJRUp7E5ro4VdLyEydz8_bW-vmCztQ3Jg=" alt="" />
+      <img className="card-img-top" src="https://media.istockphoto.com/id/1067367850/photo/manchester-skyline.jpg?s=612x612&w=0&k=20&c=BHkzQL_EfDqJRUp7E5ro4VdLyEydz8_bW-vmCztQ3Jg=" alt=""  />
       <h1 className="h1">Manchester</h1>
       <p className="p">Manchester is one of the most exciting places to visit in the UK right now where everybody and anybody is very warmly welcomed.
 
@@ -36,8 +35,8 @@ Known throughout the world as the birthplace of the industrial revolution, Manch
         <a className="btn btn-primary" href="visitlondon.com">More Information</a>
       </div>
     </div>
-  </div>
-  
+    </div>
+    
   );
 }
 
