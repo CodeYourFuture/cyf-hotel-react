@@ -8,6 +8,7 @@ function TouristInfoCards() {
           <img
             src="https://a.cdn-hotels.com/gdcs/production95/d16/cc514640-8f0f-11e8-9bad-0242ac110002.jpg"
             className="card-img-top"
+            alt="Glasgow View"
           />
           <div className="card-body">
             <h1>Glasgow</h1>
@@ -27,6 +28,7 @@ function TouristInfoCards() {
           <img
             src="https://cdn.britannica.com/42/116342-050-5AC41785/Manchester-Eng.jpg"
             className="card-img-top"
+            alt="Manchester View"
           />
           <div className="card-body">
             <h1>Manchester</h1>
@@ -47,6 +49,7 @@ function TouristInfoCards() {
             src="https://s27363.pcdn.co/wp-content/uploads/2020/05/Best-Things-to-do-in-London-1200x900.jpg.optimal.jpg
           "
             className="card-img-top"
+            alt="London View"
           />
           <div className="card-body">
             <h1>London</h1>
