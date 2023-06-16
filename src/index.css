@@ -29,3 +29,8 @@ body {
   width: 400px;
   height: auto;
 }
+
+.selected {
+  background-color: rgb(65, 155, 207); 
+  color: black; 
+}
