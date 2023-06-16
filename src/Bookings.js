@@ -7,6 +7,8 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [filteredBookings, setFilteredBookings] = useState([]);
   const [searchVal, setSearchVal] = useState("");
+  const [isLoading, setIsLoading] = useState(true); 
+  const [error, setError] = useState(null);
 
   const search = (searchVal) => {
     setSearchVal(searchVal);
@@ -24,11 +26,17 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
-      .then((res) => res.json())
-      .then((data) => {
+    setIsLoading(true)
+    fetch("https://cyf-react.glitch.me/")
+      .then(res => res.json())
+      .then(data => {
         setBookings(data);
         setFilteredBookings(data);
+        setIsLoading(false);
+      })
+      .catch(error =>{
+        setError(error.message)
+        setIsLoading(false);
       });
   }, []);
 
@@ -36,6 +44,8 @@ const Bookings = () => {
     <div className="App-content my-4">
       <div className="container">
         <Search search={search} resetSearch={resetSearch} />
+        {isLoading ? <p>Loading !!!!!!!!!!!!</p> : error ? <p>{error}</p> : '' }
+        {}
         <SearchResults results={filteredBookings} />
       </div>
     </div>
@@ -44,4 +54,3 @@ const Bookings = () => {
 
 export default Bookings;
 
-// setBookings(bookings.filter((person)=> person.firstName == searchVal || person.surname == searchVal))
