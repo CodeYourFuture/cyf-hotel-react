@@ -1,6 +1,7 @@
 import React from "react";
+import FakeBookings from "./data/fakeBookings.json";
 
-const SearchResults = () => {
+const SearchResults = (props) => {
      return(
         <table className="table">
             <thead>
@@ -15,51 +16,17 @@ const SearchResults = () => {
                 </tr>
             </thead>
             <tbody className="tbody">
-                <tr>
-                    <th scope="row"></th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                {props.bookings.map((booking, key) => (
+                <tr key={booking.id}>
+                    <th scope="row">{booking.title}</th>
+                     <td>{booking.firstName}</td>
+                     <td>{booking.surname}</td>
+                     <td>{booking.email}</td>
+                     <td>{booking.roomId}</td>
+                     <td>{booking.checkInDate}</td>
+                     <td>{booking.checkOutDate}</td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
+                ))}
              </tbody>
         </table>     
      )
