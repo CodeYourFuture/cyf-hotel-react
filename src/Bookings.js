@@ -6,7 +6,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    console.info(searchVal);
   };
 
   useEffect(() => {
