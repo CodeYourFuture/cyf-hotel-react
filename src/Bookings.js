@@ -6,13 +6,22 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
   const search = (searchVal) => {
-    console.info(searchVal);
+    console.log(searchVal);
+    const filteredBookings = bookings.filter(
+      (booking) =>
+        booking.firstName.toLowerCase() === searchVal.toLowerCase() ||
+        booking.surname.toLowerCase() === searchVal.toLowerCase()
+    );
+    setBookings(filteredBookings);
   };
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
-      .then((response) => response.json())
-      .then((data) => setBookings(data));
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setBookings(data);
+      });
   }, []);
 
   return (
