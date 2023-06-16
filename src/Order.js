@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
 
 const numberPizzas = 0;
-function Order() {
+
+function Order({ orderType }) {
   const [orders, setOrders] = useState(numberPizzas);
 
   function orderOne() {
@@ -12,7 +13,7 @@ function Order() {
   return (
     <>
       <li>
-        Pizzas: {orders}
+        {orderType}: {orders}
         <RestaurantButton setOrders={orderOne} />
       </li>
     </>
