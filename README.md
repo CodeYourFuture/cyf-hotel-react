@@ -40,6 +40,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 		<a href="#" className="btn btn-primary">Go somewhere</a>
 	</div>
 </div>
+
 ```
 
 **Test:** 3 info cards should be displayed on the page for each city (Glasgow, Manchester, London). Each card should link to the correct website.
