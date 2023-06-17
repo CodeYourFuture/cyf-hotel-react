@@ -5,7 +5,7 @@ import Heading from "./Component/Heading"
 import Footer from "./Component/Footer"
 import TouristInfoCards from "./Component/TouristInfoCards";
 import "./App.css";
-
+import Restaurant from "./Component/Restaurant";
 const App = () => {
   
   const fakeDate = [
@@ -39,6 +39,8 @@ const App = () => {
       /> */}
 
       <Bookings />
+      <Restaurant />
+
 
       <Footer data={fakeDate} />
     </div>
