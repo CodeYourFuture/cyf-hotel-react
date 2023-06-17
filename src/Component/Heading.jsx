@@ -1,12 +1,11 @@
 import react from "react";
-// https://image.flaticon.com/icons/svg/139/139899.svg
-
+import "../index.css"
 function Heading(){
     return (
         <>  
 
               <header className="App-header">
-                <img className="" src=""/>  //addlogo and styles
+                <img className="App-logo" src="https://www.freepnglogos.com/uploads/hotel-logo-png/hotel-icon-download-28.png"/> 
                 <h1>CYF Hotel</h1>
               </header>
         </>
