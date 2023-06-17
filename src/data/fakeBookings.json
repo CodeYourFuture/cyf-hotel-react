@@ -48,5 +48,15 @@
     "roomId": 3,
     "checkInDate": "2017-08-30",
     "checkOutDate": "2017-10-02"
+  },
+  {
+    "id": 6,
+    "title": "Mrs",
+    "firstName": "Anuradha",
+    "surname": "smith",
+    "email": "anu@smith.net",
+    "roomId": 3,
+    "checkInDate": "2017-08-30",
+    "checkOutDate": "2017-10-02"
   }
 ]

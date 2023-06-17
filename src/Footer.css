@@ -1,0 +1,16 @@
+.address{
+    font-family: fantasy;
+  text-align: center;
+  height: 50px; 
+  padding: 8px;
+  margin: 10px;
+  
+}
+
+.span{
+    font-weight: bold;
+    color: blue;
+    padding: 8px;
+    margin: 10px;
+    border-bottom: 1px orange solid;
+}

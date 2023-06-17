@@ -1,0 +1,14 @@
+table,
+th,
+td {
+  border: 1px solid black;
+  font-family: fantasy;
+  text-align: center;
+  height: 50px; 
+  padding: 8px;
+  
+}
+
+/* tr:hover {background-color: rgb(236, 149, 118);} */
+tr:nth-child(even) {background-color: #f2f2f2;}
+
