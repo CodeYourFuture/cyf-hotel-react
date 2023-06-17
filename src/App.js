@@ -8,10 +8,10 @@ import Footer from "./Footer";
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">CYF Hotel</header>
-      <TouristInfoCards />
+      {/* <header className="App-header">CYF Hotel</header> */}
+      <Heading />
 
-      {/* <Heading /> */}
+      <TouristInfoCards />
 
       <Bookings />
 
