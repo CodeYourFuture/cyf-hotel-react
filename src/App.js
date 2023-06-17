@@ -7,11 +7,10 @@ import Heading from "./Header";
 const App = () => {
   return (
     <div className="App">
-
       <header className="App-header">CYF Hotel</header>
-      <TouristInfoCards/>
+      <TouristInfoCards />
 
-      <Heading />
+      {/* <Heading /> */}
 
       <Bookings />
     </div>
