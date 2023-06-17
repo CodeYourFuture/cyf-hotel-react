@@ -1,7 +1,9 @@
 
-import react from "react";
+import React from "react";
 
-const SearchResults=({hotelBookings})=>{
+const SearchResults=({results})=>{
+
+      
     return (
         <table className="table table-striped" style={{marginBottom:"2em"}}>
             <thead className="thead-dark">
@@ -17,7 +19,7 @@ const SearchResults=({hotelBookings})=>{
                 </tr>
             </thead>
             <tbody>
-                {hotelBookings.map(booking=>(<tr  key={booking.id}>
+                {results.map(booking=>(<tr  key={booking.id}>
                     <td>{booking.id}</td>
                     <td>{booking.title}</td>
                     <td>{booking.firstName}</td>
