@@ -1,5 +1,6 @@
 
 import React from "react";
+import moment from "moment";
 
 const SearchResults=({results})=>{
 
@@ -16,19 +17,29 @@ const SearchResults=({results})=>{
                     <th>Room ID</th>
                     <th>Check In</th>
                     <th>Check Out</th>
+                    <th>Nights</th>
                 </tr>
             </thead>
             <tbody>
-                {results.map(booking=>(<tr  key={booking.id}>
+
+                {results.map((booking) => {
+                const checkInDate = moment(booking.checkInDate);
+                const checkOutDate = moment(booking.checkOutDate);
+                const nights = checkOutDate.diff(checkInDate, "days");
+                return (
+                    <tr key={booking.id}>
                     <td>{booking.id}</td>
                     <td>{booking.title}</td>
                     <td>{booking.firstName}</td>
                     <td>{booking.surname}</td>
                     <td>{booking.email}</td>
                     <td>{booking.roomId}</td>
-                    <td>{booking.checkInDate}</td>
-                    <td>{booking.checkOutDate}</td>
-                </tr>))}
+                    <td>{checkInDate.format("YYYY-MM-DD")}</td>
+                    <td>{checkOutDate.format("YYYY-MM-DD")}</td>
+                    <td>{nights}</td>
+                    </tr>
+                );
+                })}
             </tbody>
         </table>   
     );

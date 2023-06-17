@@ -2,10 +2,12 @@ import React from "react";
 import Heading from "./Heading";
 import TuristInfoCards from "./TuristInfoCards";
 import Bookings from "./Bookings";
+import Restaurant from "./Restaurant.js"
 import "./App.css";
 import london from  "./images/london.jpeg"
 import manchester from "./images/Manchester.webp"
 import glasgow from "./images/glasgow.jpeg"
+
 import Footer from "./Footer";
 
 const App = () => {
@@ -34,6 +36,7 @@ const App = () => {
       a={"https://visitmanchester.com"}  />
       </div>
       <Bookings />
+      <Restaurant/>
       <Footer props={contacts} /> 
 
     </div>
