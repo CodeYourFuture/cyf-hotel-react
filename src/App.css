@@ -2,6 +2,13 @@
   text-align: left;
 }
 
+.hotel-logo{
+  height: 80px;
+  position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -9,12 +16,13 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
-  color: white;
-  text-align: left;
+  /* color: white; */
+  color: #B8860B;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
 }
 
