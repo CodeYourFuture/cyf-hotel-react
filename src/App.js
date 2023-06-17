@@ -3,6 +3,7 @@ import Heading from "./Header";
 import Footer from "./Footer";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
+import Restaurant from "./Restaurant"
 import "./App.css";
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer />
     </div>
   );

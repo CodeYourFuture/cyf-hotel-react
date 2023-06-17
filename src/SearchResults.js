@@ -1,12 +1,15 @@
 import React from "react";
 import "./SearchResults.css";
 import data from "./data/fakeBookings.json";
+import moment from "moment";
+
+// const numberOfNights()
 
 const SearchResults = () => {
   console.log(data);
 
   return (
-    <table>
+    <table className="table">
       <tr>
         <td>ID</td>
         <td>Tittle</td>
