@@ -76,3 +76,7 @@ h3 {
   text-align: center;
   margin: 5px;
 }
+
+.Highlighted {
+  background-color: aquamarine;
+}

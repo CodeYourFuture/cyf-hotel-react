@@ -1,6 +1,7 @@
 import React from "react";
 import Bookings from "./Bookings";
-import SearchResults from "./SearchResults";
+// import SearchResults from "./SearchResults";
+import Restaurant from "./Restaurant";
 
 import "./App.css";
 
@@ -63,6 +64,7 @@ const App = () => {
       </div>
 
       <Bookings />
+      <Restaurant />
       <Footer text={["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]} />
     </div>
   );

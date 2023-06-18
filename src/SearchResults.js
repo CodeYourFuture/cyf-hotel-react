@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 moment().format();
 
-const SearchResults = (props) => (
-<table className="table">
+const SearchResults = (props) => {
+
+ return <table className="table">
     <thead>
         <tr>
       <th scope="col">id</th>
@@ -24,8 +25,12 @@ const SearchResults = (props) => (
             let dateIn = moment(result.checkInDate);
             return dateOut.diff(dateIn, "days");
         }
+        let [highlighted, setHighlighted] = useState(false);
+        function Highlighted() {
+          setHighlighted((highlighted) => !highlighted);
+        }
         let nights = nightsTotal();
-        return (<tr key={result.id}>
+      return (<tr key={result.id} onClick={Highlighted} className={highlighted ? "Highlighted" : null} >
           <th scope="row">{result.id}</th>
           <td>{result.title}</td>
           <td>{result.firstName}</td>
@@ -40,6 +45,6 @@ const SearchResults = (props) => (
       )}
     </tbody>
   </table>
-);
+}
 
 export default SearchResults;
