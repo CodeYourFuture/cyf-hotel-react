@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import RestaurantButton from "./RestaurantButton";
+import classes from "./Order.module.css"
 
 const Order = (props) => {
   const [orders, setOrders] = useState(0);
@@ -7,11 +8,12 @@ const Order = (props) => {
     setOrders((prevOrder) => prevOrder + 1);
   };
   return (
-    <li className="font-weight-bold mt-2">
-      <span className="mx-2">
-        {`${props.orderType} : `} {orders}
+    <li className="mt-2">
+      <img  src={props.src} style={{height:200, width:220}}/>
+      <span className="mx-2 my-2">
+        {`${props.orderType} : `}<span class="badge badge-pill badge-light">{orders}</span>
       </span>
-      <RestaurantButton className="btn btn-primary btn-lg" onClick={orderOne} />
+      <RestaurantButton className="btn btn-primary btn-md" onClick={orderOne} />
     </li>
   );
 };

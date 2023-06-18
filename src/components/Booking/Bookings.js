@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
+import ErrorMessage from "../ErrorComponent/ErrorMessage.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
@@ -27,7 +28,7 @@ const Bookings = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://cyf-react.glitch.me/")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then((res) => res.json())
       .then((data) => {
         setBookings(data);
@@ -41,12 +42,11 @@ const Bookings = () => {
   }, []);
 
   return (
-    <div className="mt-5 mx-3">
-      <div className="container">
+    < div className="mt-5 mx-3">
         <Search search={search} resetSearch={resetSearch} />
-        {isLoading ? <p>Loading !!!!!!!!!!!!</p> : error ? <p>{error}</p> : ""}
+        {isLoading && <ErrorMessage errorMessage="Loading Data"/> }
+        { error && <ErrorMessage errorMessage={error}/>}
         <SearchResults results={filteredBookings} />
-      </div>
     </div>
   );
 };

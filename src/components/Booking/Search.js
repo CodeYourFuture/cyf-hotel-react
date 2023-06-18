@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
-import classes from "./Search.module.css";
 
 const Search = (props) => {
   const [searchInput, setSearchInput] = useState("");
@@ -19,11 +18,11 @@ const Search = (props) => {
   };
 
   return (
-    <div className={classes.search}>
+    <div>
       <div className="page-header">
         <h4 className="text-left">Search Bookings</h4>
       </div>
-      <div className="row search-wrapper">
+      <div className="row">
         <div className="col">
           <form className="form-group search-box" onSubmit={submitHandler}>
             <label htmlFor="customerName">Customer name</label>
