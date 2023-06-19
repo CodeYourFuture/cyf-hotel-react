@@ -55,5 +55,13 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 35rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  
 }
