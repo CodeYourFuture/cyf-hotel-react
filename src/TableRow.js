@@ -34,6 +34,9 @@ const TableRow = (props) => {
           checkOutDate={props.aBooking.checkOutDate}
         />
       </td>
+      <td>
+        <button>Show profile</button>
+      </td>
     </tr>
   );
 };
