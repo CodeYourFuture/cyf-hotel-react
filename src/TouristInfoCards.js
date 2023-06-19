@@ -3,6 +3,7 @@ import React from "react";
 import PeopleMakeGlasgow from "./Images/PeopleMakeGlasgow.avif";
 import Manchester from "./Images/Manchester.avif";
 import London from "./Images/London.avif";
+import { nanoid } from "nanoid";
 
 const glasgow = {
   image: PeopleMakeGlasgow,
@@ -42,7 +43,7 @@ const london = {
 const arrayOfCityObject = [glasgow, manchester, london];
 const touristInfoCards = arrayOfCityObject.map((city) => {
   return (
-    <div className="card">
+    <div key={nanoid()} className="card">
       <img
         src={city.image}
         className="card-img-top"
