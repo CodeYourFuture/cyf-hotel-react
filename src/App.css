@@ -54,6 +54,11 @@ tr {
   text-align: center;
 }
 
+.footer-ul {
+  list-style-type: none;
+}
+
+
 .card {
   width: 35rem;
 }
@@ -63,5 +68,4 @@ tr {
   flex-direction: row;
   gap: 4rem;
   margin-bottom: 4rem;
-  
 }
