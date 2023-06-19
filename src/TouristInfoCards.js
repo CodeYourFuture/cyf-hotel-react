@@ -31,7 +31,7 @@ const manchester = {
 const london = {
   image: London,
   about: `London, the capital of England and the United Kingdom, is a
-          21st-century city with history stretching back to Roman times. At its
+          21st-century city with history stretching back to Roman times and Victorian architecture. At its
           centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’
           clock tower and Westminster Abbey, site of British monarch
           coronations. Across the Thames River, the London Eye observation wheel
@@ -44,12 +44,7 @@ const arrayOfCityObject = [glasgow, manchester, london];
 const touristInfoCards = arrayOfCityObject.map((city) => {
   return (
     <div key={nanoid()} className="card">
-      <img
-        src={city.image}
-        className="card-img-top"
-        width="350px"
-        height="233px"
-      />
+      <img src={city.image} className="card-img-top" width="350px" height="233px" />
       <div className="card-body">
         <h1>{city.name}</h1>
         <p>{city.about}</p>

@@ -56,8 +56,14 @@ tr {
 }
 
 .footer {
+  background-color: #222;
   padding-top: 20px;
   text-align: center;
+  padding-bottom: 15px;
+  margin-bottom: -17px;
+}
+.footer > ul {
+  color: #b8860b;
 }
 
 .card {
