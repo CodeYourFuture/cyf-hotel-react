@@ -1,10 +1,16 @@
 import { nanoid } from "nanoid";
 import React from "react";
 import "./App.css";
+import moment from "moment";
 
 const SearchResults = (props) => {
   console.log(props.booking);
+
   const bookingsEntries = props.booking.map((booking) => {
+    const start = moment(booking.checkInDate);
+    const end = moment(booking.checkOutDate);
+    const numberOfNights = end.diff(start, "days");
+
     return (
       <tr key={nanoid()}>
         <th scope="row">{booking.id}</th>
@@ -15,6 +21,7 @@ const SearchResults = (props) => {
         <td>{booking.roomId}</td>
         <td>{booking.checkInDate}</td>
         <td>{booking.checkOutDate}</td>
+        <td>{numberOfNights}</td>
       </tr>
     );
   });
@@ -32,6 +39,7 @@ const SearchResults = (props) => {
             <th scope="col">Room ID</th>
             <th scope="col">Check In Date</th>
             <th scope="col">Check Out Date</th>
+            <th scope="col">Number Of Nights</th>
           </tr>
         </thead>
 
