@@ -1,7 +1,7 @@
 import React,{useState}from "react";
 import RestaurantButton from "./RestaurantButton";
 
-const order = (props) => {
+const Order = (props) => {
   const [orders, setOrders] = useState(0);
   function orderOne() {
     setOrders(orders + 1);
@@ -14,4 +14,4 @@ const order = (props) => {
   );
 };
 
-export default order;
+export default Order;
