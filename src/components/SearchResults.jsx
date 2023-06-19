@@ -1,7 +1,6 @@
-import react from "react";
-import fakeBookings from "../data/fakeBookings.json";
+import React from "react";
 
-const SearchResults = () => {
+const SearchResults = ({results}) => {
   return (
     <table className="table table-striped">
       <thead>
@@ -18,7 +17,7 @@ const SearchResults = () => {
       </thead>
 
       <tbody>
-        {fakeBookings.map((item, index) => (
+        {results.map((item, index) => (
           <tr key={index}>
             <th scope="row">{index + 1}</th>
             <td>{item.title}</td>
@@ -36,5 +35,3 @@ const SearchResults = () => {
 };
 
 export default SearchResults;
-
-/* id, title, first name, surname, email, room id, check in date and check out date */
