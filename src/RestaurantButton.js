@@ -1,9 +1,9 @@
 import React from "react";
 
-const RestaurantButton = (props) => {
+const RestaurantButton = ({ orderOne }) => {
   return (
     <>
-      <button className="btn btn-primary" onClick={props.order}>
+      <button className="btn btn-primary" onClick={orderOne}>
         Add
       </button>
     </>
