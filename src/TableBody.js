@@ -1,12 +1,21 @@
+import { useState } from "react";
 import moment from "moment";
 
 const TableBody = (props) => {
   return (
     <tbody>
       {props.results.map((result) => {
+        const [active, setActive] = useState(false);
+        function handleClick() {
+          setActive(!active);
+        }
         return (
-          <tr>
-            <td scope="row">{result.id}</td>
+          <tr
+            scope="row"
+            className={active ? "grey" : ""}
+            onClick={handleClick}
+          >
+            <td>{result.id}</td>
             <td>{result.title}</td>
             <td>{result.firstName}</td>
             <td>{result.surname}</td>
