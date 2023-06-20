@@ -1,38 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const RestaurantButton = () => {
-    const [order, setOder] = useState(0);
-
-    const AddPizzas = () => {
-        setOder(order + 1);
-    };
-
-return (
-    <div>
-        <ul>
-            <li>
-                Pizzas: {order} <button onClick={AddPizzas} className="btn      btn-primary">
+const RestaurantButton = ({ handleClick }) => {
+    return (
+        <div>
+            <button onClick={handleClick} className="btn btn-primary">
                 Add
-                </button>
-            </li>
-        </ul>
-    </div>
-);
+            </button>
+        </div>
+    );
 };
 
 export default RestaurantButton;
-
-//   const [order, setOder] = useState(0);
-
-//   const AddPizzas = () => {
-//     orderOne = setOder(order + 1);
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={AddPizzas} className="btn btn-primary">
-//         Add
-//       </button>
-//       <Restaurant orderOne />
-//     </div>
-//   );

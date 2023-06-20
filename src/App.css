@@ -4,7 +4,7 @@
   text-align: left;
 }
 
-.tourist-cards{
+.tourist-cards {
   /* margin-left: 80px;
   display: grid;
   grid-template-columns: repeat(3, 1fr); */
@@ -45,6 +45,17 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+}
+
+.order-type {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 100px;
+}
+
+.order-head {
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
