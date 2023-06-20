@@ -7,7 +7,9 @@ const Restaurant = () => {
     <div className="center">
       <h3>Restaurant Orders</h3>
       <ul>
-        <Order />
+        <Order orderType="Pizzas" />
+        <Order orderType="Salads" />
+        <Order orderType="Chocolate ake" />
       </ul>
     </div>
   );
