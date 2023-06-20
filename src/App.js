@@ -3,11 +3,13 @@ import "./App.css";
 
 import Bookings from "./Bookings";
 import Heading from "./Heading";
+import TouristInfoCards from "./TouristInfoCards";
 
 const App = () => {
     return (
         <div className="App">
             <Heading/>
+            <TouristInfoCards/>
             <Bookings/>
         </div>
     );
