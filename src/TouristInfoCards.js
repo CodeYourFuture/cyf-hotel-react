@@ -21,19 +21,23 @@ const TouristInfo = [
   },
 ];
 const TouristInfoCards = () => {
-  return TouristInfo.map((card) => {
-    return (
-      <div className="card">
-        <img src={card.image} className="card-img-top" />
-        <div className="card-body">
-          <h2 class="card-title">{card.title}</h2>
-          <p class="card-text">{card.info}</p>
-          <a href={card.link} className="btn btn-primary">
-            More Information
-          </a>
-        </div>
-      </div>
-    );
-  });
+  return (
+    <div className="card-flex">
+      {TouristInfo.map((card) => {
+        return (
+          <div className="card">
+            <img src={card.image} className="card-img-top" />
+            <div className="card-body">
+              <h2 className="card-title">{card.title}</h2>
+              <p className="card-text">{card.info}</p>
+              <a href={card.link} className="btn btn-primary">
+                More Information
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 export default TouristInfoCards;
