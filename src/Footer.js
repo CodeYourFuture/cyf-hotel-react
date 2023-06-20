@@ -1,5 +1,5 @@
 import React from "react";
-debugger;
+
 function Footer(props) {
    return(
     
