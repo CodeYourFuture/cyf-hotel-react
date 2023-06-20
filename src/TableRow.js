@@ -12,6 +12,12 @@ function handleClick(highlightColor, setHighlightColor) {
 
 const TableRow = (props) => {
   const [highlightColor, setHighlightColor] = useState("");
+
+  function handleProfileClick(id) {
+    console.log("profile id: ", id);
+    props.setCustomerProfileId(id);
+  }
+
   return (
     <tr
       className={highlightColor}
@@ -35,7 +41,13 @@ const TableRow = (props) => {
         />
       </td>
       <td>
-        <button>Show profile</button>
+        <button
+          onClick={() => {
+            handleProfileClick(props.aBooking.id);
+          }}
+        >
+          Show profile
+        </button>
       </td>
     </tr>
   );
