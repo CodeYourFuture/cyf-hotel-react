@@ -5,6 +5,8 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [filteredBookings, setFilteredBookings] = useState([]);
+  const [customerProfile, setCustomerProfile] = useState("");
+  const [customerId, setCustomerId] = useState("");
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
