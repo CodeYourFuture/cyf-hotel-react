@@ -10,12 +10,9 @@ import Restaurant from "./Restaurant";
 const App = () => {
   return (
     <div className="App">
-      {/* <header className="App-header">CYF Hotel DJMS</header> */}
       <Heading />
-
       <Bookings />
       <Restaurant />
-
       <TouristInfoCards />
       <Footer
         addressDetail={[

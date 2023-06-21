@@ -32,7 +32,6 @@ const Search = (props) => {
                 placeholder="Customer name"
                 value={searchInput}
               />
-              {/* <button className="btn btn-primary">Search123</button> */}
               <SearchButton />
             </div>
           </form>
