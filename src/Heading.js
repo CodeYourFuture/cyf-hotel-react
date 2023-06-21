@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./LogoHotel.png";
+import logo from "./Logo.png";
 
 //console.log(LogoHotel)
 const Heading = () => {
