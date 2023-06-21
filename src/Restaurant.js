@@ -1,19 +1,12 @@
-import React, { useState } from "react";
-import RestaurantButton from "./components/RestaurantButton";
+import React from "react";
+import Order from "./components/Order";
 
 const Restaurant = () => {
-  const [orders, setOrder] = useState(0);
-  const orderOne = () => {
-    setOrder(orders + 1);
-  };
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        <li>
-          Pizzas: {orders}
-          <RestaurantButton add={orderOne}/>
-        </li>
+        <Order />
       </ul>
     </div>
   );
