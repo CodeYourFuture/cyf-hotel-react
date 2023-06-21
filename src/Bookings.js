@@ -8,7 +8,7 @@ const Bookings = () => {
   const [error, setError] = useState(null);
 
   const search = (searchVal) => {
-    console.log("TO DO!", searchVal);
+    console.log(searchVal);
     const filteredBookings = bookings.filter(
       (booking) =>
         booking.firstName.toLowerCase() === searchVal.toLowerCase() ||
@@ -20,11 +20,11 @@ const Bookings = () => {
   useEffect(() => {
     setIsLoading(true);
     fetch("https://cyf-react.glitch.me/error")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.statusText}`);
         }
-        return response.json();
+        return res.json();
       })
       .then((data) => {
         console.log(data);
