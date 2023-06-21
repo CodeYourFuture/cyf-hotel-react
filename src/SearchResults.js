@@ -1,8 +1,7 @@
 import React from "react";
 import "./SearchResults.css";
 import data from "./data/fakeBookings.json";
-import moment from "moment";
-
+// import moment from "moment";
 // const numberOfNights()
 
 const SearchResults = () => {
@@ -33,7 +32,9 @@ const SearchResults = () => {
             <td>{item.roomId}</td>
             <td>{item.checkInDate}</td>
             <td>{item.checkOutDate}</td>
-            <td>{}</td>
+            <td>{
+            (new Date(`${item.checkOutDate}T00:00:01Z`) - new Date(`${item.checkInDate}T00:00:01Z`))/ 86400000}
+            </td>
           </tr>
         );
       })}

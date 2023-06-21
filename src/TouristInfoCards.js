@@ -1,4 +1,5 @@
 import React from "react";
+import "./TouristInfoCards.css";
 
 const TouristInfoCards = () => {
   return (
@@ -19,10 +20,10 @@ const TouristInfoCards = () => {
         <div className="Tourist-info">
           <img
             src="https://images.unsplash.com/photo-1633828748381-7fd633580a38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGdsYXNnb3clMjBjaXR5fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+            width={200}
+            height={200}
             className="card-img-top"
             alt="Glasgow-img"
-            width={150}
-            height={250}
           />
           <h3 className="h3">Glasgow</h3>
           <p className="para">
@@ -43,10 +44,10 @@ const TouristInfoCards = () => {
             <div className="Tourist-info">
               <img
                 src="https://images.unsplash.com/photo-1623960146923-e77aee115f74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFuY2hlc3RlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+                width={200}
+                height={200}
                 className="card-img-top"
                 alt="Manchester-img"
-                width={150}
-                height={250}
               />
               <h3 className="h3">Manchester</h3>
               <p className="para">
@@ -54,7 +55,7 @@ const TouristInfoCards = () => {
                 rich industrial heritage. The Castlefield conservation area’s
                 18th-century canal system recalls the city’s days as a textile
                 powerhouse, and visitors can trace this history at the
-                interactive Museum of Science & Industry.
+                interactive Museum of Science & Industry
               </p>
               <div className="card-body">
                 <a href="visitmanchester.com" className="btn btn-primary">
@@ -68,9 +69,9 @@ const TouristInfoCards = () => {
                   <img
                     src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bG9uZG9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
                     className="card-img-top"
+                    width={200}
+                    height={200}
                     alt="Manchester-img"
-                    width={150}
-                    height={250}
                   />
                   <h3 className="h3">London</h3>
                   <p className="para">

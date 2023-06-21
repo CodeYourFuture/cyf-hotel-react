@@ -7,6 +7,7 @@ const Footer = () => {
     "hello@fakehotel.com",
     "0123 456789",
   ];
+  
   const currentDate = new Date().toLocaleDateString();
   return (
     <ul className="address">
