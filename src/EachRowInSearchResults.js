@@ -10,6 +10,12 @@ function EachRowInSearchResults(props) {
       setSwitchMe("off");
     }
   }
+
+  function handleShowProfile() {
+    props.setCustomerId(props.booking.id);
+    props.setCustomerProfile("Customer Profile");
+  }
+
   return (
     <tr className={switchMe} onClick={handleClick}>
       <th scope="row">{props.booking.id}</th>
@@ -21,6 +27,11 @@ function EachRowInSearchResults(props) {
       <td>{props.booking.checkInDate}</td>
       <td>{props.booking.checkOutDate}</td>
       <td>{props.numberOfNights}</td>
+      <td>
+        <button onClick={handleShowProfile} className="btn btn-primary">
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 }
