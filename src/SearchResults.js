@@ -15,6 +15,8 @@ const SearchResults = (props) => {
         key={nanoid()}
         booking={booking}
         numberOfNights={numberOfNights}
+        setCustomerId={props.setCustomerId}
+        setCustomerProfile={props.setCustomerProfile}
       />
     );
   });

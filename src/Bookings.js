@@ -34,10 +34,14 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults booking={filteredBookings} />
-        <CustomerProfile
+        <SearchResults
+          booking={filteredBookings}
           setCustomerId={setCustomerId}
           setCustomerProfile={setCustomerProfile}
+        />
+        <CustomerProfile
+          customerId={customerId}
+          customerProfile={customerProfile}
         />
       </div>
     </div>
