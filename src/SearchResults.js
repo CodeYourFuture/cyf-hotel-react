@@ -1,34 +1,26 @@
 import { nanoid } from "nanoid";
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import moment from "moment";
+import EachRowInSearchResults from "./EachRowInSearchResults";
 
 const SearchResults = (props) => {
-  console.log(props.booking);
-
   const bookingsEntries = props.booking.map((booking) => {
     const start = moment(booking.checkInDate);
     const end = moment(booking.checkOutDate);
     const numberOfNights = end.diff(start, "days");
 
     return (
-      <tr key={nanoid()}>
-        <th scope="row">{booking.id}</th>
-        <td>{booking.title}</td>
-        <td>{booking.firstName}</td>
-        <td>{booking.surname}</td>
-        <td>{booking.email}</td>
-        <td>{booking.roomId}</td>
-        <td>{booking.checkInDate}</td>
-        <td>{booking.checkOutDate}</td>
-        <td>{numberOfNights}</td>
-      </tr>
+      <EachRowInSearchResults
+        key={nanoid()}
+        booking={booking}
+        numberOfNights={numberOfNights}
+      />
     );
   });
-  console.log(bookingsEntries);
   return (
     <>
-      <table className="table table-striped">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
