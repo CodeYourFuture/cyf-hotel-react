@@ -4,9 +4,10 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const search = (searchVal) => {
-    console.log(searchVal);
+    console.log("TO DO!", searchVal);
     const filteredBookings = bookings.filter(
       (booking) =>
         booking.firstName.toLowerCase() === searchVal.toLowerCase() ||
@@ -16,11 +17,13 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    setIsLoading(true);
+    fetch("https://cyf-react.glitch.me/delayed")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setBookings(data);
+        setIsLoading(false);
       });
   }, []);
 
@@ -28,7 +31,11 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {isLoading ? (
+          <p>Loading... Please wait.</p>
+        ) : (
+          <SearchResults results={bookings} />
+        )}
       </div>
     </div>
   );
