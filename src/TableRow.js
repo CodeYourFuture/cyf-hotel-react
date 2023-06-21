@@ -14,7 +14,6 @@ const TableRow = (props) => {
   const [highlightColor, setHighlightColor] = useState("");
 
   function handleProfileClick(id) {
-    console.log("profile id: ", id);
     props.setCustomerProfileId(id);
   }
 
