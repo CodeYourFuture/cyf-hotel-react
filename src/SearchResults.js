@@ -1,18 +1,25 @@
 import { nanoid } from "nanoid";
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import moment from "moment";
 
 const SearchResults = (props) => {
-  console.log(props.booking);
+  const [switchMe, setSwitchMe] = useState("off");
 
+  function handleClick() {
+    if (switchMe === "off") {
+      setSwitchMe("on");
+    } else {
+      setSwitchMe("off");
+    }
+  }
   const bookingsEntries = props.booking.map((booking) => {
     const start = moment(booking.checkInDate);
     const end = moment(booking.checkOutDate);
     const numberOfNights = end.diff(start, "days");
 
     return (
-      <tr key={nanoid()}>
+      <tr key={nanoid()} className={switchMe} onClick={handleClick}>
         <th scope="row">{booking.id}</th>
         <td>{booking.title}</td>
         <td>{booking.firstName}</td>
@@ -25,7 +32,6 @@ const SearchResults = (props) => {
       </tr>
     );
   });
-  console.log(bookingsEntries);
   return (
     <>
       <table className="table table-striped">

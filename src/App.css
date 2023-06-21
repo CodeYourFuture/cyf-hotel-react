@@ -77,7 +77,15 @@ tr {
   margin-top: 1em;
 }
 
-.center{
+.center {
   text-align: center;
   margin-top: 2rem;
+}
+
+.on {
+  background-color: blue;
+  color: white;
+}
+.off {
+  background-color: none;
 }
