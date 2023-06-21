@@ -84,7 +84,7 @@
   flex-wrap: wrap;
   /* grid-gap: 1px; */
   /* grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); */
-  border: 2px solid green;
+  /* border: 2px solid green; */
   margin: 2rem 0;
   /* padding: 0.5%; */
 }
@@ -179,7 +179,7 @@ button {
   list-style: none;
 }
 .table {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   margin: 1rem;
 
   /* padding: 1rem; */
