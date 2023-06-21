@@ -7,8 +7,8 @@ const Bookings = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const search = (searchVal) => {
-    console.log("TO DO!", searchVal);
-    const filteredBookings = bookings.filter(
+       console.log(searchVal);
+     const filteredBookings = bookings.filter(
       (booking) =>
         booking.firstName.toLowerCase() === searchVal.toLowerCase() ||
         booking.surname.toLowerCase() === searchVal.toLowerCase()
@@ -17,13 +17,13 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    setIsLoading(true);
+     setIsLoading(true);
     fetch("https://cyf-react.glitch.me/delayed")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setBookings(data);
-        setIsLoading(false);
+        setIsLoading(false); // This line was missing
       });
   }, []);
 
