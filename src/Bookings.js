@@ -18,7 +18,11 @@ const Bookings = () => {
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
     const searchedBookings = bookings.filter(
-      (searchedNames) => searchedNames.firstName.toLowerCase().includes(searchVal.toLowerCase()) || searchedNames.surname.toLowerCase().includes(searchVal.toLowerCase())
+      (searchedNames) =>
+        searchedNames.firstName
+          .toLowerCase()
+          .includes(searchVal.toLowerCase()) ||
+        searchedNames.surname.toLowerCase().includes(searchVal.toLowerCase())
     );
     setFilteredBookings(searchedBookings);
   };
@@ -28,6 +32,10 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         <SearchResults booking={filteredBookings} />
+        <CustomerProfile
+          setCustomerId={setCustomerId}
+          setCustomerProfile={setCustomerProfile}
+        />
       </div>
     </div>
   );
