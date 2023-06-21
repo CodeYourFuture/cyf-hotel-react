@@ -1,8 +1,8 @@
 import React from "react";
 
-const SearchResults = () => {
+const SearchResults = (props) => {
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">Title</th>
@@ -15,33 +15,19 @@ const SearchResults = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Mr</td>
-          <td>John</td>
-          <td>Patterson</td>
-          <td>@gmail.com</td>
-          <td>1</td>
-          <td>2023-05-05</td>
-          <td>2023-05-15</td>
-        </tr>
-        <tr>
-          <td>Ms</td>
-          <td>Kate</td>
-          <td>Wilson</td>
-          <td>@gmail.com</td>
-          <td>2</td>
-          <td>2023-05-16</td>
-          <td>2023-05-23</td>
-        </tr>
-        <tr>
-          <td>Mrs</td>
-          <td>Jessica</td>
-          <td>Carr</td>
-          <td>@gmail.com</td>
-          <td>3</td>
-          <td>2023-06-08</td>
-          <td>2023-06-14</td>
-        </tr>
+        {props.results.map((data) => {
+          return (
+            <tr>
+              <td>{data.title}</td>
+              <td>{data.firstName}</td>
+              <td>{data.surname}</td>
+              <td>{data.email}</td>
+              <td>{data.id}</td>
+              <td>{data.checkInDate}</td>
+              <td>{data.checkOutDate}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
