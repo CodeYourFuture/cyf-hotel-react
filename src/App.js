@@ -6,6 +6,7 @@ import TouristInfoCards from "./TouristInfoCards"
 import Footer from "./Footer";
 import SearchResults from "./SearchResults";
 import FakeBookings from "./data/fakeBookings.json"
+import Restaurant from './Restaurant'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer />
     </div>
   );

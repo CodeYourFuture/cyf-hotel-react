@@ -49,7 +49,7 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
 }
 
@@ -69,7 +69,7 @@ tr {
   width: 18rem;
 }
 
-.footer {
+/* .footer {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -81,4 +81,4 @@ tr {
 
 .footer, h1 {
   color:white;
-}
+} */
