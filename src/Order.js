@@ -10,8 +10,9 @@ const Order = ({orderType}) => {
 
     return(
         <li>
-        {orderType} {orders} <RestaurantButton onClick={orderOne}/>
-      </li>
+          {orderType} {orders} <RestaurantButton onClick={orderOne}/>
+        </li>
+        
     )
 }
 

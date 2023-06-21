@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import FakeBookings from "./data/fakeBookings.json";
 import moment from "moment/moment";
 
 const SearchResults = (props) => {
-    //const time = moment([booking.checkOutDate]) - moment([booking.checkInDate])
-   // const time = a.diff(b, 'days');
-     return(
-        
+   const [selectedRows, setSelectedRows] = useState([]); 
+   const selectedClicks = (bookingId) => {
+    setSelectedRows((selectedClickedRows) => {
+        if (selectedClickedRows.includes(bookingId)) {
+            return selectedClickedRows.filter((id) => id !== bookingId)
+        } else {
+            return [...selectedClickedRows, bookingId];
+        }
+    });
+    }
+    
 
-
+   return(
         <table className="table">
             <thead>
                 <tr>
@@ -24,7 +31,10 @@ const SearchResults = (props) => {
             </thead>
             <tbody className="tbody">
                 {props.bookings.map((booking, key) => (
-                <tr key={booking.id}>
+                <tr 
+                key={booking.id}
+                className={selectedRows.includes(booking.id) ? "selected-row" : ""}
+                onClick={() => selectedClicks(booking.id)}>
                     <th scope="row">{booking.title}</th>
                      <td>{booking.firstName}</td>
                      <td>{booking.surname}</td>
@@ -38,6 +48,5 @@ const SearchResults = (props) => {
              </tbody>
         </table>     
      )
-}
-
+};
 export default SearchResults;
