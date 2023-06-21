@@ -85,7 +85,9 @@ tr {
 .on {
   background-color: blue;
   color: white;
+  cursor: pointer;
 }
 .off {
   background-color: none;
+  cursor: pointer;
 }
