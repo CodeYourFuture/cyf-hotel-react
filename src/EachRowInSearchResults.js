@@ -14,6 +14,11 @@ function EachRowInSearchResults(props) {
   function handleShowProfile() {
     props.setCustomerId(props.booking.id);
     props.setCustomerProfile("Customer Profile");
+    if (props.view === "viewOff") {
+      props.setView("viewOn");
+    } else {
+      props.setView("viewOff");
+    }
   }
 
   return (

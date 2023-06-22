@@ -91,3 +91,18 @@ tr {
   background-color: none;
   cursor: pointer;
 }
+.profile-container {
+  color: white;
+  background-color: blue;
+  padding: 1em;
+}
+.profile {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.viewOn {
+  display: block;
+}
+.viewOff {
+  display: none;
+}
