@@ -8,6 +8,7 @@ const Bookings = () => {
   const [filteredBookings, setFilteredBookings] = useState([]);
   const [customerProfile, setCustomerProfile] = useState("");
   const [customerId, setCustomerId] = useState("");
+  const [view, setView] = useState("viewOff");
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
@@ -38,10 +39,13 @@ const Bookings = () => {
           booking={filteredBookings}
           setCustomerId={setCustomerId}
           setCustomerProfile={setCustomerProfile}
+          setView={setView}
+          view={view}
         />
         <CustomerProfile
           customerId={customerId}
           customerProfile={customerProfile}
+          view={view}
         />
       </div>
     </div>

@@ -17,6 +17,8 @@ const SearchResults = (props) => {
         numberOfNights={numberOfNights}
         setCustomerId={props.setCustomerId}
         setCustomerProfile={props.setCustomerProfile}
+        setView={props.setView}
+        view={props.view}
       />
     );
   });
