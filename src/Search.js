@@ -2,6 +2,7 @@ import React from "react";
 import SearchButton from "./SearchButton";
 
 const Search = () => {
+
   return (
     <div className="search">
       <div className="page-header">
@@ -18,12 +19,11 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <button className="btn btn-primary">Search</button>
+              <SearchButton />
             </div>
           </form>
         </div>
       </div>
-      <SearchButton />
     </div>
   );
 };
