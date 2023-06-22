@@ -106,3 +106,12 @@ tr {
 .viewOff {
   display: none;
 }
+.error {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: white;
+  padding: 5em;
+  color: red;
+  font-weight: bold;
+}
