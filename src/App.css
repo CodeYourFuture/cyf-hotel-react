@@ -81,3 +81,6 @@ tr {
   width: 100%;
   margin-top: 20px;
 }
+.selected{
+  background-color: lightpink;
+}
