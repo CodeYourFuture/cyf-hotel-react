@@ -1,14 +1,10 @@
 import React from "react";
-import App from "./App";
 
-function SearchButton(){
-    const SearchButton = "search button";
+// import App from "./App";
+
+const SearchButton = () => {
     return (
-        <div className="SearchButton">
-       
-    <button className="btn btn-primary">Search</button>
-    </div>
-    );
-}
-
+      <button className="btn btn-primary">Search</button>);
+  };
+  
 export default SearchButton;
