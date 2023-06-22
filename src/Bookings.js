@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import CustomerProfile from "./CustomerProfile.js";
+import UrlNotWorking from "./UrlNotWorking.js";
 
-const Bookings = () => {
+const Bookings = (props) => {
   const [bookings, setBookings] = useState([]);
   const [filteredBookings, setFilteredBookings] = useState([]);
   const [customerProfile, setCustomerProfile] = useState("");
@@ -16,6 +17,10 @@ const Bookings = () => {
       .then((data) => {
         setBookings(data);
         setFilteredBookings(data);
+      })
+      .catch((error) => {
+        const urlNotWorking = "Not Found";
+        setBookings(urlNotWorking);
       });
   }, []);
 
@@ -31,6 +36,10 @@ const Bookings = () => {
     setFilteredBookings(searchedBookings);
   };
 
+  if (bookings === "Not Found") {
+    props.setCount(1);
+    return <UrlNotWorking />;
+  }
   return (
     <div className="App-content">
       <div className="container">
