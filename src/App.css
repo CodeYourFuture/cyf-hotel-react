@@ -2,6 +2,13 @@
   text-align: left;
 }
 
+.hotel-logo {
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -9,12 +16,13 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
-  color: white;
-  text-align: left;
+  /* color: white; */
+  color: #b8860b;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
 }
 
@@ -48,10 +56,86 @@ tr {
 }
 
 .footer {
+  background-color: #222;
   padding-top: 20px;
   text-align: center;
+  padding-bottom: 15px;
+  margin-bottom: -17px;
+}
+.footer > ul {
+  color: #b8860b;
 }
 
 .card {
   width: 18rem;
+}
+
+.cities-info {
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+  margin-top: 1em;
+}
+
+.center {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.on {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+.off {
+  background-color: none;
+  cursor: pointer;
+}
+.profile-container {
+  color: white;
+  background-color: blue;
+  padding: 1em;
+}
+.profile {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.viewOn {
+  display: block;
+}
+.viewOff {
+  display: none;
+}
+.error {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: white;
+  padding: 5em;
+  color: red;
+  font-weight: bold;
+}
+
+/* the loading wheel in the booking component  */
+.loading-wheel {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid darkgray;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
