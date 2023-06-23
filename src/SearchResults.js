@@ -1,7 +1,20 @@
+import { useState } from "react";
 import fakeData from "./data/fakeBookings.json";
 import moment from "moment";
 
 export function SearchResults() {
+  const [selectedRows, setSelectedRows] = useState([]);
+
+  const handleRowClick = (rowId) => {
+    if (selectedRows.includes(rowId)) {
+      // Row is already selected, remove it from selectedRows
+      setSelectedRows(selectedRows.filter((id) => id !== rowId));
+    } else {
+      // Row is not selected, add it to selectedRows
+      setSelectedRows([...selectedRows, rowId]);
+    }
+  };
+
   return (
     <div>
       <table className="table">
@@ -20,7 +33,13 @@ export function SearchResults() {
         </thead>
         <tbody>
           {fakeData.map((element) => (
-            <tr key={element.id}>
+            <tr
+              onClick={() => handleRowClick(element.id)}
+              className={
+                selectedRows.includes(element.id) ? "selected-row" : ""
+              }
+              key={element.id}
+            >
               <th scope="row">{element.id}</th>
               <td>{element.title}</td>
               <td>{element.firstName}</td>
@@ -43,13 +62,3 @@ export function SearchResults() {
     </div>
   );
 }
-// {
-//   "id": 1,
-//   "title": "Mr",
-//   "firstName": "John",
-//   "surname": "Doe",
-//   "email": "johndoe@doe.com",
-//   "roomId": 2,
-//   "checkInDate": "2017-11-21",
-//   "checkOutDate": "2017-11-23"
-// },
