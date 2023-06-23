@@ -3,7 +3,7 @@ import moment from "moment";
 
 const SearchResults = (props) => {
     return (
-      <table class="table table-bordered">
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th scope="col">Id</th>
