@@ -4,7 +4,7 @@ import classes from "./InfoCard.module.css";
 
 const InfoCard = (props) => {
   return (
-    <Card className={`card ${classes.cardContainer}`}>
+    <Card className={`card ${classes["card_container"]}`}>
       <img src={props.img} className="card-img-top" style={{ height: 200 }} />
       <div className="card-body text-center">
         <h2>{props.cityTitle}</h2>

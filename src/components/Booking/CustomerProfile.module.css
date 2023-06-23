@@ -1,10 +1,10 @@
-.customProfile {
+.custom_profile {
   background-color: #333;
   color: #fff;
   margin: 2rem 0;
   padding: 2rem;
 }
-.customerItems {
+.customer_items {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

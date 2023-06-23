@@ -19,8 +19,8 @@ const Search = (props) => {
 
   return (
     <div>
-      <div className="page-header">
-        <h4 className="text-left">Search Bookings</h4>
+      <div>
+        <h4>Search Bookings</h4>
       </div>
       <div className="row">
         <div className="col">

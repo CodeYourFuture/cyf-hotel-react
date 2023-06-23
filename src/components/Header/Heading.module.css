@@ -4,6 +4,9 @@
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #222;
   height: 70px;
   padding: 20px;

@@ -1,12 +1,13 @@
 import React from "react";
 import InfoCard from "./InfoCard";
-import manchesterImg from "../../images/manchester.webp";
-import londonImg from "../../images/london.jpeg";
-import glassgowImg from "../../images/glasgow.jpeg";
+import manchesterImg from "../../assets/manchester.webp";
+import londonImg from "../../assets/london.jpeg";
+import glassgowImg from "../../assets/glasgow.jpeg";
+import classes from "./TouristInfoCards.module.css"
 
 const TouristInfoCards = (props) => {
   return (
-    <div className="d-flex justify-content-around align-items-center mt-4 mx-3">
+    <section className={classes["info_cards"]}>
       <InfoCard
         img={glassgowImg}
         cityTitle="Glasgow"
@@ -25,7 +26,7 @@ const TouristInfoCards = (props) => {
         cityDescription="London is the capital city of the United Kingdom, attracting tourists with its iconic landmarks and vibrant multicultural atmosphere."
         cityWebsite="https://www.visitlondon.com/"
       />
-    </div>
+    </section>
   );
 };
 

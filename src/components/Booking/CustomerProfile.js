@@ -4,12 +4,12 @@ import classes from "./CustomerProfile.module.css";
 
 const CustomerProfile = (props) => {
   return (
-    <Card className={classes.customProfile}>
+    <Card className={classes["custom_profile"]}>
       <p className="text-center mb-3">
         <span className="text-primary font-weight-bold">More Information </span>
         (Click show profile)
       </p>
-      <div className={classes.customerItems}>
+      <div className={classes["customer_items"]}>
         {props.customerID && (
           <p>
             {" "}
