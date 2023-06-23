@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
+/*   const [isHighlighted, setIsHighlighted] = useState(false)
+  const changeColor = (e) => {
+    console.log(e.target.parentElement.className)
+    e.target.parentElement.className += 'seelcted'
+    setIsHighlighted(true)
+  } */
   return (
     <table className="table table-striped">
       <thead>
@@ -23,7 +29,7 @@ const SearchResults = ({ results }) => {
           const dateIn = moment(item.checkInDate);
           const dateOut = moment(item.checkOutDate);
           return (
-            <tr key={index}>
+            <tr key={index} /* onClick={changeColor} */>
               <th scope="row">{index + 1}</th>
               <td>{item.title}</td>
               <td>{item.firstName}</td>
