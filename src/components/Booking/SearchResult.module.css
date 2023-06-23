@@ -1,0 +1,12 @@
+tr {
+  color: #5b5757;
+  border-bottom: 2px solid #ddd;
+}
+td,
+tr {
+  padding: 20px;
+}
+
+.selected {
+  background-color: #2192ff;
+}
