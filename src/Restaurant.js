@@ -1,9 +1,10 @@
 import React from "react";
+import "./Restaurant.css";
 
 const Restaurant = () => {
   const pizzas = 0;
   return (
-    <div>
+    <div className="restaurant-orders">
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
