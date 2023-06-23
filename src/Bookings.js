@@ -10,28 +10,27 @@ const Bookings = (props) => {
   const [customerProfile, setCustomerProfile] = useState("");
   const [customerId, setCustomerId] = useState("");
   const [view, setView] = useState("viewOff");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then((response) => response.json())
       .then((data) => {
         setBookings(data);
         setFilteredBookings(data);
+        setIsLoading(false);
       })
       .catch((error) => {
         const urlNotWorking = "Not Found";
         setBookings(urlNotWorking);
+        setIsLoading(false);
       });
   }, []);
 
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
     const searchedBookings = bookings.filter(
-      (searchedNames) =>
-        searchedNames.firstName
-          .toLowerCase()
-          .includes(searchVal.toLowerCase()) ||
-        searchedNames.surname.toLowerCase().includes(searchVal.toLowerCase())
+      (searchedNames) => searchedNames.firstName.toLowerCase().includes(searchVal.toLowerCase()) || searchedNames.surname.toLowerCase().includes(searchVal.toLowerCase())
     );
     setFilteredBookings(searchedBookings);
   };
@@ -40,22 +39,18 @@ const Bookings = (props) => {
     props.setCount(1);
     return <UrlNotWorking />;
   }
+
+  if (isLoading) {
+    // return <div>Loading...</div>;
+    return <div className="loading-wheel"></div>;
+  }
+
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults
-          booking={filteredBookings}
-          setCustomerId={setCustomerId}
-          setCustomerProfile={setCustomerProfile}
-          setView={setView}
-          view={view}
-        />
-        <CustomerProfile
-          customerId={customerId}
-          customerProfile={customerProfile}
-          view={view}
-        />
+        <SearchResults booking={filteredBookings} setCustomerId={setCustomerId} setCustomerProfile={setCustomerProfile} setView={setView} view={view} />
+        <CustomerProfile customerId={customerId} customerProfile={customerProfile} view={view} />
       </div>
     </div>
   );
