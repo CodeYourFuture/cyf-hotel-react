@@ -25,8 +25,7 @@ const Bookings = () => {
       .catch(error => setError(true));
   }, []);
 
-  const search = searchVal => {
-    console.log("TO DO!", searchVal);
+  function search(searchVal) {
     setBookings(
       bookings.filter(guest => {
         return (
@@ -35,7 +34,7 @@ const Bookings = () => {
         );
       })
     );
-  };
+  }
 
   return (
     <div className="App-content">
@@ -46,7 +45,7 @@ const Bookings = () => {
         ) : !error ? (
           <p className="loading">Loading..... Please Wait</p>
         ) : (
-          <p className="error">Error..... Content not found</p>
+          <p className="loading">Error..... Content not found</p>
         )}
       </div>
     </div>

@@ -5,14 +5,17 @@ const CustomerProfile = props => {
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
       .then(res => res.json())
-      .then(data => setCustomer(data));
+      .then(data => {
+        console.log(data);
+        setCustomer(data);
+      });
   }, [props.id]);
 
   return (
     <>
       {customer.id ? (
         <div className="customer-profile">
-          <p className="customer-id"> Customer {props.id}Profile</p>
+          <p className="customer-id"> Customer {props.id} Profile</p>
           <ul>
             <li>{customer.email}</li>
             <li>{customer.phoneNumber}</li>

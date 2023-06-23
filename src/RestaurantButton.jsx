@@ -3,7 +3,7 @@ const RestaurantButton = props => {
   return (
     <>
       <button onClick={props.OrderNumber} className=" btn btn-success">
-        Add{" "}
+        Add
       </button>
       <button onClick={props.RemoveNumber} className="btn btn-success">
         Remove

@@ -6,7 +6,7 @@ const SearchRow = props => {
   const [highlighted, setHighlighted] = useState("");
   function handleClick() {
     if (selected) {
-      setHighlighted("highlight");
+      setHighlighted("highlighted");
       setSelected(false);
     } else {
       setHighlighted("");
@@ -29,7 +29,7 @@ const SearchRow = props => {
         <button
           className="btn btn-primary"
           onClick={props.handleClick}
-          value={props.info.id}
+          id={props.info.id}
         >
           Show Profile
         </button>

@@ -7,10 +7,10 @@ const Search = props => {
   const handleSearchInput = event => {
     setSearchInput(event.target.value);
   };
-  const handleSubmit = event => {
+  function handleSubmit(event) {
     event.preventDefault();
     props.search(searchInput);
-  };
+  }
   return (
     <div className="search">
       <div className="page-header">

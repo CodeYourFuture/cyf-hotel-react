@@ -6,7 +6,7 @@ const SearchResults = ({ results }) => {
 
   function handleClick(e) {
     e.preventDefault();
-    setCustomerId(e.target.value);
+    setCustomerId(e.target.id);
   }
 
   return (
@@ -25,9 +25,13 @@ const SearchResults = ({ results }) => {
           </tr>
         </thead>
         <tbody>
-          {results.map((booking, index) => {
+          {results.map((guestName, index) => {
             return (
-              <SearchRow key={index} info={booking} handleClick={handleClick} />
+              <SearchRow
+                key={index}
+                info={guestName}
+                handleClick={handleClick}
+              />
             );
           })}
         </tbody>
