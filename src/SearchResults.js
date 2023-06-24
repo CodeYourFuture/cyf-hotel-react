@@ -40,9 +40,10 @@ const SearchResults = (props) => {
   const handleShowProfile = (customerId) => {
     setCustomerId(customerId);
   };
-  const handleCloseProfile = () => {
+  const onCloseProfile=()=>{
     setCustomerId(null);
   };
+
   return (
     <div>
       <table className="table">
@@ -68,8 +69,13 @@ const SearchResults = (props) => {
       </table>
       {customerId && (
       <>
-      <button onClick={handleCloseProfile}>Close</button>
-      <CustomerProfile id={customerId}/>
+
+      <CustomerProfile id={customerId} onCloseProfile={onCloseProfile} >
+
+      </CustomerProfile>
+
+
+
       </> )}
     </div>
   );
