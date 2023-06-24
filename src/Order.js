@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import RestaurantButton from "./RestauranButton";
+import RestaurantButton from "./RestaurantButton";
+// import OrderCalculation from "./Utilities/OrderCalculation/"
 
 const Order = ({ orderType }) => {
   const [count, setCount] = useState(0);
@@ -8,26 +9,27 @@ const Order = ({ orderType }) => {
     setCount(count + 1);
   };
 
-  const removeOrder = () => {
-    setCount(count - 1);
-  };
 
-  const setToZero = () => {
-    setCount((0));
-  }
+//   const removeOrder = () => {
+//     setCount(count - 1);
+//   }
+
+const setToZero = () => {
+  setCount(0);
+};
 
   return (
     <div>
       <ul>
         <li>
           {orderType} {count}
-          <RestaurantButton handleClick={addOrder}/>
+          <br></br>
+          <RestaurantButton handleClick={addOrder} handleClick1={setToZero} />
         </li>
-          <RestaurantButton handleClick={setToZero} text="-" />
-        
       </ul>
     </div>
   );
-};
+}
+
 
 export default Order;

@@ -1,14 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import "./SearchResults.css";
 import data from "./data/fakeBookings.json";
 // import moment from "moment";
 // const numberOfNights()
 
-const SearchResults = () => {
-  console.log(data);
+const SearchResults = (props) => {
+  
+  const[highlight, sethighlight] = useState(null);
+
+  const toggleHighlight = (index) =>{
+    if (index == highlight) {
+      sethighlight(null)
+
+    } else {
+    sethighlight(index)
+  }
+}
 
   return (
     <table className="table">
+      <thead >
+      </thead>
+      <tbody>
       <tr>
         <td>ID</td>
         <td>Tittle</td>
@@ -23,7 +36,7 @@ const SearchResults = () => {
 
       {data.map((item, index) => {
         return (
-          <tr key={index}>
+          <tr onClick={() => toggleHighlight(index)} style={{backgroundColor: index == highlight ? "yellow" : "" }} key={index}>
             <td>{item.id}</td>
             <td>{item.title}</td>
             <td>{item.firstName}</td>
@@ -32,12 +45,15 @@ const SearchResults = () => {
             <td>{item.roomId}</td>
             <td>{item.checkInDate}</td>
             <td>{item.checkOutDate}</td>
-            <td>{
-            (new Date(`${item.checkOutDate}T00:00:01Z`) - new Date(`${item.checkInDate}T00:00:01Z`))/ 86400000}
+            <td>
+              {(new Date(`${item.checkOutDate}T00:00:01Z`) -
+                new Date(`${item.checkInDate}T00:00:01Z`)) /
+                86400000}
             </td>
           </tr>
         );
       })}
+      </tbody>
     </table>
   );
 };

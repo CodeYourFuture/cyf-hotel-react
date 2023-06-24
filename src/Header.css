@@ -2,12 +2,25 @@
     border-radius: 50%;
     margin: 10px;
     padding: 10px;
-
+    
 }
 
 .App-header{
     display: flex;
     align-items: center;
-    justify-content:space-between
-    /* background-color: black; */
+    justify-content:space-between;
+    background-color: black
+   
+}
+
+.span{
+     color: rgb(216, 147, 120);
+    font-family: fantasy;
+    text-align: center;
+}
+
+.span2{
+    color: orange;
+    font-family: fantasy;
+    text-align: center;
 }
