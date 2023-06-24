@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 
-function CustomerProfile({ id }) {
+function CustomerProfile({ id,onCloseProfile }) {
   const [customerProfile, setCustomerProfile] = useState();
 
   useEffect(() => {
@@ -12,21 +12,30 @@ function CustomerProfile({ id }) {
         setCustomerProfile(data);
       });
   }, [id]);
-  
 
-  return (
-    <div>
-      <h2>Customer {id} Profile</h2>
-      {customerProfile && (
-        <ul>
-          <li>Customer ID: {customerProfile.id}</li>
+  if(!customerProfile){
+    return <p>Data are loading .... Please wait</p>;
+  }
+
+
+return(
+
+
+  <fieldset class="scheduler-border">
+    <button className="closeBtn"  onClick={onCloseProfile}>X</button>
+  <legend class="scheduler-border">Customer {id} Profile</legend>
+  {customerProfile && (
+  <ul class="control-group">
+  <li>Customer ID: {customerProfile.id}</li>
           <li>Email: {customerProfile.email}</li>
           <li>VIP: {customerProfile.vip ? "Yes" : "No"}</li>
           <li>Phone Number: {customerProfile.phoneNumber}</li>
-        </ul>
-      )}
-    </div>
-  );
+  </ul>
+  )}
+
+</fieldset>
+);
+
 }
 
 export default CustomerProfile;

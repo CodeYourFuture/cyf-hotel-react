@@ -49,13 +49,24 @@ tr {
 
 .tourist-card-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .card {
-  width: 100%;
+  width: 50rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  margin: 30px;
+
+
+}
+.btn,h2{
+ display: flex;
+ justify-content: center;
+  text-align: center;
+
+}
+.card-img-top{
+  height: 180px;
 }
 
 .footer {
@@ -63,9 +74,7 @@ tr {
   text-align: center;
 }
 
-.card {
-  width: 18rem;
-}
+
 @media (max-width: 768px) {
   .App-header {
     font-size: 0.8em;
@@ -82,4 +91,7 @@ tr {
 
 .highlight {
   background-color: rgb(9, 244, 244);
+}
+.showBtn{
+  min-width: 50px;
 }

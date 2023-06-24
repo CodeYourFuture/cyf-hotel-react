@@ -34,3 +34,39 @@ body {
     margin-bottom: 10px;
   }
 }
+.table{
+  min-width: 100%;
+}
+
+.menu{
+  border: 2px solid brown;
+  width: 600px;
+}
+
+fieldset.scheduler-border {
+  position:relative;
+  border: 1px groove #ddd !important;
+  padding: 0 1.4em 1.4em 1.4em !important;
+  margin: 0 0 1.5em 0 !important;
+  -webkit-box-shadow:  0px 0px 0px 0px #000;
+
+          box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+  font-size: 1.2em !important;
+  font-weight: bold !important;
+  text-align: left !important;
+
+
+}
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: -40px;
+  outline: 1px solid #a8a0a0;
+  color: red;
+  font-weight:bold;
+}
