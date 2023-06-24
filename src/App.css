@@ -67,3 +67,36 @@ tr {
 .rowSelected{
   background-color: rgb(210, 207, 207) !important;
 }
+ul{
+  display: flex;
+}
+
+.btn{
+  margin-right: 2rem;
+  margin-left: 2rem;
+  background-color: #5b5757;
+  border: none;
+
+ }
+ .orders-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.orders-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.order {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order li {
+  margin: 0 10px;
+}

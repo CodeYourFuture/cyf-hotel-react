@@ -12,7 +12,7 @@ const orderOne =()=>{
     return(
         <li>
              {orderType} :{orders}
-            <RestaurantButton onClick={orderOne}/>
+            <RestaurantButton onClick={orderOne} />
         </li>
     )
 }
