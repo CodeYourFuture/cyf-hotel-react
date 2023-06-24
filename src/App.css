@@ -63,3 +63,7 @@ tr {
 .card {
   width: 18rem;
 }
+
+.rowSelected{
+  background-color: rgb(210, 207, 207) !important;
+}

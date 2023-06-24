@@ -1,12 +1,13 @@
 
-import React from "react";
+import React, {useState} from "react";
 import moment from "moment";
 
 const SearchResults=({results})=>{
-
+ 
+const[selectedRow,setSelectedRow]=useState();
       
     return (
-        <table className="table table-striped" style={{marginBottom:"2em"}}>
+        <table className="table" style={{marginBottom:"2em"}}>
             <thead className="thead-dark">
                 <tr>
                     <th>ID</th>
@@ -26,8 +27,12 @@ const SearchResults=({results})=>{
                 const checkInDate = moment(booking.checkInDate);
                 const checkOutDate = moment(booking.checkOutDate);
                 const nights = checkOutDate.diff(checkInDate, "days");
+                let className1=""
+                if (selectedRow ===booking.id){
+                    className1="rowSelected"
+                }
                 return (
-                    <tr key={booking.id}>
+                    <tr className={className1} key={booking.id} onClick={()=>{setSelectedRow(booking.id)}}>
                     <td>{booking.id}</td>
                     <td>{booking.title}</td>
                     <td>{booking.firstName}</td>
