@@ -11,16 +11,24 @@ const getNumbersOfNights = (checkInDate, checkOutDate) => {
 const Row = (props) =>{
     const{id, title, firstName, surname, email, roomId, checkInDate, checkOutDate} = props
     const night = getNumbersOfNights(checkInDate, checkOutDate);
+
+    const [rowSelect, setRowSelect] = useState(false);
+
+    const handleClick = () => setRowSelect(!rowSelect);
+
     return (
-      <tr>
-        <th >{id}</th>
-        <th >{title}</th>
-        <th >{firstName}</th>
-        <th >{surname}</th>
-        <th >{email}</th>
-        <th >{roomId}</th>
-        <th >{checkInDate}</th>
-        <th >{checkOutDate}</th>
+      <tr
+        onClick={handleClick}
+        className={rowSelect ? "row-highlight" : "row-nonHighlight"}
+      >
+        <th>{id}</th>
+        <th>{title}</th>
+        <th>{firstName}</th>
+        <th>{surname}</th>
+        <th>{email}</th>
+        <th>{roomId}</th>
+        <th>{checkInDate}</th>
+        <th>{checkOutDate}</th>
         <th>{night}</th>
       </tr>
     );
@@ -29,7 +37,7 @@ const Row = (props) =>{
 const Table = (props) => {
     const {data} = props;
     return (
-      <table className="table table-striped">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">id</th>

@@ -53,6 +53,11 @@
   margin: 0 100px;
 }
 
+.row-nonHighlight{}
+.row-highlight{
+  background-color: rgb(245, 163, 32);
+}
+
 .order-head {
   display: flex;
   justify-content: center;
