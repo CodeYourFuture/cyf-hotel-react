@@ -54,8 +54,25 @@
   padding: 5px 0 20px 0;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+padding: 10px;
+text-align: left;
+border-bottom: 1px solid aqua;
+}
+
 tr {
   color: #5b5757;
+}
+tr:hover {
+  background-color: orange;
+}
+.selected {
+  background-color: lightskyblue;
 }
 
 .results {
@@ -69,4 +86,32 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.btn, .RestaurantButton {
+  background-color: aqua;
+  color: white;
+  border: none;
+  padding: 8px, 16px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  /* transition: background-color 0.3s; */
+
+}
+h3 {
+  color: purple;
+  font-size:xx-large;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+ul {
+  margin-bottom: 20px;
+}
+
+.order-type {
+  font-weight: bold;
+  color:maroon;
 }

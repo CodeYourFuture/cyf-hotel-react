@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 const SearchResults = () => {
     const bookings = [
@@ -59,6 +59,17 @@ checkOutDate: "2017-11-23",
 }
  ];
 
+ const [selectedRows, setSelectedRows]=useState([]);
+ const handleRowClick = (id)=> {
+    setSelectedRows((prevSelectedRows) => {
+        if(prevSelectedRows.includes(id)) {
+            return prevSelectedRows.filter((rowId)=> rowId !== id);
+        }else{
+            return [...prevSelectedRows, id];
+        }
+    });
+ };
+
     return (
         <table className="table">
             <thead>
@@ -76,8 +87,10 @@ checkOutDate: "2017-11-23",
 </tr>
  </thead>
  <tbody>
-    {bookings.map((booking) => (
-        <tr key={booking.id}>
+    {bookings.map((booking, index) => (
+        <tr key={booking.id}
+        onClick={()=> handleRowClick(booking.id)}
+        className={selectedRows.includes(booking.id) ? "selected" : ""}>
 <td>{booking.id}</td>
 <td>{booking.title}</td>
 <td>{booking.firstName}</td>
