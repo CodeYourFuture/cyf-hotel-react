@@ -5,7 +5,9 @@ const Footer = (props) => {
     <footer className="footer">
       <ul className="un-list">
         {props.contacts.map((item) => (
-          <li className="list">{item}</li>
+          <li key={item} className="list">
+            {item}
+          </li>
         ))}
       </ul>
     </footer>
