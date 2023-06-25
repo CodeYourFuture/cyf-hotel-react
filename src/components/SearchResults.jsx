@@ -1,7 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import moment from "moment";
 
 const SearchResults = (props) => {
+    
+    const [highlight, setHighlight] = useState(null);
+    const toggleHighlight = (index) => {
+      if (index == highlight) {
+        setHighlight(null);
+      } else {
+        setHighlight(index);
+      }
+    }
     return (
       <table className="table table-bordered">
         <thead>
@@ -23,7 +32,11 @@ const SearchResults = (props) => {
             const b = moment(result.checkInDate);
             const days = a.diff(b, "days"); // 1
             return (
-              <tr key={index}>
+              <tr onClick={() => toggleHighlight(index)} 
+              style= {{
+                backgroundColor: index == highlight ? "yellow" : ""
+              }}
+              key={index}>
                 <td>{result.id}</td>
                 <td>{result.title}</td>
                 <td>{result.firstName}</td>
