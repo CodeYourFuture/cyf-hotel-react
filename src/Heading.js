@@ -2,9 +2,9 @@ import React from "react";
 
 const Heading = () => {
     return (
-        <header className="App-header">
+        <header className="App-header bg-dark">
             <img src="/images/logo.png" alt="logo" className="App-logo"/>
-            CYF Hotel
+            <h1 className="App-logo-text">CYF Hotel</h1>
         </header>
      );
 };
