@@ -1,3 +1,8 @@
+:root {
+  --blue: #007bff;
+  --greyBg: #f8f9fa;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -66,6 +71,12 @@ ul, li {
 
 tr {
   color: #5b5757;
+  cursor: pointer;
+}
+
+tr.selected {
+  color: var(--blue);
+  background-color: var(--greyBg);
 }
 
 .card-deck-grid{
@@ -90,6 +101,12 @@ tr {
 .searchResult table {
   font-size: 14px;
   width: 100%;
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }
 
 .footer {

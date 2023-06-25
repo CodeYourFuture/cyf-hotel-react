@@ -4,12 +4,17 @@ import moment from 'moment';
 const SearchResults = (props) => {
     const { results } = props;
     const [bookings, setBookings] = useState([]);
+    const [selected, setSelected] = useState(null);
 
     useEffect(()=>{
         if(results){
             setBookings(results);
         }
-    });
+    }, []);
+
+    const handleRowClick = (id) => () => {
+        setSelected(id);
+    }
     return (
         <div className="searchResult">
             <table className="table">
@@ -31,7 +36,7 @@ const SearchResults = (props) => {
                     const {id, title, firstName, surname, email, roomId, checkInDate, checkOutDate } = booking
                     const nightsQty = moment(checkOutDate).diff(moment(checkInDate), 'days');
                     return (
-                        <tr key={id}>
+                        <tr key={id} onClick={handleRowClick(id)} className={selected === id ? 'selected' : null}>
                             <td>{id}</td>
                             <td>{title}</td>
                             <td>{firstName}</td>
