@@ -2,15 +2,17 @@ import React, {useState} from "react";
 import moment from "moment";
 
 const SearchResults = (props) => {
-    
-    const [highlight, setHighlight] = useState(null);
+    const array = [];
+    props.results.forEach(() => {
+      array.push(false);
+    }) 
+    const [highlight, setHighlight] = useState(array);
     const toggleHighlight = (index) => {
-      if (index == highlight) {
-        setHighlight(null);
-      } else {
-        setHighlight(index);
-      }
-    }
+      const arrToObj = { ...highlight };
+      console.log(arrToObj);
+      arrToObj[index] = !arrToObj[index];
+      setHighlight(arrToObj);
+    };
     return (
       <table className="table table-bordered">
         <thead>
@@ -32,11 +34,13 @@ const SearchResults = (props) => {
             const b = moment(result.checkInDate);
             const days = a.diff(b, "days"); // 1
             return (
-              <tr onClick={() => toggleHighlight(index)} 
-              style= {{
-                backgroundColor: index == highlight ? "yellow" : ""
-              }}
-              key={index}>
+              <tr
+                onClick={() => toggleHighlight(index)}
+                style={{
+                  backgroundColor: highlight[index] ? "yellow" : "",
+                }}
+                key={index}
+              >
                 <td>{result.id}</td>
                 <td>{result.title}</td>
                 <td>{result.firstName}</td>
