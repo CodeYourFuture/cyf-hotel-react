@@ -1,15 +1,52 @@
+:root {
+  --blue: #007bff;
+  --greyBg: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+ul, li {
+  list-style-position: inside;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
 .App {
   text-align: left;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  //animation: App-logo-spin infinite 20s linear;
+  height: 40px;
+  margin-right: 20px;
+
+}
+
+.App-logo-text{
+  font-family: 'Moirai One', cursive;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  display: flex;
+  /*background-color: #736F72;*/
+  height: auto;
   padding: 20px;
   color: white;
   text-align: left;
@@ -23,35 +60,72 @@
 }
 
 .App-content {
-  padding-top: 20px;
+  padding-top: 40px;
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .search {
   padding: 5px 0 20px 0;
 }
 
 tr {
   color: #5b5757;
+  cursor: pointer;
+}
+
+tr.selected {
+  color: var(--blue);
+  background-color: var(--greyBg);
+}
+
+.card-deck-grid{
+  display: grid!important;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  row-gap: 24px;
+}
+
+.card-body {
+  flex: 1 1 auto;
+}
+
+.card-footer{
+  border-top: none;
+  background-color: initial;
+  padding-bottom: 25px;
 }
 
 .results {
   padding-top: 15px;
 }
 
+.searchResult {
+  overflow-x: auto;
+}
+
+.searchResult  .table {
+  font-size: 14px;
+  width: 100%;
+}
+
+.searchResult .btn{
+  white-space: nowrap;
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
 .footer {
   padding-top: 20px;
+  padding-bottom: 20px;
   text-align: center;
 }
 
-.card {
-  width: 18rem;
+@media (min-width: 900px){
+  .card-deck-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
