@@ -23,7 +23,7 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer name"
                 value={searchInput}
-                onChange={handleSearchInput} 
+                onChange={handleSearchInput}
               />
               <SearchButton />
             </div>
