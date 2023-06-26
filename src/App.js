@@ -8,7 +8,7 @@ import Restaurant from "./Restaurant";
 
 
 const App = () => {
-  const App contactDetails = [
+  const contactDetails = [
 
     "123 Fake Street, London, E1 4UD",
     "hello@fakehotel.com",
@@ -21,7 +21,7 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <Footer = contactDetails={contactDetails} />
+      <Footer contactDetails={contactDetails} />
       
     </div>
   );
