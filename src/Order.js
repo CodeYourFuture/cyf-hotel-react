@@ -3,16 +3,18 @@ import RestaurantButton from "./RestaurantButton.jsx";
 
 function Order(props) {
   const [orders, setOrders] = useState(0);
+
   function orderOne() {
-    setOrders(orders + 1);
+    setOrders(orders => preOrder + 1);
   }
   return (
-    <div>
-      <li>
-        {props.orderType}: {orders}
+    
+      <li className="list-group-item">
+        {props.orderType}: {" "}
+        <span className="badge badge-primary badge-pill">{orders}</span>{" "}
         <RestaurantButton orderOne={orderOne} />
       </li>
-    </div>
+  
   );
 }
 

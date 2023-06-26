@@ -1,14 +1,14 @@
 import React from "react";
 
-const Footer = ({ array }) => {
+const Footer = props => {
   return (
-    <div className="Footer">
-      <ul>
-        {array.map(item => {
-          return <li>{item}</li>;
-        })}
+    <footer>
+      <ul className="footer-contact">
+        {props.contactDetails.map((element, index) => (
+          <li key={index}>{element}</li>
+        ))}
       </ul>
-    </div>
+    </footer>
   );
 };
 

@@ -8,19 +8,20 @@ import Restaurant from "./Restaurant";
 
 
 const App = () => {
+  const App contactDetails = [
+
+    "123 Fake Street, London, E1 4UD",
+    "hello@fakehotel.com",
+    "0123 456789",
+  ];
+  
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <Footer 
-      array = {[
-        "123 Fake Street, London, E1 4UD",
-        "hello@fakehotel.com",
-        "0123 456789",
-      ]}
-      />
+      <Footer = contactDetails={contactDetails} />
       
     </div>
   );
