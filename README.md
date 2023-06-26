@@ -120,13 +120,13 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** In the `<Bookings />` component, declare a new state `bookings` with the corresponding setter function `setBookings` to hold the `FakeBookings` data. Instead of passing `FakeBookings` directly to the `<SearchResults />` component, pass the new `bookings` state variable.
 
-**Hint:** The new `bookings` state should be initialised with the `FakeBookings` variable.
+**Hint:** The new `bookings` state should be initialized with the `FakeBookings` variable.
 
 **Test:** Check that the bookings are still rendered correctly in the page.
 
 #### 15. Highlight booking row when clicked
 
-**Instructions:** Within the `<SearchResults />` component or its child components, add an `onClick` handler to each row in the table (hint: on the `<tr>` element). When clicked, the row is "selected" and highlighted with a different colour. When clicked again, the row is unselected and the coloured highlighting is removed.
+**Instructions:** Within the `<SearchResults />` component or its child components, add an `onClick` handler to each row in the table (hint: on the `<tr>` element). When clicked, the row is "selected" and highlighted with a different color. When clicked again, the row is unselected and the coloured highlighting is removed.
 
 **Hint:** Use a new state variable for each row to record if the row is selected or not, and use this value to set a class to the `className` prop of the row.
 
