@@ -20,8 +20,7 @@ html, body, #root {
   height: 100%;
 }
 ul, li {
-  margin: 0;
-  padding: 0;
+  list-style-position: inside;
 }
 
 #root {
@@ -83,6 +82,7 @@ tr.selected {
   display: grid!important;
   grid-template-rows: auto;
   grid-template-columns: 1fr;
+  row-gap: 24px;
 }
 
 .card-body {
@@ -92,10 +92,14 @@ tr.selected {
 .card-footer{
   border-top: none;
   background-color: initial;
+  padding-bottom: 25px;
 }
 
 .results {
   padding-top: 15px;
+}
+.searchResult {
+  overflow-x: auto;
 }
 
 .searchResult table {

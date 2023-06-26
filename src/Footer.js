@@ -1,7 +1,6 @@
 import React from "react";
 
 const Footer = ({data}) => {
-    console.log({data})
     return (
         <footer className="footer bg-light">
             <ul>
