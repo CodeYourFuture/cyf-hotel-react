@@ -98,13 +98,18 @@ tr.selected {
 .results {
   padding-top: 15px;
 }
+
 .searchResult {
   overflow-x: auto;
 }
 
-.searchResult table {
+.searchResult  .table {
   font-size: 14px;
   width: 100%;
+}
+
+.searchResult .btn{
+  white-space: nowrap;
 }
 
 .orders {
