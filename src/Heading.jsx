@@ -1,15 +1,32 @@
+// import React from "react";
+
+// const Heading = () => {
+//     return(
+//         <header  className="header">
+//             <img 
+//             src="https://image.flaticon.com/icons/svg/139/139899.svg" 
+//             alt="Hotel logo" 
+//             className="logo" />
+//         </header>
+//     );
+// };
+
+// export default Heading;
+
 import React from "react";
 
-const Heading = () => {
-    return(
-        <header  className="header">
-            <img 
-            src="https://image.flaticon.com/icons/svg/139/139899.svg" 
-            alt="Hotel logo" 
-            className="logo" />
-        </header>
-    );
-};
+function Heading() {
+  return (
+    <div>
+      <header className="App-header">CYF Hotel</header>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq5Hhqxuu6icDgXo2Tz3Iq96UZXosME2mPyQ&usqp=CAU"
+        alt="Logo"
+        className="logo"
+      />
+    </div>
+  );
+}
 
 export default Heading;
 
