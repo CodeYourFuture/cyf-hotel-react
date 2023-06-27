@@ -22,8 +22,6 @@ const CustomerProfile = ({ customerProf }) => {
         fetchingId()
     }, [customerProf])
 
-    console.log("data----->", user)
-
     return (<div className="customer-card">
         <h5>Customer Profile # {customerProf}</h5>
         <p>{user.email}</p>
@@ -79,7 +77,7 @@ const SearchResults = ({ bookings }) => {
                                     <td>{client.checkInDate}</td>
                                     <td>{client.checkOutDate}</td>
                                     <td>{a.diff(b, 'days')}</td>
-                                    <td><button onClick={(e) => { e.stopPropagation(); handleProfileClick(client.id) }}>Show profile</button></td>
+                                    <td><button onClick={(e) => { e.stopPropagation(); handleProfileClick(client.id) }} className="id-info">Show profile</button></td>
                                 </tr>
                             )
                         })

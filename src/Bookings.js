@@ -22,7 +22,7 @@ const Bookings = () => {
 
 
   function doingFetch() {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then((response) => {
         if (!response.ok) {
           throw new Error(response.status)
@@ -32,19 +32,22 @@ const Bookings = () => {
 
       })
       .then((data) => {
-        if (data) setBookings(data)
+        data && setBookings(data)
       })
   }
   useEffect(() => {
     doingFetch()
   }, []);// square brackets to load fetch only once
 
-
+  console.log({ bookings })
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults bookings={bookings} />
+        {
+          bookings.length !== 0 ? (<SearchResults bookings={bookings} />)
+            : (<span>Loading... </span>)
+        }
       </div>
     </div>
   );

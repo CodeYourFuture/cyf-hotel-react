@@ -1,6 +1,6 @@
 .App {
   text-align: left;
-  background-color: #c7c7c7;
+  background-color: #e7e7e7;
 }
 
 .App-logo {
@@ -124,6 +124,7 @@ h2 {
 .table tr {
   background-color: #cacaca;
   color: #222;
+  font-size: 14px;
 }
 
 .background-red {
@@ -135,7 +136,7 @@ h2 {
 }
 
 .customer-card {
-  background-color: #bdbdbd;
+  background-color: #dedede;
   padding: 1rem;
   border-radius: 1rem;
   width: 18rem;
@@ -157,4 +158,42 @@ h2 {
   width: 3rem;
   text-align: center;
   border-radius: 0.3rem;
+}
+
+.id-info {
+  background-color: #a2a2a2;
+  color: #383838;
+  border-radius: 0.2rem;
+  border: solid 1px #555555;
+  outline-style: none;
+
+}
+
+.id-info :focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.orders-container {
+  margin: 2rem;
+  margin-left: 4.5rem;
+
+}
+
+.orders-container ul {
+  margin-left: -2rem;
+  list-style-type: none;
+}
+
+.orders-container li {
+  margin-top: 1rem;
+  width: 18rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orders-container .btn-primary {
+  border-radius: 0.2rem;
+  width: 3.5rem;
+  height: 2rem;
 }
