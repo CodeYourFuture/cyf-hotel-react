@@ -1,16 +1,24 @@
 import React from 'react';
 import BookingTable from './BookingTable';
-import bookingsData from './data/fakeBookings.json';
+// import bookingsData from './data/fakeBookings.json';
 
 const Bookings2 = () => {
+  const [bookings, setBookings] = useState([]);
+
   useEffect(() => {
-    fetch('https://cyf-react.glitch.me');
+    fetch('https://cyf-react.glitch.me')
+    .then (response => response.json())
+    .then (data => {setBookings(data);
+  })
+  .catch(error => {
+    console.error('Error fetching bookings:', error);
+  });
   }, []);
 
   return (
     <div>
       <h1>CYF Hotel Bookings</h1>
-      <BookingTable bookings={bookingsData} />
+      <BookingTable bookings={bookings} />
     </div>
   );
 };
