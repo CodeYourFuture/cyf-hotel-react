@@ -21,7 +21,7 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <Footer contactDetails={contactDetails} />
+      {/* <Footer contactDetails={contactDetails} /> */}
       
     </div>
   );
