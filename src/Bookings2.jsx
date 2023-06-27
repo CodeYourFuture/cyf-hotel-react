@@ -7,8 +7,11 @@ const Bookings2 = () => {
     <div>
       <h1>CYF Hotel Bookings</h1>
       <BookingTable bookings={bookingsData} />
+      
     </div>
   );
 };
+
+
 
 export default Bookings2;
