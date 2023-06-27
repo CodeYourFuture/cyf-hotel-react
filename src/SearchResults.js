@@ -1,5 +1,5 @@
 import moment from "moment";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import CustomerProfile from "./CustomerProfile.js"
 
@@ -9,6 +9,7 @@ function SearchResults(props) {
 
   const [selected, setSelected] = useState([]);
   const [idSelected, setIdSelected] = useState('');
+  const [userData, setUserData] = useState('')
 
   function handleClick(index) {
     if (selected.includes(index)) {
@@ -22,8 +23,16 @@ function SearchResults(props) {
 
   function handleClickButton(idSelected) {
     setIdSelected(idSelected);
-    console.log(idSelected);
     }
+
+useEffect(() => {
+  fetch(`https://cyf-react.glitch.me/customers/${idSelected}`)
+    .then((res) => res.json())
+    .then((data) => setUserData(data)
+      
+        );
+}, [idSelected]);
+  
 
   return (
     <div>
@@ -77,7 +86,12 @@ function SearchResults(props) {
           })}
         </tbody>
       </table>
-        <CustomerProfile id={idSelected} />
+      <CustomerProfile
+        id={idSelected}
+        email={userData.email}
+        phoneNumber={userData.phoneNumber}
+        vip={userData.vip}
+      />
     </div>
   );
 }
