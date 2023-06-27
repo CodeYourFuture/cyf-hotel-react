@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import BookingTable from './BookingTable';
 // import bookingsData from './data/fakeBookings.json';
 
