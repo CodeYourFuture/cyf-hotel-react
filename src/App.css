@@ -10,13 +10,34 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  display: flex;
+  flex-direction: row;
+  height: 6rem;
   padding: 20px;
   color: white;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  justify-content: space-between;
+}
+
+
+.App-header h2 {
+  font-size: 1.5rem;
+  text-align: end;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.image-container {
+  width: 10rem;
+  height: 50px;
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
 }
 
 
@@ -56,7 +77,7 @@
 }
 
 tr {
-  color: #ffffff;
+  color: #909090;
 }
 
 .title-table {
@@ -93,4 +114,47 @@ tr {
 
 h2 {
   color: #a1a1a1;
+}
+
+.table {
+  background-color: #cacaca;
+  color: #222;
+}
+
+.table tr {
+  background-color: #cacaca;
+  color: #222;
+}
+
+.background-red {
+  background-color: #607042;
+}
+
+.background-blue {
+  background-color: #cacaca;
+}
+
+.customer-card {
+  background-color: #bdbdbd;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 18rem;
+  color: #4e4e4e;
+  border: #9e9e9e solid 1px;
+  margin-bottom: 3rem;
+}
+
+.customer-card h5 {
+  border-bottom: solid 1px #4c4c4c;
+  ;
+  padding-bottom: 1rem;
+  color: #4c4c4c
+}
+
+.customer-card .vip {
+  color: #ffffff;
+  background-color: #4e4e4e;
+  width: 3rem;
+  text-align: center;
+  border-radius: 0.3rem;
 }

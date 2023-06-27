@@ -1,16 +1,10 @@
 import React from "react";
-import Search from "./Search.js";
 import Restaurant from "./Restaurant.js"
 import Bookings from "./Bookings";
 import "./App.css";
+import Heading from "./Heading.js";
 
-const Heading = () => {
-  return (
-    <div>
-      <header className="App-header">CYF Hotel</header>
-    </div>
-  )
-}
+
 
 const Footer = (props) => {
   let data = props.address
@@ -18,8 +12,8 @@ const Footer = (props) => {
     <div className="footer">
       <ul>
         {
-          data.map(line => {
-            return <li>{line}</li>
+          data.map((line, id) => {
+            return <li key={id}>{line}</li>
           })
         }
       </ul>
