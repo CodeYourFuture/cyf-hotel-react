@@ -19,7 +19,13 @@ const Bookings = () => {
   /* https://www.youtube.com/watch?v=qdCHEUaFhBk */
 
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    //console.info("TO DO!", searchVal);
+    const filteredBookings = bookings.filter(
+      (booking) =>
+        booking.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        booking.surname.toLowerCase().includes(searchVal.toLowerCase())
+    );
+    setBookings(filteredBookings);
   };
 
   return (
