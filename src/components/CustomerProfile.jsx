@@ -7,12 +7,11 @@ const CustomerProfile = ({ id }) => {
     fetch(`https://cyf-react.glitch.me/customers/${id}`)
       .then((response) => response.json())
       .then((data) => setCustomerData(data))
-      .catch((error) => console.error("Error fetching customer data:", error));
   }, [id]);
 
   return (
     <div>
-      {customerData ? (
+      {customerData && (
         <div>
           <h3>Customer {id} Profile</h3>
           <ul>
@@ -22,8 +21,6 @@ const CustomerProfile = ({ id }) => {
             <li>Phone: {customerData.phoneNumber}</li>
           </ul>
         </div>
-      ) : (
-        <p>Loading customer profile...</p>
       )}
     </div>
   );

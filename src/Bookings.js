@@ -7,7 +7,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState(null);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then((res) => {
         return res.json();
       })
@@ -33,7 +33,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {bookings && <SearchResults results={bookings} />}
+        {bookings ? <SearchResults results={bookings} /> : <p>loading..</p>}
       </div>
     </div>
   );
