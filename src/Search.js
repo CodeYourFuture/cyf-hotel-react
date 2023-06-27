@@ -37,7 +37,7 @@ const Search = (props) => {
                 placeholder="Customer name"
                 onChange={ handleSearchInput}
               />
-              <SearchButton />
+              <SearchButton type={"submit"}/>
             </div>
           </form>
         </div>

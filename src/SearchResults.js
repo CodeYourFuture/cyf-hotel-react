@@ -1,20 +1,29 @@
 import moment from "moment";
 import React from "react";
 import { useState } from "react";
+import CustomerProfile from "./CustomerProfile.js"
+
+
 function SearchResults(props) {
-  debugger;
+  
 
   const [selected, setSelected] = useState([]);
+  const [idSelected, setIdSelected] = useState('');
 
   function handleClick(index) {
     if (selected.includes(index)) {
-      setSelected((selected) => {
-        return selected.filter((item) => item !== index);
+      setSelected((prevSelected) => {
+        return prevSelected.filter((item) => item !== index);
       });
     } else {
       setSelected([...selected, index]);
     }
   }
+
+  function handleClickButton(idSelected) {
+    setIdSelected(idSelected);
+    console.log(idSelected);
+    }
 
   return (
     <div>
@@ -30,12 +39,13 @@ function SearchResults(props) {
             <th scope="col">check in date</th>
             <th scope="col">check out date</th>
             <th scope="col">stay nights</th>
+            <th scope="col">Show profile</th>
           </tr>
         </thead>
         <tbody>
           {props.results.map((result, index) => {
             return (
-               <tr
+              <tr
                 key={index}
                 className={selected.includes(index) ? "selected" : ""}
                 onClick={() => handleClick(index)}
@@ -54,11 +64,20 @@ function SearchResults(props) {
                     "days"
                   )}
                 </td>
+                <td>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => handleClickButton(result.id)}
+                  >
+                    Show profile
+                  </button>
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+        <CustomerProfile id={idSelected} />
     </div>
   );
 }
