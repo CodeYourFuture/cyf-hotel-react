@@ -28,14 +28,6 @@ body {
   margin-right: 10px;
 }
 
-/* <div className="card">
-      <img src={props.image} className="card-img-top"></img>
-      <div className="card-body">
-        <h1 className="card-title">{props.nameOfCity}</h1>
-        <p className="card-text">{props.paragraf}</p>
-        <button className="btn btn-primary">More info</button>
-      </div>
-    </div> */
 .cards-conrainer {
   display: flex;
   justify-content: space-around;
@@ -46,6 +38,26 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
+.restuarant-container {
+  display: flex;
+  flex-direction: column;
+  /* border: 3px solid red; */
+}
+
+.restaurant-header {
+  align-self: center;
+}
+
+.list-of-food {
+  display: flex;
+  justify-content: space-around;
+  /* border: 3px solid red; */
+}
+
+/* .food-item {
+  border: 3px solid red;
+} */
 
 .footer {
   color: #e9ecef;

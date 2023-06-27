@@ -1,8 +1,7 @@
 import { useState } from "react";
-import fakeData from "./data/fakeBookings.json";
 import moment from "moment";
 
-export function SearchResults() {
+export default function SearchResults(props) {
   const [selectedRows, setSelectedRows] = useState([]);
 
   const handleRowClick = (rowId) => {
@@ -32,7 +31,7 @@ export function SearchResults() {
           </tr>
         </thead>
         <tbody>
-          {fakeData.map((element) => (
+          {props.data.map((element) => (
             <tr
               onClick={() => handleRowClick(element.id)}
               className={

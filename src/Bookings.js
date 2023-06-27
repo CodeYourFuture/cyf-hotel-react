@@ -1,20 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
-// import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
+import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
-  // const search = (searchVal) => {
-  //   console.info("TO DO!", searchVal);
-  // };
+  const [bookings, setBookings] = useState([]);
 
-  const [bookings, setBookings] = useState(FakeBookings);
+  const search = (searchInput) => {
+    const convertedVal = searchInput.toLowerCase().trim();
+    const matched = bookings.filter(({ firstName, surname }) => {
+      return (
+        firstName.toLowerCase().includes(convertedVal) ||
+        surname.toLowerCase().includes(convertedVal)
+      );
+    });
+    setBookings(matched);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("https://cyf-react.glitch.me");
+      const data = await response.json();
+      setBookings(data);
+    } catch (error) {
+      console.error("The ERROR is:", error);
+    }
+  };
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search bookings={bookings} />
-        {/* <SearchResults results={FakeBookings} /> */}
+        <Search search={search} />
+        <SearchResults data={bookings} />
       </div>
     </div>
   );

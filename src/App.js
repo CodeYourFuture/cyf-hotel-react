@@ -3,7 +3,6 @@ import { Header } from "./Header";
 import Bookings from "./Bookings";
 import "./App.css";
 import TouristInfoCards from "./TouristInfoCards";
-import { SearchResults } from "./SearchResults";
 import { Footer } from "./Footer";
 import { Restaurant } from "./Restaurant";
 
@@ -13,7 +12,6 @@ const App = () => {
       <Header />
       <TouristInfoCards />
       <Bookings />
-      <SearchResults />
       <Restaurant />
       <Footer />
     </div>
