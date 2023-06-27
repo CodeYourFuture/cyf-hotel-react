@@ -26,6 +26,7 @@ const Bookings = () => {
         booking.surname.toLowerCase().includes(searchVal.toLowerCase())
     );
     setBookings(filteredBookings);
+    //check first 18. commit for task 19
   };
 
   return (
