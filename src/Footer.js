@@ -11,7 +11,5 @@ return(
         </ul> 
     </div>
 )
-
-
 }
 export default Footer;
