@@ -84,3 +84,7 @@ tr {
 .selected{
   background-color: lightpink;
 }
+.loadingDataDiv{
+  text-align: center;
+  color: #5b5757;
+}

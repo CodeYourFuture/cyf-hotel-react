@@ -7,6 +7,7 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
 
 const [bookings, setBookings] = useState([]);
+const [loadedData, setLoadedData] = useState(false);
 
 
 const search = (searchVal) => {
@@ -24,23 +25,28 @@ const search = (searchVal) => {
 
 useEffect(() => {
   console.log("wait for loading data");
-  fetch(`https://cyf-react.glitch.me`)
-    .then((res) => res.json())
-    .then((data) => setBookings(data));
+  setTimeout(() => {
+    fetch(`https://cyf-react.glitch.me`)
+      .then((res) => res.json())
+      .then((data) => {
+        setBookings(data)
+        setLoadedData(true)
+      });
+  }, 5000) 
+  
 }, []);
 
 
-  
 
- 
-  
-  
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} /> 
+        {loadedData ? 
+        (<SearchResults results={bookings} />)
+        :
+        (<div className="loadingDataDiv"> Loading Data ... </div>)}
       </div>
     </div>
   );
