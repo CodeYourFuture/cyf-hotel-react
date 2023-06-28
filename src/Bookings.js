@@ -22,9 +22,11 @@ const Bookings = () => {
 
 
   function doingFetch() {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me/error")
       .then((response) => {
         if (!response.ok) {
+          console.log(response.status)
+          setBookings(response.status)
           throw new Error(response.status)
         } else {
           return response.json()
@@ -35,6 +37,8 @@ const Bookings = () => {
         data && setBookings(data)
       })
   }
+
+  console.log({ bookings })
   useEffect(() => {
     doingFetch()
   }, []);// square brackets to load fetch only once
@@ -45,11 +49,12 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         {
-          bookings.length !== 0 ? (<SearchResults bookings={bookings} />)
-            : (<span>Loading... </span>)
+          bookings.length > 0 ? (<SearchResults bookings={bookings} />)
+            : bookings !== 500 ? (<span>Loading... </span>) : (<span className="error-message"> Error 500</span>)
         }
+
       </div>
-    </div>
+    </div >
   );
 };
 
