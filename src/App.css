@@ -119,6 +119,9 @@ th{
 td{
   color: beige;
 }
+.selected {
+  background-color: green;
+}
 
 @media only screen and (max-width: 600px) {
   .card {

@@ -1,7 +1,18 @@
-import React from "react";
+import React,{useState} from "react";
 import moment from "moment";
 
-const SearchResults = (props) => {
+function SearchResults(props) {
+   const [rowSelected, rowSetSelected] = useState([]);
+
+   function handleClick(index) {
+     if (rowSelected.includes(index)) {
+       rowSetSelected((selected) => {
+         return selected.filter((item) => item !== index);
+       });
+     } else {
+       rowSetSelected([...rowSelected, index]);
+     }
+   }
   return (
     <table class="table">
       <thead>
@@ -20,7 +31,11 @@ const SearchResults = (props) => {
       <tbody>
         {props.results.map((result, index) => {
           return (
-            <tr key={index}>
+            <tr
+              key={index}
+              className={rowSelected.includes(index) ? "selected" : ""}
+              onClick={() => handleClick(index)}
+            >
               <th scope="row">{result.id}</th>
               <td>{result.title}</td>
               <td>{result.firstName}</td>
@@ -29,10 +44,12 @@ const SearchResults = (props) => {
               <td>{result.roomId}</td>
               <td>{result.checkInDate}</td>
               <td>{result.checkOutDate}</td>
-              <td>{moment(result.checkOutDate).diff(
-                      moment(result.checkInDate),
-                      "days"
-                    )}</td>
+              <td>
+                {moment(result.checkOutDate).diff(
+                  moment(result.checkInDate),
+                  "days"
+                )}
+              </td>
             </tr>
           );
         })}
