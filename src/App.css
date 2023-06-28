@@ -53,5 +53,38 @@ tr {
 }
 
 .card {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
   width: 18rem;
+}
+.cardMainDiv{
+  display: flex;
+  justify-content: center;
+}
+.pElementCard{
+  background-color: #f0f8fa;
+   height: 300px;
+    padding-top:40px;
+}
+.imgHeading{
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.divFooter{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+.selected{
+  background-color: lightpink;
+}
+.loadingDataDiv{
+  text-align: center;
+  color: #5b5757;
 }
