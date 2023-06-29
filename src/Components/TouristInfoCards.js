@@ -1,6 +1,6 @@
 import React from "react";
 
-const TouristInfoCards = ({ image, title, text, link }) => {
+const TouristInfoCards = ({ image, title = 'hotel dami', text, link }) => {
   return (
 
     <div className="card-container">
