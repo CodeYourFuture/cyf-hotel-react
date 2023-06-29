@@ -5,16 +5,14 @@ const SearchButton = () => <button className="btn btn-primary">Search</button>;
 
 const Search = (props) => {
   let [searchInput, setSearchInput] = useState("");
-
-  function handleSearchInput(event) {
+  function handleSearchInput (event) {
     setSearchInput(event.target.value);
   }
-
-  function submitHandler(event) {
+  function submitHandler (event) {
     event.preventDefault();
     props.search(searchInput);
+    
   }
-
   return (
     <div className="search">
       <div className="page-header">
@@ -42,4 +40,6 @@ const Search = (props) => {
   );
 };
 
+
 export default Search;
+
