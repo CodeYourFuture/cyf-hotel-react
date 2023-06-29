@@ -22,8 +22,7 @@ const SearchResults = ({ results }) => {
             <th scope="col">Room Id</th>
             <th scope="col">Check-in Date</th>
             <th scope="col">Check-out Date</th>
-            <th scope="col">nights</th>
-            <th scope="col">Actions</th> {/* New column for actions */}
+            <th scope="col">Nights</th>
           </tr>
         </thead>
 
@@ -55,7 +54,7 @@ const SearchResults = ({ results }) => {
           })}
         </tbody>
       </table>
-      {selectedCustomerId && (<CustomerProfile id={selectedCustomerId} />)}
+      {selectedCustomerId && <CustomerProfile id={selectedCustomerId} />}
     </div>
   );
 };
