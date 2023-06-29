@@ -16,10 +16,6 @@ const Bookings = () => {
     setBookings(matched);
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const fetchData = async () => {
     try {
       const response = await fetch("https://cyf-react.glitch.me");
@@ -29,6 +25,10 @@ const Bookings = () => {
       console.error("The ERROR is:", error);
     }
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="App-content">

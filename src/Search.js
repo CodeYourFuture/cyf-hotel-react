@@ -7,7 +7,6 @@ const Search = (props) => {
   function handleSearchInput(e) {
     let searchValue = e.target.value.toLowerCase().trim();
     setSearchInput(searchValue);
-
     console.log(searchValue);
   }
 

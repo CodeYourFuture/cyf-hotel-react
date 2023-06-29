@@ -3,6 +3,7 @@ const location = [
   "hello@fakehotel.com",
   "0123 456789",
 ];
+
 export function Footer() {
   return (
     <div className="footer">

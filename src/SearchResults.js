@@ -1,8 +1,17 @@
 import { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
-export default function SearchResults(props) {
+export default function SearchResults({ data }) {
   const [selectedRows, setSelectedRows] = useState([]);
+  const [selectedProfile, setSelectedProfile] = useState(null);
+
+  const setSelectedProfileFunction = (event, id) => {
+    // prevent the row from being highlighted when clicking the button
+    event.stopPropagation();
+    console.log("setSelectedProfileFunction id:", id);
+    setSelectedProfile(id);
+  };
 
   const handleRowClick = (rowId) => {
     if (selectedRows.includes(rowId)) {
@@ -12,6 +21,7 @@ export default function SearchResults(props) {
       // Row is not selected, add it to selectedRows
       setSelectedRows([...selectedRows, rowId]);
     }
+    // console.log("handleRowClick", selectedRows);
   };
 
   return (
@@ -20,18 +30,19 @@ export default function SearchResults(props) {
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">title</th>
-            <th scope="col">firstName</th>
-            <th scope="col">surname</th>
-            <th scope="col">email</th>
-            <th scope="col">roomId</th>
-            <th scope="col">checkInDate</th>
-            <th scope="col">checkOutDate</th>
+            <th scope="col">Title</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">RoomId</th>
+            <th scope="col">CheckInDate</th>
+            <th scope="col">CheckOutDate</th>
             <th scope="col">Nights</th>
+            <th score="col">Profile</th>
           </tr>
         </thead>
         <tbody>
-          {props.data.map((element) => (
+          {data.map((element) => (
             <tr
               onClick={() => handleRowClick(element.id)}
               className={
@@ -54,10 +65,21 @@ export default function SearchResults(props) {
                   "days"
                 )}
               </td>
+              <td>
+                <button
+                  key={element.id}
+                  onClick={(event) =>
+                    setSelectedProfileFunction(event, element.id)
+                  }
+                >
+                  Show profile
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <CustomerProfile id={selectedProfile} />
     </div>
   );
 }
