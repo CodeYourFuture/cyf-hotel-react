@@ -1,12 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./SearchResults.css";
-import data from "./data/fakeBookings.json";
+// import data from "./data/fakeBookings.json";
 // import moment from "moment";
 // const numberOfNights()
+
+
 
 const SearchResults = (props) => {
   
   const[highlight, sethighlight] = useState(null);
+  
+  const {results} = props
 
   const toggleHighlight = (index) =>{
     if (index == highlight) {
@@ -34,7 +38,7 @@ const SearchResults = (props) => {
         <td>No of Night stay</td>
       </tr>
 
-      {data.map((item, index) => {
+      {results.map((item, index) => {
         return (
           <tr onClick={() => toggleHighlight(index)} style={{backgroundColor: index == highlight ? "yellow" : "" }} key={index}>
             <td>{item.id}</td>
