@@ -12,6 +12,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
+
         {/* <SearchResults results={FakeBookings} /> */}
       </div>
     </div>
