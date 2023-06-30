@@ -5,8 +5,8 @@ const FooterCompo = ({ details }) => {
     <div>
       <footer>
         <ul>
-          {details.map((detail) => {
-            return <li key={detail}>{detail}</li>;
+          {details.map((detail, index) => {
+            return <li key={index}>{detail}</li>;
           })}
         </ul>
       </footer>
