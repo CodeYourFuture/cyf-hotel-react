@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchButton from "./SearchButton";
-
 
 // #### 17. Storing the search input in a state
 
@@ -10,9 +9,14 @@ import SearchButton from "./SearchButton";
 
 // **Test:** In the developer console, check that everything you type in the search input is printed successively for each new character you enter.
 
-
-
 const Search = () => {
+  const [searchInput, setSearchInput] = useState("");
+  function handleSearchInput(event) {
+    const updatedKeyword = event.target.value;
+    console.log(updatedKeyword);
+    setSearchInput(updatedKeyword);
+  }
+
   return (
     <div className="search">
       <div className="page-header">
@@ -25,11 +29,13 @@ const Search = () => {
             <div className="search-row">
               <input
                 type="text"
+                value={searchInput}
+                onChange={(event) => handleSearchInput(event)}
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
               />
-             <SearchButton />
+              <SearchButton />
             </div>
           </form>
         </div>
