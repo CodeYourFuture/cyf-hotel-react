@@ -3,13 +3,14 @@ import SearchButton from "./SearchButton";
 
 
 
-const Search = () => {
+const Search = ({search}) => {
 
   const [searchInput,setSearchInput]=useState("") //intializing with an empty string 
 
   const handleSearchInput=event=>{
     let {value}=event.target;
     setSearchInput(value); //updating the value of search input
+    search(value)
     console.log(value); //outputing the value recived from the function
   };
 

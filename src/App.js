@@ -38,7 +38,6 @@ const App = () => {
       <Bookings />
       <Restaurant/>
       <Footer props={contacts} /> 
-
     </div>
   );
 };

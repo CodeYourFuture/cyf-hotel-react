@@ -19,10 +19,10 @@ const[selectedRow,setSelectedRow]=useState();
                     <th>Check In</th>
                     <th>Check Out</th>
                     <th>Nights</th>
+                    <th>Profile</th>
                 </tr>
             </thead>
             <tbody>
-
                 {results.map((booking) => {
                 const checkInDate = moment(booking.checkInDate);
                 const checkOutDate = moment(booking.checkOutDate);
@@ -42,6 +42,7 @@ const[selectedRow,setSelectedRow]=useState();
                     <td>{checkInDate.format("YYYY-MM-DD")}</td>
                     <td>{checkOutDate.format("YYYY-MM-DD")}</td>
                     <td>{nights}</td>
+                    <td><button>Show Profile</button></td>
                     </tr>
                 );
                 })}
