@@ -1,3 +1,4 @@
+import React from "react";
 import TouristInfoCard from "./TouristInfoCard";
 
 const TouristInfoCards = () => {

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import RestaurantButton from "./RestaurantButton.jsx";
+import RestaurantButton from "./RestaurantButton.js";
 
 function Order(props) {
   const [orders, setOrders] = useState(0);
 
   function orderOne() {
-    setOrders(orders => preOrder + 1);
+    setOrders(prevOrders => prevOrders + 1);
   }
   return (
     

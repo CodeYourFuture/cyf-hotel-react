@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 
-const SearchResult = props => {
+const SearchResult = (props) => {
   const [customClass, setCustomClass] = useState("");
   const [showCustomerProfile, setShowCustomerProfile] = useState(false);
 
   const classToggle = () => {
-    setCustomClass(customClass => (customClass ? "" : "table-primary"));
+    setCustomClass((customClass) => (customClass ? "" : "table-primary"));
   };
 
-  const toggleCustomerProfile = event => {
+  const toggleCustomerProfile = (event) => {
     event.stopPropagation();
-    setShowCustomerProfile(showCustomerProfile => !showCustomerProfile);
+    setShowCustomerProfile((showCustomerProfile) => !showCustomerProfile);
   };
 
   return (
-    <>
+    <React.Fragment>
       <tr className={`text-center ${customClass}`} onClick={classToggle}>
         <th scope="row">{props.id}</th>
         <td>{props.title}</td>
@@ -41,7 +41,7 @@ const SearchResult = props => {
           {showCustomerProfile && <CustomerProfile id={props.id} />}
         </td>
       </tr>
-    </>
+    </React.Fragment>
   );
 };
 

@@ -9,7 +9,6 @@ import Restaurant from "./Restaurant";
 
 const App = () => {
   const contactDetails = [
-
     "123 Fake Street, London, E1 4UD",
     "hello@fakehotel.com",
     "0123 456789",
@@ -21,8 +20,7 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      {/* <Footer contactDetails={contactDetails} /> */}
-      
+      <Footer contactDetails={contactDetails} /> 
     </div>
   );
 };

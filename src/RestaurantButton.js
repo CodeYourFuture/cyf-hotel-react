@@ -1,6 +1,6 @@
 import React from "react";
 
-function RestaurantButton = (props) => {
+const RestaurantButton = props => {
   return (
     <div>
       <button onClick={props.orderOne} className="btn btn-primary">

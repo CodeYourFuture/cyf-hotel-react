@@ -1,11 +1,12 @@
+import React from "react";
 import SearchResult from "./SearchResult";
 import moment from "moment";
 
-const SearchResults = props => {
+const SearchResults = (props) => {
   return (
     <div className="table-responsive">
-      <table class="table table-hover table-bordered">
-        <thead class="thead-dark">
+      <table className="table table-hover table-bordered">
+        <thead className="thead-dark">
           <tr className="text-center">
             <th scope="col">ID</th>
             <th scope="col">Title</th>
@@ -20,7 +21,7 @@ const SearchResults = props => {
           </tr>
         </thead>
         <tbody>
-          {props.results.map(user => {
+          {props.results.map((user) => {
             let a = moment(user.checkInDate, "YYYY-MM-DD");
             let b = moment(user.checkOutDate, "YYYY-MM-DD");
             return (
