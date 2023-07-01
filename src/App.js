@@ -14,11 +14,13 @@ const App = () => {
       <Bookings name />
       <Restaurant />
       <FooterCompo
-        details={[
-          "123 Fake Street, London, E1 4UD",
-          "hello@fakehotel.com",
-          "0123 456789",
-        ]}
+        details={
+          {
+            address: "123 Fake Street, London, E1 4UD",
+            email: "hello@fakehotel.com",
+            phone: "0123 456789",
+          }
+        }
       />
     </div>
   );
