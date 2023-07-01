@@ -1,44 +1,21 @@
 import moment from "moment"
-import { useEffect, useState } from "react"
-
-const CustomerProfile = ({ customerProf }) => {
-    const [user, setUser] = useState([])
-    function fetchingId() {
-        fetch(`https://cyf-react.glitch.me/customers/${customerProf}`)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(response.status)
-                } else {
-                    return response.json()
-                }
-            })
-            .then((data) => {
-                if (data) {
-                    setUser(data)
-                }
-            })
-    }
-    useEffect(() => {
-        fetchingId()
-    }, [customerProf])
-
-    return (<div className="customer-card">
-        <h5>Customer Profile # {customerProf}</h5>
-        <p>{user.email}</p>
-        <p>{user.phoneNumber}</p>
-        <p className="vip">{user.vip && "VIP"}</p>
-    </div >)
-}
+import { useState } from "react"
+import CustomerProfile from "./Customer-Profile"
 
 const SearchResults = ({ bookings }) => {
-    const [active, setActive] = useState(true)
+    const [active, setActive] = useState(false)
     const [clientId, setClientId] = useState("")
     const [customerProf, setCuctomerProf] = useState("")
     const [isShown, setIsShown] = useState(false);
 
     let handleProfileClick = (client) => {
         setCuctomerProf(client)
-        setIsShown(true)
+        setIsShown(!isShown)
+    }
+
+    const handleClick = (id) => {
+        setActive(!active)
+        setClientId(id)
     }
     return (
         <div className="table-holder">
@@ -56,6 +33,7 @@ const SearchResults = ({ bookings }) => {
                         <th scope="col">Check In Date</th>
                         <th scope="col">Check Out Date</th>
                         <th scope="col">Nights</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,7 +45,7 @@ const SearchResults = ({ bookings }) => {
 
                             return (
 
-                                <tr key={client.id} onClick={() => { setActive(!active); setClientId(client.id) }} className={active && clientId === client.id ? 'background-red' : 'background-blue'}>
+                                <tr key={client.id} onClick={() => { handleClick(client.id) }} className={active && clientId === client.id ? "pressed" : ""}>
                                     <th scope="row">{client.id}</th>
                                     <td>{client.title}</td>
                                     <td>{client.firstName}</td>

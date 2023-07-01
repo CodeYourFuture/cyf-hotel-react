@@ -22,7 +22,7 @@ const Bookings = () => {
 
 
   function doingFetch() {
-    fetch("https://cyf-react.glitch.me/error")
+    fetch("https://cyf-react.glitch.me")
       .then((response) => {
         if (!response.ok) {
           console.log(response.status)

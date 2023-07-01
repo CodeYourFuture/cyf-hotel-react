@@ -116,23 +116,20 @@ h2 {
   color: #a1a1a1;
 }
 
-.table {
+table {
   background-color: #cacaca;
   color: #222;
 }
 
-.table tr {
+table tr {
   background-color: #cacaca;
   color: #222;
   font-size: 14px;
 }
 
-.background-red {
+.pressed {
   background-color: #607042;
-}
-
-.background-blue {
-  background-color: #cacaca;
+  color: white;
 }
 
 .customer-card {
