@@ -5,7 +5,7 @@ const Heading = () => {
   const name = "Beko CYF Luxury Hotel";
   return (
     <div>
-      <header id="app-header" className="App-header">
+      <header className="App-header">
         <h2>{name}</h2>
         <img src={logoHotel} className="App-logo" />
       </header>
