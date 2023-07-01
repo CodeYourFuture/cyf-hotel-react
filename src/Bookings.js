@@ -5,15 +5,19 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState(FakeBookings);
+
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
+    const searchOutCome = bookings.filter(
+      (el) => el.firstName.includes(searchVal) || el.surname.includes(searchVal)
+    );
+    setBookings(searchOutCome);
   };
 
   useEffect(() => {
     Axios.get("https://cyf-react.glitch.me").then((res) => {
       setBookings(res.data);
-      // console.log(res.data[0].firstName);
     });
   }, []);
 
