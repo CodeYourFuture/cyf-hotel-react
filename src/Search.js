@@ -1,20 +1,27 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
-// #### 17. Storing the search input in a state
+// #### 18. Triggering search when submitting the form
 
-// **Instructions:** In the following, we will implement the functionality to search for a customer name given the text typed into the customer name field. In the `src/Search.js` file, declare a new state variable named `searchInput` with the corresponding setter function `setSearchInput` (hint: use the React function `useState`). The initial value of the `searchInput` variable can be an empty string. Add a `value` property to the `<input>` tag that is set to the new `searchInput` state variable. Create a new function `handleSearchInput` taking an `event` parameter. This function should use the `setSearchInput` function to update the state variable `searchInput` with what the user typed in the input field. Finally, add a `onChange` prop to the `<input>` tag that is set to the function `handleSearchInput`. Use `console.log()` to output the value received in the `handleSearchInput` function.
+// **Instructions:** Still in the `<Search />` component, add a `onSubmit` handler to the `<form>` tag. When the form is submitted (try clicking the search button), get the value of the state `searchInput` and pass it as a parameter to the `search` prop function that has been provided for you (the `search` prop is passed from the `<Bookings />` component).
 
-// **Hint:** Use `event.target.value` to get the input value.
+// **Note:** Also your submit handler should take an `event` parameter and add the line `event.preventDefault()` to prevent the browser to implicitely submit the form).
 
-// **Test:** In the developer console, check that everything you type in the search input is printed successively for each new character you enter.
+// **Test:** Look in the console, you should see the text that is typed in the search input field when submitting the form.
 
-const Search = () => {
+const Search = (props) => {
+  // console.log("hello search.....",props.search)
   const [searchInput, setSearchInput] = useState("");
   function handleSearchInput(event) {
     const updatedKeyword = event.target.value;
     console.log(updatedKeyword);
     setSearchInput(updatedKeyword);
+  }
+
+  // get value from search input and pass it to the function called search that we get from the props
+  function handleSubmit(event) {
+    event.preventDefault();
+    props.search(searchInput);
   }
 
   return (
@@ -24,7 +31,7 @@ const Search = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form className="form-group search-box" onSubmit={handleSubmit}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input

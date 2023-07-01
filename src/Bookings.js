@@ -5,21 +5,17 @@ import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState([]); 
-  
-useEffect(() => {
- 
- fetch(`https://cyf-react.glitch.me`)
-   .then((res) => res.json())
-   .then((data) => {
-     setBookings(data)
-   });
+  const [bookings, setBookings] = useState([]);
 
-}, []); 
+  useEffect(() => {
+    fetch(`https://cyf-react.glitch.me`)
+      .then((res) => res.json())
+      .then((data) => {
+        setBookings(data);
+      });
+  }, []);
 
-
-
-  const search = searchVal => {
+  const search = (searchVal) => {
     console.info("TO DO!", searchVal);
   };
 
@@ -36,5 +32,3 @@ useEffect(() => {
 };
 
 export default Bookings;
-
-
