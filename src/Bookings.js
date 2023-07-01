@@ -6,13 +6,11 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState(FakeBookings);
+  const [searchVal, setSearchVal] = useState("");
 
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
-    const searchOutCome = bookings.filter(
-      (el) => el.firstName.includes(searchVal) || el.surname.includes(searchVal)
-    );
-    setBookings(searchOutCome);
+    setSearchVal(searchVal);
   };
 
   useEffect(() => {
@@ -21,11 +19,14 @@ const Bookings = () => {
     });
   }, []);
 
+  const searchOutCome = bookings.filter(
+    (el) => el.firstName.includes(searchVal) || el.surname.includes(searchVal));
+
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        <SearchResults results={searchOutCome} />
       </div>
     </div>
   );
