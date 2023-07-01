@@ -1,4 +1,4 @@
-const SearchButton = () => {
+const SearchButton = (props) => {
   return <button className="btn btn-primary">Search</button>;
 };
 
