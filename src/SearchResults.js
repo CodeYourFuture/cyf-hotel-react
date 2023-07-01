@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const CountNumberOfNights = (checkInDate, checkOutDate) => {
@@ -8,6 +8,14 @@ const CountNumberOfNights = (checkInDate, checkOutDate) => {
 };
 
 const SearchResults = (props) => {
+  const [isActive, setIsActive] = useState(false);
+  const [selectedID, setSelectedId] = useState(null);
+
+  function highlightSelectedRow(id) {
+    console.log(id);
+    setIsActive(!isActive);
+    setSelectedId(id);
+  }
   return (
     <table className="table">
       <thead>
@@ -25,7 +33,13 @@ const SearchResults = (props) => {
       <tbody>
         {props.results.map((data) => {
           return (
-            <tr key={data.id}>
+            <tr
+              key={data.id}
+              onClick={() => highlightSelectedRow(data.id)}
+              className={
+                isActive && selectedID === data.id ? "highlighted" : ""
+              }
+            >
               <td>{data.title}</td>
               <td>{data.firstName}</td>
               <td>{data.surname}</td>
