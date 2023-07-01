@@ -2,10 +2,10 @@ import React from "react";
 import Bookings from "./Bookings";
 import "./App.css";
 import Heading from "./Heading";
-import TouristInfoCards from "./TouristInfoCards"
+import TouristInfoCards from "./TouristInfoCards";
 import Footer from "./Footer";
 import SearchResults from "./SearchResults";
-import FakeBookings from "./data/fakeBookings.json"
+import FakeBookings from "./data/fakeBookings.json";
 import Restaurant from './Restaurant'
 
 const App = () => {
