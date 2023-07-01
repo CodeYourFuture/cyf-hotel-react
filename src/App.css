@@ -4,6 +4,15 @@
   text-align: left;
 }
 
+.rwo-btn {
+  height: 50px;
+  width: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
 .tourist-cards {
   /* margin-left: 80px;
   display: grid;
@@ -47,50 +56,50 @@
   font-size: large;
 }
 
-  .order-type {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin: 0 100px;
+.order-type {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 100px;
+}
+
+.row-nonHighlight {}
+
+.row-highlight {
+  background-color: rgb(245, 163, 32);
+}
+
+.order-head {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
 
-  .row-nonHighlight {}
-
-  .row-highlight {
-    background-color: rgb(245, 163, 32);
+  to {
+    transform: rotate(360deg);
   }
+}
 
-  .order-head {
-    display: flex;
-    justify-content: center;
-  }
+.search {
+  padding: 5px 0 20px 0;
+}
 
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
+tr {
+  color: #5b5757;
+}
 
-    to {
-      transform: rotate(360deg);
-    }
-  }
+.results {
+  padding-top: 15px;
+}
 
-  .search {
-    padding: 5px 0 20px 0;
-  }
+.footer {
+  padding-top: 20px;
+  text-align: center;
+}
 
-  tr {
-    color: #5b5757;
-  }
-
-  .results {
-    padding-top: 15px;
-  }
-
-  .footer {
-    padding-top: 20px;
-    text-align: center;
-  }
-
-  .card {
-    width: 18rem;
-  }
+.card {
+  width: 18rem;
+}
