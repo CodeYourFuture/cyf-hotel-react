@@ -13,15 +13,13 @@ const TouristInfoCards = () => {
       <TouristInfoCard
         image="manchester.jpg"
         title="Manchester"
-        description="Manchester is a major city in the northwest of England with a rich
-        industrial heritage..."
+        description="The city is notable for its architecture, culture, musical exports, media links, scientific and engineering output, social impact, sports clubs, and transport connections. It is home to two world famous football clubs - City and United"
         link="https://visitmanchester.com"
       />
       <TouristInfoCard
         image="glasgow.jpg"
         title="Glasgow"
-        description="Glasgow is a port city on the River Clyde in Scotland's western
-        Lowlands. It's famed for its Victorian and art nouveau architecture..."
+        description="Glasgow has the largest economy in Scotland and the 3rd highest GDP per capita of any city in the UK. Glasgow's major cultural institutions is the Burrell Collection, Kelvingrove Art Gallery and Museum, the Royal Conservatoire of Scotland."
         link="https://peoplemakeglasgow.com"
       />
     </div>
