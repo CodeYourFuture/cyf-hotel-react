@@ -11,7 +11,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
-    display: flex;
+  display: flex;
   align-items: center;
   gap: 0.5rem;
 }
@@ -56,10 +56,11 @@ tr {
 }
 
 .footer {
-   padding: 2rem;
+  padding: 2rem;
   /* padding-top: 20px; */
   text-align: center;
   display: flex;
+  /* flex-direction: center; */
   justify-content: center;
   background-color: #222;
   color: white;
