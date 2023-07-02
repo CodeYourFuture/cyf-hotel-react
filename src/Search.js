@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 import Header from "./Header";
 
+
+
 const Search = () => {
+  let searchInput = useState();
   return (
     <div>
     < Header/>
