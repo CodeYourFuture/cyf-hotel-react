@@ -7,8 +7,7 @@ const TouristInfoCards = () => {
       <TouristInfoCard
         image="london.jpg"
         title="London"
-        description="London, the capital of England and the United Kingdom, is a
-        21st-century city with history stretching..."
+        description="As one of the world's major global cities, London exerts a strong influence on its arts, entertainment, fashion, commerce and finance, education, health care, media, science and technology, tourism, and transport and communications"
         link="https://visitlondon.com"
       />
       <TouristInfoCard
