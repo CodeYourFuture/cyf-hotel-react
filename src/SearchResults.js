@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results, setCustomerId, setProfileOn }) => {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState({ id: "", isSelected: false });
   const [sortColumn, setSortColumn] = useState(null);
   const [sortOrder, setSortOrder] = useState("asc");
 
@@ -16,7 +16,11 @@ const SearchResults = ({ results, setCustomerId, setProfileOn }) => {
   };
 
   const highlightRow = (id) => {
-    setSelected(id === selected ? null : id);
+    if (id === selected.id) {
+      setSelected({ ...selected, isSelected: !selected.isSelected });
+    } else {
+      setSelected({ id: id, isSelected: true });
+    }
   };
 
   const sortedBookings = results.slice().sort((a, b) => {
@@ -102,11 +106,12 @@ const SearchResults = ({ results, setCustomerId, setProfileOn }) => {
               const checkInMoment = moment(checkInDate);
               const checkOutMoment = moment(checkOutDate);
               const nightCount = checkOutMoment.diff(checkInMoment, "days");
-              const isSelected = selected === id;
 
               return (
                 <tr
-                  className={isSelected ? "highlight" : ""}
+                  className={
+                    selected.id === id && selected.isSelected ? "highlight" : ""
+                  }
                   onClick={() => highlightRow(id)}
                   key={id}
                 >
