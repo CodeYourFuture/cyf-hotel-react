@@ -11,7 +11,7 @@ const Search = (props) => {
   function submitHandler (event) {
     event.preventDefault();
     props.search(searchInput);
-    
+    console.log(props)
   }
   return (
     <div className="search">

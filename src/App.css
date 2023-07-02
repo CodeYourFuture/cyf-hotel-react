@@ -37,6 +37,7 @@
 .InfoCards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
@@ -79,4 +80,22 @@ h3 {
 
 .Highlighted {
   background-color: aquamarine;
+}
+
+.formDiv {
+  display: flex;
+  align-items: flex-end;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.dates {
+  grid-row-start: 3;
+}
+
+label {
+  margin-right: 1rem;
 }
