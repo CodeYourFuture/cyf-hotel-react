@@ -1,7 +1,63 @@
-// import React from "react";
+import React from "react";
+// import { useState } from "react";
 
-// const SearchResults = () => {}
-// let allData = props.results 
+const data = [
+  {
+    title: "",
+    firstName: "",
+    surname: "",
+    Email: "",
+    Room: "",
+    CheckInDate: "",
+    CheckOutDate: "",
+    stayNights: "",
+  },
+];
+function SearchResults({ bookingResults }) {
+  const columnKey = [
+    "id",
+    "title",
+    "firstName",
+    "surname",
+    "email",
+    "roomId",
+    "checkInDate",
+    "checkOutDate",
+    "nightsIn",
+  ];
+  return (
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr className="title-table">
+          <th scope="col">#</th>
+          {columnKey.map((column) => (
+            <th scope="col">{column}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {bookingResults.map((result, index) => (
+          <tr>
+            <th scope="row">{index + 1}</th>
+            <td>{result.id}</td>
+            <td>{result.title}</td>
+            <td>{result.firstName}</td>
+            <td>{result.surname}</td>
+            <td>{result.email}</td>
+            <td>{result.roomId}</td>
+            <td>{result.checkInDate}</td>
+            <td>{result.checkOutDate}</td>
+            <tg>{result.stayNights}</tg>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+// const numbersDoubled = numbers.map((number) => number * 2);
+
+// const SearchResults = (props) => {}
+// let allData = props.results
 // return (//
 //     //
 //     <table class="table table-striped table-dark">
@@ -18,7 +74,7 @@
 //       </tr>
 //     </thead>
 //     <tbody>
-    
+
 //       <tr>
 //         <th scope="row">1</th>
 //         <td>Mx</td>
@@ -53,8 +109,4 @@
 //   </table>
 //     ;
 
-
-
-
-
-// export default SearchResults;
+export default SearchResults;
