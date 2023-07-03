@@ -1,19 +1,7 @@
 import React, { useState } from "react";
-import moment from "moment";
+import SearchResultRow from "./SearchResultRow";
 
 function SearchResults({ bookingsArray }) {
-  const [bg, setBg] = useState("off");
-
-  function colorChangeHandler(id) {
-    if (bg === "off") {
-      setBg("on");
-    } else {
-      setBg("off");
-    }
-
-    console.log(id);
-  }
-
   return (
     <>
       <table className="table">
@@ -30,34 +18,10 @@ function SearchResults({ bookingsArray }) {
             <th scope="col">Nights</th>
           </tr>
         </thead>
-        {/* split booking into separate component, with 1 state and use state for colour change */}
-
         <tbody>
-          {bookingsArray.map((booking) => {
-            return (
-              <tr
-                className={`${bg}`}
-                onClick={() => {
-                  colorChangeHandler(booking.id);
-                }}
-              >
-                <td>{booking.id}</td>
-                <td>{booking.title}</td>
-                <td>{booking.firstName}</td>
-                <td>{booking.surname}</td>
-                <td>{booking.email}</td>
-                <td>{booking.roomId}</td>
-                <td>{booking.checkInDate}</td>
-                <td>{booking.checkOutDate}</td>
-                <td>
-                  {moment(booking.checkOutDate).diff(
-                    booking.checkInDate,
-                    "days"
-                  )}
-                </td>
-              </tr>
-            );
-          })}
+          {bookingsArray.map((booking) => (
+            <SearchResultRow booking={booking} key={booking.id} />
+          ))}
         </tbody>
       </table>
     </>
