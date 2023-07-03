@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #382b21;
   height: 50px;
   padding: 20px;
   color: white;
@@ -57,17 +57,16 @@ tr {
 
 .footer {
   padding: 2rem;
-  /* padding-top: 20px; */
-  text-align: center;
-  display: flex;
-  /* flex-direction: center; */
-  justify-content: center;
-  background-color: #222;
   color: white;
 }
 
 .footer-contact {
   list-style: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #382b21;
+  color: white;
+  text-align: center;
 }
 
 .card {
