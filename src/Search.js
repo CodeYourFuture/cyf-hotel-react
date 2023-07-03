@@ -5,12 +5,14 @@ const Search = (props) => {
 
 const [searchInput, setSearchInput] = useState("")
 
-const handleSearchInput = event => {
-  setSearchInput(event.target.value)
+const handleSearchInput = (event) => {
+  setSearchInput(event.target.value);
 }
 
-const handleSubmitInput = () => {
-  event.preventDefault;
+const handleSubmitInput = event => {
+  event.preventDefault();
+  props.search(searchInput);
+  console.log(searchInput);
 }
 
   return (
@@ -20,13 +22,13 @@ const handleSubmitInput = () => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form onSubmit={handleSearchInput} 
+          <form onSubmit={handleSubmitInput} 
                 className="form-group search-box">
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
-                onChange={handleSearchInput}
                 value={searchInput}
+                onChange={handleSearchInput}
                 type="text"
                 id="customerName"
                 className="form-control"
