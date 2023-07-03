@@ -47,3 +47,9 @@ const OutcomeSearch = (props) => {
 };
 
 export default OutcomeSearch;
+
+// It is a React component named OutcomeSearch that renders a table with search results. It receives props containing
+// an array of results and a setCustomerId function. The code imports the React library, which is necessary for writing
+// React components.It imports the SearchResult component from a file named SearchResult.js (or SearchResult.jsx) located
+// in the same directory.It imports the moment library, which is a popular JavaScript library for working with dates
+// and times.
