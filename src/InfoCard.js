@@ -27,3 +27,9 @@ const InfoCard = () => {
 };
 
 export default InfoCard;
+
+// The code imports the React library, which is necessary for writing React components. It imports the TouristInfoCard
+// component from a file named TouristInfoCard.js located in the same directory as the current file. The InfoCard component
+// is defined as an arrow function. Inside the function, three instances of the TouristInfoCard component are rendered. Each
+// TouristInfoCard component receives props such as image, title, description, and link with specific values. The InfoCard
+// component is exported as the default export of this file, which means it can be imported and used in other files.
