@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
-import SearchResults from "./SearchResults.js";
+import OutcomeSearch from "./OutcomeSearch.js";
 import CustomerProfile from "./CustomerProfile.js";
 
 const Bookings = () => {
@@ -68,7 +68,7 @@ const Bookings = () => {
             <span>The Bookings data is loading, please wait...</span>
           </div>
         ) : (
-          <SearchResults results={bookings} setCustomerId={setCustomerId} />
+          <OutcomeSearch results={bookings} setCustomerId={setCustomerId} />
         )}
         {customerId && <CustomerProfile id={customerId} />}
       </div>
