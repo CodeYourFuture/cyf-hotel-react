@@ -12,7 +12,6 @@ const handleSearchInput = (event) => {
 const handleSubmitInput = event => {
   event.preventDefault();
   props.search(searchInput);
-  console.log(searchInput);
 }
 
   return (

@@ -13,8 +13,11 @@ const Bookings = () => {
     .catch(error => console.log("Error fetching data:", error));    
   }, []); 
 
-  const search = searchVal => {
-   // console.info("TO DO!", searchVal);
+  var search = searchVal => {
+    const filteredBookings = bookings.filter(booking => 
+      booking.firstName.includes(searchVal) || booking.surname.includes(searchVal)
+    );
+    setBookings(filteredBookings)
   };
 
   return (
