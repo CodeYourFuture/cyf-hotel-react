@@ -21,7 +21,7 @@ export default Order;
 
 // The code imports React and the useState hook from the "react" library. The useState hook is a built-in React hook that
 // allows functional components to manage state. The code also imports a component called "RestaurantButton" from a file
-// called "RestaurantButton.js". This component likely represents a button used to place an order in the restaurant. The
+// called "RestaurantButton.js". This component represents a button used to place an order in the restaurant. The
 // functional component Order is defined, which takes in props as its parameter. The props object is used to pass data
 // from the parent component to this component. Inside the Order component, the useState hook is used to initialize a
 // state variable called orders with an initial value of 0. The useState hook returns an array with two elements: the
