@@ -5,6 +5,7 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [filterBookings, setFilterBookings] = useState([]); // second state in order to protect OG array
 
   useEffect(() => {
     console.log("some text, some more text");
@@ -12,6 +13,7 @@ const Bookings = () => {
       .then((response) => response.json())
       .then((data) => {
         setBookings(data);
+        setFilterBookings(data);
       })
       .catch((error) => console.error(error));
   }, []);
@@ -23,14 +25,14 @@ const Bookings = () => {
         booking.surname.toLowerCase().includes(searchVal)
       );
     });
-    setBookings(searchResult);
+    setFilterBookings(searchResult);
   };
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults bookingsArray={bookings} />
+        <SearchResults bookingsArray={filterBookings} />
       </div>
     </div>
   );
