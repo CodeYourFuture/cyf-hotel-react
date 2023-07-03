@@ -11,6 +11,9 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  background-color: blue;
+  color: aliceblue;
+  font-weight: bolder;
 }
 
 .tourist-cards {
@@ -62,7 +65,9 @@
   margin: 0 100px;
 }
 
-.row-nonHighlight {}
+.row-nonHighlight {
+  background-color: rgb(241, 239, 237);
+}
 
 .row-highlight {
   background-color: rgb(245, 163, 32);
@@ -71,6 +76,20 @@
 .order-head {
   display: flex;
   justify-content: center;
+}
+
+.customer-profile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.customer-profile-showing {
+  display: block;
+}
+.customer-profile-hide {
+  display: none;
 }
 
 @keyframes App-logo-spin {

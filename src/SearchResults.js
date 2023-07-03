@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-import { CustomerProfile } from "./CustomerProfile";
+import  CustomerProfile  from "./CustomerProfile";
 
 const getNumbersOfNights = (checkInDate, checkOutDate) => {
   const date1 = moment(checkInDate);
@@ -15,11 +15,13 @@ const Row = (props) => {
   const night = getNumbersOfNights(checkInDate, checkOutDate);
 
   const [rowSelect, setRowSelect] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
 
   const handleClick = () => setRowSelect(!rowSelect);
 
   const handleProfile = () => {
       setProfile(id)
+      setShowProfile(!showProfile)
   }
 
   return (
@@ -37,7 +39,12 @@ const Row = (props) => {
       <th>{checkOutDate}</th>
       <th>{night}</th>
       <th>
-        <button onClick={handleProfile} className="rwo-btn">Show profile</button>
+        <button
+          onClick={handleProfile}
+          className={"btn btn-primary"}
+        >
+          Show profile
+        </button>
       </th>
     </tr>
   );
@@ -47,7 +54,7 @@ const Table = (props) => {
   const [profile ,setProfile ] = useState("")
   return (
     <div>
-      <CustomerProfile profile={profile} />
+      <CustomerProfile id={profile} />
       <table className="table">
         <thead>
           <tr>
