@@ -2,7 +2,7 @@ import React from "react";
 import SearchResult from "./SearchResult";
 import moment from "moment";
 
-const SearchResults = (props) => {
+const OutcomeSearch = (props) => {
   return (
     <div className="table-responsive">
       <table className="table table-hover table-bordered">
@@ -46,4 +46,4 @@ const SearchResults = (props) => {
   );
 };
 
-export default SearchResults;
+export default OutcomeSearch;

@@ -1,7 +1,6 @@
 import React from "react";
 import Heading from "./Heading";
 import Bookings from "./Bookings";
-
 import InfoCard from "./InfoCard";
 import "./App.css";
 import Footer from "./Footer";
