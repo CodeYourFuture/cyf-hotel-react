@@ -1,7 +1,8 @@
 import React from "react";
 import Heading from "./Heading";
 import Bookings from "./Bookings";
-import TouristInfoCards from "./TouristInfoCards";
+// import TouristInfoCards from "./TouristInfoCards";
+import InfoCard from "./InfoCard";
 import "./App.css";
 import Footer from "./Footer";
 import Restaurant from "./Restaurant";
@@ -16,7 +17,8 @@ const App = () => {
   return (
     <div className="App">
       <Heading />
-      <TouristInfoCards />
+      {/* <TouristInfoCards /> */}
+      <InfoCard />
       <Bookings />
       <Restaurant />
       <Footer contactDetails={contactDetails} />

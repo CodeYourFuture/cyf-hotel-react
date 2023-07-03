@@ -1,7 +1,7 @@
 import React from "react";
 import TouristInfoCard from "./TouristInfoCard";
 
-const TouristInfoCards = () => {
+const InfoCard = () => {
   return (
     <div className="cards">
       <TouristInfoCard
@@ -26,4 +26,4 @@ const TouristInfoCards = () => {
   );
 };
 
-export default TouristInfoCards;
+export default InfoCard;
