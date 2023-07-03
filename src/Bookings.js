@@ -17,13 +17,19 @@ const Bookings = () => {
   }, []);
 
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    let searchResult = bookings.filter((booking) => {
+      return (
+        booking.firstName.toLowerCase().includes(searchVal) ||
+        booking.surname.toLowerCase().includes(searchVal)
+      );
+    });
+    setBookings(searchResult);
   };
 
   return (
     <div className="App-content">
       <div className="container">
-        {/* <Search search={search} /> */}
+        <Search search={search} />
         <SearchResults bookingsArray={bookings} />
       </div>
     </div>
