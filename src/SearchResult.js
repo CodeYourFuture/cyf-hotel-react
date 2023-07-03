@@ -46,3 +46,9 @@ const SearchResult = (props) => {
 };
 
 export default SearchResult;
+
+// It is a React component named SearchResult that represents a row in a search result table. It displays information
+// about a customer and provides a button to toggle the visibility of the customer's profile. The code imports the React
+// library, which is necessary for writing React components. It also imports the useState hook from React, which allows
+// managing state within functional components. It imports the CustomerProfile component from a file named CustomerProfile.js
+// located in the same directory.
