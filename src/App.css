@@ -197,5 +197,50 @@ table tr {
 
 .error-message {
   color: red;
+}
 
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 16px;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.holder-for-customer-form {
+  background-color: #c7c8bc;
+  padding: 1rem;
+  text-align: end;
+}
+
+.form-submit {
+  margin-right: 3.7rem;
+  border: none;
+  width: 5rem;
+  height: 2rem;
+  font-size: 16px;
+  background-color: #222;
+  color: white;
+  border-radius: 0.2rem;
+
+}
+
+.form label {
+  color: #6c6c6c;
+}
+
+.form-submit:hover {
+  background-color: #607042;
+  color: white;
+}
+
+#CheckoutDate,
+#CheckinDate {
+  color: #bababa;
+}
+
+#title {
+  height: 1.9rem;
+  color: #4f4f4f;
 }
