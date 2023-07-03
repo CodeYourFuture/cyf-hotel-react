@@ -51,4 +51,17 @@ export default SearchResult;
 // about a customer and provides a button to toggle the visibility of the customer's profile. The code imports the React
 // library, which is necessary for writing React components. It also imports the useState hook from React, which allows
 // managing state within functional components. It imports the CustomerProfile component from a file named CustomerProfile.js
-// located in the same directory.
+// located in the same directory. The SearchResult component is defined as an arrow function that accepts props as a parameter.
+// Inside the function, two pieces of state are declared using the useState hook: customClass and showCustomerProfile. The
+// customClass state is used to toggle the CSS class applied to the row, adding or removing the "table-primary" class. The
+// showCustomerProfile state is used to toggle the visibility of the customer's profile. The classToggle function is called
+// when the row is clicked and toggles the value of customClass, updating the row's class name accordingly. The
+// toggleCustomerProfile function is called when the "Show Profile" or "Hide Profile" button is clicked. It stops the
+// event propagation to prevent the row click event from firing and toggles the value of showCustomerProfile. The JSX
+// code represents the table row (tr) containing customer information. The row has a dynamic class name that includes
+// the customClass state value to apply conditional styling. The customer information is displayed in table cells
+// (th and td) using the provided props.
+// The button toggles the customer profile visibility when clicked. Its label is "Show Profile" or "Hide Profile" depending
+// on the showCustomerProfile state. After the customer information row, another row is rendered with a single table cell
+// (td) that spans across all columns (colSpan={10}). This row displays the CustomerProfile component when showCustomerProfile
+// is true.
