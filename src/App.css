@@ -64,3 +64,11 @@ tr {
   align-items: center;
   justify-content: space-around;
 }
+
+.on {
+  background-color: green;
+}
+
+.off {
+  background-color: red;
+}

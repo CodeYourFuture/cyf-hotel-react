@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 function SearchResults({ bookingsArray }) {
+  const [bg, setBg] = useState("off");
+
+  function colorChangeHandler(id) {
+    if (bg === "off") {
+      setBg("on");
+    } else {
+      setBg("off");
+    }
+
+    console.log(id);
+  }
+
   return (
     <>
       <table className="table">
@@ -18,10 +30,17 @@ function SearchResults({ bookingsArray }) {
             <th scope="col">Nights</th>
           </tr>
         </thead>
+        {/* split booking into separate component, with 1 state and use state for colour change */}
+
         <tbody>
           {bookingsArray.map((booking) => {
             return (
-              <tr>
+              <tr
+                className={`${bg}`}
+                onClick={() => {
+                  colorChangeHandler(booking.id);
+                }}
+              >
                 <td>{booking.id}</td>
                 <td>{booking.title}</td>
                 <td>{booking.firstName}</td>
