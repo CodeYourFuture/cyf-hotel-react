@@ -1,0 +1,18 @@
+.footer {
+  padding: 20px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  background-color: #100833;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-details li {
+  list-style: none;
+  padding: 0 2rem;
+  margin: 10px 0;
+}

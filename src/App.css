@@ -47,11 +47,51 @@ tr {
   padding-top: 15px;
 }
 
+.tourist-card-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  width: 50rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 30px;
+
+
+}
+.btn,h2{
+ display: flex;
+ justify-content: center;
+  text-align: center;
+
+}
+.card-img-top{
+  height: 180px;
+}
+
 .footer {
   padding-top: 20px;
   text-align: center;
 }
 
-.card {
-  width: 18rem;
+
+@media (max-width: 768px) {
+  .App-header {
+    font-size: 0.8em;
+  }
+
+  .App-content {
+    font-size: medium;
+  }
+
+  .card {
+    width: auto;
+  }
+}
+
+.highlight {
+  background-color: rgb(9, 244, 244);
+}
+.showBtn{
+  min-width: 50px;
 }
