@@ -1,5 +1,5 @@
 // import React from "react"
-import "./Restaurant.css";
+
 import Order from "./Order";
 
 

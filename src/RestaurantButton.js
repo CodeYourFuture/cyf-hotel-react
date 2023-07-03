@@ -1,6 +1,3 @@
-import "./RestaurantButton.css";
-
-
 const RestaurantButton = ({ handleClick, handleClick1 }) => {
   return (
     <div>

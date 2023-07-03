@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
-import SearchResults from "./SearchResults.js";
+import SearchResults from "../src/components/SearchResults.js";
+import CustomerProfile from "./CustomerProfile.js"
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
@@ -53,6 +54,7 @@ const Bookings = () => {
         {/* <SearchResults results={FakeBookings} /> */}
         <SearchResults results={bookings} />
         <button onClick={resetHandler}> Reset</button>
+        <CustomerProfile results={bookings.id} />
       </div>
     </div>
   );
