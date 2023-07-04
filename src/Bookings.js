@@ -5,14 +5,16 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] =useState(true);
+  const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me/error")
     .then(response => response.json())
     .then(json => {setBookings(json)
                   setIsLoading(false);
     })
-    .catch(error => {console.log("Error fetching data:", error)
+    .catch((error) => {console.log("Error fetching data:", error);
+                    setError("Error fetching data. Please try again later.");
                     setIsLoading(false);
           });
   }, []); 
@@ -28,7 +30,8 @@ const Bookings = () => {
     <div className="App-content">
       {isLoading ? (
         <h1>Loading...Please Wait</h1>
-      ) : (
+      ) : error ? (
+        <h1>{error}</h1> ) : (
         <div className="container">
         <Search search={search} />
         {<SearchResults bookings={bookings} />}
