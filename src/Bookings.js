@@ -5,7 +5,6 @@ import { css } from "@emotion/react";
 
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
 import CustomerProfile from "./CustomerProfile.js";
 import BookingForm from "./BookingForm.js";
 
@@ -51,9 +50,31 @@ const Bookings = () => {
       if (response.ok) {
         fetchBookings();
       } else {
-        // Handle error response
       }
     } catch (error) {}
+  };
+
+  const handleDelete = async (bookingId) => {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}bookings/${bookingId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.ok) {
+        fetchBookings();
+        console.log("Booking deleted successfully");
+      } else {
+        console.error("Error deleting booking");
+      }
+    } catch (error) {
+      console.error("Network or other error occurred", error);
+    }
   };
 
   const override = css`
@@ -98,6 +119,7 @@ const Bookings = () => {
             results={filteredBookings}
             setCustomerId={setCustomerId}
             setProfileOn={setProfileOn}
+            deleteFunc={handleDelete}
           />
         ) : (
           <div className="fallback-ui">
