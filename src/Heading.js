@@ -1,14 +1,30 @@
+// import React from "react";
+// import hotel-logo from ".images/hotel.png";
+
+// const Heading = () => {
+//   return (
+//     <header className="App-header">
+//       <h1 className="logo-title">CYF Hotel</h1>
+//       <img
+//         className="logo-hotel"
+//         // src="../images/hotel-logo.svg"
+//         src="../images/hotel-logo.png"
+//         alt="Hotel Logo"
+//       />
+//     </header>
+//   );
+// };
+
+// export default Heading;
+
 import React from "react";
+import logo from "./images/hotel.png";
 
 const Heading = () => {
   return (
     <header className="App-header">
-      <h1 className="logo-title">CYF Hotel</h1>
-      <img
-        className="logo-hotel"
-        src="../images/hotel-logo.svg"
-        alt="Hotel Logo"
-      />
+      <img src={logo} alt="hotel" />
+      CYF Hotel
     </header>
   );
 };

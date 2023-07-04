@@ -58,15 +58,18 @@ tr {
 .footer {
   padding: 2rem;
   color: white;
+  text-align: center;
 }
 
 .footer-contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   list-style: none;
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #382b21;
   color: white;
-  text-align: center;
 }
 
 .card {

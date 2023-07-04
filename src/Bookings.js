@@ -1,3 +1,13 @@
+// import React, { useState, useEffect, useMemo } from "react";
+// import { ErrorBoundary } from "react-error-boundary";
+// import { BarLoader } from "react-spinners";
+// import { css } from "@emotion/react";
+// import Search from "./Search.js";
+// import SearchResults from "./SearchResults.js";
+// import FakeBookings from "./data/fakeBookings.json";
+// import CustomerProfile from "./CustomerProfile.js";
+// import BookingForm from "./BookingForm.js";
+
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import OutcomeSearch from "./OutcomeSearch.js";
