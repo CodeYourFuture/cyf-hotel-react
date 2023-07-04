@@ -55,3 +55,9 @@ tr {
 .card {
   width: 18rem;
 }
+
+/* My changes */
+
+.App-header img{
+  width: 25px;
+}
