@@ -2,6 +2,12 @@
   text-align: left;
 }
 
+.Top-header img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
 .App-header {
   background-color: #382b21;
   height: 50px;

@@ -1,4 +1,5 @@
 import React from "react";
+import Top from "./Top";
 import Heading from "./Heading";
 import Bookings from "./Bookings";
 import InfoCard from "./InfoCard";
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <Top />
       <Heading />
       <InfoCard />
       <Bookings />
@@ -34,7 +36,7 @@ export default App;
 // Inside the App component, there is a constant variable contactDetails that holds an array of contact information.
 // The array contains a street address, email address, and phone number. The JSX code returned by the App component
 // represents the structure of the web page. It consists of a <div> element with the class name "App". Inside the <div>,
-// the imported components are rendered in order: <Heading />, <TouristInfoCards />, <Bookings />, <Restaurant />, and
+// the imported components are rendered in order: <Top />, <Heading />, <TouristInfoCards />, <Bookings />, <Restaurant />, and
 // <Footer />. The <Footer /> component is passed the contactDetails array as a prop. The export default App; statement
 // exports the App component as the default export of this module, allowing it to be imported and used in other parts of
 // the application.
