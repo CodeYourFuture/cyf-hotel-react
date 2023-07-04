@@ -4,6 +4,7 @@ import SearchResults from "./components/SearchResults.jsx";
 
 // import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
+import SearchResultsOther from './components/SearchResultsOther.js';
 
 const Bookings = () => {
   const [bookings, setBookings] = useState(FakeBookings);
@@ -16,6 +17,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         <SearchResults results={bookings} />
+        {/* <SearchResultsOther results={bookings} /> */}
       </div>
     </div>
   );
