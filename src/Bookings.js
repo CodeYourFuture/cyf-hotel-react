@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [isLoading, setIsLoading] =useState(true);
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
     .then(response => response.json())
-    .then(json => setBookings(json))
-    .catch(error => console.log("Error fetching data:", error));    
+    .then(json => {setBookings(json)
+                  setIsLoading(false);
+    })
+    .catch(error => {console.log("Error fetching data:", error)
+                    setIsLoading(false);
+          });
   }, []); 
 
   var search = searchVal => {
@@ -22,10 +26,14 @@ const Bookings = () => {
 
   return (
     <div className="App-content">
-      <div className="container">
+      {isLoading ? (
+        <h1>Loading...Please Wait</h1>
+      ) : (
+        <div className="container">
         <Search search={search} />
         {<SearchResults bookings={bookings} />}
       </div>
+      )}
     </div>
   );
 };
