@@ -2,33 +2,58 @@ import React, { useState, useEffect, useMemo } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { BarLoader } from "react-spinners";
 import { css } from "@emotion/react";
+
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
+// import FakeBookings from "./data/fakeBookings.json";
 import CustomerProfile from "./CustomerProfile.js";
 import BookingForm from "./BookingForm.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [filteredBookings, setFilteredBookings] = useState([]);
   const [customerId, setCustomerId] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [profileOn, setProfileOn] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  const addBooking = (booking) => {
-    FakeBookings.push(booking);
-    setBookings([...FakeBookings]);
+  const fetchBookings = async () => {
+    const response = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}bookings`
+    );
+    const data = await response.json();
+    setBookings(data);
+    setFilteredBookings(data);
+    setLoaded(true);
   };
 
-  const search = (searchVal) => {
-    const convertedVal = searchVal.toLowerCase().trim();
-    const matched = FakeBookings.filter(({ firstName, surname }) => {
-      return (
-        firstName.toLowerCase().includes(convertedVal) ||
-        surname.toLowerCase().includes(convertedVal)
+  useEffect(() => {
+    fetchBookings();
+  }, []);
+
+  const handleSearch = (data) => {
+    setFilteredBookings(data);
+  };
+
+  const addBooking = async (booking) => {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}bookings`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(booking),
+        }
       );
-    });
-    setBookings(matched);
+
+      if (response.ok) {
+        fetchBookings();
+      } else {
+        // Handle error response
+      }
+    } catch (error) {}
   };
 
   const override = css`
@@ -36,14 +61,6 @@ const Bookings = () => {
     margin: 0 auto;
     border-color: red;
   `;
-
-  useEffect(() => {
-    console.log("Data loading");
-    setTimeout(() => {
-      setBookings(FakeBookings);
-      setLoaded(true);
-    }, 3000);
-  }, [FakeBookings]);
 
   const FallbackUI = ({ error, resetErrorBoundary }) => (
     <div style={{ backgroundColor: "red", color: "white", padding: "1rem" }}>
@@ -75,10 +92,10 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
+        <Search bookings={bookings} search={handleSearch} />
         {loaded ? (
           <SearchResults
-            results={bookings}
+            results={filteredBookings}
             setCustomerId={setCustomerId}
             setProfileOn={setProfileOn}
           />
@@ -90,7 +107,7 @@ const Bookings = () => {
         {customerId && memoizedCustomerProfile}
       </div>
       <div className="form__wrapper">
-        <BookingForm addBooking={addBooking} index={FakeBookings.length + 1} />
+        <BookingForm addBooking={addBooking} index={bookings.length + 1} />
         <div className="form__photo"></div>
       </div>
     </div>

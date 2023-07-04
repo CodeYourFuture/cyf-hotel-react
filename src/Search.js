@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 
-const Search = (props) => {
+const Search = ({ bookings, search }) => {
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearchInput = ({ target }) => {
@@ -10,7 +10,14 @@ const Search = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.search(searchInput);
+    const convertedVal = searchInput.toLowerCase().trim();
+    const matched = bookings.filter(({ firstName, surname }) => {
+      return (
+        firstName.toLowerCase().includes(convertedVal) ||
+        surname.toLowerCase().includes(convertedVal)
+      );
+    });
+    search(matched);
   };
 
   return (
