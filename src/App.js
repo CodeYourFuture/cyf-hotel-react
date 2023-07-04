@@ -28,7 +28,7 @@ const App = () => {
 
 export default App;
 
-// Pseudocode: React component called "App". It imports several other components, such as "Heading", "Bookings",
+// Pseudocode: React component called "App". It imports several other components, such as "Top", "Heading", "Bookings",
 // "TouristInfoCards", "Footer", and "Restaurant". It also imports a CSS file called "App.css" for styling. The App
 // component is a functional component written using arrow function syntax. It returns JSX (JavaScript XML), which
 // represents the structure and content of the component's rendered output.
