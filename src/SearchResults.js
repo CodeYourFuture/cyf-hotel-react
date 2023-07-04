@@ -12,7 +12,6 @@ const SearchResults = (props) => {
   const [selectedID, setSelectedId] = useState(null);
 
   function highlightSelectedRow(id) {
-    console.log(id);
     setIsActive(!isActive);
     setSelectedId(id);
   }
