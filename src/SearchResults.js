@@ -2,13 +2,15 @@ import moment from "moment"
 import { useState } from "react"
 import CustomerProfile from "./Customer-Profile"
 
-const SearchResults = ({ bookings }) => {
+const SearchResults = ({ bookings, newCustomer }) => {
+
     const [active, setActive] = useState(false)
     const [clientId, setClientId] = useState("")
     const [customerProf, setCuctomerProf] = useState("")
     const [isShown, setIsShown] = useState(false);
 
     let handleProfileClick = (client) => {
+
         setCuctomerProf(client)
         setIsShown(!isShown)
     }
@@ -62,7 +64,7 @@ const SearchResults = ({ bookings }) => {
                     }
                 </tbody>
             </table>
-            {isShown ? <CustomerProfile customerProf={customerProf} /> : null}
+            {isShown ? <CustomerProfile customerProf={customerProf} bookings={bookings} /> : null}
 
         </div>
     )

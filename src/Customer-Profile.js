@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 
-const CustomerProfile = ({ customerProf }) => {
+const CustomerProfile = ({ customerProf, newCustomer }) => {
     const [user, setUser] = useState([])
     function fetchingId() {
         fetch(`https://cyf-react.glitch.me/customers/${customerProf}`)

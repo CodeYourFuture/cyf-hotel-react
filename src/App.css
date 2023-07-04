@@ -199,23 +199,24 @@ table tr {
   color: red;
 }
 
-.form {
+.holder-for-inputs {
   display: flex;
   flex-direction: row;
   gap: 1rem;
   font-size: 16px;
   justify-content: center;
+  padding-top: 1rem;
   margin: 1rem;
 }
 
 .holder-for-customer-form {
-  background-color: #c7c8bc;
+  background-color: #a3a3a3;
   padding: 1rem;
   text-align: end;
 }
 
 .form-submit {
-  margin-right: 3.7rem;
+
   border: none;
   width: 5rem;
   height: 2rem;
@@ -227,7 +228,7 @@ table tr {
 }
 
 .form label {
-  color: #6c6c6c;
+  color: #393939;
 }
 
 .form-submit:hover {
@@ -243,4 +244,20 @@ table tr {
 #title {
   height: 1.9rem;
   color: #4f4f4f;
+}
+
+.id {
+  width: 2rem;
+}
+
+.title,
+.roomID {
+  width: 4rem;
+}
+
+.holder-for-customer-form h5 {
+  text-align: start;
+  color: rgb(34, 34, 34);
+  border-bottom: 1px solid rgb(35, 35, 35);
+  padding-bottom: 1rem;
 }

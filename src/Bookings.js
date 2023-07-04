@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
-import SearchResults from "./SearchResults.js";
 import InputFormForTable from "./Input-Form-For-Table.js"
 
 
@@ -49,12 +48,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {
-          bookings.length > 0 ? (<SearchResults bookings={bookings} />)
-            : bookings !== 500 ? (<span>Loading... </span>) : (<span className="error-message"> Error 500</span>)
-        }
-        <InputFormForTable bookings={bookings} />
-
+        <InputFormForTable bookings={bookings} setBookings={setBookings} />
       </div>
     </div >
   );
