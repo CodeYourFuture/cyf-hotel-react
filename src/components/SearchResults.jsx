@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
-const SearchResults = ({results}) => {
+// 15. Highlight booking row when clicked
+// https://bobbyhadz.com/blog/react-add-remove-class-on-click
+
+const SearchResults = ({ results }) => {
+  const handleClick = (current) => {
+    !current;
+  };
+  // const [isHighlighted, setIsHighlighted] = useState("highlighted");
   return (
     <table class="table">
       <thead>
