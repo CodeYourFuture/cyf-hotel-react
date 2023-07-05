@@ -11,6 +11,7 @@ const SearchResults = (props) => {
   };
   return (
     <>
+      {showId && <CustomerProfile id={showId} />}
       <table className="table">
         <TableHead />
         <tbody>
@@ -19,7 +20,6 @@ const SearchResults = (props) => {
           })}
         </tbody>
       </table>
-      {showId && <CustomerProfile id={showId} />}
     </>
   );
 };
