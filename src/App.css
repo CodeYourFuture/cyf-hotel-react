@@ -70,12 +70,12 @@ tr {
 
 /* HEADER......... */
 
-.hotel-logo{
+/* .hotel-logo{
     border-radius: 50%;
     margin: 10px;
     padding: 10px;
     
-}
+} */
 
 .App-header{
     display: flex;
@@ -84,10 +84,11 @@ tr {
     background-color:  rgb(35, 38, 37);
     margin-top: 2px;
     margin-bottom: 2px;
+    
 }
 
 .span{
-     color: rgb(216, 147, 120);
+     color: rgb(15, 119, 216);
     font-family: fantasy;
     text-align: center;
 }
@@ -175,7 +176,7 @@ td {
 }
 
 .row-highlight{
-  background-color: yellow;
+  background-color: rgb(170, 170, 162);
 }
 
 .row-none-highlight{

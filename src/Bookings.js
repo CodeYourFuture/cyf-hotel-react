@@ -5,12 +5,6 @@ import CustomerProfile from "./CustomerProfile.js"
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
-// #### 19. Implementing the search functionality
-
-// **Instructions:** Still in the `<Bookings />` component, implement the `search` method. It must use the `searchVal` variable (that you just passed from the `<Search />` component) to **filter** the search results. The filter function should return bookings where `firstName` or `surname` match `searchVal`. Once filtered, use the `setBookings` function to update the results rendered in `<SearchResults />`.
-
-// **Test:** Verify that when you enter an existing first name or surname and submit the form, the results are filtered accordingly in the customers table.
-
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
