@@ -62,6 +62,10 @@ tr {
   width: 25px;
 }
 
+table{
+  border-bottom: 1px solid rgb(195, 194, 194);
+}
+
 .highlighted0{
   background-color: red;
 }
