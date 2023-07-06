@@ -1,12 +1,19 @@
 
 import React, {useState} from "react";
 import moment from "moment";
+import CostumerProfile from "./CostumerProfile";
+
 
 const SearchResults=({results})=>{
- 
 const[selectedRow,setSelectedRow]=useState();
+const [selectedCustomer, setSelectedCustomer] = useState(null);
+
       
+const handleCostumerPrf=(costumerId)=>{
+    setSelectedCustomer(costumerId);
+}
     return (
+      <div>  
         <table className="table" style={{marginBottom:"2em"}}>
             <thead className="thead-dark">
                 <tr>
@@ -27,12 +34,13 @@ const[selectedRow,setSelectedRow]=useState();
                 const checkInDate = moment(booking.checkInDate);
                 const checkOutDate = moment(booking.checkOutDate);
                 const nights = checkOutDate.diff(checkInDate, "days");
+                const { id, title, firstName, surname, email, roomId } = booking;
                 let className1=""
                 if (selectedRow ===booking.id){
                     className1="rowSelected"
                 }
                 return (
-                    <tr className={className1} key={booking.id} onClick={()=>{setSelectedRow(booking.id)}}>
+                    <tr className={className1} key={id} onClick={()=>{setSelectedRow(id); handleCostumerPrf(id)}}>
                     <td>{booking.id}</td>
                     <td>{booking.title}</td>
                     <td>{booking.firstName}</td>
@@ -42,12 +50,21 @@ const[selectedRow,setSelectedRow]=useState();
                     <td>{checkInDate.format("YYYY-MM-DD")}</td>
                     <td>{checkOutDate.format("YYYY-MM-DD")}</td>
                     <td>{nights}</td>
-                    <td><button>Show Profile</button></td>
+                    <td><button onClick={() => handleCostumerPrf(id)}>
+                    Show Profilee</button>
+                    </td>
                     </tr>
                 );
                 })}
             </tbody>
-        </table>   
+        </table> 
+        
+        {selectedCustomer && (
+            <div>
+              <CostumerProfile id={selectedCustomer}/>
+            </div>
+          )}
+       </div>   
     );
 };
 
