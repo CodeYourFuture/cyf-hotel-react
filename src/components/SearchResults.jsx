@@ -8,7 +8,7 @@ const SearchResults = ({ results }) => {
   const handleClick = (current) => {
     !current;
   };
-  // const [isHighlighted, setIsHighlighted] = useState("highlighted");
+  //15? const [isHighlighted, setIsHighlighted] = useState("highlighted");
   return (
     <table class="table">
       <thead>

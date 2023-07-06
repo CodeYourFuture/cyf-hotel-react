@@ -5,9 +5,6 @@ import SearchResults from "./components/SearchResults.jsx";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
-  };
 
   useEffect(() => {
     fetch("https://cyf-react.glitch.me")
@@ -18,6 +15,12 @@ const Bookings = () => {
         setBookings(data);
       });
   }, []);
+
+  const search = (searchVal) => {
+    console.info("TO DO!", searchVal);
+    setBookings(bookings.filter((row) => {return row.firstName.includes(searchVal) || row.surname.includes(searchVal);}))
+    //console.log(bookings) Why still diplay all rows?
+  };
 
   return (
     <div className="App-content">
