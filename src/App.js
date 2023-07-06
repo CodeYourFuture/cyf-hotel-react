@@ -7,6 +7,7 @@ import glasgow from "./images/glasgow.jpeg";
 import manchester from "./images/manchester.jpeg";
 import TouristInfoCards from "./Components/TouristInfoCards";
 import SearchResults from "./Components/SearchResults";
+import Restaurant from "./Restaurant"
 
 import "./App.css";
 
@@ -47,7 +48,9 @@ const App = () => {
         link="visitmanchester.com"
       />
       <Bookings />
+      <Restaurant />
       <Footer 
+      
         address = {address}
       />
     </div>
