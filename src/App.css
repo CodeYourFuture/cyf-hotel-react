@@ -66,3 +66,12 @@ tr {
     justify-content: space-around;
     margin: 1rem;
 }
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

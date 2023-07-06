@@ -5,11 +5,14 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [loadingData, setLoadingData] = useState(false);
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
+    setLoadingData(false);
+    fetch(`https://cyf-react.glitch.me/delayed`)
       .then((res) => res.json())
       .then((data) => {
         setBookings(data);
+        setLoadingData(true);
       });
   }, []);
   const search = (searchVal) => {
@@ -27,7 +30,11 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {loadingData ? (
+          <SearchResults results={bookings} />
+        ) : (
+          <h1 class="blink_me">Loading.....</h1>
+        )}
       </div>
     </div>
   );
