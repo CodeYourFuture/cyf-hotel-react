@@ -16,7 +16,7 @@ const Bookings = () => {
     // console.info("TO DO!", searchVal);
   };
   useEffect(() => {
-    console.log("sdasdahgj");
+    // console.log("sdasdahgj");
     fetch(`https://cyf-react.glitch.me`)
       .then((res) => res.json())
       .then((data) => {
