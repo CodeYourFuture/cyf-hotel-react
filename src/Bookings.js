@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
 import Search from "./Search.js";
 import OutcomeSearch from "./OutcomeSearch.js";
 import CustomerProfile from "./CustomerProfile.js";
@@ -8,7 +9,6 @@ const Bookings = () => {
   const [customerId, setCustomerId] = useState(null);
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
   const [errorOccurred, setErrorOccurred] = useState({
     ok: true,
     status: "",
@@ -56,15 +56,16 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {errorOccurred.ok === false ? (
-          <div>
+        {!errorOccurred.ok ? (
+          <div className="loader">
             <span>
               An Error occurred when fetching the Bookings Data :{" "}
               {errorOccurred.status} {errorOccurred.statusText}
             </span>
           </div>
-        ) : isLoading === true ? (
+        ) : isLoading ? (
           <div>
+            <ClipLoader color={"green"} size={70} />
             <span>The Bookings data is loading, please wait...</span>
           </div>
         ) : (
