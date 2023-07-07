@@ -15,7 +15,7 @@ const handleCostumerPrf=(costumerId)=>{
     return (
       <div>  
         <table className="table" style={{marginBottom:"2em"}}>
-            <thead className="thead-dark">
+            <thead className="thead-dark" style={{ whiteSpace: 'nowrap' ,textAlign:"center" }}>
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
