@@ -1,5 +1,5 @@
 body {
-  background-color:aliceblue;
+  background-color: aliceblue;
 }
 .App-header {
   background-color: black;
@@ -60,7 +60,7 @@ h2 {
   width: 28rem;
 }
 
-.card-title{
+.card-title {
   color: white;
   background-color: black;
   font-size: 1rem;
@@ -81,19 +81,18 @@ h2 {
   background-color: brown;
 }
 
-.welcome{
-display: flex;
-flex-direction: column;
-font-size: 2rem;
+.welcome {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
 }
 
-.welcome-img{
+.welcome-img {
   display: flex;
   max-width: auto;
   height: 25rem;
   border: 2px solid brown;
   margin: 0rem 4rem 1rem 4rem;
- 
 }
 
 .order {
@@ -102,38 +101,38 @@ font-size: 2rem;
   gap: 5rem;
 }
 
-.welcome-text{
+.welcome-text {
   text-align: center;
   color: blueviolet;
 }
 
 .table {
   background-color: black;
- 
 }
 
-th{
+th {
   color: brown;
 }
 
-td{
+td {
   color: beige;
 }
 .selected {
   background-color: green;
 }
 
+.profile {
+  background-color: burlywood;
+}
 @media only screen and (max-width: 600px) {
   .card {
     flex-direction: column;
   }
-  .welcome-img{
-  margin: 0;
- 
- }
- .table {
-  width: 40%;
-  font-size: 10px;;
- }
-
+  .welcome-img {
+    margin: 0;
+  }
+  .table {
+    width: 40%;
+    font-size: 10px;
+  }
 }
