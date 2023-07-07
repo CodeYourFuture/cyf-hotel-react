@@ -2,6 +2,12 @@
   text-align: left;
 }
 
+ .Top-header img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
