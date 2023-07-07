@@ -124,6 +124,11 @@ td {
 .profile {
   background-color: burlywood;
 }
+
+.customer {
+ border: 1px solid gray;
+ margin-bottom: 30px;
+}
 @media only screen and (max-width: 600px) {
   .card {
     flex-direction: column;

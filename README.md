@@ -178,7 +178,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 21. Display a customer profile - step 2
 
-**Instructions:** When a "Show profile" button is clicked in the table, fetch the corresponding customer profile from `https://cyf-react.glitch.me/customers/<ID>` in the `<CustomerProfile />` component. A customer profile should show the customer ID, their email, if they are VIP and their phone number in a list.
+**Instructions:** When a "Show profile" button is clicked in the table, fetch the corresponding customer profile from ` in the `<CustomerProfile />``https://cyf-react.glitch.me/customers/<ID> component. A customer profile should show the customer ID, their email, if they are VIP and their phone number in a list.
 
 **Hint:** You need to use `useEffect` and the correct dependency array. You'll need to fetch customers data from the API every time a "Show profile" button is clicked and render it accordingly.
 
