@@ -1,13 +1,10 @@
 import React from "react";
 
-const Button = ({orderOne}) => {
-  
+const Button = ({ orderOne }) => {
   return (
-    
-          <button onClick={orderOne} className="btn btn-primary">
-            Add
-          </button>
-          
+    <button onClick={orderOne} className="btn btn-primary">
+      Add
+    </button>
   );
 };
 
