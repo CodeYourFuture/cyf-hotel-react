@@ -2,10 +2,10 @@ import React, { useCallback, useEffect, useState } from "react";
 import Axios from "axios";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
+// import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings);
+  const [bookings, setBookings] = useState([]);
   const [searchVal, setSearchVal] = useState("");
 
   const search = (searchVal) => {
@@ -14,9 +14,13 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    Axios.get("https://cyf-react.glitch.me").then((res) => {
-      setBookings(res.data);
-    });
+    // Axios.get("https://cyf-react.glitch.me").then((res) => {
+    //   let data = setBookings(res.data);
+    // });
+    fetch("https://cyf-react.glitch.me")
+      .then((res) => res.json())
+      .then((data) => setBookings(data))
+      .catch((error) => console.log(error));
   }, []);
 
   const searchOutCome = bookings.filter(

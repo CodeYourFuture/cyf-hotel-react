@@ -16,7 +16,6 @@ const CustomerProfile = (props) => {
     return (
         <div className="customer-profile">
             {showDataProfile.length !== 0 ? <h1> Customer Profile</h1> : <></>}
-
             {showDataProfile.length !== 0 ? (
             <ul>
                 <li>Id: {showDataProfile.id}</li>
