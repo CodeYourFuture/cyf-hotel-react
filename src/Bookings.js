@@ -6,13 +6,25 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loadingData, setLoadingData] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(null);
   useEffect(() => {
     setLoadingData(false);
     fetch(`https://cyf-react.glitch.me/delayed`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw Error(
+            `The fetching of bookings was not successful. Error: ${res.status}`
+          );
+        }
+        return res.json();
+      })
       .then((data) => {
         setBookings(data);
         setLoadingData(true);
+        setErrorMsg(null);
+      })
+      .catch((error) => {
+        setErrorMsg(error.message);
       });
   }, []);
   const search = (searchVal) => {
@@ -22,6 +34,7 @@ const Bookings = () => {
         booking.surname.toLowerCase().includes(searchVal.toLowerCase())
       );
     });
+
     setBookings(filteredBooking);
     // console.info("TO DO!", searchVal);
   };
@@ -30,7 +43,9 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {loadingData ? (
+        {errorMsg ? (
+          <h1> {errorMsg}</h1>
+        ) : loadingData ? (
           <SearchResults results={bookings} />
         ) : (
           <h1 class="blink_me">Loading.....</h1>
