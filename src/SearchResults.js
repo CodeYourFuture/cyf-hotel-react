@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
+import CustomerProfile from "./CustomerProfile";
 
 const CountNumberOfNights = (checkInDate, checkOutDate) => {
   let a = moment(checkInDate);
@@ -15,6 +16,11 @@ const SearchResults = (props) => {
     setIsActive(!isActive);
     setSelectedId(id);
   }
+  function handleClickOnButton(id) {
+    setSelectedId(id);
+    console.log("id", id);
+  }
+
   return (
     <table className="table">
       <thead>
@@ -27,6 +33,7 @@ const SearchResults = (props) => {
           <th scope="col">Check in Date</th>
           <th scope="col">Check out date</th>
           <th scope="col">Number of nights</th>
+          <th scope="col">Show profile</th>
         </tr>
       </thead>
       <tbody>
@@ -48,6 +55,16 @@ const SearchResults = (props) => {
               <td>{data.checkOutDate}</td>
               <td>
                 {CountNumberOfNights(data.checkInDate, data.checkOutDate)}
+              </td>
+              <td>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    handleClickOnButton(data.id);
+                  }}
+                >
+                  Show profile
+                </button>
               </td>
             </tr>
           );
