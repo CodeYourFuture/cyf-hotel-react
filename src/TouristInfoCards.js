@@ -16,7 +16,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img src={GlasgowImg} className="card-img-top" />
         <div className="card-body">
-          <h4>George Square</h4>
+          <h2>George Square</h2>
           <span>{glasgow}</span>
           <a href="https://peoplemakeglasgow.com/" className="btn btn-primary">
             Click for info
@@ -26,7 +26,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img src={LancasterCastleImg} className="card-img-top" />
         <div className="card-body">
-          <h4>Lancaster Castle</h4>
+          <h2>Lancaster Castle</h2>
           <span>{lancasterCastle}</span>
           <a
             href="https://www.visitmanchester.com/things-to-see-and-do/gateway-to-the-north/explore-the-north/lancaster-castle-p344321"
@@ -39,7 +39,7 @@ const TouristInfoCards = () => {
       <div className="card">
         <img src={LondonEyeImg} className="card-img-top" />
         <div className="card-body">
-          <h4>London Eye</h4>
+          <h2>London Eye</h2>
           <span>{londonEye}</span>
           <br></br>
           <a href="https://www.visitlondon.com/" className="btn btn-primary">

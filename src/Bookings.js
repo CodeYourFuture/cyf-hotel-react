@@ -36,8 +36,8 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} /> 
-        {!loading ? <h1>Loading...</h1> : 
-        <SearchResults results={searchOutCome} />
+        {!loading ? (<h1>Loading...</h1>) : (
+        <SearchResults results={searchOutCome} /> )
         }
       </div>
     </div>

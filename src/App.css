@@ -16,14 +16,23 @@
   font-weight: bolder;
 }
 
+.card-img-top {
+  width: 450px;
+  height: 301px;
+}
+
 .tourist-cards {
-  /* margin-left: 80px;
+  margin-top: 10px;
+  margin-left: 80px;
+  margin-right: 40px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); */
-  margin-top: 75px;
+  grid-template-columns: repeat(3, 1fr);
+  /* margin-top: 30px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px; */
 }
 
 .App-logo {
@@ -35,7 +44,8 @@
 
 .App-header {
   background-color: #272626;
-  height: 130px;
+  height: 150px;
+  width: 100%;
   padding: 20px;
   color: rgb(245, 163, 32);
   text-align: left;
@@ -65,6 +75,13 @@
   margin: 0 100px;
 }
 
+.card-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .row-nonHighlight {
   background-color: rgb(241, 239, 237);
 }
@@ -88,6 +105,7 @@
 .customer-profile-showing {
   display: block;
 }
+
 .customer-profile-hide {
   display: none;
 }
@@ -120,5 +138,5 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 28.2rem;
 }
