@@ -29,7 +29,7 @@ const Search = (props) => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <SearchButton  type = {"submit"}/>
+              <SearchButton type={"submit"} />
             </div>
           </form>
         </div>
