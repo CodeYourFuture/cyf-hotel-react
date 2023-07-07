@@ -4,8 +4,9 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 60px;
 }
+
 
 .App-header {
   background-color: #222;
@@ -48,10 +49,42 @@ tr {
 }
 
 .footer {
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  flex-grow: 1;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
 }
 
 .card {
   width: 18rem;
+}
+
+/* .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: #222;
+}
+
+.footer, h1 {
+  color:white;
+} */
+
+.selected-row {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
 }
