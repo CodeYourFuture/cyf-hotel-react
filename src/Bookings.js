@@ -66,7 +66,7 @@ const Bookings = () => {
         ) : isLoading ? (
           <div>
             <ClipLoader color={"green"} size={70} />
-            <span>The Bookings data is loading, please wait...</span>
+            <span>Loading, please wait...</span>
           </div>
         ) : (
           <OutcomeSearch results={bookings} setCustomerId={setCustomerId} />
