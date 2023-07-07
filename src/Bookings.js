@@ -79,38 +79,42 @@ const Bookings = () => {
 
 export default Bookings;
 
-// Pseudocode: This code represents a React component called "Bookings". It imports other components such as "Search",
-// "SearchResults", and "CustomerProfile". Inside the Bookings component, several state variables are declared using the
-//  useState hook: bookings, customerId, data, isLoading, and errorOccurred.
+// It is a React component named "Bookings" that fetches and displays booking data. The component imports necessary
+// dependencies: React, useEffect and useState hooks from React, and several other components (ClipLoader, Search,
+// OutcomeSearch, CustomerProfile) from specific files. The Bookings component is defined as a functional component
+// using an arrow function. The code initializes several state variables using the useState hook.
 
-// The code begins with importing necessary dependencies and components: React: The core React library. useEffect and
-// useState from React: Hooks used for managing side effects and state within functional components. The Search, SearchResults,
-// and CustomerProfile components from their respective files. The Bookings component is defined using the arrow function syntax.
+// bookings is an array that holds the booking data fetched from the server.
+// customerId represents the ID of a selected customer.
+// data is a copy of the original booking data.
+// isLoading is a boolean flag indicating whether the data is currently being fetched (true) or has finished loading
+// (false).
+// errorOccurred is an object that tracks whether an error occurred during the data fetch. It contains properties like
+// ok (a boolean indicating if the response was successful), status (HTTP status code), and statusText (HTTP status
+// message).
 
-// Inside the Bookings component, several state variables are declared using the useState hook: bookings: Holds the list
-// of bookings data, initially an empty array. customerId: Holds the ID of the selected customer, initially null. data: Holds the
-// original unfiltered bookings data, initially an empty array. isLoading: Indicates whether the data is currently being
-// loaded, initially set to true. errorOccurred: Holds information about any error that occurred during data fetching,
-//initially an object with ok (indicating if the request was successful), status (HTTP status code), and statusText
-// (HTTP status text). The useEffect hook is used to fetch data from the server when the component is mounted (empty dependency array
-// [] passed as the second argument to useEffect). The effect function is defined inside the useEffect hook and is executed
-// when the component mounts.
+// The useEffect hook is used to perform side effects in a functional component. In this case, it fetches the booking
+// data from the server when the component mounts (empty dependency array []). It defines an async function fetchData
+// that sends an HTTP GET request to the URL "https://cyf-react.glitch.me". If the response is not successful (!response.ok),
+// it sets the errorOccurred state accordingly and throws an error. Otherwise, it parses the response data and sets both
+// bookings and data state variables with the fetched data. Finally, it sets isLoading to false to indicate that the
+// data has finished loading. If an error occurs during the fetch or parsing, it is logged to the console.
 
-// The effect function is defined as an asynchronous function, fetchData. Inside fetchData, an HTTP GET request is made
-// to the URL "https://cyf-react.glitch.me" using the fetch function. If the response is not successful (status code
-// other than 200), an error is thrown, and the errorOccurred state variable is updated with the error details. If the
-// response is successful, the JSON data is extracted from the response using response.json(), and then both bookings
-// and data state variables are updated with the received data. Finally, the isLoading state variable is set to false
-// to indicate that data loading is complete. If an error occurs during the fetching process, it is caught and logged
-// to the console. The search function is defined to handle the filtering of bookings based on a search value.
+// Search function is responsible for handling the search functionality. It receives a searchVal parameter representing
+// the search input value. If the trimmed search value is empty, it sets bookings state to the original data array,
+// effectively resetting the search. Otherwise, it filters the bookings array based on whether the firstName or surname
+// properties of each element start with the search value (case-insensitive). The filtered results are then set as the
+// new bookings state.
 
-// If the searchVal parameter is empty or contains only whitespace characters after trimming, the original data is set as
-// the bookings. Otherwise, the bookings are filtered using the filter method, which checks if either the firstName or
-// the surname of each booking starts with the searchVal (case-insensitive comparison). The filtered bookings are then
-// set as the new value for the bookings state variable. The JSX code defines the structure and content of the rendered
-// output. The top-level element is a <div> with the class name "App-content". Inside this div, there is another <div>
-// with the class name "container". Inside the container, the Search component is rendered, which receives the search
-// function as a prop. Next, there is a conditional rendering based on the state variables errorOccurred and isLoading. If
-// an error occurred during data fetching (errorOccurred.ok === false), an error message is displayed showing the HTTP status
-// code and status text. If the data is still loading (isLoading === true), a loading message is displayed. If the data
-// has been loaded and no error occurred, the SearchResults component is rendered, passing the filtered `
+// Render:
+// The code within the return statement represents the JSX markup that will be rendered by this component.
+// <div className="App-content">: A container for the component's content.
+// <div className="container">: A container for the booking-related content.
+// <Search search={search} />: Renders the Search component and passes the search function as a prop.
+// Conditional rendering based on error and loading states:
+// If errorOccurred.ok is false, render an error message.
+// If isLoading is true, render a loading spinner and a "Loading, please wait..." message.
+// If neither of the above conditions is met, render the OutcomeSearch component and pass the bookings array and setCustomerId function as props.
+// {customerId && <CustomerProfile id={customerId} />}: Conditional rendering of the CustomerProfile component based on the customerId state variable. If customerId is truthy, render the component and pass customerId as a prop.
+
+// Exports the Bookings component as the default export, allowing it to be imported by other modules.
