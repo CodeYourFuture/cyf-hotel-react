@@ -16,7 +16,7 @@ const App = () => {
       <Heading />
       <TouristInfoCard />
       <Bookings />
-      <Restaurant />
+     <Restaurant />
       <Footer props = {address} />
     </div>
   );
