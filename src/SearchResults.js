@@ -85,7 +85,8 @@ const Table = (props) => {
                 checkOutDate={column.checkOutDate}
                 setProfile={setProfile}
               />
-            );
+              );
+            
           })}
         </tbody>
       </table>

@@ -7,6 +7,7 @@ import SearchResults from "./SearchResults.js";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [searchVal, setSearchVal] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const search = (searchVal) => {
     console.info("TO DO!", searchVal);
@@ -14,23 +15,30 @@ const Bookings = () => {
   };
 
   useEffect(() => {
-    // Axios.get("https://cyf-react.glitch.me").then((res) => {
-    //   let data = setBookings(res.data);
-    // });
-    fetch("https://cyf-react.glitch.me")
-      .then((res) => res.json())
-      .then((data) => setBookings(data))
-      .catch((error) => console.log(error));
+    const fetchData = async () => {
+      try {
+        const res = await Axios.get("https://cyf-react.glitch.me/delayed");
+        setBookings(res.data);
+      } catch (error) {
+          console.log(error);
+      }
+      setLoading(true);
+    }
+    fetchData();  
+
   }, []);
 
   const searchOutCome = bookings.filter(
-    (el) => el.firstName.includes(searchVal) || el.surname.includes(searchVal));
+    (el) => el.firstName.includes(searchVal) || el.surname.includes(searchVal)
+  );
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
+        <Search search={search} /> 
+        {!loading ? <h1>Loading...</h1> : 
         <SearchResults results={searchOutCome} />
+        }
       </div>
     </div>
   );
