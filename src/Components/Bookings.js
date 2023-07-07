@@ -48,7 +48,7 @@ const Bookings = () => {
         ) : loadingData ? (
           <SearchResults results={bookings} />
         ) : (
-          <h1 class="blink_me">Loading.....</h1>
+          <h1 className="blink_me">Loading.....</h1>
         )}
       </div>
     </div>

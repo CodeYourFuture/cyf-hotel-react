@@ -10,8 +10,8 @@ const CustomerProfile = (props) => {
     }
   }, [props.id]);
   return (
-    <table class="table">
-      <thead class="thead-dark">
+    <table className="table">
+      <thead className="thead-dark">
         <tr>
           <th scope="col">Customer ID</th>
           <th scope="col">Title</th>

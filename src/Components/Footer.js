@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <div>
       <ul className="Footer">
-        {ContactDetails.map((contact) => (
-          <li>{contact}</li>
+        {ContactDetails.map((contact, id) => (
+          <li key={id}>{contact}</li>
         ))}
       </ul>
     </div>

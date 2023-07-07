@@ -23,9 +23,9 @@ const TouristInfo = [
 const TouristInfoCards = () => {
   return (
     <div className="card-flex">
-      {TouristInfo.map((card) => {
+      {TouristInfo.map((card, id) => {
         return (
-          <div className="card">
+          <div key={id} className="card">
             <img src={card.image} className="card-img-top" />
             <div className="card-body">
               <h2 className="card-title">{card.title}</h2>

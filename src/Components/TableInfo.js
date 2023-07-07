@@ -27,9 +27,14 @@ const TableInfo = (props) => {
             "days"
           )}
         </td>
-        <button onClick={() => props.idCheck(props.result.id)}>
-          Show profile
-        </button>
+        <td>
+          <button
+            className="btn btn-primary"
+            onClick={() => props.idCheck(props.result.id)}
+          >
+            Show profile
+          </button>
+        </td>
       </tr>
     </>
   );

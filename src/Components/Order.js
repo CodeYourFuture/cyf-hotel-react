@@ -6,8 +6,10 @@ const Order = (props) => {
     setOrders(order + 1);
   };
   return (
-    <li>
-      {props.orderType}: {order}
+    <li classList="list-group-item">
+      <h2>
+        {props.orderType}: {order}
+      </h2>
       <RestaurantButton order={orderOne} />
     </li>
   );
