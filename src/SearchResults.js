@@ -50,7 +50,7 @@ const handleCostumerPrf=(costumerId)=>{
                     <td>{checkInDate.format("YYYY-MM-DD")}</td>
                     <td>{checkOutDate.format("YYYY-MM-DD")}</td>
                     <td>{nights}</td>
-                    <td><button onClick={() => handleCostumerPrf(id)}>
+                    <td><button type="button" className="btn btn-secondary btn-sm" onClick={() => handleCostumerPrf(id)} >
                     Show Profilee</button>
                     </td>
                     </tr>
@@ -60,8 +60,8 @@ const handleCostumerPrf=(costumerId)=>{
         </table> 
         
         {selectedCustomer && (
-            <div>
-              <CostumerProfile id={selectedCustomer}/>
+            <div >
+              <CostumerProfile id={selectedCustomer}/>  
             </div>
           )}
        </div>   
