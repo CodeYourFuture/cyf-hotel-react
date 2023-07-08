@@ -1,40 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Monomaniac+One&family=Quicksand:wght@300&display=swap');
+
 .App {
   text-align: left;
 }
 
+.rwo-btn {
+  height: 50px;
+  width: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: blue;
+  color: aliceblue;
+  font-weight: bolder;
+}
+
+.card-img-top {
+  width: 450px;
+  height: 301px;
+}
+
+.tourist-cards {
+  margin-top: 10px;
+  margin-left: 80px;
+  margin-right: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px; */
+}
+
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 100px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(245, 163, 32)
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: #272626;
+  height: 150px;
+  width: 100%;
   padding: 20px;
-  color: white;
+  color: rgb(245, 163, 32);
   text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-size: 2.8em;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding-top: 51px;
+  font-family: 'Monomaniac One', sans-serif;
 }
 
-.App-title {
-  font-size: 1.5em;
+
+
+.App-header h1{
+  font-size: 3.3rem;
 }
+
+/* .App-title {
+  font-size: 1.5em;
+} */
 
 .App-content {
   padding-top: 20px;
   font-size: large;
 }
 
+.order-type {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 100px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row-nonHighlight {
+  background-color: rgb(241, 239, 237);
+}
+
+.row-highlight {
+  background-color: rgb(245, 163, 32);
+}
+
+.order-head {
+  display: flex;
+  justify-content: center;
+}
+
+.customer-profile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #4c4949;
+  color: snow;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .search {
   padding: 5px 0 20px 0;
 }
@@ -53,5 +139,5 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 28.2rem;
 }
