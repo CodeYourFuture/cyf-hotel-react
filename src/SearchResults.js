@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-import  CustomerProfile  from "./CustomerProfile";
+import CustomerProfile from "./CustomerProfile";
 
 const getNumbersOfNights = (checkInDate, checkOutDate) => {
   const date1 = moment(checkInDate);
@@ -10,19 +10,29 @@ const getNumbersOfNights = (checkInDate, checkOutDate) => {
 
 const Row = (props) => {
   const {
-    id, title, firstName, surname, email, roomId, checkInDate, checkOutDate, setProfile,} = props;
+    id,
+    title,
+    firstName,
+    surname,
+    email,
+    roomId,
+    checkInDate,
+    checkOutDate,
+    setProfile,
+  } = props;
 
   const night = getNumbersOfNights(checkInDate, checkOutDate);
 
   const [rowSelect, setRowSelect] = useState(false);
+  // TODO: we don't need two states to represent showing the profile or not.
   const [showProfile, setShowProfile] = useState(false);
 
   const handleClick = () => setRowSelect(!rowSelect);
 
   const handleProfile = () => {
-      setProfile(id)
-      setShowProfile(!showProfile)
-  }
+    showProfile ? setProfile("") : setProfile(id);
+    setShowProfile(!showProfile);
+  };
 
   return (
     <tr
@@ -39,11 +49,8 @@ const Row = (props) => {
       <th>{checkOutDate}</th>
       <th>{night}</th>
       <th>
-        <button
-          onClick={handleProfile}
-          className={"btn btn-primary"}
-        >
-          Show profile
+        <button onClick={handleProfile} className={"btn btn-primary"}>
+          {showProfile ? "Hide profile" : "Show profile"}
         </button>
       </th>
     </tr>
@@ -51,7 +58,7 @@ const Row = (props) => {
 };
 const Table = (props) => {
   const { data } = props;
-  const [profile ,setProfile ] = useState("")
+  const [profile, setProfile] = useState("");
   return (
     <div>
       <CustomerProfile id={profile} />
@@ -85,8 +92,7 @@ const Table = (props) => {
                 checkOutDate={column.checkOutDate}
                 setProfile={setProfile}
               />
-              );
-            
+            );
           })}
         </tbody>
       </table>

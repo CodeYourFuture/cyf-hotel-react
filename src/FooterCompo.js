@@ -2,7 +2,7 @@ import React from "react";
 
 const FooterCompo = ({ details }) => {
   return (
-    <div>
+    <div className="footer">
       <footer>
         <ul>
           {Object.keys(details).map((key) => {
