@@ -61,6 +61,14 @@ tr {
   padding-top: 15px;
 }
 
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .footer {
   padding: 2rem;
   color: white;
