@@ -80,3 +80,10 @@ tr {
 .selectRow {
   background: red;
 } */
+.profile-flex {
+  display:flex;
+  justify-content: space-around;
+}
+.profile-title {
+ text-align: center;
+}

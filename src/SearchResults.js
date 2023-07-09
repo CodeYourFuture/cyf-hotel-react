@@ -19,7 +19,7 @@ const SearchResults = (props) => {
           })}
         </tbody>
       </table>
-      <CustomerProfile id={customerId} />
+      {customerId && <CustomerProfile id={customerId} />}
     </div>
   );
 };

@@ -5,6 +5,7 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [loadingData, setLoadingData] = useState(false);
   const search = (searchVal) => {
     const filteredBooking = bookings.filter(
       (booking) =>
@@ -17,18 +18,25 @@ const Bookings = () => {
   };
   useEffect(() => {
     // console.log("sdasdahgj");
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://cyf-react.glitch.me/delayed`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setBookings(data);
+        setLoadingData(true);
       });
   }, []);
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {loadingData ? (
+          <SearchResults results={bookings} />
+        ) : (
+          <h1 className="loading-data-message">
+            Please wait, the data is loading...
+          </h1>
+        )}
       </div>
     </div>
   );

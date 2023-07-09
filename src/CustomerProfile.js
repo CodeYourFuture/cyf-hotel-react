@@ -11,6 +11,15 @@ const CustomerProfile = (props) => {
         setCustomerProfile(data);
       });
   }, [props.id]);
-  return <p>Customer {customerProfile.id} Profile</p>;
+  return (
+    <div>
+      <p className="profile-title">Customer {customerProfile.id} Profile</p>
+      <div className="profile-flex">
+        <p>E-mail: {customerProfile.email}</p>
+        <p>Telephone number: {customerProfile.phoneNumber}</p>
+        <p>{customerProfile.vip ? "VIP" : null}</p>
+      </div>
+    </div>
+  );
 };
 export default CustomerProfile;
