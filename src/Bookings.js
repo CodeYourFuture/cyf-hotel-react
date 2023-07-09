@@ -5,7 +5,8 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [loadingData, setLoadingData] = useState(false);
+  const [isPending, setIsPending] = useState(false);
+  const [error, setError] = useState(null);
   const search = (searchVal) => {
     const filteredBooking = bookings.filter(
       (booking) =>
@@ -17,20 +18,34 @@ const Bookings = () => {
     // console.info("TO DO!", searchVal);
   };
   useEffect(() => {
-    // console.log("sdasdahgj");
-    fetch(`https://cyf-react.glitch.me/delayed`)
-      .then((res) => res.json())
+    fetch(`https://cyf-react.glitch.me/error`)
+      .then((res) => {
+        if (!res.ok) {
+          throw Error(
+            `Could not fetch the data for that resource. Error status: ${res.status}`
+          );
+        }
+        return res.json();
+      })
+
       .then((data) => {
         console.log(data);
         setBookings(data);
-        setLoadingData(true);
+        setIsPending(true);
+        setError(null);
+      })
+      .catch((err) => {
+        setIsPending(false);
+        setError(err.message);
       });
   }, []);
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {loadingData ? (
+        {error ? (
+          <div>{error}</div>
+        ) : isPending ? (
           <SearchResults results={bookings} />
         ) : (
           <h1 className="loading-data-message">
