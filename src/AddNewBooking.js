@@ -13,26 +13,69 @@ function AddNewBooking (props) {
         checkOutDate: "",
       }
     );
-      
+      const [validationErrors, setValidationErrors] = useState({});
+
     function handleChange(event) {
     const updatedUserData = {
         ...newBooking,
         [event.target.name]: event.target.value,
       };
+      setValidationErrors(validate(updatedUserData))
       setNewBooking(updatedUserData);
+    }
+
+    const validate = (values) => {
+      const errors = {}
+      const regex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+      let date = new Date().toJSON().slice(0, 10);
+      
+      if (!values.title) {
+        errors.title = "Title is required";
+      }
+      if (!values.firstName) {
+        errors.firstName = "First Name is required";
+      }
+      if (!values.surname) {
+        errors.surname = "Surname is required";
+      }
+      if (!values.email) {
+        errors.email = "email is required";
+      } else if(!regex.test(values.email)){
+        errors.email = "INVALID email"
+      }
+      if (!values.roomId) {
+        errors.roomId = "Room Number is required";
+      }
+      if (!values.checkInDate) {
+        errors.checkInDate = "CheckIn Date is required";
+      } 
+      // else if(values.checkInDate < date) {
+      //   errors.checkInDate = "Date can't be in the past"
+      // }
+      if (!values.checkOutDate) {
+        errors.checkOutDate = "CheckOut Date is required";
+      } 
+      // else if (values.checkOutDate < date) {
+      //   errors.checkOutDate = "Date can't be in the past";
+      // }
+      return errors;
     }
 
     function submitForm(event) {
       event.preventDefault();
-      props.adding(newBooking);
-      
+      if(newBooking.title === ""){
+        alert("Fill in the Form!")
+      } else {
+         props.adding(newBooking);
+      }
+     
     }
     return (
       <div className="formDiv">
         <form onSubmit={submitForm}>
-          <label>
+          <label className="form-label">
             {" "}
-            Title
+            Title<br></br>
             <input
               type="text"
               name="title"
@@ -40,10 +83,11 @@ function AddNewBooking (props) {
               value={newBooking.title}
               onChange={handleChange}
             ></input>
+            <p className="errorMsg">{validationErrors.title}</p>
           </label>
           <label>
             {" "}
-            First Name
+            First Name<br></br>
             <input
               type="text"
               name="firstName"
@@ -51,10 +95,11 @@ function AddNewBooking (props) {
               value={newBooking["first name"]}
               onChange={handleChange}
             ></input>
+            <p className="errorMsg">{validationErrors.firstName}</p>
           </label>
           <label>
             {" "}
-            Surname
+            Surname<br></br>
             <input
               type="text"
               name="surname"
@@ -62,10 +107,11 @@ function AddNewBooking (props) {
               value={newBooking.surname}
               onChange={handleChange}
             ></input>
+            <p className="errorMsg">{validationErrors.surname}</p>
           </label>
-          <label>
+          <label className="form-label">
             {" "}
-            Email
+            Email<br></br>
             <input
               type="email"
               name="email"
@@ -73,10 +119,11 @@ function AddNewBooking (props) {
               value={newBooking.email}
               onChange={handleChange}
             ></input>
+            <p className="errorMsg">{validationErrors.email}</p>
           </label>
           <label>
             {" "}
-            Room Number
+            Room Number<br></br>
             <input
               type="number"
               name="roomId"
@@ -84,10 +131,11 @@ function AddNewBooking (props) {
               value={newBooking["roomId"]}
               onChange={handleChange}
             ></input>
+            <p className="errorMsg">{validationErrors.roomId}</p>
           </label>
           <label className="dates">
             {" "}
-            Check In Date
+            Check In Date<br></br>
             <input
               type="date"
               name="checkInDate"
@@ -95,20 +143,21 @@ function AddNewBooking (props) {
               value={newBooking["checkIinDate"]}
               onChange={handleChange}
             ></input>
+            <p className="errorMsg">{validationErrors.checkInDate}</p>
           </label>
           <label className="dates">
             {" "}
-            Check Out Date
+            Check Out Date<br></br>
             <input
               type="date"
-              name="check out date"
-              placeholder="checkOutDate"
+              name="checkOutDate"
               value={newBooking["checkOutDate"]}
               onChange={handleChange}
             ></input>
+            <p className="errorMsg">{validationErrors.checkOutDate}</p>
           </label>
         </form>
-        <button type="submit" onClick={submitForm}>
+        <button type="submit" onClick={submitForm} disabled={Object.keys(validationErrors).length === 0 ? false : true}>
           SUBMIT
         </button>
       </div>

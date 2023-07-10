@@ -85,17 +85,26 @@ h3 {
 .formDiv {
   display: flex;
   align-items: flex-end;
+  border: 5px dashed black;
+  margin: 10px;
+  padding: 20px 25px 20px 25px;
+  justify-content: center;
 }
 
 form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
 }
 
 .dates {
   grid-row-start: 3;
 }
 
-label {
-  margin-right: 1rem;
+.form-label {
+  margin-right: 10px;
+}
+
+.errorMsg {
+  color: red;
 }
