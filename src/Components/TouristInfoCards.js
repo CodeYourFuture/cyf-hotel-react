@@ -3,7 +3,7 @@ import React from "react";
 const TouristInfoCards = ({ image, title = 'hotel dami', text, link }) => {
   return (
 
-    <div className="card-container">
+    
 
       <div className="card">
         <img src={image} className="card-img-top" />
@@ -15,7 +15,7 @@ const TouristInfoCards = ({ image, title = 'hotel dami', text, link }) => {
           </a>
         </div>
       </div>
-    </div>
+    
   );
 };
 

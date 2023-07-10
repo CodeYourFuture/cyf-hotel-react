@@ -12,6 +12,8 @@ body{
 }
 
 .App-header {
+  display: flex;
+  justify-content: space-between;
   background-color: #222;
   height: 100px;
   padding: 20px;
@@ -28,6 +30,8 @@ body{
 .card-container{
   display: flex;
   justify-content: space-around;
+  align-items: stretch;
+  margin-top: 15px;
 }
 .App-content {
   padding-top: 20px;
