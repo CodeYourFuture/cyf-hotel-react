@@ -127,7 +127,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 #### 15. Highlight booking row when clicked
 
 **Instructions:** Within the `<SearchResults />` component or its child components, add an `onClick` handler to each row in the table (hint: on the `<tr>` element). When clicked, the row is "selected" and highlighted with a different colour. When clicked again, the row is unselected and the coloured highlighting is removed.
-
+. 
 **Hint:** Use a new state variable for each row to record if the row is selected or not, and use this value to set a class to the `className` prop of the row.
 
 **Test:** Verify that each row of your table can be highlighted (on and off) independently when being clicked.
@@ -178,7 +178,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 21. Display a customer profile - step 2
 
-**Instructions:** When a "Show profile" button is clicked in the table, fetch the corresponding customer profile from `https://cyf-react.glitch.me/customers/<ID>` in the `<CustomerProfile />` component. A customer profile should show the customer ID, their email, if they are VIP and their phone number in a list.
+**Instructions:** When a "Show profile" button is clicked in the table, fetch the corresponding customer profile from ` in the `<CustomerProfile />``https://cyf-react.glitch.me/customers/<ID> component. A customer profile should show the customer ID, their email, if they are VIP and their phone number in a list.
 
 **Hint:** You need to use `useEffect` and the correct dependency array. You'll need to fetch customers data from the API every time a "Show profile" button is clicked and render it accordingly.
 
