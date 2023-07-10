@@ -2,7 +2,7 @@ import React from "react";
 const Heading = () => {
    return (
        <header>
-          <img src="https://image.flaticon.com/icons/svg/139/139899.svg" alt ="Hotel Logo" />
+          <img src="https://img.icons8.com/?size=2x&id=LxAiYuueWkCM&format=png" alt ="Hotel Logo" />
        </header>
    );
 };

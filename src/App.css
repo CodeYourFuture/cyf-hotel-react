@@ -53,6 +53,43 @@
 .search {
   padding: 5px 0 20px 0;
 }
+.page-header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 250px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-button {
+  background-color: red;
+  color: blue;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover{
+  background-color: aqua;
+}
 
 table {
   width: 100%;
@@ -114,4 +151,8 @@ ul {
 .order-type {
   font-weight: bold;
   color:maroon;
+}
+.Customer-profile {
+  font-weight: bold;
+  color: green;
 }
