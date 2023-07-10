@@ -6,11 +6,11 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-
+  const [allData, setAllData] = useState([]);
   const search = (searchVal) => {
     console.log("value", searchVal);
-    if (searchVal !== 0) {
-      searchVal.toLowerCase();
+    if (searchVal !== "") {
+      searchVal = searchVal.toLowerCase();
       let filteredResults = bookings.filter((booking) => {
         return (
           booking.firstName.toLowerCase().includes(searchVal) ||
@@ -18,9 +18,10 @@ const Bookings = () => {
         );
       });
       setBookings(filteredResults);
+    } else {
+      // user entered empty search query.
+      setBookings(allData);
     }
-
-    console.log("results", filteredResults);
   };
   function doingFetch() {
     fetch("https://cyf-react.glitch.me")
@@ -28,14 +29,14 @@ const Bookings = () => {
         return response.json();
       })
       .then((data) => {
-        //console.log("data", data);
+        setAllData(data);
         setBookings(data);
       });
   }
 
   useEffect(() => {
     doingFetch();
-  }, []);
+  },[]);
 
   return (
     <div className="App-content">
