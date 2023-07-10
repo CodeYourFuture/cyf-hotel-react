@@ -10,7 +10,6 @@ function Order({orderType}) {
 
   return (
     <li>
-      <orderType />
       {orderType}: {Orders} <RestaurantButton handleClick={orderOne} />
     </li>
   );

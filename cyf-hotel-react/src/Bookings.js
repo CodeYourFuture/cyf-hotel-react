@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
-const Bookings = () => {
-  const search = searchVal => {
-    const [bookings, setBookings] = useState(FakeBookings)
+const Bookings = (props) => {
+  const [bookings, setBookings] = useState([]);
+  const search = (e) => {
+   setBookings(e.target.value); 
   };
+
+  useEffect(()=>{
+    // console.log("Bookings");
+    if (props.id){
+      fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
+      .then((res) => res.json())
+      .then((data) => setBookings(data)) 
+    }
+  }, [props.id])
+      
+
   return (
     <div className="App-content">
       <div className="container">
