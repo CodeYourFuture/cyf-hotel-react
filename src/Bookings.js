@@ -27,6 +27,7 @@ const Bookings = () => {
           });
           throw new Error(response);
         }
+
         const data = await response.json();
         setBookings(data);
         setData(data);
