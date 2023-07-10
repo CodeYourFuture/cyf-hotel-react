@@ -10,11 +10,17 @@ const SearchResults = (props) => {
   }
   return (
     <div>
-      <table class="table table-hover">
+      <table className="table table-hover">
         <TableHead />
         <tbody>
-          {props.results.map((result) => {
-            return <TableRow result={result} handleClick={handleIdClick} />;
+          {props.results.map((result, index) => {
+            return (
+              <TableRow
+                key={index}
+                result={result}
+                handleClick={handleIdClick}
+              />
+            );
             //return TableRow({props: result});
           })}
         </tbody>

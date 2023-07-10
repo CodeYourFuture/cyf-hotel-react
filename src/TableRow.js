@@ -18,7 +18,11 @@ const TableRow = (props) => {
       <td>{result.checkInDate}</td>
       <td>{result.checkOutDate}</td>
       <td>{moment(result.checkOutDate).diff(result.checkInDate, "days")}</td>
-      <button onClick={() => props.handleClick(result.id)}>Show Profile</button>
+      <td>
+        <button onClick={() => props.handleClick(result.id)}>
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 };
