@@ -41,14 +41,14 @@
   font-size: large;
 }
 
-/* @keyframes App-logo-spin {
+@keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-} */
+}
 .search {
   padding: 5px 0 20px 0;
 }
@@ -61,7 +61,7 @@ tr {
   padding-top: 15px;
 }
 
-.list {
+.list-group {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -114,6 +114,7 @@ tr {
   justify-content: center;
   align-items: center;
 }
+
 .loader {
   display: flex;
   justify-content: center;

@@ -11,6 +11,7 @@ const Search = (props) => {
     event.preventDefault();
     props.search(searchInput);
   };
+
   return (
     <div className="search">
       <div className="page-header">
