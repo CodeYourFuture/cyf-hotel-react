@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "../src/components/SearchResults.js";
-import CustomerProfile from "./CustomerProfile.js"
+import CustomerProfile from "./CustomerProfile.js";
 // import SearchResults from "./SearchResults.js";
 // import FakeBookings from "./data/fakeBookings.json";
 
@@ -11,27 +11,25 @@ const Bookings = () => {
   const [reset, setReset] = useState([]);
 
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me`)
+    fetch(`https://cyf-react.glitch.me/delayed`)
       .then((res) => res.json())
       .then((data) => {
         setBookings(data);
         setReset(data);
       });
-  }, []);
+  }, [])
+
+  if (bookings == false) {
+   return <div className="loading-message"><p>Loading booking, Please wait.....</p></div>
+  };
 
   const search = (searchVal) => {
-    // console.log(bookings[0].firstName);
+   
     const filterSearch = bookings.filter(function (bookings) {
       return bookings.firstName == searchVal || bookings.surname == searchVal;
-
-      //   console.log(bookings.firstName)
-      // console.log(filterSearch)
-      // return setBookings(filterSearch);
     });
 
     setBookings(filterSearch);
-    // console.log("this worked");
-    // console.info("TO DO!", searchVal);
   };
 
   const resetHandler = () => {
@@ -48,7 +46,7 @@ const Bookings = () => {
         {/* <SearchResults results={FakeBookings} /> */}
         <SearchResults results={bookings} />
         <button onClick={resetHandler}> Reset</button>
-        <CustomerProfile results={bookings.id} />
+        {/* <CustomerProfile results={bookings.id} /> */}
       </div>
     </div>
   );

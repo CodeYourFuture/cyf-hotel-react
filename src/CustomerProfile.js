@@ -24,10 +24,13 @@ const CustomerProfile = ({id}) => {
 //   const { results } = props;
 
   return profile ? (
-    <div>
-      <p>Customer ID:{profile.id}</p>
-      <p>Customer Name:{profile.firstName} {profile.surname}</p>
-      <p>Customer E-mail:{profile.email}</p>
+    <div className="extra-info">
+      <p>Customer ID: {profile.id}</p>
+      <p>Name: {profile.firstName} {profile.surname}
+      </p>
+      <p>E-mail: {profile.email}</p>
+      {profile.vip ? <p>VIP</p> : "Not VIP"}
+      <p>Mobile: {profile.phoneNumber}</p> 
     </div>
   ) : (
     id && <p>loading profile....</p>
