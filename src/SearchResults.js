@@ -51,7 +51,7 @@ const handleCostumerPrf=(costumerId)=>{
                     <td>{checkOutDate.format("YYYY-MM-DD")}</td>
                     <td>{nights}</td>
                     <td><button type="button" className="btn btn-secondary btn-sm" onClick={() => handleCostumerPrf(id)} >
-                    Show Profilee</button>
+                    Show Profile</button>
                     </td>
                     </tr>
                 );

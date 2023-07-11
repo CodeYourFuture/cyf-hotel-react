@@ -8,16 +8,24 @@ const Bookings = () => {
   const [bookings,setBookings]=useState([]);
   const [filteredBookings,setFilteredBookings]=useState([]);
   const [contentLoading,setContentLoading]=useState(true);
+
   useEffect(() => {
     console.log("Welcome");
-
-    fetch("https://cyf-react.glitch.me/delayed")
-        .then(response => response.json())
+    fetch("https://cyf-react.glitch.me/error")
+        .then(response =>{
+          if (!response.ok){
+            throw new Error ("Error fetching data")
+          }
+       response.json()
+        })
         .then(data => {
           setBookings(data)
           setFilteredBookings(data)
-          setContentLoading(false)}) // once data is fetched the content is going to be displayed and p below is going to be removed 
-        .catch(error => console.error(error));
+          setContentLoading(false) // once data is fetched the content is going to be displayed and p below is going to be removed 
+          })
+        .catch(error => { 
+        console.error(error);
+        setContentLoading(false)});
   }, []);
 
 
