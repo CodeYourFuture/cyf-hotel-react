@@ -88,7 +88,8 @@
     color: aliceblue;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: 0.25rem
+    border-radius: 0.25rem;
+    margin: 10px;
 }
 
 /* .......SEARCH RESULTS..... */
@@ -132,3 +133,12 @@ td {
   padding: 10px;
 }
 
+.container{
+  display: flex;
+    margin: 20px;
+    padding: 20px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+   
+}
