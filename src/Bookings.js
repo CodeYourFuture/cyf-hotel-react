@@ -7,6 +7,8 @@ import FakeBookings from "./data/fakeBookings.json";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [allData, setAllData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   const search = (searchVal) => {
     console.log("value", searchVal);
     if (searchVal !== "") {
@@ -24,13 +26,14 @@ const Bookings = () => {
     }
   };
   function doingFetchForTable() {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://cyf-react.glitch.me/delayed")
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         setAllData(data);
         setBookings(data);
+        setIsLoading(false);
       });
   }
 
@@ -42,7 +45,11 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        {isLoading ? (
+          <p>Please wait while the information is loading...</p>
+        ) : (
+          <SearchResults results={bookings} />
+        )}
       </div>
     </div>
   );
