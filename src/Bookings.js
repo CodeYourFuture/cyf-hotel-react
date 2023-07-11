@@ -23,7 +23,7 @@ const Bookings = () => {
       setBookings(allData);
     }
   };
-  function doingFetch() {
+  function doingFetchForTable() {
     fetch("https://cyf-react.glitch.me")
       .then((response) => {
         return response.json();
@@ -35,8 +35,8 @@ const Bookings = () => {
   }
 
   useEffect(() => {
-    doingFetch();
-  },[]);
+    doingFetchForTable();
+  }, []);
 
   return (
     <div className="App-content">
