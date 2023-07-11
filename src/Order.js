@@ -4,10 +4,10 @@ import RestaurantButton from "./RestaurantButton";
 
 const Order = ({orderType})=>{
 
-const [orders,setOrders]=useState(0);
+const [order,setOrder]=useState(0);
 
 const orderOne =()=>{
-  setOrders(orders+1)
+  setOrder(order+1)
 };
     return(
         <li>

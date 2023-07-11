@@ -100,3 +100,7 @@ ul{
 .order li {
   margin: 0 10px;
 }
+
+.App-header{
+  display: flex;
+}
