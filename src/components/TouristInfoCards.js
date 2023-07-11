@@ -2,7 +2,7 @@ import React from "react";
 
 function TouristInfoCards() {
   return (
-    <div className="container">
+    <div data-testid="header-1" className="container">
       <article className="col1">
         <img
           src="https://www.ephotozine.com/resize/2018/25/xlrg/1616_1529882978.jpg?RTUdGk5cXyJFAQgJSEc4egtnfAYYGkVUGwBdOh80SxgRBAAhdSMKY1dhB2osTU0LIjUVDw=="
@@ -20,7 +20,7 @@ function TouristInfoCards() {
             shopping scene.The city is also rich in artists and creators which
           </p>
           <a href="https://peoplemakeglasgow.com/" className="btn btn-primary">
-            people make glasgow.com
+            visit glasgow.com
           </a>
           <br />
           <a href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F3e%2Fbf%2Fdf%2F3ebfdfee1cffa25785a6b15f2c2d3952.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.co.uk%2Fpin%2F489977634451969059%2F&tbnid=LaQ8_adnxmdxWM&vet=12ahUKEwiXgvemkf33AhUIdBoKHfzaBAAQMygDegUIARDIAQ..i&docid=TNxyVW7SG-BKuM&w=750&h=530&q=glasgow%20tourist%20map&ved=2ahUKEwiXgvemkf33AhUIdBoKHfzaBAAQMygDegUIARDIAQ">
@@ -36,7 +36,7 @@ function TouristInfoCards() {
           alt=""
           className="article-img-top"
         />
-        <div className="class-p2">
+        <div className="class-p1">
           <p>
             Greater
             <strong> Manchester</strong> where you can search for things to do
@@ -66,7 +66,7 @@ function TouristInfoCards() {
           alt=""
           className="article-img-top"
         />
-        <div className="class-p3">
+        <div className="class-p1">
           <p>
             visit London, . Find things <strong>to do in London</strong>, from
             iconic sightseeing spots and fun-filled days out top

@@ -6,10 +6,10 @@ import CustomerProfile from "./CoustomerProfile.js";
 
 function SearchResults(props) {
   const [highlight, setHighlight] = useState(" ");
+  const [highlight0, setHighlight0] = useState("");
   const [highlight1, setHighlight1] = useState("");
   const [highlight2, setHighlight2] = useState("");
   const [highlight3, setHighlight3] = useState("");
-  const [highlight0, setHighlight0] = useState("");
   const [highlight4, setHighlight4] = useState("");
   const [resultSearch, setResultSearch] = useState("");
 
@@ -19,10 +19,10 @@ function SearchResults(props) {
       <div className="input-profile">
         <div className="show-profile">
           {highlight !== undefined && <CustomerProfile id={highlight} />}
-          {highlight1 !== undefined && <CustomerProfile title={highlight1} />}
           {highlight2 !== undefined && <CustomerProfile first={highlight2} />}
           {highlight3 !== undefined && <CustomerProfile email={highlight3} />}
-          {highlight4 !== undefined && <CustomerProfile email={highlight4} />}
+          {highlight1 !== undefined && <CustomerProfile room={highlight1} />}
+          {highlight4 !== undefined && <CustomerProfile days={highlight4} />}
         </div>
         <div className="first1Button">
           <input
@@ -79,15 +79,15 @@ function SearchResults(props) {
                   <td>{result.roomId}</td>
                   <td>{result.checkInDate}</td>
                   <td>{result.checkOutDate}</td>
-                  <td>{<BookingGuest guest={result} />} Days</td>
+                  <td>{<BookingGuest guest={result} />}</td>
                   <td>
                     <button
                       key={index}
                       onClick={() =>
-                        setHighlight(result.id) ||
-                        setHighlight1(result.title) ||
-                        setHighlight2(result.firstName) ||
-                        setHighlight3(result.email) ||
+                        setHighlight("id, " + result.id) ||
+                        setHighlight1("room, " + result.roomId) ||
+                        setHighlight2("name, " + result.firstName) ||
+                        setHighlight3("email, " + result.email) ||
                         setHighlight4(<BookingGuest guest={result} />)
                       }
                       className="btn btn-primary"

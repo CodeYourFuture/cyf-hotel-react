@@ -82,51 +82,65 @@ body {
 
 /* container tourist card  compoenet styling  */
 .container {
+  perspective: 900px;
+  position: relative;
   width: 90%;
-  height: auto;
+  height: 80vh;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  margin: 30px auto;
+  margin: 20px auto;
   gap: 20px;
 }
 
 article {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 8px;
   position: relative;
   top: 80px;
   bottom: 170px;
   width: 400px;
+  height: auto;
   border-radius: 1rem;
-  background-color: rgba(245, 238, 220, 0.753);
+  background-color: whitesmoke;
 }
 
-.container p {
+.container article p {
   position: relative;
-  margin: 15px;
+  font-size: 0.9em;
   background-color: rgba(255, 127, 161, 0.082);
-  text-align: start;
-  overflow: hidden;
-}
-
-.container img {
-  width: 380px;
-  border-radius: 1rem;
-  height: 250px;
-  padding: 8px;
-  transition: 0.4s;
-}
-
-.container img:hover {
-  box-shadow: 0 12px 17px 0 #1f1602bd;
-  cursor: pointer;
-}
-
-.container a {
-  width: 220px;
   text-align: center;
 }
 
-/* booking component styling*/
+.container article img {
+  width: 380px;
+  height: 250px;
+  border-radius: 1rem;
+  transition: 0.4s;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 12px 17px 0 #1f1602bd;
+}
+
+.container article .class-p1 {
+  position: relative;
+  width: 340px;
+  text-align: center;
+}
+.col1 {
+  transform: rotateY(21deg);
+}
+.col2 {
+  transform: scale(0.9);
+}
+.col3 {
+  transform: rotateY(-21deg);
+}
+
+/* booking   component   styling     css*/
 .booking {
   width: 80%;
   height: 10%;
@@ -183,7 +197,7 @@ article {
   position: relative;
   margin: 0px auto;
   display: flex;
-  /*  component offers styling css*/
+  /*  component   offers    styling    css*/
 }
 
 .offers {
@@ -240,7 +254,7 @@ article {
   align-items: center;
 }
 
-/*   component about  styling css*/
+/*   component about    styling    css*/
 .about {
   background-color: hsl(230, 12%, 45%);
   width: 90%;
@@ -296,7 +310,7 @@ article {
   margin: 30px 0;
 }
 
-/*  component welcome styling css*/
+/*  component  welcome   styling    css*/
 .welcome {
   width: 49%;
   margin: 40px auto;
@@ -310,7 +324,7 @@ h2 {
   text-transform: uppercase;
 }
 
-/* slides     component styling  */
+/* slides     component css   styling  */
 .carousel {
   width: 400px;
   height: 300px;
@@ -332,8 +346,9 @@ h2 {
   opacity: 2;
 }
 
-/*  restaurant   component styling css*/
+/*  restaurant   component  styling     css*/
 .restaurant {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -342,11 +357,12 @@ h2 {
 }
 
 .restaurant h3 {
+  position: relative;
+  align-self: flex-end;
   font-size: 1.7em;
   width: 500px;
   height: 40px;
-  display: block;
-  margin: 0 auto;
+  margin: 0px 50px 40px 0px;
   color: #fff;
 }
 
@@ -355,7 +371,7 @@ h2 {
   height: 100vh;
 }
 
-/*  order component styling css*/
+/*  order component styling    css*/
 .btn-order {
   width: 100%;
   display: flex;
@@ -363,6 +379,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-around;
   position: relative;
+  /* background-color: whitesmoke; */
 }
 
 .btn-orders {
@@ -389,6 +406,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  /* background-color: green */
 }
 
 .form-order {
@@ -410,22 +428,23 @@ h2 {
 }
 
 .allHolders {
-  width: 50%;
+  width: 80%;
   height: 50vh;
   display: flex;
   margin: 0 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background-color: hsl(0, 0%, 0%);
+  /* background-color: hsl(0, 0%, 0%); */
 }
 
 .holder1 {
-  width: 70%;
+  width: 100%;
   background-color: rgba(91, 76, 76, 0.34);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-start;
   padding: 4px;
   justify-content: space-around;
@@ -525,49 +544,37 @@ h2 {
 
 /* component input searchResult css styling  */
 
-/* .inputResult {
+.inputResult {
   margin: 200px auto;
   display: flex;
   flex-direction: column;
-} */
+}
 
-/* .input-profile {
+.input-profile {
   display: flex;
-  width: 98%;
+  width: 90%;
   height: 80px;
   align-items: center;
   flex-direction: row-reverse;
   justify-content: space-evenly;
-  background-color: black;
-  margin: 0 auto;
-} */
-
-/* .first1Button input {
-  height: 60px;
-  border-radius: 1.1em;
-  margin: 10px;
-  padding: 5px;
-  background-color: beige;
+  background-color: rgb(29, 27, 27);
+  margin: 30px auto;
 }
 
-.search {
-  padding: 5px 0 20px 0;
-} */
+.first1Button input {
+  height: 50px;
+  border-radius: 0.7em;
+  margin: 4px;
+  padding: 5px;
+  outline: none;
+  background-color: beige;
+}
 
 tr {
   color: white;
 }
 
-/* .results {
-  padding-top: 15px;
-}
-
-.table {
-  background-color: black;
-  color: wheat;
-} */
-
-/*  component coustomer profile css styling   */
+/*  component customer profile css styling   */
 .profile {
   position: relative;
   top: 0;
@@ -598,6 +605,7 @@ tr {
   width: 100%;
   height: 50px;
   color: #fff;
+  display: block;
   text-align: center;
   background-color: black;
 }
@@ -702,7 +710,7 @@ tr {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    background-color: black;
+    background-image: linear-gradient(blue, purple);
   }
 
   .ham-burger {
@@ -780,6 +788,7 @@ tr {
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+    /* background-color: wheat; */
   }
 
   .btn-orders {
@@ -787,7 +796,7 @@ tr {
   }
 
   .holder-order {
-    background-color: green;
+    /* background-color: green; */
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -797,13 +806,6 @@ tr {
   }
 
   .allHolders {
-    width: 220px;
-    height: 300px;
-    position: relative;
-    align-self: flex-end;
-  }
-
-  .allHolders div {
     width: 250px;
   }
 
@@ -813,7 +815,7 @@ tr {
     width: 60%;
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
   }
   .holder {
     width: 100%;
@@ -821,7 +823,8 @@ tr {
   .span-order {
     position: relative;
     width: 100%;
-    background-color: black;
+    font-size: 0.7em;
+    /* background-color: black; */
   }
 
   .delivery-img {
@@ -834,23 +837,25 @@ tr {
   }
 
   .delivery-img .span-img {
-    width: 50%;
+    position: relative;
+    width: 200px;
     height: 300px;
-    height: auto;
     background-color: black;
-    margin: 10px auto;
+    margin: 30px auto;
   }
 
   .span-img img {
+    position: relative;
     width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 
   .span-img button {
-    width: 90%;
+    width: 50%;
   }
   .inputResult {
-    background-color: green;
+    /* background-color: green; */
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -865,11 +870,41 @@ tr {
   }
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 540px) {
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+    background-color: red;
+  }
+  .container article {
+    transform: none;
+    transform: scale(0.9);
+    position: relative;
+  }
+  .container article p {
+    font-size: 1.1em;
+  }
+  .input-profile {
+    width: 100%;
+  }
+  .input-profile input {
+    width: 100%;
+    font-size: 0.5em;
+  }
+  .show-profile {
+    height: 10px;
+    text-align: center;
+    font-size: 0.7em;
+  }
   .book-form {
     position: relative;
     width: 100%;
     height: 380px;
+    background-color: red;
   }
 
   .form-submit {
