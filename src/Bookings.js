@@ -5,16 +5,22 @@ import SearchResults from "./components/SearchResults.jsx";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me/delayed")
+    fetch("https://cyf-react.glitch.me/error")
       .then((res) => {
+        if (!res.ok) {
+          throw new Error("Error fetching bookings data");
+        }
         return res.json();
       })
       .then((data) => {
         setBookings(data);
-        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
       });
   }, []);
 
@@ -27,15 +33,16 @@ const Bookings = () => {
         );
       })
     );
-    //console.log(bookings) Why still diplay all rows?
   };
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {isLoading ? <p>Page is loading...</p> : null}
-        {<SearchResults results={bookings} />}
+        {error ? (
+          <p className="error-message">{error}</p>
+        ) : (<SearchResults results={bookings} />)}
+        
       </div>
     </div>
   );
