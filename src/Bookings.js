@@ -24,7 +24,7 @@ const Bookings = () => {
     }
   };
   function doingFetchForTable() {
-    fetch("https://cyf-react.glitch.me/error")
+    fetch("https://cyf-react.glitch.me")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error while data fetching(");
