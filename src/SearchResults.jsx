@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import CustomerProfile from "./CustomerProfile";
 
 const BookingRow = ({ booking }) => {
   const { id, title, firstName, surname, email, roomId, checkInDate, checkOutDate } = booking;
@@ -20,12 +21,20 @@ const rowClassName = selected ? "selected" : "";
       <td>{roomId}</td>
       <td>{checkInDate}</td>
       <td>{checkOutDate}</td>
+      <td><button onClick={() => handleShowProfile(id)}>Show Profile</button></td>
     </tr>
   );
 };
-
 const SearchResults = ({ results }) => {
+  const [selectedCustomerId, setSelectedCustomerId] = useState(null);
+
+  const handleShowProfile = (customerId) => {
+    setSelectedCustomerId(customerId);
+  };
+
+
   return (
+    <div>
     <table>
       <thead>
         <tr>
@@ -45,6 +54,8 @@ const SearchResults = ({ results }) => {
         ))}
       </tbody>
     </table>
+     <CustomerProfile id={selectedCustomerId} />
+     </div>
   );
 };
 
