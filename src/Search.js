@@ -5,7 +5,18 @@ import Header from "./Header";
 
 
 const Search = () => {
-  let searchInput = useState();
+  const [searchInput, setSearchInput] = useState("");
+
+  function handleSearchInput(event) {
+    const inputValue = event.target.value;
+    setSearchInput(inputValue);
+    console.log(inputValue);
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      search(searchInput);
+      };
+      
   return (
     <div>
     < Header/>
@@ -19,6 +30,7 @@ const Search = () => {
     </div>
     </div>
   );
+};
 };
 
 export default Search;
