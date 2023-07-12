@@ -18,7 +18,6 @@ const SearchResults = (props) => {
   }
   function handleClickOnShowProfile(id) {
     setSelectedId(id);
-    console.log("id", id);
   }
 
   return (

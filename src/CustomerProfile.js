@@ -14,7 +14,7 @@ const CustomerProfile = ({ id }) => {
       doFetchForCustomerProf();
     }
   }, [id]);
-  console.log(allCustomerData);
+  
   if (!allCustomerData) {
     return null;
   }
