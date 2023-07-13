@@ -1,77 +1,100 @@
-import React, { useState } from "react";
-import moment from "moment";
+import React, { useEffect, useState } from "react";
 
-const SearchResults = ({ results }) => {
-  const [selectedRows, setSelectedRows] = useState([]);
+const SearchResults = ({ bookings }) => {
+  const [selectedCustomerId, setSelectedCustomerId] = useState(null);
 
-  const toggleRowSelection = (id) => {
-    setSelectedRows((prevSelectedRows) => {
-      if (prevSelectedRows.includes(id)) {
-        return prevSelectedRows.filter((rowId) => rowId !== id);
-      } else {
-        return [...prevSelectedRows, id];
-      }
-    });
+  const handleShowProfile = (customerId) => {
+    setSelectedCustomerId(customerId);
   };
 
   return (
-    <table className="table table-striped">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Title</th>
-          <th>First Name</th>
-          <th>Surname</th>
-          <th>Email</th>
-          <th>Room ID</th>
-          <th>Check-in Date</th>
-          <th>Check-out Date</th>
-          <th>Nights</th>
-        </tr>
-      </thead>
-      <tbody>
-        {results.map((booking) => {
-          const {
-            id,
-            title,
-            firstName,
-            surname,
-            email,
-            roomId,
-            checkInDate,
-            checkOutDate,
-          } = booking;
-          const isSelected = selectedRows.includes(id);
-
-          return (
-            <tr
-              key={id}
-              className={isSelected ? "selected-row" : ""}
-              onClick={() => toggleRowSelection(id)}
-            >
-              <td>{id}</td>
-              <td>{title}</td>
-              <td>{firstName}</td>
-              <td>{surname}</td>
-              <td>{email}</td>
-              <td>{roomId}</td>
-              <td>{checkInDate}</td>
-              <td>{checkOutDate}</td>
-              <td>{calculateNights(checkInDate, checkOutDate)}</td>
+    <div>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Room ID</th>
+            <th>Check-in Date</th>
+            <th>Check-out Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {bookings.map((booking) => (
+            <tr key={booking.id}>
+              <td>{booking.title}</td>
+              <td>{booking.firstName}</td>
+              <td>{booking.surname}</td>
+              <td>{booking.email}</td>
+              <td>{booking.roomId}</td>
+              <td>{booking.checkInDate}</td>
+              <td>{booking.checkOutDate}</td>
+              <td>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => handleShowProfile(booking.id)}
+                >
+                  Show profile
+                </button>
+              </td>
             </tr>
-          );
-        })}
-      </tbody>
-    </table>
+          ))}
+        </tbody>
+      </table>
+      {selectedCustomerId && (
+        <CustomerProfile customerId={selectedCustomerId} />
+      )}
+    </div>
   );
 };
 
-const calculateNights = (checkInDate, checkOutDate) => {
-  const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
-  const startDate = new Date(checkInDate);
-  const endDate = new Date(checkOutDate);
-  const diffDays = Math.round(Math.abs((startDate - endDate) / oneDay));
-  return diffDays;
+const CustomerProfile = ({ customerId }) => {
+  const [customerData, setCustomerData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(`https://cyf-react.glitch.me/customers/${customerId}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch customer data");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setCustomerData(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
+  }, [customerId]);
+
+  return (
+    <div>
+      {isLoading ? (
+        <p>Loading customer profile...</p>
+      ) : (
+        <div>
+          <h2>Customer Profile</h2>
+          {customerData ? (
+            <ul>
+              <li>ID: {customerData.id}</li>
+              <li>Email: {customerData.email}</li>
+              <li>VIP: {customerData.vip ? "Yes" : "No"}</li>
+              <li>Phone: {customerData.phoneNumber}</li>
+            </ul>
+          ) : (
+            <p>Unable to fetch customer profile.</p>
+          )}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default SearchResults;
