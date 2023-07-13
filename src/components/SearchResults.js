@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = ({ results }) => {
+  const [selectedRows, setSelectedRows] = useState([]);
+
+  const toggleRowSelection = (id) => {
+    setSelectedRows((prevSelectedRows) => {
+      if (prevSelectedRows.includes(id)) {
+        return prevSelectedRows.filter((rowId) => rowId !== id);
+      } else {
+        return [...prevSelectedRows, id];
+      }
+    });
+  };
+
   return (
     <table className="table table-striped">
       <thead>
@@ -19,27 +31,47 @@ const SearchResults = ({ results }) => {
       </thead>
       <tbody>
         {results.map((booking) => {
-          const checkInDate = moment(booking.checkInDate);
-          const checkOutDate = moment(booking.checkOutDate);
-          const nights = checkOutDate.diff(checkInDate, "days");
+          const {
+            id,
+            title,
+            firstName,
+            surname,
+            email,
+            roomId,
+            checkInDate,
+            checkOutDate,
+          } = booking;
+          const isSelected = selectedRows.includes(id);
 
           return (
-            <tr key={booking.id}>
-              <td>{booking.id}</td>
-              <td>{booking.title}</td>
-              <td>{booking.firstName}</td>
-              <td>{booking.surname}</td>
-              <td>{booking.email}</td>
-              <td>{booking.roomId}</td>
-              <td>{booking.checkInDate}</td>
-              <td>{booking.checkOutDate}</td>
-              <td>{nights}</td>
+            <tr
+              key={id}
+              className={isSelected ? "selected-row" : ""}
+              onClick={() => toggleRowSelection(id)}
+            >
+              <td>{id}</td>
+              <td>{title}</td>
+              <td>{firstName}</td>
+              <td>{surname}</td>
+              <td>{email}</td>
+              <td>{roomId}</td>
+              <td>{checkInDate}</td>
+              <td>{checkOutDate}</td>
+              <td>{calculateNights(checkInDate, checkOutDate)}</td>
             </tr>
           );
         })}
       </tbody>
     </table>
   );
+};
+
+const calculateNights = (checkInDate, checkOutDate) => {
+  const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+  const startDate = new Date(checkInDate);
+  const endDate = new Date(checkOutDate);
+  const diffDays = Math.round(Math.abs((startDate - endDate) / oneDay));
+  return diffDays;
 };
 
 export default SearchResults;
