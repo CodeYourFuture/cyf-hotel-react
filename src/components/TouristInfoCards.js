@@ -12,7 +12,7 @@ const TouristInfoCards = () => {
           <div className="card-body">
             <h5 className="card-title">Glasgow</h5>
             <a href="https://peoplemakeglasgow.com" className="btn btn-primary">
-              Visit Glasgow
+              More Information
             </a>
           </div>
         </div>
@@ -25,7 +25,7 @@ const TouristInfoCards = () => {
           <div className="card-body">
             <h5 className="card-title">Manchester</h5>
             <a href="https://visitmanchester.com" className="btn btn-primary">
-              Visit Manchester
+              More Information
             </a>
           </div>
         </div>
@@ -38,7 +38,7 @@ const TouristInfoCards = () => {
           <div className="card-body">
             <h5 className="card-title">London</h5>
             <a href="https://visitlondon.com" className="btn btn-primary">
-              Visit London
+              More Information
             </a>
           </div>
         </div>
