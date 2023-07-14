@@ -1,6 +1,7 @@
 import Form from "react-bootstrap/Form";
-import Modules from "./component/Modules";
+//import Modules from "./component/Modules";
 import React from "react";
+import { Button } from "react-bootstrap";
 
 const BookingNight = () => {
   return (
@@ -37,8 +38,9 @@ const BookingNight = () => {
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
 
-        <Modules />
+        {/* <Modules /> */}
       </Form>
+      <Button className="button">close</Button>
     </div>
   );
 };

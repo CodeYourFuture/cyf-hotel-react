@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
+//import p from "react-bootstrap/p";
 import OrdData from "../data/orders.json";
 
 const Delivery = ({ prop }) => {
@@ -7,7 +7,7 @@ const Delivery = ({ prop }) => {
   const [buyCoffee, setBuyCoffee] = useState(false);
   const [buySoup, setBuySoup] = useState(false);
 
-  function deliveryButton() {
+  function delivery() {
     let clickBuy = OrdData.filter(by => {
       if (by.pizza.toLowerCase().includes(by.pizza)) {
         console.log(by.od1);
@@ -45,15 +45,15 @@ const Delivery = ({ prop }) => {
       {/* <div className="order-img"> */}
       <div className="span-img">
         <img src={prop.image} alt="img1" />
-        <Button onClick={deliveryButton}>{prop.pizza}</Button>
+        <p onClick={delivery}>{prop.pizza}</p>
       </div>
       <div className="span-img">
         <img src={prop.image2} alt="img1" />
-        <Button onClick={deliveryCoffee}>{prop.coffee}</Button>
+        <p onClick={deliveryCoffee}>{prop.coffee}</p>
       </div>
       <div className="span-img">
         <img src={prop.image3} alt="img1" />
-        <Button onClick={deliverySoup}>{prop.soup}</Button>
+        <p onClick={deliverySoup}>{prop.soup}</p>
       </div>
       {/* </div> */}
     </div>

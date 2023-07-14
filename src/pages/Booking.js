@@ -5,6 +5,7 @@ import Book from "../data/booking.json";
 import BookingNight from "../components/BookingNight";
 import Slides from "../components/Slides";
 import Footer from "../components/Footer";
+import CheckDate from "../components/CheckDate";
 
 const Booking = () => {
   const [changeButton, setChangeButton] = useState(false);
@@ -12,12 +13,12 @@ const Booking = () => {
   return (
     <div>
       <Heading />
+      <CheckDate />
       <div className="booking">
-        <Slides />
         <div className="book-choice">
-          {Book.map(opt => {
+          {Book.map((opt, i) => {
             return (
-              <div className="book-form">
+              <div className="book-form" key={i}>
                 <div className="form-select">
                   <h4>Choice From Menu</h4>
                   <Button onClick={() => setChangeButton(!changeButton)}>
@@ -30,14 +31,14 @@ const Booking = () => {
                     {opt.Month}
                   </Button>
                 </div>
-                <div className="booking-submit">
-                  {changeButton && <BookingNight />}
-                </div>
+                <div className="booking-submit"></div>
               </div>
             );
           })}
+          {changeButton && <BookingNight />}
         </div>
       </div>
+      <Slides />
       <Footer />
     </div>
   );

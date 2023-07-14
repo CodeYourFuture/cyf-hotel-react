@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import Popup from "reactjs-popup";
+import Delivery from "./Delivery";
 
-const DeleteOrder = holding => {
-  //  const [ holdSoup, setSoup] = useState('')
-  //  let order = holding !== '' ? null : holding
-  // setSoup(order)
-  return <div>{/* <h1>{holding}</h1> */}</div>;
-};
-
+const DeleteOrder = () => (
+  <Popup trigger={<button> Trigger</button>} position="right top">
+    <div>Popup content here !!</div>
+  </Popup>
+);
 export default DeleteOrder;
