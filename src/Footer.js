@@ -6,7 +6,7 @@ const Footer = () => {
     "123 Fake Street, London, E14UD",
     "hello@fakehotel.com",
     "0123 456789",
-    ];// contact info 
+];// contact info 
         return (
         <div className="the-contact">
         <ul>

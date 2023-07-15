@@ -1,6 +1,8 @@
+import { useState } from "react";
 import React from "react";
 import moment from "moment";
-// import { useState } from "react";
+
+
 
 const data = [
   {
@@ -14,6 +16,7 @@ const data = [
     stayNights: "",
   },
 ];
+
 function SearchResults({ bookingResults }) {
   const columnKey = [
     "id",
@@ -38,7 +41,7 @@ function SearchResults({ bookingResults }) {
       </thead>
       <tbody>
         {bookingResults.map((result, index) => (
-          <tr>
+          <tr onClick={''}>
             <th scope="row">{index + 1}</th>
             <td>{result.id}</td>
             <td>{result.title}</td>
@@ -48,7 +51,7 @@ function SearchResults({ bookingResults }) {
             <td>{result.roomId}</td>
             <td>{result.checkInDate}</td>
             <td>{result.checkOutDate}</td>
-            <tg>{result.stayNights}</tg>
+            <td>{result.stayNights}</td>
             <td>{moment(result.checkOutDate).diff(result.checkInDate, "days")}</td>
           </tr>
         ))}
