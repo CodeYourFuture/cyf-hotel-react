@@ -7,8 +7,8 @@ import CustomerProfile from "./CustomerProfile.js";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-
   const [reset, setReset] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch(`https://cyf-react.glitch.me/delayed`)
@@ -16,12 +16,17 @@ const Bookings = () => {
       .then((data) => {
         setBookings(data);
         setReset(data);
+        setError(true);
       });
   }, [])
 
   if (bookings == false) {
    return <div className="loading-message"><p>Loading booking, Please wait.....</p></div>
   };
+
+  if(bookings.error) {
+    return error && <p className="http-error">HTTP eror 500...</p>
+  }
 
   const search = (searchVal) => {
    

@@ -54,30 +54,6 @@
   padding: 5px;
   background-color: rgb(35, 38, 37);
   color: aliceblue;
-
-  
-}
-
-
-/* FOOTER...... */
-
-.address{
-  font-family: fantasy;
-  text-align: center;
-  height: 50px; 
-  padding: 8px;
-  margin: 10px;
-  list-style: none;
-  border-top: 2px solid blue; 
-}
-
-.span{
-    font-weight: bold;
-    color: orange;
-    padding: 8px;
-    margin: 10px;
-    border-bottom: 1px orange solid;
-   
 }
 
 /* ..........RESTAURANT........ */
@@ -141,4 +117,27 @@ td {
     flex-wrap: nowrap;
     align-items: center;
    
+}
+
+/* FOOTER...... */
+
+.address{
+  font-family: fantasy;
+  text-align: center;
+  height: 50px; 
+  padding: 10px;
+  margin: 10px;
+  list-style: none;
+  border-top: 1px solid rgb(49, 46, 42);; 
+  background-color: rgb(16, 14, 13);
+  color: orange;
+  height: auto;
+}
+
+.span{
+    font-weight: bold;
+    color: orange;
+    padding: 8px;
+    margin: 10px;
+    border-bottom: 1px orange solid;
 }
