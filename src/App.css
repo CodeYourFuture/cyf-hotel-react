@@ -1,57 +1,143 @@
-.App {
-  text-align: left;
+/* HEADER......... */
+
+/* .hotel-logo{
+    border-radius: 50%;
+    margin: 10px;
+    padding: 10px;
+    
+} */
+
+.App-header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color:  rgb(35, 38, 37);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.span{
+     color: rgb(15, 119, 216);
+    font-family: fantasy;
+    text-align: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+.span2{
+    color: orange;
+    font-family: fantasy;
+    text-align: center;
 }
 
-.App-title {
-  font-size: 1.5em;
+
+/* ......TOURIST INFO..... */
+
+.card-img-top {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 40%; 
+  height: 40%;
+  border-radius: 5px;
 }
 
-.App-content {
-  padding-top: 20px;
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.search {
-  padding: 5px 0 20px 0;
-}
-
-tr {
-  color: #5b5757;
-}
-
-.results {
-  padding-top: 15px;
-}
-
-.footer {
-  padding-top: 20px;
+.h3, .para {
   text-align: center;
+  padding: 10px;
+  margin: 10px;
 }
 
-.card {
-  width: 18rem;
+.Tourist-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgb(35, 38, 37);
+  color: aliceblue;
+}
+
+/* ..........RESTAURANT........ */
+
+/* Restaurant Button */
+.btn-zero{
+    background-color: coral;
+    color: aliceblue;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    margin: 10px;
+}
+
+/* .......SEARCH RESULTS..... */
+
+table,
+th,
+td {
+  border: 1px solid black;
+  font-family: fantasy;
+  text-align: center;
+  height: 50px; 
+  padding: 8px;
+  color: black;
+  
+}
+
+.row-highlight{
+  background-color: rgb(170, 170, 162);
+}
+
+.row-none-highlight{
+  background-color: white;
+}
+/* tr:hover {background-color: rgb(236, 149, 118);} */
+/* tr:hover {background-color: rgb(95, 184, 226);} */
+/* tr:nth-child(even) {background-color: #f2f2f2;} */
+
+.card{
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 0rem;
+  margin-bottom: 0rem;
+ background-color:rgb(35, 38, 37);
+
+}
+
+.loading-message{
+  margin: 10px;
+  padding: 10px;
+}
+
+.container{
+  display: flex;
+    margin: 20px;
+    padding: 20px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+   
+}
+
+/* FOOTER...... */
+
+.address{
+  font-family: fantasy;
+  text-align: center;
+  height: 50px; 
+  padding: 10px;
+  margin: 10px;
+  list-style: none;
+  border-top: 1px solid rgb(49, 46, 42);; 
+  background-color: rgb(16, 14, 13);
+  color: orange;
+  height: auto;
+}
+
+.span{
+    font-weight: bold;
+    color: orange;
+    padding: 8px;
+    margin: 10px;
+    border-bottom: 1px orange solid;
 }
