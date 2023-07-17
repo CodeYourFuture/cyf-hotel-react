@@ -4,9 +4,17 @@ import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = (props) => {
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState(fakeBookings);
+  // const [searchVal, setSearchVal] = useState([]);
+
   const search = (e) => {
+    const [bookings, setBookings] = useState([]);
    setBookings(e.target.value); 
+  /* const filteredSearchResults = Bookings.filter((booking) => {
+    booking.firstName.toLocaleLowerCase().includes(searchVal.toLocaleLowerCase()) || booking.lastName.toLocaleLowerCase().includes(searchVal.toLocaleLowerCase());
+  })
+  // setBookings(filteredSearchResults);
+  setSearchVal(searchVal);*/
   };
 
   useEffect(()=>{
@@ -17,7 +25,6 @@ const Bookings = (props) => {
       .then((data) => setBookings(data)) 
     }
   }, [props.id])
-      
 
   return (
     <div className="App-content">
@@ -47,10 +54,14 @@ const Bookings = (props) => {
   ]}
  /> */}
  
- <SearchResults bookings={FakeBookings} /> 
+ <SearchResults bookings={fakeBookings} /> 
       </div>
     </div>
   );
 };
 
 export default Bookings;
+
+
+
+

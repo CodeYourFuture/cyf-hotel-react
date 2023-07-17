@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  
 }
 
 .App-logo {
@@ -93,8 +94,23 @@ tr {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.restaurantOrder{
+  margin-left: 10rem;
+}
 .btn{
   background-color: #f1f1f1;
   color: black;
   border: 2px solid lightgray !important;
+}
+.add{
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color:grey;
+  color: white;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+.li{
+  margin-left: 9rem;
+  
 }

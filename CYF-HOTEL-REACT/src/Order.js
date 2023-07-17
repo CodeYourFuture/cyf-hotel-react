@@ -9,7 +9,8 @@ function Order({orderType}) {
   };
 
   return (
-    <li>
+    <li
+    className='li'>
       {orderType}: {Orders} <RestaurantButton handleClick={orderOne} />
     </li>
   );

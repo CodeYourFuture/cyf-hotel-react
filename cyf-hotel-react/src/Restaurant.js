@@ -5,7 +5,7 @@ const Restaurant = (props) => {
   
   return (
     <div>
-      <h3>Restaurant Orders</h3>
+      <h3 className="restaurantOrder">Restaurant Orders</h3>
       <ul>
       <Order orderType="Pizzas"/>
       <Order orderType="Salad"/>
