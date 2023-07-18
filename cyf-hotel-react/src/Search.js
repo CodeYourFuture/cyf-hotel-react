@@ -2,10 +2,16 @@ import React, { useState } from "react";
 import SearchButton from './SearchButton'; 
 
 const Search = ({search}) => {
-  const [searchInput, setSearchInput] = useState("");
+  const [searchIdsInput, setSearchIdsInput] = useState("");
+  const [searchNamesInput, setSearchNamesInput] = useState("");
 
-  const handleSearchInput = (event) => {
-    setSearchInput(event.target.value);
+  const handleSearchIdsInput = (event) => {
+    setSearchIdsInput(event.target.value);
+    // console.log(event.target.value);
+  };
+
+  const handleSearchNamesInput = (event) => {
+    setSearchNamesInput(event.target.value);
     // console.log(event.target.value);
   };
 
@@ -24,17 +30,30 @@ const Search = ({search}) => {
           <form className="form-group search-box"
           onSubmit={handleSubmit}
           >
-            <label htmlFor="customerName">Customer name</label>
+            <div className="label">
+            <label htmlFor="customerName">Customer ID</label>
+            <label className="customer-name" htmlFor="customerName">Customer name</label>
+            </div>
             <div className="search-row">
               <input
-                onChange={handleSearchInput}
-                value={searchInput}
+                onChange={handleSearchIdsInput}
+                value={searchIdsInput}
+                type="text"
+                id="customerId"
+                className="form-control"
+                placeholder="Customer id"
+              />  
+               <button className="search-btn btn-primary">Search IDs</button>           
+              <input
+                onChange={handleSearchNamesInput}
+                value={searchNamesInput}
                 type="text"
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
               />
-              <SearchButton />
+               <button className="search-btn btn-primary">Search Names</button>
+              {/* <SearchButton /> */}
             </div>
           </form>
         </div>
@@ -44,3 +63,5 @@ const Search = ({search}) => {
 };
 
 export default Search;
+
+

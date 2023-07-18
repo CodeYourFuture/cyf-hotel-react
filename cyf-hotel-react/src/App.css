@@ -9,7 +9,6 @@
 }
 
 .App-header {
-  /* background-color: #222; */
   height: 50px;
   padding: 20px;
   color: white;
@@ -42,16 +41,25 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.customer-name {
+    margin-left: 20rem;
 }
+
+.search-row{
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .search {
   padding: 5px 0 20px 0;
+}
+
+.search-btn{
+  padding: .25rem 1rem;
+  border-radius: 8px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;      
 }
 
 tr {
@@ -68,7 +76,6 @@ tr {
 }
 
 .cards {
-  /* width: 18rem; */
   height: auto;
   width: 60%;
   margin-left: 20%;
@@ -79,7 +86,6 @@ tr {
   flex-direction: column;
   align-items: center;
   border: .4rem solid green;
-  /* padding-bottom: 1rem; */
   margin-top: 1rem;
 }
 .card-img-top{
@@ -107,10 +113,16 @@ tr {
   border-radius: 10px;
   background-color:grey;
   color: white;
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-bottom: 1rem;
 }
 .li{
   margin-left: 9rem;
   
+}
+
+.footer-li{
+  list-style: none;
+  display: flex;
+  justify-content: center;
 }

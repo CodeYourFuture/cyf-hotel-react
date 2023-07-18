@@ -7,7 +7,7 @@ const Footer = (props) => {
           {
           // eslint-disable-next-line no-undef
           props.ContactInfo.map((item, index) =>(
-            <li key={index}>{item}</li>
+            <li className="footer-li" key={index}>{item}</li>
           ))}
       </ul>
     </footer>

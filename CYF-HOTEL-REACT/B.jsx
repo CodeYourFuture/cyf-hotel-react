@@ -1,67 +1,61 @@
-import React, { useEffect, useState } from "react";
+
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
-import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
+import InputFormForTable from "./Input-Form-For-Table.js"
 
-const Bookings = (props) => {
-  const [bookings, setBookings] = useState(fakeBookings);
-  // const [searchVal, setSearchVal] = useState([]);
 
-  const search = (e) => {
-    const [bookings, setBookings] = useState([]);
-   setBookings(e.target.value); 
-  /* const filteredSearchResults = Bookings.filter((booking) => {
-    booking.firstName.toLocaleLowerCase().includes(searchVal.toLocaleLowerCase()) || booking.lastName.toLocaleLowerCase().includes(searchVal.toLocaleLowerCase());
-  })
-  // setBookings(filteredSearchResults);
-  setSearchVal(searchVal);*/
+
+const Bookings = () => {
+  const [bookings, setBookings] = useState([])
+
+  function search(searchVal) {
+    if (searchVal !== 0) {
+
+    }
+    searchVal.toLowerCase()
+    const filteredBookings = bookings.filter(oneBooking => {
+      return oneBooking.firstName.toLowerCase().includes(searchVal) || oneBooking.surname.toLowerCase().includes(searchVal)
+    })
+    setBookings(filteredBookings)
+
+    console.info("TO DO!", filteredBookings);
   };
 
-  useEffect(()=>{
-    // console.log("Bookings");
-    if (props.id){
-      fetch(`https://cyf-react.glitch.me/customers/${props.id}`)
-      .then((res) => res.json())
-      .then((data) => setBookings(data)) 
-    }
-  }, [props.id])
 
+  function doingFetch() {
+    fetch("https://cyf-react.glitch.me")
+      .then((response) => {
+        if (!response.ok) {
+          console.log(response.status)
+          setBookings(response.status)
+          throw new Error(response.status)
+        } else {
+          return response.json()
+        }
+
+      })
+      .then((data) => {
+        data && setBookings(data)
+      })
+  }
+
+  console.log({ bookings })
+  useEffect(() => {
+    doingFetch()
+  }, []);// square brackets to load fetch only once
+
+  console.log({ bookings })
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {/* <SearchResults const bookings = {[
-    {
-      id: 1,
-      title: 'Mr',
-      firstName: 'John',
-      surname: 'Doe',
-      email: 'johndoe@example.com',
-      roomId: 101,
-      checkInDate: '2023-06-20',
-      checkOutDate: '2023-06-25'
-    },
-    {
-      id: 2,
-      title: 'Mrs',
-      firstName: 'Jane',
-      surname: 'Smith',
-      email: 'janesmith@example.com',
-      roomId: 202,
-      checkInDate: '2023-07-10',
-      checkOutDate: '2023-07-15'
-    },
-  ]}
- /> */}
- 
- <SearchResults bookings={fakeBookings} /> 
+        <InputFormForTable bookings={bookings} setBookings={setBookings} />
       </div>
-    </div>
+    </div >
   );
 };
 
+
+
+
 export default Bookings;
-
-
-
-

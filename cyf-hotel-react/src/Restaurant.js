@@ -16,3 +16,4 @@ const Restaurant = (props) => {
 };
 
 export default Restaurant;
+
