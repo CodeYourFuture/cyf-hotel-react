@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import LoadingWait from "./LoadingWait.js";
-import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   let [dataAvailable, setDataAvailable] = useState(false);
 
   useEffect(() => {
-    // fetch(`https://cyf-react.glitch.me`)
-    fetch(`https://cyf-react.glitch.me/delayed`)
+    fetch("https://malkit-hotel-server.glitch.me/bookings")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setBookings(data);
         setMasterBookings(data);
         setDataAvailable(true);
@@ -22,14 +21,13 @@ const Bookings = () => {
   let [masterBookings, setMasterBookings] = useState([]);
 
   const search = (searchVal) => {
-    let filteredBookings = masterBookings.filter((abooking) => {
-      console.log(abooking);
-      return (
-        abooking.firstName.includes(searchVal) ||
-        abooking.surname.includes(searchVal)
-      );
-    });
-    setBookings(filteredBookings);
+    fetch("https://malkit-hotel-server.glitch.me/bookings/search?term=" + searchVal)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        let filteredBookings = data;
+        setBookings(filteredBookings);
+      });
   };
 
   return (
