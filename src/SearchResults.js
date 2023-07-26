@@ -11,11 +11,7 @@ const SearchResults = (props) => {
     <div>
       <table className="table">
         <TableHeading />
-        <TableBody
-          bodyData={props.results}
-          customerProfileId={customerProfileId}
-          setCustomerProfileId={setCustomerProfileId}
-        />
+        <TableBody bodyData={props.results} customerProfileId={customerProfileId} setCustomerProfileId={setCustomerProfileId} setDeleteRow={props.setDeleteRow} />
       </table>
       <CustomerProfile customerProfileId={customerProfileId} />
     </div>

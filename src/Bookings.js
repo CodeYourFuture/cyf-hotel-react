@@ -2,41 +2,65 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import LoadingWait from "./LoadingWait.js";
-import FakeBookings from "./data/fakeBookings.json";
+import AddBooking from "./AddBooking.js";
 
 const Bookings = () => {
+  const [deleteRow, setDeleteRow] = useState(null);
   let [dataAvailable, setDataAvailable] = useState(false);
 
   useEffect(() => {
-    // fetch(`https://cyf-react.glitch.me`)
-    fetch(`https://cyf-react.glitch.me/delayed`)
+    fetch("https://malkit-hotel-server.glitch.me/bookings")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setBookings(data);
         setMasterBookings(data);
         setDataAvailable(true);
       });
   }, []);
 
+  useEffect(() => {
+    if (deleteRow)
+      fetch("https://malkit-hotel-server.glitch.me/bookings/" + deleteRow, { method: "DELETE" })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setBookings(data);
+          setMasterBookings(data);
+          setDataAvailable(true);
+        });
+  }, [deleteRow]);
+
   let [bookings, setBookings] = useState([]);
   let [masterBookings, setMasterBookings] = useState([]);
 
   const search = (searchVal) => {
-    let filteredBookings = masterBookings.filter((abooking) => {
-      console.log(abooking);
-      return (
-        abooking.firstName.includes(searchVal) ||
-        abooking.surname.includes(searchVal)
-      );
-    });
-    setBookings(filteredBookings);
+    if (!searchVal) {
+      console.log("no search Val");
+      fetch("https://malkit-hotel-server.glitch.me/bookings/")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          let filteredBookings = data;
+          setBookings(filteredBookings);
+        });
+    } else {
+      fetch("https://malkit-hotel-server.glitch.me/bookings/search?term=" + searchVal)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          let filteredBookings = data;
+          setBookings(filteredBookings);
+        });
+    }
   };
 
   return (
     <div className="App-content">
       <div className="container">
+        <AddBooking setBookings={setBookings} />
         <Search search={search} />
-        {dataAvailable ? <SearchResults results={bookings} /> : <LoadingWait />}
+        {dataAvailable ? <SearchResults results={bookings} setDeleteRow={setDeleteRow} /> : <LoadingWait />}
       </div>
     </div>
   );

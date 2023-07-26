@@ -17,6 +17,10 @@ const TableRow = (props) => {
     props.setCustomerProfileId(id);
   }
 
+  function handleDeleteClick(id) {
+    props.setDeleteRow(id);
+  }
+
   return (
     <tr
       className={highlightColor}
@@ -34,10 +38,7 @@ const TableRow = (props) => {
       <td> {props.aBooking.checkInDate} </td>
       <td> {props.aBooking.checkOutDate} </td>
       <td>
-        <NightsCount
-          checkInDate={props.aBooking.checkInDate}
-          checkOutDate={props.aBooking.checkOutDate}
-        />
+        <NightsCount checkInDate={props.aBooking.checkInDate} checkOutDate={props.aBooking.checkOutDate} />
       </td>
       <td>
         <button
@@ -47,6 +48,16 @@ const TableRow = (props) => {
           }}
         >
           Show profile
+        </button>
+      </td>
+      <td>
+        <button
+          className="btn-danger"
+          onClick={() => {
+            handleDeleteClick(props.aBooking.id);
+          }}
+        >
+          Delete Booking
         </button>
       </td>
     </tr>
