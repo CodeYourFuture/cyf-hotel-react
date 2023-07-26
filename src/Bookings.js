@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import LoadingWait from "./LoadingWait.js";
+import AddBooking from "./AddBooking.js";
 
 const Bookings = () => {
   const [deleteRow, setDeleteRow] = useState(null);
@@ -57,6 +58,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
+        <AddBooking setBookings={setBookings} />
         <Search search={search} />
         {dataAvailable ? <SearchResults results={bookings} setDeleteRow={setDeleteRow} /> : <LoadingWait />}
       </div>
