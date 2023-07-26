@@ -3,6 +3,7 @@ import React from "react";
 function TouristInfoCards() {
   return (
     <div data-testid="header-1" className="container">
+      <h2>Are you looking for Places to visit in uk, Find it here</h2>
       <article className="col1">
         <img
           src="https://www.ephotozine.com/resize/2018/25/xlrg/1616_1529882978.jpg?RTUdGk5cXyJFAQgJSEc4egtnfAYYGkVUGwBdOh80SxgRBAAhdSMKY1dhB2osTU0LIjUVDw=="
@@ -19,8 +20,8 @@ function TouristInfoCards() {
             creators which makes for a thriving and exciting independent
             shopping scene.The city is also rich in artists and creators which
           </p>
-          <a href="https://peoplemakeglasgow.com/" className="btn btn-primary">
-            visit glasgow.com
+          <a href="Booking" className="btn btn-primary">
+            Booking Now
           </a>
           <br />
           <a href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F3e%2Fbf%2Fdf%2F3ebfdfee1cffa25785a6b15f2c2d3952.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.co.uk%2Fpin%2F489977634451969059%2F&tbnid=LaQ8_adnxmdxWM&vet=12ahUKEwiXgvemkf33AhUIdBoKHfzaBAAQMygDegUIARDIAQ..i&docid=TNxyVW7SG-BKuM&w=750&h=530&q=glasgow%20tourist%20map&ved=2ahUKEwiXgvemkf33AhUIdBoKHfzaBAAQMygDegUIARDIAQ">
@@ -45,12 +46,10 @@ function TouristInfoCards() {
             Manchester city centre is jam- packed with unique and restaurants,
             bars,shops, museums,
           </p>
-          <a
-            href="https://www.visitmanchester.com/"
-            className="btn btn-primary"
-          >
-            visit manchester.com
+          <a href="Booking" className="btn btn-primary">
+            Booking Now
           </a>
+
           <br />
 
           <a href="https://www.google.com/search?q=manchester+map&oq=manchesster+map&aqs=chrome.1.69i57j0i13j46i13j0i13l3j46i13j0i13l3.16134j0j9&sourceid=chrome&ie=UTF-8#">
@@ -75,11 +74,10 @@ function TouristInfoCards() {
             this guide to the latest information
           </p>
 
-          <a href="https://www.visitlondon.com/" className="btn btn-primary">
-            visit london.com
+          <a href="Booking" className="btn btn-primary">
+            Booking Now
           </a>
           <br />
-
           <a href="https://www.google.com/search?q=london-map&oq=london-map&aqs=chrome..69i57j0i30l9.7233j0j7&sourceid=chrome&ie=UTF-8#">
             London-map
           </a>

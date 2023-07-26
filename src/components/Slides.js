@@ -6,20 +6,25 @@ import Img3 from "../images/hotel-london.jpg";
 
 function Slides() {
   return (
-    <Carousel className="carousel">
+    <Carousel className="carousel" fade>
       <Carousel.Item className="item">
-        <img className="d-block w-100" src={Img1} alt="First slide" />
+        <img src={Img1} alt="First slide" />
         <Carousel.Caption className="caption" />
+        lorem ipsum dolor sit amet, consectetur adip incididunt lorem ipsum
+        dolor sit amet, consectetur adip incididunt
+      </Carousel.Item>
+
+      <Carousel.Item className="item">
+        <img src={Img2} alt="Second slide" />
+        <Carousel.Caption className="caption" />
+        lorem ipsum dolor sit amet, consectetur adip incididunt lorem ipsum
+        dolor sit amet, consectetur adip incididunt
       </Carousel.Item>
       <Carousel.Item className="item">
-        <img className="d-block w-100" src={Img2} alt="Second slide" />
-
+        <img src={Img3} alt="Third slide" />
         <Carousel.Caption className="caption" />
-      </Carousel.Item>
-      <Carousel.Item className="item">
-        <img className="d-block w-100" src={Img3} alt="Third slide" />
-
-        <Carousel.Caption className="caption" />
+        lorem ipsum dolor sit amet, consectetur adip incididunt lorem ipsum
+        dolor sit amet, consectetur adip incididunt
       </Carousel.Item>
     </Carousel>
   );

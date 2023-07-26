@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  font-size: 20px;
+  line-height: 1.5;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(purple),
+    color-stop(blue),
+    color-stop(blue),
+    to(purple)
+  );
+  background-image: linear-gradient(purple, blue, blue, purple);
+}
+
+.main-nav {
+  width: 90%;
+  height: 7rem;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(blue),
+    to(purple)
+  );
+  background-image: linear-gradient(blue, purple);
+  border-bottom: 3px solid white;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+}
+
+.menu-links {
+  width: 50%;
+  text-align: end;
+}
+.menu-links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+.menu-links ul li {
+  font-size: 1.4rem;
+  list-style: none;
+}
+.menu-links ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+.menu-links ul li a:hover {
+  -webkit-transition: 0.9s;
+  transition: 0.9s;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+.span1,
+.span2,
+.span3 {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: black;
+}
+
+.span-4 {
+  width: 50px;
+  font-size: 0.4em;
+  font-weight: bolder;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.ham-burger {
+  visibility: hidden;
+}
+
+/* container tourist card  component styling  */
+.container {
+  -webkit-perspective: 900px;
+  perspective: 900px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 70px auto;
+}
+.container h2 {
+  position: absolute;
+  top: 0;
+  text-align: center;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 13px;
+  position: relative;
+  top: 80px;
+  bottom: 170px;
+  width: 400px;
+  height: auto;
+  border-radius: 1rem;
+  background-color: white;
+}
+
+.container article p {
+  position: relative;
+  font-size: 0.9em;
+  background-color: rgba(255, 127, 161, 0.082);
+  text-align: center;
+}
+
+.container article img {
+  width: 370px;
+  height: 250px;
+  border-radius: 1rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  text-align: center;
+  position: relative;
+  -webkit-box-shadow: 0 12px 17px 0 rgba(31, 22, 2, 0.7411764706);
+  box-shadow: 0 12px 17px 0 rgba(31, 22, 2, 0.7411764706);
+}
+
+.container article .class-p1 {
+  position: relative;
+  width: 340px;
+  text-align: center;
+}
+
+.col1 {
+  -webkit-transform: rotateY(21deg);
+  transform: rotateY(21deg);
+}
+
+.col2 {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.col3 {
+  -webkit-transform: rotateY(-21deg);
+  transform: rotateY(-21deg);
+}
+
+/*  component places to visit styling css*/
+.places {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: white;
+}
+.places p {
+  width: 230px;
+  font-size: 1em;
+}
+
+.glasgow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 290px;
+}
+
+.london {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 290px;
+}
+
+.manchester {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 290px;
+}
+
+.places img {
+  width: 320px;
+  height: 200px;
+}
+
+.p-a p {
+  width: 170px;
+  font-size: 0.6em;
+}
+
+.places .p-a {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}

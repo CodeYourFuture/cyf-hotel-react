@@ -6,6 +6,7 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "classnames": "^2.3.1",
+    "mdb-react-ui-kit": "^6.1.0",
     "moment": "^2.29.4",
     "react": "^16.8.6",
     "react-bootstrap": "^2.7.4",
@@ -14,7 +15,8 @@
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.10.0",
     "react-scripts": "^3.4.1",
-    "reactjs-popup": "^2.0.5"
+    "reactjs-popup": "^2.0.5",
+    "sass": "^1.63.6"
   },
   "scripts": {
     "start": "react-scripts start",

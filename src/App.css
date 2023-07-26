@@ -1,183 +1,22 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  width: 100%;
-  font-size: 20px;
-  line-height: 1.5;
-  background-image: linear-gradient(purple, blue, purple, blue, purple);
-}
-
-.about {
-  background-color: hsl(230, 12%, 45%);
-  color: #fff;
-}
-
-.main-nav {
-  width: 90%;
-  height: 7rem;
-  display: flex;
-  background-image: linear-gradient(blue, purple);
-  border-bottom: 3px solid white;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.logo {
-  color: #fff;
-}
-
-.menu-links {
-  width: 50%;
-  text-align: end;
-}
-
-.menu-links ul {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.menu-links ul li {
-  font-size: 1.4rem;
-  list-style: none;
-}
-
-.menu-links ul li a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.menu-links ul li a:hover {
-  transition: 0.6s;
-  text-decoration: underline;
-  text-decoration-color: yellowgreen;
-}
-
-.span1,
-.span2,
-.span3 {
-  width: 30px;
-  height: 40px;
-  text-transform: uppercase;
-  font-family: sans-serif;
-  font-weight: bolder;
-  text-shadow: lime;
-}
-
-.span-4 {
-  width: 50px;
-  font-size: 0.4em;
-  font-weight: bolder;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.ham-burger {
-  visibility: hidden;
-}
-
-/* container tourist card  compoenet styling  */
-.container {
-  perspective: 900px;
-  position: relative;
-  width: 90%;
-  height: 80vh;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto;
-  gap: 20px;
-}
-
-article {
-  display: grid;
-  grid-template-columns: 1fr;
-  place-items: center;
-  gap: 8px;
-  position: relative;
-  top: 80px;
-  bottom: 170px;
-  width: 400px;
-  height: auto;
-  border-radius: 1rem;
-  background-color: whitesmoke;
-}
-
-.container article p {
-  position: relative;
-  font-size: 0.9em;
-  background-color: rgba(255, 127, 161, 0.082);
-  text-align: center;
-}
-
-.container article img {
-  width: 380px;
-  height: 250px;
-  border-radius: 1rem;
-  transition: 0.4s;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 12px 17px 0 #1f1602bd;
-}
-
-.container article .class-p1 {
-  position: relative;
-  width: 340px;
-  text-align: center;
-}
-.col1 {
-  transform: rotateY(21deg);
-}
-.col2 {
-  transform: scale(0.9);
-}
-.col3 {
-  transform: rotateY(-21deg);
-}
-
 /* booking   component   styling     css*/
 .booking {
-  width: 80%;
+  width: 90%;
   height: 100%;
-  /* background: url(./images/wave.svg); */
-  background-color: whitesmoke;
-  background-repeat: no-repeat;
+  /* background-color: whitesmoke; */
   margin: 30px auto;
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.carousel {
+  align-items: flex-start;
   position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: black;
 }
-
-.item img {
-  width: 60vw;
-  height: 50vh;
-}
-*/
-
-/* .item {
-  z-index: 1;
-  width: 100%;
-  height: 40vh;
-  object-fit: cover;
-} */
 
 .book-choice {
   position: relative;
+  left: 0;
+  top: 2px;
   margin: 0 auto;
   font-size: 1.8em;
-  width: 100%;
+  width: 70%;
+  height: 40%;
   display: flex;
 }
 
@@ -201,25 +40,25 @@ article {
   position: relative;
   margin: 0px auto;
   display: flex;
-} /* component check date styling css  */
+}
+/* component check date styling css  */
 .check-date {
+  position: relative;
+  margin: 70px 0px 20px 0px;
   width: 100%;
-  height: 400px;
-  background-image: url("./images/hotel-glasgow.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  object-fit: cover;
 }
 .checked {
   width: 80%;
   height: 100px;
-  position: relative;
-  margin: 50px auto;
+  position: absolute;
+  left: 10%;
+  top: -50px;
+  border: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: wheat;
+  z-index: 2;
 }
 .check-in {
   height: 54px;
@@ -235,15 +74,23 @@ article {
   width: 120px;
   font-size: 0.7em;
 }
-.check-btn {
+.check-btn button {
   position: relative;
-  right: 0;
-  bottom: 0;
+  width: 160px;
+  height: 54px;
+  margin-left: 5px;
 }
 .check-room {
   position: relative;
   /* bottom: 0;
   right: 180px; */
+}
+.check-room section {
+  position: relative;
+  bottom: 12px;
+  left: 10px;
+  font-size: 0.9em;
+  width: 220px;
 }
 .check-in:hover,
 .check-out:hover,
@@ -300,10 +147,12 @@ article {
 /*  component   offers    styling    css*/
 
 .offers {
-  width: 90%;
-  height: 90vh;
+  position: relative;
+  width: 100%;
+  height: 100%;
   margin: 0px auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -330,40 +179,49 @@ article {
 
 .city {
   background-color: black;
-  width: 29%;
-  height: 500px;
+  position: relative;
+  width: 89%;
+  height: 300px;
   border-radius: 1em;
   text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 4px;
 }
 
 .offer-card {
-  width: 98%;
+  position: relative;
+  width: 100%;
   height: 60vh;
   margin: 10px auto;
   gap: 10px;
-  object-fit: cover;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-
+.city img {
+  width: 70%;
+  height: 100vh;
+  object-fit: cover;
+}
+.text {
+  width: 200px;
+}
 /*   component about    styling    css*/
 .about {
-  background-color: hsl(230, 12%, 45%);
-  width: 90%;
+  width: 100%;
   margin: 15px auto;
   height: 600px;
   display: flex;
-  justify-content: center;
-  border-top-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-
+  justify-content: space-evenly;
+  background-image: url("./images/backimage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   gap: 20px;
 }
 
@@ -372,7 +230,8 @@ article {
   flex-direction: column;
   justify-content: space-around;
   align-self: flex-start;
-  background-color: rgb(1, 13, 1);
+  box-shadow: 1px 2px 10px whitesmoke;
+  filter: blur(0.9px);
   color: whitesmoke;
   padding: 10px;
   position: relative;
@@ -385,13 +244,13 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: rgb(1, 13, 1);
+  box-shadow: 1px 2px 10px whitesmoke;
+  filter: blur(1px);
   color: whitesmoke;
   position: relative;
   width: 350px;
   height: 230px;
   margin: 30px 0;
-  align-self: center;
   padding: 10px;
 }
 
@@ -399,14 +258,17 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-self: flex-end;
-  background-color: rgb(1, 13, 1);
+  box-shadow: 1px 2px 10px whitesmoke;
+  filter: blur(0.9px);
   color: whitesmoke;
   padding: 10px;
   position: relative;
   width: 350px;
   height: 230px;
   margin: 30px 0;
+}
+.about button {
+  background: none;
 }
 
 /*  component  welcome   styling    css*/
@@ -425,18 +287,19 @@ h2 {
 
 /* slides     component css   styling  */
 .carousel {
-  width: 400px;
-  height: 300px;
-  margin: 30px 10px;
-  object-fit: cover;
-  border-radius: 1em;
+  position: relative;
+  height: 60vh;
+  background-color: red;
 }
-
-.carousel img {
-  width: 320px;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 1em;
+.carousel .item {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: calc(0.5);
 }
 
 .caption {
@@ -478,21 +341,20 @@ h2 {
   margin: 0px auto;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  /* background-color: whitesmoke; */
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .btn-order .btn-orders {
   position: relative;
-  width: 65%;
+  width: 60%;
   height: 55vh;
-  /* background-color: rgb(0, 0, 0); */
+  align-self: flex-start;
 }
 
 .holder {
   width: 30%;
-  /* background-color: black; */
+  align-self: flex-start;
 }
 
 .btn-order .orders {
@@ -558,7 +420,24 @@ h2 {
   width: 90%;
   margin: 10px auto;
 }
-
+/*    component order take away styling css */
+.takeAway {
+  position: relative;
+  width: 100%;
+  margin: 20px auto;
+}
+.takeAway img {
+  width: 100%;
+}
+.takeAway .describe {
+  position: absolute;
+  left: 18px;
+  bottom: 7%;
+}
+.describe section {
+  font-size: 1.6em;
+  font-weight: bolder;
+}
 /* component delivery styling  css*/
 .delivery-img {
   position: relative;
@@ -567,7 +446,6 @@ h2 {
   justify-content: space-around;
   width: 100%;
   height: 250px;
-  /* background-color: green; */
 }
 
 .order-img {
@@ -611,7 +489,7 @@ h2 {
 
 .form-submit {
   position: relative;
-  width: 500px;
+  width: 600px;
   height: 47vh;
   margin: 10px 30px 0px 47px;
   padding: 5px;
@@ -641,7 +519,7 @@ h2 {
 /* component input searchResult css styling  */
 
 .inputResult {
-  margin: 200px auto;
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
 }
@@ -719,7 +597,10 @@ tr {
   border-top: 3px solid white;
   background-image: linear-gradient(blue, purple);
 }
-
+.footer a {
+  color: whitesmoke;
+  text-decoration: none;
+}
 .footer {
   text-align: center;
   position: relative;
@@ -930,6 +811,7 @@ tr {
     flex-wrap: wrap;
     justify-content: space-around;
     overflow: hidden;
+    background-color: red;
   }
 
   .delivery-img .span-img {
@@ -943,6 +825,7 @@ tr {
   .span-img img {
     position: relative;
     width: 100%;
+    background-color: red;
     height: 100%;
     object-fit: cover;
   }

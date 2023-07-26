@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "reactjs-popup/dist/index.css";
 import "react-datepicker/dist/react-datepicker.css";
 import App from "./App";
+import "./index.scss";
 
 // import reportWebVitals from "./reportWebVitals";
 //const root = ReactDOM.createRoot(document.getElementById("root"));

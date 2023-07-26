@@ -11,9 +11,10 @@ const Booking = () => {
   const [changeButton, setChangeButton] = useState(false);
 
   return (
-    <div>
+    <>
       <Heading />
       <CheckDate />
+      <Slides />
       <div className="booking">
         <div className="book-choice">
           {Book.map((opt, i) => {
@@ -38,9 +39,8 @@ const Booking = () => {
           {changeButton && <BookingNight />}
         </div>
       </div>
-      <Slides />
       <Footer />
-    </div>
+    </>
   );
 };
 

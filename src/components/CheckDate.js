@@ -9,10 +9,13 @@ function CheckDate() {
   const [changeAdult, setChangeAdult] = useState(0);
   const [changeChild, setChangeChild] = useState(0);
   const [selectRoom, setSelectRoom] = useState(false);
+  const [hideRoom, setHideRoom] = useState(false);
+
   const [date, setDate] = useState(null);
   const [dateOut, setDateOut] = useState(null);
   const orderRoom = () => {
     setSelectRoom(false);
+    setHideRoom(true);
   };
   const showSelect = () => {
     setSelectRoom(true);
@@ -22,9 +25,10 @@ function CheckDate() {
     setDate("");
     setDateOut("");
     setChangeChild("");
-    setChangeRoom("");
     setChangeAdult("");
     setSelectRoom(false);
+    setChangeRoom(false);
+    setHideRoom(false);
   };
   const handleDecrementRoom = () => {
     if (changeRoom >= 1) {
@@ -107,8 +111,12 @@ function CheckDate() {
               onChange={setChangeButton}
               onClick={showSelect}
             >
-              <option>Select Room</option>
-              {changeRoom}Room-{changeAdult}Adult-{changeChild}Child
+              <h5>Select Room</h5>
+              {hideRoom && (
+                <section>
+                  {changeRoom}Room, {changeAdult}Adult, {changeChild}Child
+                </section>
+              )}
             </button>
           </div>
         </div>

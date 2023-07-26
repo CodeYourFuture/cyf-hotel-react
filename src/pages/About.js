@@ -9,17 +9,24 @@ const About = () => {
       <section className="about">
         <div className="who">
           <span>Who we are</span>
-          <p>lorem lorem ipsum dolor sit amet, consectetur adip</p>
+          <p>
+            Experience the best of your destination, with attractions, tours,
+            activities and more
+          </p>
           <Modal />
         </div>
         <div className="why">
           <span>What can offer</span>
-          <p> lorem ipsum dolor sit amet, consectetur adip lorem</p>
+          <p>Find the perfect holiday rental for your trip</p>
           <Modal />
         </div>
         <div className="what">
           <span>Why are we</span>
-          <p> lorem ipsum dolor sit amet, consectetur adip lorem</p>
+          <p>
+            {" "}
+            With instant and flexible booking options on holiday homes, villas,
+            apartments and more
+          </p>
           <Modal />
         </div>
       </section>

@@ -20,7 +20,7 @@ function Modules() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Contact us</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <h6>Contact details</h6>
@@ -32,7 +32,7 @@ function Modules() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
+          {/* <Button variant="primary">Understood</Button> */}
         </Modal.Footer>
       </Modal>
     </>
