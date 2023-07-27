@@ -46,20 +46,25 @@ const Bookings = () => {
     doingFetchForTable();
   }, []);
 
-  return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        {isLoading ? (
-          <p>Please wait while the information is loading...</p>
-        ) : errorMessage ? (
-          <p>{errorMessage}</p>
-        ) : (
+  const SearchContainer = () => {
+    if (isLoading) {
+      return <p>Please wait while the information is loading...</p>;
+    }
+
+    if (errorMessage) {
+      return <p>{errorMessage}</p>;
+    }
+
+    return (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
           <SearchResults results={bookings} />
-        )}
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
+  return <SearchContainer />;
 };
 
 export default Bookings;
