@@ -38,14 +38,22 @@ const CustomerProfile = ({ id }) => {
   }
 
   return (
-    <div>
-      <h2>{allCustomerData.id}</h2>
-      <p>{allCustomerData.title}</p>
-      <p>{allCustomerData.firstName}</p>
-      <p>{allCustomerData.surname}</p>
-      <p>{allCustomerData.email}</p>
+    <div className="customer-card">
+      <h2>Customer Profile Card</h2>
+      <p>
+        <b>Customer ID:</b> {allCustomerData.id}
+      </p>
+      <p>
+        <b>Customer Name:</b> {allCustomerData.title}{" "}
+        {allCustomerData.firstName} {allCustomerData.surname}
+      </p>
+      <p>
+        <b>Customer email:</b> {allCustomerData.email}
+      </p>
+      <p>
+        <b>Customer Phone Number:</b> {allCustomerData.phoneNumber}
+      </p>
       <p>{allCustomerData.vip ? "vip" : "not vip"}</p>
-      <p>{allCustomerData.phoneNumber}</p>
     </div>
   );
 };
