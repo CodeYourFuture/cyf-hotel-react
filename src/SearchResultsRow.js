@@ -16,7 +16,7 @@ const SearchResultsRow = (props) => {
     return b.diff(a, "days");
   };
 
-  console.log(props.booking);
+//   console.log(props.booking);
   return (
     <tr
       key={props.booking.id}
