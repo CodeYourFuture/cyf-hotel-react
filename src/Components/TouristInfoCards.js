@@ -1,9 +1,7 @@
 import React from "react";
 
-const TouristInfoCards = ({ image, title = 'hotel dami', text, link }) => {
+const TouristInfoCards = ({ image, title, text, link }) => {
   return (
-
-    
 
       <div className="card">
         <img src={image} className="card-img-top" />

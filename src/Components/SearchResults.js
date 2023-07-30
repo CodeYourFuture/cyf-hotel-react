@@ -1,4 +1,4 @@
-import react from "react";
+import React, { useState } from "react";
 import data from "../data/fakeBookings.json";
 import moment from "moment";
 
@@ -7,19 +7,26 @@ function calculateNumberOfNights(checkInDate, checkOutDate) {
   const b = moment(checkOutDate, "YYYY-MM-DD");
   return b.diff(a, "days");
 }
-function handleClick() {
-  console.log("handleclick");
-  let selected = document.getElementsByClassName("selected");
-  console.log(selected);
-}
 
 const SearchResults = () => {
-  console.log("data", data);
+  const [selected, setSelected] = useState(false);
+
+  function handleClick() {
+    console.log("selected", selected);
+    setSelected((current) => !current);
+    console.log("selected2", selected);
+
+    if (selected) {
+      document.getElementById("dami").style.color = "red";
+      console.log(document.getElementById("dami").style.color);
+      // .style.color = "red";
+    }
+  }
 
   return (
     <table className="table">
       <thead>
-        <tr className="selected" onClick={handleClick}>
+        <tr id="dami" onClick={handleClick}>
           <th scope="col">Title</th>
           <th scope="col">First name</th>
           <th scope="col">Surname</th>

@@ -9,8 +9,7 @@ function Order({ orderType }) {
   };
   return (
     <li>
-      {orderType}: {orders} <RestaurantButton orderOne={orderOne} />
-       
+      <h5>{orderType}:</h5> {orders} <RestaurantButton orderOne={orderOne} />
     </li>
   );
 };
