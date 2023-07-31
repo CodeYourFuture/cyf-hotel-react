@@ -10,23 +10,20 @@ function calculateNumberOfNights(checkInDate, checkOutDate) {
 
 const SearchResults = () => {
   const [selected, setSelected] = useState(false);
+  const [secondSelect, setSecondSelect] = useState(false)
 
-  function handleClick() {
-    console.log("selected", selected);
-    setSelected((current) => !current);
-    console.log("selected2", selected);
+  const handleClick = () => {
+    setSelected(!selected);
+  };
 
-    if (selected) {
-      document.getElementById("dami").style.color = "red";
-      console.log(document.getElementById("dami").style.color);
-      // .style.color = "red";
-    }
-  }
+ const handleSecondClick = () => {
+  setSecondSelect(!secondSelect);
+ };
 
   return (
     <table className="table">
       <thead>
-        <tr id="dami" onClick={handleClick}>
+        <tr className={selected ? "rowColor" : undefined} onClick={handleClick}>
           <th scope="col">Title</th>
           <th scope="col">First name</th>
           <th scope="col">Surname</th>
@@ -41,7 +38,10 @@ const SearchResults = () => {
       <tbody>
         {data.map((d) => {
           return (
-            <tr onClick={handleClick}>
+            <tr
+              className={secondSelect ? "rowColor" : undefined}
+              onClick={handleSecondClick}
+            >
               {/* <th scope="row">1</th> */}
               <td>{d.title}</td>
               <td>{d.firstName}</td>
