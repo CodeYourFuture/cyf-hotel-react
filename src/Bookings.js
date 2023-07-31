@@ -20,9 +20,9 @@ const Bookings = () => {
     console.info("TO DO!", filteredBookings);
   };
 
-
+  // get all data
   function doingFetch() {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://olha-danylevska-hotel-booking-server.onrender.com/bookings")
       .then((response) => {
         if (!response.ok) {
           console.log(response.status)
@@ -47,7 +47,7 @@ const Bookings = () => {
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
+        <Search search={search} setBookings={setBookings} />
         <InputFormForTable bookings={bookings} setBookings={setBookings} />
       </div>
     </div >

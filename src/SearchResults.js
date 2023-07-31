@@ -2,15 +2,38 @@ import moment from "moment"
 import { useState } from "react"
 import CustomerProfile from "./Customer-Profile"
 
-const SearchResults = ({ bookings, newCustomer }) => {
+const SearchResults = ({ bookings }) => {
 
     const [active, setActive] = useState(false)
     const [clientId, setClientId] = useState("")
     const [customerProf, setCuctomerProf] = useState("")
     const [isShown, setIsShown] = useState(false);
     const [rowClicked, setRowClicked] = useState("desc")
-    let handleProfileClick = (client) => {
+    const [user, setUser] = useState({})
 
+    function fetchingId(customerProf) {
+
+        //get single booking for profile
+        fetch(`https://olha-danylevska-hotel-booking-server.onrender.com/bookings/${customerProf}`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(response.status)
+                } else {
+                    return response.json()
+                }
+            })
+            .then((data) => {
+                if (data) {
+                    setUser(data[0])
+                    console.log(data[0])
+                }
+            })
+    }
+
+    //Profile
+
+    let handleProfileClick = (client) => {
+        fetchingId(customerProf)
         setCuctomerProf(client)
         setIsShown(!isShown)
     }
@@ -45,6 +68,20 @@ const SearchResults = ({ bookings, newCustomer }) => {
         }
     }
 
+    const handleDateSoting = (refCol) => {
+        if (rowClicked === "desc") {
+            bookings.sort((a, b) => {
+                return moment(a[refCol]).isBefore(b[refCol])
+            })
+            setRowClicked("asc")
+        }
+        if (rowClicked === "asc") {
+            bookings.sort((a, b) => {
+                return moment(b[refCol]).isBefore(a[refCol])
+            })
+            setRowClicked("desc")
+        }
+    }
 
     const handleSortingNumbers = (refCol) => {
         if (rowClicked === "desc") {
@@ -71,8 +108,8 @@ const SearchResults = ({ bookings, newCustomer }) => {
                         <th scope="col" onClick={() => (handleSorting("surname"))}>Surname</th>
                         <th scope="col" onClick={() => (handleSorting("email"))}>Email</th>
                         <th scope="col" onClick={() => (handleSortingNumbers("roomId"))}>Room ID</th>
-                        <th scope="col" onClick={() => (handleSortingNumbers("chekInDate"))}>Check In Date</th>
-                        <th scope="col" onClick={() => (handleSortingNumbers("checkOutDate"))}>Check Out Date</th>
+                        <th scope="col" onClick={() => (handleDateSoting("chekInDate"))}>Check In Date</th>
+                        <th scope="col" onClick={() => (handleDateSoting("checkOutDate"))}>Check Out Date</th>
                         <th scope="col" >Nights</th>
                         <th></th>
                     </tr>
@@ -83,9 +120,7 @@ const SearchResults = ({ bookings, newCustomer }) => {
                         bookings.map(client => {
                             let a = moment(client.checkOutDate)
                             let b = moment(client.checkInDate)
-
                             return (
-
                                 <tr key={client.id} onClick={() => { handleClick(client.id) }} className={active && clientId === client.id ? "pressed" : ""}>
                                     <th scope="row">{client.id}</th>
                                     <td>{client.title}</td>
@@ -103,7 +138,7 @@ const SearchResults = ({ bookings, newCustomer }) => {
                     }
                 </tbody>
             </table>
-            {isShown ? <CustomerProfile customerProf={customerProf} bookings={bookings} /> : null}
+            {isShown ? <CustomerProfile user={user} /> : null}
 
         </div>
     )

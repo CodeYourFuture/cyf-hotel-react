@@ -4,44 +4,61 @@ import SearchResults from "./SearchResults";
 
 
 const InputFormForTable = ({ bookings, setBookings }) => {
-    const [newCustomer, setNewCustomer] = useState({})
+    const [id, setId] = useState("")
+    const [title, setTitle] = useState("")
+    const [surname, setSurname] = useState("")
+    const [email, setEmail] = useState("")
+    const [firstName, setFirstName] = useState("")
+    const [roomId, setRoomId] = useState("")
+    const [checkInDate, setCheckInDate] = useState("")
+    const [checkOutDate, setCheckOutDate] = useState("")
 
+    function doingFetch() {
+        fetch("https://olha-danylevska-hotel-booking-server.onrender.com/bookings")
+            .then((response) => {
+                if (!response.ok) {
+                    console.log(response.status)
+                    setBookings(response.status)
+                    throw new Error(response.status)
+                } else {
+                    return response.json()
+                }
 
-    const handleIputs = (event) => {
-        const key = event.target.name;
-        const value = event.target.value;
-
-        setNewCustomer(values => ({
-            ...values,
-            [key]: value,
-        }));
+            })
+            .then((data) => {
+                data && setBookings(data)
+            })
     }
 
-    const handleSubmitForm = (event) => {
+    async function handleSubmitForm(event) {
         event.preventDefault()
-        setNewCustomer(newCustomer.id = bookings.length + 1)
-        setBookings([...bookings, newCustomer])
-    }
+        const newCustomer = {
+            id, title, firstName, surname, roomId, email, checkInDate, checkOutDate
+        }
 
+        let res = await fetch("https://olha-danylevska-hotel-booking-server.onrender.com/bookings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newCustomer)
+        })
+        let resJson = await res.json()
+        console.log(resJson)
+        doingFetch()
+    }
 
     return (
         <div>
             {
-                bookings.length > 0 ? (<SearchResults bookings={bookings} newCustomer={newCustomer} />)
+                bookings.length > 0 ? (<SearchResults bookings={bookings} />)
                     : bookings !== 500 ? (<span>Loading... </span>) : (<span className="error-message"> Error 500</span>)
             }
             <div className="holder-for-customer-form">
                 <h5>Add New Customer</h5>
                 <form className="form" onSubmit={handleSubmitForm}>
                     <div className="holder-for-inputs">
-                        <label htmlFor="id" >
-                            ID
-                            <input type="number" name="id" value={bookings.length + 1} onChange={handleIputs} className="id"></input>
-                        </label>
-
                         <label htmlFor="title">
                             Title
-                            <select type="text" id="title" name="title" value={newCustomer.title} onChange={handleIputs} className="title">
+                            <select type="text" id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} className="title">
                                 <option value="Mr">Mr</option>
                                 <option value="Mrs">Mrs</option>
                                 <option value="Miss">Mrs</option>
@@ -55,33 +72,26 @@ const InputFormForTable = ({ bookings, setBookings }) => {
 
                         <label htmlFor="firstName" >
                             First Name
-                            <input type="text" name="firstName" value={newCustomer.fname} onChange={handleIputs} required></input>
+                            <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)}></input>
                         </label>
 
                         <label htmlFor="surname" >
                             Surename
-                            <input type="text" name="surname" value={newCustomer.surname} onChange={handleIputs} required></input>
+                            <input type="text" name="surname" value={surname} onChange={(e) => setSurname(e.target.value)}></input>
                         </label>
 
                         <label htmlFor="email">
                             Email
-                            <input type="email" name="email" value={newCustomer.email} onChange={handleIputs} required></input>
+                            <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} ></input>
                         </label>
-
-                        <label htmlFor="roomId">
-                            Room ID
-                            <input type="number" name="roomId" value={newCustomer.roomId} onChange={handleIputs} className="roomID" required></input>
-                        </label>
-
                         <label htmlFor="checkinDate">
                             Check in Date
-                            <input type="date" name="checkInDate" value={newCustomer.checkInDate} onChange={handleIputs} required></input>
+                            <input type="date" name="checkInDate" value={checkInDate} onChange={(e) => setCheckInDate(e.target.value)}></input>
                         </label>
-
 
                         <label htmlFor="checkoutDate" >
                             Check out Date
-                            <input type="date" name="checkOutDate" value={newCustomer.checkOutDate} onChange={handleIputs} required></input>
+                            <input type="date" name="checkOutDate" value={checkOutDate} onChange={(e) => setCheckOutDate(e.target.value)}></input>
                         </label>
                     </div>
 
@@ -93,3 +103,22 @@ const InputFormForTable = ({ bookings, setBookings }) => {
 }
 
 export default InputFormForTable
+
+
+    // const handleIputs = (event) => {
+    //     const key = event.target.name;
+    //     const value = event.target.value;
+
+    //     setNewCustomer(values => ({
+    //         ...values,
+    //         [key]: value,
+    //     }));
+    // }
+
+
+
+    // const handleSubmitForm = (event) => {
+    //     event.preventDefault()
+    //     setNewCustomer(newCustomer.id = bookings.length + 1)
+    //     setBookings([...bookings, newCustomer])
+    // }

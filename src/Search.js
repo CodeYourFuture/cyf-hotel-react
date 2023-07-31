@@ -1,15 +1,45 @@
 import React, { useState } from "react";
 
-const Search = (props) => {
+const Search = ({ setBookings }) => {
   const [searchInput, setSearchInput] = useState("")
 
   function handleSearchInput(event) {
     setSearchInput(event.target.value)
+
   }
 
   function handleSabmit(e) {
     e.preventDefault()
-    props.search(searchInput)
+    if (searchInput !== "") {
+      fetch(`https://olha-danylevska-hotel-booking-server.onrender.com/bookings/search?term=${searchInput}`)
+        .then(response => {
+          if (!response.ok) {
+            console.log(response.status)
+            setBookings(response.status)
+            throw new Error(response.status)
+          } else {
+            return response.json()
+          }
+        })
+        .then(data => {
+          console.log({ data })
+          setBookings(data)
+        })
+    } else if (searchInput === "") {
+      fetch(`https://olha-danylevska-hotel-booking-server.onrender.com/bookings`)
+        .then(response => {
+          if (!response.ok) {
+            console.log(response.status)
+            setBookings(response.status)
+            throw new Error(response.status)
+          } else {
+            return response.json()
+          }
+        })
+        .then(data => {
+          setBookings(data)
+        })
+    }
   }
 
 
@@ -33,7 +63,7 @@ const Search = (props) => {
                 value={searchInput}
                 onChange={handleSearchInput}
               />
-              <button className="btn btn-primary" onClick={handleSabmit}>Search</button>
+              <button className="btn btn-primary">Search</button>
             </div>
           </form>
         </div>
