@@ -10,16 +10,18 @@ const Bookings = () => {
   let [bookings, setBookings] = useState([]);
   let [searchResults, setSearchResults] = useState(bookings);
   let [loading, setLoading] = useState(false);
+  let [updated, setUpdated] = useState(false)
 
     useEffect(() => {
     setLoading(true);
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://booking-server-98w3.onrender.com/bookings")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setBookings(data);
         setSearchResults(data);
         setLoading(false);
-      });}, []);
+      });}, [updated]);
     
   const search = (searchVal) => {
   console.info("TO DO!", searchVal);
@@ -37,10 +39,19 @@ const Bookings = () => {
      : setSearchResults(bookings);
  };
 
-  const addBooking = (newBooking) => {
-  console.log("Added", newBooking)
-  setSearchResults(searchResults.concat(newBooking))
+  const addBooking = () => {
+  console.log("Added")
+  setUpdated(!updated)
  };
+
+   const deleteRaw = () => {
+     setUpdated(!updated);
+   };
+
+  //  const updateBooking = (id) => {
+  //   let chosenBooking = props.results.find(booking => booking.id === id);
+  //     console.log(chosenBooking);
+  //  }
    
   return (
     <div className="App-content">
@@ -48,9 +59,9 @@ const Bookings = () => {
         <Search search={search} />
         <ErrorBoundary fallback={<div>Unable to load data, sorry....</div>}>
           {loading && "Loading......"}
-          {!loading && <SearchResults results={searchResults} />}
+          {!loading && <SearchResults results={searchResults} updates={deleteRaw}/>}
         </ErrorBoundary>
-        <AddNewBooking adding={addBooking}/>
+        <AddNewBooking adding={addBooking} />
       </div>
     </div>
   );

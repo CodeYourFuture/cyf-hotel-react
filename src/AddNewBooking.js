@@ -3,7 +3,7 @@ import { useState } from "react"
 function AddNewBooking (props) {
      const [newBooking, setNewBooking] = useState(
       {
-        id: 6,
+        
         title: "",
         firstName: "",
         surname: "",
@@ -13,6 +13,7 @@ function AddNewBooking (props) {
         checkOutDate: "",
       }
     );
+      props.chosenID ? setNewBooking(props.chosenID) : newBooking;
       const [validationErrors, setValidationErrors] = useState({});
 
     function handleChange(event) {
@@ -66,7 +67,18 @@ function AddNewBooking (props) {
       if(newBooking.title === ""){
         alert("Fill in the Form!")
       } else {
-         props.adding(newBooking);
+        //  props.adding();
+         fetch("https://booking-server-98w3.onrender.com/bookings", {
+           method: "POST", // or 'PUT'
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify(newBooking),
+         })
+           .then((response) => response.json())
+           .then((data) => {
+             console.log(data), props.adding();
+           });
       }
      
     }

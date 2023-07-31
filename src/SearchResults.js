@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 moment().format();
 import CustomerProfile from "./CustomerProfile";
+import AddNewBooking from "./AddNewBooking";
 
 
 const SearchResults = (props) => {
@@ -33,6 +34,27 @@ const SearchResults = (props) => {
     }
   }
   
+    function deleteBooking(id) {
+      fetch(`https://booking-server-98w3.onrender.com/bookings/${id}`, {
+        method: "DELETE", //
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then((data) => {console.log(data), props.updates()});
+    }
+
+    // function updateBooking(id){
+    //   let chosenBooking = props.results.find(booking => booking.id === id);
+    //   console.log(chosenBooking);      
+    // }
+
   return (
     <>
       <table className="table">
@@ -111,6 +133,16 @@ const SearchResults = (props) => {
                     <button onClick={() => setCustomerId(result.id)}>
                       Show profile
                     </button>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <button onClick={() => deleteBooking(result.id)}>
+                      Delete
+                    </button>
+                    {/* <button onClick={() => updateBooking(result.id)}>
+                      Update
+                    </button> */}
                   </div>
                 </td>
               </tr>
