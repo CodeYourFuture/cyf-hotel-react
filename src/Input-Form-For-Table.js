@@ -2,58 +2,57 @@ import { useState } from "react";
 import SearchResults from "./SearchResults";
 
 
-
 const InputFormForTable = ({ bookings, setBookings }) => {
-    const [id, setId] = useState("")
     const [title, setTitle] = useState("")
     const [surname, setSurname] = useState("")
     const [email, setEmail] = useState("")
     const [firstName, setFirstName] = useState("")
-    const [roomId, setRoomId] = useState("")
     const [checkInDate, setCheckInDate] = useState("")
     const [checkOutDate, setCheckOutDate] = useState("")
-
-    function doingFetch() {
-        fetch("https://olha-danylevska-hotel-booking-server.onrender.com/bookings")
-            .then((response) => {
-                if (!response.ok) {
-                    console.log(response.status)
-                    setBookings(response.status)
-                    throw new Error(response.status)
-                } else {
-                    return response.json()
-                }
-
-            })
-            .then((data) => {
-                data && setBookings(data)
-            })
-    }
+    const [errorMessage, setErrorMessage] = useState('')
 
     async function handleSubmitForm(event) {
         event.preventDefault()
         const newCustomer = {
-            id, title, firstName, surname, roomId, email, checkInDate, checkOutDate
+            title, firstName, surname, email, checkInDate, checkOutDate
         }
-
         let res = await fetch("https://olha-danylevska-hotel-booking-server.onrender.com/bookings", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newCustomer)
         })
-        let resJson = await res.json()
-        console.log(resJson)
-        doingFetch()
+
+        if (res.ok) {
+            let response = await res.json()
+            fetch("https://olha-danylevska-hotel-booking-server.onrender.com/bookings")
+                .then((response) => {
+                    if (!response.ok) {
+                        console.log(response.status)
+                        setBookings(response.status)
+                        throw new Error(response.status)
+                    } else {
+                        return response.json()
+                    }
+
+                })
+                .then((data) => {
+                    data && setBookings(data)
+                })
+            setErrorMessage("")
+        } else {
+            setErrorMessage("Please fill in missing areas")
+        }
     }
 
     return (
         <div>
             {
-                bookings.length > 0 ? (<SearchResults bookings={bookings} />)
+                bookings.length > 0 ? (<SearchResults bookings={bookings} setBookings={setBookings} />)
                     : bookings !== 500 ? (<span>Loading... </span>) : (<span className="error-message"> Error 500</span>)
             }
             <div className="holder-for-customer-form">
                 <h5>Add New Customer</h5>
+                {errorMessage !== "" && <p className="error-message"> {errorMessage} </p>}
                 <form className="form" onSubmit={handleSubmitForm}>
                     <div className="holder-for-inputs">
                         <label htmlFor="title">
@@ -61,7 +60,7 @@ const InputFormForTable = ({ bookings, setBookings }) => {
                             <select type="text" id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} className="title">
                                 <option value="Mr">Mr</option>
                                 <option value="Mrs">Mrs</option>
-                                <option value="Miss">Mrs</option>
+                                <option value="Miss">Miss</option>
                                 <option value="Madam">Madam</option>
                                 <option value="Doctor">Doctor</option>
                                 <option value="Dame">Dame</option>
@@ -97,8 +96,8 @@ const InputFormForTable = ({ bookings, setBookings }) => {
 
                     <input type="submit" className="form-submit"></input>
                 </form>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 

@@ -5,7 +5,6 @@ const Search = ({ setBookings }) => {
 
   function handleSearchInput(event) {
     setSearchInput(event.target.value)
-
   }
 
   function handleSabmit(e) {
@@ -63,7 +62,7 @@ const Search = ({ setBookings }) => {
                 value={searchInput}
                 onChange={handleSearchInput}
               />
-              <button className="btn btn-primary">Search</button>
+              <button className="btn btn-primary" onClick={handleSabmit}>Search</button>
             </div>
           </form>
         </div>

@@ -130,6 +130,7 @@ table tr {
 .pressed {
   background-color: #607042;
   color: white;
+  height: 2rem
 }
 
 .customer-card {
@@ -260,4 +261,21 @@ table tr {
   color: rgb(34, 34, 34);
   border-bottom: 1px solid rgb(35, 35, 35);
   padding-bottom: 1rem;
+}
+
+.error-message {
+  color: rgb(255, 255, 255);
+  background-color: rgb(134, 26, 26);
+  text-align: center;
+  border-radius: 1rem;
+  font-size: large;
+}
+
+.delete-profile {
+  border: 1px solid rgb(36, 36, 36);
+  background-color: #b69191;
+  color: rgb(56, 56, 56);
+  border-radius: 0.2rem;
+  margin-left: 1rem;
+
 }

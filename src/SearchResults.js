@@ -2,7 +2,7 @@ import moment from "moment"
 import { useState } from "react"
 import CustomerProfile from "./Customer-Profile"
 
-const SearchResults = ({ bookings }) => {
+const SearchResults = ({ bookings, setBookings }) => {
 
     const [active, setActive] = useState(false)
     const [clientId, setClientId] = useState("")
@@ -83,6 +83,16 @@ const SearchResults = ({ bookings }) => {
         }
     }
 
+    const handleDeleteButton = (id) => {
+        fetch(`https://olha-danylevska-hotel-booking-server.onrender.com/bookings/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => setBookings(data))
+            .catch(error => console.error(error));
+    }
+
+
     const handleSortingNumbers = (refCol) => {
         if (rowClicked === "desc") {
             bookings.sort((a, b) => {
@@ -131,7 +141,11 @@ const SearchResults = ({ bookings }) => {
                                     <td>{client.checkInDate}</td>
                                     <td>{client.checkOutDate}</td>
                                     <td>{a.diff(b, 'days')}</td>
-                                    <td><button onClick={(e) => { e.stopPropagation(); handleProfileClick(client.id) }} className="id-info">Show profile</button></td>
+                                    <td>
+                                        <button onClick={(e) => { e.stopPropagation(); handleProfileClick(client.id) }} className="id-info">Show profile</button>
+                                        <button className="delete-profile" onClick={() => { handleDeleteButton(client.id) }}>Delete</button>
+                                    </td>
+
                                 </tr>
                             )
                         })
