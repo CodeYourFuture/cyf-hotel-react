@@ -67,7 +67,7 @@ const SearchResults = ({ bookings, setBookings }) => {
             setRowClicked("desc")
         }
     }
-    //sorting colums with dates
+    //sorting columns with dates
     const handleDateSorting = (refCol) => {
         if (rowClicked === "desc") {
             bookings.sort((a, b) => {
@@ -93,7 +93,7 @@ const SearchResults = ({ bookings, setBookings }) => {
             .then(data => setBookings(data))
             .catch(error => console.error(error));
     }
-    // sorting colums with numbers
+    // sorting columns with numbers
     const handleSortingNumbers = (refCol) => {
         if (rowClicked === "desc") {
             bookings.sort((a, b) => {
