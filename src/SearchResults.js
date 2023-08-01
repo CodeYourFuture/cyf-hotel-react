@@ -67,21 +67,23 @@ const SearchResults = ({ bookings, setBookings }) => {
             setRowClicked("desc")
         }
     }
-
-    const handleDateSoting = (refCol) => {
+    //sorting colums with dates
+    const handleDateSorting = (refCol) => {
         if (rowClicked === "desc") {
             bookings.sort((a, b) => {
-                return moment(a[refCol]).isBefore(b[refCol])
+                return new moment(a[refCol]).format('YYYYMMDD') - new moment(b[refCol]).format('YYYYMMDD')
             })
+            console.log(bookings)
             setRowClicked("asc")
         }
         if (rowClicked === "asc") {
             bookings.sort((a, b) => {
-                return moment(b[refCol]).isBefore(a[refCol])
+                return new moment(b[refCol]).format('YYYYMMDD') - new moment(a[refCol]).format('YYYYMMDD')
             })
             setRowClicked("desc")
         }
     }
+    //delete client from the table
 
     const handleDeleteButton = (id) => {
         fetch(`https://olha-danylevska-hotel-booking-server.onrender.com/bookings/${id}`, {
@@ -91,8 +93,7 @@ const SearchResults = ({ bookings, setBookings }) => {
             .then(data => setBookings(data))
             .catch(error => console.error(error));
     }
-
-
+    // sorting colums with numbers
     const handleSortingNumbers = (refCol) => {
         if (rowClicked === "desc") {
             bookings.sort((a, b) => {
@@ -118,8 +119,8 @@ const SearchResults = ({ bookings, setBookings }) => {
                         <th scope="col" onClick={() => (handleSorting("surname"))}>Surname</th>
                         <th scope="col" onClick={() => (handleSorting("email"))}>Email</th>
                         <th scope="col" onClick={() => (handleSortingNumbers("roomId"))}>Room ID</th>
-                        <th scope="col" onClick={() => (handleDateSoting("chekInDate"))}>Check In Date</th>
-                        <th scope="col" onClick={() => (handleDateSoting("checkOutDate"))}>Check Out Date</th>
+                        <th scope="col" onClick={() => (handleDateSorting("checkInDate"))}>Check In Date</th>
+                        <th scope="col" onClick={() => (handleDateSorting("checkOutDate"))}>Check Out Date</th>
                         <th scope="col" >Nights</th>
                         <th></th>
                     </tr>
