@@ -67,24 +67,39 @@ const SearchResults = ({ bookings, setBookings }) => {
             setRowClicked("desc")
         }
     }
+
+    // const handleDateSorting = (refCol) => {
+    //     if (rowClicked === "desc") {
+    //         bookings.sort((a, b) => {
+    //             return new moment(a[refCol]).format('YYYYMMDD') - new moment(b[refCol]).format('YYYYMMDD')
+    //         })
+    //         console.log(bookings)
+    //         setRowClicked("asc")
+    //     }
+    //     if (rowClicked === "asc") {
+    //         bookings.sort((a, b) => {
+    //             return new moment(b[refCol]).format('YYYYMMDD') - new moment(a[refCol]).format('YYYYMMDD')
+    //         })
+    //         setRowClicked("desc")
+    //     }
+    // }
+
     //sorting columns with dates
     const handleDateSorting = (refCol) => {
         if (rowClicked === "desc") {
             bookings.sort((a, b) => {
-                return new moment(a[refCol]).format('YYYYMMDD') - new moment(b[refCol]).format('YYYYMMDD')
+                return moment(a[refCol]).diff(b[refCol])
             })
-            console.log(bookings)
             setRowClicked("asc")
         }
         if (rowClicked === "asc") {
             bookings.sort((a, b) => {
-                return new moment(b[refCol]).format('YYYYMMDD') - new moment(a[refCol]).format('YYYYMMDD')
+                return moment(b[refCol]).diff(a[refCol])
             })
             setRowClicked("desc")
         }
     }
     //delete client from the table
-
     const handleDeleteButton = (id) => {
         fetch(`https://olha-danylevska-hotel-booking-server.onrender.com/bookings/${id}`, {
             method: 'DELETE'
@@ -93,6 +108,7 @@ const SearchResults = ({ bookings, setBookings }) => {
             .then(data => setBookings(data))
             .catch(error => console.error(error));
     }
+
     // sorting columns with numbers
     const handleSortingNumbers = (refCol) => {
         if (rowClicked === "desc") {
