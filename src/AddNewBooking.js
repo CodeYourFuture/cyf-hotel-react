@@ -1,19 +1,8 @@
-import { useState } from "react"
+import { useState, useContext } from "react";
+import { BookingForForm } from "./data/BookingForm";
 
 function AddNewBooking (props) {
-     const [newBooking, setNewBooking] = useState(
-      {
-        
-        title: "",
-        firstName: "",
-        surname: "",
-        email: "",
-        roomId: "",
-        checkInDate: "",
-        checkOutDate: "",
-      }
-    );
-      props.chosenID ? setNewBooking(props.chosenID) : newBooking;
+  const {newBooking, setNewBooking} = useContext(BookingForForm);
       const [validationErrors, setValidationErrors] = useState({});
 
     function handleChange(event) {
@@ -67,9 +56,9 @@ function AddNewBooking (props) {
       if(newBooking.title === ""){
         alert("Fill in the Form!")
       } else {
-        //  props.adding();
+        
          fetch("https://booking-server-98w3.onrender.com/bookings", {
-           method: "POST", // or 'PUT'
+           method: "PUT", // or 'PUT'
            headers: {
              "Content-Type": "application/json",
            },
@@ -104,7 +93,7 @@ function AddNewBooking (props) {
               type="text"
               name="firstName"
               placeholder="First Name"
-              value={newBooking["first name"]}
+              value={newBooking["firstName"]}
               onChange={handleChange}
             ></input>
             <p className="errorMsg">{validationErrors.firstName}</p>

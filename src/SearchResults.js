@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import moment from "moment";
 moment().format();
 import CustomerProfile from "./CustomerProfile";
-import AddNewBooking from "./AddNewBooking";
+import { BookingForForm } from "./data/BookingForm";
 
 
 const SearchResults = (props) => {
   const [customerId, setCustomerId] = useState(null);
   const [descendingOrder, setDescendingOrder] = useState(true); 
   const [valueToSort, setValueToSort] = useState("id");
+  const { setNewBooking } = useContext(BookingForForm);
 
   function highlighted(event) {
       event.target.parentElement.className === "Highlighted"
@@ -50,10 +51,10 @@ const SearchResults = (props) => {
   .then((data) => {console.log(data), props.updates()});
     }
 
-    // function updateBooking(id){
-    //   let chosenBooking = props.results.find(booking => booking.id === id);
-    //   console.log(chosenBooking);      
-    // }
+    function updateBooking(id){
+      let chosenBooking = props.results.find(booking => booking.id === id);
+      setNewBooking(chosenBooking);
+    }
 
   return (
     <>
@@ -140,9 +141,9 @@ const SearchResults = (props) => {
                     <button onClick={() => deleteBooking(result.id)}>
                       Delete
                     </button>
-                    {/* <button onClick={() => updateBooking(result.id)}>
+                    <button onClick={() => updateBooking(result.id)}>
                       Update
-                    </button> */}
+                    </button>
                   </div>
                 </td>
               </tr>
