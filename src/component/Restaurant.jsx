@@ -1,17 +1,36 @@
-import React from "react";
-
+import React, { useState } from "react";
+import Order from "./orders"; // Import the Order component
+import "./restaurant.css"
 const Restaurant = () => {
-  const pizzas = 0;
+  // Declare state variables for different orders
+  const [pizzaCount, setPizzaCount] = useState(0);
+  const [saladCount, setSaladCount] = useState(0);
+  const [cakeCount, setCakeCount] = useState(0);
+
   return (
-    <div>
+    <div className="restaurant-container">
       <h3>Restaurant Orders</h3>
-      <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+      <ul className="order-list">
+        <Order
+          orderType="Pizzas"
+          count={pizzaCount}
+          onIncrement={() => setPizzaCount(pizzaCount + 1)}
+        />
+        <Order
+          orderType="Salads"
+          count={saladCount}
+          onIncrement={() => setSaladCount(saladCount + 1)}
+        />
+        <Order
+          orderType="Chocolate cake"
+          count={cakeCount}
+          onIncrement={() => setCakeCount(cakeCount + 1)}
+        />
       </ul>
     </div>
   );
 };
 
 export default Restaurant;
+
+

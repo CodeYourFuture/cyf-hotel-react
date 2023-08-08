@@ -43,3 +43,8 @@ body {
 .Footer li {
   margin: 0 10px;
 }
+
+.selected-row {
+  background-color: #f0f0f0; /* Apply your desired highlight color */
+  cursor: pointer;
+}

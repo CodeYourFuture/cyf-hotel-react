@@ -4,6 +4,7 @@ import Bookings from "./component/Bookings";
 import Footer from "./component/Footer"
 import "./App.css";
 import Header from "./component/Header";
+import Restaurant from "./component/Restaurant";
 const App = () => {
 
 
@@ -18,6 +19,7 @@ const App = () => {
         <TouristInfoCards descriptions="Manchester is the nucleus of the largest metropolitan area in the north of England, and it remains an important regional city, but it has lost the extraordinary vitality and unique influence that put it at the forefront of the Industrial Revolution." name="Manchester" img="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/3d/31/60/manchester-town-hall.jpg?w=700&h=-1&s=1"/>
       </div>
       <Bookings />
+      <Restaurant />
       <Footer/>
    </div>
    </>

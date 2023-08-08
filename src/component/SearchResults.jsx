@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
+import "../index.css";
 
 const SearchResults = ({ bookings }) => {
+  const [selectedRows, setSelectedRows] = useState({});
+
+  const handleRowClick = (bookingId) => {
+    setSelectedRows((prevState) => ({
+      ...prevState,
+      [bookingId]: !prevState[bookingId]
+    }));
+  };
+
   return (
     <table className="table">
       <thead>
@@ -14,7 +24,7 @@ const SearchResults = ({ bookings }) => {
           <th>Room ID</th>
           <th>Check-in Date</th>
           <th>Check-out Date</th>
-          <th>Nights</th> {/* New column for number of nights */}
+          <th>Nights</th>
         </tr>
       </thead>
       <tbody>
@@ -23,8 +33,14 @@ const SearchResults = ({ bookings }) => {
           const checkOutDate = moment(booking.checkOutDate);
           const nights = checkOutDate.diff(checkInDate, "days");
 
+          const rowClass = selectedRows[booking.id] ? "selected-row" : "";
+
           return (
-            <tr key={booking.id}>
+            <tr
+              key={booking.id}
+              className={rowClass}
+              onClick={() => handleRowClick(booking.id)}
+            >
               <td>{booking.id}</td>
               <td>{booking.title}</td>
               <td>{booking.firstName}</td>
@@ -33,7 +49,7 @@ const SearchResults = ({ bookings }) => {
               <td>{booking.roomId}</td>
               <td>{booking.checkInDate}</td>
               <td>{booking.checkOutDate}</td>
-              <td>{nights}</td> {/* Display number of nights */}
+              <td>{nights}</td>
             </tr>
           );
         })}
