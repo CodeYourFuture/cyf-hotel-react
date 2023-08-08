@@ -161,6 +161,7 @@ table tr {
 .id-info {
   background-color: #a2a2a2;
   color: #383838;
+  width: 6rem;
   border-radius: 0.2rem;
   border: solid 1px #555555;
   outline-style: none;
@@ -202,12 +203,17 @@ table tr {
 
 .holder-for-inputs {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   gap: 1rem;
   font-size: 16px;
   justify-content: center;
   padding-top: 1rem;
   margin: 1rem;
+}
+
+.holder-for-inputs label {
+  display: flex;
+  flex-direction: column;
 }
 
 .holder-for-customer-form {
@@ -276,6 +282,121 @@ table tr {
   background-color: #b69191;
   color: rgb(56, 56, 56);
   border-radius: 0.2rem;
-  margin-left: 1rem;
+  margin-left: 0.3rem;
 
+}
+
+.room-id {
+  width: 4rem;
+}
+
+.holder-for-inputs input {
+  border-radius: 0.2rem;
+  border: #4f4f4f 1px solid;
+  background-color: #808080;
+  padding-left: 0.4rem;
+  color: white;
+}
+
+.holder-for-inputs input:focus {
+  outline: none;
+  background-color: #e6e6e6;
+  color: #222;
+}
+
+select:focus {
+  outline: none;
+}
+
+.edit-button {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: #343434;
+  color: rgb(224, 224, 224);
+  border-radius: 0.2rem;
+}
+
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.buttons-edit-delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-top: 0.3rem;
+}
+
+.buttons-td {
+  text-align: right;
+}
+
+.edit-container {
+  width: 25rem;
+  min-height: 10rem;
+  background-color: #607042;
+  position: absolute;
+  box-shadow: rgba(0, 0, 0, 0.60) 0px 3px 8px;
+  text-align: right;
+  margin-top: 2rem;
+  border-radius: 0.3rem;
+  color: white;
+  align-self: center;
+}
+
+.form-edit {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  font-size: 14px;
+
+}
+
+.form-edit input {
+  margin-left: 1rem;
+  font-size: 16px;
+}
+
+.form-edit h5 {
+  margin-bottom: 1.5rem;
+  color: rgb(173, 180, 138);
+  align-self: center;
+}
+
+
+.table-holder {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.edit-submit {
+  background-color: #2d361e;
+  border: none;
+  height: 2rem;
+  border-radius: 0.2rem;
+  color: #607042;
+}
+
+.edit-submit:hover {
+  background-color: #262b1f;
+  color: #cad4b7;
+}
+
+.close-edit {
+  align-self: flex-end;
+  background-color: rgb(255, 0, 0, 0%);
+  color: #2d361e;
+  font-weight: 400;
+  font-size: 18px;
+  border: none;
+}
+
+.customer-prof {
+  align-self: center;
+  flex-wrap: nowrap;
 }

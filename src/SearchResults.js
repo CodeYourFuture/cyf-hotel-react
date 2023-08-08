@@ -1,15 +1,16 @@
 import moment from "moment"
 import { useState } from "react"
 import CustomerProfile from "./Customer-Profile"
+import EditWindow from "./EditWindow"
 
 const SearchResults = ({ bookings, setBookings }) => {
 
     const [active, setActive] = useState(false)
     const [clientId, setClientId] = useState("")
-    const [customerProf, setCuctomerProf] = useState("")
+    const [customerProf, setCustomerProfile] = useState({})
     const [isShown, setIsShown] = useState(false);
     const [rowClicked, setRowClicked] = useState("desc")
-    const [user, setUser] = useState({})
+    const [edit, setEdit] = useState(false)
 
     function fetchingId(customerProf) {
 
@@ -32,9 +33,9 @@ const SearchResults = ({ bookings, setBookings }) => {
 
     //Profile
 
-    let handleProfileClick = (client) => {
+    let handleProfileClick = (id) => {
         fetchingId(customerProf)
-        setCuctomerProf(client)
+        setClientId(id)
         setIsShown(!isShown)
     }
 
@@ -68,22 +69,6 @@ const SearchResults = ({ bookings, setBookings }) => {
         }
     }
 
-    // const handleDateSorting = (refCol) => {
-    //     if (rowClicked === "desc") {
-    //         bookings.sort((a, b) => {
-    //             return new moment(a[refCol]).format('YYYYMMDD') - new moment(b[refCol]).format('YYYYMMDD')
-    //         })
-    //         console.log(bookings)
-    //         setRowClicked("asc")
-    //     }
-    //     if (rowClicked === "asc") {
-    //         bookings.sort((a, b) => {
-    //             return new moment(b[refCol]).format('YYYYMMDD') - new moment(a[refCol]).format('YYYYMMDD')
-    //         })
-    //         setRowClicked("desc")
-    //     }
-    // }
-
     //sorting columns with dates
     const handleDateSorting = (refCol) => {
         if (rowClicked === "desc") {
@@ -98,6 +83,11 @@ const SearchResults = ({ bookings, setBookings }) => {
             })
             setRowClicked("desc")
         }
+    }
+
+    const handleEditButton = (id) => {
+        setEdit(true)
+        setClientId(id)
     }
     //delete client from the table
     const handleDeleteButton = (id) => {
@@ -126,6 +116,8 @@ const SearchResults = ({ bookings, setBookings }) => {
     }
     return (
         <div className="table-holder">
+            {edit && <EditWindow setEdit={setEdit} setBookings={setBookings} bookings={bookings} clientId={clientId} />}
+
             <table className="table">
                 <thead>
                     <tr className="title-table" >
@@ -148,7 +140,7 @@ const SearchResults = ({ bookings, setBookings }) => {
                             let a = moment(client.checkOutDate)
                             let b = moment(client.checkInDate)
                             return (
-                                <tr key={client.id} onClick={() => { handleClick(client.id) }} className={active && clientId === client.id ? "pressed" : ""}>
+                                <tr key={client.id} onClick={() => { handleClick(client.id) }} className={active && clientId === client.id ? "pressed" : ""} >
                                     <th scope="row">{client.id}</th>
                                     <td>{client.title}</td>
                                     <td>{client.firstName}</td>
@@ -158,9 +150,13 @@ const SearchResults = ({ bookings, setBookings }) => {
                                     <td>{client.checkInDate}</td>
                                     <td>{client.checkOutDate}</td>
                                     <td>{a.diff(b, 'days')}</td>
-                                    <td>
+                                    <td className="buttons-td">
                                         <button onClick={(e) => { e.stopPropagation(); handleProfileClick(client.id) }} className="id-info">Show profile</button>
-                                        <button className="delete-profile" onClick={() => { handleDeleteButton(client.id) }}>Delete</button>
+                                        <div className="buttons-edit-delete">
+                                            <button className="edit-button" onClick={() => { handleEditButton(client.id) }}>Edit</button>
+                                            <button className="delete-profile" onClick={() => { handleDeleteButton(client.id) }}>Delete</button>
+                                        </div>
+
                                     </td>
 
                                 </tr>
@@ -169,8 +165,7 @@ const SearchResults = ({ bookings, setBookings }) => {
                     }
                 </tbody>
             </table>
-            {isShown ? <CustomerProfile user={user} /> : null}
-
+            {isShown ? <CustomerProfile bookings={bookings} setClientId={setClientId} clientId={clientId} className="customer-prof" /> : null}
         </div>
     )
 }

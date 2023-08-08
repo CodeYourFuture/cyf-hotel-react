@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SearchResults from "./SearchResults";
+import moment from "moment";
 
 
 const InputFormForTable = ({ bookings, setBookings }) => {
@@ -7,6 +8,7 @@ const InputFormForTable = ({ bookings, setBookings }) => {
     const [surname, setSurname] = useState("")
     const [email, setEmail] = useState("")
     const [firstName, setFirstName] = useState("")
+    const [roomId, setRoomId] = useState("")
     const [checkInDate, setCheckInDate] = useState("")
     const [checkOutDate, setCheckOutDate] = useState("")
     const [errorMessage, setErrorMessage] = useState('')
@@ -14,7 +16,7 @@ const InputFormForTable = ({ bookings, setBookings }) => {
     async function handleSubmitForm(event) {
         event.preventDefault()
         const newCustomer = {
-            title, firstName, surname, email, checkInDate, checkOutDate
+            title, firstName, surname, email, checkInDate, checkOutDate, roomId
         }
         let res = await fetch("https://olha-danylevska-hotel-booking-server.onrender.com/bookings", {
             method: "POST",
@@ -40,7 +42,11 @@ const InputFormForTable = ({ bookings, setBookings }) => {
                 })
             setErrorMessage("")
         } else {
-            setErrorMessage("Please fill in missing areas")
+            if (moment(checkInDate).isAfter(moment(checkOutDate))) {
+                setErrorMessage("Check Out date should be after Check in date")
+            } else {
+                setErrorMessage("Please fill in missing areas")
+            }
         }
     }
 
@@ -53,11 +59,13 @@ const InputFormForTable = ({ bookings, setBookings }) => {
             <div className="holder-for-customer-form">
                 <h5>Add New Customer</h5>
                 {errorMessage !== "" && <p className="error-message"> {errorMessage} </p>}
-                <form className="form" onSubmit={handleSubmitForm}>
+                <form className="form" onSubmit={handleSubmitForm} autocomplete="off">
+                    <input autocomplete="false" name="hidden" type="text" class="hidden"></input>
                     <div className="holder-for-inputs">
                         <label htmlFor="title">
                             Title
                             <select type="text" id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} className="title">
+                                <option default>Title</option>
                                 <option value="Mr">Mr</option>
                                 <option value="Mrs">Mrs</option>
                                 <option value="Miss">Miss</option>
@@ -71,17 +79,21 @@ const InputFormForTable = ({ bookings, setBookings }) => {
 
                         <label htmlFor="firstName" >
                             First Name
-                            <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)}></input>
+                            <input autocomplete="off" type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)}  ></input>
                         </label>
 
                         <label htmlFor="surname" >
                             Surename
-                            <input type="text" name="surname" value={surname} onChange={(e) => setSurname(e.target.value)}></input>
+                            <input autocomplete="off" type="text" name="surname" value={surname} onChange={(e) => setSurname(e.target.value)}></input>
                         </label>
 
                         <label htmlFor="email">
                             Email
-                            <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} ></input>
+                            <input autocomplete="off" type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} ></input>
+                        </label>
+                        <label htmlFor="roomId">
+                            Roon ID
+                            <input type="roomId" name="roomId" className="room-id" value={roomId} onChange={(e) => setRoomId(e.target.value)} ></input>
                         </label>
                         <label htmlFor="checkinDate">
                             Check in Date
