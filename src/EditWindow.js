@@ -46,7 +46,7 @@ const EditWindow = ({ setEdit, clientId, bookings, setBookings }) => {
 
     return (
         <div className="edit-container">
-            <form className="form-edit" onSubmit={handleSubmit} >
+            <form autoComplete="off" className="form-edit" onSubmit={handleSubmit} >
                 <button className="close-edit" onClick={handleCloseButton}>X</button>
                 <h5>{`Edit Customer Info (ID #${editingBooking[0].id})`}</h5>
 

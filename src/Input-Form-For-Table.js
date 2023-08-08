@@ -59,8 +59,7 @@ const InputFormForTable = ({ bookings, setBookings }) => {
             <div className="holder-for-customer-form">
                 <h5>Add New Customer</h5>
                 {errorMessage !== "" && <p className="error-message"> {errorMessage} </p>}
-                <form className="form" onSubmit={handleSubmitForm} autocomplete="off">
-                    <input autocomplete="false" name="hidden" type="text" class="hidden"></input>
+                <form className="form" onSubmit={handleSubmitForm} autoComplete="off">
                     <div className="holder-for-inputs">
                         <label htmlFor="title">
                             Title
@@ -79,17 +78,17 @@ const InputFormForTable = ({ bookings, setBookings }) => {
 
                         <label htmlFor="firstName" >
                             First Name
-                            <input autocomplete="off" type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)}  ></input>
+                            <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)}  ></input>
                         </label>
 
                         <label htmlFor="surname" >
                             Surename
-                            <input autocomplete="off" type="text" name="surname" value={surname} onChange={(e) => setSurname(e.target.value)}></input>
+                            <input type="text" name="surname" value={surname} onChange={(e) => setSurname(e.target.value)}></input>
                         </label>
 
                         <label htmlFor="email">
                             Email
-                            <input autocomplete="off" type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} ></input>
+                            <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} ></input>
                         </label>
                         <label htmlFor="roomId">
                             Roon ID

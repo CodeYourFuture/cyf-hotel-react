@@ -34,7 +34,6 @@ const SearchResults = ({ bookings, setBookings }) => {
     //Profile
 
     let handleProfileClick = (id) => {
-        fetchingId(customerProf)
         setClientId(id)
         setIsShown(!isShown)
     }
