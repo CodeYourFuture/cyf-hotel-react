@@ -1,14 +1,28 @@
-import React from "react";
+
+import React, { useState } from "react";
+
+
+const Order = (props) => {
+  const [orders, setOrders] = useState(0)
+  const orderOne = () => {
+    setOrders(orders + 1)
+  }
+  return (
+    <li>
+      {props.orderType}: {orders} <button className="btn-primary" onClick={orderOne}>Add</button>
+    </li>
+  )
+}
 
 const Restaurant = () => {
-  const pizzas = 0;
+
   return (
-    <div>
+    <div className="orders-container">
       <h3>Restaurant Orders</h3>
       <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+        <Order orderType="Pizza" />
+        <Order orderType="Salads" />
+        <Order orderType="Chocolate cake" />
       </ul>
     </div>
   );

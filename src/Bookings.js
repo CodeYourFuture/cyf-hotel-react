@@ -1,21 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
-// import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
+import InputFormForTable from "./Input-Form-For-Table.js"
+
 
 const Bookings = () => {
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
-  };
+  const [bookings, setBookings] = useState([])
+
+  // get all data
+  function doingFetch() {
+    fetch("https://olha-danylevska-hotel-booking-server.onrender.com/bookings")
+      .then((response) => {
+        if (!response.ok) {
+          console.log(response.status)
+          setBookings(response.status)
+          throw new Error(response.status)
+        } else {
+          return response.json()
+        }
+
+      })
+      .then((data) => {
+        data && setBookings(data)
+      })
+  }
+
+  useEffect(() => {
+    doingFetch()
+    console.log({ bookings })
+  }, []);// square brackets to load fetch only once
+
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-        {/* <SearchResults results={FakeBookings} /> */}
+        <Search setBookings={setBookings} />
+        <InputFormForTable bookings={bookings} setBookings={setBookings} />
       </div>
-    </div>
+    </div >
   );
 };
+
+
+
 
 export default Bookings;
