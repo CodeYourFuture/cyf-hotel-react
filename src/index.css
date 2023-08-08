@@ -24,3 +24,27 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  height: 100px;
+}
+
+.Footer ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.Footer li {
+  margin: 0 10px;
+}
+
+.selected-row {
+  background-color: #f0f0f0; /* Apply your desired highlight color */
+  cursor: pointer;
+}
