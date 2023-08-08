@@ -1,3 +1,4 @@
+import moment from "moment"
 import { useState } from "react"
 const EditWindow = ({ setEdit, clientId, bookings, setBookings }) => {
     let editingBooking = bookings.filter(booking => { return booking.id == clientId })
@@ -9,7 +10,7 @@ const EditWindow = ({ setEdit, clientId, bookings, setBookings }) => {
     const [roomId, setRoomId] = useState(editingBooking[0].roomId)
     const [checkInDate, setCheckInDate] = useState(editingBooking[0].checkInDate)
     const [checkOutDate, setCheckOutDate] = useState(editingBooking[0].checkOutDate)
-
+    const [error, setError] = useState("")
     const handleSubmit = (event) => {
         event.preventDefault()
         const editedCustomer = {
@@ -23,21 +24,22 @@ const EditWindow = ({ setEdit, clientId, bookings, setBookings }) => {
             },
             body: JSON.stringify(editedCustomer)
         };
-        fetch(`https://olha-danylevska-hotel-booking-server.onrender.com/bookings/${clientId}`, options)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(updatedData => {
-                console.log({ updatedData })
-                setBookings(updatedData);
-                setEdit(false)
-            })
-            .catch(error => {
-                console.error('Error updating data:', error);
-            });
+        moment(checkInDate).isBefore(moment(checkOutDate)) ?
+            fetch(`https://olha-danylevska-hotel-booking-server.onrender.com/bookings/${clientId}`, options)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(updatedData => {
+                    console.log({ updatedData })
+                    setBookings(updatedData);
+                    setEdit(false)
+                })
+                .catch(error => {
+                    console.error('Error updating data:', error);
+                }) : setError("Check In date should be before Check Out Date")
     }
 
     const handleCloseButton = () => {
@@ -48,6 +50,7 @@ const EditWindow = ({ setEdit, clientId, bookings, setBookings }) => {
         <div className="edit-container">
             <form autoComplete="off" className="form-edit" onSubmit={handleSubmit} >
                 <button className="close-edit" onClick={handleCloseButton}>X</button>
+                {error !== "" && <p>{error}</p>}
                 <h5>{`Edit Customer Info (ID #${editingBooking[0].id})`}</h5>
 
                 <label htmlFor="title">
@@ -77,12 +80,12 @@ const EditWindow = ({ setEdit, clientId, bookings, setBookings }) => {
                 </label>
                 <label htmlFor="checkIn">
                     Check In
-                    <input type="text" id="checkInDate" name="checkInDate" value={checkInDate} onChange={(e) => setCheckInDate(e.target.value)}>
+                    <input type="date" id="checkInDate" name="checkInDate" value={checkInDate} onChange={(e) => setCheckInDate(e.target.value)}>
                     </input>
                 </label>
                 <label htmlFor="checkOut">
                     Check Out
-                    <input type="text" id="checkOutDate" name="checkOutDate" value={checkOutDate} onChange={(e) => setCheckOutDate(e.target.value)}>
+                    <input type="date" id="checkOutDate" name="checkOutDate" value={checkOutDate} onChange={(e) => setCheckOutDate(e.target.value)}>
                     </input>
                 </label>
                 <input type="submit" className="edit-submit"></input>
