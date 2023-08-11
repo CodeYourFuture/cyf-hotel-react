@@ -1,3 +1,7 @@
+* {
+  list-style-type: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -23,4 +27,65 @@ body {
 
 .search-row input {
   margin-right: 10px;
+}
+
+.cards-conrainer {
+  display: flex;
+  justify-content: space-around;
+}
+.image-container,
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*FORM*/
+.div-for-form {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form-conrainer {
+  display: grid;
+  grid-column: auto auto;
+  background-color: hwb(240 93% 0%);
+  width: 400px;
+  border-radius: 25px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  padding: 20px 40px;
+  row-gap: 15px;
+}
+
+.form-fild {
+  display: grid;
+}
+
+/**/
+
+.restuarant-container {
+  display: flex;
+  flex-direction: column;
+  /* border: 3px solid red; */
+}
+
+.restaurant-header {
+  align-self: center;
+}
+
+.list-of-food {
+  display: flex;
+  justify-content: space-around;
+  /* border: 3px solid red; */
+}
+
+/* .food-item {
+  border: 3px solid red;
+} */
+
+.footer {
+  color: #e9ecef;
+  background-color: #3d3b3b;
 }
