@@ -40,6 +40,31 @@ img {
   object-fit: cover;
 }
 
+/*FORM*/
+.div-for-form {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form-conrainer {
+  display: grid;
+  grid-column: auto auto;
+  background-color: hwb(240 93% 0%);
+  width: 400px;
+  border-radius: 25px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  padding: 20px 40px;
+  row-gap: 15px;
+}
+
+.form-fild {
+  display: grid;
+}
+
+/**/
+
 .restuarant-container {
   display: flex;
   flex-direction: column;

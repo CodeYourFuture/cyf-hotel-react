@@ -2,7 +2,7 @@ import { useState } from "react";
 import moment from "moment";
 import CustomerProfile from "./CustomerProfile";
 
-export default function SearchResults({ data }) {
+export default function SearchResults({ bookings }) {
   const [selectedRows, setSelectedRows] = useState([]);
   const [selectedProfile, setSelectedProfile] = useState(null);
 
@@ -42,7 +42,7 @@ export default function SearchResults({ data }) {
           </tr>
         </thead>
         <tbody>
-          {data.map((element) => (
+          {bookings.map((element) => (
             <tr
               onClick={() => handleRowClick(element.id)}
               className={

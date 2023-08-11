@@ -1,8 +1,18 @@
 import React, { useState } from "react";
-import SearchButton from "./SearchButton";
 
-const Search = (props) => {
+const Search = ({ bookings, setBookings, setRefreshMessages }) => {
   const [searchInput, setSearchInput] = useState("");
+
+  // function searchBooking() {
+  //   const convertedVal = searchInput.toLowerCase().trim();
+  //   console.log(convertedVal);
+  //   const matched = bookings.filter(({ firstName, surname }) => {
+  //     firstName.toLowerCase().includes(convertedVal) ||
+  //       surname.toLowerCase().includes(convertedVal);
+  //   });
+  //   console.log(matched);
+  //   setBookings(matched);
+  // }
 
   function handleSearchInput(e) {
     let searchValue = e.target.value.toLowerCase().trim();
@@ -10,12 +20,29 @@ const Search = (props) => {
     console.log(searchValue);
   }
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    props.search(searchInput);
-    console.log("Search for:", searchInput);
-  };
+  // const handleSearchSubmit = (e) => {
+  //   e.preventDefault();
+  //   searchBooking();
+  //   console.log("Search for:", searchInput);
+  // };
 
+  function handleSearchSubmit(event) {
+    event.preventDefault();
+    const convertedVal = searchInput.toLowerCase().trim();
+    console.log(convertedVal);
+
+    const matched = bookings.filter(({ firstName, surname }) => {
+      firstName.toLowerCase().includes(convertedVal) ||
+        surname.toLowerCase().includes(convertedVal);
+    });
+    console.log(matched);
+    setBookings(matched);
+    event.target.reset();
+
+    setRefreshMessages((prevRefreshMessages) => !prevRefreshMessages);
+
+    setIsSubmitting(false);
+  }
   return (
     <div className="search">
       <div className="page-header">
@@ -35,7 +62,7 @@ const Search = (props) => {
                 placeholder="Customer name"
                 label="Search"
               />
-              <SearchButton />
+              <button className="btn btn-primary">Search</button>
             </div>
           </form>
         </div>
