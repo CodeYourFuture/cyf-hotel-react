@@ -1,3 +1,7 @@
+body{
+  box-sizing: border-box;
+}
+
 .App {
   text-align: left;
 }
@@ -8,8 +12,10 @@
 }
 
 .App-header {
+  display: flex;
+  justify-content: space-between;
   background-color: #222;
-  height: 50px;
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -21,7 +27,12 @@
 .App-title {
   font-size: 1.5em;
 }
-
+.card-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 15px;
+}
 .App-content {
   padding-top: 20px;
   font-size: large;
@@ -54,4 +65,10 @@ tr {
 
 .card {
   width: 18rem;
+}
+tr {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+
+.rowColor {
+    background-color: brown;
+    color: #FFF;
 }
