@@ -1,7 +1,7 @@
 import React from "react";
-import Search from "./Search.js";
-import SearchResults from "./SearchResults.js";
-import FakeBookings from "./data/fakeBookings.json";
+import Search from "./Search";
+import SearchResults from "./SearchResults";
+import FakeBookings from "./data/fakeBookings";
 
 const Bookings = () => {
   const search = searchVal => {

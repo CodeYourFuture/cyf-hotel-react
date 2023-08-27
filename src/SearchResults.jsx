@@ -1,5 +1,15 @@
 import React from "react";
+
+function nightsInHotel(checkOutDate, checkInDate) {
+    const checkOut = new Date(checkOutDate);
+    const checkIn = new Date(checkInDate);
+    const timeDifference = checkOut - checkIn;
+    const nights = Math.ceil(timeDifference / (1000 * 3600 * 24));
+    return nights;
+}
+
 const BookingRow = ({ booking }) => {
+    const numberOfNights = nightsInHotel(booking.checkOutDate, booking.checkInDate);
     return (
         <tr>
             <td>{booking.id}</td>
@@ -10,6 +20,7 @@ const BookingRow = ({ booking }) => {
             <td>{booking.roomId}</td>
             <td>{booking.checkInDate}</td>
             <td>{booking.checkOutDate}</td>
+            <td>{numberOfNights}</td>
         </tr>
     );
 };
@@ -19,7 +30,7 @@ const SearchResults = ({ bookings }) => {
         <div>
             <h2>Search Results</h2>
             <table>
-            <thead>
+                <thead>
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
@@ -29,12 +40,13 @@ const SearchResults = ({ bookings }) => {
                         <th>Room ID</th>
                         <th>Check-in Date</th>
                         <th>Check-out Date</th>
+                        <th>Nights</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     {bookings.map((booking) => (
-                        <BookingRow key={booking.id} booking={booking} />
+                        <BookingRow key={booking.id} booking={booking}  />
 
                     ))}
                 </tbody>
