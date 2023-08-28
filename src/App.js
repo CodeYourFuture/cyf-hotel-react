@@ -3,6 +3,7 @@ import Heading from "./Heading";
 import TouristInfoCards from "./TouristInfoCards";
 import Bookings from "./Bookings";
 import Footer from "./Footer";
+import Restaurant from "./Restaurant"
 import "./App.css";
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
     <div className="App">
       <Heading />
       <Bookings />
+      <Restaurant />
       <TouristInfoCards />
       <Footer addressData={addressData} />
 
