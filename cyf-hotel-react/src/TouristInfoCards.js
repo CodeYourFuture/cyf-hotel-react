@@ -9,7 +9,7 @@ const TouristInfoCards = () => {
       <h1 className="h1">Glasgow</h1>
       <p className="p">Glasgow is a port city on the River Clyde in Scotland's western Lowlands. It's famed for its Victorian and art nouveau architecture, a rich legacy of the city's 18th–20th-century prosperity due to trade and shipbuilding. Today it's a national cultural hub, home to institutions including the Scottish Opera, Scottish Ballet and National Theatre of Scotland, as well as acclaimed museums and a thriving music scene.</p>
       <div className="card-body">
-      <a className="btn btn-primary" href="peoplemakeglasgow.com">More Information</a>
+      <a className="btn btn-primary" href="https://peoplemakeglasgow.com/">More Information</a>
       </div>
       
     </div>
@@ -23,7 +23,7 @@ Manchester is the only UK city to feature in Lonely Planet's Best in Travel 2023
 
 Known throughout the world as the birthplace of the industrial revolution, Manchester has a proud history in science, politics, music, arts and sport. And today the city combines this heritage with a progressive vision to be a city that delivers surprise and delight in equal measures. </p>
 <div className="card-body">
-  <a className="btn btn-primary" href="visitmanchester.com">More Information</a>
+  <a className="btn btn-primary" href="https://www.visitmanchester.com/">More Information</a>
 </div>
     </div>
 
@@ -32,7 +32,7 @@ Known throughout the world as the birthplace of the industrial revolution, Manch
       <h1 className="h1">London</h1>
       <p className="p">Welcome to London! Discover the best of London with Visit London, the official guide to England’s exciting capital. Find things to do in London, from iconic sightseeing spots and fun-filled days out to top restaurants, theatre and unmissable London events. If you’re not able to visit just yet, plan ahead to make the most of your next visit.</p>
       <div className="card-body">
-        <a className="btn btn-primary" href="visitlondon.com">More Information</a>
+        <a className="btn btn-primary" href="https://www.visitlondon.com/">More Information</a>
       </div>
     </div>
     </div>

@@ -5,15 +5,23 @@ import Bookings from "./Bookings";
 import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 import "./App.css";
+import Test from "./Test";
+
 
 const App = () => {
+  
   return (
-    <div className="App">
-      <Heading />
+    
+  <div className="App">
+     <Heading />
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <Footer const ContactInfo = {["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]} />
+      <Footer const ContactInfo = {["123 Fake Street, London, E1 4UD", "hello@fakehotel.com", "0123 456789"]} />*/
+
+      
+
+
     </div>
   );
 };
