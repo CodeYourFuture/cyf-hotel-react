@@ -1,0 +1,128 @@
+.App {
+  text-align: left;
+  
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  height: 50px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-content {
+  padding-top: 20px;
+  font-size: large;
+}
+
+.customer-name {
+    margin-left: 20rem;
+}
+
+.search-row{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search {
+  padding: 5px 0 20px 0;
+}
+
+.search-btn{
+  padding: .25rem 1rem;
+  border-radius: 8px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;      
+}
+
+tr {
+  color: #5b5757;
+}
+
+.results {
+  padding-top: 15px;
+}
+
+.footer {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.cards {
+  height: auto;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.TouristInfoCards{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: .4rem solid green;
+  margin-top: 1rem;
+}
+.card-img-top{
+  height: 450px;
+  width: 99%;
+}
+.h1{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.p{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.restaurantOrder{
+  margin-left: 10rem;
+}
+.btn{
+  background-color: #f1f1f1;
+  color: black;
+  border: 2px solid lightgray !important;
+}
+.add{
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color:grey;
+  color: white;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.li{
+  margin-left: 9rem;
+  
+}
+
+.footer-li{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
