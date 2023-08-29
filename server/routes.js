@@ -127,12 +127,13 @@ router.put("/customers/:pid", async (req, res) => {
 });
 
 router.delete("/customers/:pid", async (req, res) => {
-  const custId = req.params.pid;
-
+  const custId = parseInt(req.params.pid);
   try {
-    const result = await db.query("DELETE FROM customers WHERE id=$1", [
-      custId,
-    ]);
+    await db.query(
+      "DELETE FROM reservations WHERE cust_id=$1 AND checkin_date > current_date",
+      [custId]
+    );
+    await db.query("DELETE FROM customers WHERE id=$1", [custId]);
     res.status(200).send(`Customer ${custId} was successfully deleted!`);
   } catch (err) {
     console.error(err);
