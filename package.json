@@ -39,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "A hotel booking application in React. Homework for the [CodeYourFuture React module](https://codeyourfuture.github.io/syllabus-master/react/)",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

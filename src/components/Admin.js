@@ -1,5 +1,5 @@
 import React from "react";
-import TouristInfoCards from "./touristInfoCards/TouristInfoCards";
+import TouristInfoCards from "./touristInfocards/TouristInfoCards";
 import Bookings from "./Bookings";
 import Restaurant from "./restaurant/Restaurant";
 
