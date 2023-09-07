@@ -8,14 +8,16 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
+  background-color: white;
+  height: 8.5rem;
+  padding: 1rem;
+  color: black;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
 }
 
 .App-title {
@@ -39,6 +41,10 @@
   padding: 5px 0 20px 0;
 }
 
+.table-bordered {
+  margin:2rem 0 5rem 0;
+}
+
 tr {
   color: #5b5757;
 }
@@ -52,6 +58,18 @@ tr {
   text-align: center;
 }
 
+.footer-ul {
+  list-style-type: none;
+}
+
+
 .card {
-  width: 18rem;
+  width: 35rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  margin-bottom: 4rem;
 }

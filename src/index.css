@@ -24,3 +24,8 @@ body {
 .search-row input {
   margin-right: 10px;
 }
+
+/* making space between logo and h1 */
+header > img {
+  margin-right: 2rem;
+}

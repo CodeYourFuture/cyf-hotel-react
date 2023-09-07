@@ -1,0 +1,8 @@
+.profile-container {
+    border: 1px solid grey;
+    padding: 1rem;
+}
+
+.profile-list {
+  list-style-type: none;
+}

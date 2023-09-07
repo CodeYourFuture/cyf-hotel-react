@@ -1,0 +1,10 @@
+.restaurant-orders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6rem;
+}
+
+.btn {
+    margin: 1.5rem 2rem;
+}
