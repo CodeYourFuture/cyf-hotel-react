@@ -8,7 +8,15 @@ const Bookings = () => {
   const [filteredBookings, setFilteredBookings] = useState([]);
 
   const search = searchVal => {
-    console.info("TO DO!", searchVal);
+    const filtered = bookings.filter((booking) => {
+      const { firstName, surname } = booking;
+      return (
+        firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        surname.toLowerCase().includes(searchVal.toLowerCase())
+      );
+    });
+
+    setFilteredBookings(filtered);
   };
 
  useEffect(() => {
