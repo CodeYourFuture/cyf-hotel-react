@@ -1,0 +1,79 @@
+.App {
+  text-align: left;
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  background-color: #1c1e21;
+  height: 50px;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-content {
+  padding-top: 20px;
+  font-size: large;
+}
+
+.card-img-top {
+  height: 350px;
+  transition: all 0.3s ease-in;
+}
+
+.card-img-top:hover {
+  opacity: 0.9;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.search {
+  padding: 5px 0 20px 0;
+}
+
+tr {
+  color: #5b5757;
+}
+
+.table td {
+  padding: 0.45rem;
+}
+
+.results {
+  padding-top: 15px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #1c1e21;
+  color: #fff;
+}
+
+footer > ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+li {
+  list-style: none;
+}
+
+.card {
+  width: 18rem;
+}

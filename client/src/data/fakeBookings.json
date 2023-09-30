@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "title": "Doctor",
+    "title": "Dr",
     "firstName": "Sadia",
     "surname": "Begum",
     "email": "begum_sadia@sadia.org",
@@ -31,7 +31,7 @@
   },
   {
     "id": 4,
-    "title": "Dame",
+    "title": "Ms",
     "firstName": "Judi",
     "surname": "Dench",
     "email": "Judi@dench.co.uk",
@@ -41,7 +41,7 @@
   },
   {
     "id": 5,
-    "title": "Madam",
+    "title": "Mrs",
     "firstName": "Anuradha",
     "surname": "Selvam",
     "email": "anu@selvam.net",
