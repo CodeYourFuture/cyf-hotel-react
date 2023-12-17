@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -17,9 +17,17 @@
   font-size: 1em;
   font-weight: bold;
 }
-
+.card-img-top {
+  height: 180px;
+}
 .App-title {
   font-size: 1.5em;
+}
+.infoCards{
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+  margin: 40px 20px;
 }
 
 .App-content {
@@ -54,4 +62,45 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.rowSelected{
+  background-color: rgb(210, 207, 207) !important;
+}
+ul{
+  display: flex;
+}
+
+.btn{
+  margin-right: 2rem;
+  margin-left: 2rem;
+  background-color: #5b5757;
+  border: none;
+
+ }
+ .orders-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.orders-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.order {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order li {
+  margin: 0 10px;
+}
+
+.App-header{
+  display: flex;
 }
