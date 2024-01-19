@@ -8,8 +8,8 @@ function TouristInfoCards() {
           <div className="card-head">
             <h1 className="city-name"> London </h1>
             <img
-              src="https://voxcitywalks.com/wp-content/uploads/2020/10/london-2.jpg"
-              className="card-img-top"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxzeZX2jass6oezzGFv7auBlIgs2cZ9NSsTQ&usqp=CAU"
+              className="card-img-top" alt="london"
             />
           </div>
           <div className="card-body">
@@ -31,7 +31,7 @@ function TouristInfoCards() {
             </p>
             <a href="peoplemakeglasgow.com">
               {" "}
-              <button className="app-btn">See London </button>{" "}
+              <a href = "https://en.wikipedia.org/wiki/London"><button className="app-btn">About London </button></a>
             </a>
           </div>
         </div>
@@ -61,7 +61,7 @@ function TouristInfoCards() {
             </p>
             <a href="visitmanchester.com">
               {" "}
-              <button className="app-btn">See Manchester </button>{" "}
+              <a href = "https://en.wikipedia.org/wiki/Manchester"><button className="app-btn">About Manchester </button> </a>
             </a>
           </div>
         </div>
@@ -89,7 +89,7 @@ function TouristInfoCards() {
               Kingdom.[7]
             </p>
             <a href="visitlondon.com">
-              <button className="app-btn">See Glasgow </button>
+              <a href ="https://en.wikipedia.org/wiki/Glasgow"><button className="app-btn">About Glasgow </button></a>
             </a>
           </div>
         </div>

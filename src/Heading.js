@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.jpg";
 
-function Header() {
+function Heading() {
   return (
     <header className="App-header">
       <p>CYF</p>
@@ -9,4 +9,4 @@ function Header() {
     </header>
   );
 }
-export default Header;
+export default Heading;
