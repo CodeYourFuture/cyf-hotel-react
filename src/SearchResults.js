@@ -18,7 +18,7 @@ function SearchResults(props) {
             <th scope="col">Room ID</th>
             <th scope="col">Check in date</th>
             <th scope="col">Check out date</th>
-            <th scope="col">tootal nights</th>
+            <th scope="col">nights</th>
             <th scope="col"> customer profile</th>
           </tr>
         </thead>

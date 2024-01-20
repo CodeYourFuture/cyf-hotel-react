@@ -216,10 +216,6 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Test:** Each column in the table should be clickable to sort results in ascending or descending order.
 
-<<<<<<< HEAD
-
- 
-=======
 #### 26. Validate new booking 
 
 **Instructions:** Add validation to some fields from exercise 24: the first name and last name must not be empty, the email must contain exactly 1 `@` symbol, and at least one `.` symbol after the `@`; the room ID must be a number between 0 and 100. If the fields do not contain correct information when the 'Submit' button is pressed, display a red error message at the top of the page, but do not clear the text already in the field.
@@ -258,9 +254,8 @@ Packages contain new functions and properties to work with that may not be avail
 
 Think about some of the code you have written in this lesson - are there any packages available that might have helped you to complete the exercises?
 
-For example, exercise 26 and 27 used validation. Searching npmjs.com for '[validate](https://www.npmjs.com/search?q=validate)' shows multiple packages, such as '[validator](https://www.npmjs.com/package/validator)' and '[Validate](https://www.npmjs.com/package/Validate)'. Open both of these packages in your browser, and consider the following questions:
+For exampHle, exercise 26 and 27 used validation. Searching npmjs.com for '[validate](https://www.npmjs.com/search?q=validate)' shows multiple packages, such as '[validator](https://www.npmjs.com/package/validator)' and '[Validate](https://www.npmjs.com/package/Validate)'. Open both of these packages in your browser, and consider the following questions:
 - Is it clear what this package does? Will it solve my specific problem better than writing my own code?
 - Do I trust that the code in this package is safe to run on my machine? Do other people trust this package? (Hint: look at weekly downloads, last update, dependents, and visit the repository)
 - Is this package accessible? Will it work on all browsers?
 - If I decide to use this package and it breaks, will I know how to fix it or replace it?
->>>>>>> fork/master

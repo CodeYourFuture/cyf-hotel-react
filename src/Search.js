@@ -6,7 +6,7 @@ const Search = ({ search }) => {
   const [searchInput, setSearchInput] = useState("");
 
   function handleSearchInput(event) {
-    console.log(event.target.value);
+    console.log(event.target.value,">>>>>");
     return setSearchInput(event.target.value);
   }
   function handleSubmit(event) {
