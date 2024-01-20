@@ -5,7 +5,7 @@ export default function CustomerProfile({ id, setId }) {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `https://cyf-react.glitch.me/customers/${id}`
+        `https://temporary-cyf-react.onrender.com/customers/${id}`
       );
       const data = await response.json();
       setCustomer(data);

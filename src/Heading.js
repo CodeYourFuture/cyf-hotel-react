@@ -4,8 +4,8 @@ import logo from "./logo.jpg";
 function Heading() {
   return (
     <header className="App-header">
-      <p>CYF</p>
-      <img src={logo} width="75px" />
+      <img src={logo} width="60px" />
+      <p id ="logo-p">CYF</p>
     </header>
   );
 }

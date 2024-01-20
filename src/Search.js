@@ -21,9 +21,7 @@ const Search = ({ search }) => {
       <div className="row search-wrapper">
         <div className="col">
           <form onSubmit={handleSubmit} className="form-group search-box">
-            <label htmlFor="customerName" id="label">
-              Customer name
-            </label>
+            
             <div className="search-row">
               <input
                 type="text"
