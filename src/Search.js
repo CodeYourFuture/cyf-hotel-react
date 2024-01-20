@@ -27,7 +27,7 @@ const Search = ({ search }) => {
                 type="text"
                 id="customerName"
                 className="form-control"
-                placeholder="Customer name"
+                placeholder="Customer's name"
                 value={searchInput}
                 onChange={handleSearchInput}
               />
