@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CustomerProfile from "./CustomerProfile";
 import BookingTable from "./BookingTable";
 
+
 function SearchResults(props) {
   const [id, setId] = useState("");
   return (
