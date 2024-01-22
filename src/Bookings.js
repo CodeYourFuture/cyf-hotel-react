@@ -15,7 +15,7 @@ const Bookings = () => {
         const firstName = (person.firstName || "").toLowerCase();
         const lastName = (person.lastName || "").toLowerCase();
         
-        return firstName.includes(searchVal.toLowerCase()) || lastName.includes(searchVal.toLowerCase());
+        return firstName.includes(searchVal.toLowerCase()) || surname.includes(searchVal.toLowerCase());
       });
   
       setBookings(matchName);
