@@ -48,10 +48,10 @@ const CreateBooking = () => {
       />
       <button
         onClick={() => {
-          fetch("https://hotel-server-elahe.glitch.me/bookings", {
+          fetch("http://localhost:5005/bookings", {
             method: "POST",
             headers: {
-              "Content-Type": "application/json",
+              "Content-Type": "application/json"
             },
             body: JSON.stringify({
               title,
@@ -60,8 +60,8 @@ const CreateBooking = () => {
               email,
               roomId,
               checkInDate,
-              checkOutDate,
-            }),
+              checkOutDate
+            })
           });
         }}
       >
