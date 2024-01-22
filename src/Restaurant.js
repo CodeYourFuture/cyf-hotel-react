@@ -1,14 +1,15 @@
-import React from "react";
+import React from 'react';
+import Order from './Order';
 
 const Restaurant = () => {
-  const pizzas = 0;
+  const foods = ["pizza", "salad", "cake"]
   return (
     <div>
-      <h3>Restaurant Orders</h3>
+      <h3 className='head3'>Restaurant orders</h3>
       <ul>
-        <li>
-          Pizzas: {pizzas} <button className="btn btn-primary">Add</button>
-        </li>
+        
+         {foods.map ((food, index) => <Order key = {index} orderType = {food}/>)}
+        
       </ul>
     </div>
   );
