@@ -13,7 +13,7 @@ const Bookings = () => {
     if (searchVal) {
       const matchName = bookings.filter(person => {
         const firstName = (person.firstName || "").toLowerCase();
-        const lastName = (person.lastName || "").toLowerCase();
+        const surname = (person.surname|| "").toLowerCase();
         
         return firstName.includes(searchVal.toLowerCase()) || surname.includes(searchVal.toLowerCase());
       });
