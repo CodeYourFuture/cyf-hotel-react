@@ -1,7 +1,7 @@
 
 const { fakeBookings } = require("./data/index.js");
 const format = require("pg-format");
-const db = require("./connection");
+const db = require("./connection.js");
 
 function seed() {
   return db

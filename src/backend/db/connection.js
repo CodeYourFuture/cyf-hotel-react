@@ -1,5 +1,5 @@
-require('dotenv').config();
 const { Pool } = require('pg');
+require('dotenv').config();
 
 const dbConfig = {
   user: process.env.POSTGRES_USER,
@@ -10,5 +10,9 @@ const dbConfig = {
 };
 
 const pool = new Pool(dbConfig);
+
+pool.on('error', (err) => {
+  console.error('Unexpected error on idle client', err);
+});
 
 module.exports = pool;

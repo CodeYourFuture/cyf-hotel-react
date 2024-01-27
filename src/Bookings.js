@@ -21,10 +21,11 @@ const Bookings = () => {
       setBookings(matchName);
     }
   };
+  // "https://temporary-cyf-react.onrender.com/
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://temporary-cyf-react.onrender.com/");
+        const response = await fetch('https://temporary-cyf-react.onrender.com/');
         if (!response.ok) {
           throw new Error("SERVER RESPONSE ERROR !!!");
         }

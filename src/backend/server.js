@@ -1,7 +1,9 @@
 const express = require('express');
 const { Pool } = require('pg');
 const path = require('path');
+// const connection = require("./data/connection");
 require('dotenv').config();
+
 
 const pool = new Pool({
   user: process.env.POSTGRES_USER,
