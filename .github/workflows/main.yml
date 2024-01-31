@@ -20,4 +20,4 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
     - name: Deploy
-      run: npm deploy
+      run: npm run deploy
