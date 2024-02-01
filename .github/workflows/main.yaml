@@ -1,6 +1,6 @@
 name: CI/CD Pipeline
 
-on:[push]
+on: [push]
 
 
 jobs:
