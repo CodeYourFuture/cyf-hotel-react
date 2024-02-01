@@ -35,7 +35,7 @@ jobs:
     - name: Deploy
       run: npm run deploy
       env:
-        AWS_ACCESS_KEY_ID: ${{ AKIAXJGI4S4KRZN7TYEC}}
-        AWS_SECRET_ACCESS_KEY: ${{ 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 }}
+        AWS_ACCESS_KEY_ID: ${{AWS_ACCESS_KEY_ID}}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
         AWS_REGION: 'eu-west-2'  
 
