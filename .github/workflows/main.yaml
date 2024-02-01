@@ -34,5 +34,7 @@ jobs:
 
     - name: Deploy
       run: npm run deploy
-
+      env:
+      
+        AWS_REGION: 'eu-west-2'  
 
