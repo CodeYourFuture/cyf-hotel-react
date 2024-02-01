@@ -14,7 +14,7 @@ const pool = new Pool({
 });
 
 const app = express();
-const Port = process.env.PORT || 5000;
+const Port = process.env.PORT || 4000;
 
 app.use(express.static(path.join(__dirname, 'build')));
 
