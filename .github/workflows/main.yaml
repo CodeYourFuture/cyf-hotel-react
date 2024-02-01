@@ -1,23 +1,26 @@
-name: CI/CD Pipeline
-
-on: [push]
+name: Your Workflow Name
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-    - name: Install Dependencies
+      with:
+        node-version: '20'
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
       run: npm install
+
     - name: Run tests
       run: npm test
-
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Deploy
-      run: npm deploy
