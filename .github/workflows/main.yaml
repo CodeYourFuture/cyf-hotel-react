@@ -1,8 +1,9 @@
-
-
 name: CI/CD Pipeline
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   test:
@@ -10,7 +11,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-      
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20' 
 
     - name: Install Dependencies
       run: npm install
@@ -23,9 +28,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
       with:
-        node-version: '20'
+        node-version: '20' 
 
     - name: Deploy
-      run: npm deploy
-      
+      run: npm run deploy
