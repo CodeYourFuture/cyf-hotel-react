@@ -1,0 +1,22 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Deploy to EC2
+        run: |
+          ssh -i Documents/cyf/ubuntu/cyf-hotel12.pem ec2-user@18.130.247.166 'bash -s' < deploy-script.sh
+               ../src/backend/deploy-script.sh
