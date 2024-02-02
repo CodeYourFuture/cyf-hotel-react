@@ -19,11 +19,14 @@ jobs:
         run: npm test
 
   deploy:
+    
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm install
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,6 +35,7 @@ jobs:
 
       - name: Install AWS CLI
         run: npm install -g aws-cli
+     
 
       - name: Configure AWS credentials
         run: |
@@ -44,3 +48,4 @@ jobs:
 
       - name: Deploy to S3
         run: aws s3 sync build/ s3://cyfhotelapp
+        
