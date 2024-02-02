@@ -27,10 +27,19 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
-
+    
+   
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+    
+    - name: Deploy
+      run: |
+          npm install -g aws-cli
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set region eu-west-2
+          aws s3 sync build/ s3://cyfhotelapp
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
