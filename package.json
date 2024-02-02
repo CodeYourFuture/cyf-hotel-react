@@ -23,10 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    
     "prod": "npm run build && npm run deploy",
     "watch": "npm-watch"
-    
   },
   "devDependencies": {
     "husky": "^8.0.3",
