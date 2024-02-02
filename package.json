@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync build/ s3://cyfhotelapp",
+    
     "prod": "npm run build && npm run deploy",
     "watch": "npm-watch"
     
