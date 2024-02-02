@@ -24,7 +24,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "prod": "npm run build && npm run deploy",
-    "watch": "npm-watch"
+    "watch": "npm-watch",
+    "deploy":"aws s3 sync build/ s3://cyfhotelapp"
   },
   "devDependencies": {
     "husky": "^8.0.3",
