@@ -50,7 +50,7 @@ jobs:
       - name: Deploy to server
         uses: easingthemes/ssh-deploy@v4
         with:
-          sshPrivateKey: ${{ secrets_SSH_PRIVATE_KEY }}
+          sshPrivateKey: ${{ secrets.SECRETS_SSH_PRIVATE_KEY }}
           server: ${{ secrets.EC2_HOST }}
            
           remote_port: ${{ secrets.EC2_PORT }}
