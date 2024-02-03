@@ -47,11 +47,17 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Deploy to EC2
+      - name: Deploy to server
         uses: easingthemes/ssh-deploy@v4
         with:
+          sshPrivateKey: ${{ secrets_SSH_PRIVATE_KEY }}
           server: ${{ secrets.EC2_HOST }}
+           
           remote_port: ${{ secrets.EC2_PORT }}
           username: ${{ secrets.EC2_USERNAME }}
-          local_path: "/home/ec2-user/cyf-hotel-react/build" # Change this to the path where your built files are located
-          server_path: "/home/ec2-user/cyf-hotel-react/src/backend" # Change this to the path on your EC2 instance where you want to deploy the files
+          
+          localPath: /home/***/cyf-hotel-react/build
+          serverPath: /home/***/cyf-hotel-react/src/backend
+          TARGET: /home/REMOTE_USER/
+          ARGS: -rlgoDzvc -i
+          SSH_CMD_ARGS: -o StrictHostKeyChecking=no
