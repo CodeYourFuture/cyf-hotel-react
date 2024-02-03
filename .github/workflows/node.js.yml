@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
@@ -51,10 +51,10 @@ jobs:
         uses: easingthemes/ssh-deploy@v4
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_Public_KEY: ${{ secrets.SSH_Public_KEY }}
+          
           REMOTE_HOST: ${{ secrets.EC2_HOST }}
           REMOTE_USER: ${{ secrets.EC2_USERNAME }}
-          SOURCE: /path/to/local/files
-          TARGET: /path/on/remote/server
+          SOURCE: "*"
+          TARGET: "/home/ubuntu/cyf-hotel-react/src/backend"
           ARGS: -rlgoDzvc -i
           SSH_CMD_ARGS: -o StrictHostKeyChecking=no
