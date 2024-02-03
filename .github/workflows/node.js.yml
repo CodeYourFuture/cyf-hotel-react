@@ -29,3 +29,29 @@ jobs:
     - run: npm i
     - run: npm run build --if-present
     - run: npm test
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build application
+        run: npm run build
+
+      - name: Deploy to EC2
+        uses: easingthemes/ssh-deploy@v4
+        with:
+          server: ${{ secrets.EC2_HOST }}
+          remote_port: ${{ secrets.EC2_PORT }}
+          username: ${{ secrets.EC2_USERNAME }}
+          local_path: "/home/ec2-user/cyf-hotel-react/build" # Change this to the path where your built files are located
+          server_path: "/home/ec2-user/cyf-hotel-react/src/backend" # Change this to the path on your EC2 instance where you want to deploy the files
