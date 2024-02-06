@@ -17,12 +17,14 @@ const Bookings = () => {
 
       try {
         const response = await fetch(
-          "https://temporary-cyf-react.onrender.com/"
+          "http://localhost:3001/bookings"
         );
+
         if (!response.ok) {
           throw new Error(`HTTP error! Status code: ${response.status}`);
         }
         const data = await response.json();
+        
         setTimeout(() => {
           setBookings(data);
           setLoadingData(false);
@@ -33,6 +35,7 @@ const Bookings = () => {
         setLoadingData(false);
       }
     };
+
 
     fetchData();
   }, []);
