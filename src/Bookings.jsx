@@ -17,7 +17,7 @@ const Bookings = () => {
 
       try {
         const response = await fetch(
-          "http://localhost:3001/bookings"
+          "http://13.40.77.68:3001/bookings"
         );
 
         if (!response.ok) {
