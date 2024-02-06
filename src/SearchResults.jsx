@@ -8,7 +8,7 @@ const SearchResults = ({ results }) => {
 
   useEffect(() => {
     if (selectedRow) {
-      fetch(`http://localhost:3001/customers/${selectedRow}`)
+      fetch(`http://localhost:3001/customers//${selectedRow}`)
         .then((response) => response.json())
         .then((data) => setCustomerData(data));
     }
