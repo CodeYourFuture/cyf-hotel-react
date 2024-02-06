@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS cyf_hotel;
-CREATE DATABASE cyf_hotel;
+DROP DATABASE IF EXISTS cyfhotelapp;
+CREATE DATABASE cyfhotelapp;
