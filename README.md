@@ -2,12 +2,7 @@
 
   [![wakatime](https://wakatime.com/badge/github/Amir-Pourhadi/CYF-React-Hotel.svg)](https://wakatime.com/badge/github/Amir-Pourhadi/CYF-React-Hotel)
   [![Netlify Status](https://api.netlify.com/api/v1/badges/d9ade705-faa7-4e05-9b94-d2d16787c59e/deploy-status)](https://app.netlify.com/sites/amir-react-hotel/deploys)
-  [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_CYF-React-Hotel&metric=ncloc)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_CYF-React-Hotel)
-  [![CodeFactor](https://www.codefactor.io/repository/github/amir-pourhadi/cyf-react-hotel/badge)](https://www.codefactor.io/repository/github/amir-pourhadi/cyf-react-hotel)  
-  [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_CYF-React-Hotel&metric=alert_status)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_CYF-React-Hotel)
-  [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_CYF-React-Hotel&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_CYF-React-Hotel)
-  [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_CYF-React-Hotel&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_CYF-React-Hotel)
-  [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Amir-Pourhadi_CYF-React-Hotel&metric=security_rating)](https://sonarcloud.io/dashboard?id=Amir-Pourhadi_CYF-React-Hotel)
+
 </div>
 
 A hotel booking application in React. Homework for the [CodeYourFuture React module](https://codeyourfuture.github.io/syllabus-master/react/)
