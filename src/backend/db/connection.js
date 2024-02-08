@@ -8,7 +8,7 @@ const dbConfig = {
   password: process.env.POSTGRES_PASSWORD,
   port: process.env.POSTGRES_PORT,
 };
-
+console.log(dbConfig)
 const pool = new Pool(dbConfig);
 
 pool.on('error', (err) => {

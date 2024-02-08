@@ -1,22 +1,17 @@
 const express = require('express');
-const { Pool } = require('pg');
-const path = require('path');
-// const connection = require("./data/connection");
 require('dotenv').config();
+const path = require('path');
+const pool = require("./db/connection");
+const cors = require("cors")
 
 
-const pool = new Pool({
-  user: process.env.POSTGRES_USER,
-  host: process.env.POSTGRES_HOST,
-  database: process.env.POSTGRES_DB,
-  password: process.env.POSTGRES_PASSWORD,
-  port: process.env.POSTGRES_PORT,
-});
+
 
 const app = express();
+app.use(cors())
 const Port = process.env.PORT || 4000;
 
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/api/data', async (req, res) => {
   try {
@@ -32,9 +27,11 @@ app.get('/api/data', async (req, res) => {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
 
 app.listen(Port, () => {
-  console.log(`Server is running on port ${Port}`);
   console.log(`Server is running on port ${Port}`);
   console.log(`Database user: ${process.env.POSTGRES_USER}`);
 });

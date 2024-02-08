@@ -25,7 +25,7 @@ const Bookings = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://temporary-cyf-react.onrender.com/');
+        const response = await fetch('http://18.171.60.156/api/data');
         if (!response.ok) {
           throw new Error("SERVER RESPONSE ERROR !!!");
         }

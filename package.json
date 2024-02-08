@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.3.2",
     "loading": "^1.13.3",
     "loading.js": "^0.1.1",
@@ -24,14 +25,14 @@
     "eject": "react-scripts eject",
     "prod": "npm run build && npm run deploy",
     "watch": "npm-watch",
-    "deploy": "aws s3 sync build/ s3://cyfhotelapp"
+    "deploy": "aws s3 sync build/ s3://cyfhotelapp",
+    "dev": " nodemon ./src/backend/server.js"
   },
   "devDependencies": {
-    "react-scripts": "^5.0.1",
     "husky": "^8.0.3",
     "prettier": "^2.8.4",
-    "pretty-quick": "^3.1.3"
-    
+    "pretty-quick": "^3.1.3",
+    "react-scripts": "^5.0.1"
   },
   "husky": {
     "hooks": {

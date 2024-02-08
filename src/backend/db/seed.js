@@ -13,8 +13,10 @@ function seed() {
     .then(() => {
       return insertBookingsData();
     })
+    .catch((error) => console.error("Error seeding database:", error));
+  }
     
-}
+
 
 
 function createBookingsTable() {
