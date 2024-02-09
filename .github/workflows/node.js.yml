@@ -57,5 +57,4 @@ jobs:
           REMOTE_USER: ${{ secrets.EC2_USERNAME }}
           SOURCE: "*"
           TARGET: "./cyf-hotel-react"
-          ARGS: -rlgoDzvc -i
-          SSH_CMD_ARGS: -o StrictHostKeyChecking=no
+         
