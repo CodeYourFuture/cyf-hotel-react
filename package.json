@@ -26,7 +26,7 @@
     "prod": "npm run build && npm run deploy",
     "watch": "npm-watch",
     "deploy": "aws s3 sync build/ s3://cyfhotelapp",
-    "dev": " nodemon ./src/backend/server.js"
+    "dev": " nodemon ./src/backend/server.js --host 0.0.0.0"
   },
   "devDependencies": {
     "husky": "^8.0.3",
