@@ -1,35 +1,14 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node.js CI
+name: Deploy and Docker Build
 
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm i
-    - run: npm run build --if-present
-    - run: npm test
-  deploy:
+  deploy-and-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -47,38 +26,20 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Deploy to server
-        uses: easingthemes/ssh-deploy@v4
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: Check SSH connection
-        run: ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} echo "SSH connection successful"
-
-      - name: Deploy via rsync
-        run: |
-          rsync -avz --delete -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no" ./source_directory ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/destination_directory
-          
-          
-          REMOTE_HOST: ${{ secrets.EC2_HOST }}
-          REMOTE_USER: ${{ secrets.EC2_USERNAME }}
-          SOURCE: "*"
-          TARGET: "./cyf-hotel-react"
       - name: Deploy via SSH
         uses: easingthemes/ssh-deploy@v4
         with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.EC2_HOST }}
           REMOTE_USER: ${{ secrets.EC2_USERNAME }}
-       # Build Docker image
+          TARGET: "./cyf-hotel-react"
+
       - name: Build Docker image
-        run: docker build -t cyfhotelapp-docker-image:latest .
+        run: |
+          docker build -t cyfhotelapp-docker-image:latest .
+          docker tag cyfhotelapp-docker-image:latest ${{ secrets.AWS_ECR_URI }}/cyfhotelapp-docker-image:latest
+          docker push ${{ secrets.AWS_ECR_URI }}/cyfhotelapp-docker-image:latest
+        env:
+          AWS_ECR_URI: ${{ secrets.AWS_ECR_URI }}
 
-      # Tag Docker image for Amazon ECR
-      - name: Tag Docker image for Amazon ECR
-        run: docker tag cyfhotelapp-docker-image:latest ec2-user.dkr.ecr.eu-west-2.amazonaws.com/cyfhotelapp-docker-image:latest
-
-      # Push Docker image to Amazon ECR
-      - name: Push Docker image to Amazon ECR
-        run: docker push ec2-user.dkr.ecr.eu-west-2.amazonaws.com/cyfhotelapp-docker-image:latest
-
-          
          
