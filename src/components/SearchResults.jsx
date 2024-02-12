@@ -30,19 +30,19 @@ const SearchResults = ({ results }) => {
           </tr>
         </thead>
         <tbody>
-          {results.map((item, index) => {
-            var a = moment(item.checkInDate);
-            var b = moment(item.checkOutDate);
+          {results && results.rows && results.rows.map((item, index) => {
+            var a = moment(item.checkindate);
+            var b = moment(item.checkoutdate);
             return (
               <tr key={index}>
                 <th scope="row">{index + 1}</th>
                 <td>{item.title}</td>
-                <td>{item.firstName}</td>
+                <td>{item.firstname}</td>
                 <td>{item.surname}</td>
                 <td>{item.email}</td>
-                <td>{item.roomId}</td>
-                <td>{item.checkInDate}</td>
-                <td>{item.checkOutDate}</td>
+                <td>{item.roomid}</td>
+                <td>{item.checkindate}</td>
+                <td>{item.checkoutdate}</td>
                 <td>{b.diff(a, "days")}</td>
                 <td>
                   <button

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./components/SearchResults.jsx";
-//import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -17,7 +16,7 @@ const Bookings = () => {
   });
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("https://hotel-db-zeta.vercel.app")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Error fetching bookings data");
@@ -25,6 +24,7 @@ const Bookings = () => {
         return res.json();
       })
       .then((data) => {
+        console.log("data::: ", data)
         setBookings(data);
       })
       .catch((error) => {
@@ -50,18 +50,19 @@ const Bookings = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setBookings([...bookings, newBooking]);
+    setBookings((bookings) => [...bookings, newBooking]);
   };
 
   return (
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {error ? (
+{/*         {error ? (
           <p className="error-message">{error}</p>
         ) : (
           <SearchResults results={bookings} />
-        )}
+        )} */}
+        <SearchResults results={bookings} />
         <form className="new-booking">
           <h4>Add a New Booking</h4>
           <input

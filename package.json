@@ -2,6 +2,7 @@
   "name": "react-hotel",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://hotel-db-zeta.vercel.app",
   "dependencies": {
     "moment": "^2.29.4",
     "react": "^18.2.0",

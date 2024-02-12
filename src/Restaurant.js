@@ -3,7 +3,7 @@ import Order from "./components/Order";
 
 const Restaurant = () => {
   return (
-    <div>
+    <div style={{ marginTop: '120px' }}>
       <h3>Restaurant Orders</h3>
       <ul>
         <Order orderType="Pizza" />

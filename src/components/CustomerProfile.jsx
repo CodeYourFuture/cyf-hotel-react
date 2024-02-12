@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 const CustomerProfile = ({ id }) => {
   const [customerInfo, setCustomerInfo] = useState("");
   useEffect(() => {
-    fetch(`https://cyf-react.glitch.me/customers/${id}`)
+    fetch(`https://hotel-db-zeta.vercel.app/${id}`)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        setCustomerInfo(data);
+        console.log(data.rows[0])
+        setCustomerInfo(data.rows[0]);
       });
   }, [id]);
   return (
