@@ -254,7 +254,7 @@ Packages contain new functions and properties to work with that may not be avail
 
 Think about some of the code you have written in this lesson - are there any packages available that might have helped you to complete the exercises?
 
-For example, exercise 26 and 27 used validation. Searching npmjs.com for '[validate](https://www.npmjs.com/search?q=validate)' shows multiple packages, such as '[validator](https://www.npmjs.com/package/validator)' and '[Validate](https://www.npmjs.com/package/Validate)'. Open both of these packages in your browser, and consider the following questions:
+For exampHle, exercise 26 and 27 used validation. Searching npmjs.com for '[validate](https://www.npmjs.com/search?q=validate)' shows multiple packages, such as '[validator](https://www.npmjs.com/package/validator)' and '[Validate](https://www.npmjs.com/package/Validate)'. Open both of these packages in your browser, and consider the following questions:
 - Is it clear what this package does? Will it solve my specific problem better than writing my own code?
 - Do I trust that the code in this package is safe to run on my machine? Do other people trust this package? (Hint: look at weekly downloads, last update, dependents, and visit the repository)
 - Is this package accessible? Will it work on all browsers?

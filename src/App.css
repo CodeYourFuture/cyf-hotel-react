@@ -1,30 +1,111 @@
-.App {
-  text-align: left;
+* {
+  color: var(--black);
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+:root {
+  --black: #222629;
+  --lightgreen: #86c232;
+  --darkgreen: #61892f;
+  --darkgray: #474b4f;
+  --lightgray: #6b6e70;
+  --move: #8e8262;
+  --brown: #844d36;
+  --ashgray: #474853;
+  --sky: #4d6d9a;
+  --a: #f3e8ff;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--a);
+  color: var(--black);
+  font-family: "Gill Sans", sans-serif;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: #4d6d9a;
+}
+#logo-p {
+  margin-left: 10px;
+}
+
+.App-container {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  margin-bottom: 1rem;
+}
+.app-btn {
+  background-color: #a87c7c;
+  color: var(--black);
+  border-radius: 20px;
+  width: 12vw;
+  min-width: 8rem;
+  font-size: medium;
+  box-shadow: 3px 3px 7px #474853;
+}
+.app-btn:hover {
+  background-color: #e6baa3;
+}
+.table-primary {
+  color: #222629;
+}
+
+.city-name {
+  text-shadow: 3px 3px 3px #495e7f;
+}
+.card-head img {
+  width: 400px;
+  height: 400px;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 100vw;
   padding: 20px;
-  color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+  align-self: center;
+  justify-self: center;
+}
+.singl-card {
+  display: flex;
+  margin: 2rem;
+  border: 1px solid #4d6d9a;
+  border-radius: 5px;
+  width: 90%;
+  box-shadow: 5px 5px 10px #474853;
+}
+.card-body {
+  align-self: center;
+  margin: 1rem;
+}
+.restaurantOrder {
+  display: flex;
+  margin: 1rem;
 }
 
-.App-title {
-  font-size: 1.5em;
+.order-items {
+  width: 8rem;
+  text-align: center;
+  justify-content: flex-start;
 }
 
-.App-content {
-  padding-top: 20px;
-  font-size: large;
+.fotter-li {
+  display: flex;
+  justify-content: space-around;
+  background-color: #4d6d9a;
+  list-style-type: none;
+  height: 70px;
+  align-items: center;
+}
+li {
+  list-style-type: none;
+}
+
+#menue-p {
+  margin-left: 3rem;
 }
 
 @keyframes App-logo-spin {
@@ -35,23 +116,31 @@
     transform: rotate(360deg);
   }
 }
-.search {
-  padding: 5px 0 20px 0;
+.customerProfile {
+  color: #222629;
 }
-
-tr {
-  color: #5b5757;
+a {
+  text-decoration: none;
 }
-
-.results {
-  padding-top: 15px;
+.singl-card:hover {
+  background-color: #f8edff;
 }
-
-.footer {
-  padding-top: 20px;
-  text-align: center;
+.card-link:hover {
+  color: white;
 }
-
-.card {
-  width: 18rem;
+.card-link {
+  width: 100%;
+}
+.table-div {
+  overflow-x: auto;
+}
+@media screen and (max-width: 700px) {
+  .singl-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-head img {
+    max-width: 300px;
+    min-width: 150;
+  }
 }

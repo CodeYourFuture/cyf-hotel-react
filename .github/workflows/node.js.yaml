@@ -1,0 +1,47 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Deploy and Docker Build
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  deploy-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build application
+        run: npm run build
+      - name: Check SSH connection run: ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} echo "SSH connection successful" 
+      - name: Deploy via rsync run: | rsync -avz --delete -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no" ./source_directory ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/destination_directory 
+
+      - name: Deploy via SSH
+        uses: easingthemes/ssh-deploy@v4
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.EC2_HOST }}
+          REMOTE_USER: ${{ secrets.EC2_USERNAME }}
+          TARGET: "./cyf-hotel-react"
+
+      - name: Build Docker image
+        run: |
+          docker build -t cyfhotelapp-docker-image:latest .
+          docker tag cyfhotelapp-docker-image:latest ${{ secrets.AWS_ECR_URI }}/cyfhotelapp-docker-image:latest
+          docker push ${{ secrets.AWS_ECR_URI }}/cyfhotelapp-docker-image:latest
+        env:
+          AWS_ECR_URI: ${{ secrets.AWS_ECR_URI }}
+
+         
