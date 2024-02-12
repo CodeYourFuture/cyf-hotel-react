@@ -68,5 +68,17 @@ jobs:
         with:
           REMOTE_HOST: ${{ secrets.EC2_HOST }}
           REMOTE_USER: ${{ secrets.EC2_USERNAME }}
+       # Build Docker image
+      - name: Build Docker image
+        run: docker build -t cyfhotelapp-docker-image:latest .
+
+      # Tag Docker image for Amazon ECR
+      - name: Tag Docker image for Amazon ECR
+        run: docker tag cyfhotelapp-docker-image:latest ec2-user.dkr.ecr.eu-west-2.amazonaws.com/cyfhotelapp-docker-image:latest
+
+      # Push Docker image to Amazon ECR
+      - name: Push Docker image to Amazon ECR
+        run: docker push ec2-user.dkr.ecr.eu-west-2.amazonaws.com/cyfhotelapp-docker-image:latest
+
           
          
