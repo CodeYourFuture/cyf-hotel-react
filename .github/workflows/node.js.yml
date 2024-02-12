@@ -25,6 +25,8 @@ jobs:
 
       - name: Build application
         run: npm run build
+      - name: Check SSH connection run: ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} echo "SSH connection successful" 
+      - name: Deploy via rsync run: | rsync -avz --delete -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no" ./source_directory ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/destination_directory 
 
       - name: Deploy via SSH
         uses: easingthemes/ssh-deploy@v4
