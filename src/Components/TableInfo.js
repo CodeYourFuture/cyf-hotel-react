@@ -28,8 +28,16 @@ const TableInfo = (props) => {
           )}
         </td>
         <td>
+          {/* <button
+            className="btn btn-danger"
+            onClick={() => props.idCheck(props.result.id)}
+          >
+            Delete
+          </button> */}
+        </td>
+        <td>
           <button
-            className="btn btn-primary"
+            className="btn btn-secondary"
             onClick={() => props.idCheck(props.result.id)}
           >
             Show profile

@@ -5,13 +5,18 @@ import Heading from "./Components/Heading";
 import Footer from "./Components/Footer";
 import TouristInfoCards from "./Components/TouristInfoCards";
 import Restaurant from "./Components/Restaurant";
+import HotelServices from "./Components/HotelServices";
+import RoomTypes from "./Components/RoomTypes";
+
 const App = () => {
   return (
     <div className="App">
       <Heading />
       <TouristInfoCards />
+      <HotelServices />
+      <RoomTypes />
       <Bookings />
-      <Restaurant />
+
       <Footer />
     </div>
   );

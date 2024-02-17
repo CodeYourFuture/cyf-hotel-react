@@ -1,3 +1,5 @@
+import React from "react";
+
 const TouristInfo = [
   {
     title: "Glasgow",
@@ -20,24 +22,37 @@ const TouristInfo = [
     link: "https://visitlondon.com",
   },
 ];
+
 const TouristInfoCards = () => {
   return (
-    <div className="card-flex">
-      {TouristInfo.map((card, id) => {
-        return (
-          <div key={id} className="card">
-            <img src={card.image} className="card-img-top" />
-            <div className="card-body">
-              <h2 className="card-title">{card.title}</h2>
-              <p className="card-text">{card.info}</p>
-              <a href={card.link} className="btn btn-primary">
-                More Information
-              </a>
+    <div id="home" className="container my-4" style={{ paddingTop: "50px" }}>
+      <div className="row row-cols-1 row-cols-md-3 g-4">
+        {TouristInfo.map((card, id) => {
+          return (
+            <div key={id} className="col">
+              <div className="card h-100 border-0 shadow">
+                <img
+                  src={card.image}
+                  className="card-img-top"
+                  alt={card.title}
+                />
+                <div className="card-body d-flex flex-column">
+                  <h2 className="card-title">{card.title}</h2>
+                  <p className="card-text flex-grow-1">{card.info}</p>
+                  <a
+                    href={card.link}
+                    className="btn btn-primary mt-auto stretched-link btn-custom"
+                  >
+                    More Information
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };
+
 export default TouristInfoCards;

@@ -9,7 +9,7 @@ const Bookings = () => {
   const [errorMsg, setErrorMsg] = useState(null);
   useEffect(() => {
     setLoadingData(false);
-    fetch(`https://cyf-react.glitch.me/delayed`)
+    fetch(`https://andrius-hotel-server.onrender.com/bookings`)
       .then((res) => {
         if (!res.ok) {
           throw Error(
@@ -40,15 +40,18 @@ const Bookings = () => {
   };
 
   return (
-    <div className="App-content">
+    <div id="bookings" className="App-content">
       <div className="container">
-        <Search search={search} />
+        {/* <Search search={search} /> */}
         {errorMsg ? (
           <h1> {errorMsg}</h1>
         ) : loadingData ? (
-          <SearchResults results={bookings} />
+          <SearchResults results={bookings.bookings} />
         ) : (
-          <h1 className="blink_me">Loading.....</h1>
+          <div className="loading-container">
+            <h1 className="blink_me">Loading.....</h1>
+            <div className="loading-spinner"></div>
+          </div>
         )}
       </div>
     </div>

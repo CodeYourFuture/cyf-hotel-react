@@ -2,6 +2,7 @@ import { useState } from "react";
 import TableHead from "./TableHead.js";
 import TableInfo from "./TableInfo";
 import CustomerProfile from "./CustomerProfile";
+import Table from "./Table.js";
 
 const SearchResults = (props) => {
   const [showId, setShowId] = useState("");
@@ -11,7 +12,8 @@ const SearchResults = (props) => {
   };
   return (
     <>
-      {showId && <CustomerProfile id={showId} />}
+      <Table results={props.results} />
+      {/* {showId && <CustomerProfile id={showId} />}
       <table className="table">
         <TableHead />
         <tbody>
@@ -19,7 +21,7 @@ const SearchResults = (props) => {
             return <TableInfo key={id} result={result} idCheck={IdCheck} />;
           })}
         </tbody>
-      </table>
+      </table> */}
     </>
   );
 };
