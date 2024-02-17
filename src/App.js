@@ -1,13 +1,23 @@
 import React from "react";
-
-import Bookings from "./Bookings";
+import Bookings from "./Components/Bookings";
 import "./App.css";
+import Heading from "./Components/Heading";
+import Footer from "./Components/Footer";
+import TouristInfoCards from "./Components/TouristInfoCards";
+import Restaurant from "./Components/Restaurant";
+import HotelServices from "./Components/HotelServices";
+import RoomTypes from "./Components/RoomTypes";
 
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">CYF Hotel</header>
+      <Heading />
+      <TouristInfoCards />
+      <HotelServices />
+      <RoomTypes />
       <Bookings />
+
+      <Footer />
     </div>
   );
 };

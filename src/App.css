@@ -1,57 +1,68 @@
-.App {
-  text-align: left;
+.btn-custom {
+  background-color: #ff7f50;
+  /* Custom color */
+  border-color: #ff7f50;
+  /* Custom border color */
+  transition: background-color 0.3s, border-color 0.3s;
+  /* Smooth transition on hover */
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.btn-custom:hover {
+  background-color: #ff6347;
+  /* Darker shade on hover */
+  border-color: #ff6347;
+  /* Darker shade on hover */
 }
 
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+.service-card {
+  transition: all 0.3s ease;
+  /* Apply transition effect to all properties */
 }
 
-.App-title {
-  font-size: 1.5em;
+.service-card:hover {
+  transform: scale(1.05);
+  /* Grow the card slightly on hover */
+  background-color: #f8f9fa;
+  /* Change background color on hover */
 }
 
-.App-content {
-  padding-top: 20px;
-  font-size: large;
+/* Bookings.css */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.blink_me {
+  font-size: 24px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
   }
-  to {
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-top: 20px;
+}
+
+@keyframes spin {
+  100% {
     transform: rotate(360deg);
   }
-}
-.search {
-  padding: 5px 0 20px 0;
-}
-
-tr {
-  color: #5b5757;
-}
-
-.results {
-  padding-top: 15px;
-}
-
-.footer {
-  padding-top: 20px;
-  text-align: center;
-}
-
-.card {
-  width: 18rem;
 }
