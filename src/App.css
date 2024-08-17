@@ -1,5 +1,9 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
 .App {
-  text-align: left;
+  text-align: center;
 }
 
 .App-logo {
@@ -8,14 +12,21 @@
 }
 
 .App-header {
-  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
   height: 50px;
-  padding: 20px;
-  color: white;
+  padding-left: 10px;
+  color: rgb(46, 46, 46);
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  position: sticky;
+  z-index: 1;
+  top: 0;
 }
 
 .App-title {
@@ -37,6 +48,7 @@
 }
 .search {
   padding: 5px 0 20px 0;
+  border-top: 2px solid #e9ecef;
 }
 
 tr {
@@ -52,6 +64,70 @@ tr {
   text-align: center;
 }
 
+/* .........................................................Hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(https://images.pexels.com/photos/302831/pexels-photo-302831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-position: center right;
+  background-repeat: no-repeat;
+  height: 30rem;
+  color: #fff;
+}
+/* .........................................................Custom CSS */
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  fill: green;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 .card {
-  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 40vh;
+}
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.order-type {
+  display: flex;
+  gap: 20px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+footer ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 20px 0 5px 0;
+}
+table .thead-dark th {
+  color: #fff;
+  background-color: #212529;
+  border-color: #32383e;
+}
+
+.selected-colour {
+  background-color: lightgray;
 }
