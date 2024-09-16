@@ -3,24 +3,20 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-
 .search-wrapper {
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid #E9ECEF;
 }
-
 .search-box label {
   font-weight: bold;
   padding: 0.75rem;
   margin-bottom: 0;
-  color: #5b5757;
+  color: #5B5757;
 }
-
 .search-row {
   display: flex;
-  border-top: 2px solid #e9ecef;
+  border-top: 2px solid #E9ECEF;
   padding-top: 15px;
 }
-
 .search-row input {
   margin-right: 10px;
 }
