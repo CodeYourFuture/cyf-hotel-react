@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #aed6f1;
   height: 50px;
   padding: 20px;
   color: white;
@@ -53,5 +53,102 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: auto;
+  margin-left: 50px;
+  padding-bottom: 30px;
+}
+
+.hotel-logo {
+  width: 300px;
+  height: auto;
+}
+
+.card-image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.image1 {
+  width: 200px;
+  margin-left: 1px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+  padding: 0px 1px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 2px 20px;
+  margin-top: 15px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2874a6;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 9px #5dade2;
+}
+
+.btn:hover {
+  background-color: #aed6f1;
+}
+
+.btn:active {
+  background-color: #aed6f1;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+.footer-btn {
+  margin: auto;
+  width: 100px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff !important;
+  background-color: #2874a6;
+  border-radius: 8px;
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #aed6f1;
+  padding: 8px;
+  width: 100%;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #aed6f1;
+}
+
+#customers tr:hover {
+  background-color: #aed6f1;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2874a6;
+  color: white;
 }
