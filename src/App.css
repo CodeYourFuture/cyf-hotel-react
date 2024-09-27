@@ -53,5 +53,22 @@ tr {
 }
 
 .card {
+ 
+  
   width: 18rem;
+  width: 15rem;
+  margin: 2rem;
+  display: flex;
+  
+
 }
+.card-container {
+  display: flex;
+
+}
+ .headerLogo {
+  background-color: white;
+  margin-left: 1rem;
+
+ }
+
