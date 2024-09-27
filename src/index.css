@@ -1,26 +1,47 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
 }
 
 .search-wrapper {
-  border-top: 1px solid #e9ecef;
+	border-top: 1px solid #e9ecef;
 }
 
 .search-box label {
-  font-weight: bold;
-  padding: 0.75rem;
-  margin-bottom: 0;
-  color: #5b5757;
+	font-weight: bold;
+	padding: 0.75rem;
+	margin-bottom: 0;
+	color: #5b5757;
 }
 
 .search-row {
-  display: flex;
-  border-top: 2px solid #e9ecef;
-  padding-top: 15px;
+	display: flex;
+	border-top: 2px solid #e9ecef;
+	padding-top: 15px;
 }
 
 .search-row input {
-  margin-right: 10px;
+	margin-right: 10px;
+}
+#logo {
+	height: 4vw;
+	width: 4vw;
+	margin: 0 50px 60px 0;
+}
+.cards {
+	display: flex;
+}
+.card img {
+	height: 143px;
+}
+#footer {
+	display: flex;
+	flex-direction: row;
+
+	list-style: none;
+	padding: 1% 20%;
+}
+#listItem {
+	padding-left: 5px;
 }
